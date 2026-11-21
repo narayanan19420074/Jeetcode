@@ -1,0 +1,4468 @@
+{
+ "pattern": {
+  "title": "DI: Caselets",
+  "slug": "di-caselets",
+  "description": "Text-only caselets with numeric data.",
+  "order": 61,
+  "passPercentage": 70,
+  "timeLimitMinutes": 20,
+  "category": "Data Interpretation",
+  "testQuestionCount": 15,
+  "subPatterns": [
+   {
+    "slug": "paragraph-caselet",
+    "title": "Paragraph caselet"
+   },
+   {
+    "slug": "venn-set-caselet",
+    "title": "Venn / set caselet"
+   },
+   {
+    "slug": "arrangement-caselet",
+    "title": "Arrangement caselet"
+   },
+   {
+    "slug": "percentage-caselet",
+    "title": "Percentage caselet"
+   }
+  ]
+ },
+ "sets": [
+  {
+   "id": "di-caselets-s021",
+   "type": "text",
+   "title": "Banana chips sales at a Trichy shop",
+   "text": "A snack shop in Trichy sold 1,200 packets of banana chips in January at ₹40 per packet. In February the number of packets sold was 25% more than in January, and the price stayed the same. In March the number of packets sold was 20% less than in February, but the price was raised to ₹45 per packet. The shop buys each packet at ₹32 in January and February and at ₹36 in March."
+  },
+  {
+   "id": "di-caselets-s022",
+   "type": "text",
+   "title": "Tiruppur T-shirt factory",
+   "text": "A garment factory in Tiruppur has three production units. Unit A makes 4,500 T-shirts per day. Unit B makes 20% more than Unit A, and Unit C makes 3/5 of what Unit B makes. The rejection rates are 2% for Unit A, 3% for Unit B and 5% for Unit C. The factory works 26 days in a month."
+  },
+  {
+   "id": "di-caselets-s023",
+   "type": "text",
+   "title": "Students of a Jaipur school",
+   "text": "A Kendriya Vidyalaya in Jaipur has 1,500 students, of whom 60% are boys. Among the boys, 40% have taken the Science stream, and among the girls 50% have taken Science. Of all students who have not taken Science, three-fourths are in Commerce and the rest are in Arts. 30% of the Science students scored a distinction."
+  },
+  {
+   "id": "di-caselets-s024",
+   "type": "text",
+   "title": "Chennai to Madurai bus service",
+   "text": "A private operator runs a Chennai–Madurai service with 40-seat buses at a fare of ₹650 per passenger. On weekdays (Monday to Friday) it runs 6 trips a day with 85% of seats occupied. On Saturday and Sunday it runs 10 trips a day with every seat occupied. The operating cost (fuel, driver and toll) is ₹9,000 per trip. Assume each trip is one-way and uses its own bus."
+  },
+  {
+   "id": "di-caselets-s025",
+   "type": "text",
+   "title": "Murugan's 20-acre farm",
+   "text": "Farmer Murugan cultivates 20 acres near Thanjavur: 45% under paddy, 30% under sugarcane and the rest under groundnut. Yield per acre is 30 quintals for paddy (sold at ₹2,200 per quintal), 40 tonnes for sugarcane (sold at ₹3,100 per tonne) and 12 quintals for groundnut (sold at ₹6,000 per quintal). The cultivation expense per acre is ₹28,000 for paddy, ₹45,000 for sugarcane and ₹30,000 for groundnut."
+  },
+  {
+   "id": "di-caselets-s026",
+   "type": "text",
+   "title": "Online store weekly orders",
+   "text": "An online store in Bengaluru received 8,000 orders in a week with an average order value of ₹1,200. 15% of the orders were cancelled before dispatch. Of the orders dispatched, 10% were returned and fully refunded. The store pays ₹60 as delivery cost for every dispatched order (including those later returned)."
+  },
+  {
+   "id": "di-caselets-s027",
+   "type": "text",
+   "title": "Vellore hospital occupancy",
+   "text": "A hospital in Vellore has 250 beds, of which 40 are ICU beds and the rest are general beds. Average occupancy is 90% in the ICU and 70% in general wards. An ICU patient stays 4 days on average and pays ₹12,000 per day; a general-ward patient stays 3 days on average and pays ₹3,000 per day. Assume a 30-day month and steady occupancy."
+  },
+  {
+   "id": "di-caselets-s028",
+   "type": "text",
+   "title": "Cricket academy in Pune",
+   "text": "A cricket academy in Pune has 120 trainees: 50% in batting, 30% in bowling and the rest in wicketkeeping. The monthly fee is ₹3,000 for batting, ₹3,500 for bowling and ₹4,000 for wicketkeeping. 10% of the batting trainees and 25% of the bowling trainees receive a scholarship that halves their fee. The academy's monthly expenses are ₹2,10,000."
+  },
+  {
+   "id": "di-caselets-s041",
+   "type": "text",
+   "title": "Gym members in Kochi",
+   "text": "A gym in Kochi has 200 members. 120 members do cardio, 90 members do weight training and 30 members do neither of the two. Every member who does anything does at least one of these two activities."
+  },
+  {
+   "id": "di-caselets-s042",
+   "type": "text",
+   "title": "Hyderabad commuters survey",
+   "text": "In a survey of 500 commuters in Hyderabad, 320 said they use the Metro, 280 said they use city buses and 40 said they use neither. The commuters who use both modes were not counted separately in the survey."
+  },
+  {
+   "id": "di-caselets-s043",
+   "type": "text",
+   "title": "Skills at a Pune IT firm",
+   "text": "In an IT firm in Pune, 38 employees know Python, 32 know Java and 25 know SQL. 12 know both Python and Java, 10 know both Python and SQL, 9 know both Java and SQL, and 4 know all three. 12 employees know none of the three."
+  },
+  {
+   "id": "di-caselets-s044",
+   "type": "text",
+   "title": "Newspaper readership in Madurai",
+   "text": "Of 400 households surveyed in Madurai, 210 take The Hindu, 160 take Dina Thanthi and 120 take Dinamalar. 50 households take both The Hindu and Dina Thanthi, 40 take both The Hindu and Dinamalar, 30 take both Dina Thanthi and Dinamalar, and 10 take all three newspapers."
+  },
+  {
+   "id": "di-caselets-s045",
+   "type": "text",
+   "title": "Student clubs in a Delhi school",
+   "text": "All 120 students of Class XII in a Delhi school belong to at least one of three clubs: Quiz, Music and Sports. 58 are in the Quiz club, 50 in the Music club and 65 in the Sports club. The number of students who belong to exactly two clubs is 10 for Quiz and Music, 15 for Quiz and Sports, and 12 for Music and Sports."
+  },
+  {
+   "id": "di-caselets-s046",
+   "type": "text",
+   "title": "Sports at a Coimbatore engineering college",
+   "text": "In an engineering college in Coimbatore with 2,000 students, 60% of the students play cricket, 45% play football and 20% play neither of the two games."
+  },
+  {
+   "id": "di-caselets-s047",
+   "type": "text",
+   "title": "OTT subscriptions",
+   "text": "Out of 1,000 young viewers in Mumbai surveyed, 520 subscribe to Hotstar, 450 to Netflix and 400 to Prime Video. 200 subscribe to both Hotstar and Netflix, 170 to both Hotstar and Prime Video, 150 to both Netflix and Prime Video, and 80 subscribe to all three platforms."
+  },
+  {
+   "id": "di-caselets-s048",
+   "type": "text",
+   "title": "Tea, coffee and juice in a Trichy canteen",
+   "text": "Every employee in a canteen survey at a Trichy factory takes at least one of tea, coffee and juice. 180 take tea, 150 take coffee and 90 take juice. 60 take both tea and coffee, 30 take both tea and juice, and 40 take both coffee and juice. 25 employees take only juice."
+  },
+  {
+   "id": "di-caselets-s061",
+   "type": "text",
+   "title": "Auditorium seating, Chennai",
+   "text": "Six friends, Ganesh, Hema, Imran, Jaya, Kiran and Latha, attend a concert at an auditorium in Chennai. They occupy six adjacent seats in one row, numbered 1 to 6 from left to right, one person per seat. There is exactly 1 person between Latha and Hema. Hema sits somewhere to the left of Latha. Ganesh sits somewhere to the left of Kiran. Jaya sits somewhere to the left of Imran. Kiran sits immediately to the left of Imran. There is exactly 1 person between Ganesh and Imran."
+  },
+  {
+   "id": "di-caselets-s062",
+   "type": "text",
+   "title": "Weekly lecture schedule, Kota",
+   "text": "A coaching institute in Kota schedules six different lectures, Physics, Chemistry, Maths, Biology, English and Computer Science, on six consecutive days from Monday to Saturday, one lecture per day. The Chemistry lecture is held on Friday. Physics is held on an earlier day than Biology. Physics and Computer Science are not held on consecutive days. Maths is held on an earlier day than Biology. There is exactly 1 lecture between Chemistry and Computer Science. Biology is held on an earlier day than English."
+  },
+  {
+   "id": "di-caselets-s063",
+   "type": "text",
+   "title": "Offices in a Mumbai tower",
+   "text": "Five firms owned by Aarav, Bhavna, Chetan, Deepa and Eshan each occupy exactly one floor of a five-storey commercial building in Mumbai. The floors are numbered 1 (lowest) to 5 (highest), and each firm is named after its owner. Eshan's firm is on floor 3. There is exactly 1 floor between Deepa and Chetan. Chetan is on a lower floor than Aarav. Chetan and Bhavna are not on adjacent floors."
+  },
+  {
+   "id": "di-caselets-s064",
+   "type": "text",
+   "title": "Interview slots, Hyderabad",
+   "text": "Five candidates, Kavya, Lokesh, Meena, Naveen and Pooja, are interviewed at a company in Hyderabad on the same day, one after another, in five hourly slots: 10 AM, 11 AM, 12 noon, 1 PM and 2 PM. There is exactly 1 candidate between Kavya and Meena. There are exactly 2 candidates between Pooja and Naveen. Naveen is interviewed earlier than Pooja. There is exactly 1 candidate between Naveen and Meena."
+  },
+  {
+   "id": "di-caselets-s065",
+   "type": "text",
+   "title": "Trains at a Coimbatore junction",
+   "text": "Six trains, the Nilgiri, Kovai, Cheran, Pandian, Vaigai and Pearl, stand on six parallel platforms of a junction station, numbered 1 to 6 in order, with exactly one train on each platform. The Vaigai stands on platform 2. There are exactly 2 trains between Vaigai and Kovai. Pandian and Kovai do not stand on adjacent platforms. There is exactly 1 train between Vaigai and Nilgiri. Pearl stands on the platform immediately before that of Vaigai."
+  },
+  {
+   "id": "di-caselets-s066",
+   "type": "text",
+   "title": "Marathon finishing order, Pune",
+   "text": "Six runners, Rohit, Sanjay, Tarun, Uday, Vikram and Wasim, finished a 10 km run in Pune. Their finishing positions were 1st to 6th, with no ties. Vikram and Rohit did not finish in consecutive positions. Wasim finished immediately ahead of Sanjay. Vikram finished ahead of Sanjay. Sanjay finished immediately ahead of Uday. There are exactly 2 runners between Uday and Tarun."
+  },
+  {
+   "id": "di-caselets-s067",
+   "type": "text",
+   "title": "Stalls at a Madurai fair",
+   "text": "At a temple fair in Madurai, five shopkeepers, Anbu, Bharath, Chitra, Dinesh and Elango, run five stalls in a straight line, numbered 1 to 5 starting from the entrance gate. Each shopkeeper runs exactly one stall. Anbu runs stall 2. Dinesh has a stall closer to the gate than Elango. Chitra and Anbu do not have adjacent stalls. Chitra has the stall immediately before that of Bharath."
+  },
+  {
+   "id": "di-caselets-s068",
+   "type": "text",
+   "title": "Houses in a Kochi lane",
+   "text": "Six families, Fathima, George, Hari, Indu, Joseph and Kamala, live in six houses along one side of a lane in Kochi. The houses are numbered 1 to 6 starting from the main road, and each family lives in exactly one house. Hari lives closer to the main road than Fathima. Hari lives in the house immediately before that of George. There is exactly 1 house between Joseph and Indu. Indu lives closer to the main road than Hari. There are exactly 2 houses between Indu and Hari."
+  },
+  {
+   "id": "di-caselets-s081",
+   "type": "text",
+   "title": "Gram panchayat election",
+   "text": "A gram panchayat in Thanjavur district has 12,000 registered voters. In the election, 70% of the registered voters cast their votes, and 5% of the votes cast were found invalid. Among the valid votes, Rajan got 45%, Seetha got 35% and Murali got the rest."
+  },
+  {
+   "id": "di-caselets-s082",
+   "type": "text",
+   "title": "A family budget in Salem",
+   "text": "A family in Salem has a monthly income of ₹60,000. It spends 25% of the income on rent, 20% on food, 15% on education and 10% on transport, and saves the rest. Next year the income rises by 10%, rent rises by 20%, food by 5% and education by 40%, while the transport spending stays the same. Savings are whatever remains."
+  },
+  {
+   "id": "di-caselets-s083",
+   "type": "text",
+   "title": "Monthly output of a Pune plant",
+   "text": "A two-wheeler parts factory in Pune produced 8,000 units in April. May production was 25% more than April, June production was 10% less than May, and July production was 20% more than June. The defective share of the units produced was 5% in April, 4% in May, 3% in June and 2.5% in July."
+  },
+  {
+   "id": "di-caselets-s084",
+   "type": "text",
+   "title": "Entrance test results",
+   "text": "Of the 1,200 candidates who appeared for an entrance test in Madurai, 60% were male. 45% of the male candidates and 55% of the female candidates passed the test."
+  },
+  {
+   "id": "di-caselets-s085",
+   "type": "text",
+   "title": "Diwali sale at an electronics store",
+   "text": "A store in Coimbatore offers festival discounts on the marked price: 20% on a television, 15% on a refrigerator and 12% on a washing machine. The marked prices are ₹40,000, ₹30,000 and ₹25,000 respectively. During the sale, 50 televisions, 40 refrigerators and 30 washing machines were sold. Customers paying by card got an additional 5% off the already discounted price; 30 of the televisions and 10 of the refrigerators were bought by card."
+  },
+  {
+   "id": "di-caselets-s086",
+   "type": "text",
+   "title": "Literacy in a district",
+   "text": "A district in Tamil Nadu had a population of 8,00,000 in 2015. The population grew by 10% in the five years to 2020 and by 8% in the five years from 2020 to 2025. The literacy rate (literate persons as a percentage of the population) was 72% in 2015, 78% in 2020 and 84% in 2025."
+  },
+  {
+   "id": "di-caselets-s087",
+   "type": "text",
+   "title": "A Bengaluru startup's three years",
+   "text": "A startup in Bengaluru earned a revenue of ₹50 lakh in its first year, and its expenses were 80% of the revenue. In the second year the revenue grew by 30% and the expenses grew by 20%. In the third year the revenue grew by 10% over the second year, while the expenses fell by 5% from the second year. Profit = revenue − expenses."
+  },
+  {
+   "id": "di-caselets-s088",
+   "type": "text",
+   "title": "Milk collection at a dairy in Anand",
+   "text": "A dairy in Anand collects 5,000 litres of milk in a day, of which 60% is cow milk and the rest is buffalo milk. The fat content is 3.5% in cow milk and 6.5% in buffalo milk (as a percentage of volume)."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "How many packets were sold in February?",
+   "options": [
+    {
+     "text": "300"
+    },
+    {
+     "text": "900"
+    },
+    {
+     "text": "1350"
+    },
+    {
+     "text": "1500"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "February sales = 1200 × 125/100 = 1,500 packets.",
+   "order": 1,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Add 25% = add one quarter: 1200 + 300.",
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "How many packets were sold in March?",
+   "options": [
+    {
+     "text": "1080"
+    },
+    {
+     "text": "960"
+    },
+    {
+     "text": "1200"
+    },
+    {
+     "text": "1320"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "March = 80% of 1,500 = 1,200 packets (25% up then 20% down brings back to the original).",
+   "order": 2,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "x% up followed by x/(100+x)×100% down restores the base.",
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "How many T-shirts does Unit B make per day?",
+   "options": [
+    {
+     "text": "5400"
+    },
+    {
+     "text": "4860"
+    },
+    {
+     "text": "5850"
+    },
+    {
+     "text": "900"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Unit B = 4500 × 1.2 = 5,400.",
+   "order": 3,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many T-shirts does Unit C make per day?",
+   "options": [
+    {
+     "text": "2700"
+    },
+    {
+     "text": "3240"
+    },
+    {
+     "text": "2916"
+    },
+    {
+     "text": "2160"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Unit B = 5,400, so Unit C = 5,400 × 3/5 = 3,240.",
+   "order": 4,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many girls are there in the school?",
+   "options": [
+    {
+     "text": "900"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "750"
+    },
+    {
+     "text": "600"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Girls = 40% of 1,500 = 600.",
+   "order": 5,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "How many students have taken the Science stream?",
+   "options": [
+    {
+     "text": "660"
+    },
+    {
+     "text": "675"
+    },
+    {
+     "text": "600"
+    },
+    {
+     "text": "594"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Boys in Science = 900 × 0.4 = 360; girls in Science = 600 × 0.5 = 300. Total = 660.",
+   "order": 6,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "How many passengers travel on an average weekday trip?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "85% of 40 seats = 34 passengers.",
+   "order": 7,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "What is the total fare collected on one weekend day?",
+   "options": [
+    {
+     "text": "₹2,34,000"
+    },
+    {
+     "text": "₹2,21,000"
+    },
+    {
+     "text": "₹2,60,000"
+    },
+    {
+     "text": "₹1,56,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "10 trips × 40 passengers × ₹650 = ₹2,60,000.",
+   "order": 8,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "How many acres are under groundnut?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Groundnut = 100 − 45 − 30 = 25% of 20 = 5 acres.",
+   "order": 9,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "How many orders were cancelled before dispatch?",
+   "options": [
+    {
+     "text": "6800"
+    },
+    {
+     "text": "1080"
+    },
+    {
+     "text": "1200"
+    },
+    {
+     "text": "800"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "15% of 8,000 = 1,200 orders.",
+   "order": 10,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "On an average day, how many ICU beds are occupied?",
+   "options": [
+    {
+     "text": "28"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "ICU beds = 40 and average occupancy is 90%. Occupied ICU beds = 0.90 × 40 = 36 beds.",
+   "order": 11,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "How many wicketkeeping trainees are there?",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Wicketkeeping = 100 − 50 − 30 = 20% of 120 = 24.",
+   "order": 12,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "What was the total revenue from the three months together?",
+   "options": [
+    {
+     "text": "₹1,75,500"
+    },
+    {
+     "text": "₹1,45,800"
+    },
+    {
+     "text": "₹1,56,000"
+    },
+    {
+     "text": "₹1,62,000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Jan = 1200×40 = 48,000; Feb = 1500×40 = 60,000; Mar = 1200×45 = 54,000. Total = ₹1,62,000.",
+   "order": 13,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "By what percentage did revenue in March decrease from the revenue in February?",
+   "options": [
+    {
+     "text": "9%"
+    },
+    {
+     "text": "10%"
+    },
+    {
+     "text": "12%"
+    },
+    {
+     "text": "20%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Feb revenue = 60,000; Mar revenue = 54,000. Decrease = 6,000/60,000 × 100 = 10%.",
+   "order": 14,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "How many T-shirts are rejected per day in the whole factory?",
+   "options": [
+    {
+     "text": "414"
+    },
+    {
+     "text": "373"
+    },
+    {
+     "text": "252"
+    },
+    {
+     "text": "394"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A: 90, B: 162, C: 162. Total rejects = 414 per day.",
+   "order": 15,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many acceptable T-shirts does the factory make in a month?",
+   "options": [
+    {
+     "text": "341640"
+    },
+    {
+     "text": "381780"
+    },
+    {
+     "text": "330876"
+    },
+    {
+     "text": "297788"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Daily output = 13,140; accepted = 13,140 − 414 = 12,726. Monthly = 12,726 × 26 = 3,30,876.",
+   "order": 16,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many students are in the Arts stream?",
+   "options": [
+    {
+     "text": "630"
+    },
+    {
+     "text": "210"
+    },
+    {
+     "text": "189"
+    },
+    {
+     "text": "165"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Non-Science = 1,500 − 660 = 840. Arts = 1/4 of 840 = 210.",
+   "order": 17,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "The Arts students form what percentage of all students in the school?",
+   "options": [
+    {
+     "text": "13%"
+    },
+    {
+     "text": "25%"
+    },
+    {
+     "text": "14%"
+    },
+    {
+     "text": "32%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Boys = 60% of 1,500 = 900, girls = 600. Science: boys 40% of 900 = 360, girls 50% of 600 = 300, total 660. Non-Science = 1,500 − 660 = 840; Arts = 1/4 of 840 = 210. Percentage = 210/1,500 × 100 = 14%.",
+   "order": 18,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "What is the total fare collected in one full week (Monday to Sunday)?",
+   "options": [
+    {
+     "text": "₹11,83,000"
+    },
+    {
+     "text": "₹9,28,200"
+    },
+    {
+     "text": "₹13,00,000"
+    },
+    {
+     "text": "₹10,64,700"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Weekdays: 5 × 6 × 34 × 650 = 6,63,000. Weekend: 2 × 2,60,000 = 5,20,000. Total = ₹11,83,000.",
+   "order": 19,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "What is the operator's total profit in one week?",
+   "options": [
+    {
+     "text": "₹8,05,000"
+    },
+    {
+     "text": "₹2,83,000"
+    },
+    {
+     "text": "₹6,59,700"
+    },
+    {
+     "text": "₹7,33,000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue = 11,83,000. Trips per week = 30 + 20 = 50; cost = 50 × 9,000 = 4,50,000. Profit = ₹7,33,000.",
+   "order": 20,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "What is the profit from the sugarcane crop?",
+   "options": [
+    {
+     "text": "₹5,76,000"
+    },
+    {
+     "text": "₹4,74,000"
+    },
+    {
+     "text": "₹4,26,600"
+    },
+    {
+     "text": "₹7,44,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sugarcane area = 6 acres. Revenue = 6×40×3100 = 7,44,000. Cost = 6×45,000 = 2,70,000. Profit = ₹4,74,000.",
+   "order": 21,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "What is the total revenue from all three crops?",
+   "options": [
+    {
+     "text": "₹16,98,000"
+    },
+    {
+     "text": "₹13,74,000"
+    },
+    {
+     "text": "₹13,38,000"
+    },
+    {
+     "text": "₹15,28,200"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Paddy = 9×30×2200 = 5,94,000; sugarcane = 7,44,000; groundnut = 5×12×6000 = 3,60,000. Total = ₹16,98,000.",
+   "order": 22,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "What is the profit per acre from groundnut?",
+   "options": [
+    {
+     "text": "₹72,000"
+    },
+    {
+     "text": "₹37,800"
+    },
+    {
+     "text": "₹42,000"
+    },
+    {
+     "text": "₹44,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue per acre = 12 × 6000 = 72,000. Profit = 72,000 − 30,000 = ₹42,000 per acre.",
+   "order": 23,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "How many orders were returned?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "612"
+    },
+    {
+     "text": "800"
+    },
+    {
+     "text": "680"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dispatched = 8,000 − 1,200 = 6,800. Returned = 10% of 6,800 = 680.",
+   "order": 24,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "What was the revenue retained after cancellations and returns?",
+   "options": [
+    {
+     "text": "₹81,60,000"
+    },
+    {
+     "text": "₹73,44,000"
+    },
+    {
+     "text": "₹66,09,600"
+    },
+    {
+     "text": "₹86,40,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Orders kept = 6,800 − 680 = 6,120. Revenue = 6,120 × 1,200 = ₹73,44,000.",
+   "order": 25,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "What was the total delivery cost for the week?",
+   "options": [
+    {
+     "text": "₹4,08,000"
+    },
+    {
+     "text": "₹3,67,200"
+    },
+    {
+     "text": "₹4,48,800"
+    },
+    {
+     "text": "₹4,80,000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Delivery is paid on dispatched orders: 6,800 × 60 = ₹4,08,000.",
+   "order": 26,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "On an average day, how many general beds are occupied?",
+   "options": [
+    {
+     "text": "132"
+    },
+    {
+     "text": "175"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "147"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "General beds = 210; 70% of 210 = 147.",
+   "order": 27,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "What is the hospital's revenue per day from bed charges?",
+   "options": [
+    {
+     "text": "₹7,85,700"
+    },
+    {
+     "text": "₹11,10,000"
+    },
+    {
+     "text": "₹8,73,000"
+    },
+    {
+     "text": "₹4,32,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "ICU: 36 × 12,000 = 4,32,000. General: 147 × 3,000 = 4,41,000. Total = ₹8,73,000.",
+   "order": 28,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "How many patients are admitted in a 30-day month (ICU and general together)?",
+   "options": [
+    {
+     "text": "1740"
+    },
+    {
+     "text": "1830"
+    },
+    {
+     "text": "5490"
+    },
+    {
+     "text": "1566"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Admissions = bed-days ÷ average stay. ICU: 36×30/4 = 270. General: 147×30/3 = 1,470. Total = 1,740.",
+   "order": 29,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "How many trainees receive a scholarship?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Batting: 10% of 60 = 6. Bowling: 25% of 36 = 9. Total = 15.",
+   "order": 30,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "What is the fee collected from batting trainees in a month?",
+   "options": [
+    {
+     "text": "₹1,62,000"
+    },
+    {
+     "text": "₹1,71,000"
+    },
+    {
+     "text": "₹1,53,900"
+    },
+    {
+     "text": "₹1,80,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "54 pay full fee = 1,62,000; 6 pay half = 9,000. Total = ₹1,71,000.",
+   "order": 31,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "What is the total monthly fee collection of the academy?",
+   "options": [
+    {
+     "text": "₹3,54,750"
+    },
+    {
+     "text": "₹3,39,525"
+    },
+    {
+     "text": "₹4,02,000"
+    },
+    {
+     "text": "₹3,77,250"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Batting 1,71,000; bowling 27×3500 + 9×1750 = 94,500 + 15,750 = 1,10,250; wicketkeeping 24×4000 = 96,000. Total = ₹3,77,250.",
+   "order": 32,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "What was the overall profit percentage of the shop over the three months?",
+   "options": [
+    {
+     "text": "22%"
+    },
+    {
+     "text": "20%"
+    },
+    {
+     "text": "25%"
+    },
+    {
+     "text": "28%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue = 1,62,000. Cost = 2700×32 + 1200×36 = 86,400 + 43,200 = 1,29,600. Profit = 32,400. Profit % = 32,400/1,29,600 × 100 = 25%.",
+   "order": 33,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Profit % is on cost: 32400/129600 = 1/4.",
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "What is the overall rejection percentage of the factory, to two decimal places?",
+   "options": [
+    {
+     "text": "3.33%"
+    },
+    {
+     "text": "3.15%"
+    },
+    {
+     "text": "2.84%"
+    },
+    {
+     "text": "3.25%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total rejected 414 out of 13,140 produced: 414/13140 × 100 = 3.15%.",
+   "order": 34,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Do not average 2, 3, 5 — the units have different outputs (weighted average).",
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "Suppose 20% of Commerce students and 40% of Arts students also scored a distinction. Together with the Science distinctions, what percentage of the school scored a distinction?",
+   "options": [
+    {
+     "text": "13.2%"
+    },
+    {
+     "text": "24.5%"
+    },
+    {
+     "text": "30.0%"
+    },
+    {
+     "text": "27.2%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Science: 660×0.3 = 198; Commerce: 630×0.2 = 126; Arts: 210×0.4 = 84. Total = 408. 408/1500 × 100 = 27.2%.",
+   "order": 35,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "Profit in a week is what percentage of the fare revenue, to one decimal place?",
+   "options": [
+    {
+     "text": "62.0%"
+    },
+    {
+     "text": "55.8%"
+    },
+    {
+     "text": "162.9%"
+    },
+    {
+     "text": "38.0%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "733000/1183000 × 100 = 61.96% ≈ 62.0%.",
+   "order": 36,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "If Murugan shifts 2 acres from paddy to sugarcane, by how much does his total profit change?",
+   "options": [
+    {
+     "text": "₹68,000"
+    },
+    {
+     "text": "₹73,800"
+    },
+    {
+     "text": "₹82,000"
+    },
+    {
+     "text": "₹1,58,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Paddy profit/acre = 66,000 − 28,000 = 38,000. Sugarcane profit/acre = 1,24,000 − 45,000 = 79,000. Gain = 2 × (79,000 − 38,000) = ₹82,000 increase.",
+   "order": 37,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Only the per-acre profit difference matters.",
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "What was the retained revenue after deducting the delivery cost?",
+   "options": [
+    {
+     "text": "₹69,76,800"
+    },
+    {
+     "text": "₹69,36,000"
+    },
+    {
+     "text": "₹62,42,400"
+    },
+    {
+     "text": "₹77,52,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "7,344,000 − 4,08,000 = ₹69,36,000.",
+   "order": 38,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "What is the average revenue per admitted patient in the month, to the nearest rupee?",
+   "options": [
+    {
+     "text": "₹502"
+    },
+    {
+     "text": "₹13,547"
+    },
+    {
+     "text": "₹4,770"
+    },
+    {
+     "text": "₹15,052"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Monthly revenue = 8,73,000 × 30 = 2,61,90,000. Divided by 1,740 admissions = ₹15,052 (approx).",
+   "order": 39,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "Monthly surplus (fees minus expenses) is what percentage of the expenses, to one decimal place?",
+   "options": [
+    {
+     "text": "79.6%"
+    },
+    {
+     "text": "179.6%"
+    },
+    {
+     "text": "71.7%"
+    },
+    {
+     "text": "44.3%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Surplus = 3,77,250 − 2,10,000 = 1,67,250. 1,67,250/2,10,000 × 100 = 79.6%.",
+   "order": 40,
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "How many members do both cardio and weight training?",
+   "options": [
+    {
+     "text": "210"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Members doing at least one = 200 − 30 = 170. Both = 120 + 90 − 170 = 40.",
+   "order": 41,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Both = sum of the two − union.",
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many members do only cardio?",
+   "options": [
+    {
+     "text": "130"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only cardio = 120 − 40 = 80.",
+   "order": 42,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many commuters use both the Metro and city buses?",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "126"
+    },
+    {
+     "text": "180"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Union = 500 − 40 = 460. Both = 320 + 280 − 460 = 140.",
+   "order": 43,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "How many commuters use only the Metro?",
+   "options": [
+    {
+     "text": "320"
+    },
+    {
+     "text": "198"
+    },
+    {
+     "text": "162"
+    },
+    {
+     "text": "180"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only Metro = 320 − 140 = 180.",
+   "order": 44,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "How many employees does the firm have?",
+   "options": [
+    {
+     "text": "72"
+    },
+    {
+     "text": "95"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "68"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Union = 38+32+25−12−10−9+4 = 68. Adding the 12 who know none gives 80.",
+   "order": 45,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many employees know only Python?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only Python = 38 − (Python∩Java only 8) − (Python∩SQL only 6) − 4 all three = 20.",
+   "order": 46,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many households take none of the three newspapers?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "-90"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Union = 490 − 120 + 10 = 380. None = 400 − 380 = 20.",
+   "order": 47,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many households take only The Hindu?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "117"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "130"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only Hindu = 210 − 50 − 40 + 10 = 130.",
+   "order": 48,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many students belong to exactly two clubs?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "53"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly two = 10 + 15 + 12 = 37.",
+   "order": 49,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "What percentage of students play both cricket and football?",
+   "options": [
+    {
+     "text": "25%"
+    },
+    {
+     "text": "15%"
+    },
+    {
+     "text": "22%"
+    },
+    {
+     "text": "5%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Playing at least one = 80%. Both = 60 + 45 − 80 = 25%.",
+   "order": 50,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many viewers subscribe to none of the three platforms?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "-370"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Union = 1370 − 520 + 80 = 930. None = 1000 − 930 = 70.",
+   "order": 51,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many employees take all three drinks?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Juice total = only juice + (TJ − t) + (CJ − t) + t = 25 + 30 + 40 − t = 95 − t = 90, so t = 5.",
+   "order": 52,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many members do only weight training?",
+   "options": [
+    {
+     "text": "45"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only weights = 90 − 40 = 50.",
+   "order": 53,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many members do at least one of the two activities?",
+   "options": [
+    {
+     "text": "200"
+    },
+    {
+     "text": "153"
+    },
+    {
+     "text": "210"
+    },
+    {
+     "text": "170"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = total − neither = 170.",
+   "order": 54,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many commuters use only buses?",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "280"
+    },
+    {
+     "text": "154"
+    },
+    {
+     "text": "126"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only buses = 280 − 140 = 140.",
+   "order": 55,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "What percentage of commuters use neither mode?",
+   "options": [
+    {
+     "text": "9%"
+    },
+    {
+     "text": "8%"
+    },
+    {
+     "text": "7%"
+    },
+    {
+     "text": "28%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Neither = 40 commuters out of the 500 surveyed. Percentage = 40/500 × 100 = 8%. The Metro and bus figures are not needed.",
+   "order": 56,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "How many employees know exactly two of the three languages?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly two = (12−4) + (10−4) + (9−4) = 8 + 6 + 5 = 19.",
+   "order": 57,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many employees know exactly one of the three languages?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "57"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only Python 20, only Java 32−8−5−4 = 15, only SQL 25−6−5−4 = 10. Total = 45.",
+   "order": 58,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many households take exactly two of the three newspapers?",
+   "options": [
+    {
+     "text": "81"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly two = 40 + 30 + 20 = 90.",
+   "order": 59,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many households take The Hindu and Dinamalar but not Dina Thanthi?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hindu∩Dinamalar = 40, of which 10 also take Dina Thanthi. So 30.",
+   "order": 60,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many students belong to all three clubs?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "53"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum of memberships = 173 = x + 2(37) + 3t, with x = 120 − 37 − t singles. So 173 = 83 − t + 74 + 3t → 2t = 16, t = 8.",
+   "order": 61,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Total memberships = singles + 2×pairs + 3×triple.",
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students are only in the Quiz club?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only Quiz = 58 − 10 − 15 − 8 = 25.",
+   "order": 62,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students belong to exactly one club?",
+   "options": [
+    {
+     "text": "83"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "75"
+    },
+    {
+     "text": "112"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = total − exactly two − all three = 120 − 37 − 8 = 75.",
+   "order": 63,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students play only cricket?",
+   "options": [
+    {
+     "text": "700"
+    },
+    {
+     "text": "1200"
+    },
+    {
+     "text": "630"
+    },
+    {
+     "text": "500"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only cricket = 60% − 25% = 35% of 2,000 = 700.",
+   "order": 64,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many students play only football?",
+   "options": [
+    {
+     "text": "900"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "400"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only football = 45% − 25% = 20% of 2,000 = 400.",
+   "order": 65,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many students play exactly one of the two games?",
+   "options": [
+    {
+     "text": "990"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "1100"
+    },
+    {
+     "text": "1600"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = 35% + 20% = 55% of 2,000 = 1,100.",
+   "order": 66,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many viewers subscribe only to Hotstar?",
+   "options": [
+    {
+     "text": "207"
+    },
+    {
+     "text": "230"
+    },
+    {
+     "text": "440"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only Hotstar = 520 − 200 − 170 + 80 = 230.",
+   "order": 67,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many viewers subscribe to Netflix and Prime Video but not Hotstar?",
+   "options": [
+    {
+     "text": "70"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "230"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "150 subscribe to both; 80 of them also have Hotstar. So 70.",
+   "order": 68,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many viewers subscribe to at least two platforms?",
+   "options": [
+    {
+     "text": "440"
+    },
+    {
+     "text": "324"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "520"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least two = sum of pairs − 2 × triple = 520 − 160 = 360.",
+   "order": 69,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "At least two = ΣPairs − 2×Triple.",
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many employees does the survey cover?",
+   "options": [
+    {
+     "text": "420"
+    },
+    {
+     "text": "295"
+    },
+    {
+     "text": "266"
+    },
+    {
+     "text": "290"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone takes at least one, so total = union = 420 − 130 + 5 = 295.",
+   "order": 70,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many employees take only tea?",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "85"
+    },
+    {
+     "text": "86"
+    },
+    {
+     "text": "95"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only tea = 180 − 60 − 30 + 5 = 95.",
+   "order": 71,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many employees take tea and coffee but not juice?",
+   "options": [
+    {
+     "text": "55"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Tea∩Coffee = 60, which includes the 5 who take all three. So 55.",
+   "order": 72,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "What percentage of members do exactly one of the two activities?",
+   "options": [
+    {
+     "text": "20%"
+    },
+    {
+     "text": "58%"
+    },
+    {
+     "text": "85%"
+    },
+    {
+     "text": "65%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = 80 + 50 = 130. 130/200 × 100 = 65%.",
+   "order": 73,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "If 30% of those who use only buses shift to the Metro (and continue to be counted as Metro users), how many commuters will use the Metro in total?",
+   "options": [
+    {
+     "text": "326"
+    },
+    {
+     "text": "362"
+    },
+    {
+     "text": "278"
+    },
+    {
+     "text": "404"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only-bus users = 140; 30% of 140 = 42. Metro users become 320 + 42 = 362.",
+   "order": 74,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "What percentage of all employees know at least two of the languages?",
+   "options": [
+    {
+     "text": "25.88%"
+    },
+    {
+     "text": "23.75%"
+    },
+    {
+     "text": "28.75%"
+    },
+    {
+     "text": "33.82%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least two = 19 + 4 = 23. 23/80 × 100 = 28.75%.",
+   "order": 75,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "Households taking exactly one newspaper form what percentage of the households taking at least one newspaper, to two decimal places?",
+   "options": [
+    {
+     "text": "73.68%"
+    },
+    {
+     "text": "57.14%"
+    },
+    {
+     "text": "66.32%"
+    },
+    {
+     "text": "70.00%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only Hindu 130, only Thanthi 160−50−30+10 = 90, only Dinamalar 120−40−30+10 = 60. Exactly one = 280. 280/380 × 100 = 73.68%.",
+   "order": 76,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many students are in the Music or Sports club (or both)?",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "86"
+    },
+    {
+     "text": "115"
+    },
+    {
+     "text": "62"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everyone is in at least one club, so students outside Music and Sports are exactly those only in Quiz = 25. Hence 120 − 25 = 95.",
+   "order": 77,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "Students playing exactly one game are what percentage of those who play at least one game?",
+   "options": [
+    {
+     "text": "31.25%"
+    },
+    {
+     "text": "68.75%"
+    },
+    {
+     "text": "55.00%"
+    },
+    {
+     "text": "61.88%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Play at least one game = 100% − 20% = 80% of 2,000 = 1,600. Both = 60% + 45% − 80% = 25% (500). Exactly one = 80% − 25% = 55%, i.e. 1,100 students. Required = 55/80 × 100 = 68.75%.",
+   "order": 78,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "What percentage of all surveyed viewers subscribe to exactly one platform?",
+   "options": [
+    {
+     "text": "93%"
+    },
+    {
+     "text": "36%"
+    },
+    {
+     "text": "57%"
+    },
+    {
+     "text": "51%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Union 930; exactly two = 360 − 80 = 280; all three = 80. Exactly one = 930 − 280 − 80 = 570. 570/1000 × 100 = 57%.",
+   "order": 79,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many employees take exactly two of the three drinks?",
+   "options": [
+    {
+     "text": "125"
+    },
+    {
+     "text": "130"
+    },
+    {
+     "text": "104"
+    },
+    {
+     "text": "115"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "All three = a: only juice = 90 − 30 − 40 + a = 25, so a = 5. Exactly two = (60 + 30 + 40) − 3a = 130 − 15 = 115. Check: only tea 95 + only coffee 55 + only juice 25 + two 115 + three 5 = 295.",
+   "order": 80,
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "Who sits in seat 1?",
+   "options": [
+    {
+     "text": "Ganesh"
+    },
+    {
+     "text": "Jaya"
+    },
+    {
+     "text": "Hema"
+    },
+    {
+     "text": "Kiran"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. So seat 1 is Hema.",
+   "order": 81,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "In which seat does Ganesh sit?",
+   "options": [
+    {
+     "text": "seat 5"
+    },
+    {
+     "text": "seat 1"
+    },
+    {
+     "text": "seat 6"
+    },
+    {
+     "text": "seat 4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. Ganesh is in seat 4.",
+   "order": 82,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "Which lecture is held on Friday?",
+   "options": [
+    {
+     "text": "Chemistry"
+    },
+    {
+     "text": "Biology"
+    },
+    {
+     "text": "Maths"
+    },
+    {
+     "text": "Computer Science"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. So Friday is Chemistry.",
+   "order": 83,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "On which day is the English lecture held?",
+   "options": [
+    {
+     "text": "Wednesday"
+    },
+    {
+     "text": "Saturday"
+    },
+    {
+     "text": "Monday"
+    },
+    {
+     "text": "Friday"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. English is in Saturday.",
+   "order": 84,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "Whose firm is on floor 1?",
+   "options": [
+    {
+     "text": "Eshan"
+    },
+    {
+     "text": "Chetan"
+    },
+    {
+     "text": "Aarav"
+    },
+    {
+     "text": "Bhavna"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. So floor 1 is Bhavna.",
+   "order": 85,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "On which floor is Bhavna's firm?",
+   "options": [
+    {
+     "text": "floor 2"
+    },
+    {
+     "text": "floor 5"
+    },
+    {
+     "text": "floor 1"
+    },
+    {
+     "text": "floor 3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. Bhavna is in floor 1.",
+   "order": 86,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "Who is interviewed in the 2 PM slot?",
+   "options": [
+    {
+     "text": "Lokesh"
+    },
+    {
+     "text": "Kavya"
+    },
+    {
+     "text": "Naveen"
+    },
+    {
+     "text": "Pooja"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. So 2 PM is Kavya.",
+   "order": 87,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "In which slot is Kavya interviewed?",
+   "options": [
+    {
+     "text": "2 PM"
+    },
+    {
+     "text": "12 noon"
+    },
+    {
+     "text": "1 PM"
+    },
+    {
+     "text": "10 AM"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. Kavya is in 2 PM.",
+   "order": 88,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "Which train stands on platform 2?",
+   "options": [
+    {
+     "text": "Pearl"
+    },
+    {
+     "text": "Kovai"
+    },
+    {
+     "text": "Vaigai"
+    },
+    {
+     "text": "Cheran"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. So platform 2 is Vaigai.",
+   "order": 89,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "On which platform does the Cheran stand?",
+   "options": [
+    {
+     "text": "platform 6"
+    },
+    {
+     "text": "platform 4"
+    },
+    {
+     "text": "platform 3"
+    },
+    {
+     "text": "platform 2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. Cheran is in platform 6.",
+   "order": 90,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "Who finished in position 3?",
+   "options": [
+    {
+     "text": "Vikram"
+    },
+    {
+     "text": "Wasim"
+    },
+    {
+     "text": "Uday"
+    },
+    {
+     "text": "Rohit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. So position 3 is Wasim.",
+   "order": 91,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "In which position did Uday finish?",
+   "options": [
+    {
+     "text": "position 6"
+    },
+    {
+     "text": "position 2"
+    },
+    {
+     "text": "position 1"
+    },
+    {
+     "text": "position 5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. Uday is in position 5.",
+   "order": 92,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "Who runs stall 4?",
+   "options": [
+    {
+     "text": "Chitra"
+    },
+    {
+     "text": "Anbu"
+    },
+    {
+     "text": "Dinesh"
+    },
+    {
+     "text": "Elango"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. So stall 4 is Chitra.",
+   "order": 93,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "Which stall does Chitra run?",
+   "options": [
+    {
+     "text": "stall 1"
+    },
+    {
+     "text": "stall 2"
+    },
+    {
+     "text": "stall 4"
+    },
+    {
+     "text": "stall 5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. Chitra is in stall 4.",
+   "order": 94,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "Who lives in house 5?",
+   "options": [
+    {
+     "text": "Kamala"
+    },
+    {
+     "text": "George"
+    },
+    {
+     "text": "Joseph"
+    },
+    {
+     "text": "Indu"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. So house 5 is George.",
+   "order": 95,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first.",
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "In which house does Hari live?",
+   "options": [
+    {
+     "text": "house 6"
+    },
+    {
+     "text": "house 1"
+    },
+    {
+     "text": "house 5"
+    },
+    {
+     "text": "house 4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. Hari is in house 4.",
+   "order": 96,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "Who sits immediately to the left of Latha?",
+   "options": [
+    {
+     "text": "Jaya"
+    },
+    {
+     "text": "Imran"
+    },
+    {
+     "text": "Hema"
+    },
+    {
+     "text": "Ganesh"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. The one immediately before Latha is Jaya.",
+   "order": 97,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "How many persons are there between Imran and Jaya in the order?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. Imran is in seat 6 and Jaya in seat 2, so there are 4 − 1 = 3 in between.",
+   "order": 98,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "Which lecture is held on the day immediately before the Maths lecture?",
+   "options": [
+    {
+     "text": "Chemistry"
+    },
+    {
+     "text": "Biology"
+    },
+    {
+     "text": "English"
+    },
+    {
+     "text": "Physics"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. The one immediately before Maths is Physics.",
+   "order": 99,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "How many lectures are there between Physics and English in the order?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. Physics is in Monday and English in Saturday, so there are 5 − 1 = 4 in between.",
+   "order": 100,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "Whose firm is on the floor immediately below that of Deepa?",
+   "options": [
+    {
+     "text": "Chetan"
+    },
+    {
+     "text": "Bhavna"
+    },
+    {
+     "text": "Deepa"
+    },
+    {
+     "text": "Aarav"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. The one immediately before Deepa is Bhavna.",
+   "order": 101,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "How many floors are there between Aarav and Deepa in the order?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. Aarav is in floor 5 and Deepa in floor 2, so there are 3 − 1 = 2 in between.",
+   "order": 102,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "Who is interviewed in the slot immediately before Meena?",
+   "options": [
+    {
+     "text": "Kavya"
+    },
+    {
+     "text": "Pooja"
+    },
+    {
+     "text": "Meena"
+    },
+    {
+     "text": "Lokesh"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. The one immediately before Meena is Lokesh.",
+   "order": 103,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "How many candidates are there between Meena and Kavya in the order?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. Meena is in 12 noon and Kavya in 2 PM, so there are 2 − 1 = 1 in between.",
+   "order": 104,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "Which train stands on the platform immediately before that of the Pandian?",
+   "options": [
+    {
+     "text": "Pandian"
+    },
+    {
+     "text": "Vaigai"
+    },
+    {
+     "text": "Nilgiri"
+    },
+    {
+     "text": "Kovai"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. The one immediately before Pandian is Vaigai.",
+   "order": 105,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "How many trains are there between Pearl and Kovai in the order?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. Pearl is in platform 1 and Kovai in platform 5, so there are 4 − 1 = 3 in between.",
+   "order": 106,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "Who finished immediately ahead of Wasim?",
+   "options": [
+    {
+     "text": "Wasim"
+    },
+    {
+     "text": "Rohit"
+    },
+    {
+     "text": "Uday"
+    },
+    {
+     "text": "Tarun"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. The one immediately before Wasim is Tarun.",
+   "order": 107,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "How many runners are there between Wasim and Rohit in the order?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. Wasim is in position 3 and Rohit in position 6, so there are 3 − 1 = 2 in between.",
+   "order": 108,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "Whose stall is immediately after that of Chitra, moving away from the gate?",
+   "options": [
+    {
+     "text": "Bharath"
+    },
+    {
+     "text": "Dinesh"
+    },
+    {
+     "text": "Anbu"
+    },
+    {
+     "text": "Chitra"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. The one immediately after Chitra is Bharath.",
+   "order": 109,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "How many stalls are there between Bharath and Elango in the order?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. Bharath is in stall 5 and Elango in stall 3, so there are 2 − 1 = 1 in between.",
+   "order": 110,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "Who lives in the house immediately after that of George, moving away from the main road?",
+   "options": [
+    {
+     "text": "Kamala"
+    },
+    {
+     "text": "George"
+    },
+    {
+     "text": "Joseph"
+    },
+    {
+     "text": "Fathima"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. The one immediately after George is Fathima.",
+   "order": 111,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "How many houses are there between Joseph and Fathima in the order?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. Joseph is in house 3 and Fathima in house 6, so there are 3 − 1 = 2 in between.",
+   "order": 112,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Between = difference of positions − 1.",
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "If Kiran and Jaya exchange their positions, then who sits immediately to the right of Hema in the new order?",
+   "options": [
+    {
+     "text": "Hema"
+    },
+    {
+     "text": "Latha"
+    },
+    {
+     "text": "Kiran"
+    },
+    {
+     "text": "Imran"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. After exchanging Kiran (seat 5) and Jaya (seat 2), the new order is Hema, Kiran, Latha, Ganesh, Jaya, Imran. The one right after Hema is Kiran.",
+   "order": 113,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "If Computer Science and Physics exchange their positions, then which lecture is held on the day immediately after the Maths lecture in the new order?",
+   "options": [
+    {
+     "text": "Computer Science"
+    },
+    {
+     "text": "Physics"
+    },
+    {
+     "text": "Chemistry"
+    },
+    {
+     "text": "Biology"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. After exchanging Computer Science (Wednesday) and Physics (Monday), the new order is Computer Science, Maths, Physics, Biology, Chemistry, English. The one right after Maths is Physics.",
+   "order": 114,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "If Eshan and Chetan exchange their positions, then whose firm is on the floor immediately above that of Deepa in the new order?",
+   "options": [
+    {
+     "text": "Deepa"
+    },
+    {
+     "text": "Aarav"
+    },
+    {
+     "text": "Eshan"
+    },
+    {
+     "text": "Chetan"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. After exchanging Eshan (floor 3) and Chetan (floor 4), the new order is Bhavna, Deepa, Chetan, Eshan, Aarav. The one right after Deepa is Chetan.",
+   "order": 115,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "If Pooja and Naveen exchange their positions, then who is interviewed in the slot immediately after Meena in the new order?",
+   "options": [
+    {
+     "text": "Naveen"
+    },
+    {
+     "text": "Kavya"
+    },
+    {
+     "text": "Lokesh"
+    },
+    {
+     "text": "Pooja"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. After exchanging Pooja (1 PM) and Naveen (10 AM), the new order is Pooja, Lokesh, Meena, Naveen, Kavya. The one right after Meena is Naveen.",
+   "order": 116,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "If Cheran and Nilgiri exchange their positions, then which train stands on the platform immediately after that of the Kovai in the new order?",
+   "options": [
+    {
+     "text": "Pandian"
+    },
+    {
+     "text": "Vaigai"
+    },
+    {
+     "text": "Nilgiri"
+    },
+    {
+     "text": "Pearl"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. After exchanging Cheran (platform 6) and Nilgiri (platform 4), the new order is Pearl, Vaigai, Pandian, Cheran, Kovai, Nilgiri. The one right after Kovai is Nilgiri.",
+   "order": 117,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "If Rohit and Sanjay exchange their positions, then who finished immediately behind Uday in the new order?",
+   "options": [
+    {
+     "text": "Sanjay"
+    },
+    {
+     "text": "Vikram"
+    },
+    {
+     "text": "Rohit"
+    },
+    {
+     "text": "Wasim"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. After exchanging Rohit (position 6) and Sanjay (position 4), the new order is Vikram, Tarun, Wasim, Rohit, Uday, Sanjay. The one right after Uday is Sanjay.",
+   "order": 118,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "If Elango and Dinesh exchange their positions, then whose stall is immediately after that of Anbu, moving away from the gate in the new order?",
+   "options": [
+    {
+     "text": "Bharath"
+    },
+    {
+     "text": "Dinesh"
+    },
+    {
+     "text": "Elango"
+    },
+    {
+     "text": "Anbu"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. After exchanging Elango (stall 3) and Dinesh (stall 1), the new order is Elango, Anbu, Dinesh, Chitra, Bharath. The one right after Anbu is Dinesh.",
+   "order": 119,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "If Hari and Joseph exchange their positions, then who lives in the house immediately after that of Kamala, moving away from the main road in the new order?",
+   "options": [
+    {
+     "text": "Indu"
+    },
+    {
+     "text": "George"
+    },
+    {
+     "text": "Joseph"
+    },
+    {
+     "text": "Hari"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. After exchanging Hari (house 4) and Joseph (house 3), the new order is Indu, Kamala, Hari, Joseph, George, Fathima. The one right after Kamala is Hari.",
+   "order": 120,
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "How many votes were cast?",
+   "options": [
+    {
+     "text": "8,820"
+    },
+    {
+     "text": "3,600"
+    },
+    {
+     "text": "8,400"
+    },
+    {
+     "text": "7,980"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Votes cast = 70% of 12,000 = 0.70 × 12,000 = 8,400.",
+   "order": 121,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "70% of 12,000 = 7 × 1,200.",
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "How many invalid votes were there?",
+   "options": [
+    {
+     "text": "420"
+    },
+    {
+     "text": "399"
+    },
+    {
+     "text": "840"
+    },
+    {
+     "text": "600"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Invalid votes = 5% of votes cast = 0.05 × 8,400 = 420.",
+   "order": 122,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "What are the family's current monthly savings?",
+   "options": [
+    {
+     "text": "₹24,000"
+    },
+    {
+     "text": "₹18,000"
+    },
+    {
+     "text": "₹21,000"
+    },
+    {
+     "text": "₹15,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Savings % = 100 − (25 + 20 + 15 + 10) = 30%. 30% of ₹60,000 = ₹18,000.",
+   "order": 123,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "What will the monthly food expense be next year?",
+   "options": [
+    {
+     "text": "₹13,200"
+    },
+    {
+     "text": "₹14,400"
+    },
+    {
+     "text": "₹12,000"
+    },
+    {
+     "text": "₹12,600"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Food now = 20% of 60,000 = ₹12,000. Next year = 12,000 × 1.05 = ₹12,600.",
+   "order": 124,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "How many units did the factory produce in June?",
+   "options": [
+    {
+     "text": "9,000"
+    },
+    {
+     "text": "8,000"
+    },
+    {
+     "text": "9,500"
+    },
+    {
+     "text": "10,000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "May = 8,000 × 1.25 = 10,000. June = 10,000 × 0.9 = 9,000.",
+   "order": 125,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "How many defective units were produced in July?",
+   "options": [
+    {
+     "text": "216"
+    },
+    {
+     "text": "270"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "250"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "July production = 9,000 × 1.2 = 10,800. Defective = 2.5% of 10,800 = 270.",
+   "order": 126,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "How many female candidates appeared for the test?",
+   "options": [
+    {
+     "text": "520"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "600"
+    },
+    {
+     "text": "480"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Males = 60% of 1,200 = 720. Females = 1,200 − 720 = 480.",
+   "order": 127,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "How many male candidates passed?",
+   "options": [
+    {
+     "text": "540"
+    },
+    {
+     "text": "360"
+    },
+    {
+     "text": "324"
+    },
+    {
+     "text": "396"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Male candidates = 720. Passed = 45% of 720 = 324.",
+   "order": 128,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "What is the selling price of a television after the festival discount?",
+   "options": [
+    {
+     "text": "₹32,000"
+    },
+    {
+     "text": "₹30,000"
+    },
+    {
+     "text": "₹35,000"
+    },
+    {
+     "text": "₹34,000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "20% off ₹40,000 = ₹8,000 off, so price = ₹32,000.",
+   "order": 129,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "What is the selling price of a washing machine after the festival discount?",
+   "options": [
+    {
+     "text": "₹23,000"
+    },
+    {
+     "text": "₹22,000"
+    },
+    {
+     "text": "₹24,500"
+    },
+    {
+     "text": "₹21,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "12% of 25,000 = ₹3,000. Price = 25,000 − 3,000 = ₹22,000.",
+   "order": 130,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "What was the population in 2020?",
+   "options": [
+    {
+     "text": "8,40,000"
+    },
+    {
+     "text": "8,60,000"
+    },
+    {
+     "text": "8,80,000"
+    },
+    {
+     "text": "9,04,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2020 population = 8,00,000 × 1.10 = 8,80,000.",
+   "order": 131,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "How many people were literate in 2015?",
+   "options": [
+    {
+     "text": "6,00,000"
+    },
+    {
+     "text": "6,40,000"
+    },
+    {
+     "text": "5,60,000"
+    },
+    {
+     "text": "5,76,000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "72% of 8,00,000 = 5,76,000.",
+   "order": 132,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "What was the profit in the first year?",
+   "options": [
+    {
+     "text": "₹10 lakh"
+    },
+    {
+     "text": "₹12 lakh"
+    },
+    {
+     "text": "₹40 lakh"
+    },
+    {
+     "text": "₹8 lakh"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Expenses = 80% of 50 = 40 lakh. Profit = 50 − 40 = ₹10 lakh.",
+   "order": 133,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "What was the revenue in the second year?",
+   "options": [
+    {
+     "text": "₹62 lakh"
+    },
+    {
+     "text": "₹65 lakh"
+    },
+    {
+     "text": "₹60 lakh"
+    },
+    {
+     "text": "₹70 lakh"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue = 50 × 1.30 = ₹65 lakh.",
+   "order": 134,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "How many litres of cow milk does the dairy collect?",
+   "options": [
+    {
+     "text": "2,500"
+    },
+    {
+     "text": "3,500"
+    },
+    {
+     "text": "3,000"
+    },
+    {
+     "text": "2,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "60% of 5,000 = 3,000 litres.",
+   "order": 135,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "How many litres of fat are there in the buffalo milk collected?",
+   "options": [
+    {
+     "text": "65"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "325"
+    },
+    {
+     "text": "130"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Buffalo milk = 40% of 5,000 = 2,000 litres. Fat = 6.5% of 2,000 = 130 litres.",
+   "order": 136,
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "How many valid votes did Rajan get?",
+   "options": [
+    {
+     "text": "3,591"
+    },
+    {
+     "text": "3,780"
+    },
+    {
+     "text": "3,150"
+    },
+    {
+     "text": "3,990"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Valid votes = 8,400 − 420 = 7,980. Rajan's votes = 45% of 7,980 = 3,591.",
+   "order": 137,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Valid = 95% of 8,400 = 7,980.",
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "Rajan's lead over Seetha equals what percentage of the registered voters?",
+   "options": [
+    {
+     "text": "9.50%"
+    },
+    {
+     "text": "6.30%"
+    },
+    {
+     "text": "7.98%"
+    },
+    {
+     "text": "6.65%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lead = (45% − 35%) of 7,980 = 10% of 7,980 = 798. As a share of registered voters = 798/12,000 × 100 = 6.65%.",
+   "order": 138,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "Next year the rent will be what percentage of the family's income (to two decimal places)?",
+   "options": [
+    {
+     "text": "30.00%"
+    },
+    {
+     "text": "27.27%"
+    },
+    {
+     "text": "24.00%"
+    },
+    {
+     "text": "25.00%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rent now = 25% of 60,000 = ₹15,000. New rent = 15,000 × 1.2 = ₹18,000. New income = ₹66,000. Share = 18,000/66,000 × 100 = 27.27%.",
+   "order": 139,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rent grows faster than income, so its share must exceed 25%.",
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "What will the monthly savings be next year?",
+   "options": [
+    {
+     "text": "₹19,800"
+    },
+    {
+     "text": "₹15,000"
+    },
+    {
+     "text": "₹16,800"
+    },
+    {
+     "text": "₹18,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New spends: rent 18,000, food 12,600, education 9,000 × 1.4 = 12,600, transport 6,000; total = 49,200. Savings = 66,000 − 49,200 = ₹16,800.",
+   "order": 140,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "How many non-defective units were produced in July?",
+   "options": [
+    {
+     "text": "10,270"
+    },
+    {
+     "text": "10,800"
+    },
+    {
+     "text": "9,000"
+    },
+    {
+     "text": "10,530"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "July production = 10,800 and defective = 270, so good units = 10,800 − 270 = 10,530.",
+   "order": 141,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "Over the four months together, the defective units form what percentage of total production (nearest 0.1%)?",
+   "options": [
+    {
+     "text": "4.0%"
+    },
+    {
+     "text": "3.9%"
+    },
+    {
+     "text": "3.5%"
+    },
+    {
+     "text": "3.1%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total production = 8,000 + 10,000 + 9,000 + 10,800 = 37,800. Total defective = 400 + 400 + 270 + 270 = 1,340. Percentage = 1,340/37,800 × 100 = 3.54%, i.e. 3.5%.",
+   "order": 142,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "What is the overall pass percentage?",
+   "options": [
+    {
+     "text": "49%"
+    },
+    {
+     "text": "50%"
+    },
+    {
+     "text": "48%"
+    },
+    {
+     "text": "51%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Passed = 324 + 264 = 588. Overall pass % = 588/1,200 × 100 = 49%.",
+   "order": 143,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Weighted average: 0.6 × 45 + 0.4 × 55 = 27 + 22 = 49.",
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "Female candidates form what percentage of all those who passed (nearest 0.1%)?",
+   "options": [
+    {
+     "text": "40.0%"
+    },
+    {
+     "text": "44.9%"
+    },
+    {
+     "text": "55.0%"
+    },
+    {
+     "text": "46.7%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Female passers = 264 and total passers = 588. Share = 264/588 × 100 = 44.90%, i.e. 44.9%.",
+   "order": 144,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "How many more candidates would have to pass for the overall pass percentage to become 55%?",
+   "options": [
+    {
+     "text": "84"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "55% of 1,200 = 660. Currently 588 passed, so 660 − 588 = 72 more must pass.",
+   "order": 145,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "What is the total sales revenue at the festival-discounted prices (before any card discount)?",
+   "options": [
+    {
+     "text": "₹39,50,000"
+    },
+    {
+     "text": "₹32,80,000"
+    },
+    {
+     "text": "₹33,20,000"
+    },
+    {
+     "text": "₹31,60,000"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "TVs: 50 × 32,000 = 16,00,000. Fridges: 40 × 25,500 = 10,20,000. Washers: 30 × 22,000 = 6,60,000. Total = ₹32,80,000.",
+   "order": 146,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "The overall discount given, as a percentage of the total marked value, is closest to which value?",
+   "options": [
+    {
+     "text": "17.0%"
+    },
+    {
+     "text": "16.0%"
+    },
+    {
+     "text": "18.5%"
+    },
+    {
+     "text": "15.0%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Marked value = 20,00,000 + 12,00,000 + 7,50,000 = 39,50,000. Discount = 39,50,000 − 32,80,000 = 6,70,000. 6,70,000/39,50,000 × 100 = 16.96%, which is about 17.0%.",
+   "order": 147,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "What was the population in 2025?",
+   "options": [
+    {
+     "text": "9,68,000"
+    },
+    {
+     "text": "9,44,000"
+    },
+    {
+     "text": "9,50,400"
+    },
+    {
+     "text": "9,60,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2025 population = 8,80,000 × 1.08 = 9,50,400. (Not 18% over 2015, because the 8% applies to the 2020 base.)",
+   "order": 148,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Successive growth: 10% then 8% = 18.8% overall.",
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "How many people were literate in 2025?",
+   "options": [
+    {
+     "text": "7,98,000"
+    },
+    {
+     "text": "8,25,000"
+    },
+    {
+     "text": "7,98,336"
+    },
+    {
+     "text": "7,68,000"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "84% of 9,50,400 = 9,50,400 × 0.84 = 7,98,336.",
+   "order": 149,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "In the second year, the profit was what percentage of the revenue (nearest 0.01%)?",
+   "options": [
+    {
+     "text": "34.00%"
+    },
+    {
+     "text": "20.00%"
+    },
+    {
+     "text": "23.08%"
+    },
+    {
+     "text": "26.15%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Expenses = 40 × 1.2 = 48 lakh. Profit = 65 − 48 = 17 lakh. Profit margin = 17/65 × 100 = 26.15%.",
+   "order": 150,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "What were the expenses in the third year?",
+   "options": [
+    {
+     "text": "₹50.4 lakh"
+    },
+    {
+     "text": "₹45.6 lakh"
+    },
+    {
+     "text": "₹48.0 lakh"
+    },
+    {
+     "text": "₹46.8 lakh"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Expenses in year 2 = 48 lakh. Year 3 = 48 × 0.95 = ₹45.6 lakh.",
+   "order": 151,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "What is the average fat percentage of the mixed milk?",
+   "options": [
+    {
+     "text": "4.7%"
+    },
+    {
+     "text": "5.0%"
+    },
+    {
+     "text": "4.5%"
+    },
+    {
+     "text": "5.2%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fat in cow milk = 3.5% of 3,000 = 105 L. Total fat = 105 + 130 = 235 L. Average = 235/5,000 × 100 = 4.7%.",
+   "order": 152,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Weighted average: 0.6 × 3.5 + 0.4 × 6.5 = 2.1 + 2.6 = 4.7.",
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "If 500 litres of water is added to the mixed milk, the fat percentage becomes (nearest 0.01%)",
+   "options": [
+    {
+     "text": "4.70%"
+    },
+    {
+     "text": "4.50%"
+    },
+    {
+     "text": "4.27%"
+    },
+    {
+     "text": "4.00%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fat stays at 235 L but volume becomes 5,500 L. Fat % = 235/5,500 × 100 = 4.27%.",
+   "order": 153,
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "At least how many valid votes must shift from Rajan to Seetha so that the two have exactly equal votes?",
+   "options": [
+    {
+     "text": "399"
+    },
+    {
+     "text": "420"
+    },
+    {
+     "text": "1,197"
+    },
+    {
+     "text": "798"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rajan leads by 798. Moving x votes from Rajan to Seetha reduces the lead by 2x, so 2x = 798 and x = 399.",
+   "order": 154,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Gap shifted between two people: move half the gap.",
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "By what percentage (to two decimal places) will the savings fall next year?",
+   "options": [
+    {
+     "text": "10.00%"
+    },
+    {
+     "text": "6.67%"
+    },
+    {
+     "text": "6.00%"
+    },
+    {
+     "text": "8.33%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fall = 18,000 − 16,800 = ₹1,200. Percentage fall = 1,200/18,000 × 100 = 6.67%. Income rose 10% but savings fell, because spending rose faster.",
+   "order": 155,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Always take the percentage change on the old savings, not the new.",
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "By what percentage (nearest 0.1%) were the good units in July higher than the good units in April?",
+   "options": [
+    {
+     "text": "35.4%"
+    },
+    {
+     "text": "31.5%"
+    },
+    {
+     "text": "35.0%"
+    },
+    {
+     "text": "38.6%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "April good units = 8,000 − 400 = 7,600. July good units = 10,530. Rise = 2,930, and 2,930/7,600 × 100 = 38.55%, i.e. 38.6%. (Using total production instead gives 35%, which is the trap.)",
+   "order": 156,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "After the extra card discount, what is the total revenue of the store?",
+   "options": [
+    {
+     "text": "₹32,19,250"
+    },
+    {
+     "text": "₹32,80,000"
+    },
+    {
+     "text": "₹31,16,000"
+    },
+    {
+     "text": "₹32,16,000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Card discount on TVs = 30 × 5% of 32,000 = 30 × 1,600 = 48,000. On fridges = 10 × 5% of 25,500 = 10 × 1,275 = 12,750. Total = 60,750. Revenue = 32,80,000 − 60,750 = ₹32,19,250.",
+   "order": 157,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "The number of literate persons in 2025 was what percentage more than in 2015?",
+   "options": [
+    {
+     "text": "12.0%"
+    },
+    {
+     "text": "33.3%"
+    },
+    {
+     "text": "38.6%"
+    },
+    {
+     "text": "16.7%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Increase = 7,98,336 − 5,76,000 = 2,22,336. Percentage = 2,22,336/5,76,000 × 100 = 38.6%. The rise is larger than the literacy-rate rise (12 points) because the population also grew.",
+   "order": 158,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "The third-year profit was what percentage higher than the first-year profit?",
+   "options": [
+    {
+     "text": "259%"
+    },
+    {
+     "text": "73%"
+    },
+    {
+     "text": "150%"
+    },
+    {
+     "text": "159%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue year 3 = 65 × 1.1 = 71.5 lakh. Profit = 71.5 − 45.6 = 25.9 lakh. Increase over 10 lakh = 15.9 lakh, i.e. 15.9/10 × 100 = 159%.",
+   "order": 159,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Percentage increase uses the old value as the base: 25.9/10 = 259% of the old, i.e. 159% more.",
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "How many litres of pure buffalo milk must be added to the original 5,000 litres to raise the average fat content to exactly 5%?",
+   "options": [
+    {
+     "text": "1,250"
+    },
+    {
+     "text": "1,000"
+    },
+    {
+     "text": "800"
+    },
+    {
+     "text": "500"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let x litres be added: (235 + 0.065x)/(5,000 + x) = 0.05. So 235 + 0.065x = 250 + 0.05x, giving 0.015x = 15 and x = 1,000.",
+   "order": 160,
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Alligation: 6.5 − 5 = 1.5 parts vs 5 − 4.7 = 0.3 parts, so 5,000 : x = 1.5 : 0.3.",
+   "setId": "di-caselets-s088"
+  }
+ ]
+}

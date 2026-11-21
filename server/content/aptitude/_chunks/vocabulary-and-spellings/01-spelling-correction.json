@@ -1,0 +1,547 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to provide room or lodging for)",
+   "options": [
+    "accommodate",
+    "accomodate",
+    "acommodate",
+    "accomodete"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'accommodate'. It has double c and double m.",
+   "shortcut": "Remember: two c's, two m's.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: needed; essential)",
+   "options": [
+    "neccessary",
+    "necessary",
+    "necesary",
+    "neccesary"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'necessary'. One c, two s's.",
+   "shortcut": "One collar (c), two sleeves (s).",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to divide or set apart)",
+   "options": [
+    "seperate",
+    "separete",
+    "separate",
+    "sepparate"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'separate'. The middle syllable is 'par' (there is 'a rat' in sep-a-rat-e).",
+   "shortcut": "There is 'a rat' in separate.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: without any doubt)",
+   "options": [
+    "definately",
+    "definitly",
+    "defenitely",
+    "definitely"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'definitely'. Built on 'definite' + -ly; the stem has 'finite' in it.",
+   "shortcut": "Think 'finite' inside definitely.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: something that happens)",
+   "options": [
+    "occurrence",
+    "occurence",
+    "ocurrence",
+    "occurrance"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'occurrence'. Double c, double r, and the ending is -ence.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to make someone feel awkward)",
+   "options": [
+    "embarass",
+    "embarrass",
+    "embarras",
+    "emberrass"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'embarrass'. Double r and double s.",
+   "shortcut": "Two r's and two s's.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to get something sent to you)",
+   "options": [
+    "recieve",
+    "receve",
+    "receive",
+    "riceive"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'receive'. Rule: 'i before e, except after c'; after c the order is 'ei'.",
+   "shortcut": "i before e except after c.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: something accomplished through effort)",
+   "options": [
+    "acheivement",
+    "achievment",
+    "acheivment",
+    "achievement"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'achievement'. After 'ch' the order is 'ie' (achieve) and the e of achieve is kept before -ment.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the surroundings in which we live)",
+   "options": [
+    "environment",
+    "enviroment",
+    "environmant",
+    "envirnment"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'environment'. It comes from 'environ' + -ment, so the 'n' before 'm' is kept.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the body that rules a country)",
+   "options": [
+    "goverment",
+    "government",
+    "govenment",
+    "governmant"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'government'. The word is 'govern' + -ment; the n before -ment is kept.",
+   "shortcut": "govern + ment.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the inner sense of right and wrong)",
+   "options": [
+    "concience",
+    "consience",
+    "conscience",
+    "conscence"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'conscience'. The spelling is con-science, with 'sc' followed by 'ie'.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a special right or advantage)",
+   "options": [
+    "privelege",
+    "priviledge",
+    "privilage",
+    "privilege"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'privilege'. Ends in -lege; there is no d.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the act of keeping something in good condition)",
+   "options": [
+    "maintenance",
+    "maintainance",
+    "maintenence",
+    "maintanance"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'maintenance'. The verb is 'maintain' but the noun is 'maintenance' (main-ten-ance).",
+   "shortcut": "Maintain loses its 'ai' in the noun.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a period of one thousand years)",
+   "options": [
+    "millenium",
+    "millennium",
+    "milennium",
+    "milenium"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'millennium'. Double l and double n (from Latin mille + annus).",
+   "shortcut": "Two l's, two n's.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a set of written questions for a survey)",
+   "options": [
+    "questionaire",
+    "questionnair",
+    "questionnaire",
+    "quesionnaire"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'questionnaire'. It has double n and ends in -aire.",
+   "shortcut": "Two n's, ends -aire.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a group appointed for a particular task)",
+   "options": [
+    "comittee",
+    "committe",
+    "commitee",
+    "committee"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'committee'. Double m, double t, double e.",
+   "shortcut": "Two m's, two t's, two e's.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: administration by officials and fixed procedures)",
+   "options": [
+    "bureaucracy",
+    "beaurocracy",
+    "bureacracy",
+    "buerocracy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'bureaucracy'. From French 'bureau' + -cracy, so it begins 'bureau-'.",
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a regular pattern of beats)",
+   "options": [
+    "rythm",
+    "rhythm",
+    "rhythem",
+    "rhythym"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'rhythm'. Two h's and no vowel except y; it ends -thm.",
+   "shortcut": "Rhythm Helps Your Two Hips Move.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: steady persistence despite difficulty)",
+   "options": [
+    "perseverence",
+    "perserverance",
+    "perseverance",
+    "persaverance"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'perseverance'. The noun is 'persevere' + -ance, with the e of the verb dropped: perseverance (not -erence).",
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a strong desire to know)",
+   "options": [
+    "curiousity",
+    "curiosty",
+    "curosity",
+    "curiosity"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'curiosity'. The adjective 'curious' loses 'ou' to 'curio' in the noun: curi-osity.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to describe as larger than the truth)",
+   "options": [
+    "exaggerate",
+    "exagerate",
+    "exaggarate",
+    "exagerrate"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'exaggerate'. Double g, then -erate.",
+   "shortcut": "Two g's.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a person one knows slightly)",
+   "options": [
+    "acquaintence",
+    "acquaintance",
+    "aquaintance",
+    "acquaintanse"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'acquaintance'. Starts with 'acq' (double-letter sound) and ends -ance.",
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a formal promise or assurance)",
+   "options": [
+    "garantee",
+    "guarentee",
+    "guarantee",
+    "gaurantee"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'guarantee'. The order is g-u-a-r-a-n-t-e-e.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the way a word is spoken)",
+   "options": [
+    "pronounciation",
+    "pronunsiation",
+    "pronunciaton",
+    "pronunciation"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'pronunciation'. The verb 'pronounce' drops the 'o': pronunciation.",
+   "shortcut": "Pronounce has 'ou', pronunciation does not.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a system ranked by levels of authority)",
+   "options": [
+    "hierarchy",
+    "hierachy",
+    "heirarchy",
+    "hiearchy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'hierarchy'. The word begins 'hier-' (from Greek hieros) followed by '-archy'.",
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a person who starts a business)",
+   "options": [
+    "entreprenuer",
+    "entrepreneur",
+    "enterpreneur",
+    "entrepeneur"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'entrepreneur'. French origin: entre- + -preneur.",
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: made up of various kinds)",
+   "options": [
+    "miscelaneous",
+    "miscellanious",
+    "miscellaneous",
+    "mispellaneous"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'miscellaneous'. Double l, and the ending is -eous.",
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following words is spelt incorrectly? Hint: the correct form of the odd one means not controlled by others.",
+   "options": [
+    "permanent",
+    "consistent",
+    "excellent",
+    "independant"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'independant' is a misspelling; the correct form is 'independent'. The adjective ends in -ent, like the other three words which are correctly spelt.",
+   "shortcut": "Spot the double/single letter or the ie/ei slip first.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following words is spelt incorrectly? Hint: the correct form of the odd one means a particular time or event.",
+   "options": [
+    "occassion",
+    "admission",
+    "discussion",
+    "expression"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'occassion' is a misspelling; the correct form is 'occasion'. 'Occasion' has a double c but only one s.",
+   "shortcut": "Spot the double/single letter or the ie/ei slip first.",
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following words is spelt incorrectly? Hint: the correct form of the odd one means the day after today.",
+   "options": [
+    "borrow",
+    "tommorow",
+    "sorrow",
+    "morrow"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'tommorow' is a misspelling; the correct form is 'tomorrow'. Tomorrow has one m followed by double r.",
+   "shortcut": "Spot the double/single letter or the ie/ei slip first.",
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

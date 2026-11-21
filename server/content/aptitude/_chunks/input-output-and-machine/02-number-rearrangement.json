@@ -1,0 +1,575 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In odd-numbered steps the number that is smallest among those not yet fixed goes to the left end; in even-numbered steps the number that is largest among those not yet fixed goes to the right end. The value is used for comparison. Input: 76 22 51 85 74. What is Step II?",
+   "options": [
+    "76 22 85 74 51",
+    "22 51 74 85 76",
+    "22 51 76 85 74",
+    "22 76 51 74 85"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Input: 76 22 51 85 74 | Step I: 22 76 51 85 74 | Step II: 22 76 51 74 85. So Step II is 22 76 51 74 85.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 19 32 72 42 30. Step I: 32 72 42 30 19. Step II: 32 42 30 72 19. Following the same rule, what will Step III be?",
+   "options": [
+    "32 30 42 72 19",
+    "72 42 32 30 19",
+    "42 30 72 32 19",
+    "19 32 72 42 30"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the number that is largest digit-sum among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: 19 32 72 42 30 | Step I: 32 72 42 30 19 | Step II: 32 42 30 72 19 | Step III: 32 30 42 72 19. So Step III is 32 30 42 72 19.",
+   "shortcut": "Fix the largest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 80 57 46 85 39. Step I: 39 80 57 46 85. Step II: 39 57 80 46 85. Following the same rule, what will Step III be?",
+   "options": [
+    "85 80 57 46 39",
+    "39 57 46 80 85",
+    "39 46 80 57 85",
+    "85 39 57 46 80"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the number that is largest units digit among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: 80 57 46 85 39 | Step I: 39 80 57 46 85 | Step II: 39 57 80 46 85 | Step III: 39 57 46 80 85. So Step III is 39 57 46 80 85.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 33 12 39 75 58. Step I: 75 33 12 39 58. Step II: 75 33 39 58 12. Following the same rule, what will Step III be?",
+   "options": [
+    "58 39 75 33 12",
+    "12 33 39 75 58",
+    "75 58 33 39 12",
+    "33 12 39 58 75"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In odd-numbered steps the number that is largest among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest among those not yet fixed goes to the right end. Applying it: Input: 33 12 39 75 58 | Step I: 75 33 12 39 58 | Step II: 75 33 39 58 12 | Step III: 75 58 33 39 12. So Step III is 75 58 33 39 12.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In each step, the number that is smallest digit-sum among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. The digit-sum is used for comparison. Input: 48 44 63 21 23. What is Step II?",
+   "options": [
+    "21 23 48 44 63",
+    "48 44 63 23 21",
+    "21 23 44 48 63",
+    "44 21 23 63 48"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: 48 44 63 21 23 | Step I: 21 48 44 63 23 | Step II: 21 23 48 44 63. So Step II is 21 23 48 44 63.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 88 34 20 91 87. Step I: 20 88 34 91 87. Step II: 20 91 88 34 87. Following the same rule, what will Step III be?",
+   "options": [
+    "20 91 34 88 87",
+    "20 34 91 88 87",
+    "91 88 87 34 20",
+    "88 87 34 91 20"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the number that is smallest units digit among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: 88 34 20 91 87 | Step I: 20 88 34 91 87 | Step II: 20 91 88 34 87 | Step III: 20 91 34 88 87. So Step III is 20 91 34 88 87.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 67 91 18 95 72. Step I: 91 67 18 95 72. Step II: 91 67 95 72 18. Following the same rule, what will Step III be?",
+   "options": [
+    "91 72 67 95 18",
+    "91 72 95 67 18",
+    "91 67 95 72 18",
+    "95 91 72 67 18"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest units digit among those not yet fixed goes to the left end; in even-numbered steps the number that is largest units digit among those not yet fixed goes to the right end. Applying it: Input: 67 91 18 95 72 | Step I: 91 67 18 95 72 | Step II: 91 67 95 72 18 | Step III: 91 72 67 95 18. So Step III is 91 72 67 95 18.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 59 50 43 57 34. Step I: 34 59 50 43 57. Step II: 34 43 59 50 57. Following the same rule, what will Step III be?",
+   "options": [
+    "43 34 50 57 59",
+    "59 57 34 50 43",
+    "34 43 50 59 57",
+    "50 43 57 34 59"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the number that is smallest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: 59 50 43 57 34 | Step I: 34 59 50 43 57 | Step II: 34 43 59 50 57 | Step III: 34 43 50 59 57. So Step III is 34 43 50 59 57.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 28 49 86 64 43. Step I: 43 28 49 86 64. Step II: 43 28 86 64 49. Following the same rule, what will Step III be?",
+   "options": [
+    "43 28 86 64 49",
+    "43 64 28 86 49",
+    "43 28 64 49 86",
+    "49 28 86 64 43"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest units digit among those not yet fixed goes to the left end; in even-numbered steps the number that is largest units digit among those not yet fixed goes to the right end. Applying it: Input: 28 49 86 64 43 | Step I: 43 28 49 86 64 | Step II: 43 28 86 64 49 | Step III: 43 64 28 86 49. So Step III is 43 64 28 86 49.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 33 73 29 20 71 88. Step I: 33 73 29 71 88 20. Step II: 73 29 71 88 33 20. Following the same rule, what will Step IV be?",
+   "options": [
+    "20 71 73 33 88 29",
+    "20 71 33 73 88 29",
+    "29 88 73 71 33 20",
+    "20 29 33 71 73 88"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the number that is smallest digit-sum among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: 33 73 29 20 71 88 | Step I: 33 73 29 71 88 20 | Step II: 73 29 71 88 33 20 | Step III: 73 29 88 71 33 20 | Step IV: 29 88 73 71 33 20. So Step IV is 29 88 73 71 33 20.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 98 15 11 50 32 57. Step I: 50 98 15 11 32 57. Step II: 50 11 98 15 32 57. Following the same rule, what will Step IV be?",
+   "options": [
+    "98 57 15 32 50 11",
+    "11 50 32 15 98 57",
+    "98 57 15 32 11 50",
+    "50 11 32 15 98 57"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the number that is smallest units digit among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: 98 15 11 50 32 57 | Step I: 50 98 15 11 32 57 | Step II: 50 11 98 15 32 57 | Step III: 50 11 32 98 15 57 | Step IV: 50 11 32 15 98 57. So Step IV is 50 11 32 15 98 57.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In each step, the number that is smallest digit-sum among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. The digit-sum is used for comparison. Input: 98 93 27 83 52 35. What is Step III?",
+   "options": [
+    "27 35 93 83 52 98",
+    "98 27 93 83 35 52",
+    "52 93 83 98 27 35",
+    "52 35 27 98 93 83"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Input: 98 93 27 83 52 35 | Step I: 52 98 93 27 83 35 | Step II: 52 35 98 93 27 83 | Step III: 52 35 27 98 93 83. So Step III is 52 35 27 98 93 83.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In odd-numbered steps the number that is smallest among those not yet fixed goes to the left end; in even-numbered steps the number that is largest among those not yet fixed goes to the right end. The value is used for comparison. Input: 61 17 37 74 31 11. What is Step III?",
+   "options": [
+    "61 31 11 17 37 74",
+    "17 37 74 61 31 11",
+    "11 17 61 37 31 74",
+    "11 17 37 31 61 74"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Input: 61 17 37 74 31 11 | Step I: 11 61 17 37 74 31 | Step II: 11 61 17 37 31 74 | Step III: 11 17 61 37 31 74. So Step III is 11 17 61 37 31 74.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 26 47 70 78 22 11. Step I: 70 26 47 78 22 11. Step II: 70 26 47 22 11 78. Following the same rule, what will Step IV be?",
+   "options": [
+    "70 11 26 22 47 78",
+    "70 11 22 26 47 78",
+    "78 70 26 47 22 11",
+    "11 22 26 47 70 78"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest units digit among those not yet fixed goes to the left end; in even-numbered steps the number that is largest units digit among those not yet fixed goes to the right end. Applying it: Input: 26 47 70 78 22 11 | Step I: 70 26 47 78 22 11 | Step II: 70 26 47 22 11 78 | Step III: 70 11 26 47 22 78 | Step IV: 70 11 26 22 47 78. So Step IV is 70 11 26 22 47 78.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In each step, the number that is smallest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. The value is used for comparison. Input: 56 54 72 63 58 88. What is Step III?",
+   "options": [
+    "72 63 88 58 56 54",
+    "56 58 88 63 72 54",
+    "54 72 63 56 58 88",
+    "54 56 58 72 63 88"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: 56 54 72 63 58 88 | Step I: 56 72 63 58 88 54 | Step II: 72 63 58 88 56 54 | Step III: 72 63 88 58 56 54. So Step III is 72 63 88 58 56 54.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In odd-numbered steps the number that is largest among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest among those not yet fixed goes to the right end. The value is used for comparison. Input: 61 65 53 88 85 71. What is Step III?",
+   "options": [
+    "88 85 61 65 71 53",
+    "61 53 65 85 71 88",
+    "65 88 85 71 53 61",
+    "88 85 65 53 71 61"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: 61 65 53 88 85 71 | Step I: 88 61 65 53 85 71 | Step II: 88 61 65 85 71 53 | Step III: 88 85 61 65 71 53. So Step III is 88 85 61 65 71 53.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 91 63 82 20 62 59. Step I: 20 91 63 82 62 59. Step II: 20 63 82 62 59 91. Following the same rule, what will Step IV be?",
+   "options": [
+    "20 59 63 62 82 91",
+    "91 82 63 62 59 20",
+    "82 59 91 63 62 20",
+    "20 62 63 91 82 59"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest among those not yet fixed goes to the left end; in even-numbered steps the number that is largest among those not yet fixed goes to the right end. Applying it: Input: 91 63 82 20 62 59 | Step I: 20 91 63 82 62 59 | Step II: 20 63 82 62 59 91 | Step III: 20 59 63 82 62 91 | Step IV: 20 59 63 62 82 91. So Step IV is 20 59 63 62 82 91.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 84 70 49 79 12 81. Step I: 12 84 70 49 79 81. Step II: 12 84 70 49 81 79. Following the same rule, what will Step IV be?",
+   "options": [
+    "12 70 84 81 49 79",
+    "70 12 81 84 49 79",
+    "84 81 79 70 49 12",
+    "70 81 12 84 49 79"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest digit-sum among those not yet fixed goes to the left end; in even-numbered steps the number that is largest digit-sum among those not yet fixed goes to the right end. Applying it: Input: 84 70 49 79 12 81 | Step I: 12 84 70 49 79 81 | Step II: 12 84 70 49 81 79 | Step III: 12 70 84 49 81 79 | Step IV: 12 70 84 81 49 79. So Step IV is 12 70 84 81 49 79.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 82 14 93 30 85 12. Step I: 82 14 30 85 12 93. Step II: 82 14 30 12 85 93. Following the same rule, what will Step IV be?",
+   "options": [
+    "14 12 30 82 85 93",
+    "30 12 14 82 93 85",
+    "30 12 82 14 93 85",
+    "85 14 93 12 82 30"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the number that is largest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: 82 14 93 30 85 12 | Step I: 82 14 30 85 12 93 | Step II: 82 14 30 12 85 93 | Step III: 14 30 12 82 85 93 | Step IV: 14 12 30 82 85 93. So Step IV is 14 12 30 82 85 93.",
+   "shortcut": "Fix the largest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 16 55 70 50 39 68. Step I: 70 16 55 50 39 68. Step II: 70 68 16 55 50 39. Following the same rule, what will Step IV be?",
+   "options": [
+    "50 16 55 70 39 68",
+    "70 68 55 50 16 39",
+    "70 68 55 50 39 16",
+    "39 68 16 55 50 70"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the number that is largest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: 16 55 70 50 39 68 | Step I: 70 16 55 50 39 68 | Step II: 70 68 16 55 50 39 | Step III: 70 68 55 16 50 39 | Step IV: 70 68 55 50 16 39. So Step IV is 70 68 55 50 16 39.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 81 57 45 53 59 36. Step I: 36 81 57 45 53 59. Step II: 36 45 81 57 53 59. Which number will be 6th from the left end in Step III?",
+   "options": [
+    "59",
+    "81",
+    "53",
+    "36"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the number that is smallest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: 81 57 45 53 59 36 | Step I: 36 81 57 45 53 59 | Step II: 36 45 81 57 53 59 | Step III: 36 45 53 81 57 59. In Step III the 6th number from the left is 59.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In each step, the number that is largest digit-sum among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. The digit-sum is used for comparison. Input: 31 28 67 17 97 34. What is Step III?",
+   "options": [
+    "31 28 17 34 67 97",
+    "31 34 17 28 67 97",
+    "97 67 31 28 34 17",
+    "97 67 28 31 17 34"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Input: 31 28 67 17 97 34 | Step I: 97 31 28 67 17 34 | Step II: 97 67 31 28 17 34 | Step III: 97 67 28 31 17 34. So Step III is 97 67 28 31 17 34.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 50 33 75 31 65 18. Step I: 75 50 33 31 65 18. Step II: 75 50 33 65 18 31. Which number will be 2nd from the right end in Step III?",
+   "options": [
+    "65",
+    "18",
+    "75",
+    "33"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In odd-numbered steps the number that is largest digit-sum among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest digit-sum among those not yet fixed goes to the right end. Input: 50 33 75 31 65 18 | Step I: 75 50 33 31 65 18 | Step II: 75 50 33 65 18 31 | Step III: 75 65 50 33 18 31. In Step III the 2nd number from the right is 18.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 35 39 88 43 81 36. Step I: 39 35 88 43 81 36. Step II: 39 35 88 43 36 81. Following the same rule, what will Step IV be?",
+   "options": [
+    "35 36 39 43 81 88",
+    "88 81 39 43 36 35",
+    "88 81 43 39 36 35",
+    "39 88 35 36 43 81"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In odd-numbered steps the number that is largest units digit among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest units digit among those not yet fixed goes to the right end. Applying it: Input: 35 39 88 43 81 36 | Step I: 39 35 88 43 81 36 | Step II: 39 35 88 43 36 81 | Step III: 39 88 35 43 36 81 | Step IV: 39 88 35 36 43 81. So Step IV is 39 88 35 36 43 81.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 50 14 23 13 91 56 82 93. Step I: 50 14 23 91 56 82 93 13. Step II: 50 23 91 56 82 93 14 13. Following the same rule, what will Step V be?",
+   "options": [
+    "50 91 82 93 13 23 14 56",
+    "14 23 13 50 56 82 91 93",
+    "91 82 93 56 50 23 14 13",
+    "91 93 82 56 50 23 14 13"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the number that is smallest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: 50 14 23 13 91 56 82 93 | Step I: 50 14 23 91 56 82 93 13 | Step II: 50 23 91 56 82 93 14 13 | Step III: 50 91 56 82 93 23 14 13 | Step IV: 91 56 82 93 50 23 14 13 | Step V: 91 82 93 56 50 23 14 13. So Step V is 91 82 93 56 50 23 14 13.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 86 69 80 25 79 18 47. Step I: 25 86 69 80 79 18 47. Step II: 25 86 69 80 18 47 79. Which number will be 2nd from the left end in Step IV?",
+   "options": [
+    "80",
+    "25",
+    "18",
+    "69"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest digit-sum among those not yet fixed goes to the left end; in even-numbered steps the number that is largest digit-sum among those not yet fixed goes to the right end. Input: 86 69 80 25 79 18 47 | Step I: 25 86 69 80 79 18 47 | Step II: 25 86 69 80 18 47 79 | Step III: 25 80 86 69 18 47 79 | Step IV: 25 80 86 18 47 69 79. In Step IV the 2nd number from the left is 80.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule, step by step. Input: 79 87 58 91 35 13 16 30. Step I: 30 79 87 58 91 35 13 16. Step II: 30 91 79 87 58 35 13 16. Following the same rule, what will Step V be?",
+   "options": [
+    "30 91 13 35 79 87 58 16",
+    "79 87 58 91 35 16 13 30",
+    "30 91 13 35 16 79 87 58",
+    "91 87 79 58 35 13 16 30"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the number that is smallest units digit among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: 79 87 58 91 35 13 16 30 | Step I: 30 79 87 58 91 35 13 16 | Step II: 30 91 79 87 58 35 13 16 | Step III: 30 91 13 79 87 58 35 16 | Step IV: 30 91 13 35 79 87 58 16 | Step V: 30 91 13 35 16 79 87 58. So Step V is 30 91 13 35 16 79 87 58.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 96 70 17 51 45 41 83. Step I: 41 96 70 17 51 45 83. Step II: 41 51 96 70 17 45 83. Which number will be 3rd from the right end in Step IV?",
+   "options": [
+    "83",
+    "70",
+    "96",
+    "45"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the number that is smallest digit-sum among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: 96 70 17 51 45 41 83 | Step I: 41 96 70 17 51 45 83 | Step II: 41 51 96 70 17 45 83 | Step III: 41 51 70 96 17 45 83 | Step IV: 41 51 70 17 96 45 83. In Step IV the 3rd number from the right is 96.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In odd-numbered steps the number that is smallest units digit among those not yet fixed goes to the left end; in even-numbered steps the number that is largest units digit among those not yet fixed goes to the right end. The units digit is used for comparison. Input: 26 39 70 13 72 78 95. What is Step IV?",
+   "options": [
+    "39 78 26 13 95 72 70",
+    "26 39 78 95 13 72 70",
+    "70 72 26 13 95 78 39",
+    "13 70 26 72 39 78 95"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Input: 26 39 70 13 72 78 95 | Step I: 70 26 39 13 72 78 95 | Step II: 70 26 13 72 78 95 39 | Step III: 70 72 26 13 78 95 39 | Step IV: 70 72 26 13 95 78 39. So Step IV is 70 72 26 13 95 78 39.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers step by step. Rule: In odd-numbered steps the number that is largest digit-sum among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest digit-sum among those not yet fixed goes to the right end. The digit-sum is used for comparison. Input: 21 16 38 33 86 36 20 91. What is Step IV?",
+   "options": [
+    "86 38 16 33 36 91 21 20",
+    "86 38 21 16 33 36 91 20",
+    "16 20 21 38 33 36 86 91",
+    "16 20 21 33 38 86 36 91"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: 21 16 38 33 86 36 20 91 | Step I: 86 21 16 38 33 36 20 91 | Step II: 86 21 16 38 33 36 91 20 | Step III: 86 38 21 16 33 36 91 20 | Step IV: 86 38 16 33 36 91 21 20. So Step IV is 86 38 16 33 36 91 21 20.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "number-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

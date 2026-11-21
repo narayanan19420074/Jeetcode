@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "Two runners start together from the same point on a circular track and run in the same direction. One takes 18 minutes per round and the other 27 minutes. After how many minutes will they next be together at the starting point?",
+   "options": [
+    "54",
+    "9",
+    "72",
+    "486"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They meet at the start again after LCM(18, 27) = 54 minutes.",
+   "shortcut": "Meeting at the start = LCM of lap times.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three temple bells at Madurai ring at intervals of 24, 32 and 40 seconds. If they ring together at 6:00 am, after how many seconds will they next ring together?",
+   "options": [
+    "480",
+    "240",
+    "8",
+    "30720"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Next common ring after LCM(24, 32, 40) = 480 seconds.",
+   "shortcut": "Next simultaneous event = LCM of intervals.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three temple bells at Mysuru ring at intervals of 36, 48 and 60 seconds. If they ring together at 6:00 am, after how many seconds will they next ring together?",
+   "options": [
+    "720",
+    "103680",
+    "360",
+    "12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Next common ring after LCM(36, 48, 60) = 720 seconds.",
+   "shortcut": "Next simultaneous event = LCM of intervals.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two runners start together from the same point on a circular track and run in the same direction. One takes 16 minutes per round and the other 24 minutes. After how many minutes will they next be together at the starting point?",
+   "options": [
+    "8",
+    "48",
+    "384",
+    "64"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "They meet at the start again after LCM(16, 24) = 48 minutes.",
+   "shortcut": "Meeting at the start = LCM of lap times.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three alarms beep every 15, 20 and 25 minutes. If they beep together at 8:00 am, after how many minutes will they beep together again?",
+   "options": [
+    "300",
+    "600",
+    "60",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Required time = LCM(15, 20, 25) = 300 minutes.",
+   "shortcut": "LCM of the intervals.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three temple bells at Chennai ring at intervals of 14, 21 and 28 seconds. If they ring together at 6:00 am, after how many seconds will they next ring together?",
+   "options": [
+    "8232",
+    "84",
+    "7",
+    "42"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Next common ring after LCM(14, 21, 28) = 84 seconds.",
+   "shortcut": "Next simultaneous event = LCM of intervals.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three temple bells at Indore ring at intervals of 30, 45 and 75 seconds. If they ring together at 6:00 am, after how many seconds will they next ring together?",
+   "options": [
+    "15",
+    "225",
+    "450",
+    "101250"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Next common ring after LCM(30, 45, 75) = 450 seconds.",
+   "shortcut": "Next simultaneous event = LCM of intervals.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three bells toll at intervals of 21, 35 and 42 seconds and all toll together at the start. How many times will they toll together in 30 minutes, counting the one at the start?",
+   "options": [
+    "11",
+    "9",
+    "8",
+    "10"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 210 s. In 1800 s they coincide 8 more times, plus the start: 9.",
+   "shortcut": "Count = (total time ÷ LCM) + 1 with the start included.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three bells toll at intervals of 25, 40 and 50 seconds and all toll together at the start. How many times will they toll together in 45 minutes, counting the one at the start?",
+   "options": [
+    "13",
+    "14",
+    "16",
+    "15"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 200 s. In 2700 s they coincide 13 more times, plus the start: 14.",
+   "shortcut": "Count = (total time ÷ LCM) + 1 with the start included.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three lights flash every 60, 90 and 150 seconds. They flash together at 9:00 am. At what time will they next flash together?",
+   "options": [
+    "9:07 am",
+    "9:15 am",
+    "9:14 am",
+    "9:16 am"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(60, 90, 150) = 900 s = 15 min. 9:00 am + 15 min = 9:15 am.",
+   "shortcut": "Convert the LCM to minutes and add.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three lights flash every 120, 180 and 240 seconds. They flash together at 8:45 am. At what time will they next flash together?",
+   "options": [
+    "8:57 am",
+    "8:51 am",
+    "8:56 am",
+    "8:58 am"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM(120, 180, 240) = 720 s = 12 min. 8:45 am + 12 min = 8:57 am.",
+   "shortcut": "Convert the LCM to minutes and add.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three joggers start together from the same point on a circular park track and run in the same direction. They complete a round in 4, 6 and 9 minutes respectively. How many rounds will the slowest jogger have completed when all three are first together at the start again?",
+   "options": [
+    "5",
+    "9",
+    "4",
+    "36"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All together after LCM(4, 6, 9) = 36 min. Slowest takes 9 min per round → 36/9 = 4 rounds.",
+   "shortcut": "Rounds = LCM ÷ own lap time.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three joggers start together from the same point on a circular park track and run in the same direction. They complete a round in 9, 15 and 18 minutes respectively. How many rounds will the slowest jogger have completed when all three are first together at the start again?",
+   "options": [
+    "6",
+    "90",
+    "5",
+    "10"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All together after LCM(9, 15, 18) = 90 min. Slowest takes 18 min per round → 90/18 = 5 rounds.",
+   "shortcut": "Rounds = LCM ÷ own lap time.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three bells toll at intervals of 20, 30 and 45 seconds and all toll together at the start. How many times will they toll together in 120 minutes, counting the one at the start?",
+   "options": [
+    "42",
+    "41",
+    "43",
+    "40"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 180 s. In 7200 s they coincide 40 more times, plus the start: 41.",
+   "shortcut": "Count = (total time ÷ LCM) + 1 with the start included.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three joggers start together from the same point on a circular park track and run in the same direction. They complete a round in 6, 8 and 10 minutes respectively. How many rounds will the slowest jogger have completed when all three are first together at the start again?",
+   "options": [
+    "13",
+    "120",
+    "12",
+    "20"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All together after LCM(6, 8, 10) = 120 min. Slowest takes 10 min per round → 120/10 = 12 rounds.",
+   "shortcut": "Rounds = LCM ÷ own lap time.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three bells toll at intervals of 10, 14 and 35 seconds and all toll together at the start. How many times will they toll together in 45 minutes, counting the one at the start?",
+   "options": [
+    "40",
+    "38",
+    "41",
+    "39"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = 70 s. In 2700 s they coincide 38 more times, plus the start: 39.",
+   "shortcut": "Count = (total time ÷ LCM) + 1 with the start included.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three joggers start together from the same point on a circular park track and run in the same direction. They complete a round in 10, 12 and 16 minutes respectively. How many rounds will the slowest jogger have completed when all three are first together at the start again?",
+   "options": [
+    "240",
+    "16",
+    "24",
+    "15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "All together after LCM(10, 12, 16) = 240 min. Slowest takes 16 min per round → 240/16 = 15 rounds.",
+   "shortcut": "Rounds = LCM ÷ own lap time.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three bells toll at intervals of 18, 27 and 45 seconds and all toll together at the start. How many times will they toll together in 120 minutes, counting the one at the start?",
+   "options": [
+    "27",
+    "26",
+    "28",
+    "29"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM = 270 s. In 7200 s they coincide 26 more times, plus the start: 27.",
+   "shortcut": "Count = (total time ÷ LCM) + 1 with the start included.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three signals change after 40, 60 and 90 seconds. They change together at 7:00:00 am. How many times will they change together after 7:00:00 am up to and including 10:00:00 am (do not count the 7:00:00 am instant)?",
+   "options": [
+    "29",
+    "30",
+    "31",
+    "270"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 360 s. Interval of 3 h = 10800 s. Number of coincidences after the start = floor(10800/360) = 30.",
+   "shortcut": "floor(total / LCM), then add 1 only if the start is counted.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two machines at a plant in Coimbatore ring a buzzer every 40 minutes and every 56 minutes respectively. They last rang together at 9:00 am on Monday. After how many hours will they ring together for the third time from then (excluding the 9:00 am ring)?",
+   "options": [
+    "56/3 hours",
+    "14 hours",
+    "14/3 hours",
+    "28/3 hours"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM(40, 56) = 280 min. Third coincidence after 3 × 280 = 840 min = 14 hours.",
+   "shortcut": "n-th coincidence after start = n × LCM.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three signals change after 20, 30 and 50 seconds. They change together at 7:00:00 am. How many times will they change together after 7:00:00 am up to and including 8:00:00 am (do not count the 7:00:00 am instant)?",
+   "options": [
+    "13",
+    "11",
+    "12",
+    "180"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM = 300 s. Interval of 1 h = 3600 s. Number of coincidences after the start = floor(3600/300) = 12.",
+   "shortcut": "floor(total / LCM), then add 1 only if the start is counted.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two machines at a plant in Coimbatore ring a buzzer every 45 minutes and every 60 minutes respectively. They last rang together at 9:00 am on Monday. After how many hours will they ring together for the third time from then (excluding the 9:00 am ring)?",
+   "options": [
+    "9 hours",
+    "6 hours",
+    "12 hours",
+    "3 hours"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM(45, 60) = 180 min. Third coincidence after 3 × 180 = 540 min = 9 hours.",
+   "shortcut": "n-th coincidence after start = n × LCM.",
+   "subPattern": "bells-lights-timing-lcm",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

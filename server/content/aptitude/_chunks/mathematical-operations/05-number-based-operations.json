@@ -1,0 +1,676 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In a puzzle, 4 means 8; 6 means 4; 2 means 9; 9 means 2 and 8 means 6. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 − 9 − 6 ?",
+   "options": [
+    "3",
+    "-1",
+    "5",
+    "-13"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each number by its meaning: 9 − 2 − 4. BODMAS: 9 − 2 − 4 → 7 − 4 → 3. Answer = 3.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 5 means 6; 8 means 9; 9 means 7; 6 means 5 and 7 means 8. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 6 + 5 − 9 ?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 5 + 6 − 7. BODMAS: 5 + 6 − 7 → 11 − 7 → 4. Answer = 4.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 1 means 7; 7 means 5; 8 means 4; 4 means 8 and 5 means 1. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 7 − 5 − 4 ?",
+   "options": [
+    "-11",
+    "-7",
+    "-2",
+    "-4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 5 − 1 − 8. BODMAS: 5 − 1 − 8 → 4 − 8 → -4. Answer = -4.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 2 means 5; 4 means 9; 5 means 2; 9 means 7 and 7 means 4. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 − 9 − 5 ?",
+   "options": [
+    "-4",
+    "-11",
+    "1",
+    "-12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each number by its meaning: 5 − 7 − 2. BODMAS: 5 − 7 − 2 → -2 − 2 → -4. Answer = -4.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 6 means 2; 3 means 1; 1 means 4; 4 means 3 and 2 means 6. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 − 3 − 6 ?",
+   "options": [
+    "2",
+    "3",
+    "5",
+    "-7"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 6 − 1 − 2. BODMAS: 6 − 1 − 2 → 5 − 2 → 3. Answer = 3.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 5 means 6; 2 means 8; 8 means 5; 6 means 4 and 4 means 2. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 5 × 8 − 2 ?",
+   "options": [
+    "18",
+    "38",
+    "19",
+    "22"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 6 × 5 − 8. BODMAS: 6 × 5 − 8 → 30 − 8 → 22. Answer = 22.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 4 means 2; 7 means 5; 2 means 9; 5 means 4 and 9 means 7. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 9 − 5 + 4 ?",
+   "options": [
+    "10",
+    "8",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 7 − 4 + 2. BODMAS: 7 − 4 + 2 → 3 + 2 → 5. Answer = 5.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 6 means 8; 3 means 7; 8 means 9; 7 means 6 and 9 means 3. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 6 + 9 × 8 ?",
+   "options": [
+    "99",
+    "35",
+    "78",
+    "40"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 8 + 3 × 9. BODMAS: 8 + 3 × 9 → 8 + 27 → 35. Answer = 35.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 5 means 9; 8 means 7; 3 means 8; 4 means 5; 9 means 4 and 7 means 3. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 5 × 4 − 7 × 3 ?",
+   "options": [
+    "21",
+    "23",
+    "336",
+    "-1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each number by its meaning: 9 × 5 − 3 × 8. BODMAS: 9 × 5 − 3 × 8 → 45 − 3 × 8 → 45 − 24 → 21. Answer = 21.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 2 means 9; 1 means 4; 7 means 1; 4 means 2; 5 means 7 and 9 means 5. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 + 9 − 7 + 1 ?",
+   "options": [
+    "14",
+    "17",
+    "16",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 9 + 5 − 1 + 4. BODMAS: 9 + 5 − 1 + 4 → 14 − 1 + 4 → 13 + 4 → 17. Answer = 17.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 9 means 3; 4 means 1; 2 means 9; 1 means 4; 3 means 6 and 6 means 2. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 9 × 6 + 2 − 4 ?",
+   "options": [
+    "52",
+    "11",
+    "13",
+    "14"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 3 × 2 + 9 − 1. BODMAS: 3 × 2 + 9 − 1 → 6 + 9 − 1 → 15 − 1 → 14. Answer = 14.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a puzzle, 1 means 6; 4 means 7; 7 means 5; 6 means 8; 8 means 1 and 5 means 4. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 8 − 4 + 5 × 7 ?",
+   "options": [
+    "-10",
+    "11",
+    "14",
+    "10"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each number by its meaning: 1 − 7 + 4 × 5. BODMAS: 1 − 7 + 4 × 5 → 1 − 7 + 20 → -6 + 20 → 14. Answer = 14.",
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 11, 10, 99; Row 2: 11, 2, 11; Row 3: 9, 8, 63; Row 4: 9, 4, ?  Find the missing number.",
+   "options": [
+    "25",
+    "513",
+    "27",
+    "713"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In Row 1, 11 and 10 give 99, which matches a×b − a. The rule holds for Rows 2 and 3 as well. For Row 4: a×b − a with a = 9, b = 4 gives 27.",
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 12, 6, 48; Row 2: 12, 5, 37; Row 3: 12, 11, 133; Row 4: 9, 7, ?  Find the missing number.",
+   "options": [
+    "4",
+    "216",
+    "14",
+    "58"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In Row 1, 12 and 6 give 48, which matches a + b². The rule holds for Rows 2 and 3 as well. For Row 4: a + b² with a = 9, b = 7 gives 58.",
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 8, 7, 49; Row 2: 9, 8, 64; Row 3: 12, 7, 77; Row 4: 12, 8, ?  Find the missing number.",
+   "options": [
+    "1720",
+    "400",
+    "2096",
+    "88"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In Row 1, 8 and 7 give 49, which matches a×b − b. The rule holds for Rows 2 and 3 as well. For Row 4: a×b − b with a = 12, b = 8 gives 88.",
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 12, 7, 60; Row 2: 12, 11, 12; Row 3: 9, 1, 72; Row 4: 9, 7, ?  Find the missing number.",
+   "options": [
+    "680",
+    "70",
+    "18",
+    "263"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In Row 1, 12 and 7 give 60, which matches (a − b) × a. The rule holds for Rows 2 and 3 as well. For Row 4: (a − b) × a with a = 9, b = 7 gives 18.",
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 8, 7, 10; Row 2: 8, 4, 16; Row 3: 11, 10, 13; Row 4: 6, 5, ?  Find the missing number.",
+   "options": [
+    "19",
+    "41",
+    "35",
+    "8"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In Row 1, 8 and 7 give 10, which matches 3a − 2b. The rule holds for Rows 2 and 3 as well. For Row 4: 3a − 2b with a = 6, b = 5 gives 8.",
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Reverse the digits of 46 and add the result to 46. What is the sum?",
+   "options": [
+    "99",
+    "18",
+    "92",
+    "110"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Reverse of 46 is 64. 46 + 64 = 110.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the difference between 732 and the number obtained by reversing its digits.",
+   "options": [
+    "504",
+    "396",
+    "495",
+    "969"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Reverse of 732 is 237. 732 − 237 = 495.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find (product of the digits) − (sum of the digits) of the number 9465.",
+   "options": [
+    "24",
+    "1104",
+    "1056",
+    "1080"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Digits of 9465: [9, 4, 6, 5]. Product = 1080, sum = 24. 1080 − 24 = 1056.",
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Using each digit of 3714 exactly once, form the largest and the smallest possible numbers. What is their difference?",
+   "options": [
+    "2367",
+    "4995",
+    "3717",
+    "6084"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Largest = 7431, smallest = 1347. Difference = 7431 − 1347 = 6084.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of the squares of the digits of 409, minus the sum of the digits of 409?",
+   "options": [
+    "110",
+    "96",
+    "80",
+    "84"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Squares: [16, 0, 81] sum to 97. Digit sum = 13. Difference = 84.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine swaps the first two digits of a 3-digit number in one step, and swaps the last two digits in another. If both results are formed from 271 separately and added, what is the sum?",
+   "options": [
+    "443",
+    "938",
+    "504",
+    "542"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Swap first two digits: 721. Swap last two digits: 217. Sum = 721 + 217 = 938.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the sum of the digits of 7852 is subtracted from 7852, the result is divisible by 9. What is the result?",
+   "options": [
+    "7830",
+    "7808",
+    "7874",
+    "7821"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Digit sum = 22. 7852 − 22 = 7830, and 7830 ÷ 9 = 870, confirming divisibility.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The two-digit number 70 is multiplied by the number formed by reversing its digits. What is the product?",
+   "options": [
+    "4900",
+    "483",
+    "560",
+    "490"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Reverse of 70 is 7. 70 × 7 = 490.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "From 927, subtract the product of its digits. What is left?",
+   "options": [
+    "909",
+    "1053",
+    "801",
+    "810"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Product of digits = 9×2×7 = 126. 927 − 126 = 801.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine works on a number as follows: if the number is even, it divides it by 2; if odd, it multiplies by 3 and adds 1. It stops on reaching 1. Starting with 7, how many operations does it perform?",
+   "options": [
+    "18",
+    "14",
+    "17",
+    "16"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Path: 7 → 22 → 11 → 34 → 17 → 52 → 26 → 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1. That is 16 operations.",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A rule is applied to a number repeatedly: if the number is odd, multiply by 5 and add 6; if it is even, just add 6. Starting from 6, what is the number after 6 applications?",
+   "options": [
+    "36",
+    "83",
+    "48",
+    "42"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sequence: 6 → 12 → 18 → 24 → 30 → 36 → 42. After 6 applications: 42.",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Repeatedly replace a number by the sum of its digits until a single digit remains. Starting from 7492, what single-digit number is finally obtained?",
+   "options": [
+    "4",
+    "6",
+    "3",
+    "8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chain: 7492 → 22 → 4. Final digit = 4 (equal to 7492 mod 9, with 9 for multiples of 9).",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A calculator key 'F' turns any number y into 3y + 1. If you start with 4 and press F 4 times, what number is shown?",
+   "options": [
+    "728",
+    "367",
+    "364",
+    "363"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After each press: 4 → 13 → 40 → 121 → 364. After 4 presses: 364.",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 28, 12, 20, 5 separately, what is the sum of the results?",
+   "options": [
+    "130",
+    "79",
+    "77",
+    "81"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Results: 28 → 31 (not prime), 12 → 15 (not prime), 20 → 23 (not prime), 5 → 10 (prime). Sum = 79.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 29, 17, 18, 20 separately, what is the sum of the results?",
+   "options": [
+    "135",
+    "136",
+    "96",
+    "168"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Results: 29 → 58 (prime), 17 → 34 (prime), 18 → 21 (not prime), 20 → 23 (not prime). Sum = 136.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 21, 20, 2, 26 separately, what is the sum of the results?",
+   "options": [
+    "138",
+    "83",
+    "80",
+    "78"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Results: 21 → 24 (not prime), 20 → 23 (not prime), 2 → 4 (prime), 26 → 29 (not prime). Sum = 80.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 7, 18, 13, 23 separately, what is the sum of the results?",
+   "options": [
+    "109",
+    "122",
+    "73",
+    "107"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Results: 7 → 14 (prime), 18 → 21 (not prime), 13 → 26 (prime), 23 → 46 (prime). Sum = 107.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 2, 23, 21, 20 separately, what is the sum of the results?",
+   "options": [
+    "97",
+    "78",
+    "132",
+    "93"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Results: 2 → 4 (prime), 23 → 46 (prime), 21 → 24 (not prime), 20 → 23 (not prime). Sum = 97.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is increased by 1 and any other number is halved if even, otherwise decreased by 1. If this is done to each of 23, 21, 17, 18 separately, what is the sum of the results?",
+   "options": [
+    "83",
+    "67",
+    "71",
+    "74"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Results: 23 → 24 (prime), 21 → 20 (not prime), 17 → 18 (prime), 18 → 9 (not prime). Sum = 71.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A prime number is squared and any other number is decreased by 2. If this is done to each of 2, 10, 21, 8 separately, what is the sum of the results?",
+   "options": [
+    "33",
+    "36",
+    "37",
+    "609"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Results: 2 → 4 (prime), 10 → 8 (not prime), 21 → 19 (not prime), 8 → 6 (not prime). Sum = 37.",
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime.",
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

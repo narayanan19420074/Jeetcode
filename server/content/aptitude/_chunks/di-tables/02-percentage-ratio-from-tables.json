@@ -1,0 +1,1630 @@
+{
+ "sets": [
+  {
+   "id": "di-tables-s012",
+   "type": "table",
+   "title": "Annual revenue of 4 companies (₹ crore)",
+   "table": {
+    "columns": [
+     "Financial year",
+     "Kaveri Foods",
+     "Himalaya Herbals",
+     "Ganga Papers",
+     "Nilgiri Tea Co."
+    ],
+    "rows": [
+     [
+      "2019-20",
+      2240,
+      1320,
+      1230,
+      990
+     ],
+     [
+      "2020-21",
+      1570,
+      1070,
+      1110,
+      940
+     ],
+     [
+      "2021-22",
+      2200,
+      970,
+      1150,
+      980
+     ],
+     [
+      "2022-23",
+      2310,
+      900,
+      960,
+      740
+     ],
+     [
+      "2023-24",
+      2180,
+      1370,
+      1170,
+      1060
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s013",
+   "type": "table",
+   "title": "Student enrolment in 5 departments of an engineering college",
+   "table": {
+    "columns": [
+     "Year",
+     "Chemical",
+     "EEE",
+     "CSE",
+     "ECE",
+     "Civil"
+    ],
+    "rows": [
+     [
+      "2019",
+      140,
+      210,
+      75,
+      145,
+      165
+     ],
+     [
+      "2020",
+      140,
+      180,
+      115,
+      120,
+      150
+     ],
+     [
+      "2021",
+      175,
+      160,
+      70,
+      110,
+      95
+     ],
+     [
+      "2022",
+      135,
+      200,
+      85,
+      105,
+      110
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s014",
+   "type": "table",
+   "title": "Electricity consumption of 5 cities (in million units)",
+   "table": {
+    "columns": [
+     "Month",
+     "Nagpur",
+     "Jaipur",
+     "Madurai",
+     "Indore",
+     "Coimbatore"
+    ],
+    "rows": [
+     [
+      "April",
+      800,
+      510,
+      240,
+      210,
+      870
+     ],
+     [
+      "May",
+      880,
+      460,
+      220,
+      230,
+      810
+     ],
+     [
+      "June",
+      500,
+      670,
+      160,
+      180,
+      1140
+     ],
+     [
+      "July",
+      690,
+      690,
+      240,
+      200,
+      750
+     ],
+     [
+      "August",
+      710,
+      490,
+      220,
+      180,
+      880
+     ],
+     [
+      "September",
+      730,
+      520,
+      250,
+      220,
+      730
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s015",
+   "type": "table",
+   "title": "Export value of 5 items from India (₹ crore)",
+   "table": {
+    "columns": [
+     "Item",
+     "2018",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023"
+    ],
+    "rows": [
+     [
+      "Gems and jewellery",
+      1630,
+      1760,
+      1750,
+      1640,
+      1890,
+      1890
+     ],
+     [
+      "Spices",
+      2430,
+      2160,
+      2450,
+      2440,
+      2570,
+      2610
+     ],
+     [
+      "Basmati rice",
+      2980,
+      1770,
+      2560,
+      2410,
+      2180,
+      1850
+     ],
+     [
+      "Tea",
+      2230,
+      2520,
+      3090,
+      3310,
+      3370,
+      2520
+     ],
+     [
+      "Leather goods",
+      2650,
+      3470,
+      3250,
+      4290,
+      4370,
+      4040
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s016",
+   "type": "table",
+   "title": "Runs scored by 5 Ranji Trophy teams in a season",
+   "table": {
+    "columns": [
+     "Team",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2020-21"
+    ],
+    "rows": [
+     [
+      "Delhi",
+      3840,
+      2390,
+      2750,
+      3820
+     ],
+     [
+      "Tamil Nadu",
+      3080,
+      3810,
+      3170,
+      2220
+     ],
+     [
+      "Vidarbha",
+      3500,
+      2730,
+      2920,
+      4750
+     ],
+     [
+      "Karnataka",
+      4830,
+      4640,
+      5100,
+      4690
+     ],
+     [
+      "Saurashtra",
+      1460,
+      1980,
+      1840,
+      1550
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s017",
+   "type": "table",
+   "title": "Monthly two-wheeler sales of 6 brands (in thousand units)",
+   "table": {
+    "columns": [
+     "Month",
+     "Chakra",
+     "Vayu",
+     "Suraj",
+     "Tejas",
+     "Veera",
+     "Arjun"
+    ],
+    "rows": [
+     [
+      "April",
+      54,
+      180,
+      182,
+      116,
+      300,
+      66
+     ],
+     [
+      "May",
+      56,
+      250,
+      182,
+      140,
+      294,
+      54
+     ],
+     [
+      "June",
+      78,
+      178,
+      152,
+      142,
+      244,
+      82
+     ],
+     [
+      "July",
+      60,
+      234,
+      124,
+      82,
+      288,
+      90
+     ],
+     [
+      "August",
+      60,
+      206,
+      204,
+      124,
+      246,
+      88
+     ],
+     [
+      "September",
+      70,
+      176,
+      154,
+      96,
+      282,
+      70
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s018",
+   "type": "table",
+   "title": "Passengers carried by 4 railway zones (in lakh)",
+   "table": {
+    "columns": [
+     "Zone",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023"
+    ],
+    "rows": [
+     [
+      "Southern",
+      770,
+      720,
+      740,
+      760,
+      770
+     ],
+     [
+      "South Central",
+      570,
+      530,
+      600,
+      480,
+      720
+     ],
+     [
+      "Eastern",
+      940,
+      660,
+      630,
+      550,
+      950
+     ],
+     [
+      "North Eastern",
+      640,
+      770,
+      450,
+      480,
+      600
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s019",
+   "type": "table",
+   "title": "Tea production of 5 states (in million kg)",
+   "table": {
+    "columns": [
+     "State",
+     "2019",
+     "2020",
+     "2021",
+     "2022"
+    ],
+    "rows": [
+     [
+      "Tamil Nadu",
+      570,
+      350,
+      455,
+      510
+     ],
+     [
+      "Kerala",
+      290,
+      210,
+      230,
+      305
+     ],
+     [
+      "West Bengal",
+      510,
+      520,
+      395,
+      500
+     ],
+     [
+      "Tripura",
+      485,
+      475,
+      485,
+      535
+     ],
+     [
+      "Karnataka",
+      245,
+      265,
+      240,
+      270
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s020",
+   "type": "table",
+   "title": "Books sold by a publisher in 4 cities",
+   "table": {
+    "columns": [
+     "City",
+     "January",
+     "February",
+     "March",
+     "April",
+     "May",
+     "June"
+    ],
+    "rows": [
+     [
+      "Trichy",
+      1030,
+      910,
+      960,
+      940,
+      650,
+      860
+     ],
+     [
+      "Vellore",
+      980,
+      1080,
+      1250,
+      1140,
+      1220,
+      1160
+     ],
+     [
+      "Salem",
+      810,
+      730,
+      810,
+      800,
+      480,
+      740
+     ],
+     [
+      "Coimbatore",
+      1300,
+      1570,
+      2070,
+      1260,
+      1570,
+      1230
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s021",
+   "type": "table",
+   "title": "Deposits collected by 5 bank branches (₹ crore)",
+   "table": {
+    "columns": [
+     "Year",
+     "Velachery",
+     "Guindy",
+     "Anna Nagar",
+     "Tambaram",
+     "Adyar"
+    ],
+    "rows": [
+     [
+      "2021",
+      600,
+      160,
+      130,
+      785,
+      570
+     ],
+     [
+      "2022",
+      505,
+      180,
+      140,
+      535,
+      585
+     ],
+     [
+      "2023",
+      620,
+      145,
+      95,
+      585,
+      785
+     ],
+     [
+      "2024",
+      580,
+      220,
+      115,
+      890,
+      745
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s022",
+   "type": "table",
+   "title": "Outpatients treated in 4 hospitals (in hundreds)",
+   "table": {
+    "columns": [
+     "Hospital",
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May"
+    ],
+    "rows": [
+     [
+      "Dhanvantari",
+      86,
+      88,
+      84,
+      82,
+      88
+     ],
+     [
+      "Apollo Care",
+      262,
+      232,
+      272,
+      312,
+      184
+     ],
+     [
+      "Lifeline",
+      324,
+      274,
+      322,
+      192,
+      218
+     ],
+     [
+      "Sanjeevani",
+      280,
+      276,
+      268,
+      192,
+      210
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "The revenue for Nilgiri Tea Co. in 2020-21 is what percent of the revenue for Ganga Papers in 2020-21? (Answer to the nearest integer.)",
+   "options": [
+    "118%",
+    "15%",
+    "46%",
+    "85%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percent = 940 / 1110 × 100 = 84.68 ≈ 85%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s012"
+  },
+  {
+   "questionText": "In 2021-22, the combined revenue of Ganga Papers and Nilgiri Tea Co. forms what percent of the total revenue of all companies that financial year? (One decimal place.)",
+   "options": [
+    "67.2%",
+    "21.7%",
+    "59.8%",
+    "40.2%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ganga Papers + Nilgiri Tea Co. = 1150 + 980 = 2130. Total for 2021-22 = 5,300. Percent = 2130/5,300 × 100 = 40.2%.",
+   "shortcut": "Add the two numerator cells first; the denominator is the full column total.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s012"
+  },
+  {
+   "questionText": "By what percent is the revenue for Kaveri Foods in 2021-22 more than that for Nilgiri Tea Co. in 2021-22? (Correct to one decimal place.)",
+   "options": [
+    "55.5%",
+    "224.5%",
+    "38.4%",
+    "124.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = 2200 - 980 = 1220. Percent more = 1220 / 980 × 100 = 124.5% (base is the smaller quantity, Nilgiri Tea Co.).",
+   "shortcut": "'More than B' means B is the base: (A - B) / B × 100.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s012"
+  },
+  {
+   "questionText": "What percent of the total revenue of Nilgiri Tea Co. over all financial years was recorded in its best financial year? (Correct to one decimal place.)",
+   "options": [
+    "29.0%",
+    "22.5%",
+    "15.7%",
+    "112.5%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Best financial year for Nilgiri Tea Co. is 2023-24 with 1060. Total = 4,710. Percent = 1060/4,710 × 100 = 22.5%.",
+   "shortcut": "Find the row maximum, then divide by the row total.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s012"
+  },
+  {
+   "questionText": "What percent of the total revenue of all companies in 2022-23 is contributed by Himalaya Herbals? (Correct to one decimal place.)",
+   "options": [
+    "22.4%",
+    "18.3%",
+    "73.3%",
+    "21.3%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for 2022-23 = 4,910. Share of Himalaya Herbals = 900 / 4,910 × 100 = 18.3%.",
+   "shortcut": "Total first, then divide: the denominator is the column total, not another single cell.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s012"
+  },
+  {
+   "questionText": "In 2021, the combined enrolment of ECE and EEE forms what percent of the total enrolment of all departments that year? (One decimal place.)",
+   "options": [
+    "79.4%",
+    "44.3%",
+    "18.0%",
+    "55.7%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "ECE + EEE = 110 + 160 = 270. Total for 2021 = 610. Percent = 270/610 × 100 = 44.3%.",
+   "shortcut": "Add the two numerator cells first; the denominator is the full column total.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s013"
+  },
+  {
+   "questionText": "By what percent is the enrolment for EEE in 2020 more than the enrolment for Civil in 2022? (Correct to one decimal place.)",
+   "options": [
+    "38.9%",
+    "163.6%",
+    "48.3%",
+    "63.6%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "EEE in 2020 = 180; Civil in 2022 = 110. Percent more = (180-110)/110 × 100 = 63.6%.",
+   "shortcut": "Base is the quantity that follows 'than'.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s013"
+  },
+  {
+   "questionText": "The total enrolment of EEE over all years is what percent of the total enrolment of Chemical over all years? (Nearest integer.)",
+   "options": [
+    "79%",
+    "27%",
+    "127%",
+    "28%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total of EEE = 750; total of Chemical = 590. Percent = 750 / 590 × 100 = 127.12 ≈ 127%.",
+   "shortcut": "Round the two totals to convenient numbers before dividing; the options are usually well separated.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s013"
+  },
+  {
+   "questionText": "What percent of the total enrolment of all departments in 2020 is contributed by CSE? (Correct to one decimal place.)",
+   "options": [
+    "16.3%",
+    "19.5%",
+    "81.6%",
+    "12.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total for 2020 = 705. Share of CSE = 115 / 705 × 100 = 16.3%.",
+   "shortcut": "Total first, then divide: the denominator is the column total, not another single cell.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s013"
+  },
+  {
+   "questionText": "What percent of the grand total enrolment (all departments, all years) is the total for ECE? (Correct to one decimal place.)",
+   "options": [
+    "21.8%",
+    "17.9%",
+    "89.4%",
+    "27.4%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Grand total = 2,685; total for ECE = 480. Share = 480 / 2,685 × 100 = 17.9%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s013"
+  },
+  {
+   "questionText": "What percent of the grand total electricity consumption (all cities, all months) is the total for Indore? (Correct to one decimal place.)",
+   "options": [
+    "8.6%",
+    "39.7%",
+    "17.1%",
+    "7.9%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Grand total = 15,380; total for Indore = 1,220. Share = 1,220 / 15,380 × 100 = 7.9%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s014"
+  },
+  {
+   "questionText": "What is the ratio of the combined electricity consumption of Indore and Coimbatore in June to the combined electricity consumption of Madurai and Nagpur in September, in simplest form?",
+   "options": [
+    "49 : 66",
+    "66 : 49",
+    "18 : 25",
+    "115 : 49"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Indore + Coimbatore in June = 180 + 1140 = 1320. Madurai + Nagpur in September = 250 + 730 = 980. Ratio = 1320 : 980 = 66 : 49.",
+   "shortcut": "Note that the two groups come from different periods; read each from its own column.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s014"
+  },
+  {
+   "questionText": "What is the ratio of the electricity consumption for Madurai to that for Coimbatore in September, in its simplest form?",
+   "options": [
+    "73 : 25",
+    "25 : 98",
+    "98 : 73",
+    "25 : 73"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "250 : 730; dividing both by 10 gives 25 : 73.",
+   "shortcut": "Cancel the common factor (try 5 and 10 first, since most table values are multiples of them).",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s014"
+  },
+  {
+   "questionText": "What is the ratio of the combined electricity consumption of all cities in September to the combined electricity consumption of all cities in July, in simplest form?",
+   "options": [
+    "257 : 245",
+    "245 : 257",
+    "12 : 257",
+    "73 : 69"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for September = 2,450; total for July = 2,570. Ratio = 2,450 : 2,570 = 245 : 257.",
+   "shortcut": "Cancel by 5 or 10 first; then check for further common factors.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s014"
+  },
+  {
+   "questionText": "By what percent is the electricity consumption for Nagpur in April more than that for Madurai in April? (Correct to one decimal place.)",
+   "options": [
+    "233.3%",
+    "70.0%",
+    "333.3%",
+    "53.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Difference = 800 - 240 = 560. Percent more = 560 / 240 × 100 = 233.3% (base is the smaller quantity, Madurai).",
+   "shortcut": "'More than B' means B is the base: (A - B) / B × 100.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s014"
+  },
+  {
+   "questionText": "The export value for Spices in 2023 is what percent of the export value for Leather goods in 2023? (Answer to the nearest integer.)",
+   "options": [
+    "155%",
+    "65%",
+    "35%",
+    "39%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percent = 2610 / 4040 × 100 = 64.60 ≈ 65%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s015"
+  },
+  {
+   "questionText": "What percent of the total export value of all items in 2020 is contributed by Tea? (Correct to one decimal place.)",
+   "options": [
+    "23.6%",
+    "30.9%",
+    "117.9%",
+    "21.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total for 2020 = 13,100. Share of Tea = 3090 / 13,100 × 100 = 23.6%.",
+   "shortcut": "Total first, then divide: the denominator is the column total, not another single cell.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s015"
+  },
+  {
+   "questionText": "What percent of the grand total export value (all items, all years) is the total for Gems and jewellery? (Correct to one decimal place.)",
+   "options": [
+    "15.6%",
+    "67.6%",
+    "13.5%",
+    "15.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Grand total = 78,080; total for Gems and jewellery = 10,560. Share = 10,560 / 78,080 × 100 = 13.5%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s015"
+  },
+  {
+   "questionText": "By what percent is the export value for Tea in 2022 more than the export value for Basmati rice in 2023? (Correct to one decimal place.)",
+   "options": [
+    "45.1%",
+    "182.2%",
+    "82.2%",
+    "58.2%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tea in 2022 = 3370; Basmati rice in 2023 = 1850. Percent more = (3370-1850)/1850 × 100 = 82.2%.",
+   "shortcut": "Base is the quantity that follows 'than'.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s015"
+  },
+  {
+   "questionText": "The total export value of Leather goods over all years is what percent of the total export value of Spices over all years? (Nearest integer.)",
+   "options": [
+    "151%",
+    "66%",
+    "51%",
+    "28%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total of Leather goods = 22,070; total of Spices = 14,660. Percent = 22,070 / 14,660 × 100 = 150.55 ≈ 151%.",
+   "shortcut": "Round the two totals to convenient numbers before dividing; the options are usually well separated.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s015"
+  },
+  {
+   "questionText": "What percent of the grand total runs scored (all teams, all seasons) is the total for Karnataka? (Correct to one decimal place.)",
+   "options": [
+    "42.0%",
+    "148.0%",
+    "29.6%",
+    "25.7%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Grand total = 65,070; total for Karnataka = 19,260. Share = 19,260 / 65,070 × 100 = 29.6%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s016"
+  },
+  {
+   "questionText": "What is the ratio of the combined runs scored of all teams in 2018-19 to the combined runs scored of all teams in 2019-20, in simplest form?",
+   "options": [
+    "1578 : 1555",
+    "1555 : 1578",
+    "23 : 1578",
+    "239 : 275"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for 2018-19 = 15,550; total for 2019-20 = 15,780. Ratio = 15,550 : 15,780 = 1555 : 1578.",
+   "shortcut": "Cancel by 5 or 10 first; then check for further common factors.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s016"
+  },
+  {
+   "questionText": "In 2020-21, the combined runs scored of Tamil Nadu and Saurashtra forms what percent of the total runs scored of all teams that season? (One decimal place.)",
+   "options": [
+    "28.4%",
+    "22.1%",
+    "13.0%",
+    "77.9%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tamil Nadu + Saurashtra = 2220 + 1550 = 3770. Total for 2020-21 = 17,030. Percent = 3770/17,030 × 100 = 22.1%.",
+   "shortcut": "Add the two numerator cells first; the denominator is the full column total.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s016"
+  },
+  {
+   "questionText": "By what percent is the runs scored for Karnataka in 2018-19 more than the runs scored for Tamil Nadu in 2019-20? (Correct to one decimal place.)",
+   "options": [
+    "46.4%",
+    "31.7%",
+    "146.4%",
+    "37.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Karnataka in 2018-19 = 4640; Tamil Nadu in 2019-20 = 3170. Percent more = (4640-3170)/3170 × 100 = 46.4%.",
+   "shortcut": "Base is the quantity that follows 'than'.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s016"
+  },
+  {
+   "questionText": "What is the ratio of the runs scored for Saurashtra to that for Karnataka in 2018-19, in its simplest form?",
+   "options": [
+    "232 : 99",
+    "99 : 331",
+    "99 : 232",
+    "331 : 232"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "1980 : 4640; dividing both by 20 gives 99 : 232.",
+   "shortcut": "Cancel the common factor (try 5 and 10 first, since most table values are multiples of them).",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s016"
+  },
+  {
+   "questionText": "What percent of the total sales of all brands in April is contributed by Suraj? (Correct to one decimal place.)",
+   "options": [
+    "25.4%",
+    "121.6%",
+    "18.5%",
+    "20.3%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total for April = 898. Share of Suraj = 182 / 898 × 100 = 20.3%.",
+   "shortcut": "Total first, then divide: the denominator is the column total, not another single cell.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s017"
+  },
+  {
+   "questionText": "By what percent is the sales for Suraj in July more than that for Chakra in July? (Correct to one decimal place.)",
+   "options": [
+    "51.6%",
+    "106.7%",
+    "206.7%",
+    "34.8%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Difference = 124 - 60 = 64. Percent more = 64 / 60 × 100 = 106.7% (base is the smaller quantity, Chakra).",
+   "shortcut": "'More than B' means B is the base: (A - B) / B × 100.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s017"
+  },
+  {
+   "questionText": "In May, the combined sales of Veera and Tejas forms what percent of the total sales of all brands that month? (One decimal place.)",
+   "options": [
+    "80.1%",
+    "44.5%",
+    "30.1%",
+    "55.5%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Veera + Tejas = 294 + 140 = 434. Total for May = 976. Percent = 434/976 × 100 = 44.5%.",
+   "shortcut": "Add the two numerator cells first; the denominator is the full column total.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s017"
+  },
+  {
+   "questionText": "What percent of the grand total sales (all brands, all months) is the total for Chakra? (Correct to one decimal place.)",
+   "options": [
+    "7.5%",
+    "42.0%",
+    "7.0%",
+    "16.6%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Grand total = 5,404; total for Chakra = 378. Share = 378 / 5,404 × 100 = 7.0%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s017"
+  },
+  {
+   "questionText": "What percent of the total sales of Veera over all months was recorded in its best month? (Correct to one decimal place.)",
+   "options": [
+    "22.2%",
+    "14.8%",
+    "108.8%",
+    "18.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Best month for Veera is April with 300. Total = 1,654. Percent = 300/1,654 × 100 = 18.1%.",
+   "shortcut": "Find the row maximum, then divide by the row total.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s017"
+  },
+  {
+   "questionText": "What is the ratio of the combined passenger traffic of all zones in 2020 to the combined passenger traffic of all zones in 2023, in simplest form?",
+   "options": [
+    "76 : 67",
+    "9 : 76",
+    "72 : 77",
+    "67 : 76"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total for 2020 = 2,680; total for 2023 = 3,040. Ratio = 2,680 : 3,040 = 67 : 76.",
+   "shortcut": "Cancel by 5 or 10 first; then check for further common factors.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s018"
+  },
+  {
+   "questionText": "What percent of the total passenger traffic of all zones in 2019 is contributed by North Eastern? (Correct to one decimal place.)",
+   "options": [
+    "28.1%",
+    "21.9%",
+    "87.7%",
+    "22.1%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for 2019 = 2,920. Share of North Eastern = 640 / 2,920 × 100 = 21.9%.",
+   "shortcut": "Total first, then divide: the denominator is the column total, not another single cell.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s018"
+  },
+  {
+   "questionText": "The passenger traffic for North Eastern in 2020 is what percent of the passenger traffic for Eastern in 2020? (Answer to the nearest integer.)",
+   "options": [
+    "86%",
+    "117%",
+    "17%",
+    "54%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percent = 770 / 660 × 100 = 116.67 ≈ 117%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s018"
+  },
+  {
+   "questionText": "By what percent is the passenger traffic for North Eastern in 2020 more than that for Southern in 2020? (Correct to one decimal place.)",
+   "options": [
+    "6.5%",
+    "106.9%",
+    "3.4%",
+    "6.9%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = 770 - 720 = 50. Percent more = 50 / 720 × 100 = 6.9% (base is the smaller quantity, Southern).",
+   "shortcut": "'More than B' means B is the base: (A - B) / B × 100.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s018"
+  },
+  {
+   "questionText": "What percent of the total passenger traffic of South Central over all years was recorded in its best year? (Correct to one decimal place.)",
+   "options": [
+    "24.8%",
+    "33.0%",
+    "16.6%",
+    "124.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Best year for South Central is 2023 with 720. Total = 2,900. Percent = 720/2,900 × 100 = 24.8%.",
+   "shortcut": "Find the row maximum, then divide by the row total.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s018"
+  },
+  {
+   "questionText": "By what percent is the tea production for West Bengal in 2021 more than that for Kerala in 2021? (Correct to one decimal place.)",
+   "options": [
+    "41.8%",
+    "171.7%",
+    "71.7%",
+    "26.4%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference = 395 - 230 = 165. Percent more = 165 / 230 × 100 = 71.7% (base is the smaller quantity, Kerala).",
+   "shortcut": "'More than B' means B is the base: (A - B) / B × 100.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s019"
+  },
+  {
+   "questionText": "The tea production for West Bengal in 2019 is what percent of the tea production for Tripura in 2019? (Answer to the nearest integer.)",
+   "options": [
+    "95%",
+    "105%",
+    "5%",
+    "51%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percent = 510 / 485 × 100 = 105.15 ≈ 105%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s019"
+  },
+  {
+   "questionText": "In 2021, the combined tea production of Karnataka and Tripura forms what percent of the total tea production of all states that year? (One decimal place.)",
+   "options": [
+    "67.1%",
+    "13.3%",
+    "59.8%",
+    "40.2%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Karnataka + Tripura = 240 + 485 = 725. Total for 2021 = 1,805. Percent = 725/1,805 × 100 = 40.2%.",
+   "shortcut": "Add the two numerator cells first; the denominator is the full column total.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s019"
+  },
+  {
+   "questionText": "By what percent is the tea production for Tamil Nadu in 2022 more than the tea production for Tripura in 2019? (Correct to one decimal place.)",
+   "options": [
+    "4.9%",
+    "105.2%",
+    "5.0%",
+    "5.2%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tamil Nadu in 2022 = 510; Tripura in 2019 = 485. Percent more = (510-485)/485 × 100 = 5.2%.",
+   "shortcut": "Base is the quantity that follows 'than'.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s019"
+  },
+  {
+   "questionText": "The total tea production of Tamil Nadu over all years is what percent of the total tea production of West Bengal over all years? (Nearest integer.)",
+   "options": [
+    "98%",
+    "102%",
+    "2%",
+    "24%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total of Tamil Nadu = 1,885; total of West Bengal = 1,925. Percent = 1,885 / 1,925 × 100 = 97.92 ≈ 98%.",
+   "shortcut": "Round the two totals to convenient numbers before dividing; the options are usually well separated.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s019"
+  },
+  {
+   "questionText": "The total book sales of Vellore over all months is what percent of the total book sales of Salem over all months? (Nearest integer.)",
+   "options": [
+    "64%",
+    "156%",
+    "56%",
+    "27%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total of Vellore = 6,830; total of Salem = 4,370. Percent = 6,830 / 4,370 × 100 = 156.29 ≈ 156%.",
+   "shortcut": "Round the two totals to convenient numbers before dividing; the options are usually well separated.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s020"
+  },
+  {
+   "questionText": "What percent of the total book sales of Vellore over all months was recorded in its best month? (Correct to one decimal place.)",
+   "options": [
+    "22.4%",
+    "14.3%",
+    "18.3%",
+    "109.8%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Best month for Vellore is March with 1250. Total = 6,830. Percent = 1250/6,830 × 100 = 18.3%.",
+   "shortcut": "Find the row maximum, then divide by the row total.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s020"
+  },
+  {
+   "questionText": "By what percent is the book sales for Coimbatore in April more than that for Salem in April? (Correct to one decimal place.)",
+   "options": [
+    "57.5%",
+    "36.5%",
+    "157.5%",
+    "22.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Difference = 1260 - 800 = 460. Percent more = 460 / 800 × 100 = 57.5% (base is the smaller quantity, Salem).",
+   "shortcut": "'More than B' means B is the base: (A - B) / B × 100.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s020"
+  },
+  {
+   "questionText": "What is the ratio of the book sales for Salem to that for Trichy in March, in its simplest form?",
+   "options": [
+    "27 : 32",
+    "32 : 27",
+    "27 : 59",
+    "59 : 32"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "810 : 960; dividing both by 30 gives 27 : 32.",
+   "shortcut": "Cancel the common factor (try 5 and 10 first, since most table values are multiples of them).",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s020"
+  },
+  {
+   "questionText": "The book sales for Trichy in May is what percent of the book sales for Salem in May? (Answer to the nearest integer.)",
+   "options": [
+    "135%",
+    "74%",
+    "35%",
+    "58%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percent = 650 / 480 × 100 = 135.42 ≈ 135%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s020"
+  },
+  {
+   "questionText": "What percent of the grand total deposits (all branches, all years) was recorded in 2021 and 2024 together? (Correct to one decimal place.)",
+   "options": [
+    "53.5%",
+    "114.9%",
+    "25.0%",
+    "46.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2021 total = 2,245; 2024 total = 2,550; together 4,795. Grand total = 8,970. Percent = 53.5%.",
+   "shortcut": "Add the two column totals, then divide by the grand total once.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s021"
+  },
+  {
+   "questionText": "The deposits for Anna Nagar in 2022 is what percent of the deposits for Tambaram in 2022? (Answer to the nearest integer.)",
+   "options": [
+    "26%",
+    "382%",
+    "74%",
+    "21%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percent = 140 / 535 × 100 = 26.17 ≈ 26%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s021"
+  },
+  {
+   "questionText": "What percent of the grand total deposits (all branches, all years) is the total for Adyar? (Correct to one decimal place.)",
+   "options": [
+    "42.7%",
+    "149.7%",
+    "25.0%",
+    "29.9%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Grand total = 8,970; total for Adyar = 2,685. Share = 2,685 / 8,970 × 100 = 29.9%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s021"
+  },
+  {
+   "questionText": "The total deposits of Anna Nagar over all years is what percent of the total deposits of Velachery over all years? (Nearest integer.)",
+   "options": [
+    "21%",
+    "480%",
+    "79%",
+    "5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total of Anna Nagar = 480; total of Velachery = 2,305. Percent = 480 / 2,305 × 100 = 20.82 ≈ 21%.",
+   "shortcut": "Round the two totals to convenient numbers before dividing; the options are usually well separated.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s021"
+  },
+  {
+   "questionText": "In 2021, the combined deposits of Anna Nagar and Velachery forms what percent of the total deposits of all branches that year? (One decimal place.)",
+   "options": [
+    "48.2%",
+    "5.8%",
+    "67.5%",
+    "32.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Anna Nagar + Velachery = 130 + 600 = 730. Total for 2021 = 2,245. Percent = 730/2,245 × 100 = 32.5%.",
+   "shortcut": "Add the two numerator cells first; the denominator is the full column total.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s021"
+  },
+  {
+   "questionText": "What percent of the total outpatient count of Sanjeevani over all months was recorded in its best month? (Correct to one decimal place.)",
+   "options": [
+    "29.6%",
+    "22.8%",
+    "15.7%",
+    "114.2%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Best month for Sanjeevani is Jan with 280. Total = 1,226. Percent = 280/1,226 × 100 = 22.8%.",
+   "shortcut": "Find the row maximum, then divide by the row total.",
+   "difficulty": "hard",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s022"
+  },
+  {
+   "questionText": "The outpatient count for Dhanvantari in Jan is what percent of the outpatient count for Sanjeevani in Jan? (Answer to the nearest integer.)",
+   "options": [
+    "326%",
+    "69%",
+    "31%",
+    "23%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Percent = 86 / 280 × 100 = 30.71 ≈ 31%.",
+   "shortcut": "The base is the value after 'of'; put it in the denominator.",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s022"
+  },
+  {
+   "questionText": "What percent of the grand total outpatient count (all hospitals, all months) is the total for Apollo Care? (Correct to one decimal place.)",
+   "options": [
+    "42.3%",
+    "118.9%",
+    "22.4%",
+    "29.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Grand total = 4,246; total for Apollo Care = 1,262. Share = 1,262 / 4,246 × 100 = 29.7%.",
+   "shortcut": "Sanity check: with n entities of similar size each share is near 100/n percent.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s022"
+  },
+  {
+   "questionText": "What is the ratio of the combined outpatient count of all hospitals in May to the combined outpatient count of all hospitals in Mar, in simplest form?",
+   "options": [
+    "473 : 350",
+    "123 : 473",
+    "350 : 473",
+    "22 : 21"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total for May = 700; total for Mar = 946. Ratio = 700 : 946 = 350 : 473.",
+   "shortcut": "Cancel by 5 or 10 first; then check for further common factors.",
+   "difficulty": "medium",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s022"
+  },
+  {
+   "questionText": "What is the ratio of the outpatient count for Dhanvantari to that for Lifeline in Apr, in its simplest form?",
+   "options": [
+    "96 : 41",
+    "41 : 137",
+    "137 : 96",
+    "41 : 96"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "82 : 192; dividing both by 2 gives 41 : 96.",
+   "shortcut": "Cancel the common factor (try 5 and 10 first, since most table values are multiples of them).",
+   "difficulty": "easy",
+   "subPattern": "percentage-ratio-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s022"
+  }
+ ]
+}

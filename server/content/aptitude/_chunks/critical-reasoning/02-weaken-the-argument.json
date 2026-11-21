@@ -1,0 +1,476 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: After a new flyover opened at Koyambedu, the bus travel time on a Chennai route fell from 50 to 35 minutes. Officials say the flyover is responsible. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The flyover has four lanes.",
+    "Some commuters still prefer autorickshaws on that route.",
+    "In the same period the bus company removed 30% of the stops on that route.",
+    "The flyover was built by a Chennai-based firm."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A different change in the same period (fewer stops) could by itself shorten the journey, so it offers an alternative cause and weakens the claim.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for another factor that could produce the same effect."
+  },
+  {
+   "questionText": "Read the following: In a Jaipur school, students who bring home-cooked tiffin score higher than those who eat in the canteen. The principal says home food improves scores. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Tiffin boxes are checked by the class teacher.",
+    "Canteen food is cheaper than home-cooked food.",
+    "Students who bring tiffin mostly come from families that can afford private tuition.",
+    "The school has 1,200 students."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Private tuition is a rival explanation for the higher scores, so the link to home food is weakened.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A mobile phone company released an advertisement featuring a famous cricketer, and its sales rose 25% that quarter. The company's marketing head says the advertisement caused the rise. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The advertisement was shown on four TV channels.",
+    "The cricketer has endorsed other products too.",
+    "The cricket World Cup began in that quarter, and sales of all phone brands rose by about 25%.",
+    "The company's phones come in three colours."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If every brand's sales rose by the same amount, the common cause (the tournament period) explains the rise and the advertisement is not needed.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: At a Hyderabad hospital, heart-surgery patients who attend yoga classes recover faster. The hospital argues that yoga speeds up recovery. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The yoga classes are held in the morning.",
+    "Yoga is taught by a certified instructor.",
+    "Only patients who are already recovering well are physically able to attend the classes.",
+    "The hospital performs about 300 heart surgeries a year."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "This reverses the cause and effect: good recovery allows attendance, not the other way round.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Check whether the effect might actually be the cause."
+  },
+  {
+   "questionText": "Read the following: Enrolment in Bihar's government schools rose by 12% over three years. The state claims that its mid-day meal scheme was responsible for the rise. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The meal scheme serves rice and dal.",
+    "The scheme is funded jointly by the Centre and the state.",
+    "The number of school-age children in Bihar rose by 14% over the same three years.",
+    "Some private schools also offer meals."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the school-age population grew faster than enrolment, the rise in enrolment is explained by demographics and does not need the scheme.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: To reduce power cuts, Uttarakhand plans to build several small hydroelectric plants, assuming they will generate steady power through the year. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The plants will be built over three years.",
+    "Hydropower does not release carbon dioxide.",
+    "Most of the rivers where the plants are proposed run almost dry for five months of the year.",
+    "The state has many tourists in summer."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The plan depends on year-round water; if the rivers run dry for five months, steady output is undermined.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: An online coaching app says that 90% of its subscribers cleared the exam, which it says proves its quality. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The app has been downloaded by lakhs of students.",
+    "The app charges a monthly fee.",
+    "The 90% figure counts only subscribers who completed the entire course, and about 70% of subscribers drop out before the end.",
+    "Its lectures are recorded in Hindi and English."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Counting only those who completed the course ignores most subscribers, so the success rate is inflated by selection.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In a pilot village, drip irrigation cut water use by 40%. The cooperative concludes it will cut water use by about 40% in all its villages. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The pilot lasted one season.",
+    "Drip systems are made of plastic tubing.",
+    "The pilot village was chosen because its water losses under flood irrigation were unusually high compared with other villages.",
+    "The cooperative has 12 villages."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An atypical pilot site cannot be taken to represent other villages, so the expected saving elsewhere is likely lower.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A Kolkata sweet-shop owner says his rasgulla sales dropped because a rival shop opened nearby. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The rival shop sells many kinds of sweets.",
+    "The rival shop is on the same road.",
+    "His rasgulla sales had been falling steadily for two years before the rival shop opened.",
+    "The owner's shop opens at 8 am."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the decline began long before the rival came, the rival cannot be its cause.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A Delhi airline says that its on-time record of 92% shows how much it values passengers' time. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The airline operates 150 flights a day.",
+    "Its on-time record is published monthly.",
+    "The airline adds 30 minutes to the scheduled duration of every flight, so flights arrive 'on time' even if they are slow.",
+    "Some of its aircraft are leased."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Padding the schedule makes punctuality easy to achieve without saving passengers any time, so it undermines the inference.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Vimal argues that switching to an electric bike will save him ₹4,000 a month, as he now spends ₹5,000 monthly on petrol and charging would cost only ₹1,000. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Electric bikes are quieter than petrol bikes.",
+    "Charging takes about four hours.",
+    "The electric bike requires a monthly battery lease of ₹3,500.",
+    "Petrol prices change every day."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The lease cost cuts the actual saving to ₹500, so the conclusion is badly weakened.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The government claims that cashless payment at ration shops reduced corruption, since complaints about ration shops fell by 30%. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Cashless payment is done through a card.",
+    "Ration shops open at 9 am.",
+    "The complaint helpline which recorded these complaints was discontinued for part of the period.",
+    "The scheme was launched by the state food department."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the means of recording complaints was shut, fewer complaints may reflect fewer records rather than less corruption.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Since automatic doors were installed on some Mumbai local trains, deaths from falling off trains have fallen. A railway official says the doors save lives. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The doors close in about ten seconds.",
+    "Automatic doors cost several lakh rupees per coach.",
+    "The trains with automatic doors run only on air-conditioned services, where almost nobody travelled on footboards even earlier.",
+    "Mumbai local trains carry millions of passengers daily."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the risk was already negligible on those trains, the fall in deaths cannot be attributed to the doors.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A college hostel warden argues that exam stress causes students' hair fall, because hair fall complaints peak in exam months. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Students sleep less during exams.",
+    "The hostel has a gym.",
+    "Hair fall among students in this college peaks every year in the monsoon months, which also happen to be the exam months.",
+    "Complaints are made to the warden."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A seasonal factor (monsoon) offers an alternative explanation for the same pattern.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Researchers found that Indian districts with more mobile phones have higher female literacy. They conclude that mobile phones raise literacy. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Mobile phone ownership has grown rapidly in India.",
+    "Literacy is measured by census surveys.",
+    "Mobile towers were installed first in districts that already had high literacy and better roads.",
+    "Some districts have very few towers."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If phones arrived where literacy was already high, the cause could be the reverse or a common factor, so the claimed effect is undermined.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A tea company says that since its Assam tea has just won an international award, its exports will rise next year. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The award was announced in London.",
+    "The company was founded in 1950.",
+    "A 30% import duty on tea will take effect next month in its largest importing country.",
+    "Tea is picked mostly by hand."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A new heavy duty works directly against export growth and outweighs any boost from the award.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Kerala's literacy programme succeeded through a network of community libraries and volunteers. A minister says the same programme will succeed in Rajasthan. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The programme in Kerala began in 1989.",
+    "Rajasthan is larger than Kerala.",
+    "Rajasthan has almost no community libraries and few volunteer organisations.",
+    "Rajasthan has many tourists."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An analogy fails if the two cases differ in a feature on which the programme's success depended.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A school principal says smart boards raised the Class 8 mathematics average by 10 marks. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Smart boards were installed in June.",
+    "The smart boards have 75-inch screens.",
+    "Class 8 was also the only class to receive a new, highly experienced mathematics teacher that year.",
+    "The school has classes from 1 to 12."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An additional change for the same class (a new experienced teacher) offers another explanation for the gain.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Autorickshaw fares in a city have been raised by 20%. An owners' association says that its members' earnings will rise by 20%. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Autorickshaws run on CNG in the city.",
+    "The fare increase was announced in January.",
+    "Higher fares will push many customers to app-based cabs, so the number of autorickshaw rides will drop.",
+    "Meters are checked every year."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Earnings depend on both fare and number of rides; if rides fall, earnings need not rise by 20%.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A poll of 1,000 people found that 60% favour an odd-even vehicle rule in Delhi. A newspaper says that most Delhi residents favour the rule. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The poll was conducted in September.",
+    "Respondents were interviewed in person.",
+    "All the respondents were recruited at Metro stations.",
+    "The poll was commissioned by a newspaper."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Metro users do not drive much, so they are likely to favour the restriction; the sample is biased and does not represent the residents.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for a biased sample behind a generalisation."
+  },
+  {
+   "questionText": "Read the following: A cement company says its new brand is the strongest because eight out of ten engineers it surveyed preferred it. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The survey was done by telephone.",
+    "Cement is sold in 50 kg bags.",
+    "All ten engineers surveyed were employees of the company.",
+    "The brand was launched last year."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Employees of the company are not independent judges, so the survey gives biased support.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A school says that chess-club members have high mathematics scores, and concludes that playing chess improves mathematics. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The chess club has 40 members.",
+    "Chess tournaments are held twice a year.",
+    "Children are admitted to the chess club only after they clear a school-wide mathematics aptitude test.",
+    "Mathematics classes are held in the morning."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If selection into the club depends on mathematical ability, the high scores come first and are not caused by chess.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The metro rail corporation says that its off-peak discount raised off-peak ridership by 18%, and therefore reduced peak-hour crowding. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The discount is 10% on the normal fare.",
+    "Off-peak hours are 11 am to 4 pm.",
+    "Most of the extra off-peak riders earlier travelled by bus at off-peak times, and peak-hour ridership did not change.",
+    "The metro has smart-card readers at all stations."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Peak crowding falls only if peak riders shift; if the new off-peak riders were never peak riders, peak crowding stays unchanged.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A biscuit maker claims its sugar-free biscuits are healthier than its regular ones. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Sugar-free biscuits are sold in green packs.",
+    "Regular biscuits have been sold for 40 years.",
+    "To compensate for the sugar, the sugar-free biscuits contain more refined flour and fat and have more calories than regular ones.",
+    "Some customers prefer sweet biscuits."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Removing sugar does not make a product healthier if it is replaced by other less healthy ingredients; the extra calories weaken the claim.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: After a highway link to a temple town was built, the average household income in the town rose by 20%. A planner says the tourism the highway brought raised incomes. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "The highway is 80 km long.",
+    "Temples are open from 5 am to 9 pm.",
+    "The whole rise came from a large factory opened in the town in the same year, whose employees are all residents.",
+    "The town's population is about 40,000."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the income gain is fully explained by the factory, tourism is not needed to explain it.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Researchers found that Indian cities with more tree cover have lower summer temperatures. They conclude that planting more trees in a city will lower its summer temperature. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    "Tree planting drives are held in July.",
+    "Trees give shade.",
+    "Cities with more tree cover are mostly located on the coast or in hills, where summers are cooler regardless of trees.",
+    "The temperatures were recorded by weather stations."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Geography is a common cause of both tree cover and cooler weather, so the correlation does not show that planting trees would cool a city.",
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

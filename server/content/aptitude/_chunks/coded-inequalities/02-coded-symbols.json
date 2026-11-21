@@ -1,0 +1,919 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In the following question, the symbols #, @, *, ^, ★ are used with the meanings given: 'P @ Q' means 'P is not smaller than Q'; 'P ^ Q' means 'P is not greater than Q'; 'P ★ Q' means 'P is equal to Q'; 'P * Q' means 'P is smaller than Q'; 'P # Q' means 'P is greater than Q'. Statements: B @ J # P; S * N ★ J. Conclusions: I. S ^ J  II. J @ S",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: B ≥ J > P; S < N = J.\nI. J = N > S gives S ≤ J: true.\nII. J = N > S gives J ≥ S: true.\nHence: Both I and II follow.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ~, ★, %, #, ^ are used with the meanings given: 'P # Q' means 'P is not greater than Q'; 'P ~ Q' means 'P is greater than Q'; 'P ^ Q' means 'P is equal to Q'; 'P % Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'. Statements: X % A % F # J; K ~ P ~ J. Conclusions: I. F ^ A  II. X # A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: X < A < F ≤ J; K > P > J.\nI. F > A is already fixed, so F = A is false.\nII. A > X gives X ≤ A: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ^, ★, !, &, % are used with the meanings given: 'P ! Q' means 'P is smaller than Q'; 'P % Q' means 'P is equal to Q'; 'P ★ Q' means 'P is not smaller than Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P ^ Q' means 'P is greater than Q'. Statements: J ! T ! Y & L ! D. Conclusions: I. Y & L  II. D % T",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: J < T < Y ≤ L < D.\nI. L ≥ Y gives Y ≤ L: true.\nII. D > L ≥ Y > T is already fixed, so D = T is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, @, ^, &, ~ are used with the meanings given: 'P @ Q' means 'P is either greater than or equal to Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P ^ Q' means 'P is smaller than Q'; 'P % Q' means 'P is greater than Q'; 'P ~ Q' means 'P is equal to Q'. Statements: R ^ L ^ X; S & T & R. Conclusions: I. R @ L  II. T ^ S",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: R < L < X; S ≤ T ≤ R.\nI. L > R is already fixed, so R ≥ L is false.\nII. T ≥ S is already fixed, so T < S is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ^, ★, ©, ~, % are used with the meanings given: 'P © Q' means 'P is smaller than Q'; 'P ~ Q' means 'P is not greater than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'; 'P % Q' means 'P is equal to Q'; 'P ^ Q' means 'P is greater than Q'. Statements: P ^ D ^ R ^ M; V ~ R © G. Conclusions: I. M © R  II. P ★ R",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: P > D > R > M; V ≤ R < G.\nI. R > M gives M < R: true.\nII. P > D > R gives P ≥ R: true.\nHence: Both I and II follow.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols &, #, ©, ★, ~ are used with the meanings given: 'P ~ Q' means 'P is equal to Q'; 'P © Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is not greater than Q'; 'P & Q' means 'P is greater than Q'; 'P # Q' means 'P is not smaller than Q'. Statements: W & C & Y; E © T ★ C. Conclusions: I. T # Y  II. W # T",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: W > C > Y; E < T ≤ C.\nI. No chain settles T against Y (it can be =, >, <), so T ≥ Y is not certain.\nII. W > C ≥ T gives W ≥ T: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ★, ^, % are used with the meanings given: 'P ★ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is either smaller than or equal to Q'; 'P % Q' means 'P is equal to Q'; 'P ! Q' means 'P is not smaller than Q'; 'P @ Q' means 'P is greater than Q'. Statements: K ! G @ T @ B @ N. Conclusions: I. N % T  II. T @ K",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: K ≥ G > T > B > N.\nI. T > B > N is already fixed, so N = T is false.\nII. K ≥ G > T is already fixed, so T > K is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ©, &, @, %, ! are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P © Q' means 'P is greater than Q'; 'P % Q' means 'P is either smaller than or equal to Q'; 'P & Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is equal to Q'. Statements: X % H @ Y % Z @ A. Conclusions: I. A © Y  II. H % Z",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: X ≤ H < Y ≤ Z < A.\nI. A > Z ≥ Y gives A > Y: true.\nII. Z ≥ Y > H gives H ≤ Z: true.\nHence: Both I and II follow.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ~, ^, ★ are used with the meanings given: 'P ~ Q' means 'P is smaller than Q'; 'P @ Q' means 'P is greater than Q'; 'P ! Q' means 'P is not smaller than Q'; 'P ★ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is not greater than Q'. Statements: V ~ C ^ Y. Conclusions: I. V @ Y  II. Y ! C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: V < C ≤ Y.\nI. Y ≥ C > V is already fixed, so V > Y is false.\nII. Y ≥ C gives Y ≥ C: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ^, !, &, ★, * are used with the meanings given: 'P & Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is greater than Q'; 'P ★ Q' means 'P is not greater than Q'; 'P * Q' means 'P is equal to Q'; 'P ! Q' means 'P is not smaller than Q'. Statements: N ! P * L ^ D ^ E. Conclusions: I. E & L  II. D ^ N",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: N ≥ P = L > D > E.\nI. L > D > E gives E < L: true.\nII. N ≥ P = L > D is already fixed, so D > N is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, !, @, ©, ^ are used with the meanings given: 'P $ Q' means 'P is greater than Q'; 'P © Q' means 'P is either smaller than or equal to Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P @ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is equal to Q'. Statements: J @ U @ V. Conclusions: I. U @ V  II. J © V",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: J < U < V.\nI. V > U gives U < V: true.\nII. V > U > J gives J ≤ V: true.\nHence: Both I and II follow.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, $, *, !, # are used with the meanings given: 'P * Q' means 'P is smaller than Q'; 'P ! Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is equal to Q'; 'P % Q' means 'P is greater than Q'; 'P $ Q' means 'P is either greater than or equal to Q'. Statements: D % U % C. Conclusions: I. D * C  II. C % U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: D > U > C.\nI. D > U > C is already fixed, so D < C is false.\nII. U > C is already fixed, so C > U is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ~, *, #, @, & are used with the meanings given: 'P # Q' means 'P is smaller than Q'; 'P @ Q' means 'P is not greater than Q'; 'P * Q' means 'P is not smaller than Q'; 'P & Q' means 'P is equal to Q'; 'P ~ Q' means 'P is greater than Q'. Statements: J ~ N # W; U @ L # J. Conclusions: I. W & U  II. N & U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: J > N < W; U ≤ L < J.\nI. No chain settles W against U (it can be =, >, <), so W = U is not certain.\nII. No chain settles N against U (it can be =, >, <), so N = U is not certain.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, *, ^, ©, ! are used with the meanings given: 'P © Q' means 'P is not greater than Q'; 'P $ Q' means 'P is greater than Q'; 'P ! Q' means 'P is equal to Q'; 'P ^ Q' means 'P is smaller than Q'; 'P * Q' means 'P is not smaller than Q'. Statements: H ^ P ^ Y © X; C ^ H ^ W. Conclusions: I. P © Y  II. Y ^ C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: H < P < Y ≤ X; C < H < W.\nI. Y > P gives P ≤ Y: true.\nII. Y > P > H > C is already fixed, so Y < C is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols @, ★, *, #, ~ are used with the meanings given: 'P ★ Q' means 'P is not smaller than Q'; 'P # Q' means 'P is not greater than Q'; 'P @ Q' means 'P is greater than Q'; 'P * Q' means 'P is smaller than Q'; 'P ~ Q' means 'P is equal to Q'. Statements: E * C * P ~ D # X. Conclusions: I. C ★ E  II. C ★ D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: E < C < P = D ≤ X.\nI. C > E gives C ≥ E: true.\nII. D = P > C is already fixed, so C ≥ D is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols *, @, ~, &, # are used with the meanings given: 'P & Q' means 'P is either smaller than or equal to Q'; 'P * Q' means 'P is greater than Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P # Q' means 'P is equal to Q'; 'P ~ Q' means 'P is smaller than Q'. Statements: V ~ H & G; V & S & X. Conclusions: I. H # S  II. G ~ X",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: V < H ≤ G; V ≤ S ≤ X.\nI. No chain settles H against S (it can be =, >, <), so H = S is not certain.\nII. No chain settles G against X (it can be =, >, <), so G < X is not certain.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ~, %, @, ^, © are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is not greater than Q'; 'P © Q' means 'P is equal to Q'; 'P % Q' means 'P is either greater than or equal to Q'; 'P ~ Q' means 'P is greater than Q'. Statements: U ^ K @ W @ E; U @ L ^ J. Conclusions: I. J @ L  II. K % L",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: U ≤ K < W < E; U < L ≤ J.\nI. J ≥ L is already fixed, so J < L is false.\nII. No chain settles K against L (it can be =, >, <), so K ≥ L is not certain.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols !, @, ©, &, ^ are used with the meanings given: 'P & Q' means 'P is not greater than Q'; 'P © Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is equal to Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is greater than Q'. Statements: C @ E ! Z @ M. Conclusions: I. C © M  II. Z @ M",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: C ≥ E > Z ≥ M.\nI. C ≥ E > Z ≥ M is already fixed, so C < M is false.\nII. Z ≥ M gives Z ≥ M: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ©, &, @, #, % are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P & Q' means 'P is either greater than or equal to Q'; 'P © Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'. Statements: P @ Y @ B @ R; R & H & W. Conclusions: I. P © B  II. Y @ R",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: P < Y < B < R; R ≥ H ≥ W.\nI. B > Y > P is already fixed, so P > B is false.\nII. R > B > Y gives Y < R: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols #, ★, !, &, © are used with the meanings given: 'P ★ Q' means 'P is not smaller than Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P ! Q' means 'P is smaller than Q'; 'P © Q' means 'P is equal to Q'; 'P # Q' means 'P is greater than Q'. Statements: N ! S ! W & F & X. Conclusions: I. N & W  II. X ! W",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: N < S < W ≤ F ≤ X.\nI. W > S > N gives N ≤ W: true.\nII. X ≥ F ≥ W is already fixed, so X < W is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, ★, !, &, * are used with the meanings given: 'P ★ Q' means 'P is either greater than or equal to Q'; 'P $ Q' means 'P is greater than Q'; 'P * Q' means 'P is equal to Q'; 'P & Q' means 'P is not greater than Q'; 'P ! Q' means 'P is smaller than Q'. Statements: J ! P * E; P $ T $ M. Conclusions: I. J & M  II. J $ M",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: J < P = E; P > T > M.\nI. No chain settles J against M (it can be =, >, <), so J ≤ M is not certain.\nII. No chain settles J against M (it can be =, >, <), so J > M is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ^, #, $ are used with the meanings given: 'P ! Q' means 'P is either greater than or equal to Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is greater than Q'; 'P $ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is smaller than Q'. Statements: B # P ^ S; P ^ Z ^ X. Conclusions: I. Z ^ S  II. Z ! S",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: B ≤ P < S; P < Z < X.\nI. No chain settles Z against S (it can be =, >, <), so Z < S is not certain.\nII. No chain settles Z against S (it can be =, >, <), so Z ≥ S is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols &, ★, %, ©, # are used with the meanings given: 'P © Q' means 'P is not greater than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'; 'P % Q' means 'P is smaller than Q'; 'P & Q' means 'P is greater than Q'; 'P # Q' means 'P is equal to Q'. Statements: F # G & A & Z. Conclusions: I. G % Z  II. Z & F  III. F % A. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: F = G > A > Z.\nI. G > A > Z is already fixed, so G < Z is false.\nII. F = G > A > Z is already fixed, so Z > F is false.\nIII. F = G > A is already fixed, so F < A is false.\nCount = 0: none of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ^, &, ★ are used with the meanings given: 'P ^ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is greater than Q'; 'P ★ Q' means 'P is equal to Q'. Statements: L ! E @ A ! H ! U. Conclusions: I. U ^ E  II. A @ H  III. A ★ E. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: L ≥ E > A ≥ H ≥ U.\nI. E > A ≥ H ≥ U gives U < E: true.\nII. No chain settles A against H (it can be =, >), so A > H is not certain.\nIII. E > A is already fixed, so A = E is false.\nCount = 1: only one of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols @, ~, #, %, * are used with the meanings given: 'P * Q' means 'P is equal to Q'; 'P ~ Q' means 'P is not smaller than Q'; 'P % Q' means 'P is not greater than Q'; 'P # Q' means 'P is smaller than Q'; 'P @ Q' means 'P is greater than Q'. Statements: Y % T % H # S. Conclusions: I. T * Y  II. S ~ Y  III. S @ H. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: Y ≤ T ≤ H < S.\nI. No chain settles T against Y (it can be =, >), so T = Y is not certain.\nII. S > H ≥ T ≥ Y gives S ≥ Y: true.\nIII. S > H gives S > H: true.\nCount = 2: only two of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols !, ★, *, #, % are used with the meanings given: 'P % Q' means 'P is equal to Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P ! Q' means 'P is greater than Q'; 'P * Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'. Statements: Y ★ C ! E ! F. Conclusions: I. Y ! E  II. F * Y  III. F * C. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: Y ≥ C > E > F.\nI. Y ≥ C > E gives Y > E: true.\nII. Y ≥ C > E > F gives F < Y: true.\nIII. C > E > F gives F < C: true.\nCount = 3: all three of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols *, @, !, #, © are used with the meanings given: 'P * Q' means 'P is greater than Q'; 'P © Q' means 'P is equal to Q'; 'P ! Q' means 'P is smaller than Q'; 'P @ Q' means 'P is not smaller than Q'; 'P # Q' means 'P is either smaller than or equal to Q'. Statements: H @ F * P; H * Y @ G. Conclusions: I. F ! P  II. G # Y  III. F © H. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: H ≥ F > P; H > Y ≥ G.\nI. F > P is already fixed, so F < P is false.\nII. Y ≥ G gives G ≤ Y: true.\nIII. No chain settles F against H (it can be =, <), so F = H is not certain.\nCount = 1: only one of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols *, ©, &, ★, % are used with the meanings given: 'P ★ Q' means 'P is not greater than Q'; 'P & Q' means 'P is smaller than Q'; 'P * Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'; 'P © Q' means 'P is not smaller than Q'. Statements: R ★ X & S & L ★ A. Conclusions: I. S * R  II. X ★ A  III. L © A. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: R ≤ X < S < L ≤ A.\nI. S > X ≥ R gives S > R: true.\nII. A ≥ L > S > X gives X ≤ A: true.\nIII. No chain settles L against A (it can be =, <), so L ≥ A is not certain.\nCount = 2: only two of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, #, !, @, % are used with the meanings given: 'P ! Q' means 'P is smaller than Q'; 'P $ Q' means 'P is greater than Q'; 'P @ Q' means 'P is not greater than Q'; 'P % Q' means 'P is equal to Q'; 'P # Q' means 'P is either greater than or equal to Q'. Statements: S @ E @ P @ V. Conclusions: I. E # V  II. E $ V  III. P $ S. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: S ≤ E ≤ P ≤ V.\nI. No chain settles E against V (it can be =, <), so E ≥ V is not certain.\nII. V ≥ P ≥ E is already fixed, so E > V is false.\nIII. No chain settles P against S (it can be =, >), so P > S is not certain.\nCount = 0: none of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols *, #, @, ^, & are used with the meanings given: 'P * Q' means 'P is greater than Q'; 'P @ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is not greater than Q'; 'P # Q' means 'P is either greater than or equal to Q'; 'P & Q' means 'P is equal to Q'. Statements: F @ S @ W @ K & U. Conclusions: I. W ^ K  II. F @ W  III. W * F. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: F < S < W < K = U.\nI. K > W gives W ≤ K: true.\nII. W > S > F gives F < W: true.\nIII. W > S > F gives W > F: true.\nCount = 3: all three of them.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, ★, @, !, # are used with the meanings given: 'P # Q' means 'P is equal to Q'; 'P % Q' means 'P is greater than Q'; 'P ! Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is not smaller than Q'. In the expression 'T % N ★ P ? R # A', which symbol in place of ? makes 'R % P' definitely true?",
+   "options": [
+    "!",
+    "#",
+    "@",
+    "%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: T > N ≥ P ? R = A.\nWith < in place of ?: T > N ≥ P < R = A.\nR > P gives R > P: true.\nThe other symbols either break the chain or give a different relation between R and P.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ★, *, ©, @, ~ are used with the meanings given: 'P ★ Q' means 'P is greater than Q'; 'P ~ Q' means 'P is equal to Q'; 'P © Q' means 'P is smaller than Q'; 'P * Q' means 'P is either greater than or equal to Q'; 'P @ Q' means 'P is not greater than Q'. In the expression 'R ~ P ? A', which symbol in place of ? makes 'R ★ A' definitely true?",
+   "options": [
+    "★",
+    "©",
+    "@",
+    "~"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded expression: R = P ? A.\nWith > in place of ?: R = P > A.\nR = P > A gives R > A: true.\nThe other symbols either break the chain or give a different relation between R and A.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, ^, #, @, & are used with the meanings given: 'P & Q' means 'P is equal to Q'; 'P @ Q' means 'P is not greater than Q'; 'P # Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is either greater than or equal to Q'; 'P % Q' means 'P is greater than Q'. In the expression 'G @ T ? M', which symbol in place of ? makes 'M % G' definitely true?",
+   "options": [
+    "#",
+    "%",
+    "^",
+    "&"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded expression: G ≤ T ? M.\nWith < in place of ?: G ≤ T < M.\nM > T ≥ G gives M > G: true.\nThe other symbols either break the chain or give a different relation between M and G.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols &, *, %, ★, @ are used with the meanings given: 'P % Q' means 'P is smaller than Q'; 'P * Q' means 'P is either greater than or equal to Q'; 'P ★ Q' means 'P is either smaller than or equal to Q'; 'P & Q' means 'P is greater than Q'; 'P @ Q' means 'P is equal to Q'. In the expression 'N ★ C ? P', which symbol in place of ? makes 'N % P' definitely true?",
+   "options": [
+    "@",
+    "*",
+    "★",
+    "%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded expression: N ≤ C ? P.\nWith < in place of ?: N ≤ C < P.\nP > C ≥ N gives N < P: true.\nThe other symbols either break the chain or give a different relation between N and P.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ^, @, *, ★, # are used with the meanings given: 'P ^ Q' means 'P is greater than Q'; 'P * Q' means 'P is smaller than Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P ★ Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is equal to Q'. In the expression 'D * F * A ? Y', which symbol in place of ? makes 'Y * A' definitely true?",
+   "options": [
+    "@",
+    "^",
+    "*",
+    "★"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded expression: D < F < A ? Y.\nWith > in place of ?: D < F < A > Y.\nA > Y gives Y < A: true.\nThe other symbols either break the chain or give a different relation between Y and A.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ^, ~, ★, $, ! are used with the meanings given: 'P ★ Q' means 'P is smaller than Q'; 'P $ Q' means 'P is either smaller than or equal to Q'; 'P ~ Q' means 'P is not smaller than Q'; 'P ! Q' means 'P is equal to Q'; 'P ^ Q' means 'P is greater than Q'. In the expression 'C ? K ★ Y $ G', which symbol in place of ? makes 'C ^ K' definitely true?",
+   "options": [
+    "^",
+    "~",
+    "!",
+    "★"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded expression: C ? K < Y ≤ G.\nWith > in place of ?: C > K < Y ≤ G.\nC > K gives C > K: true.\nThe other symbols either break the chain or give a different relation between C and K.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols *, #, &, !, @ are used with the meanings given: 'P @ Q' means 'P is equal to Q'; 'P & Q' means 'P is smaller than Q'; 'P ! Q' means 'P is not greater than Q'; 'P # Q' means 'P is not smaller than Q'; 'P * Q' means 'P is greater than Q'. In the expression 'Z * V ? F', which symbol in place of ? makes 'F & V' definitely true?",
+   "options": [
+    "!",
+    "&",
+    "*",
+    "@"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: Z > V ? F.\nWith > in place of ?: Z > V > F.\nV > F gives F < V: true.\nThe other symbols either break the chain or give a different relation between F and V.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ★, ^, !, @, * are used with the meanings given: 'P @ Q' means 'P is not greater than Q'; 'P ! Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is greater than Q'; 'P * Q' means 'P is equal to Q'; 'P ^ Q' means 'P is not smaller than Q'. In the expression 'U ★ K ? D', which symbol in place of ? makes 'K ! D' definitely true?",
+   "options": [
+    "★",
+    "!",
+    "*",
+    "@"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded expression: U > K ? D.\nWith < in place of ?: U > K < D.\nD > K gives K < D: true.\nThe other symbols either break the chain or give a different relation between K and D.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols #, !, $, *, © are used with the meanings given: 'P © Q' means 'P is equal to Q'; 'P # Q' means 'P is greater than Q'; 'P $ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P * Q' means 'P is not greater than Q'. In the expression 'A # X ? T', which symbol in place of ? makes 'T # X' definitely true?",
+   "options": [
+    "#",
+    "$",
+    "!",
+    "©"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded expression: A > X ? T.\nWith < in place of ?: A > X < T.\nT > X gives T > X: true.\nThe other symbols either break the chain or give a different relation between T and X.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ★, $, *, @, % are used with the meanings given: 'P @ Q' means 'P is not greater than Q'; 'P $ Q' means 'P is not smaller than Q'; 'P % Q' means 'P is equal to Q'; 'P * Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is greater than Q'. In the expression 'E $ P ? L', which symbol in place of ? makes 'P ★ L' definitely true?",
+   "options": [
+    "@",
+    "%",
+    "★",
+    "*"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: E ≥ P ? L.\nWith > in place of ?: E ≥ P > L.\nP > L gives P > L: true.\nThe other symbols either break the chain or give a different relation between P and L.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, &, !, ^, @ are used with the meanings given: 'P & Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is smaller than Q'; 'P % Q' means 'P is greater than Q'; 'P @ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is either smaller than or equal to Q'. Statements: M & L % A; A ! V ^ Z. Which of the following is definitely true?",
+   "options": [
+    "A ^ Z",
+    "L ! V",
+    "M @ A",
+    "L % V"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: M ≥ L > A; A < V ≤ Z.\nZ ≥ V > A gives A ≤ Z: true.\nNo chain settles L against V (it can be =, >, <), so L < V is not certain.\nM ≥ L > A is already fixed, so M = A is false.\nNo chain settles L against V (it can be =, >, <), so L > V is not certain.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ~, ^, ©, !, @ are used with the meanings given: 'P ~ Q' means 'P is greater than Q'; 'P © Q' means 'P is smaller than Q'; 'P @ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is not greater than Q'. Statements: A ~ Z @ T; X ! A © U. Which of the following is definitely true?",
+   "options": [
+    "X ~ T",
+    "X © U",
+    "T @ U",
+    "A © X"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: A > Z = T; X ≤ A < U.\nNo chain settles X against T (it can be =, >, <), so X > T is not certain.\nU > A ≥ X gives X < U: true.\nU > A > Z = T is already fixed, so T = U is false.\nA ≥ X is already fixed, so A < X is false.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ~, !, #, *, ★ are used with the meanings given: 'P * Q' means 'P is not greater than Q'; 'P ! Q' means 'P is not smaller than Q'; 'P ~ Q' means 'P is greater than Q'; 'P ★ Q' means 'P is equal to Q'; 'P # Q' means 'P is smaller than Q'. Statements: B ~ L ~ W ~ M. Which of the following can never be true?",
+   "options": [
+    "M * B",
+    "L ★ M",
+    "B ! M",
+    "W * B"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: B > L > W > M.\nB > L > W > M gives M ≤ B: true.\nL > W > M is already fixed, so L = M is false.\nB > L > W > M gives B ≥ M: true.\nB > L > W gives W ≤ B: true.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ★, *, #, ^, © are used with the meanings given: 'P * Q' means 'P is not smaller than Q'; 'P © Q' means 'P is equal to Q'; 'P ^ Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is greater than Q'. Statements: V ★ T * E ★ C; E ★ N © B. Which of the following can possibly be true?",
+   "options": [
+    "C ★ V",
+    "C © N",
+    "B © E",
+    "N * T"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: V > T ≥ E > C; E > N = B.\nV > T ≥ E > C is already fixed, so C > V is false.\nNo chain settles C against N (it can be =, >, <), so C = N is not certain.\nE > N = B is already fixed, so B = E is false.\nT ≥ E > N is already fixed, so N ≥ T is false.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols #, $, *, !, ^ are used with the meanings given: 'P * Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is equal to Q'; 'P ! Q' means 'P is not greater than Q'; 'P $ Q' means 'P is either greater than or equal to Q'; 'P # Q' means 'P is greater than Q'. Statements: G ^ J ! Y * V; J # C # N. Which of the following may be true but is not definitely true?",
+   "options": [
+    "Y ! J",
+    "Y # V",
+    "C # N",
+    "J * V"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: G = J ≤ Y < V; J > C > N.\nNo chain settles Y against J (it can be =, >), so Y ≤ J is not certain.\nV > Y is already fixed, so Y > V is false.\nC > N gives C > N: true.\nV > Y ≥ J gives J < V: true.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ~, @, ★, %, © are used with the meanings given: 'P @ Q' means 'P is not smaller than Q'; 'P % Q' means 'P is either smaller than or equal to Q'; 'P © Q' means 'P is equal to Q'; 'P ★ Q' means 'P is smaller than Q'; 'P ~ Q' means 'P is greater than Q'. Statements: U @ F ~ G; U % R % W. Which of the following is definitely true?",
+   "options": [
+    "G ★ F",
+    "W © U",
+    "U © G",
+    "W © F"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: U ≥ F > G; U ≤ R ≤ W.\nF > G gives G < F: true.\nNo chain settles W against U (it can be =, >), so W = U is not certain.\nU ≥ F > G is already fixed, so U = G is false.\nNo chain settles W against F (it can be =, >), so W = F is not certain.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, @, ~, ©, ★ are used with the meanings given: 'P ~ Q' means 'P is smaller than Q'; 'P © Q' means 'P is not greater than Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P ★ Q' means 'P is equal to Q'; 'P $ Q' means 'P is greater than Q'. Statements: A ~ F ~ M. Conclusions: I. A ~ F  II. A @ M",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: A < F < M.\nI. F > A gives A < F: true.\nII. M > F > A is already fixed, so A ≥ M is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, ©, ★, &, # are used with the meanings given: 'P # Q' means 'P is equal to Q'; 'P % Q' means 'P is greater than Q'; 'P © Q' means 'P is not smaller than Q'; 'P ★ Q' means 'P is smaller than Q'; 'P & Q' means 'P is either smaller than or equal to Q'. Statements: R % F % M © N. Conclusions: I. R ★ N  II. M ★ F",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: R > F > M ≥ N.\nI. R > F > M ≥ N is already fixed, so R < N is false.\nII. F > M gives M < F: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols #, %, ©, ★, ! are used with the meanings given: 'P ★ Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is greater than Q'; 'P ! Q' means 'P is equal to Q'; 'P % Q' means 'P is not smaller than Q'; 'P © Q' means 'P is smaller than Q'. Statements: L © Y © N; Z ★ Y # S. Conclusions: I. Y © L  II. N ! Z",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: L < Y < N; Z ≤ Y > S.\nI. Y > L is already fixed, so Y < L is false.\nII. N > Y ≥ Z is already fixed, so N = Z is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

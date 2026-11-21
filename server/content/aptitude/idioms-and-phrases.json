@@ -1,0 +1,4405 @@
+{
+ "pattern": {
+  "title": "Idioms and Phrases",
+  "slug": "idioms-and-phrases",
+  "description": "Meaning of idioms and phrases.",
+  "order": 50,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "common-idioms",
+    "title": "Common idioms"
+   },
+   {
+    "slug": "phrasal-verbs",
+    "title": "Phrasal verbs"
+   },
+   {
+    "slug": "proverbs",
+    "title": "Proverbs"
+   },
+   {
+    "slug": "idiom-in-context",
+    "title": "Idiom in context"
+   },
+   {
+    "slug": "foreign-legal-phrases",
+    "title": "Foreign / legal phrases"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "What does the idiom 'A blessing in disguise' mean?",
+   "options": [
+    {
+     "text": "A hidden curse"
+    },
+    {
+     "text": "A person pretending to be kind"
+    },
+    {
+     "text": "A secret gift"
+    },
+    {
+     "text": "An apparent misfortune that turns out to be good"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The phrase describes something that looks bad at first but later proves beneficial.",
+   "order": 1,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The idiom 'Bite the bullet' most nearly means:",
+   "options": [
+    {
+     "text": "Face a painful situation with courage"
+    },
+    {
+     "text": "Eat hurriedly"
+    },
+    {
+     "text": "Speak rudely"
+    },
+    {
+     "text": "Escape from danger"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To bite the bullet is to accept something unpleasant and get on with it bravely.",
+   "order": 2,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Break the ice'.",
+   "options": [
+    {
+     "text": "Break a rule"
+    },
+    {
+     "text": "Cool a drink"
+    },
+    {
+     "text": "Begin a conversation in an awkward social setting"
+    },
+    {
+     "text": "End a friendship"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "It means to ease initial tension between strangers so that talk can begin.",
+   "order": 3,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Under the weather'.",
+   "options": [
+    {
+     "text": "Very cheerful"
+    },
+    {
+     "text": "Slightly unwell"
+    },
+    {
+     "text": "Extremely poor"
+    },
+    {
+     "text": "Caught in the rain"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The idiom is used for a person who feels a little ill.",
+   "order": 4,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "'A piece of cake' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "A sweet reward"
+    },
+    {
+     "text": "A difficult puzzle"
+    },
+    {
+     "text": "A small share"
+    },
+    {
+     "text": "Something very easy"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It describes a task that can be done without effort.",
+   "order": 5,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'Call it a day' mean?",
+   "options": [
+    {
+     "text": "Start a new job"
+    },
+    {
+     "text": "Stop working for the day"
+    },
+    {
+     "text": "Name a date"
+    },
+    {
+     "text": "Postpone a meeting"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The idiom means to decide to stop an activity for now.",
+   "order": 6,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'A dark horse' mean?",
+   "options": [
+    {
+     "text": "A dishonest person"
+    },
+    {
+     "text": "A favourite candidate"
+    },
+    {
+     "text": "A little-known person who unexpectedly wins"
+    },
+    {
+     "text": "A black animal"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The term is used for an unexpected winner whose abilities were unknown.",
+   "order": 7,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The idiom 'Throw in the towel' most nearly means:",
+   "options": [
+    {
+     "text": "Admit defeat and give up"
+    },
+    {
+     "text": "Clean up quickly"
+    },
+    {
+     "text": "Start a fight"
+    },
+    {
+     "text": "Win easily"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The idiom comes from boxing, where a towel signals surrender.",
+   "order": 8,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'A white elephant'.",
+   "options": [
+    {
+     "text": "A sign of good luck"
+    },
+    {
+     "text": "A rare animal"
+    },
+    {
+     "text": "A costly possession that is useless"
+    },
+    {
+     "text": "A holy object"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "It refers to something expensive to maintain and of little benefit.",
+   "order": 9,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'A storm in a teacup'.",
+   "options": [
+    {
+     "text": "A heavy rainfall"
+    },
+    {
+     "text": "Great fuss over a trivial matter"
+    },
+    {
+     "text": "A tea party"
+    },
+    {
+     "text": "A serious crisis"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It describes an unnecessary uproar about something small.",
+   "order": 10,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "'Split hairs' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "Visit a barber"
+    },
+    {
+     "text": "Divide equally"
+    },
+    {
+     "text": "Argue loudly"
+    },
+    {
+     "text": "Make petty distinctions"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To split hairs is to quibble over very fine, unimportant differences.",
+   "order": 11,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'Sit on the fence' mean?",
+   "options": [
+    {
+     "text": "Avoid taking sides"
+    },
+    {
+     "text": "Support one side strongly"
+    },
+    {
+     "text": "Guard a boundary"
+    },
+    {
+     "text": "Rest after work"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The idiom means to remain neutral and undecided.",
+   "order": 12,
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "'Beat around the bush' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "Search a forest"
+    },
+    {
+     "text": "Attack someone"
+    },
+    {
+     "text": "Avoid coming to the main point"
+    },
+    {
+     "text": "Work very hard"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A person who beats around the bush talks indirectly instead of stating the point.",
+   "order": 13,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The idiom 'Burn the midnight oil' most nearly means:",
+   "options": [
+    {
+     "text": "Start a fire"
+    },
+    {
+     "text": "Sleep very early"
+    },
+    {
+     "text": "Waste fuel"
+    },
+    {
+     "text": "Work or study late into the night"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The idiom comes from oil lamps used for late-night work or study.",
+   "order": 14,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Cost an arm and a leg'.",
+   "options": [
+    {
+     "text": "Be extremely expensive"
+    },
+    {
+     "text": "Cause a serious injury"
+    },
+    {
+     "text": "Be of no value"
+    },
+    {
+     "text": "Be given free"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It is used for something that costs a very high price.",
+   "order": 15,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "'Once in a blue moon' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "Without warning"
+    },
+    {
+     "text": "Very rarely"
+    },
+    {
+     "text": "Every month"
+    },
+    {
+     "text": "At night"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A blue moon is a rare event, so the idiom means extremely seldom.",
+   "order": 16,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'Spill the beans' mean?",
+   "options": [
+    {
+     "text": "Waste food"
+    },
+    {
+     "text": "Cook a meal"
+    },
+    {
+     "text": "Reveal a secret"
+    },
+    {
+     "text": "Make a mess"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "To spill the beans is to disclose confidential information.",
+   "order": 17,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The idiom 'Cry over spilt milk' most nearly means:",
+   "options": [
+    {
+     "text": "Waste dairy products"
+    },
+    {
+     "text": "Behave like a child"
+    },
+    {
+     "text": "Complain about prices"
+    },
+    {
+     "text": "Lament something that cannot be undone"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It means to be upset about a loss that cannot be reversed.",
+   "order": 18,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "'Face the music' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "Accept the consequences of one's actions"
+    },
+    {
+     "text": "Perform on stage"
+    },
+    {
+     "text": "Avoid criticism"
+    },
+    {
+     "text": "Enjoy a concert"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To face the music is to meet punishment or criticism that one deserves.",
+   "order": 19,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'Add fuel to the fire' mean?",
+   "options": [
+    {
+     "text": "Provide warmth"
+    },
+    {
+     "text": "Make a bad situation worse"
+    },
+    {
+     "text": "Calm an argument"
+    },
+    {
+     "text": "Cook food quickly"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means to aggravate an already tense situation.",
+   "order": 20,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "The idiom 'At the eleventh hour' most nearly means:",
+   "options": [
+    {
+     "text": "At the last possible moment"
+    },
+    {
+     "text": "At exactly eleven"
+    },
+    {
+     "text": "Very early"
+    },
+    {
+     "text": "Without any delay"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The phrase means just in time, when almost too late.",
+   "order": 21,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Barking up the wrong tree'.",
+   "options": [
+    {
+     "text": "Hunting animals"
+    },
+    {
+     "text": "Scolding a child"
+    },
+    {
+     "text": "Pursuing a mistaken course of action"
+    },
+    {
+     "text": "Making a loud noise"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "It means to chase the wrong person or approach for a goal.",
+   "order": 22,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "'Achilles' heel' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "A secret talent"
+    },
+    {
+     "text": "A strong point"
+    },
+    {
+     "text": "A heavy injury"
+    },
+    {
+     "text": "A person's weak point"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The expression refers to a vulnerable spot in an otherwise strong person.",
+   "order": 23,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The idiom 'Read between the lines' most nearly means:",
+   "options": [
+    {
+     "text": "Skip a paragraph"
+    },
+    {
+     "text": "Understand a hidden meaning"
+    },
+    {
+     "text": "Correct a text"
+    },
+    {
+     "text": "Read very slowly"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means to infer what is not directly stated.",
+   "order": 24,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Take something with a pinch of salt'.",
+   "options": [
+    {
+     "text": "Not believe it completely"
+    },
+    {
+     "text": "Accept it eagerly"
+    },
+    {
+     "text": "Reject it angrily"
+    },
+    {
+     "text": "Add seasoning"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It advises treating a statement with some doubt.",
+   "order": 25,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "'Turn a blind eye' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "Lose one's sight"
+    },
+    {
+     "text": "Notice carefully"
+    },
+    {
+     "text": "Look away from light"
+    },
+    {
+     "text": "Deliberately ignore something wrong"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It means to pretend not to see something.",
+   "order": 26,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'A red-letter day' mean?",
+   "options": [
+    {
+     "text": "A day of examinations"
+    },
+    {
+     "text": "A holiday for banks"
+    },
+    {
+     "text": "A memorable and happy day"
+    },
+    {
+     "text": "A day of mourning"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The phrase refers to a special day marked in red on calendars.",
+   "order": 27,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "The idiom 'The lion's share' most nearly means:",
+   "options": [
+    {
+     "text": "The smallest portion"
+    },
+    {
+     "text": "The largest part"
+    },
+    {
+     "text": "A royal gift"
+    },
+    {
+     "text": "An equal share"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means the biggest portion of something shared.",
+   "order": 28,
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'Hit the nail on the head' mean?",
+   "options": [
+    {
+     "text": "Say or do exactly the right thing"
+    },
+    {
+     "text": "Work with tools"
+    },
+    {
+     "text": "Cause an injury"
+    },
+    {
+     "text": "Fail in a task"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The idiom means to state precisely what is correct or relevant.",
+   "order": 29,
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "The idiom 'Let the cat out of the bag' most nearly means:",
+   "options": [
+    {
+     "text": "Start a quarrel"
+    },
+    {
+     "text": "Disclose a secret by accident"
+    },
+    {
+     "text": "Rescue an animal"
+    },
+    {
+     "text": "Create confusion"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means to reveal something hidden, usually carelessly.",
+   "order": 30,
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Kill two birds with one stone'.",
+   "options": [
+    {
+     "text": "Waste effort on two tasks"
+    },
+    {
+     "text": "Hunt skilfully"
+    },
+    {
+     "text": "Act cruelly"
+    },
+    {
+     "text": "Achieve two aims with a single action"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The idiom means solving two problems with one effort.",
+   "order": 31,
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "'Cut corners' – select the option closest in meaning.",
+   "options": [
+    {
+     "text": "Draw straight lines"
+    },
+    {
+     "text": "Save time by walking fast"
+    },
+    {
+     "text": "Do something in the cheapest or easiest way, skipping proper steps"
+    },
+    {
+     "text": "Trim a paper"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cutting corners means sacrificing quality or procedure to save effort or money.",
+   "order": 32,
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the idiom 'Pull someone's leg' mean?",
+   "options": [
+    {
+     "text": "Cause an injury"
+    },
+    {
+     "text": "Deceive for money"
+    },
+    {
+     "text": "Tease or joke with someone"
+    },
+    {
+     "text": "Help someone walk"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "It means to play a harmless joke on a person.",
+   "order": 33,
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The idiom 'A bolt from the blue' most nearly means:",
+   "options": [
+    {
+     "text": "A clear sky"
+    },
+    {
+     "text": "A completely unexpected event"
+    },
+    {
+     "text": "A planned surprise"
+    },
+    {
+     "text": "A lightning rod"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means a sudden shock that comes without warning.",
+   "order": 34,
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'call off' mean?",
+   "options": [
+    {
+     "text": "cancel"
+    },
+    {
+     "text": "begin"
+    },
+    {
+     "text": "postpone"
+    },
+    {
+     "text": "visit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To call off an event is to cancel it.",
+   "order": 35,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'put off' most nearly means:",
+   "options": [
+    {
+     "text": "complete"
+    },
+    {
+     "text": "cancel"
+    },
+    {
+     "text": "wear"
+    },
+    {
+     "text": "postpone"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To put off a task is to delay it to a later time.",
+   "order": 36,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'give up' as a phrasal verb.",
+   "options": [
+    {
+     "text": "donate"
+    },
+    {
+     "text": "continue"
+    },
+    {
+     "text": "stop trying; surrender"
+    },
+    {
+     "text": "start"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Give up means to abandon an effort or a habit.",
+   "order": 37,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'take after' most nearly means:",
+   "options": [
+    {
+     "text": "chase"
+    },
+    {
+     "text": "imitate in order to mock"
+    },
+    {
+     "text": "follow in time"
+    },
+    {
+     "text": "resemble a family elder"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Take after means to look or behave like an older relative.",
+   "order": 38,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'put up with' as a phrasal verb.",
+   "options": [
+    {
+     "text": "tolerate"
+    },
+    {
+     "text": "build"
+    },
+    {
+     "text": "display"
+    },
+    {
+     "text": "complain about"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To put up with something is to endure it without complaint.",
+   "order": 39,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'set off' mean?",
+   "options": [
+    {
+     "text": "stop travelling"
+    },
+    {
+     "text": "begin a journey"
+    },
+    {
+     "text": "extinguish"
+    },
+    {
+     "text": "return home"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Set off means to start out on a trip.",
+   "order": 40,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'pick up' as a phrasal verb.",
+   "options": [
+    {
+     "text": "forget"
+    },
+    {
+     "text": "teach formally"
+    },
+    {
+     "text": "throw away"
+    },
+    {
+     "text": "learn casually"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "One can pick up a language by being exposed to it.",
+   "order": 41,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'wind up' mean?",
+   "options": [
+    {
+     "text": "bring to an end"
+    },
+    {
+     "text": "start"
+    },
+    {
+     "text": "twist a rope"
+    },
+    {
+     "text": "tease"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To wind up a meeting is to conclude it.",
+   "order": 42,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'turn up' most nearly means:",
+   "options": [
+    {
+     "text": "rotate downward"
+    },
+    {
+     "text": "arrive or appear"
+    },
+    {
+     "text": "reject"
+    },
+    {
+     "text": "refuse"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Turn up means to show up at a place.",
+   "order": 43,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'step down' mean?",
+   "options": [
+    {
+     "text": "be promoted"
+    },
+    {
+     "text": "stand up for someone"
+    },
+    {
+     "text": "resign from a position"
+    },
+    {
+     "text": "take charge"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A chairman who steps down leaves office.",
+   "order": 44,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'cut down on' most nearly means:",
+   "options": [
+    {
+     "text": "increase"
+    },
+    {
+     "text": "chop a tree"
+    },
+    {
+     "text": "reduce the quantity of"
+    },
+    {
+     "text": "finish"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "To cut down on sugar is to consume less of it.",
+   "order": 45,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'hold on' as a phrasal verb.",
+   "options": [
+    {
+     "text": "wait for a moment"
+    },
+    {
+     "text": "leave"
+    },
+    {
+     "text": "hang up the phone"
+    },
+    {
+     "text": "hurry"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hold on, as a spoken request, means please wait.",
+   "order": 46,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'look into' mean?",
+   "options": [
+    {
+     "text": "look inside"
+    },
+    {
+     "text": "investigate"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "admire"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To look into a matter is to examine it carefully.",
+   "order": 47,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'carry out' as a phrasal verb.",
+   "options": [
+    {
+     "text": "delay"
+    },
+    {
+     "text": "cancel"
+    },
+    {
+     "text": "lift outside"
+    },
+    {
+     "text": "perform or execute"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Carry out means to complete a task or plan.",
+   "order": 48,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'break down' mean?",
+   "options": [
+    {
+     "text": "stop functioning"
+    },
+    {
+     "text": "exercise"
+    },
+    {
+     "text": "start working"
+    },
+    {
+     "text": "repair"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A vehicle that breaks down stops working.",
+   "order": 49,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'come across' most nearly means:",
+   "options": [
+    {
+     "text": "search for"
+    },
+    {
+     "text": "find or meet by chance"
+    },
+    {
+     "text": "cross a road"
+    },
+    {
+     "text": "argue with"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To come across something is to discover it unexpectedly.",
+   "order": 50,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'run out of' as a phrasal verb.",
+   "options": [
+    {
+     "text": "collect more of"
+    },
+    {
+     "text": "compete with"
+    },
+    {
+     "text": "have no more of"
+    },
+    {
+     "text": "run away from"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If you run out of something, your supply is exhausted.",
+   "order": 51,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'look after' most nearly means:",
+   "options": [
+    {
+     "text": "search for"
+    },
+    {
+     "text": "look behind"
+    },
+    {
+     "text": "avoid"
+    },
+    {
+     "text": "take care of"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To look after a person is to take care of him or her.",
+   "order": 52,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'figure out' mean?",
+   "options": [
+    {
+     "text": "understand or solve"
+    },
+    {
+     "text": "confuse"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "draw a shape"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To figure out a problem is to find its answer.",
+   "order": 53,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'make up for' most nearly means:",
+   "options": [
+    {
+     "text": "quarrel over"
+    },
+    {
+     "text": "invent a story"
+    },
+    {
+     "text": "compensate for"
+    },
+    {
+     "text": "apply cosmetics"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Make up for means to balance a loss or fault with something good.",
+   "order": 54,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'fall out' as a phrasal verb.",
+   "options": [
+    {
+     "text": "stay together"
+    },
+    {
+     "text": "agree"
+    },
+    {
+     "text": "drop from a height"
+    },
+    {
+     "text": "quarrel"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two friends who fall out have a disagreement.",
+   "order": 55,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'drop in' mean?",
+   "options": [
+    {
+     "text": "fall into water"
+    },
+    {
+     "text": "visit casually"
+    },
+    {
+     "text": "leave suddenly"
+    },
+    {
+     "text": "telephone formally"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To drop in is to visit without a formal invitation.",
+   "order": 56,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'back out' as a phrasal verb.",
+   "options": [
+    {
+     "text": "join eagerly"
+    },
+    {
+     "text": "support strongly"
+    },
+    {
+     "text": "walk outside"
+    },
+    {
+     "text": "withdraw from an agreement"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To back out of a deal is to retreat from a promise.",
+   "order": 57,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'stand for' most nearly means:",
+   "options": [
+    {
+     "text": "oppose"
+    },
+    {
+     "text": "hide"
+    },
+    {
+     "text": "represent"
+    },
+    {
+     "text": "rise up"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The letters 'IT' stand for information technology, meaning represent.",
+   "order": 58,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'show off' as a phrasal verb.",
+   "options": [
+    {
+     "text": "switch off"
+    },
+    {
+     "text": "display proudly to impress"
+    },
+    {
+     "text": "teach"
+    },
+    {
+     "text": "hide"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A person who shows off wants to impress others.",
+   "order": 59,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'run into' mean?",
+   "options": [
+    {
+     "text": "meet unexpectedly"
+    },
+    {
+     "text": "run towards"
+    },
+    {
+     "text": "avoid"
+    },
+    {
+     "text": "chase"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To run into a friend is to meet him by chance.",
+   "order": 60,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'look up to' most nearly means:",
+   "options": [
+    {
+     "text": "look at the sky"
+    },
+    {
+     "text": "search for"
+    },
+    {
+     "text": "despise"
+    },
+    {
+     "text": "admire and respect"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Children look up to parents they admire.",
+   "order": 61,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'turn down' most nearly means:",
+   "options": [
+    {
+     "text": "switch on"
+    },
+    {
+     "text": "reject"
+    },
+    {
+     "text": "increase the volume"
+    },
+    {
+     "text": "accept"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To turn down an offer is to refuse it.",
+   "order": 62,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'get along with' mean?",
+   "options": [
+    {
+     "text": "travel with"
+    },
+    {
+     "text": "depend on"
+    },
+    {
+     "text": "be on friendly terms with"
+    },
+    {
+     "text": "quarrel with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "To get along with someone is to have a good relationship.",
+   "order": 63,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'bring up' as a phrasal verb.",
+   "options": [
+    {
+     "text": "raise a child"
+    },
+    {
+     "text": "punish"
+    },
+    {
+     "text": "forget"
+    },
+    {
+     "text": "lower down"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bring up means to rear and educate a child.",
+   "order": 64,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The phrasal verb 'pass away' most nearly means:",
+   "options": [
+    {
+     "text": "succeed"
+    },
+    {
+     "text": "walk past"
+    },
+    {
+     "text": "die"
+    },
+    {
+     "text": "fail an exam"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pass away is a polite way of saying die.",
+   "order": 65,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrasal verb 'get over' mean?",
+   "options": [
+    {
+     "text": "recover from"
+    },
+    {
+     "text": "get ahead of"
+    },
+    {
+     "text": "fall ill with"
+    },
+    {
+     "text": "remember"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get over an illness is to recover from it.",
+   "order": 66,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the meaning of 'call on' as a phrasal verb.",
+   "options": [
+    {
+     "text": "avoid"
+    },
+    {
+     "text": "telephone only"
+    },
+    {
+     "text": "insult"
+    },
+    {
+     "text": "pay a visit to"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To call on someone is to visit that person.",
+   "order": 67,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'A stitch in time saves nine'?",
+   "options": [
+    {
+     "text": "Tailors should be paid on time"
+    },
+    {
+     "text": "Timely action prevents bigger trouble later"
+    },
+    {
+     "text": "Sewing is a useful skill"
+    },
+    {
+     "text": "Nine people can do work faster"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fixing a small problem at once avoids a larger one.",
+   "order": 68,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'All that glitters is not gold' teaches that:",
+   "options": [
+    {
+     "text": "Gold is not valuable"
+    },
+    {
+     "text": "Appearances can be deceptive"
+    },
+    {
+     "text": "Jewellery should be avoided"
+    },
+    {
+     "text": "Shiny things are always costly"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Attractive outward looks do not guarantee real worth.",
+   "order": 69,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Look before you leap'?",
+   "options": [
+    {
+     "text": "Watch others jump"
+    },
+    {
+     "text": "Jump quickly"
+    },
+    {
+     "text": "Do not take any risk at all"
+    },
+    {
+     "text": "Think carefully before acting"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The proverb advises caution and forethought.",
+   "order": 70,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Empty vessels make the most noise' teaches that:",
+   "options": [
+    {
+     "text": "Empty pots are cheap"
+    },
+    {
+     "text": "Noise indicates wealth"
+    },
+    {
+     "text": "Those with least knowledge talk the most"
+    },
+    {
+     "text": "Silent people are ignorant"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shallow people tend to be boastful and loud.",
+   "order": 71,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Slow and steady wins the race'?",
+   "options": [
+    {
+     "text": "Consistent effort leads to success"
+    },
+    {
+     "text": "Speed is useless"
+    },
+    {
+     "text": "Races should be avoided"
+    },
+    {
+     "text": "Tortoises are fast"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Patient, regular effort beats hasty, irregular bursts.",
+   "order": 72,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Necessity is the mother of invention'?",
+   "options": [
+    {
+     "text": "Only the rich invent"
+    },
+    {
+     "text": "Mothers invent gadgets"
+    },
+    {
+     "text": "Need drives people to create new things"
+    },
+    {
+     "text": "Inventions are unnecessary"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pressing needs push people to find new solutions.",
+   "order": 73,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'A bird in the hand is worth two in the bush'?",
+   "options": [
+    {
+     "text": "A certain gain is better than a greater but uncertain one"
+    },
+    {
+     "text": "Birds are valuable pets"
+    },
+    {
+     "text": "Take risks for rewards"
+    },
+    {
+     "text": "Hunting is profitable"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value what you have over what you might get.",
+   "order": 74,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Out of sight, out of mind'?",
+   "options": [
+    {
+     "text": "Mind controls sight"
+    },
+    {
+     "text": "Hidden things are safe"
+    },
+    {
+     "text": "Blind people forget"
+    },
+    {
+     "text": "We soon forget what is no longer before us"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Absence tends to make people forget.",
+   "order": 75,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Every cloud has a silver lining' teaches that:",
+   "options": [
+    {
+     "text": "Rain always follows"
+    },
+    {
+     "text": "There is something good in every difficulty"
+    },
+    {
+     "text": "Bad times never end"
+    },
+    {
+     "text": "Clouds are made of silver"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hardship usually has some hopeful side.",
+   "order": 76,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'A burnt child dreads the fire'?",
+   "options": [
+    {
+     "text": "Fire is always dangerous"
+    },
+    {
+     "text": "Burns heal slowly"
+    },
+    {
+     "text": "One who has suffered is cautious afterwards"
+    },
+    {
+     "text": "Children love fire"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A bad experience makes a person wary of its cause.",
+   "order": 77,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Haste makes waste' teaches that:",
+   "options": [
+    {
+     "text": "Hurry brings success"
+    },
+    {
+     "text": "Waste is unavoidable"
+    },
+    {
+     "text": "Speed saves money"
+    },
+    {
+     "text": "Doing things hurriedly leads to mistakes and loss"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rushing results in errors that waste effort.",
+   "order": 78,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Pride goes before a fall'?",
+   "options": [
+    {
+     "text": "Self-respect is a weakness"
+    },
+    {
+     "text": "Arrogance leads to downfall"
+    },
+    {
+     "text": "Proud people walk fast"
+    },
+    {
+     "text": "Falls make people proud"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Excessive pride is often followed by failure.",
+   "order": 79,
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Strike while the iron is hot'?",
+   "options": [
+    {
+     "text": "Act at the right moment"
+    },
+    {
+     "text": "Never hurry"
+    },
+    {
+     "text": "Be patient"
+    },
+    {
+     "text": "Avoid working with metals"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Opportunities should be used when they arise.",
+   "order": 80,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'A rolling stone gathers no moss'?",
+   "options": [
+    {
+     "text": "Moving objects become dirty"
+    },
+    {
+     "text": "Nature protects the active"
+    },
+    {
+     "text": "A person who keeps changing places or jobs does not build up anything lasting"
+    },
+    {
+     "text": "Stones are always smooth"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Constant movement prevents one from settling and accumulating gains.",
+   "order": 81,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Honesty is the best policy'?",
+   "options": [
+    {
+     "text": "Lying is sometimes profitable"
+    },
+    {
+     "text": "Being truthful is the wisest course"
+    },
+    {
+     "text": "Insurance is important"
+    },
+    {
+     "text": "Policies should be written"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Truthfulness serves one better in the long run.",
+   "order": 82,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Where there is a will, there is a way' teaches that:",
+   "options": [
+    {
+     "text": "Wills must be written"
+    },
+    {
+     "text": "Wishes are always granted"
+    },
+    {
+     "text": "Roads exist everywhere"
+    },
+    {
+     "text": "A determined person finds a means to succeed"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Strong determination overcomes obstacles.",
+   "order": 83,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Actions speak louder than words'?",
+   "options": [
+    {
+     "text": "What one does matters more than what one says"
+    },
+    {
+     "text": "Silence is impolite"
+    },
+    {
+     "text": "Words are useless"
+    },
+    {
+     "text": "Loud people act more"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Deeds reveal true intentions better than promises.",
+   "order": 84,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The proverb 'A friend in need is a friend indeed' teaches that:",
+   "options": [
+    {
+     "text": "Friendship needs money"
+    },
+    {
+     "text": "Needy people make friends"
+    },
+    {
+     "text": "Friends are needed always"
+    },
+    {
+     "text": "A true friend helps in times of trouble"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Real friendship shows itself during difficulty.",
+   "order": 85,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Do not count your chickens before they are hatched'?",
+   "options": [
+    {
+     "text": "Do not rely on a result before it is certain"
+    },
+    {
+     "text": "Poultry farming is profitable"
+    },
+    {
+     "text": "Eggs should be counted daily"
+    },
+    {
+     "text": "Chickens hatch quickly"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "One should not assume success prematurely.",
+   "order": 86,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Charity begins at home' teaches that:",
+   "options": [
+    {
+     "text": "Never help strangers"
+    },
+    {
+     "text": "One's first duty is to one's family"
+    },
+    {
+     "text": "Charity is a house rule"
+    },
+    {
+     "text": "Give only to relatives"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Kindness and help should start with those closest to us.",
+   "order": 87,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Make hay while the sun shines'?",
+   "options": [
+    {
+     "text": "Avoid work in summer"
+    },
+    {
+     "text": "Farming needs sunlight only"
+    },
+    {
+     "text": "Use the favourable time to the full"
+    },
+    {
+     "text": "Rest in sunshine"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Take advantage of good conditions while they last.",
+   "order": 88,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Better late than never'?",
+   "options": [
+    {
+     "text": "Never be late"
+    },
+    {
+     "text": "Always arrive late"
+    },
+    {
+     "text": "Lateness is acceptable always"
+    },
+    {
+     "text": "It is better to do something late than not at all"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A delayed action is still preferable to no action.",
+   "order": 89,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'The pen is mightier than the sword'?",
+   "options": [
+    {
+     "text": "Pens are weapons"
+    },
+    {
+     "text": "Writers are always rich"
+    },
+    {
+     "text": "Writing and ideas are more powerful than violence"
+    },
+    {
+     "text": "Swords are blunt"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ideas expressed in writing can influence more than force.",
+   "order": 90,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The proverb 'United we stand, divided we fall' teaches that:",
+   "options": [
+    {
+     "text": "Unity gives strength"
+    },
+    {
+     "text": "Division is good"
+    },
+    {
+     "text": "Standing is tiring"
+    },
+    {
+     "text": "Falling is unavoidable"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People working together succeed; division leads to failure.",
+   "order": 91,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'One swallow does not make a summer'?",
+   "options": [
+    {
+     "text": "Summer comes with birds"
+    },
+    {
+     "text": "One favourable sign is not proof of a trend"
+    },
+    {
+     "text": "Swallows are rare"
+    },
+    {
+     "text": "Birds predict weather exactly"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A single instance is not enough to draw a conclusion.",
+   "order": 92,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Familiarity breeds contempt'?",
+   "options": [
+    {
+     "text": "Too much closeness can lead to disrespect"
+    },
+    {
+     "text": "Knowledge brings respect"
+    },
+    {
+     "text": "Families are contemptuous"
+    },
+    {
+     "text": "Strangers are friends"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Over-familiarity makes people lose respect for each other.",
+   "order": 93,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Half a loaf is better than no bread' teaches that:",
+   "options": [
+    {
+     "text": "Bakers should cut bread"
+    },
+    {
+     "text": "Bread is cheap"
+    },
+    {
+     "text": "A little is better than nothing"
+    },
+    {
+     "text": "Half measures are always best"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Accept a partial gain rather than get nothing.",
+   "order": 94,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Time and tide wait for none'?",
+   "options": [
+    {
+     "text": "Tides are regular"
+    },
+    {
+     "text": "Opportunities do not wait for anyone"
+    },
+    {
+     "text": "Clocks never stop"
+    },
+    {
+     "text": "The sea has no time"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "One must act in time, because time cannot be held back.",
+   "order": 95,
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Too many cooks spoil the broth' teaches that:",
+   "options": [
+    {
+     "text": "Soup should be cooked slowly"
+    },
+    {
+     "text": "Cooking requires many ingredients"
+    },
+    {
+     "text": "Chefs are always proud"
+    },
+    {
+     "text": "Too many people on a task ruin it"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When too many people interfere, the work suffers.",
+   "order": 96,
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Birds of a feather flock together'?",
+   "options": [
+    {
+     "text": "Opposites attract"
+    },
+    {
+     "text": "Feathers are light"
+    },
+    {
+     "text": "Birds migrate in winter"
+    },
+    {
+     "text": "People of similar tastes stay together"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Like-minded people associate with each other.",
+   "order": 97,
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Early to bed and early to rise makes a man healthy, wealthy and wise'?",
+   "options": [
+    {
+     "text": "Wealthy people sleep early only"
+    },
+    {
+     "text": "Sleep is a waste of time"
+    },
+    {
+     "text": "Regular early habits bring good results"
+    },
+    {
+     "text": "Wisdom needs no rest"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The proverb recommends disciplined sleep habits.",
+   "order": 98,
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The proverb 'Prevention is better than cure' teaches that:",
+   "options": [
+    {
+     "text": "It is wiser to avoid trouble than to remedy it"
+    },
+    {
+     "text": "Cures are always available"
+    },
+    {
+     "text": "Diseases cannot be avoided"
+    },
+    {
+     "text": "Medicines are costly"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Taking precautions saves more effort than fixing problems.",
+   "order": 99,
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Rome was not built in a day'?",
+   "options": [
+    {
+     "text": "Rome was small"
+    },
+    {
+     "text": "Great achievements take time and patience"
+    },
+    {
+     "text": "Builders work slowly"
+    },
+    {
+     "text": "Cities are built by emperors"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Important work cannot be completed hastily.",
+   "order": 100,
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Do not put all your eggs in one basket'?",
+   "options": [
+    {
+     "text": "Baskets are strong"
+    },
+    {
+     "text": "Do not risk everything on a single venture"
+    },
+    {
+     "text": "Eggs break easily"
+    },
+    {
+     "text": "Always buy in bulk"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Spread risk by diversifying.",
+   "order": 101,
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"She was in the pink of health after the surgery.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "in excellent health"
+    },
+    {
+     "text": "slightly pale"
+    },
+    {
+     "text": "recently ill"
+    },
+    {
+     "text": "very weak"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In the pink of health means in perfect health.",
+   "order": 102,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The two neighbours have been at loggerheads for years over the boundary wall.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "living far apart"
+    },
+    {
+     "text": "on friendly terms"
+    },
+    {
+     "text": "in partnership"
+    },
+    {
+     "text": "in constant disagreement"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At loggerheads means quarrelling or in sharp dispute.",
+   "order": 103,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Raman was on cloud nine when he got the job offer.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "very anxious"
+    },
+    {
+     "text": "confused"
+    },
+    {
+     "text": "extremely happy"
+    },
+    {
+     "text": "exhausted"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "On cloud nine means very happy.",
+   "order": 104,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The fireman reached the spot in the nick of time.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "after the danger"
+    },
+    {
+     "text": "just at the right moment"
+    },
+    {
+     "text": "too early"
+    },
+    {
+     "text": "very late"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In the nick of time means barely in time.",
+   "order": 105,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"A promotion for Meena is on the cards this year.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "likely to happen"
+    },
+    {
+     "text": "impossible"
+    },
+    {
+     "text": "already completed"
+    },
+    {
+     "text": "being played"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "On the cards means probable.",
+   "order": 106,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The company's profits have grown by leaps and bounds.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "slowly"
+    },
+    {
+     "text": "dangerously"
+    },
+    {
+     "text": "irregularly"
+    },
+    {
+     "text": "very rapidly"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "By leaps and bounds means with rapid progress.",
+   "order": 107,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"As a young actor, he rubbed shoulders with famous stars.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "fought with"
+    },
+    {
+     "text": "competed with"
+    },
+    {
+     "text": "mixed socially with"
+    },
+    {
+     "text": "carried"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "To rub shoulders is to meet and mix with people.",
+   "order": 108,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"He pulled strings to get his son admitted to the college.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "used personal influence"
+    },
+    {
+     "text": "delayed the process"
+    },
+    {
+     "text": "paid the fees"
+    },
+    {
+     "text": "played an instrument"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pulling strings means using influential contacts.",
+   "order": 109,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Do not pass the buck; take responsibility for the error.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "borrow money"
+    },
+    {
+     "text": "shift the blame onto someone else"
+    },
+    {
+     "text": "give money"
+    },
+    {
+     "text": "accept the blame"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To pass the buck is to transfer responsibility to another.",
+   "order": 110,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The news came out of the blue and shocked everybody.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "after warnings"
+    },
+    {
+     "text": "slowly"
+    },
+    {
+     "text": "unexpectedly"
+    },
+    {
+     "text": "from the sky"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Out of the blue means suddenly and without warning.",
+   "order": 111,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"In a fit of anger he took the law into his own hands.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "followed the law strictly"
+    },
+    {
+     "text": "wrote a new law"
+    },
+    {
+     "text": "became a judge"
+    },
+    {
+     "text": "acted on his own without legal authority"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Taking the law into one's hands means punishing or acting without legal right.",
+   "order": 112,
+   "subPattern": "idiom-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Priya got cold feet just before the interview.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "felt very confident"
+    },
+    {
+     "text": "felt a chill"
+    },
+    {
+     "text": "became nervous and lost courage"
+    },
+    {
+     "text": "left the building angrily"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cold feet means sudden fear or loss of nerve.",
+   "order": 113,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Winning the state-level award was a feather in her cap.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "an achievement to be proud of"
+    },
+    {
+     "text": "a sign of luck"
+    },
+    {
+     "text": "a decoration for clothes"
+    },
+    {
+     "text": "a cause of embarrassment"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A feather in one's cap is an honour or achievement.",
+   "order": 114,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The teacher went the extra mile to help weak students.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "refused to help"
+    },
+    {
+     "text": "made more effort than expected"
+    },
+    {
+     "text": "walked a long distance"
+    },
+    {
+     "text": "punished the class"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To go the extra mile is to do more than is required.",
+   "order": 115,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"With a small salary, he finds it difficult to make ends meet.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "join two things"
+    },
+    {
+     "text": "complete a task"
+    },
+    {
+     "text": "reach the destination"
+    },
+    {
+     "text": "earn just enough to pay for basic needs"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Make ends meet means to manage on the money one has.",
+   "order": 116,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The donation was a drop in the ocean compared with what was needed.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "a timely help"
+    },
+    {
+     "text": "a very small amount"
+    },
+    {
+     "text": "a large gift"
+    },
+    {
+     "text": "a wasteful act"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A drop in the ocean is a tiny amount compared with the need.",
+   "order": 117,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Do not take his harsh words to heart.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "be deeply upset by"
+    },
+    {
+     "text": "listen to"
+    },
+    {
+     "text": "argue with"
+    },
+    {
+     "text": "forget at once"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Taking something to heart means being greatly affected by it.",
+   "order": 118,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The clerk has an axe to grind in this dispute.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "a strong argument"
+    },
+    {
+     "text": "no interest"
+    },
+    {
+     "text": "a tool to sharpen"
+    },
+    {
+     "text": "a selfish motive"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An axe to grind means a private interest influencing one's actions.",
+   "order": 119,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"We went on a wild goose chase looking for the address.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "a bird hunt"
+    },
+    {
+     "text": "a planned trip"
+    },
+    {
+     "text": "a useless and fruitless search"
+    },
+    {
+     "text": "a quick success"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A wild goose chase is a futile pursuit.",
+   "order": 120,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Do not jump the gun and announce the results before they are declared.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "fire a pistol"
+    },
+    {
+     "text": "act too soon"
+    },
+    {
+     "text": "wait patiently"
+    },
+    {
+     "text": "start a race"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To jump the gun is to act prematurely.",
+   "order": 121,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Since the quarrel, Kavitha has been giving me the cold shoulder.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "helping"
+    },
+    {
+     "text": "praising"
+    },
+    {
+     "text": "warmly welcoming"
+    },
+    {
+     "text": "deliberately ignoring"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cold shoulder means unfriendly treatment.",
+   "order": 122,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"He got the sack for being constantly absent.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "received a bag"
+    },
+    {
+     "text": "was promoted"
+    },
+    {
+     "text": "was dismissed from his job"
+    },
+    {
+     "text": "was transferred"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Get the sack means to be fired.",
+   "order": 123,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"She made the remark tongue in cheek, so nobody took it seriously.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "in a joking, ironical manner"
+    },
+    {
+     "text": "very sincerely"
+    },
+    {
+     "text": "with pain"
+    },
+    {
+     "text": "with anger"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Tongue in cheek means said ironically, not seriously.",
+   "order": 124,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The doctors kept the infection at bay with strong antibiotics.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "unnoticed"
+    },
+    {
+     "text": "under control and away"
+    },
+    {
+     "text": "spreading"
+    },
+    {
+     "text": "in the bay"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Keeping something at bay means preventing it from coming near or harming.",
+   "order": 125,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The new manager expects every employee to toe the line.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "follow the rules strictly"
+    },
+    {
+     "text": "stand in a queue"
+    },
+    {
+     "text": "avoid work"
+    },
+    {
+     "text": "cross the border"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To toe the line is to obey rules and conform.",
+   "order": 126,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The matter was a hot potato, so the officers avoided it.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "a popular topic"
+    },
+    {
+     "text": "an easy task"
+    },
+    {
+     "text": "a controversial issue difficult to handle"
+    },
+    {
+     "text": "a hot food item"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A hot potato is an awkward subject that people avoid handling.",
+   "order": 127,
+   "subPattern": "idiom-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"After his illness, he decided to turn over a new leaf.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "change his job"
+    },
+    {
+     "text": "read a new book"
+    },
+    {
+     "text": "collect leaves"
+    },
+    {
+     "text": "begin a new and better way of life"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It means to make a fresh start.",
+   "order": 128,
+   "subPattern": "idiom-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The brothers finally buried the hatchet after twenty years.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "went hunting"
+    },
+    {
+     "text": "ended their quarrel"
+    },
+    {
+     "text": "hid a weapon"
+    },
+    {
+     "text": "started a fight"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "To bury the hatchet is to make peace.",
+   "order": 129,
+   "subPattern": "idiom-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The minister only paid lip service to the cause of education.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "kissed the document"
+    },
+    {
+     "text": "worked sincerely"
+    },
+    {
+     "text": "expressed support without real action"
+    },
+    {
+     "text": "spoke very loudly"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lip service is insincere verbal support.",
+   "order": 130,
+   "subPattern": "idiom-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"He landed in hot water for submitting false bills.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "got into serious trouble"
+    },
+    {
+     "text": "took a bath"
+    },
+    {
+     "text": "won a contest"
+    },
+    {
+     "text": "got rich"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In hot water means in trouble.",
+   "order": 131,
+   "subPattern": "idiom-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The office files were at sixes and sevens after the shifting.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "very heavy"
+    },
+    {
+     "text": "counted wrongly"
+    },
+    {
+     "text": "neatly arranged"
+    },
+    {
+     "text": "in a state of disorder"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At sixes and sevens means in confusion.",
+   "order": 132,
+   "subPattern": "idiom-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"His argument does not hold water.\" Which option gives the meaning of the idiomatic expression used in it?",
+   "options": [
+    {
+     "text": "is very strong"
+    },
+    {
+     "text": "is not logical or valid"
+    },
+    {
+     "text": "is very long"
+    },
+    {
+     "text": "is not wet"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An argument that does not hold water is unsound.",
+   "order": 133,
+   "subPattern": "idiom-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'ad hoc' mean?",
+   "options": [
+    {
+     "text": "without cause"
+    },
+    {
+     "text": "by mutual consent"
+    },
+    {
+     "text": "for a particular purpose only"
+    },
+    {
+     "text": "for ever"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ad hoc, Latin, describes something arranged for a specific purpose, e.g. an ad hoc committee.",
+   "order": 134,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'bona fide' is used to mean:",
+   "options": [
+    {
+     "text": "genuine; in good faith"
+    },
+    {
+     "text": "secret"
+    },
+    {
+     "text": "in bad faith"
+    },
+    {
+     "text": "fake"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bona fide is Latin for good faith, so it means genuine.",
+   "order": 135,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'status quo'.",
+   "options": [
+    {
+     "text": "a legal claim"
+    },
+    {
+     "text": "a future plan"
+    },
+    {
+     "text": "a high rank"
+    },
+    {
+     "text": "the existing state of affairs"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Status quo means the situation as it currently stands.",
+   "order": 136,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The expression 'pro bono' is used to mean:",
+   "options": [
+    {
+     "text": "in a hurry"
+    },
+    {
+     "text": "done free of charge for public good"
+    },
+    {
+     "text": "against the law"
+    },
+    {
+     "text": "for a fee"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pro bono work, often legal, is done without payment.",
+   "order": 137,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'quid pro quo'.",
+   "options": [
+    {
+     "text": "something given in return for something"
+    },
+    {
+     "text": "a legal order"
+    },
+    {
+     "text": "a question"
+    },
+    {
+     "text": "a free gift"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Quid pro quo means one thing in exchange for another.",
+   "order": 138,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'ex officio' mean?",
+   "options": [
+    {
+     "text": "after office hours"
+    },
+    {
+     "text": "without any office"
+    },
+    {
+     "text": "outside the country"
+    },
+    {
+     "text": "by virtue of one's office"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An ex officio member holds a seat because of his official position.",
+   "order": 139,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'fait accompli'.",
+   "options": [
+    {
+     "text": "a future plan"
+    },
+    {
+     "text": "a legal notice"
+    },
+    {
+     "text": "an accomplished fact that cannot be changed"
+    },
+    {
+     "text": "a fair deal"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A fait accompli is something already done and irreversible.",
+   "order": 140,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'bête noire' mean?",
+   "options": [
+    {
+     "text": "a hidden talent"
+    },
+    {
+     "text": "a close friend"
+    },
+    {
+     "text": "a black animal"
+    },
+    {
+     "text": "a person or thing one particularly dislikes"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bête noire, French, means a pet aversion.",
+   "order": 141,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'sub judice' is used to mean:",
+   "options": [
+    {
+     "text": "under judicial consideration, not yet decided"
+    },
+    {
+     "text": "below a judge"
+    },
+    {
+     "text": "fully judged"
+    },
+    {
+     "text": "a court fee"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A sub judice matter is pending in court and should not be commented on.",
+   "order": 142,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'verbatim' mean?",
+   "options": [
+    {
+     "text": "word by word meaning"
+    },
+    {
+     "text": "in a loud voice"
+    },
+    {
+     "text": "in exactly the same words"
+    },
+    {
+     "text": "in a summary"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A verbatim report reproduces the exact words spoken.",
+   "order": 143,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'tabula rasa' is used to mean:",
+   "options": [
+    {
+     "text": "a table of rates"
+    },
+    {
+     "text": "a clean slate"
+    },
+    {
+     "text": "a final result"
+    },
+    {
+     "text": "a broken table"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tabula rasa, Latin for blank slate, refers to a blank mind or fresh start.",
+   "order": 144,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'pro rata'.",
+   "options": [
+    {
+     "text": "at random"
+    },
+    {
+     "text": "for free"
+    },
+    {
+     "text": "in proportion"
+    },
+    {
+     "text": "in advance"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pro rata means proportionally, e.g. pay calculated in proportion to the time worked.",
+   "order": 145,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'vice versa' mean?",
+   "options": [
+    {
+     "text": "versus"
+    },
+    {
+     "text": "in place of"
+    },
+    {
+     "text": "against the rule"
+    },
+    {
+     "text": "the other way round"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Vice versa means with the order reversed.",
+   "order": 146,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'de facto'.",
+   "options": [
+    {
+     "text": "by custom only"
+    },
+    {
+     "text": "in fact, whether or not by law"
+    },
+    {
+     "text": "in theory"
+    },
+    {
+     "text": "by law"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "De facto means actual or existing in practice, even without legal sanction.",
+   "order": 147,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'de jure' mean?",
+   "options": [
+    {
+     "text": "according to law"
+    },
+    {
+     "text": "in practice"
+    },
+    {
+     "text": "by force"
+    },
+    {
+     "text": "temporarily"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "De jure means by right or by law.",
+   "order": 148,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'alibi' is used to mean:",
+   "options": [
+    {
+     "text": "a witness"
+    },
+    {
+     "text": "a confession"
+    },
+    {
+     "text": "a punishment"
+    },
+    {
+     "text": "a plea of having been elsewhere when a crime was committed"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alibi is Latin for elsewhere; it is a defence based on absence from the scene.",
+   "order": 149,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'prima facie'.",
+   "options": [
+    {
+     "text": "in secret"
+    },
+    {
+     "text": "finally"
+    },
+    {
+     "text": "at first sight; on the face of it"
+    },
+    {
+     "text": "beyond doubt"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A prima facie case appears valid on first appearance.",
+   "order": 150,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The expression 'in camera' is used to mean:",
+   "options": [
+    {
+     "text": "in private, not in open court"
+    },
+    {
+     "text": "on film"
+    },
+    {
+     "text": "in public"
+    },
+    {
+     "text": "by photograph"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In camera proceedings are held in a judge's chamber, away from the public.",
+   "order": 151,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'mutatis mutandis' mean?",
+   "options": [
+    {
+     "text": "in all cases"
+    },
+    {
+     "text": "with necessary changes made"
+    },
+    {
+     "text": "by mutual wish"
+    },
+    {
+     "text": "without any change"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mutatis mutandis means making the necessary alterations.",
+   "order": 152,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'persona non grata' is used to mean:",
+   "options": [
+    {
+     "text": "an unwelcome person"
+    },
+    {
+     "text": "a famous person"
+    },
+    {
+     "text": "an unknown person"
+    },
+    {
+     "text": "a diplomat"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The phrase is used for a person who is not acceptable, especially to a government.",
+   "order": 153,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'carte blanche'.",
+   "options": [
+    {
+     "text": "a blank cheque only"
+    },
+    {
+     "text": "a ban"
+    },
+    {
+     "text": "complete freedom to act"
+    },
+    {
+     "text": "a white card game"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Carte blanche, French, means unrestricted authority.",
+   "order": 154,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'ipso facto' mean?",
+   "options": [
+    {
+     "text": "in fiction"
+    },
+    {
+     "text": "in a fact"
+    },
+    {
+     "text": "after the fact"
+    },
+    {
+     "text": "by that very fact"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ipso facto means as a direct consequence of the fact itself.",
+   "order": 155,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'ultra vires'.",
+   "options": [
+    {
+     "text": "very strong"
+    },
+    {
+     "text": "beyond one's legal power"
+    },
+    {
+     "text": "within one's power"
+    },
+    {
+     "text": "a type of virus"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An act ultra vires exceeds the authority legally given.",
+   "order": 156,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The expression 'magnum opus' is used to mean:",
+   "options": [
+    {
+     "text": "a big opera"
+    },
+    {
+     "text": "a minor work"
+    },
+    {
+     "text": "the greatest work of an artist or writer"
+    },
+    {
+     "text": "a debut work"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Magnum opus is Latin for great work.",
+   "order": 157,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'modus operandi'.",
+   "options": [
+    {
+     "text": "a method of working"
+    },
+    {
+     "text": "a mode of payment"
+    },
+    {
+     "text": "a type of operation"
+    },
+    {
+     "text": "a kind of machine"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Modus operandi means the particular manner of doing something, often abbreviated M.O.",
+   "order": 158,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'terra firma' mean?",
+   "options": [
+    {
+     "text": "a warm region"
+    },
+    {
+     "text": "the earth's core"
+    },
+    {
+     "text": "a firm contract"
+    },
+    {
+     "text": "dry land; solid ground"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Terra firma is Latin for firm land.",
+   "order": 159,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'in toto' is used to mean:",
+   "options": [
+    {
+     "text": "in a total silence"
+    },
+    {
+     "text": "as a whole; completely"
+    },
+    {
+     "text": "in part"
+    },
+    {
+     "text": "in a summary"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In toto, Latin, means as a whole, i.e. completely.",
+   "order": 160,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'a priori' mean?",
+   "options": [
+    {
+     "text": "by chance"
+    },
+    {
+     "text": "after the event"
+    },
+    {
+     "text": "from experience"
+    },
+    {
+     "text": "reasoning from cause to effect, before experience"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A priori, Latin, reasoning proceeds from known principles to conclusions, not from observation.",
+   "order": 161,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "The expression 'per capita' is used to mean:",
+   "options": [
+    {
+     "text": "per hundred"
+    },
+    {
+     "text": "for each person"
+    },
+    {
+     "text": "per year"
+    },
+    {
+     "text": "per unit area"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Per capita literally means by heads, i.e. per person.",
+   "order": 162,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'sine die' mean?",
+   "options": [
+    {
+     "text": "without a fixed date for resuming"
+    },
+    {
+     "text": "every day"
+    },
+    {
+     "text": "for a day"
+    },
+    {
+     "text": "on a holiday"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A meeting adjourned sine die has no new date fixed.",
+   "order": 163,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'habeas corpus'.",
+   "options": [
+    {
+     "text": "a post-mortem report"
+    },
+    {
+     "text": "a death sentence"
+    },
+    {
+     "text": "a writ to bring a detained person before a court"
+    },
+    {
+     "text": "a bail bond"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Habeas corpus protects against unlawful detention.",
+   "order": 164,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The expression 'en route' is used to mean:",
+   "options": [
+    {
+     "text": "at home"
+    },
+    {
+     "text": "on the way"
+    },
+    {
+     "text": "on a road"
+    },
+    {
+     "text": "by train only"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "En route, French, means on the way to a place.",
+   "order": 165,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What does the phrase 'caveat emptor' mean?",
+   "options": [
+    {
+     "text": "let the buyer beware"
+    },
+    {
+     "text": "let the seller beware"
+    },
+    {
+     "text": "a free sample"
+    },
+    {
+     "text": "a cautious seller"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Under caveat emptor, the buyer is responsible for checking quality before buying.",
+   "order": 166,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'alma mater'.",
+   "options": [
+    {
+     "text": "a mother's blessing"
+    },
+    {
+     "text": "a motherland"
+    },
+    {
+     "text": "the school or college one attended"
+    },
+    {
+     "text": "a female teacher"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alma mater, Latin for nourishing mother, denotes one's former institution.",
+   "order": 167,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The expression 'per annum' is used to mean:",
+   "options": [
+    {
+     "text": "every day"
+    },
+    {
+     "text": "for each month"
+    },
+    {
+     "text": "for ever"
+    },
+    {
+     "text": "for each year"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Per annum, Latin, means for each year, i.e. yearly.",
+   "order": 168,
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  }
+ ]
+}

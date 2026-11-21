@@ -1,0 +1,810 @@
+{
+ "sets": [
+  {
+   "id": "di-mixed-charts-s001",
+   "type": "table",
+   "title": "Table: Annual production target of five Tamil Nadu knitwear towns and Bar chart data: actual production achieved (both in thousand garments)",
+   "table": {
+    "columns": [
+     "Town",
+     "Target (Table)",
+     "Actual production (Bar)"
+    ],
+    "rows": [
+     [
+      "Tiruppur",
+      480,
+      432
+     ],
+     [
+      "Erode",
+      360,
+      288
+     ],
+     [
+      "Salem",
+      300,
+      276
+     ],
+     [
+      "Karur",
+      420,
+      357
+     ],
+     [
+      "Coimbatore",
+      540,
+      486
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s002",
+   "type": "table",
+   "title": "Table: Installed capacity of five state power stations (MW) and Bar chart data: peak load actually supplied (MW)",
+   "table": {
+    "columns": [
+     "Power station",
+     "Installed capacity (MW) (Table)",
+     "Peak load supplied (Bar)"
+    ],
+    "rows": [
+     [
+      "Neyveli",
+      1650,
+      1320
+     ],
+     [
+      "Mettur",
+      840,
+      672
+     ],
+     [
+      "Tuticorin",
+      1050,
+      945
+     ],
+     [
+      "Ennore",
+      720,
+      540
+     ],
+     [
+      "Vallur",
+      1500,
+      1275
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s003",
+   "type": "table",
+   "title": "Table: Seats sanctioned in five engineering colleges and Bar chart data: seats filled after counselling",
+   "table": {
+    "columns": [
+     "College",
+     "Seats sanctioned (Table)",
+     "Seats filled (Bar)"
+    ],
+    "rows": [
+     [
+      "Kaveri Institute",
+      900,
+      810
+     ],
+     [
+      "Palar College",
+      720,
+      540
+     ],
+     [
+      "Nilgiri Tech",
+      600,
+      570
+     ],
+     [
+      "Vaigai Institute",
+      840,
+      630
+     ],
+     [
+      "Pennar College",
+      660,
+      484
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s004",
+   "type": "table",
+   "title": "Table: Daily scheduled trains in five railway divisions and Bar chart data: trains that ran on time",
+   "table": {
+    "columns": [
+     "Division",
+     "Scheduled trains per day (Table)",
+     "On-time trains (Bar)"
+    ],
+    "rows": [
+     [
+      "Chennai",
+      240,
+      204
+     ],
+     [
+      "Madurai",
+      120,
+      96
+     ],
+     [
+      "Trichy",
+      150,
+      135
+     ],
+     [
+      "Salem",
+      110,
+      88
+     ],
+     [
+      "Palakkad",
+      180,
+      162
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s005",
+   "type": "table",
+   "title": "Table: Sanctioned beds in five district hospitals and Bar chart data: average beds occupied per day",
+   "table": {
+    "columns": [
+     "Hospital",
+     "Sanctioned beds (Table)",
+     "Beds occupied (Bar)"
+    ],
+    "rows": [
+     [
+      "Vellore",
+      450,
+      396
+     ],
+     [
+      "Thanjavur",
+      350,
+      294
+     ],
+     [
+      "Tirunelveli",
+      400,
+      300
+     ],
+     [
+      "Dindigul",
+      300,
+      276
+     ],
+     [
+      "Nagercoil",
+      250,
+      215
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s006",
+   "type": "table",
+   "title": "Table: Milk procurement capacity of five dairy cooperatives and Bar chart data: milk actually procured (both in thousand litres per day)",
+   "table": {
+    "columns": [
+     "Cooperative",
+     "Capacity (Table)",
+     "Milk actually procured (Bar)"
+    ],
+    "rows": [
+     [
+      "Anand Sahakari",
+      640,
+      576
+     ],
+     [
+      "Kolhapur Gokul",
+      480,
+      360
+     ],
+     [
+      "Erode Aavin",
+      560,
+      490
+     ],
+     [
+      "Nashik Vikas",
+      320,
+      256
+     ],
+     [
+      "Hubli Nandini",
+      400,
+      376
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the average actual production per town across the 5 towns? (in thousand garments, correct to one decimal place)",
+   "options": [
+    "367.8",
+    "420.0",
+    "459.8",
+    "393.9"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of actual production = 1839. Average = 1839 ÷ 5 = 367.8.",
+   "shortcut": "Add the bar-chart values and divide by the number of bars.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "The actual production of Karur is what percentage of its annual production target? (Correct to one decimal place.)",
+   "options": [
+    "117.6%",
+    "15.0%",
+    "45.9%",
+    "85.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both values come from the combined data: annual production target = 420 and actual production = 357 (thousand garments). Percentage = 357 ÷ 420 × 100 = 85.0%.",
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "Coimbatore's annual production target forms what percentage of the total annual production target of all towns? (Correct to one decimal place.)",
+   "options": [
+    "26.4%",
+    "29.4%",
+    "25.7%",
+    "2.6%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total annual production target = 2100. Share = 540 ÷ 2100 × 100 = 25.7%.",
+   "shortcut": "Use the Table column total as the base.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "By what percentage is the actual production of Coimbatore more than that of Karur? (Correct to one decimal place.)",
+   "options": [
+    "26.5%",
+    "36.1%",
+    "136.1%",
+    "28.6%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Difference = 486 − 357 = 129. Percentage more = 129 ÷ 357 × 100 = 36.1% (base is the smaller entity).",
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (actual production ÷ annual production target) × 100 among the towns. (Correct to one decimal place.)",
+   "options": [
+    "12.0 percentage points",
+    "92.0 percentage points",
+    "7.6 percentage points",
+    "1.1 percentage points"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percentages: Tiruppur 90.00%, Erode 80.00%, Salem 92.00%, Karur 85.00%, Coimbatore 90.00%. Difference = 92.00 − 80.00 = 12.0 percentage points.",
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "The peak load supplied of Ennore is what percentage of its installed capacity? (Correct to one decimal place.)",
+   "options": [
+    "133.3%",
+    "25.0%",
+    "42.9%",
+    "75.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both values come from the combined data: installed capacity = 720 and peak load supplied = 540 (MW). Percentage = 540 ÷ 720 × 100 = 75.0%.",
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "What is the ratio of installed capacity to peak load supplied for Ennore in its simplest form?",
+   "options": [
+    "3:4",
+    "4:1",
+    "4:3",
+    "720:720"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "installed capacity : peak load supplied = 720 : 540. HCF = 180, so the ratio is 4:3.",
+   "shortcut": "Divide both numbers by their HCF; keep Table first, Bar second.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "By what percentage is the peak load supplied of Neyveli more than that of Tuticorin? (Correct to one decimal place.)",
+   "options": [
+    "28.4%",
+    "39.7%",
+    "139.7%",
+    "57.1%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Difference = 1320 − 945 = 375. Percentage more = 375 ÷ 945 × 100 = 39.7% (base is the smaller entity).",
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "Vallur's installed capacity forms what percentage of the total installed capacity of all power stations? (Correct to one decimal place.)",
+   "options": [
+    "26.0%",
+    "26.8%",
+    "31.6%",
+    "2.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total installed capacity = 5760. Share = 1500 ÷ 5760 × 100 = 26.0%.",
+   "shortcut": "Use the Table column total as the base.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (peak load supplied ÷ installed capacity) × 100 among the power stations. (Correct to one decimal place.)",
+   "options": [
+    "90.0 percentage points",
+    "7.5 percentage points",
+    "1.2 percentage points",
+    "15.0 percentage points"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentages: Neyveli 80.00%, Mettur 80.00%, Tuticorin 90.00%, Ennore 75.00%, Vallur 85.00%. Difference = 90.00 − 75.00 = 15.0 percentage points.",
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "What is the average seats filled per college across the 5 colleges? (in seats, correct to one decimal place)",
+   "options": [
+    "744.0",
+    "758.5",
+    "606.8",
+    "675.4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of seats filled = 3034. Average = 3034 ÷ 5 = 606.8.",
+   "shortcut": "Add the bar-chart values and divide by the number of bars.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "What is the total shortfall of seats filled below seats sanctioned, summed over all colleges? (in seats)",
+   "options": [
+    "3720",
+    "686",
+    "3034",
+    "210"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total seats sanctioned = 3720; total seats filled = 3034. Shortfall = 3720 − 3034 = 686.",
+   "shortcut": "Subtract the two column totals instead of five separate gaps.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "For how many of the 5 colleges is the seats filled higher than the average seats filled of all 5?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 3034 ÷ 5 = 606.8. Values above it: Kaveri Institute, Vaigai Institute = 2.",
+   "shortcut": "Find the mean once, then scan the bars.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "By what percentage is the seats filled of Kaveri Institute more than that of Nilgiri Tech? (Correct to one decimal place.)",
+   "options": [
+    "29.6%",
+    "142.1%",
+    "50.0%",
+    "42.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = 810 − 570 = 240. Percentage more = 240 ÷ 570 × 100 = 42.1% (base is the smaller entity).",
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (seats filled ÷ seats sanctioned) × 100 among the colleges. (Correct to one decimal place.)",
+   "options": [
+    "95.0 percentage points",
+    "8.2 percentage points",
+    "21.7 percentage points",
+    "1.3 percentage points"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Percentages: Kaveri Institute 90.00%, Palar College 75.00%, Nilgiri Tech 95.00%, Vaigai Institute 75.00%, Pennar College 73.33%. Difference = 95.00 − 73.33 = 21.7 percentage points.",
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "The on-time trains of Palakkad is what percentage of its scheduled trains? (Correct to one decimal place.)",
+   "options": [
+    "111.1%",
+    "90.0%",
+    "10.0%",
+    "47.4%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both values come from the combined data: scheduled trains = 180 and on-time trains = 162 (trains per day). Percentage = 162 ÷ 180 × 100 = 90.0%.",
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "Madurai's scheduled trains forms what percentage of the total scheduled trains of all divisions? (Correct to one decimal place.)",
+   "options": [
+    "15.0%",
+    "14.0%",
+    "17.5%",
+    "1.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total scheduled trains = 800. Share = 120 ÷ 800 × 100 = 15.0%.",
+   "shortcut": "Use the Table column total as the base.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "Taking Chennai and Palakkad together, the combined on-time trains is what percentage of their combined scheduled trains? (Correct to one decimal place.)",
+   "options": [
+    "87.5%",
+    "114.8%",
+    "45.8%",
+    "87.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combined on-time trains = 204+162 = 366; combined scheduled trains = 240+180 = 420. Ratio = 87.1%. (Averaging the two separate percentages would be wrong.)",
+   "shortcut": "Add numerators and denominators first; never average percentages with different bases.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "For how many of the 5 divisions is the on-time trains higher than the average on-time trains of all 5?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Average = 685 ÷ 5 = 137.0. Values above it: Chennai, Palakkad = 2.",
+   "shortcut": "Find the mean once, then scan the bars.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (on-time trains ÷ scheduled trains) × 100 among the divisions. (Correct to one decimal place.)",
+   "options": [
+    "90.0 percentage points",
+    "10.0 percentage points",
+    "5.6 percentage points",
+    "1.1 percentage points"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percentages: Chennai 85.00%, Madurai 80.00%, Trichy 90.00%, Salem 80.00%, Palakkad 90.00%. Difference = 90.00 − 80.00 = 10.0 percentage points.",
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "What is the average beds occupied per hospital across the 5 hospitals? (in beds, correct to one decimal place)",
+   "options": [
+    "296.2",
+    "350.0",
+    "370.2",
+    "323.1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of beds occupied = 1481. Average = 1481 ÷ 5 = 296.2.",
+   "shortcut": "Add the bar-chart values and divide by the number of bars.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "By what percentage is the beds occupied of Vellore more than that of Thanjavur? (Correct to one decimal place.)",
+   "options": [
+    "25.8%",
+    "134.7%",
+    "28.6%",
+    "34.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = 396 − 294 = 102. Percentage more = 102 ÷ 294 × 100 = 34.7% (base is the smaller entity).",
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "For which hospital is the beds occupied the highest as a percentage of its sanctioned beds?",
+   "options": [
+    "Vellore",
+    "Nagercoil",
+    "Dindigul",
+    "Thanjavur"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ratios (Bar ÷ Table × 100): Vellore 88.0%, Thanjavur 84.0%, Tirunelveli 75.0%, Dindigul 92.0%, Nagercoil 86.0%. Highest is Dindigul.",
+   "shortcut": "Compare fractions Bar/Table directly; the largest leads.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "For how many of the 5 hospitals is the beds occupied higher than the average beds occupied of all 5?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Average = 1481 ÷ 5 = 296.2. Values above it: Vellore, Tirunelveli = 2.",
+   "shortcut": "Find the mean once, then scan the bars.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (beds occupied ÷ sanctioned beds) × 100 among the hospitals. (Correct to one decimal place.)",
+   "options": [
+    "17.0 percentage points",
+    "92.0 percentage points",
+    "9.6 percentage points",
+    "1.2 percentage points"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percentages: Vellore 88.00%, Thanjavur 84.00%, Tirunelveli 75.00%, Dindigul 92.00%, Nagercoil 86.00%. Difference = 92.00 − 75.00 = 17.0 percentage points.",
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "The milk actually procured of Kolhapur Gokul is what percentage of its procurement capacity? (Correct to one decimal place.)",
+   "options": [
+    "133.3%",
+    "25.0%",
+    "42.9%",
+    "75.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both values come from the combined data: procurement capacity = 480 and milk actually procured = 360 (thousand litres per day). Percentage = 360 ÷ 480 × 100 = 75.0%.",
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "For how many of the 5 cooperatives is the milk actually procured higher than the average milk actually procured of all 5?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Average = 2058 ÷ 5 = 411.6. Values above it: Anand Sahakari, Erode Aavin = 2.",
+   "shortcut": "Find the mean once, then scan the bars.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "Taking Anand Sahakari and Hubli Nandini together, the combined milk actually procured is what percentage of their combined procurement capacity? (Correct to one decimal place.)",
+   "options": [
+    "92.0%",
+    "91.5%",
+    "109.2%",
+    "39.7%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combined milk actually procured = 576+376 = 952; combined procurement capacity = 640+400 = 1040. Ratio = 91.5%. (Averaging the two separate percentages would be wrong.)",
+   "shortcut": "Add numerators and denominators first; never average percentages with different bases.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "For which cooperative is the milk actually procured the highest as a percentage of its procurement capacity?",
+   "options": [
+    "Hubli Nandini",
+    "Anand Sahakari",
+    "Erode Aavin",
+    "Nashik Vikas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios (Bar ÷ Table × 100): Anand Sahakari 90.0%, Kolhapur Gokul 75.0%, Erode Aavin 87.5%, Nashik Vikas 80.0%, Hubli Nandini 94.0%. Highest is Hubli Nandini.",
+   "shortcut": "Compare fractions Bar/Table directly; the largest leads.",
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (milk actually procured ÷ procurement capacity) × 100 among the cooperatives. (Correct to one decimal place.)",
+   "options": [
+    "94.0 percentage points",
+    "10.8 percentage points",
+    "1.3 percentage points",
+    "19.0 percentage points"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentages: Anand Sahakari 90.00%, Kolhapur Gokul 75.00%, Erode Aavin 87.50%, Nashik Vikas 80.00%, Hubli Nandini 94.00%. Difference = 94.00 − 75.00 = 19.0 percentage points.",
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s006"
+  }
+ ]
+}

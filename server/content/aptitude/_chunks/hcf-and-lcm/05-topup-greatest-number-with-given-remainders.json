@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "Find the greatest number that divides 200 and 317 leaving a remainder of 5 in each case.",
+   "options": [
+    "117",
+    "112",
+    "122",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Subtract the remainder: 200−5 = 195, 317−5 = 312. Required number = HCF = 39.",
+   "shortcut": "HCF of (numbers − remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the greatest number that divides 173 and 132 leaving remainders 2 and 6 respectively?",
+   "options": [
+    "9",
+    "11",
+    "1",
+    "41"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Required = HCF(173−2, 132−6) = HCF(171, 126) = 9.",
+   "shortcut": "Subtract each remainder, then HCF.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 243, 339 and 411 leaving a remainder of 3 in each case.",
+   "options": [
+    "3",
+    "27",
+    "21",
+    "24"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Subtract the remainder: 243−3 = 240, 339−3 = 336, 411−3 = 408. Required number = HCF = 24.",
+   "shortcut": "HCF of (numbers − remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 271 and 505 leaving a remainder of 1 in each case.",
+   "options": [
+    "233",
+    "1",
+    "234",
+    "235"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Subtract the remainder: 271−1 = 270, 505−1 = 504. Required number = HCF = 18.",
+   "shortcut": "HCF of (numbers − remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 101, 129 and 192 leaving a remainder of 3 in each case.",
+   "options": [
+    "1",
+    "4",
+    "7",
+    "10"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Subtract the remainder: 101−3 = 98, 129−3 = 126, 192−3 = 189. Required number = HCF = 7.",
+   "shortcut": "HCF of (numbers − remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the greatest number that divides 57 and 79 leaving remainders 1 and 2 respectively?",
+   "options": [
+    "7",
+    "1",
+    "8",
+    "22"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Required = HCF(57−1, 79−2) = HCF(56, 77) = 7.",
+   "shortcut": "Subtract each remainder, then HCF.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the greatest number that divides 421 and 339 leaving remainders 1 and 3 respectively?",
+   "options": [
+    "2",
+    "84",
+    "1",
+    "85"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required = HCF(421−1, 339−3) = HCF(420, 336) = 84.",
+   "shortcut": "Subtract each remainder, then HCF.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 633, 737 and 614 leaving remainders 3, 2 and 5 respectively.",
+   "options": [
+    "42",
+    "21",
+    "1",
+    "24"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required = HCF of 633−3 = 630, 737−2 = 735, 614−5 = 609 = 21.",
+   "shortcut": "HCF of (number − its remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number which divides 147, 394 and 446 and leaves the same remainder in each case.",
+   "options": [
+    "13",
+    "26",
+    "1",
+    "17"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Same remainder → the number divides every difference. 394−147 = 247, 446−147 = 299. HCF = 13.",
+   "shortcut": "HCF of the differences.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of the digits of the greatest number that divides 50 and 458 leaving remainder 2 in each case?",
+   "options": [
+    "7",
+    "8",
+    "2",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(50−2, 458−2) = HCF(48, 456) = 24. Digit sum = 6.",
+   "shortcut": "Find the HCF of the reduced numbers, then add digits.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number which divides 261, 295 and 584 and leaves the same remainder in each case.",
+   "options": [
+    "23",
+    "1",
+    "34",
+    "17"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Same remainder → the number divides every difference. 295−261 = 34, 584−261 = 323. HCF = 17.",
+   "shortcut": "HCF of the differences.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 47, 171 and 131 leaving remainders 5, 3 and 5 respectively.",
+   "options": [
+    "1",
+    "2",
+    "42",
+    "47"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Required = HCF of 47−5 = 42, 171−3 = 168, 131−5 = 126 = 42.",
+   "shortcut": "HCF of (number − its remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 257, 264 and 256 leaving remainders 5, 3 and 4 respectively.",
+   "options": [
+    "18",
+    "14",
+    "1",
+    "9"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required = HCF of 257−5 = 252, 264−3 = 261, 256−4 = 252 = 9.",
+   "shortcut": "HCF of (number − its remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number which divides 318, 354 and 450 and leaves the same remainder in each case.",
+   "options": [
+    "12",
+    "36",
+    "24",
+    "6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Same remainder → the number divides every difference. 354−318 = 36, 450−318 = 132. HCF = 12.",
+   "shortcut": "HCF of the differences.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of the digits of the greatest number that divides 676 and 781 leaving remainder 4 in each case?",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "HCF(676−4, 781−4) = HCF(672, 777) = 21. Digit sum = 3.",
+   "shortcut": "Find the HCF of the reduced numbers, then add digits.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number which divides 402, 652 and 852 and leaves the same remainder in each case.",
+   "options": [
+    "50",
+    "100",
+    "2",
+    "25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Same remainder → the number divides every difference. 652−402 = 250, 852−402 = 450. HCF = 50.",
+   "shortcut": "HCF of the differences.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number that divides 32, 105 and 44 leaving remainders 2, 3 and 2 respectively.",
+   "options": [
+    "1",
+    "6",
+    "8",
+    "12"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required = HCF of 32−2 = 30, 105−3 = 102, 44−2 = 42 = 6.",
+   "shortcut": "HCF of (number − its remainder).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the greatest number which divides 78, 803 and 828 and leaves the same remainder in each case.",
+   "options": [
+    "25",
+    "1",
+    "50",
+    "28"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Same remainder → the number divides every difference. 803−78 = 725, 828−78 = 750. HCF = 25.",
+   "shortcut": "HCF of the differences.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A number N divides 514, 577 and 110 leaving remainders 4, 7 and 5 respectively. If N is as large as possible, what is the remainder when 1201 is divided by N?",
+   "options": [
+    "14",
+    "1",
+    "16",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Largest N = HCF(510, 570, 105) = 15. Each number leaves its own remainder, so the sum leaves (16) mod 15 = 1.",
+   "shortcut": "Remainder of the sum = sum of remainders (mod N).",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many different numbers divide 424 and 241 leaving remainders 4 and 1 respectively?",
+   "options": [
+    "12",
+    "7",
+    "8",
+    "9"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Any such number divides HCF(420, 240) = 60 and must exceed the larger remainder 4. Divisors of 60 greater than 4: 8.",
+   "shortcut": "Divisors of the HCF that exceed every remainder.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many different numbers divide 830 and 290 leaving remainders 2 and 2 respectively?",
+   "options": [
+    "6",
+    "9",
+    "7",
+    "8"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Any such number divides HCF(828, 288) = 36 and must exceed the larger remainder 2. Divisors of 36 greater than 2: 7.",
+   "shortcut": "Divisors of the HCF that exceed every remainder.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many different numbers divide 651 and 410 leaving remainders 3 and 2 respectively?",
+   "options": [
+    "6",
+    "4",
+    "8",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Any such number divides HCF(648, 408) = 24 and must exceed the larger remainder 3. Divisors of 24 greater than 3: 5.",
+   "shortcut": "Divisors of the HCF that exceed every remainder.",
+   "subPattern": "greatest-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,738 @@
+{
+ "sets": [
+  {
+   "id": "di-caselets-s041",
+   "type": "text",
+   "title": "Gym members in Kochi",
+   "text": "A gym in Kochi has 200 members. 120 members do cardio, 90 members do weight training and 30 members do neither of the two. Every member who does anything does at least one of these two activities."
+  },
+  {
+   "id": "di-caselets-s042",
+   "type": "text",
+   "title": "Hyderabad commuters survey",
+   "text": "In a survey of 500 commuters in Hyderabad, 320 said they use the Metro, 280 said they use city buses and 40 said they use neither. The commuters who use both modes were not counted separately in the survey."
+  },
+  {
+   "id": "di-caselets-s043",
+   "type": "text",
+   "title": "Skills at a Pune IT firm",
+   "text": "In an IT firm in Pune, 38 employees know Python, 32 know Java and 25 know SQL. 12 know both Python and Java, 10 know both Python and SQL, 9 know both Java and SQL, and 4 know all three. 12 employees know none of the three."
+  },
+  {
+   "id": "di-caselets-s044",
+   "type": "text",
+   "title": "Newspaper readership in Madurai",
+   "text": "Of 400 households surveyed in Madurai, 210 take The Hindu, 160 take Dina Thanthi and 120 take Dinamalar. 50 households take both The Hindu and Dina Thanthi, 40 take both The Hindu and Dinamalar, 30 take both Dina Thanthi and Dinamalar, and 10 take all three newspapers."
+  },
+  {
+   "id": "di-caselets-s045",
+   "type": "text",
+   "title": "Student clubs in a Delhi school",
+   "text": "All 120 students of Class XII in a Delhi school belong to at least one of three clubs: Quiz, Music and Sports. 58 are in the Quiz club, 50 in the Music club and 65 in the Sports club. The number of students who belong to exactly two clubs is 10 for Quiz and Music, 15 for Quiz and Sports, and 12 for Music and Sports."
+  },
+  {
+   "id": "di-caselets-s046",
+   "type": "text",
+   "title": "Sports at a Coimbatore engineering college",
+   "text": "In an engineering college in Coimbatore with 2,000 students, 60% of the students play cricket, 45% play football and 20% play neither of the two games."
+  },
+  {
+   "id": "di-caselets-s047",
+   "type": "text",
+   "title": "OTT subscriptions",
+   "text": "Out of 1,000 young viewers in Mumbai surveyed, 520 subscribe to Hotstar, 450 to Netflix and 400 to Prime Video. 200 subscribe to both Hotstar and Netflix, 170 to both Hotstar and Prime Video, 150 to both Netflix and Prime Video, and 80 subscribe to all three platforms."
+  },
+  {
+   "id": "di-caselets-s048",
+   "type": "text",
+   "title": "Tea, coffee and juice in a Trichy canteen",
+   "text": "Every employee in a canteen survey at a Trichy factory takes at least one of tea, coffee and juice. 180 take tea, 150 take coffee and 90 take juice. 60 take both tea and coffee, 30 take both tea and juice, and 40 take both coffee and juice. 25 employees take only juice."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "How many members do both cardio and weight training?",
+   "options": [
+    "210",
+    "40",
+    "80",
+    "36"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Members doing at least one = 200 − 30 = 170. Both = 120 + 90 − 170 = 40.",
+   "shortcut": "Both = sum of the two − union.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many members do only cardio?",
+   "options": [
+    "120",
+    "80",
+    "130",
+    "72"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only cardio = 120 − 40 = 80.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many members do only weight training?",
+   "options": [
+    "90",
+    "50",
+    "80",
+    "45"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only weights = 90 − 40 = 50.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many members do at least one of the two activities?",
+   "options": [
+    "210",
+    "170",
+    "200",
+    "153"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = total − neither = 170.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "What percentage of members do exactly one of the two activities?",
+   "options": [
+    "85%",
+    "65%",
+    "20%",
+    "58%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = 80 + 50 = 130. 130/200 × 100 = 65%.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s041"
+  },
+  {
+   "questionText": "How many commuters use both the Metro and city buses?",
+   "options": [
+    "140",
+    "100",
+    "180",
+    "126"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Union = 500 − 40 = 460. Both = 320 + 280 − 460 = 140.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "How many commuters use only the Metro?",
+   "options": [
+    "180",
+    "320",
+    "162",
+    "198"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only Metro = 320 − 140 = 180.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "How many commuters use only buses?",
+   "options": [
+    "140",
+    "280",
+    "126",
+    "154"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only buses = 280 − 140 = 140.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "What percentage of commuters use neither mode?",
+   "options": [
+    "8%",
+    "28%",
+    "9%",
+    "7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Neither = 40 commuters out of the 500 surveyed. Percentage = 40/500 × 100 = 8%. The Metro and bus figures are not needed.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "If 30% of those who use only buses shift to the Metro (and continue to be counted as Metro users), how many commuters will use the Metro in total?",
+   "options": [
+    "362",
+    "404",
+    "278",
+    "326"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only-bus users = 140; 30% of 140 = 42. Metro users become 320 + 42 = 362.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s042"
+  },
+  {
+   "questionText": "How many employees does the firm have?",
+   "options": [
+    "95",
+    "68",
+    "72",
+    "80"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Union = 38+32+25−12−10−9+4 = 68. Adding the 12 who know none gives 80.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many employees know only Python?",
+   "options": [
+    "16",
+    "18",
+    "22",
+    "20"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only Python = 38 − (Python∩Java only 8) − (Python∩SQL only 6) − 4 all three = 20.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many employees know exactly two of the three languages?",
+   "options": [
+    "31",
+    "27",
+    "17",
+    "19"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly two = (12−4) + (10−4) + (9−4) = 8 + 6 + 5 = 19.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many employees know exactly one of the three languages?",
+   "options": [
+    "57",
+    "49",
+    "40",
+    "45"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only Python 20, only Java 32−8−5−4 = 15, only SQL 25−6−5−4 = 10. Total = 45.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "What percentage of all employees know at least two of the languages?",
+   "options": [
+    "23.75%",
+    "33.82%",
+    "25.88%",
+    "28.75%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least two = 19 + 4 = 23. 23/80 × 100 = 28.75%.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s043"
+  },
+  {
+   "questionText": "How many households take none of the three newspapers?",
+   "options": [
+    "-90",
+    "18",
+    "20",
+    "22"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Union = 490 − 120 + 10 = 380. None = 400 − 380 = 20.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many households take only The Hindu?",
+   "options": [
+    "120",
+    "110",
+    "130",
+    "117"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only Hindu = 210 − 50 − 40 + 10 = 130.",
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many households take exactly two of the three newspapers?",
+   "options": [
+    "120",
+    "110",
+    "90",
+    "81"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly two = 40 + 30 + 20 = 90.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many households take The Hindu and Dinamalar but not Dina Thanthi?",
+   "options": [
+    "40",
+    "50",
+    "30",
+    "27"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Hindu∩Dinamalar = 40, of which 10 also take Dina Thanthi. So 30.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "Households taking exactly one newspaper form what percentage of the households taking at least one newspaper, to two decimal places?",
+   "options": [
+    "70.00%",
+    "57.14%",
+    "73.68%",
+    "66.32%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only Hindu 130, only Thanthi 160−50−30+10 = 90, only Dinamalar 120−40−30+10 = 60. Exactly one = 280. 280/380 × 100 = 73.68%.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s044"
+  },
+  {
+   "questionText": "How many students belong to exactly two clubs?",
+   "options": [
+    "53",
+    "37",
+    "45",
+    "33"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly two = 10 + 15 + 12 = 37.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students belong to all three clubs?",
+   "options": [
+    "53",
+    "8",
+    "7",
+    "9"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of memberships = 173 = x + 2(37) + 3t, with x = 120 − 37 − t singles. So 173 = 83 − t + 74 + 3t → 2t = 16, t = 8.",
+   "shortcut": "Total memberships = singles + 2×pairs + 3×triple.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students are only in the Quiz club?",
+   "options": [
+    "33",
+    "25",
+    "50",
+    "22"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only Quiz = 58 − 10 − 15 − 8 = 25.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students belong to exactly one club?",
+   "options": [
+    "83",
+    "75",
+    "112",
+    "68"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = total − exactly two − all three = 120 − 37 − 8 = 75.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "How many students are in the Music or Sports club (or both)?",
+   "options": [
+    "115",
+    "95",
+    "62",
+    "86"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone is in at least one club, so students outside Music and Sports are exactly those only in Quiz = 25. Hence 120 − 25 = 95.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s045"
+  },
+  {
+   "questionText": "What percentage of students play both cricket and football?",
+   "options": [
+    "25%",
+    "5%",
+    "15%",
+    "22%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Playing at least one = 80%. Both = 60 + 45 − 80 = 25%.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many students play only cricket?",
+   "options": [
+    "700",
+    "1200",
+    "500",
+    "630"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only cricket = 60% − 25% = 35% of 2,000 = 700.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many students play only football?",
+   "options": [
+    "400",
+    "900",
+    "500",
+    "360"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only football = 45% − 25% = 20% of 2,000 = 400.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many students play exactly one of the two games?",
+   "options": [
+    "1100",
+    "1600",
+    "500",
+    "990"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = 35% + 20% = 55% of 2,000 = 1,100.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "Students playing exactly one game are what percentage of those who play at least one game?",
+   "options": [
+    "68.75%",
+    "55.00%",
+    "31.25%",
+    "61.88%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Play at least one game = 100% − 20% = 80% of 2,000 = 1,600. Both = 60% + 45% − 80% = 25% (500). Exactly one = 80% − 25% = 55%, i.e. 1,100 students. Required = 55/80 × 100 = 68.75%.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s046"
+  },
+  {
+   "questionText": "How many viewers subscribe to none of the three platforms?",
+   "options": [
+    "-370",
+    "150",
+    "63",
+    "70"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Union = 1370 − 520 + 80 = 930. None = 1000 − 930 = 70.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many viewers subscribe only to Hotstar?",
+   "options": [
+    "150",
+    "440",
+    "207",
+    "230"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only Hotstar = 520 − 200 − 170 + 80 = 230.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many viewers subscribe to Netflix and Prime Video but not Hotstar?",
+   "options": [
+    "150",
+    "230",
+    "63",
+    "70"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "150 subscribe to both; 80 of them also have Hotstar. So 70.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many viewers subscribe to at least two platforms?",
+   "options": [
+    "520",
+    "440",
+    "324",
+    "360"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least two = sum of pairs − 2 × triple = 520 − 160 = 360.",
+   "shortcut": "At least two = ΣPairs − 2×Triple.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "What percentage of all surveyed viewers subscribe to exactly one platform?",
+   "options": [
+    "93%",
+    "36%",
+    "51%",
+    "57%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Union 930; exactly two = 360 − 80 = 280; all three = 80. Exactly one = 930 − 280 − 80 = 570. 570/1000 × 100 = 57%.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s047"
+  },
+  {
+   "questionText": "How many employees take all three drinks?",
+   "options": [
+    "15",
+    "4",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Juice total = only juice + (TJ − t) + (CJ − t) + t = 25 + 30 + 40 − t = 95 − t = 90, so t = 5.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many employees does the survey cover?",
+   "options": [
+    "420",
+    "290",
+    "295",
+    "266"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Everyone takes at least one, so total = union = 420 − 130 + 5 = 295.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many employees take only tea?",
+   "options": [
+    "90",
+    "85",
+    "95",
+    "86"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only tea = 180 − 60 − 30 + 5 = 95.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many employees take tea and coffee but not juice?",
+   "options": [
+    "60",
+    "65",
+    "55",
+    "50"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tea∩Coffee = 60, which includes the 5 who take all three. So 55.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  },
+  {
+   "questionText": "How many employees take exactly two of the three drinks?",
+   "options": [
+    "130",
+    "125",
+    "115",
+    "104"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "All three = a: only juice = 90 − 30 − 40 + a = 25, so a = 5. Exactly two = (60 + 30 + 40) − 3a = 130 − 15 = 115. Check: only tea 95 + only coffee 55 + only juice 25 + two 115 + three 5 = 295.",
+   "subPattern": "venn-set-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-caselets-s048"
+  }
+ ]
+}

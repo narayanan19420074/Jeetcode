@@ -1,0 +1,5492 @@
+{
+ "pattern": {
+  "title": "DI: Mixed and Advanced",
+  "slug": "di-mixed-charts",
+  "description": "Combination and advanced DI sets.",
+  "order": 62,
+  "passPercentage": 70,
+  "timeLimitMinutes": 20,
+  "category": "Data Interpretation",
+  "testQuestionCount": 15,
+  "subPatterns": [
+   {
+    "slug": "table-bar",
+    "title": "Table + bar"
+   },
+   {
+    "slug": "table-line",
+    "title": "Table + line"
+   },
+   {
+    "slug": "bar-pie",
+    "title": "Bar + pie"
+   },
+   {
+    "slug": "missing-data-interpretation",
+    "title": "Missing data interpretation"
+   },
+   {
+    "slug": "data-sufficiency-style-di",
+    "title": "Data-sufficiency style DI"
+   }
+  ]
+ },
+ "sets": [
+  {
+   "id": "di-mixed-charts-s001",
+   "type": "table",
+   "title": "Table: Annual production target of five Tamil Nadu knitwear towns and Bar chart data: actual production achieved (both in thousand garments)",
+   "table": {
+    "columns": [
+     "Town",
+     "Target (Table)",
+     "Actual production (Bar)"
+    ],
+    "rows": [
+     [
+      "Tiruppur",
+      480,
+      432
+     ],
+     [
+      "Erode",
+      360,
+      288
+     ],
+     [
+      "Salem",
+      300,
+      276
+     ],
+     [
+      "Karur",
+      420,
+      357
+     ],
+     [
+      "Coimbatore",
+      540,
+      486
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s002",
+   "type": "table",
+   "title": "Table: Installed capacity of five state power stations (MW) and Bar chart data: peak load actually supplied (MW)",
+   "table": {
+    "columns": [
+     "Power station",
+     "Installed capacity (MW) (Table)",
+     "Peak load supplied (Bar)"
+    ],
+    "rows": [
+     [
+      "Neyveli",
+      1650,
+      1320
+     ],
+     [
+      "Mettur",
+      840,
+      672
+     ],
+     [
+      "Tuticorin",
+      1050,
+      945
+     ],
+     [
+      "Ennore",
+      720,
+      540
+     ],
+     [
+      "Vallur",
+      1500,
+      1275
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s003",
+   "type": "table",
+   "title": "Table: Seats sanctioned in five engineering colleges and Bar chart data: seats filled after counselling",
+   "table": {
+    "columns": [
+     "College",
+     "Seats sanctioned (Table)",
+     "Seats filled (Bar)"
+    ],
+    "rows": [
+     [
+      "Kaveri Institute",
+      900,
+      810
+     ],
+     [
+      "Palar College",
+      720,
+      540
+     ],
+     [
+      "Nilgiri Tech",
+      600,
+      570
+     ],
+     [
+      "Vaigai Institute",
+      840,
+      630
+     ],
+     [
+      "Pennar College",
+      660,
+      484
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s004",
+   "type": "table",
+   "title": "Table: Daily scheduled trains in five railway divisions and Bar chart data: trains that ran on time",
+   "table": {
+    "columns": [
+     "Division",
+     "Scheduled trains per day (Table)",
+     "On-time trains (Bar)"
+    ],
+    "rows": [
+     [
+      "Chennai",
+      240,
+      204
+     ],
+     [
+      "Madurai",
+      120,
+      96
+     ],
+     [
+      "Trichy",
+      150,
+      135
+     ],
+     [
+      "Salem",
+      110,
+      88
+     ],
+     [
+      "Palakkad",
+      180,
+      162
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s005",
+   "type": "table",
+   "title": "Table: Sanctioned beds in five district hospitals and Bar chart data: average beds occupied per day",
+   "table": {
+    "columns": [
+     "Hospital",
+     "Sanctioned beds (Table)",
+     "Beds occupied (Bar)"
+    ],
+    "rows": [
+     [
+      "Vellore",
+      450,
+      396
+     ],
+     [
+      "Thanjavur",
+      350,
+      294
+     ],
+     [
+      "Tirunelveli",
+      400,
+      300
+     ],
+     [
+      "Dindigul",
+      300,
+      276
+     ],
+     [
+      "Nagercoil",
+      250,
+      215
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s006",
+   "type": "table",
+   "title": "Table: Milk procurement capacity of five dairy cooperatives and Bar chart data: milk actually procured (both in thousand litres per day)",
+   "table": {
+    "columns": [
+     "Cooperative",
+     "Capacity (Table)",
+     "Milk actually procured (Bar)"
+    ],
+    "rows": [
+     [
+      "Anand Sahakari",
+      640,
+      576
+     ],
+     [
+      "Kolhapur Gokul",
+      480,
+      360
+     ],
+     [
+      "Erode Aavin",
+      560,
+      490
+     ],
+     [
+      "Nashik Vikas",
+      320,
+      256
+     ],
+     [
+      "Hubli Nandini",
+      400,
+      376
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s007",
+   "type": "table",
+   "title": "Table: Tea production of a Nilgiri estate (lakh kg) and Line graph data: average auction price (₹ per kg), 2019 to 2024",
+   "table": {
+    "columns": [
+     "Year",
+     "Production (lakh kg) (Table)",
+     "Auction price (₹ per kg) (Line)"
+    ],
+    "rows": [
+     [
+      "2019",
+      40,
+      180
+     ],
+     [
+      "2020",
+      36,
+      200
+     ],
+     [
+      "2021",
+      45,
+      190
+     ],
+     [
+      "2022",
+      50,
+      210
+     ],
+     [
+      "2023",
+      48,
+      240
+     ],
+     [
+      "2024",
+      60,
+      225
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s008",
+   "type": "table",
+   "title": "Table: Milk sold by a Kolhapur cooperative (lakh litres) and Line graph data: selling price (₹ per litre)",
+   "table": {
+    "columns": [
+     "Year",
+     "Milk sales (lakh litres) (Table)",
+     "Selling price (₹ per litre) (Line)"
+    ],
+    "rows": [
+     [
+      "2018-19",
+      80,
+      36
+     ],
+     [
+      "2019-20",
+      84,
+      38
+     ],
+     [
+      "2020-21",
+      70,
+      40
+     ],
+     [
+      "2021-22",
+      90,
+      42
+     ],
+     [
+      "2022-23",
+      96,
+      45
+     ],
+     [
+      "2023-24",
+      100,
+      48
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s009",
+   "type": "table",
+   "title": "Table: Onions arriving at Lasalgaon market (lakh kg) and Line graph data: wholesale price (₹ per kg)",
+   "table": {
+    "columns": [
+     "Year",
+     "Arrivals (lakh kg) (Table)",
+     "Wholesale price (₹ per kg) (Line)"
+    ],
+    "rows": [
+     [
+      "2019",
+      120,
+      24
+     ],
+     [
+      "2020",
+      100,
+      40
+     ],
+     [
+      "2021",
+      140,
+      20
+     ],
+     [
+      "2022",
+      150,
+      16
+     ],
+     [
+      "2023",
+      110,
+      30
+     ],
+     [
+      "2024",
+      130,
+      28
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s010",
+   "type": "table",
+   "title": "Table: Rice sold by a Thanjavur mill (lakh kg) and Line graph data: price realised (₹ per kg)",
+   "table": {
+    "columns": [
+     "Year",
+     "Rice sold (lakh kg) (Table)",
+     "Price realised (₹ per kg) (Line)"
+    ],
+    "rows": [
+     [
+      "2018",
+      50,
+      30
+     ],
+     [
+      "2019",
+      56,
+      32
+     ],
+     [
+      "2020",
+      60,
+      35
+     ],
+     [
+      "2021",
+      54,
+      40
+     ],
+     [
+      "2022",
+      66,
+      38
+     ],
+     [
+      "2023",
+      70,
+      45
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s011",
+   "type": "table",
+   "title": "Table: Bricks supplied by a Hosur kiln (lakh pieces) and Line graph data: price (₹ per piece)",
+   "table": {
+    "columns": [
+     "Year",
+     "Bricks supplied (lakh pieces) (Table)",
+     "Price (₹ per piece) (Line)"
+    ],
+    "rows": [
+     [
+      "2019",
+      30,
+      6
+     ],
+     [
+      "2020",
+      24,
+      7
+     ],
+     [
+      "2021",
+      36,
+      6
+     ],
+     [
+      "2022",
+      42,
+      8
+     ],
+     [
+      "2023",
+      45,
+      9
+     ],
+     [
+      "2024",
+      54,
+      10
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s012",
+   "type": "table",
+   "title": "Table: Banana chips packed by a Trichy unit (lakh packets) and Line graph data: price per packet (₹)",
+   "table": {
+    "columns": [
+     "Year",
+     "Packets sold (lakh packets) (Table)",
+     "Price per packet (₹) (Line)"
+    ],
+    "rows": [
+     [
+      "2019-20",
+      20,
+      10
+     ],
+     [
+      "2020-21",
+      16,
+      10
+     ],
+     [
+      "2021-22",
+      25,
+      12
+     ],
+     [
+      "2022-23",
+      32,
+      15
+     ],
+     [
+      "2023-24",
+      36,
+      15
+     ],
+     [
+      "2024-25",
+      40,
+      20
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s013",
+   "type": "table",
+   "title": "Pie chart data: share of the total sales of ₹4,000 crore among six companies, and Bar chart data: number of employees (in hundreds)",
+   "table": {
+    "columns": [
+     "Company",
+     "Pie: share of sales (%)",
+     "Bar: employees (hundreds of employees)"
+    ],
+    "rows": [
+     [
+      "Aarav Foods",
+      25,
+      50
+     ],
+     [
+      "Bharat Motors",
+      20,
+      80
+     ],
+     [
+      "Chola Textiles",
+      15,
+      30
+     ],
+     [
+      "Deccan Steel",
+      10,
+      40
+     ],
+     [
+      "Eastern Pharma",
+      20,
+      25
+     ],
+     [
+      "Falcon Paper",
+      10,
+      16
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s014",
+   "type": "table",
+   "title": "Pie chart data: share of total rice production of 2,400 lakh tonnes among five states, and Bar chart data: area under cultivation (lakh hectares)",
+   "table": {
+    "columns": [
+     "State",
+     "Pie: share of rice production (%)",
+     "Bar: area under cultivation (lakh hectares)"
+    ],
+    "rows": [
+     [
+      "Punjab",
+      25,
+      60
+     ],
+     [
+      "West Bengal",
+      30,
+      100
+     ],
+     [
+      "Uttar Pradesh",
+      20,
+      80
+     ],
+     [
+      "Tamil Nadu",
+      10,
+      20
+     ],
+     [
+      "Andhra Pradesh",
+      15,
+      40
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s015",
+   "type": "table",
+   "title": "Pie chart data: share of 1,500 lakh passengers carried in a year by five railway zones, and Bar chart data: number of trains run (in hundreds)",
+   "table": {
+    "columns": [
+     "Zone",
+     "Pie: share of passengers carried (%)",
+     "Bar: trains run (hundreds of trains)"
+    ],
+    "rows": [
+     [
+      "Southern",
+      30,
+      50
+     ],
+     [
+      "Western",
+      25,
+      100
+     ],
+     [
+      "Northern",
+      20,
+      40
+     ],
+     [
+      "Eastern",
+      15,
+      50
+     ],
+     [
+      "Central",
+      10,
+      25
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s016",
+   "type": "table",
+   "title": "Pie chart data: share of 3,000 runs scored by a team in a season among six batters, and Bar chart data: innings batted",
+   "table": {
+    "columns": [
+     "Batter",
+     "Pie: share of runs scored (%)",
+     "Bar: innings batted (innings)"
+    ],
+    "rows": [
+     [
+      "Rohan",
+      25,
+      24
+     ],
+     [
+      "Siddharth",
+      20,
+      16
+     ],
+     [
+      "Tilak",
+      15,
+      10
+     ],
+     [
+      "Umesh",
+      10,
+      12
+     ],
+     [
+      "Vikram",
+      20,
+      25
+     ],
+     [
+      "Yash",
+      10,
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s017",
+   "type": "table",
+   "title": "Pie chart data: share of 2,000 units of electricity consumed (in million units) among five cities, and Bar chart data: population (in lakh)",
+   "table": {
+    "columns": [
+     "City",
+     "Pie: share of electricity consumed (%)",
+     "Bar: population (lakh)"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      20,
+      16
+     ],
+     [
+      "Madurai",
+      15,
+      15
+     ],
+     [
+      "Trichy",
+      25,
+      10
+     ],
+     [
+      "Salem",
+      30,
+      40
+     ],
+     [
+      "Tiruppur",
+      10,
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s018",
+   "type": "table",
+   "title": "Pie chart data: share of 1,200 crore units of FMCG packs sold, among five regional brands, and Bar chart data: number of distributors (in hundreds)",
+   "table": {
+    "columns": [
+     "Brand",
+     "Pie: share of packs sold (%)",
+     "Bar: distributors (hundreds of distributors)"
+    ],
+    "rows": [
+     [
+      "Kongu Snacks",
+      20,
+      16
+     ],
+     [
+      "Pongal Foods",
+      35,
+      28
+     ],
+     [
+      "Ooty Biscuits",
+      15,
+      12
+     ],
+     [
+      "Malabar Mix",
+      10,
+      5
+     ],
+     [
+      "Cauvery Chips",
+      20,
+      32
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s019",
+   "type": "table",
+   "title": "Table: Quarterly sales of five products of a Trichy snack unit (₹ lakh). Each Total is the sum of the four quarters and the last row gives column totals. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Product",
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Banana chips",
+      24,
+      30,
+      "—",
+      38,
+      120
+     ],
+     [
+      "Murukku",
+      16,
+      20,
+      22,
+      "—",
+      76
+     ],
+     [
+      "Varkey",
+      "—",
+      34,
+      38,
+      42,
+      144
+     ],
+     [
+      "Mixture",
+      12,
+      14,
+      10,
+      16,
+      52
+     ],
+     [
+      "Peanut chikki",
+      18,
+      "—",
+      20,
+      24,
+      84
+     ],
+     [
+      "Total",
+      100,
+      120,
+      118,
+      138,
+      476
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s020",
+   "type": "table",
+   "title": "Table: Monthly rainfall recorded at five stations in a quarter (mm). Each Total is the sum of the three months and the last row gives column totals. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Station",
+     "July",
+     "August",
+     "September",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      60,
+      "—",
+      90,
+      230
+     ],
+     [
+      "Ooty",
+      120,
+      150,
+      "—",
+      380
+     ],
+     [
+      "Madurai",
+      40,
+      55,
+      70,
+      165
+     ],
+     [
+      "Chennai",
+      "—",
+      130,
+      150,
+      370
+     ],
+     [
+      "Kodaikanal",
+      100,
+      "—",
+      135,
+      360
+     ],
+     [
+      "Total",
+      410,
+      540,
+      555,
+      1505
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s021",
+   "type": "table",
+   "title": "Table: Goods wagons loaded at five railway yards in four weeks. Each Total is the sum of the four weeks and the last row gives column totals. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Yard",
+     "Week 1",
+     "Week 2",
+     "Week 3",
+     "Week 4",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Jolarpet",
+      140,
+      160,
+      120,
+      "—",
+      600
+     ],
+     [
+      "Erode",
+      90,
+      110,
+      100,
+      120,
+      420
+     ],
+     [
+      "Arakkonam",
+      200,
+      "—",
+      220,
+      240,
+      840
+     ],
+     [
+      "Tondiarpet",
+      70,
+      60,
+      "—",
+      80,
+      300
+     ],
+     [
+      "Podanur",
+      "—",
+      130,
+      150,
+      140,
+      530
+     ],
+     [
+      "Total",
+      610,
+      640,
+      680,
+      760,
+      2690
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s022",
+   "type": "table",
+   "title": "Table: Candidates in five coaching centres. Boys % is the percentage of boys among the Total; Boys and Girls are numbers. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Centre",
+     "Total",
+     "Boys %",
+     "Boys",
+     "Girls"
+    ],
+    "rows": [
+     [
+      "Anna Nagar",
+      "—",
+      "—",
+      240,
+      160
+     ],
+     [
+      "Gandhipuram",
+      300,
+      40,
+      "—",
+      "—"
+     ],
+     [
+      "Tambaram",
+      500,
+      50,
+      250,
+      250
+     ],
+     [
+      "Saidapet",
+      250,
+      "—",
+      100,
+      "—"
+     ],
+     [
+      "Peelamedu",
+      "—",
+      40,
+      "—",
+      210
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s023",
+   "type": "table",
+   "title": "Table: Staff in five footwear plants. Men % is the percentage of men among the Total; Men and Women are numbers. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Plant",
+     "Total",
+     "Men %",
+     "Men",
+     "Women"
+    ],
+    "rows": [
+     [
+      "Plant A",
+      600,
+      70,
+      "—",
+      "—"
+     ],
+     [
+      "Plant B",
+      "—",
+      "—",
+      270,
+      180
+     ],
+     [
+      "Plant C",
+      800,
+      50,
+      400,
+      400
+     ],
+     [
+      "Plant D",
+      500,
+      "—",
+      400,
+      "—"
+     ],
+     [
+      "Plant E",
+      "—",
+      25,
+      90,
+      "—"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s024",
+   "type": "table",
+   "title": "Table: Registered voters in five assembly constituencies. Male % is the percentage of male voters among the Total; Male and Female are numbers (in hundreds). Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Constituency",
+     "Total",
+     "Male %",
+     "Male",
+     "Female"
+    ],
+    "rows": [
+     [
+      "Constituency 1",
+      800,
+      "—",
+      "—",
+      440
+     ],
+     [
+      "Constituency 2",
+      "—",
+      55,
+      330,
+      "—"
+     ],
+     [
+      "Constituency 3",
+      500,
+      60,
+      300,
+      200
+     ],
+     [
+      "Constituency 4",
+      "—",
+      "—",
+      360,
+      540
+     ],
+     [
+      "Constituency 5",
+      700,
+      50,
+      "—",
+      "—"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s025",
+   "type": "table",
+   "title": "Table: Monthly output of three plants (thousand units), April to June. The nine monthly figures add up to 400; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Plant",
+     "April",
+     "May",
+     "June"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      40,
+      "?",
+      50
+     ],
+     [
+      "Hosur",
+      "?",
+      45,
+      55
+     ],
+     [
+      "Pune",
+      60,
+      70,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s026",
+   "type": "table",
+   "title": "Table: Sales at a snack outlet in Trichy. Revenue = packs sold x price per pack, and the total revenue of the three items is Rs 24,500. Cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Item",
+     "Packs sold",
+     "Price per pack (Rs)",
+     "Revenue (Rs)"
+    ],
+    "rows": [
+     [
+      "Banana chips",
+      200,
+      40,
+      8000
+     ],
+     [
+      "Varkey",
+      "?",
+      60,
+      "?"
+     ],
+     [
+      "Murukku",
+      150,
+      "?",
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s027",
+   "type": "table",
+   "title": "Table: Runs scored by three batters in three matches of a Coimbatore club league. The mean of all nine scores is 50; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Batter",
+     "Match 1",
+     "Match 2",
+     "Match 3"
+    ],
+    "rows": [
+     [
+      "Arjun",
+      52,
+      "?",
+      70
+     ],
+     [
+      "Bala",
+      35,
+      48,
+      "?"
+     ],
+     [
+      "Charan",
+      "?",
+      60,
+      44
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s028",
+   "type": "table",
+   "title": "Table: Marks (out of 50) of three students in three class tests. The mean of all nine marks is 38; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Student",
+     "Test 1",
+     "Test 2",
+     "Test 3"
+    ],
+    "rows": [
+     [
+      "Kavya",
+      40,
+      "?",
+      35
+     ],
+     [
+      "Meena",
+      "?",
+      38,
+      42
+     ],
+     [
+      "Nikhil",
+      30,
+      44,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s029",
+   "type": "table",
+   "title": "Table: Arrivals (quintals) of three vegetables at three Tamil Nadu mandis in one week. The nine figures add up to 740; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Mandi",
+     "Tomato",
+     "Onion",
+     "Potato"
+    ],
+    "rows": [
+     [
+      "Koyambedu",
+      120,
+      "?",
+      90
+     ],
+     [
+      "Madurai",
+      "?",
+      80,
+      60
+     ],
+     [
+      "Trichy",
+      70,
+      50,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s030",
+   "type": "table",
+   "title": "Table: A 600 km bus journey in three legs. Leg 1 is fully given; the distances of Legs 2 and 3 add up to the rest of the journey, and the speed of Leg 3 is not given. Cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Leg",
+     "Distance (km)",
+     "Speed (km/h)",
+     "Time (h)"
+    ],
+    "rows": [
+     [
+      "Leg 1",
+      150,
+      50,
+      3
+     ],
+     [
+      "Leg 2",
+      "?",
+      60,
+      "?"
+     ],
+     [
+      "Leg 3",
+      "?",
+      "?",
+      "?"
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the average actual production per town across the 5 towns? (in thousand garments, correct to one decimal place)",
+   "options": [
+    {
+     "text": "367.8"
+    },
+    {
+     "text": "459.8"
+    },
+    {
+     "text": "393.9"
+    },
+    {
+     "text": "420.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of actual production = 1839. Average = 1839 ÷ 5 = 367.8.",
+   "order": 1,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Add the bar-chart values and divide by the number of bars.",
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "The actual production of Karur is what percentage of its annual production target? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "45.9%"
+    },
+    {
+     "text": "117.6%"
+    },
+    {
+     "text": "15.0%"
+    },
+    {
+     "text": "85.0%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both values come from the combined data: annual production target = 420 and actual production = 357 (thousand garments). Percentage = 357 ÷ 420 × 100 = 85.0%.",
+   "order": 2,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "The peak load supplied of Ennore is what percentage of its installed capacity? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "25.0%"
+    },
+    {
+     "text": "75.0%"
+    },
+    {
+     "text": "42.9%"
+    },
+    {
+     "text": "133.3%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both values come from the combined data: installed capacity = 720 and peak load supplied = 540 (MW). Percentage = 540 ÷ 720 × 100 = 75.0%.",
+   "order": 3,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "What is the ratio of installed capacity to peak load supplied for Ennore in its simplest form?",
+   "options": [
+    {
+     "text": "3:4"
+    },
+    {
+     "text": "4:1"
+    },
+    {
+     "text": "4:3"
+    },
+    {
+     "text": "720:720"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "installed capacity : peak load supplied = 720 : 540. HCF = 180, so the ratio is 4:3.",
+   "order": 4,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Divide both numbers by their HCF; keep Table first, Bar second.",
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "What is the average seats filled per college across the 5 colleges? (in seats, correct to one decimal place)",
+   "options": [
+    {
+     "text": "744.0"
+    },
+    {
+     "text": "675.4"
+    },
+    {
+     "text": "758.5"
+    },
+    {
+     "text": "606.8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum of seats filled = 3034. Average = 3034 ÷ 5 = 606.8.",
+   "order": 5,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Add the bar-chart values and divide by the number of bars.",
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "What is the total shortfall of seats filled below seats sanctioned, summed over all colleges? (in seats)",
+   "options": [
+    {
+     "text": "686"
+    },
+    {
+     "text": "3034"
+    },
+    {
+     "text": "3720"
+    },
+    {
+     "text": "210"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total seats sanctioned = 3720; total seats filled = 3034. Shortfall = 3720 − 3034 = 686.",
+   "order": 6,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Subtract the two column totals instead of five separate gaps.",
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "The on-time trains of Palakkad is what percentage of its scheduled trains? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "111.1%"
+    },
+    {
+     "text": "47.4%"
+    },
+    {
+     "text": "90.0%"
+    },
+    {
+     "text": "10.0%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Both values come from the combined data: scheduled trains = 180 and on-time trains = 162 (trains per day). Percentage = 162 ÷ 180 × 100 = 90.0%.",
+   "order": 7,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "What is the average beds occupied per hospital across the 5 hospitals? (in beds, correct to one decimal place)",
+   "options": [
+    {
+     "text": "370.2"
+    },
+    {
+     "text": "296.2"
+    },
+    {
+     "text": "350.0"
+    },
+    {
+     "text": "323.1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of beds occupied = 1481. Average = 1481 ÷ 5 = 296.2.",
+   "order": 8,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Add the bar-chart values and divide by the number of bars.",
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "The milk actually procured of Kolhapur Gokul is what percentage of its procurement capacity? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "133.3%"
+    },
+    {
+     "text": "75.0%"
+    },
+    {
+     "text": "42.9%"
+    },
+    {
+     "text": "25.0%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both values come from the combined data: procurement capacity = 480 and milk actually procured = 360 (thousand litres per day). Percentage = 360 ÷ 480 × 100 = 75.0%.",
+   "order": 9,
+   "subPattern": "table-bar",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Part ÷ whole × 100, where the whole is the Table figure.",
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "Coimbatore's annual production target forms what percentage of the total annual production target of all towns? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "26.4%"
+    },
+    {
+     "text": "29.4%"
+    },
+    {
+     "text": "2.6%"
+    },
+    {
+     "text": "25.7%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total annual production target = 2100. Share = 540 ÷ 2100 × 100 = 25.7%.",
+   "order": 10,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Use the Table column total as the base.",
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "By what percentage is the actual production of Coimbatore more than that of Karur? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "36.1%"
+    },
+    {
+     "text": "136.1%"
+    },
+    {
+     "text": "28.6%"
+    },
+    {
+     "text": "26.5%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Difference = 486 − 357 = 129. Percentage more = 129 ÷ 357 × 100 = 36.1% (base is the smaller entity).",
+   "order": 11,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "By what percentage is the peak load supplied of Neyveli more than that of Tuticorin? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "139.7%"
+    },
+    {
+     "text": "57.1%"
+    },
+    {
+     "text": "39.7%"
+    },
+    {
+     "text": "28.4%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference = 1320 − 945 = 375. Percentage more = 375 ÷ 945 × 100 = 39.7% (base is the smaller entity).",
+   "order": 12,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "Vallur's installed capacity forms what percentage of the total installed capacity of all power stations? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "26.0%"
+    },
+    {
+     "text": "26.8%"
+    },
+    {
+     "text": "2.6%"
+    },
+    {
+     "text": "31.6%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total installed capacity = 5760. Share = 1500 ÷ 5760 × 100 = 26.0%.",
+   "order": 13,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Use the Table column total as the base.",
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "For how many of the 5 colleges is the seats filled higher than the average seats filled of all 5?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Average = 3034 ÷ 5 = 606.8. Values above it: Kaveri Institute, Vaigai Institute = 2.",
+   "order": 14,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the mean once, then scan the bars.",
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "By what percentage is the seats filled of Kaveri Institute more than that of Nilgiri Tech? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "142.1%"
+    },
+    {
+     "text": "50.0%"
+    },
+    {
+     "text": "29.6%"
+    },
+    {
+     "text": "42.1%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = 810 − 570 = 240. Percentage more = 240 ÷ 570 × 100 = 42.1% (base is the smaller entity).",
+   "order": 15,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "Madurai's scheduled trains forms what percentage of the total scheduled trains of all divisions? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "17.5%"
+    },
+    {
+     "text": "15.0%"
+    },
+    {
+     "text": "1.5%"
+    },
+    {
+     "text": "14.0%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total scheduled trains = 800. Share = 120 ÷ 800 × 100 = 15.0%.",
+   "order": 16,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Use the Table column total as the base.",
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "Taking Chennai and Palakkad together, the combined on-time trains is what percentage of their combined scheduled trains? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "45.8%"
+    },
+    {
+     "text": "87.5%"
+    },
+    {
+     "text": "87.1%"
+    },
+    {
+     "text": "114.8%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combined on-time trains = 204+162 = 366; combined scheduled trains = 240+180 = 420. Ratio = 87.1%. (Averaging the two separate percentages would be wrong.)",
+   "order": 17,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add numerators and denominators first; never average percentages with different bases.",
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "For how many of the 5 divisions is the on-time trains higher than the average on-time trains of all 5?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 685 ÷ 5 = 137.0. Values above it: Chennai, Palakkad = 2.",
+   "order": 18,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the mean once, then scan the bars.",
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "By what percentage is the beds occupied of Vellore more than that of Thanjavur? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "25.8%"
+    },
+    {
+     "text": "28.6%"
+    },
+    {
+     "text": "134.7%"
+    },
+    {
+     "text": "34.7%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference = 396 − 294 = 102. Percentage more = 102 ÷ 294 × 100 = 34.7% (base is the smaller entity).",
+   "order": 19,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "'More than' means the base is the one after 'than'.",
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "For which hospital is the beds occupied the highest as a percentage of its sanctioned beds?",
+   "options": [
+    {
+     "text": "Vellore"
+    },
+    {
+     "text": "Dindigul"
+    },
+    {
+     "text": "Thanjavur"
+    },
+    {
+     "text": "Nagercoil"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ratios (Bar ÷ Table × 100): Vellore 88.0%, Thanjavur 84.0%, Tirunelveli 75.0%, Dindigul 92.0%, Nagercoil 86.0%. Highest is Dindigul.",
+   "order": 20,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare fractions Bar/Table directly; the largest leads.",
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "For how many of the 5 hospitals is the beds occupied higher than the average beds occupied of all 5?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average = 1481 ÷ 5 = 296.2. Values above it: Vellore, Tirunelveli = 2.",
+   "order": 21,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the mean once, then scan the bars.",
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "For how many of the 5 cooperatives is the milk actually procured higher than the average milk actually procured of all 5?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Average = 2058 ÷ 5 = 411.6. Values above it: Anand Sahakari, Erode Aavin = 2.",
+   "order": 22,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the mean once, then scan the bars.",
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "Taking Anand Sahakari and Hubli Nandini together, the combined milk actually procured is what percentage of their combined procurement capacity? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "91.5%"
+    },
+    {
+     "text": "109.2%"
+    },
+    {
+     "text": "92.0%"
+    },
+    {
+     "text": "39.7%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combined milk actually procured = 576+376 = 952; combined procurement capacity = 640+400 = 1040. Ratio = 91.5%. (Averaging the two separate percentages would be wrong.)",
+   "order": 23,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add numerators and denominators first; never average percentages with different bases.",
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "For which cooperative is the milk actually procured the highest as a percentage of its procurement capacity?",
+   "options": [
+    {
+     "text": "Anand Sahakari"
+    },
+    {
+     "text": "Nashik Vikas"
+    },
+    {
+     "text": "Hubli Nandini"
+    },
+    {
+     "text": "Erode Aavin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ratios (Bar ÷ Table × 100): Anand Sahakari 90.0%, Kolhapur Gokul 75.0%, Erode Aavin 87.5%, Nashik Vikas 80.0%, Hubli Nandini 94.0%. Highest is Hubli Nandini.",
+   "order": 24,
+   "subPattern": "table-bar",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare fractions Bar/Table directly; the largest leads.",
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (actual production ÷ annual production target) × 100 among the towns. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "12.0 percentage points"
+    },
+    {
+     "text": "7.6 percentage points"
+    },
+    {
+     "text": "1.1 percentage points"
+    },
+    {
+     "text": "92.0 percentage points"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percentages: Tiruppur 90.00%, Erode 80.00%, Salem 92.00%, Karur 85.00%, Coimbatore 90.00%. Difference = 92.00 − 80.00 = 12.0 percentage points.",
+   "order": 25,
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "setId": "di-mixed-charts-s001"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (peak load supplied ÷ installed capacity) × 100 among the power stations. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "7.5 percentage points"
+    },
+    {
+     "text": "15.0 percentage points"
+    },
+    {
+     "text": "1.2 percentage points"
+    },
+    {
+     "text": "90.0 percentage points"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percentages: Neyveli 80.00%, Mettur 80.00%, Tuticorin 90.00%, Ennore 75.00%, Vallur 85.00%. Difference = 90.00 − 75.00 = 15.0 percentage points.",
+   "order": 26,
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "setId": "di-mixed-charts-s002"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (seats filled ÷ seats sanctioned) × 100 among the colleges. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "1.3 percentage points"
+    },
+    {
+     "text": "8.2 percentage points"
+    },
+    {
+     "text": "21.7 percentage points"
+    },
+    {
+     "text": "95.0 percentage points"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Percentages: Kaveri Institute 90.00%, Palar College 75.00%, Nilgiri Tech 95.00%, Vaigai Institute 75.00%, Pennar College 73.33%. Difference = 95.00 − 73.33 = 21.7 percentage points.",
+   "order": 27,
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "setId": "di-mixed-charts-s003"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (on-time trains ÷ scheduled trains) × 100 among the divisions. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "1.1 percentage points"
+    },
+    {
+     "text": "90.0 percentage points"
+    },
+    {
+     "text": "5.6 percentage points"
+    },
+    {
+     "text": "10.0 percentage points"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentages: Chennai 85.00%, Madurai 80.00%, Trichy 90.00%, Salem 80.00%, Palakkad 90.00%. Difference = 90.00 − 80.00 = 10.0 percentage points.",
+   "order": 28,
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "setId": "di-mixed-charts-s004"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (beds occupied ÷ sanctioned beds) × 100 among the hospitals. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "17.0 percentage points"
+    },
+    {
+     "text": "9.6 percentage points"
+    },
+    {
+     "text": "1.2 percentage points"
+    },
+    {
+     "text": "92.0 percentage points"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percentages: Vellore 88.00%, Thanjavur 84.00%, Tirunelveli 75.00%, Dindigul 92.00%, Nagercoil 86.00%. Difference = 92.00 − 75.00 = 17.0 percentage points.",
+   "order": 29,
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "setId": "di-mixed-charts-s005"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest value of (milk actually procured ÷ procurement capacity) × 100 among the cooperatives. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "10.8 percentage points"
+    },
+    {
+     "text": "94.0 percentage points"
+    },
+    {
+     "text": "19.0 percentage points"
+    },
+    {
+     "text": "1.3 percentage points"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Percentages: Anand Sahakari 90.00%, Kolhapur Gokul 75.00%, Erode Aavin 87.50%, Nashik Vikas 80.00%, Hubli Nandini 94.00%. Difference = 94.00 − 75.00 = 19.0 percentage points.",
+   "order": 30,
+   "subPattern": "table-bar",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Only the extreme two entities matter; compute all five ratios once.",
+   "setId": "di-mixed-charts-s006"
+  },
+  {
+   "questionText": "By what percentage did the auction price rise from 2019 to 2024? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "20.0%"
+    },
+    {
+     "text": "125.0%"
+    },
+    {
+     "text": "50.0%"
+    },
+    {
+     "text": "25.0%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rise = 225 − 180 = 45. Percentage = 45 ÷ 180 × 100 = 25.0%.",
+   "order": 31,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Change ÷ original × 100.",
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = production × auction price. What was the revenue in 2023? (in ₹ lakh)",
+   "options": [
+    {
+     "text": "115200"
+    },
+    {
+     "text": "11520"
+    },
+    {
+     "text": "5760"
+    },
+    {
+     "text": "288"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "48 lakh kg × ₹240 = ₹11520 lakh.",
+   "order": 32,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Lakh × rupees gives rupees in lakh directly.",
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "What is the average selling price over the 6 years? (₹ per litre, correct to one decimal place)",
+   "options": [
+    {
+     "text": "49.8"
+    },
+    {
+     "text": "86.7"
+    },
+    {
+     "text": "41.5"
+    },
+    {
+     "text": "3628.7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of prices = 249. Average = 249 ÷ 6 = 41.5.",
+   "order": 33,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Read the line points and take a simple mean.",
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "By what percentage did the selling price rise from 2018-19 to 2023-24? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "33.3%"
+    },
+    {
+     "text": "36.7%"
+    },
+    {
+     "text": "133.3%"
+    },
+    {
+     "text": "25.0%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rise = 48 − 36 = 12. Percentage = 12 ÷ 36 × 100 = 33.3%.",
+   "order": 34,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Change ÷ original × 100.",
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. What was the revenue in 2021? (in ₹ lakh)",
+   "options": [
+    {
+     "text": "28000"
+    },
+    {
+     "text": "1400"
+    },
+    {
+     "text": "160"
+    },
+    {
+     "text": "2800"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "140 lakh kg × ₹20 = ₹2800 lakh.",
+   "order": 35,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Lakh × rupees gives rupees in lakh directly.",
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "By what percentage did the wholesale price rise from 2019 to 2024? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "14.3%"
+    },
+    {
+     "text": "16.7%"
+    },
+    {
+     "text": "116.7%"
+    },
+    {
+     "text": "8.3%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rise = 28 − 24 = 4. Percentage = 4 ÷ 24 × 100 = 16.7%.",
+   "order": 36,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Change ÷ original × 100.",
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "By what percentage did the price realised rise from 2018 to 2023? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "50.0%"
+    },
+    {
+     "text": "40.0%"
+    },
+    {
+     "text": "33.3%"
+    },
+    {
+     "text": "150.0%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rise = 45 − 30 = 15. Percentage = 15 ÷ 30 × 100 = 50.0%.",
+   "order": 37,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Change ÷ original × 100.",
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "What is the average price over the 6 years? (₹ per piece, correct to one decimal place)",
+   "options": [
+    {
+     "text": "307.5"
+    },
+    {
+     "text": "9.2"
+    },
+    {
+     "text": "7.7"
+    },
+    {
+     "text": "38.5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of prices = 46. Average = 46 ÷ 6 = 7.7.",
+   "order": 38,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Read the line points and take a simple mean.",
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. What was the revenue in 2024-25? (in ₹ lakh)",
+   "options": [
+    {
+     "text": "8000"
+    },
+    {
+     "text": "400"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "800"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "40 lakh packets × ₹20 = ₹800 lakh.",
+   "order": 39,
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Lakh × rupees gives rupees in lakh directly.",
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "Revenue = production × auction price. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenues: [7200, 7200, 8550, 10500, 11520, 13500]. Average = 58470 ÷ 6 = 9745.0. Years above the average: 2022, 2023, 2024 = 3.",
+   "order": 40,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compute the mean once and compare each product.",
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = production × auction price. By what percentage did the revenue change from 2019 to 2024? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    {
+     "text": "50.0%"
+    },
+    {
+     "text": "46.7%"
+    },
+    {
+     "text": "75.0%"
+    },
+    {
+     "text": "87.5%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue 2019 = 40×180 = 7200; revenue 2024 = 60×225 = 13500. Change = 6300 ÷ 7200 × 100 = 87.5%.",
+   "order": 41,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = milk sales × selling price. In which year was the revenue the highest?",
+   "options": [
+    {
+     "text": "2021-22"
+    },
+    {
+     "text": "2023-24"
+    },
+    {
+     "text": "2019-20"
+    },
+    {
+     "text": "2022-23"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue (₹ lakh): 2018-19: 2880, 2019-20: 3192, 2020-21: 2800, 2021-22: 3780, 2022-23: 4320, 2023-24: 4800. Highest is 2023-24.",
+   "order": 42,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = milk sales × selling price. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revenues: [2880, 3192, 2800, 3780, 4320, 4800]. Average = 21772 ÷ 6 = 3628.7. Years above the average: 2021-22, 2022-23, 2023-24 = 3.",
+   "order": 43,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compute the mean once and compare each product.",
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. By what percentage did the revenue change from 2019 to 2024? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    {
+     "text": "8.3%"
+    },
+    {
+     "text": "20.9%"
+    },
+    {
+     "text": "26.4%"
+    },
+    {
+     "text": "25.0%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue 2019 = 120×24 = 2880; revenue 2024 = 130×28 = 3640. Change = 760 ÷ 2880 × 100 = 26.4%.",
+   "order": 44,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. In which year was the revenue the highest?",
+   "options": [
+    {
+     "text": "2024"
+    },
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2023"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue (₹ lakh): 2019: 2880, 2020: 4000, 2021: 2800, 2022: 2400, 2023: 3300, 2024: 3640. Highest is 2020.",
+   "order": 45,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. By what percentage did the revenue change from 2018 to 2023? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    {
+     "text": "90.0%"
+    },
+    {
+     "text": "40.0%"
+    },
+    {
+     "text": "52.4%"
+    },
+    {
+     "text": "110.0%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue 2018 = 50×30 = 1500; revenue 2023 = 70×45 = 3150. Change = 1650 ÷ 1500 × 100 = 110.0%.",
+   "order": 46,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. In which year was the revenue the highest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2022"
+    },
+    {
+     "text": "2020"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue (₹ lakh): 2018: 1500, 2019: 1792, 2020: 2100, 2021: 2160, 2022: 2508, 2023: 3150. Highest is 2023.",
+   "order": 47,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revenues: [1500, 1792, 2100, 2160, 2508, 3150]. Average = 13210 ÷ 6 = 2201.7. Years above the average: 2022, 2023 = 2.",
+   "order": 48,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compute the mean once and compare each product.",
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "In which year was the percentage increase in bricks supplied over the previous year the highest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2024"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Year-on-year % change: 2020 -20.0%, 2021 50.0%, 2022 16.7%, 2023 7.1%, 2024 20.0%. Highest is 2021.",
+   "order": 49,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare growth as % of the previous year, not the absolute jump.",
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = bricks supplied × price. By what percentage did the revenue change from 2019 to 2024? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    {
+     "text": "146.7%"
+    },
+    {
+     "text": "66.7%"
+    },
+    {
+     "text": "80.0%"
+    },
+    {
+     "text": "200.0%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue 2019 = 30×6 = 180; revenue 2024 = 54×10 = 540. Change = 360 ÷ 180 × 100 = 200.0%.",
+   "order": 50,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = bricks supplied × price. In which year was the revenue the highest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2024"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue (₹ lakh): 2019: 180, 2020: 168, 2021: 216, 2022: 336, 2023: 405, 2024: 540. Highest is 2024.",
+   "order": 51,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenues: [200, 160, 300, 480, 540, 800]. Average = 2480 ÷ 6 = 413.3. Years above the average: 2022-23, 2023-24, 2024-25 = 3.",
+   "order": 52,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compute the mean once and compare each product.",
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "In which year was the percentage increase in packets sold over the previous year the highest?",
+   "options": [
+    {
+     "text": "2023-24"
+    },
+    {
+     "text": "2024-25"
+    },
+    {
+     "text": "2021-22"
+    },
+    {
+     "text": "2022-23"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Year-on-year % change: 2020-21 -20.0%, 2021-22 56.2%, 2022-23 28.0%, 2023-24 12.5%, 2024-25 11.1%. Highest is 2021-22.",
+   "order": 53,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare growth as % of the previous year, not the absolute jump.",
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. By what percentage did the revenue change from 2019-20 to 2024-25? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    {
+     "text": "75.0%"
+    },
+    {
+     "text": "300.0%"
+    },
+    {
+     "text": "200.0%"
+    },
+    {
+     "text": "100.0%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue 2019-20 = 20×10 = 200; revenue 2024-25 = 40×20 = 800. Change = 600 ÷ 200 × 100 = 300.0%.",
+   "order": 54,
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "Revenue = production × auction price. Find the ratio of the revenue in the year of the highest auction price to the revenue in the year of the lowest auction price. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    {
+     "text": "1.60"
+    },
+    {
+     "text": "0.62"
+    },
+    {
+     "text": "1.20"
+    },
+    {
+     "text": "1.33"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest price in 2023: 48×240 = 11520. Lowest price in 2019: 40×180 = 7200. Ratio = 11520 ÷ 7200 = 1.60.",
+   "order": 55,
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Pick the two years from the line first, then bring in the quantities from the table.",
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = milk sales × selling price. The revenue of the first three years is what percentage of the total revenue of all six years? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "59.3%"
+    },
+    {
+     "text": "68.8%"
+    },
+    {
+     "text": "45.0%"
+    },
+    {
+     "text": "40.7%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenues: [2880, 3192, 2800, 3780, 4320, 4800]. First three = 8872; total = 21772. Percentage = 40.7%.",
+   "order": 56,
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Total revenue = sum of the six products; use it as the base.",
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. Find the ratio of the revenue in the year of the highest wholesale price to the revenue in the year of the lowest wholesale price. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    {
+     "text": "0.67"
+    },
+    {
+     "text": "0.60"
+    },
+    {
+     "text": "2.50"
+    },
+    {
+     "text": "1.67"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Highest price in 2020: 100×40 = 4000. Lowest price in 2022: 150×16 = 2400. Ratio = 4000 ÷ 2400 = 1.67.",
+   "order": 57,
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Pick the two years from the line first, then bring in the quantities from the table.",
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. The revenue of the first three years is what percentage of the total revenue of all six years? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "69.0%"
+    },
+    {
+     "text": "46.6%"
+    },
+    {
+     "text": "40.8%"
+    },
+    {
+     "text": "59.2%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenues: [1500, 1792, 2100, 2160, 2508, 3150]. First three = 5392; total = 13210. Percentage = 40.8%.",
+   "order": 58,
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Total revenue = sum of the six products; use it as the base.",
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = bricks supplied × price. Find the ratio of the revenue in the year of the highest price to the revenue in the year of the lowest price. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    {
+     "text": "3.00"
+    },
+    {
+     "text": "1.67"
+    },
+    {
+     "text": "1.80"
+    },
+    {
+     "text": "0.33"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest price in 2024: 54×10 = 540. Lowest price in 2019: 30×6 = 180. Ratio = 540 ÷ 180 = 3.00.",
+   "order": 59,
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Pick the two years from the line first, then bring in the quantities from the table.",
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. The revenue of the first three years is what percentage of the total revenue of all six years? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "36.1%"
+    },
+    {
+     "text": "26.6%"
+    },
+    {
+     "text": "36.3%"
+    },
+    {
+     "text": "73.4%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenues: [200, 160, 300, 480, 540, 800]. First three = 660; total = 2480. Percentage = 26.6%.",
+   "order": 60,
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Total revenue = sum of the six products; use it as the base.",
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Chola Textiles in the pie chart?",
+   "options": [
+    {
+     "text": "36°"
+    },
+    {
+     "text": "54°"
+    },
+    {
+     "text": "72°"
+    },
+    {
+     "text": "45°"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle = 15% of 360° = 15 × 3.6 = 54°.",
+   "order": 61,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "1% of the pie = 3.6°.",
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "What is the sales of Bharat Motors? (in ₹ crore)",
+   "options": [
+    {
+     "text": "800"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "6400"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "20% of 4000 = 4000 × 20 ÷ 100 = 800.",
+   "order": 62,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Total × share ÷ 100.",
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "By how much does the rice production of West Bengal exceed that of Tamil Nadu? (in lakh tonnes)",
+   "options": [
+    {
+     "text": "960"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference in share = 30% − 10% = 20% of 2400 = 480.",
+   "order": 63,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Subtract the percentages first, then take that % of the total.",
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Tamil Nadu in the pie chart?",
+   "options": [
+    {
+     "text": "30°"
+    },
+    {
+     "text": "54°"
+    },
+    {
+     "text": "18°"
+    },
+    {
+     "text": "36°"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Angle = 10% of 360° = 10 × 3.6 = 36°.",
+   "order": 64,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "1% of the pie = 3.6°.",
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "What is the passengers carried of Southern? (in lakh)",
+   "options": [
+    {
+     "text": "450"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "2250"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "30% of 1500 = 1500 × 30 ÷ 100 = 450.",
+   "order": 65,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Total × share ÷ 100.",
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Northern in the pie chart?",
+   "options": [
+    {
+     "text": "60°"
+    },
+    {
+     "text": "54°"
+    },
+    {
+     "text": "90°"
+    },
+    {
+     "text": "72°"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Angle = 20% of 360° = 20 × 3.6 = 72°.",
+   "order": 66,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "1% of the pie = 3.6°.",
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Rohan in the pie chart?",
+   "options": [
+    {
+     "text": "108°"
+    },
+    {
+     "text": "90°"
+    },
+    {
+     "text": "72°"
+    },
+    {
+     "text": "75°"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle = 25% of 360° = 25 × 3.6 = 90°.",
+   "order": 67,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "1% of the pie = 3.6°.",
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "By how much does the electricity consumed of Salem exceed that of Tiruppur? (in million units)",
+   "options": [
+    {
+     "text": "200"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "400"
+    },
+    {
+     "text": "800"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Difference in share = 30% − 10% = 20% of 2000 = 400.",
+   "order": 68,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Subtract the percentages first, then take that % of the total.",
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "What is the packs sold of Malabar Mix? (in crore packs)",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "10% of 1200 = 1200 × 10 ÷ 100 = 120.",
+   "order": 69,
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Total × share ÷ 100.",
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "What is the average sales of the companies whose pie share is below 20%? (in ₹ crore)",
+   "options": [
+    {
+     "text": "600.0"
+    },
+    {
+     "text": "1400.0"
+    },
+    {
+     "text": "666.7"
+    },
+    {
+     "text": "466.7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Entities below 20%: Chola Textiles (15%), Deccan Steel (10%), Falcon Paper (10%). Their total = 35% of 4000 = 1400; average = 1400 ÷ 3 = 466.7.",
+   "order": 70,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "Which company has the highest sales per unit of employees?",
+   "options": [
+    {
+     "text": "Aarav Foods"
+    },
+    {
+     "text": "Eastern Pharma"
+    },
+    {
+     "text": "Chola Textiles"
+    },
+    {
+     "text": "Falcon Paper"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Per unit: Aarav Foods 20.00, Bharat Motors 10.00, Chola Textiles 20.00, Deccan Steel 10.00, Eastern Pharma 32.00, Falcon Paper 25.00. Highest is Eastern Pharma.",
+   "order": 71,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "Find the rice production per unit of area under cultivation for Punjab, in lakh tonnes per lakh hectare. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "0.4"
+    },
+    {
+     "text": "24.0"
+    },
+    {
+     "text": "10.0"
+    },
+    {
+     "text": "0.1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rice production = 25% of 2400 = 600. Per unit = 600 ÷ 60 = 10.0.",
+   "order": 72,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "What is the average rice production of the states whose pie share is below 20%? (in lakh tonnes)",
+   "options": [
+    {
+     "text": "360"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "480"
+    },
+    {
+     "text": "600"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Entities below 20%: Tamil Nadu (10%), Andhra Pradesh (15%). Their total = 25% of 2400 = 600; average = 600 ÷ 2 = 300.",
+   "order": 73,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "Which zone has the highest passengers carried per unit of trains run?",
+   "options": [
+    {
+     "text": "Northern"
+    },
+    {
+     "text": "Eastern"
+    },
+    {
+     "text": "Central"
+    },
+    {
+     "text": "Southern"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Per unit: Southern 9.00, Western 3.75, Northern 7.50, Eastern 4.50, Central 6.00. Highest is Southern.",
+   "order": 74,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "Find the passengers carried per unit of trains run for Central, in lakh passengers per hundred trains. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "6.0"
+    },
+    {
+     "text": "15.0"
+    },
+    {
+     "text": "0.4"
+    },
+    {
+     "text": "0.2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Passengers carried = 10% of 1500 = 150. Per unit = 150 ÷ 25 = 6.0.",
+   "order": 75,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "Which batter has the highest runs scored per unit of innings batted?",
+   "options": [
+    {
+     "text": "Siddharth"
+    },
+    {
+     "text": "Rohan"
+    },
+    {
+     "text": "Tilak"
+    },
+    {
+     "text": "Yash"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Per unit: Rohan 31.25, Siddharth 37.50, Tilak 45.00, Umesh 25.00, Vikram 24.00, Yash 37.50. Highest is Tilak.",
+   "order": 76,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "Find the runs scored per unit of innings batted for Vikram, in runs per innings. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "0.0"
+    },
+    {
+     "text": "30.0"
+    },
+    {
+     "text": "0.8"
+    },
+    {
+     "text": "24.0"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Runs scored = 20% of 3000 = 600. Per unit = 600 ÷ 25 = 24.0.",
+   "order": 77,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "What is the average runs scored of the batters whose pie share is below 20%? (in runs)",
+   "options": [
+    {
+     "text": "500"
+    },
+    {
+     "text": "350"
+    },
+    {
+     "text": "1050"
+    },
+    {
+     "text": "450"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Entities below 20%: Tilak (15%), Umesh (10%), Yash (10%). Their total = 35% of 3000 = 1050; average = 1050 ÷ 3 = 350.",
+   "order": 78,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "What is the combined electricity consumed of all cities that have more than 15 lakh of population? (in million units)",
+   "options": [
+    {
+     "text": "700"
+    },
+    {
+     "text": "1100"
+    },
+    {
+     "text": "1000"
+    },
+    {
+     "text": "1300"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Entities with more than 15: Coimbatore (20%), Salem (30%). Total share = 50% of 2000 = 1000.",
+   "order": 79,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add the qualifying pie percentages first, then convert once.",
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "Which city has the highest electricity consumed per unit of population?",
+   "options": [
+    {
+     "text": "Trichy"
+    },
+    {
+     "text": "Tiruppur"
+    },
+    {
+     "text": "Madurai"
+    },
+    {
+     "text": "Coimbatore"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Per unit: Coimbatore 25.00, Madurai 20.00, Trichy 50.00, Salem 15.00, Tiruppur 25.00. Highest is Trichy.",
+   "order": 80,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "Find the electricity consumed per unit of population for Coimbatore, in million units per lakh people. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "20.0"
+    },
+    {
+     "text": "25.0"
+    },
+    {
+     "text": "0.0"
+    },
+    {
+     "text": "1.2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Electricity consumed = 20% of 2000 = 400. Per unit = 400 ÷ 16 = 25.0.",
+   "order": 81,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "What is the average packs sold of the brands whose pie share is below 20%? (in crore packs)",
+   "options": [
+    {
+     "text": "300"
+    },
+    {
+     "text": "195"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Entities below 20%: Ooty Biscuits (15%), Malabar Mix (10%). Their total = 25% of 1200 = 300; average = 300 ÷ 2 = 150.",
+   "order": 82,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "What is the combined packs sold of all brands that have more than 16 hundreds of distributors of distributors? (in crore packs)",
+   "options": [
+    {
+     "text": "660"
+    },
+    {
+     "text": "900"
+    },
+    {
+     "text": "540"
+    },
+    {
+     "text": "300"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Entities with more than 16: Pongal Foods (35%), Cauvery Chips (20%). Total share = 55% of 1200 = 660.",
+   "order": 83,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add the qualifying pie percentages first, then convert once.",
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "Which brand has the highest packs sold per unit of distributors?",
+   "options": [
+    {
+     "text": "Kongu Snacks"
+    },
+    {
+     "text": "Ooty Biscuits"
+    },
+    {
+     "text": "Malabar Mix"
+    },
+    {
+     "text": "Pongal Foods"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Per unit: Kongu Snacks 15.00, Pongal Foods 15.00, Ooty Biscuits 15.00, Malabar Mix 24.00, Cauvery Chips 7.50. Highest is Malabar Mix.",
+   "order": 84,
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "Find the ratio of the sales per unit of employees of Eastern Pharma to that of Deccan Steel. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    {
+     "text": "2.00"
+    },
+    {
+     "text": "1.25"
+    },
+    {
+     "text": "3.20"
+    },
+    {
+     "text": "0.31"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Eastern Pharma: 800 ÷ 25 = 32.000. Deccan Steel: 400 ÷ 40 = 10.000. Ratio = 3.20.",
+   "order": 85,
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Ratio = (pie%₁ ÷ bar₁) ÷ (pie%₂ ÷ bar₂); the total cancels.",
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "Suppose the rice production of Punjab rises by 50% while that of every other state stays the same. What percentage of the new total will Punjab then account for? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "33.3%"
+    },
+    {
+     "text": "36.7%"
+    },
+    {
+     "text": "75.0%"
+    },
+    {
+     "text": "37.5%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Old value = 600; new value = 900.0. New total = 2400 + 300.0 = 2700.0. Share = 900.0 ÷ 2700.0 × 100 = 33.3%.",
+   "order": 86,
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "The total changes too; do not divide by the old total.",
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "Find the ratio of the passengers carried per unit of trains run of Southern to that of Western. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    {
+     "text": "0.60"
+    },
+    {
+     "text": "0.42"
+    },
+    {
+     "text": "1.20"
+    },
+    {
+     "text": "2.40"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Southern: 450 ÷ 50 = 9.000. Western: 375 ÷ 100 = 3.750. Ratio = 2.40.",
+   "order": 87,
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Ratio = (pie%₁ ÷ bar₁) ÷ (pie%₂ ÷ bar₂); the total cancels.",
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "Suppose the runs scored of Siddharth rises by 20% while that of every other batter stays the same. What percentage of the new total will Siddharth then account for? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "40.0%"
+    },
+    {
+     "text": "23.1%"
+    },
+    {
+     "text": "24.0%"
+    },
+    {
+     "text": "25.4%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Old value = 600; new value = 720.0. New total = 3000 + 120.0 = 3120.0. Share = 720.0 ÷ 3120.0 × 100 = 23.1%.",
+   "order": 88,
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "The total changes too; do not divide by the old total.",
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "Find the ratio of the electricity consumed per unit of population of Trichy to that of Salem. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    {
+     "text": "0.30"
+    },
+    {
+     "text": "0.21"
+    },
+    {
+     "text": "3.33"
+    },
+    {
+     "text": "0.83"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Trichy: 500 ÷ 10 = 50.000. Salem: 600 ÷ 40 = 15.000. Ratio = 3.33.",
+   "order": 89,
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Ratio = (pie%₁ ÷ bar₁) ÷ (pie%₂ ÷ bar₂); the total cancels.",
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "Suppose the packs sold of Malabar Mix rises by 20% while that of every other brand stays the same. What percentage of the new total will Malabar Mix then account for? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "12.9%"
+    },
+    {
+     "text": "30.0%"
+    },
+    {
+     "text": "12.0%"
+    },
+    {
+     "text": "11.8%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Old value = 120; new value = 144.0. New total = 1200 + 24.0 = 1224.0. Share = 144.0 ÷ 1224.0 × 100 = 11.8%.",
+   "order": 90,
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "The total changes too; do not divide by the old total.",
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "What was the average value per product in Q1? (in ₹ lakh, correct to one decimal place)",
+   "options": [
+    {
+     "text": "25.0"
+    },
+    {
+     "text": "20.0"
+    },
+    {
+     "text": "22.0"
+    },
+    {
+     "text": "14.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The column total for Q1 is 100, so the blank does not matter. Average = 100 ÷ 5 = 20.0.",
+   "order": 91,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Use the Total row of the column; no need to fill the blank.",
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "What is the missing value for Peanut chikki in Q2? (₹ lakh)",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Row total = 84. Known cells add to 62. Missing = 84 − 62 = 22.",
+   "order": 92,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Row total minus the known cells in the row.",
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "What is the missing value for Kodaikanal in August? (mm)",
+   "options": [
+    {
+     "text": "135"
+    },
+    {
+     "text": "115"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "145"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Row total = 360. Known cells add to 235. Missing = 360 − 235 = 125.",
+   "order": 93,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Row total minus the known cells in the row.",
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "What was the average value per station in August? (in mm, correct to one decimal place)",
+   "options": [
+    {
+     "text": "92.0"
+    },
+    {
+     "text": "135.0"
+    },
+    {
+     "text": "113.0"
+    },
+    {
+     "text": "108.0"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The column total for August is 540, so the blank does not matter. Average = 540 ÷ 5 = 108.0.",
+   "order": 94,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Use the Total row of the column; no need to fill the blank.",
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "What was the average value per yard in Week 4? (in wagons, correct to one decimal place)",
+   "options": [
+    {
+     "text": "152.0"
+    },
+    {
+     "text": "116.0"
+    },
+    {
+     "text": "190.0"
+    },
+    {
+     "text": "157.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The column total for Week 4 is 760, so the blank does not matter. Average = 760 ÷ 5 = 152.0.",
+   "order": 95,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Use the Total row of the column; no need to fill the blank.",
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "What is the missing value for Arakkonam in Week 2? (wagons)",
+   "options": [
+    {
+     "text": "200"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "190"
+    },
+    {
+     "text": "170"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row total = 840. Known cells add to 660. Missing = 840 − 660 = 180.",
+   "order": 96,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Row total minus the known cells in the row.",
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "What is the number of girls for Gandhipuram?",
+   "options": [
+    {
+     "text": "160"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "200"
+    },
+    {
+     "text": "216"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In the row of Gandhipuram, use Total = Boys + Girls and Boys % = Boys ÷ Total × 100 on the two known figures. Completed row: Total 300, Boys % 40, Boys 120, Girls 180. The asked figure is 180.",
+   "order": 97,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Any two of the four figures in a row fix the other two.",
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "What is the total number of candidates in all five plants together?",
+   "options": [
+    {
+     "text": "2610"
+    },
+    {
+     "text": "2810"
+    },
+    {
+     "text": "2710"
+    },
+    {
+     "text": "2660"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Totals after filling blanks: 600, 450, 800, 500, 360. Sum = 2710.",
+   "order": 98,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Recover every blank Total before adding.",
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "What is the number of male for Constituency 5?",
+   "options": [
+    {
+     "text": "330"
+    },
+    {
+     "text": "420"
+    },
+    {
+     "text": "370"
+    },
+    {
+     "text": "350"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In the row of Constituency 5, use Total = Male + Female and Male % = Male ÷ Total × 100 on the two known figures. Completed row: Total 700, Male % 50, Male 350, Female 350. The asked figure is 350.",
+   "order": 99,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Any two of the four figures in a row fix the other two.",
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "What is the sum of all the 4 missing values in the table? (₹ lakh)",
+   "options": [
+    {
+     "text": "98"
+    },
+    {
+     "text": "108"
+    },
+    {
+     "text": "118"
+    },
+    {
+     "text": "88"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing values: Banana chips / Q3 = 28, Murukku / Q4 = 18, Varkey / Q1 = 30, Peanut chikki / Q2 = 22. Sum = 98.",
+   "order": 100,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Fill each blank from its row total, then add.",
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "The missing value for Murukku in Q4 is what percentage of Murukku's Total? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "76.3%"
+    },
+    {
+     "text": "23.7%"
+    },
+    {
+     "text": "13.0%"
+    },
+    {
+     "text": "3.8%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing = 76 − 58 = 18. Percentage = 18 ÷ 76 × 100 = 23.7%.",
+   "order": 101,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the blank first, and divide by that row's own Total.",
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "The missing value for Ooty in September is what percentage of Ooty's Total? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "19.8%"
+    },
+    {
+     "text": "71.1%"
+    },
+    {
+     "text": "28.9%"
+    },
+    {
+     "text": "7.3%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Missing = 380 − 270 = 110. Percentage = 110 ÷ 380 × 100 = 28.9%.",
+   "order": 102,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find the blank first, and divide by that row's own Total.",
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "Which station had the highest value in July?",
+   "options": [
+    {
+     "text": "Ooty"
+    },
+    {
+     "text": "Chennai"
+    },
+    {
+     "text": "Coimbatore"
+    },
+    {
+     "text": "Kodaikanal"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After filling the blank, July values are Coimbatore 60, Ooty 120, Madurai 40, Chennai 90, Kodaikanal 100. Highest is Ooty.",
+   "order": 103,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The blank may itself be the highest; do not skip it.",
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "Which yard had the highest value in Week 3?",
+   "options": [
+    {
+     "text": "Erode"
+    },
+    {
+     "text": "Jolarpet"
+    },
+    {
+     "text": "Podanur"
+    },
+    {
+     "text": "Arakkonam"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After filling the blank, Week 3 values are Jolarpet 120, Erode 100, Arakkonam 220, Tondiarpet 90, Podanur 150. Highest is Arakkonam.",
+   "order": 104,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The blank may itself be the highest; do not skip it.",
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "What is the sum of all the 4 missing values in the table? (wagons)",
+   "options": [
+    {
+     "text": "580"
+    },
+    {
+     "text": "570"
+    },
+    {
+     "text": "550"
+    },
+    {
+     "text": "560"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Missing values: Jolarpet / Week 4 = 180, Arakkonam / Week 2 = 180, Tondiarpet / Week 3 = 90, Podanur / Week 1 = 110. Sum = 560.",
+   "order": 105,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Fill each blank from its row total, then add.",
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "Overall, what percentage of all candidates are boys? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "52.8%"
+    },
+    {
+     "text": "47.2%"
+    },
+    {
+     "text": "89.5%"
+    },
+    {
+     "text": "46.0%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total boys = 850; grand total = 1800. Percentage = 47.2%. (A simple average of the five percentages would be wrong.)",
+   "order": 106,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add the numbers, not the percentages.",
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "What is the total number of girls across all five centres?",
+   "options": [
+    {
+     "text": "1000"
+    },
+    {
+     "text": "900"
+    },
+    {
+     "text": "950"
+    },
+    {
+     "text": "850"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Girls per row: 160, 180, 250, 150, 210. Sum = 950.",
+   "order": 107,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Complete each row first; then add the column.",
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "What is the difference between the largest and the smallest Total among the five centres?",
+   "options": [
+    {
+     "text": "250"
+    },
+    {
+     "text": "350"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: [400, 300, 500, 250, 350]. Difference = 500 − 250 = 250.",
+   "order": 108,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find every Total first.",
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "In which plant is the percentage of men the highest?",
+   "options": [
+    {
+     "text": "Plant C"
+    },
+    {
+     "text": "Plant B"
+    },
+    {
+     "text": "Plant A"
+    },
+    {
+     "text": "Plant D"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Men % after filling: Plant A 70%, Plant B 60%, Plant C 50%, Plant D 80%, Plant E 25%. Highest is Plant D.",
+   "order": 109,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Recover the blank percentages from the counts.",
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "Overall, what percentage of all candidates are men? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "57.0%"
+    },
+    {
+     "text": "58.3%"
+    },
+    {
+     "text": "139.8%"
+    },
+    {
+     "text": "41.7%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total men = 1580; grand total = 2710. Percentage = 58.3%. (A simple average of the five percentages would be wrong.)",
+   "order": 110,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add the numbers, not the percentages.",
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "What is the total number of women across all five plants?",
+   "options": [
+    {
+     "text": "1580"
+    },
+    {
+     "text": "1180"
+    },
+    {
+     "text": "1130"
+    },
+    {
+     "text": "1080"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Women per row: 180, 180, 400, 100, 270. Sum = 1130.",
+   "order": 111,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Complete each row first; then add the column.",
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "What is the difference between the largest and the smallest Total among the five constituencys?",
+   "options": [
+    {
+     "text": "400"
+    },
+    {
+     "text": "500"
+    },
+    {
+     "text": "900"
+    },
+    {
+     "text": "300"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: [800, 600, 500, 900, 700]. Difference = 900 − 500 = 400.",
+   "order": 112,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Find every Total first.",
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "In which constituency is the percentage of male the highest?",
+   "options": [
+    {
+     "text": "Constituency 3"
+    },
+    {
+     "text": "Constituency 5"
+    },
+    {
+     "text": "Constituency 1"
+    },
+    {
+     "text": "Constituency 2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Male % after filling: Constituency 1 45%, Constituency 2 55%, Constituency 3 60%, Constituency 4 40%, Constituency 5 50%. Highest is Constituency 3.",
+   "order": 113,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Recover the blank percentages from the counts.",
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "Overall, what percentage of all candidates are male? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "51.4%"
+    },
+    {
+     "text": "50.0%"
+    },
+    {
+     "text": "94.4%"
+    },
+    {
+     "text": "48.6%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total male = 1700; grand total = 3500. Percentage = 48.6%. (A simple average of the five percentages would be wrong.)",
+   "order": 114,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Add the numbers, not the percentages.",
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "By what percentage is the missing value for Banana chips in Q3 more than the missing value for Peanut chikki in Q2? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "227.3%"
+    },
+    {
+     "text": "127.3%"
+    },
+    {
+     "text": "27.3%"
+    },
+    {
+     "text": "21.4%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First blank = 28; second blank = 22 (each from its row total). Percentage more = (28−22) ÷ 22 × 100 = 27.3%.",
+   "order": 115,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Base is the quantity after 'than'.",
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "Which station showed the highest percentage increase from July to September?",
+   "options": [
+    {
+     "text": "Kodaikanal"
+    },
+    {
+     "text": "Madurai"
+    },
+    {
+     "text": "Coimbatore"
+    },
+    {
+     "text": "Chennai"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After filling blanks, % increase: Coimbatore 50.0%, Ooty -8.3%, Madurai 75.0%, Chennai 66.7%, Kodaikanal 35.0%. Highest is Madurai.",
+   "order": 116,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Fill every blank in the two columns that matter before comparing growth rates.",
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "By what percentage is the missing value for Jolarpet in Week 4 more than the missing value for Podanur in Week 1? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "63.6%"
+    },
+    {
+     "text": "38.9%"
+    },
+    {
+     "text": "163.6%"
+    },
+    {
+     "text": "263.6%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First blank = 180; second blank = 110 (each from its row total). Percentage more = (180−110) ÷ 110 × 100 = 63.6%.",
+   "order": 117,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Base is the quantity after 'than'.",
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "By what percentage is the number of girls in Tambaram more than that in Gandhipuram? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "28.0%"
+    },
+    {
+     "text": "138.9%"
+    },
+    {
+     "text": "38.9%"
+    },
+    {
+     "text": "108.3%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Girls in Tambaram = 250; in Gandhipuram = 180. More by (250−180) ÷ 180 × 100 = 38.9%.",
+   "order": 118,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Fill both rows' blanks first; base is the second entity.",
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "By what percentage is the number of women in Plant C more than that in Plant A? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "55.0%"
+    },
+    {
+     "text": "122.2%"
+    },
+    {
+     "text": "222.2%"
+    },
+    {
+     "text": "134.4%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Women in Plant C = 400; in Plant A = 180. More by (400−180) ÷ 180 × 100 = 122.2%.",
+   "order": 119,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Fill both rows' blanks first; base is the second entity.",
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "By what percentage is the number of female in Constituency 4 more than that in Constituency 5? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "2.9%"
+    },
+    {
+     "text": "154.3%"
+    },
+    {
+     "text": "35.2%"
+    },
+    {
+     "text": "54.3%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Female in Constituency 4 = 540; in Constituency 5 = 350. More by (540−350) ÷ 350 × 100 = 54.3%.",
+   "order": 120,
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Fill both rows' blanks first; base is the second entity.",
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "What was Pune's output in June?\nStatement I: Coimbatore's May output and Hosur's April output together were 60 thousand units.\nStatement II: Hosur's April-to-June total was 130 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 20. Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 20. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 121,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "With a fixed total, knowing the sum of two missing cells fixes the third.",
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was Hosur's output in April?\nStatement I: Coimbatore's April-to-June total was 130 thousand units.\nStatement II: Pune's April-to-June total was 150 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 20. So: Both statements together are sufficient; neither alone is.",
+   "order": 122,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Three unknowns with one sum: you need two more independent facts.",
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "How many packs of Varkey were sold?\nStatement I: Murukku was sold at Rs 50 per pack.\nStatement II: Varkey revenue exceeded Murukku revenue by Rs 1,500.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 150. Using Statement II with the table, the possible answers are: 150. Using both together: 150. So: Each statement alone is sufficient.",
+   "order": 123,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "What was the revenue from Murukku?\nStatement I: Varkey revenue was Rs 9,000.\nStatement II: The number of Varkey packs sold was a multiple of 50.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 7500. Using Statement II with the table, the possible answers are: 1500, 4500, 7500, 10500 .... Using both together: 7500. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 124,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "How many runs did Arjun score in Match 2?\nStatement I: Bala's Match 3 score and Charan's Match 1 score together were 81.\nStatement II: Charan scored 30 in Match 1.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 60. Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 60. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 125,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "How many runs did Bala score in Match 3?\nStatement I: Arjun's total over the three matches was 150.\nStatement II: Bala's average over the three matches was 55.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 82. Using both together: 82. So: Statement II alone is sufficient; Statement I alone is not.",
+   "order": 126,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "What did Kavya score in Test 2?\nStatement I: Meena's Test 1 mark and Nikhil's Test 3 mark together were 70.\nStatement II: Nikhil scored 36 in Test 3.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 43. Using Statement II with the table, the possible answers are: 27, 28, 29, 30 .... Using both together: 43. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 127,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "How many quintals of onion arrived at Koyambedu?\nStatement I: Madurai's tomato arrivals and Trichy's potato arrivals together were 150 quintals.\nStatement II: Madurai's tomato arrivals were 100 quintals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 120. Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 120. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 128,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "What was the distance of Leg 3?\nStatement I: Leg 2 took 3 hours.\nStatement II: The speed of Leg 3 was 90 km/h.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 270. Using Statement II with the table, the possible answers are: 10, 20, 30, 40 .... Using both together: 270. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 129,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "What was Pune's April-to-June total output?\nStatement I: Coimbatore's May output and Hosur's April output together were 70 thousand units.\nStatement II: Coimbatore's and Hosur's April-to-June totals were both 130 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 140. Using Statement II with the table, the possible answers are: 140. Using both together: 140. So: Each statement alone is sufficient.",
+   "order": 130,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was Hosur's output in April?\nStatement I: Coimbatore's May output was more than Pune's June output.\nStatement II: Hosur's April output was below 50 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 1, 2, 3, 4 .... So: Even both statements together are not sufficient.",
+   "order": 131,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Inequalities rarely pin down an exact value.",
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was the price of a Murukku pack?\nStatement I: The number of Varkey packs sold was a multiple of 100.\nStatement II: The price of a Murukku pack was at least Rs 50.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 30, 70. Using Statement II with the table, the possible answers are: 50, 52, 54, 56 .... Using both together: 70. So: Both statements together are sufficient; neither alone is.",
+   "order": 132,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "What was the total number of packs sold of the three items?\nStatement I: Varkey revenue was more than Murukku revenue.\nStatement II: Fewer than 200 packs of Varkey were sold.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 490, 495, 500, 505 .... Using Statement II with the table, the possible answers are: 355, 360, 365, 370 .... Using both together: 490, 495, 500, 505 .... So: Even both statements together are not sufficient.",
+   "order": 133,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "How many runs did Charan score in Match 1?\nStatement I: Arjun's Match 2 score and Bala's Match 3 score together were 100.\nStatement II: Charan's total over the three matches was 145.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 41. Using Statement II with the table, the possible answers are: 41. Using both together: 41. So: Each statement alone is sufficient.",
+   "order": 134,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "What was Charan's total over the three matches?\nStatement I: Arjun scored 50 in Match 2.\nStatement II: Bala scored 60 in Match 3.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 105, 106, 107, 108 .... Using Statement II with the table, the possible answers are: 105, 106, 107, 108 .... Using both together: 135. So: Both statements together are sufficient; neither alone is.",
+   "order": 135,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "What did Meena score in Test 1?\nStatement I: Kavya scored full marks (50) in Test 2.\nStatement II: Nikhil scored full marks (50) in Test 3.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 13, 14, 15, 16 .... Using Statement II with the table, the possible answers are: 13, 14, 15, 16 .... Using both together: 13. So: Both statements together are sufficient; neither alone is.",
+   "order": 136,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "What did Nikhil score in Test 3?\nStatement I: Kavya and Meena both scored full marks (50) in the tests where their marks are missing.\nStatement II: Nikhil's total over the three tests was below 100.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 13. Using Statement II with the table, the possible answers are: 13, 14, 15, 16 .... Using both together: 13. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 137,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "Did Kavya score more in Test 2 than Meena did in Test 1?\nStatement I: Nikhil scored 50 in Test 3.\nStatement II: Kavya's total over the three tests was higher than Meena's total.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: No, Yes. Using Statement II with the table, the possible answers are: Yes. Using both together: Yes. So: Statement II alone is sufficient; Statement I alone is not.",
+   "order": 138,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "What were the total tomato arrivals at the three mandis?\nStatement I: Koyambedu's total arrivals of the three vegetables were 300 quintals.\nStatement II: Trichy's total arrivals of the three vegetables were 200 quintals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 191, 192, 193, 194 .... Using Statement II with the table, the possible answers are: 191, 192, 193, 194 .... Using both together: 290. So: Both statements together are sufficient; neither alone is.",
+   "order": 139,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "Were the total arrivals at Madurai higher than the total arrivals at Trichy?\nStatement I: Koyambedu's onion arrivals were below 100 quintals.\nStatement II: Madurai's tomato arrivals were higher than Trichy's potato arrivals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: No, Yes. Using Statement II with the table, the possible answers are: Yes. Using both together: Yes. So: Statement II alone is sufficient; Statement I alone is not.",
+   "order": 140,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "How many quintals of potato arrived at Trichy?\nStatement I: Madurai's tomato arrivals were higher than Trichy's potato arrivals.\nStatement II: Koyambedu's onion arrivals were below 120 quintals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 1, 2, 3, 4 .... So: Even both statements together are not sufficient.",
+   "order": 141,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "What was the total time taken for the whole journey?\nStatement I: The speed of Leg 3 was 90 km/h.\nStatement II: Legs 2 and 3 each took exactly 3 hours.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 145/18, 73/9, 49/6, 74/9 .... Using Statement II with the table, the possible answers are: 9. Using both together: 9. So: Statement II alone is sufficient; Statement I alone is not.",
+   "order": 142,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "Was the distance of Leg 3 greater than the distance of Leg 2?\nStatement I: Leg 2 took less than 3.5 hours.\nStatement II: The speed of Leg 3 was more than 60 km/h.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: Yes. Using Statement II with the table, the possible answers are: No, Yes. Using both together: Yes. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 143,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "How long did Leg 2 take?\nStatement I: The distance of Leg 3 was 270 km.\nStatement II: The distance of Leg 3 was 90 km more than the distance of Leg 2.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 3. Using Statement II with the table, the possible answers are: 3. Using both together: 3. So: Each statement alone is sufficient.",
+   "order": 144,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "What was Coimbatore's output in May?\nStatement I: Coimbatore's May output was twice Hosur's April output.\nStatement II: Pune's June output was 20 thousand units more than Hosur's April output.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 2, 4, 6, 8 .... Using Statement II with the table, the possible answers are: 2, 4, 6, 8 .... Using both together: 30. So: Both statements together are sufficient; neither alone is.",
+   "order": 145,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "Was the revenue from Varkey greater than the revenue from Murukku?\nStatement I: More than 150 packs of Varkey were sold.\nStatement II: The price of a Murukku pack was a multiple of Rs 10.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: Yes. Using Statement II with the table, the possible answers are: No, Yes. Using both together: Yes. So: Statement I alone is sufficient; Statement II alone is not.",
+   "order": 146,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "How many runs did Bala score in Match 3?\nStatement I: Arjun's Match 2 score was 10 more than Charan's Match 1 score.\nStatement II: Arjun's Match 2 score was more than 40.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Each statement alone is sufficient"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 1, 3, 5, 7 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 1, 3, 5, 7 .... So: Even both statements together are not sufficient.",
+   "order": 147,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "What did Meena score in Test 1?\nStatement I: Kavya's Test 2 mark and Nikhil's Test 3 mark together were 100.\nStatement II: Meena's total over the three tests was 93.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 13. Using Statement II with the table, the possible answers are: 13. Using both together: 13. So: Each statement alone is sufficient.",
+   "order": 148,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "How many quintals of tomato arrived at Madurai?\nStatement I: Koyambedu's onion arrivals and Trichy's potato arrivals together were 135 quintals.\nStatement II: Madurai's tomato arrivals equalled the sum of Koyambedu's onion arrivals and Trichy's potato arrivals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Each statement alone is sufficient"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 135. Using Statement II with the table, the possible answers are: 135. Using both together: 135. So: Each statement alone is sufficient.",
+   "order": 149,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "What was the average speed for the whole journey of 600 km?\nStatement I: Legs 2 and 3 took the same time.\nStatement II: The speed of Leg 3 was 90 km/h.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    {
+     "text": "Statement I alone is sufficient; Statement II alone is not"
+    },
+    {
+     "text": "Statement II alone is sufficient; Statement I alone is not"
+    },
+    {
+     "text": "Both statements together are sufficient; neither alone is"
+    },
+    {
+     "text": "Even both statements together are not sufficient"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 600/13, 50, 200/3, 75. Using Statement II with the table, the possible answers are: 2700/47, 10800/187, 1800/31, 2160/37 .... Using both together: 200/3. So: Both statements together are sufficient; neither alone is.",
+   "order": 150,
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  }
+ ]
+}

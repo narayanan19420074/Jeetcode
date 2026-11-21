@@ -1,0 +1,744 @@
+{
+ "sets": [
+  {
+   "id": "logical-puzzles-s050",
+   "type": "text",
+   "title": "Grid puzzle 1: city and hobby of four people",
+   "text": "Four friends live in different cities and have different hobbies. The cities are Chennai, Mumbai, Kolkata, Pune; the hobbies are chess, painting, cycling, singing. People: Ravi, Sneha, Kiran, Latha. Each person has exactly one city and one hobby, and no two people share either. Clues:\n1. Latha's city is Pune.\n2. The person whose city is Kolkata has hobby painting.\n3. Sneha's hobby is chess.\n4. Kiran's hobby is not cycling.\n5. The person whose city is Chennai has hobby cycling."
+  },
+  {
+   "id": "logical-puzzles-s051",
+   "type": "text",
+   "title": "Grid puzzle 2: drink and vehicle of four people",
+   "text": "Four colleagues each prefer a different drink and a different vehicle for commuting. The drinks are tea, coffee, lassi, juice; the vehicles are bike, car, scooter, bus. People: Mohan, Pooja, Salim, Gita. Each person has exactly one drink and one vehicle, and no two people share either. Clues:\n1. The person whose drink is tea has vehicle scooter.\n2. Gita's drink is tea.\n3. Salim's drink is coffee.\n4. The person whose drink is lassi has vehicle car.\n5. Pooja's vehicle is bus."
+  },
+  {
+   "id": "logical-puzzles-s052",
+   "type": "text",
+   "title": "Grid puzzle 3: fruit and colour of four people",
+   "text": "Four students each have a favourite fruit and a favourite colour. The fruits are mango, apple, banana, grape; the colours are red, blue, green, yellow. People: Anand, Bindu, Cyrus, Dolly. Each person has exactly one fruit and one colour, and no two people share either. Clues:\n1. Dolly's colour is blue.\n2. Bindu's fruit is apple.\n3. The person whose fruit is mango has colour yellow.\n4. Cyrus's colour is not yellow.\n5. The person whose fruit is grape has colour green."
+  },
+  {
+   "id": "logical-puzzles-s053",
+   "type": "text",
+   "title": "Grid puzzle 4: sport and subject of four people",
+   "text": "Four players each play a different sport and study a different subject. The sports are cricket, hockey, tennis, kabaddi; the subjects are Maths, Physics, History, Biology. People: Elan, Fiza, Gopal, Hema. Each person has exactly one sport and one subject, and no two people share either. Clues:\n1. Hema's subject is History.\n2. The person whose sport is cricket has subject Maths.\n3. Elan's subject is Maths.\n4. Fiza's sport is kabaddi.\n5. The person whose sport is tennis does not have subject History.\n6. The person whose sport is kabaddi does not have subject Biology."
+  },
+  {
+   "id": "logical-puzzles-s054",
+   "type": "text",
+   "title": "Grid puzzle 5: vehicle and colour of four people",
+   "text": "Four neighbours drive different vehicles and favour different colours. The vehicles are bike, car, scooter, bus; the colours are red, blue, green, yellow. People: Irfan, Janaki, Kabir, Leela. Each person has exactly one vehicle and one colour, and no two people share either. Clues:\n1. Leela's colour is green.\n2. The person whose vehicle is scooter has colour blue.\n3. Janaki's vehicle is car.\n4. Irfan's colour is not blue.\n5. Leela's vehicle is bike.\n6. Irfan's colour is not yellow."
+  },
+  {
+   "id": "logical-puzzles-s055",
+   "type": "text",
+   "title": "Grid puzzle 6: city and sport of four people",
+   "text": "Four trainees each belong to a different city and a different sport. The cities are Chennai, Mumbai, Kolkata, Pune; the sports are cricket, hockey, tennis, kabaddi. People: Manoj, Nandini, Prem, Radha. Each person has exactly one city and one sport, and no two people share either. Clues:\n1. The person whose city is Kolkata has sport kabaddi.\n2. Prem's sport is tennis.\n3. Manoj's city is Kolkata.\n4. Radha's sport is hockey.\n5. The person whose city is Mumbai does not have sport hockey.\n6. Prem's city is Pune."
+  },
+  {
+   "id": "logical-puzzles-s056",
+   "type": "text",
+   "title": "Grid puzzle 7: hobby and drink of four people",
+   "text": "Four officers each have a different hobby and prefer a different drink. The hobbies are chess, painting, cycling, singing; the drinks are tea, coffee, lassi, juice. People: Sunil, Tanvi, Umesh, Vasu. Each person has exactly one hobby and one drink, and no two people share either. Clues:\n1. Tanvi's hobby is singing.\n2. Umesh's drink is tea.\n3. The person whose hobby is chess has drink coffee.\n4. Sunil's hobby is painting.\n5. Tanvi's drink is lassi."
+  },
+  {
+   "id": "logical-puzzles-s057",
+   "type": "text",
+   "title": "Grid puzzle 8: fruit and sport of four people",
+   "text": "Four cousins each like a different fruit and a different sport. The fruits are mango, apple, banana, grape; the sports are cricket, hockey, tennis, kabaddi. People: Wasim, Yogita, Zeenat, Ajay. Each person has exactly one fruit and one sport, and no two people share either. Clues:\n1. Zeenat's sport is hockey.\n2. Ajay's fruit is mango.\n3. Wasim's sport is kabaddi.\n4. Zeenat's fruit is banana.\n5. The person whose fruit is apple does not have sport kabaddi.\n6. The person whose fruit is apple does not have sport tennis."
+  },
+  {
+   "id": "logical-puzzles-s058",
+   "type": "text",
+   "title": "Grid puzzle 9: subject and city of four people",
+   "text": "Four teachers each teach a different subject and live in a different city. The subjects are Maths, Physics, History, Biology; the cities are Chennai, Mumbai, Kolkata, Pune. People: Bhaskar, Charulata, Dev, Eswari. Each person has exactly one subject and one city, and no two people share either. Clues:\n1. Dev's city is Chennai.\n2. Dev's subject is Biology.\n3. The person whose subject is Maths has city Mumbai.\n4. Eswari's subject is Maths.\n5. Bhaskar's subject is not Physics.\n6. Bhaskar's city is not Kolkata."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "In the puzzle on Ravi, Sneha, Kiran and Latha: who has the hobby chess?",
+   "options": [
+    "Sneha",
+    "Ravi",
+    "Kiran",
+    "Latha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one hobby. Final grid: Ravi: Chennai, cycling; Sneha: Mumbai, chess; Kiran: Kolkata, painting; Latha: Pune, singing.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s050",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Ravi, Sneha, Kiran and Latha: what is the city of the person whose hobby is cycling?",
+   "options": [
+    "Chennai",
+    "Kolkata",
+    "Mumbai",
+    "Pune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one hobby. Final grid: Ravi: Chennai, cycling; Sneha: Mumbai, chess; Kiran: Kolkata, painting; Latha: Pune, singing.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s050",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Ravi, Sneha, Kiran and Latha: what is Sneha's city?",
+   "options": [
+    "Mumbai",
+    "Kolkata",
+    "Chennai",
+    "Pune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one hobby. Final grid: Ravi: Chennai, cycling; Sneha: Mumbai, chess; Kiran: Kolkata, painting; Latha: Pune, singing.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s050",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Ravi, Sneha, Kiran and Latha: which hobby does Sneha have?",
+   "options": [
+    "chess",
+    "painting",
+    "singing",
+    "cycling"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one hobby. Final grid: Ravi: Chennai, cycling; Sneha: Mumbai, chess; Kiran: Kolkata, painting; Latha: Pune, singing.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s050",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Mohan, Pooja, Salim and Gita: who has the vehicle scooter?",
+   "options": [
+    "Gita",
+    "Salim",
+    "Pooja",
+    "Mohan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one drink and one vehicle. Final grid: Mohan: lassi, car; Pooja: juice, bus; Salim: coffee, bike; Gita: tea, scooter.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s051",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Mohan, Pooja, Salim and Gita: which vehicle does the person with drink tea have?",
+   "options": [
+    "scooter",
+    "bus",
+    "bike",
+    "car"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one drink and one vehicle. Final grid: Mohan: lassi, car; Pooja: juice, bus; Salim: coffee, bike; Gita: tea, scooter.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s051",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Mohan, Pooja, Salim and Gita: what is the drink of the person whose vehicle is bus?",
+   "options": [
+    "juice",
+    "tea",
+    "coffee",
+    "lassi"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one drink and one vehicle. Final grid: Mohan: lassi, car; Pooja: juice, bus; Salim: coffee, bike; Gita: tea, scooter.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s051",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Mohan, Pooja, Salim and Gita: what is Pooja's drink?",
+   "options": [
+    "juice",
+    "tea",
+    "lassi",
+    "coffee"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one drink and one vehicle. Final grid: Mohan: lassi, car; Pooja: juice, bus; Salim: coffee, bike; Gita: tea, scooter.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s051",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Anand, Bindu, Cyrus and Dolly: what is Anand's fruit?",
+   "options": [
+    "mango",
+    "apple",
+    "banana",
+    "grape"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one colour. Final grid: Anand: mango, yellow; Bindu: apple, red; Cyrus: grape, green; Dolly: banana, blue.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s052",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Anand, Bindu, Cyrus and Dolly: which colour does Dolly have?",
+   "options": [
+    "blue",
+    "red",
+    "yellow",
+    "green"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one colour. Final grid: Anand: mango, yellow; Bindu: apple, red; Cyrus: grape, green; Dolly: banana, blue.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s052",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Anand, Bindu, Cyrus and Dolly: what is the fruit of the person whose colour is green?",
+   "options": [
+    "grape",
+    "apple",
+    "mango",
+    "banana"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one colour. Final grid: Anand: mango, yellow; Bindu: apple, red; Cyrus: grape, green; Dolly: banana, blue.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s052",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Anand, Bindu, Cyrus and Dolly: who has the colour red?",
+   "options": [
+    "Bindu",
+    "Cyrus",
+    "Dolly",
+    "Anand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one colour. Final grid: Anand: mango, yellow; Bindu: apple, red; Cyrus: grape, green; Dolly: banana, blue.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s052",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Elan, Fiza, Gopal and Hema: what is the sport of the person whose subject is Maths?",
+   "options": [
+    "cricket",
+    "kabaddi",
+    "hockey",
+    "tennis"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one sport and one subject. Final grid: Elan: cricket, Maths; Fiza: kabaddi, Physics; Gopal: tennis, Biology; Hema: hockey, History.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s053",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Elan, Fiza, Gopal and Hema: which subject does Hema have?",
+   "options": [
+    "History",
+    "Physics",
+    "Biology",
+    "Maths"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one sport and one subject. Final grid: Elan: cricket, Maths; Fiza: kabaddi, Physics; Gopal: tennis, Biology; Hema: hockey, History.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s053",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Elan, Fiza, Gopal and Hema: who has the subject Physics?",
+   "options": [
+    "Fiza",
+    "Elan",
+    "Gopal",
+    "Hema"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one sport and one subject. Final grid: Elan: cricket, Maths; Fiza: kabaddi, Physics; Gopal: tennis, Biology; Hema: hockey, History.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s053",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Elan, Fiza, Gopal and Hema: which subject does the person with sport tennis have?",
+   "options": [
+    "Biology",
+    "History",
+    "Maths",
+    "Physics"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one sport and one subject. Final grid: Elan: cricket, Maths; Fiza: kabaddi, Physics; Gopal: tennis, Biology; Hema: hockey, History.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s053",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Irfan, Janaki, Kabir and Leela: which colour does Kabir have?",
+   "options": [
+    "blue",
+    "red",
+    "green",
+    "yellow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one vehicle and one colour. Final grid: Irfan: bus, red; Janaki: car, yellow; Kabir: scooter, blue; Leela: bike, green.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s054",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Irfan, Janaki, Kabir and Leela: what is Kabir's vehicle?",
+   "options": [
+    "scooter",
+    "car",
+    "bus",
+    "bike"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one vehicle and one colour. Final grid: Irfan: bus, red; Janaki: car, yellow; Kabir: scooter, blue; Leela: bike, green.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s054",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Irfan, Janaki, Kabir and Leela: who has the vehicle bus?",
+   "options": [
+    "Irfan",
+    "Leela",
+    "Kabir",
+    "Janaki"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one vehicle and one colour. Final grid: Irfan: bus, red; Janaki: car, yellow; Kabir: scooter, blue; Leela: bike, green.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s054",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Irfan, Janaki, Kabir and Leela: who has the colour blue?",
+   "options": [
+    "Kabir",
+    "Leela",
+    "Irfan",
+    "Janaki"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one vehicle and one colour. Final grid: Irfan: bus, red; Janaki: car, yellow; Kabir: scooter, blue; Leela: bike, green.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s054",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Manoj, Nandini, Prem and Radha: what is the city of the person whose sport is cricket?",
+   "options": [
+    "Mumbai",
+    "Chennai",
+    "Pune",
+    "Kolkata"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one sport. Final grid: Manoj: Kolkata, kabaddi; Nandini: Mumbai, cricket; Prem: Pune, tennis; Radha: Chennai, hockey.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s055",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Manoj, Nandini, Prem and Radha: who has the sport hockey?",
+   "options": [
+    "Radha",
+    "Nandini",
+    "Manoj",
+    "Prem"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one sport. Final grid: Manoj: Kolkata, kabaddi; Nandini: Mumbai, cricket; Prem: Pune, tennis; Radha: Chennai, hockey.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s055",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Manoj, Nandini, Prem and Radha: which sport does Nandini have?",
+   "options": [
+    "cricket",
+    "kabaddi",
+    "hockey",
+    "tennis"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one sport. Final grid: Manoj: Kolkata, kabaddi; Nandini: Mumbai, cricket; Prem: Pune, tennis; Radha: Chennai, hockey.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s055",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Manoj, Nandini, Prem and Radha: which sport does the person with city Kolkata have?",
+   "options": [
+    "kabaddi",
+    "cricket",
+    "hockey",
+    "tennis"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one city and one sport. Final grid: Manoj: Kolkata, kabaddi; Nandini: Mumbai, cricket; Prem: Pune, tennis; Radha: Chennai, hockey.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s055",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Sunil, Tanvi, Umesh and Vasu: who has the drink juice?",
+   "options": [
+    "Sunil",
+    "Umesh",
+    "Tanvi",
+    "Vasu"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one hobby and one drink. Final grid: Sunil: painting, juice; Tanvi: singing, lassi; Umesh: cycling, tea; Vasu: chess, coffee.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s056",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Sunil, Tanvi, Umesh and Vasu: which drink does the person with hobby cycling have?",
+   "options": [
+    "tea",
+    "juice",
+    "lassi",
+    "coffee"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one hobby and one drink. Final grid: Sunil: painting, juice; Tanvi: singing, lassi; Umesh: cycling, tea; Vasu: chess, coffee.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s056",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Sunil, Tanvi, Umesh and Vasu: what is Sunil's hobby?",
+   "options": [
+    "painting",
+    "singing",
+    "chess",
+    "cycling"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one hobby and one drink. Final grid: Sunil: painting, juice; Tanvi: singing, lassi; Umesh: cycling, tea; Vasu: chess, coffee.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s056",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Sunil, Tanvi, Umesh and Vasu: what is the hobby of the person whose drink is tea?",
+   "options": [
+    "cycling",
+    "painting",
+    "chess",
+    "singing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one hobby and one drink. Final grid: Sunil: painting, juice; Tanvi: singing, lassi; Umesh: cycling, tea; Vasu: chess, coffee.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s056",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Wasim, Yogita, Zeenat and Ajay: what is Zeenat's fruit?",
+   "options": [
+    "banana",
+    "apple",
+    "mango",
+    "grape"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one sport. Final grid: Wasim: grape, kabaddi; Yogita: apple, cricket; Zeenat: banana, hockey; Ajay: mango, tennis.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s057",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Wasim, Yogita, Zeenat and Ajay: who has the fruit grape?",
+   "options": [
+    "Wasim",
+    "Zeenat",
+    "Yogita",
+    "Ajay"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one sport. Final grid: Wasim: grape, kabaddi; Yogita: apple, cricket; Zeenat: banana, hockey; Ajay: mango, tennis.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s057",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Wasim, Yogita, Zeenat and Ajay: who has the sport hockey?",
+   "options": [
+    "Zeenat",
+    "Wasim",
+    "Yogita",
+    "Ajay"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one sport. Final grid: Wasim: grape, kabaddi; Yogita: apple, cricket; Zeenat: banana, hockey; Ajay: mango, tennis.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s057",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Wasim, Yogita, Zeenat and Ajay: what is the fruit of the person whose sport is hockey?",
+   "options": [
+    "banana",
+    "mango",
+    "apple",
+    "grape"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one fruit and one sport. Final grid: Wasim: grape, kabaddi; Yogita: apple, cricket; Zeenat: banana, hockey; Ajay: mango, tennis.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "logical-puzzles-s057",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Bhaskar, Charulata, Dev and Eswari: what is Charulata's subject?",
+   "options": [
+    "Physics",
+    "Biology",
+    "History",
+    "Maths"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one subject and one city. Final grid: Bhaskar: History, Pune; Charulata: Physics, Kolkata; Dev: Biology, Chennai; Eswari: Maths, Mumbai.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s058",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Bhaskar, Charulata, Dev and Eswari: which city does the person with subject Physics have?",
+   "options": [
+    "Kolkata",
+    "Mumbai",
+    "Chennai",
+    "Pune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one subject and one city. Final grid: Bhaskar: History, Pune; Charulata: Physics, Kolkata; Dev: Biology, Chennai; Eswari: Maths, Mumbai.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s058",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Bhaskar, Charulata, Dev and Eswari: who has the subject Biology?",
+   "options": [
+    "Dev",
+    "Charulata",
+    "Bhaskar",
+    "Eswari"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one subject and one city. Final grid: Bhaskar: History, Pune; Charulata: Physics, Kolkata; Dev: Biology, Chennai; Eswari: Maths, Mumbai.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s058",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  },
+  {
+   "questionText": "In the puzzle on Bhaskar, Charulata, Dev and Eswari: what is the subject of the person whose city is Pune?",
+   "options": [
+    "History",
+    "Biology",
+    "Maths",
+    "Physics"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Start with the direct clues, then use the negative clues to eliminate options until each person is forced into one subject and one city. Final grid: Bhaskar: History, Pune; Charulata: Physics, Kolkata; Dev: Biology, Chennai; Eswari: Maths, Mumbai.",
+   "subPattern": "grid-table-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s058",
+   "shortcut": "Draw a small grid, mark each direct clue with a tick and cross out the rest of its row and column."
+  }
+ ]
+}

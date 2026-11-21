@@ -1,0 +1,751 @@
+{
+ "sets": [
+  {
+   "id": "di-caselets-s081",
+   "type": "text",
+   "title": "Gram panchayat election",
+   "text": "A gram panchayat in Thanjavur district has 12,000 registered voters. In the election, 70% of the registered voters cast their votes, and 5% of the votes cast were found invalid. Among the valid votes, Rajan got 45%, Seetha got 35% and Murali got the rest."
+  },
+  {
+   "id": "di-caselets-s082",
+   "type": "text",
+   "title": "A family budget in Salem",
+   "text": "A family in Salem has a monthly income of ₹60,000. It spends 25% of the income on rent, 20% on food, 15% on education and 10% on transport, and saves the rest. Next year the income rises by 10%, rent rises by 20%, food by 5% and education by 40%, while the transport spending stays the same. Savings are whatever remains."
+  },
+  {
+   "id": "di-caselets-s083",
+   "type": "text",
+   "title": "Monthly output of a Pune plant",
+   "text": "A two-wheeler parts factory in Pune produced 8,000 units in April. May production was 25% more than April, June production was 10% less than May, and July production was 20% more than June. The defective share of the units produced was 5% in April, 4% in May, 3% in June and 2.5% in July."
+  },
+  {
+   "id": "di-caselets-s084",
+   "type": "text",
+   "title": "Entrance test results",
+   "text": "Of the 1,200 candidates who appeared for an entrance test in Madurai, 60% were male. 45% of the male candidates and 55% of the female candidates passed the test."
+  },
+  {
+   "id": "di-caselets-s085",
+   "type": "text",
+   "title": "Diwali sale at an electronics store",
+   "text": "A store in Coimbatore offers festival discounts on the marked price: 20% on a television, 15% on a refrigerator and 12% on a washing machine. The marked prices are ₹40,000, ₹30,000 and ₹25,000 respectively. During the sale, 50 televisions, 40 refrigerators and 30 washing machines were sold. Customers paying by card got an additional 5% off the already discounted price; 30 of the televisions and 10 of the refrigerators were bought by card."
+  },
+  {
+   "id": "di-caselets-s086",
+   "type": "text",
+   "title": "Literacy in a district",
+   "text": "A district in Tamil Nadu had a population of 8,00,000 in 2015. The population grew by 10% in the five years to 2020 and by 8% in the five years from 2020 to 2025. The literacy rate (literate persons as a percentage of the population) was 72% in 2015, 78% in 2020 and 84% in 2025."
+  },
+  {
+   "id": "di-caselets-s087",
+   "type": "text",
+   "title": "A Bengaluru startup's three years",
+   "text": "A startup in Bengaluru earned a revenue of ₹50 lakh in its first year, and its expenses were 80% of the revenue. In the second year the revenue grew by 30% and the expenses grew by 20%. In the third year the revenue grew by 10% over the second year, while the expenses fell by 5% from the second year. Profit = revenue − expenses."
+  },
+  {
+   "id": "di-caselets-s088",
+   "type": "text",
+   "title": "Milk collection at a dairy in Anand",
+   "text": "A dairy in Anand collects 5,000 litres of milk in a day, of which 60% is cow milk and the rest is buffalo milk. The fat content is 3.5% in cow milk and 6.5% in buffalo milk (as a percentage of volume)."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "How many votes were cast?",
+   "options": [
+    "8,400",
+    "8,820",
+    "7,980",
+    "3,600"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Votes cast = 70% of 12,000 = 0.70 × 12,000 = 8,400.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s081",
+   "shortcut": "70% of 12,000 = 7 × 1,200."
+  },
+  {
+   "questionText": "How many invalid votes were there?",
+   "options": [
+    "600",
+    "420",
+    "840",
+    "399"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Invalid votes = 5% of votes cast = 0.05 × 8,400 = 420.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "How many valid votes did Rajan get?",
+   "options": [
+    "3,780",
+    "3,150",
+    "3,591",
+    "3,990"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Valid votes = 8,400 − 420 = 7,980. Rajan's votes = 45% of 7,980 = 3,591.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s081",
+   "shortcut": "Valid = 95% of 8,400 = 7,980."
+  },
+  {
+   "questionText": "Rajan's lead over Seetha equals what percentage of the registered voters?",
+   "options": [
+    "6.30%",
+    "9.50%",
+    "7.98%",
+    "6.65%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lead = (45% − 35%) of 7,980 = 10% of 7,980 = 798. As a share of registered voters = 798/12,000 × 100 = 6.65%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s081"
+  },
+  {
+   "questionText": "At least how many valid votes must shift from Rajan to Seetha so that the two have exactly equal votes?",
+   "options": [
+    "399",
+    "798",
+    "1,197",
+    "420"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rajan leads by 798. Moving x votes from Rajan to Seetha reduces the lead by 2x, so 2x = 798 and x = 399.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s081",
+   "shortcut": "Gap shifted between two people: move half the gap."
+  },
+  {
+   "questionText": "What are the family's current monthly savings?",
+   "options": [
+    "₹15,000",
+    "₹18,000",
+    "₹24,000",
+    "₹21,000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Savings % = 100 − (25 + 20 + 15 + 10) = 30%. 30% of ₹60,000 = ₹18,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "What will the monthly food expense be next year?",
+   "options": [
+    "₹13,200",
+    "₹12,000",
+    "₹12,600",
+    "₹14,400"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Food now = 20% of 60,000 = ₹12,000. Next year = 12,000 × 1.05 = ₹12,600.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "Next year the rent will be what percentage of the family's income (to two decimal places)?",
+   "options": [
+    "25.00%",
+    "30.00%",
+    "24.00%",
+    "27.27%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rent now = 25% of 60,000 = ₹15,000. New rent = 15,000 × 1.2 = ₹18,000. New income = ₹66,000. Share = 18,000/66,000 × 100 = 27.27%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082",
+   "shortcut": "Rent grows faster than income, so its share must exceed 25%."
+  },
+  {
+   "questionText": "What will the monthly savings be next year?",
+   "options": [
+    "₹16,800",
+    "₹18,000",
+    "₹19,800",
+    "₹15,000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New spends: rent 18,000, food 12,600, education 9,000 × 1.4 = 12,600, transport 6,000; total = 49,200. Savings = 66,000 − 49,200 = ₹16,800.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s082"
+  },
+  {
+   "questionText": "By what percentage (to two decimal places) will the savings fall next year?",
+   "options": [
+    "10.00%",
+    "6.67%",
+    "8.33%",
+    "6.00%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fall = 18,000 − 16,800 = ₹1,200. Percentage fall = 1,200/18,000 × 100 = 6.67%. Income rose 10% but savings fell, because spending rose faster.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s082",
+   "shortcut": "Always take the percentage change on the old savings, not the new."
+  },
+  {
+   "questionText": "How many units did the factory produce in June?",
+   "options": [
+    "8,000",
+    "9,500",
+    "9,000",
+    "10,000"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "May = 8,000 × 1.25 = 10,000. June = 10,000 × 0.9 = 9,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "How many defective units were produced in July?",
+   "options": [
+    "250",
+    "300",
+    "216",
+    "270"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "July production = 9,000 × 1.2 = 10,800. Defective = 2.5% of 10,800 = 270.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "How many non-defective units were produced in July?",
+   "options": [
+    "10,530",
+    "10,800",
+    "10,270",
+    "9,000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "July production = 10,800 and defective = 270, so good units = 10,800 − 270 = 10,530.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "Over the four months together, the defective units form what percentage of total production (nearest 0.1%)?",
+   "options": [
+    "3.1%",
+    "3.5%",
+    "4.0%",
+    "3.9%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total production = 8,000 + 10,000 + 9,000 + 10,800 = 37,800. Total defective = 400 + 400 + 270 + 270 = 1,340. Percentage = 1,340/37,800 × 100 = 3.54%, i.e. 3.5%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "By what percentage (nearest 0.1%) were the good units in July higher than the good units in April?",
+   "options": [
+    "35.0%",
+    "35.4%",
+    "38.6%",
+    "31.5%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "April good units = 8,000 − 400 = 7,600. July good units = 10,530. Rise = 2,930, and 2,930/7,600 × 100 = 38.55%, i.e. 38.6%. (Using total production instead gives 35%, which is the trap.)",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s083"
+  },
+  {
+   "questionText": "How many female candidates appeared for the test?",
+   "options": [
+    "520",
+    "540",
+    "600",
+    "480"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Males = 60% of 1,200 = 720. Females = 1,200 − 720 = 480.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "How many male candidates passed?",
+   "options": [
+    "324",
+    "540",
+    "396",
+    "360"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Male candidates = 720. Passed = 45% of 720 = 324.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "What is the overall pass percentage?",
+   "options": [
+    "50%",
+    "49%",
+    "48%",
+    "51%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Passed = 324 + 264 = 588. Overall pass % = 588/1,200 × 100 = 49%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084",
+   "shortcut": "Weighted average: 0.6 × 45 + 0.4 × 55 = 27 + 22 = 49."
+  },
+  {
+   "questionText": "Female candidates form what percentage of all those who passed (nearest 0.1%)?",
+   "options": [
+    "40.0%",
+    "55.0%",
+    "44.9%",
+    "46.7%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Female passers = 264 and total passers = 588. Share = 264/588 × 100 = 44.90%, i.e. 44.9%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "How many more candidates would have to pass for the overall pass percentage to become 55%?",
+   "options": [
+    "60",
+    "66",
+    "84",
+    "72"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "55% of 1,200 = 660. Currently 588 passed, so 660 − 588 = 72 more must pass.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s084"
+  },
+  {
+   "questionText": "What is the selling price of a television after the festival discount?",
+   "options": [
+    "₹32,000",
+    "₹35,000",
+    "₹30,000",
+    "₹34,000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "20% off ₹40,000 = ₹8,000 off, so price = ₹32,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "What is the selling price of a washing machine after the festival discount?",
+   "options": [
+    "₹21,000",
+    "₹22,000",
+    "₹23,000",
+    "₹24,500"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "12% of 25,000 = ₹3,000. Price = 25,000 − 3,000 = ₹22,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "What is the total sales revenue at the festival-discounted prices (before any card discount)?",
+   "options": [
+    "₹39,50,000",
+    "₹31,60,000",
+    "₹32,80,000",
+    "₹33,20,000"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "TVs: 50 × 32,000 = 16,00,000. Fridges: 40 × 25,500 = 10,20,000. Washers: 30 × 22,000 = 6,60,000. Total = ₹32,80,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "The overall discount given, as a percentage of the total marked value, is closest to which value?",
+   "options": [
+    "16.0%",
+    "15.0%",
+    "18.5%",
+    "17.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Marked value = 20,00,000 + 12,00,000 + 7,50,000 = 39,50,000. Discount = 39,50,000 − 32,80,000 = 6,70,000. 6,70,000/39,50,000 × 100 = 16.96%, which is about 17.0%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "After the extra card discount, what is the total revenue of the store?",
+   "options": [
+    "₹32,19,250",
+    "₹32,80,000",
+    "₹31,16,000",
+    "₹32,16,000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Card discount on TVs = 30 × 5% of 32,000 = 30 × 1,600 = 48,000. On fridges = 10 × 5% of 25,500 = 10 × 1,275 = 12,750. Total = 60,750. Revenue = 32,80,000 − 60,750 = ₹32,19,250.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s085"
+  },
+  {
+   "questionText": "What was the population in 2020?",
+   "options": [
+    "8,60,000",
+    "8,80,000",
+    "9,04,000",
+    "8,40,000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2020 population = 8,00,000 × 1.10 = 8,80,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "How many people were literate in 2015?",
+   "options": [
+    "6,00,000",
+    "5,60,000",
+    "5,76,000",
+    "6,40,000"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "72% of 8,00,000 = 5,76,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "What was the population in 2025?",
+   "options": [
+    "9,44,000",
+    "9,60,000",
+    "9,68,000",
+    "9,50,400"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2025 population = 8,80,000 × 1.08 = 9,50,400. (Not 18% over 2015, because the 8% applies to the 2020 base.)",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086",
+   "shortcut": "Successive growth: 10% then 8% = 18.8% overall."
+  },
+  {
+   "questionText": "How many people were literate in 2025?",
+   "options": [
+    "7,98,336",
+    "7,98,000",
+    "7,68,000",
+    "8,25,000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "84% of 9,50,400 = 9,50,400 × 0.84 = 7,98,336.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "The number of literate persons in 2025 was what percentage more than in 2015?",
+   "options": [
+    "16.7%",
+    "38.6%",
+    "12.0%",
+    "33.3%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Increase = 7,98,336 − 5,76,000 = 2,22,336. Percentage = 2,22,336/5,76,000 × 100 = 38.6%. The rise is larger than the literacy-rate rise (12 points) because the population also grew.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s086"
+  },
+  {
+   "questionText": "What was the profit in the first year?",
+   "options": [
+    "₹40 lakh",
+    "₹8 lakh",
+    "₹10 lakh",
+    "₹12 lakh"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Expenses = 80% of 50 = 40 lakh. Profit = 50 − 40 = ₹10 lakh.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "What was the revenue in the second year?",
+   "options": [
+    "₹60 lakh",
+    "₹70 lakh",
+    "₹62 lakh",
+    "₹65 lakh"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue = 50 × 1.30 = ₹65 lakh.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "In the second year, the profit was what percentage of the revenue (nearest 0.01%)?",
+   "options": [
+    "26.15%",
+    "20.00%",
+    "23.08%",
+    "34.00%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Expenses = 40 × 1.2 = 48 lakh. Profit = 65 − 48 = 17 lakh. Profit margin = 17/65 × 100 = 26.15%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "What were the expenses in the third year?",
+   "options": [
+    "₹50.4 lakh",
+    "₹45.6 lakh",
+    "₹46.8 lakh",
+    "₹48.0 lakh"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Expenses in year 2 = 48 lakh. Year 3 = 48 × 0.95 = ₹45.6 lakh.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s087"
+  },
+  {
+   "questionText": "The third-year profit was what percentage higher than the first-year profit?",
+   "options": [
+    "259%",
+    "73%",
+    "159%",
+    "150%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue year 3 = 65 × 1.1 = 71.5 lakh. Profit = 71.5 − 45.6 = 25.9 lakh. Increase over 10 lakh = 15.9 lakh, i.e. 15.9/10 × 100 = 159%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s087",
+   "shortcut": "Percentage increase uses the old value as the base: 25.9/10 = 259% of the old, i.e. 159% more."
+  },
+  {
+   "questionText": "How many litres of cow milk does the dairy collect?",
+   "options": [
+    "2,000",
+    "3,500",
+    "2,500",
+    "3,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "60% of 5,000 = 3,000 litres.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "How many litres of fat are there in the buffalo milk collected?",
+   "options": [
+    "130",
+    "105",
+    "325",
+    "65"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Buffalo milk = 40% of 5,000 = 2,000 litres. Fat = 6.5% of 2,000 = 130 litres.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "What is the average fat percentage of the mixed milk?",
+   "options": [
+    "5.0%",
+    "4.7%",
+    "4.5%",
+    "5.2%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fat in cow milk = 3.5% of 3,000 = 105 L. Total fat = 105 + 130 = 235 L. Average = 235/5,000 × 100 = 4.7%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088",
+   "shortcut": "Weighted average: 0.6 × 3.5 + 0.4 × 6.5 = 2.1 + 2.6 = 4.7."
+  },
+  {
+   "questionText": "If 500 litres of water is added to the mixed milk, the fat percentage becomes (nearest 0.01%)",
+   "options": [
+    "4.50%",
+    "4.70%",
+    "4.27%",
+    "4.00%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fat stays at 235 L but volume becomes 5,500 L. Fat % = 235/5,500 × 100 = 4.27%.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s088"
+  },
+  {
+   "questionText": "How many litres of pure buffalo milk must be added to the original 5,000 litres to raise the average fat content to exactly 5%?",
+   "options": [
+    "800",
+    "1,250",
+    "500",
+    "1,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let x litres be added: (235 + 0.065x)/(5,000 + x) = 0.05. So 235 + 0.065x = 250 + 0.05x, giving 0.015x = 15 and x = 1,000.",
+   "subPattern": "percentage-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-caselets-s088",
+   "shortcut": "Alligation: 6.5 − 5 = 1.5 parts vs 5 − 4.7 = 0.3 parts, so 5,000 : x = 1.5 : 0.3."
+  }
+ ]
+}

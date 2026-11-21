@@ -1,0 +1,632 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The prize was shared between Anita and ____.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After a preposition (between), the object form 'me' is used.",
+   "shortcut": "Preposition + object pronoun.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rahul and ____ went to the market.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "As part of the subject, the subject form 'I' is needed.",
+   "shortcut": "Subject position = I.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It was ____ who called you yesterday.",
+   "options": [
+    "him",
+    "his",
+    "he",
+    "himself"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'it was' the subject form is used with a following relative clause: he.",
+   "shortcut": "It is + subject pronoun + who/that.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She blamed ____ for the accident.",
+   "options": [
+    "her",
+    "she",
+    "hers",
+    "herself"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The subject and object are the same person, so a reflexive pronoun is needed: herself.",
+   "shortcut": "Same person doing and receiving = reflexive.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The book is not mine; it is ____.",
+   "options": [
+    "hers",
+    "her",
+    "she",
+    "herself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive pronoun standing alone completes the sentence: hers.",
+   "shortcut": "Possessive pronoun has no noun after it.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This is ____ umbrella, not yours.",
+   "options": [
+    "mine",
+    "my",
+    "me",
+    "myself"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A possessive adjective is followed by a noun: my umbrella.",
+   "shortcut": "Adjective + noun: my. Standalone: mine.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Each of the boys has finished ____ homework.",
+   "options": [
+    "its",
+    "her",
+    "his",
+    "our"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Each of the boys' is singular and refers to male persons: his.",
+   "shortcut": "Each = singular pronoun.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The old man lost ____ way in the forest.",
+   "options": [
+    "its",
+    "her",
+    "their",
+    "his"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The pronoun must match the singular male subject 'old man': his.",
+   "shortcut": "Pronoun agrees with its noun.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya and Divya completed ____ projects before the deadline.",
+   "options": [
+    "their",
+    "its",
+    "her",
+    "his"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The plural subject takes the plural possessive: their.",
+   "shortcut": "Plural noun = their.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The company has changed ____ policy on refunds.",
+   "options": [
+    "his",
+    "its",
+    "her",
+    "whose"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A company as one unit is referred to with 'its'.",
+   "shortcut": "Company = its.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He did all the work by ____ without any help.",
+   "options": [
+    "him",
+    "his",
+    "himself",
+    "he"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'By himself' means alone; the reflexive follows the preposition when it refers back to the subject.",
+   "shortcut": "by + reflexive = alone.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Between you and ____, the plan will not work.",
+   "options": [
+    "I",
+    "myself",
+    "mine",
+    "me"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Between' is a preposition and takes the object form: me.",
+   "shortcut": "Between you and me.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is not as intelligent as ____ am.",
+   "options": [
+    "I",
+    "me",
+    "my",
+    "myself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb 'am' needs a subject, so the subject form I is used.",
+   "shortcut": "as...as + subject + verb.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Do you know ____ is waiting outside?",
+   "options": [
+    "whom",
+    "who",
+    "whose",
+    "which"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Who' is the subject of 'is waiting', so the subject form is used.",
+   "shortcut": "Who = subject, whom = object.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "To ____ did you give the keys?",
+   "options": [
+    "who",
+    "whose",
+    "whom",
+    "which"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After the preposition 'to', the object form 'whom' is used.",
+   "shortcut": "Preposition + whom.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The man ____ car was stolen reported to the police.",
+   "options": [
+    "who",
+    "whom",
+    "which",
+    "whose"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The relative pronoun shows possession of the car, so 'whose'.",
+   "shortcut": "Possession = whose.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This is the girl ____ won the first prize.",
+   "options": [
+    "who",
+    "whom",
+    "whose",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Who' is the subject of 'won'. Persons take who.",
+   "shortcut": "Person + subject = who.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The watch ____ I bought yesterday has stopped.",
+   "options": [
+    "who",
+    "which",
+    "whom",
+    "whose"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The antecedent is a thing, so the relative pronoun 'which' is used; who/whom are for persons.",
+   "shortcut": "Thing = which.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is the man to ____ I gave the money.",
+   "options": [
+    "who",
+    "whose",
+    "whom",
+    "which"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After the preposition 'to', the object form 'whom' is used.",
+   "shortcut": "Preposition + whom.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "They enjoyed ____ at the festival.",
+   "options": [
+    "them",
+    "their",
+    "theirs",
+    "themselves"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The subject and object are the same, so the reflexive 'themselves' is used.",
+   "shortcut": "enjoy + reflexive.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She prepared the dinner ____.",
+   "options": [
+    "herself",
+    "her",
+    "she",
+    "hers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Used for emphasis, the reflexive 'herself' follows the noun or the verb phrase.",
+   "shortcut": "Emphatic reflexive.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The lion hurt ____ while trying to escape the cage.",
+   "options": [
+    "him",
+    "itself",
+    "its",
+    "themselves"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A lion as an animal is referred to as 'it', and since the subject and object are the same, 'itself' is required.",
+   "shortcut": "Same entity = reflexive.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We should respect ____ elders.",
+   "options": [
+    "us",
+    "ours",
+    "our",
+    "ourselves"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A possessive adjective is needed before the noun 'elders': our.",
+   "shortcut": "Adjective before noun.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The climate of Ooty is cooler than ____ of Chennai.",
+   "options": [
+    "those",
+    "it",
+    "them",
+    "that"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'That' stands for the singular noun 'climate' to avoid repetition.",
+   "shortcut": "that = singular, those = plural.",
+   "subPattern": "pronouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The teacher told Meena and ____ to stay back.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Told' takes an object, so the object form 'me' is needed.",
+   "shortcut": "Verb + object pronoun.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Let you and ____ finish the work first.",
+   "options": [
+    "I",
+    "me",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Let' takes an object form: let you and me.",
+   "shortcut": "Let + object.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hari as well as ____ was selected for the camp.",
+   "options": [
+    "me",
+    "myself",
+    "I",
+    "mine"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The pronoun is part of the subject of 'was selected', so the subject form: I.",
+   "shortcut": "Subject form in subject position.",
+   "subPattern": "pronouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Only the two of ____ know the password.",
+   "options": [
+    "we",
+    "ourselves",
+    "ours",
+    "us"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After the preposition 'of', the object form is used: us.",
+   "shortcut": "Preposition + object.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The leaves of this plant are bigger than ____ of that plant.",
+   "options": [
+    "those",
+    "that",
+    "it",
+    "them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Those' stands for the plural noun 'leaves' to avoid repetition.",
+   "shortcut": "those = plural.",
+   "subPattern": "pronouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Seema and Reena are friends; ____ love each other.",
+   "options": [
+    "she",
+    "they",
+    "it",
+    "we"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A plural subject needed for two girls: they.",
+   "shortcut": "Plural noun = they.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of these two bags is ____?",
+   "options": [
+    "you",
+    "your",
+    "yours",
+    "yourself"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A standalone possessive pronoun is needed here: yours.",
+   "shortcut": "Possessive pronoun alone.",
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The students ____ passed the test were awarded certificates.",
+   "options": [
+    "whom",
+    "whose",
+    "which",
+    "who"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The relative pronoun refers to persons and is the subject of 'passed': who.",
+   "shortcut": "Person subject = who.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The old woman ____ I met yesterday is my neighbour.",
+   "options": [
+    "whom",
+    "whose",
+    "what",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun is the object of 'met' and refers to a person: whom.",
+   "shortcut": "Person object = whom.",
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

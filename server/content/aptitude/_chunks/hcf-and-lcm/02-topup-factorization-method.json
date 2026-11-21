@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "How many positive factors does 480249 have?",
+   "options": [
+    "11",
+    "45",
+    "44",
+    "46"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "480249 = 11^2 × 7^2 × 3^4. Number of factors = (2+1) × (2+1) × (4+1) = 45.",
+   "shortcut": "Add 1 to every exponent and multiply.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are given in prime-factor form as 7^2 × 3^3 × 5 and 7^3 × 3 × 5. What is their HCF?",
+   "options": [
+    "46305",
+    "34034175",
+    "735",
+    "77175"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HCF takes each prime with the smaller power: 7^2 × 3 × 5 = 735.",
+   "shortcut": "HCF = lowest powers, LCM = highest powers of every prime.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors does 133100 have?",
+   "options": [
+    "10",
+    "37",
+    "35",
+    "36"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "133100 = 5^2 × 11^3 × 2^2. Number of factors = (2+1) × (3+1) × (2+1) = 36.",
+   "shortcut": "Add 1 to every exponent and multiply.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are given in prime-factor form as 5^4 × 3^4 × 7^3 and 5^4 × 3^3 × 7. What is their HCF?",
+   "options": [
+    "2480625",
+    "2051166796875",
+    "17364375",
+    "118125"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF takes each prime with the smaller power: 5^4 × 3^3 × 7 = 118125.",
+   "shortcut": "HCF = lowest powers, LCM = highest powers of every prime.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors does 74088 have?",
+   "options": [
+    "63",
+    "12",
+    "65",
+    "64"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "74088 = 3^3 × 2^3 × 7^3. Number of factors = (3+1) × (3+1) × (3+1) = 64.",
+   "shortcut": "Add 1 to every exponent and multiply.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are given in prime-factor form as 2^2 × 3 × 7 and 2 × 3^3 × 7^4. What is their HCF?",
+   "options": [
+    "259308",
+    "42",
+    "1764",
+    "10890936"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF takes each prime with the smaller power: 2 × 3 × 7 = 42.",
+   "shortcut": "HCF = lowest powers, LCM = highest powers of every prime.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors does 594 have?",
+   "options": [
+    "16",
+    "8",
+    "17",
+    "15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "594 = 2 × 3^3 × 11. Number of factors = (1+1) × (3+1) × (1+1) = 16.",
+   "shortcut": "Add 1 to every exponent and multiply.",
+   "subPattern": "factorization-method",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many common factors do 756 and 1134 have?",
+   "options": [
+    "24",
+    "20",
+    "16",
+    "18"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Common factors = factors of HCF. HCF(756, 1134) = 378, which has 16 factors.",
+   "shortcut": "Common factors of two numbers = number of factors of their HCF.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many common factors do 840 and 1260 have?",
+   "options": [
+    "32",
+    "26",
+    "24",
+    "36"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Common factors = factors of HCF. HCF(840, 1260) = 420, which has 24 factors.",
+   "shortcut": "Common factors of two numbers = number of factors of their HCF.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 6615 must be multiplied to make it a perfect square?",
+   "options": [
+    "15",
+    "17",
+    "75",
+    "6615"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "6615 = 5 × 7^2 × 3^3. For a perfect square, every exponent must be a multiple of 2. Multiply by 5 × 3 = 15.",
+   "shortcut": "Make each prime's exponent a multiple of 2.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 1512 must be multiplied to make it a perfect cube?",
+   "options": [
+    "343",
+    "1512",
+    "7",
+    "49"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1512 = 7 × 2^3 × 3^3. For a perfect cube, every exponent must be a multiple of 3. Multiply by 7^2 = 49.",
+   "shortcut": "Make each prime's exponent a multiple of 3.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many common factors do 1260 and 1800 have?",
+   "options": [
+    "18",
+    "72",
+    "36",
+    "20"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Common factors = factors of HCF. HCF(1260, 1800) = 180, which has 18 factors.",
+   "shortcut": "Common factors of two numbers = number of factors of their HCF.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three numbers are 4802000, 192080 and 13720. What is the HCF of the three numbers?",
+   "options": [
+    "192080",
+    "13720",
+    "960400",
+    "4802000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Factorise: 4802000 = 2^4 × 5^3 × 7^4, 192080 = 2^4 × 5 × 7^4, 13720 = 2^3 × 5 × 7^3. Take the least power of each prime: 13720.",
+   "shortcut": "Least powers of each prime across all numbers.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 25725 must be multiplied to make it a perfect cube?",
+   "options": [
+    "75",
+    "315",
+    "25725",
+    "45"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "25725 = 7^3 × 3 × 5^2. For a perfect cube, every exponent must be a multiple of 3. Multiply by 3^2 × 5 = 45.",
+   "shortcut": "Make each prime's exponent a multiple of 3.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three numbers are 15000, 101250 and 1500. What is the HCF of the three numbers?",
+   "options": [
+    "3750",
+    "750",
+    "405000",
+    "22500"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Factorise: 15000 = 3 × 5^4 × 2^3, 101250 = 3^4 × 5^4 × 2, 1500 = 3 × 5^3 × 2^2. Take the least power of each prime: 750.",
+   "shortcut": "Least powers of each prime across all numbers.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 23625 must be multiplied to make it a perfect cube?",
+   "options": [
+    "49",
+    "23625",
+    "7",
+    "343"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "23625 = 7 × 3^3 × 5^3. For a perfect cube, every exponent must be a multiple of 3. Multiply by 7^2 = 49.",
+   "shortcut": "Make each prime's exponent a multiple of 3.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 1400 must be multiplied to make it a perfect cube?",
+   "options": [
+    "245",
+    "1225",
+    "1400",
+    "175"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1400 = 5^2 × 7 × 2^3. For a perfect cube, every exponent must be a multiple of 3. Multiply by 5 × 7^2 = 245.",
+   "shortcut": "Make each prime's exponent a multiple of 3.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 1350 must be multiplied to make it a perfect cube?",
+   "options": [
+    "20",
+    "60",
+    "1350",
+    "50"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1350 = 3^3 × 2 × 5^2. For a perfect cube, every exponent must be a multiple of 3. Multiply by 2^2 × 5 = 20.",
+   "shortcut": "Make each prime's exponent a multiple of 3.",
+   "subPattern": "factorization-method",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors does the LCM of 72 and 108 have?",
+   "options": [
+    "36",
+    "144",
+    "9",
+    "16"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM(72, 108) = 216. Count factors from its prime exponents: 16.",
+   "shortcut": "Find LCM first, then multiply (exponent+1) over its primes.",
+   "subPattern": "factorization-method",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors does the LCM of 120 and 180 have?",
+   "options": [
+    "12",
+    "72",
+    "288",
+    "24"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM(120, 180) = 360. Count factors from its prime exponents: 24.",
+   "shortcut": "Find LCM first, then multiply (exponent+1) over its primes.",
+   "subPattern": "factorization-method",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the sum of the HCF and the LCM of 20, 50 and 16.",
+   "options": [
+    "800",
+    "402",
+    "400",
+    "102"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF(20, 50, 16) = 2 and LCM = 400 by prime factorisation. Sum = 2 + 400 = 402.",
+   "shortcut": "Factorise once; read HCF (lowest powers) and LCM (highest powers).",
+   "subPattern": "factorization-method",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors of 1080 are odd?",
+   "options": [
+    "9",
+    "24",
+    "32",
+    "8"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1080 = 2^3 × 5 × 3^3. Odd factors come only from the odd primes: (1+1) × (3+1) = 8.",
+   "shortcut": "Ignore the power of 2 when counting odd factors.",
+   "subPattern": "factorization-method",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

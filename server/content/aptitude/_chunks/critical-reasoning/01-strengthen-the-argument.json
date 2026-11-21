@@ -1,0 +1,460 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: A government school in Erode started a free breakfast scheme. Over the next year its attendance rose from 82% to 91%. The principal concludes that the breakfast scheme caused the improvement. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Breakfast under the scheme costs the school about ₹6 per child per day.",
+    "Some students skipped breakfast on days when exams were held.",
+    "Over the same year, attendance stayed at about 82% in comparable Erode schools that had no breakfast scheme.",
+    "The school's enrolment is larger than the district average."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A comparison group that did not receive the scheme and showed no change rules out district-wide causes, so it strengthens the causal claim. The other options do not link breakfast to attendance.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for a control group or a stated mechanism that links cause to effect."
+  },
+  {
+   "questionText": "Read the following: A snack maker in Trichy changed from opaque packs to transparent pouches, and monthly sales rose by 20%. The owner concludes that the transparent pouch is what drove the rise. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The new pouch is available in three sizes.",
+    "The snack maker also plans to open a second production unit.",
+    "A survey found that most new buyers said they chose the pack because they could see the chips inside.",
+    "Pouches cost slightly more than the old packs."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Direct evidence from buyers about why they chose the pack supports the proposed mechanism. Size range, expansion plans and cost say nothing about why sales rose.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Coimbatore plans to build a metro line along Avinashi Road. A planner argues that it will noticeably reduce road traffic on that corridor. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The metro line will take at least five years to build.",
+    "Avinashi Road already has several flyovers.",
+    "In other cities of similar size and road layout, opening a metro line was followed by a measurable fall in traffic on the parallel roads.",
+    "Coimbatore's population has grown steadily over two decades."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Evidence from relevantly similar cases where the same step produced the same result strengthens a prediction by analogy. The other options are neutral about the effect on traffic.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A cricket team won 8 of its next 10 matches after appointing a new fielding coach. A commentator says the coach is the reason for the improved results. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The new coach played Test cricket for India.",
+    "The coach's fielding drills last 90 minutes each day.",
+    "Over the same matches, the team's catching and run-saving statistics improved sharply while its batting and bowling figures stayed the same.",
+    "The team's next series is in a different country."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Showing that the specific area the coach works on improved, while other areas did not, supports the causal claim. The coach's playing record or drill length is irrelevant to causation.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Researchers found that Bengaluru software employees who commute for more than two hours sleep fewer hours than others. They argue that long commutes are the reason for reduced sleep. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Bengaluru has some of the worst traffic in India.",
+    "Employees who sleep fewer hours report lower job satisfaction.",
+    "Among employees of the same companies working the same hours, those living close to office sleep longer than those with long commutes.",
+    "Many employees in the sample work in rotating shifts."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Comparing people who differ only in commute (same employer, same hours) removes the main rival explanation (work hours), so the commute becomes the likely cause.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In a Chennai clinic, diabetic patients who eat ragi porridge daily have lower blood sugar than those who do not. A dietitian concludes that ragi lowers blood sugar. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Ragi is widely grown in Karnataka.",
+    "Most patients in the clinic live in urban areas.",
+    "The two groups of patients are similar in age, body weight and medication.",
+    "Ragi contains more calcium than rice."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Matching the groups on other factors removes the alternative explanations that could produce the same difference. The other options are neutral.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A village in Gujarat received solar-powered irrigation pumps and farmers' incomes rose. An official argues that giving solar pumps to a village in Bihar will similarly raise incomes there. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The pumps in Gujarat were installed by a private firm.",
+    "Solar panels typically last about twenty years.",
+    "The Bihar village has similar crops, a similar shortage of irrigation water and similar sunshine as the Gujarat village.",
+    "Gujarat's capital is Gandhinagar."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An argument by analogy is stronger when the two cases share the features that matter to the outcome (crops, water shortage, sunshine).",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "In analogy arguments, look for the option that makes the two cases alike in the relevant respects."
+  },
+  {
+   "questionText": "Read the following: A firm claims that its aptitude test should be used for hiring, because employees who scored above 70 on it received better first-year reviews. The test had been taken by existing employees. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The test takes 60 minutes to complete.",
+    "The test papers are checked by software.",
+    "The reviewed employees had been hired without reference to their test scores and covered a wide range of scores.",
+    "Other firms in the same city use similar tests."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the employees were not selected on scores and span a wide range, the link between score and review is not an artefact of selection, so the predictive claim is stronger.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: After a Kerala town banned plastic carry bags, complaints about clogged drains fell by 40%. The municipality says the ban caused the fall. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Cloth bags cost more than plastic bags.",
+    "The ban was announced through a newspaper campaign.",
+    "Waste audits showed that plastic bags were the main item blocking the town's drains before the ban.",
+    "Complaints are recorded by the municipal office."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Establishing that the banned item was the main cause of the problem links the ban to the outcome.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Researchers noticed that children who play cricket in the evening score better on concentration tests than children who do not. They conclude that playing evening cricket improves concentration. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The concentration test lasts 20 minutes.",
+    "Most of the children in the study were boys.",
+    "Children who took up cricket during the study improved on their own earlier scores, while those who did not take it up showed no change.",
+    "Cricket is the most popular sport in the city."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A before-and-after comparison of the same children, with a non-playing comparison group, rules out the possibility that good concentrators simply choose cricket.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A municipal corporation plans to replace old water pipes, expecting to cut water losses by 25%. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "New pipes cost ₹2,000 per metre.",
+    "Water is supplied on alternate days in most wards.",
+    "An audit shows that most of the city's leakage occurs in joints and in pipes older than 40 years, which the plan covers.",
+    "Residents often complain about low pressure."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A plan works if it targets the main source of the problem; the audit shows the plan covers that source.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A Pune library finds that students who use its reading room regularly score higher in exams. The librarian says that using the library raises marks. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The library holds 50,000 books.",
+    "The library is open until 8 pm.",
+    "Students who began using the library in Class 9 improved their marks compared with their own earlier marks.",
+    "Toppers usually write more notes."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Showing improvement in the same students after they started using the library addresses the rival explanation that good students simply choose to go to libraries.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A food-delivery app cut its delivery fee from ₹30 to ₹10 in Hyderabad as a trial and orders rose by 55%. The app decides to roll out the lower fee in all its cities, expecting similar growth. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Hyderabad is famous for biryani.",
+    "The delivery partners were paid the same amount during the trial.",
+    "Hyderabad is representative of the app's other cities in income levels and ordering habits.",
+    "The app has over two crore users."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Generalising from a trial to a rollout needs the trial city to be typical of the other cities; this option provides that.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Farmers who sell through the e-NAM online mandi portal receive higher prices than those who do not. A policy analyst argues that joining e-NAM raises a farmer's price. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The portal operates in over a thousand mandis.",
+    "The portal is available in several languages.",
+    "Farmers were chosen to join the portal by a random draw from the list of applicants.",
+    "Some farmers use mobile phones to check prices."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Random assignment ensures that farmers on and off the portal are alike on average, so any price difference can be attributed to the portal. This removes the self-selection explanation.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Random assignment is the strongest evidence for cause."
+  },
+  {
+   "questionText": "Read the following: An IT firm tried afternoon nap rooms on one floor but not on a comparable floor, and the nap-room floor closed more tasks. The manager argues that naps raise productivity. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The nap rooms have reclining chairs.",
+    "The firm's canteen serves lunch at 1 pm.",
+    "Employees on the two floors do the same type of work, and the number of tasks closed had been similar on both floors before the trial.",
+    "Naps last 20 minutes on average."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Equal prior performance on both floors shows the difference after the trial is not due to the floors being different to begin with.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In Odisha, free iron tablets in schools reduced anaemia among students from 40% to 28%. The health department wants to extend the scheme to Jharkhand schools. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Odisha is larger than Jharkhand in area.",
+    "The tablets are produced in Hyderabad.",
+    "In both states, anaemia among schoolchildren is mainly caused by a shortage of iron in the diet.",
+    "Many Jharkhand schools have hostels."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Showing the same underlying cause in both places supports expecting the same remedy to work.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Anita has topped every internal test in her school for three years. Her teacher predicts she will top the Board examination. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The internal tests are held every two months.",
+    "Anita is the youngest student in her class.",
+    "In the last ten years, the topper of the school's internal tests has also topped the Board examination in nine of those years.",
+    "The Board examination is held in March."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A strong historical record that internal-test toppers go on to top the Board exam directly supports the prediction.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A Madurai sweet shop started online ordering and its sales grew 30%. The owner says online ordering brought new customers rather than just shifting existing ones, and plans to extend it to his Salem branch. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Online orders are packed in eco-friendly boxes.",
+    "The Madurai shop is over fifty years old.",
+    "Most online orders came from customers who had never bought from the shop before.",
+    "The Salem branch is smaller than the Madurai shop."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If most online buyers are new, the channel added customers instead of moving existing customers, which supports the owner's claim.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The forest department says that doubling anti-poaching patrols raised the tiger count in a reserve from 40 to 55. It argues that the patrols were responsible. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Patrol staff were given new vehicles.",
+    "Tigers breed more often in winter.",
+    "Evidence of snares and poachers' camps fell sharply after the patrols were doubled, while the animals tigers prey on remained unchanged.",
+    "The reserve is open to tourists from October to June."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fewer snares and camps show that poaching fell because of the patrols, and an unchanged prey base rules out a food-supply explanation.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A call centre in Pune moved to fixed shifts and its attrition fell. HR says irregular shifts were the main reason people had been quitting. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The call centre has two hundred seats.",
+    "Fixed shifts were introduced in April.",
+    "Exit interviews of most of those who had left earlier gave rotating shifts as their primary reason.",
+    "The centre provides cab services to employees."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Direct testimony from those who quit about their reason supports the claimed mechanism.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A survey of 500 people at Ernakulam railway station found that 80% support a new coastal highway. A newspaper concludes that most people in Kerala support the highway. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The surveyors were paid per completed response.",
+    "Ernakulam is one of the busiest stations in Kerala.",
+    "The 500 respondents had been chosen at random from electoral rolls covering all the districts of Kerala.",
+    "The survey was conducted in Malayalam."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion about a population is stronger if the sample is random and representative of it.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Representative sample strengthens a generalisation."
+  },
+  {
+   "questionText": "Read the following: After petrol prices rose sharply, an analyst predicts that more Delhi residents will buy electric two-wheelers. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Electric two-wheelers are available in several colours.",
+    "Petrol is imported from abroad.",
+    "On earlier occasions when petrol prices rose, Delhi saw more registrations of vehicles that are cheaper to run, such as CNG cars.",
+    "Delhi has the largest number of vehicles in India."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Past behaviour of the same population in the same situation supports the prediction.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Researchers found that people who eat amla daily catch fewer colds. They conclude that eating amla helps prevent colds. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Amla is cheaper than most other fruits in India.",
+    "Amla trees grow in many northern states.",
+    "Laboratory tests show that amla extract raises the level of immune cells that fight cold viruses.",
+    "Some people dislike the sour taste of amla."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A plausible biological mechanism linking the cause to the effect supports the causal claim.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A bank says that its mobile app has reduced branch visits, because branch footfall fell by 15% after the app was launched. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "The bank has branches in 18 states.",
+    "The app can be downloaded free of charge.",
+    "Branch footfall fell most among customers who use the app actively and fell little among customers who do not use it.",
+    "Branch timings are 10 am to 4 pm."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A dose-response pattern (more app use, bigger fall in visits) supports a causal link and counters the idea that visits fell for general reasons.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for a pattern in which more of the cause gives more of the effect."
+  },
+  {
+   "questionText": "Read the following: A study in Bhopal found that primary school children who take up chess score better in mathematics a year later than their own earlier scores. The researchers conclude that chess improves mathematics. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    "Chess clubs meet on Saturdays.",
+    "The children's mathematics tests were set by the state board.",
+    "Children who did not take up chess, but were otherwise similar, showed no change in their mathematics scores over the same year.",
+    "Chess was invented in India."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A similar comparison group with no change shows the improvement is not simply due to growing older or a general trend.",
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

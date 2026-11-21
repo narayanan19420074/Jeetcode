@@ -1,0 +1,945 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. The fare nearly emptied his wallet.\nQ. Ramesh woke up late on Monday morning.\nR. As a result, he had to take an auto-rickshaw.\nS. He missed the 7:30 bus to the office.",
+   "options": [
+    "QPRS",
+    "QRSP",
+    "QSRP",
+    "RSQP"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-S-R-P. Q sets the situation; 'He' in S is Ramesh; 'As a result' in R follows the missed bus; P gives the consequence of the auto fare.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. In India, it brings heavy rain from June to September.\nQ. This rain is vital for the Kharif crop.\nR. Farmers therefore watch the sky anxiously every June.\nS. A monsoon is a seasonal change in wind direction.",
+   "options": [
+    "SPQR",
+    "SQPR",
+    "SRQP",
+    "RPQS"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: S-P-Q-R. S defines the monsoon; 'it' in P refers to it; 'This rain' in Q follows; 'therefore' in R concludes.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Priya joined an IT firm in Pune last year.\nQ. Today she mentors the new recruits.\nR. Her manager credited her sharp debugging skills.\nS. Within six months, she was promoted to team lead.",
+   "options": [
+    "RSPQ",
+    "QSRP",
+    "PSRQ",
+    "PRSQ"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: P-S-R-Q. Chronology: joined (P), promoted (S), reason given (R), present day (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Finally, it empties into the Bay of Bengal.\nQ. It rises from the Gangotri glacier in Uttarakhand.\nR. The Ganga is the longest river in India.\nS. Along its course, it passes through Varanasi and Patna.",
+   "options": [
+    "RQSP",
+    "QRSP",
+    "RSQP",
+    "SQRP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: R-Q-S-P. The river is introduced in R; 'It' in Q gives the source; S the middle course; 'Finally' in P the end.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Soon, princely states began forming their own teams.\nQ. By the 1930s, India was ready for international Test cricket.\nR. Initially, only the Parsi community played it seriously.\nS. Cricket reached India through British traders and soldiers.",
+   "options": [
+    "SQPR",
+    "RSPQ",
+    "SRQP",
+    "SRPQ"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: S-R-P-Q. The origin comes first (S); 'Initially' (R); 'Soon' (P); 'By the 1930s' (Q) is the latest in time.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Even small deposits grow when interest is added repeatedly.\nQ. Savings should begin as early as possible.\nR. This effect is known as compounding.\nS. Hence, a young saver ends up richer than a late starter.",
+   "options": [
+    "QPRS",
+    "PQRS",
+    "QSRP",
+    "SPRQ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: Q-P-R-S. Q states the claim; P gives the reason; 'This effect' in R names it; 'Hence' in S concludes.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. The train from Chennai arrived at platform four.\nQ. Within minutes, the platform was empty again.\nR. The porters followed them, carrying heavy trunks.\nS. Passengers rushed towards the coaches with their luggage.",
+   "options": [
+    "PRSQ",
+    "PQRS",
+    "RSPQ",
+    "PSRQ"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: P-S-R-Q. The train arrives (P), passengers rush (S), porters follow 'them' (R), then the platform empties (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. On the festival night, they light diyas and burst crackers.\nQ. Families clean and decorate their homes beforehand.\nR. Diwali is celebrated across India with great joy.\nS. The next morning, neighbours exchange sweets and greetings.",
+   "options": [
+    "RQPS",
+    "QRPS",
+    "RPQS",
+    "RQSP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: R-Q-P-S. General idea (R), preparation (Q), festival night (P), next morning (S).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Our school library had very few books.\nQ. The principal therefore asked the alumni for donations.\nR. Now every student can borrow a book every week.\nS. Within a month, hundreds of books arrived.",
+   "options": [
+    "PQRS",
+    "PQSR",
+    "QPSR",
+    "PSQR"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: P-Q-S-R. Problem (P), 'therefore' action (Q), result (S), present outcome 'Now' (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Tea was first grown in Assam in the 1830s.\nQ. The British soon set up large plantations there.\nR. Today, Assam produces over half of India's tea.\nS. These estates employed thousands of labourers.",
+   "options": [
+    "PQSR",
+    "PRSQ",
+    "PQRS",
+    "QPSR"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: P-Q-S-R. Origin (P); 'there' in Q refers to Assam; 'These estates' in S; 'Today' in R is last.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Its low moisture content stops bacteria from growing.\nQ. Honey never spoils if it is stored properly.\nR. Because of this, jars of honey have survived for centuries.\nS. Moreover, it contains natural acids that kill germs.",
+   "options": [
+    "QRSP",
+    "QPRS",
+    "QPSR",
+    "PQSR"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-P-S-R. Claim (Q), first reason (P), 'Moreover' adds a second (S), 'Because of this' concludes (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. He then toured the country to understand its people.\nQ. Mahatma Gandhi returned to India from South Africa in 1915.\nR. It was his first major success in India.\nS. In 1917, he led the Champaran movement for indigo farmers.",
+   "options": [
+    "PQSR",
+    "RPSQ",
+    "QPSR",
+    "SPQR"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-P-S-R. Q gives the return; 'He then' in P; 1917 in S; 'It' in R refers to the Champaran movement.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. However, the price was beyond his budget.\nQ. Rohan wanted to buy a new laptop.\nR. He therefore decided to wait for the festive sale.\nS. Two months later, he bought it at a 30% discount.",
+   "options": [
+    "QRPS",
+    "SPRQ",
+    "PQRS",
+    "QPRS"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: Q-P-R-S. Desire (Q); 'However' (P); 'therefore' decision (R); 'Two months later' (S).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Lack of sleep, therefore, weakens both body and mind.\nQ. Sleep is essential for good health.\nR. The brain also stores the day's memories.\nS. During sleep, the body repairs its tissues.",
+   "options": [
+    "RSQP",
+    "SQRP",
+    "QSRP",
+    "PSRQ"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-S-R-P. Topic (Q); body repair (S); 'also' adds brain (R); 'therefore' in P concludes.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Today, millions of tourists visit it every year.\nQ. Construction took over twenty years.\nR. The Taj Mahal was built by Shah Jahan in Agra.\nS. He commissioned it in memory of his wife, Mumtaz Mahal.",
+   "options": [
+    "RSQP",
+    "PSQR",
+    "RQSP",
+    "SRQP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: R-S-Q-P. R introduces the monument; 'He' and 'it' in S; construction (Q); 'Today' (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Customers can now compare prices in seconds.\nQ. Online shopping has changed how Indians buy things.\nR. Consequently, many local shops have started selling online as well.\nS. Delivery reaches even small towns in a few days.",
+   "options": [
+    "RPSQ",
+    "QPSR",
+    "PQSR",
+    "QSPR"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: Q-P-S-R. Topic (Q); benefit one (P); benefit two (S); 'Consequently' (R) is the effect.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. The tiny root then pushes downwards into the soil.\nQ. A seed needs water, air and warmth to sprout.\nR. Finally, the shoot rises towards the light.\nS. Once it absorbs water, the seed coat softens.",
+   "options": [
+    "QRPS",
+    "QSRP",
+    "RSPQ",
+    "QSPR"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: Q-S-P-R. Conditions (Q); 'Once it absorbs' (S); 'then' root (P); 'Finally' shoot (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. They asked him to stop and check the map.\nQ. The cab driver took a wrong turn near the airport.\nR. The passengers realised it only after ten minutes.\nS. He apologised and corrected the route.",
+   "options": [
+    "QRPS",
+    "QPRS",
+    "SRPQ",
+    "QRSP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: Q-R-P-S. Error (Q); 'it' in R refers to the wrong turn; reaction (P); 'He apologised' (S).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. That is why the United Nations declared an International Day of Yoga.\nQ. Regular practice improves flexibility and calms the mind.\nR. Yoga originated in ancient India.\nS. It combines physical postures, breathing and meditation.",
+   "options": [
+    "RSQP",
+    "PSQR",
+    "QSRP",
+    "SRQP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: R-S-Q-P. Origin (R); 'It' (S); benefits (Q); 'That is why' (P) concludes.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. At first, only a few neighbours bought her bread.\nQ. Orders soon poured in from across the city.\nR. Then a food blogger praised her cakes online.\nS. Meena opened her first bakery in Madurai.",
+   "options": [
+    "QPRS",
+    "SPRQ",
+    "PSRQ",
+    "SPQR"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: S-P-R-Q. S starts; 'At first' (P); 'Then' blogger (R); 'soon poured in' (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Plastic waste is choking our rivers.\nQ. We must therefore reduce single-use plastic immediately.\nR. Marine animals often mistake it for food.\nS. It takes hundreds of years to decompose.",
+   "options": [
+    "PRSQ",
+    "PSQR",
+    "PSRQ",
+    "PQRS"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: P-S-R-Q. Problem (P); 'It' (S); effect on animals (R); 'therefore' call for action (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Machines soon became smaller, faster and cheaper.\nQ. The first computers were as large as rooms.\nR. The invention of the transistor changed everything.\nS. They used thousands of vacuum tubes.",
+   "options": [
+    "RSQP",
+    "QRSP",
+    "QSRP",
+    "QPRS"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-S-R-P. Early computers (Q); 'They' (S); turning point (R); consequence (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. The victory inspired a whole generation of young cricketers.\nQ. India won its first Cricket World Cup in 1983.\nR. Nobody had expected them to defeat the mighty West Indies.\nS. The team was led by Kapil Dev.",
+   "options": [
+    "PSRQ",
+    "SQRP",
+    "QSRP",
+    "QRSP"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-S-R-P. Q states the event; S names the captain; 'them' in R; the effect (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. When the storm uprooted it, the whole village mourned.\nQ. Elders gathered under it every evening.\nR. The old banyan tree stood at the centre of the village.\nS. Children played around its thick roots.",
+   "options": [
+    "RPSQ",
+    "RSQP",
+    "RQSP",
+    "RQPS"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: R-Q-S-P. The tree is introduced (R); 'it' (Q); 'its' (S); the storm event (P) comes last.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Ravi applied for a passport last month.\nQ. After uploading them, he booked an appointment.\nR. The passport arrived at his home within two weeks.\nS. The online form required several documents.",
+   "options": [
+    "PRQS",
+    "PSRQ",
+    "PSQR",
+    "PQSR"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: P-S-Q-R. Applied (P); form (S); 'them' = documents (Q); delivery (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. A balanced diet therefore prevents most deficiencies.\nQ. Yet their absence causes serious diseases.\nR. For instance, lack of vitamin C leads to scurvy.\nS. Vitamins are needed in small quantities.",
+   "options": [
+    "SRQP",
+    "SQRP",
+    "PQRS",
+    "RQSP"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: S-Q-R-P. Statement (S); 'Yet' contrast (Q); 'For instance' example (R); 'therefore' (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Houseboats glide along calm lagoons at Alleppey.\nQ. As a result, tourism is a major source of income for the state.\nR. Kerala has a long tradition of backwater tourism.\nS. Visitors enjoy local fish curry on deck.",
+   "options": [
+    "PRSQ",
+    "RPSQ",
+    "RPQS",
+    "RSPQ"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: R-P-S-Q. Topic (R); example (P); more detail (S); 'As a result' (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. He ran into a roadside tea stall for shelter.\nQ. There he waited until the rain stopped.\nR. Halfway to college, it began to pour.\nS. Amit forgot his umbrella at home.",
+   "options": [
+    "QRPS",
+    "SPRQ",
+    "SQPR",
+    "SRPQ"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: S-R-P-Q. S; 'it' in R refers to the weather; shelter (P); 'There' in Q refers to the stall.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. That is how we hear.\nQ. Sound travels as waves through air.\nR. The brain then interprets the vibrations.\nS. These waves reach our ears and vibrate the eardrum.",
+   "options": [
+    "QSRP",
+    "QRSP",
+    "RSQP",
+    "QPRS"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: Q-S-R-P. Wave travel (Q); 'These waves' (S); 'then' (R); 'That is how' summarises (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. He worked with a team of legal experts for nearly three years.\nQ. Dr B. R. Ambedkar chaired its drafting committee.\nR. The Indian Constitution came into force on 26 January 1950.\nS. The day is now celebrated as Republic Day.",
+   "options": [
+    "RSPQ",
+    "RQPS",
+    "SQPR",
+    "RQSP"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: R-Q-P-S. Event (R); drafting committee (Q); 'He' (P); 'The day' (S) concludes.",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Studying a little every day works better.\nQ. Many students rely on last-minute revision.\nR. This habit leaves them anxious on exam day.\nS. Such steady effort builds confidence.",
+   "options": [
+    "PRQS",
+    "QSPR",
+    "RQPS",
+    "QRPS"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: Q-R-P-S. Problem (Q); 'This habit' (R); solution (P); 'Such steady effort' (S).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. He founded ISRO's precursor in 1962.\nQ. Under his guidance, India launched its first sounding rocket.\nR. His vision continues to guide ISRO today.\nS. Vikram Sarabhai is called the father of India's space programme.",
+   "options": [
+    "SPQR",
+    "SPRQ",
+    "PSQR",
+    "QPSR"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: S-P-Q-R. Claim (S); founding (P); achievement (Q); present-day legacy (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Within a year, the shortage had ended.\nQ. The residents formed a committee to find a solution.\nR. Our colony had a serious water shortage.\nS. The committee installed rainwater harvesting tanks.",
+   "options": [
+    "RQPS",
+    "RSQP",
+    "RQSP",
+    "QRSP"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: R-Q-S-P. Problem (R); committee formed (Q); 'The committee' acts (S); result (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Each loan has its own interest rate and tenure.\nQ. Banks offer several types of loans.\nR. Another is the education loan, which covers college fees.\nS. The most common is the home loan, which helps buy a house.",
+   "options": [
+    "QRSP",
+    "RSQP",
+    "QSRP",
+    "QSPR"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-S-R-P. General statement (Q); examples (S,R); 'Each loan' sums up (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. In reality, it lives mostly in grasslands.\nQ. The lion is called the king of the jungle.\nR. Asiatic lions survive only in Gir, Gujarat.\nS. Conservation efforts have slowly increased their number.",
+   "options": [
+    "SPRQ",
+    "QSRP",
+    "QPRS",
+    "QPSR"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: Q-P-R-S. Common belief (Q); correction 'In reality' (P); Gir (R); 'their number' refers to the lions (S).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. She found a tutor through a friend.\nQ. Gradually, her fingers learnt the chords.\nR. Lata wanted to learn the guitar.\nS. The first lessons were quite difficult.",
+   "options": [
+    "QPSR",
+    "RSPQ",
+    "RPQS",
+    "RPSQ"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: R-P-S-Q. Wish (R); tutor (P); 'first lessons' (S); 'Gradually' (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Costlier loans reduce spending and cool demand.\nQ. When prices rise, each rupee buys less.\nR. The Reserve Bank therefore raises interest rates.\nS. Inflation means a general rise in prices.",
+   "options": [
+    "SQPR",
+    "QSRP",
+    "SQRP",
+    "PQRS"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: S-Q-R-P. Definition (S); effect (Q); RBI response 'therefore' (R); consequence (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Twelve pairs of carved wheels surround its base.\nQ. Locals can read the time from the shadows.\nR. The Konark Sun Temple is shaped like a giant chariot.\nS. Each wheel works as a sundial.",
+   "options": [
+    "RSPQ",
+    "RQSP",
+    "RPQS",
+    "RPSQ"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: R-P-S-Q. Temple (R); 'its base' (P); 'Each wheel' (S); 'the shadows' (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Relieved, she opened her book.\nQ. She finally found a seat near the door.\nR. The coach was crowded with office-goers.\nS. Sunita boarded the metro at Rajiv Chowk.",
+   "options": [
+    "SQRP",
+    "SRPQ",
+    "RSQP",
+    "SRQP"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: S-R-Q-P. Boarding (S); crowd (R); 'finally' seat (Q); 'Relieved' (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. India exports software, textiles and spices.\nQ. Imports, on the other hand, drain foreign exchange.\nR. A healthy economy keeps the two in balance.\nS. Exports earn foreign exchange for a country.",
+   "options": [
+    "SPQR",
+    "SQPR",
+    "QPSR",
+    "SPRQ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: S-P-Q-R. S states exports; examples (P); 'on the other hand' (Q); 'the two' (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Cool air cannot hold as much water vapour.\nQ. As it climbs, the air cools.\nR. Rain clouds form when moist air rises.\nS. The vapour condenses into droplets that fall as rain.",
+   "options": [
+    "QRPS",
+    "RQSP",
+    "RQPS",
+    "SQPR"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Correct order: R-Q-P-S. Formation (R); 'it climbs' (Q); reason (P); result (S).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Hari thanked him warmly for his honesty.\nQ. He searched every shop he had visited.\nR. A vegetable seller had picked it up.\nS. Hari lost his wallet in the market.",
+   "options": [
+    "SRQP",
+    "SPRQ",
+    "PQRS",
+    "SQRP"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: S-Q-R-P. Loss (S); search (Q); 'it' = wallet (R); thanks (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Mangoes are called the king of fruits in India.\nQ. Each region proudly defends its own variety.\nR. Further north, Dasheri and Langra are the favourites.\nS. Alphonso from Ratnagiri is prized for its sweetness.",
+   "options": [
+    "PSRQ",
+    "QSRP",
+    "PSQR",
+    "RSPQ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: P-S-R-Q. General (P); south-west example (S); north example (R); 'Each region' (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. The invention of the printing press transformed Europe.\nQ. More people learnt to read.\nR. Ideas then spread faster than ever before.\nS. Books, once copied by hand, became cheap.",
+   "options": [
+    "SPQR",
+    "PSQR",
+    "PQSR",
+    "PRQS"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: P-S-Q-R. Claim (P); 'once copied by hand' (S); effect (Q); 'then' (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. She had rehearsed every possible question.\nQ. She answered calmly and won the job.\nR. Neha was nervous before her interview.\nS. The panel, however, asked something unexpected.",
+   "options": [
+    "RPQS",
+    "PRSQ",
+    "RQSP",
+    "RPSQ"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Correct order: R-P-S-Q. Nervous (R); rehearsal (P); 'however' twist (S); outcome (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Such teams work harder and stay longer.\nQ. Listening reveals problems that numbers hide.\nR. It also makes team members feel valued.\nS. A good leader listens before deciding.",
+   "options": [
+    "SQRP",
+    "PQRS",
+    "SPRQ",
+    "RQSP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: S-Q-R-P. Claim (S); 'Listening' (Q); 'It also' (R); 'Such teams' (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. In 2017, the city won World Heritage status.\nQ. Each pol is a closed community with its own gate.\nR. Ahmedabad's old city has beautiful wooden houses.\nS. These houses are built around open courtyards called pols.",
+   "options": [
+    "QSRP",
+    "RSQP",
+    "PSQR",
+    "RQSP"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: R-S-Q-P. Houses (R); 'These houses' (S); 'Each pol' (Q); 2017 (P).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. The cheetah is the fastest land animal.\nQ. It tires quickly, however, and must rest after the chase.\nR. India reintroduced cheetahs in 2022 after seventy years.\nS. It can reach nearly 100 km/h in short bursts.",
+   "options": [
+    "PSQR",
+    "PSRQ",
+    "RSQP",
+    "PRQS"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: P-S-Q-R. Fact (P); 'It' speed (S); 'however' (Q); India's reintroduction is a separate new event, last (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. Kabir Das was a fifteenth-century poet from Varanasi.\nQ. Even today, people quote them in daily life.\nR. His couplets, called dohas, are simple yet profound.\nS. They criticise empty rituals and social divisions.",
+   "options": [
+    "PRSQ",
+    "SRPQ",
+    "PRQS",
+    "PSRQ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Correct order: P-R-S-Q. Introduces poet (P); 'His couplets' (R); 'They' (S); 'Even today' (Q).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rearrange the following sentences to form a meaningful paragraph.\nP. After ten years, the balance had grown remarkably.\nQ. Kishore opened a savings account at nineteen.\nR. This taught him the value of discipline.\nS. He deposited a fixed sum every month.",
+   "options": [
+    "QSRP",
+    "QSPR",
+    "SQPR",
+    "QRPS"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Correct order: Q-S-P-R. Opening (Q); habit (S); ten years later (P); 'This' lesson (R).",
+   "shortcut": "Spot the opener (general idea, no pronoun), then chain pronouns and connectors.",
+   "subPattern": "sentence-ordering-4-sentences",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

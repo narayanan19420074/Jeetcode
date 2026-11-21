@@ -1,0 +1,1164 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which of the following best describes how the circles for Surgeons, Doctors and Humans should be drawn in a Venn diagram?",
+   "options": [
+    "Surgeons and Doctors are two separate circles, and the circle of Humans cuts across both of them partly",
+    "Surgeons, Doctors and Humans are three completely separate circles",
+    "Surgeons lie completely inside Doctors, and Humans is a separate circle outside Doctors",
+    "Surgeons are inside Doctors, and Doctors are inside Humans (three nested circles)"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Surgeons belongs to Doctors, and every member of Doctors belongs to Humans, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Mangoes, Fruits, Edible things. Which Venn diagram description fits them best?",
+   "options": [
+    "Mangoes are inside Fruits, and Fruits are inside Edible things (three nested circles)",
+    "Mangoes and Fruits are two separate circles, and the circle of Edible things cuts across both of them partly",
+    "Mangoes and Fruits are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Edible things",
+    "Mangoes, Fruits and Edible things are three completely separate circles"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Mangoes belongs to Fruits, and every member of Fruits belongs to Edible things, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Chennai, Tamil Nadu and India.",
+   "options": [
+    "Chennai are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles)",
+    "Chennai and Tamil Nadu are two separate circles, both lying completely inside the circle of India",
+    "Chennai and Tamil Nadu are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of India",
+    "Chennai and Tamil Nadu are two separate circles, and the circle of India cuts across both of them partly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Chennai belongs to Tamil Nadu, and every member of Tamil Nadu belongs to India, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Sparrows, Birds and Animals?",
+   "options": [
+    "Sparrows and Birds are two separate circles, and the circle of Animals cuts across both of them partly",
+    "Sparrows and Birds are two partly overlapping circles, and the circle of Animals lies completely apart from both",
+    "Sparrows are inside Birds, and Birds are inside Animals (three nested circles)",
+    "Sparrows lie completely inside Birds, and Animals is a separate circle outside Birds"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every member of Sparrows belongs to Birds, and every member of Birds belongs to Animals, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Roses, Flowers and Plants should be drawn in a Venn diagram?",
+   "options": [
+    "Roses are inside Flowers, and Flowers are inside Plants (three nested circles)",
+    "Roses and Flowers are two separate circles, and the circle of Plants cuts across both of them partly",
+    "Roses, Flowers and Plants are three completely separate circles",
+    "Roses and Flowers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Plants"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Roses belongs to Flowers, and every member of Flowers belongs to Plants, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Basmati, Rice, Cereals. Which Venn diagram description fits them best?",
+   "options": [
+    "Basmati are inside Rice, and Rice are inside Cereals (three nested circles)",
+    "Basmati and Rice are two partly overlapping circles, and the circle of Cereals lies completely apart from both",
+    "Basmati, Rice and Cereals are three completely separate circles",
+    "Basmati and Rice are two separate circles, and the circle of Cereals cuts across both of them partly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Basmati belongs to Rice, and every member of Rice belongs to Cereals, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Squares, Rectangles and Quadrilaterals.",
+   "options": [
+    "Squares are inside Rectangles, and Rectangles are inside Quadrilaterals (three nested circles)",
+    "Squares and Rectangles are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Quadrilaterals",
+    "Squares, Rectangles and Quadrilaterals are three completely separate circles",
+    "Squares and Rectangles are two partly overlapping circles, and the circle of Quadrilaterals lies completely apart from both"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Squares belongs to Rectangles, and every member of Rectangles belongs to Quadrilaterals, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Lions, Mammals and Animals?",
+   "options": [
+    "Lions and Mammals are two separate circles, and the circle of Animals cuts across both of them partly",
+    "Lions and Mammals are two partly overlapping circles, and the circle of Animals lies completely apart from both",
+    "Lions are inside Mammals, and Mammals are inside Animals (three nested circles)",
+    "Lions and Mammals are two separate circles, both lying completely inside the circle of Animals"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every member of Lions belongs to Mammals, and every member of Mammals belongs to Animals, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Coimbatore, Tamil Nadu and India should be drawn in a Venn diagram?",
+   "options": [
+    "Coimbatore are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles)",
+    "Coimbatore and Tamil Nadu are two partly overlapping circles, and the circle of India lies completely apart from both",
+    "Coimbatore lie completely inside Tamil Nadu, and India is a separate circle outside Tamil Nadu",
+    "Coimbatore and Tamil Nadu are two separate circles, both lying completely inside the circle of India"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Coimbatore belongs to Tamil Nadu, and every member of Tamil Nadu belongs to India, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Wheat, Cereals, Crops. Which Venn diagram description fits them best?",
+   "options": [
+    "Wheat and Cereals are two partly overlapping circles, and the circle of Crops lies completely apart from both",
+    "Wheat and Cereals are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Crops",
+    "Wheat and Cereals are two separate circles, both lying completely inside the circle of Crops",
+    "Wheat are inside Cereals, and Cereals are inside Crops (three nested circles)"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Wheat belongs to Cereals, and every member of Cereals belongs to Crops, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Laptops, Computers and Machines.",
+   "options": [
+    "Laptops and Computers are two separate circles, both lying completely inside the circle of Machines",
+    "Laptops, Computers and Machines are three completely separate circles",
+    "Laptops are inside Computers, and Computers are inside Machines (three nested circles)",
+    "Laptops lie completely inside Computers, and Machines is a separate circle outside Computers"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every member of Laptops belongs to Computers, and every member of Computers belongs to Machines, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Ooty, Nilgiris and Tamil Nadu?",
+   "options": [
+    "Ooty, Nilgiris and Tamil Nadu are three completely separate circles",
+    "Ooty lie completely inside Nilgiris, and Tamil Nadu is a separate circle outside Nilgiris",
+    "Ooty and Nilgiris are two partly overlapping circles, and the circle of Tamil Nadu lies completely apart from both",
+    "Ooty are inside Nilgiris, and Nilgiris are inside Tamil Nadu (three nested circles)"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Ooty belongs to Nilgiris, and every member of Nilgiris belongs to Tamil Nadu, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Peacocks, Birds and Living beings should be drawn in a Venn diagram?",
+   "options": [
+    "Peacocks, Birds and Living beings are three completely separate circles",
+    "Peacocks and Birds are two partly overlapping circles, and the circle of Living beings lies completely apart from both",
+    "Peacocks and Birds are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Living beings",
+    "Peacocks are inside Birds, and Birds are inside Living beings (three nested circles)"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Peacocks belongs to Birds, and every member of Birds belongs to Living beings, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Kolkata, West Bengal, India. Which Venn diagram description fits them best?",
+   "options": [
+    "Kolkata are inside West Bengal, and West Bengal are inside India (three nested circles)",
+    "Kolkata and West Bengal are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of India",
+    "Kolkata, West Bengal and India are three completely separate circles",
+    "Kolkata and West Bengal are two partly overlapping circles, and the circle of India lies completely apart from both"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Kolkata belongs to West Bengal, and every member of West Bengal belongs to India, so the three circles are nested.",
+   "shortcut": "Smallest category inside, bigger inside bigger.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Cats, Dogs and Animals.",
+   "options": [
+    "Cats, Dogs and Animals are three completely separate circles",
+    "Cats and Dogs are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Animals",
+    "Cats and Dogs are two separate circles, both lying completely inside the circle of Animals",
+    "Cats and Dogs are two partly overlapping circles, and the circle of Animals lies completely apart from both"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cats and Dogs have nothing in common but both belong to Animals, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Tigers, Elephants and Wild animals?",
+   "options": [
+    "Tigers lie completely inside Elephants, and Wild animals is a separate circle outside Elephants",
+    "Tigers are inside Elephants, and Elephants are inside Wild animals (three nested circles)",
+    "Tigers and Elephants are two separate circles, both lying completely inside the circle of Wild animals",
+    "Tigers and Elephants are two partly overlapping circles, and the circle of Wild animals lies completely apart from both"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tigers and Elephants have nothing in common but both belong to Wild animals, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Apples, Bananas and Fruits should be drawn in a Venn diagram?",
+   "options": [
+    "Apples and Bananas are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Fruits",
+    "Apples and Bananas are two separate circles, both lying completely inside the circle of Fruits",
+    "Apples are inside Bananas, and Bananas are inside Fruits (three nested circles)",
+    "Apples and Bananas are two separate circles, and the circle of Fruits cuts across both of them partly"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Apples and Bananas have nothing in common but both belong to Fruits, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Tamil, Hindi, Languages. Which Venn diagram description fits them best?",
+   "options": [
+    "Tamil lie completely inside Hindi, and Languages is a separate circle outside Hindi",
+    "Tamil and Hindi are two partly overlapping circles, and the circle of Languages lies completely apart from both",
+    "Tamil and Hindi are two separate circles, both lying completely inside the circle of Languages",
+    "Tamil, Hindi and Languages are three completely separate circles"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tamil and Hindi have nothing in common but both belong to Languages, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Cricket, Kabaddi and Sports.",
+   "options": [
+    "Cricket, Kabaddi and Sports are three completely separate circles",
+    "Cricket and Kabaddi are two separate circles, and the circle of Sports cuts across both of them partly",
+    "Cricket and Kabaddi are two partly overlapping circles, and the circle of Sports lies completely apart from both",
+    "Cricket and Kabaddi are two separate circles, both lying completely inside the circle of Sports"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cricket and Kabaddi have nothing in common but both belong to Sports, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Pens, Pencils and Stationery?",
+   "options": [
+    "Pens and Pencils are two partly overlapping circles, and the circle of Stationery lies completely apart from both",
+    "Pens are inside Pencils, and Pencils are inside Stationery (three nested circles)",
+    "Pens and Pencils are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Stationery",
+    "Pens and Pencils are two separate circles, both lying completely inside the circle of Stationery"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pens and Pencils have nothing in common but both belong to Stationery, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Ganga, Yamuna and Rivers should be drawn in a Venn diagram?",
+   "options": [
+    "Ganga and Yamuna are two partly overlapping circles, and the circle of Rivers lies completely apart from both",
+    "Ganga and Yamuna are two separate circles, both lying completely inside the circle of Rivers",
+    "Ganga and Yamuna are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Rivers",
+    "Ganga are inside Yamuna, and Yamuna are inside Rivers (three nested circles)"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ganga and Yamuna have nothing in common but both belong to Rivers, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Buses, Trains, Public transport. Which Venn diagram description fits them best?",
+   "options": [
+    "Buses, Trains and Public transport are three completely separate circles",
+    "Buses and Trains are two separate circles, and the circle of Public transport cuts across both of them partly",
+    "Buses lie completely inside Trains, and Public transport is a separate circle outside Trains",
+    "Buses and Trains are two separate circles, both lying completely inside the circle of Public transport"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Buses and Trains have nothing in common but both belong to Public transport, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Mumbai, Pune and Maharashtra.",
+   "options": [
+    "Mumbai and Pune are two separate circles, both lying completely inside the circle of Maharashtra",
+    "Mumbai and Pune are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Maharashtra",
+    "Mumbai, Pune and Maharashtra are three completely separate circles",
+    "Mumbai lie completely inside Pune, and Maharashtra is a separate circle outside Pune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mumbai and Pune have nothing in common but both belong to Maharashtra, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Rice, Wheat and Cereals?",
+   "options": [
+    "Rice and Wheat are two separate circles, both lying completely inside the circle of Cereals",
+    "Rice and Wheat are two separate circles, and the circle of Cereals cuts across both of them partly",
+    "Rice and Wheat are two partly overlapping circles, and the circle of Cereals lies completely apart from both",
+    "Rice are inside Wheat, and Wheat are inside Cereals (three nested circles)"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rice and Wheat have nothing in common but both belong to Cereals, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Hockey, Football and Team games should be drawn in a Venn diagram?",
+   "options": [
+    "Hockey and Football are two partly overlapping circles, and the circle of Team games lies completely apart from both",
+    "Hockey are inside Football, and Football are inside Team games (three nested circles)",
+    "Hockey and Football are two separate circles, and the circle of Team games cuts across both of them partly",
+    "Hockey and Football are two separate circles, both lying completely inside the circle of Team games"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hockey and Football have nothing in common but both belong to Team games, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Parrots, Crows, Birds. Which Venn diagram description fits them best?",
+   "options": [
+    "Parrots and Crows are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Birds",
+    "Parrots and Crows are two separate circles, and the circle of Birds cuts across both of them partly",
+    "Parrots and Crows are two separate circles, both lying completely inside the circle of Birds",
+    "Parrots lie completely inside Crows, and Birds is a separate circle outside Crows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Parrots and Crows have nothing in common but both belong to Birds, so two separate circles sit inside the big one.",
+   "shortcut": "Two members of the same class → two separate circles inside one big circle.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Dogs, Tables and Rivers.",
+   "options": [
+    "Dogs and Tables are two separate circles, both lying completely inside the circle of Rivers",
+    "Dogs, Tables and Rivers are three completely separate circles",
+    "Dogs and Tables are two separate circles, and the circle of Rivers cuts across both of them partly",
+    "Dogs are inside Tables, and Tables are inside Rivers (three nested circles)"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Pens, Trains and Mangoes?",
+   "options": [
+    "Pens and Trains are two partly overlapping circles, and the circle of Mangoes lies completely apart from both",
+    "Pens and Trains are two separate circles, and the circle of Mangoes cuts across both of them partly",
+    "Pens are inside Trains, and Trains are inside Mangoes (three nested circles)",
+    "Pens, Trains and Mangoes are three completely separate circles"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Tigers, Books and Oceans should be drawn in a Venn diagram?",
+   "options": [
+    "Tigers, Books and Oceans are three completely separate circles",
+    "Tigers and Books are two separate circles, and the circle of Oceans cuts across both of them partly",
+    "Tigers are inside Books, and Books are inside Oceans (three nested circles)",
+    "Tigers and Books are two partly overlapping circles, and the circle of Oceans lies completely apart from both"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Lamps, Elephants, Roads. Which Venn diagram description fits them best?",
+   "options": [
+    "Lamps and Elephants are two separate circles, both lying completely inside the circle of Roads",
+    "Lamps and Elephants are two partly overlapping circles, and the circle of Roads lies completely apart from both",
+    "Lamps, Elephants and Roads are three completely separate circles",
+    "Lamps and Elephants are two separate circles, and the circle of Roads cuts across both of them partly"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Cricket bats, Fish and Clouds.",
+   "options": [
+    "Cricket bats and Fish are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Clouds",
+    "Cricket bats, Fish and Clouds are three completely separate circles",
+    "Cricket bats and Fish are two partly overlapping circles, and the circle of Clouds lies completely apart from both",
+    "Cricket bats lie completely inside Fish, and Clouds is a separate circle outside Fish"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Buses, Coconuts and Mountains?",
+   "options": [
+    "Buses and Coconuts are two partly overlapping circles, and the circle of Mountains lies completely apart from both",
+    "Buses and Coconuts are two separate circles, both lying completely inside the circle of Mountains",
+    "Buses are inside Coconuts, and Coconuts are inside Mountains (three nested circles)",
+    "Buses, Coconuts and Mountains are three completely separate circles"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Chairs, Peacocks and Stars should be drawn in a Venn diagram?",
+   "options": [
+    "Chairs are inside Peacocks, and Peacocks are inside Stars (three nested circles)",
+    "Chairs and Peacocks are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Stars",
+    "Chairs and Peacocks are two partly overlapping circles, and the circle of Stars lies completely apart from both",
+    "Chairs, Peacocks and Stars are three completely separate circles"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Trains, Banana plants, Pillows. Which Venn diagram description fits them best?",
+   "options": [
+    "Trains and Banana plants are two separate circles, both lying completely inside the circle of Pillows",
+    "Trains, Banana plants and Pillows are three completely separate circles",
+    "Trains lie completely inside Banana plants, and Pillows is a separate circle outside Banana plants",
+    "Trains are inside Banana plants, and Banana plants are inside Pillows (three nested circles)"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "shortcut": "No common member → separate circles.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Doctors, Women and Humans.",
+   "options": [
+    "Doctors and Women are two separate circles, and the circle of Humans cuts across both of them partly",
+    "Doctors and Women are two partly overlapping circles, and the circle of Humans lies completely apart from both",
+    "Doctors and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans",
+    "Doctors are inside Women, and Women are inside Humans (three nested circles)"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some doctors are also women (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Teachers, Singers and Humans?",
+   "options": [
+    "Teachers are inside Singers, and Singers are inside Humans (three nested circles)",
+    "Teachers and Singers are two partly overlapping circles, and the circle of Humans lies completely apart from both",
+    "Teachers and Singers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans",
+    "Teachers and Singers are two separate circles, both lying completely inside the circle of Humans"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some teachers are also singers (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Engineers, Cricketers and Persons should be drawn in a Venn diagram?",
+   "options": [
+    "Engineers are inside Cricketers, and Cricketers are inside Persons (three nested circles)",
+    "Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons",
+    "Engineers lie completely inside Cricketers, and Persons is a separate circle outside Cricketers",
+    "Engineers and Cricketers are two partly overlapping circles, and the circle of Persons lies completely apart from both"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some engineers are also cricketers (partial overlap) and all belong to persons, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Writers, Politicians, Humans. Which Venn diagram description fits them best?",
+   "options": [
+    "Writers and Politicians are two partly overlapping circles, and the circle of Humans lies completely apart from both",
+    "Writers and Politicians are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans",
+    "Writers are inside Politicians, and Politicians are inside Humans (three nested circles)",
+    "Writers, Politicians and Humans are three completely separate circles"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some writers are also politicians (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Poets, Doctors and Persons.",
+   "options": [
+    "Poets and Doctors are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons",
+    "Poets, Doctors and Persons are three completely separate circles",
+    "Poets and Doctors are two separate circles, both lying completely inside the circle of Persons",
+    "Poets and Doctors are two separate circles, and the circle of Persons cuts across both of them partly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some poets are also doctors (partial overlap) and all belong to persons, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Farmers, Women and Humans?",
+   "options": [
+    "Farmers are inside Women, and Women are inside Humans (three nested circles)",
+    "Farmers lie completely inside Women, and Humans is a separate circle outside Women",
+    "Farmers and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans",
+    "Farmers, Women and Humans are three completely separate circles"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some farmers are also women (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Dancers, Lawyers and Persons should be drawn in a Venn diagram?",
+   "options": [
+    "Dancers lie completely inside Lawyers, and Persons is a separate circle outside Lawyers",
+    "Dancers are inside Lawyers, and Lawyers are inside Persons (three nested circles)",
+    "Dancers and Lawyers are two partly overlapping circles, and the circle of Persons lies completely apart from both",
+    "Dancers and Lawyers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some dancers are also lawyers (partial overlap) and all belong to persons, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Cyclists, Teachers, Humans. Which Venn diagram description fits them best?",
+   "options": [
+    "Cyclists and Teachers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans",
+    "Cyclists lie completely inside Teachers, and Humans is a separate circle outside Teachers",
+    "Cyclists are inside Teachers, and Teachers are inside Humans (three nested circles)",
+    "Cyclists and Teachers are two separate circles, both lying completely inside the circle of Humans"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some cyclists are also teachers (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Boys, Girls and Cricketers.",
+   "options": [
+    "Boys lie completely inside Girls, and Cricketers is a separate circle outside Girls",
+    "Boys and Girls are two separate circles, and the circle of Cricketers cuts across both of them partly",
+    "Boys and Girls are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Cricketers",
+    "Boys, Girls and Cricketers are three completely separate circles"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Boys and Girls never overlap, but each group has some members who are also cricketers and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Men, Women and Teachers?",
+   "options": [
+    "Men, Women and Teachers are three completely separate circles",
+    "Men and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Teachers",
+    "Men and Women are two separate circles, and the circle of Teachers cuts across both of them partly",
+    "Men lie completely inside Women, and Teachers is a separate circle outside Women"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Men and Women never overlap, but each group has some members who are also teachers and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Males, Females and Doctors should be drawn in a Venn diagram?",
+   "options": [
+    "Males lie completely inside Females, and Doctors is a separate circle outside Females",
+    "Males and Females are two separate circles, and the circle of Doctors cuts across both of them partly",
+    "Males are inside Females, and Females are inside Doctors (three nested circles)",
+    "Males and Females are two separate circles, both lying completely inside the circle of Doctors"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Males and Females never overlap, but each group has some members who are also doctors and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Boys, Girls, Swimmers. Which Venn diagram description fits them best?",
+   "options": [
+    "Boys and Girls are two partly overlapping circles, and the circle of Swimmers lies completely apart from both",
+    "Boys and Girls are two separate circles, both lying completely inside the circle of Swimmers",
+    "Boys and Girls are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Swimmers",
+    "Boys and Girls are two separate circles, and the circle of Swimmers cuts across both of them partly"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Boys and Girls never overlap, but each group has some members who are also swimmers and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Men, Women and Engineers.",
+   "options": [
+    "Men and Women are two separate circles, and the circle of Engineers cuts across both of them partly",
+    "Men lie completely inside Women, and Engineers is a separate circle outside Women",
+    "Men and Women are two separate circles, both lying completely inside the circle of Engineers",
+    "Men are inside Women, and Women are inside Engineers (three nested circles)"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Men and Women never overlap, but each group has some members who are also engineers and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Boys, Girls and Singers?",
+   "options": [
+    "Boys and Girls are two separate circles, both lying completely inside the circle of Singers",
+    "Boys and Girls are two separate circles, and the circle of Singers cuts across both of them partly",
+    "Boys and Girls are two partly overlapping circles, and the circle of Singers lies completely apart from both",
+    "Boys lie completely inside Girls, and Singers is a separate circle outside Girls"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Boys and Girls never overlap, but each group has some members who are also singers and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Men, Women and Farmers should be drawn in a Venn diagram?",
+   "options": [
+    "Men and Women are two separate circles, and the circle of Farmers cuts across both of them partly",
+    "Men and Women are two partly overlapping circles, and the circle of Farmers lies completely apart from both",
+    "Men and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Farmers",
+    "Men, Women and Farmers are three completely separate circles"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Men and Women never overlap, but each group has some members who are also farmers and some who are not, so the third circle cuts across both.",
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Teachers, Women, Mountains. Which Venn diagram description fits them best?",
+   "options": [
+    "Teachers and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Mountains",
+    "Teachers and Women are two partly overlapping circles, and the circle of Mountains lies completely apart from both",
+    "Teachers, Women and Mountains are three completely separate circles",
+    "Teachers and Women are two separate circles, both lying completely inside the circle of Mountains"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some teachers are women (overlap), while mountains have nothing to do with either, so the third circle is separate.",
+   "shortcut": "Overlap needs a common member; unrelated third stays separate.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Doctors, Singers and Rivers.",
+   "options": [
+    "Doctors and Singers are two separate circles, and the circle of Rivers cuts across both of them partly",
+    "Doctors and Singers are two partly overlapping circles, and the circle of Rivers lies completely apart from both",
+    "Doctors lie completely inside Singers, and Rivers is a separate circle outside Singers",
+    "Doctors, Singers and Rivers are three completely separate circles"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some doctors are singers (overlap), while rivers have nothing to do with either, so the third circle is separate.",
+   "shortcut": "Overlap needs a common member; unrelated third stays separate.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Engineers, Cricketers and Planets?",
+   "options": [
+    "Engineers and Cricketers are two separate circles, both lying completely inside the circle of Planets",
+    "Engineers and Cricketers are two partly overlapping circles, and the circle of Planets lies completely apart from both",
+    "Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Planets",
+    "Engineers lie completely inside Cricketers, and Planets is a separate circle outside Cricketers"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some engineers are cricketers (overlap), while planets have nothing to do with either, so the third circle is separate.",
+   "shortcut": "Overlap needs a common member; unrelated third stays separate.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Fathers, Doctors and Rocks should be drawn in a Venn diagram?",
+   "options": [
+    "Fathers and Doctors are two partly overlapping circles, and the circle of Rocks lies completely apart from both",
+    "Fathers are inside Doctors, and Doctors are inside Rocks (three nested circles)",
+    "Fathers and Doctors are two separate circles, and the circle of Rocks cuts across both of them partly",
+    "Fathers lie completely inside Doctors, and Rocks is a separate circle outside Doctors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some fathers are doctors (overlap), while rocks have nothing to do with either, so the third circle is separate.",
+   "shortcut": "Overlap needs a common member; unrelated third stays separate.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Mothers, Teachers, Bridges. Which Venn diagram description fits them best?",
+   "options": [
+    "Mothers and Teachers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Bridges",
+    "Mothers and Teachers are two partly overlapping circles, and the circle of Bridges lies completely apart from both",
+    "Mothers are inside Teachers, and Teachers are inside Bridges (three nested circles)",
+    "Mothers lie completely inside Teachers, and Bridges is a separate circle outside Teachers"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some mothers are teachers (overlap), while bridges have nothing to do with either, so the third circle is separate.",
+   "shortcut": "Overlap needs a common member; unrelated third stays separate.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Poets, Engineers and Oceans.",
+   "options": [
+    "Poets lie completely inside Engineers, and Oceans is a separate circle outside Engineers",
+    "Poets and Engineers are two separate circles, and the circle of Oceans cuts across both of them partly",
+    "Poets and Engineers are two partly overlapping circles, and the circle of Oceans lies completely apart from both",
+    "Poets are inside Engineers, and Engineers are inside Oceans (three nested circles)"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some poets are engineers (overlap), while oceans have nothing to do with either, so the third circle is separate.",
+   "shortcut": "Overlap needs a common member; unrelated third stays separate.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Roses, Flowers and Cars?",
+   "options": [
+    "Roses are inside Flowers, and Flowers are inside Cars (three nested circles)",
+    "Roses and Flowers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Cars",
+    "Roses lie completely inside Flowers, and Cars is a separate circle outside Flowers",
+    "Roses and Flowers are two partly overlapping circles, and the circle of Cars lies completely apart from both"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Roses are wholly inside Flowers, and Cars belong to neither, so the third circle is outside.",
+   "shortcut": "Nest the related pair; keep the unrelated one apart.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Sparrows, Birds and Tables should be drawn in a Venn diagram?",
+   "options": [
+    "Sparrows and Birds are two separate circles, both lying completely inside the circle of Tables",
+    "Sparrows lie completely inside Birds, and Tables is a separate circle outside Birds",
+    "Sparrows and Birds are two separate circles, and the circle of Tables cuts across both of them partly",
+    "Sparrows and Birds are two partly overlapping circles, and the circle of Tables lies completely apart from both"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sparrows are wholly inside Birds, and Tables belong to neither, so the third circle is outside.",
+   "shortcut": "Nest the related pair; keep the unrelated one apart.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three groups are given: Lions, Animals, Rivers. Which Venn diagram description fits them best?",
+   "options": [
+    "Lions lie completely inside Animals, and Rivers is a separate circle outside Animals",
+    "Lions and Animals are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Rivers",
+    "Lions and Animals are two separate circles, both lying completely inside the circle of Rivers",
+    "Lions, Animals and Rivers are three completely separate circles"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Lions are wholly inside Animals, and Rivers belong to neither, so the third circle is outside.",
+   "shortcut": "Nest the related pair; keep the unrelated one apart.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Teapots, Utensils and Planets.",
+   "options": [
+    "Teapots, Utensils and Planets are three completely separate circles",
+    "Teapots and Utensils are two separate circles, and the circle of Planets cuts across both of them partly",
+    "Teapots and Utensils are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Planets",
+    "Teapots lie completely inside Utensils, and Planets is a separate circle outside Utensils"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Teapots are wholly inside Utensils, and Planets belong to neither, so the third circle is outside.",
+   "shortcut": "Nest the related pair; keep the unrelated one apart.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Hockey sticks, Sports equipment and Clouds?",
+   "options": [
+    "Hockey sticks, Sports equipment and Clouds are three completely separate circles",
+    "Hockey sticks are inside Sports equipment, and Sports equipment are inside Clouds (three nested circles)",
+    "Hockey sticks and Sports equipment are two separate circles, both lying completely inside the circle of Clouds",
+    "Hockey sticks lie completely inside Sports equipment, and Clouds is a separate circle outside Sports equipment"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hockey sticks are wholly inside Sports equipment, and Clouds belong to neither, so the third circle is outside.",
+   "shortcut": "Nest the related pair; keep the unrelated one apart.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Trucks, Vehicles and Fruits should be drawn in a Venn diagram?",
+   "options": [
+    "Trucks are inside Vehicles, and Vehicles are inside Fruits (three nested circles)",
+    "Trucks, Vehicles and Fruits are three completely separate circles",
+    "Trucks and Vehicles are two partly overlapping circles, and the circle of Fruits lies completely apart from both",
+    "Trucks lie completely inside Vehicles, and Fruits is a separate circle outside Vehicles"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Trucks are wholly inside Vehicles, and Fruits belong to neither, so the third circle is outside.",
+   "shortcut": "Nest the related pair; keep the unrelated one apart.",
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,419 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The tone of the elderly master's remark at the end of the passage is best described as",
+   "options": [
+    "gracious and quietly worried about the craft's future",
+    "bitter and resentful",
+    "boastful and self-satisfied",
+    "indifferent and careless"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He does not mind who wears the cloth, which is generous, but wants someone to learn the craft, which shows concern for its continuity.",
+   "subPattern": "tone-attitude",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s011"
+  },
+  {
+   "questionText": "The author's treatment of the debate between commuters and officials can best be described as",
+   "options": [
+    "even-handed",
+    "hostile towards the railways",
+    "enthusiastic about cancellations",
+    "cynical about passengers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author reports both the commuters' suggestion and the officials' reply without taking sides.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s012"
+  },
+  {
+   "questionText": "The author's attitude towards the anganwadi system is best described as",
+   "options": [
+    "appreciative but concerned about the neglect of its workers",
+    "scornful of the scheme",
+    "entirely uncritical",
+    "puzzled and undecided"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author credits the centres with achievements and points out the burdens and lack of support on workers.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s013"
+  },
+  {
+   "questionText": "The tone of the passage's description of lane-cricket rules is best described as",
+   "options": [
+    "affectionate and mildly humorous",
+    "angry and critical",
+    "formal and scientific",
+    "grim and pessimistic"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The window and electric-wire rules are described with a light, fond touch.",
+   "subPattern": "tone-attitude",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s014"
+  },
+  {
+   "questionText": "The tone of the author is best described as",
+   "options": [
+    "balanced and cautious",
+    "sarcastic",
+    "enthusiastic",
+    "dismissive"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author presents both sides and ends by recommending caution until evidence arrives.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s015"
+  },
+  {
+   "questionText": "The tone of the volunteer's closing remark is best described as",
+   "options": [
+    "ruefully ironic",
+    "cheerfully optimistic",
+    "openly hostile",
+    "coldly neutral"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He contrasts the salt tasting sweeter to the buyer than to the maker, a wry comment that carries sorrow about unfair earnings.",
+   "subPattern": "tone-attitude",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s017"
+  },
+  {
+   "questionText": "The tone of the last sentence of the passage is",
+   "options": [
+    "cautionary yet sympathetic",
+    "mocking",
+    "furious",
+    "indifferent"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It acknowledges love for the hills but warns that without care it destroys them.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s018"
+  },
+  {
+   "questionText": "The author's attitude towards the technology-based schooling of the pandemic is best described as",
+   "options": [
+    "measured and realistic",
+    "wholly enthusiastic",
+    "scornful",
+    "fearful"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author acknowledges its value in extending reach but also its limits, concluding that technology cannot replace the school.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s019"
+  },
+  {
+   "questionText": "The attitude of Murugan towards his profession is best described as",
+   "options": [
+    "realistic yet fond",
+    "resentful and bitter",
+    "ashamed",
+    "careless"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He wants better for his daughter but does not speak ill of his trade and treasures the stories.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s020"
+  },
+  {
+   "questionText": "The tone of the passage towards the scheme is best described as",
+   "options": [
+    "warmly appreciative with a brief note of criticism",
+    "deeply sceptical",
+    "sarcastic",
+    "detached and technical"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author describes benefits favourably and mentions a limitation without hostility.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s021"
+  },
+  {
+   "questionText": "The tone of the researcher's last remark is best described as",
+   "options": [
+    "reassuring and metaphorical",
+    "angry",
+    "mocking",
+    "fearful"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Calling a language a house to be kept in repair reassures that it is an asset and encourages care.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s023"
+  },
+  {
+   "questionText": "The author's concluding stance is best described as",
+   "options": [
+    "balanced and thoughtful",
+    "enthusiastic without reservation",
+    "deeply pessimistic",
+    "mocking"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither a cure nor a curse' signals an even view.",
+   "subPattern": "tone-attitude",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s024"
+  },
+  {
+   "questionText": "The author's attitude towards the economic criticism of the charkha is best described as",
+   "options": [
+    "fair-minded and not dismissive",
+    "contemptuous",
+    "enthusiastic",
+    "fearful"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author presents the criticism and Gandhi's reply, then says 'whatever one thinks of the economics', neutral and even.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s025"
+  },
+  {
+   "questionText": "The tone of the volunteer's remark about the small bird is best described as",
+   "options": [
+    "thoughtful and cautionary",
+    "flippant",
+    "angry",
+    "admiring in a purely commercial way"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The remark uses the bird as an indicator and warns that its loss signals other changes.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s026"
+  },
+  {
+   "questionText": "The author's attitude towards bazaar bargaining is best described as",
+   "options": [
+    "understanding and mildly nostalgic",
+    "disapproving",
+    "sarcastic",
+    "completely indifferent"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author explains its logic and notes its decline with some sympathy.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s027"
+  },
+  {
+   "questionText": "The author's tone towards parents who fear empty time is best described as",
+   "options": [
+    "understanding but gently persuasive",
+    "contemptuous",
+    "alarmed",
+    "jocular"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author acknowledges their fear and then presents experts' reasoning.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s029"
+  },
+  {
+   "questionText": "The tone of the economist's closing hope is best described as",
+   "options": [
+    "gently hopeful",
+    "angrily critical",
+    "mocking",
+    "neutral and factual"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word 'hope' and the gentle wording show optimism about changing attitudes.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s030"
+  },
+  {
+   "questionText": "The author's attitude to the single-screen theatre is best described as",
+   "options": [
+    "sympathetic and wistful",
+    "hostile",
+    "neutral and uninterested",
+    "mocking"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author highlights its social role and regrets the likelihood of its loss.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s031"
+  },
+  {
+   "questionText": "The tone of the passage is best described as (Passage: “Maps and Memory in Old Delhi”)",
+   "options": [
+    "respectful and appreciative",
+    "sarcastic",
+    "angry",
+    "detached"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The author admires local knowledge and the boys' work.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s032"
+  },
+  {
+   "questionText": "The tone of the guard's closing comment is best described as",
+   "options": [
+    "gently humorous and fond",
+    "bitter",
+    "fearful",
+    "coldly critical"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He avoids the argument but points out an affectionate truth about the railway's appeal.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s033"
+  },
+  {
+   "questionText": "The tone of the author in describing Dr Meena is best described as",
+   "options": [
+    "admiring and restrained",
+    "mocking",
+    "sorrowful",
+    "envious"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The account is factual but shows respect for her work.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s035"
+  },
+  {
+   "questionText": "The tone in the final sentence is best described as",
+   "options": [
+    "pointed but measured",
+    "furious",
+    "wholly humorous",
+    "puzzled"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It gently puts slogans in their place and stresses clear signs.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s036"
+  },
+  {
+   "questionText": "The tone of the Karnataka farmer's remark is best described as",
+   "options": [
+    "practical and hopeful",
+    "resentful",
+    "hopeless",
+    "flippant"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He contrasts necessity with choice and expresses that earning from millets will make the campaign succeed.",
+   "subPattern": "tone-attitude",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s037"
+  }
+ ]
+}

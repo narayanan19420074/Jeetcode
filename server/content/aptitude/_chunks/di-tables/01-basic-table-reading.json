@@ -1,0 +1,1608 @@
+{
+ "sets": [
+  {
+   "id": "di-tables-s001",
+   "type": "table",
+   "title": "Annual car production of 6 companies (in thousand units)",
+   "table": {
+    "columns": [
+     "Company",
+     "2019",
+     "2020",
+     "2021",
+     "2022"
+    ],
+    "rows": [
+     [
+      "Kia India",
+      645,
+      475,
+      740,
+      430
+     ],
+     [
+      "Maruti Suzuki",
+      220,
+      270,
+      285,
+      225
+     ],
+     [
+      "Hyundai India",
+      350,
+      485,
+      395,
+      305
+     ],
+     [
+      "Tata Motors",
+      490,
+      430,
+      665,
+      620
+     ],
+     [
+      "Toyota Kirloskar",
+      330,
+      325,
+      335,
+      335
+     ],
+     [
+      "Honda Cars",
+      360,
+      495,
+      520,
+      460
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s002",
+   "type": "table",
+   "title": "Monthly rainfall recorded in 4 cities (in mm)",
+   "table": {
+    "columns": [
+     "City",
+     "July",
+     "August",
+     "September",
+     "October",
+     "November"
+    ],
+    "rows": [
+     [
+      "Pune",
+      135,
+      190,
+      120,
+      200,
+      135
+     ],
+     [
+      "Bengaluru",
+      155,
+      165,
+      195,
+      210,
+      140
+     ],
+     [
+      "Chennai",
+      220,
+      250,
+      145,
+      220,
+      245
+     ],
+     [
+      "Lucknow",
+      320,
+      215,
+      265,
+      345,
+      290
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s003",
+   "type": "table",
+   "title": "Wheat production of 5 states (in lakh tonnes)",
+   "table": {
+    "columns": [
+     "State",
+     "2021",
+     "2022",
+     "2023",
+     "2024"
+    ],
+    "rows": [
+     [
+      "Madhya Pradesh",
+      255,
+      195,
+      270,
+      215
+     ],
+     [
+      "Uttar Pradesh",
+      65,
+      55,
+      75,
+      70
+     ],
+     [
+      "Punjab",
+      50,
+      85,
+      75,
+      80
+     ],
+     [
+      "Haryana",
+      110,
+      135,
+      120,
+      80
+     ],
+     [
+      "Rajasthan",
+      185,
+      135,
+      130,
+      190
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s004",
+   "type": "table",
+   "title": "Annual revenue of 6 companies (₹ crore)",
+   "table": {
+    "columns": [
+     "Financial year",
+     "Sundaram Textiles",
+     "Vindhya Steel",
+     "Himalaya Herbals",
+     "Nilgiri Tea Co.",
+     "Narmada Cements",
+     "Kaveri Foods"
+    ],
+    "rows": [
+     [
+      "2020-21",
+      2180,
+      2690,
+      1960,
+      3010,
+      1060,
+      1500
+     ],
+     [
+      "2021-22",
+      1850,
+      2150,
+      2190,
+      2950,
+      850,
+      2040
+     ],
+     [
+      "2022-23",
+      2340,
+      2640,
+      2460,
+      2760,
+      1050,
+      2120
+     ],
+     [
+      "2023-24",
+      2440,
+      3710,
+      2320,
+      2760,
+      1010,
+      2100
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s005",
+   "type": "table",
+   "title": "Student enrolment in 6 departments of an engineering college",
+   "table": {
+    "columns": [
+     "Year",
+     "Chemical",
+     "IT",
+     "CSE",
+     "ECE",
+     "Civil",
+     "EEE"
+    ],
+    "rows": [
+     [
+      "2020",
+      155,
+      90,
+      225,
+      80,
+      200,
+      175
+     ],
+     [
+      "2021",
+      140,
+      85,
+      275,
+      65,
+      250,
+      270
+     ],
+     [
+      "2022",
+      175,
+      110,
+      280,
+      90,
+      225,
+      250
+     ],
+     [
+      "2023",
+      135,
+      65,
+      185,
+      105,
+      230,
+      170
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s006",
+   "type": "table",
+   "title": "Electricity consumption of 4 cities (in million units)",
+   "table": {
+    "columns": [
+     "Month",
+     "Coimbatore",
+     "Vizag",
+     "Nagpur",
+     "Surat"
+    ],
+    "rows": [
+     [
+      "April",
+      610,
+      640,
+      420,
+      390
+     ],
+     [
+      "May",
+      870,
+      900,
+      390,
+      490
+     ],
+     [
+      "June",
+      960,
+      870,
+      480,
+      620
+     ],
+     [
+      "July",
+      650,
+      660,
+      450,
+      620
+     ],
+     [
+      "August",
+      940,
+      600,
+      320,
+      430
+     ],
+     [
+      "September",
+      690,
+      630,
+      530,
+      490
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s007",
+   "type": "table",
+   "title": "Export value of 5 items from India (₹ crore)",
+   "table": {
+    "columns": [
+     "Item",
+     "2018",
+     "2019",
+     "2020",
+     "2021"
+    ],
+    "rows": [
+     [
+      "Leather goods",
+      1910,
+      2270,
+      1770,
+      2010
+     ],
+     [
+      "Basmati rice",
+      3310,
+      3340,
+      5320,
+      4140
+     ],
+     [
+      "Handicrafts",
+      1220,
+      1170,
+      1700,
+      1160
+     ],
+     [
+      "Textiles",
+      3470,
+      4480,
+      3820,
+      5410
+     ],
+     [
+      "Gems and jewellery",
+      1130,
+      720,
+      1030,
+      660
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s008",
+   "type": "table",
+   "title": "Runs scored by 4 Ranji Trophy teams in a season",
+   "table": {
+    "columns": [
+     "Season",
+     "Saurashtra",
+     "Bengal",
+     "Delhi",
+     "Tamil Nadu"
+    ],
+    "rows": [
+     [
+      "2017-18",
+      1790,
+      1870,
+      1830,
+      3860
+     ],
+     [
+      "2018-19",
+      2350,
+      1530,
+      1930,
+      2970
+     ],
+     [
+      "2019-20",
+      1770,
+      1840,
+      1840,
+      3390
+     ],
+     [
+      "2020-21",
+      2410,
+      2080,
+      1740,
+      4550
+     ],
+     [
+      "2021-22",
+      2160,
+      1330,
+      2720,
+      4410
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s009",
+   "type": "table",
+   "title": "Monthly two-wheeler sales of 6 brands (in thousand units)",
+   "table": {
+    "columns": [
+     "Brand",
+     "June",
+     "July",
+     "August",
+     "September"
+    ],
+    "rows": [
+     [
+      "Vayu",
+      220,
+      242,
+      222,
+      170
+     ],
+     [
+      "Veera",
+      180,
+      196,
+      140,
+      192
+     ],
+     [
+      "Tejas",
+      96,
+      86,
+      56,
+      94
+     ],
+     [
+      "Arjun",
+      232,
+      242,
+      168,
+      176
+     ],
+     [
+      "Chakra",
+      90,
+      70,
+      98,
+      96
+     ],
+     [
+      "Garuda",
+      164,
+      234,
+      186,
+      244
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s010",
+   "type": "table",
+   "title": "Passengers carried by 5 railway zones (in lakh)",
+   "table": {
+    "columns": [
+     "Zone",
+     "2020",
+     "2021",
+     "2022",
+     "2023"
+    ],
+    "rows": [
+     [
+      "Northern",
+      1420,
+      1100,
+      1560,
+      950
+     ],
+     [
+      "South Central",
+      1100,
+      1150,
+      1140,
+      850
+     ],
+     [
+      "Eastern",
+      1460,
+      1040,
+      970,
+      970
+     ],
+     [
+      "Central",
+      740,
+      1000,
+      1130,
+      1140
+     ],
+     [
+      "Western",
+      510,
+      430,
+      660,
+      580
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s011",
+   "type": "table",
+   "title": "Tea production of 4 states (in million kg)",
+   "table": {
+    "columns": [
+     "State",
+     "2018",
+     "2019",
+     "2020",
+     "2021"
+    ],
+    "rows": [
+     [
+      "Kerala",
+      330,
+      415,
+      350,
+      350
+     ],
+     [
+      "Tripura",
+      725,
+      750,
+      870,
+      635
+     ],
+     [
+      "Karnataka",
+      595,
+      455,
+      695,
+      655
+     ],
+     [
+      "Assam",
+      550,
+      680,
+      400,
+      535
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Which company had the highest production in 2020?",
+   "options": [
+    "Hyundai India",
+    "Honda Cars",
+    "Maruti Suzuki",
+    "Toyota Kirloskar"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare the values for 2020: Kia India 475, Maruti Suzuki 270, Hyundai India 485, Tata Motors 430, Toyota Kirloskar 325, Honda Cars 495. The largest is 495, for Honda Cars.",
+   "shortcut": "Scan the single column or row once and keep only the current maximum in mind.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s001"
+  },
+  {
+   "questionText": "In which year was the production for Kia India the lowest?",
+   "options": [
+    "2020",
+    "2021",
+    "2022",
+    "2019"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Values for Kia India: 2019 645, 2020 475, 2021 740, 2022 430. The smallest is 430, in 2022.",
+   "shortcut": "Look for the smallest number in the row; ignore everything else.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s001"
+  },
+  {
+   "questionText": "What is the sum of the production for Toyota Kirloskar in 2020 and the production for Tata Motors in 2022?",
+   "options": [
+    "295 thousand units",
+    "755 thousand units",
+    "945 thousand units",
+    "955 thousand units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Toyota Kirloskar in 2020 = 325; Tata Motors in 2022 = 620. Sum = 945.",
+   "shortcut": "Write both cell values down first, then add; the trap options use the wrong period for one of them.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s001"
+  },
+  {
+   "questionText": "In how many years did the production for Maruti Suzuki exceed 247 thousand units?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for Maruti Suzuki: 220, 270, 285, 225. Those above 247: 2020 (270), 2021 (285), i.e. 2.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s001"
+  },
+  {
+   "questionText": "What is the difference between the highest and the lowest combined production of all the companies in a single year?",
+   "options": [
+    "565 thousand units",
+    "2,940 thousand units",
+    "2,375 thousand units",
+    "575 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Period totals: 2019 2,395, 2020 2,480, 2021 2,940, 2022 2,375. Highest 2,940 - lowest 2,375 = 565.",
+   "shortcut": "Find the two extreme column totals only; there is no need to compute any other difference.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s001"
+  },
+  {
+   "questionText": "What was the rainfall for Chennai in July?",
+   "options": [
+    "250 mm",
+    "245 mm",
+    "220 mm",
+    "135 mm"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Locate Chennai and July in the table. The entry where they meet is 220 mm.",
+   "shortcut": "Run a finger along the row of the entity and the column of the period; check you have not slid to a neighbouring cell.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s002"
+  },
+  {
+   "questionText": "By how much is the total rainfall of Chennai in the first two months of the table different from the total rainfall of Lucknow in the last two months of the table?",
+   "options": [
+    "1,105 mm",
+    "165 mm",
+    "70 mm",
+    "65 mm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chennai, first two: 220 + 250 = 470. Lucknow, last two: 345 + 290 = 635. Difference = 165.",
+   "shortcut": "Compute the two small sums separately and subtract; do not subtract cell by cell.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s002"
+  },
+  {
+   "questionText": "In how many months did the rainfall for Bengaluru exceed 160 mm?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for Bengaluru: 155, 165, 195, 210, 140. Those above 160: August (165), September (195), October (210), i.e. 3.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s002"
+  },
+  {
+   "questionText": "What is the sum of the rainfall for Bengaluru in July and the rainfall for Lucknow in September?",
+   "options": [
+    "420 mm",
+    "110 mm",
+    "475 mm",
+    "460 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bengaluru in July = 155; Lucknow in September = 265. Sum = 420.",
+   "shortcut": "Write both cell values down first, then add; the trap options use the wrong period for one of them.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s002"
+  },
+  {
+   "questionText": "By how much did the rainfall for Chennai exceed that for Bengaluru in July?",
+   "options": [
+    "65 mm",
+    "375 mm",
+    "85 mm",
+    "75 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chennai in July = 220 and Bengaluru in July = 155. Difference = 220 - 155 = 65.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s002"
+  },
+  {
+   "questionText": "By how much is the total wheat production of Punjab in the first two years of the table different from the total wheat production of Uttar Pradesh in the last two years of the table?",
+   "options": [
+    "280 lakh tonnes",
+    "35 lakh tonnes",
+    "15 lakh tonnes",
+    "10 lakh tonnes"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Punjab, first two: 50 + 85 = 135. Uttar Pradesh, last two: 75 + 70 = 145. Difference = 10.",
+   "shortcut": "Compute the two small sums separately and subtract; do not subtract cell by cell.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s003"
+  },
+  {
+   "questionText": "In how many years did the wheat production for Uttar Pradesh exceed 67 lakh tonnes?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values for Uttar Pradesh: 65, 55, 75, 70. Those above 67: 2023 (75), 2024 (70), i.e. 2.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s003"
+  },
+  {
+   "questionText": "In which year was the combined wheat production of all the states the highest?",
+   "options": [
+    "2021",
+    "2023",
+    "2022",
+    "2024"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Column totals: 2021 665, 2022 605, 2023 670, 2024 635. The highest is 670, in 2023.",
+   "shortcut": "Add each period's values across all entities and compare the totals.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s003"
+  },
+  {
+   "questionText": "Which state had the highest wheat production in 2022?",
+   "options": [
+    "Haryana",
+    "Uttar Pradesh",
+    "Punjab",
+    "Madhya Pradesh"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Compare the values for 2022: Madhya Pradesh 195, Uttar Pradesh 55, Punjab 85, Haryana 135, Rajasthan 135. The largest is 195, for Madhya Pradesh.",
+   "shortcut": "Scan the single column or row once and keep only the current maximum in mind.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s003"
+  },
+  {
+   "questionText": "What is the sum of the wheat production for Punjab in 2021 and the wheat production for Uttar Pradesh in 2024?",
+   "options": [
+    "20 lakh tonnes",
+    "120 lakh tonnes",
+    "115 lakh tonnes",
+    "150 lakh tonnes"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Punjab in 2021 = 50; Uttar Pradesh in 2024 = 70. Sum = 120.",
+   "shortcut": "Write both cell values down first, then add; the trap options use the wrong period for one of them.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s003"
+  },
+  {
+   "questionText": "What is the sum of the revenue for Sundaram Textiles in 2021-22 and the revenue for Nilgiri Tea Co. in 2023-24?",
+   "options": [
+    "₹910 crore",
+    "₹4,800 crore",
+    "₹5,200 crore",
+    "₹4,610 crore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sundaram Textiles in 2021-22 = 1850; Nilgiri Tea Co. in 2023-24 = 2760. Sum = 4,610.",
+   "shortcut": "Write both cell values down first, then add; the trap options use the wrong period for one of them.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s004"
+  },
+  {
+   "questionText": "What was the revenue for Sundaram Textiles in 2023-24?",
+   "options": [
+    "₹2,440 crore",
+    "₹2,180 crore",
+    "₹2,340 crore",
+    "₹2,760 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Locate Sundaram Textiles and 2023-24 in the table. The entry where they meet is ₹2,440 crore.",
+   "shortcut": "Run a finger along the row of the entity and the column of the period; check you have not slid to a neighbouring cell.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s004"
+  },
+  {
+   "questionText": "In which financial year was the revenue for Vindhya Steel the lowest?",
+   "options": [
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2020-21"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for Vindhya Steel: 2020-21 2690, 2021-22 2150, 2022-23 2640, 2023-24 3710. The smallest is 2150, in 2021-22.",
+   "shortcut": "Look for the smallest number in the row; ignore everything else.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s004"
+  },
+  {
+   "questionText": "By how much did the revenue for Vindhya Steel exceed that for Kaveri Foods in 2020-21?",
+   "options": [
+    "₹4,190 crore",
+    "₹110 crore",
+    "₹1,200 crore",
+    "₹1,190 crore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Vindhya Steel in 2020-21 = 2690 and Kaveri Foods in 2020-21 = 1500. Difference = 2690 - 1500 = 1,190.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s004"
+  },
+  {
+   "questionText": "In how many financial years was the combined revenue of Kaveri Foods and Vindhya Steel greater than that of Himalaya Herbals?",
+   "options": [
+    "3",
+    "4",
+    "0",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare period by period (combined vs Himalaya Herbals): 2020-21: 4190 vs 1960, 2021-22: 4190 vs 2190, 2022-23: 4760 vs 2460, 2023-24: 5810 vs 2320. Count = 4.",
+   "shortcut": "Add the two rows once into a scratch line and compare it against the third row.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s004"
+  },
+  {
+   "questionText": "By how much did the enrolment for Chemical exceed that for ECE in 2021?",
+   "options": [
+    "205 students",
+    "85 students",
+    "150 students",
+    "75 students"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Chemical in 2021 = 140 and ECE in 2021 = 65. Difference = 140 - 65 = 75.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s005"
+  },
+  {
+   "questionText": "What was the total enrolment for Civil over all 4 years shown in the table?",
+   "options": [
+    "655 students",
+    "1,080 students",
+    "905 students",
+    "675 students"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Add every value for Civil: 200 + 250 + 225 + 230 = 905.",
+   "shortcut": "Pair numbers that make round figures while adding, and count the terms so that none is missed.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s005"
+  },
+  {
+   "questionText": "In how many years did the enrolment for IT exceed 87 students?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for IT: 90, 85, 110, 65. Those above 87: 2020 (90), 2022 (110), i.e. 2.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s005"
+  },
+  {
+   "questionText": "If the highest enrolment recorded by each department in any year is noted, what is the sum of these highest values?",
+   "options": [
+    "820 students",
+    "1,190 students",
+    "890 students",
+    "910 students"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row-wise maxima: Chemical 175, IT 110, CSE 280, ECE 105, Civil 250, EEE 270. Sum = 1,190.",
+   "shortcut": "Circle the largest number in every row first, then add the circled numbers.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s005"
+  },
+  {
+   "questionText": "In which year was the combined enrolment of all the departments the highest?",
+   "options": [
+    "2021",
+    "2023",
+    "2022",
+    "2020"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Column totals: 2020 925, 2021 1,085, 2022 1,130, 2023 890. The highest is 1,130, in 2022.",
+   "shortcut": "Add each period's values across all entities and compare the totals.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s005"
+  },
+  {
+   "questionText": "What is the difference between the highest and the lowest combined electricity consumption of all the cities in a single month?",
+   "options": [
+    "2,930 million units",
+    "870 million units",
+    "2,060 million units",
+    "880 million units"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Period totals: April 2,060, May 2,650, June 2,930, July 2,380, August 2,290, September 2,340. Highest 2,930 - lowest 2,060 = 870.",
+   "shortcut": "Find the two extreme column totals only; there is no need to compute any other difference.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s006"
+  },
+  {
+   "questionText": "Between which two consecutive months was the rise in the electricity consumption for Coimbatore the largest?",
+   "options": [
+    "July to August",
+    "April to May",
+    "June to July",
+    "August to September"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: April to May +260, May to June +90, June to July -310, July to August +290, August to September -250. The largest rise is 290, from July to August.",
+   "shortcut": "Write the successive differences in a line and pick the biggest positive one.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s006"
+  },
+  {
+   "questionText": "In which month was the electricity consumption for Coimbatore the lowest?",
+   "options": [
+    "April",
+    "July",
+    "June",
+    "May"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for Coimbatore: April 610, May 870, June 960, July 650, August 940, September 690. The smallest is 610, in April.",
+   "shortcut": "Look for the smallest number in the row; ignore everything else.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s006"
+  },
+  {
+   "questionText": "By how much did the electricity consumption for Coimbatore exceed that for Vizag in September?",
+   "options": [
+    "1,320 million units",
+    "30 million units",
+    "60 million units",
+    "70 million units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Coimbatore in September = 690 and Vizag in September = 630. Difference = 690 - 630 = 60.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s006"
+  },
+  {
+   "questionText": "In how many months did the electricity consumption for Surat exceed 460 million units?",
+   "options": [
+    "4",
+    "5",
+    "3",
+    "6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for Surat: 390, 490, 620, 620, 430, 490. Those above 460: May (490), June (620), July (620), September (490), i.e. 4.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s006"
+  },
+  {
+   "questionText": "By how much did the export value for Basmati rice exceed that for Handicrafts in 2020?",
+   "options": [
+    "₹7,020 crore",
+    "₹3,620 crore",
+    "₹2,980 crore",
+    "₹3,630 crore"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Basmati rice in 2020 = 5320 and Handicrafts in 2020 = 1700. Difference = 5320 - 1700 = 3,620.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s007"
+  },
+  {
+   "questionText": "In which year was the export value for Basmati rice the lowest?",
+   "options": [
+    "2019",
+    "2020",
+    "2021",
+    "2018"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values for Basmati rice: 2018 3310, 2019 3340, 2020 5320, 2021 4140. The smallest is 3310, in 2018.",
+   "shortcut": "Look for the smallest number in the row; ignore everything else.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s007"
+  },
+  {
+   "questionText": "What was the export value for Handicrafts in 2020?",
+   "options": [
+    "₹1,160 crore",
+    "₹1,170 crore",
+    "₹1,700 crore",
+    "₹3,820 crore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Locate Handicrafts and 2020 in the table. The entry where they meet is ₹1,700 crore.",
+   "shortcut": "Run a finger along the row of the entity and the column of the period; check you have not slid to a neighbouring cell.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s007"
+  },
+  {
+   "questionText": "In which year was the combined export value of all the items the highest?",
+   "options": [
+    "2020",
+    "2021",
+    "2018",
+    "2019"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Column totals: 2018 11,040, 2019 11,980, 2020 13,640, 2021 13,380. The highest is 13,640, in 2020.",
+   "shortcut": "Add each period's values across all entities and compare the totals.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s007"
+  },
+  {
+   "questionText": "By how much is the total export value of Handicrafts in the first two years of the table different from the total export value of Leather goods in the last two years of the table?",
+   "options": [
+    "₹6,170 crore",
+    "₹1,320 crore",
+    "₹1,390 crore",
+    "₹1,790 crore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Handicrafts, first two: 1220 + 1170 = 2390. Leather goods, last two: 1770 + 2010 = 3780. Difference = 1,390.",
+   "shortcut": "Compute the two small sums separately and subtract; do not subtract cell by cell.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s007"
+  },
+  {
+   "questionText": "By how much is the total runs scored of Bengal in the first two seasons of the table different from the total runs scored of Saurashtra in the last two seasons of the table?",
+   "options": [
+    "7,970 runs",
+    "1,170 runs",
+    "730 runs",
+    "740 runs"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Bengal, first two: 1870 + 1530 = 3400. Saurashtra, last two: 2410 + 2160 = 4570. Difference = 1,170.",
+   "shortcut": "Compute the two small sums separately and subtract; do not subtract cell by cell.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s008"
+  },
+  {
+   "questionText": "Between which two consecutive seasons was the rise in the runs scored for Saurashtra the largest?",
+   "options": [
+    "2017-18 to 2018-19",
+    "2019-20 to 2020-21",
+    "2018-19 to 2019-20",
+    "2020-21 to 2021-22"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Changes: 2017-18 to 2018-19 +560, 2018-19 to 2019-20 -580, 2019-20 to 2020-21 +640, 2020-21 to 2021-22 -250. The largest rise is 640, from 2019-20 to 2020-21.",
+   "shortcut": "Write the successive differences in a line and pick the biggest positive one.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s008"
+  },
+  {
+   "questionText": "In how many seasons did the runs scored for Delhi exceed 2,325 runs?",
+   "options": [
+    "2",
+    "0",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values for Delhi: 1830, 1930, 1840, 1740, 2720. Those above 2,325: 2021-22 (2720), i.e. 1.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s008"
+  },
+  {
+   "questionText": "Which team had the highest runs scored in 2019-20?",
+   "options": [
+    "Bengal",
+    "Tamil Nadu",
+    "Saurashtra",
+    "Delhi"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare the values for 2019-20: Saurashtra 1770, Bengal 1840, Delhi 1840, Tamil Nadu 3390. The largest is 3390, for Tamil Nadu.",
+   "shortcut": "Scan the single column or row once and keep only the current maximum in mind.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s008"
+  },
+  {
+   "questionText": "In which season was the combined runs scored of all the teams the highest?",
+   "options": [
+    "2021-22",
+    "2020-21",
+    "2018-19",
+    "2019-20"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Column totals: 2017-18 9,350, 2018-19 8,780, 2019-20 8,840, 2020-21 10,780, 2021-22 10,620. The highest is 10,780, in 2020-21.",
+   "shortcut": "Add each period's values across all entities and compare the totals.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s008"
+  },
+  {
+   "questionText": "If the highest sales recorded by each brand in any month is noted, what is the sum of these highest values?",
+   "options": [
+    "768 thousand units",
+    "972 thousand units",
+    "874 thousand units",
+    "1,118 thousand units"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Row-wise maxima: Vayu 242, Veera 196, Tejas 96, Arjun 242, Chakra 98, Garuda 244. Sum = 1,118.",
+   "shortcut": "Circle the largest number in every row first, then add the circled numbers.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s009"
+  },
+  {
+   "questionText": "In which month was the sales for Chakra the lowest?",
+   "options": [
+    "June",
+    "August",
+    "September",
+    "July"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values for Chakra: June 90, July 70, August 98, September 96. The smallest is 70, in July.",
+   "shortcut": "Look for the smallest number in the row; ignore everything else.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s009"
+  },
+  {
+   "questionText": "What was the total sales for Tejas over all 4 months shown in the table?",
+   "options": [
+    "332 thousand units",
+    "276 thousand units",
+    "512 thousand units",
+    "238 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add every value for Tejas: 96 + 86 + 56 + 94 = 332.",
+   "shortcut": "Pair numbers that make round figures while adding, and count the terms so that none is missed.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s009"
+  },
+  {
+   "questionText": "By how much did the sales for Vayu exceed that for Veera in June?",
+   "options": [
+    "400 thousand units",
+    "46 thousand units",
+    "50 thousand units",
+    "40 thousand units"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Vayu in June = 220 and Veera in June = 180. Difference = 220 - 180 = 40.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s009"
+  },
+  {
+   "questionText": "In how many months did the sales for Tejas exceed 90 thousand units?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values for Tejas: 96, 86, 56, 94. Those above 90: June (96), September (94), i.e. 2.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s009"
+  },
+  {
+   "questionText": "By how much is the total passenger traffic of Eastern in the first two years of the table different from the total passenger traffic of South Central in the last two years of the table?",
+   "options": [
+    "510 lakh",
+    "4,490 lakh",
+    "310 lakh",
+    "250 lakh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Eastern, first two: 1460 + 1040 = 2500. South Central, last two: 1140 + 850 = 1990. Difference = 510.",
+   "shortcut": "Compute the two small sums separately and subtract; do not subtract cell by cell.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s010"
+  },
+  {
+   "questionText": "What is the sum of the passenger traffic for South Central in 2020 and the passenger traffic for Central in 2022?",
+   "options": [
+    "30 lakh",
+    "1,840 lakh",
+    "2,230 lakh",
+    "2,270 lakh"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "South Central in 2020 = 1100; Central in 2022 = 1130. Sum = 2,230.",
+   "shortcut": "Write both cell values down first, then add; the trap options use the wrong period for one of them.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s010"
+  },
+  {
+   "questionText": "Which zone had the highest passenger traffic in 2022?",
+   "options": [
+    "Northern",
+    "South Central",
+    "Western",
+    "Central"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare the values for 2022: Northern 1560, South Central 1140, Eastern 970, Central 1130, Western 660. The largest is 1560, for Northern.",
+   "shortcut": "Scan the single column or row once and keep only the current maximum in mind.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s010"
+  },
+  {
+   "questionText": "In which year was the combined passenger traffic of all the zones the highest?",
+   "options": [
+    "2020",
+    "2023",
+    "2022",
+    "2021"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Column totals: 2020 5,230, 2021 4,720, 2022 5,460, 2023 4,490. The highest is 5,460, in 2022.",
+   "shortcut": "Add each period's values across all entities and compare the totals.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s010"
+  },
+  {
+   "questionText": "In how many years did the passenger traffic for Western exceed 545 lakh?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Values for Western: 510, 430, 660, 580. Those above 545: 2022 (660), 2023 (580), i.e. 2.",
+   "shortcut": "Tick every cell larger than the benchmark and count the ticks.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s010"
+  },
+  {
+   "questionText": "What was the tea production for Tripura in 2020?",
+   "options": [
+    "870 million kg",
+    "635 million kg",
+    "750 million kg",
+    "350 million kg"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Locate Tripura and 2020 in the table. The entry where they meet is 870 million kg.",
+   "shortcut": "Run a finger along the row of the entity and the column of the period; check you have not slid to a neighbouring cell.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s011"
+  },
+  {
+   "questionText": "By how much is the total tea production of Assam in the first two years of the table different from the total tea production of Tripura in the last two years of the table?",
+   "options": [
+    "2,735 million kg",
+    "540 million kg",
+    "275 million kg",
+    "245 million kg"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Assam, first two: 550 + 680 = 1230. Tripura, last two: 870 + 635 = 1505. Difference = 275.",
+   "shortcut": "Compute the two small sums separately and subtract; do not subtract cell by cell.",
+   "difficulty": "hard",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s011"
+  },
+  {
+   "questionText": "In which year was the tea production for Karnataka the lowest?",
+   "options": [
+    "2018",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values for Karnataka: 2018 595, 2019 455, 2020 695, 2021 655. The smallest is 455, in 2019.",
+   "shortcut": "Look for the smallest number in the row; ignore everything else.",
+   "difficulty": "easy",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s011"
+  },
+  {
+   "questionText": "What is the sum of the tea production for Kerala in 2018 and the tea production for Tripura in 2021?",
+   "options": [
+    "305 million kg",
+    "1,055 million kg",
+    "965 million kg",
+    "985 million kg"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kerala in 2018 = 330; Tripura in 2021 = 635. Sum = 965.",
+   "shortcut": "Write both cell values down first, then add; the trap options use the wrong period for one of them.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s011"
+  },
+  {
+   "questionText": "By how much did the tea production for Karnataka exceed that for Assam in 2020?",
+   "options": [
+    "295 million kg",
+    "1,095 million kg",
+    "120 million kg",
+    "305 million kg"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Karnataka in 2020 = 695 and Assam in 2020 = 400. Difference = 695 - 400 = 295.",
+   "shortcut": "Subtract only the two cells in the same column; do not mix periods.",
+   "difficulty": "medium",
+   "subPattern": "basic-table-reading",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s011"
+  }
+ ]
+}

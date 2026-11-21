@@ -1,0 +1,866 @@
+{
+ "sets": [
+  {
+   "id": "logical-puzzles-s021",
+   "type": "text",
+   "title": "Puzzle 21: Ranking of 4 people by wealth",
+   "text": "4 people (Madhavi, Hema, Nandini, Sneha) have different wealths. Conditions:\n1. Sneha is richer than Nandini, and nobody is between them in wealth.\n2. Sneha and Hema are next to each other when the 4 are arranged by wealth.\n3. Madhavi is richer than Nandini."
+  },
+  {
+   "id": "logical-puzzles-s022",
+   "type": "text",
+   "title": "Puzzle 22: Ranking of 4 people by height",
+   "text": "4 people (Yamini, Hema, Charan, Prakash) have different heights. Conditions:\n1. Charan and Yamini are next to each other when the 4 are arranged by height.\n2. Yamini is taller than Prakash, and nobody is between them in height.\n3. Hema is not the shortest."
+  },
+  {
+   "id": "logical-puzzles-s023",
+   "type": "text",
+   "title": "Puzzle 23: Ranking of 4 people by weight",
+   "text": "4 people (Omkar, Venkat, Pooja, Ishita) have different weights. Conditions:\n1. Pooja is heavier than Omkar, and nobody is between them in weight.\n2. Ishita is heavier than Pooja.\n3. Venkat is heavier than Ishita."
+  },
+  {
+   "id": "logical-puzzles-s024",
+   "type": "text",
+   "title": "Puzzle 24: Ranking of 5 people by age",
+   "text": "5 people (Karthik, Ramesh, Mohan, Venkat, Suresh) have different ages. Conditions:\n1. Exactly 2 people are between Ramesh and Karthik in age.\n2. Suresh is older than Karthik, and nobody is between them in age.\n3. Karthik and Venkat are next to each other when the 5 are arranged by age.\n4. Mohan is older than Ramesh, and nobody is between them in age."
+  },
+  {
+   "id": "logical-puzzles-s025",
+   "type": "text",
+   "title": "Puzzle 25: Ranking of 5 people by wealth",
+   "text": "5 people (Imran, Pooja, Balaji, Rohit, Naveen) have different wealths. Conditions:\n1. Balaji is richer than Imran.\n2. Exactly 3 people are poorer than Pooja.\n3. Pooja is richer than Naveen.\n4. Exactly 2 people are between Naveen and Rohit in wealth."
+  },
+  {
+   "id": "logical-puzzles-s026",
+   "type": "text",
+   "title": "Puzzle 26: Ranking of 5 people by weight",
+   "text": "5 people (Karthik, Bharat, Gopal, Kavya, Vikram) have different weights. Conditions:\n1. Exactly 2 people are between Kavya and Vikram in weight.\n2. Bharat and Karthik are next to each other when the 5 are arranged by weight.\n3. Vikram is lighter than Bharat.\n4. Exactly 1 person is lighter than Karthik."
+  },
+  {
+   "id": "logical-puzzles-s027",
+   "type": "text",
+   "title": "Puzzle 27: Ranking of 5 people by weight",
+   "text": "5 people (Divya, Charan, Ramesh, Gayathri, Balaji) have different weights. Conditions:\n1. Gayathri is not the lightest.\n2. Gayathri is lighter than Divya.\n3. Balaji is heavier than Divya, and nobody is between them in weight.\n4. Divya is heavier than Ramesh, and nobody is between them in weight."
+  },
+  {
+   "id": "logical-puzzles-s028",
+   "type": "text",
+   "title": "Puzzle 28: Ranking of 5 people by weight",
+   "text": "5 people (Saravanan, Arjun, Chitra, Charan, Uma) have different weights. Conditions:\n1. Charan is heavier than Saravanan, and nobody is between them in weight.\n2. Arjun and Chitra are next to each other when the 5 are arranged by weight.\n3. Saravanan and Uma are next to each other when the 5 are arranged by weight.\n4. Chitra is lighter than Uma.\n5. Chitra is lighter than Arjun."
+  },
+  {
+   "id": "logical-puzzles-s029",
+   "type": "text",
+   "title": "Puzzle 29: Ranking of 6 people by age",
+   "text": "6 people (Divya, Charan, Yamini, Deepa, Manoj, Chitra) have different ages. Conditions:\n1. Yamini and Divya are next to each other when the 6 are arranged by age.\n2. Manoj is older than Charan, and nobody is between them in age.\n3. Deepa and Manoj are next to each other when the 6 are arranged by age.\n4. Exactly 2 people are younger than Divya."
+  },
+  {
+   "id": "logical-puzzles-s030",
+   "type": "text",
+   "title": "Puzzle 30: Ranking of 6 people by wealth",
+   "text": "6 people (Jagan, Pooja, Saravanan, Kavya, Vikram, Latha) have different wealths. Conditions:\n1. Kavya is poorer than Jagan.\n2. Vikram is poorer than Pooja.\n3. Exactly 1 person is between Kavya and Latha in wealth.\n4. Vikram is not the poorest.\n5. Exactly 3 people are poorer than Jagan.\n6. Saravanan and Vikram are next to each other when the 6 are arranged by wealth."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "How many people are richer than Madhavi?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from richest to poorest: Madhavi > Hema > Sneha > Nandini. 0 people are above Madhavi.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s021",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the poorest among the 4?",
+   "options": [
+    "Hema",
+    "Sneha",
+    "Nandini",
+    "Madhavi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from richest to poorest: Madhavi > Hema > Sneha > Nandini. Nandini is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s021",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the richest among the 4?",
+   "options": [
+    "Hema",
+    "Sneha",
+    "Nandini",
+    "Madhavi"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from richest to poorest: Madhavi > Hema > Sneha > Nandini. Madhavi is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s021",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are poorer than Nandini?",
+   "options": [
+    "3",
+    "0",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from richest to poorest: Madhavi > Hema > Sneha > Nandini. Nandini has 0 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s021",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the tallest among the 4?",
+   "options": [
+    "Hema",
+    "Charan",
+    "Yamini",
+    "Prakash"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions give the order from tallest to shortest: Hema > Charan > Yamini > Prakash. Hema is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s022",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the shortest among the 4?",
+   "options": [
+    "Hema",
+    "Prakash",
+    "Charan",
+    "Yamini"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from tallest to shortest: Hema > Charan > Yamini > Prakash. Prakash is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s022",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are shorter than Prakash?",
+   "options": [
+    "1",
+    "0",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from tallest to shortest: Hema > Charan > Yamini > Prakash. Prakash has 0 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s022",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are taller than Prakash?",
+   "options": [
+    "2",
+    "1",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from tallest to shortest: Hema > Charan > Yamini > Prakash. 3 people are above Prakash.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s022",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the lightest among the 4?",
+   "options": [
+    "Pooja",
+    "Venkat",
+    "Omkar",
+    "Ishita"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Venkat > Ishita > Pooja > Omkar. Omkar is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s023",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are heavier than Venkat?",
+   "options": [
+    "3",
+    "2",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Venkat > Ishita > Pooja > Omkar. 0 people are above Venkat.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s023",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the heaviest among the 4?",
+   "options": [
+    "Ishita",
+    "Venkat",
+    "Omkar",
+    "Pooja"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from heaviest to lightest: Venkat > Ishita > Pooja > Omkar. Venkat is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s023",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are lighter than Pooja?",
+   "options": [
+    "0",
+    "3",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Venkat > Ishita > Pooja > Omkar. Pooja has 1 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s023",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who ranks number 4 when the 5 are arranged from oldest to youngest?",
+   "options": [
+    "Ramesh",
+    "Venkat",
+    "Suresh",
+    "Mohan"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from oldest to youngest: Suresh > Karthik > Venkat > Mohan > Ramesh. Rank 4 from the top is Mohan.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s024",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the youngest among the 5?",
+   "options": [
+    "Venkat",
+    "Mohan",
+    "Ramesh",
+    "Karthik"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from oldest to youngest: Suresh > Karthik > Venkat > Mohan > Ramesh. Ramesh is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s024",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are younger than Karthik?",
+   "options": [
+    "2",
+    "0",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from oldest to youngest: Suresh > Karthik > Venkat > Mohan > Ramesh. Karthik has 3 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s024",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are older than Suresh?",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from oldest to youngest: Suresh > Karthik > Venkat > Mohan > Ramesh. 0 people are above Suresh.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s024",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the poorest among the 5?",
+   "options": [
+    "Rohit",
+    "Balaji",
+    "Pooja",
+    "Imran"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from richest to poorest: Rohit > Pooja > Balaji > Naveen > Imran. Imran is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s025",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who ranks number 3 when the 5 are arranged from richest to poorest?",
+   "options": [
+    "Imran",
+    "Naveen",
+    "Pooja",
+    "Balaji"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from richest to poorest: Rohit > Pooja > Balaji > Naveen > Imran. Rank 3 from the top is Balaji.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s025",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the richest among the 5?",
+   "options": [
+    "Pooja",
+    "Imran",
+    "Rohit",
+    "Naveen"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from richest to poorest: Rohit > Pooja > Balaji > Naveen > Imran. Rohit is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s025",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is immediately richer than Pooja?",
+   "options": [
+    "Imran",
+    "Balaji",
+    "Rohit",
+    "Naveen"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from richest to poorest: Rohit > Pooja > Balaji > Naveen > Imran. The next above Pooja is Rohit.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s025",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the lightest among the 5?",
+   "options": [
+    "Karthik",
+    "Kavya",
+    "Vikram",
+    "Gopal"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Gopal > Kavya > Bharat > Karthik > Vikram. Vikram is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s026",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the heaviest among the 5?",
+   "options": [
+    "Kavya",
+    "Karthik",
+    "Gopal",
+    "Vikram"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Gopal > Kavya > Bharat > Karthik > Vikram. Gopal is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s026",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are heavier than Vikram?",
+   "options": [
+    "3",
+    "0",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from heaviest to lightest: Gopal > Kavya > Bharat > Karthik > Vikram. 4 people are above Vikram.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s026",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are lighter than Gopal?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Gopal > Kavya > Bharat > Karthik > Vikram. Gopal has 4 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s026",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are heavier than Gayathri?",
+   "options": [
+    "0",
+    "4",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Balaji > Divya > Ramesh > Gayathri > Charan. 3 people are above Gayathri.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s027",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who ranks number 2 when the 5 are arranged from heaviest to lightest?",
+   "options": [
+    "Charan",
+    "Ramesh",
+    "Balaji",
+    "Divya"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from heaviest to lightest: Balaji > Divya > Ramesh > Gayathri > Charan. Rank 2 from the top is Divya.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s027",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "In Puzzle 27: Who is the heaviest among the 5?",
+   "options": [
+    "Charan",
+    "Balaji",
+    "Divya",
+    "Ramesh"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from heaviest to lightest: Balaji > Divya > Ramesh > Gayathri > Charan. Balaji is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s027",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is immediately heavier than Gayathri?",
+   "options": [
+    "Ramesh",
+    "Charan",
+    "Divya",
+    "Balaji"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions give the order from heaviest to lightest: Balaji > Divya > Ramesh > Gayathri > Charan. The next above Gayathri is Ramesh.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s027",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who ranks number 4 when the 5 are arranged from heaviest to lightest?",
+   "options": [
+    "Uma",
+    "Chitra",
+    "Saravanan",
+    "Arjun"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from heaviest to lightest: Charan > Saravanan > Uma > Arjun > Chitra. Rank 4 from the top is Arjun.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s028",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is immediately heavier than Uma?",
+   "options": [
+    "Saravanan",
+    "Charan",
+    "Chitra",
+    "Arjun"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions give the order from heaviest to lightest: Charan > Saravanan > Uma > Arjun > Chitra. The next above Uma is Saravanan.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s028",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are lighter than Arjun?",
+   "options": [
+    "4",
+    "3",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from heaviest to lightest: Charan > Saravanan > Uma > Arjun > Chitra. Arjun has 1 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s028",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "In Puzzle 28: Who is the lightest among the 5?",
+   "options": [
+    "Charan",
+    "Saravanan",
+    "Chitra",
+    "Uma"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions give the order from heaviest to lightest: Charan > Saravanan > Uma > Arjun > Chitra. Chitra is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s028",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the oldest among the 6?",
+   "options": [
+    "Deepa",
+    "Yamini",
+    "Chitra",
+    "Charan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions give the order from oldest to youngest: Deepa > Manoj > Charan > Divya > Yamini > Chitra. Deepa is at the top.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s029",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who ranks number 4 when the 6 are arranged from oldest to youngest?",
+   "options": [
+    "Manoj",
+    "Divya",
+    "Charan",
+    "Yamini"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from oldest to youngest: Deepa > Manoj > Charan > Divya > Yamini > Chitra. Rank 4 from the top is Divya.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s029",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are older than Chitra?",
+   "options": [
+    "5",
+    "2",
+    "3",
+    "0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions give the order from oldest to youngest: Deepa > Manoj > Charan > Divya > Yamini > Chitra. 5 people are above Chitra.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s029",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are younger than Charan?",
+   "options": [
+    "2",
+    "0",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from oldest to youngest: Deepa > Manoj > Charan > Divya > Yamini > Chitra. Charan has 3 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s029",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many people are richer than Jagan?",
+   "options": [
+    "4",
+    "1",
+    "0",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from richest to poorest: Pooja > Latha > Jagan > Kavya > Vikram > Saravanan. 2 people are above Jagan.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s030",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are poorer than Jagan?",
+   "options": [
+    "3",
+    "4",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions give the order from richest to poorest: Pooja > Latha > Jagan > Kavya > Vikram > Saravanan. Jagan has 3 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s030",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "Who is the poorest among the 6?",
+   "options": [
+    "Vikram",
+    "Saravanan",
+    "Jagan",
+    "Pooja"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions give the order from richest to poorest: Pooja > Latha > Jagan > Kavya > Vikram > Saravanan. Saravanan is at the bottom.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s030",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  },
+  {
+   "questionText": "How many of the others are poorer than Pooja?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions give the order from richest to poorest: Pooja > Latha > Jagan > Kavya > Vikram > Saravanan. Pooja has 5 people below.",
+   "subPattern": "comparison-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc",
+    "general"
+   ],
+   "setId": "logical-puzzles-s030",
+   "shortcut": "Draw the chain of \">\" signs and merge the conditions into a single line."
+  }
+ ]
+}

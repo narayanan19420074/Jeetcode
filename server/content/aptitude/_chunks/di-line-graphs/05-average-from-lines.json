@@ -1,0 +1,930 @@
+{
+ "sets": [
+  {
+   "id": "di-line-graphs-s025",
+   "type": "line",
+   "title": "Daily sales of a tea stall for two weeks-days (in cups)",
+   "chart": {
+    "xLabel": "Day",
+    "yLabel": "Number of cups sold (cups)",
+    "series": [
+     {
+      "name": "Week 1",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 200
+       },
+       {
+        "label": "Tue",
+        "value": 220
+       },
+       {
+        "label": "Wed",
+        "value": 180
+       },
+       {
+        "label": "Thu",
+        "value": 240
+       },
+       {
+        "label": "Fri",
+        "value": 260
+       },
+       {
+        "label": "Sat",
+        "value": 300
+       }
+      ]
+     },
+     {
+      "name": "Week 2",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 190
+       },
+       {
+        "label": "Tue",
+        "value": 230
+       },
+       {
+        "label": "Wed",
+        "value": 210
+       },
+       {
+        "label": "Thu",
+        "value": 250
+       },
+       {
+        "label": "Fri",
+        "value": 280
+       },
+       {
+        "label": "Sat",
+        "value": 320
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s026",
+   "type": "line",
+   "title": "Monthly production at three units of a factory (in tonnes)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Production (tonnes)",
+    "series": [
+     {
+      "name": "Unit 1",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 120
+       },
+       {
+        "label": "Feb",
+        "value": 135
+       },
+       {
+        "label": "Mar",
+        "value": 150
+       },
+       {
+        "label": "Apr",
+        "value": 141
+       }
+      ]
+     },
+     {
+      "name": "Unit 2",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 100
+       },
+       {
+        "label": "Feb",
+        "value": 110
+       },
+       {
+        "label": "Mar",
+        "value": 95
+       },
+       {
+        "label": "Apr",
+        "value": 115
+       }
+      ]
+     },
+     {
+      "name": "Unit 3",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 140
+       },
+       {
+        "label": "Feb",
+        "value": 130
+       },
+       {
+        "label": "Mar",
+        "value": 160
+       },
+       {
+        "label": "Apr",
+        "value": 150
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s027",
+   "type": "line",
+   "title": "Marks of a student in six unit tests (out of 100)",
+   "chart": {
+    "xLabel": "Test",
+    "yLabel": "Score (marks)",
+    "series": [
+     {
+      "name": "Maths",
+      "data": [
+       {
+        "label": "T1",
+        "value": 62
+       },
+       {
+        "label": "T2",
+        "value": 70
+       },
+       {
+        "label": "T3",
+        "value": 58
+       },
+       {
+        "label": "T4",
+        "value": 81
+       },
+       {
+        "label": "T5",
+        "value": 76
+       },
+       {
+        "label": "T6",
+        "value": 90
+       }
+      ]
+     },
+     {
+      "name": "Science",
+      "data": [
+       {
+        "label": "T1",
+        "value": 55
+       },
+       {
+        "label": "T2",
+        "value": 64
+       },
+       {
+        "label": "T3",
+        "value": 72
+       },
+       {
+        "label": "T4",
+        "value": 68
+       },
+       {
+        "label": "T5",
+        "value": 80
+       },
+       {
+        "label": "T6",
+        "value": 85
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s028",
+   "type": "line",
+   "title": "Fuel sold at a petrol bunk (in thousand litres)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Fuel sold (thousand litres)",
+    "series": [
+     {
+      "name": "Petrol",
+      "data": [
+       {
+        "label": "2018",
+        "value": 420
+       },
+       {
+        "label": "2019",
+        "value": 450
+       },
+       {
+        "label": "2020",
+        "value": 380
+       },
+       {
+        "label": "2021",
+        "value": 470
+       },
+       {
+        "label": "2022",
+        "value": 520
+       },
+       {
+        "label": "2023",
+        "value": 560
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s029",
+   "type": "line",
+   "title": "Rainfall in two districts across monsoon months (in mm)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Rainfall (mm)",
+    "series": [
+     {
+      "name": "Nilgiris",
+      "data": [
+       {
+        "label": "Jun",
+        "value": 140
+       },
+       {
+        "label": "Jul",
+        "value": 210
+       },
+       {
+        "label": "Aug",
+        "value": 260
+       },
+       {
+        "label": "Sep",
+        "value": 180
+       },
+       {
+        "label": "Oct",
+        "value": 120
+       }
+      ]
+     },
+     {
+      "name": "Erode",
+      "data": [
+       {
+        "label": "Jun",
+        "value": 60
+       },
+       {
+        "label": "Jul",
+        "value": 90
+       },
+       {
+        "label": "Aug",
+        "value": 110
+       },
+       {
+        "label": "Sep",
+        "value": 150
+       },
+       {
+        "label": "Oct",
+        "value": 200
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s030",
+   "type": "line",
+   "title": "Profit of a company and its subsidiary (in ₹ crore)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Profit (₹ crore)",
+    "series": [
+     {
+      "name": "Parent",
+      "data": [
+       {
+        "label": "2019",
+        "value": 48
+       },
+       {
+        "label": "2020",
+        "value": 56
+       },
+       {
+        "label": "2021",
+        "value": 40
+       },
+       {
+        "label": "2022",
+        "value": 64
+       },
+       {
+        "label": "2023",
+        "value": 72
+       },
+       {
+        "label": "2024",
+        "value": 80
+       }
+      ]
+     },
+     {
+      "name": "Subsidiary",
+      "data": [
+       {
+        "label": "2019",
+        "value": 30
+       },
+       {
+        "label": "2020",
+        "value": 36
+       },
+       {
+        "label": "2021",
+        "value": 44
+       },
+       {
+        "label": "2022",
+        "value": 38
+       },
+       {
+        "label": "2023",
+        "value": 52
+       },
+       {
+        "label": "2024",
+        "value": 50
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the average number of cups sold of Week 2 from Wed to Fri (both included) (in cups)? (Correct to one decimal place.)",
+   "options": [
+    "246.7",
+    "230.0",
+    "264.0",
+    "229.4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values: 210, 250, 280. Sum = 740; average = 740/3 = 246.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What was the average number of cups sold of Week 1 and Week 2 in Fri (in cups)? (Correct to one decimal place.)",
+   "options": [
+    "280.0",
+    "260.0",
+    "288.9",
+    "270.0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = 260 + 280 = 540; average = 540/2 = 270.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What was the average increase per day in the number of cups sold of Week 2 from Mon to Sat (in cups)? (Correct to one decimal place.)",
+   "options": [
+    "21.7",
+    "68.4",
+    "27.8",
+    "26.0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total rise = 320 - 190 = 130 over 5 intervals. Average = 26.0.",
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What is the average number of cups sold of Week 2 over the 6 days shown (in cups)? (Correct to one decimal place.)",
+   "options": [
+    "258.0",
+    "130.0",
+    "246.7",
+    "264.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = 1480; average = 1480/6 = 246.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What is the average of the gaps (larger minus smaller) between Week 1 and Week 2 across the 6 days shown (in cups)? (Correct to one decimal place.)",
+   "options": [
+    "13.3",
+    "20.0",
+    "17.9",
+    "16.7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: 10, 10, 30, 10, 20, 20; sum = 100; average = 100/6 = 16.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What is the average production of Unit 2 over the 4 months shown (in tonnes)? (Correct to one decimal place.)",
+   "options": [
+    "105.0",
+    "106.7",
+    "20.0",
+    "112.4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 420; average = 420/4 = 105.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "What is the average of the production of Unit 2 in Jan and Apr (in tonnes)? (Correct to one decimal place.)",
+   "options": [
+    "7.5",
+    "105.0",
+    "107.5",
+    "115.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Add the two values: 100 + 115 = 215. Divide by 2: 215/2 = 107.5.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "In how many months was the production of Unit 3 above the average of all 4 months shown?",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average = 580/4 = 145.00. Values above it: 160, 150, so the count is 2.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "By how much is the average production of Unit 2 over the last three months greater than its average over the first three months (in tonnes)? (Correct to one decimal place.)",
+   "options": [
+    "15.0",
+    "10.0",
+    "5.0",
+    "5.4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First three: 305/3 = 101.67. Last three: 320/3 = 106.67. Difference = 5.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "The average production of Unit 1 over all 4 months is to be exactly 146 tonnes, keeping the first 3 values as shown. What must the Apr value be?",
+   "options": [
+    "38",
+    "146",
+    "192",
+    "179"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required total = 146 x 4 = 584. Sum of first 3 values = 405. Needed value = 179.",
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "What is the average score of Science from T1 to T3 (both included) (in marks)? (Correct to one decimal place.)",
+   "options": [
+    "70.7",
+    "59.5",
+    "68.2",
+    "63.7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 55, 64, 72. Sum = 191; average = 191/3 = 63.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What was the average score of Maths and Science in T4 (in marks)? (Correct to one decimal place.)",
+   "options": [
+    "81.0",
+    "68.0",
+    "74.5",
+    "79.7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = 81 + 68 = 149; average = 149/2 = 74.5.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What is the average of the combined score of Maths and Science across all 6 tests (in marks)? (Correct to one decimal place.)",
+   "options": [
+    "153.2",
+    "153.5",
+    "133.5",
+    "143.5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combined each period: 117, 134, 130, 149, 156, 175. Sum = 861; average = 861/6 = 143.5.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What is the average of the gaps (larger minus smaller) between Maths and Science across the 6 tests shown (in marks)? (Correct to one decimal place.)",
+   "options": [
+    "2.2",
+    "9.8",
+    "8.8",
+    "8.2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: 7, 6, 14, 13, 4, 5; sum = 49; average = 49/6 = 8.2.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "By how much is the average score of Science over the last three tests greater than its average over the first three tests (in marks)? (Correct to one decimal place.)",
+   "options": [
+    "42.0",
+    "14.0",
+    "28.0",
+    "15.0"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First three: 191/3 = 63.67. Last three: 233/3 = 77.67. Difference = 14.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What is the average fuel sold over the 6 years shown (in thousand litres)? (Correct to one decimal place.)",
+   "options": [
+    "476.0",
+    "180.0",
+    "466.7",
+    "499.4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = 2800; average = 2800/6 = 466.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "What was the average increase per year in the fuel sold from 2018 to 2023 (in thousand litres)? (Correct to one decimal place.)",
+   "options": [
+    "23.3",
+    "33.3",
+    "28.0",
+    "30.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 560 - 420 = 140 over 5 intervals. Average = 28.0.",
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "In how many years was the fuel sold above the average of all 6 years shown?",
+   "options": [
+    "4",
+    "3",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Average = 2800/6 = 466.67. Values above it: 470, 520, 560, so the count is 3.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "By how much is the average fuel sold over the last three years greater than its average over the first three years (in thousand litres)? (Correct to one decimal place.)",
+   "options": [
+    "300.0",
+    "200.0",
+    "100.0",
+    "107.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First three: 1250/3 = 416.67. Last three: 1550/3 = 516.67. Difference = 100.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "The average fuel sold over all 6 years is to be exactly 472 thousand litres, keeping the first 5 values as shown. What must the 2023 value be?",
+   "options": [
+    "592",
+    "32",
+    "472",
+    "633"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Required total = 472 x 6 = 2832. Sum of first 5 values = 2240. Needed value = 592.",
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "What is the average rainfall of Nilgiris from Jul to Sep (both included) (in mm)? (Correct to one decimal place.)",
+   "options": [
+    "216.7",
+    "182.0",
+    "235.0",
+    "231.9"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values: 210, 260, 180. Sum = 650; average = 650/3 = 216.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "What is the average rainfall of Nilgiris over the 5 months shown (in mm)? (Correct to one decimal place.)",
+   "options": [
+    "182.0",
+    "192.5",
+    "140.0",
+    "194.7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 910; average = 910/5 = 182.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "In how many months was the rainfall of Erode above the average of all 5 months shown?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Average = 610/5 = 122.00. Values above it: 150, 200, so the count is 2.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "By how much is the average rainfall of Erode over the last three months greater than its average over the first three months (in mm)? (Correct to one decimal place.)",
+   "options": [
+    "66.7",
+    "200.0",
+    "133.3",
+    "71.4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First three: 260/3 = 86.67. Last three: 460/3 = 153.33. Difference = 66.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "By what percent is the average rainfall of Nilgiris (over all 5 months) higher than that of Erode? (Correct to one decimal place.)",
+   "options": [
+    "49.2%",
+    "33.0%",
+    "60.0%",
+    "52.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Averages: Nilgiris = 182.00, Erode = 122.00. Percent = (182.00-122.00)/122.00 x 100 = 49.2%.",
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "What is the average profit of Parent over the 6 years shown (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    "62.4",
+    "60.0",
+    "40.0",
+    "64.2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum = 360; average = 360/6 = 60.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "By how much is the average profit of Subsidiary over the last three years greater than its average over the first three years (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    "10.0",
+    "30.0",
+    "20.0",
+    "10.7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First three: 110/3 = 36.67. Last three: 140/3 = 46.67. Difference = 10.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What is the average of the combined profit of Parent and Subsidiary across all 6 years (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    "101.7",
+    "50.8",
+    "110.3",
+    "108.8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combined each period: 78, 92, 84, 102, 124, 130. Sum = 610; average = 610/6 = 101.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What is the average of the gaps (larger minus smaller) between Parent and Subsidiary across the 6 years shown (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    "18.3",
+    "23.6",
+    "21.1",
+    "19.7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: 18, 20, 4, 26, 20, 30; sum = 118; average = 118/6 = 19.7.",
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What is the average profit of Parent over only those years in which it was higher than Subsidiary (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    "60.0",
+    "41.2",
+    "64.0",
+    "68.5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Parent is higher in 2019, 2020, 2022, 2023, 2024: values 48, 56, 64, 72, 80. Average = 320/5 = 64.0.",
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s030"
+  }
+ ]
+}

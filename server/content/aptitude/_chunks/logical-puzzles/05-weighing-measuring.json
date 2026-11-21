@@ -1,0 +1,865 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 3 litres and 5 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 4 litres in one of the jugs?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "5"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "BFS over the states (litres in 3L jug, litres in 5L jug) from (0, 0). Shortest sequence: fill the 5L jug -> (0, 5); pour 5L jug into 3L jug -> (3, 2); empty the 3L jug -> (0, 2); pour 5L jug into 3L jug -> (2, 0); fill the 5L jug -> (2, 5); pour 5L jug into 3L jug -> (3, 4). That is 6 operations, and no shorter sequence reaches 4 L.",
+      "shortcut": "Repeatedly pour into the 5L jug and fill the 3L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 5 litres and 7 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 6 litres in one of the jugs?",
+      "options": [
+        "9",
+        "12",
+        "11",
+        "10"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "BFS over the states (litres in 5L jug, litres in 7L jug) from (0, 0). Shortest sequence: fill the 7L jug -> (0, 7); pour 7L jug into 5L jug -> (5, 2); empty the 5L jug -> (0, 2); pour 7L jug into 5L jug -> (2, 0); fill the 7L jug -> (2, 7); pour 7L jug into 5L jug -> (5, 4); empty the 5L jug -> (0, 4); pour 7L jug into 5L jug -> (4, 0); fill the 7L jug -> (4, 7); pour 7L jug into 5L jug -> (5, 6). That is 10 operations, and no shorter sequence reaches 6 L.",
+      "shortcut": "Repeatedly pour into the 7L jug and fill the 5L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 4 litres and 9 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 6 litres in one of the jugs?",
+      "options": [
+        "9",
+        "7",
+        "10",
+        "8"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "BFS over the states (litres in 4L jug, litres in 9L jug) from (0, 0). Shortest sequence: fill the 9L jug -> (0, 9); pour 9L jug into 4L jug -> (4, 5); empty the 4L jug -> (0, 5); pour 9L jug into 4L jug -> (4, 1); empty the 4L jug -> (0, 1); pour 9L jug into 4L jug -> (1, 0); fill the 9L jug -> (1, 9); pour 9L jug into 4L jug -> (4, 6). That is 8 operations, and no shorter sequence reaches 6 L.",
+      "shortcut": "Repeatedly pour into the 9L jug and fill the 4L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 7 litres and 11 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 8 litres in one of the jugs?",
+      "options": [
+        "8",
+        "6",
+        "7",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BFS over the states (litres in 7L jug, litres in 11L jug) from (0, 0). Shortest sequence: fill the 11L jug -> (0, 11); pour 11L jug into 7L jug -> (7, 4); empty the 7L jug -> (0, 4); pour 11L jug into 7L jug -> (4, 0); fill the 11L jug -> (4, 11); pour 11L jug into 7L jug -> (7, 8). That is 6 operations, and no shorter sequence reaches 8 L.",
+      "shortcut": "Repeatedly pour into the 11L jug and fill the 7L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 5 litres and 8 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 7 litres in one of the jugs?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "10"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BFS over the states (litres in 5L jug, litres in 8L jug) from (0, 0). Shortest sequence: fill the 5L jug -> (5, 0); pour 5L jug into 8L jug -> (0, 5); fill the 5L jug -> (5, 5); pour 5L jug into 8L jug -> (2, 8); empty the 8L jug -> (2, 0); pour 5L jug into 8L jug -> (0, 2); fill the 5L jug -> (5, 2); pour 5L jug into 8L jug -> (0, 7). That is 8 operations, and no shorter sequence reaches 7 L.",
+      "shortcut": "Repeatedly pour into the 8L jug and fill the 5L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 3 litres and 7 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 5 litres in one of the jugs?",
+      "options": [
+        "10",
+        "7",
+        "8",
+        "9"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "BFS over the states (litres in 3L jug, litres in 7L jug) from (0, 0). Shortest sequence: fill the 7L jug -> (0, 7); pour 7L jug into 3L jug -> (3, 4); empty the 3L jug -> (0, 4); pour 7L jug into 3L jug -> (3, 1); empty the 3L jug -> (0, 1); pour 7L jug into 3L jug -> (1, 0); fill the 7L jug -> (1, 7); pour 7L jug into 3L jug -> (3, 5). That is 8 operations, and no shorter sequence reaches 5 L.",
+      "shortcut": "Repeatedly pour into the 7L jug and fill the 3L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 4 litres and 7 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 5 litres in one of the jugs?",
+      "options": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "BFS over the states (litres in 4L jug, litres in 7L jug) from (0, 0). Shortest sequence: fill the 4L jug -> (4, 0); pour 4L jug into 7L jug -> (0, 4); fill the 4L jug -> (4, 4); pour 4L jug into 7L jug -> (1, 7); empty the 7L jug -> (1, 0); pour 4L jug into 7L jug -> (0, 1); fill the 4L jug -> (4, 1); pour 4L jug into 7L jug -> (0, 5). That is 8 operations, and no shorter sequence reaches 5 L.",
+      "shortcut": "Repeatedly pour into the 7L jug and fill the 4L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "You have an unlimited water supply and two unmarked jugs of 6 litres and 11 litres. One operation is: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. What is the minimum number of operations needed to have exactly 7 litres in one of the jugs?",
+      "options": [
+        "9",
+        "7",
+        "8",
+        "10"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "BFS over the states (litres in 6L jug, litres in 11L jug) from (0, 0). Shortest sequence: fill the 6L jug -> (6, 0); pour 6L jug into 11L jug -> (0, 6); fill the 6L jug -> (6, 6); pour 6L jug into 11L jug -> (1, 11); empty the 11L jug -> (1, 0); pour 6L jug into 11L jug -> (0, 1); fill the 6L jug -> (6, 1); pour 6L jug into 11L jug -> (0, 7). That is 8 operations, and no shorter sequence reaches 7 L.",
+      "shortcut": "Repeatedly pour into the 11L jug and fill the 6L jug (or the reverse) and track the remainders; try both directions and take the shorter route.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Using only an unmarked 6-litre jug and an unmarked 9-litre jug (unlimited water, no other vessel), exactly which of the following quantities (in litres) can be measured?",
+      "options": [
+        "3 litres",
+        "5 litres",
+        "4 litres",
+        "2 litres"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Every quantity measurable with jugs of 6 L and 9 L is a multiple of gcd(6, 9) = 3. Among 2, 3, 4, 5 only 3 is a multiple of 3, and it is reachable; the others are not.",
+      "shortcut": "Only multiples of the HCF of the two jug sizes (up to the larger jug) can be measured.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Using only an unmarked 4-litre jug and an unmarked 10-litre jug (unlimited water, no other vessel), exactly which of the following quantities (in litres) can be measured?",
+      "options": [
+        "7 litres",
+        "5 litres",
+        "6 litres",
+        "3 litres"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Every quantity measurable with jugs of 4 L and 10 L is a multiple of gcd(4, 10) = 2. Among 3, 5, 6, 7 only 6 is a multiple of 2, and it is reachable; the others are not.",
+      "shortcut": "Only multiples of the HCF of the two jug sizes (up to the larger jug) can be measured.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Using only an unmarked 8-litre jug and an unmarked 12-litre jug (unlimited water, no other vessel), exactly which of the following quantities (in litres) can be measured?",
+      "options": [
+        "3 litres",
+        "6 litres",
+        "7 litres",
+        "4 litres"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Every quantity measurable with jugs of 8 L and 12 L is a multiple of gcd(8, 12) = 4. Among 3, 4, 6, 7 only 4 is a multiple of 4, and it is reachable; the others are not.",
+      "shortcut": "Only multiples of the HCF of the two jug sizes (up to the larger jug) can be measured.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 3 identical-looking balls, one is slightly heavier than the rest. Using a two-pan balance with no weights, what is the minimum number of weighings that guarantees finding the heavy ball?",
+      "options": [
+        "3",
+        "4",
+        "1",
+        "2"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each weighing has 3 outcomes (left heavy, right heavy, balanced), so k weighings separate 3^k balls. 1 < 3 ≤ 3, so 1 weighings are needed (and enough: split into three nearly equal groups each time).",
+      "shortcut": "Find the smallest k with 3^k ≥ n.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 8 identical-looking balls, one is slightly heavier than the rest. Using a two-pan balance with no weights, what is the minimum number of weighings that guarantees finding the heavy ball?",
+      "options": [
+        "3",
+        "1",
+        "2",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Each weighing has 3 outcomes (left heavy, right heavy, balanced), so k weighings separate 3^k balls. 3 < 8 ≤ 9, so 2 weighings are needed (and enough: split into three nearly equal groups each time).",
+      "shortcut": "Find the smallest k with 3^k ≥ n.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 9 identical-looking balls, one is slightly heavier than the rest. Using a two-pan balance with no weights, what is the minimum number of weighings that guarantees finding the heavy ball?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "3"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each weighing has 3 outcomes (left heavy, right heavy, balanced), so k weighings separate 3^k balls. 3 < 9 ≤ 9, so 2 weighings are needed (and enough: split into three nearly equal groups each time).",
+      "shortcut": "Find the smallest k with 3^k ≥ n.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 10 identical-looking balls, one is slightly heavier than the rest. Using a two-pan balance with no weights, what is the minimum number of weighings that guarantees finding the heavy ball?",
+      "options": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each weighing has 3 outcomes (left heavy, right heavy, balanced), so k weighings separate 3^k balls. 9 < 10 ≤ 27, so 3 weighings are needed (and enough: split into three nearly equal groups each time).",
+      "shortcut": "Find the smallest k with 3^k ≥ n.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 27 identical-looking balls, one is slightly heavier than the rest. Using a two-pan balance with no weights, what is the minimum number of weighings that guarantees finding the heavy ball?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each weighing has 3 outcomes (left heavy, right heavy, balanced), so k weighings separate 3^k balls. 9 < 27 ≤ 27, so 3 weighings are needed (and enough: split into three nearly equal groups each time).",
+      "shortcut": "Find the smallest k with 3^k ≥ n.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 28 identical-looking balls, one is slightly heavier than the rest. Using a two-pan balance with no weights, what is the minimum number of weighings that guarantees finding the heavy ball?",
+      "options": [
+        "6",
+        "4",
+        "3",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each weighing has 3 outcomes (left heavy, right heavy, balanced), so k weighings separate 3^k balls. 27 < 28 ≤ 81, so 4 weighings are needed (and enough: split into three nearly equal groups each time).",
+      "shortcut": "Find the smallest k with 3^k ≥ n.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 12 identical-looking coins, exactly one is counterfeit and is either heavier or lighter than the rest (you do not know which). With a two-pan balance and no weights, what is the minimum number of weighings that guarantees identifying the counterfeit coin (you need not say whether it is heavier or lighter)?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "When the odd coin may be heavier or lighter, k weighings can handle at most (3^k - 1)/2 coins: 1, 4, 13, 40 for k = 1, 2, 3, 4. Here 12 coins need k = 3 since 4 < 12 <= 13. Exhaustive search over all weighing strategies agrees. Plan: weigh 4 v 4; if balanced the odd coin is among the other 4 and two more weighings finish; if not, 8 cases remain which the third weighing can split into groups of at most 3.",
+      "shortcut": "Max coins for k weighings = (3^k - 1)/2 when heavy/light is unknown.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 5 identical-looking coins, exactly one is counterfeit and is either heavier or lighter than the rest (you do not know which). With a two-pan balance and no weights, what is the minimum number of weighings that guarantees identifying the counterfeit coin (you need not say whether it is heavier or lighter)?",
+      "options": [
+        "2",
+        "4",
+        "3",
+        "5"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When the odd coin may be heavier or lighter, k weighings can handle at most (3^k - 1)/2 coins: 1, 4, 13, 40 for k = 1, 2, 3, 4. Here 5 coins need k = 3 since 4 < 5 <= 13. Exhaustive search over all weighing strategies agrees.",
+      "shortcut": "Max coins for k weighings = (3^k - 1)/2 when heavy/light is unknown.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 14 identical-looking coins, exactly one is counterfeit and is either heavier or lighter than the rest (you do not know which). With a two-pan balance and no weights, what is the minimum number of weighings that guarantees identifying the counterfeit coin (you need not say whether it is heavier or lighter)?",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "6"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "When the odd coin may be heavier or lighter, k weighings can handle at most (3^k - 1)/2 coins: 1, 4, 13, 40 for k = 1, 2, 3, 4. Here 14 coins need k = 4 since 13 < 14 <= 40. Exhaustive search over all weighing strategies agrees.",
+      "shortcut": "Max coins for k weighings = (3^k - 1)/2 when heavy/light is unknown.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 3 identical-looking coins, exactly one is counterfeit and is either heavier or lighter than the rest (you do not know which). With a two-pan balance and no weights, what is the minimum number of weighings that guarantees identifying the counterfeit coin (you need not say whether it is heavier or lighter)?",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "4"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "When the odd coin may be heavier or lighter, k weighings can handle at most (3^k - 1)/2 coins: 1, 4, 13, 40 for k = 1, 2, 3, 4. Here 3 coins need k = 2 since 1 < 3 <= 4. Exhaustive search over all weighing strategies agrees. Plan: weigh coin 1 v coin 2. If balanced, coin 3 is odd; otherwise weigh coin 1 v coin 3 to see which of 1 and 2 is odd.",
+      "shortcut": "Max coins for k weighings = (3^k - 1)/2 when heavy/light is unknown.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A balance can be used at most 2 times. What is the maximum number of identical-looking balls among which one heavier ball can be certainly identified?",
+      "options": [
+        "8",
+        "9",
+        "6",
+        "12"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each weighing has 3 outcomes, so 2 weighings distinguish 3^2 = 9 balls. With 10 balls 3 weighings are needed.",
+      "shortcut": "k weighings -> 3^k balls.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A balance can be used at most 3 times. What is the maximum number of identical-looking balls among which one heavier ball can be certainly identified?",
+      "options": [
+        "18",
+        "26",
+        "24",
+        "27"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Each weighing has 3 outcomes, so 3 weighings distinguish 3^3 = 27 balls. With 28 balls 4 weighings are needed.",
+      "shortcut": "k weighings -> 3^k balls.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A balance can be used at most 4 times. What is the maximum number of identical-looking balls among which one heavier ball can be certainly identified?",
+      "options": [
+        "78",
+        "81",
+        "64",
+        "80"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Each weighing has 3 outcomes, so 4 weighings distinguish 3^4 = 81 balls. With 82 balls 5 weighings are needed.",
+      "shortcut": "k weighings -> 3^k balls.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the minimum number of weights needed to weigh every whole number of kilograms from 1 kg to 13 kg on a two-pan balance if weights may be placed in either pan?",
+      "options": [
+        "3",
+        "5",
+        "4",
+        "2"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "With weights allowed in both pans each weight has 3 roles (left, right, unused), so the best set is 1, 3, 9, 27, ... Four weights reach 1+3+9+27 = 40, three reach 13, five reach 121. For up to 13 kg the minimum is 3.",
+      "shortcut": "Powers of 3: 1, 3, 9, 27, 81 give totals 1, 4, 13, 40, 121.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the minimum number of weights needed to weigh every whole number of kilograms from 1 kg to 40 kg on a two-pan balance if weights may be placed in either pan?",
+      "options": [
+        "6",
+        "3",
+        "5",
+        "4"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "With weights allowed in both pans each weight has 3 roles (left, right, unused), so the best set is 1, 3, 9, 27, ... Four weights reach 1+3+9+27 = 40, three reach 13, five reach 121. For up to 40 kg the minimum is 4.",
+      "shortcut": "Powers of 3: 1, 3, 9, 27, 81 give totals 1, 4, 13, 40, 121.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A shopkeeper wants to weigh every whole number of kilograms from 1 kg to 15 kg, putting the weights only on one pan (the goods on the other). What is the minimum number of weights he needs?",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "5"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "If weights go only on one pan each weight is used or not used, so the best set is 1, 2, 4, 8, ... Powers of 2 up to 2^3 give totals 2^4-1: 15 ≥ 15. Fewer weights give at most 2^3-1 < 15. Minimum = 4.",
+      "shortcut": "One pan: powers of 2 (1, 2, 4, 8, ...); n weights reach 2^n - 1.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A shopkeeper wants to weigh every whole number of kilograms from 1 kg to 63 kg, putting the weights only on one pan (the goods on the other). What is the minimum number of weights he needs?",
+      "options": [
+        "8",
+        "7",
+        "5",
+        "6"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "If weights go only on one pan each weight is used or not used, so the best set is 1, 2, 4, 8, ... Powers of 2 up to 2^5 give totals 2^6-1: 63 ≥ 63. Fewer weights give at most 2^5-1 < 63. Minimum = 6.",
+      "shortcut": "One pan: powers of 2 (1, 2, 4, 8, ...); n weights reach 2^n - 1.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "What is the minimum number of weights needed to weigh every whole number of kilograms from 1 kg to 121 kg on a two-pan balance if weights may be placed in either pan?",
+      "options": [
+        "5",
+        "6",
+        "4",
+        "7"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "With weights allowed in both pans each weight has 3 roles (left, right, unused), so the best set is 1, 3, 9, 27, ... Four weights reach 1+3+9+27 = 40, three reach 13, five reach 121. For up to 121 kg the minimum is 5.",
+      "shortcut": "Powers of 3: 1, 3, 9, 27, 81 give totals 1, 4, 13, 40, 121.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two sand-timers run for 4 minutes and 7 minutes. Both are started together at time 0, and whenever a timer runs out you may flip either timer or both at once (flips are possible only at such moments). Which of these times from the start can be signalled exactly by a timer running out?",
+      "options": [
+        "6 minutes",
+        "9 minutes",
+        "3 minutes",
+        "5 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Schedule: at 4 min flip the 4-min timer; at 7 min flip the 7-min timer; at 8 min flip the 7-min timer; a timer runs out at 9 min. Searching every flip choice shows 3, 5, 6 min can never be signalled.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two sand-timers run for 3 minutes and 5 minutes. Both are started together at time 0, and whenever a timer runs out you may flip either timer or both at once (flips are possible only at such moments). Which of these times from the start can be signalled exactly by a timer running out?",
+      "options": [
+        "2 minutes",
+        "7 minutes",
+        "1 minutes",
+        "4 minutes"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Schedule: at 3 min flip the 3-min timer; at 5 min flip the 5-min timer; at 6 min flip the 5-min timer; a timer runs out at 7 min. Searching every flip choice shows 1, 4, 2 min can never be signalled.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two sand-timers run for 5 minutes and 8 minutes. Both are started together at time 0, and whenever a timer runs out you may flip either timer or both at once (flips are possible only at such moments). Which of these times from the start can be signalled exactly by a timer running out?",
+      "options": [
+        "3 minutes",
+        "6 minutes",
+        "11 minutes",
+        "9 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Schedule: at 5 min flip the 5-min timer; at 8 min flip the 5-min timer; a timer runs out at 11 min. Searching every flip choice shows 3, 6, 9 min can never be signalled.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two sand-timers run for 7 minutes and 11 minutes. Both are started together at time 0, and whenever a timer runs out you may flip either timer or both at once (flips are possible only at such moments). Which of these times from the start can be signalled exactly by a timer running out?",
+      "options": [
+        "14 minutes",
+        "5 minutes",
+        "13 minutes",
+        "9 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Schedule: at 7 min flip the 11-min timer; a timer runs out at 14 min. Searching every flip choice shows 5, 9, 13 min can never be signalled.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two sand-timers run for 5 minutes and 7 minutes. Both are started together at time 0, and whenever a timer runs out you may flip either timer or both at once (flips are possible only at such moments). Which of these times from the start can be signalled exactly by a timer running out?",
+      "options": [
+        "12 minutes",
+        "8 minutes",
+        "4 minutes",
+        "6 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Schedule: at 7 min flip the 5-min timer; a timer runs out at 12 min. Searching every flip choice shows 6, 8, 4 min can never be signalled.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Two identical ropes each burn out in exactly 60 minutes when lit at one end, but they burn unevenly (half the length does not take half the time). You have matches and no clock. Which of these times, measured from the start, can be signalled exactly by a rope finishing burning?",
+      "options": [
+        "55 minutes",
+        "50 minutes",
+        "40 minutes",
+        "45 minutes"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Method: light both ends of X and one end of Y; when X finishes (30 min) light the other end of Y. Exhaustive search over all ways of lighting ends at the moments a rope finishes shows that with two ropes the signalled times are only 30, 45, 60, 90, 120 and so on; the other options (40, 50, 55) are impossible.",
+      "shortcut": "Lighting both ends halves the remaining burn time.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A temple priest has two incense ropes, each of which burns completely in 60 minutes from one end but at an uneven rate along its length. With only a lighter, he wants a moment exactly T minutes after he starts, shown by a rope burning out. Which value of T is achievable?",
+      "options": [
+        "20 minutes",
+        "75 minutes",
+        "90 minutes",
+        "35 minutes"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Method: light one end of X; when it finishes (60 min) light both ends of Y. Exhaustive search over all ways of lighting ends at the moments a rope finishes shows that with two ropes the signalled times are only 30, 45, 60, 90, 120 and so on; the other options (20, 35, 75) are impossible.",
+      "shortcut": "Lighting both ends halves the remaining burn time.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A cook has two uneven-burning 60-minute fuse ropes and a matchbox, but no watch. She can light a rope at one or both ends, at the start or at the moment another rope burns out. For which of these times from the start can she signal the moment exactly?",
+      "options": [
+        "120 minutes",
+        "105 minutes",
+        "75 minutes",
+        "25 minutes"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Method: burn X then Y from one end each. Exhaustive search over all ways of lighting ends at the moments a rope finishes shows that with two ropes the signalled times are only 30, 45, 60, 90, 120 and so on; the other options (25, 75, 105) are impossible.",
+      "shortcut": "Lighting both ends halves the remaining burn time.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Three parcels A, B and C are weighed in pairs: A and B together weigh 17 kg, B and C together 23 kg, A and C together 20 kg. What does the heaviest parcel weigh?",
+      "options": [
+        "11 kg",
+        "12 kg",
+        "13 kg",
+        "14 kg"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Add all three: 2(A+B+C) = 60, so A+B+C = 30 kg. Then C = 30-17 = 13, A = 30-23 = 7, B = 30-20 = 10. The heaviest is 13 kg (unique whole-number solution confirmed by search).",
+      "shortcut": "Total = half the sum of the pair weights; subtract each pair from it.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Four friends are weighed three at a time. The four triple-weights are 195 kg, 186 kg, 189 kg and 192 kg. What is the weight of the heaviest friend?",
+      "options": [
+        "62 kg",
+        "65 kg",
+        "70 kg",
+        "68 kg"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Each friend appears in three of the four triples, so the total of the four triple-weights = 3 x (sum of all four). 195+186+189+192 = 762, so all four together weigh 254 kg. A friend's weight = 254 - (triple that leaves him out): 59, 62, 65, 68. The heaviest is 254 - 186 = 68 kg.",
+      "shortcut": "Sum of all triples / 3 = total; subtract the smallest triple to get the heaviest person.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "On a balance, 4 mangoes exactly balance 6 apples, and 3 apples exactly balance 5 guavas. How many guavas will balance 2 mangoes?",
+      "options": [
+        "6",
+        "4",
+        "3",
+        "5"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Mango : apple = 6 : 4 = 3 : 2, so 2 mangoes = 3 apples. And 3 apples = 5 guavas. Therefore 2 mangoes = 5 guavas.",
+      "shortcut": "Chain the equalities so the common item cancels.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "A balance shows: 3 books weigh the same as 5 notebooks, and 2 notebooks weigh the same as 7 pens. How many pens weigh the same as 6 books?",
+      "options": [
+        "35",
+        "42",
+        "30",
+        "21"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "6 books = 10 notebooks (double the first relation). 2 notebooks = 7 pens, so 10 notebooks = 5 x 7 = 35 pens.",
+      "shortcut": "Double/scale the first relation until the middle item matches the second one.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Using only weights of 1 kg, 3 kg and 9 kg (one of each) and a two-pan balance, which arrangement weighs out exactly 7 kg of sugar?",
+      "options": [
+        "Goods with 1 kg on one pan; 9 kg, 3 kg on the other",
+        "Goods with 1 kg, 3 kg on one pan; 9 kg on the other",
+        "Goods with 3 kg on one pan; 1 kg, 9 kg on the other",
+        "Goods with 3 kg on one pan; 9 kg on the other"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Sugar x + (weights on its pan) = (weights on the other pan). With 3 kg beside the sugar and 9 kg + 1 kg opposite: x + 3 = 10, so x = 7 kg. The other arrangements give 6, 5 and 11 kg (checked by search over all placements; this is the only one giving 7).",
+      "shortcut": "Write the target as 9 - 3 + 1 : the minus term goes on the goods' pan.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Using weights of 1 kg, 3 kg, 9 kg and 27 kg (one of each) and a two-pan balance, which arrangement weighs out exactly 20 kg of rice?",
+      "options": [
+        "Goods with 3 kg on one pan; 27 kg on the other",
+        "Goods with 1 kg, 9 kg on one pan; 3 kg, 27 kg on the other",
+        "Goods with 9 kg on one pan; 27 kg on the other",
+        "Goods with 1 kg, 9 kg on one pan; 27 kg on the other"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rice x + (weights on its pan) = (weights on the other). With 9 kg and 1 kg beside the rice and 27 kg and 3 kg opposite: x + 10 = 30, so x = 20 kg. The other arrangements give 18, 24 and 17 kg; a search over all 3^4 placements shows this is the only one giving 20.",
+      "shortcut": "20 = 27 - 9 + 3 - 1: positive terms opposite the goods, negative terms with the goods.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 9 identical-looking balls one is heavier. To be sure of finding it in 2 weighings, how many balls must be placed on EACH pan in the first weighing?",
+      "options": [
+        "5",
+        "3",
+        "4",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "After the first weighing at most 3^1 = 3 balls may remain under suspicion. If the pans tilt, the heavy ball is among the 3 on the lower pan; if they balance it is among the 3 left out. Putting 3 on each pan leaves 3, 3, 3: all ≤ 3. Any other number leaves a group larger than 3 (checked for each option).",
+      "shortcut": "Divide into three equal groups of 3.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Among 27 identical-looking balls one is heavier. To be sure of finding it in 3 weighings, how many balls must be placed on EACH pan in the first weighing?",
+      "options": [
+        "7",
+        "11",
+        "9",
+        "13"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "After the first weighing at most 3^2 = 9 balls may remain under suspicion. If the pans tilt, the heavy ball is among the 9 on the lower pan; if they balance it is among the 9 left out. Putting 9 on each pan leaves 9, 9, 9: all ≤ 9. Any other number leaves a group larger than 9 (checked for each option).",
+      "shortcut": "Divide into three equal groups of 9.",
+      "subPattern": "weighing-measuring",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    }
+  ]
+}

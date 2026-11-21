@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "Find the smallest number which, when increased by 2, is exactly divisible by 10, 12 and 16.",
+   "options": [
+    "238",
+    "242",
+    "478",
+    "240"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Number + 2 must be a multiple of the LCM, which is 240. So the number is 240 − 2 = 238.",
+   "shortcut": "Least number = LCM − k.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the smallest number which, when increased by 2, is exactly divisible by 5, 15 and 25.",
+   "options": [
+    "75",
+    "77",
+    "73",
+    "148"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Number + 2 must be a multiple of the LCM, which is 75. So the number is 75 − 2 = 73.",
+   "shortcut": "Least number = LCM − k.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the smallest number which, when increased by 2, is exactly divisible by 8, 10 and 12.",
+   "options": [
+    "238",
+    "122",
+    "118",
+    "120"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Number + 2 must be a multiple of the LCM, which is 120. So the number is 120 − 2 = 118.",
+   "shortcut": "Least number = LCM − k.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the least number which leaves a remainder of 2 when divided by 12 or 24?",
+   "options": [
+    "22",
+    "48",
+    "26",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM of 12, 24 = 24. Least number = LCM + 2 = 26.",
+   "shortcut": "LCM + common remainder.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the least number which leaves a remainder of 1 when divided by 8, 9 or 30?",
+   "options": [
+    "359",
+    "360",
+    "721",
+    "361"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM of 8, 9, 30 = 360. Least number = LCM + 1 = 361.",
+   "shortcut": "LCM + common remainder.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the least number which leaves a remainder of 1 when divided by 4 or 25?",
+   "options": [
+    "201",
+    "100",
+    "101",
+    "99"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "LCM of 4, 25 = 100. Least number = LCM + 1 = 101.",
+   "shortcut": "LCM + common remainder.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the least number which leaves a remainder of 1 when divided by 12 or 36?",
+   "options": [
+    "36",
+    "37",
+    "73",
+    "35"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM of 12, 36 = 36. Least number = LCM + 1 = 37.",
+   "shortcut": "LCM + common remainder.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the smallest number that leaves a remainder of 2 when divided by 18 or 45, but is exactly divisible by 11.",
+   "options": [
+    "990",
+    "902",
+    "92",
+    "992"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Numbers of the form 90k + 2 (LCM = 90). Try k = 1, 2, ... until divisible by 11: first success gives 902.",
+   "shortcut": "Form LCM·k + r, test k = 1, 2, ...",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest 5-digit number which leaves remainder 2 when divided by 5, 12 and 20?",
+   "options": [
+    "62",
+    "9962",
+    "10082",
+    "10022"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = 60. Need L·k + 2 ≥ 10000. Smallest k = 167, giving 10022.",
+   "shortcut": "Take the first multiple of LCM at/above the limit, add r.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest 4-digit number which leaves remainder 3 when divided by 10, 40 and 45?",
+   "options": [
+    "1443",
+    "1083",
+    "723",
+    "363"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 360. Need L·k + 3 ≥ 1000. Smallest k = 3, giving 1083.",
+   "shortcut": "Take the first multiple of LCM at/above the limit, add r.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest 4-digit number which leaves remainder 2 when divided by 6, 9 and 18?",
+   "options": [
+    "1010",
+    "1028",
+    "992",
+    "20"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "LCM = 18. Need L·k + 2 ≥ 1000. Smallest k = 56, giving 1010.",
+   "shortcut": "Take the first multiple of LCM at/above the limit, add r.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest 4-digit number which leaves remainder 1 when divided by 6, 12 and 36?",
+   "options": [
+    "973",
+    "37",
+    "1045",
+    "1009"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "LCM = 36. Need L·k + 1 ≥ 1000. Smallest k = 28, giving 1009.",
+   "shortcut": "Take the first multiple of LCM at/above the limit, add r.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest 4-digit number which leaves remainder 1 when divided by 4, 15 and 25?",
+   "options": [
+    "301",
+    "1201",
+    "1501",
+    "901"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = 300. Need L·k + 1 ≥ 1000. Smallest k = 4, giving 1201.",
+   "shortcut": "Take the first multiple of LCM at/above the limit, add r.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the least number which when divided by 15, 18 and 36 leaves remainders 7, 10 and 28 respectively.",
+   "options": [
+    "180",
+    "188",
+    "171",
+    "172"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In each case divisor − remainder = 8, so number + 8 is divisible by all. Least = LCM − 8 = 180 − 8 = 172.",
+   "shortcut": "Constant gap m → LCM − m.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the smallest number that leaves a remainder of 2 when divided by 9 or 20, but is exactly divisible by 11.",
+   "options": [
+    "902",
+    "1982",
+    "182",
+    "1980"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers of the form 180k + 2 (LCM = 180). Try k = 1, 2, ... until divisible by 11: first success gives 902.",
+   "shortcut": "Form LCM·k + r, test k = 1, 2, ...",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the least number which when divided by 10, 36 and 45 leaves remainders 3, 29 and 38 respectively.",
+   "options": [
+    "187",
+    "180",
+    "173",
+    "172"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In each case divisor − remainder = 7, so number + 7 is divisible by all. Least = LCM − 7 = 180 − 7 = 173.",
+   "shortcut": "Constant gap m → LCM − m.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the least number which when divided by 5, 20 and 45 leaves remainders 1, 16 and 41 respectively.",
+   "options": [
+    "184",
+    "180",
+    "176",
+    "175"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In each case divisor − remainder = 4, so number + 4 is divisible by all. Least = LCM − 4 = 180 − 4 = 176.",
+   "shortcut": "Constant gap m → LCM − m.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the smallest number that leaves a remainder of 3 when divided by 4 or 24, but is exactly divisible by 9.",
+   "options": [
+    "219",
+    "51",
+    "27",
+    "216"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Numbers of the form 24k + 3 (LCM = 24). Try k = 1, 2, ... until divisible by 9: first success gives 27.",
+   "shortcut": "Form LCM·k + r, test k = 1, 2, ...",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many numbers between 1 and 1000 (inclusive) leave a remainder of 1 when divided by 10 and by 30?",
+   "options": [
+    "35",
+    "33",
+    "36",
+    "34"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Such numbers are 30k + 1. We need 30k + 1 ≤ 1000, so k runs from 0 to 33: 34 numbers.",
+   "shortcut": "Count terms of the AP LCM·k + r up to the limit.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the least positive number that leaves remainder 7 when divided by 10 and remainder 17 when divided by 36.",
+   "options": [
+    "16",
+    "17",
+    "187",
+    "197"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check numbers 7, 7+10, 7+2×10, ... until the remainder on dividing by 36 is 17. First match: 17.",
+   "shortcut": "List numbers of the form r1 + multiple of first divisor, test the second condition.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the least positive number that leaves remainder 22 when divided by 24 and remainder 14 when divided by 40.",
+   "options": [
+    "94",
+    "93",
+    "142",
+    "214"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check numbers 22, 22+24, 22+2×24, ... until the remainder on dividing by 40 is 14. First match: 94.",
+   "shortcut": "List numbers of the form r1 + multiple of first divisor, test the second condition.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many numbers between 1 and 2000 (inclusive) leave a remainder of 2 when divided by 6 and by 40?",
+   "options": [
+    "16",
+    "18",
+    "19",
+    "17"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Such numbers are 120k + 2. We need 120k + 2 ≤ 2000, so k runs from 0 to 16: 17 numbers.",
+   "shortcut": "Count terms of the AP LCM·k + r up to the limit.",
+   "subPattern": "least-number-with-given-remainders",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

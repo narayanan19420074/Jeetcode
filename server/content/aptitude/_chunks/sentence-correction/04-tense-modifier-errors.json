@@ -1,0 +1,803 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She ___ in Mumbai since 2019.",
+   "options": [
+    "has lived",
+    "lived",
+    "is living",
+    "lives"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since 2019' marks a period that started in the past and continues now, so the present perfect 'has lived' is needed.",
+   "shortcut": "since / for + continuing period -> present perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ him yesterday at the station.",
+   "options": [
+    "met",
+    "have met",
+    "meet",
+    "had met"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Yesterday' names a finished past time, so the simple past 'met' is used.",
+   "shortcut": "Definite past time -> simple past.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. By the time the police arrived, the thieves ___.",
+   "options": [
+    "had escaped",
+    "have escaped",
+    "escape",
+    "would escape"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'By the time' with a past clause needs the past perfect for the earlier action: 'had escaped'.",
+   "shortcut": "By the time + simple past -> past perfect in the main clause.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The train ___ before we reached the platform.",
+   "options": [
+    "had left",
+    "has left",
+    "leaves",
+    "is leaving"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The train's departure happened before another past action, so the past perfect 'had left' is used.",
+   "shortcut": "Earlier of two past actions -> past perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Look! The bus ___.",
+   "options": [
+    "is coming",
+    "comes",
+    "came",
+    "will came"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look!' points to an action happening right now, so the present continuous 'is coming' is used.",
+   "shortcut": "Happening now -> present continuous.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ in the garden at 6 p.m. yesterday.",
+   "options": [
+    "was walking",
+    "walk",
+    "have walked",
+    "am walking"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An action in progress at a specific past moment takes the past continuous: 'was walking'.",
+   "shortcut": "In progress at a past time -> past continuous.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If it rains tomorrow, the match ___ postponed.",
+   "options": [
+    "will be",
+    "would be",
+    "was",
+    "is being"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A first conditional (real future possibility) uses present simple in the if-clause and 'will' in the main clause.",
+   "shortcut": "If + present, will + verb.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Water ___ at 100 degrees Celsius.",
+   "options": [
+    "boils",
+    "is boiling",
+    "boiled",
+    "has boiled"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A scientific fact is stated in the simple present, so 'boils'.",
+   "shortcut": "General truth -> simple present.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. My sister ___ her homework already.",
+   "options": [
+    "has finished",
+    "is finishing",
+    "finishes",
+    "will finish"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Already' with a completed action that is relevant now takes the present perfect: 'has finished'.",
+   "shortcut": "already / yet / just -> present perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I have never ___ such a beautiful sunset.",
+   "options": [
+    "seen",
+    "saw",
+    "see",
+    "seeing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The present perfect 'have ... ' needs the past participle. The past participle of 'see' is 'seen'.",
+   "shortcut": "have/has + past participle.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither of the boys ___ the answer yesterday.",
+   "options": [
+    "knew",
+    "knows",
+    "has known",
+    "know"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Yesterday' fixes the time in the past, so the simple past 'knew' is used.",
+   "shortcut": "Past time marker -> simple past.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. We ___ this house in 2015.",
+   "options": [
+    "bought",
+    "have bought",
+    "buy",
+    "are buying"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A specific past year ('in 2015') requires the simple past, not the present perfect.",
+   "shortcut": "Definite past time -> simple past.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Hardly ___ the gate when it began to rain.",
+   "options": [
+    "had I reached",
+    "I reached",
+    "did I reach",
+    "I had reached"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' at the start takes inversion with the past perfect: 'Hardly had I reached ... when ...'.",
+   "shortcut": "Hardly/Scarcely/No sooner + had + subject + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. By next March, she ___ in this company for ten years.",
+   "options": [
+    "will have worked",
+    "will work",
+    "has worked",
+    "had worked"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A future deadline ('by next March') plus a duration calls for the future perfect: 'will have worked'.",
+   "shortcut": "By + future time -> future perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ for you since morning.",
+   "options": [
+    "have been waiting",
+    "am waiting",
+    "waited",
+    "was waiting"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since morning' shows an action continuing up to now, so the present perfect continuous is used.",
+   "shortcut": "since/for + continuing action -> have/has been + -ing.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If he ___ harder, he would have passed the exam.",
+   "options": [
+    "had worked",
+    "worked",
+    "has worked",
+    "would work"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A third conditional (unreal past) uses the past perfect in the if-clause and 'would have + pp' in the main clause.",
+   "shortcut": "If + had + pp, would have + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She looked as if she ___ a ghost.",
+   "options": [
+    "had seen",
+    "has seen",
+    "sees",
+    "will see"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Looked' is past, and the seeing came before the looking, so the past perfect 'had seen' is needed.",
+   "shortcut": "Earlier than a past main verb -> past perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Titanic ___ in 1912 after hitting an iceberg.",
+   "options": [
+    "sank",
+    "has sunk",
+    "had sunk",
+    "sinks"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A historical event with a given year takes the simple past: 'sank'.",
+   "shortcut": "Historical date -> simple past.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Since the new manager joined, sales ___ steadily.",
+   "options": [
+    "have grown",
+    "grew",
+    "had grown",
+    "grow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since + past event' shows a change continuing up to now, so the present perfect 'have grown'.",
+   "shortcut": "Since + past point -> present perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Walking down the road, a stray dog barked at Rahul.\nB. Walking down the road, Rahul was barked at by a stray dog.\nC. Walking down the road, the bark of a stray dog startled Rahul.\nD. Rahul was barked at by a stray dog, walking down the road.",
+   "options": [
+    "B. Walking down the road, Rahul was barked at by a stray dog.",
+    "A. Walking down the road, a stray dog barked at Rahul.",
+    "C. Walking down the road, the bark of a stray dog startled Rahul.",
+    "D. Rahul was barked at by a stray dog, walking down the road."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An opening participle phrase must modify the subject that follows it. Only in B is the subject (Rahul) the one walking. In A and C the dog or the bark seems to walk; in D the phrase is placed so that it modifies the dog.",
+   "shortcut": "The word right after the comma must be the doer of the opening phrase.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Having finished the exam, ___.",
+   "options": [
+    "Priya left the hall",
+    "the hall was left empty",
+    "the bell was rung",
+    "the question paper was handed in"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The participle phrase 'Having finished the exam' must modify the person who finished it. Only 'Priya' can; the other options give a thing as subject (dangling modifier).",
+   "shortcut": "Opening -ing/-ed phrase: the next noun must be its doer.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. To get a bank loan, ___.",
+   "options": [
+    "the applicant must submit income proof",
+    "income proof must be submitted",
+    "a form is necessary",
+    "the process is lengthy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The infinitive phrase 'To get a bank loan' needs a doer as the subject of the main clause. Only 'the applicant' can get a loan; the others leave the phrase dangling.",
+   "shortcut": "Purpose phrase 'To do X' -> subject must be the doer.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The teacher gave a book to the boy with a red cover.\nB. The teacher gave the boy a book with a red cover.\nC. The teacher with a red cover gave the boy a book.\nD. With a red cover, the teacher gave a book to the boy.",
+   "options": [
+    "B. The teacher gave the boy a book with a red cover.",
+    "A. The teacher gave a book to the boy with a red cover.",
+    "C. The teacher with a red cover gave the boy a book.",
+    "D. With a red cover, the teacher gave a book to the boy."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A modifier must sit next to the word it describes. The red cover belongs to the book, so it must follow 'a book' (B). In A it attaches to the boy, in C to the teacher, and in D it floats at the front.",
+   "shortcut": "Place the modifier right beside what it describes.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The meeting ___ at 10 a.m. tomorrow, so please be on time.",
+   "options": [
+    "starts",
+    "will be start",
+    "has started",
+    "started"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A scheduled or fixed future event is expressed with the simple present: 'starts'.",
+   "shortcut": "Timetable future -> simple present.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. No sooner ___ the bell rung than the students ran out.",
+   "options": [
+    "had",
+    "has",
+    "did",
+    "was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'No sooner' is followed by the past perfect (inverted): 'No sooner had the bell rung than ...'.",
+   "shortcut": "No sooner + had + subject + pp + than.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Scarcely ___ he finished speaking when the audience applauded.",
+   "options": [
+    "had",
+    "has",
+    "did",
+    "would"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Scarcely' takes the past perfect with inversion and is followed by 'when': 'Scarcely had he finished ... when ...'.",
+   "shortcut": "Scarcely/Hardly + had ... when.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She ___ the piano for an hour when the guests arrived.",
+   "options": [
+    "had been playing",
+    "has been playing",
+    "was played",
+    "is playing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An action continuing up to a past moment ('when the guests arrived') uses the past perfect continuous.",
+   "shortcut": "Duration up to a past point -> had been + -ing.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If you ___ the instructions carefully, you would not have made this mistake.",
+   "options": [
+    "had read",
+    "read",
+    "have read",
+    "would read"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main clause 'would not have made' is a third conditional, so the if-clause needs the past perfect 'had read'.",
+   "shortcut": "would have + pp needs if + had + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. By the time we reached Ooty, the sun ___ set.",
+   "options": [
+    "had",
+    "has",
+    "was",
+    "would"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'By the time we reached' (past) needs the earlier action in the past perfect: 'had set'.",
+   "shortcut": "By the time + past -> had + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ him since last year.",
+   "options": [
+    "haven't seen",
+    "didn't see",
+    "don't see",
+    "hadn't seen"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since last year' marks a period continuing to now, so the present perfect 'haven't seen' is used.",
+   "shortcut": "since + point of time -> present perfect.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If water ___, it turns into steam.",
+   "options": [
+    "is heated",
+    "heats",
+    "will heat",
+    "heated"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A scientific fact uses the zero conditional: present simple in both clauses. Water receives the action, so the passive 'is heated' is needed.",
+   "shortcut": "General truth: if + present, present.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I am looking forward to ___ you.",
+   "options": [
+    "seeing",
+    "see",
+    "have seen",
+    "saw"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look forward to' ends in the preposition 'to', which is followed by a gerund (-ing form): 'seeing'.",
+   "shortcut": "look forward to + -ing.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Not having received any reply, ___.",
+   "options": [
+    "the manager sent a reminder",
+    "a reminder was sent",
+    "the delay was irritating",
+    "an email was drafted"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The opening participle phrase must be followed by its doer. Only 'the manager' could have been waiting for a reply; the others dangle the modifier.",
+   "shortcut": "Opening phrase -> doer must come next.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The match ___ by the time we reach the stadium.",
+   "options": [
+    "will have started",
+    "has started",
+    "started",
+    "had started"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'By the time we reach' (present form for the future) calls for the future perfect in the main clause: 'will have started'.",
+   "shortcut": "By the time + present -> will have + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Had the committee ___ the proposal earlier, the project would have finished on time.",
+   "options": [
+    "approved",
+    "approve",
+    "approves",
+    "been approving"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inverted third conditional: 'Had + subject + past participle'. The past participle of 'approve' is 'approved'.",
+   "shortcut": "Had + S + pp, would have + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Unless you ___ the fee by Friday, your admission will be cancelled.",
+   "options": [
+    "pay",
+    "will pay",
+    "paid",
+    "are paying"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'unless' in a first conditional, the present simple is used for the future: 'Unless you pay ...'. 'Will' is not used in the unless-clause.",
+   "shortcut": "Unless / if + present, never will.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She would have joined us if she ___ about the plan.",
+   "options": [
+    "had known",
+    "knew",
+    "would have known",
+    "has known"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main clause 'would have joined' is a third conditional, so the if-clause takes the past perfect 'had known'.",
+   "shortcut": "would have + pp <- if + had + pp.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Having been warned about the storm, the boats were kept in the harbour by the fishermen.\nB. Having been warned about the storm, the fishermen kept the boats in the harbour.\nC. Having warned about the storm, the fishermen kept the boats in the harbour.\nD. Having been warned about the storm, the harbour held the fishermen's boats.",
+   "options": [
+    "B. Having been warned about the storm, the fishermen kept the boats in the harbour.",
+    "A. Having been warned about the storm, the boats were kept in the harbour by the fishermen.",
+    "C. Having warned about the storm, the fishermen kept the boats in the harbour.",
+    "D. Having been warned about the storm, the harbour held the fishermen's boats."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The phrase 'Having been warned' describes the people who received the warning, so they must be the subject that follows. In B the fishermen are. In A and D the boats and harbour cannot be warned, and C uses the wrong form ('having warned').",
+   "shortcut": "Opening phrase and subject must name the same person.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rohan, who ___ to Pune last year, now works in Bengaluru.",
+   "options": [
+    "moved",
+    "has moved",
+    "moves",
+    "is moving"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Last year' is a finished, definite past time, so the simple past 'moved' is used.",
+   "shortcut": "Definite past time -> simple past.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ this novel for a week now and I am still on chapter three.",
+   "options": [
+    "have been reading",
+    "read",
+    "was reading",
+    "had read"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'For a week now' shows an action continuing up to the present, so the present perfect continuous 'have been reading' is used.",
+   "shortcut": "for + duration up to now -> have been + -ing.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Stuck in traffic, the flight was missed by Ananya.\nB. Stuck in traffic, Ananya missed her flight.\nC. Stuck in traffic, a flight was missed.\nD. Stuck in traffic, the delay cost Ananya her flight.",
+   "options": [
+    "B. Stuck in traffic, Ananya missed her flight.",
+    "A. Stuck in traffic, the flight was missed by Ananya.",
+    "C. Stuck in traffic, a flight was missed.",
+    "D. Stuck in traffic, the delay cost Ananya her flight."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Stuck in traffic' must modify the noun directly after the comma. Only Ananya can be stuck in traffic. In A the flight, in C nothing, and in D the delay is the subject, so the modifier dangles.",
+   "shortcut": "Check who or what is directly after the comma.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ to the gym every morning before I injured my knee.",
+   "options": [
+    "used to go",
+    "am used to go",
+    "was used to go",
+    "use to go"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Used to + base verb' expresses a past habit that no longer exists. 'Be used to' takes -ing, and 'use to' is incorrect in the affirmative.",
+   "shortcut": "Past habit -> used to + verb.",
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

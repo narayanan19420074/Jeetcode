@@ -1,0 +1,459 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: Last month the price of onions in the Lasalgaon market rose by 50%, yet the quantity of onions sold went up. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Onions are used in most Indian kitchens.",
+    "Farmers sell onions at lower prices in villages.",
+    "Rumours of a coming shortage made traders and households buy extra stock before prices could rise further.",
+    "Potato prices also rose last month."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A reason why buyers purchased more despite higher prices (fear of future scarcity) resolves the puzzle. The others do not explain why quantity rose.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "The resolution must explain both sides of the apparent contradiction."
+  },
+  {
+   "questionText": "Read the following: After a Madurai hospital appointed five additional doctors, the average waiting time for patients increased. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "The new doctors are young.",
+    "The hospital has a new car park.",
+    "News of the better staffing drew twice as many patients as before.",
+    "Waiting rooms are air-conditioned."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If patient numbers grew faster than the capacity added, waiting times can rise even with more doctors.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A bank cut its interest rate on savings deposits, yet its total deposits grew that quarter. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Many customers do not know the interest rate.",
+    "The bank has a large number of branches.",
+    "A fall in the stock market that quarter led investors to move money into bank deposits.",
+    "Savings accounts are opened with a minimum balance."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A separate reason for people to deposit more (a safe place after a stock-market fall) explains growth despite the lower rate.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A school shortened every class by 10 minutes, yet the teachers reported better syllabus coverage. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Students enjoy shorter classes.",
+    "The school has more teachers than before.",
+    "Teachers used to spend the first ten minutes of each class taking attendance, which is now done through an app.",
+    "Examinations are held in March."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If a non-teaching task that took the same time was removed, effective teaching time did not fall and coverage can improve.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The number of cars on Bengaluru's roads fell by 10% after a metro line opened, yet the average travel time on those roads increased. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "The metro runs from 6 am to 11 pm.",
+    "Metro tickets are cheaper than taxis.",
+    "Metro construction work reduced the usable road width, cutting road capacity by much more than 10%.",
+    "Bengaluru has many software companies."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If capacity fell by more than the traffic did, congestion and travel times can rise even with fewer cars.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The number of people who read books in a small town rose over five years, yet its only bookshop closed. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Readers like to read novels.",
+    "The bookshop was founded in 1980.",
+    "Most readers began buying books online or reading e-books instead of in the shop.",
+    "The town has a library."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Readers can increase while sales at the physical shop fall if they buy elsewhere.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A farmer's yield of tomatoes per acre doubled this year, yet his income from tomatoes fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Tomato farming needs a lot of water.",
+    "The farmer used a new variety of seeds.",
+    "A glut of tomatoes in the market caused prices to fall by more than half.",
+    "Tomatoes are used in many dishes."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Income = yield × price. If price falls by more than half while yield doubles, income falls.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Vegetable prices in Nashik fell this month, although the supply of vegetables was lower than last month. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Vegetables are grown in Nashik.",
+    "Some vegetables are exported.",
+    "A religious fast reduced the demand for vegetables far more than the supply fell.",
+    "The supply was affected by rain."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Prices depend on demand and supply; if demand dropped by more than supply, prices fall.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In a state, the share of infected patients who were vaccinated rose from 5% to 40%, although the vaccine's effectiveness did not change. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Vaccines are free in government hospitals.",
+    "The virus mutates frequently.",
+    "Vaccination coverage in the population rose from 5% to 60% during the same period.",
+    "Infection numbers were lower this year."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When most of the population is vaccinated, even with the same effectiveness, many of the infected will be vaccinated people. The share of infected who are vaccinated rises as coverage rises (base-rate effect).",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Compare shares within a group to the group's share in the population."
+  },
+  {
+   "questionText": "Read the following: At an IIT, the number of students who received offers above ₹30 lakh increased this year, yet the average package of the batch fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "The placement season lasted a month.",
+    "The IIT is located in a big city.",
+    "Many more students than before were placed, mostly in jobs with moderate pay.",
+    "Some students chose higher studies."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The average can fall if the batch has many more lower-paying placements even when the top offers increased.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Petrol consumption in Mumbai fell even though the registrations of new cars rose. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Mumbai roads are crowded.",
+    "Cars are bought by families.",
+    "A large share of the new cars are CNG or electric vehicles.",
+    "Petrol is sold in petrol pumps."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New cars that do not use petrol raise registrations without raising petrol consumption.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A sweet shop's profit during Diwali was higher than last Diwali, even though it sold fewer boxes of sweets. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Diwali sweets are in great demand.",
+    "The shop was open on all days.",
+    "This year the shop sold mostly premium boxes that earn a much higher profit per box.",
+    "Sweets are made of sugar and milk."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Profit depends on number of boxes and profit per box; a richer mix can raise profit even with fewer boxes.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Bookings with a Kerala backwaters tour company fell during Onam week, even though it had reduced its prices. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Onam is a festival of Kerala.",
+    "The company has houseboats.",
+    "Floods had cut off road access to the backwaters that week.",
+    "Tourists enjoy the backwaters."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An external obstacle to travel can outweigh the effect of a price cut.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Wholesale rice prices in a city rose by 15%, but retail rice prices in the city fell during the same period. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Rice is a staple food.",
+    "Wholesalers buy in bulk.",
+    "The government started selling subsidised rice in the city's ration shops, forcing retailers to cut their prices.",
+    "Rice is transported by truck."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A competitor selling at a subsidy can force retailers to cut prices even when their costs rise.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The capacity of Nitin's new phone battery is 20% larger than that of his old phone, but it runs for fewer hours between charges. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "The new phone is available in black.",
+    "Nitin's old phone is two years old.",
+    "The new phone consumes more than 20% more power than the old one.",
+    "Batteries are made of lithium."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Running time = capacity ÷ power use. If power use rises by more than 20%, the run time falls despite a larger battery.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Most employees of a firm say they are satisfied with their pay, yet the firm has high attrition. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "The firm's pay is above the industry average.",
+    "The firm has offices in many cities.",
+    "Most of those who left were fresh graduates who quit to pursue higher studies.",
+    "Employees receive a bonus in October."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Departures for reasons unrelated to pay explain high attrition despite satisfaction with pay.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Sales of cough syrup in Delhi rose sharply in November, although there was no increase in the number of cough cases. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Winter begins in November.",
+    "Cough syrup is sold at pharmacies.",
+    "Many households bought extra bottles because the price was about to rise.",
+    "Doctors recommend rest."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Stockpiling ahead of a price rise increases sales without any rise in cases.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: After night buses were banned on a highway, the number of night-time accidents on it rose. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Night buses were used by many passengers.",
+    "The highway is in a hill region.",
+    "Night truck traffic and private cars on the highway rose sharply after the ban.",
+    "The ban was announced in April."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "More vehicles of other kinds on the road can raise accidents even though one category is removed.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The per capita income of a district rose over five years, yet the proportion of people living in poverty also rose. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "The district's population grew.",
+    "Many people there are farmers.",
+    "The income gains were concentrated among the richest few, while the incomes of the poor fell.",
+    "Prices of essentials are published weekly."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An average can rise because of gains at the top while the poor become poorer.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Averages can hide how income is distributed."
+  },
+  {
+   "questionText": "Read the following: Rajasthan received its highest rainfall in a decade this monsoon, yet crop output was among the lowest. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Rajasthan is largely a desert.",
+    "Rain is measured in millimetres.",
+    "Most of the rain fell in three days of flash floods that destroyed standing crops.",
+    "Crops need water."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A great quantity of rain concentrated in a damaging burst can destroy crops, so heavy rain and poor output can coexist.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Gym memberships in a Pune locality doubled in two years, yet the gym owners' total revenue fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Gyms are open early in the morning.",
+    "Gym equipment is imported.",
+    "Most new members joined through heavily discounted corporate plans that cost a fraction of the regular fee.",
+    "Some members use the swimming pool."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue = members × average fee; a large drop in the fee can offset the rise in members.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Marriages in a Kerala town increased over a decade, but the number of births fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Marriages are held in temples and churches.",
+    "Weddings are costly.",
+    "Couples now marry later and wait longer before having their first child.",
+    "The town has a maternity hospital."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A delay in childbearing after marriage can lower births even when marriages rise.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Over ten years the number of ATMs in a state doubled, yet the total value of ATM cash withdrawals fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "ATMs dispense currency notes.",
+    "Banks charge for extra withdrawals.",
+    "Use of UPI and digital payments grew rapidly, so people withdrew less cash.",
+    "ATMs are located in many places."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A substitute that reduces the need for cash explains lower withdrawals despite more ATMs.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for a factor that changes demand, not supply."
+  },
+  {
+   "questionText": "Read the following: A factory reduced working hours by 10%, yet its output rose by 5%. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Workers were happy with shorter hours.",
+    "The factory makes plastic goods.",
+    "During the same period it automated a machine that had been the bottleneck on its production line.",
+    "Some workers took leave in December."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Removing a production bottleneck can raise output even with fewer hours.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The number of fires reported in a city rose over five years, yet the number of deaths from fires fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    "Fires are more frequent in summer.",
+    "The fire brigade has a control room.",
+    "Most buildings were fitted with smoke alarms and sprinklers, so fires were detected and put out early.",
+    "Many fires start from cooking gas."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Better detection and suppression can keep deaths down even when more fires occur.",
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

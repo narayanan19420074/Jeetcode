@@ -1,0 +1,144 @@
+{
+ "sets": [
+  {
+   "id": "reading-comprehension-s001",
+   "type": "text",
+   "title": "Monsoon Forecasts and Farmers",
+   "text": "For decades, Indian farmers read the sky the way their grandparents did: by watching the first cloudbank over the Western Ghats and trusting the village almanac. Today the India Meteorological Department issues forecasts based on satellite images, ocean temperature records and supercomputer models, and its seasonal outlook in April is watched closely by markets as well as farmers. Accuracy has improved, yet a district-level prediction remains hard, because rainfall in a single week can differ sharply between two villages only ten kilometres apart. Critics argue that a headline figure such as 'ninety-six per cent of the long period average' tells a smallholder very little about when to sow. Officials reply that the national figure was never meant to replace local advice, and they point to text-message alerts that now reach millions of farmers in their own languages. Whether these alerts are changing decisions in the field is still being studied; early surveys suggest that farmers trust a forecast more when it comes through a neighbour than through a phone."
+  },
+  {
+   "id": "reading-comprehension-s007",
+   "type": "text",
+   "title": "Threads of a Fading Craft",
+   "text": "In a weaver's colony near Pochampally, the clatter of the loom starts before sunrise and often continues after dark. A single sari in the traditional ikat style may take a family several days, since the threads must be tied and dyed in patterns before weaving even begins. Power looms can imitate the design in a few hours and sell it at half the price, and many shoppers cannot tell the difference at first glance. The government has tried to help by reserving certain designs for handloom producers and by organising exhibitions in big cities. These steps have helped some weavers, but a young man in the colony shrugged when asked if he would follow his father's trade. His cousin, he said, earns more as a delivery rider. The cloth, it seems, may survive better than the craft that produces it."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "It can be inferred from the passage that farmers",
+   "options": [
+    "may act on a forecast more readily when someone they know passes it on",
+    "have stopped using any kind of weather prediction",
+    "no longer need information at the district level",
+    "are unaffected by satellite-based forecasting in any way"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The last sentence reports that farmers trust a forecast more when it comes through a neighbour. The other options either contradict the passage (they still need local advice) or go beyond it.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s001"
+  },
+  {
+   "questionText": "It can be inferred from the passage that before the franchise league",
+   "options": [
+    "most kabaddi players earned little money from the sport",
+    "kabaddi was unknown in all Indian villages",
+    "girls were not allowed to watch kabaddi",
+    "there were no referees in kabaddi matches"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says players once earned only the praise of their villages, which implies little or no money. The other options are not supported.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s003"
+  },
+  {
+   "questionText": "The passage suggests that if millets fetched unsteady prices, many farmers would",
+   "options": [
+    "keep growing the more profitable crops they already know",
+    "switch completely to millets for health reasons",
+    "stop farming altogether",
+    "insist that schools stop buying millets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says that without steady prices many will continue with the more profitable crops.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s004"
+  },
+  {
+   "questionText": "It can be inferred from the passage that the severe flooding in modern Bengaluru is largely due to",
+   "options": [
+    "the loss of the linked system of lakes and channels",
+    "more rainfall than in earlier centuries",
+    "the vigilance of residents' groups",
+    "the cleaning of a few lakes by civic bodies"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage links floods to drained lakes and paved channels. It never claims rainfall has increased.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s005"
+  },
+  {
+   "questionText": "The coaches mentioned in the passage would most probably agree that",
+   "options": [
+    "children should combine online practice with games on a physical board",
+    "online platforms are useless for learning chess",
+    "teenagers should not play against grandmasters",
+    "tournament games should be shortened below six hours"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Their caution is that screens cannot teach temperament, which real boards do; they do not reject online play.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s006"
+  },
+  {
+   "questionText": "The young man's remark about his cousin suggests that",
+   "options": [
+    "many young people do not see handloom weaving as financially attractive",
+    "delivery riding is a respected traditional trade",
+    "government exhibitions have failed in every city",
+    "power looms are banned in the colony"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He contrasts weaving with the better earnings of a delivery rider, which points to weak financial appeal for youth.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s007"
+  },
+  {
+   "questionText": "The author implies that the wellbeing measures taken by institutes",
+   "options": [
+    "do not address the basic cause of student stress",
+    "have completely solved the problem",
+    "are unwelcome",
+    "are harmful to students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Welcome, but they treat the symptoms' shows they help but do not reach the root cause.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s009"
+  }
+ ]
+}

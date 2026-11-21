@@ -1,0 +1,945 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "Text: The Chennai Metro carried 2.4 lakh passengers on Monday and 2.1 lakh on Tuesday.\nInferences:\nI. Ridership on Monday was higher than on Tuesday.\nII. Ridership will be higher on Wednesday than on Tuesday.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 2.4 lakh > 2.1 lakh, so I follows. II predicts the future.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Rani's school bag weighs 4 kg, which is one-fifth of her body weight.\nInferences:\nI. Rani's bag is the heaviest in her class.\nII. Rani weighs 20 kg.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 4 kg is one-fifth, so her weight is 4 × 5 = 20 kg. I is not stated.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Of the 60 members of a trekking club, 45 are men.\nInferences:\nI. Fifteen members of the club are not men.\nII. The club has no women members.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 60 − 45 = 15 are not men. Nothing in the passage rules women in or out, so II is unsupported.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The new software update fixes a bug that caused apps to crash on older phones.\nInferences:\nI. The update will make all phones faster.\nII. Some apps crashed on older phones before the update.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Fixing a crash bug implies crashes occurred. Speed is not mentioned.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The village school has three teachers for 90 pupils, all in classes 1 to 5.\nInferences:\nI. There are more pupils than teachers in the school.\nII. Each teacher handles exactly one class.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 90 pupils exceed 3 teachers. The passage does not say how classes are assigned.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In Kerala the monsoon usually arrives in the first week of June, but this year it arrived on 28 May.\nInferences:\nI. The monsoon will also end earlier than usual this year.\nII. The monsoon arrived earlier than usual this year.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 28 May is before the usual first week of June. Nothing is said about its end.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A cricketer scored 48, 52 and 61 in three innings.\nInferences:\nI. He scored more than 50 in two of the three innings.\nII. He scored a century in the series.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Only 52 and 61 exceed 50. No score reaches 100.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Anand reached the station at 9:50 am. The train had left at 9:45 am.\nInferences:\nI. The train had been running late.\nII. Anand missed the train.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. He arrived after the departure, so he missed it. The scheduled time is not given, so I is unsupported.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A bus ticket costs ₹30 for an adult and half that for a child.\nInferences:\nI. A child's ticket costs ₹15.\nII. Children travel more often than adults.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Half of ₹30 is ₹15. Frequency of travel is not mentioned.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A company says overtime will be paid only to employees who work beyond 8 hours a day.\nInferences:\nI. Every employee who works beyond 8 hours is sure to get overtime.\nII. An employee who works exactly 8 hours will not get overtime.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 'Only to those beyond 8 hours' excludes exactly 8 hours. It does not promise overtime to everyone beyond 8 hours, so I reverses the condition.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In a city, 70% of households have a television and 40% have a computer.\nInferences:\nI. At least 10% of the households have both.\nII. 30% of the households have neither.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 70 + 40 = 110, which exceeds 100, so at least 10% overlap. The share with neither can be 0 or more, so II is not certain.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The price of tomatoes fell from ₹60 per kg in May to ₹40 per kg in June.\nInferences:\nI. The fall was caused by an increase in supply.\nII. The price fell by one-third from May to June.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Fall = 20 on 60 = one-third. The cause is not given.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A temple is open from 6 am to 12 noon and from 4 pm to 9 pm daily.\nInferences:\nI. The temple is closed at 2 pm.\nII. The temple is open for 11 hours a day.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 2 pm falls between 12 and 4. Open hours are 6 + 5 = 11. Both follow directly.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A study of 500 students found that those who slept 7 to 8 hours scored higher on average than those who slept under 6 hours.\nInferences:\nI. Sleeping longer will make every student score higher.\nII. In this study, sleep duration was linked to test scores.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. The study shows an association. A guarantee for every student goes beyond the passage.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Although the factory employs 200 workers, only 150 attended on Monday.\nInferences:\nI. Fifty workers did not attend on Monday.\nII. The absent workers were on strike.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 200 − 150 = 50. The reason for absence is not given.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Rahul said, 'I will go to the match only if it does not rain.'\nInferences:\nI. If it does not rain, Rahul will definitely go to the match.\nII. If it rains, Rahul will not go to the match.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 'Only if' makes no-rain necessary, not sufficient. II follows; I reverses the condition.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A bank's fixed deposit rate for senior citizens is 0.5 percentage points higher than the regular rate. The regular rate is 6.5%.\nInferences:\nI. Senior citizens get 7% on fixed deposits.\nII. Regular depositors get more than 6.5%.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 6.5 + 0.5 = 7%. II contradicts the given regular rate.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Five finalists of a quiz are from Tamil Nadu (3) and Kerala (2). The winner is from Kerala.\nInferences:\nI. The runner-up is from Tamil Nadu.\nII. The winner is not from Tamil Nadu.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. The winner is from Kerala, so not from Tamil Nadu. The runner-up's state is not given.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A train covers 360 km in 6 hours without stopping.\nInferences:\nI. Its average speed is 60 km/h.\nII. It runs at exactly 60 km/h throughout the journey.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 360 ÷ 6 = 60 average. An average does not mean constant speed.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The government has ordered all private schools to reserve 25% of entry-level seats for children from poor families. A school has 200 entry-level seats.\nInferences:\nI. The government will pay the school for those seats.\nII. The school must reserve 50 seats.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 25% of 200 = 50. Payment is not mentioned.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Many people in the town are unhappy with the new bus timetable, though some find it convenient.\nInferences:\nI. Not everyone in the town is unhappy with the timetable.\nII. The timetable should be withdrawn.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 'Some find it convenient' supports I. A recommendation is not an inference from the facts.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In five years the number of students in a college rose from 800 to 1,200, while the number of teachers rose from 40 to 50.\nInferences:\nI. Teachers' salaries have increased.\nII. The number of students per teacher has increased.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. The ratio went from 800/40 = 20 to 1200/50 = 24. Salaries are not mentioned.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Not all trains stopping at Erode go to Chennai.\nInferences:\nI. Some trains stopping at Erode do not go to Chennai.\nII. No train stopping at Erode goes to Chennai.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 'Not all' means at least some do not. It does not mean none.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A shop gave a 15% discount on a jacket marked at ₹2,000.\nInferences:\nI. The shop made a loss on the jacket.\nII. The customer paid ₹1,700.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 15% of 2,000 = 300, so price = ₹1,700. Cost price is not given.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Every employee of a firm who has completed five years of service is eligible for a loan. Some eligible employees have not applied.\nInferences:\nI. Some employees who have completed five years have not applied.\nII. Every eligible employee has completed five years of service.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. The passage says completion of five years leads to eligibility, not the reverse. Some eligible employees may not have five years, so neither I nor II is certain.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In a race, Arun finished before Balu and Balu before Chitra. Dinesh finished after Arun.\nInferences:\nI. Dinesh finished before Chitra.\nII. Arun finished before Chitra.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Arun < Balu < Chitra in finishing order gives II. Dinesh could be anywhere after Arun, so I is not certain.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: If the monsoon fails, the prices of pulses rise. Prices of pulses have risen this year.\nInferences:\nI. The monsoon failed this year.\nII. Prices would not have risen if the monsoon had not failed.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. The passage only says failure leads to a rise. Other causes may also raise prices, so neither inference is certain.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A survey of 1,000 commuters in Pune found that 80% prefer buses to cars.\nInferences:\nI. 80% of all commuters in Pune prefer buses.\nII. 800 of the surveyed commuters prefer buses.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. 80% of 1,000 = 800. The survey sample cannot be assumed to represent all commuters.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A factory's output rose by 20% in the first half of the year, and then fell by 20% of the new level in the second half.\nInferences:\nI. The output at the end of the year is the same as at the start.\nII. The output at the end of the year is lower than at the start.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Start 100 → 120 → 96. End is 4% lower, so II follows and I does not.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A library has 2,000 books. 60% are in English and the rest are in Tamil. One-fourth of the Tamil books are novels.\nInferences:\nI. The library has 500 Tamil novels.\nII. The library has 200 Tamil novels.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Only I can be inferred",
+        "Only II can be inferred",
+        "Both I and II can be inferred",
+        "Neither I nor II can be inferred"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "An inference is valid only if it follows directly from the passage, using no outside knowledge; extra claims, predictions and reversals are rejected. Tamil books = 40% of 2,000 = 800. One-fourth of 800 = 200. So only II follows.",
+      "shortcut": "Check each inference against the passage alone. Watch for reversals, 'only if' traps and claims about reasons or the future.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Coimbatore's textile mills use large quantities of cotton, most of which is sourced from farmers in Tamil Nadu and neighbouring states.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Cotton is used by the textile mills of Coimbatore.",
+        "All cotton in India comes from Tamil Nadu.",
+        "Coimbatore has no industry other than textiles.",
+        "Cotton farmers earn more than mill workers."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. The passage says the mills use cotton. The others are extreme or outside the passage.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The Kaveri originates in Karnataka and flows through Tamil Nadu before reaching the Bay of Bengal.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The Kaveri flows through at least two states.",
+        "The Kaveri is the longest river in India.",
+        "The Kaveri floods every year.",
+        "The Kaveri water is used only for irrigation."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. Karnataka and Tamil Nadu are named. The rest are not stated.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Because of the festival, all government offices in the district will remain closed on Monday and Tuesday.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Government offices in the district will be closed for two consecutive days.",
+        "Banks in the district will be closed on Monday.",
+        "Schools in the district will be closed all week.",
+        "The festival lasts for two days."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. Monday and Tuesday are consecutive. Banks, schools and festival length are not mentioned.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The number of vehicles registered in a city rose from 8 lakh to 12 lakh in ten years, while its road length increased by only 5%.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The number of vehicles grew faster than the road length.",
+        "Road accidents in the city increased.",
+        "The city's population rose by 50%.",
+        "The road length in the city decreased."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. Vehicles rose by 50% against 5% for roads. Accidents and population are not mentioned, and roads did not decrease.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Ravi studies for three hours every night and scores above 90% in all his tests.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Ravi studies at night.",
+        "Three hours of study is enough for anyone to score above 90%.",
+        "Ravi has no hobbies.",
+        "Ravi will top the class."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. Studying every night is stated. The others generalise or go beyond the passage.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A new fertiliser raised paddy yield on trial farms by 15%, but the trial lasted only one season.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The fertiliser raised paddy yield on the trial farms.",
+        "The fertiliser will raise yield by 15% in every season.",
+        "The fertiliser is cheaper than other fertilisers.",
+        "The fertiliser harms the soil."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. The trial result is stated. A guarantee for every season goes beyond one season, and cost and soil effects are not mentioned.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Most students who joined a coaching class in January had scored below 50% in an earlier test. After three months, the class average rose from 42% to 58%.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The class average improved by 16 percentage points.",
+        "Every student now scores above 58%.",
+        "Coaching was the only reason for the rise.",
+        "No student had scored below 50% earlier."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. 58 − 42 = 16. The other options are extreme or contradict the passage.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A tea estate in the Nilgiris employs 300 workers, two-thirds of whom are women.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The estate employs 200 women.",
+        "Women workers earn more than others.",
+        "Women workers work longer hours than others.",
+        "The estate employs 150 women."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. Two-thirds of 300 = 200. Pay and hours are not given, and 150 is wrong.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Unlike rice, millets need very little water. A farmer in a dry region switched from rice to millets.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The farmer's crop now needs less water than before.",
+        "The farmer's income has risen.",
+        "Millets cannot be grown in wet regions.",
+        "All farmers in dry regions grow millets."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. The passage compares water need. Income and other claims are not supported.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The central bank has raised the repo rate by 0.25 percentage points. Banks often pass on such increases to borrowers.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Interest rates on loans may rise.",
+        "Loan interest rates will definitely rise tomorrow.",
+        "Deposit rates will fall.",
+        "Inflation has fallen."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. 'Often pass on' supports 'may rise'. The other options are certain, or unrelated.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Delhi's air quality was 'severe' on Wednesday, so schools in the city were asked to hold classes online.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Poor air quality was the reason for shifting classes online.",
+        "Online classes improve air quality.",
+        "All schools in India shifted online.",
+        "Air quality will be severe on Thursday as well."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. 'So' links air quality to the decision. The rest are unsupported.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In a cricket tournament a team gets 2 points for a win and 1 for a tie. Team A has played 5 matches, with 3 wins and 1 tie.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Team A has at least 7 points.",
+        "Team A has exactly 8 points.",
+        "Team A has lost two matches.",
+        "Team A is leading the table."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. 3 × 2 + 1 = 7 from the known results; the fifth match can only add points. 8 points, two losses and the lead are not determined.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A bus company charges ₹2 per km for the first 20 km and ₹1.50 per km beyond 20 km.\nWhich of the following can be validly inferred?",
+      "options": [
+        "A 30 km journey costs ₹55.",
+        "A 30 km journey costs ₹60.",
+        "A 30 km journey costs ₹45.",
+        "A 30 km journey costs ₹50."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. 20 × 2 = 40 and 10 × 1.5 = 15, total ₹55.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A museum is closed on Mondays and on national holidays. 26 January 2026 fell on a Monday.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The museum was closed on 26 January 2026.",
+        "The museum is closed on every Tuesday.",
+        "The museum is open on national holidays.",
+        "The museum was closed all through January 2026."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. The passage says it is closed on Mondays. The others contradict or go beyond it.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In a survey of three towns, the literacy rate was highest in Town X, and Town Z had a lower rate than Town Y.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Town Z has the lowest literacy rate of the three.",
+        "Town Y has the highest literacy rate.",
+        "Town X and Town Z have equal rates.",
+        "Town Y and Town Z have equal rates."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. X is highest and Z is below Y, so the order is X, Y, Z. The others contradict this.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A cooperative society sold 4,000 litres of milk on Sunday, which was 25% more than on Saturday.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Saturday's sales were 3,200 litres.",
+        "Saturday's sales were 3,000 litres.",
+        "Saturday's sales were 5,000 litres.",
+        "Saturday's sales were 4,250 litres."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. Saturday × 1.25 = 4,000, so Saturday = 3,200 litres.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: The government says exports of textiles from Tiruppur rose by 12% in the year, though overall national exports fell by 3%.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Tiruppur's textile exports did better than overall national exports.",
+        "Tiruppur has the largest textile exports in India.",
+        "Textile exports from every Indian town rose.",
+        "National textile exports rose."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. A 12% rise against a 3% fall supports the first option. Size, other towns and national textile exports are not stated.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: Unless the dam gates are opened, the water level in the reservoir will cross the danger mark by evening. The gates were not opened till evening.\nWhich of the following can be validly inferred?",
+      "options": [
+        "The water level crossed the danger mark by evening.",
+        "The gates will be opened tomorrow.",
+        "The dam is unsafe.",
+        "Heavy rain caused the water level to rise."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. 'Unless' means the danger mark is crossed if the gates stay shut, and they did. The others are not stated.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: In a village, every family that owns a tractor also owns land.\nWhich of the following can be validly inferred?",
+      "options": [
+        "A family without land does not own a tractor.",
+        "Every family that owns land owns a tractor.",
+        "Some landless families own tractors.",
+        "All families in the village own land."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. The statement 'tractor, so land' implies 'no land, so no tractor'. The others reverse or contradict it.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Text: A shop sells pens at ₹10 each or 12 pens for ₹100.\nWhich of the following can be validly inferred?",
+      "options": [
+        "Buying 12 pens as a set costs less per pen than buying them one by one.",
+        "Each pen in a set costs ₹10.",
+        "Buying 12 pens one by one costs ₹100.",
+        "The shop makes a loss on sets."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A valid inference must be supported by the passage itself; extreme claims, outside facts, predictions and unrelated claims are rejected. The set price per pen is 100 ÷ 12 = about ₹8.33, below ₹10. Profit or loss is not given.",
+      "shortcut": "The right option stays closest to the passage. Reject options with 'all', 'always', 'will' or new facts.",
+      "subPattern": "inference-from-passage",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    }
+  ]
+}

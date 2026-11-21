@@ -1,0 +1,1039 @@
+{
+ "sets": [
+  {
+   "id": "di-line-graphs-s019",
+   "type": "line",
+   "title": "Sales of two-wheelers and cars by a dealer (in hundreds)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Sales figure (hundreds)",
+    "series": [
+     {
+      "name": "Two-wheelers",
+      "data": [
+       {
+        "label": "2016",
+        "value": 90
+       },
+       {
+        "label": "2017",
+        "value": 96
+       },
+       {
+        "label": "2018",
+        "value": 100
+       },
+       {
+        "label": "2019",
+        "value": 104
+       },
+       {
+        "label": "2020",
+        "value": 108
+       },
+       {
+        "label": "2021",
+        "value": 110
+       },
+       {
+        "label": "2022",
+        "value": 112
+       },
+       {
+        "label": "2023",
+        "value": 114
+       }
+      ]
+     },
+     {
+      "name": "Cars",
+      "data": [
+       {
+        "label": "2016",
+        "value": 60
+       },
+       {
+        "label": "2017",
+        "value": 72
+       },
+       {
+        "label": "2018",
+        "value": 86
+       },
+       {
+        "label": "2019",
+        "value": 100
+       },
+       {
+        "label": "2020",
+        "value": 118
+       },
+       {
+        "label": "2021",
+        "value": 132
+       },
+       {
+        "label": "2022",
+        "value": 144
+       },
+       {
+        "label": "2023",
+        "value": 150
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s020",
+   "type": "line",
+   "title": "Runs scored by two batters in eight matches (in runs)",
+   "chart": {
+    "xLabel": "Match",
+    "yLabel": "Run tally (runs)",
+    "series": [
+     {
+      "name": "Kohli",
+      "data": [
+       {
+        "label": "M1",
+        "value": 45
+       },
+       {
+        "label": "M2",
+        "value": 72
+       },
+       {
+        "label": "M3",
+        "value": 30
+       },
+       {
+        "label": "M4",
+        "value": 88
+       },
+       {
+        "label": "M5",
+        "value": 64
+       },
+       {
+        "label": "M6",
+        "value": 20
+       },
+       {
+        "label": "M7",
+        "value": 95
+       },
+       {
+        "label": "M8",
+        "value": 50
+       }
+      ]
+     },
+     {
+      "name": "Rohit",
+      "data": [
+       {
+        "label": "M1",
+        "value": 60
+       },
+       {
+        "label": "M2",
+        "value": 40
+       },
+       {
+        "label": "M3",
+        "value": 55
+       },
+       {
+        "label": "M4",
+        "value": 70
+       },
+       {
+        "label": "M5",
+        "value": 85
+       },
+       {
+        "label": "M6",
+        "value": 48
+       },
+       {
+        "label": "M7",
+        "value": 52
+       },
+       {
+        "label": "M8",
+        "value": 66
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s021",
+   "type": "line",
+   "title": "Retail price of rice and wheat per kg (in ₹)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Price (₹ per kg)",
+    "series": [
+     {
+      "name": "Rice",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 44
+       },
+       {
+        "label": "Feb",
+        "value": 46
+       },
+       {
+        "label": "Mar",
+        "value": 48
+       },
+       {
+        "label": "Apr",
+        "value": 53
+       },
+       {
+        "label": "May",
+        "value": 50
+       },
+       {
+        "label": "Jun",
+        "value": 47
+       },
+       {
+        "label": "Jul",
+        "value": 45
+       }
+      ]
+     },
+     {
+      "name": "Wheat",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 38
+       },
+       {
+        "label": "Feb",
+        "value": 41
+       },
+       {
+        "label": "Mar",
+        "value": 44
+       },
+       {
+        "label": "Apr",
+        "value": 52
+       },
+       {
+        "label": "May",
+        "value": 55
+       },
+       {
+        "label": "Jun",
+        "value": 58
+       },
+       {
+        "label": "Jul",
+        "value": 57
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s022",
+   "type": "line",
+   "title": "Online and showroom sales of a mobile brand (in thousand units)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Sales figure (thousand units)",
+    "series": [
+     {
+      "name": "Online",
+      "data": [
+       {
+        "label": "2017",
+        "value": 30
+       },
+       {
+        "label": "2018",
+        "value": 38
+       },
+       {
+        "label": "2019",
+        "value": 46
+       },
+       {
+        "label": "2020",
+        "value": 62
+       },
+       {
+        "label": "2021",
+        "value": 80
+       },
+       {
+        "label": "2022",
+        "value": 98
+       },
+       {
+        "label": "2023",
+        "value": 115
+       }
+      ]
+     },
+     {
+      "name": "Showroom",
+      "data": [
+       {
+        "label": "2017",
+        "value": 80
+       },
+       {
+        "label": "2018",
+        "value": 84
+       },
+       {
+        "label": "2019",
+        "value": 82
+       },
+       {
+        "label": "2020",
+        "value": 76
+       },
+       {
+        "label": "2021",
+        "value": 70
+       },
+       {
+        "label": "2022",
+        "value": 66
+       },
+       {
+        "label": "2023",
+        "value": 60
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s023",
+   "type": "line",
+   "title": "Population of two towns (in thousands)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Population (thousand)",
+    "series": [
+     {
+      "name": "Town X",
+      "data": [
+       {
+        "label": "2000",
+        "value": 90
+       },
+       {
+        "label": "2005",
+        "value": 98
+       },
+       {
+        "label": "2010",
+        "value": 105
+       },
+       {
+        "label": "2015",
+        "value": 110
+       },
+       {
+        "label": "2020",
+        "value": 114
+       },
+       {
+        "label": "2025",
+        "value": 117
+       },
+       {
+        "label": "2030",
+        "value": 119
+       },
+       {
+        "label": "2035",
+        "value": 120
+       }
+      ]
+     },
+     {
+      "name": "Town Y",
+      "data": [
+       {
+        "label": "2000",
+        "value": 40
+       },
+       {
+        "label": "2005",
+        "value": 55
+       },
+       {
+        "label": "2010",
+        "value": 72
+       },
+       {
+        "label": "2015",
+        "value": 90
+       },
+       {
+        "label": "2020",
+        "value": 108
+       },
+       {
+        "label": "2025",
+        "value": 126
+       },
+       {
+        "label": "2030",
+        "value": 144
+       },
+       {
+        "label": "2035",
+        "value": 160
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s024",
+   "type": "line",
+   "title": "Wickets taken by two bowlers per series (in number)",
+   "chart": {
+    "xLabel": "Series",
+    "yLabel": "Wicket tally (wickets)",
+    "series": [
+     {
+      "name": "Bumrah",
+      "data": [
+       {
+        "label": "S1",
+        "value": 12
+       },
+       {
+        "label": "S2",
+        "value": 18
+       },
+       {
+        "label": "S3",
+        "value": 15
+       },
+       {
+        "label": "S4",
+        "value": 22
+       },
+       {
+        "label": "S5",
+        "value": 17
+       },
+       {
+        "label": "S6",
+        "value": 25
+       },
+       {
+        "label": "S7",
+        "value": 20
+       }
+      ]
+     },
+     {
+      "name": "Ashwin",
+      "data": [
+       {
+        "label": "S1",
+        "value": 16
+       },
+       {
+        "label": "S2",
+        "value": 14
+       },
+       {
+        "label": "S3",
+        "value": 19
+       },
+       {
+        "label": "S4",
+        "value": 18
+       },
+       {
+        "label": "S5",
+        "value": 24
+       },
+       {
+        "label": "S6",
+        "value": 21
+       },
+       {
+        "label": "S7",
+        "value": 23
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "By how much does the sales figure of Two-wheelers differ from that of Cars in 2021 (in hundreds)?",
+   "options": [
+    "242",
+    "26",
+    "22",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2021: Two-wheelers = 110, Cars = 132. Difference = 22.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "What was the sales figure of Two-wheelers in 2023 (in hundreds)?",
+   "options": [
+    "150",
+    "122",
+    "114",
+    "106"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the Two-wheelers line at 2023: 114 hundreds.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "In which year was the gap between the sales figure of Two-wheelers and Cars the smallest?",
+   "options": [
+    "2022",
+    "2018",
+    "2016",
+    "2019"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: 2016: 30, 2017: 24, 2018: 14, 2019: 4, 2020: 10, 2021: 22, 2022: 32, 2023: 36. Smallest is 4 in 2019.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "For how many years was the sales figure of Two-wheelers greater than that of Cars?",
+   "options": [
+    "5",
+    "3",
+    "4",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two-wheelers > Cars in 4 of the 8 years.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "In the year in which the two lines are closest to each other, what is the combined sales figure of Two-wheelers and Cars (in hundreds)?",
+   "options": [
+    "4",
+    "264",
+    "204",
+    "218"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gaps: 30, 24, 14, 4, 10, 22, 32, 36. Closest is 2019 (gap 4). Combined = 104 + 100 = 204.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "In which match did the run tally of Kohli first exceed that of Rohit?",
+   "options": [
+    "M4",
+    "M3",
+    "M2",
+    "M5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kohli starts below Rohit. Comparing point by point, it first goes above in M2 (72 vs 40).",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "By how much does the run tally of Kohli differ from that of Rohit in M2 (in runs)?",
+   "options": [
+    "112",
+    "32",
+    "36",
+    "34"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "M2: Kohli = 72, Rohit = 40. Difference = 32.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "The line of Kohli and the line of Rohit intersect for the first time between which two consecutive matches?",
+   "options": [
+    "Between M1 and M2",
+    "Between M5 and M6",
+    "Between M4 and M5",
+    "Between M7 and M8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gap (Kohli - Rohit) changes sign from -15 in M1 to 32 in M2, so the lines cross in between.",
+   "shortcut": "A crossover happens where the sign of the difference between the two values flips.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "How many times do the lines of Kohli and Rohit cross each other over the period shown?",
+   "options": [
+    "7",
+    "6",
+    "5",
+    "8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gap (Kohli - Rohit) by match: -15, 32, -25, 18, -21, -28, 43, -16. The sign changes 6 time(s).",
+   "shortcut": "Count the number of sign changes in the difference.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "In the match in which the gap between the two lines is the largest, by what percent is the higher value above the lower? (Correct to one decimal place.)",
+   "options": [
+    "45.3%",
+    "43.0%",
+    "82.7%",
+    "88.5%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Widest gap is 43 in M7 (95 vs 52). Percent = 43/52 x 100 = 82.7%.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "By how much does the price of Rice differ from that of Wheat in May (in ₹ per kg)?",
+   "options": [
+    "105",
+    "9",
+    "6",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "May: Rice = 50, Wheat = 55. Difference = 5.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "What was the price of Wheat in Feb (in ₹ per kg)?",
+   "options": [
+    "41",
+    "46",
+    "44",
+    "38"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the Wheat line at Feb: 41 ₹ per kg.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "How many times do the lines of Rice and Wheat cross each other over the period shown?",
+   "options": [
+    "2",
+    "0",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gap (Rice - Wheat) by month: 6, 5, 4, 1, -5, -11, -12. The sign changes 1 time(s).",
+   "shortcut": "Count the number of sign changes in the difference.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "In which month was the gap between the price of Rice and Wheat the smallest?",
+   "options": [
+    "Apr",
+    "Mar",
+    "Jan",
+    "Jun"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gaps: Jan: 6, Feb: 5, Mar: 4, Apr: 1, May: 5, Jun: 11, Jul: 12. Smallest is 1 in Apr.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "Considering only the months in which Rice was above Wheat, what is the average gap (Rice minus Wheat) (in ₹ per kg)? (Correct to one decimal place.)",
+   "options": [
+    "6.3",
+    "4.0",
+    "16.0",
+    "4.3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps in those months: 6, 5, 4, 1. Average = 16/4 = 4.0.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "In which year did the sales figure of Online first exceed that of Showroom?",
+   "options": [
+    "2021",
+    "2022",
+    "2023",
+    "2020"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Online starts below Showroom. Comparing point by point, it first goes above in 2021 (80 vs 70).",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "In which year was the gap between the sales figure of Online and Showroom the smallest?",
+   "options": [
+    "2017",
+    "2021",
+    "2018",
+    "2020"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps: 2017: 50, 2018: 46, 2019: 36, 2020: 14, 2021: 10, 2022: 32, 2023: 55. Smallest is 10 in 2021.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "For how many years was the sales figure of Online greater than that of Showroom?",
+   "options": [
+    "4",
+    "2",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Online > Showroom in 3 of the 7 years.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "The line of Online and the line of Showroom intersect for the first time between which two consecutive years?",
+   "options": [
+    "Between 2020 and 2021",
+    "Between 2019 and 2020",
+    "Between 2022 and 2023",
+    "Between 2018 and 2019"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gap (Online - Showroom) changes sign from -14 in 2020 to 10 in 2021, so the lines cross in between.",
+   "shortcut": "A crossover happens where the sign of the difference between the two values flips.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "Taking only the years in which Online was above Showroom, what is the total of the gaps (Online minus Showroom) (in thousand units)?",
+   "options": [
+    "243",
+    "104",
+    "90",
+    "97"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps where Online is higher: 10, 32, 55. Total = 97.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "By how much does the population of Town X differ from that of Town Y in 2010 (in thousand)?",
+   "options": [
+    "177",
+    "33",
+    "37",
+    "35"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2010: Town X = 105, Town Y = 72. Difference = 33.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "In which year did the population of Town Y first exceed that of Town X?",
+   "options": [
+    "2010",
+    "2015",
+    "2025",
+    "2005"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Town Y starts below Town X. Comparing point by point, it first goes above in 2025 (126 vs 117).",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "The line of Town X and the line of Town Y intersect for the first time between which two consecutive years?",
+   "options": [
+    "Between 2015 and 2020",
+    "Between 2010 and 2015",
+    "Between 2020 and 2025",
+    "Between 2000 and 2005"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gap (Town X - Town Y) changes sign from 6 in 2020 to -9 in 2025, so the lines cross in between.",
+   "shortcut": "A crossover happens where the sign of the difference between the two values flips.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "How many times do the lines of Town X and Town Y cross each other over the period shown?",
+   "options": [
+    "2",
+    "0",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gap (Town X - Town Y) by year: 50, 43, 33, 20, 6, -9, -25, -40. The sign changes 1 time(s).",
+   "shortcut": "Count the number of sign changes in the difference.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "What is the average of the combined population of Town X and Town Y over only those years in which Town X exceeded Town Y (in thousand)? (Correct to one decimal place.)",
+   "options": [
+    "176.4",
+    "208.5",
+    "103.4",
+    "188.7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying years: 2000, 2005, 2010, 2015, 2020. Combined values: 130, 153, 177, 200, 222. Average = 176.4.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "In which series did the wicket tally of Bumrah first exceed that of Ashwin?",
+   "options": [
+    "S3",
+    "S2",
+    "S7",
+    "S5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Bumrah starts below Ashwin. Comparing point by point, it first goes above in S2 (18 vs 14).",
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "How many times do the lines of Bumrah and Ashwin cross each other over the period shown?",
+   "options": [
+    "7",
+    "6",
+    "5",
+    "8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gap (Bumrah - Ashwin) by series: -4, 4, -4, 4, -7, 4, -3. The sign changes 6 time(s).",
+   "shortcut": "Count the number of sign changes in the difference.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "In which series was the gap between the wicket tally of Bumrah and Ashwin the smallest?",
+   "options": [
+    "S6",
+    "S7",
+    "S1",
+    "S5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps: S1: 4, S2: 4, S3: 4, S4: 4, S5: 7, S6: 4, S7: 3. Smallest is 3 in S7.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "For how many series was the wicket tally of Bumrah greater than that of Ashwin?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bumrah > Ashwin in 3 of the 7 series.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "In the series in which the two lines are closest to each other, what is the combined wicket tally of Bumrah and Ashwin (in wickets)?",
+   "options": [
+    "3",
+    "49",
+    "46",
+    "43"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: 4, 4, 4, 4, 7, 4, 3. Closest is S7 (gap 3). Combined = 20 + 23 = 43.",
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s024"
+  }
+ ]
+}

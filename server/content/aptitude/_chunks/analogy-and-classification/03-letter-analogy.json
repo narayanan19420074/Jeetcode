@@ -1,0 +1,613 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "CAT : ECV :: DOG : ?",
+   "options": [
+    "FQI",
+    "GRJ",
+    "EPH",
+    "BME"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 2. CAT → ECV confirms it. Applying the same shift to DOG: D→F, O→Q, G→I. Answer: FQI.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "BAT : CBU :: RAM : ?",
+   "options": [
+    "SBN",
+    "TCO",
+    "RAM",
+    "QZL"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 1. BAT → CBU confirms it. Applying the same shift to RAM: R→S, A→B, M→N. Answer: SBN.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "MAP : LZO :: SUN : ?",
+   "options": [
+    "RTM",
+    "SUN",
+    "QSL",
+    "TVO"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted backward by 1. MAP → LZO confirms it. Applying the same shift to SUN: S→R, U→T, N→M. Answer: RTM.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "ABC : DEF :: PQR : ?",
+   "options": [
+    "STU",
+    "TUV",
+    "RST",
+    "MNO"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 3. ABC → DEF confirms it. Applying the same shift to PQR: P→S, Q→T, R→U. Answer: STU.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "RAIN : TCKP :: HAIL : ?",
+   "options": [
+    "JCKN",
+    "KDLO",
+    "IBJM",
+    "FYGJ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 2. RAIN → TCKP confirms it. Applying the same shift to HAIL: H→J, A→C, I→K, L→N. Answer: JCKN.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "ASK : EWO :: FIX : ?",
+   "options": [
+    "JMB",
+    "KNC",
+    "ILA",
+    "BET"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 4. ASK → EWO confirms it. Applying the same shift to FIX: F→J, I→M, X→B. Answer: JMB.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "TEA : RCY :: CUP : ?",
+   "options": [
+    "ASN",
+    "BTO",
+    "ZRM",
+    "EWR"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted backward by 2. TEA → RCY confirms it. Applying the same shift to CUP: C→A, U→S, P→N. Answer: ASN.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "AB : BC :: PQ : ?",
+   "options": [
+    "QR",
+    "RS",
+    "PQ",
+    "OP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 1. AB → BC confirms it. Applying the same shift to PQ: P→Q, Q→R. Answer: QR.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "MN : OP :: ST : ?",
+   "options": [
+    "UV",
+    "VW",
+    "TU",
+    "QR"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted forward by 2. MN → OP confirms it. Applying the same shift to ST: S→U, T→V. Answer: UV.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "BAD : YZW :: CAB : ?",
+   "options": [
+    "XZY",
+    "DBC",
+    "YZX",
+    "YAZ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter is replaced by its opposite letter (A↔Z, B↔Y, ... position p ↔ 27 − p). BAD → YZW confirms it. For CAB: C→X, A→Z, B→Y. Answer: XZY.",
+   "shortcut": "Opposite letters add up to 27 in position value: A+Z=27, B+Y=27, and so on.",
+   "subPattern": "letter-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "ACE : ZXV :: BDF : ?",
+   "options": [
+    "YWU",
+    "CEG",
+    "UWY",
+    "ZXV"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter is replaced by its opposite letter (A↔Z, B↔Y, ... position p ↔ 27 − p). ACE → ZXV confirms it. For BDF: B→Y, D→W, F→U. Answer: YWU.",
+   "shortcut": "Opposite letters add up to 27 in position value: A+Z=27, B+Y=27, and so on.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "DOG : WLT :: CAT : ?",
+   "options": [
+    "XZG",
+    "DBU",
+    "GZX",
+    "YAH"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter is replaced by its opposite letter (A↔Z, B↔Y, ... position p ↔ 27 − p). DOG → WLT confirms it. For CAT: C→X, A→Z, T→G. Answer: XZG.",
+   "shortcut": "Opposite letters add up to 27 in position value: A+Z=27, B+Y=27, and so on.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "MAN : NZM :: SIX : ?",
+   "options": [
+    "HRC",
+    "TJY",
+    "CRH",
+    "ISD"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter is replaced by its opposite letter (A↔Z, B↔Y, ... position p ↔ 27 − p). MAN → NZM confirms it. For SIX: S→H, I→R, X→C. Answer: HRC.",
+   "shortcut": "Opposite letters add up to 27 in position value: A+Z=27, B+Y=27, and so on.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "HOT : SLG :: PEN : ?",
+   "options": [
+    "KVM",
+    "QFO",
+    "MVK",
+    "LWN"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter is replaced by its opposite letter (A↔Z, B↔Y, ... position p ↔ 27 − p). HOT → SLG confirms it. For PEN: P→K, E→V, N→M. Answer: KVM.",
+   "shortcut": "Opposite letters add up to 27 in position value: A+Z=27, B+Y=27, and so on.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "CAT : DCW :: BUS : ?",
+   "options": [
+    "CWV",
+    "DXW",
+    "CVT",
+    "EWT"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: the letters are shifted by +1, +2, +3 in order. CAT → DCW confirms it. For BUS: B+1→C, U+2→W, S+3→V. Answer: CWV.",
+   "shortcut": "Compare letter by letter; the shifts change with position, so check each position separately.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "FAN : GCQ :: PEN : ?",
+   "options": [
+    "QGQ",
+    "RHR",
+    "QFO",
+    "SGO"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: the letters are shifted by +1, +2, +3 in order. FAN → GCQ confirms it. For PEN: P+1→Q, E+2→G, N+3→Q. Answer: QGQ.",
+   "shortcut": "Compare letter by letter; the shifts change with position, so check each position separately.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "BOX : DNZ :: JAR : ?",
+   "options": [
+    "LZT",
+    "MAU",
+    "LCT",
+    "HBP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: the letters are shifted by +2, -1, +2 in order. BOX → DNZ confirms it. For JAR: J+2→L, A-1→Z, R+2→T. Answer: LZT.",
+   "shortcut": "Compare letter by letter; the shifts change with position, so check each position separately.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "RAM : NBS :: SUN : ?",
+   "options": [
+    "OVT",
+    "TVO",
+    "NUS",
+    "PWU"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: reverse the word, then shift every letter by 1. RAM reversed is MAR, shifted gives NBS. For SUN: reversed NUS, shifted gives OVT. Answer: OVT.",
+   "shortcut": "Test the two operations separately on the first pair to find their order.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "LOG : IQN :: TEN : ?",
+   "options": [
+    "PGV",
+    "VGP",
+    "NET",
+    "QHW"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: reverse the word, then shift every letter by 2. LOG reversed is GOL, shifted gives IQN. For TEN: reversed NET, shifted gives PGV. Answer: PGV.",
+   "shortcut": "Test the two operations separately on the first pair to find their order.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "AC : EG :: IK : ?",
+   "options": [
+    "MO",
+    "LM",
+    "KM",
+    "MN"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter moves forward by 4. A→E, C→G. Applying to IK: I→M, K→O. Answer: MO.",
+   "shortcut": "Look at one letter: A to E is +4. Apply to both.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "BD : FH :: JL : ?",
+   "options": [
+    "NP",
+    "MO",
+    "LN",
+    "NO"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter moves forward by 4. B→F, D→H. For JL: J→N, L→P. Answer: NP.",
+   "shortcut": "Find the single shift from the first letter pair and apply it to both.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "STOP : PTOS :: DEAL : ?",
+   "options": [
+    "LEAD",
+    "EDAL",
+    "LAED",
+    "DAEL"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: the first and last letters are interchanged, the middle ones stay. STOP → PTOS. Applying to DEAL: swap D and L to get LEAD. Answer: LEAD.",
+   "shortcut": "Compare the end letters of the first pair; middle unchanged.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "TEAM : MEAT :: BARK : ?",
+   "options": [
+    "KARB",
+    "KRAB",
+    "BRAK",
+    "KABR"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: first and last letters are interchanged. TEAM → MEAT. For BARK: swap B and K to get KARB. Answer: KARB.",
+   "shortcut": "Spot which positions change: only the first and last.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "FOX : CLU :: HAT : ?",
+   "options": [
+    "EXQ",
+    "FYR",
+    "DWP",
+    "KDW"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter of the word is shifted backward by 3. FOX → CLU confirms it. Applying the same shift to HAT: H→E, A→X, T→Q. Answer: EXQ.",
+   "shortcut": "Write the letter positions (A=1 ... Z=26) under the letters, find the shift in the first pair, apply it to the second.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "AB : 3 :: CD : ?",
+   "options": [
+    "7",
+    "6",
+    "8",
+    "34"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: sum of the alphabetical positions. A(1)+B(2)=3. For CD: C(3)+D(4)=7. Answer: 7.",
+   "shortcut": "Convert letters to positions first.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "BD : 6 :: EG : ?",
+   "options": [
+    "12",
+    "11",
+    "13",
+    "10"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: sum of the alphabetical positions. B(2)+D(4)=6. For EG: E(5)+G(7)=12. Answer: 12.",
+   "shortcut": "Add the positions; do not multiply.",
+   "subPattern": "letter-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "CAT : 24 :: DOG : ?",
+   "options": [
+    "26",
+    "28",
+    "24",
+    "27"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: sum of the alphabetical positions. C(3)+A(1)+T(20)=24. For DOG: D(4)+O(15)+G(7)=26. Answer: 26.",
+   "shortcut": "Add the three positions.",
+   "subPattern": "letter-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "CAB : 312 :: BED : ?",
+   "options": [
+    "254",
+    "245",
+    "452",
+    "524"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: each letter is written as its alphabetical position, in the same order. C=3, A=1, B=2 gives 312. For BED: B=2, E=5, D=4 gives 254. Answer: 254.",
+   "shortcut": "Write the positions side by side, in the same order.",
+   "subPattern": "letter-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "ONE : QRK :: TWO : ?",
+   "options": [
+    "VAU",
+    "VYQ",
+    "UYR",
+    "ZAQ"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: letters are shifted by +2, +4, +6 in order. ONE → QRK. For TWO: T+2→V, W+4→A, O+6→U. Answer: VAU.",
+   "shortcut": "Check each position independently.",
+   "subPattern": "letter-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "WAX : ZDA :: ZOO : ?",
+   "options": [
+    "CRR",
+    "WLL",
+    "BQQ",
+    "CPP"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: every letter moves forward by 3, wrapping from Z back to A. WAX → ZDA (X→A by wrap). For ZOO: Z→C, O→R, O→R. Answer: CRR.",
+   "shortcut": "After Z comes A again.",
+   "subPattern": "letter-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PEN : LWN :: ART : ?",
+   "options": [
+    "AJH",
+    "ZIG",
+    "BSU",
+    "YHF"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: replace each letter by its opposite letter, then shift one step forward. PEN: opposites KVM, +1 gives LWN. For ART: opposites ZIG, +1 gives AJH. Answer: AJH.",
+   "shortcut": "Break the transformation into two steps and test each on the first pair.",
+   "subPattern": "letter-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "RAT : SZU :: BUS : ?",
+   "options": [
+    "CTT",
+    "CVT",
+    "AVR",
+    "CTR"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: letters shifted by +1, −1, +1. RAT → SZU. For BUS: B+1→C, U−1→T, S+1→T. Answer: CTT.",
+   "shortcut": "Position-wise comparison reveals the alternating pattern.",
+   "subPattern": "letter-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,840 @@
+{
+ "sets": [
+  {
+   "id": "di-mixed-charts-s007",
+   "type": "table",
+   "title": "Table: Tea production of a Nilgiri estate (lakh kg) and Line graph data: average auction price (₹ per kg), 2019 to 2024",
+   "table": {
+    "columns": [
+     "Year",
+     "Production (lakh kg) (Table)",
+     "Auction price (₹ per kg) (Line)"
+    ],
+    "rows": [
+     [
+      "2019",
+      40,
+      180
+     ],
+     [
+      "2020",
+      36,
+      200
+     ],
+     [
+      "2021",
+      45,
+      190
+     ],
+     [
+      "2022",
+      50,
+      210
+     ],
+     [
+      "2023",
+      48,
+      240
+     ],
+     [
+      "2024",
+      60,
+      225
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s008",
+   "type": "table",
+   "title": "Table: Milk sold by a Kolhapur cooperative (lakh litres) and Line graph data: selling price (₹ per litre)",
+   "table": {
+    "columns": [
+     "Year",
+     "Milk sales (lakh litres) (Table)",
+     "Selling price (₹ per litre) (Line)"
+    ],
+    "rows": [
+     [
+      "2018-19",
+      80,
+      36
+     ],
+     [
+      "2019-20",
+      84,
+      38
+     ],
+     [
+      "2020-21",
+      70,
+      40
+     ],
+     [
+      "2021-22",
+      90,
+      42
+     ],
+     [
+      "2022-23",
+      96,
+      45
+     ],
+     [
+      "2023-24",
+      100,
+      48
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s009",
+   "type": "table",
+   "title": "Table: Onions arriving at Lasalgaon market (lakh kg) and Line graph data: wholesale price (₹ per kg)",
+   "table": {
+    "columns": [
+     "Year",
+     "Arrivals (lakh kg) (Table)",
+     "Wholesale price (₹ per kg) (Line)"
+    ],
+    "rows": [
+     [
+      "2019",
+      120,
+      24
+     ],
+     [
+      "2020",
+      100,
+      40
+     ],
+     [
+      "2021",
+      140,
+      20
+     ],
+     [
+      "2022",
+      150,
+      16
+     ],
+     [
+      "2023",
+      110,
+      30
+     ],
+     [
+      "2024",
+      130,
+      28
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s010",
+   "type": "table",
+   "title": "Table: Rice sold by a Thanjavur mill (lakh kg) and Line graph data: price realised (₹ per kg)",
+   "table": {
+    "columns": [
+     "Year",
+     "Rice sold (lakh kg) (Table)",
+     "Price realised (₹ per kg) (Line)"
+    ],
+    "rows": [
+     [
+      "2018",
+      50,
+      30
+     ],
+     [
+      "2019",
+      56,
+      32
+     ],
+     [
+      "2020",
+      60,
+      35
+     ],
+     [
+      "2021",
+      54,
+      40
+     ],
+     [
+      "2022",
+      66,
+      38
+     ],
+     [
+      "2023",
+      70,
+      45
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s011",
+   "type": "table",
+   "title": "Table: Bricks supplied by a Hosur kiln (lakh pieces) and Line graph data: price (₹ per piece)",
+   "table": {
+    "columns": [
+     "Year",
+     "Bricks supplied (lakh pieces) (Table)",
+     "Price (₹ per piece) (Line)"
+    ],
+    "rows": [
+     [
+      "2019",
+      30,
+      6
+     ],
+     [
+      "2020",
+      24,
+      7
+     ],
+     [
+      "2021",
+      36,
+      6
+     ],
+     [
+      "2022",
+      42,
+      8
+     ],
+     [
+      "2023",
+      45,
+      9
+     ],
+     [
+      "2024",
+      54,
+      10
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s012",
+   "type": "table",
+   "title": "Table: Banana chips packed by a Trichy unit (lakh packets) and Line graph data: price per packet (₹)",
+   "table": {
+    "columns": [
+     "Year",
+     "Packets sold (lakh packets) (Table)",
+     "Price per packet (₹) (Line)"
+    ],
+    "rows": [
+     [
+      "2019-20",
+      20,
+      10
+     ],
+     [
+      "2020-21",
+      16,
+      10
+     ],
+     [
+      "2021-22",
+      25,
+      12
+     ],
+     [
+      "2022-23",
+      32,
+      15
+     ],
+     [
+      "2023-24",
+      36,
+      15
+     ],
+     [
+      "2024-25",
+      40,
+      20
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "By what percentage did the auction price rise from 2019 to 2024? (Correct to one decimal place.)",
+   "options": [
+    "20.0%",
+    "50.0%",
+    "25.0%",
+    "125.0%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rise = 225 − 180 = 45. Percentage = 45 ÷ 180 × 100 = 25.0%.",
+   "shortcut": "Change ÷ original × 100.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = production × auction price. What was the revenue in 2023? (in ₹ lakh)",
+   "options": [
+    "288",
+    "11520",
+    "5760",
+    "115200"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "48 lakh kg × ₹240 = ₹11520 lakh.",
+   "shortcut": "Lakh × rupees gives rupees in lakh directly.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = production × auction price. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revenues: [7200, 7200, 8550, 10500, 11520, 13500]. Average = 58470 ÷ 6 = 9745.0. Years above the average: 2022, 2023, 2024 = 3.",
+   "shortcut": "Compute the mean once and compare each product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = production × auction price. By what percentage did the revenue change from 2019 to 2024? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    "75.0%",
+    "46.7%",
+    "50.0%",
+    "87.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue 2019 = 40×180 = 7200; revenue 2024 = 60×225 = 13500. Change = 6300 ÷ 7200 × 100 = 87.5%.",
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "Revenue = production × auction price. Find the ratio of the revenue in the year of the highest auction price to the revenue in the year of the lowest auction price. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    "1.33",
+    "1.20",
+    "1.60",
+    "0.62"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Highest price in 2023: 48×240 = 11520. Lowest price in 2019: 40×180 = 7200. Ratio = 11520 ÷ 7200 = 1.60.",
+   "shortcut": "Pick the two years from the line first, then bring in the quantities from the table.",
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s007"
+  },
+  {
+   "questionText": "What is the average selling price over the 6 years? (₹ per litre, correct to one decimal place)",
+   "options": [
+    "86.7",
+    "41.5",
+    "3628.7",
+    "49.8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of prices = 249. Average = 249 ÷ 6 = 41.5.",
+   "shortcut": "Read the line points and take a simple mean.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "By what percentage did the selling price rise from 2018-19 to 2023-24? (Correct to one decimal place.)",
+   "options": [
+    "33.3%",
+    "25.0%",
+    "133.3%",
+    "36.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rise = 48 − 36 = 12. Percentage = 12 ÷ 36 × 100 = 33.3%.",
+   "shortcut": "Change ÷ original × 100.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = milk sales × selling price. In which year was the revenue the highest?",
+   "options": [
+    "2022-23",
+    "2021-22",
+    "2019-20",
+    "2023-24"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue (₹ lakh): 2018-19: 2880, 2019-20: 3192, 2020-21: 2800, 2021-22: 3780, 2022-23: 4320, 2023-24: 4800. Highest is 2023-24.",
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = milk sales × selling price. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    "4",
+    "2",
+    "3",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenues: [2880, 3192, 2800, 3780, 4320, 4800]. Average = 21772 ÷ 6 = 3628.7. Years above the average: 2021-22, 2022-23, 2023-24 = 3.",
+   "shortcut": "Compute the mean once and compare each product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = milk sales × selling price. The revenue of the first three years is what percentage of the total revenue of all six years? (Correct to one decimal place.)",
+   "options": [
+    "45.0%",
+    "40.7%",
+    "59.3%",
+    "68.8%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenues: [2880, 3192, 2800, 3780, 4320, 4800]. First three = 8872; total = 21772. Percentage = 40.7%.",
+   "shortcut": "Total revenue = sum of the six products; use it as the base.",
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s008"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. What was the revenue in 2021? (in ₹ lakh)",
+   "options": [
+    "2800",
+    "160",
+    "1400",
+    "28000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "140 lakh kg × ₹20 = ₹2800 lakh.",
+   "shortcut": "Lakh × rupees gives rupees in lakh directly.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "By what percentage did the wholesale price rise from 2019 to 2024? (Correct to one decimal place.)",
+   "options": [
+    "14.3%",
+    "8.3%",
+    "116.7%",
+    "16.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rise = 28 − 24 = 4. Percentage = 4 ÷ 24 × 100 = 16.7%.",
+   "shortcut": "Change ÷ original × 100.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. By what percentage did the revenue change from 2019 to 2024? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    "25.0%",
+    "20.9%",
+    "26.4%",
+    "8.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue 2019 = 120×24 = 2880; revenue 2024 = 130×28 = 3640. Change = 760 ÷ 2880 × 100 = 26.4%.",
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. In which year was the revenue the highest?",
+   "options": [
+    "2024",
+    "2020",
+    "2023",
+    "2019"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue (₹ lakh): 2019: 2880, 2020: 4000, 2021: 2800, 2022: 2400, 2023: 3300, 2024: 3640. Highest is 2020.",
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "Revenue = arrivals × wholesale price. Find the ratio of the revenue in the year of the highest wholesale price to the revenue in the year of the lowest wholesale price. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    "1.67",
+    "2.50",
+    "0.67",
+    "0.60"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest price in 2020: 100×40 = 4000. Lowest price in 2022: 150×16 = 2400. Ratio = 4000 ÷ 2400 = 1.67.",
+   "shortcut": "Pick the two years from the line first, then bring in the quantities from the table.",
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s009"
+  },
+  {
+   "questionText": "By what percentage did the price realised rise from 2018 to 2023? (Correct to one decimal place.)",
+   "options": [
+    "33.3%",
+    "40.0%",
+    "150.0%",
+    "50.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rise = 45 − 30 = 15. Percentage = 15 ÷ 30 × 100 = 50.0%.",
+   "shortcut": "Change ÷ original × 100.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. By what percentage did the revenue change from 2018 to 2023? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    "90.0%",
+    "52.4%",
+    "110.0%",
+    "40.0%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue 2018 = 50×30 = 1500; revenue 2023 = 70×45 = 3150. Change = 1650 ÷ 1500 × 100 = 110.0%.",
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. In which year was the revenue the highest?",
+   "options": [
+    "2022",
+    "2023",
+    "2021",
+    "2020"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue (₹ lakh): 2018: 1500, 2019: 1792, 2020: 2100, 2021: 2160, 2022: 2508, 2023: 3150. Highest is 2023.",
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revenues: [1500, 1792, 2100, 2160, 2508, 3150]. Average = 13210 ÷ 6 = 2201.7. Years above the average: 2022, 2023 = 2.",
+   "shortcut": "Compute the mean once and compare each product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "Revenue = rice sold × price realised. The revenue of the first three years is what percentage of the total revenue of all six years? (Correct to one decimal place.)",
+   "options": [
+    "46.6%",
+    "59.2%",
+    "69.0%",
+    "40.8%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenues: [1500, 1792, 2100, 2160, 2508, 3150]. First three = 5392; total = 13210. Percentage = 40.8%.",
+   "shortcut": "Total revenue = sum of the six products; use it as the base.",
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s010"
+  },
+  {
+   "questionText": "What is the average price over the 6 years? (₹ per piece, correct to one decimal place)",
+   "options": [
+    "38.5",
+    "307.5",
+    "7.7",
+    "9.2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of prices = 46. Average = 46 ÷ 6 = 7.7.",
+   "shortcut": "Read the line points and take a simple mean.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "In which year was the percentage increase in bricks supplied over the previous year the highest?",
+   "options": [
+    "2024",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Year-on-year % change: 2020 -20.0%, 2021 50.0%, 2022 16.7%, 2023 7.1%, 2024 20.0%. Highest is 2021.",
+   "shortcut": "Compare growth as % of the previous year, not the absolute jump.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = bricks supplied × price. By what percentage did the revenue change from 2019 to 2024? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    "200.0%",
+    "146.7%",
+    "66.7%",
+    "80.0%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revenue 2019 = 30×6 = 180; revenue 2024 = 54×10 = 540. Change = 360 ÷ 180 × 100 = 200.0%.",
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = bricks supplied × price. In which year was the revenue the highest?",
+   "options": [
+    "2023",
+    "2022",
+    "2021",
+    "2024"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Revenue (₹ lakh): 2019: 180, 2020: 168, 2021: 216, 2022: 336, 2023: 405, 2024: 540. Highest is 2024.",
+   "shortcut": "The year of highest price or highest quantity need not give the highest product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = bricks supplied × price. Find the ratio of the revenue in the year of the highest price to the revenue in the year of the lowest price. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    "1.67",
+    "1.80",
+    "3.00",
+    "0.33"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Highest price in 2024: 54×10 = 540. Lowest price in 2019: 30×6 = 180. Ratio = 540 ÷ 180 = 3.00.",
+   "shortcut": "Pick the two years from the line first, then bring in the quantities from the table.",
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s011"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. What was the revenue in 2024-25? (in ₹ lakh)",
+   "options": [
+    "60",
+    "800",
+    "400",
+    "8000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "40 lakh packets × ₹20 = ₹800 lakh.",
+   "shortcut": "Lakh × rupees gives rupees in lakh directly.",
+   "subPattern": "table-line",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. In how many of the 6 years was the revenue above the average revenue of all 6 years?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revenues: [200, 160, 300, 480, 540, 800]. Average = 2480 ÷ 6 = 413.3. Years above the average: 2022-23, 2023-24, 2024-25 = 3.",
+   "shortcut": "Compute the mean once and compare each product.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "In which year was the percentage increase in packets sold over the previous year the highest?",
+   "options": [
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2021-22"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Year-on-year % change: 2020-21 -20.0%, 2021-22 56.2%, 2022-23 28.0%, 2023-24 12.5%, 2024-25 11.1%. Highest is 2021-22.",
+   "shortcut": "Compare growth as % of the previous year, not the absolute jump.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. By what percentage did the revenue change from 2019-20 to 2024-25? (Correct to one decimal place; give the magnitude.)",
+   "options": [
+    "200.0%",
+    "75.0%",
+    "300.0%",
+    "100.0%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue 2019-20 = 20×10 = 200; revenue 2024-25 = 40×20 = 800. Change = 600 ÷ 200 × 100 = 300.0%.",
+   "shortcut": "Do not add the quantity and price growth rates; multiply the factors.",
+   "subPattern": "table-line",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s012"
+  },
+  {
+   "questionText": "Revenue = packets sold × price per packet. The revenue of the first three years is what percentage of the total revenue of all six years? (Correct to one decimal place.)",
+   "options": [
+    "36.1%",
+    "26.6%",
+    "73.4%",
+    "36.3%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenues: [200, 160, 300, 480, 540, 800]. First three = 660; total = 2480. Percentage = 26.6%.",
+   "shortcut": "Total revenue = sum of the six products; use it as the base.",
+   "subPattern": "table-line",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s012"
+  }
+ ]
+}

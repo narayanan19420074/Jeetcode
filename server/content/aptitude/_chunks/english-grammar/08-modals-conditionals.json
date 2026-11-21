@@ -1,0 +1,651 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "You ____ wear a helmet while riding a two-wheeler.",
+   "options": [
+    "may",
+    "might",
+    "used to",
+    "must"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Must' expresses a legal or strong obligation.",
+   "shortcut": "must = obligation.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ I come in, madam?",
+   "options": [
+    "May",
+    "Must",
+    "Shall",
+    "Ought"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'May' is used to ask for polite permission.",
+   "shortcut": "May I = permission.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ____ swim when she was five years old.",
+   "options": [
+    "can",
+    "could",
+    "may",
+    "must"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Could' is the past of 'can' for an ability in the past.",
+   "shortcut": "could = past ability.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If it rains tomorrow, we ____ the picnic.",
+   "options": [
+    "would cancel",
+    "cancelled",
+    "will cancel",
+    "had cancelled"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First conditional: if + present simple, will + base verb.",
+   "shortcut": "If + present, will + verb.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If I were you, I ____ accept the offer.",
+   "options": [
+    "will",
+    "can",
+    "shall",
+    "would"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Second conditional: if + past, would + base verb.",
+   "shortcut": "If + past, would.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If he had studied, he ____ the exam.",
+   "options": [
+    "would have passed",
+    "would pass",
+    "will pass",
+    "had passed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third conditional: if + past perfect, would have + past participle.",
+   "shortcut": "If + had pp, would have pp.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If water is heated to 100 degrees, it ____.",
+   "options": [
+    "boiled",
+    "boils",
+    "would boil",
+    "has boiling"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Zero conditional for general truths: if + present, present.",
+   "shortcut": "Truth = present, present.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "You ____ not smoke in a hospital.",
+   "options": [
+    "can",
+    "need",
+    "must",
+    "would"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Must not' expresses prohibition.",
+   "shortcut": "must not = forbidden.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It is not necessary to carry cash, so you ____ not carry it.",
+   "options": [
+    "must",
+    "would",
+    "shall",
+    "need"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Need not' expresses absence of necessity, matching the stem.",
+   "shortcut": "need not = no necessity.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ____ be at home; his car is outside.",
+   "options": [
+    "must",
+    "can",
+    "shall",
+    "need"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Must' expresses a strong logical deduction.",
+   "shortcut": "must = strong certainty.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It ____ rain this evening; the sky is cloudy.",
+   "options": [
+    "must",
+    "may",
+    "shall",
+    "need"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'May' expresses a possibility.",
+   "shortcut": "may = possibility.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "You ____ to respect your teachers.",
+   "options": [
+    "must",
+    "can",
+    "ought",
+    "will"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Ought' is always followed by 'to' and expresses moral duty.",
+   "shortcut": "ought + to.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I wish I ____ a bigger house.",
+   "options": [
+    "have",
+    "would have",
+    "will have",
+    "had"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After 'wish' for an unreal present, the past tense is used.",
+   "shortcut": "wish + past = present regret.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I wish I ____ the exam last year.",
+   "options": [
+    "had passed",
+    "passed",
+    "would pass",
+    "have passed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Wish' for an unreal past takes the past perfect.",
+   "shortcut": "wish + had pp = past regret.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If I ____ rich, I would help the poor.",
+   "options": [
+    "am",
+    "were",
+    "will be",
+    "would be"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In unreal conditions the subjunctive 'were' is used for all subjects.",
+   "shortcut": "If I were.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Unless you ____ hard, you will not succeed.",
+   "options": [
+    "will work",
+    "worked",
+    "work",
+    "are working"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'unless' the present simple is used for a future condition.",
+   "shortcut": "unless + present.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He suggested that she ____ a doctor.",
+   "options": [
+    "consults",
+    "consulted",
+    "would consult",
+    "consult"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After 'suggest that', the base form (subjunctive) is used.",
+   "shortcut": "suggest that + base verb.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ you please pass the salt?",
+   "options": [
+    "Could",
+    "Should",
+    "Would not",
+    "Must"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Could' is a polite request.",
+   "shortcut": "Could you = polite request.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "You ____ have told me earlier; now it is too late.",
+   "options": [
+    "would",
+    "should",
+    "can",
+    "may"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Should have + pp' expresses criticism of something not done.",
+   "shortcut": "should have = regret/advice in the past.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ____ have left already; the lights are off.",
+   "options": [
+    "should",
+    "need",
+    "must",
+    "would"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Must have + pp' expresses a strong deduction about the past.",
+   "shortcut": "must have = deduction.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ____ be sixty; he looks very young.",
+   "options": [
+    "must",
+    "should",
+    "would",
+    "cannot"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Cannot' expresses a strong impossibility.",
+   "shortcut": "cannot = impossible.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I ____ get up early when I was in school.",
+   "options": [
+    "used to",
+    "use to",
+    "am used to",
+    "would be"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Used to' denotes a past habit that no longer exists.",
+   "shortcut": "used to = past habit.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I am used to ____ up early.",
+   "options": [
+    "get",
+    "getting",
+    "got",
+    "have got"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Be used to' (accustomed) is followed by a gerund.",
+   "shortcut": "be used to + -ing.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If you ____ me, I would have helped you.",
+   "options": [
+    "asked",
+    "would ask",
+    "had asked",
+    "ask"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The result clause 'would have helped' needs the past perfect in the if-clause.",
+   "shortcut": "Third conditional.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I would rather ____ at home than go out.",
+   "options": [
+    "to stay",
+    "staying",
+    "stayed",
+    "stay"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Would rather' is followed by the bare infinitive.",
+   "shortcut": "would rather + base verb.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ____ not come yesterday because he was ill.",
+   "options": [
+    "could",
+    "can",
+    "may",
+    "must"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Could not' is the past of 'cannot' for inability.",
+   "shortcut": "could not = past inability.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ I help you with the luggage?",
+   "options": [
+    "Will",
+    "Shall",
+    "Would",
+    "Might"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Shall I' is used for offers with the first person.",
+   "shortcut": "Shall I = offer.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The students ____ submit the form by Friday.",
+   "options": [
+    "may",
+    "might",
+    "must",
+    "could"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An official obligation uses 'must'.",
+   "shortcut": "must = obligation.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If she ____ earlier, she would have caught the train.",
+   "options": [
+    "left",
+    "would leave",
+    "leaves",
+    "had left"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The result 'would have caught' requires the past perfect.",
+   "shortcut": "If + had pp.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It is time we ____ for the airport.",
+   "options": [
+    "left",
+    "leave",
+    "will leave",
+    "had leave"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'It is time + subject' takes the past form of the verb.",
+   "shortcut": "it is time + past.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He asked whether he ____ use my phone.",
+   "options": [
+    "can",
+    "could",
+    "shall",
+    "must"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In reported speech 'can' changes to 'could'.",
+   "shortcut": "can -> could.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If you heat ice, it ____.",
+   "options": [
+    "will melting",
+    "would melt",
+    "melts",
+    "melted"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A general truth takes the present simple in both clauses.",
+   "shortcut": "Zero conditional.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "You ____ better see a doctor about that cough.",
+   "options": [
+    "would",
+    "should",
+    "did",
+    "had"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Had better' gives strong advice and takes the base verb.",
+   "shortcut": "had better + base verb.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Were I the Prime Minister, I ____ reduce taxes.",
+   "options": [
+    "would",
+    "will",
+    "had",
+    "can"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inverted second conditional 'Were I' is followed by 'would'.",
+   "shortcut": "Were I = If I were.",
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

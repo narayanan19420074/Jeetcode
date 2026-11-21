@@ -1,0 +1,859 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: A ≤ D < S ≤ F. Which of the following is definitely true?",
+   "options": [
+    "A ≥ F",
+    "S ≤ D",
+    "A ≥ D",
+    "D < S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "F ≥ S > D ≥ A is already fixed, so A ≥ F is false.\nS > D is already fixed, so S ≤ D is false.\nNo chain settles A against D (it can be =, <), so A ≥ D is not certain.\nS > D gives D < S: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: U > E > B > T ≥ M. Which of the following is definitely true?",
+   "options": [
+    "U ≤ T",
+    "M = B",
+    "B ≥ E",
+    "E > B"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "U > E > B > T is already fixed, so U ≤ T is false.\nB > T ≥ M is already fixed, so M = B is false.\nE > B is already fixed, so B ≥ E is false.\nE > B gives E > B: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: X ≥ G > Y; G < N < T. Which of the following is definitely true?",
+   "options": [
+    "X > N",
+    "T < X",
+    "X < G",
+    "X ≥ Y"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles X against N (it can be =, >, <), so X > N is not certain.\nNo chain settles T against X (it can be =, >, <), so T < X is not certain.\nX ≥ G is already fixed, so X < G is false.\nX ≥ G > Y gives X ≥ Y: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: T < J < W; G = J ≤ E. Which of the following is definitely true?",
+   "options": [
+    "G < J",
+    "W < J",
+    "J = E",
+    "J < W"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "G = J is already fixed, so G < J is false.\nW > J is already fixed, so W < J is false.\nNo chain settles J against E (it can be =, <), so J = E is not certain.\nW > J gives J < W: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: U > S > D > X > V. Which of the following is definitely true?",
+   "options": [
+    "D < V",
+    "S ≤ D",
+    "V = X",
+    "V < X"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "D > X > V is already fixed, so D < V is false.\nS > D is already fixed, so S ≤ D is false.\nX > V is already fixed, so V = X is false.\nX > V gives V < X: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: U ≤ J ≤ N < F ≤ B. Which of the following is definitely true?",
+   "options": [
+    "B > F",
+    "B < N",
+    "U ≤ F",
+    "J > N"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No chain settles B against F (it can be =, >), so B > F is not certain.\nB ≥ F > N is already fixed, so B < N is false.\nF > N ≥ J ≥ U gives U ≤ F: true.\nN ≥ J is already fixed, so J > N is false.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V < R < X; Y < R < C. Which of the following is definitely true?",
+   "options": [
+    "V > Y",
+    "X ≤ C",
+    "Y > R",
+    "C > R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles V against Y (it can be =, >, <), so V > Y is not certain.\nNo chain settles X against C (it can be =, >, <), so X ≤ C is not certain.\nR > Y is already fixed, so Y > R is false.\nC > R gives C > R: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: T ≤ M < W ≤ G < E. Which of the following is definitely true?",
+   "options": [
+    "G > M",
+    "M = W",
+    "E < T",
+    "T = W"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "G ≥ W > M gives G > M: true.\nW > M is already fixed, so M = W is false.\nE > G ≥ W > M ≥ T is already fixed, so E < T is false.\nW > M ≥ T is already fixed, so T = W is false.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: M < Z = B ≤ V = N. Which of the following can never be true?",
+   "options": [
+    "N > B",
+    "M < Z",
+    "Z < V",
+    "B > Z"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles N against B (it can be =, >), so N > B is not certain.\nZ > M gives M < Z: true.\nNo chain settles Z against V (it can be =, <), so Z < V is not certain.\nZ = B is already fixed, so B > Z is false.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R < K < J = P < N. Which of the following can never be true?",
+   "options": [
+    "P < K",
+    "N ≥ K",
+    "P > R",
+    "P = J"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "P = J > K is already fixed, so P < K is false.\nN > P = J > K gives N ≥ K: true.\nP = J > K > R gives P > R: true.\nP = J and J = P, so P = J is true.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: C = A ≥ X ≥ U. Which of the following can never be true?",
+   "options": [
+    "A > X",
+    "X ≤ C",
+    "U > X",
+    "U < C"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No chain settles A against X (it can be =, >), so A > X is not certain.\nC = A ≥ X gives X ≤ C: true.\nX ≥ U is already fixed, so U > X is false.\nNo chain settles U against C (it can be =, <), so U < C is not certain.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R > A > W ≥ Y; C ≤ Y ≤ T. Which of the following can never be true?",
+   "options": [
+    "A > Y",
+    "Y > T",
+    "T ≤ R",
+    "R ≥ T"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A > W ≥ Y gives A > Y: true.\nT ≥ Y is already fixed, so Y > T is false.\nNo chain settles T against R (it can be =, >, <), so T ≤ R is not certain.\nNo chain settles R against T (it can be =, >, <), so R ≥ T is not certain.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P = Y < X; V ≤ P ≤ U. Which of the following can never be true?",
+   "options": [
+    "U = P",
+    "Y ≥ V",
+    "X < Y",
+    "P ≤ U"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No chain settles U against P (it can be =, >), so U = P is not certain.\nY = P ≥ V gives Y ≥ V: true.\nX > Y is already fixed, so X < Y is false.\nU ≥ P gives P ≤ U: true.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: F ≥ S ≥ U > K. Which of the following can never be true?",
+   "options": [
+    "U ≥ S",
+    "F > U",
+    "S < F",
+    "K > S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles U against S (it can be =, <), so U ≥ S is not certain.\nNo chain settles F against U (it can be =, >), so F > U is not certain.\nNo chain settles S against F (it can be =, <), so S < F is not certain.\nS ≥ U > K is already fixed, so K > S is false.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Z > U > R > N; F > G > N. Which of the following can never be true?",
+   "options": [
+    "G ≥ F",
+    "U ≤ F",
+    "Z ≥ F",
+    "U > N"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "F > G is already fixed, so G ≥ F is false.\nNo chain settles U against F (it can be =, >, <), so U ≤ F is not certain.\nNo chain settles Z against F (it can be =, >, <), so Z ≥ F is not certain.\nU > R > N gives U > N: true.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: F ≤ U ≤ D ≤ L. Which of the following can never be true?",
+   "options": [
+    "L > F",
+    "D ≤ U",
+    "U > L",
+    "U = L"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No chain settles L against F (it can be =, >), so L > F is not certain.\nNo chain settles D against U (it can be =, >), so D ≤ U is not certain.\nL ≥ D ≥ U is already fixed, so U > L is false.\nNo chain settles U against L (it can be =, <), so U = L is not certain.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: X > K ≥ M > W. Which of the following can never be true?",
+   "options": [
+    "K > W",
+    "X > K",
+    "X ≥ M",
+    "K = X"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "K ≥ M > W gives K > W: true.\nX > K gives X > K: true.\nX > K ≥ M gives X ≥ M: true.\nX > K is already fixed, so K = X is false.",
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P ≤ T < W ≤ N < S. Which of the following can possibly be true?",
+   "options": [
+    "N = S",
+    "N < P",
+    "W = N",
+    "T > S"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "S > N is already fixed, so N = S is false.\nN ≥ W > T ≥ P is already fixed, so N < P is false.\nNo chain settles W against N (it can be =, <), so W = N is not certain.\nS > N ≥ W > T is already fixed, so T > S is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: N < Y ≤ L < D < C. Which of the following can possibly be true?",
+   "options": [
+    "L < D",
+    "D = L",
+    "C = Y",
+    "N = D"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "D > L gives L < D: true.\nD > L is already fixed, so D = L is false.\nC > D > L ≥ Y is already fixed, so C = Y is false.\nD > L ≥ Y > N is already fixed, so N = D is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: E ≥ B > U > Y. Which of the following can possibly be true?",
+   "options": [
+    "B = Y",
+    "Y ≥ E",
+    "E = Y",
+    "E > B"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "B > U > Y is already fixed, so B = Y is false.\nE ≥ B > U > Y is already fixed, so Y ≥ E is false.\nE ≥ B > U > Y is already fixed, so E = Y is false.\nNo chain settles E against B (it can be =, >), so E > B is not certain.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: N = G > Z; Z < X < T. Which of the following can possibly be true?",
+   "options": [
+    "Z < N",
+    "Z ≥ N",
+    "G < Z",
+    "N < Z"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "N = G > Z gives Z < N: true.\nN = G > Z is already fixed, so Z ≥ N is false.\nG > Z is already fixed, so G < Z is false.\nN = G > Z is already fixed, so N < Z is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J < N < P < X = U. Which of the following can possibly be true?",
+   "options": [
+    "J > P",
+    "X > J",
+    "U > X",
+    "X ≤ P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P > N > J is already fixed, so J > P is false.\nX > P > N > J gives X > J: true.\nX = U is already fixed, so U > X is false.\nX > P is already fixed, so X ≤ P is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R < L < K = M. Which of the following can possibly be true?",
+   "options": [
+    "L < R",
+    "L < M",
+    "R ≥ M",
+    "K < L"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "L > R is already fixed, so L < R is false.\nM = K > L gives L < M: true.\nM = K > L > R is already fixed, so R ≥ M is false.\nK > L is already fixed, so K < L is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: S ≤ V < R ≤ Y. Which of the following can possibly be true?",
+   "options": [
+    "V ≥ R",
+    "Y < V",
+    "R < Y",
+    "S > R"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "R > V is already fixed, so V ≥ R is false.\nY ≥ R > V is already fixed, so Y < V is false.\nNo chain settles R against Y (it can be =, <), so R < Y is not certain.\nR > V ≥ S is already fixed, so S > R is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: W ≥ S > C ≥ V. Which of the following can possibly be true?",
+   "options": [
+    "V > C",
+    "V ≤ W",
+    "S > W",
+    "V = W"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "C ≥ V is already fixed, so V > C is false.\nW ≥ S > C ≥ V gives V ≤ W: true.\nW ≥ S is already fixed, so S > W is false.\nW ≥ S > C ≥ V is already fixed, so V = W is false.",
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R = A > N ≥ K. Which of the following may be true but is not definitely true?",
+   "options": [
+    "A ≥ K",
+    "N < K",
+    "A > R",
+    "N = K"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A > N ≥ K gives A ≥ K: true.\nN ≥ K is already fixed, so N < K is false.\nR = A is already fixed, so A > R is false.\nNo chain settles N against K (it can be =, >), so N = K is not certain.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J > P ≥ Z; R = J = B. Which of the following may be true but is not definitely true?",
+   "options": [
+    "Z > P",
+    "J > B",
+    "Z = P",
+    "J > Z"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "P ≥ Z is already fixed, so Z > P is false.\nB = J is already fixed, so J > B is false.\nNo chain settles Z against P (it can be =, <), so Z = P is not certain.\nJ > P ≥ Z gives J > Z: true.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D ≥ G ≥ W; W ≥ B = L. Which of the following may be true but is not definitely true?",
+   "options": [
+    "D ≥ G",
+    "G < W",
+    "G ≥ B",
+    "G = W"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "D ≥ G gives D ≥ G: true.\nG ≥ W is already fixed, so G < W is false.\nG ≥ W ≥ B gives G ≥ B: true.\nNo chain settles G against W (it can be =, >), so G = W is not certain.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J < D < H; N ≤ D < V. Which of the following may be true but is not definitely true?",
+   "options": [
+    "N = H",
+    "H > D",
+    "H < N",
+    "N = D"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "H > D ≥ N is already fixed, so N = H is false.\nH > D gives H > D: true.\nH > D ≥ N is already fixed, so H < N is false.\nNo chain settles N against D (it can be =, <), so N = D is not certain.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: N > R = Z; N > C > G. Which of the following may be true but is not definitely true?",
+   "options": [
+    "C ≤ N",
+    "Z < N",
+    "Z < R",
+    "G > Z"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "N > C gives C ≤ N: true.\nN > R = Z gives Z < N: true.\nZ = R is already fixed, so Z < R is false.\nNo chain settles G against Z (it can be =, >, <), so G > Z is not certain.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V < U ≤ Z < F. Which of the following may be true but is not definitely true?",
+   "options": [
+    "V ≤ F",
+    "U < Z",
+    "Z > F",
+    "Z < U"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "F > Z ≥ U > V gives V ≤ F: true.\nNo chain settles U against Z (it can be =, <), so U < Z is not certain.\nF > Z is already fixed, so Z > F is false.\nZ ≥ U is already fixed, so Z < U is false.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: A ≤ X < P < K; V < P < C. Which of the following may be true but is not definitely true?",
+   "options": [
+    "P = A",
+    "A > C",
+    "C ≤ P",
+    "K ≥ C"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "P > X ≥ A is already fixed, so P = A is false.\nC > P > X ≥ A is already fixed, so A > C is false.\nC > P is already fixed, so C ≤ P is false.\nNo chain settles K against C (it can be =, >, <), so K ≥ C is not certain.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: A > D > S > G; L > A ≥ V. Which of the following may be true but is not definitely true?",
+   "options": [
+    "V = A",
+    "D > A",
+    "L ≤ A",
+    "L < A"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No chain settles V against A (it can be =, <), so V = A is not certain.\nA > D is already fixed, so D > A is false.\nL > A is already fixed, so L ≤ A is false.\nL > A is already fixed, so L < A is false.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G = A < F < X ≤ J. Which of the following may be true but is not definitely true?",
+   "options": [
+    "J = X",
+    "A > X",
+    "F = G",
+    "X > G"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No chain settles J against X (it can be =, >), so J = X is not certain.\nX > F > A is already fixed, so A > X is false.\nF > A = G is already fixed, so F = G is false.\nX > F > A = G gives X > G: true.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D < H = W < Y; W < V ≤ T. Which of the following may be true but is not definitely true?",
+   "options": [
+    "T ≤ Y",
+    "V > D",
+    "Y ≥ W",
+    "V ≥ W"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No chain settles T against Y (it can be =, >, <), so T ≤ Y is not certain.\nV > W = H > D gives V > D: true.\nY > W gives Y ≥ W: true.\nV > W gives V ≥ W: true.",
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Z = D < R; X > H > D. Conclusions: I. H = Z  II. Z > D  III. X = D. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. H > D = Z is already fixed, so H = Z is false.\nII. D = Z is already fixed, so Z > D is false.\nIII. X > H > D is already fixed, so X = D is false.\nCount = 0: none of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P ≥ T > X > K; V < K < N. Conclusions: I. N ≤ P  II. K ≥ T  III. X ≤ K. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. No chain settles N against P (it can be =, >, <), so N ≤ P is not certain.\nII. T > X > K is already fixed, so K ≥ T is false.\nIII. X > K is already fixed, so X ≤ K is false.\nCount = 1: only one of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: L = F < V ≤ K. Conclusions: I. F < K  II. V ≥ L  III. K < F. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. K ≥ V > F gives F < K: true.\nII. V > F = L gives V ≥ L: true.\nIII. K ≥ V > F is already fixed, so K < F is false.\nCount = 2: only two of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: F ≥ X > U ≥ Y. Conclusions: I. U > Y  II. F > U  III. Y < X. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles U against Y (it can be =, >), so U > Y is not certain.\nII. F ≥ X > U gives F > U: true.\nIII. X > U ≥ Y gives Y < X: true.\nCount = 3: all three of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G < P > B < J. Conclusions: I. B = P  II. P = B  III. G < B. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. P > B is already fixed, so B = P is false.\nII. P > B is already fixed, so P = B is false.\nIII. No chain settles G against B (it can be =, >, <), so G < B is not certain.\nCount = 1: only one of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D ≥ M > V ≥ E; Z > B > V. Conclusions: I. B ≥ V  II. M < E  III. M ≥ D. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. B > V gives B ≥ V: true.\nII. M > V ≥ E is already fixed, so M < E is false.\nIII. No chain settles M against D (it can be =, <), so M ≥ D is not certain.\nCount = 2: only two of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: W ≤ T < Z < E. Conclusions: I. Z > E  II. W > T  III. T < W. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. E > Z is already fixed, so Z > E is false.\nII. T ≥ W is already fixed, so W > T is false.\nIII. T ≥ W is already fixed, so T < W is false.\nCount = 0: none of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: W > X ≥ Z; S ≤ A > X. Conclusions: I. S > W  II. S ≤ A  III. X > S. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles S against W (it can be =, >, <), so S > W is not certain.\nII. A ≥ S gives S ≤ A: true.\nIII. No chain settles X against S (it can be =, >, <), so X > S is not certain.\nCount = 3: all three of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols %, ★, #, &, ~ are used with the meanings given: 'P & Q' means 'P is either smaller than or equal to Q'; 'P % Q' means 'P is greater than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'; 'P ~ Q' means 'P is equal to Q'; 'P # Q' means 'P is smaller than Q'. Statements: B ~ R % A % Y % C. Which of the following can never be true?",
+   "options": [
+    "Y & A",
+    "R & B",
+    "A % R",
+    "R ★ A"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: B = R > A > Y > C.\nA > Y gives Y ≤ A: true.\nB = R gives R ≤ B: true.\nR > A is already fixed, so A > R is false.\nR > A gives R ≥ A: true.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols !, $, @, ©, % are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'; 'P $ Q' means 'P is either greater than or equal to Q'; 'P © Q' means 'P is not greater than Q'. Statements: N % K $ M; E $ N ! D. Which of the following may be true but is not definitely true?",
+   "options": [
+    "D © N",
+    "M ! N",
+    "E ! N",
+    "N ! D"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: N = K ≥ M; E ≥ N > D.\nN > D gives D ≤ N: true.\nN = K ≥ M is already fixed, so M > N is false.\nNo chain settles E against N (it can be =, >), so E > N is not certain.\nN > D gives N > D: true.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols !, &, ~, #, @ are used with the meanings given: 'P & Q' means 'P is either greater than or equal to Q'; 'P ~ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is greater than Q'; 'P @ Q' means 'P is equal to Q'; 'P # Q' means 'P is not greater than Q'. Statements: F ~ H ~ A # W; C ~ Z # F. Which of the following can possibly be true?",
+   "options": [
+    "W ! A",
+    "F ~ Z",
+    "C & Z",
+    "W ~ A"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: F < H < A ≤ W; C < Z ≤ F.\nNo chain settles W against A (it can be =, >), so W > A is not certain.\nF ≥ Z is already fixed, so F < Z is false.\nZ > C is already fixed, so C ≥ Z is false.\nW ≥ A is already fixed, so W < A is false.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

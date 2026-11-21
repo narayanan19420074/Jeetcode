@@ -1,0 +1,1115 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: Some boxes are not caps. All bridges are boxes.\nConclusions:\nI. All caps are bridges.\nII. Some caps are not bridges.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All caps are bridges does not follow: in a diagram where only these regions are occupied: an item that belongs to caps only, not to boxes or bridges; an item that belongs to boxes only, not to caps or bridges, the statements hold but this fails.\nII. Some caps are not bridges does not follow: in a diagram where only this region is occupied: an item that belongs to boxes only, not to caps or bridges, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All horns are belts. Some belts are roofs.\nConclusions:\nI. Some horns are belts.\nII. No horns are belts.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some horns are belts does not follow: in a diagram where only this region is occupied: an item that belongs to belts and roofs, not to horns, the statements hold but this fails.\nII. No horns are belts does not follow: in a diagram where only this region is occupied: an item that belongs to horns and belts and roofs, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some sweets are brushes. Some sweets are not tents.\nConclusions:\nI. Some tents are brushes.\nII. No tents are brushes.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some tents are brushes does not follow: in a diagram where only this region is occupied: an item that belongs to brushes and sweets, not to tents, the statements hold but this fails.\nII. No tents are brushes does not follow: in a diagram where only these regions are occupied: an item that belongs to brushes and sweets, not to tents; an item that belongs to brushes and tents, not to sweets, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some stones are not windows. Some windows are belts.\nConclusions:\nI. All belts are windows.\nII. Some belts are not windows.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All belts are windows does not follow: in a diagram where only these regions are occupied: an item that belongs to belts and windows, not to stones; an item that belongs to belts and stones, not to windows, the statements hold but this fails.\nII. Some belts are not windows does not follow: in a diagram where only these regions are occupied: an item that belongs to belts and windows, not to stones; an item that belongs to stones only, not to belts or windows, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All pens are ponds. No watches are ponds.\nConclusions:\nI. No pens are ponds.\nII. Some pens are ponds.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No pens are ponds does not follow: in a diagram where only this region is occupied: an item that belongs to pens and ponds, not to watches, the statements hold but this fails.\nII. Some pens are ponds does not follow: in a diagram where only this region is occupied: an item that belongs to ponds only, not to pens or watches, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All carrots are apples. No carrots are buses.\nConclusions:\nI. Some apples are buses.\nII. No buses are apples.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some apples are buses does not follow: in a diagram where only this region is occupied: an item that belongs to apples only, not to carrots or buses, the statements hold but this fails.\nII. No buses are apples does not follow: in a diagram where only this region is occupied: an item that belongs to apples and buses, not to carrots, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some seeds are balls. Some apples are balls.\nConclusions:\nI. No balls are apples.\nII. Some balls are not apples.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No balls are apples does not follow: in a diagram where only this region is occupied: an item that belongs to seeds and balls and apples, the statements hold but this fails.\nII. Some balls are not apples does not follow: in a diagram where only this region is occupied: an item that belongs to seeds and balls and apples, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All planets are tables. Some tables are flowers.\nConclusions:\nI. Some tables are planets.\nII. No tables are planets.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some tables are planets does not follow: in a diagram where only this region is occupied: an item that belongs to tables and flowers, not to planets, the statements hold but this fails.\nII. No tables are planets does not follow: in a diagram where only this region is occupied: an item that belongs to planets and tables and flowers, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No stones are poles. Some poles are not folders.\nConclusions:\nI. No folders are stones.\nII. Some folders are stones.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No folders are stones does not follow: in a diagram where only these regions are occupied: an item that belongs to poles only, not to stones or folders; an item that belongs to stones and folders, not to poles, the statements hold but this fails.\nII. Some folders are stones does not follow: in a diagram where only this region is occupied: an item that belongs to poles only, not to stones or folders, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No mirrors are boxes. All curtains are mirrors.\nConclusions:\nI. No mirrors are curtains.\nII. Some curtains are mirrors.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No mirrors are curtains does not follow: in a diagram where only this region is occupied: an item that belongs to curtains and mirrors, not to boxes, the statements hold but this fails.\nII. Some curtains are mirrors does not follow: in a diagram where only this region is occupied: an item that belongs to mirrors only, not to curtains or boxes, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some gates are laptops. Some laptops are combs.\nConclusions:\nI. Some gates are combs.\nII. No gates are combs.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some gates are combs does not follow: in a diagram where only these regions are occupied: an item that belongs to gates and laptops, not to combs; an item that belongs to laptops and combs, not to gates, the statements hold but this fails.\nII. No gates are combs does not follow: in a diagram where only this region is occupied: an item that belongs to gates and laptops and combs, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No stones are tables. All stones are teachers.\nConclusions:\nI. All tables are teachers.\nII. Some tables are not teachers.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tables are teachers does not follow: in a diagram where only this region is occupied: an item that belongs to tables only, not to stones or teachers, the statements hold but this fails.\nII. Some tables are not teachers does not follow: in a diagram where only this region is occupied: an item that belongs to teachers only, not to tables or stones, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All bulbs are notes. All notes are potatoes.\nConclusions:\nI. Some potatoes are not bulbs.\nII. Some potatoes are bulbs.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some potatoes are not bulbs does not follow: in a diagram where only this region is occupied: an item that belongs to bulbs and notes and potatoes, the statements hold but this fails.\nII. Some potatoes are bulbs does not follow: in a diagram where only this region is occupied: an item that belongs to potatoes only, not to bulbs or notes, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some birds are stones. Some rulers are birds.\nConclusions:\nI. All rulers are birds.\nII. No rulers are stones.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All rulers are birds does not follow: in a diagram where only these regions are occupied: an item that belongs to rulers only, not to stones or birds; an item that belongs to stones and birds and rulers, the statements hold but this fails.\nII. No rulers are stones does not follow: in a diagram where only this region is occupied: an item that belongs to stones and birds and rulers, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All notes are lemons. All notes are mats.\nConclusions:\nI. Some mats are not lemons.\nII. All mats are lemons.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some mats are not lemons does not follow: in a diagram where only this region is occupied: an item that belongs to lemons only, not to notes or mats, the statements hold but this fails.\nII. All mats are lemons does not follow: in a diagram where only this region is occupied: an item that belongs to mats only, not to lemons or notes, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some flowers are not erasers. No jugs are erasers.\nConclusions:\nI. No jugs are flowers.\nII. All jugs are flowers.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No jugs are flowers does not follow: in a diagram where only this region is occupied: an item that belongs to flowers and jugs, not to erasers, the statements hold but this fails.\nII. All jugs are flowers does not follow: in a diagram where only these regions are occupied: an item that belongs to flowers only, not to erasers or jugs; an item that belongs to jugs only, not to flowers or erasers, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some drums are not wires. Some cakes are not wires.\nConclusions:\nI. Some drums are cakes.\nII. No drums are cakes.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some drums are cakes does not follow: in a diagram where only these regions are occupied: an item that belongs to drums only, not to wires or cakes; an item that belongs to cakes only, not to drums or wires, the statements hold but this fails.\nII. No drums are cakes does not follow: in a diagram where only this region is occupied: an item that belongs to drums and cakes, not to wires, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No temples are balls. No temples are trucks.\nConclusions:\nI. Some trucks are not temples.\nII. All trucks are temples.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some trucks are not temples does not follow: in a diagram where only this region is occupied: an item that belongs to balls only, not to temples or trucks, the statements hold but this fails.\nII. All trucks are temples does not follow: in a diagram where only this region is occupied: an item that belongs to trucks only, not to balls or temples, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All birds are boats. No boats are pots.\nConclusions:\nI. Some birds are not boats.\nII. Some boats are not birds.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some birds are not boats does not follow: in a diagram where only this region is occupied: an item that belongs to boats only, not to birds or pots, the statements hold but this fails.\nII. Some boats are not birds does not follow: in a diagram where only this region is occupied: an item that belongs to birds and boats, not to pots, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All switches are plates. Some wheels are plates.\nConclusions:\nI. Some switches are not wheels.\nII. No switches are wheels.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some switches are not wheels does not follow: in a diagram where only this region is occupied: an item that belongs to wheels and plates, not to switches, the statements hold but this fails.\nII. No switches are wheels does not follow: in a diagram where only this region is occupied: an item that belongs to wheels and plates and switches, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No pencils are files. No files are leaves.\nConclusions:\nI. All files are pencils.\nII. No leaves are pencils.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All files are pencils does not follow: in a diagram where only this region is occupied: an item that belongs to files only, not to pencils or leaves, the statements hold but this fails.\nII. No leaves are pencils does not follow: in a diagram where only this region is occupied: an item that belongs to pencils and leaves, not to files, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some bridges are not diaries. Some mats are not bridges.\nConclusions:\nI. Some mats are not diaries.\nII. Some diaries are not mats.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some mats are not diaries does not follow: in a diagram where only these regions are occupied: an item that belongs to bridges only, not to mats or diaries; an item that belongs to mats and diaries, not to bridges, the statements hold but this fails.\nII. Some diaries are not mats does not follow: in a diagram where only these regions are occupied: an item that belongs to mats only, not to bridges or diaries; an item that belongs to bridges only, not to mats or diaries, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All watches are drums. Some planets are not drums.\nConclusions:\nI. Some planets are watches.\nII. Some drums are planets.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some planets are watches does not follow: in a diagram where only this region is occupied: an item that belongs to planets only, not to watches or drums, the statements hold but this fails.\nII. Some drums are planets does not follow: in a diagram where only this region is occupied: an item that belongs to planets only, not to watches or drums, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No chairs are flowers. Some chairs are sweets.\nConclusions:\nI. Some chairs are flowers.\nII. No flowers are sweets.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some chairs are flowers does not follow: in a diagram where only this region is occupied: an item that belongs to chairs and sweets, not to flowers, the statements hold but this fails.\nII. No flowers are sweets does not follow: in a diagram where only these regions are occupied: an item that belongs to flowers and sweets, not to chairs; an item that belongs to chairs and sweets, not to flowers, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some magnets are not apples. No grapes are magnets.\nConclusions:\nI. No apples are magnets.\nII. Some magnets are apples.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No apples are magnets does not follow: in a diagram where only these regions are occupied: an item that belongs to magnets only, not to apples or grapes; an item that belongs to apples and magnets, not to grapes, the statements hold but this fails.\nII. Some magnets are apples does not follow: in a diagram where only this region is occupied: an item that belongs to magnets only, not to apples or grapes, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some combs are not pans. All soaps are combs.\nConclusions:\nI. Some soaps are pans.\nII. Some combs are pans.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some soaps are pans does not follow: in a diagram where only this region is occupied: an item that belongs to combs only, not to pans or soaps, the statements hold but this fails.\nII. Some combs are pans does not follow: in a diagram where only this region is occupied: an item that belongs to combs only, not to pans or soaps, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some notes are horns. Some stars are notes.\nConclusions:\nI. All notes are stars.\nII. Some notes are not stars.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All notes are stars does not follow: in a diagram where only these regions are occupied: an item that belongs to stars and notes, not to horns; an item that belongs to notes and horns, not to stars, the statements hold but this fails.\nII. Some notes are not stars does not follow: in a diagram where only this region is occupied: an item that belongs to stars and notes and horns, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some blankets are not locks. No cups are locks.\nConclusions:\nI. No blankets are cups.\nII. Some blankets are cups.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No blankets are cups does not follow: in a diagram where only this region is occupied: an item that belongs to blankets and cups, not to locks, the statements hold but this fails.\nII. Some blankets are cups does not follow: in a diagram where only this region is occupied: an item that belongs to blankets only, not to locks or cups, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some shoes are not forks. All rockets are forks.\nConclusions:\nI. Some forks are not shoes.\nII. All forks are shoes.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some forks are not shoes does not follow: in a diagram where only this region is occupied: an item that belongs to shoes only, not to rockets or forks, the statements hold but this fails.\nII. All forks are shoes does not follow: in a diagram where only these regions are occupied: an item that belongs to forks only, not to rockets or shoes; an item that belongs to shoes only, not to rockets or forks, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All files are apples. No files are keys.\nConclusions:\nI. No apples are files.\nII. Some files are apples.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No apples are files does not follow: in a diagram where only this region is occupied: an item that belongs to apples and files, not to keys, the statements hold but this fails.\nII. Some files are apples does not follow: in a diagram where only this region is occupied: an item that belongs to apples only, not to files or keys, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some potatoes are not carpets. Some notes are carpets.\nConclusions:\nI. All notes are carpets.\nII. Some notes are not carpets.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All notes are carpets does not follow: in a diagram where only these regions are occupied: an item that belongs to potatoes and notes, not to carpets; an item that belongs to carpets and notes, not to potatoes, the statements hold but this fails.\nII. Some notes are not carpets does not follow: in a diagram where only these regions are occupied: an item that belongs to potatoes only, not to carpets or notes; an item that belongs to carpets and notes, not to potatoes, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No diaries are coins. Some coins are not gates.\nConclusions:\nI. Some diaries are not gates.\nII. No diaries are gates.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some diaries are not gates does not follow: in a diagram where only this region is occupied: an item that belongs to coins only, not to diaries or gates, the statements hold but this fails.\nII. No diaries are gates does not follow: in a diagram where only these regions are occupied: an item that belongs to coins only, not to diaries or gates; an item that belongs to diaries and gates, not to coins, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some windows are not soaps. No soaps are tomatoes.\nConclusions:\nI. All tomatoes are soaps.\nII. Some tomatoes are not soaps.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tomatoes are soaps does not follow: in a diagram where only this region is occupied: an item that belongs to tomatoes and windows, not to soaps, the statements hold but this fails.\nII. Some tomatoes are not soaps does not follow: in a diagram where only this region is occupied: an item that belongs to windows only, not to tomatoes or soaps, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All doctors are notes. No notes are blankets.\nConclusions:\nI. Some blankets are notes.\nII. All doctors are blankets.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some blankets are notes does not follow: in a diagram where only this region is occupied: an item that belongs to notes only, not to doctors or blankets, the statements hold but this fails.\nII. All doctors are blankets does not follow: in a diagram where only this region is occupied: an item that belongs to doctors and notes, not to blankets, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some rivers are not files. Some files are carrots.\nConclusions:\nI. All files are carrots.\nII. Some files are not carrots.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All files are carrots does not follow: in a diagram where only these regions are occupied: an item that belongs to files only, not to carrots or rivers; an item that belongs to carrots and files, not to rivers; an item that belongs to rivers only, not to carrots or files, the statements hold but this fails.\nII. Some files are not carrots does not follow: in a diagram where only these regions are occupied: an item that belongs to carrots and files, not to rivers; an item that belongs to rivers only, not to carrots or files, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No lemons are cycles. Some towels are cycles.\nConclusions:\nI. Some towels are not cycles.\nII. No cycles are towels.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some towels are not cycles does not follow: in a diagram where only this region is occupied: an item that belongs to towels and cycles, not to lemons, the statements hold but this fails.\nII. No cycles are towels does not follow: in a diagram where only this region is occupied: an item that belongs to towels and cycles, not to lemons, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some tractors are not spoons. Some tractors are not gates.\nConclusions:\nI. No tractors are spoons.\nII. All tractors are spoons.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No tractors are spoons does not follow: in a diagram where only these regions are occupied: an item that belongs to tractors only, not to spoons or gates; an item that belongs to spoons and tractors, not to gates, the statements hold but this fails.\nII. All tractors are spoons does not follow: in a diagram where only this region is occupied: an item that belongs to tractors only, not to spoons or gates, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some mats are not rockets. No rockets are folders.\nConclusions:\nI. Some folders are not mats.\nII. All folders are mats.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some folders are not mats does not follow: in a diagram where only this region is occupied: an item that belongs to mats only, not to folders or rockets, the statements hold but this fails.\nII. All folders are mats does not follow: in a diagram where only these regions are occupied: an item that belongs to folders only, not to rockets or mats; an item that belongs to mats only, not to folders or rockets, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some knives are not lamps. All lamps are locks.\nConclusions:\nI. Some knives are locks.\nII. No knives are locks.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some knives are locks does not follow: in a diagram where only this region is occupied: an item that belongs to knives only, not to lamps or locks, the statements hold but this fails.\nII. No knives are locks does not follow: in a diagram where only this region is occupied: an item that belongs to knives and locks, not to lamps, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some ponds are not jugs. Some seeds are jugs.\nConclusions:\nI. Some ponds are seeds.\nII. No seeds are ponds.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some ponds are seeds does not follow: in a diagram where only these regions are occupied: an item that belongs to ponds only, not to jugs or seeds; an item that belongs to jugs and seeds, not to ponds, the statements hold but this fails.\nII. No seeds are ponds does not follow: in a diagram where only these regions are occupied: an item that belongs to ponds and seeds, not to jugs; an item that belongs to jugs and seeds, not to ponds, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All cups are balls. All cups are curtains.\nConclusions:\nI. Some balls are not cups.\nII. Some balls are curtains.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some balls are not cups does not follow: in a diagram where only this region is occupied: an item that belongs to curtains only, not to balls or cups, the statements hold but this fails.\nII. Some balls are curtains does not follow: in a diagram where only this region is occupied: an item that belongs to balls only, not to cups or curtains, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some trucks are not buses. Some coins are not trucks.\nConclusions:\nI. No buses are trucks.\nII. Some buses are trucks.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No buses are trucks does not follow: in a diagram where only these regions are occupied: an item that belongs to trucks only, not to buses or coins; an item that belongs to buses and trucks, not to coins; an item that belongs to coins only, not to buses or trucks, the statements hold but this fails.\nII. Some buses are trucks does not follow: in a diagram where only these regions are occupied: an item that belongs to trucks only, not to buses or coins; an item that belongs to coins only, not to buses or trucks, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some letters are not temples. Some tunnels are not letters.\nConclusions:\nI. All tunnels are letters.\nII. No tunnels are temples.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tunnels are letters does not follow: in a diagram where only these regions are occupied: an item that belongs to letters only, not to temples or tunnels; an item that belongs to tunnels only, not to temples or letters, the statements hold but this fails.\nII. No tunnels are temples does not follow: in a diagram where only these regions are occupied: an item that belongs to letters only, not to temples or tunnels; an item that belongs to temples and tunnels, not to letters, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some ponds are not ships. All fans are ponds.\nConclusions:\nI. No fans are ships.\nII. Some fans are not ships.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No fans are ships does not follow: in a diagram where only these regions are occupied: an item that belongs to ponds only, not to ships or fans; an item that belongs to ships and ponds and fans, the statements hold but this fails.\nII. Some fans are not ships does not follow: in a diagram where only this region is occupied: an item that belongs to ponds only, not to ships or fans, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All ladders are spoons. Some spoons are leaves.\nConclusions:\nI. All ladders are leaves.\nII. No ladders are leaves.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All ladders are leaves does not follow: in a diagram where only these regions are occupied: an item that belongs to leaves and spoons, not to ladders; an item that belongs to spoons and ladders, not to leaves, the statements hold but this fails.\nII. No ladders are leaves does not follow: in a diagram where only this region is occupied: an item that belongs to leaves and spoons and ladders, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some rockets are stars. All temples are rockets.\nConclusions:\nI. Some temples are not stars.\nII. Some temples are stars.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Either conclusion I or II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some temples are not stars does not follow: in a diagram where only this region is occupied: an item that belongs to stars and rockets, not to temples, the statements hold but this fails.\nII. Some temples are stars does not follow: in a diagram where only this region is occupied: an item that belongs to stars and rockets, not to temples, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All stamps are watches. All pens are watches.\nConclusions:\nI. Some pens are stamps.\nII. No stamps are pens.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some pens are stamps does not follow: in a diagram where only this region is occupied: an item that belongs to watches only, not to stamps or pens, the statements hold but this fails.\nII. No stamps are pens does not follow: in a diagram where only this region is occupied: an item that belongs to stamps and watches and pens, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some spoons are not grapes. No chairs are spoons.\nConclusions:\nI. Some grapes are not spoons.\nII. All grapes are spoons.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some grapes are not spoons does not follow: in a diagram where only this region is occupied: an item that belongs to spoons only, not to chairs or grapes, the statements hold but this fails.\nII. All grapes are spoons does not follow: in a diagram where only these regions are occupied: an item that belongs to spoons only, not to chairs or grapes; an item that belongs to grapes only, not to chairs or spoons, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All coins are teachers. Some lamps are coins.\nConclusions:\nI. No coins are lamps.\nII. All teachers are coins.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No coins are lamps does not follow: in a diagram where only this region is occupied: an item that belongs to teachers and coins and lamps, the statements hold but this fails.\nII. All teachers are coins does not follow: in a diagram where only these regions are occupied: an item that belongs to teachers only, not to coins or lamps; an item that belongs to teachers and coins and lamps, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No stamps are tunnels. Some stamps are not chains.\nConclusions:\nI. All tunnels are chains.\nII. Some tunnels are not chains.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tunnels are chains does not follow: in a diagram where only these regions are occupied: an item that belongs to tunnels only, not to stamps or chains; an item that belongs to stamps only, not to tunnels or chains, the statements hold but this fails.\nII. Some tunnels are not chains does not follow: in a diagram where only this region is occupied: an item that belongs to stamps only, not to tunnels or chains, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some carpets are not diaries. Some carpets are lamps.\nConclusions:\nI. All diaries are lamps.\nII. Some diaries are not lamps.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All diaries are lamps does not follow: in a diagram where only these regions are occupied: an item that belongs to diaries only, not to carpets or lamps; an item that belongs to carpets and lamps, not to diaries, the statements hold but this fails.\nII. Some diaries are not lamps does not follow: in a diagram where only this region is occupied: an item that belongs to carpets and lamps, not to diaries, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All bridges are sweets. All sweets are boats.\nConclusions:\nI. All bridges are boats.\nII. No sweets are boats.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All bridges are boats follows: All bridges are sweets + All sweets are boats => All bridges are boats.\nII. No sweets are boats does not follow: in a diagram where only this region is occupied: an item that belongs to sweets and boats, not to bridges, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All bulbs are parks. Some lemons are not bulbs.\nConclusions:\nI. Some bulbs are parks.\nII. No bulbs are parks.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some bulbs are parks does not follow: in a diagram where only this region is occupied: an item that belongs to lemons only, not to parks or bulbs, the statements hold but this fails.\nII. No bulbs are parks does not follow: in a diagram where only these regions are occupied: an item that belongs to parks and bulbs, not to lemons; an item that belongs to lemons only, not to parks or bulbs, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some doctors are diaries. All doctors are knives.\nConclusions:\nI. All diaries are doctors.\nII. Some diaries are not doctors.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All diaries are doctors does not follow: in a diagram where only these regions are occupied: an item that belongs to diaries only, not to knives or doctors; an item that belongs to knives and doctors and diaries, the statements hold but this fails.\nII. Some diaries are not doctors does not follow: in a diagram where only this region is occupied: an item that belongs to knives and doctors and diaries, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No stones are signals. No signals are magnets.\nConclusions:\nI. Some stones are not magnets.\nII. No signals are stones.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some stones are not magnets does not follow: in a diagram where only this region is occupied: an item that belongs to signals only, not to stones or magnets, the statements hold but this fails.\nII. No signals are stones follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All tents are keys. Some keys are not markets.\nConclusions:\nI. Some markets are not keys.\nII. All markets are keys.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some markets are not keys does not follow: in a diagram where only this region is occupied: an item that belongs to keys only, not to tents or markets, the statements hold but this fails.\nII. All markets are keys does not follow: in a diagram where only these regions are occupied: an item that belongs to keys only, not to tents or markets; an item that belongs to markets only, not to tents or keys, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some rulers are not seeds. Some rulers are not trees.\nConclusions:\nI. Some seeds are trees.\nII. No seeds are trees.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some seeds are trees does not follow: in a diagram where only this region is occupied: an item that belongs to rulers only, not to seeds or trees, the statements hold but this fails.\nII. No seeds are trees does not follow: in a diagram where only these regions are occupied: an item that belongs to rulers only, not to seeds or trees; an item that belongs to seeds and trees, not to rulers, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All watches are combs. All pots are combs.\nConclusions:\nI. All watches are pots.\nII. Some pots are not watches.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Either conclusion I or II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All watches are pots does not follow: in a diagram where only this region is occupied: an item that belongs to watches and combs, not to pots, the statements hold but this fails.\nII. Some pots are not watches does not follow: in a diagram where only this region is occupied: an item that belongs to combs only, not to watches or pots, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All parks are seats. Some temples are not parks.\nConclusions:\nI. Some parks are temples.\nII. No temples are parks.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some parks are temples does not follow: in a diagram where only this region is occupied: an item that belongs to temples only, not to seats or parks, the statements hold but this fails.\nII. No temples are parks does not follow: in a diagram where only these regions are occupied: an item that belongs to temples only, not to seats or parks; an item that belongs to seats and parks and temples, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some bridges are not knives. No signals are bridges.\nConclusions:\nI. No knives are signals.\nII. Some knives are signals.\nWhich of the following is correct?",
+   "options": [
+    "Either conclusion I or II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No knives are signals does not follow: in a diagram where only these regions are occupied: an item that belongs to bridges only, not to signals or knives; an item that belongs to signals and knives, not to bridges, the statements hold but this fails.\nII. Some knives are signals does not follow: in a diagram where only this region is occupied: an item that belongs to bridges only, not to signals or knives, the statements hold but this fails.\nSince neither conclusion follows alone but at least one of them holds in every diagram (they cover all possibilities for this pair), the answer is 'Either I or II'.\nSo either I or II must be true.\nConvention used: 'Either I or II' is the answer only when neither conclusion follows on its own but, in every Venn diagram that fits the statements, at least one of the two is true; if one conclusion follows alone, the answer is 'Only' that one.",
+   "shortcut": "Complementary pairs: 'Some X are Y' with 'No X are Y', and 'All X are Y' with 'Some X are not Y'. If neither alone follows but they form such a pair, mark Either-or.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

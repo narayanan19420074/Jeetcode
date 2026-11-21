@@ -1,0 +1,905 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: HOT",
+   "options": [
+    "cold",
+    "bright",
+    "wet",
+    "heavy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hot: the opposite temperature; hot is very warm, cold is very low in temperature. So \"cold\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: GENEROUS",
+   "options": [
+    "kind",
+    "stingy",
+    "rich",
+    "polite"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Generous: giving freely; stingy means unwilling to give or spend. So \"stingy\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VICTORY",
+   "options": [
+    "triumph",
+    "success",
+    "defeat",
+    "celebration"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Victory: winning; the reverse is losing, i.e. defeat. So \"defeat\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EARLY",
+   "options": [
+    "soon",
+    "quick",
+    "prompt",
+    "late"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Early: before the expected time; the reverse is after it, i.e. late. So \"late\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TRUTH",
+   "options": [
+    "falsehood",
+    "fact",
+    "honesty",
+    "belief"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Truth: what is true; the reverse is what is untrue. So \"falsehood\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: STRONG",
+   "options": [
+    "mighty",
+    "weak",
+    "tall",
+    "hard"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Strong: having great physical power; weak lacks it. So \"weak\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LOVE",
+   "options": [
+    "affection",
+    "respect",
+    "hatred",
+    "desire"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Love: deep liking; hatred is intense dislike. So \"hatred\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ACCEPT",
+   "options": [
+    "receive",
+    "admit",
+    "welcome",
+    "reject"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Accept: to take what is offered; reject is to refuse it. So \"reject\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EXPAND",
+   "options": [
+    "shrink",
+    "grow",
+    "widen",
+    "stretch"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Expand: to become larger; shrink is to become smaller. So \"shrink\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CLEAN",
+   "options": [
+    "clear",
+    "dirty",
+    "neat",
+    "tidy"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Clean: free from dirt; dirty is the reverse. So \"dirty\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ARRIVE",
+   "options": [
+    "reach",
+    "enter",
+    "depart",
+    "appear"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arrive: to come to a place; depart is to leave it. So \"depart\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INCREASE",
+   "options": [
+    "rise",
+    "grow",
+    "add",
+    "decrease"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Increase: to become greater; decrease is to become less. So \"decrease\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: SAFE",
+   "options": [
+    "dangerous",
+    "secure",
+    "calm",
+    "quiet"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Safe: free from risk; dangerous is full of risk. So \"dangerous\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EMPTY",
+   "options": [
+    "vacant",
+    "full",
+    "hollow",
+    "bare"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Empty: containing nothing; full contains as much as possible. So \"full\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LAUGH",
+   "options": [
+    "smile",
+    "giggle",
+    "weep",
+    "cheer"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Laugh: to express joy aloud; weep is to cry in sorrow. So \"weep\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PERMANENT",
+   "options": [
+    "lasting",
+    "steady",
+    "fixed",
+    "temporary"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Permanent: lasting indefinitely; temporary lasts only a while. So \"temporary\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: OPTIMISTIC",
+   "options": [
+    "pessimistic",
+    "hopeful",
+    "cheerful",
+    "confident"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Optimistic: expecting good outcomes; pessimistic expects bad ones. So \"pessimistic\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: RIGID",
+   "options": [
+    "stiff",
+    "flexible",
+    "strict",
+    "firm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rigid: unable to bend or change; flexible can adapt. So \"flexible\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ARROGANT",
+   "options": [
+    "proud",
+    "rude",
+    "humble",
+    "bold"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arrogant: overly proud of oneself; humble has a modest view of oneself. So \"humble\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TRANSPARENT",
+   "options": [
+    "clear",
+    "thin",
+    "fragile",
+    "opaque"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Transparent: allowing light to pass through; opaque does not. So \"opaque\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VOLUNTARY",
+   "options": [
+    "compulsory",
+    "willing",
+    "free",
+    "casual"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Voluntary: done by choice; compulsory is forced or required. So \"compulsory\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PRAISE",
+   "options": [
+    "applaud",
+    "criticise",
+    "flatter",
+    "announce"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Praise: to express approval; criticise is to express disapproval. So \"criticise\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LETHARGIC",
+   "options": [
+    "sluggish",
+    "calm",
+    "energetic",
+    "weary"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lethargic: lacking energy; energetic is full of it. So \"energetic\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: GENUINE",
+   "options": [
+    "authentic",
+    "valuable",
+    "rare",
+    "counterfeit"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Genuine: real; counterfeit is a fake made to deceive. So \"counterfeit\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: BENEVOLENT",
+   "options": [
+    "malevolent",
+    "kind",
+    "wealthy",
+    "generous"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Benevolent: wishing good for others; malevolent wishes harm. So \"malevolent\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CONCORD",
+   "options": [
+    "harmony",
+    "discord",
+    "agreement",
+    "peace"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Concord: agreement and harmony; discord is disagreement. So \"discord\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INFLATE",
+   "options": [
+    "swell",
+    "expand",
+    "deflate",
+    "raise"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inflate: to fill with air or enlarge; deflate is to let air out. So \"deflate\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VERBOSE",
+   "options": [
+    "wordy",
+    "talkative",
+    "rude",
+    "concise"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Verbose: using too many words; concise uses just enough. So \"concise\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CRUDE",
+   "options": [
+    "refined",
+    "rough",
+    "natural",
+    "raw"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Crude: in a natural or unpolished state; refined is processed or polished. So \"refined\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: MANDATORY",
+   "options": [
+    "compulsory",
+    "optional",
+    "legal",
+    "urgent"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mandatory: required by rule; optional is left to choice. So \"optional\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VACANT",
+   "options": [
+    "empty",
+    "free",
+    "occupied",
+    "open"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Vacant: not in use; occupied is in use. So \"occupied\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TIMID",
+   "options": [
+    "shy",
+    "quiet",
+    "gentle",
+    "bold"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Timid: lacking courage; bold is confident and daring. So \"bold\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: DELIBERATE",
+   "options": [
+    "accidental",
+    "intentional",
+    "careful",
+    "planned"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Deliberate: done on purpose; accidental happens by chance. So \"accidental\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: FERTILE",
+   "options": [
+    "productive",
+    "barren",
+    "rich",
+    "green"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fertile: able to produce crops; barren cannot. So \"barren\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ENCOURAGE",
+   "options": [
+    "inspire",
+    "support",
+    "discourage",
+    "advise"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Encourage: to give hope or confidence; discourage removes it. So \"discourage\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: HASTEN",
+   "options": [
+    "rush",
+    "urge",
+    "quicken",
+    "delay"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hasten: to make something happen sooner; delay makes it later. So \"delay\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LAVISH",
+   "options": [
+    "frugal",
+    "generous",
+    "rich",
+    "grand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Lavish: spending or giving in great quantity; frugal is sparing. So \"frugal\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: RELEVANT",
+   "options": [
+    "related",
+    "irrelevant",
+    "important",
+    "useful"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Relevant: connected to the matter at hand; irrelevant is not. So \"irrelevant\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: SHALLOW",
+   "options": [
+    "narrow",
+    "flat",
+    "deep",
+    "thin"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shallow: of little depth; deep goes far down. So \"deep\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ASCEND",
+   "options": [
+    "climb",
+    "rise",
+    "travel",
+    "descend"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ascend: to go up; descend is to go down. So \"descend\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: MUNIFICENT",
+   "options": [
+    "miserly",
+    "generous",
+    "wealthy",
+    "noble"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Munificent: very generous in giving; miserly is hoarding and unwilling to give. So \"miserly\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LUCID",
+   "options": [
+    "clear",
+    "obscure",
+    "bright",
+    "brief"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lucid: easy to understand; obscure is hard to understand. So \"obscure\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: AUDACIOUS",
+   "options": [
+    "bold",
+    "rude",
+    "timid",
+    "clever"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Audacious: willing to take bold risks; timid shrinks from them. So \"timid\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: BENIGN",
+   "options": [
+    "kind",
+    "mild",
+    "harmless",
+    "malignant"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Benign: gentle or harmless in effect; malignant is harmful or deadly. So \"malignant\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TACITURN",
+   "options": [
+    "talkative",
+    "silent",
+    "grim",
+    "rude"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Taciturn: habitually saying little; talkative speaks a lot. So \"talkative\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INEPT",
+   "options": [
+    "clumsy",
+    "skilful",
+    "careless",
+    "foolish"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inept: lacking skill; skilful has it. So \"skilful\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: MAGNANIMOUS",
+   "options": [
+    "generous",
+    "noble",
+    "petty",
+    "ambitious"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Magnanimous: generous and forgiving in spirit; petty is small-minded. So \"petty\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INTREPID",
+   "options": [
+    "fearless",
+    "careless",
+    "adventurous",
+    "cowardly"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Intrepid: fearless and enduring; cowardly lacks courage. So \"cowardly\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: OBSCURE",
+   "options": [
+    "evident",
+    "hidden",
+    "vague",
+    "dim"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Obscure: not clearly seen or understood; evident is plainly visible. So \"evident\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PRODIGAL",
+   "options": [
+    "wasteful",
+    "thrifty",
+    "generous",
+    "careless"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Prodigal: spending recklessly; thrifty saves carefully. So \"thrifty\" is the antonym. The other options are synonyms or unrelated words.",
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

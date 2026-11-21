@@ -1,0 +1,1316 @@
+{
+ "sets": [
+  {
+   "id": "di-pie-charts-s041",
+   "type": "pie",
+   "title": "Waste collected by a corporation - total 2,000 tonnes (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Waste collected by a corporation",
+      "data": [
+       {
+        "label": "Glass",
+        "value": 34
+       },
+       {
+        "label": "Paper",
+        "value": 17
+       },
+       {
+        "label": "E-waste",
+        "value": 14
+       },
+       {
+        "label": "Plastic",
+        "value": 7
+       },
+       {
+        "label": "Metal",
+        "value": 28
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s042",
+   "type": "pie",
+   "title": "Exports of a Tiruppur garment cluster - total ₹ 20,000 lakh (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Exports of a Tiruppur garment cluster",
+      "data": [
+       {
+        "label": "Innerwear",
+        "value": 23
+       },
+       {
+        "label": "Kidswear",
+        "value": 5
+       },
+       {
+        "label": "T-shirts",
+        "value": 29
+       },
+       {
+        "label": "Others",
+        "value": 9
+       },
+       {
+        "label": "Nightwear",
+        "value": 34
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s043",
+   "type": "pie",
+   "title": "Complaints received by a consumer forum - total 800 complaints (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Complaints received by a consumer forum",
+      "data": [
+       {
+        "label": "Telecom",
+        "value": 26
+       },
+       {
+        "label": "Retail",
+        "value": 15
+       },
+       {
+        "label": "Housing",
+        "value": 28
+       },
+       {
+        "label": "Insurance",
+        "value": 7
+       },
+       {
+        "label": "Banking",
+        "value": 24
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s044",
+   "type": "pie",
+   "title": "Population of a taluk by occupation - total 5,00,000 persons (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Population of a taluk by occupation",
+      "data": [
+       {
+        "label": "Transport",
+        "value": 27
+       },
+       {
+        "label": "Trade",
+        "value": 31
+       },
+       {
+        "label": "Services",
+        "value": 16
+       },
+       {
+        "label": "Industry",
+        "value": 4
+       },
+       {
+        "label": "Unemployed",
+        "value": 13
+       },
+       {
+        "label": "Farming",
+        "value": 9
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s045",
+   "type": "pie",
+   "title": "Monthly sales of Happy Break snack stall - total ₹ 6,00,000 (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Monthly sales of Happy Break snack stall",
+      "data": [
+       {
+        "label": "Varkey",
+        "value": 20
+       },
+       {
+        "label": "Banana chips",
+        "value": 12
+       },
+       {
+        "label": "Sweets",
+        "value": 8
+       },
+       {
+        "label": "Mixture",
+        "value": 15
+       },
+       {
+        "label": "Murukku",
+        "value": 22
+       },
+       {
+        "label": "Peanut chikki",
+        "value": 23
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s046",
+   "type": "pie",
+   "title": "Expenditure on a wedding - total ₹ 10,00,000 (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Expenditure on a wedding",
+      "data": [
+       {
+        "label": "Photography",
+        "value": 26
+       },
+       {
+        "label": "Travel",
+        "value": 29
+       },
+       {
+        "label": "Decoration",
+        "value": 24
+       },
+       {
+        "label": "Jewellery",
+        "value": 6
+       },
+       {
+        "label": "Catering",
+        "value": 8
+       },
+       {
+        "label": "Clothes",
+        "value": 7
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s047",
+   "type": "pie",
+   "title": "Crop area of a district - total 12,000 hectares (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Crop area of a district",
+      "data": [
+       {
+        "label": "Pulses",
+        "value": 12
+       },
+       {
+        "label": "Paddy",
+        "value": 31
+       },
+       {
+        "label": "Groundnut",
+        "value": 6
+       },
+       {
+        "label": "Banana",
+        "value": 21
+       },
+       {
+        "label": "Cotton",
+        "value": 30
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s048",
+   "type": "pie",
+   "title": "Visitors to Ooty during a season - total 5,00,000 visitors (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Visitors to Ooty during a season",
+      "data": [
+       {
+        "label": "Botanical Garden",
+        "value": 17
+       },
+       {
+        "label": "Pykara",
+        "value": 8
+       },
+       {
+        "label": "Doddabetta",
+        "value": 21
+       },
+       {
+        "label": "Rose Garden",
+        "value": 22
+       },
+       {
+        "label": "Tea Factory",
+        "value": 32
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s049",
+   "type": "pie",
+   "title": "Employees of an IT company by department - total 8,000 employees (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Employees of an IT company by department",
+      "data": [
+       {
+        "label": "Research",
+        "value": 9
+       },
+       {
+        "label": "Support",
+        "value": 27
+       },
+       {
+        "label": "Sales",
+        "value": 18
+       },
+       {
+        "label": "Testing",
+        "value": 19
+       },
+       {
+        "label": "Admin",
+        "value": 16
+       },
+       {
+        "label": "Development",
+        "value": 11
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s050",
+   "type": "pie",
+   "title": "Medals won by a country in a sports meet - total 500 medals (sectors shown in percent)",
+   "chart": {
+    "series": [
+     {
+      "name": "Medals won by a country in a sports meet",
+      "data": [
+       {
+        "label": "Boxing",
+        "value": 10
+       },
+       {
+        "label": "Athletics",
+        "value": 6
+       },
+       {
+        "label": "Swimming",
+        "value": 9
+       },
+       {
+        "label": "Hockey",
+        "value": 22
+       },
+       {
+        "label": "Shooting",
+        "value": 25
+       },
+       {
+        "label": "Wrestling",
+        "value": 28
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the ratio of the share of Metal to the share of E-waste, in its simplest form?",
+   "options": [
+    "28:17",
+    "14:17",
+    "2:1",
+    "1:2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shares are 28 and 14. Ratio = 28 : 14 = 2:1 in lowest terms.",
+   "shortcut": "Divide both by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s041"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Glass to that for Paper in the given data?",
+   "options": [
+    "2:1",
+    "14:17",
+    "1:2",
+    "17:7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 34:17 = 2:1.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s041"
+  },
+  {
+   "questionText": "The sector for Metal is what percent of the sector for Glass? (Round to one decimal place.)",
+   "options": [
+    "121.4%",
+    "82.4%",
+    "6%",
+    "17.6%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(28/34) x 100 = 82.4%. So the required answer is 82.4%.",
+   "shortcut": "Smaller over larger, times 100.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s041"
+  },
+  {
+   "questionText": "What is the ratio of Plastic to all the other categories taken together, in simplest form?",
+   "options": [
+    "7:93",
+    "14:93",
+    "7:100",
+    "93:7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Plastic = 7%, others = 93%. Ratio = 7:93.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s041"
+  },
+  {
+   "questionText": "What is the ratio of the combined share of Glass and Metal to the combined share of E-waste and Paper, in simplest form?",
+   "options": [
+    "31:7",
+    "2:1",
+    "34:31",
+    "1:2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(Glass + Metal) = 62; (E-waste + Paper) = 31. Ratio = 2:1.",
+   "shortcut": "Add first, then take the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s041"
+  },
+  {
+   "questionText": "The sector for Others is how many times to the sector for Kidswear? Give the answer as a ratio X:Y in lowest terms where X is Others and Y is Kidswear.",
+   "options": [
+    "9:29",
+    "9:5",
+    "5:9",
+    "9:23"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "9:5 reduces to 9:5. So the required answer is 9:5.",
+   "shortcut": "Cancel the common factor of the two shares.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s042"
+  },
+  {
+   "questionText": "What is the ratio of Kidswear to all the other categories taken together, in simplest form?",
+   "options": [
+    "1:20",
+    "2:19",
+    "19:1",
+    "1:19"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kidswear = 5%, others = 95%. Ratio = 1:19.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s042"
+  },
+  {
+   "questionText": "What is the ratio of the combined share of T-shirts and Others to the combined share of Nightwear and Innerwear, in simplest form?",
+   "options": [
+    "2:3",
+    "29:57",
+    "19:17",
+    "3:2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(T-shirts + Others) = 38; (Nightwear + Innerwear) = 57. Ratio = 2:3.",
+   "shortcut": "Add first, then take the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s042"
+  },
+  {
+   "questionText": "What is the ratio of the shares of Others : T-shirts : Nightwear in simplest form?",
+   "options": [
+    "34:29:9",
+    "29:9:34",
+    "9:29:34",
+    "9:34:29"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shares = 9 : 29 : 34; dividing by their HCF gives 9:29:34.",
+   "shortcut": "Divide all three by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s042"
+  },
+  {
+   "questionText": "If the value for Others increases by 10% and that for Kidswear is unchanged, what will be the new ratio of Others to Kidswear, in simplest form?",
+   "options": [
+    "9:5",
+    "99:50",
+    "19:5",
+    "50:99"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New Others = 9 x 110/100 = 9.9 (in share units). Ratio with Kidswear (5) = 99:50.",
+   "shortcut": "Scale X by (100+r)/100 then re-form the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s042"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Telecom to that for Banking in the given data?",
+   "options": [
+    "24:7",
+    "7:6",
+    "12:13",
+    "13:12"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 26:24 = 13:12.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s043"
+  },
+  {
+   "questionText": "The sector for Retail is how many times to the sector for Insurance? Give the answer as a ratio X:Y in lowest terms where X is Retail and Y is Insurance.",
+   "options": [
+    "15:7",
+    "7:15",
+    "15:28",
+    "15:26"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "15:7 reduces to 15:7. So the required answer is 15:7.",
+   "shortcut": "Cancel the common factor of the two shares.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s043"
+  },
+  {
+   "questionText": "The sector for Insurance is what percent of the sector for Telecom? (Round to one decimal place.)",
+   "options": [
+    "19%",
+    "26.9%",
+    "371.4%",
+    "73.1%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(7/26) x 100 = 26.9%. So the required answer is 26.9%.",
+   "shortcut": "Smaller over larger, times 100.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s043"
+  },
+  {
+   "questionText": "What is the ratio of Retail to all the other categories taken together, in simplest form?",
+   "options": [
+    "3:20",
+    "17:3",
+    "3:17",
+    "6:17"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Retail = 15%, others = 85%. Ratio = 3:17.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s043"
+  },
+  {
+   "questionText": "Let P = ratio of Banking to Housing, and Q = ratio of Insurance to Telecom, each as a fraction of the form first/second. What is the ratio P : Q in simplest form?",
+   "options": [
+    "156:49",
+    "3:13",
+    "6:7",
+    "13:3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "P = 24/28, Q = 7/26. P:Q = (P/Q) = (24 x 26) : (28 x 7) = 156:49.",
+   "shortcut": "P:Q = (pX x pW):(pY x pZ).",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s043"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Unemployed to that for Farming in the given data?",
+   "options": [
+    "13:9",
+    "9:13",
+    "9:4",
+    "9:31"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 13:9 = 13:9.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s044"
+  },
+  {
+   "questionText": "What is the ratio of Unemployed to all the other categories taken together, in simplest form?",
+   "options": [
+    "13:100",
+    "13:87",
+    "87:13",
+    "26:87"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Unemployed = 13%, others = 87%. Ratio = 13:87.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s044"
+  },
+  {
+   "questionText": "If the value for Services is 80,000 persons, what is the value for Industry?",
+   "options": [
+    "40,000 persons",
+    "20,000 persons",
+    "1,00,000 persons",
+    "80,000 persons"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Industry:Services = 4:16. Value of Industry = 80,000 persons x 4/16 = 20,000 persons.",
+   "shortcut": "Use the ratio of shares: X = Y x (pX / pY).",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s044"
+  },
+  {
+   "questionText": "What is the ratio of the combined share of Industry and Transport to the combined share of Farming and Services, in simplest form?",
+   "options": [
+    "4:25",
+    "25:31",
+    "31:25",
+    "31:9"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(Industry + Transport) = 31; (Farming + Services) = 25. Ratio = 31:25.",
+   "shortcut": "Add first, then take the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s044"
+  },
+  {
+   "questionText": "If the value for Services increases by 20% and that for Trade is unchanged, what will be the new ratio of Services to Trade, in simplest form?",
+   "options": [
+    "36:31",
+    "16:31",
+    "155:96",
+    "96:155"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New Services = 16 x 120/100 = 19.2 (in share units). Ratio with Trade (31) = 96:155.",
+   "shortcut": "Scale X by (100+r)/100 then re-form the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s044"
+  },
+  {
+   "questionText": "What is the ratio of the largest sector to the smallest sector in simplest form?",
+   "options": [
+    "8:23",
+    "11:4",
+    "23:22",
+    "23:8"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Largest = Peanut chikki (23), smallest = Sweets (8). Ratio = 23:8.",
+   "shortcut": "Pick the extremes, then reduce.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s045"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Peanut chikki to that for Banana chips in the given data?",
+   "options": [
+    "4:5",
+    "12:23",
+    "23:12",
+    "23:20"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 23:12 = 23:12.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s045"
+  },
+  {
+   "questionText": "If the value for Varkey is ₹ 1,20,000, what is the value for Banana chips?",
+   "options": [
+    "₹ 1,20,000",
+    "₹ 1,44,000",
+    "₹ 1,92,000",
+    "₹ 72,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Banana chips:Varkey = 12:20. Value of Banana chips = ₹ 1,20,000 x 12/20 = ₹ 72,000.",
+   "shortcut": "Use the ratio of shares: X = Y x (pX / pY).",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s045"
+  },
+  {
+   "questionText": "What is the ratio of Mixture to all the other categories taken together, in simplest form?",
+   "options": [
+    "17:3",
+    "3:20",
+    "3:17",
+    "6:17"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Mixture = 15%, others = 85%. Ratio = 3:17.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s045"
+  },
+  {
+   "questionText": "Let P = ratio of Varkey to Sweets, and Q = ratio of Peanut chikki to Banana chips, each as a fraction of the form first/second. What is the ratio P : Q in simplest form?",
+   "options": [
+    "115:24",
+    "30:23",
+    "24:115",
+    "5:2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P = 20/8, Q = 23/12. P:Q = (P/Q) = (20 x 12) : (8 x 23) = 30:23.",
+   "shortcut": "P:Q = (pX x pW):(pY x pZ).",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s045"
+  },
+  {
+   "questionText": "The sector for Catering is how many times to the sector for Clothes? Give the answer as a ratio X:Y in lowest terms where X is Catering and Y is Clothes.",
+   "options": [
+    "8:7",
+    "4:13",
+    "8:29",
+    "7:8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "8:7 reduces to 8:7. So the required answer is 8:7.",
+   "shortcut": "Cancel the common factor of the two shares.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s046"
+  },
+  {
+   "questionText": "What is the ratio of Photography to all the other categories taken together, in simplest form?",
+   "options": [
+    "37:13",
+    "13:37",
+    "13:50",
+    "26:37"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Photography = 26%, others = 74%. Ratio = 13:37.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s046"
+  },
+  {
+   "questionText": "The sector for Clothes is what percent of the sector for Decoration? (Round to one decimal place.)",
+   "options": [
+    "29.2%",
+    "70.8%",
+    "17%",
+    "342.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(7/24) x 100 = 29.2%. So the required answer is 29.2%.",
+   "shortcut": "Smaller over larger, times 100.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s046"
+  },
+  {
+   "questionText": "What is the ratio of the shares of Jewellery : Clothes : Catering in simplest form?",
+   "options": [
+    "6:7:8",
+    "8:7:6",
+    "6:8:7",
+    "7:6:8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares = 6 : 7 : 8; dividing by their HCF gives 6:7:8.",
+   "shortcut": "Divide all three by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s046"
+  },
+  {
+   "questionText": "Let S be the combined share of Jewellery and Decoration, and let R be the share of Catering. What is the ratio of the difference |S - R| to the sum S + R, in simplest form?",
+   "options": [
+    "19:11",
+    "11:4",
+    "15:4",
+    "11:19"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "S = 30, R = 8. Difference = 22, sum = 38. Ratio = 11:19.",
+   "shortcut": "Compute difference and sum, then reduce.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s046"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Pulses to that for Groundnut in the given data?",
+   "options": [
+    "2:1",
+    "6:31",
+    "2:7",
+    "1:2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 12:6 = 2:1.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s047"
+  },
+  {
+   "questionText": "What is the ratio of the share of Pulses to the share of Banana, in its simplest form?",
+   "options": [
+    "7:10",
+    "12:31",
+    "4:7",
+    "7:4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shares are 12 and 21. Ratio = 12 : 21 = 4:7 in lowest terms.",
+   "shortcut": "Divide both by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s047"
+  },
+  {
+   "questionText": "What is the ratio of the shares of Groundnut : Paddy : Cotton in simplest form?",
+   "options": [
+    "6:31:30",
+    "31:6:30",
+    "6:30:31",
+    "30:31:6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares = 6 : 31 : 30; dividing by their HCF gives 6:31:30.",
+   "shortcut": "Divide all three by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s047"
+  },
+  {
+   "questionText": "What is the ratio of the combined share of Paddy and Banana to the combined share of Cotton and Groundnut, in simplest form?",
+   "options": [
+    "31:36",
+    "26:15",
+    "13:9",
+    "9:13"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(Paddy + Banana) = 52; (Cotton + Groundnut) = 36. Ratio = 13:9.",
+   "shortcut": "Add first, then take the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s047"
+  },
+  {
+   "questionText": "Let S be the combined share of Cotton and Paddy, and let R be the share of Pulses. What is the ratio of the difference |S - R| to the sum S + R, in simplest form?",
+   "options": [
+    "49:73",
+    "73:49",
+    "49:12",
+    "61:12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "S = 61, R = 12. Difference = 49, sum = 73. Ratio = 49:73.",
+   "shortcut": "Compute difference and sum, then reduce.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s047"
+  },
+  {
+   "questionText": "What is the ratio of the share of Doddabetta to the share of Tea Factory, in its simplest form?",
+   "options": [
+    "21:32",
+    "32:17",
+    "21:22",
+    "32:21"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares are 21 and 32. Ratio = 21 : 32 = 21:32 in lowest terms.",
+   "shortcut": "Divide both by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s048"
+  },
+  {
+   "questionText": "What is the ratio of Pykara to all the other categories taken together, in simplest form?",
+   "options": [
+    "23:2",
+    "2:25",
+    "2:23",
+    "4:23"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pykara = 8%, others = 92%. Ratio = 2:23.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s048"
+  },
+  {
+   "questionText": "If the value for Doddabetta is 1,05,000 visitors, what is the value for Pykara?",
+   "options": [
+    "40,000 visitors",
+    "1,45,000 visitors",
+    "80,000 visitors",
+    "1,05,000 visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pykara:Doddabetta = 8:21. Value of Pykara = 1,05,000 visitors x 8/21 = 40,000 visitors.",
+   "shortcut": "Use the ratio of shares: X = Y x (pX / pY).",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s048"
+  },
+  {
+   "questionText": "What is the ratio of the combined share of Pykara and Rose Garden to the combined share of Botanical Garden and Doddabetta, in simplest form?",
+   "options": [
+    "4:19",
+    "30:17",
+    "15:19",
+    "19:15"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(Pykara + Rose Garden) = 30; (Botanical Garden + Doddabetta) = 38. Ratio = 15:19.",
+   "shortcut": "Add first, then take the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s048"
+  },
+  {
+   "questionText": "Let S be the combined share of Pykara and Botanical Garden, and let R be the share of Tea Factory. What is the ratio of the difference |S - R| to the sum S + R, in simplest form?",
+   "options": [
+    "7:25",
+    "7:57",
+    "57:7",
+    "32:25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "S = 25, R = 32. Difference = 7, sum = 57. Ratio = 7:57.",
+   "shortcut": "Compute difference and sum, then reduce.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s048"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Admin to that for Sales in the given data?",
+   "options": [
+    "8:9",
+    "2:3",
+    "9:8",
+    "1:2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 16:18 = 8:9.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s049"
+  },
+  {
+   "questionText": "What is the ratio of the share of Research to the share of Sales, in its simplest form?",
+   "options": [
+    "9:16",
+    "2:1",
+    "1:2",
+    "18:11"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shares are 9 and 18. Ratio = 9 : 18 = 1:2 in lowest terms.",
+   "shortcut": "Divide both by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s049"
+  },
+  {
+   "questionText": "What is the ratio of the shares of Sales : Research : Testing in simplest form?",
+   "options": [
+    "9:18:19",
+    "18:19:9",
+    "19:9:18",
+    "18:9:19"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Shares = 18 : 9 : 19; dividing by their HCF gives 18:9:19.",
+   "shortcut": "Divide all three by their HCF.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s049"
+  },
+  {
+   "questionText": "The sector for Sales is what percent of the sector for Support? (Round to one decimal place.)",
+   "options": [
+    "33.3%",
+    "150%",
+    "66.7%",
+    "9%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(18/27) x 100 = 66.7%. So the required answer is 66.7%.",
+   "shortcut": "Smaller over larger, times 100.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s049"
+  },
+  {
+   "questionText": "If the value for Support increases by 50% and that for Testing is unchanged, what will be the new ratio of Support to Testing, in simplest form?",
+   "options": [
+    "77:19",
+    "81:38",
+    "27:19",
+    "38:81"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New Support = 27 x 150/100 = 40.5 (in share units). Ratio with Testing (19) = 81:38.",
+   "shortcut": "Scale X by (100+r)/100 then re-form the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s049"
+  },
+  {
+   "questionText": "What is the ratio of the actual quantity for Shooting to that for Hockey in the given data?",
+   "options": [
+    "22:25",
+    "25:6",
+    "25:22",
+    "22:9"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Since both are shares of the same total, quantity ratio = share ratio = 25:22 = 25:22.",
+   "shortcut": "Total cancels in a ratio of two sectors.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s050"
+  },
+  {
+   "questionText": "What is the ratio of Hockey to all the other categories taken together, in simplest form?",
+   "options": [
+    "22:39",
+    "39:11",
+    "11:50",
+    "11:39"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hockey = 22%, others = 78%. Ratio = 11:39.",
+   "shortcut": "Others = 100 minus the share.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s050"
+  },
+  {
+   "questionText": "The sector for Boxing is what percent of the sector for Hockey? (Round to one decimal place.)",
+   "options": [
+    "54.5%",
+    "12%",
+    "220%",
+    "45.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(10/22) x 100 = 45.5%. So the required answer is 45.5%.",
+   "shortcut": "Smaller over larger, times 100.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s050"
+  },
+  {
+   "questionText": "What is the ratio of the combined share of Swimming and Athletics to the combined share of Wrestling and Hockey, in simplest form?",
+   "options": [
+    "10:3",
+    "15:28",
+    "9:50",
+    "3:10"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(Swimming + Athletics) = 15; (Wrestling + Hockey) = 50. Ratio = 3:10.",
+   "shortcut": "Add first, then take the ratio.",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s050"
+  },
+  {
+   "questionText": "Let P = ratio of Wrestling to Swimming, and Q = ratio of Boxing to Hockey, each as a fraction of the form first/second. What is the ratio P : Q in simplest form?",
+   "options": [
+    "28:9",
+    "308:45",
+    "140:99",
+    "99:140"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P = 28/9, Q = 10/22. P:Q = (P/Q) = (28 x 22) : (9 x 10) = 308:45.",
+   "shortcut": "P:Q = (pX x pW):(pY x pZ).",
+   "subPattern": "ratio-between-sectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-pie-charts-s050"
+  }
+ ]
+}

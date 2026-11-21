@@ -1,0 +1,1115 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statement: All leaves are ponds.\nConclusion: Some mangoes are not leaves.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some mangoes are not ponds",
+    "All ponds are mangoes",
+    "No ponds are mangoes",
+    "Some ponds are not mangoes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some mangoes are not leaves is forced.\nAdding Some mangoes are not ponds: Some mangoes are not ponds + All leaves are ponds => Some mangoes are not leaves.\nCheck a wrong option, All ponds are mangoes: take only this region is occupied: an item that belongs to mangoes and ponds and leaves; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some biscuits are not jugs.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some biscuits are potatoes; No potatoes are jugs",
+    "Some potatoes are not biscuits; All potatoes are jugs",
+    "Some biscuits are potatoes; Some jugs are not potatoes",
+    "All biscuits are potatoes; Some jugs are potatoes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects biscuits and jugs through potatoes in the right way: Some biscuits are potatoes and No potatoes are jugs.\nDerivation: Some biscuits are potatoes + No potatoes are jugs => Some biscuits are not jugs.\nFor the pair 'Some potatoes are not biscuits; All potatoes are jugs', take only this region is occupied: an item that belongs to potatoes and jugs, not to biscuits: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some rockets are schools.\nConclusion: Some rockets are letters.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All schools are letters",
+    "Some schools are letters",
+    "No schools are letters",
+    "Some letters are not schools"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some rockets are letters is forced.\nAdding All schools are letters: Some rockets are schools + All schools are letters => Some rockets are letters.\nCheck a wrong option, Some schools are letters: take only these regions are occupied: an item that belongs to rockets and schools, not to letters; an item that belongs to schools and letters, not to rockets; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No grapes are gardens.\nConclusion: No grapes are tunnels.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All tunnels are gardens",
+    "Some gardens are not tunnels",
+    "No tunnels are gardens",
+    "All gardens are tunnels"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No grapes are tunnels is forced.\nAdding All tunnels are gardens: it holds in every diagram.\nCheck a wrong option, Some gardens are not tunnels: take only these regions are occupied: an item that belongs to gardens only, not to grapes or tunnels; an item that belongs to grapes and tunnels, not to gardens; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No coins are folders.\nConclusion: No rings are coins.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All rings are folders",
+    "Some rings are not folders",
+    "Some folders are not rings",
+    "No folders are rings"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No rings are coins is forced.\nAdding All rings are folders: All rings are folders + No folders are coins => No rings are coins.\nCheck a wrong option, Some rings are not folders: take only this region is occupied: an item that belongs to coins and rings, not to folders; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All keys are towels.\nConclusion: All keys are ponds.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All towels are ponds",
+    "Some towels are ponds",
+    "Some towels are not ponds",
+    "Some ponds are not towels"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that All keys are ponds is forced.\nAdding All towels are ponds: All keys are towels + All towels are ponds => All keys are ponds.\nCheck a wrong option, Some towels are ponds: take only these regions are occupied: an item that belongs to keys and towels, not to ponds; an item that belongs to towels and ponds, not to keys; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some doctors are not stones. All doctors are bulbs.\nConclusion: Some jugs are not stones.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All bulbs are jugs",
+    "Some jugs are bulbs",
+    "No bulbs are jugs",
+    "No jugs are bulbs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some jugs are not stones, the chain must run through all four groups; the only link that does it is: All bulbs are jugs.\nIt holds in every diagram that fits all three statements.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some jugs are bulbs: take only these regions are occupied: an item that belongs to doctors and bulbs, not to stones or jugs; an item that belongs to stones and bulbs and jugs, not to doctors.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No tunnels are leaves.\nConclusion: No combs are tunnels.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All combs are leaves",
+    "Some leaves are not combs",
+    "Some combs are not leaves",
+    "Some combs are leaves"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No combs are tunnels is forced.\nAdding All combs are leaves: All combs are leaves + No leaves are tunnels => No combs are tunnels.\nCheck a wrong option, Some leaves are not combs: take only these regions are occupied: an item that belongs to leaves only, not to combs or tunnels; an item that belongs to combs and tunnels, not to leaves; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All soaps are windows.\nConclusion: Some windows are not clocks.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some soaps are not clocks",
+    "Some clocks are not soaps",
+    "Some clocks are soaps",
+    "All clocks are soaps"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some windows are not clocks is forced.\nAdding Some soaps are not clocks: it holds in every diagram.\nCheck a wrong option, Some clocks are not soaps: take only this region is occupied: an item that belongs to clocks only, not to soaps or windows; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No brushes are biscuits.\nConclusion: No mangoes are brushes.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All mangoes are biscuits",
+    "No biscuits are mangoes",
+    "No mangoes are biscuits",
+    "Some mangoes are not biscuits"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No mangoes are brushes is forced.\nAdding All mangoes are biscuits: All mangoes are biscuits + No biscuits are brushes => No mangoes are brushes.\nCheck a wrong option, No biscuits are mangoes: take only this region is occupied: an item that belongs to mangoes and brushes, not to biscuits; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No files are ships.\nConclusion: No ships are kurtas.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All kurtas are files",
+    "Some kurtas are not files",
+    "No kurtas are files",
+    "All files are kurtas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No ships are kurtas is forced.\nAdding All kurtas are files: it holds in every diagram.\nCheck a wrong option, Some kurtas are not files: take only this region is occupied: an item that belongs to ships and kurtas, not to files; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some temples are cables.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some pens are cables; All pens are temples",
+    "No cables are pens; Some pens are temples",
+    "Some pens are not cables; Some temples are pens",
+    "Some pens are cables; No pens are temples"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects cables and temples through pens in the right way: Some pens are cables and All pens are temples.\nIt holds in every diagram.\nFor the pair 'No cables are pens; Some pens are temples', take only this region is occupied: an item that belongs to pens and temples, not to cables: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: No mats are rivers.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "No rivers are pillows; All mats are pillows",
+    "Some rivers are pillows; Some pillows are not mats",
+    "Some pillows are rivers; Some mats are pillows",
+    "No pillows are rivers; No pillows are mats"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects rivers and mats through pillows in the right way: No rivers are pillows and All mats are pillows.\nDerivation: All mats are pillows + No pillows are rivers => No mats are rivers.\nFor the pair 'Some rivers are pillows; Some pillows are not mats', take only these regions are occupied: an item that belongs to rivers and pillows, not to mats; an item that belongs to rivers and mats, not to pillows: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some trains are not sarees.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some rivers are trains; No rivers are sarees",
+    "No trains are rivers; Some rivers are not sarees",
+    "All rivers are trains; All rivers are sarees",
+    "Some rivers are not trains; Some rivers are sarees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects trains and sarees through rivers in the right way: Some rivers are trains and No rivers are sarees.\nDerivation: Some trains are rivers + No rivers are sarees => Some trains are not sarees.\nFor the pair 'No trains are rivers; Some rivers are not sarees', take only this region is occupied: an item that belongs to rivers only, not to trains or sarees: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: No banks are rockets.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "No rockets are stamps; All banks are stamps",
+    "Some rockets are not stamps; All stamps are banks",
+    "Some rockets are stamps; Some banks are stamps",
+    "No rockets are stamps; Some stamps are banks"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects rockets and banks through stamps in the right way: No rockets are stamps and All banks are stamps.\nDerivation: All banks are stamps + No stamps are rockets => No banks are rockets.\nFor the pair 'Some rockets are not stamps; All stamps are banks', take only this region is occupied: an item that belongs to rockets and banks, not to stamps: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some curtains are not bridges.\nConclusion: Some curtains are not pots.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All pots are bridges",
+    "Some bridges are pots",
+    "No bridges are pots",
+    "Some pots are bridges"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some curtains are not pots is forced.\nAdding All pots are bridges: Some curtains are not bridges + All pots are bridges => Some curtains are not pots.\nCheck a wrong option, Some bridges are pots: take only these regions are occupied: an item that belongs to pots and bridges, not to curtains; an item that belongs to pots and curtains, not to bridges; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some boxes are shops.\nConclusion: Some shops are trees.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All boxes are trees",
+    "No trees are boxes",
+    "Some boxes are not trees",
+    "Some trees are not boxes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some shops are trees is forced.\nAdding All boxes are trees: Some shops are boxes + All boxes are trees => Some shops are trees.\nCheck a wrong option, No trees are boxes: take only this region is occupied: an item that belongs to boxes and shops, not to trees; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No letters are teachers.\nConclusion: No temples are letters.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All temples are teachers",
+    "All teachers are temples",
+    "No temples are teachers",
+    "No teachers are temples"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No temples are letters is forced.\nAdding All temples are teachers: All temples are teachers + No teachers are letters => No temples are letters.\nCheck a wrong option, All teachers are temples: take only this region is occupied: an item that belongs to letters and temples, not to teachers; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some roads are not clouds.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some roads are not parks; All clouds are parks",
+    "All parks are roads; All clouds are parks",
+    "Some roads are parks; Some clouds are not parks",
+    "No parks are roads; No clouds are parks"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects roads and clouds through parks in the right way: Some roads are not parks and All clouds are parks.\nDerivation: Some roads are not parks + All clouds are parks => Some roads are not clouds.\nFor the pair 'All parks are roads; All clouds are parks', take only this region is occupied: an item that belongs to roads and parks and clouds: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some coins are hills.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All erasers are hills; Some erasers are coins",
+    "Some erasers are hills; Some erasers are coins",
+    "All erasers are hills; Some erasers are not coins",
+    "No erasers are hills; No coins are erasers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects hills and coins through erasers in the right way: All erasers are hills and Some erasers are coins.\nDerivation: Some coins are erasers + All erasers are hills => Some coins are hills.\nFor the pair 'Some erasers are hills; Some erasers are coins', take only these regions are occupied: an item that belongs to hills and erasers, not to coins; an item that belongs to erasers and coins, not to hills: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some poles are not stamps.\nConclusion: Some poles are not wheels.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All wheels are stamps",
+    "Some wheels are not stamps",
+    "Some stamps are wheels",
+    "Some wheels are stamps"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some poles are not wheels is forced.\nAdding All wheels are stamps: Some poles are not stamps + All wheels are stamps => Some poles are not wheels.\nCheck a wrong option, Some wheels are not stamps: take only this region is occupied: an item that belongs to wheels and poles, not to stamps; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some fans are not diaries.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some fans are walls; No diaries are walls",
+    "Some walls are fans; Some diaries are not walls",
+    "All fans are walls; Some walls are not diaries",
+    "All fans are walls; Some walls are diaries"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects fans and diaries through walls in the right way: Some fans are walls and No diaries are walls.\nDerivation: Some fans are walls + No walls are diaries => Some fans are not diaries.\nFor the pair 'Some walls are fans; Some diaries are not walls', take only these regions are occupied: an item that belongs to diaries only, not to fans or walls; an item that belongs to fans and walls and diaries: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No forks are peas.\nConclusion: No peas are roads.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All roads are forks",
+    "Some roads are forks",
+    "Some forks are not roads",
+    "Some roads are not forks"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No peas are roads is forced.\nAdding All roads are forks: it holds in every diagram.\nCheck a wrong option, Some roads are forks: take only these regions are occupied: an item that belongs to roads and forks, not to peas; an item that belongs to roads and peas, not to forks; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some notes are jugs.\nConclusion: Some balls are jugs.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All notes are balls",
+    "No balls are notes",
+    "Some balls are not notes",
+    "Some balls are notes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some balls are jugs is forced.\nAdding All notes are balls: it holds in every diagram.\nCheck a wrong option, No balls are notes: take only this region is occupied: an item that belongs to jugs and notes, not to balls; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No pans are schools. Some schools are diaries.\nConclusion: Some canals are not pans.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All diaries are canals",
+    "Some canals are not diaries",
+    "No diaries are canals",
+    "Some diaries are not canals"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some canals are not pans, the chain must run through all four groups; the only link that does it is: All diaries are canals.\nDerivation: Some canals are schools + No schools are pans => Some canals are not pans.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some canals are not diaries: take only these regions are occupied: an item that belongs to schools and diaries, not to pans or canals; an item that belongs to pans and canals, not to schools or diaries.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All books are towels. All towels are tunnels.\nConclusion: Some bricks are not books.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "Some bricks are not tunnels",
+    "Some bricks are tunnels",
+    "Some tunnels are bricks",
+    "No bricks are tunnels"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some bricks are not books, the chain must run through all four groups; the only link that does it is: Some bricks are not tunnels.\nDerivation: All books are towels + All towels are tunnels => All books are tunnels; Some bricks are not tunnels + All books are tunnels => Some bricks are not books.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some bricks are tunnels: take only this region is occupied: an item that belongs to books and towels and tunnels and bricks.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No jugs are shoes.\nConclusion: No folders are jugs.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All folders are shoes",
+    "Some shoes are not folders",
+    "All shoes are folders",
+    "Some folders are shoes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No folders are jugs is forced.\nAdding All folders are shoes: All folders are shoes + No shoes are jugs => No folders are jugs.\nCheck a wrong option, Some shoes are not folders: take only these regions are occupied: an item that belongs to shoes only, not to folders or jugs; an item that belongs to folders and jugs, not to shoes; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: All flowers are stars.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All gates are stars; All flowers are gates",
+    "Some gates are not stars; No gates are flowers",
+    "No stars are gates; Some gates are flowers",
+    "Some gates are not stars; All flowers are gates"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects stars and flowers through gates in the right way: All gates are stars and All flowers are gates.\nDerivation: All flowers are gates + All gates are stars => All flowers are stars.\nFor the pair 'Some gates are not stars; No gates are flowers', take only these regions are occupied: an item that belongs to gates only, not to stars or flowers; an item that belongs to flowers only, not to stars or gates: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No onions are mats.\nConclusion: No mats are trucks.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All trucks are onions",
+    "Some onions are trucks",
+    "No onions are trucks",
+    "Some trucks are not onions"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No mats are trucks is forced.\nAdding All trucks are onions: it holds in every diagram.\nCheck a wrong option, Some onions are trucks: take only these regions are occupied: an item that belongs to trucks and onions, not to mats; an item that belongs to trucks and mats, not to onions; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: All trains are knives.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All trains are sarees; All sarees are knives",
+    "No trains are sarees; All knives are sarees",
+    "Some sarees are not trains; Some sarees are knives",
+    "Some trains are not sarees; Some sarees are not knives"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects trains and knives through sarees in the right way: All trains are sarees and All sarees are knives.\nDerivation: All trains are sarees + All sarees are knives => All trains are knives.\nFor the pair 'No trains are sarees; All knives are sarees', take only this region is occupied: an item that belongs to trains only, not to sarees or knives: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All kurtas are buses. No cycles are buses.\nConclusion: No kurtas are bridges.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All bridges are cycles",
+    "Some cycles are bridges",
+    "Some bridges are not cycles",
+    "Some bridges are cycles"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get No kurtas are bridges, the chain must run through all four groups; the only link that does it is: All bridges are cycles.\nIt holds in every diagram that fits all three statements.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some cycles are bridges: take only these regions are occupied: an item that belongs to kurtas and buses and bridges, not to cycles; an item that belongs to cycles and bridges, not to kurtas or buses.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No stamps are hills. Some cards are stamps.\nConclusion: Some trains are not hills.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All cards are trains",
+    "All trains are cards",
+    "Some cards are not trains",
+    "No cards are trains"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some trains are not hills, the chain must run through all four groups; the only link that does it is: All cards are trains.\nDerivation: Some trains are stamps + No stamps are hills => Some trains are not hills.\nEach other option leaves a diagram where the conclusion fails, e.g. for All trains are cards: take only this region is occupied: an item that belongs to stamps and cards, not to hills or trains.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: No forks are tents.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All tents are chains; No chains are forks",
+    "No chains are tents; Some forks are not chains",
+    "Some chains are not tents; Some chains are not forks",
+    "All tents are chains; Some forks are not chains"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects tents and forks through chains in the right way: All tents are chains and No chains are forks.\nIt holds in every diagram.\nFor the pair 'No chains are tents; Some forks are not chains', take only this region is occupied: an item that belongs to tents and forks, not to chains: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No bulbs are doctors.\nConclusion: No ladders are doctors.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All ladders are bulbs",
+    "Some ladders are bulbs",
+    "Some ladders are not bulbs",
+    "Some bulbs are not ladders"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that No ladders are doctors is forced.\nAdding All ladders are bulbs: All ladders are bulbs + No bulbs are doctors => No ladders are doctors.\nCheck a wrong option, Some ladders are bulbs: take only these regions are occupied: an item that belongs to ladders and bulbs, not to doctors; an item that belongs to ladders and doctors, not to bulbs; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some horns are not tomatoes.\nConclusion: Some horns are not carrots.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All carrots are tomatoes",
+    "Some tomatoes are not carrots",
+    "Some carrots are tomatoes",
+    "Some carrots are not tomatoes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some horns are not carrots is forced.\nAdding All carrots are tomatoes: Some horns are not tomatoes + All carrots are tomatoes => Some horns are not carrots.\nCheck a wrong option, Some tomatoes are not carrots: take only these regions are occupied: an item that belongs to tomatoes only, not to horns or carrots; an item that belongs to horns and carrots, not to tomatoes; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: All clocks are wires.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All sarees are wires; All clocks are sarees",
+    "Some wires are not sarees; No clocks are sarees",
+    "Some wires are sarees; All sarees are clocks",
+    "Some sarees are wires; No sarees are clocks"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects wires and clocks through sarees in the right way: All sarees are wires and All clocks are sarees.\nDerivation: All clocks are sarees + All sarees are wires => All clocks are wires.\nFor the pair 'Some wires are not sarees; No clocks are sarees', take only these regions are occupied: an item that belongs to wires only, not to sarees or clocks; an item that belongs to clocks only, not to wires or sarees: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some potatoes are books.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some tractors are books; All tractors are potatoes",
+    "All tractors are books; No tractors are potatoes",
+    "Some books are not tractors; All tractors are potatoes",
+    "No books are tractors; All tractors are potatoes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects books and potatoes through tractors in the right way: Some tractors are books and All tractors are potatoes.\nIt holds in every diagram.\nFor the pair 'All tractors are books; No tractors are potatoes', take only this region is occupied: an item that belongs to books only, not to tractors or potatoes: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: No stamps are clouds.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "No clouds are biscuits; All stamps are biscuits",
+    "No biscuits are clouds; Some biscuits are not stamps",
+    "Some biscuits are not clouds; Some stamps are biscuits",
+    "All biscuits are clouds; Some stamps are not biscuits"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects clouds and stamps through biscuits in the right way: No clouds are biscuits and All stamps are biscuits.\nDerivation: All stamps are biscuits + No biscuits are clouds => No stamps are clouds.\nFor the pair 'No biscuits are clouds; Some biscuits are not stamps', take only these regions are occupied: an item that belongs to biscuits only, not to clouds or stamps; an item that belongs to clouds and stamps, not to biscuits: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All shops are lamps. Some watches are shops.\nConclusion: Some lamps are folders.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All watches are folders",
+    "No watches are folders",
+    "Some folders are not watches",
+    "Some watches are folders"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some lamps are folders, the chain must run through all four groups; the only link that does it is: All watches are folders.\nDerivation: Some lamps are watches + All watches are folders => Some lamps are folders.\nEach other option leaves a diagram where the conclusion fails, e.g. for No watches are folders: take only this region is occupied: an item that belongs to lamps and shops and watches, not to folders.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: All stones are erasers.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All trees are erasers; All stones are trees",
+    "No trees are erasers; Some trees are stones",
+    "No trees are erasers; No stones are trees",
+    "Some erasers are not trees; All trees are stones"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects erasers and stones through trees in the right way: All trees are erasers and All stones are trees.\nDerivation: All stones are trees + All trees are erasers => All stones are erasers.\nFor the pair 'No trees are erasers; Some trees are stones', take only this region is occupied: an item that belongs to trees and stones, not to erasers: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All carpets are poles.\nConclusion: Some poles are not bulbs.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some carpets are not bulbs",
+    "No carpets are bulbs",
+    "Some bulbs are not carpets",
+    "Some bulbs are carpets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some poles are not bulbs is forced.\nAdding Some carpets are not bulbs: it holds in every diagram.\nCheck a wrong option, No carpets are bulbs: take only this region is occupied: an item that belongs to bulbs only, not to poles or carpets; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No leaves are drums. All ships are drums.\nConclusion: No shoes are leaves.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All shoes are ships",
+    "Some shoes are ships",
+    "Some ships are not shoes",
+    "No ships are shoes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get No shoes are leaves, the chain must run through all four groups; the only link that does it is: All shoes are ships.\nDerivation: All ships are drums + No drums are leaves => No ships are leaves; All shoes are ships + No ships are leaves => No shoes are leaves.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some shoes are ships: take only these regions are occupied: an item that belongs to leaves and shoes, not to drums or ships; an item that belongs to drums and ships and shoes, not to leaves.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some pans are not folders.\nConclusion: Some laptops are not folders.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All pans are laptops",
+    "Some pans are not laptops",
+    "Some laptops are not pans",
+    "All laptops are pans"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some laptops are not folders is forced.\nAdding All pans are laptops: it holds in every diagram.\nCheck a wrong option, Some pans are not laptops: take only this region is occupied: an item that belongs to pans only, not to laptops or folders; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: All caps are files.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All caps are hills; All hills are files",
+    "Some hills are not caps; No files are hills",
+    "Some caps are not hills; Some files are hills",
+    "Some caps are not hills; All hills are files"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects caps and files through hills in the right way: All caps are hills and All hills are files.\nDerivation: All caps are hills + All hills are files => All caps are files.\nFor the pair 'Some hills are not caps; No files are hills', take only these regions are occupied: an item that belongs to caps only, not to hills or files; an item that belongs to hills only, not to caps or files: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All cycles are files.\nConclusion: Some files are not clouds.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some cycles are not clouds",
+    "No cycles are clouds",
+    "Some clouds are cycles",
+    "Some cycles are clouds"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some files are not clouds is forced.\nAdding Some cycles are not clouds: it holds in every diagram.\nCheck a wrong option, No cycles are clouds: take only this region is occupied: an item that belongs to clouds only, not to cycles or files; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All pots are books.\nConclusion: Some books are not bags.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some pots are not bags",
+    "No pots are bags",
+    "Some pots are bags",
+    "No bags are pots"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some books are not bags is forced.\nAdding Some pots are not bags: it holds in every diagram.\nCheck a wrong option, No pots are bags: take only this region is occupied: an item that belongs to bags only, not to pots or books; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All pans are temples.\nConclusion: Some phones are not pans.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some phones are not temples",
+    "Some temples are not phones",
+    "No temples are phones",
+    "All temples are phones"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some phones are not pans is forced.\nAdding Some phones are not temples: Some phones are not temples + All pans are temples => Some phones are not pans.\nCheck a wrong option, Some temples are not phones: take only this region is occupied: an item that belongs to temples only, not to pans or phones; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some pencils are not buckets.\nConclusion: Some pencils are not doors.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All doors are buckets",
+    "No buckets are doors",
+    "Some buckets are not doors",
+    "All buckets are doors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some pencils are not doors is forced.\nAdding All doors are buckets: Some pencils are not buckets + All doors are buckets => Some pencils are not doors.\nCheck a wrong option, No buckets are doors: take only this region is occupied: an item that belongs to pencils and doors, not to buckets; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some jugs are phones.\nConclusion: Some phones are chains.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All jugs are chains",
+    "Some jugs are not chains",
+    "All chains are jugs",
+    "Some jugs are chains"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some phones are chains is forced.\nAdding All jugs are chains: Some phones are jugs + All jugs are chains => Some phones are chains.\nCheck a wrong option, Some jugs are not chains: take only this region is occupied: an item that belongs to jugs and phones, not to chains; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: No notes are sweets.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All notes are magnets; No magnets are sweets",
+    "All notes are magnets; Some sweets are magnets",
+    "Some magnets are not notes; No magnets are sweets",
+    "All magnets are notes; No magnets are sweets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects notes and sweets through magnets in the right way: All notes are magnets and No magnets are sweets.\nDerivation: All notes are magnets + No magnets are sweets => No notes are sweets.\nFor the pair 'All notes are magnets; Some sweets are magnets', take only this region is occupied: an item that belongs to notes and magnets and sweets: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All files are grapes. No shops are grapes.\nConclusion: No poles are files.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All poles are shops",
+    "Some shops are not poles",
+    "Some poles are not shops",
+    "No shops are poles"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get No poles are files, the chain must run through all four groups; the only link that does it is: All poles are shops.\nDerivation: All poles are shops + No shops are files => No poles are files.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some shops are not poles: take only these regions are occupied: an item that belongs to shops only, not to files or grapes or poles; an item that belongs to files and grapes and poles, not to shops.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All canals are stars.\nConclusion: All canals are pots.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All stars are pots",
+    "Some stars are not pots",
+    "No pots are stars",
+    "No stars are pots"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that All canals are pots is forced.\nAdding All stars are pots: All canals are stars + All stars are pots => All canals are pots.\nCheck a wrong option, Some stars are not pots: take only this region is occupied: an item that belongs to canals and stars, not to pots; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All belts are kurtas.\nConclusion: Some gardens are not belts.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some gardens are not kurtas",
+    "Some kurtas are gardens",
+    "All kurtas are gardens",
+    "Some kurtas are not gardens"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some gardens are not belts is forced.\nAdding Some gardens are not kurtas: Some gardens are not kurtas + All belts are kurtas => Some gardens are not belts.\nCheck a wrong option, Some kurtas are gardens: take only this region is occupied: an item that belongs to gardens and kurtas and belts; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: All tables are spoons.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "All tables are engines; All engines are spoons",
+    "Some engines are not tables; No spoons are engines",
+    "Some tables are engines; Some engines are not spoons",
+    "No engines are tables; All spoons are engines"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects tables and spoons through engines in the right way: All tables are engines and All engines are spoons.\nDerivation: All tables are engines + All engines are spoons => All tables are spoons.\nFor the pair 'Some engines are not tables; No spoons are engines', take only these regions are occupied: an item that belongs to tables only, not to engines or spoons; an item that belongs to engines only, not to tables or spoons: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + All gives All (A in B, B in C, so A in C).",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some poles are not doors.\nConclusion: Some fans are not doors.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "All poles are fans",
+    "No poles are fans",
+    "All fans are poles",
+    "No fans are poles"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some fans are not doors is forced.\nAdding All poles are fans: it holds in every diagram.\nCheck a wrong option, No poles are fans: take only this region is occupied: an item that belongs to poles only, not to fans or doors; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some shops are not hills.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some shops are clocks; No hills are clocks",
+    "All clocks are shops; No clocks are hills",
+    "Some shops are not clocks; Some hills are not clocks",
+    "No clocks are shops; Some clocks are hills"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects shops and hills through clocks in the right way: Some shops are clocks and No hills are clocks.\nDerivation: Some shops are clocks + No clocks are hills => Some shops are not hills.\nFor the pair 'All clocks are shops; No clocks are hills', take only this region is occupied: an item that belongs to hills only, not to shops or clocks: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All clocks are roads. Some tomatoes are clocks.\nConclusion: Some roads are ponds.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All tomatoes are ponds",
+    "Some ponds are not tomatoes",
+    "Some tomatoes are not ponds",
+    "No tomatoes are ponds"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some roads are ponds, the chain must run through all four groups; the only link that does it is: All tomatoes are ponds.\nDerivation: Some roads are tomatoes + All tomatoes are ponds => Some roads are ponds.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some ponds are not tomatoes: take only these regions are occupied: an item that belongs to roads and clocks and tomatoes, not to ponds; an item that belongs to ponds only, not to roads or clocks or tomatoes.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some diaries are tyres. All diaries are drums.\nConclusion: Some coins are tyres.\nWhich of the following statements, when added to the two given statements, makes the conclusion definitely follow?",
+   "options": [
+    "All drums are coins",
+    "Some drums are not coins",
+    "No drums are coins",
+    "All coins are drums"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To get Some coins are tyres, the chain must run through all four groups; the only link that does it is: All drums are coins.\nIt holds in every diagram that fits all three statements.\nEach other option leaves a diagram where the conclusion fails, e.g. for Some drums are not coins: take only this region is occupied: an item that belongs to tyres and diaries and drums, not to coins.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Work backwards: link each group to the next so that the chain connects the two terms in the conclusion; use All+All=All, All+No=No, Some+All=Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Conclusion: Some diaries are apples.\nWhich of the following pairs of statements together make this conclusion definitely follow?",
+   "options": [
+    "Some biscuits are diaries; All biscuits are apples",
+    "No biscuits are diaries; All apples are biscuits",
+    "All diaries are biscuits; All apples are biscuits",
+    "No diaries are biscuits; Some biscuits are not apples"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only one pair connects diaries and apples through biscuits in the right way: Some biscuits are diaries and All biscuits are apples.\nDerivation: Some diaries are biscuits + All biscuits are apples => Some diaries are apples.\nFor the pair 'No biscuits are diaries; All apples are biscuits', take only this region is occupied: an item that belongs to diaries only, not to biscuits or apples: statements true, conclusion false.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All planets are tyres.\nConclusion: Some balls are not planets.\nWhich of the following statements, when added to the given statement, makes the conclusion definitely follow?",
+   "options": [
+    "Some balls are not tyres",
+    "All tyres are balls",
+    "No tyres are balls",
+    "Some balls are tyres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The given statement links two of the groups; the added statement must link the third group to the chain so that Some balls are not planets is forced.\nAdding Some balls are not tyres: Some balls are not tyres + All planets are tyres => Some balls are not planets.\nCheck a wrong option, All tyres are balls: take only this region is occupied: an item that belongs to balls and tyres and planets; the statements hold but the conclusion fails.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some-not + All (pointing back) gives Some-not.",
+   "subPattern": "reverse-syllogism",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

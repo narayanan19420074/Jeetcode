@@ -1,0 +1,1693 @@
+{
+ "sets": [
+  {
+   "id": "di-tables-s034",
+   "type": "table",
+   "title": "Monthly rainfall recorded in 6 cities (in mm) (some entries missing)",
+   "table": {
+    "columns": [
+     "City",
+     "June",
+     "July",
+     "August",
+     "September",
+     "October",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Kochi",
+      235,
+      220,
+      240,
+      305,
+      305,
+      1305
+     ],
+     [
+      "Hyderabad",
+      240,
+      380,
+      260,
+      "?",
+      325,
+      1455
+     ],
+     [
+      "Pune",
+      330,
+      530,
+      "?",
+      325,
+      365,
+      2035
+     ],
+     [
+      "Chennai",
+      115,
+      "?",
+      85,
+      145,
+      140,
+      635
+     ],
+     [
+      "Bengaluru",
+      415,
+      335,
+      400,
+      500,
+      575,
+      2225
+     ],
+     [
+      "Mumbai",
+      255,
+      230,
+      280,
+      210,
+      "?",
+      1295
+     ],
+     [
+      "Total",
+      1590,
+      1845,
+      1750,
+      1735,
+      2030,
+      8950
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s035",
+   "type": "table",
+   "title": "Results of a bank recruitment preliminary test at 5 centres (some entries missing)",
+   "table": {
+    "columns": [
+     "Centre",
+     "Appeared",
+     "Passed",
+     "Pass %"
+    ],
+    "rows": [
+     [
+      "Madurai",
+      "?",
+      765,
+      75
+     ],
+     [
+      "Chennai",
+      "?",
+      570,
+      50
+     ],
+     [
+      "Erode",
+      360,
+      324,
+      "?"
+     ],
+     [
+      "Trichy",
+      920,
+      "?",
+      40
+     ],
+     [
+      "Salem",
+      1060,
+      1007,
+      95
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s036",
+   "type": "table",
+   "title": "Electricity consumption of 6 cities (in million units) (some entries missing)",
+   "table": {
+    "columns": [
+     "City",
+     "May",
+     "June",
+     "July",
+     "August",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Jaipur",
+      430,
+      490,
+      "?",
+      650,
+      2160
+     ],
+     [
+      "Surat",
+      920,
+      710,
+      1080,
+      "?",
+      3570
+     ],
+     [
+      "Madurai",
+      "?",
+      460,
+      480,
+      750,
+      2230
+     ],
+     [
+      "Nagpur",
+      730,
+      610,
+      900,
+      560,
+      2800
+     ],
+     [
+      "Vizag",
+      230,
+      "?",
+      170,
+      260,
+      880
+     ],
+     [
+      "Indore",
+      230,
+      300,
+      290,
+      350,
+      1170
+     ],
+     [
+      "Total",
+      3080,
+      2790,
+      3510,
+      3430,
+      12810
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s037",
+   "type": "table",
+   "title": "Runs scored by 5 Ranji Trophy teams in a season (some entries missing)",
+   "table": {
+    "columns": [
+     "Team",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2020-21",
+     "2021-22",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Delhi",
+      1410,
+      1270,
+      1890,
+      1150,
+      "?",
+      7440
+     ],
+     [
+      "Vidarbha",
+      "?",
+      1440,
+      2410,
+      2150,
+      1680,
+      9420
+     ],
+     [
+      "Bengal",
+      3970,
+      4170,
+      3560,
+      "?",
+      3610,
+      18180
+     ],
+     [
+      "Mumbai",
+      2160,
+      2580,
+      2920,
+      2520,
+      2520,
+      12700
+     ],
+     [
+      "Saurashtra",
+      3680,
+      4190,
+      "?",
+      2770,
+      2540,
+      17350
+     ],
+     [
+      "Total",
+      12960,
+      13650,
+      14950,
+      11460,
+      12070,
+      65090
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s038",
+   "type": "table",
+   "title": "Results of a state engineering entrance test at 5 districts (some entries missing)",
+   "table": {
+    "columns": [
+     "District",
+     "Appeared",
+     "Passed",
+     "Pass %"
+    ],
+    "rows": [
+     [
+      "Solapur",
+      200,
+      "?",
+      65
+     ],
+     [
+      "Nagpur",
+      500,
+      350,
+      70
+     ],
+     [
+      "Aurangabad",
+      "?",
+      570,
+      50
+     ],
+     [
+      "Kolhapur",
+      "?",
+      504,
+      60
+     ],
+     [
+      "Satara",
+      500,
+      450,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s039",
+   "type": "table",
+   "title": "Books sold by a publisher in 4 cities (some entries missing)",
+   "table": {
+    "columns": [
+     "City",
+     "March",
+     "April",
+     "May",
+     "June",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Tirunelveli",
+      1400,
+      990,
+      1230,
+      "?",
+      5010
+     ],
+     [
+      "Madurai",
+      "?",
+      1480,
+      1670,
+      1400,
+      6290
+     ],
+     [
+      "Chennai",
+      1140,
+      "?",
+      1250,
+      1550,
+      5080
+     ],
+     [
+      "Vellore",
+      1810,
+      1920,
+      "?",
+      2250,
+      7270
+     ],
+     [
+      "Total",
+      6090,
+      5530,
+      5440,
+      6590,
+      23650
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s040",
+   "type": "table",
+   "title": "Results of a Class 12 board examination at 5 schools (some entries missing)",
+   "table": {
+    "columns": [
+     "School",
+     "Appeared",
+     "Passed",
+     "Pass %"
+    ],
+    "rows": [
+     [
+      "Kendriya Vidyalaya",
+      "?",
+      444,
+      60
+     ],
+     [
+      "DAV Public",
+      420,
+      "?",
+      45
+     ],
+     [
+      "Gyan Bharti",
+      480,
+      456,
+      95
+     ],
+     [
+      "Sarvodaya",
+      420,
+      336,
+      "?"
+     ],
+     [
+      "Navodaya",
+      "?",
+      574,
+      70
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s041",
+   "type": "table",
+   "title": "Monthly rainfall recorded in 4 cities (in mm) (some entries missing)",
+   "table": {
+    "columns": [
+     "City",
+     "June",
+     "July",
+     "August",
+     "September",
+     "October",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Kochi",
+      270,
+      220,
+      320,
+      300,
+      "?",
+      1340
+     ],
+     [
+      "Mumbai",
+      500,
+      560,
+      "?",
+      330,
+      410,
+      2115
+     ],
+     [
+      "Chennai",
+      "?",
+      315,
+      230,
+      200,
+      235,
+      1240
+     ],
+     [
+      "Bengaluru",
+      255,
+      "?",
+      215,
+      245,
+      280,
+      1215
+     ],
+     [
+      "Total",
+      1285,
+      1315,
+      1080,
+      1075,
+      1155,
+      5910
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s042",
+   "type": "table",
+   "title": "Annual revenue of 5 companies (₹ crore) (some entries missing)",
+   "table": {
+    "columns": [
+     "Company",
+     "2020-21",
+     "2021-22",
+     "2022-23",
+     "2023-24",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Vindhya Steel",
+      2380,
+      2240,
+      "?",
+      1760,
+      7900
+     ],
+     [
+      "Kaveri Foods",
+      2890,
+      2900,
+      2900,
+      2220,
+      10910
+     ],
+     [
+      "Narmada Cements",
+      1230,
+      "?",
+      1990,
+      1650,
+      6120
+     ],
+     [
+      "Ganga Papers",
+      1790,
+      1580,
+      1060,
+      "?",
+      5580
+     ],
+     [
+      "Himalaya Herbals",
+      "?",
+      720,
+      620,
+      700,
+      2680
+     ],
+     [
+      "Total",
+      8930,
+      8690,
+      8090,
+      7480,
+      33190
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s043",
+   "type": "table",
+   "title": "Results of a staff selection screening test at 6 zones (some entries missing)",
+   "table": {
+    "columns": [
+     "Zone",
+     "Appeared",
+     "Passed",
+     "Pass %"
+    ],
+    "rows": [
+     [
+      "Kanpur",
+      1000,
+      "?",
+      85
+     ],
+     [
+      "Lucknow",
+      520,
+      364,
+      70
+     ],
+     [
+      "Meerut",
+      860,
+      516,
+      60
+     ],
+     [
+      "Gorakhpur",
+      "?",
+      735,
+      75
+     ],
+     [
+      "Prayagraj",
+      760,
+      304,
+      "?"
+     ],
+     [
+      "Agra",
+      300,
+      150,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s044",
+   "type": "table",
+   "title": "Runs scored by 4 Ranji Trophy teams in a season (some entries missing)",
+   "table": {
+    "columns": [
+     "Team",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2020-21",
+     "2021-22",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Vidarbha",
+      1720,
+      1600,
+      "?",
+      1860,
+      1790,
+      8860
+     ],
+     [
+      "Karnataka",
+      3460,
+      3740,
+      3490,
+      4780,
+      "?",
+      19590
+     ],
+     [
+      "Mumbai",
+      "?",
+      1870,
+      2480,
+      2450,
+      2120,
+      11610
+     ],
+     [
+      "Tamil Nadu",
+      4440,
+      2830,
+      5190,
+      "?",
+      4810,
+      22000
+     ],
+     [
+      "Total",
+      12310,
+      10040,
+      13050,
+      13820,
+      12840,
+      62060
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Find the missing value of the rainfall for Hyderabad in September.",
+   "options": [
+    "235 mm",
+    "250 mm",
+    "1,205 mm",
+    "280 mm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row total of Hyderabad = 1,455. Known entries add to 1,205. Missing value = 1,455 - 1,205 = 250.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s034"
+  },
+  {
+   "questionText": "Find the missing value of the rainfall for Chennai in July.",
+   "options": [
+    "150 mm",
+    "160 mm",
+    "485 mm",
+    "300 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Row total of Chennai = 635. Known entries add to 485. Missing value = 635 - 485 = 150.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s034"
+  },
+  {
+   "questionText": "What is the difference between the largest and the smallest of the four missing entries?",
+   "options": [
+    "485 mm",
+    "335 mm",
+    "150 mm",
+    "635 mm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing values: 150, 485, 250, 320. Largest 485 - smallest 150 = 335.",
+   "shortcut": "Recover all four blanks first, then pick the extremes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s034"
+  },
+  {
+   "questionText": "The missing entry for Hyderabad in September is what percent of the total rainfall of Hyderabad? (Correct to one decimal place.)",
+   "options": [
+    "20.7%",
+    "14.4%",
+    "17.2%",
+    "2.8%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Missing entry = 1,455 - 1,205 = 250. Percent of row total = 250/1,455 × 100 = 17.2%.",
+   "shortcut": "Find the blank first; the row total is already given as the denominator.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s034"
+  },
+  {
+   "questionText": "By what percent is the missing entry for Hyderabad in September more than the missing entry for Chennai in July? (Correct to one decimal place.)",
+   "options": [
+    "66.7%",
+    "40.0%",
+    "166.7%",
+    "25.0%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing entries: 250 and 150. Percent more = (250-150)/150 × 100 = 66.7%.",
+   "shortcut": "The smaller quantity is the base for 'more than'.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s034"
+  },
+  {
+   "questionText": "What is the total number of candidates who passed across all the centres?",
+   "options": [
+    "3,034",
+    "4,500",
+    "2,710",
+    "3,084"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Passed at each (after filling blanks): 765, 570, 324, 368, 1007. Total = 3,034.",
+   "shortcut": "Compute the missing passed counts from appeared × pass%, then add.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s035"
+  },
+  {
+   "questionText": "How many candidates failed at Erode?",
+   "options": [
+    "324",
+    "344",
+    "36",
+    "76"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At Erode: appeared 360, passed 324. Failed = 360 - 324 = 36.",
+   "shortcut": "Failed % = 100 - pass %; then take that percentage of appeared.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s035"
+  },
+  {
+   "questionText": "How many candidates appeared at Chennai?",
+   "options": [
+    "620",
+    "1,140",
+    "1,710",
+    "1,240"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass % = Passed / Appeared × 100, so Appeared = 570 × 100 / 50 = 1140.",
+   "shortcut": "Appeared = passed × 100 / pass%.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s035"
+  },
+  {
+   "questionText": "Which centre had the highest pass percentage?",
+   "options": [
+    "Erode",
+    "Salem",
+    "Chennai",
+    "Madurai"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass %: Madurai 75%, Chennai 50%, Erode 90%, Trichy 40%, Salem 95%. Highest: Salem.",
+   "shortcut": "Highest pass percentage need not mean the highest number of passes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s035"
+  },
+  {
+   "questionText": "What is the combined pass percentage of Chennai and Salem together? (Correct to one decimal place.)",
+   "options": [
+    "72.5%",
+    "75.0%",
+    "71.7%",
+    "28.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combined passed = 570 + 1007 = 1577; combined appeared = 1140 + 1060 = 2200. Percent = 71.7%.",
+   "shortcut": "Do not average the two percentages unless the two groups are equal in size.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s035"
+  },
+  {
+   "questionText": "By what percent is the missing entry for Madurai in May more than the missing entry for Vizag in June? (Correct to one decimal place.)",
+   "options": [
+    "59.3%",
+    "145.5%",
+    "245.5%",
+    "42.1%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing entries: 540 and 220. Percent more = (540-220)/220 × 100 = 145.5%.",
+   "shortcut": "The smaller quantity is the base for 'more than'.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s036"
+  },
+  {
+   "questionText": "The missing entry for Surat in August is what percent of the total electricity consumption of Surat? (Correct to one decimal place.)",
+   "options": [
+    "31.7%",
+    "24.1%",
+    "25.1%",
+    "6.7%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing entry = 3,570 - 2,710 = 860. Percent of row total = 860/3,570 × 100 = 24.1%.",
+   "shortcut": "Find the blank first; the row total is already given as the denominator.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s036"
+  },
+  {
+   "questionText": "In the table showing electricity consumption of 6 cities (in million units) (first row: Jaipur), what is the difference between the largest and the smallest of the four missing entries?",
+   "options": [
+    "640 million units",
+    "860 million units",
+    "220 million units",
+    "270 million units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing values: 220, 590, 860, 540. Largest 860 - smallest 220 = 640.",
+   "shortcut": "Recover all four blanks first, then pick the extremes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s036"
+  },
+  {
+   "questionText": "Find the missing value of the electricity consumption for Jaipur in July.",
+   "options": [
+    "560 million units",
+    "590 million units",
+    "1,570 million units",
+    "1,180 million units"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Column total for July = 3,510. Known entries add to 2,920. Missing value = 3,510 - 2,920 = 590.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s036"
+  },
+  {
+   "questionText": "What is the sum of the four missing entries in the table?",
+   "options": [
+    "2,210 million units",
+    "1,990 million units",
+    "1,350 million units",
+    "8,840 million units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing values (from row/column totals): Vizag-June = 220, Jaipur-July = 590, Surat-August = 860, Madurai-May = 540. Sum = 2,210.",
+   "shortcut": "Find each blank using its row total, then add; or check via the totals.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s036"
+  },
+  {
+   "questionText": "What is the average of the four missing entries? (Correct to one decimal place.)",
+   "options": [
+    "2,625.0 runs",
+    "10,500.0 runs",
+    "3,500.0 runs",
+    "2,100.0 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing values: 1740, 4170, 1720, 2870. Sum = 10,500; average = 10,500/4 = 2625.0.",
+   "shortcut": "Four blanks, so divide their sum by 4.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s037"
+  },
+  {
+   "questionText": "By what percent is the missing entry for Vidarbha in 2017-18 more than the missing entry for Delhi in 2021-22? (Correct to one decimal place.)",
+   "options": [
+    "1.2%",
+    "1.1%",
+    "101.2%",
+    "0.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing entries: 1740 and 1720. Percent more = (1740-1720)/1720 × 100 = 1.2%.",
+   "shortcut": "The smaller quantity is the base for 'more than'.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s037"
+  },
+  {
+   "questionText": "Find the missing value of the runs scored for Delhi in 2021-22.",
+   "options": [
+    "1,700 runs",
+    "5,720 runs",
+    "1,720 runs",
+    "3,440 runs"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Row total of Delhi = 7,440. Known entries add to 5,720. Missing value = 7,440 - 5,720 = 1,720.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s037"
+  },
+  {
+   "questionText": "Find the missing value of the runs scored for Vidarbha in 2017-18.",
+   "options": [
+    "1,740 runs",
+    "1,710 runs",
+    "7,680 runs",
+    "3,540 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Row total of Vidarbha = 9,420. Known entries add to 7,680. Missing value = 9,420 - 7,680 = 1,740.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s037"
+  },
+  {
+   "questionText": "In the table showing runs scored by 5 Ranji Trophy teams in a season (first row: Delhi), what is the difference between the largest and the smallest of the four missing entries?",
+   "options": [
+    "4,170 runs",
+    "2,450 runs",
+    "1,720 runs",
+    "1,300 runs"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing values: 1740, 4170, 1720, 2870. Largest 4170 - smallest 1720 = 2,450.",
+   "shortcut": "Recover all four blanks first, then pick the extremes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s037"
+  },
+  {
+   "questionText": "What was the pass percentage at Satara?",
+   "options": [
+    "10%",
+    "90%",
+    "95%",
+    "900%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass % = Passed / Appeared × 100 = 450 / 500 × 100 = 90%.",
+   "shortcut": "Pass% = passed / appeared × 100.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s038"
+  },
+  {
+   "questionText": "What is the overall pass percentage of all the districts taken together? (Correct to one decimal place.)",
+   "options": [
+    "67.0%",
+    "66.0%",
+    "90.0%",
+    "63.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total passed = 2,004; total appeared = 3,180. Overall pass % = 2,004/3,180 × 100 = 63.0%. (It is not the simple mean of the pass percentages.)",
+   "shortcut": "Weighted figure: total passed / total appeared, never the mean of percentages.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s038"
+  },
+  {
+   "questionText": "What is the ratio of the number of candidates who passed at Aurangabad to the number who passed at Solapur, in simplest form?",
+   "options": [
+    "13 : 57",
+    "57 : 10",
+    "57 : 7",
+    "57 : 13"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Passed: Aurangabad = 570, Solapur = 130. Ratio = 57 : 13.",
+   "shortcut": "Fill in the blanks first; the ratio uses the passed counts, not the appeared counts.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s038"
+  },
+  {
+   "questionText": "How many candidates failed at Satara?",
+   "options": [
+    "450",
+    "50",
+    "470",
+    "90"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At Satara: appeared 500, passed 450. Failed = 500 - 450 = 50.",
+   "shortcut": "Failed % = 100 - pass %; then take that percentage of appeared.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s038"
+  },
+  {
+   "questionText": "Which district had the highest pass percentage?",
+   "options": [
+    "Aurangabad",
+    "Nagpur",
+    "Solapur",
+    "Satara"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pass %: Solapur 65%, Nagpur 70%, Aurangabad 50%, Kolhapur 60%, Satara 90%. Highest: Satara.",
+   "shortcut": "Highest pass percentage need not mean the highest number of passes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s038"
+  },
+  {
+   "questionText": "The missing entry for Tirunelveli in June is what percent of the total book sales of Tirunelveli? (Correct to one decimal place.)",
+   "options": [
+    "38.4%",
+    "27.7%",
+    "21.1%",
+    "5.9%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing entry = 5,010 - 3,620 = 1390. Percent of row total = 1390/5,010 × 100 = 27.7%.",
+   "shortcut": "Find the blank first; the row total is already given as the denominator.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s039"
+  },
+  {
+   "questionText": "In the table showing books sold by a publisher in 4 cities (first row: Tirunelveli), what is the difference between the largest and the smallest of the four missing entries?",
+   "options": [
+    "1,740 books",
+    "1,140 books",
+    "600 books",
+    "2,880 books"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Missing values: 1390, 1290, 1140, 1740. Largest 1740 - smallest 1140 = 600.",
+   "shortcut": "Recover all four blanks first, then pick the extremes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s039"
+  },
+  {
+   "questionText": "In the table showing books sold by a publisher in 4 cities (first row: Tirunelveli), what is the sum of the four missing entries in the table?",
+   "options": [
+    "4,420 books",
+    "5,560 books",
+    "3,820 books",
+    "23,650 books"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing values (from row/column totals): Tirunelveli-June = 1390, Vellore-May = 1290, Chennai-April = 1140, Madurai-March = 1740. Sum = 5,560.",
+   "shortcut": "Find each blank using its row total, then add; or check via the totals.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s039"
+  },
+  {
+   "questionText": "Find the missing value of the book sales for Vellore in May.",
+   "options": [
+    "1,290 books",
+    "1,320 books",
+    "5,980 books",
+    "2,580 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Column total for May = 5,440. Known entries add to 4,150. Missing value = 5,440 - 4,150 = 1,290.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s039"
+  },
+  {
+   "questionText": "The four missing entries together form what percent of the grand total shown in the table? (Correct to one decimal place.)",
+   "options": [
+    "23.5%",
+    "30.7%",
+    "76.5%",
+    "5.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of missing entries = 5,560; grand total = 23,650. Percent = 5,560/23,650 × 100 = 23.5%.",
+   "shortcut": "Find the four blanks, add them once, divide by the grand total.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s039"
+  },
+  {
+   "questionText": "How many candidates failed at Navodaya?",
+   "options": [
+    "574",
+    "594",
+    "286",
+    "246"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At Navodaya: appeared 820, passed 574. Failed = 820 - 574 = 246.",
+   "shortcut": "Failed % = 100 - pass %; then take that percentage of appeared.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s040"
+  },
+  {
+   "questionText": "Which school had the highest pass percentage?",
+   "options": [
+    "Navodaya",
+    "Gyan Bharti",
+    "Sarvodaya",
+    "Kendriya Vidyalaya"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass %: Kendriya Vidyalaya 60%, DAV Public 45%, Gyan Bharti 95%, Sarvodaya 80%, Navodaya 70%. Highest: Gyan Bharti.",
+   "shortcut": "Highest pass percentage need not mean the highest number of passes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s040"
+  },
+  {
+   "questionText": "What was the pass percentage at Sarvodaya?",
+   "options": [
+    "20%",
+    "80%",
+    "85%",
+    "75%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pass % = Passed / Appeared × 100 = 336 / 420 × 100 = 80%.",
+   "shortcut": "Pass% = passed / appeared × 100.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s040"
+  },
+  {
+   "questionText": "How many candidates appeared at Kendriya Vidyalaya?",
+   "options": [
+    "740",
+    "504",
+    "888",
+    "840"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pass % = Passed / Appeared × 100, so Appeared = 444 × 100 / 60 = 740.",
+   "shortcut": "Appeared = passed × 100 / pass%.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s040"
+  },
+  {
+   "questionText": "What is the combined pass percentage of Sarvodaya and DAV Public together? (Correct to one decimal place.)",
+   "options": [
+    "62.5%",
+    "65.0%",
+    "37.5%",
+    "31.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combined passed = 336 + 189 = 525; combined appeared = 420 + 420 = 840. Percent = 62.5%.",
+   "shortcut": "Do not average the two percentages unless the two groups are equal in size.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s040"
+  },
+  {
+   "questionText": "The missing entry for Bengaluru in July is what percent of the total rainfall of Bengaluru? (Correct to one decimal place.)",
+   "options": [
+    "22.1%",
+    "16.7%",
+    "3.7%",
+    "18.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Missing entry = 1,215 - 995 = 220. Percent of row total = 220/1,215 × 100 = 18.1%.",
+   "shortcut": "Find the blank first; the row total is already given as the denominator.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s041"
+  },
+  {
+   "questionText": "In the table showing monthly rainfall recorded in 4 cities (in mm) (first row: Kochi), what is the sum of the four missing entries in the table?",
+   "options": [
+    "805 mm",
+    "1,025 mm",
+    "710 mm",
+    "5,910 mm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing values (from row/column totals): Mumbai-August = 315, Chennai-June = 260, Bengaluru-July = 220, Kochi-October = 230. Sum = 1,025.",
+   "shortcut": "Find each blank using its row total, then add; or check via the totals.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s041"
+  },
+  {
+   "questionText": "Find the missing value of the rainfall for Kochi in October.",
+   "options": [
+    "215 mm",
+    "1,110 mm",
+    "230 mm",
+    "185 mm"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Column total for October = 1,155. Known entries add to 925. Missing value = 1,155 - 925 = 230.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s041"
+  },
+  {
+   "questionText": "In the table showing monthly rainfall recorded in 4 cities (in mm) (first row: Kochi), the four missing entries together form what percent of the grand total shown in the table? (Correct to one decimal place.)",
+   "options": [
+    "21.0%",
+    "82.7%",
+    "4.3%",
+    "17.3%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum of missing entries = 1,025; grand total = 5,910. Percent = 1,025/5,910 × 100 = 17.3%.",
+   "shortcut": "Find the four blanks, add them once, divide by the grand total.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s041"
+  },
+  {
+   "questionText": "In the table showing monthly rainfall recorded in 4 cities (in mm) (first row: Kochi), what is the difference between the largest and the smallest of the four missing entries?",
+   "options": [
+    "95 mm",
+    "315 mm",
+    "220 mm",
+    "535 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing values: 315, 260, 220, 230. Largest 315 - smallest 220 = 95.",
+   "shortcut": "Recover all four blanks first, then pick the extremes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s041"
+  },
+  {
+   "questionText": "In the table showing annual revenue of 5 companies (₹ crore) (first row: Vindhya Steel), what is the sum of the four missing entries in the table?",
+   "options": [
+    "₹3,920 crore",
+    "₹3,040 crore",
+    "₹4,560 crore",
+    "₹22,280 crore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Missing values (from row/column totals): Ganga Papers-2023-24 = 1150, Himalaya Herbals-2020-21 = 640, Narmada Cements-2021-22 = 1250, Vindhya Steel-2022-23 = 1520. Sum = 4,560.",
+   "shortcut": "Find each blank using its row total, then add; or check via the totals.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s042"
+  },
+  {
+   "questionText": "The missing entry for Vindhya Steel in 2022-23 is what percent of the total revenue of Vindhya Steel? (Correct to one decimal place.)",
+   "options": [
+    "23.8%",
+    "19.2%",
+    "18.8%",
+    "4.6%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing entry = 7,900 - 6,380 = 1520. Percent of row total = 1520/7,900 × 100 = 19.2%.",
+   "shortcut": "Find the blank first; the row total is already given as the denominator.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s042"
+  },
+  {
+   "questionText": "Find the missing value of the revenue for Vindhya Steel in 2022-23.",
+   "options": [
+    "₹1,520 crore",
+    "₹1,490 crore",
+    "₹6,380 crore",
+    "₹190 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Column total for 2022-23 = 8,090. Known entries add to 6,570. Missing value = 8,090 - 6,570 = 1,520.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s042"
+  },
+  {
+   "questionText": "Find the missing value of the revenue for Himalaya Herbals in 2020-21.",
+   "options": [
+    "₹660 crore",
+    "₹2,040 crore",
+    "₹6,250 crore",
+    "₹640 crore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Column total for 2020-21 = 8,930. Known entries add to 8,290. Missing value = 8,930 - 8,290 = 640.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s042"
+  },
+  {
+   "questionText": "What is the ratio of the missing entry for Ganga Papers in 2023-24 to the missing entry for Narmada Cements in 2021-22, in simplest form?",
+   "options": [
+    "23 : 25",
+    "25 : 23",
+    "48 : 25",
+    "23 : 48"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing entries: Ganga Papers-2023-24 = 1150; Narmada Cements-2021-22 = 1250. Ratio 1150 : 1250 = 23 : 25.",
+   "shortcut": "Restore both blanks from the totals, then cancel the common factor.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s042"
+  },
+  {
+   "questionText": "How many candidates failed at Agra?",
+   "options": [
+    "150",
+    "170",
+    "250",
+    "190"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At Agra: appeared 300, passed 150. Failed = 300 - 150 = 150.",
+   "shortcut": "Failed % = 100 - pass %; then take that percentage of appeared.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s043"
+  },
+  {
+   "questionText": "What is the ratio of the number of candidates who passed at Gorakhpur to the number who passed at Agra, in simplest form?",
+   "options": [
+    "10 : 49",
+    "49 : 10",
+    "49 : 15",
+    "49 : 30"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Passed: Gorakhpur = 735, Agra = 150. Ratio = 49 : 10.",
+   "shortcut": "Fill in the blanks first; the ratio uses the passed counts, not the appeared counts.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s043"
+  },
+  {
+   "questionText": "How many candidates appeared at Gorakhpur?",
+   "options": [
+    "810",
+    "1,470",
+    "980",
+    "1,080"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pass % = Passed / Appeared × 100, so Appeared = 735 × 100 / 75 = 980.",
+   "shortcut": "Appeared = passed × 100 / pass%.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s043"
+  },
+  {
+   "questionText": "How many more candidates passed at Prayagraj than failed at Lucknow?",
+   "options": [
+    "148",
+    "460",
+    "60",
+    "178"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Passed at Prayagraj = 304. Failed at Lucknow = 520 - 364 = 156. Difference = 304 - 156 = 148.",
+   "shortcut": "Work out failed = appeared - passed for the second centre only.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s043"
+  },
+  {
+   "questionText": "Which zone had the highest pass percentage?",
+   "options": [
+    "Gorakhpur",
+    "Meerut",
+    "Kanpur",
+    "Lucknow"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pass %: Kanpur 85%, Lucknow 70%, Meerut 60%, Gorakhpur 75%, Prayagraj 40%, Agra 50%. Highest: Kanpur.",
+   "shortcut": "Highest pass percentage need not mean the highest number of passes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s043"
+  },
+  {
+   "questionText": "By what percent is the missing entry for Karnataka in 2021-22 more than the missing entry for Vidarbha in 2019-20? (Correct to one decimal place.)",
+   "options": [
+    "118.0%",
+    "54.1%",
+    "218.0%",
+    "37.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing entries: 4120 and 1890. Percent more = (4120-1890)/1890 × 100 = 118.0%.",
+   "shortcut": "The smaller quantity is the base for 'more than'.",
+   "difficulty": "hard",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s044"
+  },
+  {
+   "questionText": "In the table showing runs scored by 4 Ranji Trophy teams in a season (first row: Vidarbha), what is the difference between the largest and the smallest of the four missing entries?",
+   "options": [
+    "4,730 runs",
+    "2,840 runs",
+    "1,890 runs",
+    "6,620 runs"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing values: 1890, 4730, 2690, 4120. Largest 4730 - smallest 1890 = 2,840.",
+   "shortcut": "Recover all four blanks first, then pick the extremes.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s044"
+  },
+  {
+   "questionText": "Find the missing value of the runs scored for Karnataka in 2021-22.",
+   "options": [
+    "4,120 runs",
+    "4,100 runs",
+    "15,470 runs",
+    "6,750 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Column total for 2021-22 = 12,840. Known entries add to 8,720. Missing value = 12,840 - 8,720 = 4,120.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s044"
+  },
+  {
+   "questionText": "The missing entry for Vidarbha in 2019-20 is what percent of the total runs scored of Vidarbha? (Correct to one decimal place.)",
+   "options": [
+    "21.3%",
+    "27.1%",
+    "14.5%",
+    "3.0%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing entry = 8,860 - 6,970 = 1890. Percent of row total = 1890/8,860 × 100 = 21.3%.",
+   "shortcut": "Find the blank first; the row total is already given as the denominator.",
+   "difficulty": "medium",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s044"
+  },
+  {
+   "questionText": "Find the missing value of the runs scored for Mumbai in 2017-18.",
+   "options": [
+    "2,720 runs",
+    "8,920 runs",
+    "5,380 runs",
+    "2,690 runs"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Row total of Mumbai = 11,610. Known entries add to 8,920. Missing value = 11,610 - 8,920 = 2,690.",
+   "shortcut": "Use whichever total (row or column) has only one unknown: unknown = total minus the sum of the known entries.",
+   "difficulty": "easy",
+   "subPattern": "missing-data-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s044"
+  }
+ ]
+}

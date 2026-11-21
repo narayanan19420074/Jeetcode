@@ -1,0 +1,803 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Between you and ___, the plan will not work.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After a preposition ('between') the object form 'me' is used.",
+   "shortcut": "Preposition + object pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The prize was shared between Rahul and ___.",
+   "options": [
+    "her",
+    "she",
+    "herself",
+    "hers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Between' is a preposition, so the object pronoun 'her' is needed.",
+   "shortcut": "Preposition + object pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. ___ and I went to the station together.",
+   "options": [
+    "She",
+    "Her",
+    "Hers",
+    "Herself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'went', so the subject form 'she' is used.",
+   "shortcut": "Subject -> I, he, she, we, they.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither Anita nor ___ was late.",
+   "options": [
+    "she",
+    "her",
+    "hers",
+    "herself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'was', so the subject form 'she' is needed.",
+   "shortcut": "Subject -> nominative form.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The teacher praised Rohan and ___ for the neat work.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Me' is the object of the verb 'praised'.",
+   "shortcut": "Object of verb -> me, him, her, us, them.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rohit hurt ___ while playing cricket.",
+   "options": [
+    "himself",
+    "hisself",
+    "him",
+    "his"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When the subject and object are the same person, a reflexive pronoun is used: 'himself'. 'Hisself' is not standard English.",
+   "shortcut": "Same doer and receiver -> reflexive.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I made this cake ___.",
+   "options": [
+    "myself",
+    "me",
+    "my",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Myself' is used for emphasis, showing that I made it, not someone else.",
+   "shortcut": "Emphatic -> -self.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. This pen is not yours; it is ___.",
+   "options": [
+    "mine",
+    "my",
+    "me",
+    "myself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive pronoun that stands alone (no noun after it) is 'mine'. 'My' must be followed by a noun.",
+   "shortcut": "my + noun; mine alone.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The company has changed ___ policy.",
+   "options": [
+    "its",
+    "it's",
+    "it",
+    "itself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The possessive determiner for a singular thing is 'its' (no apostrophe). 'It's' means 'it is'.",
+   "shortcut": "its = possessive; it's = it is/has.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He and ___ are cousins.",
+   "options": [
+    "I",
+    "me",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is part of the subject of 'are', so 'I' is used.",
+   "shortcut": "Subject -> I.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Let him and ___ go.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Let' is followed by an object pronoun: 'let him and me go'.",
+   "shortcut": "Let + object pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Whose is this bag? It is ___.",
+   "options": [
+    "hers",
+    "her",
+    "she",
+    "herself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A standalone possessive is 'hers'. 'Her' needs a noun after it.",
+   "shortcut": "Possessive pronoun alone: mine, yours, hers, ours, theirs.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The students lost ___ way in the forest.",
+   "options": [
+    "their",
+    "there",
+    "they're",
+    "them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive determiner is needed before 'way'. 'Their' is the possessive of 'they'.",
+   "shortcut": "their = belonging to them.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The boy ___ won the prize is my cousin.",
+   "options": [
+    "who",
+    "whom",
+    "whose",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'won' and refers to a person, so 'who' is used.",
+   "shortcut": "Person as subject -> who.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The person ___ I met yesterday was the director.",
+   "options": [
+    "whom",
+    "whose",
+    "which",
+    "where"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the object of 'met' and refers to a person, so the object form 'whom' is used.",
+   "shortcut": "Person as object -> whom.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The book ___ cover is torn belongs to Rita.",
+   "options": [
+    "whose",
+    "who",
+    "whom",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word shows possession ('the book's cover'), so 'whose' is needed.",
+   "shortcut": "Possession -> whose.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither of the girls has brought ___ lunch.",
+   "options": [
+    "her",
+    "his",
+    "its",
+    "our"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither of the girls' is singular and female, so the matching possessive is 'her'.",
+   "shortcut": "Neither + singular -> her/his.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Each of the boys must bring ___ own books.",
+   "options": [
+    "his",
+    "her",
+    "its",
+    "our"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular and refers to boys, so the possessive is 'his'.",
+   "shortcut": "Each + singular -> his/her.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. A student must carry ___ identity card.",
+   "options": [
+    "his or her",
+    "its",
+    "your",
+    "our"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'A student' is a singular person of unspecified sex, so 'his or her' agrees with it. 'Its', 'your' and 'our' do not match.",
+   "shortcut": "Singular antecedent -> singular pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Rahul told Mohan that he had won the lottery.\nB. Rahul told Mohan, \"You have won the lottery.\"\nC. Rahul told Mohan that it was won by him.\nD. The mother told her daughter that she was ill.",
+   "options": [
+    "B. Rahul told Mohan, \"You have won the lottery.\"",
+    "A. Rahul told Mohan that he had won the lottery.",
+    "C. Rahul told Mohan that it was won by him.",
+    "D. The mother told her daughter that she was ill."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A pronoun must clearly refer to one noun. In A, C and D 'he', 'him' and 'she' could refer to either person. Direct speech in B removes the ambiguity.",
+   "shortcut": "If 'he/she' could mean two people, rewrite.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Me and my friend went to the cinema.\nB. My friend and me went to the cinema.\nC. My friend and I went to the cinema.\nD. Myself and my friend went to the cinema.",
+   "options": [
+    "C. My friend and I went to the cinema.",
+    "A. Me and my friend went to the cinema.",
+    "B. My friend and me went to the cinema.",
+    "D. Myself and my friend went to the cinema."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is part of the subject of 'went', so it must be 'I'. 'Me' is the object form and 'myself' is reflexive; neither can be a subject.",
+   "shortcut": "Remove the other person: 'I went' -> 'my friend and I went'.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The manager gave the report to Priya and I.\nB. The manager gave the report to Priya and me.\nC. The manager gave the report to Priya and myself.\nD. The manager gave the report to I and Priya.",
+   "options": [
+    "B. The manager gave the report to Priya and me.",
+    "A. The manager gave the report to Priya and I.",
+    "C. The manager gave the report to Priya and myself.",
+    "D. The manager gave the report to I and Priya."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the preposition 'to' the object form 'me' is needed. 'I' is a subject form, and 'myself' is reflexive and has no earlier 'I' in the clause to reflect.",
+   "shortcut": "Remove the other name: 'to me' not 'to I'.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. ___ of the two paths is shorter?",
+   "options": [
+    "Which",
+    "What",
+    "Who",
+    "Whom"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When the choice is among a limited, known set (two paths), 'which' is used.",
+   "shortcut": "Limited choice -> which.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Both of the players received ___ medals.",
+   "options": [
+    "their",
+    "his",
+    "its",
+    "her"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Both of the players' is plural, so the possessive is 'their'.",
+   "shortcut": "Plural antecedent -> their.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The teacher, ___ I respect a lot, retires next month.",
+   "options": [
+    "whom",
+    "whose",
+    "which",
+    "whomever"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the object of 'respect' and refers to a person, so 'whom' is used.",
+   "shortcut": "Person as object -> whom.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The tree has lost all ___ leaves.",
+   "options": [
+    "its",
+    "it's",
+    "their",
+    "it"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The possessive of a singular thing is 'its'. 'It's' always means 'it is' or 'it has'.",
+   "shortcut": "its (no apostrophe) = possessive.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is I who ___ responsible.",
+   "options": [
+    "am",
+    "is",
+    "are",
+    "be"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A relative pronoun 'who' takes the person of its antecedent. Here the antecedent is 'I' (first person), so the verb is 'am'.",
+   "shortcut": "who takes the person of its antecedent.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. We should respect ___ elders.",
+   "options": [
+    "our",
+    "us",
+    "we",
+    "ours"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive determiner is needed before the noun 'elders'. The subject is 'we', so 'our'.",
+   "shortcut": "Possessive before a noun: my, our, your, their.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The principal gave the trophy to ___ had scored the highest.",
+   "options": [
+    "whoever",
+    "whomever",
+    "whom",
+    "anyone whom"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'had scored', so the subject form 'whoever' is used, even after 'to'.",
+   "shortcut": "The pronoun's role inside its own clause decides the case.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. You and him are invited.\nB. You and he are invited.\nC. Him and you are invited.\nD. You and himself are invited.",
+   "options": [
+    "B. You and he are invited.",
+    "A. You and him are invited.",
+    "C. Him and you are invited.",
+    "D. You and himself are invited."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronouns are the subject of 'are', so the subject form 'he' is needed. 'Him' is the object form, and 'himself' is reflexive.",
+   "shortcut": "Subject -> he.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Smiths have sold ___ house.",
+   "options": [
+    "their",
+    "its",
+    "his",
+    "there"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The Smiths' is plural, so the possessive is 'their'.",
+   "shortcut": "Plural family name -> their.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Ramesh, along with his friends, has lost ___ way.",
+   "options": [
+    "his",
+    "their",
+    "its",
+    "her"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Along with' does not change the subject, which is 'Ramesh' (singular masculine). So 'his'.",
+   "shortcut": "Pronoun agrees with the main subject.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I do not know ___ has taken my pen.",
+   "options": [
+    "who",
+    "whom",
+    "whose",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'has taken', so the subject form 'who' is used.",
+   "shortcut": "Subject of its clause -> who.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. All the guests except Sheela and ___ had left.",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Except' is a preposition, so it takes the object form 'me'.",
+   "shortcut": "except/but/between + object pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He is the man ___ I believe is guilty.",
+   "options": [
+    "who",
+    "whom",
+    "whose",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'I believe' is a parenthetical clause. 'Who' is the subject of 'is guilty', so the subject form is needed.",
+   "shortcut": "Drop 'I believe' and test: '___ is guilty'.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The reward will go to ___ the committee thinks is most deserving.",
+   "options": [
+    "whoever",
+    "whomever",
+    "whom",
+    "whose"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inside its clause, the pronoun is the subject of 'is most deserving' ('the committee thinks' is parenthetical), so 'whoever'.",
+   "shortcut": "Drop the parenthetical clause and test the case.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Neither of the sisters wanted to share their room.\nB. Neither of the sisters wanted to share her room.\nC. Neither of the sisters wanted to share its room.\nD. Neither of the sisters wanted to share our room.",
+   "options": [
+    "B. Neither of the sisters wanted to share her room.",
+    "A. Neither of the sisters wanted to share their room.",
+    "C. Neither of the sisters wanted to share its room.",
+    "D. Neither of the sisters wanted to share our room."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' is singular, so the pronoun that refers to it must be singular and feminine: 'her'. 'Their' is plural, 'its' is for things, and 'our' changes the speaker.",
+   "shortcut": "Neither/each/either: singular pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Those of ___ who attended the camp were awarded certificates.",
+   "options": [
+    "us",
+    "we",
+    "ours",
+    "ourselves"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Of' is a preposition, so the object form 'us' follows it.",
+   "shortcut": "Preposition + object pronoun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The Government has announced its decision, and they will implement it soon.\nB. The Government has announced its decision, and it will implement it soon.\nC. The Government have announced its decision, and they will implement it soon.\nD. The Government has announced their decision, and it will implement it soon.",
+   "options": [
+    "B. The Government has announced its decision, and it will implement it soon.",
+    "A. The Government has announced its decision, and they will implement it soon.",
+    "C. The Government have announced its decision, and they will implement it soon.",
+    "D. The Government has announced their decision, and it will implement it soon."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A collective noun acting as a single body takes singular pronouns throughout. B is consistent: 'has', 'its', 'it'. The others shift between singular and plural.",
+   "shortcut": "Keep one number for the same noun.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The chief guest, ___ speech inspired everyone, left early.",
+   "options": [
+    "whose",
+    "who",
+    "whom",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word shows possession (the guest's speech), so 'whose' is needed.",
+   "shortcut": "Possession -> whose.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. It is me who is responsible.\nB. It is I who is responsible.\nC. It is I who am responsible.\nD. It is me who am responsible.",
+   "options": [
+    "C. It is I who am responsible.",
+    "A. It is me who is responsible.",
+    "B. It is I who is responsible.",
+    "D. It is me who am responsible."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'it is', the formal complement is the subject form 'I'. The relative 'who' takes the person of 'I', so the verb is 'am'.",
+   "shortcut": "It is I who am.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The people ___ I work with are friendly.",
+   "options": [
+    "whom",
+    "whose",
+    "which",
+    "what"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the object of the preposition 'with' and refers to people, so 'whom' is used.",
+   "shortcut": "Person as object -> whom.",
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,803 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The price of vegetables ___ rising every month.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is the singular noun 'price', not 'vegetables'. A singular subject takes the singular verb 'is'.",
+   "shortcut": "Find the head noun; ignore 'of ...' phrases.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Either Meena or her sisters ___ going to attend the wedding today.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'either...or', the verb agrees with the subject nearest to it. 'Her sisters' is plural, so 'are'.",
+   "shortcut": "either/or, neither/nor: match the nearer subject.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the manager nor the clerks ___ aware of the new rule.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither...nor', the verb agrees with the nearer subject. 'Clerks' is plural, so 'are'.",
+   "shortcut": "Nearer subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the clerks nor the manager ___ aware of the new rule.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither...nor', the verb agrees with the nearer subject. 'Manager' is singular, so 'is'.",
+   "shortcut": "Nearer subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Bread and butter ___ my usual breakfast.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two nouns that form one single idea or dish are treated as a singular subject, so 'is'.",
+   "shortcut": "One idea joined by 'and' -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Politics ___ a subject of great interest to him.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of subjects such as politics, physics, mathematics and economics look plural but take a singular verb.",
+   "shortcut": "Subject names ending in -s are singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Measles ___ a contagious disease.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of diseases ending in -s (measles, mumps, diabetes) take a singular verb.",
+   "shortcut": "Disease names in -s are singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Everybody in the hall ___ standing right now.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Everybody' is a singular indefinite pronoun, so it takes 'is'. 'Right now' also rules out the past forms.",
+   "shortcut": "every-/some-/any-/no- + body/one -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The scissors on the table ___ very sharp.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Scissors' is a plural-only noun (a tool with two blades) and takes a plural verb.",
+   "shortcut": "scissors, trousers, spectacles: plural verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. My trousers ___ too long for me.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Trousers' is a plural-only noun and takes a plural verb.",
+   "shortcut": "Pair-nouns used alone are plural.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. A pair of shoes ___ kept near the door.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is the singular word 'pair'; 'of shoes' only describes it. So the verb is 'is'.",
+   "shortcut": "'A pair of' -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Each of the four sisters ___ a talented singer.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular, so it takes 'is' regardless of the plural noun that follows 'of'.",
+   "shortcut": "Each/every/either/neither + singular verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Nobody except the two guards ___ the secret code.",
+   "options": [
+    "knows",
+    "know",
+    "have known",
+    "are knowing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'nobody' (singular). 'Except the two guards' is only an exclusion phrase, so the verb is 'knows'.",
+   "shortcut": "'except', 'but', 'besides' phrases do not change the subject.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The quality of the mangoes sold in this market ___ excellent.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'quality' (singular). The plural 'mangoes' sits inside a modifying phrase, so the verb is 'is'.",
+   "shortcut": "Ignore the intervening phrase.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The mother, along with her two children, ___ visiting the temple today.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Along with' is not a conjunction; the verb agrees with the first subject 'the mother', which is singular.",
+   "shortcut": "along with / together with / as well as: first subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. A number of passengers ___ waiting at the platform now.",
+   "options": [
+    "are",
+    "is",
+    "has been",
+    "was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'A number of' means 'several' and acts as a plural subject, so the verb is 'are'.",
+   "shortcut": "A number of -> plural; The number of -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The number of passengers waiting at the platform ___ increasing now.",
+   "options": [
+    "is",
+    "are",
+    "have been",
+    "were"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The number of' refers to the number itself, which is singular, so the verb is 'is'.",
+   "shortcut": "The number of -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. One of the reasons for the current delay ___ the heavy rain.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'one' (singular); 'of the reasons' is a modifying phrase. 'Current' marks present time.",
+   "shortcut": "One of + plural noun -> singular verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She is one of those teachers who ___ always encouraging students to ask questions.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 'one of those ... who', the relative pronoun 'who' refers to the plural 'teachers', so the verb is plural: 'are'.",
+   "shortcut": "one of those who -> plural verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He is the only one of the clerks who ___ the software well.",
+   "options": [
+    "knows",
+    "know",
+    "have known",
+    "are knowing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'the only one of ... who', 'who' refers to 'one' (singular), so the verb is 'knows'.",
+   "shortcut": "the only one who -> singular verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Ten kilometres ___ a long distance to walk every day.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A distance treated as a single unit takes a singular verb.",
+   "shortcut": "Distance, money, time as one unit -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Two-fifths of the water in the tank ___ already been used.",
+   "options": [
+    "has",
+    "have",
+    "are",
+    "were"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With fractions, the verb agrees with the noun after 'of'. 'Water' is uncountable and singular, so 'has'.",
+   "shortcut": "Fraction + of + noun: verb follows the noun.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Two-fifths of the students in the class ___ already left.",
+   "options": [
+    "have",
+    "has",
+    "is",
+    "was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With fractions, the verb agrees with the noun after 'of'. 'Students' is plural, so 'have'.",
+   "shortcut": "Fraction + of + noun: verb follows the noun.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither of the two roads ___ leading to the village.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' is singular, so it takes 'is'.",
+   "shortcut": "Neither/either + singular verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Not only the principal but also the teachers ___ present at the meeting today.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'not only ... but also', the verb agrees with the nearer subject. 'Teachers' is plural, so 'are'.",
+   "shortcut": "Nearer subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Many a candidate ___ failed the aptitude round in the past.",
+   "options": [
+    "has",
+    "have",
+    "were",
+    "are"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Many a' is followed by a singular noun and takes a singular verb, so 'has'.",
+   "shortcut": "Many a + singular noun + singular verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. More than one candidate ___ applied for the post.",
+   "options": [
+    "has",
+    "have",
+    "are",
+    "were"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'More than one' takes a singular noun and a singular verb, so 'has'.",
+   "shortcut": "More than one -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Gold and silver ___ both precious metals.",
+   "options": [
+    "are",
+    "is",
+    "has been",
+    "was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two different nouns joined by 'and' form a plural subject, and 'both' confirms it, so 'are'.",
+   "shortcut": "A and B (two things) -> plural.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Every boy and every girl in the school ___ expected to wear a uniform.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When singular nouns joined by 'and' are each preceded by 'every' or 'each', the subject is singular, so 'is'.",
+   "shortcut": "every X and every Y -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Each of the employees, along with the supervisor, ___ required to wear a helmet.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'each' (singular). 'Along with the supervisor' does not add to the subject.",
+   "shortcut": "each + along with -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The main attraction of the fair ___ the elephants and the camels.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb agrees with the subject 'attraction' (singular), not with the complement 'elephants and camels'.",
+   "shortcut": "Verb agrees with the subject, not the complement.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. There ___ several mistakes in your report.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 'there ... ' sentences the real subject follows the verb. 'Mistakes' is plural, so 'are'.",
+   "shortcut": "There + be: look at the noun after the verb.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Principal and Chairman of the college ___ presiding over the function.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "One article before two titles ('the Principal and Chairman') shows one person holding both posts, so the subject is singular.",
+   "shortcut": "One article, two nouns -> one person -> singular.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Principal and the Chairman of the college ___ presiding over the function.",
+   "options": [
+    "are",
+    "is",
+    "were",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A separate article before each noun ('the Principal and the Chairman') shows two different persons, so the subject is plural.",
+   "shortcut": "Article repeated -> two persons -> plural.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the coach nor the players, who had trained for months, ___ satisfied with the result.",
+   "options": [
+    "were",
+    "was",
+    "is",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither...nor' the verb agrees with the nearer subject, 'players' (plural). 'Had trained' sets the past time, so 'were'.",
+   "shortcut": "Nearer subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The chief, together with his ministers, ___ expected to arrive shortly.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Together with' does not make the subject plural; the verb agrees with 'the chief', which is singular.",
+   "shortcut": "together with: first subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is the engineers, not the manager, who ___ responsible for the delay.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun 'who' refers to the noun it follows, 'engineers' (plural). So 'are'.",
+   "shortcut": "'who' takes the number of its antecedent.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is the manager, not the engineers, who ___ responsible for the delay.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun 'who' refers to 'the manager' (singular), so the verb is 'is'.",
+   "shortcut": "'who' takes the number of its antecedent.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Half of the mangoes in the basket ___ rotten.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'half of', the verb follows the noun after 'of'. 'Mangoes' is plural, so 'are'.",
+   "shortcut": "Fraction + of + noun: verb follows the noun.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The stars, as well as the moon, ___ visible tonight.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As well as' does not join subjects; the verb agrees with the first subject, 'the stars' (plural), so 'are'.",
+   "shortcut": "as well as: first subject decides.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Where ___ the keys and the wallet kept?",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In a question the subject follows the verb. 'The keys and the wallet' is a plural subject (two things joined by 'and'), so 'are'.",
+   "shortcut": "Rearrange the question to find the subject.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Here ___ the documents you asked for.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'Here', the subject follows the verb. 'Documents' is plural, so 'are'.",
+   "shortcut": "Here/There + verb + subject: agree with the subject.",
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

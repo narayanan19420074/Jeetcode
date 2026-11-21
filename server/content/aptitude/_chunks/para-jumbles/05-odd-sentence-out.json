@@ -1,0 +1,945 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Nilgiri hills are famous for their tea gardens.\nQ. Workers pluck the tender leaves by hand every morning.\nR. Ooty tea is known for its brisk flavour.\nS. The leaves are then withered, rolled and dried.\nT. The Reserve Bank regulates the country's money supply.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "T"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence T is the odd one out: it is about banking, while the other four are about tea.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Taj Mahal was built of white marble.\nQ. Each team has eleven players.\nR. Cricket is played with a bat and a ball.\nS. A Test match can last up to five days.\nT. The side scoring more runs wins the match.",
+   "options": [
+    "R",
+    "S",
+    "T",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P is the odd one out: it is about a monument, not the game of cricket.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Spiders have eight legs and spin webs.\nQ. The queen lays all the eggs of the hive.\nR. Honeybees live in organised colonies.\nS. Worker bees collect nectar and pollen.\nT. Drones mate with the queen and then die.",
+   "options": [
+    "T",
+    "S",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P is the odd one out: it discusses spiders; the rest describe the bee colony.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. He goes for a long run in the park.\nQ. After a cold shower, he has a light breakfast.\nR. By eight, he is at his desk.\nS. The Himalayas are the highest mountain range.\nT. Ravi wakes up at five every morning.",
+   "options": [
+    "R",
+    "P",
+    "S",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence S is the odd one out: it has nothing to do with Ravi's routine.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Ganga is considered sacred by Hindus.\nQ. Its water is carried home in small pots.\nR. The Ganga also supports farming across the northern plains.\nS. Hyderabad is famous for its biryani.\nT. Millions bathe in it during festivals.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence S is the odd one out: it is about a city's food, not the river.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Regular reviews keep the plan realistic.\nQ. Heavy traffic is common in metro cities.\nR. It lists income and expenses side by side.\nS. Savings are set aside before leisure spending.\nT. A budget helps a family control its spending.",
+   "options": [
+    "Q",
+    "P",
+    "T",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q is the odd one out: it is about traffic; the others are about budgeting.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Photosynthesis takes place in the green parts of plants.\nQ. The human skeleton has 206 bones.\nR. Oxygen is released as a by-product.\nS. Chlorophyll captures sunlight.\nT. Carbon dioxide and water are converted into glucose.",
+   "options": [
+    "P",
+    "S",
+    "T",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q is the odd one out: it deals with anatomy, not photosynthesis.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The first aeroplane flew in 1903.\nQ. Messages travel in seconds across the world.\nR. Video calls keep families close.\nS. Smartphones have changed how we communicate.\nT. Social media lets people share their lives.",
+   "options": [
+    "T",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P is the odd one out: it is about early aviation history, unrelated to smartphones.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Regular practice lowers stress levels.\nQ. Meditation calms the restless mind.\nR. Yoga improves flexibility and strength.\nS. Pranayama regulates breathing.\nT. Delhi is the capital of India.",
+   "options": [
+    "Q",
+    "T",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence T is the odd one out: it is a political fact, unrelated to yoga.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. His greatest creation was the Taj Mahal.\nQ. The Mughal emperor Shah Jahan loved architecture.\nR. He built the Red Fort in Delhi.\nS. He also commissioned the Jama Masjid.\nT. Sachin Tendulkar scored one hundred international centuries.",
+   "options": [
+    "T",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence T is the odd one out: it is about cricket.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Her classes leave students eager to learn.\nQ. A good teacher inspires students.\nR. Monsoon winds bring rain to India.\nS. She encourages questions instead of discouraging them.\nT. She explains difficult ideas with simple examples.",
+   "options": [
+    "P",
+    "T",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence R is the odd one out: it is about weather, not about teaching.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Recycled paper uses less water than fresh paper.\nQ. Recycling paper saves trees.\nR. Elephants are the largest land animals.\nS. The pulp is cleaned and pressed into new sheets.\nT. Used paper is collected and pulped.",
+   "options": [
+    "Q",
+    "S",
+    "T",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R is the odd one out: it is about animals, not paper recycling.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Mumbai is India's financial capital.\nQ. The Bombay Stock Exchange is located there.\nR. Kerala has the highest literacy rate in India.\nS. Its Dalal Street is a symbol of Indian finance.\nT. Many banks have their headquarters in the city.",
+   "options": [
+    "S",
+    "R",
+    "T",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence R is the odd one out: it concerns a different state and subject.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. A cheetah can sprint at nearly 100 km/h.\nQ. It tires quickly after a long chase.\nR. Its claws grip the ground like spikes.\nS. Penguins live in the Antarctic region.\nT. Its slim body and long legs help it run faster.",
+   "options": [
+    "R",
+    "T",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence S is the odd one out: it is about penguins, not the cheetah.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The sky turned dark with clouds in the evening.\nQ. She researched the company's products.\nR. Anita prepared for the interview carefully.\nS. She practised answers to common questions.\nT. She dressed neatly and arrived early.",
+   "options": [
+    "P",
+    "Q",
+    "T",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P is the odd one out: it has no link to Anita's preparation.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. A passport is an essential travel document.\nQ. Indian cuisine uses many spices.\nR. It certifies the holder's nationality.\nS. Applicants must submit proof of address and birth.\nT. It must be renewed after ten years.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q is the odd one out: it is about food.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Students can find articles in seconds.\nQ. Tigers are often found in the Sundarbans.\nR. The internet has made research easy.\nS. Online libraries hold millions of books.\nT. Search engines sort results by relevance.",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q is the odd one out: it is about wildlife, not the internet.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Diwali is the festival of lights.\nQ. Families light lamps outside their houses.\nR. Rangoli decorates the doorsteps.\nS. Football is played with a round ball.\nT. Sweets are exchanged among neighbours.",
+   "options": [
+    "P",
+    "S",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S is the odd one out: it is about a sport.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. This raises the groundwater level.\nQ. Pits allow surplus water to seep into the ground.\nR. Rooftop water is channelled into storage tanks.\nS. Rainwater harvesting conserves water.\nT. The railway fare was increased last year.",
+   "options": [
+    "T",
+    "Q",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence T is the odd one out: it is about fares, not water conservation.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Indian flag has three colours.\nQ. Saffron represents courage.\nR. Green signifies prosperity.\nS. The Red Fort stands in Old Delhi.\nT. White stands for peace.",
+   "options": [
+    "S",
+    "P",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S is the odd one out: it is about a monument, not the flag.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Deficiency can lead to brittle bones in old age.\nQ. Calcium is essential for strong bones.\nR. Children need plenty of calcium while growing.\nS. Milk and curd are rich sources of it.\nT. Exports of software crossed record levels last year.",
+   "options": [
+    "P",
+    "T",
+    "S",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence T is the odd one out: it is about the economy.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Ramanujan was a self-taught mathematician.\nQ. Madras was renamed Chennai in 1996.\nR. Hardy recognised his genius immediately.\nS. He sent his theorems to Professor Hardy in Cambridge.\nT. Ramanujan travelled to England and worked with him.",
+   "options": [
+    "P",
+    "R",
+    "T",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q is the odd one out: it concerns a city's name.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. It is used to build houses in the northeast.\nQ. Bamboo grows quickly and needs little water.\nR. Artisans weave baskets and mats from it.\nS. Its shoots are cooked as a delicacy.\nT. Gold prices rose sharply in the festive season.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "T"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence T is the odd one out: it is about gold prices.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Many children enjoy playing in the rain.\nQ. The memory stores data temporarily.\nR. The hard disk stores it permanently.\nS. A computer processes information.\nT. The CPU executes instructions.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "T"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P is the odd one out: it is about children and rain.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Our school organised a blood donation camp.\nQ. Doctors checked each donor before collecting blood.\nR. Over a hundred volunteers registered.\nS. A giraffe's neck helps it reach tall branches.\nT. The camp ended with refreshments for all.",
+   "options": [
+    "S",
+    "R",
+    "T",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S is the odd one out: it is about a giraffe.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The cricket World Cup is held every four years.\nQ. Mysore and Kanchipuram are famous for silk sarees.\nR. The worms feed on mulberry leaves.\nS. They spin cocoons from which threads are drawn.\nT. Silk is made by silkworms.",
+   "options": [
+    "Q",
+    "S",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P is the odd one out: it concerns cricket.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Wheat is the staple crop of northern India.\nQ. During deep sleep, tissues repair themselves.\nR. Adults need seven to eight hours nightly.\nS. The brain organises the day's memories.\nT. Sleep restores the body's energy.",
+   "options": [
+    "P",
+    "Q",
+    "T",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P is the odd one out: it is about crops.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. It also gives loans to those who need them.\nQ. The sun is a star at the centre of our solar system.\nR. A bank keeps customers' money safe.\nS. It pays interest on savings deposits.\nT. Customers can withdraw their money using ATMs.",
+   "options": [
+    "S",
+    "P",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q is the odd one out: it is about astronomy.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Wide feet stop it from sinking in sand.\nQ. Pune is known for its educational institutions.\nR. Its hump stores fat, not water.\nS. The camel is called the ship of the desert.\nT. It can go many days without drinking.",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "T"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q is the odd one out: it is about a city.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Public libraries serve all sections of society.\nQ. Mount Everest was first climbed in 1953.\nR. They lend books free of cost.\nS. Quiet reading rooms help students prepare for exams.\nT. Many offer computer access too.",
+   "options": [
+    "Q",
+    "P",
+    "S",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q is the odd one out: it is about mountaineering history.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Amazon is the largest rainforest on earth.\nQ. A player must think several moves ahead.\nR. Each piece moves in its own way.\nS. Chess teaches patience and planning.\nT. The game ends in checkmate, resignation or a draw.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P is the odd one out: it is about forests.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Collectors visited his house to see them.\nQ. His album held rare stamps from fifty countries.\nR. Hari collected stamps from his childhood.\nS. One stamp, issued in 1947, was his pride.\nT. Petrol prices vary from state to state.",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "T"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence T is the odd one out: it is about fuel prices.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Ajanta caves contain ancient paintings.\nQ. Charging stations are being built in cities.\nR. Electric vehicles run on batteries.\nS. They are cheaper to run than petrol cars.\nT. They produce no smoke on the road.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P is the odd one out: it is about art and history.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Its editorial gives the paper's opinion.\nQ. A newspaper reports daily events.\nR. Sports pages cover matches and players.\nS. Classified ads help buyers and sellers connect.\nT. Whales are the largest mammals in the sea.",
+   "options": [
+    "T",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence T is the odd one out: it is about marine life.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. It grows in muddy ponds.\nQ. The lotus is India's national flower.\nR. Hindus consider it a symbol of purity.\nS. Its petals remain clean despite the mud.\nT. Cotton is grown in black soil regions.",
+   "options": [
+    "Q",
+    "R",
+    "T",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence T is the odd one out: it is about soil and crops.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. They practise aptitude questions daily.\nQ. Many Indian students prepare for placement tests.\nR. The moon has no atmosphere.\nS. Group discussions improve communication.\nT. Mock tests build speed and accuracy.",
+   "options": [
+    "R",
+    "S",
+    "T",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R is the odd one out: it is about the moon.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Defenders try to stop them by holding on.\nQ. Kabaddi is a popular contact sport in India.\nR. Raiders try to tag opponents and return to their half.\nS. Gulab jamun is a sweet made from milk solids.\nT. Points are scored for every tagged opponent.",
+   "options": [
+    "Q",
+    "T",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence S is the odd one out: it is about a sweet.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The postman delivered a letter to our house.\nQ. It was from my grandmother in Madurai.\nR. She also sent her blessings for my exams.\nS. She wrote about the harvest festival.\nT. The price of onions doubled last week.",
+   "options": [
+    "T",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence T is the odd one out: it is unrelated to the letter.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Qutub Minar is a tall brick tower in Delhi.\nQ. Petrol and diesel are fossil fuels.\nR. Their reserves will run out one day.\nS. They are extracted from crude oil.\nT. Burning them releases carbon dioxide.",
+   "options": [
+    "R",
+    "S",
+    "P",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P is the odd one out: it is about a monument.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Mathematics is the study of numbers and shapes.\nQ. Its climate is cool all year round.\nR. The botanical garden there is famed for its flowers.\nS. Visitors take the toy train through tunnels and forests.\nT. Ooty is a hill station in Tamil Nadu.",
+   "options": [
+    "T",
+    "S",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P is the odd one out: it is a general statement about a subject.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The harvest festival Pongal is celebrated in January.\nQ. Water stations are placed along the route.\nR. Training starts months in advance.\nS. A marathon is a long-distance running race.\nT. Runners cover forty-two kilometres.",
+   "options": [
+    "T",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P is the odd one out: it is about a festival.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. The Nile is the longest river in the world.\nQ. He encouraged people to boycott foreign cloth.\nR. Mahatma Gandhi believed in non-violence.\nS. He led the salt march in 1930.\nT. He spun khadi himself on a charkha.",
+   "options": [
+    "R",
+    "P",
+    "T",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P is the odd one out: it is about geography.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Updates fix bugs and security holes.\nQ. Users should install them promptly.\nR. Jasmine flowers are used to decorate hair.\nS. Computers need regular software updates.\nT. Old programs may stop working without them.",
+   "options": [
+    "P",
+    "S",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R is the odd one out: it is about flowers.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Pearls are formed inside oysters.\nQ. Light travels faster than sound.\nR. A grain of sand irritates the soft body.\nS. After years, a smooth pearl is formed.\nT. The oyster coats it with layers of nacre.",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence Q is the odd one out: it is about physics.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Players such as Mithali Raj became household names.\nQ. Women's cricket has grown in popularity.\nR. Sponsors are investing more than ever.\nS. Matches now attract large television audiences.\nT. Rice grows well in flooded fields.",
+   "options": [
+    "R",
+    "S",
+    "T",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence T is the odd one out: it is about agriculture.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Pitching tents needs coordination.\nQ. Cooking on a fire builds self-reliance.\nR. Camping teaches teamwork.\nS. Gold is a soft yellow metal.\nT. Evening songs bring everyone together.",
+   "options": [
+    "T",
+    "R",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S is the odd one out: it is about a metal.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Today it is open to visitors.\nQ. Thick walls and wide moats protected it.\nR. Soldiers kept watch from tall towers.\nS. A hospital needs clean water and trained nurses.\nT. The city's old fort was built in the sixteenth century.",
+   "options": [
+    "R",
+    "S",
+    "P",
+    "T"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S is the odd one out: it is about hospitals.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Strokes are practised once the fear goes.\nQ. Beginners start in shallow water.\nR. Floating builds trust in the water.\nS. Learning to swim is a life skill.\nT. The earth takes 365 days to go around the sun.",
+   "options": [
+    "S",
+    "T",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence T is the odd one out: it is about astronomy.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Assam and Darjeeling are the leading producing regions.\nQ. Plantation workers pluck the leaves by hand.\nR. Coffee, by contrast, is grown mainly in the southern hills of Karnataka.\nS. Auction centres in Kolkata and Guwahati fix the prices.\nT. Tea is the most popular beverage in India.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R is the odd one out: the paragraph is about tea; this sentence shifts to coffee.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Four of the following five sentences form a coherent paragraph. Pick the sentence that does not belong.\nP. Bills can be paid from home.\nQ. Funds can be transferred in seconds.\nR. Online banking saves customers a trip to the branch.\nS. Cheque books were once the main way of paying large amounts.\nT. Strong passwords protect the account from fraud.",
+   "options": [
+    "P",
+    "S",
+    "T",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S is the odd one out: the paragraph is about the benefits and use of online banking; this one looks back at an older practice.",
+   "shortcut": "Find the common subject of the four sentences; the one that shifts to another topic is the odd one.",
+   "subPattern": "odd-sentence-out",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

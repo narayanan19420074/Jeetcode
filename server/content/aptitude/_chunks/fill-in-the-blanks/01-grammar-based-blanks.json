@@ -1,0 +1,927 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Neither of the two candidates ___ selected for the interview.",
+   "options": [
+    "was",
+    "were",
+    "are",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' is a singular pronoun, so it takes a singular verb: was.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Neither / Each / Either / One of + plural noun takes a singular verb."
+  },
+  {
+   "questionText": "She has been working in this company ___ 2019.",
+   "options": [
+    "for",
+    "since",
+    "from",
+    "by"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Since' is used with a fixed point in time (2019) with the present perfect continuous; 'for' is used with a period.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Point of time -> since; length of time -> for."
+  },
+  {
+   "questionText": "Each of the students ___ given a certificate of merit.",
+   "options": [
+    "were",
+    "have been",
+    "was",
+    "are"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Each' is singular, so the verb is singular: was given.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If I ___ you, I would accept the offer immediately.",
+   "options": [
+    "am",
+    "was",
+    "be",
+    "were"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "For an unreal (imaginary) condition in the present, the subjunctive 'were' is used for all persons in standard grammar.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Unreal 'if' clause -> were (not was)."
+  },
+  {
+   "questionText": "The news of the victory ___ received with great joy.",
+   "options": [
+    "was",
+    "were",
+    "are",
+    "have"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'News' is an uncountable noun and takes a singular verb.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "News, furniture, information, advice: always singular."
+  },
+  {
+   "questionText": "By the time we reached the station, the train ___.",
+   "options": [
+    "has left",
+    "had left",
+    "leaves",
+    "will leave"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two past actions: the earlier one (the train leaving) is in the past perfect, the later (our reaching) in the simple past.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "'By the time' + simple past -> past perfect in main clause."
+  },
+  {
+   "questionText": "One of my friends ___ a pilot in the Indian Air Force.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'One of + plural noun' takes a singular verb because the subject is 'One'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The teacher, along with her students, ___ going on a trip to Mysuru.",
+   "options": [
+    "are",
+    "were",
+    "have been",
+    "is"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Along with' does not make the subject plural; the verb agrees with 'The teacher', so it is singular.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Along with / together with / as well as: ignore the added noun."
+  },
+  {
+   "questionText": "He suggested that she ___ a doctor immediately.",
+   "options": [
+    "see",
+    "sees",
+    "saw",
+    "will see"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After verbs like suggest, insist, recommend and demand, a 'that' clause takes the base form of the verb (subjunctive): see.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "suggest/insist/demand that + subject + base verb."
+  },
+  {
+   "questionText": "It is high time we ___ the problem seriously.",
+   "options": [
+    "consider",
+    "considered",
+    "will consider",
+    "have considered"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'It is high time' is followed by the simple past (past subjunctive) to show that action is overdue.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "It is (high) time + past tense."
+  },
+  {
+   "questionText": "I am looking forward to ___ you at the wedding.",
+   "options": [
+    "see",
+    "saw",
+    "seeing",
+    "have seen"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In 'look forward to', 'to' is a preposition, so the verb that follows takes the -ing form.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Preposition 'to' + verb-ing."
+  },
+  {
+   "questionText": "Of the two brothers, Ramesh is the ___.",
+   "options": [
+    "tallest",
+    "more tall",
+    "most tall",
+    "taller"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When two persons are compared, the comparative degree (taller) is used, not the superlative.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Two things -> comparative; three or more -> superlative."
+  },
+  {
+   "questionText": "Hardly had he reached the platform ___ the train started moving.",
+   "options": [
+    "when",
+    "than",
+    "then",
+    "that"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' (and 'scarcely') is followed by 'when'; 'than' goes with 'no sooner'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Hardly/Scarcely ... when; No sooner ... than."
+  },
+  {
+   "questionText": "No sooner did he enter the hall ___ the lights went out.",
+   "options": [
+    "when",
+    "than",
+    "then",
+    "that"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'No sooner' is correctly followed by 'than'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Mathematics ___ my favourite subject since childhood.",
+   "options": [
+    "have been",
+    "were",
+    "has been",
+    "are"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of subjects ending in -s (mathematics, physics, economics) are singular; 'since' needs the present perfect: has been.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The scissors on the table ___ very sharp.",
+   "options": [
+    "is",
+    "has",
+    "was",
+    "are"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Scissors' is a plural-only noun, so the verb is plural: are.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Scissors, trousers, spectacles: plural verb."
+  },
+  {
+   "questionText": "I wish I ___ taller so that I could join the police force.",
+   "options": [
+    "were",
+    "am",
+    "will be",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'wish' referring to an unreal present situation, the subjunctive 'were' is used.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "wish + past / were."
+  },
+  {
+   "questionText": "Let us start the work now, ___?",
+   "options": [
+    "will we",
+    "shall we",
+    "don't we",
+    "do we"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The question tag for 'Let us ...' is 'shall we'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Let's -> shall we?"
+  },
+  {
+   "questionText": "He cannot swim across the river, ___?",
+   "options": [
+    "can't he",
+    "does he",
+    "can he",
+    "is he"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A negative statement takes a positive tag with the same auxiliary: cannot -> can he.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Negative statement -> positive tag."
+  },
+  {
+   "questionText": "She ___ her homework when the teacher entered the room.",
+   "options": [
+    "is doing",
+    "does",
+    "has done",
+    "was doing"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A past continuous action is interrupted by a simple past action (entered): was doing.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Interrupted background action -> past continuous."
+  },
+  {
+   "questionText": "Unless you ___ hard, you will not pass the examination.",
+   "options": [
+    "work",
+    "don't work",
+    "will work",
+    "worked"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Unless' already carries a negative meaning, so the verb that follows is affirmative, in the present tense for a future condition.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Unless + affirmative verb (never 'unless ... not')."
+  },
+  {
+   "questionText": "The number of students in our college ___ increasing every year.",
+   "options": [
+    "are",
+    "is",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'The number of' takes a singular verb, because the subject is 'number'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "The number of -> singular; A number of -> plural."
+  },
+  {
+   "questionText": "A number of students ___ absent from the class today.",
+   "options": [
+    "is",
+    "was",
+    "are",
+    "has been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'A number of' means 'several' and takes a plural verb.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He speaks as if he ___ the owner of the company.",
+   "options": [
+    "is",
+    "will be",
+    "has been",
+    "were"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As if' expressing an unreal comparison takes the subjunctive 'were'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "as if / as though (unreal) -> were."
+  },
+  {
+   "questionText": "The more you practise, ___ you become.",
+   "options": [
+    "the better",
+    "better",
+    "the best",
+    "best"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The structure 'the + comparative ..., the + comparative' needs 'the better'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "The more ..., the better ..."
+  },
+  {
+   "questionText": "Many a student ___ failed in this examination.",
+   "options": [
+    "have",
+    "has",
+    "are",
+    "were"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Many a' is followed by a singular noun and a singular verb: has failed.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Many a + singular noun + singular verb."
+  },
+  {
+   "questionText": "Either Meena or her cousins ___ coming to the party tonight.",
+   "options": [
+    "is",
+    "was",
+    "are",
+    "has been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With 'either ... or', the verb agrees with the nearer subject, 'cousins' (plural): are.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Either/Neither ... or/nor: verb agrees with the nearest noun."
+  },
+  {
+   "questionText": "Neither the manager nor his assistants ___ present at the meeting.",
+   "options": [
+    "was",
+    "is",
+    "has been",
+    "were"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 'neither ... nor', the verb agrees with the nearer subject, 'assistants', so it is plural: were.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The doctor suggested ___ to the hills for a few weeks.",
+   "options": [
+    "going",
+    "to go",
+    "go",
+    "gone"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb 'suggest' is followed by a gerund (-ing form), not by an infinitive.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "suggest + verb-ing."
+  },
+  {
+   "questionText": "He is used to ___ up early in the morning.",
+   "options": [
+    "get",
+    "getting",
+    "got",
+    "gets"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In 'be used to', 'to' is a preposition, so the -ing form follows.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "be used to + verb-ing."
+  },
+  {
+   "questionText": "The books ___ I bought yesterday are very expensive.",
+   "options": [
+    "what",
+    "whom",
+    "which",
+    "whose"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The relative pronoun for things is 'which'. 'What' cannot follow a noun, 'whom' is for persons and 'whose' shows possession.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The man ___ car was stolen has lodged a complaint.",
+   "options": [
+    "who",
+    "whom",
+    "which",
+    "whose"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The car belongs to the man, so the possessive relative pronoun 'whose' is required.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The girl ___ I met at the airport is my cousin.",
+   "options": [
+    "whom",
+    "whose",
+    "which",
+    "what"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Whom' is the object form for a person (I met her); 'whose', 'which' and 'what' do not fit.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I have never seen ___ elephant as tall as that one.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "some"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Elephant' begins with a vowel sound, so the article 'an' is used.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He bought ___ one-rupee coin from the shop.",
+   "options": [
+    "an",
+    "the",
+    "a",
+    "some"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'One' begins with the consonant sound /w/, so the article is 'a', not 'an'.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Article depends on sound, not spelling: a one-rupee, a university, an hour."
+  },
+  {
+   "questionText": "If it rains tomorrow, we ___ the picnic.",
+   "options": [
+    "would cancel",
+    "cancelled",
+    "had cancelled",
+    "will cancel"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A real future condition (present tense in the if-clause) takes 'will' + base verb in the main clause.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "If + present, ... will + verb."
+  },
+  {
+   "questionText": "If she had studied harder, she ___ the examination.",
+   "options": [
+    "would have passed",
+    "would pass",
+    "will pass",
+    "had passed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An unreal past condition (had studied) takes 'would have + past participle' in the main clause.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "If + had + V3, ... would have + V3."
+  },
+  {
+   "questionText": "She said that she ___ the film the previous day.",
+   "options": [
+    "has seen",
+    "had seen",
+    "sees",
+    "will see"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In reported speech, a past action that came before the reporting verb is expressed in the past perfect: had seen.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reported speech: simple past -> past perfect."
+  },
+  {
+   "questionText": "I ___ in this city since I was a child.",
+   "options": [
+    "lived",
+    "live",
+    "have lived",
+    "am living"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Since' with a point in the past and an action continuing to now needs the present perfect: have lived.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Water ___ at 100 degrees Celsius at sea level.",
+   "options": [
+    "boil",
+    "is boiling",
+    "boiled",
+    "boils"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A scientific fact is expressed in the simple present; 'water' is singular, so boils.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the two plans, this one is ___.",
+   "options": [
+    "the better",
+    "the best",
+    "more better",
+    "most better"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Comparison of two items uses the comparative with 'the': the better.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Gulliver's Travels ___ written by Jonathan Swift.",
+   "options": [
+    "were",
+    "was",
+    "are",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A title of a book is treated as singular, and the sentence is about a past writing: was.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Book / film titles take singular verbs."
+  },
+  {
+   "questionText": "Ten kilometres ___ a long distance to walk every day.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A distance treated as a single unit takes a singular verb.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The furniture in the old house ___ been sold.",
+   "options": [
+    "have",
+    "are",
+    "were",
+    "has"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Furniture' is uncountable and singular, so 'has been' is correct.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ravi, as well as his friends, ___ invited to the function.",
+   "options": [
+    "was",
+    "were",
+    "are",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As well as' does not change the number of the subject; 'Ravi' is singular, so the verb is singular.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The patient ___ before the doctor arrived at the hospital.",
+   "options": [
+    "has died",
+    "had died",
+    "dies",
+    "was dying"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two past events: the death happened before the doctor's arrival, so the earlier one takes the past perfect.",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Principal, as well as the teachers, ___ attending the seminar tomorrow.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'As well as' does not make the subject plural; the subject is 'The Principal' (singular).",
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,727 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 7 × 20 ÷ 4 ?",
+   "options": [
+    "12",
+    "35",
+    "2",
+    "14"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 7 + 20 ÷ 4. Apply BODMAS: 7 + 20 ÷ 4 → 7 + 5 → 12. Answer = 12.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '−' and '÷' are interchanged, then what is the value of 3 ÷ 23 ÷ 31 ?",
+   "options": [
+    "-50",
+    "-51",
+    "-61",
+    "51"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 3 − 23 − 31. Apply BODMAS: 3 − 23 − 31 → -20 − 31 → -51. Answer = -51.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 9 − 17 × 21 ?",
+   "options": [
+    "9",
+    "-348",
+    "11",
+    "13"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 9 − 17 + 21. Apply BODMAS: 9 − 17 + 21 → -8 + 21 → 13. Answer = 13.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 7 + 13 × 31 ?",
+   "options": [
+    "-396",
+    "-398",
+    "-400",
+    "410"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 7 − 13 × 31. Apply BODMAS: 7 − 13 × 31 → 7 − 403 → -396. Answer = -396.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 5 + 15 + 4 ?",
+   "options": [
+    "14",
+    "-13",
+    "-18",
+    "-14"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 5 − 15 − 4. Apply BODMAS: 5 − 15 − 4 → -10 − 4 → -14. Answer = -14.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 6 − 3 + 14 ?",
+   "options": [
+    "42",
+    "17",
+    "-36",
+    "-35"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 6 − 3 × 14. Apply BODMAS: 6 − 3 × 14 → 6 − 42 → -36. Answer = -36.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 32 − 8 − 8 ?",
+   "options": [
+    "16",
+    "-48",
+    "42",
+    "48"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 32 + 8 + 8. Apply BODMAS: 32 + 8 + 8 → 40 + 8 → 48. Answer = 48.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 32 + 22 + 35 ?",
+   "options": [
+    "-35",
+    "-25",
+    "-24",
+    "25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 32 − 22 − 35. Apply BODMAS: 32 − 22 − 35 → 10 − 35 → -25. Answer = -25.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 18 + 8 × 20 ?",
+   "options": [
+    "142",
+    "200",
+    "-152",
+    "-142"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 18 − 8 × 20. Apply BODMAS: 18 − 8 × 20 → 18 − 160 → -142. Answer = -142.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 7 + 21 + 3 ?",
+   "options": [
+    "-21",
+    "31",
+    "17",
+    "-17"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 7 − 21 − 3. Apply BODMAS: 7 − 21 − 3 → -14 − 3 → -17. Answer = -17.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '÷' are interchanged, then what is the value of 8 ÷ 11 ÷ 2 ?",
+   "options": [
+    "-21",
+    "15",
+    "23",
+    "21"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 8 + 11 + 2. Apply BODMAS: 8 + 11 + 2 → 19 + 2 → 21. Answer = 21.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '−' and '×' are interchanged, then what is the value of 8 − 26 ÷ 26 + 4 ?",
+   "options": [
+    "12",
+    "2",
+    "14",
+    "11"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 8 × 26 ÷ 26 + 4. Apply BODMAS: 8 × 26 ÷ 26 + 4 → 208 ÷ 26 + 4 → 8 + 4 → 12. Answer = 12.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 3 ÷ 6 ÷ 24 × 10 ?",
+   "options": [
+    "-17",
+    "-16",
+    "17",
+    "-21"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 3 − 6 − 24 + 10. Apply BODMAS: 3 − 6 − 24 + 10 → -3 − 24 + 10 → -27 + 10 → -17. Answer = -17.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '÷' and also '−' and '×' are interchanged, then what is the value of 35 ÷ 3 × 19 ÷ 36 ?",
+   "options": [
+    "-55",
+    "55",
+    "57",
+    "51"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 35 + 3 − 19 + 36. Apply BODMAS: 35 + 3 − 19 + 36 → 38 − 19 + 36 → 19 + 36 → 55. Answer = 55.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged and the numbers 15 and 11 are also interchanged, find the value of 15 + 32 ÷ 8 ÷ 15 .",
+   "options": [
+    "331",
+    "329",
+    "-333",
+    "333"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs and swap the numbers 15 ↔ 11 to get 11 × 32 − 8 − 11. Apply BODMAS: 11 × 32 − 8 − 11 → 352 − 8 − 11 → 344 − 11 → 333. Answer = 333.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged and the numbers 10 and 25 are also interchanged, find the value of 10 − 9 × 21 + 3 .",
+   "options": [
+    "211",
+    "-176",
+    "201",
+    "-211"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs and swap the numbers 10 ↔ 25 to get 25 + 9 × 21 − 3. Apply BODMAS: 25 + 9 × 21 − 3 → 25 + 189 − 3 → 214 − 3 → 211. Answer = 211.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '×' and '÷' are interchanged, then what is the value of ( 6 ÷ 28 ) + 25 − 23 ?",
+   "options": [
+    "-170",
+    "164",
+    "172",
+    "170"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get ( 6 × 28 ) + 25 − 23. Apply BODMAS: ( 6 × 28 ) + 25 − 23 → ( 168 ) + 25 − 23 → 168 + 25 − 23 → 193 − 23 → 170. Answer = 170.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '÷' and also '−' and '×' are interchanged, then what is the value of 36 × 28 − 2 × 6 ?",
+   "options": [
+    "-26",
+    "10",
+    "-36",
+    "996"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 36 − 28 × 2 − 6. Apply BODMAS: 36 − 28 × 2 − 6 → 36 − 56 − 6 → -20 − 6 → -26. Answer = -26.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 12 + 15 − 7 − 16 ?",
+   "options": [
+    "158",
+    "4",
+    "157",
+    "147"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 12 × 15 − 7 − 16. Apply BODMAS: 12 × 15 − 7 − 16 → 180 − 7 − 16 → 173 − 16 → 157. Answer = 157.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, then what is the value of 26 − 28 − 19 ÷ 10 ?",
+   "options": [
+    "244",
+    "234",
+    "246",
+    "-244"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 26 + 28 + 19 × 10. Apply BODMAS: 26 + 28 + 19 × 10 → 26 + 28 + 190 → 54 + 190 → 244. Answer = 244.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged and the numbers 28 and 6 are also interchanged, find the value of 11 + 5 + 28 × 28 .",
+   "options": [
+    "5",
+    "0",
+    "6",
+    "-1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs and swap the numbers 28 ↔ 6 to get 11 − 5 − 6 ÷ 6. Apply BODMAS: 11 − 5 − 6 ÷ 6 → 11 − 5 − 1 → 6 − 1 → 5. Answer = 5.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 7 − 14 × 17 − 15 ?",
+   "options": [
+    "-260",
+    "-246",
+    "372",
+    "260"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 7 + 14 × 17 + 15. Apply BODMAS: 7 + 14 × 17 + 15 → 7 + 238 + 15 → 245 + 15 → 260. Answer = 260.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, then what is the value of 9 − 22 − 16 + 19 ?",
+   "options": [
+    "24",
+    "29",
+    "-10",
+    "28"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 9 + 22 + 16 − 19. Apply BODMAS: 9 + 22 + 16 − 19 → 31 + 16 − 19 → 47 − 19 → 28. Answer = 28.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '−' and '×' are interchanged and the numbers 28 and 11 are also interchanged, find the value of 10 × 16 × 32 − 28 .",
+   "options": [
+    "5092",
+    "-360",
+    "-358",
+    "-418"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs and swap the numbers 28 ↔ 11 to get 10 − 16 − 32 × 11. Apply BODMAS: 10 − 16 − 32 × 11 → 10 − 16 − 352 → -6 − 352 → -358. Answer = -358.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 8 + 9 × 34 ÷ 8 ?",
+   "options": [
+    "-98",
+    "96",
+    "94",
+    "98"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 8 × 9 + 34 − 8. Apply BODMAS: 8 × 9 + 34 − 8 → 72 + 34 − 8 → 106 − 8 → 98. Answer = 98.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '÷' and also '−' and '×' are interchanged, then what is the value of 11 ÷ 23 ÷ ( 31 × 23 ) ?",
+   "options": [
+    "38",
+    "42",
+    "-42",
+    "43"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 11 + 23 + ( 31 − 23 ). Apply BODMAS: 11 + 23 + ( 31 − 23 ) → 11 + 23 + ( 8 ) → 11 + 23 + 8 → 34 + 8 → 42. Answer = 42.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 30 × 21 × 4 + 16 ?",
+   "options": [
+    "115",
+    "111",
+    "2536",
+    "-115"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 30 + 21 + 4 × 16. Apply BODMAS: 30 + 21 + 4 × 16 → 30 + 21 + 64 → 51 + 64 → 115. Answer = 115.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 25 − 25 + 11 × 2 ?",
+   "options": [
+    "-248",
+    "-250",
+    "2",
+    "22"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 25 − 25 × 11 + 2. Apply BODMAS: 25 − 25 × 11 + 2 → 25 − 275 + 2 → -250 + 2 → -248. Answer = -248.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 25 × 14 ÷ 29 ÷ 18 ?",
+   "options": [
+    "-7",
+    "-12",
+    "-8",
+    "8"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 25 + 14 − 29 − 18. Apply BODMAS: 25 + 14 − 29 − 18 → 39 − 29 − 18 → 10 − 18 → -8. Answer = -8.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 2 × 23 × 32 × 15 + 21 ?",
+   "options": [
+    "366",
+    "1512",
+    "22101",
+    "372"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 2 + 23 + 32 + 15 × 21. Apply BODMAS: 2 + 23 + 32 + 15 × 21 → 2 + 23 + 32 + 315 → 25 + 32 + 315 → 57 + 315 → 372. Answer = 372.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, then what is the value of 15 − 35 ÷ 5 + 19 − 9 ?",
+   "options": [
+    "180",
+    "240",
+    "18",
+    "176"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 15 + 35 × 5 − 19 + 9. Apply BODMAS: 15 + 35 × 5 − 19 + 9 → 15 + 175 − 19 + 9 → 190 − 19 + 9 → 171 + 9 → 180. Answer = 180.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 10 × 5 + 3 × ( 2 ÷ 24 ) ?",
+   "options": [
+    "5",
+    "23",
+    "-3",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 10 + 5 × 3 + ( 2 − 24 ). Apply BODMAS: 10 + 5 × 3 + ( 2 − 24 ) → 10 + 5 × 3 + ( -22 ) → 10 + 5 × 3 + -22 → 10 + 15 + -22 → 25 + -22 → 3. Answer = 3.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 32 ÷ 18 × 33 ÷ 3 + 35 ?",
+   "options": [
+    "-60",
+    "1540",
+    "-58",
+    "-62"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 32 − 18 + 33 − 3 × 35. Apply BODMAS: 32 − 18 + 33 − 3 × 35 → 32 − 18 + 33 − 105 → 14 + 33 − 105 → 47 − 105 → -58. Answer = -58.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '÷' are interchanged and the numbers 25 and 19 are also interchanged, find the value of 31 − ( 25 − 28 ) ÷ 22 ÷ 20 .",
+   "options": [
+    "72",
+    "82",
+    "80",
+    "26"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs and swap the numbers 25 ↔ 19 to get 31 − ( 19 − 28 ) + 22 + 20. Apply BODMAS: 31 − ( 19 − 28 ) + 22 + 20 → 31 − ( -9 ) + 22 + 20 → 31 − -9 + 22 + 20 → 40 + 22 + 20 → 62 + 20 → 82. Answer = 82.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '÷' are interchanged and the numbers 17 and 10 are also interchanged, find the value of 26 − 17 × 12 ÷ 8 × 29 .",
+   "options": [
+    "5800",
+    "-138",
+    "138",
+    "128"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs and swap the numbers 17 ↔ 10 to get 26 − 10 × 12 + 8 × 29. Apply BODMAS: 26 − 10 × 12 + 8 × 29 → 26 − 120 + 8 × 29 → 26 − 120 + 232 → -94 + 232 → 138. Answer = 138.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '×' and '÷' are interchanged and the numbers 27 and 35 are also interchanged, find the value of 4 − 16 − ( 7 ÷ 27 ) − 18 .",
+   "options": [
+    "-275",
+    "-683",
+    "-279",
+    "275"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs and swap the numbers 27 ↔ 35 to get 4 − 16 − ( 7 × 35 ) − 18. Apply BODMAS: 4 − 16 − ( 7 × 35 ) − 18 → 4 − 16 − ( 245 ) − 18 → 4 − 16 − 245 − 18 → -12 − 245 − 18 → -257 − 18 → -275. Answer = -275.",
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything.",
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, which of the following equations is correct?",
+   "options": [
+    "2 ÷ 25 + 7 = -173",
+    "19 × 5 × 15 = -39",
+    "30 ÷ 4 ÷ 29 = 4",
+    "16 ÷ 20 × 7 = 6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 2 ÷ 25 + 7 becomes 2 − 25 × 7; by BODMAS 2 − 25 × 7 → 2 − 175 → -173 = -173. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, which of the following equations is correct?",
+   "options": [
+    "21 − 8 × 8 = -21",
+    "3 × 10 + 21 = 213",
+    "6 + 9 ÷ 27 = 1",
+    "4 × 2 + 6 = -16"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 3 × 10 + 21 becomes 3 + 10 × 21; by BODMAS 3 + 10 × 21 → 3 + 210 → 213 = 213. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, which of the following equations is correct?",
+   "options": [
+    "10 ÷ 28 + 5 = 282",
+    "20 ÷ 11 + 16 = 200",
+    "15 − 18 − 10 = 43",
+    "27 + 4 + 24 = 1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 15 − 18 − 10 becomes 15 + 18 + 10; by BODMAS 15 + 18 + 10 → 33 + 10 → 43 = 43. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

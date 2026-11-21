@@ -1,0 +1,174 @@
+{
+  "sets": [
+    {
+      "id": "reading-comprehension-s002",
+      "type": "text",
+      "title": "Scan and Pay",
+      "text": "When a vegetable seller in Madurai pasted a printed QR code on her weighing scale three years ago, her regular customers laughed. Today she says she rarely carries change at all. The Unified Payments Interface has made it possible for a tea stall, a flower vendor and a large supermarket to accept money through the same simple scan, with no card machine and no monthly fee. Supporters call this the most important financial reform of the decade, since it has drawn millions of small traders into the formal banking system. Yet the picture is not wholly bright. Network failures in smaller towns can leave a vendor unpaid for a day's sale, and elderly customers often avoid the system out of fear of fraud. Banks and the regulator have introduced limits, reversal procedures and awareness drives, but these measures work best where people already own a smartphone. The challenge now is less about technology than about reaching those who have been left on the other side of the screen."
+    },
+    {
+      "id": "reading-comprehension-s003",
+      "type": "text",
+      "title": "From Village Ground to Prime Time",
+      "text": "Until a little over a decade ago, kabaddi was a game played on dusty village grounds and watched by neighbours who had gathered to cheer. The arrival of a franchise league, with floodlights, commentary and prime-time television, changed its fortunes almost overnight. Players who once earned only the praise of their villages now sign contracts worth lakhs, and schoolchildren in cities that had never seen a raid now ask for kabaddi mats. Purists, however, worry that the pursuit of television audiences has altered the sport. Matches have been shortened, rules adjusted to favour dramatic raids, and the loud music between halves would have baffled the old village referees. Yet it is hard to argue with the results: more girls and boys are taking up the sport, and several former rural players have become coaches. The game has gained a larger audience, though whether it has kept its soul is a question its followers answer according to their age."
+    },
+    {
+      "id": "reading-comprehension-s004",
+      "type": "text",
+      "title": "The Return of the Poor Man's Grain",
+      "text": "Ragi, jowar and bajra were once called poor people's grains, and for a generation of urban Indians they vanished from the dinner table, replaced by polished rice and refined wheat. Nutrition scientists now say that this was a costly mistake. Millets are rich in fibre, minerals and slow-releasing carbohydrates, and they grow with remarkably little water on land where rice would fail. Agricultural departments in several states have therefore begun to buy millets for school meals and public distribution. Farmers, however, need more than official goodwill. Unless markets pay a steady price and processing machines reduce the labour of removing the husk, many will continue to grow the more profitable crops they know. The revival of millets will therefore depend as much on the economics of the farm as on the fashions of the kitchen."
+    },
+    {
+      "id": "reading-comprehension-s005",
+      "type": "text",
+      "title": "Links in a Chain",
+      "text": "Bengaluru was once a city of more than a thousand lakes, built by farmers and rulers over centuries to store the scarce rain of the Deccan plateau. Each tank was linked to the next, so that overflow from one filled its neighbour and floods were largely kept at bay. As the city expanded, builders drained many of these water bodies and paved over the channels that joined them. The consequence is visible every monsoon, when a heavy shower turns roads into rivers and stranded commuters wait for hours. Civic bodies have started to clean and restore a few lakes, and residents' groups have guarded them vigilantly. But restoring a lake in isolation achieves little if the stream that fed it is still buried under concrete. The old engineers understood that a lake is not an ornament; it is one link in a chain, and the chain is only as good as its weakest link."
+    },
+    {
+      "id": "reading-comprehension-s006",
+      "type": "text",
+      "title": "Chess Beyond the Club",
+      "text": "When Viswanathan Anand won his first world title, chess in India was largely a pastime for retired clerks and a handful of college clubs. A generation later, teenagers from Chennai and Kolkata routinely defeat grandmasters twice their age, and the country counts dozens of grandmasters of its own. Several factors explain this change. Online platforms allow a child in a small town to play hundreds of games a week against strong opponents. Free analysis engines have replaced expensive coaching for those who cannot afford it. State governments have also begun to reward medal winners with jobs and prize money. Some coaches caution, though, that screens can teach tactics but not temperament; the patience to sit through a six-hour tournament game, they say, still comes only from playing across a real board. Perhaps the best outcome would be a blend of both worlds."
+    },
+    {
+      "id": "reading-comprehension-s008",
+      "type": "text",
+      "title": "Doctor on the Screen",
+      "text": "A farmer in a Himalayan village, whose nearest hospital is a day's journey away, can now describe his chest pain to a doctor in Chandigarh through a video call at the village health centre. Telemedicine, which was a modest experiment in India for years, grew rapidly when travel became difficult, and many state governments have since built it into their health plans. Doctors report that it works well for follow-up visits, for common ailments and for advice on managing long-term conditions. It cannot, naturally, replace a physical examination in emergencies, and doctors are quick to warn against diagnosis by guesswork over a poor connection. A further hurdle is that the health worker at the village centre often lacks training in handling the equipment. Still, early experience suggests that a good idea, supported by modest investment in training and bandwidth, can bring specialist advice to places that have long done without it."
+    },
+    {
+      "id": "reading-comprehension-s009",
+      "type": "text",
+      "title": "The Kota Dream",
+      "text": "Every year, thousands of teenagers leave their homes in small towns and move to Kota to prepare for engineering and medical entrance examinations. The city's coaching institutes have built a reputation for producing top ranks, and an economy of hostels, tiffin services and stationery shops depends on the migration. Parents see the fees as an investment, a safe route to a stable career. Counsellors, however, have grown concerned about the pressure borne by students who spend twelve hours a day on tests and are rarely seen to relax. Some institutes have begun to hold weekly fun events and to appoint psychologists, and the state has proposed rules on student wellbeing. These are welcome, but they treat the symptoms. The root of the problem is a system in which a few thousand seats are chased by lakhs of hopefuls, and where a single rank can seem to decide a whole life."
+    }
+  ],
+  "questions": [
+    {
+      "questionText": "What is the main idea of the passage?",
+      "options": [
+        "UPI has widened access to formal payments for small traders, but gaps in connectivity and trust remain.",
+        "UPI has made card machines obsolete in every Indian city.",
+        "Elderly customers are the main reason UPI has not succeeded.",
+        "Regulators have failed to control payment fraud."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage praises UPI's reach and then lists network failures and fear of fraud as remaining gaps. The other options overgeneralise or pick a minor detail.",
+      "subPattern": "main-idea",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s002"
+    },
+    {
+      "questionText": "The main idea of the passage is that",
+      "options": [
+        "kabaddi's rise through a franchise league has brought money and popularity, along with doubts about changes to the sport",
+        "kabaddi is a rural game that cannot survive in cities",
+        "television has ruined kabaddi beyond repair",
+        "village referees were better than present-day officials"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage presents gains (contracts, new players, coaches) and the purists' worries. Only the first option covers both.",
+      "subPattern": "main-idea",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": "reading-comprehension-s003"
+    },
+    {
+      "questionText": "The central message of the passage is that",
+      "options": [
+        "reviving millets needs sound farm economics as well as a change in food habits",
+        "millets are nutritionally poorer than polished rice",
+        "rice should not be grown in dry regions",
+        "urban Indians have always preferred millets"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The last sentence states it: revival depends on farm economics as much as on kitchen fashions.",
+      "subPattern": "main-idea",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s004"
+    },
+    {
+      "questionText": "What is the main point of the passage?",
+      "options": [
+        "Bengaluru's flooding can be reduced only by reviving the connected lake system, not individual lakes alone.",
+        "Bengaluru has more lakes than any other Indian city.",
+        "Residents' groups should replace civic bodies.",
+        "Monsoon showers in Bengaluru are heavier than they used to be."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage stresses the lake-and-channel chain; restoring one lake in isolation achieves little.",
+      "subPattern": "main-idea",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": "reading-comprehension-s005"
+    },
+    {
+      "questionText": "The passage is mainly about",
+      "options": [
+        "the reasons behind India's chess boom and the continued value of over-the-board play",
+        "the career of Viswanathan Anand",
+        "the dangers of online games",
+        "the prize money offered by state governments"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage lists causes of the boom and ends with coaches' caution about real boards.",
+      "subPattern": "main-idea",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s006"
+    },
+    {
+      "questionText": "According to the passage on telemedicine, the main idea is that",
+      "options": [
+        "telemedicine can bring specialist advice to remote areas if its limits are recognised and support is provided",
+        "telemedicine should replace physical examinations",
+        "village health workers are poorly qualified",
+        "Himalayan villages have no hospitals"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage shows benefits, limits and needs (training, bandwidth). Option two contradicts it.",
+      "subPattern": "main-idea",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s008"
+    },
+    {
+      "questionText": "The passage on coaching institutes is chiefly intended to convey that",
+      "options": [
+        "the stress among Kota's students comes chiefly from intense competition for very few seats",
+        "coaching institutes in Kota are not profitable",
+        "parents should not pay coaching fees",
+        "students in Kota are not hard-working"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The author says wellbeing measures treat symptoms while the root is lakhs chasing a few thousand seats.",
+      "subPattern": "main-idea",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": "reading-comprehension-s009"
+    }
+  ]
+}

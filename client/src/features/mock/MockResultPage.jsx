@@ -5,6 +5,7 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, difficultyMeta, formatDuration } from '../aptitude/components/aptitudeUi';
+import QuestionStimulus from '../aptitude/components/QuestionStimulus';
 import { PLAN_AMBER } from '../studyplan/planUtils';
 import { COLOR_PALETTE, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
 
@@ -24,7 +25,7 @@ function Stat({ label, value }) {
   );
 }
 
-function ReviewItem({ r }) {
+function ReviewItem({ r, set }) {
   const [open, setOpen] = useState(false);
   const skipped = r.selectedOption === null;
   const tone = skipped ? COLOR_PALETTE.slate[400] : r.isCorrect ? COLOR_PALETTE.emerald[500] : COLOR_PALETTE.red[500];
@@ -37,6 +38,7 @@ function ReviewItem({ r }) {
       </ButtonBase>
       <Collapse in={open} unmountOnExit>
         <Box sx={{ px: 1.5, pb: 1.5 }}>
+          <QuestionStimulus set={set} />
           <Typography sx={{ whiteSpace: 'pre-line', mb: 1, fontSize: FONT_SIZES.bodyLg }}>{r.questionText}</Typography>
           {r.options.map((o, i) => {
             const right = i === r.correctOptionIndex;
@@ -145,7 +147,7 @@ export default function MockResultPage() {
           ))}
         </Box>
         <Box sx={{ display: 'grid', gap: 1 }}>
-          {shown.map((x) => <ReviewItem key={x.n} r={x} />)}
+          {shown.map((x) => <ReviewItem key={x.n} r={x} set={x.setKey ? r.sets?.[x.setKey] : null} />)}
           {shown.length === 0 && <Typography variant="body2" color="text.secondary">Nothing here.</Typography>}
         </Box>
       </Box>

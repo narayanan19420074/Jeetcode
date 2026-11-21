@@ -1,0 +1,917 @@
+{
+ "sets": [
+  {
+   "id": "di-mixed-charts-s019",
+   "type": "table",
+   "title": "Table: Quarterly sales of five products of a Trichy snack unit (₹ lakh). Each Total is the sum of the four quarters and the last row gives column totals. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Product",
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Banana chips",
+      24,
+      30,
+      "—",
+      38,
+      120
+     ],
+     [
+      "Murukku",
+      16,
+      20,
+      22,
+      "—",
+      76
+     ],
+     [
+      "Varkey",
+      "—",
+      34,
+      38,
+      42,
+      144
+     ],
+     [
+      "Mixture",
+      12,
+      14,
+      10,
+      16,
+      52
+     ],
+     [
+      "Peanut chikki",
+      18,
+      "—",
+      20,
+      24,
+      84
+     ],
+     [
+      "Total",
+      100,
+      120,
+      118,
+      138,
+      476
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s020",
+   "type": "table",
+   "title": "Table: Monthly rainfall recorded at five stations in a quarter (mm). Each Total is the sum of the three months and the last row gives column totals. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Station",
+     "July",
+     "August",
+     "September",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      60,
+      "—",
+      90,
+      230
+     ],
+     [
+      "Ooty",
+      120,
+      150,
+      "—",
+      380
+     ],
+     [
+      "Madurai",
+      40,
+      55,
+      70,
+      165
+     ],
+     [
+      "Chennai",
+      "—",
+      130,
+      150,
+      370
+     ],
+     [
+      "Kodaikanal",
+      100,
+      "—",
+      135,
+      360
+     ],
+     [
+      "Total",
+      410,
+      540,
+      555,
+      1505
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s021",
+   "type": "table",
+   "title": "Table: Goods wagons loaded at five railway yards in four weeks. Each Total is the sum of the four weeks and the last row gives column totals. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Yard",
+     "Week 1",
+     "Week 2",
+     "Week 3",
+     "Week 4",
+     "Total"
+    ],
+    "rows": [
+     [
+      "Jolarpet",
+      140,
+      160,
+      120,
+      "—",
+      600
+     ],
+     [
+      "Erode",
+      90,
+      110,
+      100,
+      120,
+      420
+     ],
+     [
+      "Arakkonam",
+      200,
+      "—",
+      220,
+      240,
+      840
+     ],
+     [
+      "Tondiarpet",
+      70,
+      60,
+      "—",
+      80,
+      300
+     ],
+     [
+      "Podanur",
+      "—",
+      130,
+      150,
+      140,
+      530
+     ],
+     [
+      "Total",
+      610,
+      640,
+      680,
+      760,
+      2690
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s022",
+   "type": "table",
+   "title": "Table: Candidates in five coaching centres. Boys % is the percentage of boys among the Total; Boys and Girls are numbers. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Centre",
+     "Total",
+     "Boys %",
+     "Boys",
+     "Girls"
+    ],
+    "rows": [
+     [
+      "Anna Nagar",
+      "—",
+      "—",
+      240,
+      160
+     ],
+     [
+      "Gandhipuram",
+      300,
+      40,
+      "—",
+      "—"
+     ],
+     [
+      "Tambaram",
+      500,
+      50,
+      250,
+      250
+     ],
+     [
+      "Saidapet",
+      250,
+      "—",
+      100,
+      "—"
+     ],
+     [
+      "Peelamedu",
+      "—",
+      40,
+      "—",
+      210
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s023",
+   "type": "table",
+   "title": "Table: Staff in five footwear plants. Men % is the percentage of men among the Total; Men and Women are numbers. Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Plant",
+     "Total",
+     "Men %",
+     "Men",
+     "Women"
+    ],
+    "rows": [
+     [
+      "Plant A",
+      600,
+      70,
+      "—",
+      "—"
+     ],
+     [
+      "Plant B",
+      "—",
+      "—",
+      270,
+      180
+     ],
+     [
+      "Plant C",
+      800,
+      50,
+      400,
+      400
+     ],
+     [
+      "Plant D",
+      500,
+      "—",
+      400,
+      "—"
+     ],
+     [
+      "Plant E",
+      "—",
+      25,
+      90,
+      "—"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s024",
+   "type": "table",
+   "title": "Table: Registered voters in five assembly constituencies. Male % is the percentage of male voters among the Total; Male and Female are numbers (in hundreds). Cells marked — are not given.",
+   "table": {
+    "columns": [
+     "Constituency",
+     "Total",
+     "Male %",
+     "Male",
+     "Female"
+    ],
+    "rows": [
+     [
+      "Constituency 1",
+      800,
+      "—",
+      "—",
+      440
+     ],
+     [
+      "Constituency 2",
+      "—",
+      55,
+      330,
+      "—"
+     ],
+     [
+      "Constituency 3",
+      500,
+      60,
+      300,
+      200
+     ],
+     [
+      "Constituency 4",
+      "—",
+      "—",
+      360,
+      540
+     ],
+     [
+      "Constituency 5",
+      700,
+      50,
+      "—",
+      "—"
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What was the average value per product in Q1? (in ₹ lakh, correct to one decimal place)",
+   "options": [
+    "25.0",
+    "14.0",
+    "20.0",
+    "22.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The column total for Q1 is 100, so the blank does not matter. Average = 100 ÷ 5 = 20.0.",
+   "shortcut": "Use the Total row of the column; no need to fill the blank.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "What is the missing value for Peanut chikki in Q2? (₹ lakh)",
+   "options": [
+    "32",
+    "22",
+    "12",
+    "42"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row total = 84. Known cells add to 62. Missing = 84 − 62 = 22.",
+   "shortcut": "Row total minus the known cells in the row.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "What is the sum of all the 4 missing values in the table? (₹ lakh)",
+   "options": [
+    "98",
+    "108",
+    "88",
+    "118"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Missing values: Banana chips / Q3 = 28, Murukku / Q4 = 18, Varkey / Q1 = 30, Peanut chikki / Q2 = 22. Sum = 98.",
+   "shortcut": "Fill each blank from its row total, then add.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "The missing value for Murukku in Q4 is what percentage of Murukku's Total? (Correct to one decimal place.)",
+   "options": [
+    "13.0%",
+    "76.3%",
+    "3.8%",
+    "23.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Missing = 76 − 58 = 18. Percentage = 18 ÷ 76 × 100 = 23.7%.",
+   "shortcut": "Find the blank first, and divide by that row's own Total.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "By what percentage is the missing value for Banana chips in Q3 more than the missing value for Peanut chikki in Q2? (Correct to one decimal place.)",
+   "options": [
+    "21.4%",
+    "127.3%",
+    "27.3%",
+    "227.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First blank = 28; second blank = 22 (each from its row total). Percentage more = (28−22) ÷ 22 × 100 = 27.3%.",
+   "shortcut": "Base is the quantity after 'than'.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s019"
+  },
+  {
+   "questionText": "What is the missing value for Kodaikanal in August? (mm)",
+   "options": [
+    "135",
+    "125",
+    "115",
+    "145"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row total = 360. Known cells add to 235. Missing = 360 − 235 = 125.",
+   "shortcut": "Row total minus the known cells in the row.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "What was the average value per station in August? (in mm, correct to one decimal place)",
+   "options": [
+    "108.0",
+    "135.0",
+    "113.0",
+    "92.0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The column total for August is 540, so the blank does not matter. Average = 540 ÷ 5 = 108.0.",
+   "shortcut": "Use the Total row of the column; no need to fill the blank.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "The missing value for Ooty in September is what percentage of Ooty's Total? (Correct to one decimal place.)",
+   "options": [
+    "19.8%",
+    "71.1%",
+    "7.3%",
+    "28.9%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Missing = 380 − 270 = 110. Percentage = 110 ÷ 380 × 100 = 28.9%.",
+   "shortcut": "Find the blank first, and divide by that row's own Total.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "Which station had the highest value in July?",
+   "options": [
+    "Kodaikanal",
+    "Chennai",
+    "Ooty",
+    "Coimbatore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After filling the blank, July values are Coimbatore 60, Ooty 120, Madurai 40, Chennai 90, Kodaikanal 100. Highest is Ooty.",
+   "shortcut": "The blank may itself be the highest; do not skip it.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "Which station showed the highest percentage increase from July to September?",
+   "options": [
+    "Chennai",
+    "Madurai",
+    "Coimbatore",
+    "Kodaikanal"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After filling blanks, % increase: Coimbatore 50.0%, Ooty -8.3%, Madurai 75.0%, Chennai 66.7%, Kodaikanal 35.0%. Highest is Madurai.",
+   "shortcut": "Fill every blank in the two columns that matter before comparing growth rates.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s020"
+  },
+  {
+   "questionText": "What was the average value per yard in Week 4? (in wagons, correct to one decimal place)",
+   "options": [
+    "152.0",
+    "190.0",
+    "157.0",
+    "116.0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The column total for Week 4 is 760, so the blank does not matter. Average = 760 ÷ 5 = 152.0.",
+   "shortcut": "Use the Total row of the column; no need to fill the blank.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "What is the missing value for Arakkonam in Week 2? (wagons)",
+   "options": [
+    "190",
+    "170",
+    "200",
+    "180"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Row total = 840. Known cells add to 660. Missing = 840 − 660 = 180.",
+   "shortcut": "Row total minus the known cells in the row.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "Which yard had the highest value in Week 3?",
+   "options": [
+    "Podanur",
+    "Jolarpet",
+    "Arakkonam",
+    "Erode"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After filling the blank, Week 3 values are Jolarpet 120, Erode 100, Arakkonam 220, Tondiarpet 90, Podanur 150. Highest is Arakkonam.",
+   "shortcut": "The blank may itself be the highest; do not skip it.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "What is the sum of all the 4 missing values in the table? (wagons)",
+   "options": [
+    "570",
+    "560",
+    "550",
+    "580"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Missing values: Jolarpet / Week 4 = 180, Arakkonam / Week 2 = 180, Tondiarpet / Week 3 = 90, Podanur / Week 1 = 110. Sum = 560.",
+   "shortcut": "Fill each blank from its row total, then add.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "By what percentage is the missing value for Jolarpet in Week 4 more than the missing value for Podanur in Week 1? (Correct to one decimal place.)",
+   "options": [
+    "63.6%",
+    "38.9%",
+    "163.6%",
+    "263.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First blank = 180; second blank = 110 (each from its row total). Percentage more = (180−110) ÷ 110 × 100 = 63.6%.",
+   "shortcut": "Base is the quantity after 'than'.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s021"
+  },
+  {
+   "questionText": "What is the number of girls for Gandhipuram?",
+   "options": [
+    "200",
+    "160",
+    "216",
+    "180"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In the row of Gandhipuram, use Total = Boys + Girls and Boys % = Boys ÷ Total × 100 on the two known figures. Completed row: Total 300, Boys % 40, Boys 120, Girls 180. The asked figure is 180.",
+   "shortcut": "Any two of the four figures in a row fix the other two.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "Overall, what percentage of all candidates are boys? (Correct to one decimal place.)",
+   "options": [
+    "46.0%",
+    "52.8%",
+    "47.2%",
+    "89.5%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total boys = 850; grand total = 1800. Percentage = 47.2%. (A simple average of the five percentages would be wrong.)",
+   "shortcut": "Add the numbers, not the percentages.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "What is the total number of girls across all five centres?",
+   "options": [
+    "850",
+    "950",
+    "1000",
+    "900"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Girls per row: 160, 180, 250, 150, 210. Sum = 950.",
+   "shortcut": "Complete each row first; then add the column.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "What is the difference between the largest and the smallest Total among the five centres?",
+   "options": [
+    "250",
+    "350",
+    "150",
+    "500"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: [400, 300, 500, 250, 350]. Difference = 500 − 250 = 250.",
+   "shortcut": "Find every Total first.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "By what percentage is the number of girls in Tambaram more than that in Gandhipuram? (Correct to one decimal place.)",
+   "options": [
+    "28.0%",
+    "138.9%",
+    "108.3%",
+    "38.9%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Girls in Tambaram = 250; in Gandhipuram = 180. More by (250−180) ÷ 180 × 100 = 38.9%.",
+   "shortcut": "Fill both rows' blanks first; base is the second entity.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s022"
+  },
+  {
+   "questionText": "What is the total number of candidates in all five plants together?",
+   "options": [
+    "2610",
+    "2810",
+    "2710",
+    "2660"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Totals after filling blanks: 600, 450, 800, 500, 360. Sum = 2710.",
+   "shortcut": "Recover every blank Total before adding.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "In which plant is the percentage of men the highest?",
+   "options": [
+    "Plant A",
+    "Plant D",
+    "Plant B",
+    "Plant C"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Men % after filling: Plant A 70%, Plant B 60%, Plant C 50%, Plant D 80%, Plant E 25%. Highest is Plant D.",
+   "shortcut": "Recover the blank percentages from the counts.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "Overall, what percentage of all candidates are men? (Correct to one decimal place.)",
+   "options": [
+    "58.3%",
+    "57.0%",
+    "41.7%",
+    "139.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total men = 1580; grand total = 2710. Percentage = 58.3%. (A simple average of the five percentages would be wrong.)",
+   "shortcut": "Add the numbers, not the percentages.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "What is the total number of women across all five plants?",
+   "options": [
+    "1580",
+    "1180",
+    "1080",
+    "1130"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Women per row: 180, 180, 400, 100, 270. Sum = 1130.",
+   "shortcut": "Complete each row first; then add the column.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "By what percentage is the number of women in Plant C more than that in Plant A? (Correct to one decimal place.)",
+   "options": [
+    "55.0%",
+    "222.2%",
+    "122.2%",
+    "134.4%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Women in Plant C = 400; in Plant A = 180. More by (400−180) ÷ 180 × 100 = 122.2%.",
+   "shortcut": "Fill both rows' blanks first; base is the second entity.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s023"
+  },
+  {
+   "questionText": "What is the number of male for Constituency 5?",
+   "options": [
+    "370",
+    "350",
+    "330",
+    "420"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In the row of Constituency 5, use Total = Male + Female and Male % = Male ÷ Total × 100 on the two known figures. Completed row: Total 700, Male % 50, Male 350, Female 350. The asked figure is 350.",
+   "shortcut": "Any two of the four figures in a row fix the other two.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "What is the difference between the largest and the smallest Total among the five constituencys?",
+   "options": [
+    "400",
+    "500",
+    "300",
+    "900"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: [800, 600, 500, 900, 700]. Difference = 900 − 500 = 400.",
+   "shortcut": "Find every Total first.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "In which constituency is the percentage of male the highest?",
+   "options": [
+    "Constituency 2",
+    "Constituency 5",
+    "Constituency 1",
+    "Constituency 3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Male % after filling: Constituency 1 45%, Constituency 2 55%, Constituency 3 60%, Constituency 4 40%, Constituency 5 50%. Highest is Constituency 3.",
+   "shortcut": "Recover the blank percentages from the counts.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "Overall, what percentage of all candidates are male? (Correct to one decimal place.)",
+   "options": [
+    "50.0%",
+    "51.4%",
+    "48.6%",
+    "94.4%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total male = 1700; grand total = 3500. Percentage = 48.6%. (A simple average of the five percentages would be wrong.)",
+   "shortcut": "Add the numbers, not the percentages.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s024"
+  },
+  {
+   "questionText": "By what percentage is the number of female in Constituency 4 more than that in Constituency 5? (Correct to one decimal place.)",
+   "options": [
+    "35.2%",
+    "54.3%",
+    "154.3%",
+    "2.9%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Female in Constituency 4 = 540; in Constituency 5 = 350. More by (540−350) ÷ 350 × 100 = 54.3%.",
+   "shortcut": "Fill both rows' blanks first; base is the second entity.",
+   "subPattern": "missing-data-interpretation",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s024"
+  }
+ ]
+}

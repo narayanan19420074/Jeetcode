@@ -1,0 +1,529 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "7 : 49 :: 12 : ?",
+   "options": [
+    "144",
+    "24",
+    "156",
+    "143"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: squaring the number. 7 → 49. Applying the same rule, 12 → 144. Answer: 144.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "3 : 27 :: 5 : ?",
+   "options": [
+    "125",
+    "25",
+    "120",
+    "15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: cubing the number. 3 → 27. Applying the same rule, 5 → 125. Answer: 125.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "5 : 17 :: 9 : ?",
+   "options": [
+    "29",
+    "25",
+    "21",
+    "30"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: multiplying by 3 and adding 2. 5 → 17. Applying the same rule, 9 → 29. Answer: 29.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "6 : 42 :: 11 : ?",
+   "options": [
+    "132",
+    "121",
+    "110",
+    "143"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: n × (n + 1). 6 → 42. Applying the same rule, 11 → 132. Answer: 132.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "8 : 63 :: 12 : ?",
+   "options": [
+    "143",
+    "145",
+    "144",
+    "132"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: square minus 1. 8 → 63. Applying the same rule, 12 → 143. Answer: 143.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "4 : 17 :: 9 : ?",
+   "options": [
+    "42",
+    "48",
+    "33",
+    "40"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: multiplying by 5 and subtracting 3. 4 → 17. Applying the same rule, 9 → 42. Answer: 42.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "(3, 4) : 25 :: (5, 12) : ?",
+   "options": [
+    "169",
+    "289",
+    "37",
+    "77"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: a² + b². For (3, 4) this gives 25. For (5, 12) it gives 169. Answer: 169.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "9 : 81 :: 15 : ?",
+   "options": [
+    "225",
+    "30",
+    "240",
+    "224"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: squaring the number. 9 → 81. Applying the same rule, 15 → 225. Answer: 225.",
+   "subPattern": "number-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "6 : 37 :: 9 : ?",
+   "options": [
+    "82",
+    "80",
+    "90",
+    "100"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: square plus 1. 6 → 37. Applying the same rule, 9 → 82. Answer: 82.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "5 : 35 :: 9 : ?",
+   "options": [
+    "99",
+    "83",
+    "90",
+    "121"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: n × (n + 2). 5 → 35. Applying the same rule, 9 → 99. Answer: 99.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "3 : 30 :: 6 : ?",
+   "options": [
+    "222",
+    "210",
+    "217",
+    "42"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: cube plus the number. 3 → 30. Applying the same rule, 6 → 222. Answer: 222.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "4 : 60 :: 8 : ?",
+   "options": [
+    "504",
+    "520",
+    "511",
+    "56"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: cube minus the number. 4 → 60. Applying the same rule, 8 → 504. Answer: 504.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "47 : 74 :: 63 : ?",
+   "options": [
+    "36",
+    "72",
+    "126",
+    "567"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: reversing the digits. 47 → 74. Applying the same rule, 63 → 36. Answer: 36.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "34 : 41 :: 56 : ?",
+   "options": [
+    "67",
+    "112",
+    "68",
+    "45"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: sum of the number and its digit-sum. 34 → 41. Applying the same rule, 56 → 67. Answer: 67.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "5 : 31 :: 8 : ?",
+   "options": [
+    "73",
+    "72",
+    "65",
+    "74"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: n² + n + 1 (square plus number plus 1). 5 → 31. Applying the same rule, 8 → 73. Answer: 73.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "(3, 4) : 19 :: (5, 6) : ?",
+   "options": [
+    "41",
+    "35",
+    "19",
+    "36"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: a × b + a + b. For (3, 4) this gives 19. For (5, 6) it gives 41. Answer: 41.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "(4, 5) : 11 :: (6, 7) : ?",
+   "options": [
+    "29",
+    "42",
+    "36",
+    "55"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: a × b − (a + b). For (4, 5) this gives 11. For (6, 7) it gives 29. Answer: 29.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "10 : 101 :: 13 : ?",
+   "options": [
+    "170",
+    "168",
+    "182",
+    "196"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: square plus 1. 10 → 101. Applying the same rule, 13 → 170. Answer: 170.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "7 : 63 :: 12 : ?",
+   "options": [
+    "168",
+    "146",
+    "156",
+    "196"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: n × (n + 2). 7 → 63. Applying the same rule, 12 → 168. Answer: 168.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "4 : 68 :: 7 : ?",
+   "options": [
+    "350",
+    "336",
+    "344",
+    "56"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: cube plus the number. 4 → 68. Applying the same rule, 7 → 350. Answer: 350.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "5 : 120 :: 9 : ?",
+   "options": [
+    "720",
+    "738",
+    "728",
+    "72"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: cube minus the number. 5 → 120. Applying the same rule, 9 → 720. Answer: 720.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "58 : 85 :: 81 : ?",
+   "options": [
+    "18",
+    "90",
+    "162",
+    "729"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: reversing the digits. 58 → 85. Applying the same rule, 81 → 18. Answer: 18.",
+   "subPattern": "number-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "23 : 30 :: 34 : ?",
+   "options": [
+    "84",
+    "19",
+    "12",
+    "49"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: product of the digits times the digit-sum. 23 → 30. Applying the same rule, 34 → 84. Answer: 84.",
+   "subPattern": "number-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "3 : 36 :: 5 : ?",
+   "options": [
+    "150",
+    "130",
+    "100",
+    "135"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: n³ + n². 3 → 36. Applying the same rule, 5 → 150. Answer: 150.",
+   "subPattern": "number-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "12 : 147 :: 23 : ?",
+   "options": [
+    "534",
+    "529",
+    "524",
+    "535"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: n² + the digit-sum of n. 12 → 147. Applying the same rule, 23 → 534. Answer: 534.",
+   "subPattern": "number-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "2 : 26 :: 4 : ?",
+   "options": [
+    "124",
+    "63",
+    "125",
+    "65"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: (n+1)³ − 1. 2 → 26. Applying the same rule, 4 → 124. Answer: 124.",
+   "subPattern": "number-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "(1, 2) : 8 :: (2, 3) : ?",
+   "options": [
+    "24",
+    "25",
+    "12",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: (a + b)² − 1. For (1, 2) this gives 8. For (2, 3) it gives 24. Answer: 24.",
+   "subPattern": "number-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  },
+  {
+   "questionText": "(2, 3) : 11 :: (3, 4) : ?",
+   "options": [
+    "31",
+    "13",
+    "43",
+    "67"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: a³ + b. For (2, 3) this gives 11. For (3, 4) it gives 31. Answer: 31.",
+   "subPattern": "number-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the rule from the first pair and check it on one more value before applying it."
+  }
+ ]
+}

@@ -1,0 +1,575 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: bell ink gold telephone playground. Step I: telephone bell ink gold playground. Step II: telephone playground bell ink gold. Following the same rule, in which step will the line \"telephone playground ink gold bell\" appear?",
+   "options": [
+    "Step II",
+    "Step III",
+    "Step I",
+    "Step IV"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: bell ink gold telephone playground | Step I: telephone bell ink gold playground | Step II: telephone playground bell ink gold | Step III: telephone playground ink bell gold | Step IV: telephone playground ink gold bell. The line \"telephone playground ink gold bell\" is Step IV.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: bell temple restaurant balloon plant. Step I: restaurant bell temple balloon plant. Step II: restaurant balloon bell temple plant. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "6",
+    "2",
+    "5",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each step fixes one word; checking the lines: Input: bell temple restaurant balloon plant | Step I: restaurant bell temple balloon plant | Step II: restaurant balloon bell temple plant | Step III: restaurant balloon temple bell plant | Step IV: restaurant balloon temple plant bell. The final arrangement is reached in Step IV, so 4 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: tea chocolate house coin landscape. Step I: chocolate tea house coin landscape. Step II: chocolate coin tea house landscape. Which word is newly fixed at an end of the line in Step IV?",
+   "options": [
+    "chocolate",
+    "tea",
+    "landscape",
+    "house"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: tea chocolate house coin landscape | Step I: chocolate tea house coin landscape | Step II: chocolate coin tea house landscape | Step III: chocolate coin house tea landscape | Step IV: chocolate coin house landscape tea. The element moved to an end in Step IV is landscape.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: rose plant birthday cat playground. Step I: rose plant birthday playground cat. Step II: plant birthday playground rose cat. Following the same rule, in which step will the line \"birthday playground plant rose cat\" appear?",
+   "options": [
+    "Step IV",
+    "Step I",
+    "Step II",
+    "Step III"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is shortest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: rose plant birthday cat playground | Step I: rose plant birthday playground cat | Step II: plant birthday playground rose cat | Step III: birthday playground plant rose cat | Step IV: playground birthday plant rose cat. The line \"birthday playground plant rose cat\" is Step III.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 38 94 75 32 30. Step I: 94 75 32 30 38. Step II: 94 32 30 75 38. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "4",
+    "5",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each step fixes one number; checking the lines: Input: 38 94 75 32 30 | Step I: 94 75 32 30 38 | Step II: 94 32 30 75 38 | Step III: 32 30 94 75 38 | Step IV: 30 32 94 75 38. The final arrangement is reached in Step IV, so 4 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: kitchen sunshine cow football chocolate. Step I: kitchen cow football chocolate sunshine. Step II: cow football chocolate kitchen sunshine. Which word is newly fixed at an end of the line in Step IV?",
+   "options": [
+    "sunshine",
+    "chocolate",
+    "kitchen",
+    "cow"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: kitchen sunshine cow football chocolate | Step I: kitchen cow football chocolate sunshine | Step II: cow football chocolate kitchen sunshine | Step III: cow chocolate football kitchen sunshine | Step IV: chocolate cow football kitchen sunshine. The element moved to an end in Step IV is cow.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: mango football playground rain telephone. Step I: playground mango football rain telephone. Step II: playground mango football telephone rain. Following the same rule, in which step will the line \"playground telephone football mango rain\" appear?",
+   "options": [
+    "Step IV",
+    "Step I",
+    "Step II",
+    "Step III"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the word that is longest among those not yet fixed goes to the left end; in even-numbered steps the word that is shortest among those not yet fixed goes to the right end. Input: mango football playground rain telephone | Step I: playground mango football rain telephone | Step II: playground mango football telephone rain | Step III: playground telephone mango football rain | Step IV: playground telephone football mango rain. The line \"playground telephone football mango rain\" is Step IV.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 95 68 78 71 44. Step I: 68 78 71 44 95. Step II: 68 71 44 78 95. In which step does the line first read exactly the same as the final output?",
+   "options": [
+    "Step I",
+    "Step III",
+    "Step IV",
+    "Step II"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the number that is largest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: 95 68 78 71 44 | Step I: 68 78 71 44 95 | Step II: 68 71 44 78 95 | Step III: 68 44 71 78 95 | Step IV: 44 68 71 78 95. The last change happens in Step IV.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: birthday library cow football pavilion. Step I: pavilion birthday library cow football. Step II: pavilion library birthday cow football. Following the same rule, in which step will the line \"pavilion library football birthday cow\" appear?",
+   "options": [
+    "Step III",
+    "Step II",
+    "Step I",
+    "Step IV"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: birthday library cow football pavilion | Step I: pavilion birthday library cow football | Step II: pavilion library birthday cow football | Step III: pavilion library football birthday cow | Step IV: pavilion library football cow birthday. The line \"pavilion library football birthday cow\" is Step III.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: window mango map rain house kite. Step I: house window mango map rain kite. Step II: house kite window mango map rain. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "3",
+    "7",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each step fixes one word; checking the lines: Input: window mango map rain house kite | Step I: house window mango map rain kite | Step II: house kite window mango map rain | Step III: house kite mango window map rain | Step IV: house kite mango map window rain | Step V: house kite mango map rain window. The final arrangement is reached in Step V, so 5 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: kitchen ink sunshine garden tiger market. Step I: tiger kitchen ink sunshine garden market. Step II: tiger kitchen ink sunshine market garden. Which word is newly fixed at an end of the line in Step IV?",
+   "options": [
+    "garden",
+    "market",
+    "kitchen",
+    "ink"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In odd-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the right end. Input: kitchen ink sunshine garden tiger market | Step I: tiger kitchen ink sunshine garden market | Step II: tiger kitchen ink sunshine market garden | Step III: tiger sunshine kitchen ink market garden | Step IV: tiger sunshine kitchen market ink garden. The element moved to an end in Step IV is ink.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 17 80 92 28 29 93. Step I: 80 17 92 28 29 93. Step II: 80 17 92 28 93 29. Following the same rule, in which step will the line \"80 92 17 28 93 29\" appear?",
+   "options": [
+    "Step V",
+    "Step III",
+    "Step I",
+    "Step IV"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In odd-numbered steps the number that is smallest units digit among those not yet fixed goes to the left end; in even-numbered steps the number that is largest units digit among those not yet fixed goes to the right end. Input: 17 80 92 28 29 93 | Step I: 80 17 92 28 29 93 | Step II: 80 17 92 28 93 29 | Step III: 80 92 17 28 93 29 | Step IV: 80 92 17 93 28 29 | Step V: 80 92 93 17 28 29. The line \"80 92 17 28 93 29\" is Step III.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 43 52 98 15 81 89. Step I: 43 52 98 15 89 81. Step II: 43 98 15 89 52 81. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "4",
+    "3",
+    "7",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each step fixes one number; checking the lines: Input: 43 52 98 15 81 89 | Step I: 43 52 98 15 89 81 | Step II: 43 98 15 89 52 81 | Step III: 98 15 89 43 52 81 | Step IV: 98 89 15 43 52 81 | Step V: 89 98 15 43 52 81. The final arrangement is reached in Step V, so 5 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 70 62 58 27 77 38. Step I: 77 70 62 58 27 38. Step II: 77 62 58 27 38 70. Which number is newly fixed at an end of the line in Step IV?",
+   "options": [
+    "77",
+    "62",
+    "27",
+    "70"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In odd-numbered steps the number that is largest digit-sum among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest digit-sum among those not yet fixed goes to the right end. Input: 70 62 58 27 77 38 | Step I: 77 70 62 58 27 38 | Step II: 77 62 58 27 38 70 | Step III: 77 58 62 27 38 70 | Step IV: 77 58 27 38 62 70. The element moved to an end in Step IV is 62.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: temple restaurant kitchen cotton silver gold. Step I: cotton temple restaurant kitchen silver gold. Step II: cotton gold temple restaurant kitchen silver. Following the same rule, in which step will the line \"cotton gold kitchen temple restaurant silver\" appear?",
+   "options": [
+    "Step III",
+    "Step II",
+    "Step V",
+    "Step I"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: temple restaurant kitchen cotton silver gold | Step I: cotton temple restaurant kitchen silver gold | Step II: cotton gold temple restaurant kitchen silver | Step III: cotton gold kitchen temple restaurant silver | Step IV: cotton gold kitchen restaurant temple silver | Step V: cotton gold kitchen restaurant silver temple. The line \"cotton gold kitchen temple restaurant silver\" is Step III.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 89 16 51 77 70 22. Step I: 70 89 16 51 77 22. Step II: 70 51 89 16 77 22. In which step does the line first read exactly the same as the final output?",
+   "options": [
+    "Step IV",
+    "Step V",
+    "Step III",
+    "Step II"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the number that is smallest units digit among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: 89 16 51 77 70 22 | Step I: 70 89 16 51 77 22 | Step II: 70 51 89 16 77 22 | Step III: 70 51 22 89 16 77 | Step IV: 70 51 22 16 89 77 | Step V: 70 51 22 16 77 89. The last change happens in Step V.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: coin diamond newspaper mango rain motorcycle. Step I: rain coin diamond newspaper mango motorcycle. Step II: rain newspaper coin diamond mango motorcycle. Following the same rule, in which step will the line \"rain newspaper motorcycle coin diamond mango\" appear?",
+   "options": [
+    "Step III",
+    "Step V",
+    "Step II",
+    "Step I"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: coin diamond newspaper mango rain motorcycle | Step I: rain coin diamond newspaper mango motorcycle | Step II: rain newspaper coin diamond mango motorcycle | Step III: rain newspaper motorcycle coin diamond mango | Step IV: rain newspaper motorcycle mango coin diamond | Step V: rain newspaper motorcycle mango diamond coin. The line \"rain newspaper motorcycle coin diamond mango\" is Step III.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: landscape pavilion tree lemon window ink. Step I: pavilion tree lemon window ink landscape. Step II: tree lemon window ink pavilion landscape. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "7",
+    "3",
+    "5",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each step fixes one word; checking the lines: Input: landscape pavilion tree lemon window ink | Step I: pavilion tree lemon window ink landscape | Step II: tree lemon window ink pavilion landscape | Step III: tree lemon ink window pavilion landscape | Step IV: tree ink lemon window pavilion landscape | Step V: ink tree lemon window pavilion landscape. The final arrangement is reached in Step V, so 5 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: rose rocket landscape plant football sun. Step I: rose rocket plant football sun landscape. Step II: rose rocket plant sun football landscape. Which word is newly fixed at an end of the line in Step III?",
+   "options": [
+    "plant",
+    "rocket",
+    "football",
+    "landscape"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the word that is longest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: rose rocket landscape plant football sun | Step I: rose rocket plant football sun landscape | Step II: rose rocket plant sun football landscape | Step III: rose plant sun rocket football landscape. The element moved to an end in Step III is rocket.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 60 88 34 40 64 56. Step I: 88 60 34 40 64 56. Step II: 88 60 34 64 56 40. Following the same rule, in which step will the line \"88 56 34 64 60 40\" appear?",
+   "options": [
+    "Step IV",
+    "Step III",
+    "Step V",
+    "Step I"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the number that is largest digit-sum among those not yet fixed goes to the left end; in even-numbered steps the number that is smallest digit-sum among those not yet fixed goes to the right end. Input: 60 88 34 40 64 56 | Step I: 88 60 34 40 64 56 | Step II: 88 60 34 64 56 40 | Step III: 88 56 60 34 64 40 | Step IV: 88 56 34 64 60 40 | Step V: 88 56 64 34 60 40. The line \"88 56 34 64 60 40\" is Step IV.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: flame chair umbrella cow mango tiger. Step I: umbrella flame chair cow mango tiger. Step II: umbrella flame cow mango tiger chair. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "5",
+    "3",
+    "6",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each step fixes one word; checking the lines: Input: flame chair umbrella cow mango tiger | Step I: umbrella flame chair cow mango tiger | Step II: umbrella flame cow mango tiger chair | Step III: umbrella tiger flame cow mango chair | Step IV: umbrella tiger flame mango cow chair | Step V: umbrella tiger mango flame cow chair. The final arrangement is reached in Step V, so 5 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: rose village umbrella butterfly market restaurant. Step I: village umbrella butterfly market restaurant rose. Step II: village umbrella butterfly restaurant market rose. Which word is newly fixed at an end of the line in Step III?",
+   "options": [
+    "village",
+    "market",
+    "restaurant",
+    "umbrella"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is shortest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: rose village umbrella butterfly market restaurant | Step I: village umbrella butterfly market restaurant rose | Step II: village umbrella butterfly restaurant market rose | Step III: umbrella butterfly restaurant village market rose. The element moved to an end in Step III is village.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: rocket cricket passenger calendar motorcycle train. Step I: rocket cricket passenger calendar train motorcycle. Step II: rocket cricket calendar train passenger motorcycle. Following the same rule, in which step will the line \"rocket cricket train calendar passenger motorcycle\" appear?",
+   "options": [
+    "Step IV",
+    "Step II",
+    "Step III",
+    "Step V"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is longest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: rocket cricket passenger calendar motorcycle train | Step I: rocket cricket passenger calendar train motorcycle | Step II: rocket cricket calendar train passenger motorcycle | Step III: rocket cricket train calendar passenger motorcycle | Step IV: rocket train cricket calendar passenger motorcycle | Step V: train rocket cricket calendar passenger motorcycle. The line \"rocket cricket train calendar passenger motorcycle\" is Step III.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 71 28 47 76 69 42. Step I: 69 71 28 47 76 42. Step II: 69 28 71 47 76 42. In which step does the line first read exactly the same as the final output?",
+   "options": [
+    "Step II",
+    "Step IV",
+    "Step I",
+    "Step V"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the number that is largest units digit among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: 71 28 47 76 69 42 | Step I: 69 71 28 47 76 42 | Step II: 69 28 71 47 76 42 | Step III: 69 28 47 71 76 42 | Step IV: 69 28 47 76 71 42 | Step V: 69 28 47 76 42 71. The last change happens in Step V.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: chocolate coin journey library pencil plant rose milk. Step I: rose chocolate coin journey library pencil plant milk. Step II: rose coin journey library pencil plant milk chocolate. Following the same rule, in which step will the line \"rose plant pencil milk library journey coin chocolate\" appear?",
+   "options": [
+    "Step II",
+    "Step IV",
+    "Step V",
+    "Step VII"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In odd-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the right end. Input: chocolate coin journey library pencil plant rose milk | Step I: rose chocolate coin journey library pencil plant milk | Step II: rose coin journey library pencil plant milk chocolate | Step III: rose plant coin journey library pencil milk chocolate | Step IV: rose plant journey library pencil milk coin chocolate | Step V: rose plant pencil journey library milk coin chocolate | Step VI: rose plant pencil library milk journey coin chocolate | Step VII: rose plant pencil milk library journey coin chocolate. The line \"rose plant pencil milk library journey coin chocolate\" is Step VII.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: fish ink library classroom flame chair house playground. Step I: playground fish ink library classroom flame chair house. Step II: playground fish ink library classroom flame house chair. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "9",
+    "8",
+    "7",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each step fixes one word; checking the lines: Input: fish ink library classroom flame chair house playground | Step I: playground fish ink library classroom flame chair house | Step II: playground fish ink library classroom flame house chair | Step III: playground library fish ink classroom flame house chair | Step IV: playground library fish ink flame house classroom chair | Step V: playground library ink fish flame house classroom chair | Step VI: playground library ink flame house fish classroom chair | Step VII: playground library ink house flame fish classroom chair. The final arrangement is reached in Step VII, so 7 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: diamond chocolate motorcycle garden football gold cow. Step I: diamond chocolate garden football gold cow motorcycle. Step II: diamond garden football gold cow chocolate motorcycle. Which word is newly fixed at an end of the line in Step III?",
+   "options": [
+    "football",
+    "cow",
+    "motorcycle",
+    "garden"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is longest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Input: diamond chocolate motorcycle garden football gold cow | Step I: diamond chocolate garden football gold cow motorcycle | Step II: diamond garden football gold cow chocolate motorcycle | Step III: diamond garden gold cow football chocolate motorcycle. The element moved to an end in Step III is football.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: birthday cotton gold flame journey village ghost silver. Step I: village birthday cotton gold flame journey ghost silver. Step II: village silver birthday cotton gold flame journey ghost. Following the same rule, in which step will the line \"village silver journey gold ghost flame cotton birthday\" appear?",
+   "options": [
+    "Step V",
+    "Step II",
+    "Step IV",
+    "Step VII"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: birthday cotton gold flame journey village ghost silver | Step I: village birthday cotton gold flame journey ghost silver | Step II: village silver birthday cotton gold flame journey ghost | Step III: village silver journey birthday cotton gold flame ghost | Step IV: village silver journey gold birthday cotton flame ghost | Step V: village silver journey gold ghost birthday cotton flame | Step VI: village silver journey gold ghost flame birthday cotton | Step VII: village silver journey gold ghost flame cotton birthday. The line \"village silver journey gold ghost flame cotton birthday\" is Step VII.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of numbers by a fixed rule. Input: 76 45 32 51 67 93 20. Step I: 20 76 45 32 51 67 93. Step II: 20 76 45 32 51 93 67. How many steps are needed in all to reach the final line, after which nothing changes?",
+   "options": [
+    "6",
+    "4",
+    "8",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each step fixes one number; checking the lines: Input: 76 45 32 51 67 93 20 | Step I: 20 76 45 32 51 67 93 | Step II: 20 76 45 32 51 93 67 | Step III: 20 51 76 45 32 93 67 | Step IV: 20 51 45 32 93 76 67 | Step V: 20 51 32 45 93 76 67 | Step VI: 20 51 32 93 45 76 67. The final arrangement is reached in Step VI, so 6 steps.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: newspaper station pencil coin butterfly flame fan. Step I: fan newspaper station pencil coin butterfly flame. Step II: fan station pencil coin butterfly flame newspaper. Which word is newly fixed at an end of the line in Step VI?",
+   "options": [
+    "station",
+    "fan",
+    "flame",
+    "coin"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the word that is shortest among those not yet fixed goes to the left end; in even-numbered steps the word that is longest among those not yet fixed goes to the right end. Input: newspaper station pencil coin butterfly flame fan | Step I: fan newspaper station pencil coin butterfly flame | Step II: fan station pencil coin butterfly flame newspaper | Step III: fan coin station pencil butterfly flame newspaper | Step IV: fan coin station pencil flame butterfly newspaper | Step V: fan coin flame station pencil butterfly newspaper | Step VI: fan coin flame pencil station butterfly newspaper. The element moved to an end in Step VI is station.",
+   "shortcut": "Run the rule step by step on the input; count how many elements still need fixing.",
+   "subPattern": "step-identification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

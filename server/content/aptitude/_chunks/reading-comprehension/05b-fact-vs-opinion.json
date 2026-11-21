@@ -1,0 +1,416 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which of the following statements from the passage is a matter of opinion rather than fact?",
+   "options": [
+    "A city that forgets how it once stored water will pay dearly when the monsoon fails.",
+    "Many lakes were filled to make way for apartments and roads.",
+    "Citizen groups have begun to clean a few lakes.",
+    "The tanks were linked by channels so that an overflow from one fed the next."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first statement is a prediction and judgement voiced by activists; the rest describe things that can be verified.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s010"
+  },
+  {
+   "questionText": "Which of the following is a statement of opinion?",
+   "options": [
+    "A late train is still better than none.",
+    "Locomotives have been fitted with devices that warn drivers of signals.",
+    "Fog reduces the distance from which a driver can see signals.",
+    "Northern India experiences fog in December."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Better than none' is a value judgement. The rest can be checked against records and observation.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s012"
+  },
+  {
+   "questionText": "Which of the following is the author's opinion or the opinion of reformers rather than a plain fact?",
+   "options": [
+    "The state must pay and equip the worker as it would any other professional.",
+    "Anganwadi workers weigh infants and keep vaccination records.",
+    "Workers are asked to register voters.",
+    "Some centres lack drinking water."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Must' expresses what reformers think should be done; the others are descriptions of present conditions.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s013"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a verifiable fact?",
+   "options": [
+    "Such play teaches things no net session can.",
+    "Children use a taped tennis ball in lane cricket.",
+    "The rules of street cricket vary from lane to lane.",
+    "Academies select players through coaches."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'No net session can' is a claim attributed to some coaches and cannot be proved from records; the rest are observable.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s014"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a fact? (Passage: “The Cost of a Free Ride”)",
+   "options": [
+    "No scheme is free; the real question is who pays and what is received in return.",
+    "Some conductors report that women outnumber men at peak hours.",
+    "The state pays the transport corporation to make up the difference.",
+    "Several state governments offer free bus travel to women."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is the economist's view of how to judge the scheme. The others are reports of conditions or arrangements.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s015"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a fact? (Passage: “Silence in the Examination Hall”)",
+   "options": [
+    "Calm is not the same as silence.",
+    "Some schools have begun parents' sessions on examination months.",
+    "Teachers report that relaxed students tend to score as well as tense ones.",
+    "Parents often lower the television volume during board exams."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a reflective claim rather than a checkable statement; the others describe practices or reports.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s016"
+  },
+  {
+   "questionText": "Which of the following is a statement of opinion rather than fact?",
+   "options": [
+    "Love without care soon destroys what it admires.",
+    "Rescue teams are called out almost every weekend.",
+    "Villagers earn from guiding and selling tea.",
+    "The number of trekkers rises each year."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a general judgement. The rest report conditions that can be counted or observed.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s018"
+  },
+  {
+   "questionText": "Which of the following is a verifiable fact rather than an opinion? (Passage: “Online Classes and the Village Child”)",
+   "options": [
+    "Tests after schools reopened showed reading skills among younger pupils had slipped by more than a year.",
+    "Technology can never replace a teacher.",
+    "Evening lessons are always better than daytime lessons.",
+    "Village children were less intelligent than city children."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a reported finding of testing. The others are opinions or unsupported claims.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s019"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a fact? (Passage: “The Auto-Rickshaw Driver's Day”)",
+   "options": [
+    "Every passenger leaves a small story behind on the seat.",
+    "Murugan has driven for twenty years.",
+    "Murugan has joined a drivers' union.",
+    "His eldest daughter studies engineering."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a figurative, subjective remark. The others state checkable details.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s020"
+  },
+  {
+   "questionText": "Which of the following is a matter of opinion?",
+   "options": [
+    "Other tastes will grow once the reading habit is rebuilt.",
+    "The librarians in the scheme are volunteers.",
+    "The books in the scheme are donations.",
+    "The scheme has more than a thousand borrowers."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a prediction offered by organisers; the rest are factual descriptions.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s021"
+  },
+  {
+   "questionText": "Which of the following is a verifiable fact rather than an opinion? (Passage: “Cooking Gas and the Kitchen”)",
+   "options": [
+    "A national scheme offered free gas connections to poor households.",
+    "A cleaner kitchen will be partly achieved only through a subsidy.",
+    "Wood is a better fuel than gas for every purpose.",
+    "Women should never cook with wood."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a statement about a scheme that can be checked; the others are judgements or absolutes.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s022"
+  },
+  {
+   "questionText": "Which of the following is a verifiable fact?",
+   "options": [
+    "Travel time between the two ends of the city fell to about twenty minutes.",
+    "The metro is the best thing that has happened to Kolkata.",
+    "Commuters are happier than ever.",
+    "The poor deserve housing near every station."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only the first can be checked against timings; others are opinions.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s024"
+  },
+  {
+   "questionText": "Which of the following statements is an opinion?",
+   "options": [
+    "Hand spinning was too slow to compete with mills.",
+    "Gandhi took up the charkha.",
+    "Leaders sat at the spinning wheel.",
+    "Millions of rural households had idle hours."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a claim made by critics that can be disputed; the others are statements of what happened or existed.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s025"
+  },
+  {
+   "questionText": "Which of the following is a statement of fact rather than opinion?",
+   "options": [
+    "March 20 is observed as World Sparrow Day.",
+    "A small bird is a good measure of a city's health.",
+    "Sparrows are the prettiest birds in India.",
+    "Gardens should be banned in cities."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only the first is a verifiable statement.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s026"
+  },
+  {
+   "questionText": "Which of the following is an opinion?",
+   "options": [
+    "Without bargaining the shop loses its character.",
+    "Bargaining lets a shop charge different prices to different customers.",
+    "The practice is declining in malls and online stores.",
+    "A shopkeeper in Jaipur may name a price that the customer laughs at."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a lament, a subjective judgement; the others describe practices.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s027"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a fact? (Passage: “Water Harvesting in Rajasthan”)",
+   "options": [
+    "Sharing is what the johad really teaches.",
+    "Johads hold monsoon rain behind a low wall.",
+    "Farmers who once left for cities now grow a second crop.",
+    "Engineers who doubted the method now study it."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a reflective judgement of villagers; the others are descriptions or reports.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s028"
+  },
+  {
+   "questionText": "Which of the following statements is a matter of opinion?",
+   "options": [
+    "A family should measure a wedding by the happiness it brings.",
+    "A large wedding may employ caterers, florists and musicians.",
+    "Gold sales rise before the muhurat dates.",
+    "Families often borrow heavily for weddings."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first expresses a view of how to measure; the others describe situations that can be observed.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s030"
+  },
+  {
+   "questionText": "Which of the following is a verifiable fact rather than an opinion? (Passage: “Two Tickets to the Cinema”)",
+   "options": [
+    "The theatre opened in 1962 and charges forty rupees a ticket.",
+    "The loss will be felt in the places where a town used to laugh together.",
+    "Multiplexes are bad for society.",
+    "Such halls were the best thing about small towns."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only the first can be checked against records.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s031"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a fact? (Passage: “Maps and Memory in Old Delhi”)",
+   "options": [
+    "A map is a made thing, not a mirror of the place.",
+    "Satellite maps missed hundreds of shops in narrow passages.",
+    "Local boys recorded doorways with phones.",
+    "Rickshaw pullers use landmarks to find houses."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is the leader's interpretation. The other statements are reports.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s032"
+  },
+  {
+   "questionText": "Which of the following is a matter of opinion? (Passage: “Trains of the Himalaya”)",
+   "options": [
+    "The money spent on the toy train could be better used on roads and hospitals.",
+    "The railway was built in the 1880s to carry tea.",
+    "The railway has been given heritage status.",
+    "The railway earns less than it costs."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a view some people hold; the rest are statements that can be verified.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s033"
+  },
+  {
+   "questionText": "Which of the following is a statement of fact rather than of opinion?",
+   "options": [
+    "A researcher found that stores combining personal service with simple technology earned more than those that adopted neither.",
+    "The kirana will never be defeated.",
+    "Supermarkets are an unnecessary luxury.",
+    "Online grocers are dishonest."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only the first reports a finding of a study that can be verified.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s034"
+  },
+  {
+   "questionText": "Which of the following is a verifiable fact rather than an opinion? (Passage: “The Language of Road Signs”)",
+   "options": [
+    "More than half of the accidents on the studied highway occurred where a warning sign was absent or unreadable.",
+    "Witty slogans are the best way to stop accidents.",
+    "Drivers on Indian highways are careless.",
+    "Reflective paint is ugly."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a reported finding of a study.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s036"
+  },
+  {
+   "questionText": "Which of the following is an opinion rather than a fact? (Passage: “Millets Return to the Plate”)",
+   "options": [
+    "The difference between growing from necessity and growing for income is what the campaign must bring about.",
+    "Millets are rich in fibre and minerals.",
+    "Some state governments include millets in school meals.",
+    "Millets were staples across drylands until the 1960s."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first is a view on the campaign's goal; the others are claims that can be checked.",
+   "subPattern": "fact-vs-opinion",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s037"
+  }
+ ]
+}

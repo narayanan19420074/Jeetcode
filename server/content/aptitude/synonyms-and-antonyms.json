@@ -1,0 +1,6537 @@
+{
+ "pattern": {
+  "title": "Synonyms and Antonyms",
+  "slug": "synonyms-and-antonyms",
+  "description": "Meaning and opposites.",
+  "order": 49,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "synonyms",
+    "title": "Synonyms"
+   },
+   {
+    "slug": "antonyms",
+    "title": "Antonyms"
+   },
+   {
+    "slug": "words-in-context",
+    "title": "Words in context"
+   },
+   {
+    "slug": "commonly-asked-word-lists",
+    "title": "Commonly asked word lists"
+   },
+   {
+    "slug": "contextual-choice",
+    "title": "Contextual choice"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: HAPPY",
+   "options": [
+    {
+     "text": "joyful"
+    },
+    {
+     "text": "tired"
+    },
+    {
+     "text": "angry"
+    },
+    {
+     "text": "sad"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Happy: feeling pleasure or contentment; joyful has the same sense. So \"joyful\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 1,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: BIG",
+   "options": [
+    {
+     "text": "quiet"
+    },
+    {
+     "text": "enormous"
+    },
+    {
+     "text": "tiny"
+    },
+    {
+     "text": "narrow"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Big: very large in size. So \"enormous\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 2,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: QUICK",
+   "options": [
+    {
+     "text": "slow"
+    },
+    {
+     "text": "lazy"
+    },
+    {
+     "text": "rapid"
+    },
+    {
+     "text": "gentle"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Quick: moving or happening at speed. So \"rapid\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 3,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: BEGIN",
+   "options": [
+    {
+     "text": "cancel"
+    },
+    {
+     "text": "delay"
+    },
+    {
+     "text": "finish"
+    },
+    {
+     "text": "commence"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Begin: to start; commence is the formal word for it. So \"commence\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 4,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: BRAVE",
+   "options": [
+    {
+     "text": "foolish"
+    },
+    {
+     "text": "careless"
+    },
+    {
+     "text": "courageous"
+    },
+    {
+     "text": "timid"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Brave: ready to face danger without fear. So \"courageous\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 5,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: RICH",
+   "options": [
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "generous"
+    },
+    {
+     "text": "greedy"
+    },
+    {
+     "text": "poor"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rich: having a lot of money or property. So \"wealthy\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 6,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: SMART",
+   "options": [
+    {
+     "text": "rude"
+    },
+    {
+     "text": "dull"
+    },
+    {
+     "text": "lazy"
+    },
+    {
+     "text": "intelligent"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Smart: quick to learn and understand. So \"intelligent\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 7,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ERROR",
+   "options": [
+    {
+     "text": "success"
+    },
+    {
+     "text": "mistake"
+    },
+    {
+     "text": "effort"
+    },
+    {
+     "text": "habit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Error: something done wrongly. So \"mistake\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 8,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: SILENT",
+   "options": [
+    {
+     "text": "noisy"
+    },
+    {
+     "text": "quiet"
+    },
+    {
+     "text": "angry"
+    },
+    {
+     "text": "bright"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Silent: making no sound. So \"quiet\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 9,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: BUY",
+   "options": [
+    {
+     "text": "steal"
+    },
+    {
+     "text": "sell"
+    },
+    {
+     "text": "purchase"
+    },
+    {
+     "text": "borrow"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Buy: to obtain something by paying money. So \"purchase\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 10,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ANCIENT",
+   "options": [
+    {
+     "text": "old"
+    },
+    {
+     "text": "modern"
+    },
+    {
+     "text": "young"
+    },
+    {
+     "text": "fresh"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ancient: belonging to the distant past; old is the closest option. So \"old\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 11,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ASSIST",
+   "options": [
+    {
+     "text": "hinder"
+    },
+    {
+     "text": "praise"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "help"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Assist: to give support to someone. So \"help\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 12,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: TIRED",
+   "options": [
+    {
+     "text": "bored"
+    },
+    {
+     "text": "hungry"
+    },
+    {
+     "text": "exhausted"
+    },
+    {
+     "text": "energetic"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tired: in need of rest after effort. So \"exhausted\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 13,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ANGRY",
+   "options": [
+    {
+     "text": "furious"
+    },
+    {
+     "text": "polite"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "glad"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Angry: feeling or showing strong displeasure. So \"furious\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 14,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ALLOW",
+   "options": [
+    {
+     "text": "avoid"
+    },
+    {
+     "text": "forbid"
+    },
+    {
+     "text": "refuse"
+    },
+    {
+     "text": "permit"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Allow: to let something happen or be done. So \"permit\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 15,
+   "subPattern": "synonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: DILIGENT",
+   "options": [
+    {
+     "text": "talkative"
+    },
+    {
+     "text": "industrious"
+    },
+    {
+     "text": "cunning"
+    },
+    {
+     "text": "careless"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Diligent: hard-working and careful in effort. So \"industrious\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 16,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: FRUGAL",
+   "options": [
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "wasteful"
+    },
+    {
+     "text": "thrifty"
+    },
+    {
+     "text": "generous"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Frugal: careful about spending money. So \"thrifty\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 17,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: CANDID",
+   "options": [
+    {
+     "text": "polite"
+    },
+    {
+     "text": "frank"
+    },
+    {
+     "text": "hostile"
+    },
+    {
+     "text": "secretive"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Candid: open and honest in speech. So \"frank\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 18,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: MEAGRE",
+   "options": [
+    {
+     "text": "abundant"
+    },
+    {
+     "text": "ample"
+    },
+    {
+     "text": "rich"
+    },
+    {
+     "text": "scanty"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Meagre: small in quantity and inadequate. So \"scanty\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 19,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: OBSTINATE",
+   "options": [
+    {
+     "text": "stubborn"
+    },
+    {
+     "text": "clever"
+    },
+    {
+     "text": "flexible"
+    },
+    {
+     "text": "humble"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Obstinate: refusing to change one's mind or course. So \"stubborn\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 20,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: AMELIORATE",
+   "options": [
+    {
+     "text": "worsen"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "delay"
+    },
+    {
+     "text": "improve"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ameliorate: to make a bad situation better. So \"improve\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 21,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: CONCEAL",
+   "options": [
+    {
+     "text": "display"
+    },
+    {
+     "text": "announce"
+    },
+    {
+     "text": "hide"
+    },
+    {
+     "text": "reveal"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Conceal: to keep something out of sight. So \"hide\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 22,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ABUNDANT",
+   "options": [
+    {
+     "text": "scarce"
+    },
+    {
+     "text": "plentiful"
+    },
+    {
+     "text": "rare"
+    },
+    {
+     "text": "expensive"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Abundant: existing in large quantity. So \"plentiful\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 23,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: HOSTILE",
+   "options": [
+    {
+     "text": "unfriendly"
+    },
+    {
+     "text": "humorous"
+    },
+    {
+     "text": "neutral"
+    },
+    {
+     "text": "welcoming"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hostile: showing opposition or ill will. So \"unfriendly\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 24,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: RELUCTANT",
+   "options": [
+    {
+     "text": "eager"
+    },
+    {
+     "text": "careful"
+    },
+    {
+     "text": "unwilling"
+    },
+    {
+     "text": "ready"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Reluctant: not wanting to do something. So \"unwilling\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 25,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: VITAL",
+   "options": [
+    {
+     "text": "trivial"
+    },
+    {
+     "text": "vivid"
+    },
+    {
+     "text": "optional"
+    },
+    {
+     "text": "essential"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Vital: absolutely necessary. So \"essential\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 26,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: PRUDENT",
+   "options": [
+    {
+     "text": "cautious"
+    },
+    {
+     "text": "stingy"
+    },
+    {
+     "text": "reckless"
+    },
+    {
+     "text": "ignorant"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Prudent: acting with care and good judgement about the future. So \"cautious\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 27,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: TRANQUIL",
+   "options": [
+    {
+     "text": "turbulent"
+    },
+    {
+     "text": "peaceful"
+    },
+    {
+     "text": "hectic"
+    },
+    {
+     "text": "lively"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tranquil: free from disturbance. So \"peaceful\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 28,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: EMINENT",
+   "options": [
+    {
+     "text": "ordinary"
+    },
+    {
+     "text": "obscure"
+    },
+    {
+     "text": "distinguished"
+    },
+    {
+     "text": "arrogant"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Eminent: famous and respected in a field. So \"distinguished\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 29,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: VAGUE",
+   "options": [
+    {
+     "text": "certain"
+    },
+    {
+     "text": "unclear"
+    },
+    {
+     "text": "precise"
+    },
+    {
+     "text": "rigid"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Vague: not clearly expressed or defined. So \"unclear\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 30,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: HUMBLE",
+   "options": [
+    {
+     "text": "modest"
+    },
+    {
+     "text": "proud"
+    },
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "arrogant"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Humble: having a low opinion of one's own importance. So \"modest\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 31,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: VENERATE",
+   "options": [
+    {
+     "text": "despise"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "imitate"
+    },
+    {
+     "text": "revere"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Venerate: to regard with deep respect. So \"revere\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 32,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: SCARCE",
+   "options": [
+    {
+     "text": "cheap"
+    },
+    {
+     "text": "rare"
+    },
+    {
+     "text": "common"
+    },
+    {
+     "text": "plentiful"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Scarce: insufficient in supply; hard to find. So \"rare\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 33,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: SERENE",
+   "options": [
+    {
+     "text": "agitated"
+    },
+    {
+     "text": "gloomy"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "noisy"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Serene: clear, untroubled and peaceful. So \"calm\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 34,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: MUNDANE",
+   "options": [
+    {
+     "text": "ordinary"
+    },
+    {
+     "text": "remarkable"
+    },
+    {
+     "text": "unique"
+    },
+    {
+     "text": "thrilling"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mundane: dull and everyday, lacking excitement. So \"ordinary\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 35,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: PACIFY",
+   "options": [
+    {
+     "text": "provoke"
+    },
+    {
+     "text": "punish"
+    },
+    {
+     "text": "alarm"
+    },
+    {
+     "text": "soothe"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pacify: to calm someone who is upset. So \"soothe\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 36,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ABANDON",
+   "options": [
+    {
+     "text": "desert"
+    },
+    {
+     "text": "retain"
+    },
+    {
+     "text": "protect"
+    },
+    {
+     "text": "adopt"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Abandon: to leave completely and finally. So \"desert\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 37,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: FRAGILE",
+   "options": [
+    {
+     "text": "heavy"
+    },
+    {
+     "text": "flexible"
+    },
+    {
+     "text": "sturdy"
+    },
+    {
+     "text": "delicate"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Fragile: easily broken or damaged. So \"delicate\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 38,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: HINDER",
+   "options": [
+    {
+     "text": "guide"
+    },
+    {
+     "text": "hasten"
+    },
+    {
+     "text": "obstruct"
+    },
+    {
+     "text": "assist"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Hinder: to create difficulties that slow or block progress. So \"obstruct\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 39,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ZEAL",
+   "options": [
+    {
+     "text": "anger"
+    },
+    {
+     "text": "enthusiasm"
+    },
+    {
+     "text": "apathy"
+    },
+    {
+     "text": "caution"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Zeal: great energy and eagerness for a cause. So \"enthusiasm\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 40,
+   "subPattern": "synonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: EPHEMERAL",
+   "options": [
+    {
+     "text": "brilliant"
+    },
+    {
+     "text": "transient"
+    },
+    {
+     "text": "fragile"
+    },
+    {
+     "text": "eternal"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ephemeral: lasting for a very short time. So \"transient\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 41,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: LOQUACIOUS",
+   "options": [
+    {
+     "text": "talkative"
+    },
+    {
+     "text": "rude"
+    },
+    {
+     "text": "boastful"
+    },
+    {
+     "text": "taciturn"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Loquacious: fond of talking a great deal. So \"talkative\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 42,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: SAGACIOUS",
+   "options": [
+    {
+     "text": "arrogant"
+    },
+    {
+     "text": "naive"
+    },
+    {
+     "text": "wise"
+    },
+    {
+     "text": "hasty"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sagacious: having keen mental discernment and good judgement. So \"wise\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 43,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: PERNICIOUS",
+   "options": [
+    {
+     "text": "hidden"
+    },
+    {
+     "text": "helpful"
+    },
+    {
+     "text": "sudden"
+    },
+    {
+     "text": "harmful"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pernicious: having a gradual but destructive effect. So \"harmful\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 44,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: RECALCITRANT",
+   "options": [
+    {
+     "text": "tired"
+    },
+    {
+     "text": "anxious"
+    },
+    {
+     "text": "defiant"
+    },
+    {
+     "text": "obedient"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Recalcitrant: stubbornly resisting authority or control. So \"defiant\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 45,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: TRUCULENT",
+   "options": [
+    {
+     "text": "cheerful"
+    },
+    {
+     "text": "aggressive"
+    },
+    {
+     "text": "docile"
+    },
+    {
+     "text": "timid"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Truculent: eager to argue or fight. So \"aggressive\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 46,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: OBSEQUIOUS",
+   "options": [
+    {
+     "text": "servile"
+    },
+    {
+     "text": "honest"
+    },
+    {
+     "text": "arrogant"
+    },
+    {
+     "text": "rebellious"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Obsequious: excessively eager to please or obey. So \"servile\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 47,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: EQUIVOCAL",
+   "options": [
+    {
+     "text": "balanced"
+    },
+    {
+     "text": "honest"
+    },
+    {
+     "text": "clear"
+    },
+    {
+     "text": "ambiguous"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Equivocal: open to more than one interpretation. So \"ambiguous\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 48,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: OSTENTATIOUS",
+   "options": [
+    {
+     "text": "modest"
+    },
+    {
+     "text": "showy"
+    },
+    {
+     "text": "careless"
+    },
+    {
+     "text": "wealthy"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ostentatious: designed to impress by display. So \"showy\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 49,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: LACONIC",
+   "options": [
+    {
+     "text": "ancient"
+    },
+    {
+     "text": "cheerful"
+    },
+    {
+     "text": "wordy"
+    },
+    {
+     "text": "concise"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Laconic: using very few words. So \"concise\" is the synonym. The other options are unrelated or opposite in sense.",
+   "order": 50,
+   "subPattern": "synonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: HOT",
+   "options": [
+    {
+     "text": "cold"
+    },
+    {
+     "text": "wet"
+    },
+    {
+     "text": "bright"
+    },
+    {
+     "text": "heavy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hot: the opposite temperature; hot is very warm, cold is very low in temperature. So \"cold\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 51,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: GENEROUS",
+   "options": [
+    {
+     "text": "rich"
+    },
+    {
+     "text": "kind"
+    },
+    {
+     "text": "stingy"
+    },
+    {
+     "text": "polite"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Generous: giving freely; stingy means unwilling to give or spend. So \"stingy\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 52,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VICTORY",
+   "options": [
+    {
+     "text": "triumph"
+    },
+    {
+     "text": "success"
+    },
+    {
+     "text": "defeat"
+    },
+    {
+     "text": "celebration"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Victory: winning; the reverse is losing, i.e. defeat. So \"defeat\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 53,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EARLY",
+   "options": [
+    {
+     "text": "late"
+    },
+    {
+     "text": "soon"
+    },
+    {
+     "text": "quick"
+    },
+    {
+     "text": "prompt"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Early: before the expected time; the reverse is after it, i.e. late. So \"late\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 54,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TRUTH",
+   "options": [
+    {
+     "text": "fact"
+    },
+    {
+     "text": "belief"
+    },
+    {
+     "text": "honesty"
+    },
+    {
+     "text": "falsehood"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Truth: what is true; the reverse is what is untrue. So \"falsehood\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 55,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: STRONG",
+   "options": [
+    {
+     "text": "hard"
+    },
+    {
+     "text": "weak"
+    },
+    {
+     "text": "tall"
+    },
+    {
+     "text": "mighty"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Strong: having great physical power; weak lacks it. So \"weak\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 56,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LOVE",
+   "options": [
+    {
+     "text": "desire"
+    },
+    {
+     "text": "affection"
+    },
+    {
+     "text": "respect"
+    },
+    {
+     "text": "hatred"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Love: deep liking; hatred is intense dislike. So \"hatred\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 57,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ACCEPT",
+   "options": [
+    {
+     "text": "receive"
+    },
+    {
+     "text": "welcome"
+    },
+    {
+     "text": "reject"
+    },
+    {
+     "text": "admit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Accept: to take what is offered; reject is to refuse it. So \"reject\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 58,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EXPAND",
+   "options": [
+    {
+     "text": "widen"
+    },
+    {
+     "text": "shrink"
+    },
+    {
+     "text": "grow"
+    },
+    {
+     "text": "stretch"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Expand: to become larger; shrink is to become smaller. So \"shrink\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 59,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CLEAN",
+   "options": [
+    {
+     "text": "dirty"
+    },
+    {
+     "text": "tidy"
+    },
+    {
+     "text": "clear"
+    },
+    {
+     "text": "neat"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Clean: free from dirt; dirty is the reverse. So \"dirty\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 60,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ARRIVE",
+   "options": [
+    {
+     "text": "reach"
+    },
+    {
+     "text": "appear"
+    },
+    {
+     "text": "enter"
+    },
+    {
+     "text": "depart"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Arrive: to come to a place; depart is to leave it. So \"depart\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 61,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INCREASE",
+   "options": [
+    {
+     "text": "grow"
+    },
+    {
+     "text": "add"
+    },
+    {
+     "text": "decrease"
+    },
+    {
+     "text": "rise"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Increase: to become greater; decrease is to become less. So \"decrease\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 62,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: SAFE",
+   "options": [
+    {
+     "text": "secure"
+    },
+    {
+     "text": "dangerous"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "quiet"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Safe: free from risk; dangerous is full of risk. So \"dangerous\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 63,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EMPTY",
+   "options": [
+    {
+     "text": "full"
+    },
+    {
+     "text": "hollow"
+    },
+    {
+     "text": "vacant"
+    },
+    {
+     "text": "bare"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Empty: containing nothing; full contains as much as possible. So \"full\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 64,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LAUGH",
+   "options": [
+    {
+     "text": "giggle"
+    },
+    {
+     "text": "cheer"
+    },
+    {
+     "text": "smile"
+    },
+    {
+     "text": "weep"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Laugh: to express joy aloud; weep is to cry in sorrow. So \"weep\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 65,
+   "subPattern": "antonyms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PERMANENT",
+   "options": [
+    {
+     "text": "steady"
+    },
+    {
+     "text": "temporary"
+    },
+    {
+     "text": "lasting"
+    },
+    {
+     "text": "fixed"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Permanent: lasting indefinitely; temporary lasts only a while. So \"temporary\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 66,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: OPTIMISTIC",
+   "options": [
+    {
+     "text": "pessimistic"
+    },
+    {
+     "text": "hopeful"
+    },
+    {
+     "text": "cheerful"
+    },
+    {
+     "text": "confident"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Optimistic: expecting good outcomes; pessimistic expects bad ones. So \"pessimistic\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 67,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: RIGID",
+   "options": [
+    {
+     "text": "firm"
+    },
+    {
+     "text": "strict"
+    },
+    {
+     "text": "flexible"
+    },
+    {
+     "text": "stiff"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rigid: unable to bend or change; flexible can adapt. So \"flexible\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 68,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ARROGANT",
+   "options": [
+    {
+     "text": "humble"
+    },
+    {
+     "text": "bold"
+    },
+    {
+     "text": "rude"
+    },
+    {
+     "text": "proud"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Arrogant: overly proud of oneself; humble has a modest view of oneself. So \"humble\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 69,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TRANSPARENT",
+   "options": [
+    {
+     "text": "fragile"
+    },
+    {
+     "text": "opaque"
+    },
+    {
+     "text": "thin"
+    },
+    {
+     "text": "clear"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Transparent: allowing light to pass through; opaque does not. So \"opaque\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 70,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VOLUNTARY",
+   "options": [
+    {
+     "text": "free"
+    },
+    {
+     "text": "casual"
+    },
+    {
+     "text": "willing"
+    },
+    {
+     "text": "compulsory"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Voluntary: done by choice; compulsory is forced or required. So \"compulsory\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 71,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PRAISE",
+   "options": [
+    {
+     "text": "flatter"
+    },
+    {
+     "text": "applaud"
+    },
+    {
+     "text": "criticise"
+    },
+    {
+     "text": "announce"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Praise: to express approval; criticise is to express disapproval. So \"criticise\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 72,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LETHARGIC",
+   "options": [
+    {
+     "text": "sluggish"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "energetic"
+    },
+    {
+     "text": "weary"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lethargic: lacking energy; energetic is full of it. So \"energetic\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 73,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: GENUINE",
+   "options": [
+    {
+     "text": "counterfeit"
+    },
+    {
+     "text": "authentic"
+    },
+    {
+     "text": "rare"
+    },
+    {
+     "text": "valuable"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Genuine: real; counterfeit is a fake made to deceive. So \"counterfeit\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 74,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: BENEVOLENT",
+   "options": [
+    {
+     "text": "generous"
+    },
+    {
+     "text": "kind"
+    },
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "malevolent"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Benevolent: wishing good for others; malevolent wishes harm. So \"malevolent\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 75,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CONCORD",
+   "options": [
+    {
+     "text": "peace"
+    },
+    {
+     "text": "discord"
+    },
+    {
+     "text": "agreement"
+    },
+    {
+     "text": "harmony"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Concord: agreement and harmony; discord is disagreement. So \"discord\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 76,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INFLATE",
+   "options": [
+    {
+     "text": "expand"
+    },
+    {
+     "text": "raise"
+    },
+    {
+     "text": "deflate"
+    },
+    {
+     "text": "swell"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inflate: to fill with air or enlarge; deflate is to let air out. So \"deflate\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 77,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VERBOSE",
+   "options": [
+    {
+     "text": "wordy"
+    },
+    {
+     "text": "rude"
+    },
+    {
+     "text": "talkative"
+    },
+    {
+     "text": "concise"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Verbose: using too many words; concise uses just enough. So \"concise\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 78,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CRUDE",
+   "options": [
+    {
+     "text": "rough"
+    },
+    {
+     "text": "refined"
+    },
+    {
+     "text": "raw"
+    },
+    {
+     "text": "natural"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Crude: in a natural or unpolished state; refined is processed or polished. So \"refined\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 79,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: MANDATORY",
+   "options": [
+    {
+     "text": "optional"
+    },
+    {
+     "text": "compulsory"
+    },
+    {
+     "text": "urgent"
+    },
+    {
+     "text": "legal"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mandatory: required by rule; optional is left to choice. So \"optional\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 80,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VACANT",
+   "options": [
+    {
+     "text": "occupied"
+    },
+    {
+     "text": "open"
+    },
+    {
+     "text": "empty"
+    },
+    {
+     "text": "free"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Vacant: not in use; occupied is in use. So \"occupied\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 81,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TIMID",
+   "options": [
+    {
+     "text": "gentle"
+    },
+    {
+     "text": "quiet"
+    },
+    {
+     "text": "shy"
+    },
+    {
+     "text": "bold"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Timid: lacking courage; bold is confident and daring. So \"bold\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 82,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: DELIBERATE",
+   "options": [
+    {
+     "text": "intentional"
+    },
+    {
+     "text": "accidental"
+    },
+    {
+     "text": "planned"
+    },
+    {
+     "text": "careful"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Deliberate: done on purpose; accidental happens by chance. So \"accidental\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 83,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: FERTILE",
+   "options": [
+    {
+     "text": "productive"
+    },
+    {
+     "text": "green"
+    },
+    {
+     "text": "barren"
+    },
+    {
+     "text": "rich"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fertile: able to produce crops; barren cannot. So \"barren\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 84,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ENCOURAGE",
+   "options": [
+    {
+     "text": "discourage"
+    },
+    {
+     "text": "advise"
+    },
+    {
+     "text": "support"
+    },
+    {
+     "text": "inspire"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Encourage: to give hope or confidence; discourage removes it. So \"discourage\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 85,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: HASTEN",
+   "options": [
+    {
+     "text": "quicken"
+    },
+    {
+     "text": "delay"
+    },
+    {
+     "text": "urge"
+    },
+    {
+     "text": "rush"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hasten: to make something happen sooner; delay makes it later. So \"delay\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 86,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LAVISH",
+   "options": [
+    {
+     "text": "grand"
+    },
+    {
+     "text": "generous"
+    },
+    {
+     "text": "rich"
+    },
+    {
+     "text": "frugal"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lavish: spending or giving in great quantity; frugal is sparing. So \"frugal\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 87,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: RELEVANT",
+   "options": [
+    {
+     "text": "important"
+    },
+    {
+     "text": "related"
+    },
+    {
+     "text": "irrelevant"
+    },
+    {
+     "text": "useful"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Relevant: connected to the matter at hand; irrelevant is not. So \"irrelevant\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 88,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: SHALLOW",
+   "options": [
+    {
+     "text": "flat"
+    },
+    {
+     "text": "narrow"
+    },
+    {
+     "text": "deep"
+    },
+    {
+     "text": "thin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shallow: of little depth; deep goes far down. So \"deep\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 89,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ASCEND",
+   "options": [
+    {
+     "text": "descend"
+    },
+    {
+     "text": "climb"
+    },
+    {
+     "text": "travel"
+    },
+    {
+     "text": "rise"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ascend: to go up; descend is to go down. So \"descend\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 90,
+   "subPattern": "antonyms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: MUNIFICENT",
+   "options": [
+    {
+     "text": "generous"
+    },
+    {
+     "text": "miserly"
+    },
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "noble"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Munificent: very generous in giving; miserly is hoarding and unwilling to give. So \"miserly\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 91,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LUCID",
+   "options": [
+    {
+     "text": "clear"
+    },
+    {
+     "text": "brief"
+    },
+    {
+     "text": "bright"
+    },
+    {
+     "text": "obscure"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lucid: easy to understand; obscure is hard to understand. So \"obscure\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 92,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: AUDACIOUS",
+   "options": [
+    {
+     "text": "clever"
+    },
+    {
+     "text": "timid"
+    },
+    {
+     "text": "bold"
+    },
+    {
+     "text": "rude"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Audacious: willing to take bold risks; timid shrinks from them. So \"timid\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 93,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: BENIGN",
+   "options": [
+    {
+     "text": "mild"
+    },
+    {
+     "text": "harmless"
+    },
+    {
+     "text": "kind"
+    },
+    {
+     "text": "malignant"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Benign: gentle or harmless in effect; malignant is harmful or deadly. So \"malignant\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 94,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TACITURN",
+   "options": [
+    {
+     "text": "rude"
+    },
+    {
+     "text": "grim"
+    },
+    {
+     "text": "talkative"
+    },
+    {
+     "text": "silent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Taciturn: habitually saying little; talkative speaks a lot. So \"talkative\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 95,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INEPT",
+   "options": [
+    {
+     "text": "skilful"
+    },
+    {
+     "text": "foolish"
+    },
+    {
+     "text": "clumsy"
+    },
+    {
+     "text": "careless"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inept: lacking skill; skilful has it. So \"skilful\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 96,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: MAGNANIMOUS",
+   "options": [
+    {
+     "text": "noble"
+    },
+    {
+     "text": "ambitious"
+    },
+    {
+     "text": "petty"
+    },
+    {
+     "text": "generous"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Magnanimous: generous and forgiving in spirit; petty is small-minded. So \"petty\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 97,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INTREPID",
+   "options": [
+    {
+     "text": "careless"
+    },
+    {
+     "text": "fearless"
+    },
+    {
+     "text": "adventurous"
+    },
+    {
+     "text": "cowardly"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Intrepid: fearless and enduring; cowardly lacks courage. So \"cowardly\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 98,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: OBSCURE",
+   "options": [
+    {
+     "text": "hidden"
+    },
+    {
+     "text": "evident"
+    },
+    {
+     "text": "dim"
+    },
+    {
+     "text": "vague"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Obscure: not clearly seen or understood; evident is plainly visible. So \"evident\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 99,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PRODIGAL",
+   "options": [
+    {
+     "text": "thrifty"
+    },
+    {
+     "text": "careless"
+    },
+    {
+     "text": "generous"
+    },
+    {
+     "text": "wasteful"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Prodigal: spending recklessly; thrifty saves carefully. So \"thrifty\" is the antonym. The other options are synonyms or unrelated words.",
+   "order": 100,
+   "subPattern": "antonyms",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The teacher was PLEASED with the class's performance.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "tired"
+    },
+    {
+     "text": "delighted"
+    },
+    {
+     "text": "annoyed"
+    },
+    {
+     "text": "puzzled"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, pleased means satisfied and happy; delighted is the closest. So \"delighted\" is the synonym.",
+   "order": 101,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Ravi made a SWIFT decision about the job offer.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "quick"
+    },
+    {
+     "text": "careless"
+    },
+    {
+     "text": "weak"
+    },
+    {
+     "text": "late"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, swift means fast or prompt. So \"quick\" is the synonym.",
+   "order": 102,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The old bridge is in a DANGEROUS condition.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "steady"
+    },
+    {
+     "text": "narrow"
+    },
+    {
+     "text": "ancient"
+    },
+    {
+     "text": "risky"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, dangerous means likely to cause harm; risky is the closest. So \"risky\" is the synonym.",
+   "order": 103,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Meena gave a BRIEF speech at the function.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "lengthy"
+    },
+    {
+     "text": "boring"
+    },
+    {
+     "text": "short"
+    },
+    {
+     "text": "loud"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, brief means lasting a short time. So \"short\" is the synonym.",
+   "order": 104,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The shop was CROWDED during Diwali.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "deserted"
+    },
+    {
+     "text": "noisy"
+    },
+    {
+     "text": "busy"
+    },
+    {
+     "text": "bright"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, crowded means full of people; deserted means empty of people. So \"deserted\" is the antonym.",
+   "order": 105,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The river was SHALLOW near the bank.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "narrow"
+    },
+    {
+     "text": "clear"
+    },
+    {
+     "text": "deep"
+    },
+    {
+     "text": "calm"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, shallow means not deep; the opposite is deep. So \"deep\" is the antonym.",
+   "order": 106,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"He is HONEST in all his dealings.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "polite"
+    },
+    {
+     "text": "deceitful"
+    },
+    {
+     "text": "truthful"
+    },
+    {
+     "text": "careful"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, honest means truthful and fair; deceitful is the reverse. So \"deceitful\" is the antonym.",
+   "order": 107,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The monsoon brought HEAVY rain to Chennai.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "mild"
+    },
+    {
+     "text": "brief"
+    },
+    {
+     "text": "scattered"
+    },
+    {
+     "text": "intense"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, heavy rain is rain falling in large amounts, i.e. intense. So \"intense\" is the synonym.",
+   "order": 108,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The children were EAGER to watch the match.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "afraid"
+    },
+    {
+     "text": "unwilling"
+    },
+    {
+     "text": "keen"
+    },
+    {
+     "text": "tired"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, eager means very keen and enthusiastic. So \"keen\" is the synonym.",
+   "order": 109,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The exam paper was EASY for most students.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "fair"
+    },
+    {
+     "text": "difficult"
+    },
+    {
+     "text": "simple"
+    },
+    {
+     "text": "short"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, easy means needing little effort; the opposite is difficult. So \"difficult\" is the antonym.",
+   "order": 110,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Kavya's room was always TIDY.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "bright"
+    },
+    {
+     "text": "small"
+    },
+    {
+     "text": "dusty"
+    },
+    {
+     "text": "neat"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, tidy means arranged in good order, i.e. neat. So \"neat\" is the synonym.",
+   "order": 111,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The patient looked WEAK after the surgery.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "strong"
+    },
+    {
+     "text": "tired"
+    },
+    {
+     "text": "ill"
+    },
+    {
+     "text": "pale"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, weak means lacking strength; the opposite is strong. So \"strong\" is the antonym.",
+   "order": 112,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The dog is LOYAL to its master.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "fierce"
+    },
+    {
+     "text": "faithful"
+    },
+    {
+     "text": "lazy"
+    },
+    {
+     "text": "hungry"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, loyal means steadily devoted, i.e. faithful. So \"faithful\" is the synonym.",
+   "order": 113,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The train was PUNCTUAL today.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "empty"
+    },
+    {
+     "text": "fast"
+    },
+    {
+     "text": "crowded"
+    },
+    {
+     "text": "late"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, punctual means arriving on time; the opposite is late. So \"late\" is the antonym.",
+   "order": 114,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The soup was TASTY.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "delicious"
+    },
+    {
+     "text": "bland"
+    },
+    {
+     "text": "salty"
+    },
+    {
+     "text": "hot"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, tasty means having a pleasant flavour, i.e. delicious. So \"delicious\" is the synonym.",
+   "order": 115,
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The minister's remarks were AMBIGUOUS and open to many readings.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "brief"
+    },
+    {
+     "text": "firm"
+    },
+    {
+     "text": "unclear"
+    },
+    {
+     "text": "rude"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, ambiguous means having more than one possible meaning, i.e. unclear. So \"unclear\" is the synonym.",
+   "order": 116,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The company decided to CURTAIL its expenses this year.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "record"
+    },
+    {
+     "text": "reduce"
+    },
+    {
+     "text": "hide"
+    },
+    {
+     "text": "increase"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, curtail means to cut short or reduce. So \"reduce\" is the synonym.",
+   "order": 117,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The witness gave a CONSISTENT account of the accident.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "brief"
+    },
+    {
+     "text": "detailed"
+    },
+    {
+     "text": "truthful"
+    },
+    {
+     "text": "contradictory"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, consistent means free of contradictions; the opposite is contradictory. So \"contradictory\" is the antonym.",
+   "order": 118,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The scientist's findings were CORROBORATED by later experiments.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "denied"
+    },
+    {
+     "text": "delayed"
+    },
+    {
+     "text": "confirmed"
+    },
+    {
+     "text": "published"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, corroborate means to support with further evidence, i.e. confirm. So \"confirmed\" is the synonym.",
+   "order": 119,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The speaker's tone was CONCILIATORY toward the protesters.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "hostile"
+    },
+    {
+     "text": "formal"
+    },
+    {
+     "text": "gentle"
+    },
+    {
+     "text": "loud"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, conciliatory means aimed at winning over; hostile is the reverse. So \"hostile\" is the antonym.",
+   "order": 120,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Farmers were ELATED when the rains finally arrived.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "indifferent"
+    },
+    {
+     "text": "overjoyed"
+    },
+    {
+     "text": "puzzled"
+    },
+    {
+     "text": "worried"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, elated means extremely happy, i.e. overjoyed. So \"overjoyed\" is the synonym.",
+   "order": 121,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The council gave a SWIFT reply to the complaint.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "clear"
+    },
+    {
+     "text": "prompt"
+    },
+    {
+     "text": "slow"
+    },
+    {
+     "text": "polite"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, swift means fast; the opposite is slow. So \"slow\" is the antonym.",
+   "order": 122,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"Her ABRUPT departure surprised everyone.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "peaceful"
+    },
+    {
+     "text": "gradual"
+    },
+    {
+     "text": "polite"
+    },
+    {
+     "text": "sudden"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, abrupt means sudden and unexpected. So \"sudden\" is the synonym.",
+   "order": 123,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The festival turned a quiet town into a LIVELY place.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "dull"
+    },
+    {
+     "text": "small"
+    },
+    {
+     "text": "busy"
+    },
+    {
+     "text": "bright"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, lively means full of energy; the opposite is dull. So \"dull\" is the antonym.",
+   "order": 124,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The old professor was RENOWNED for his research.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "strict"
+    },
+    {
+     "text": "retired"
+    },
+    {
+     "text": "unknown"
+    },
+    {
+     "text": "famous"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, renowned means widely known and respected, i.e. famous. So \"famous\" is the synonym.",
+   "order": 125,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The new policy will ENHANCE the quality of schools.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "diminish"
+    },
+    {
+     "text": "regulate"
+    },
+    {
+     "text": "strengthen"
+    },
+    {
+     "text": "improve"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, enhance means to raise or improve; diminish is to lessen. So \"diminish\" is the antonym.",
+   "order": 126,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The villagers were APPREHENSIVE about the coming cyclone.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "curious"
+    },
+    {
+     "text": "anxious"
+    },
+    {
+     "text": "confident"
+    },
+    {
+     "text": "careless"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, apprehensive means worried that something bad will happen. So \"anxious\" is the synonym.",
+   "order": 127,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The captain's decision was HASTY.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "quick"
+    },
+    {
+     "text": "sudden"
+    },
+    {
+     "text": "considered"
+    },
+    {
+     "text": "rash"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, hasty means done too quickly without thought; considered means thought through. So \"considered\" is the antonym.",
+   "order": 128,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The judge was LENIENT with the first-time offender.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "harsh"
+    },
+    {
+     "text": "strict"
+    },
+    {
+     "text": "angry"
+    },
+    {
+     "text": "merciful"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, lenient means not severe in punishing, i.e. merciful. So \"merciful\" is the synonym.",
+   "order": 129,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The lecture was TEDIOUS for the audience.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "long"
+    },
+    {
+     "text": "interesting"
+    },
+    {
+     "text": "formal"
+    },
+    {
+     "text": "quiet"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, tedious means boring and tiresome; the opposite is interesting. So \"interesting\" is the antonym.",
+   "order": 130,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The comedian's wit was UNPARALLELED.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "ordinary"
+    },
+    {
+     "text": "boastful"
+    },
+    {
+     "text": "matchless"
+    },
+    {
+     "text": "shallow"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, unparalleled means having no equal, i.e. matchless. So \"matchless\" is the synonym.",
+   "order": 131,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The monk led a SECLUDED life in the Himalayas.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "isolated"
+    },
+    {
+     "text": "public"
+    },
+    {
+     "text": "comfortable"
+    },
+    {
+     "text": "busy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, secluded means kept away from others, i.e. isolated. So \"isolated\" is the synonym.",
+   "order": 132,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The CANDID remarks of the chairman surprised the board.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "blunt"
+    },
+    {
+     "text": "evasive"
+    },
+    {
+     "text": "public"
+    },
+    {
+     "text": "honest"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, candid means frank; evasive means avoiding a direct answer. So \"evasive\" is the antonym.",
+   "order": 133,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The audience was CAPTIVATED by her singing.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "enthralled"
+    },
+    {
+     "text": "bored"
+    },
+    {
+     "text": "confused"
+    },
+    {
+     "text": "annoyed"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, captivated means held spellbound, i.e. enthralled. So \"enthralled\" is the synonym.",
+   "order": 134,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The athlete showed REMARKABLE stamina.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "sudden"
+    },
+    {
+     "text": "rare"
+    },
+    {
+     "text": "ordinary"
+    },
+    {
+     "text": "great"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, remarkable means worthy of notice; ordinary is the reverse. So \"ordinary\" is the antonym.",
+   "order": 135,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The clerk was REPRIMANDED for coming late.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "praised"
+    },
+    {
+     "text": "promoted"
+    },
+    {
+     "text": "ignored"
+    },
+    {
+     "text": "rebuked"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, reprimand means to scold formally, i.e. rebuke. So \"rebuked\" is the synonym.",
+   "order": 136,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The author's argument was COHERENT.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "disjointed"
+    },
+    {
+     "text": "logical"
+    },
+    {
+     "text": "lengthy"
+    },
+    {
+     "text": "clear"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, coherent means logically connected; disjointed is not connected. So \"disjointed\" is the antonym.",
+   "order": 137,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The two cousins have a CORDIAL relationship.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "formal"
+    },
+    {
+     "text": "friendly"
+    },
+    {
+     "text": "strained"
+    },
+    {
+     "text": "distant"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, cordial means warm and friendly. So \"friendly\" is the synonym.",
+   "order": 138,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The speaker's mood was SOMBRE.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "quiet"
+    },
+    {
+     "text": "serious"
+    },
+    {
+     "text": "cheerful"
+    },
+    {
+     "text": "tired"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, sombre means dark and gloomy; cheerful is the reverse. So \"cheerful\" is the antonym.",
+   "order": 139,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The company's profits DWINDLED over the year.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "soared"
+    },
+    {
+     "text": "stabilised"
+    },
+    {
+     "text": "doubled"
+    },
+    {
+     "text": "declined"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, dwindle means to diminish gradually, i.e. decline. So \"declined\" is the synonym.",
+   "order": 140,
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The bank will FORFEIT the deposit if the terms are violated.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "return"
+    },
+    {
+     "text": "invest"
+    },
+    {
+     "text": "increase"
+    },
+    {
+     "text": "lose"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, forfeit means to lose a right or property as a penalty. So \"lose\" is the synonym.",
+   "order": 141,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The professor's lecture was ABSTRUSE, and few students followed it.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "obscure"
+    },
+    {
+     "text": "boring"
+    },
+    {
+     "text": "trivial"
+    },
+    {
+     "text": "lengthy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, abstruse means hard to understand, i.e. obscure in meaning. So \"obscure\" is the synonym.",
+   "order": 142,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The witness's testimony was EVASIVE.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "cautious"
+    },
+    {
+     "text": "straightforward"
+    },
+    {
+     "text": "vague"
+    },
+    {
+     "text": "hesitant"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, evasive means avoiding directness; straightforward is direct. So \"straightforward\" is the antonym.",
+   "order": 143,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The committee decided to EXPEDITE the approval process.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "delay"
+    },
+    {
+     "text": "review"
+    },
+    {
+     "text": "hasten"
+    },
+    {
+     "text": "cancel"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, expedite means to speed up a process. So \"hasten\" is the synonym.",
+   "order": 144,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The CHAOTIC traffic of Mumbai calmed after midnight.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "noisy"
+    },
+    {
+     "text": "busy"
+    },
+    {
+     "text": "congested"
+    },
+    {
+     "text": "orderly"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, chaotic means completely disordered; orderly is the opposite. So \"orderly\" is the antonym.",
+   "order": 145,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"His speech was full of PLATITUDES that everyone had heard before.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "insults"
+    },
+    {
+     "text": "humour"
+    },
+    {
+     "text": "clichés"
+    },
+    {
+     "text": "statistics"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, platitude means a remark made stale by overuse, i.e. cliché. So \"clichés\" is the synonym.",
+   "order": 146,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The sudden rise in prices was TRANSIENT.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "permanent"
+    },
+    {
+     "text": "brief"
+    },
+    {
+     "text": "steep"
+    },
+    {
+     "text": "minor"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, transient means short-lived; permanent is lasting. So \"permanent\" is the antonym.",
+   "order": 147,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"She is known for her PERSPICACITY; she spots problems early.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "humility"
+    },
+    {
+     "text": "insight"
+    },
+    {
+     "text": "generosity"
+    },
+    {
+     "text": "stubbornness"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, perspicacity means keen mental perception, i.e. insight. So \"insight\" is the synonym.",
+   "order": 148,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The monarch's rule was BENEVOLENT.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "long"
+    },
+    {
+     "text": "cruel"
+    },
+    {
+     "text": "stable"
+    },
+    {
+     "text": "wise"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, benevolent means kindly and well-meaning; cruel is the reverse. So \"cruel\" is the antonym.",
+   "order": 149,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Read the sentence: \"The CURSORY inspection missed several defects.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    {
+     "text": "superficial"
+    },
+    {
+     "text": "detailed"
+    },
+    {
+     "text": "annual"
+    },
+    {
+     "text": "thorough"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, cursory means hasty and not thorough, i.e. superficial. So \"superficial\" is the synonym.",
+   "order": 150,
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ARDENT",
+   "options": [
+    {
+     "text": "polite"
+    },
+    {
+     "text": "tired"
+    },
+    {
+     "text": "passionate"
+    },
+    {
+     "text": "indifferent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ardent: ardent means full of fervour, i.e. passionate. So \"passionate\" is the synonym.",
+   "order": 151,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ADVERSITY",
+   "options": [
+    {
+     "text": "prosperity"
+    },
+    {
+     "text": "advice"
+    },
+    {
+     "text": "adventure"
+    },
+    {
+     "text": "hardship"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Adversity: adversity means misfortune and difficulty, i.e. hardship. So \"hardship\" is the synonym.",
+   "order": 152,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: AFFLUENT",
+   "options": [
+    {
+     "text": "humble"
+    },
+    {
+     "text": "needy"
+    },
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "generous"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Affluent: affluent means having abundant wealth. So \"wealthy\" is the synonym.",
+   "order": 153,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ARDUOUS",
+   "options": [
+    {
+     "text": "short"
+    },
+    {
+     "text": "lonely"
+    },
+    {
+     "text": "easy"
+    },
+    {
+     "text": "difficult"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Arduous: arduous means requiring great effort, i.e. difficult. So \"difficult\" is the synonym.",
+   "order": 154,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: FEEBLE",
+   "options": [
+    {
+     "text": "tiny"
+    },
+    {
+     "text": "weak"
+    },
+    {
+     "text": "strong"
+    },
+    {
+     "text": "quick"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Feeble: feeble means lacking strength, i.e. weak. So \"weak\" is the synonym.",
+   "order": 155,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: FUTILE",
+   "options": [
+    {
+     "text": "useless"
+    },
+    {
+     "text": "fruitful"
+    },
+    {
+     "text": "useful"
+    },
+    {
+     "text": "brief"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Futile: futile means incapable of producing any result, i.e. useless. So \"useless\" is the synonym.",
+   "order": 156,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: TRIVIAL",
+   "options": [
+    {
+     "text": "unimportant"
+    },
+    {
+     "text": "vital"
+    },
+    {
+     "text": "significant"
+    },
+    {
+     "text": "serious"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Trivial: trivial means of little value or importance. So \"unimportant\" is the synonym.",
+   "order": 157,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: WARY",
+   "options": [
+    {
+     "text": "weary"
+    },
+    {
+     "text": "angry"
+    },
+    {
+     "text": "careless"
+    },
+    {
+     "text": "cautious"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Wary: wary means watchful about possible danger, i.e. cautious. So \"cautious\" is the synonym.",
+   "order": 158,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: SORROW",
+   "options": [
+    {
+     "text": "anger"
+    },
+    {
+     "text": "joy"
+    },
+    {
+     "text": "grief"
+    },
+    {
+     "text": "shame"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sorrow: sorrow means deep distress, i.e. grief. So \"grief\" is the synonym.",
+   "order": 159,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INEVITABLE",
+   "options": [
+    {
+     "text": "sudden"
+    },
+    {
+     "text": "avoidable"
+    },
+    {
+     "text": "certain"
+    },
+    {
+     "text": "necessary"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inevitable: inevitable means certain to happen; avoidable can be prevented. So \"avoidable\" is the antonym.",
+   "order": 160,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: CONSPICUOUS",
+   "options": [
+    {
+     "text": "famous"
+    },
+    {
+     "text": "bright"
+    },
+    {
+     "text": "obvious"
+    },
+    {
+     "text": "hidden"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Conspicuous: conspicuous means easily seen; hidden is the opposite. So \"hidden\" is the antonym.",
+   "order": 161,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: NOVICE",
+   "options": [
+    {
+     "text": "expert"
+    },
+    {
+     "text": "student"
+    },
+    {
+     "text": "trainee"
+    },
+    {
+     "text": "beginner"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Novice: novice means a beginner; expert is highly skilled. So \"expert\" is the antonym.",
+   "order": 162,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: OBSOLETE",
+   "options": [
+    {
+     "text": "outdated"
+    },
+    {
+     "text": "modern"
+    },
+    {
+     "text": "abandoned"
+    },
+    {
+     "text": "ancient"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Obsolete: obsolete means out of date; modern is current. So \"modern\" is the antonym.",
+   "order": 163,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: TINY",
+   "options": [
+    {
+     "text": "minute"
+    },
+    {
+     "text": "small"
+    },
+    {
+     "text": "huge"
+    },
+    {
+     "text": "little"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tiny: tiny means extremely small; huge is extremely large. So \"huge\" is the antonym.",
+   "order": 164,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ABUNDANCE",
+   "options": [
+    {
+     "text": "wealth"
+    },
+    {
+     "text": "richness"
+    },
+    {
+     "text": "scarcity"
+    },
+    {
+     "text": "plenty"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Abundance: abundance means a large quantity; scarcity is shortage. So \"scarcity\" is the antonym.",
+   "order": 165,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ALLEVIATE",
+   "options": [
+    {
+     "text": "aggravate"
+    },
+    {
+     "text": "prevent"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "relieve"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alleviate: alleviate means to make suffering less severe, i.e. relieve. So \"relieve\" is the synonym.",
+   "order": 166,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: AUDACIOUS",
+   "options": [
+    {
+     "text": "daring"
+    },
+    {
+     "text": "clever"
+    },
+    {
+     "text": "timid"
+    },
+    {
+     "text": "rude"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Audacious: audacious means willing to take bold risks, i.e. daring. So \"daring\" is the synonym.",
+   "order": 167,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: CAPRICIOUS",
+   "options": [
+    {
+     "text": "angry"
+    },
+    {
+     "text": "fickle"
+    },
+    {
+     "text": "bold"
+    },
+    {
+     "text": "steady"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Capricious: capricious means given to sudden changes of mood, i.e. fickle. So \"fickle\" is the synonym.",
+   "order": 168,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: CENSURE",
+   "options": [
+    {
+     "text": "record"
+    },
+    {
+     "text": "praise"
+    },
+    {
+     "text": "condemn"
+    },
+    {
+     "text": "delay"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Censure: censure means to express strong disapproval, i.e. condemn. So \"condemn\" is the synonym.",
+   "order": 169,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: COHERENT",
+   "options": [
+    {
+     "text": "confused"
+    },
+    {
+     "text": "lengthy"
+    },
+    {
+     "text": "brief"
+    },
+    {
+     "text": "logical"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Coherent: coherent means logical and consistent. So \"logical\" is the synonym.",
+   "order": 170,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: DIFFIDENT",
+   "options": [
+    {
+     "text": "shy"
+    },
+    {
+     "text": "bold"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "rude"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Diffident: diffident means lacking self-confidence, i.e. shy. So \"shy\" is the synonym.",
+   "order": 171,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: DUBIOUS",
+   "options": [
+    {
+     "text": "clear"
+    },
+    {
+     "text": "doubtful"
+    },
+    {
+     "text": "certain"
+    },
+    {
+     "text": "honest"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dubious: dubious means hesitating or doubting. So \"doubtful\" is the synonym.",
+   "order": 172,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: HAUGHTY",
+   "options": [
+    {
+     "text": "cruel"
+    },
+    {
+     "text": "wealthy"
+    },
+    {
+     "text": "humble"
+    },
+    {
+     "text": "arrogant"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Haughty: haughty means disdainfully proud, i.e. arrogant. So \"arrogant\" is the synonym.",
+   "order": 173,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: IMPEDE",
+   "options": [
+    {
+     "text": "escape"
+    },
+    {
+     "text": "hamper"
+    },
+    {
+     "text": "repeat"
+    },
+    {
+     "text": "facilitate"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Impede: impede means to delay or hinder progress, i.e. hamper. So \"hamper\" is the synonym.",
+   "order": 174,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: LUCRATIVE",
+   "options": [
+    {
+     "text": "costly"
+    },
+    {
+     "text": "tiring"
+    },
+    {
+     "text": "profitable"
+    },
+    {
+     "text": "risky"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lucrative: lucrative means producing a great deal of profit. So \"profitable\" is the synonym.",
+   "order": 175,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: METICULOUS",
+   "options": [
+    {
+     "text": "painstaking"
+    },
+    {
+     "text": "quiet"
+    },
+    {
+     "text": "careless"
+    },
+    {
+     "text": "quick"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Meticulous: meticulous means showing great attention to detail, i.e. painstaking. So \"painstaking\" is the synonym.",
+   "order": 176,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: PLAUSIBLE",
+   "options": [
+    {
+     "text": "believable"
+    },
+    {
+     "text": "certain"
+    },
+    {
+     "text": "famous"
+    },
+    {
+     "text": "absurd"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Plausible: plausible means seeming reasonable, i.e. believable. So \"believable\" is the synonym.",
+   "order": 177,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: STEADFAST",
+   "options": [
+    {
+     "text": "calm"
+    },
+    {
+     "text": "fickle"
+    },
+    {
+     "text": "lazy"
+    },
+    {
+     "text": "unwavering"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Steadfast: steadfast means firmly fixed and loyal, i.e. unwavering. So \"unwavering\" is the synonym.",
+   "order": 178,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: COMPLACENT",
+   "options": [
+    {
+     "text": "relaxed"
+    },
+    {
+     "text": "concerned"
+    },
+    {
+     "text": "smug"
+    },
+    {
+     "text": "content"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Complacent: complacent means uncritically self-satisfied; concerned is alert and worried. So \"concerned\" is the antonym.",
+   "order": 179,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: DIFFIDENT",
+   "options": [
+    {
+     "text": "humble"
+    },
+    {
+     "text": "shy"
+    },
+    {
+     "text": "confident"
+    },
+    {
+     "text": "careful"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Diffident: diffident means lacking confidence; confident is self-assured. So \"confident\" is the antonym.",
+   "order": 180,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: EXACERBATE",
+   "options": [
+    {
+     "text": "worsen"
+    },
+    {
+     "text": "provoke"
+    },
+    {
+     "text": "soothe"
+    },
+    {
+     "text": "intensify"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exacerbate: exacerbate means to make worse; soothe means to ease. So \"soothe\" is the antonym.",
+   "order": 181,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: FASTIDIOUS",
+   "options": [
+    {
+     "text": "easygoing"
+    },
+    {
+     "text": "refined"
+    },
+    {
+     "text": "choosy"
+    },
+    {
+     "text": "fussy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fastidious: fastidious means very hard to please; easygoing is relaxed and undemanding. So \"easygoing\" is the antonym.",
+   "order": 182,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: GREGARIOUS",
+   "options": [
+    {
+     "text": "friendly"
+    },
+    {
+     "text": "solitary"
+    },
+    {
+     "text": "sociable"
+    },
+    {
+     "text": "cheerful"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gregarious: gregarious means fond of company; solitary prefers being alone. So \"solitary\" is the antonym.",
+   "order": 183,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: IMPARTIAL",
+   "options": [
+    {
+     "text": "just"
+    },
+    {
+     "text": "neutral"
+    },
+    {
+     "text": "fair"
+    },
+    {
+     "text": "biased"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Impartial: impartial means treating all sides equally; biased favours one side. So \"biased\" is the antonym.",
+   "order": 184,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INNOCUOUS",
+   "options": [
+    {
+     "text": "harmless"
+    },
+    {
+     "text": "harmful"
+    },
+    {
+     "text": "mild"
+    },
+    {
+     "text": "gentle"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Innocuous: innocuous means not harmful; harmful is the opposite. So \"harmful\" is the antonym.",
+   "order": 185,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: INDIGENT",
+   "options": [
+    {
+     "text": "needy"
+    },
+    {
+     "text": "poor"
+    },
+    {
+     "text": "affluent"
+    },
+    {
+     "text": "homeless"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Indigent: indigent means poor; affluent means wealthy. So \"affluent\" is the antonym.",
+   "order": 186,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: LETHARGY",
+   "options": [
+    {
+     "text": "laziness"
+    },
+    {
+     "text": "fatigue"
+    },
+    {
+     "text": "sleep"
+    },
+    {
+     "text": "vigour"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lethargy: lethargy means a lack of energy; vigour is strong energy. So \"vigour\" is the antonym.",
+   "order": 187,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PROLIFIC",
+   "options": [
+    {
+     "text": "unproductive"
+    },
+    {
+     "text": "fertile"
+    },
+    {
+     "text": "creative"
+    },
+    {
+     "text": "productive"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Prolific: prolific means producing much; unproductive produces little. So \"unproductive\" is the antonym.",
+   "order": 188,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: RAMPANT",
+   "options": [
+    {
+     "text": "common"
+    },
+    {
+     "text": "wild"
+    },
+    {
+     "text": "widespread"
+    },
+    {
+     "text": "controlled"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rampant: rampant means spreading unchecked; controlled is held in check. So \"controlled\" is the antonym.",
+   "order": 189,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: SPORADIC",
+   "options": [
+    {
+     "text": "rare"
+    },
+    {
+     "text": "continuous"
+    },
+    {
+     "text": "occasional"
+    },
+    {
+     "text": "scattered"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sporadic: sporadic means occurring at irregular intervals; continuous never stops. So \"continuous\" is the antonym.",
+   "order": 190,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: EXONERATE",
+   "options": [
+    {
+     "text": "absolve"
+    },
+    {
+     "text": "interrogate"
+    },
+    {
+     "text": "punish"
+    },
+    {
+     "text": "accuse"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exonerate: exonerate means to clear of blame, i.e. absolve. So \"absolve\" is the synonym.",
+   "order": 191,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: ERUDITE",
+   "options": [
+    {
+     "text": "pious"
+    },
+    {
+     "text": "ignorant"
+    },
+    {
+     "text": "scholarly"
+    },
+    {
+     "text": "eloquent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Erudite: erudite means having great learning, i.e. scholarly. So \"scholarly\" is the synonym.",
+   "order": 192,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: EXTOL",
+   "options": [
+    {
+     "text": "denounce"
+    },
+    {
+     "text": "laud"
+    },
+    {
+     "text": "mock"
+    },
+    {
+     "text": "forget"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Extol: extol means to praise enthusiastically, i.e. laud. So \"laud\" is the synonym.",
+   "order": 193,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: QUELL",
+   "options": [
+    {
+     "text": "provoke"
+    },
+    {
+     "text": "resume"
+    },
+    {
+     "text": "announce"
+    },
+    {
+     "text": "suppress"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Quell: quell means to put an end to, usually by force, i.e. suppress. So \"suppress\" is the synonym.",
+   "order": 194,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: PANACEA",
+   "options": [
+    {
+     "text": "a cure for all ills"
+    },
+    {
+     "text": "a slow disease"
+    },
+    {
+     "text": "a minor illness"
+    },
+    {
+     "text": "a deadly poison"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Panacea: panacea means a remedy believed to cure every problem. So \"a cure for all ills\" is the synonym.",
+   "order": 195,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is closest in meaning (synonym) to the word: PRAGMATIC",
+   "options": [
+    {
+     "text": "stubborn"
+    },
+    {
+     "text": "theoretical"
+    },
+    {
+     "text": "practical"
+    },
+    {
+     "text": "idealistic"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pragmatic: pragmatic means dealing with things sensibly and realistically, i.e. practical. So \"practical\" is the synonym.",
+   "order": 196,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: VOLATILE",
+   "options": [
+    {
+     "text": "explosive"
+    },
+    {
+     "text": "lively"
+    },
+    {
+     "text": "stable"
+    },
+    {
+     "text": "unstable"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Volatile: volatile means liable to change rapidly; stable stays steady. So \"stable\" is the antonym.",
+   "order": 197,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: PENURY",
+   "options": [
+    {
+     "text": "affluence"
+    },
+    {
+     "text": "misery"
+    },
+    {
+     "text": "poverty"
+    },
+    {
+     "text": "scarcity"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Penury: penury means extreme poverty; affluence means abundant wealth. So \"affluence\" is the antonym.",
+   "order": 198,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: NONCHALANT",
+   "options": [
+    {
+     "text": "relaxed"
+    },
+    {
+     "text": "indifferent"
+    },
+    {
+     "text": "casual"
+    },
+    {
+     "text": "anxious"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Nonchalant: nonchalant means calm and unconcerned; anxious is worried. So \"anxious\" is the antonym.",
+   "order": 199,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the word that is opposite in meaning (antonym) to the word: ZENITH",
+   "options": [
+    {
+     "text": "summit"
+    },
+    {
+     "text": "nadir"
+    },
+    {
+     "text": "apex"
+    },
+    {
+     "text": "peak"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Zenith: zenith means the highest point; nadir is the lowest point. So \"nadir\" is the antonym.",
+   "order": 200,
+   "subPattern": "commonly-asked-word-lists",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The soldiers could [BEAR] the biting cold of Siachen without complaint.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "endure"
+    },
+    {
+     "text": "carry"
+    },
+    {
+     "text": "produce"
+    },
+    {
+     "text": "deliver"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Here bear means to put up with something unpleasant, i.e. endure. Carry, produce and deliver are other senses of bear that do not fit.",
+   "order": 201,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The sun will [SET] by six in the evening.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "arrange"
+    },
+    {
+     "text": "fix"
+    },
+    {
+     "text": "go down"
+    },
+    {
+     "text": "harden"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Set used of the sun means to sink below the horizon, i.e. go down. The other options are different senses of set.",
+   "order": 202,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [FAIR] umpire gave every decision without favour.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "pale"
+    },
+    {
+     "text": "impartial"
+    },
+    {
+     "text": "average"
+    },
+    {
+     "text": "cheerful"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fair for an umpire means treating both sides equally, i.e. impartial. Pale and average are other senses of fair.",
+   "order": 203,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [MATCH] between Chennai and Mumbai went to the last ball.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "spark"
+    },
+    {
+     "text": "equal"
+    },
+    {
+     "text": "partner"
+    },
+    {
+     "text": "contest"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Match here is a sporting contest. Partner and equal are other senses; spark is not a sense of match here.",
+   "order": 204,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The captain will [ADDRESS] the team before the final.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "send to"
+    },
+    {
+     "text": "look for"
+    },
+    {
+     "text": "locate"
+    },
+    {
+     "text": "speak to"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Address used with an audience means to speak to them. The other options are different senses.",
+   "order": 205,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The driver paid a [FINE] for jumping the signal.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "delicate"
+    },
+    {
+     "text": "penalty"
+    },
+    {
+     "text": "thin"
+    },
+    {
+     "text": "excellent"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fine as a noun here is a sum of money charged as punishment, i.e. a penalty.",
+   "order": 206,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [TRUNK] of the old banyan tree was very thick.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "stalk"
+    },
+    {
+     "text": "luggage box"
+    },
+    {
+     "text": "elephant's nose"
+    },
+    {
+     "text": "car boot"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Trunk of a tree is its main woody stem or stalk. The other options are other senses of trunk.",
+   "order": 207,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The shopkeeper will [CLOSE] the shop at nine.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "near"
+    },
+    {
+     "text": "intimate"
+    },
+    {
+     "text": "shut"
+    },
+    {
+     "text": "miserly"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Close used as a verb with a shop means to shut it. Near, miserly and intimate are adjective senses.",
+   "order": 208,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [SPRING] in the village never dries up.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "natural water source"
+    },
+    {
+     "text": "rainy season"
+    },
+    {
+     "text": "coiled metal part"
+    },
+    {
+     "text": "sudden jump"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Spring here is a place where water flows from the ground, i.e. a natural water source.",
+   "order": 209,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [LIGHT] bag was easy to carry.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "solid"
+    },
+    {
+     "text": "dark"
+    },
+    {
+     "text": "serious"
+    },
+    {
+     "text": "heavy"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Light in the sense of little weight has the opposite heavy. Dark is the opposite only of light as brightness.",
+   "order": 210,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"Meera gave the [RIGHT] answer to the question.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "lazy"
+    },
+    {
+     "text": "bent"
+    },
+    {
+     "text": "wrong"
+    },
+    {
+     "text": "left"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Right meaning correct has the opposite wrong. Left is the opposite only for direction.",
+   "order": 211,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"She is a [KIND] teacher who never raises her voice.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "rare"
+    },
+    {
+     "text": "cruel"
+    },
+    {
+     "text": "shy"
+    },
+    {
+     "text": "humble"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Kind meaning gentle and considerate has the opposite cruel.",
+   "order": 212,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The batter swung the [BAT] and hit a six.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "flying mammal"
+    },
+    {
+     "text": "wicket"
+    },
+    {
+     "text": "small ball"
+    },
+    {
+     "text": "wooden club"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bat in cricket is the wooden club used to hit the ball.",
+   "order": 213,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"Please [WATCH] the baby while I cook.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "teach"
+    },
+    {
+     "text": "look after"
+    },
+    {
+     "text": "wait for"
+    },
+    {
+     "text": "scold"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Watch a child here means to keep an eye on and care for, i.e. look after.",
+   "order": 214,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The children sat on the [BANK] of the river and fished.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "storehouse"
+    },
+    {
+     "text": "money lender"
+    },
+    {
+     "text": "shore"
+    },
+    {
+     "text": "heap"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Bank of a river is the land alongside it, i.e. the shore.",
+   "order": 215,
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The judge asked the witness to [PRODUCE] the document in court.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "present"
+    },
+    {
+     "text": "create"
+    },
+    {
+     "text": "manufacture"
+    },
+    {
+     "text": "yield"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Produce in this legal context means to bring out and show, i.e. present.",
+   "order": 216,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The company will [FLOAT] its new shares next month.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "hover"
+    },
+    {
+     "text": "swim"
+    },
+    {
+     "text": "drift"
+    },
+    {
+     "text": "launch"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To float shares means to put them on sale for the first time, i.e. launch them.",
+   "order": 217,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The doctor was [FIRM] about the patient's diet.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "stiff"
+    },
+    {
+     "text": "resolute"
+    },
+    {
+     "text": "solid"
+    },
+    {
+     "text": "commercial"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Firm here describes a person who does not yield, i.e. resolute.",
+   "order": 218,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The goalkeeper managed to [SAVE] the penalty with his left hand.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "economise"
+    },
+    {
+     "text": "rescue"
+    },
+    {
+     "text": "block"
+    },
+    {
+     "text": "store"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Save in football means to stop a shot from scoring, i.e. block it.",
+   "order": 219,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"Rohit decided to [PITCH] his idea to the investors.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "propose"
+    },
+    {
+     "text": "throw"
+    },
+    {
+     "text": "slope"
+    },
+    {
+     "text": "camp"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pitch an idea means to present it persuasively, i.e. propose it.",
+   "order": 220,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The new rules will [BEAR] upon every employee of the firm.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "give birth to"
+    },
+    {
+     "text": "carry"
+    },
+    {
+     "text": "tolerate"
+    },
+    {
+     "text": "apply to"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bear upon means to be relevant to or affect, i.e. apply to.",
+   "order": 221,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The students were asked to [DRAW] a conclusion from the passage.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "derive"
+    },
+    {
+     "text": "attract"
+    },
+    {
+     "text": "sketch"
+    },
+    {
+     "text": "pull"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Draw a conclusion means to derive it from the evidence.",
+   "order": 222,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The minister will [FIELD] questions from reporters after the meeting.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "plough"
+    },
+    {
+     "text": "answer"
+    },
+    {
+     "text": "cultivate"
+    },
+    {
+     "text": "stop a ball"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Field a question means to handle and answer it.",
+   "order": 223,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The old tree could not [STAND] the force of the storm.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "climb"
+    },
+    {
+     "text": "halt"
+    },
+    {
+     "text": "withstand"
+    },
+    {
+     "text": "rise"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Stand the force of something means to withstand it.",
+   "order": 224,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The singer's [PITCH] was perfect throughout the concert.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "slope"
+    },
+    {
+     "text": "tent"
+    },
+    {
+     "text": "tone level"
+    },
+    {
+     "text": "throw"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pitch in music is the highness or lowness of a note, i.e. its tone level.",
+   "order": 225,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The new manager has a [SOUND] knowledge of accounts.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "healthy"
+    },
+    {
+     "text": "thorough"
+    },
+    {
+     "text": "loud"
+    },
+    {
+     "text": "noise"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sound here means reliable and well founded, i.e. thorough.",
+   "order": 226,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The old man's [PLAIN] speaking won him respect.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "level"
+    },
+    {
+     "text": "ugly"
+    },
+    {
+     "text": "empty"
+    },
+    {
+     "text": "frank"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Plain speaking is honest and direct speech, i.e. frank.",
+   "order": 227,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The captain's century helped [BOLSTER] the team's confidence.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "strengthen"
+    },
+    {
+     "text": "hide"
+    },
+    {
+     "text": "measure"
+    },
+    {
+     "text": "shake"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bolster means to support and strengthen.",
+   "order": 228,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The manager's [PRAISE] pleased the whole team.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "applause"
+    },
+    {
+     "text": "speech"
+    },
+    {
+     "text": "reward"
+    },
+    {
+     "text": "criticism"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Praise is approval; its opposite is criticism.",
+   "order": 229,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"Strict laws will [CURB] illegal mining in the district.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "legalise"
+    },
+    {
+     "text": "restrain"
+    },
+    {
+     "text": "map"
+    },
+    {
+     "text": "encourage"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Curb means to hold back or keep in check, i.e. restrain.",
+   "order": 230,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The shopkeeper offered a [GENEROUS] discount during Diwali.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "large"
+    },
+    {
+     "text": "kind"
+    },
+    {
+     "text": "meagre"
+    },
+    {
+     "text": "fair"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Generous here means large in amount; its opposite is meagre, i.e. small and inadequate.",
+   "order": 231,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The minister gave an [EVASIVE] reply to the question.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "indirect"
+    },
+    {
+     "text": "long"
+    },
+    {
+     "text": "frank"
+    },
+    {
+     "text": "angry"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Evasive means avoiding a direct answer, i.e. indirect.",
+   "order": 232,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The sea was [TURBULENT] on the day of the storm.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "rough"
+    },
+    {
+     "text": "dark"
+    },
+    {
+     "text": "deep"
+    },
+    {
+     "text": "calm"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Turbulent means violently disturbed; its opposite is calm.",
+   "order": 233,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"Ravi's [TENACIOUS] pursuit of the goal finally paid off.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "casual"
+    },
+    {
+     "text": "angry"
+    },
+    {
+     "text": "persistent"
+    },
+    {
+     "text": "brief"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tenacious means holding firmly to a purpose, i.e. persistent.",
+   "order": 234,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"Her [CONCISE] summary saved everybody's time.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "clear"
+    },
+    {
+     "text": "wordy"
+    },
+    {
+     "text": "short"
+    },
+    {
+     "text": "neat"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Concise means brief but complete; its opposite is wordy.",
+   "order": 235,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The two companies decided to [MERGE] last year.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "combine"
+    },
+    {
+     "text": "compete"
+    },
+    {
+     "text": "split"
+    },
+    {
+     "text": "close"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Merge means to join together into one, i.e. combine.",
+   "order": 236,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The company's profit [SURGED] in the third quarter.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "jumped"
+    },
+    {
+     "text": "stabilised"
+    },
+    {
+     "text": "soared"
+    },
+    {
+     "text": "plunged"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Surge means to rise sharply; its opposite is to plunge, i.e. fall sharply.",
+   "order": 237,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The trainer will [HONE] his skills before the finals.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "sharpen"
+    },
+    {
+     "text": "display"
+    },
+    {
+     "text": "blunt"
+    },
+    {
+     "text": "hide"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hone means to refine and sharpen, in this case skills.",
+   "order": 238,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"He was [RELUCTANT] to sign the form without reading it.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "careful"
+    },
+    {
+     "text": "eager"
+    },
+    {
+     "text": "afraid"
+    },
+    {
+     "text": "unwilling"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Reluctant means unwilling; its opposite is eager, i.e. willing.",
+   "order": 239,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The chief's speech [PLACATED] the angry shareholders.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "bored"
+    },
+    {
+     "text": "informed"
+    },
+    {
+     "text": "pacified"
+    },
+    {
+     "text": "provoked"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Placate means to calm someone who is angry, i.e. pacify.",
+   "order": 240,
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"His [CAUSTIC] remarks hurt the new employee.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "mild"
+    },
+    {
+     "text": "gentle"
+    },
+    {
+     "text": "hesitant"
+    },
+    {
+     "text": "biting"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Caustic remarks are sharply sarcastic or bitter, i.e. biting.",
+   "order": 241,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [OPAQUE] policy puzzled the citizens.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "rigid"
+    },
+    {
+     "text": "transparent"
+    },
+    {
+     "text": "complex"
+    },
+    {
+     "text": "hidden"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Opaque here means not open or clear; its opposite is transparent.",
+   "order": 242,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The negotiators tried to [MOLLIFY] the angry union.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "defeat"
+    },
+    {
+     "text": "ignore"
+    },
+    {
+     "text": "soothe"
+    },
+    {
+     "text": "provoke"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Mollify means to appease someone's anger, i.e. soothe.",
+   "order": 243,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [LAUDABLE] effort deserved a reward.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "blameworthy"
+    },
+    {
+     "text": "excessive"
+    },
+    {
+     "text": "hasty"
+    },
+    {
+     "text": "tiring"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Laudable means deserving praise; its opposite is blameworthy, i.e. deserving blame.",
+   "order": 244,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The new technology will [OBVIATE] the need for fresh loans.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "predict"
+    },
+    {
+     "text": "justify"
+    },
+    {
+     "text": "eliminate"
+    },
+    {
+     "text": "create"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Obviate means to remove a difficulty or need, i.e. eliminate.",
+   "order": 245,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The [AUSPICIOUS] start of the campaign pleased the party.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "slow"
+    },
+    {
+     "text": "ominous"
+    },
+    {
+     "text": "grand"
+    },
+    {
+     "text": "minor"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Auspicious means promising success; its opposite is ominous, i.e. promising trouble.",
+   "order": 246,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The speaker's [VERBOSE] style bored the listeners.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "wordy"
+    },
+    {
+     "text": "loud"
+    },
+    {
+     "text": "witty"
+    },
+    {
+     "text": "formal"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Verbose means using more words than needed, i.e. wordy.",
+   "order": 247,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The jury's [UNANIMOUS] verdict ended the trial.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "quick"
+    },
+    {
+     "text": "clear"
+    },
+    {
+     "text": "final"
+    },
+    {
+     "text": "divided"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Unanimous means with everyone agreeing; its opposite is divided.",
+   "order": 248,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The critic [LAMBASTED] the film in his Sunday column.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "praised"
+    },
+    {
+     "text": "condemned"
+    },
+    {
+     "text": "summarised"
+    },
+    {
+     "text": "ignored"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lambast means to criticise harshly, i.e. condemn.",
+   "order": 249,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In the sentence \"The two leaders had an [AMICABLE] meeting in Delhi.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    {
+     "text": "hostile"
+    },
+    {
+     "text": "formal"
+    },
+    {
+     "text": "private"
+    },
+    {
+     "text": "brief"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Amicable means friendly; its opposite is hostile.",
+   "order": 250,
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,631 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who scientifically studies the stars, planets and other celestial bodies\"",
+   "options": [
+    "astrologer",
+    "astronomer",
+    "geologist",
+    "meteorologist"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"astronomer\": one who scientifically studies stars, planets and other celestial bodies. The other options mean: astrologer: one who predicts human fortunes and events from the positions of stars; geologist: a scientist who studies the earth's rocks and structure; meteorologist: a scientist who studies weather and the atmosphere.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who hates women\"",
+   "options": [
+    "misogynist",
+    "misanthrope",
+    "philanderer",
+    "bigot"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"misogynist\": a person who hates women. The other options mean: misanthrope: a person who hates or distrusts mankind; philanderer: a man who has casual love affairs with many women; bigot: a person who is intolerantly attached to his own opinions.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Miso- = hate; gyne = woman."
+  },
+  {
+   "questionText": "Which one word stands for \"A person who hates or distrusts mankind\"?",
+   "options": [
+    "misogynist",
+    "philanthropist",
+    "pessimist",
+    "misanthrope"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"misanthrope\": a person who hates or distrusts mankind. The other options mean: misogynist: a person who hates women; philanthropist: a person who loves mankind and helps it through charity; pessimist: a person who expects the worst.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Miso- = hate; anthropos = mankind."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who loves mankind and works for its welfare through charity\"?",
+   "options": [
+    "misanthrope",
+    "cynic",
+    "philanthropist",
+    "hermit"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"philanthropist\": a person who loves mankind and helps it through charity. The other options mean: misanthrope: a person who hates or distrusts mankind; cynic: a person who distrusts the motives of others; hermit: a person who lives alone, away from society.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Philo- = love; anthropos = mankind."
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A lover and collector of books\"",
+   "options": [
+    "philatelist",
+    "bibliophile",
+    "numismatist",
+    "lexicographer"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"bibliophile\": a lover and collector of books. The other options mean: philatelist: a collector and student of postage stamps; numismatist: a collector or student of coins and medals; lexicographer: one who compiles dictionaries.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Biblio- = book; -phile = lover."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who collects postage stamps as a hobby\"",
+   "options": [
+    "philatelist",
+    "numismatist",
+    "bibliophile",
+    "antiquarian"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"philatelist\": a collector and student of postage stamps. The other options mean: numismatist: a collector or student of coins and medals; bibliophile: a lover and collector of books; antiquarian: a collector or student of antiques and ancient objects.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Phil- = love; ateleia = freedom from tax (postage stamp)."
+  },
+  {
+   "questionText": "Which one word stands for \"A person who collects or studies coins and medals\"?",
+   "options": [
+    "philatelist",
+    "cartographer",
+    "lexicographer",
+    "numismatist"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"numismatist\": a collector or student of coins and medals. The other options mean: philatelist: a collector and student of postage stamps; cartographer: one who draws or makes maps; lexicographer: one who compiles dictionaries.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who draws or makes maps\"?",
+   "options": [
+    "lexicographer",
+    "stenographer",
+    "cartographer",
+    "biographer"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"cartographer\": one who draws or makes maps. The other options mean: lexicographer: one who compiles dictionaries; stenographer: one who writes in shorthand; biographer: one who writes the life story of another person.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who compiles dictionaries\"",
+   "options": [
+    "cartographer",
+    "lexicographer",
+    "biographer",
+    "calligrapher"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"lexicographer\": one who compiles dictionaries. The other options mean: cartographer: one who draws or makes maps; biographer: one who writes the life story of another person; calligrapher: an expert in beautiful handwriting.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who writes in shorthand\"",
+   "options": [
+    "stenographer",
+    "calligrapher",
+    "cryptographer",
+    "typographer"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"stenographer\": one who writes in shorthand. The other options mean: calligrapher: an expert in beautiful handwriting; cryptographer: one who writes or designs secret codes; typographer: one who designs or arranges printed type.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word stands for \"A person who is an expert in beautiful handwriting\"?",
+   "options": [
+    "stenographer",
+    "graphologist",
+    "cryptographer",
+    "calligrapher"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"calligrapher\": an expert in beautiful handwriting. The other options mean: stenographer: one who writes in shorthand; graphologist: an expert who studies handwriting to judge a person's character; cryptographer: one who writes or designs secret codes.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"An expert who studies a person's handwriting to judge his character\"?",
+   "options": [
+    "calligrapher",
+    "palmist",
+    "graphologist",
+    "phrenologist"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"graphologist\": an expert who studies handwriting to judge a person's character. The other options mean: calligrapher: an expert in beautiful handwriting; palmist: one who tells fortunes by reading the lines of the palm; phrenologist: one who studies the shape of the skull to judge character.",
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Graph = writing; -ologist = expert who studies."
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who designs or solves secret codes\"",
+   "options": [
+    "stenographer",
+    "cryptographer",
+    "lexicographer",
+    "calligrapher"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"cryptographer\": one who writes or designs secret codes. The other options mean: stenographer: one who writes in shorthand; lexicographer: one who compiles dictionaries; calligrapher: an expert in beautiful handwriting.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A doctor who specialises in diseases of the eye\"",
+   "options": [
+    "ophthalmologist",
+    "cardiologist",
+    "neurologist",
+    "dermatologist"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"ophthalmologist\": a doctor who specialises in diseases of the eye. The other options mean: cardiologist: a doctor who specialises in diseases of the heart; neurologist: a doctor who specialises in diseases of the nerves and brain; dermatologist: a doctor who specialises in diseases of the skin.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word stands for \"A doctor who specialises in diseases of the heart\"?",
+   "options": [
+    "pulmonologist",
+    "neurologist",
+    "dermatologist",
+    "cardiologist"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"cardiologist\": a doctor who specialises in diseases of the heart. The other options mean: pulmonologist: a doctor who specialises in diseases of the lungs; neurologist: a doctor who specialises in diseases of the nerves and brain; dermatologist: a doctor who specialises in diseases of the skin.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A doctor who specialises in diseases of the kidneys\"?",
+   "options": [
+    "hepatologist",
+    "gastroenterologist",
+    "nephrologist",
+    "cardiologist"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"nephrologist\": a doctor who specialises in diseases of the kidneys. The other options mean: hepatologist: a doctor who specialises in diseases of the liver; gastroenterologist: a doctor who specialises in diseases of the stomach and intestines; cardiologist: a doctor who specialises in diseases of the heart.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A dentist who corrects teeth that are irregularly placed\"",
+   "options": [
+    "chiropodist",
+    "orthodontist",
+    "orthopaedist",
+    "paediatrician"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"orthodontist\": a dentist who corrects irregularly placed teeth. The other options mean: chiropodist: one who treats minor ailments of the feet; orthopaedist: a doctor who treats disorders of the bones and joints; paediatrician: a doctor who treats children's diseases.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A doctor who treats the diseases of children\"",
+   "options": [
+    "paediatrician",
+    "geriatrician",
+    "gynaecologist",
+    "dermatologist"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"paediatrician\": a doctor who treats children's diseases. The other options mean: geriatrician: a doctor who treats the diseases of old people; gynaecologist: a doctor who treats women's reproductive health; dermatologist: a doctor who specialises in diseases of the skin.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word stands for \"A doctor who specialises in the care of elderly people\"?",
+   "options": [
+    "paediatrician",
+    "psychiatrist",
+    "radiologist",
+    "geriatrician"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"geriatrician\": a doctor who treats the diseases of old people. The other options mean: paediatrician: a doctor who treats children's diseases; psychiatrist: a doctor who treats mental illness; radiologist: a doctor who diagnoses illness using X-rays and scans.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A scientist who studies the origin and development of mankind and its customs\"?",
+   "options": [
+    "archaeologist",
+    "ornithologist",
+    "anthropologist",
+    "entomologist"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"anthropologist\": a scientist who studies the origin, development and customs of mankind. The other options mean: archaeologist: one who studies ancient civilisations through excavated remains; ornithologist: a scientist who studies birds; entomologist: a scientist who studies insects.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who studies ancient civilisations by digging up and examining their remains\"",
+   "options": [
+    "ornithologist",
+    "archaeologist",
+    "geologist",
+    "linguist"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"archaeologist\": one who studies ancient civilisations through excavated remains. The other options mean: ornithologist: a scientist who studies birds; geologist: a scientist who studies the earth's rocks and structure; linguist: one who studies language scientifically.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A scientist who studies birds\"",
+   "options": [
+    "ornithologist",
+    "entomologist",
+    "herpetologist",
+    "ichthyologist"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"ornithologist\": a scientist who studies birds. The other options mean: entomologist: a scientist who studies insects; herpetologist: a scientist who studies reptiles and amphibians; ichthyologist: a scientist who studies fish.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word stands for \"A scientist who studies insects\"?",
+   "options": [
+    "ornithologist",
+    "etymologist",
+    "herpetologist",
+    "entomologist"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"entomologist\": a scientist who studies insects. The other options mean: ornithologist: a scientist who studies birds; etymologist: one who studies the origin and historical development of words; herpetologist: a scientist who studies reptiles and amphibians.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who studies the origin and historical development of words\"?",
+   "options": [
+    "entomologist",
+    "ornithologist",
+    "etymologist",
+    "ethnologist"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"etymologist\": one who studies the origin and historical development of words. The other options mean: entomologist: a scientist who studies insects; ornithologist: a scientist who studies birds; ethnologist: one who studies the different races of people and their cultures.",
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who knows or speaks many languages\"",
+   "options": [
+    "orator",
+    "polyglot",
+    "pedant",
+    "elocutionist"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"polyglot\": a person who knows or speaks many languages. The other options mean: orator: a skilled public speaker; pedant: a person who makes a show of learning or is overly concerned with minor rules; elocutionist: an expert in the art of clear and effective speaking.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A teacher or schoolmaster\"",
+   "options": [
+    "pedagogue",
+    "pedant",
+    "demagogue",
+    "pedlar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"pedagogue\": a teacher or schoolmaster. The other options mean: pedant: a person who makes a show of learning or is overly concerned with minor rules; demagogue: a political leader who wins support by appealing to popular passions and prejudices; pedlar: a person who sells small goods by going from door to door.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Paid- (child) + agogos (leader): leads children, a teacher."
+  },
+  {
+   "questionText": "Which one word stands for \"A political leader who wins power by appealing to the emotions and prejudices of the common people\"?",
+   "options": [
+    "pedagogue",
+    "democrat",
+    "bureaucrat",
+    "demagogue"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"demagogue\": a political leader who wins support by appealing to popular passions and prejudices. The other options mean: pedagogue: a teacher or schoolmaster; democrat: a believer in rule by the people; bureaucrat: an official in a government department.",
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A ruler who holds absolute power\"?",
+   "options": [
+    "democrat",
+    "bureaucrat",
+    "autocrat",
+    "aristocrat"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"autocrat\": a ruler with absolute power. The other options mean: democrat: a believer in rule by the people; bureaucrat: an official in a government department; aristocrat: a member of the hereditary noble class.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person whose power or influence comes from his great wealth\"",
+   "options": [
+    "aristocrat",
+    "plutocrat",
+    "democrat",
+    "bureaucrat"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"plutocrat\": a person whose power comes from his wealth. The other options mean: aristocrat: a member of the hereditary noble class; democrat: a believer in rule by the people; bureaucrat: an official in a government department.",
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who takes refined pleasure in good food and drink\"",
+   "options": [
+    "epicure",
+    "glutton",
+    "ascetic",
+    "cynic"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"epicure\": a person who takes refined pleasure in good food and drink. The other options mean: glutton: a person who eats greedily and too much; ascetic: a person who lives a life of severe self-discipline and avoids worldly pleasures; cynic: a person who distrusts the motives of others.",
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word stands for \"A person who practises severe self-discipline and avoids worldly pleasures\"?",
+   "options": [
+    "epicure",
+    "hedonist",
+    "sceptic",
+    "ascetic"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"ascetic\": a person who lives a life of severe self-discipline and avoids worldly pleasures. The other options mean: epicure: a person who takes refined pleasure in good food and drink; hedonist: a person who believes that pleasure is the chief aim of life; sceptic: a person who doubts accepted opinions.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who travels on foot\"?",
+   "options": [
+    "pilgrim",
+    "passenger",
+    "pedestrian",
+    "nomad"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"pedestrian\": a person who travels on foot. The other options mean: pilgrim: a person who journeys to a sacred place; passenger: a person who travels in a vehicle without driving it; nomad: a member of a tribe that moves from place to place in search of pasture.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who always looks on the bright side and expects the best\"",
+   "options": [
+    "pessimist",
+    "optimist",
+    "cynic",
+    "sceptic"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"optimist\": a person who always expects the best and looks on the bright side. The other options mean: pessimist: a person who expects the worst; cynic: a person who distrusts the motives of others; sceptic: a person who doubts accepted opinions.",
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who does an activity for love of it and not for money\"",
+   "options": [
+    "amateur",
+    "professional",
+    "veteran",
+    "pedant"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"amateur\": a person who takes part in an activity for love of it, not for money. The other options mean: professional: a person who earns a living from an activity; veteran: a person with long experience, especially an ex-soldier; pedant: a person who makes a show of learning or is overly concerned with minor rules.",
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

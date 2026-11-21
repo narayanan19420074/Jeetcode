@@ -1,0 +1,453 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which of the following numbers is prime?",
+   "options": [
+    "97",
+    "87",
+    "91",
+    "93"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "87 = 3 × 29, 91 = 7 × 13 and 93 = 3 × 31 are composite. 97 has no prime divisor up to 9 (2, 3, 5, 7), so it is prime.",
+   "shortcut": "Test divisibility by primes up to √n.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest prime number greater than 90?",
+   "options": [
+    "91",
+    "97",
+    "93",
+    "99"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "91 = 7 × 13, 92 even, 93 = 3 × 31, 94 even, 95 = 5 × 19, 96 even. 97 is prime.",
+   "shortcut": "Skip evens and multiples of 3, 5, 7.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of the first eight prime numbers?",
+   "options": [
+    "75",
+    "78",
+    "77",
+    "80"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 77.",
+   "shortcut": "List the primes and add carefully.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many prime numbers are there from 1 to 50?",
+   "options": [
+    "14",
+    "16",
+    "17",
+    "15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47: that is 15 primes.",
+   "shortcut": "Remember the count: 25 primes below 100, 15 below 50.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the largest prime factor of 2310?",
+   "options": [
+    "11",
+    "7",
+    "5",
+    "1155"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2310 = 2 × 3 × 5 × 7 × 11. The largest prime factor is 11.",
+   "shortcut": "Divide out small primes first.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which is the only even prime number?",
+   "options": [
+    "0",
+    "2",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Every even number greater than 2 is divisible by 2 and hence composite. So 2 is the only even prime.",
+   "shortcut": "Memorise it.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest prime number that is also a factor of 3003?",
+   "options": [
+    "2",
+    "5",
+    "3",
+    "7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "3003 is odd, so 2 is not a factor. Digit sum = 6, so 3 divides it: 3003 = 3 × 1001. The smallest prime factor is 3.",
+   "shortcut": "Test 2, 3, 5 in order.",
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "To test whether 391 is prime by trial division, what is the largest prime you need to try as a divisor?",
+   "options": [
+    "17",
+    "23",
+    "20",
+    "19"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "√391 ≈ 19.8, so test primes up to 19. In fact 391 = 17 × 23 is composite, and 17 is found while testing.",
+   "shortcut": "Test all primes ≤ √n.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two prime numbers have sum 60 and product 899. What is the larger prime?",
+   "options": [
+    "31",
+    "29",
+    "37",
+    "41"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "p + q = 60, pq = 899. Then (q − p)² = 3600 − 3596 = 4, so q − p = 2. q = 31, p = 29.",
+   "shortcut": "Use (q − p)² = (p + q)² − 4pq.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the largest prime factor of 8051?",
+   "options": [
+    "83",
+    "97",
+    "89",
+    "101"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "8051 = 8100 − 49 = 90² − 7² = (90 − 7)(90 + 7) = 83 × 97. Both are prime, so the largest is 97.",
+   "shortcut": "Look for a difference of squares.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of the distinct prime factors of 3003?",
+   "options": [
+    "24",
+    "36",
+    "34",
+    "429"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "3003 = 3 × 7 × 11 × 13. Sum = 3 + 7 + 11 + 13 = 34.",
+   "shortcut": "Factorise using 1001 = 7 × 11 × 13.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression n² + n + 41 gives primes for many natural numbers n. What is the smallest natural number n for which it is composite?",
+   "options": [
+    "39",
+    "41",
+    "42",
+    "40"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It stays prime for n = 1 to 39, and fails at n = 40: 40² + 40 + 41 = 1681 = 41².",
+   "shortcut": "Look for n where n² + n + 41 is a multiple of 41, i.e. n = 40.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many prime numbers lie between 100 and 130?",
+   "options": [
+    "6",
+    "4",
+    "7",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Primes in the range: 101, 103, 107, 109, 113, 127. Count = 6.",
+   "shortcut": "Check only numbers of the form 6k ± 1.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Every prime greater than 3 is of the form 6k ± 1. How many primes below 60 are of the form 6k + 1?",
+   "options": [
+    "9",
+    "6",
+    "5",
+    "8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Primes below 60 that leave remainder 1 on division by 6: 7, 13, 19, 31, 37, 43. Count = 6.",
+   "shortcut": "6k + 1 primes: 7, 13, 19, 31, 37, 43...",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If p is a prime greater than 3, then p² − 1 is always divisible by which of the following?",
+   "options": [
+    "16",
+    "30",
+    "24",
+    "36"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "p is of the form 6k ± 1, so p² − 1 = (p − 1)(p + 1) is a product of two consecutive even numbers (one a multiple of 4) and also contains a multiple of 3. So 8 × 3 = 24 always divides it.",
+   "shortcut": "(p − 1)(p + 1): even, multiple of 8 and of 3.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many prime numbers p are there such that p, p + 2 and p + 4 are all prime?",
+   "options": [
+    "2",
+    "3",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Among p, p + 2, p + 4 one is a multiple of 3 for any p. So all three can be prime only if that multiple is 3 itself: (3, 5, 7). Exactly 1 such prime.",
+   "shortcut": "Three numbers in steps of 2 cover all residues mod 3.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The product of two consecutive primes is 1763. What is the larger prime?",
+   "options": [
+    "43",
+    "37",
+    "41",
+    "47"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "√1763 ≈ 42, so look at the primes near 42: 41 × 43 = 1763. The larger prime is 43.",
+   "shortcut": "Take the square root and look at adjacent primes.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many primes p less than 100 are there such that p + 6 is also prime?",
+   "options": [
+    "14",
+    "16",
+    "18",
+    "20"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pairs (p, p + 6): (5,11), (7,13), (11,17), (13,19), (17,23), (23,29), (31,37), (37,43), (41,47), (47,53), (53,59), (61,67), (67,73), (73,79), (83,89), (97,103). Count = 16.",
+   "shortcut": "Enumerate primes below 100 and test p + 6.",
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In how many ways can 50 be written as the sum of two prime numbers (order not counted)?",
+   "options": [
+    "2",
+    "5",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pairs: 3+47, 7+43, 13+37, 19+31. Total = 4.",
+   "shortcut": "Try each prime ≤ 25 and check the partner.",
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the sum of all prime numbers p below 30 for which 2p + 1 is also prime.",
+   "options": [
+    "71",
+    "78",
+    "80",
+    "73"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "p = 2 (5), 3 (7), 5 (11), 11 (23), 23 (47), 29 (59). Sum = 2 + 3 + 5 + 11 + 23 + 29 = 73. Others like 7 (15), 13 (27), 17 (35), 19 (39) fail.",
+   "shortcut": "Test 2p + 1 for each prime below 30.",
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the greatest prime factor of 3¹² − 1?",
+   "options": [
+    "73",
+    "7",
+    "13",
+    "41"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "3¹² − 1 = (3⁶ − 1)(3⁶ + 1) = 728 × 730 = (2³ × 7 × 13)(2 × 5 × 73). Greatest prime factor = 73.",
+   "shortcut": "Use a² − b² repeatedly.",
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many two-digit prime numbers have the property that the number obtained by reversing the digits is also prime (palindromic primes such as 11 are included)?",
+   "options": [
+    "8",
+    "9",
+    "10",
+    "11"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Qualifying primes: 11, 13, 17, 31, 37, 71, 73, 79, 97. Count = 9.",
+   "shortcut": "Primes with digits 2, 4, 5, 6, 8, 0 in the tens or units place are ruled out.",
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of all prime numbers between 50 and 70?",
+   "options": [
+    "183",
+    "230",
+    "240",
+    "247"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Primes between 50 and 70: 53, 59, 61, 67. Sum = 240.",
+   "shortcut": "List 6k ± 1 numbers and test them.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the total number of prime factors (counting repetitions) in the product 4¹¹ × 7⁵ × 11²?",
+   "options": [
+    "18",
+    "27",
+    "31",
+    "29"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "4¹¹ = 2²² contributes 22 prime factors, 7⁵ contributes 5 and 11² contributes 2. Total = 22 + 5 + 2 = 29.",
+   "shortcut": "Convert every base to primes first.",
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,5811 @@
+{
+ "pattern": {
+  "title": "Venn Diagrams",
+  "slug": "venn-diagrams",
+  "description": "Set relationships and overlap counting.",
+  "order": 38,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "relationship-venn-diagrams",
+    "title": "Relationship Venn diagrams"
+   },
+   {
+    "slug": "set-counting-two-sets",
+    "title": "Set counting (two sets)"
+   },
+   {
+    "slug": "set-counting-three-sets",
+    "title": "Set counting (three sets)"
+   },
+   {
+    "slug": "overlap-only-in-one-set",
+    "title": "Overlap & only-in-one-set"
+   },
+   {
+    "slug": "venn-based-reasoning",
+    "title": "Venn-based reasoning"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which of the following best describes how the circles for Surgeons, Doctors and Humans should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Surgeons lie completely inside Doctors, and Humans is a separate circle outside Doctors"
+    },
+    {
+     "text": "Surgeons, Doctors and Humans are three completely separate circles"
+    },
+    {
+     "text": "Surgeons and Doctors are two separate circles, and the circle of Humans cuts across both of them partly"
+    },
+    {
+     "text": "Surgeons are inside Doctors, and Doctors are inside Humans (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Surgeons belongs to Doctors, and every member of Doctors belongs to Humans, so the three circles are nested.",
+   "order": 1,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Three groups are given: Mangoes, Fruits, Edible things. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Mangoes are inside Fruits, and Fruits are inside Edible things (three nested circles)"
+    },
+    {
+     "text": "Mangoes and Fruits are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Edible things"
+    },
+    {
+     "text": "Mangoes, Fruits and Edible things are three completely separate circles"
+    },
+    {
+     "text": "Mangoes and Fruits are two separate circles, and the circle of Edible things cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Mangoes belongs to Fruits, and every member of Fruits belongs to Edible things, so the three circles are nested.",
+   "order": 2,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Chennai, Tamil Nadu and India.",
+   "options": [
+    {
+     "text": "Chennai and Tamil Nadu are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of India"
+    },
+    {
+     "text": "Chennai and Tamil Nadu are two separate circles, and the circle of India cuts across both of them partly"
+    },
+    {
+     "text": "Chennai are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles)"
+    },
+    {
+     "text": "Chennai and Tamil Nadu are two separate circles, both lying completely inside the circle of India"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every member of Chennai belongs to Tamil Nadu, and every member of Tamil Nadu belongs to India, so the three circles are nested.",
+   "order": 3,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Sparrows, Birds and Animals?",
+   "options": [
+    {
+     "text": "Sparrows lie completely inside Birds, and Animals is a separate circle outside Birds"
+    },
+    {
+     "text": "Sparrows are inside Birds, and Birds are inside Animals (three nested circles)"
+    },
+    {
+     "text": "Sparrows and Birds are two separate circles, and the circle of Animals cuts across both of them partly"
+    },
+    {
+     "text": "Sparrows and Birds are two partly overlapping circles, and the circle of Animals lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Every member of Sparrows belongs to Birds, and every member of Birds belongs to Animals, so the three circles are nested.",
+   "order": 4,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Roses, Flowers and Plants should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Roses, Flowers and Plants are three completely separate circles"
+    },
+    {
+     "text": "Roses are inside Flowers, and Flowers are inside Plants (three nested circles)"
+    },
+    {
+     "text": "Roses and Flowers are two separate circles, and the circle of Plants cuts across both of them partly"
+    },
+    {
+     "text": "Roses and Flowers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Plants"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Every member of Roses belongs to Flowers, and every member of Flowers belongs to Plants, so the three circles are nested.",
+   "order": 5,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Three groups are given: Basmati, Rice, Cereals. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Basmati and Rice are two separate circles, and the circle of Cereals cuts across both of them partly"
+    },
+    {
+     "text": "Basmati, Rice and Cereals are three completely separate circles"
+    },
+    {
+     "text": "Basmati and Rice are two partly overlapping circles, and the circle of Cereals lies completely apart from both"
+    },
+    {
+     "text": "Basmati are inside Rice, and Rice are inside Cereals (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Basmati belongs to Rice, and every member of Rice belongs to Cereals, so the three circles are nested.",
+   "order": 6,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Squares, Rectangles and Quadrilaterals.",
+   "options": [
+    {
+     "text": "Squares, Rectangles and Quadrilaterals are three completely separate circles"
+    },
+    {
+     "text": "Squares and Rectangles are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Quadrilaterals"
+    },
+    {
+     "text": "Squares are inside Rectangles, and Rectangles are inside Quadrilaterals (three nested circles)"
+    },
+    {
+     "text": "Squares and Rectangles are two partly overlapping circles, and the circle of Quadrilaterals lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every member of Squares belongs to Rectangles, and every member of Rectangles belongs to Quadrilaterals, so the three circles are nested.",
+   "order": 7,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Lions, Mammals and Animals?",
+   "options": [
+    {
+     "text": "Lions are inside Mammals, and Mammals are inside Animals (three nested circles)"
+    },
+    {
+     "text": "Lions and Mammals are two partly overlapping circles, and the circle of Animals lies completely apart from both"
+    },
+    {
+     "text": "Lions and Mammals are two separate circles, and the circle of Animals cuts across both of them partly"
+    },
+    {
+     "text": "Lions and Mammals are two separate circles, both lying completely inside the circle of Animals"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Lions belongs to Mammals, and every member of Mammals belongs to Animals, so the three circles are nested.",
+   "order": 8,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Coimbatore, Tamil Nadu and India should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Coimbatore are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles)"
+    },
+    {
+     "text": "Coimbatore and Tamil Nadu are two partly overlapping circles, and the circle of India lies completely apart from both"
+    },
+    {
+     "text": "Coimbatore lie completely inside Tamil Nadu, and India is a separate circle outside Tamil Nadu"
+    },
+    {
+     "text": "Coimbatore and Tamil Nadu are two separate circles, both lying completely inside the circle of India"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Coimbatore belongs to Tamil Nadu, and every member of Tamil Nadu belongs to India, so the three circles are nested.",
+   "order": 9,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Three groups are given: Wheat, Cereals, Crops. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Wheat and Cereals are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Crops"
+    },
+    {
+     "text": "Wheat are inside Cereals, and Cereals are inside Crops (three nested circles)"
+    },
+    {
+     "text": "Wheat and Cereals are two separate circles, both lying completely inside the circle of Crops"
+    },
+    {
+     "text": "Wheat and Cereals are two partly overlapping circles, and the circle of Crops lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Every member of Wheat belongs to Cereals, and every member of Cereals belongs to Crops, so the three circles are nested.",
+   "order": 10,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Laptops, Computers and Machines.",
+   "options": [
+    {
+     "text": "Laptops, Computers and Machines are three completely separate circles"
+    },
+    {
+     "text": "Laptops lie completely inside Computers, and Machines is a separate circle outside Computers"
+    },
+    {
+     "text": "Laptops and Computers are two separate circles, both lying completely inside the circle of Machines"
+    },
+    {
+     "text": "Laptops are inside Computers, and Computers are inside Machines (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Laptops belongs to Computers, and every member of Computers belongs to Machines, so the three circles are nested.",
+   "order": 11,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Ooty, Nilgiris and Tamil Nadu?",
+   "options": [
+    {
+     "text": "Ooty, Nilgiris and Tamil Nadu are three completely separate circles"
+    },
+    {
+     "text": "Ooty lie completely inside Nilgiris, and Tamil Nadu is a separate circle outside Nilgiris"
+    },
+    {
+     "text": "Ooty are inside Nilgiris, and Nilgiris are inside Tamil Nadu (three nested circles)"
+    },
+    {
+     "text": "Ooty and Nilgiris are two partly overlapping circles, and the circle of Tamil Nadu lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Every member of Ooty belongs to Nilgiris, and every member of Nilgiris belongs to Tamil Nadu, so the three circles are nested.",
+   "order": 12,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Peacocks, Birds and Living beings should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Peacocks and Birds are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Living beings"
+    },
+    {
+     "text": "Peacocks, Birds and Living beings are three completely separate circles"
+    },
+    {
+     "text": "Peacocks and Birds are two partly overlapping circles, and the circle of Living beings lies completely apart from both"
+    },
+    {
+     "text": "Peacocks are inside Birds, and Birds are inside Living beings (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every member of Peacocks belongs to Birds, and every member of Birds belongs to Living beings, so the three circles are nested.",
+   "order": 13,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Three groups are given: Kolkata, West Bengal, India. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Kolkata are inside West Bengal, and West Bengal are inside India (three nested circles)"
+    },
+    {
+     "text": "Kolkata and West Bengal are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of India"
+    },
+    {
+     "text": "Kolkata and West Bengal are two partly overlapping circles, and the circle of India lies completely apart from both"
+    },
+    {
+     "text": "Kolkata, West Bengal and India are three completely separate circles"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Every member of Kolkata belongs to West Bengal, and every member of West Bengal belongs to India, so the three circles are nested.",
+   "order": 14,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Smallest category inside, bigger inside bigger."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Dogs, Tables and Rivers.",
+   "options": [
+    {
+     "text": "Dogs and Tables are two separate circles, both lying completely inside the circle of Rivers"
+    },
+    {
+     "text": "Dogs are inside Tables, and Tables are inside Rivers (three nested circles)"
+    },
+    {
+     "text": "Dogs, Tables and Rivers are three completely separate circles"
+    },
+    {
+     "text": "Dogs and Tables are two separate circles, and the circle of Rivers cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 15,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Pens, Trains and Mangoes?",
+   "options": [
+    {
+     "text": "Pens are inside Trains, and Trains are inside Mangoes (three nested circles)"
+    },
+    {
+     "text": "Pens, Trains and Mangoes are three completely separate circles"
+    },
+    {
+     "text": "Pens and Trains are two partly overlapping circles, and the circle of Mangoes lies completely apart from both"
+    },
+    {
+     "text": "Pens and Trains are two separate circles, and the circle of Mangoes cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 16,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Tigers, Books and Oceans should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Tigers and Books are two separate circles, and the circle of Oceans cuts across both of them partly"
+    },
+    {
+     "text": "Tigers, Books and Oceans are three completely separate circles"
+    },
+    {
+     "text": "Tigers are inside Books, and Books are inside Oceans (three nested circles)"
+    },
+    {
+     "text": "Tigers and Books are two partly overlapping circles, and the circle of Oceans lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 17,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Three groups are given: Lamps, Elephants, Roads. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Lamps and Elephants are two partly overlapping circles, and the circle of Roads lies completely apart from both"
+    },
+    {
+     "text": "Lamps and Elephants are two separate circles, both lying completely inside the circle of Roads"
+    },
+    {
+     "text": "Lamps, Elephants and Roads are three completely separate circles"
+    },
+    {
+     "text": "Lamps and Elephants are two separate circles, and the circle of Roads cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 18,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Cricket bats, Fish and Clouds.",
+   "options": [
+    {
+     "text": "Cricket bats, Fish and Clouds are three completely separate circles"
+    },
+    {
+     "text": "Cricket bats lie completely inside Fish, and Clouds is a separate circle outside Fish"
+    },
+    {
+     "text": "Cricket bats and Fish are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Clouds"
+    },
+    {
+     "text": "Cricket bats and Fish are two partly overlapping circles, and the circle of Clouds lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 19,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Buses, Coconuts and Mountains?",
+   "options": [
+    {
+     "text": "Buses and Coconuts are two partly overlapping circles, and the circle of Mountains lies completely apart from both"
+    },
+    {
+     "text": "Buses are inside Coconuts, and Coconuts are inside Mountains (three nested circles)"
+    },
+    {
+     "text": "Buses and Coconuts are two separate circles, both lying completely inside the circle of Mountains"
+    },
+    {
+     "text": "Buses, Coconuts and Mountains are three completely separate circles"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 20,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Chairs, Peacocks and Stars should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Chairs are inside Peacocks, and Peacocks are inside Stars (three nested circles)"
+    },
+    {
+     "text": "Chairs and Peacocks are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Stars"
+    },
+    {
+     "text": "Chairs and Peacocks are two partly overlapping circles, and the circle of Stars lies completely apart from both"
+    },
+    {
+     "text": "Chairs, Peacocks and Stars are three completely separate circles"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 21,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Three groups are given: Trains, Banana plants, Pillows. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Trains and Banana plants are two separate circles, both lying completely inside the circle of Pillows"
+    },
+    {
+     "text": "Trains are inside Banana plants, and Banana plants are inside Pillows (three nested circles)"
+    },
+    {
+     "text": "Trains, Banana plants and Pillows are three completely separate circles"
+    },
+    {
+     "text": "Trains lie completely inside Banana plants, and Pillows is a separate circle outside Banana plants"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "None of the three groups shares a member with another, so there are three separate circles.",
+   "order": 22,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "No common member → separate circles."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Roses, Flowers and Cars?",
+   "options": [
+    {
+     "text": "Roses are inside Flowers, and Flowers are inside Cars (three nested circles)"
+    },
+    {
+     "text": "Roses lie completely inside Flowers, and Cars is a separate circle outside Flowers"
+    },
+    {
+     "text": "Roses and Flowers are two partly overlapping circles, and the circle of Cars lies completely apart from both"
+    },
+    {
+     "text": "Roses and Flowers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Cars"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Roses are wholly inside Flowers, and Cars belong to neither, so the third circle is outside.",
+   "order": 23,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Nest the related pair; keep the unrelated one apart."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Sparrows, Birds and Tables should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Sparrows lie completely inside Birds, and Tables is a separate circle outside Birds"
+    },
+    {
+     "text": "Sparrows and Birds are two separate circles, and the circle of Tables cuts across both of them partly"
+    },
+    {
+     "text": "Sparrows and Birds are two partly overlapping circles, and the circle of Tables lies completely apart from both"
+    },
+    {
+     "text": "Sparrows and Birds are two separate circles, both lying completely inside the circle of Tables"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sparrows are wholly inside Birds, and Tables belong to neither, so the third circle is outside.",
+   "order": 24,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Nest the related pair; keep the unrelated one apart."
+  },
+  {
+   "questionText": "Three groups are given: Lions, Animals, Rivers. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Lions, Animals and Rivers are three completely separate circles"
+    },
+    {
+     "text": "Lions lie completely inside Animals, and Rivers is a separate circle outside Animals"
+    },
+    {
+     "text": "Lions and Animals are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Rivers"
+    },
+    {
+     "text": "Lions and Animals are two separate circles, both lying completely inside the circle of Rivers"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lions are wholly inside Animals, and Rivers belong to neither, so the third circle is outside.",
+   "order": 25,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Nest the related pair; keep the unrelated one apart."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Teapots, Utensils and Planets.",
+   "options": [
+    {
+     "text": "Teapots and Utensils are two separate circles, and the circle of Planets cuts across both of them partly"
+    },
+    {
+     "text": "Teapots and Utensils are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Planets"
+    },
+    {
+     "text": "Teapots, Utensils and Planets are three completely separate circles"
+    },
+    {
+     "text": "Teapots lie completely inside Utensils, and Planets is a separate circle outside Utensils"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Teapots are wholly inside Utensils, and Planets belong to neither, so the third circle is outside.",
+   "order": 26,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Nest the related pair; keep the unrelated one apart."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Hockey sticks, Sports equipment and Clouds?",
+   "options": [
+    {
+     "text": "Hockey sticks lie completely inside Sports equipment, and Clouds is a separate circle outside Sports equipment"
+    },
+    {
+     "text": "Hockey sticks are inside Sports equipment, and Sports equipment are inside Clouds (three nested circles)"
+    },
+    {
+     "text": "Hockey sticks and Sports equipment are two separate circles, both lying completely inside the circle of Clouds"
+    },
+    {
+     "text": "Hockey sticks, Sports equipment and Clouds are three completely separate circles"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hockey sticks are wholly inside Sports equipment, and Clouds belong to neither, so the third circle is outside.",
+   "order": 27,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Nest the related pair; keep the unrelated one apart."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Trucks, Vehicles and Fruits should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Trucks are inside Vehicles, and Vehicles are inside Fruits (three nested circles)"
+    },
+    {
+     "text": "Trucks, Vehicles and Fruits are three completely separate circles"
+    },
+    {
+     "text": "Trucks lie completely inside Vehicles, and Fruits is a separate circle outside Vehicles"
+    },
+    {
+     "text": "Trucks and Vehicles are two partly overlapping circles, and the circle of Fruits lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Trucks are wholly inside Vehicles, and Fruits belong to neither, so the third circle is outside.",
+   "order": 28,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Nest the related pair; keep the unrelated one apart."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Cats, Dogs and Animals.",
+   "options": [
+    {
+     "text": "Cats and Dogs are two partly overlapping circles, and the circle of Animals lies completely apart from both"
+    },
+    {
+     "text": "Cats, Dogs and Animals are three completely separate circles"
+    },
+    {
+     "text": "Cats and Dogs are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Animals"
+    },
+    {
+     "text": "Cats and Dogs are two separate circles, both lying completely inside the circle of Animals"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cats and Dogs have nothing in common but both belong to Animals, so two separate circles sit inside the big one.",
+   "order": 29,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Tigers, Elephants and Wild animals?",
+   "options": [
+    {
+     "text": "Tigers and Elephants are two partly overlapping circles, and the circle of Wild animals lies completely apart from both"
+    },
+    {
+     "text": "Tigers lie completely inside Elephants, and Wild animals is a separate circle outside Elephants"
+    },
+    {
+     "text": "Tigers and Elephants are two separate circles, both lying completely inside the circle of Wild animals"
+    },
+    {
+     "text": "Tigers are inside Elephants, and Elephants are inside Wild animals (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tigers and Elephants have nothing in common but both belong to Wild animals, so two separate circles sit inside the big one.",
+   "order": 30,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Apples, Bananas and Fruits should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Apples and Bananas are two separate circles, both lying completely inside the circle of Fruits"
+    },
+    {
+     "text": "Apples are inside Bananas, and Bananas are inside Fruits (three nested circles)"
+    },
+    {
+     "text": "Apples and Bananas are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Fruits"
+    },
+    {
+     "text": "Apples and Bananas are two separate circles, and the circle of Fruits cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Apples and Bananas have nothing in common but both belong to Fruits, so two separate circles sit inside the big one.",
+   "order": 31,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Three groups are given: Tamil, Hindi, Languages. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Tamil, Hindi and Languages are three completely separate circles"
+    },
+    {
+     "text": "Tamil and Hindi are two separate circles, both lying completely inside the circle of Languages"
+    },
+    {
+     "text": "Tamil lie completely inside Hindi, and Languages is a separate circle outside Hindi"
+    },
+    {
+     "text": "Tamil and Hindi are two partly overlapping circles, and the circle of Languages lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tamil and Hindi have nothing in common but both belong to Languages, so two separate circles sit inside the big one.",
+   "order": 32,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Cricket, Kabaddi and Sports.",
+   "options": [
+    {
+     "text": "Cricket and Kabaddi are two separate circles, and the circle of Sports cuts across both of them partly"
+    },
+    {
+     "text": "Cricket, Kabaddi and Sports are three completely separate circles"
+    },
+    {
+     "text": "Cricket and Kabaddi are two separate circles, both lying completely inside the circle of Sports"
+    },
+    {
+     "text": "Cricket and Kabaddi are two partly overlapping circles, and the circle of Sports lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cricket and Kabaddi have nothing in common but both belong to Sports, so two separate circles sit inside the big one.",
+   "order": 33,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Pens, Pencils and Stationery?",
+   "options": [
+    {
+     "text": "Pens and Pencils are two partly overlapping circles, and the circle of Stationery lies completely apart from both"
+    },
+    {
+     "text": "Pens and Pencils are two separate circles, both lying completely inside the circle of Stationery"
+    },
+    {
+     "text": "Pens are inside Pencils, and Pencils are inside Stationery (three nested circles)"
+    },
+    {
+     "text": "Pens and Pencils are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Stationery"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pens and Pencils have nothing in common but both belong to Stationery, so two separate circles sit inside the big one.",
+   "order": 34,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Ganga, Yamuna and Rivers should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Ganga and Yamuna are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Rivers"
+    },
+    {
+     "text": "Ganga and Yamuna are two partly overlapping circles, and the circle of Rivers lies completely apart from both"
+    },
+    {
+     "text": "Ganga are inside Yamuna, and Yamuna are inside Rivers (three nested circles)"
+    },
+    {
+     "text": "Ganga and Yamuna are two separate circles, both lying completely inside the circle of Rivers"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ganga and Yamuna have nothing in common but both belong to Rivers, so two separate circles sit inside the big one.",
+   "order": 35,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Three groups are given: Buses, Trains, Public transport. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Buses and Trains are two separate circles, both lying completely inside the circle of Public transport"
+    },
+    {
+     "text": "Buses, Trains and Public transport are three completely separate circles"
+    },
+    {
+     "text": "Buses and Trains are two separate circles, and the circle of Public transport cuts across both of them partly"
+    },
+    {
+     "text": "Buses lie completely inside Trains, and Public transport is a separate circle outside Trains"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Buses and Trains have nothing in common but both belong to Public transport, so two separate circles sit inside the big one.",
+   "order": 36,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Mumbai, Pune and Maharashtra.",
+   "options": [
+    {
+     "text": "Mumbai, Pune and Maharashtra are three completely separate circles"
+    },
+    {
+     "text": "Mumbai and Pune are two separate circles, both lying completely inside the circle of Maharashtra"
+    },
+    {
+     "text": "Mumbai lie completely inside Pune, and Maharashtra is a separate circle outside Pune"
+    },
+    {
+     "text": "Mumbai and Pune are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Maharashtra"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mumbai and Pune have nothing in common but both belong to Maharashtra, so two separate circles sit inside the big one.",
+   "order": 37,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Rice, Wheat and Cereals?",
+   "options": [
+    {
+     "text": "Rice and Wheat are two separate circles, both lying completely inside the circle of Cereals"
+    },
+    {
+     "text": "Rice are inside Wheat, and Wheat are inside Cereals (three nested circles)"
+    },
+    {
+     "text": "Rice and Wheat are two separate circles, and the circle of Cereals cuts across both of them partly"
+    },
+    {
+     "text": "Rice and Wheat are two partly overlapping circles, and the circle of Cereals lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rice and Wheat have nothing in common but both belong to Cereals, so two separate circles sit inside the big one.",
+   "order": 38,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Hockey, Football and Team games should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Hockey and Football are two separate circles, and the circle of Team games cuts across both of them partly"
+    },
+    {
+     "text": "Hockey are inside Football, and Football are inside Team games (three nested circles)"
+    },
+    {
+     "text": "Hockey and Football are two partly overlapping circles, and the circle of Team games lies completely apart from both"
+    },
+    {
+     "text": "Hockey and Football are two separate circles, both lying completely inside the circle of Team games"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hockey and Football have nothing in common but both belong to Team games, so two separate circles sit inside the big one.",
+   "order": 39,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Three groups are given: Parrots, Crows, Birds. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Parrots and Crows are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Birds"
+    },
+    {
+     "text": "Parrots and Crows are two separate circles, and the circle of Birds cuts across both of them partly"
+    },
+    {
+     "text": "Parrots and Crows are two separate circles, both lying completely inside the circle of Birds"
+    },
+    {
+     "text": "Parrots lie completely inside Crows, and Birds is a separate circle outside Crows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Parrots and Crows have nothing in common but both belong to Birds, so two separate circles sit inside the big one.",
+   "order": 40,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Two members of the same class → two separate circles inside one big circle."
+  },
+  {
+   "questionText": "Three groups are given: Teachers, Women, Mountains. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Teachers and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Mountains"
+    },
+    {
+     "text": "Teachers and Women are two separate circles, both lying completely inside the circle of Mountains"
+    },
+    {
+     "text": "Teachers, Women and Mountains are three completely separate circles"
+    },
+    {
+     "text": "Teachers and Women are two partly overlapping circles, and the circle of Mountains lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some teachers are women (overlap), while mountains have nothing to do with either, so the third circle is separate.",
+   "order": 41,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Overlap needs a common member; unrelated third stays separate."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Doctors, Singers and Rivers.",
+   "options": [
+    {
+     "text": "Doctors and Singers are two partly overlapping circles, and the circle of Rivers lies completely apart from both"
+    },
+    {
+     "text": "Doctors and Singers are two separate circles, and the circle of Rivers cuts across both of them partly"
+    },
+    {
+     "text": "Doctors, Singers and Rivers are three completely separate circles"
+    },
+    {
+     "text": "Doctors lie completely inside Singers, and Rivers is a separate circle outside Singers"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some doctors are singers (overlap), while rivers have nothing to do with either, so the third circle is separate.",
+   "order": 42,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Overlap needs a common member; unrelated third stays separate."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Engineers, Cricketers and Planets?",
+   "options": [
+    {
+     "text": "Engineers lie completely inside Cricketers, and Planets is a separate circle outside Cricketers"
+    },
+    {
+     "text": "Engineers and Cricketers are two partly overlapping circles, and the circle of Planets lies completely apart from both"
+    },
+    {
+     "text": "Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Planets"
+    },
+    {
+     "text": "Engineers and Cricketers are two separate circles, both lying completely inside the circle of Planets"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some engineers are cricketers (overlap), while planets have nothing to do with either, so the third circle is separate.",
+   "order": 43,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Overlap needs a common member; unrelated third stays separate."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Fathers, Doctors and Rocks should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Fathers and Doctors are two separate circles, and the circle of Rocks cuts across both of them partly"
+    },
+    {
+     "text": "Fathers are inside Doctors, and Doctors are inside Rocks (three nested circles)"
+    },
+    {
+     "text": "Fathers and Doctors are two partly overlapping circles, and the circle of Rocks lies completely apart from both"
+    },
+    {
+     "text": "Fathers lie completely inside Doctors, and Rocks is a separate circle outside Doctors"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some fathers are doctors (overlap), while rocks have nothing to do with either, so the third circle is separate.",
+   "order": 44,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Overlap needs a common member; unrelated third stays separate."
+  },
+  {
+   "questionText": "Three groups are given: Mothers, Teachers, Bridges. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Mothers lie completely inside Teachers, and Bridges is a separate circle outside Teachers"
+    },
+    {
+     "text": "Mothers and Teachers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Bridges"
+    },
+    {
+     "text": "Mothers are inside Teachers, and Teachers are inside Bridges (three nested circles)"
+    },
+    {
+     "text": "Mothers and Teachers are two partly overlapping circles, and the circle of Bridges lies completely apart from both"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some mothers are teachers (overlap), while bridges have nothing to do with either, so the third circle is separate.",
+   "order": 45,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Overlap needs a common member; unrelated third stays separate."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Poets, Engineers and Oceans.",
+   "options": [
+    {
+     "text": "Poets and Engineers are two partly overlapping circles, and the circle of Oceans lies completely apart from both"
+    },
+    {
+     "text": "Poets lie completely inside Engineers, and Oceans is a separate circle outside Engineers"
+    },
+    {
+     "text": "Poets and Engineers are two separate circles, and the circle of Oceans cuts across both of them partly"
+    },
+    {
+     "text": "Poets are inside Engineers, and Engineers are inside Oceans (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some poets are engineers (overlap), while oceans have nothing to do with either, so the third circle is separate.",
+   "order": 46,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Overlap needs a common member; unrelated third stays separate."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Doctors, Women and Humans.",
+   "options": [
+    {
+     "text": "Doctors and Women are two separate circles, and the circle of Humans cuts across both of them partly"
+    },
+    {
+     "text": "Doctors and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans"
+    },
+    {
+     "text": "Doctors and Women are two partly overlapping circles, and the circle of Humans lies completely apart from both"
+    },
+    {
+     "text": "Doctors are inside Women, and Women are inside Humans (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some doctors are also women (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "order": 47,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Teachers, Singers and Humans?",
+   "options": [
+    {
+     "text": "Teachers and Singers are two partly overlapping circles, and the circle of Humans lies completely apart from both"
+    },
+    {
+     "text": "Teachers are inside Singers, and Singers are inside Humans (three nested circles)"
+    },
+    {
+     "text": "Teachers and Singers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans"
+    },
+    {
+     "text": "Teachers and Singers are two separate circles, both lying completely inside the circle of Humans"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some teachers are also singers (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "order": 48,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Engineers, Cricketers and Persons should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons"
+    },
+    {
+     "text": "Engineers and Cricketers are two partly overlapping circles, and the circle of Persons lies completely apart from both"
+    },
+    {
+     "text": "Engineers lie completely inside Cricketers, and Persons is a separate circle outside Cricketers"
+    },
+    {
+     "text": "Engineers are inside Cricketers, and Cricketers are inside Persons (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some engineers are also cricketers (partial overlap) and all belong to persons, so two overlapping circles sit inside the big one.",
+   "order": 49,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Three groups are given: Writers, Politicians, Humans. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Writers are inside Politicians, and Politicians are inside Humans (three nested circles)"
+    },
+    {
+     "text": "Writers and Politicians are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans"
+    },
+    {
+     "text": "Writers and Politicians are two partly overlapping circles, and the circle of Humans lies completely apart from both"
+    },
+    {
+     "text": "Writers, Politicians and Humans are three completely separate circles"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some writers are also politicians (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "order": 50,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Poets, Doctors and Persons.",
+   "options": [
+    {
+     "text": "Poets and Doctors are two separate circles, both lying completely inside the circle of Persons"
+    },
+    {
+     "text": "Poets and Doctors are two separate circles, and the circle of Persons cuts across both of them partly"
+    },
+    {
+     "text": "Poets, Doctors and Persons are three completely separate circles"
+    },
+    {
+     "text": "Poets and Doctors are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some poets are also doctors (partial overlap) and all belong to persons, so two overlapping circles sit inside the big one.",
+   "order": 51,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Farmers, Women and Humans?",
+   "options": [
+    {
+     "text": "Farmers lie completely inside Women, and Humans is a separate circle outside Women"
+    },
+    {
+     "text": "Farmers, Women and Humans are three completely separate circles"
+    },
+    {
+     "text": "Farmers and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans"
+    },
+    {
+     "text": "Farmers are inside Women, and Women are inside Humans (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some farmers are also women (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "order": 52,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Dancers, Lawyers and Persons should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Dancers and Lawyers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons"
+    },
+    {
+     "text": "Dancers and Lawyers are two partly overlapping circles, and the circle of Persons lies completely apart from both"
+    },
+    {
+     "text": "Dancers lie completely inside Lawyers, and Persons is a separate circle outside Lawyers"
+    },
+    {
+     "text": "Dancers are inside Lawyers, and Lawyers are inside Persons (three nested circles)"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some dancers are also lawyers (partial overlap) and all belong to persons, so two overlapping circles sit inside the big one.",
+   "order": 53,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Three groups are given: Cyclists, Teachers, Humans. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Cyclists lie completely inside Teachers, and Humans is a separate circle outside Teachers"
+    },
+    {
+     "text": "Cyclists are inside Teachers, and Teachers are inside Humans (three nested circles)"
+    },
+    {
+     "text": "Cyclists and Teachers are two separate circles, both lying completely inside the circle of Humans"
+    },
+    {
+     "text": "Cyclists and Teachers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some cyclists are also teachers (partial overlap) and all belong to humans, so two overlapping circles sit inside the big one.",
+   "order": 54,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each pair: can one thing be both? If yes (but not always), overlap."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Boys, Girls and Cricketers.",
+   "options": [
+    {
+     "text": "Boys, Girls and Cricketers are three completely separate circles"
+    },
+    {
+     "text": "Boys and Girls are two separate circles, and the circle of Cricketers cuts across both of them partly"
+    },
+    {
+     "text": "Boys and Girls are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Cricketers"
+    },
+    {
+     "text": "Boys lie completely inside Girls, and Cricketers is a separate circle outside Girls"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Boys and Girls never overlap, but each group has some members who are also cricketers and some who are not, so the third circle cuts across both.",
+   "order": 55,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Men, Women and Teachers?",
+   "options": [
+    {
+     "text": "Men and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Teachers"
+    },
+    {
+     "text": "Men, Women and Teachers are three completely separate circles"
+    },
+    {
+     "text": "Men and Women are two separate circles, and the circle of Teachers cuts across both of them partly"
+    },
+    {
+     "text": "Men lie completely inside Women, and Teachers is a separate circle outside Women"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Men and Women never overlap, but each group has some members who are also teachers and some who are not, so the third circle cuts across both.",
+   "order": 56,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Males, Females and Doctors should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Males and Females are two separate circles, and the circle of Doctors cuts across both of them partly"
+    },
+    {
+     "text": "Males are inside Females, and Females are inside Doctors (three nested circles)"
+    },
+    {
+     "text": "Males lie completely inside Females, and Doctors is a separate circle outside Females"
+    },
+    {
+     "text": "Males and Females are two separate circles, both lying completely inside the circle of Doctors"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Males and Females never overlap, but each group has some members who are also doctors and some who are not, so the third circle cuts across both.",
+   "order": 57,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Three groups are given: Boys, Girls, Swimmers. Which Venn diagram description fits them best?",
+   "options": [
+    {
+     "text": "Boys and Girls are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Swimmers"
+    },
+    {
+     "text": "Boys and Girls are two separate circles, both lying completely inside the circle of Swimmers"
+    },
+    {
+     "text": "Boys and Girls are two partly overlapping circles, and the circle of Swimmers lies completely apart from both"
+    },
+    {
+     "text": "Boys and Girls are two separate circles, and the circle of Swimmers cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Boys and Girls never overlap, but each group has some members who are also swimmers and some who are not, so the third circle cuts across both.",
+   "order": 58,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Choose the Venn diagram (described in words) that correctly represents Men, Women and Engineers.",
+   "options": [
+    {
+     "text": "Men and Women are two separate circles, both lying completely inside the circle of Engineers"
+    },
+    {
+     "text": "Men and Women are two separate circles, and the circle of Engineers cuts across both of them partly"
+    },
+    {
+     "text": "Men are inside Women, and Women are inside Engineers (three nested circles)"
+    },
+    {
+     "text": "Men lie completely inside Women, and Engineers is a separate circle outside Women"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Men and Women never overlap, but each group has some members who are also engineers and some who are not, so the third circle cuts across both.",
+   "order": 59,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Which arrangement of circles correctly represents the relationship among Boys, Girls and Singers?",
+   "options": [
+    {
+     "text": "Boys and Girls are two partly overlapping circles, and the circle of Singers lies completely apart from both"
+    },
+    {
+     "text": "Boys lie completely inside Girls, and Singers is a separate circle outside Girls"
+    },
+    {
+     "text": "Boys and Girls are two separate circles, and the circle of Singers cuts across both of them partly"
+    },
+    {
+     "text": "Boys and Girls are two separate circles, both lying completely inside the circle of Singers"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Boys and Girls never overlap, but each group has some members who are also singers and some who are not, so the third circle cuts across both.",
+   "order": 60,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Which of the following best describes how the circles for Men, Women and Farmers should be drawn in a Venn diagram?",
+   "options": [
+    {
+     "text": "Men, Women and Farmers are three completely separate circles"
+    },
+    {
+     "text": "Men and Women are two partly overlapping circles, and the circle of Farmers lies completely apart from both"
+    },
+    {
+     "text": "Men and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Farmers"
+    },
+    {
+     "text": "Men and Women are two separate circles, and the circle of Farmers cuts across both of them partly"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Men and Women never overlap, but each group has some members who are also farmers and some who are not, so the third circle cuts across both.",
+   "order": 61,
+   "subPattern": "relationship-venn-diagrams",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Test the third group against each of the other two: partly yes, partly no → cuts across."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 82 take Social Science, 28 take Sanskrit and 20 take both Social Science and Sanskrit. How many take at least one of the two?",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "82"
+    },
+    {
+     "text": "130"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 82 + 28 − 20 = 90.",
+   "order": 62,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Union = sum of both − common (the common part is counted twice)."
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 84 speak Telugu, 56 speak English and 24 speak both Telugu and English. How many speak at least one of the two?",
+   "options": [
+    {
+     "text": "140"
+    },
+    {
+     "text": "164"
+    },
+    {
+     "text": "116"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 84 + 56 − 24 = 116.",
+   "order": 63,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Union = sum of both − common (the common part is counted twice)."
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 47 play hockey, 32 play cricket and 13 play both hockey and cricket. How many play at least one of the two?",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "79"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 47 + 32 − 13 = 66.",
+   "order": 64,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Union = sum of both − common (the common part is counted twice)."
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 98 speak Urdu, 89 speak Hindi and 29 speak both Urdu and Hindi. How many speak at least one of the two?",
+   "options": [
+    {
+     "text": "187"
+    },
+    {
+     "text": "98"
+    },
+    {
+     "text": "158"
+    },
+    {
+     "text": "216"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 98 + 89 − 29 = 158.",
+   "order": 65,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Union = sum of both − common (the common part is counted twice)."
+  },
+  {
+   "questionText": "In a hostel-mess survey of commuters in Bengaluru, 83 use the bus, 88 use an auto-rickshaw, and 142 use at least one of them. How many use both?",
+   "options": [
+    {
+     "text": "313"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "59"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both = n(A) + n(B) − n(A ∪ B) = 83 + 88 − 142 = 29.",
+   "order": 66,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both = A + B − Union."
+  },
+  {
+   "questionText": "In a hostel-mess survey of farmers in a Punjab village, 78 grow maize, 47 grow wheat, and 90 grow at least one of them. How many grow both?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "215"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "35"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both = n(A) + n(B) − n(A ∪ B) = 78 + 47 − 90 = 35.",
+   "order": 67,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both = A + B − Union."
+  },
+  {
+   "questionText": "In a hostel-mess survey of customers at a Mumbai mall, 59 pay using Paytm, 44 pay using a credit card, and 98 pay using at least one of them. How many pay using both?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "201"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Both = n(A) + n(B) − n(A ∪ B) = 59 + 44 − 98 = 5.",
+   "order": 68,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both = A + B − Union."
+  },
+  {
+   "questionText": "Among 126 students in a Chennai college, 52 play hockey, 99 play kabaddi and 35 play both. How many play neither?",
+   "options": [
+    {
+     "text": "74"
+    },
+    {
+     "text": "116"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 52 + 99 − 35 = 116. Neither = 126 − 116 = 10.",
+   "order": 69,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Neither = Total − (A + B − Both)."
+  },
+  {
+   "questionText": "Among 111 employees of a Pune IT firm, 88 know Java, 41 know SQL and 23 know both. How many know neither?",
+   "options": [
+    {
+     "text": "106"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "70"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 88 + 41 − 23 = 106. Neither = 111 − 106 = 5.",
+   "order": 70,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Neither = Total − (A + B − Both)."
+  },
+  {
+   "questionText": "Among 154 customers at a Mumbai mall, 94 pay using Google Pay, 67 pay using a credit card and 27 pay using both. How many pay using neither?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "134"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "87"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 94 + 67 − 27 = 134. Neither = 154 − 134 = 20.",
+   "order": 71,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Neither = Total − (A + B − Both)."
+  },
+  {
+   "questionText": "Among 105 Class X students in Jaipur, 81 take Science, 45 take Maths and 21 take both. How many take neither?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 81 + 45 − 21 = 105. Neither = 105 − 105 = 0.",
+   "order": 72,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Neither = Total − (A + B − Both)."
+  },
+  {
+   "questionText": "Of 145 customers at a Mumbai mall, 5 pay using neither a credit card nor PhonePe. 80 pay using a credit card and 78 pay using PhonePe. How many pay using both?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "62"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 145 − 5 = 140. Both = n(A) + n(B) − union = 80 + 78 − 140 = 18.",
+   "order": 73,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both = A + B − (Total − Neither)."
+  },
+  {
+   "questionText": "Of 82 visitors to a Mysuru restaurant, 15 order neither pongal nor dosa. 40 order pongal and 37 order dosa. How many order both?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 82 − 15 = 67. Both = n(A) + n(B) − union = 40 + 37 − 67 = 10.",
+   "order": 74,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both = A + B − (Total − Neither)."
+  },
+  {
+   "questionText": "Of 53 people at a Kolkata book fair, 10 read neither Anandabazar Patrika nor The Telegraph. 36 read Anandabazar Patrika and 21 read The Telegraph. How many read both?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 53 − 10 = 43. Both = n(A) + n(B) − union = 36 + 21 − 43 = 14.",
+   "order": 75,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both = A + B − (Total − Neither)."
+  },
+  {
+   "questionText": "Of 152 commuters in Bengaluru, 12 use neither the metro nor an auto-rickshaw. 105 use the metro and 70 use an auto-rickshaw. How many use both?",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "70"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 152 − 12 = 140. Both = n(A) + n(B) − union = 105 + 70 − 140 = 35.",
+   "order": 76,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both = A + B − (Total − Neither)."
+  },
+  {
+   "questionText": "Of 142 families in a Madurai colony, 30 watch neither ISL nor Hockey India League. 68 watch ISL and 54 watch Hockey India League. How many watch both?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "58"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 142 − 30 = 112. Both = n(A) + n(B) − union = 68 + 54 − 112 = 10.",
+   "order": 77,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both = A + B − (Total − Neither)."
+  },
+  {
+   "questionText": "Of 84 people at a Kolkata book fair, 20 read neither The Hindu nor The Telegraph. 52 read The Hindu and 36 read The Telegraph. How many read both?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 84 − 20 = 64. Both = n(A) + n(B) − union = 52 + 36 − 64 = 24.",
+   "order": 78,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both = A + B − (Total − Neither)."
+  },
+  {
+   "questionText": "In a survey of commuters in Bengaluru, 60% use the bus, 47% use an auto-rickshaw and 15% use neither. What percentage use both?",
+   "options": [
+    {
+     "text": "22%"
+    },
+    {
+     "text": "7%"
+    },
+    {
+     "text": "38%"
+    },
+    {
+     "text": "25%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 60 + 47 − 85 = 22%.",
+   "order": 79,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both% = A% + B% − (100 − Neither%)."
+  },
+  {
+   "questionText": "In a survey of customers at a Mumbai mall, 46% pay using PhonePe, 53% pay using a credit card and 15% pay using neither. What percentage pay using both?",
+   "options": [
+    {
+     "text": "84%"
+    },
+    {
+     "text": "39%"
+    },
+    {
+     "text": "32%"
+    },
+    {
+     "text": "14%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 46 + 53 − 85 = 14%.",
+   "order": 80,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both% = A% + B% − (100 − Neither%)."
+  },
+  {
+   "questionText": "In a survey of Class X students in Jaipur, 67% take Maths, 61% take Sanskrit and 15% take neither. What percentage take both?",
+   "options": [
+    {
+     "text": "28%"
+    },
+    {
+     "text": "43%"
+    },
+    {
+     "text": "24%"
+    },
+    {
+     "text": "18%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 67 + 61 − 85 = 43%.",
+   "order": 81,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both% = A% + B% − (100 − Neither%)."
+  },
+  {
+   "questionText": "In a survey of customers at a Mumbai mall, 46% pay using PhonePe, 47% pay using Paytm and 15% pay using neither. What percentage pay using both?",
+   "options": [
+    {
+     "text": "38%"
+    },
+    {
+     "text": "39%"
+    },
+    {
+     "text": "78%"
+    },
+    {
+     "text": "8%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 46 + 47 − 85 = 8%.",
+   "order": 82,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both% = A% + B% − (100 − Neither%)."
+  },
+  {
+   "questionText": "A survey covered 600 farmers in a Punjab village: 44% grow wheat, 69% grow rice, and 10% grow neither. How many grow both?",
+   "options": [
+    {
+     "text": "138"
+    },
+    {
+     "text": "276"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "126"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 90%. Both = 44% + 69% − 90% = 23% of 600 = 138.",
+   "order": 83,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find Both% first, then take that percentage of the total."
+  },
+  {
+   "questionText": "A survey covered 400 residents of a Hyderabad apartment complex: 52% speak English, 49% speak Urdu, and 20% speak neither. How many speak both?",
+   "options": [
+    {
+     "text": "112"
+    },
+    {
+     "text": "124"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 80%. Both = 52% + 49% − 80% = 21% of 400 = 84.",
+   "order": 84,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find Both% first, then take that percentage of the total."
+  },
+  {
+   "questionText": "A survey covered 600 families in a Madurai colony: 62% watch Pro Kabaddi, 66% watch Hockey India League, and 15% watch neither. How many watch both?",
+   "options": [
+    {
+     "text": "258"
+    },
+    {
+     "text": "168"
+    },
+    {
+     "text": "138"
+    },
+    {
+     "text": "114"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 85%. Both = 62% + 66% − 85% = 43% of 600 = 258.",
+   "order": 85,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find Both% first, then take that percentage of the total."
+  },
+  {
+   "questionText": "Of the staff in a Kochi office surveyed, 47 drink only lime juice, 28 drink only buttermilk and 21 drink both. How many drink lime juice in all?",
+   "options": [
+    {
+     "text": "49"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for a set = only that set + both. Here it is 47 + 21 = 68.",
+   "order": 86,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set."
+  },
+  {
+   "questionText": "Of the visitors to a Mysuru restaurant surveyed, 48 order only dosa, 40 order only pongal and 7 order both. How many order dosa in all?",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total for a set = only that set + both. Here it is 48 + 7 = 55.",
+   "order": 87,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set."
+  },
+  {
+   "questionText": "Of the employees of a Pune IT firm surveyed, 44 know only C++, 52 know only Python and 3 know both. How many know C++ in all?",
+   "options": [
+    {
+     "text": "99"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total for a set = only that set + both. Here it is 44 + 3 = 47.",
+   "order": 88,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set."
+  },
+  {
+   "questionText": "Of the staff in a Kochi office surveyed, 64 drink only lime juice, 10 drink only buttermilk and 33 drink both. How many drink lime juice in all?",
+   "options": [
+    {
+     "text": "97"
+    },
+    {
+     "text": "107"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total for a set = only that set + both. Here it is 64 + 33 = 97.",
+   "order": 89,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set."
+  },
+  {
+   "questionText": "Every one of the families in a Madurai colony watch at least one of Pro Kabaddi and ISL. 2/3 of them watch Pro Kabaddi, 5/6 of them watch ISL, and 9 watch both. How many people are there in the group?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 2/3 + 5/6 − 1 = 1/2. Total = 9 ÷ 1/2 = 18.",
+   "order": 90,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction."
+  },
+  {
+   "questionText": "Every one of the farmers in a Punjab village grow at least one of rice and sugarcane. 3/4 of them grow rice, 2/3 of them grow sugarcane, and 30 grow both. How many people are there in the group?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 3/4 + 2/3 − 1 = 5/12. Total = 30 ÷ 5/12 = 72.",
+   "order": 91,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction."
+  },
+  {
+   "questionText": "Every one of the Class X students in Jaipur take at least one of Science and Social Science. 2/3 of them take Science, 5/6 of them take Social Science, and 6 take both. How many people are there in the group?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 2/3 + 5/6 − 1 = 1/2. Total = 6 ÷ 1/2 = 12.",
+   "order": 92,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction."
+  },
+  {
+   "questionText": "Every one of the students in a Chennai college play at least one of kabaddi and football. 5/8 of them play kabaddi, 1/2 of them play football, and 5 play both. How many people are there in the group?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 5/8 + 1/2 − 1 = 1/8. Total = 5 ÷ 1/8 = 40.",
+   "order": 93,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction."
+  },
+  {
+   "questionText": "Of 87 people at a Kolkata book fair, 20 read neither The Hindu nor Anandabazar Patrika, and 22 read both. The number who read only The Hindu and the number who read only Anandabazar Patrika are in the ratio 3 : 2. How many read The Hindu (in all)?",
+   "options": [
+    {
+     "text": "67"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "45"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only The Hindu + only Anandabazar Patrika = 87 − 20 − 22 = 45. Split 3:2 → 3k + 2k = 45, k = 9, only The Hindu = 27. Total The Hindu = 27 + 22 = 49.",
+   "order": 94,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back."
+  },
+  {
+   "questionText": "Of 80 farmers in a Punjab village, 20 grow neither maize nor rice, and 24 grow both. The number who grow only maize and the number who grow only rice are in the ratio 2 : 1. How many grow maize (in all)?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "60"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only maize + only rice = 80 − 20 − 24 = 36. Split 2:1 → 2k + 1k = 36, k = 12, only maize = 24. Total maize = 24 + 24 = 48.",
+   "order": 95,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back."
+  },
+  {
+   "questionText": "Of 78 farmers in a Punjab village, 15 grow neither wheat nor sugarcane, and 7 grow both. The number who grow only wheat and the number who grow only sugarcane are in the ratio 4 : 3. How many grow wheat (in all)?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only wheat + only sugarcane = 78 − 15 − 7 = 56. Split 4:3 → 4k + 3k = 56, k = 8, only wheat = 32. Total wheat = 32 + 7 = 39.",
+   "order": 96,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back."
+  },
+  {
+   "questionText": "Of 135 students in a Chennai college, 15 play neither football nor kabaddi, and 29 play both. The number who play only football and the number who play only kabaddi are in the ratio 4 : 3. How many play football (in all)?",
+   "options": [
+    {
+     "text": "91"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "52"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only football + only kabaddi = 135 − 15 − 29 = 91. Split 4:3 → 4k + 3k = 91, k = 13, only football = 52. Total football = 52 + 29 = 81.",
+   "order": 97,
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 66 take Sanskrit, 62 take Science and 66 take Social Science; 38 take both Sanskrit and Science, 31 take both Science and Social Science, 38 take both Sanskrit and Social Science, and 24 take all three. How many take at least one of the three?",
+   "options": [
+    {
+     "text": "194"
+    },
+    {
+     "text": "87"
+    },
+    {
+     "text": "111"
+    },
+    {
+     "text": "63"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 194 − 107 + 24 = 111.",
+   "order": 98,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple."
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 54 know C++, 81 know SQL and 73 know Java; 36 know both C++ and SQL, 40 know both SQL and Java, 17 know both C++ and Java, and 13 know all three. How many know at least one of the three?",
+   "options": [
+    {
+     "text": "128"
+    },
+    {
+     "text": "102"
+    },
+    {
+     "text": "208"
+    },
+    {
+     "text": "115"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 208 − 93 + 13 = 128.",
+   "order": 99,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple."
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 80 speak English, 90 speak Telugu and 79 speak Urdu; 44 speak both English and Telugu, 43 speak both Telugu and Urdu, 28 speak both English and Urdu, and 17 speak all three. How many speak at least one of the three?",
+   "options": [
+    {
+     "text": "117"
+    },
+    {
+     "text": "134"
+    },
+    {
+     "text": "249"
+    },
+    {
+     "text": "151"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 249 − 115 + 17 = 151.",
+   "order": 100,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple."
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 69 speak Hindi, 60 speak English and 65 speak Urdu; 32 speak both Hindi and English, 31 speak both English and Urdu, 48 speak both Hindi and Urdu, and 27 speak all three. How many speak at least one of the three?",
+   "options": [
+    {
+     "text": "83"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "194"
+    },
+    {
+     "text": "56"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 194 − 111 + 27 = 110.",
+   "order": 101,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple."
+  },
+  {
+   "questionText": "Of 113 families in a Madurai colony, 55 watch Hockey India League, 63 watch ISL and 62 watch Pro Kabaddi; 29 watch both Hockey India League and ISL, 38 watch both ISL and Pro Kabaddi, 28 watch both Hockey India League and Pro Kabaddi, and 20 watch all three. How many watch none of the three?",
+   "options": [
+    {
+     "text": "28"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 180 − 95 + 20 = 105. None = 113 − 105 = 8.",
+   "order": 102,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total."
+  },
+  {
+   "questionText": "Of 102 visitors to a Mysuru restaurant, 49 order vada, 64 order pongal and 41 order idli; 28 order both vada and pongal, 24 order both pongal and idli, 18 order both vada and idli, and 14 order all three. How many order none of the three?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 154 − 70 + 14 = 98. None = 102 − 98 = 4.",
+   "order": 103,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total."
+  },
+  {
+   "questionText": "Of 144 employees of a Pune IT firm, 87 know C++, 60 know SQL and 84 know Java; 37 know both C++ and SQL, 38 know both SQL and Java, 49 know both C++ and Java, and 27 know all three. How many know none of the three?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "64"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 231 − 124 + 27 = 134. None = 144 − 134 = 10.",
+   "order": 104,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total."
+  },
+  {
+   "questionText": "Of 88 employees of a Pune IT firm, 56 know C++, 46 know Java and 41 know SQL; 23 know both C++ and Java, 29 know both Java and SQL, 23 know both C++ and SQL, and 16 know all three. How many know none of the three?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 143 − 75 + 16 = 84. None = 88 − 84 = 4.",
+   "order": 105,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total."
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 28 know only SQL, 16 know only Python, 6 know only Java, 21 know exactly SQL and Python, 14 know exactly Python and Java, 24 know exactly SQL and Java, and 28 know all three. How many know SQL in all?",
+   "options": [
+    {
+     "text": "73"
+    },
+    {
+     "text": "115"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "101"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Everyone in set SQL: only SQL + SQL-Python only + SQL-Java only + all three = 28 + 21 + 24 + 28 = 101.",
+   "order": 106,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Add every region that lies inside the circle, including the centre."
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 8 speak only Hindi, 9 speak only Telugu, 20 speak only Urdu, 13 speak exactly Hindi and Telugu, 12 speak exactly Telugu and Urdu, 9 speak exactly Hindi and Urdu, and 30 speak all three. How many speak Hindi in all?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everyone in set Hindi: only Hindi + Hindi-Telugu only + Hindi-Urdu only + all three = 8 + 13 + 9 + 30 = 60.",
+   "order": 107,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Add every region that lies inside the circle, including the centre."
+  },
+  {
+   "questionText": "Among the people at a Kolkata book fair, 20 read only The Hindu, 9 read only Anandabazar Patrika, 13 read only The Telegraph, 10 read exactly The Hindu and Anandabazar Patrika, 10 read exactly Anandabazar Patrika and The Telegraph, 28 read exactly The Hindu and The Telegraph, and 8 read all three. How many read The Hindu in all?",
+   "options": [
+    {
+     "text": "76"
+    },
+    {
+     "text": "66"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "58"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone in set The Hindu: only The Hindu + The Hindu-Anandabazar Patrika only + The Hindu-The Telegraph only + all three = 20 + 10 + 28 + 8 = 66.",
+   "order": 108,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add every region that lies inside the circle, including the centre."
+  },
+  {
+   "questionText": "In a survey of commuters in Bengaluru, 79 use an auto-rickshaw, 67 use a bike taxi and 64 use the bus. 46 use both an auto-rickshaw and a bike taxi, 37 use both a bike taxi and the bus, 48 use both an auto-rickshaw and the bus. Everyone use at least one of the three and the total is 104. How many use all three?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 104 − 210 + 131 = 25.",
+   "order": 109,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs)."
+  },
+  {
+   "questionText": "In a survey of families in a Madurai colony, 74 watch Pro Kabaddi, 62 watch Hockey India League and 73 watch ISL. 29 watch both Pro Kabaddi and Hockey India League, 41 watch both Hockey India League and ISL, 45 watch both Pro Kabaddi and ISL. Everyone watch at least one of the three and the total is 117. How many watch all three?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 117 − 209 + 115 = 23.",
+   "order": 110,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs)."
+  },
+  {
+   "questionText": "In a survey of families in a Madurai colony, 67 watch IPL, 55 watch Hockey India League and 66 watch Pro Kabaddi. 33 watch both IPL and Hockey India League, 31 watch both Hockey India League and Pro Kabaddi, 30 watch both IPL and Pro Kabaddi. Everyone watch at least one of the three and the total is 110. How many watch all three?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "15"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 110 − 188 + 94 = 16.",
+   "order": 111,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs)."
+  },
+  {
+   "questionText": "In a survey of customers at a Mumbai mall, 82 pay using a credit card, 84 pay using Paytm and 101 pay using PhonePe. 31 pay using both a credit card and Paytm, 50 pay using both Paytm and PhonePe, 48 pay using both a credit card and PhonePe. Everyone pay using at least one of the three and the total is 162. How many pay using all three?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 162 − 267 + 129 = 24.",
+   "order": 112,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs)."
+  },
+  {
+   "questionText": "In a survey of commuters in Bengaluru, 70 use a bike taxi, 62 use an auto-rickshaw and 82 use the metro. 36 use both a bike taxi and an auto-rickshaw, 34 use both an auto-rickshaw and the metro, 40 use both a bike taxi and the metro. Everyone use at least one of the three and the total is 123. How many use all three?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 123 − 214 + 110 = 19.",
+   "order": 113,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs)."
+  },
+  {
+   "questionText": "In a town survey of Class X students in Jaipur, 32% take Sanskrit, 27% take Maths, 32% take Science; 9% take Sanskrit and Maths, 9% take Maths and Science, 21% take Sanskrit and Science; 6% take all three. What percentage take none of the three?",
+   "options": [
+    {
+     "text": "58%"
+    },
+    {
+     "text": "9%"
+    },
+    {
+     "text": "42%"
+    },
+    {
+     "text": "48%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 91 − 39 + 6 = 58%. None = 100 − 58 = 42%.",
+   "order": 114,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%."
+  },
+  {
+   "questionText": "In a town survey of residents of a Hyderabad apartment complex, 30% speak Urdu, 31% speak Hindi, 25% speak English; 11% speak Urdu and Hindi, 8% speak Hindi and English, 13% speak Urdu and English; 2% speak all three. What percentage speak none of the three?",
+   "options": [
+    {
+     "text": "46%"
+    },
+    {
+     "text": "56%"
+    },
+    {
+     "text": "14%"
+    },
+    {
+     "text": "44%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 86 − 32 + 2 = 56%. None = 100 − 56 = 44%.",
+   "order": 115,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%."
+  },
+  {
+   "questionText": "In a town survey of residents of a Hyderabad apartment complex, 34% speak Urdu, 24% speak Hindi, 35% speak English; 11% speak Urdu and Hindi, 12% speak Hindi and English, 17% speak Urdu and English; 5% speak all three. What percentage speak none of the three?",
+   "options": [
+    {
+     "text": "7%"
+    },
+    {
+     "text": "42%"
+    },
+    {
+     "text": "58%"
+    },
+    {
+     "text": "47%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 93 − 40 + 5 = 58%. None = 100 − 58 = 42%.",
+   "order": 116,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%."
+  },
+  {
+   "questionText": "In a town survey of commuters in Bengaluru, 20% use the metro, 31% use a bike taxi, 25% use the bus; 8% use the metro and a bike taxi, 16% use a bike taxi and the bus, 6% use the metro and the bus; 2% use all three. What percentage use none of the three?",
+   "options": [
+    {
+     "text": "54%"
+    },
+    {
+     "text": "48%"
+    },
+    {
+     "text": "24%"
+    },
+    {
+     "text": "52%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 76 − 30 + 2 = 48%. None = 100 − 48 = 52%.",
+   "order": 117,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%."
+  },
+  {
+   "questionText": "Among the commuters in Bengaluru, 7 use only an auto-rickshaw, 25 use only the bus, 18 use only the metro, 14 use exactly an auto-rickshaw and the bus, 15 use exactly the bus and the metro, 30 use exactly an auto-rickshaw and the metro, and 4 use all three. How many use at least one of an auto-rickshaw or the bus?",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "98"
+    },
+    {
+     "text": "113"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everything except 'only the metro' lies in an auto-rickshaw or the bus: 113 − 18 = 95. (Equivalent: add every region touching an auto-rickshaw or the bus.)",
+   "order": 118,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Total of regions minus the region outside both circles (only third set)."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 3 take only Sanskrit, 24 take only Science, 20 take only Maths, 12 take exactly Sanskrit and Science, 30 take exactly Science and Maths, 9 take exactly Sanskrit and Maths, and 14 take all three. How many take at least one of Sanskrit or Science?",
+   "options": [
+    {
+     "text": "112"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "118"
+    },
+    {
+     "text": "53"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everything except 'only Maths' lies in Sanskrit or Science: 112 − 20 = 92. (Equivalent: add every region touching Sanskrit or Science.)",
+   "order": 119,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Total of regions minus the region outside both circles (only third set)."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 15 take only Sanskrit, 22 take only Maths, 9 take only Science, 27 take exactly Sanskrit and Maths, 18 take exactly Maths and Science, 18 take exactly Sanskrit and Science, and 18 take all three. How many take at least one of Sanskrit or Maths?",
+   "options": [
+    {
+     "text": "127"
+    },
+    {
+     "text": "163"
+    },
+    {
+     "text": "118"
+    },
+    {
+     "text": "82"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Everything except 'only Science' lies in Sanskrit or Maths: 127 − 9 = 118. (Equivalent: add every region touching Sanskrit or Maths.)",
+   "order": 120,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Total of regions minus the region outside both circles (only third set)."
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 29 grow only wheat, 30 grow only maize, 23 grow only sugarcane, 20 grow exactly wheat and maize, 18 grow exactly maize and sugarcane, 24 grow exactly wheat and sugarcane, and 6 grow all three. How many grow at least one of wheat or maize?",
+   "options": [
+    {
+     "text": "153"
+    },
+    {
+     "text": "150"
+    },
+    {
+     "text": "127"
+    },
+    {
+     "text": "85"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Everything except 'only sugarcane' lies in wheat or maize: 150 − 23 = 127. (Equivalent: add every region touching wheat or maize.)",
+   "order": 121,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Total of regions minus the region outside both circles (only third set)."
+  },
+  {
+   "questionText": "Among the visitors to a Mysuru restaurant, 85 order idli, 70 order vada and 81 order pongal. Exactly 19 order idli and vada only, exactly 22 order vada and pongal only, exactly 15 order idli and pongal only, and 22 order all three. How many order at least one of the three?",
+   "options": [
+    {
+     "text": "136"
+    },
+    {
+     "text": "236"
+    },
+    {
+     "text": "158"
+    },
+    {
+     "text": "180"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 236 − 56 − 2×22 = 136.",
+   "order": 122,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three)."
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 66 play football, 82 play kabaddi and 86 play hockey. Exactly 11 play football and kabaddi only, exactly 27 play kabaddi and hockey only, exactly 22 play football and hockey only, and 24 play all three. How many play at least one of the three?",
+   "options": [
+    {
+     "text": "174"
+    },
+    {
+     "text": "126"
+    },
+    {
+     "text": "234"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 234 − 60 − 2×24 = 126.",
+   "order": 123,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three)."
+  },
+  {
+   "questionText": "Among the visitors to a Mysuru restaurant, 25 order idli, 73 order vada and 61 order pongal. Exactly 12 order idli and vada only, exactly 26 order vada and pongal only, exactly 4 order idli and pongal only, and 5 order all three. How many order at least one of the three?",
+   "options": [
+    {
+     "text": "112"
+    },
+    {
+     "text": "117"
+    },
+    {
+     "text": "159"
+    },
+    {
+     "text": "107"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 159 − 42 − 2×5 = 107.",
+   "order": 124,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three)."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 71 take Sanskrit, 60 take Maths and 48 take Science. Exactly 27 take Sanskrit and Maths only, exactly 5 take Maths and Science only, exactly 8 take Sanskrit and Science only, and 17 take all three. How many take at least one of the three?",
+   "options": [
+    {
+     "text": "139"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "179"
+    },
+    {
+     "text": "122"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 179 − 40 − 2×17 = 105.",
+   "order": 125,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three)."
+  },
+  {
+   "questionText": "Of 135 students in a Chennai college, 4 play none of kabaddi, football, cricket. 88 play kabaddi, 71 play football and 84 play cricket; 34 play both kabaddi and football, 51 play both football and cricket, 49 play both kabaddi and cricket. How many play all three?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 135 − 4 = 131. U = A + B + C − pairs + ABC ⇒ ABC = 131 − 243 + 134 = 22.",
+   "order": 126,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC."
+  },
+  {
+   "questionText": "Of 131 Class X students in Jaipur, 6 take none of Sanskrit, Social Science, Science. 69 take Sanskrit, 83 take Social Science and 83 take Science; 37 take both Sanskrit and Social Science, 50 take both Social Science and Science, 51 take both Sanskrit and Science. How many take all three?",
+   "options": [
+    {
+     "text": "26"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 131 − 6 = 125. U = A + B + C − pairs + ABC ⇒ ABC = 125 − 235 + 138 = 28.",
+   "order": 127,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC."
+  },
+  {
+   "questionText": "Of 148 residents of a Hyderabad apartment complex, 12 speak none of Hindi, Urdu, Telugu. 83 speak Hindi, 89 speak Urdu and 83 speak Telugu; 48 speak both Hindi and Urdu, 43 speak both Urdu and Telugu, 57 speak both Hindi and Telugu. How many speak all three?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 148 − 12 = 136. U = A + B + C − pairs + ABC ⇒ ABC = 136 − 255 + 148 = 29.",
+   "order": 128,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC."
+  },
+  {
+   "questionText": "Of 110 residents of a Hyderabad apartment complex, 12 speak none of Telugu, English, Urdu. 67 speak Telugu, 52 speak English and 66 speak Urdu; 36 speak both Telugu and English, 32 speak both English and Urdu, 42 speak both Telugu and Urdu. How many speak all three?",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 110 − 12 = 98. U = A + B + C − pairs + ABC ⇒ ABC = 98 − 185 + 110 = 23.",
+   "order": 129,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC."
+  },
+  {
+   "questionText": "A survey of 130 employees of a Pune IT firm covers on Python, SQL and Java. 12 know none of them, 70 know exactly one, and the three headcounts add up to 181 (i.e. Python + SQL + Java = 181). How many know all three?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let t = exactly two, h = all three. t + h = 130 − 12 − 70 = 48. Also 70 + 2t + 3h = 181 ⇒ 2t + 3h = 111. Subtract 2×(t + h): h = 111 − 96 = 15.",
+   "order": 130,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'."
+  },
+  {
+   "questionText": "A survey of 128 residents of a Hyderabad apartment complex covers on English, Hindi and Telugu. 12 speak none of them, 50 speak exactly one, and the three headcounts add up to 209 (i.e. English + Hindi + Telugu = 209). How many speak all three?",
+   "options": [
+    {
+     "text": "25"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let t = exactly two, h = all three. t + h = 128 − 12 − 50 = 66. Also 50 + 2t + 3h = 209 ⇒ 2t + 3h = 159. Subtract 2×(t + h): h = 159 − 132 = 27.",
+   "order": 131,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'."
+  },
+  {
+   "questionText": "A survey of 97 employees of a Pune IT firm covers on SQL, Java and Python. 0 know none of them, 39 know exactly one, and the three headcounts add up to 170 (i.e. SQL + Java + Python = 170). How many know all three?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let t = exactly two, h = all three. t + h = 97 − 0 − 39 = 58. Also 39 + 2t + 3h = 170 ⇒ 2t + 3h = 131. Subtract 2×(t + h): h = 131 − 116 = 15.",
+   "order": 132,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'."
+  },
+  {
+   "questionText": "A survey of 111 families in a Madurai colony covers on Pro Kabaddi, ISL and IPL. 10 watch none of them, 56 watch exactly one, and the three headcounts add up to 149 (i.e. Pro Kabaddi + ISL + IPL = 149). How many watch all three?",
+   "options": [
+    {
+     "text": "42"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let t = exactly two, h = all three. t + h = 111 − 10 − 56 = 45. Also 56 + 2t + 3h = 149 ⇒ 2t + 3h = 93. Subtract 2×(t + h): h = 93 − 90 = 3.",
+   "order": 133,
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'."
+  },
+  {
+   "questionText": "Among the staff in a Kochi office, 50 drink tea, 56 drink buttermilk and 13 drink both. How many drink only tea?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only tea = n(tea) − both = 50 − 13 = 37.",
+   "order": 134,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − Both."
+  },
+  {
+   "questionText": "Among the families in a Madurai colony, 21 watch IPL, 72 watch ISL and 10 watch both. How many watch only IPL?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only IPL = n(IPL) − both = 21 − 10 = 11.",
+   "order": 135,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − Both."
+  },
+  {
+   "questionText": "Among the people at a Kolkata book fair, 97 read The Telegraph, 53 read Times of India and 30 read both. How many read only The Telegraph?",
+   "options": [
+    {
+     "text": "67"
+    },
+    {
+     "text": "97"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "127"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only The Telegraph = n(The Telegraph) − both = 97 − 30 = 67.",
+   "order": 136,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − Both."
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 61 pay using Paytm, 37 pay using a credit card and 19 pay using both. How many pay using only Paytm?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "61"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only Paytm = n(Paytm) − both = 61 − 19 = 42.",
+   "order": 137,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Only A = A − Both."
+  },
+  {
+   "questionText": "Of the commuters in Bengaluru surveyed, 29 use the metro, 22 use an auto-rickshaw and 8 use both. How many use exactly one of the two (either the metro or an auto-rickshaw but not both)?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "59"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = (A − both) + (B − both) = 29 + 22 − 2×8 = 35.",
+   "order": 138,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A + B − 2 × Both."
+  },
+  {
+   "questionText": "Of the Class X students in Jaipur surveyed, 42 take Sanskrit, 82 take Social Science and 14 take both. How many take exactly one of the two (either Sanskrit or Social Science but not both)?",
+   "options": [
+    {
+     "text": "124"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "138"
+    },
+    {
+     "text": "110"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = (A − both) + (B − both) = 42 + 82 − 2×14 = 96.",
+   "order": 139,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A + B − 2 × Both."
+  },
+  {
+   "questionText": "Of the visitors to a Mysuru restaurant surveyed, 27 order dosa, 78 order vada and 19 order both. How many order exactly one of the two (either dosa or vada but not both)?",
+   "options": [
+    {
+     "text": "86"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "67"
+    },
+    {
+     "text": "124"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = (A − both) + (B − both) = 27 + 78 − 2×19 = 67.",
+   "order": 140,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly one = A + B − 2 × Both."
+  },
+  {
+   "questionText": "Of the farmers in a Punjab village surveyed, 64 grow rice, 15 grow sugarcane and 4 grow both. How many grow exactly one of the two (either rice or sugarcane but not both)?",
+   "options": [
+    {
+     "text": "79"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "75"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = (A − both) + (B − both) = 64 + 15 − 2×4 = 71.",
+   "order": 141,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A + B − 2 × Both."
+  },
+  {
+   "questionText": "Of 106 commuters in Bengaluru, 25 use neither the bus nor a bike taxi. 67 use a bike taxi, and 25 of those also use the bus. How many use the bus only?",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 106 − 25 = 81. Anyone not in a bike taxi but in the union is only the bus: 81 − 67 = 14.",
+   "order": 142,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = Union − B."
+  },
+  {
+   "questionText": "Of 98 commuters in Bengaluru, 0 use neither the bus nor a bike taxi. 79 use a bike taxi, and 10 of those also use the bus. How many use the bus only?",
+   "options": [
+    {
+     "text": "98"
+    },
+    {
+     "text": "88"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 98 − 0 = 98. Anyone not in a bike taxi but in the union is only the bus: 98 − 79 = 19.",
+   "order": 143,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Only A = Union − B."
+  },
+  {
+   "questionText": "Of 131 Class X students in Jaipur, 20 take neither Sanskrit nor Science. 51 take Science, and 21 of those also take Sanskrit. How many take Sanskrit only?",
+   "options": [
+    {
+     "text": "60"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "111"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 131 − 20 = 111. Anyone not in Science but in the union is only Sanskrit: 111 − 51 = 60.",
+   "order": 144,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Only A = Union − B."
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 92 know C++, 83 know Java, 99 know SQL; 49 know C++ and Java; 55 know Java and SQL; 39 know C++ and SQL; 25 know all three. How many know only C++?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "54"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only C++ = A − (A∩B) − (A∩C) + (A∩B∩C) = 92 − 49 − 39 + 25 = 29.",
+   "order": 145,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − AB − AC + ABC."
+  },
+  {
+   "questionText": "Among the visitors to a Mysuru restaurant, 68 order pongal, 51 order dosa, 67 order vada; 34 order pongal and dosa; 35 order dosa and vada; 37 order pongal and vada; 24 order all three. How many order only pongal?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "45"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only pongal = A − (A∩B) − (A∩C) + (A∩B∩C) = 68 − 34 − 37 + 24 = 21.",
+   "order": 146,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − AB − AC + ABC."
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 56 pay using a credit card, 65 pay using Google Pay, 77 pay using Paytm; 29 pay using a credit card and Google Pay; 53 pay using Google Pay and Paytm; 40 pay using a credit card and Paytm; 25 pay using all three. How many pay using only a credit card?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only a credit card = A − (A∩B) − (A∩C) + (A∩B∩C) = 56 − 29 − 40 + 25 = 12.",
+   "order": 147,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − AB − AC + ABC."
+  },
+  {
+   "questionText": "Among the families in a Madurai colony, 69 watch IPL, 87 watch Pro Kabaddi, 76 watch Hockey India League; 37 watch IPL and Pro Kabaddi; 38 watch Pro Kabaddi and Hockey India League; 35 watch IPL and Hockey India League; 12 watch all three. How many watch only IPL?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only IPL = A − (A∩B) − (A∩C) + (A∩B∩C) = 69 − 37 − 35 + 12 = 9.",
+   "order": 148,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − AB − AC + ABC."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 91 take Social Science, 69 take Maths, 73 take Science; 38 take Social Science and Maths; 37 take Maths and Science; 49 take Social Science and Science; 22 take all three. How many take only Social Science?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only Social Science = A − (A∩B) − (A∩C) + (A∩B∩C) = 91 − 38 − 49 + 22 = 26.",
+   "order": 149,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Only A = A − AB − AC + ABC."
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 95 grow rice, 101 grow wheat, 88 grow sugarcane; 43 grow rice and wheat; 48 grow wheat and sugarcane; 43 grow rice and sugarcane; 18 grow all three. How many grow exactly two of the three?",
+   "options": [
+    {
+     "text": "98"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "116"
+    },
+    {
+     "text": "134"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 134 − 3×18 = 80.",
+   "order": 150,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three)."
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 64 pay using a credit card, 54 pay using PhonePe, 81 pay using Paytm; 16 pay using a credit card and PhonePe; 34 pay using PhonePe and Paytm; 32 pay using a credit card and Paytm; 12 pay using all three. How many pay using exactly two of the three?",
+   "options": [
+    {
+     "text": "46"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "82"
+    },
+    {
+     "text": "70"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 82 − 3×12 = 46.",
+   "order": 151,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three)."
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 61 play kabaddi, 61 play hockey, 72 play cricket; 35 play kabaddi and hockey; 30 play hockey and cricket; 20 play kabaddi and cricket; 7 play all three. How many play exactly two of the three?",
+   "options": [
+    {
+     "text": "85"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "64"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 85 − 3×7 = 64.",
+   "order": 152,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three)."
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 56 pay using PhonePe, 45 pay using Google Pay, 68 pay using Paytm; 29 pay using PhonePe and Google Pay; 32 pay using Google Pay and Paytm; 47 pay using PhonePe and Paytm; 23 pay using all three. How many pay using exactly two of the three?",
+   "options": [
+    {
+     "text": "108"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "62"
+    },
+    {
+     "text": "85"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 108 − 3×23 = 39.",
+   "order": 153,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three)."
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 77 play cricket, 56 play hockey, 83 play kabaddi; 32 play cricket and hockey; 44 play hockey and kabaddi; 47 play cricket and kabaddi; 25 play all three. How many play cricket and hockey but not kabaddi?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(A∩B) includes those in kabaddi too. Required = 32 − 25 = 7.",
+   "order": 154,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "(A and B but not C) = AB − ABC."
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 36 grow rice, 43 grow wheat, 44 grow sugarcane; 19 grow rice and wheat; 25 grow wheat and sugarcane; 12 grow rice and sugarcane; 8 grow all three. How many grow rice and wheat but not sugarcane?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(A∩B) includes those in sugarcane too. Required = 19 − 8 = 11.",
+   "order": 155,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "(A and B but not C) = AB − ABC."
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 89 grow rice, 68 grow sugarcane, 62 grow wheat; 56 grow rice and sugarcane; 33 grow sugarcane and wheat; 37 grow rice and wheat; 30 grow all three. How many grow rice and sugarcane but not wheat?",
+   "options": [
+    {
+     "text": "56"
+    },
+    {
+     "text": "86"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(A∩B) includes those in wheat too. Required = 56 − 30 = 26.",
+   "order": 156,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "(A and B but not C) = AB − ABC."
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 47 know C++, 58 know Python, 53 know SQL; 29 know C++ and Python; 17 know Python and SQL; 17 know C++ and SQL; 7 know all three. How many know C++ and Python but not SQL?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(A∩B) includes those in SQL too. Required = 29 − 7 = 22.",
+   "order": 157,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "(A and B but not C) = AB − ABC."
+  },
+  {
+   "questionText": "In a survey of students in a Chennai college, 51% play kabaddi, 41% play cricket and 15% play both. What percentage play exactly one of the two?",
+   "options": [
+    {
+     "text": "92%"
+    },
+    {
+     "text": "77%"
+    },
+    {
+     "text": "62%"
+    },
+    {
+     "text": "36%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = 51 + 41 − 2×15 = 62%.",
+   "order": 158,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly one = A% + B% − 2×Both%."
+  },
+  {
+   "questionText": "In a survey of visitors to a Mysuru restaurant, 41% order dosa, 33% order vada and 24% order both. What percentage order exactly one of the two?",
+   "options": [
+    {
+     "text": "26%"
+    },
+    {
+     "text": "74%"
+    },
+    {
+     "text": "17%"
+    },
+    {
+     "text": "50%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = 41 + 33 − 2×24 = 26%.",
+   "order": 159,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A% + B% − 2×Both%."
+  },
+  {
+   "questionText": "In a survey of residents of a Hyderabad apartment complex, 46% speak Telugu, 30% speak Hindi and 17% speak both. What percentage speak exactly one of the two?",
+   "options": [
+    {
+     "text": "76%"
+    },
+    {
+     "text": "59%"
+    },
+    {
+     "text": "29%"
+    },
+    {
+     "text": "42%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = 46 + 30 − 2×17 = 42%.",
+   "order": 160,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A% + B% − 2×Both%."
+  },
+  {
+   "questionText": "In a survey of Class X students in Jaipur, 48% take Social Science, 37% take Maths and 21% take both. What percentage take exactly one of the two?",
+   "options": [
+    {
+     "text": "43%"
+    },
+    {
+     "text": "64%"
+    },
+    {
+     "text": "85%"
+    },
+    {
+     "text": "27%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = 48 + 37 − 2×21 = 43%.",
+   "order": 161,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A% + B% − 2×Both%."
+  },
+  {
+   "questionText": "Of 124 commuters in Bengaluru, 15 use none of the metro, the bus, an auto-rickshaw. 52 use exactly two of them and 4 use all three. How many use exactly one?",
+   "options": [
+    {
+     "text": "57"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "53"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = 124 − none − exactly two − all three = 124 − 15 − 52 − 4 = 53.",
+   "order": 162,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Partition the group: none + one + two + three = Total."
+  },
+  {
+   "questionText": "Of 138 employees of a Pune IT firm, 8 know none of C++, Java, SQL. 58 know exactly two of them and 11 know all three. How many know exactly one?",
+   "options": [
+    {
+     "text": "69"
+    },
+    {
+     "text": "119"
+    },
+    {
+     "text": "61"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = 138 − none − exactly two − all three = 138 − 8 − 58 − 11 = 61.",
+   "order": 163,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Partition the group: none + one + two + three = Total."
+  },
+  {
+   "questionText": "Among the people at a Kolkata book fair, 86 read Times of India, 76 read The Hindu, 59 read The Telegraph; 46 read Times of India and The Hindu; 27 read The Hindu and The Telegraph; 29 read Times of India and The Telegraph; 18 read all three. How many read exactly one of the three?",
+   "options": [
+    {
+     "text": "137"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 221 − 204 + 54 = 71.",
+   "order": 164,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC."
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 65 grow sugarcane, 29 grow rice, 68 grow maize; 11 grow sugarcane and rice; 16 grow rice and maize; 32 grow sugarcane and maize; 5 grow all three. How many grow exactly one of the three?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "108"
+    },
+    {
+     "text": "59"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 162 − 118 + 15 = 59.",
+   "order": 165,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC."
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 81 take Sanskrit, 88 take Science, 71 take Maths; 53 take Sanskrit and Science; 44 take Science and Maths; 43 take Sanskrit and Maths; 27 take all three. How many take exactly one of the three?",
+   "options": [
+    {
+     "text": "41"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "127"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 240 − 280 + 81 = 41.",
+   "order": 166,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC."
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 76 know Python, 52 know SQL, 82 know C++; 31 know Python and SQL; 40 know SQL and C++; 47 know Python and C++; 26 know all three. How many know exactly one of the three?",
+   "options": [
+    {
+     "text": "118"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "52"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 210 − 236 + 78 = 52.",
+   "order": 167,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC."
+  },
+  {
+   "questionText": "Out of 138 students in a Chennai college, 54 play hockey, 72 play football, 83 play cricket; 27 play hockey and football; 32 play football and cricket; 36 play hockey and cricket; 12 play all three. How many play at most one of the three (that is, one or none)?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "67"
+    },
+    {
+     "text": "79"
+    },
+    {
+     "text": "55"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 95 − 24 = 71. At most one = 138 − 71 = 67.",
+   "order": 168,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total."
+  },
+  {
+   "questionText": "Out of 162 residents of a Hyderabad apartment complex, 93 speak Urdu, 71 speak Telugu, 90 speak Hindi; 39 speak Urdu and Telugu; 42 speak Telugu and Hindi; 42 speak Urdu and Hindi; 16 speak all three. How many speak at most one of the three (that is, one or none)?",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "87"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 123 − 32 = 91. At most one = 162 − 91 = 71.",
+   "order": 169,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total."
+  },
+  {
+   "questionText": "Out of 127 commuters in Bengaluru, 55 use the metro, 70 use a bike taxi, 76 use the bus; 28 use the metro and a bike taxi; 39 use a bike taxi and the bus; 40 use the metro and the bus; 23 use all three. How many use at most one of the three (that is, one or none)?",
+   "options": [
+    {
+     "text": "89"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "66"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 107 − 46 = 61. At most one = 127 − 61 = 66.",
+   "order": 170,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total."
+  },
+  {
+   "questionText": "Out of 157 customers at a Mumbai mall, 74 pay using Google Pay, 65 pay using Paytm, 76 pay using a credit card; 32 pay using Google Pay and Paytm; 18 pay using Paytm and a credit card; 32 pay using Google Pay and a credit card; 4 pay using all three. How many pay using at most one of the three (that is, one or none)?",
+   "options": [
+    {
+     "text": "79"
+    },
+    {
+     "text": "87"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "75"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 82 − 8 = 74. At most one = 157 − 74 = 83.",
+   "order": 171,
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total."
+  },
+  {
+   "questionText": "In a Venn diagram, Surgeons are inside Doctors, and Doctors are inside Humans (three nested circles). Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "All Surgeons are Doctors"
+    },
+    {
+     "text": "Some Doctors are not Humans"
+    },
+    {
+     "text": "No Surgeons are Humans"
+    },
+    {
+     "text": "No Doctors are Humans"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Surgeons are inside Doctors, and Doctors are inside Humans (three nested circles). Only 'All Surgeons are Doctors' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 172,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Mangoes are inside Fruits, and Fruits are inside Edible things (three nested circles). Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Mangoes are not Fruits"
+    },
+    {
+     "text": "Some Fruits are Mangoes"
+    },
+    {
+     "text": "No Mangoes are Edible things"
+    },
+    {
+     "text": "Some Fruits are not Edible things"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Mangoes are inside Fruits, and Fruits are inside Edible things (three nested circles). Only 'Some Fruits are Mangoes' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 173,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Dogs, Tables and Rivers are three completely separate circles. Which statement must be true?",
+   "options": [
+    {
+     "text": "No Dogs are Tables"
+    },
+    {
+     "text": "Some Dogs are Rivers"
+    },
+    {
+     "text": "Some Tables are Rivers"
+    },
+    {
+     "text": "All Dogs are Rivers"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Dogs, Tables and Rivers are three completely separate circles. Only 'No Dogs are Tables' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 174,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Pens, Trains and Mangoes are three completely separate circles. Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Pens are Trains"
+    },
+    {
+     "text": "All Trains are Pens"
+    },
+    {
+     "text": "No Pens are Trains"
+    },
+    {
+     "text": "Some Pens are Mangoes"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Pens, Trains and Mangoes are three completely separate circles. Only 'No Pens are Trains' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 175,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Roses lie completely inside Flowers, and Cars is a separate circle outside Flowers. Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Roses are Cars"
+    },
+    {
+     "text": "Some Flowers are Cars"
+    },
+    {
+     "text": "All Cars are Flowers"
+    },
+    {
+     "text": "Some Flowers are Roses"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Roses lie completely inside Flowers, and Cars is a separate circle outside Flowers. Only 'Some Flowers are Roses' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 176,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Sparrows lie completely inside Birds, and Tables is a separate circle outside Birds. Which statement must be true?",
+   "options": [
+    {
+     "text": "Some Sparrows are not Birds"
+    },
+    {
+     "text": "Some Sparrows are Tables"
+    },
+    {
+     "text": "No Birds are Tables"
+    },
+    {
+     "text": "Some Birds are Tables"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Sparrows lie completely inside Birds, and Tables is a separate circle outside Birds. Only 'No Birds are Tables' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 177,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Chennai are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles). Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Chennai are not India"
+    },
+    {
+     "text": "All Tamil Nadu are India"
+    },
+    {
+     "text": "No Tamil Nadu are India"
+    },
+    {
+     "text": "No Chennai are India"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Chennai are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles). Only 'All Tamil Nadu are India' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 178,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Tigers, Books and Oceans are three completely separate circles. Which statement must be true?",
+   "options": [
+    {
+     "text": "Some Books are Oceans"
+    },
+    {
+     "text": "Some Tigers are Oceans"
+    },
+    {
+     "text": "All Tigers are Oceans"
+    },
+    {
+     "text": "No Tigers are Oceans"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Tigers, Books and Oceans are three completely separate circles. Only 'No Tigers are Oceans' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 179,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Lions lie completely inside Animals, and Rivers is a separate circle outside Animals. Which statement must be true?",
+   "options": [
+    {
+     "text": "No Lions are Rivers"
+    },
+    {
+     "text": "Some Animals are Rivers"
+    },
+    {
+     "text": "Some Lions are Rivers"
+    },
+    {
+     "text": "Some Lions are not Animals"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Lions lie completely inside Animals, and Rivers is a separate circle outside Animals. Only 'No Lions are Rivers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 180,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "Among 60 customers at a Mumbai mall, 36 pay using Google Pay and 37 pay using PhonePe. What is the maximum possible number who pay using both?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "73"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The overlap cannot exceed the smaller set. Maximum both = min(36, 37) = 36.",
+   "order": 181,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "Max both = the smaller of the two sets."
+  },
+  {
+   "questionText": "Among 100 employees of a Pune IT firm, 22 know SQL and 35 know C++. What is the maximum possible number who know both?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The overlap cannot exceed the smaller set. Maximum both = min(22, 35) = 22.",
+   "order": 182,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "Max both = the smaller of the two sets."
+  },
+  {
+   "questionText": "Among 100 families in a Madurai colony, 47 watch ISL and 68 watch Hockey India League. What is the maximum possible number who watch both?",
+   "options": [
+    {
+     "text": "115"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "15"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The overlap cannot exceed the smaller set. Maximum both = min(47, 68) = 47.",
+   "order": 183,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "Max both = the smaller of the two sets."
+  },
+  {
+   "questionText": "Among 200 visitors to a Mysuru restaurant, 20 order pongal and 37 order idli. What is the minimum possible number who order neither?",
+   "options": [
+    {
+     "text": "163"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "143"
+    },
+    {
+     "text": "180"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Neither is smallest when the two sets do not overlap at all (union = 57). Minimum neither = 200 − 57 = 143.",
+   "order": 184,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Min neither: make A and B disjoint → Total − A − B."
+  },
+  {
+   "questionText": "Among 200 families in a Madurai colony, 26 watch ISL and 87 watch IPL. What is the minimum possible number who watch neither?",
+   "options": [
+    {
+     "text": "113"
+    },
+    {
+     "text": "87"
+    },
+    {
+     "text": "174"
+    },
+    {
+     "text": "89"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Neither is smallest when the two sets do not overlap at all (union = 113). Minimum neither = 200 − 113 = 87.",
+   "order": 185,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Min neither: make A and B disjoint → Total − A − B."
+  },
+  {
+   "questionText": "Among 200 Class X students in Jaipur, 80 take Maths and 66 take Sanskrit. What is the minimum possible number who take neither?",
+   "options": [
+    {
+     "text": "146"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "134"
+    },
+    {
+     "text": "54"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Neither is smallest when the two sets do not overlap at all (union = 146). Minimum neither = 200 − 146 = 54.",
+   "order": 186,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Min neither: make A and B disjoint → Total − A − B."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Cats and Dogs are two separate circles, both lying completely inside the circle of Animals. Which statement must be true?",
+   "options": [
+    {
+     "text": "All Dogs are Animals"
+    },
+    {
+     "text": "No Cats are Animals"
+    },
+    {
+     "text": "Some Cats are not Animals"
+    },
+    {
+     "text": "Some Dogs are not Animals"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Cats and Dogs are two separate circles, both lying completely inside the circle of Animals. Only 'All Dogs are Animals' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 187,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Tigers and Elephants are two separate circles, both lying completely inside the circle of Wild animals. Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Elephants are not Wild animals"
+    },
+    {
+     "text": "Some Tigers are Elephants"
+    },
+    {
+     "text": "All Elephants are Wild animals"
+    },
+    {
+     "text": "No Elephants are Wild animals"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Tigers and Elephants are two separate circles, both lying completely inside the circle of Wild animals. Only 'All Elephants are Wild animals' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 188,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Teachers and Women are two partly overlapping circles, and the circle of Mountains lies completely apart from both. Which statement must be true?",
+   "options": [
+    {
+     "text": "Some Teachers are Women"
+    },
+    {
+     "text": "Some Women are Mountains"
+    },
+    {
+     "text": "All Mountains are Teachers"
+    },
+    {
+     "text": "Some Teachers are Mountains"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Teachers and Women are two partly overlapping circles, and the circle of Mountains lies completely apart from both. Only 'Some Teachers are Women' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 189,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Doctors and Singers are two partly overlapping circles, and the circle of Rivers lies completely apart from both. Which statement must be true?",
+   "options": [
+    {
+     "text": "Some Doctors are Rivers"
+    },
+    {
+     "text": "Some Doctors are Singers"
+    },
+    {
+     "text": "All Doctors are Singers"
+    },
+    {
+     "text": "Some Singers are Rivers"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Doctors and Singers are two partly overlapping circles, and the circle of Rivers lies completely apart from both. Only 'Some Doctors are Singers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 190,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Apples and Bananas are two separate circles, both lying completely inside the circle of Fruits. Which statement must be true?",
+   "options": [
+    {
+     "text": "Some Apples are Bananas"
+    },
+    {
+     "text": "No Bananas are Fruits"
+    },
+    {
+     "text": "Some Fruits are Apples"
+    },
+    {
+     "text": "Some Bananas are not Fruits"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Apples and Bananas are two separate circles, both lying completely inside the circle of Fruits. Only 'Some Fruits are Apples' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 191,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Engineers and Cricketers are two partly overlapping circles, and the circle of Planets lies completely apart from both. Which statement must be true?",
+   "options": [
+    {
+     "text": "All Planets are Engineers"
+    },
+    {
+     "text": "Some Engineers are Planets"
+    },
+    {
+     "text": "All Engineers are Cricketers"
+    },
+    {
+     "text": "No Engineers are Planets"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Engineers and Cricketers are two partly overlapping circles, and the circle of Planets lies completely apart from both. Only 'No Engineers are Planets' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 192,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "Among 120 employees of a Pune IT firm, 79 know Java and 91 know C++. Some may know neither. What is the minimum possible number who know both?",
+   "options": [
+    {
+     "text": "50"
+    },
+    {
+     "text": "170"
+    },
+    {
+     "text": "79"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (120): both ≥ 79 + 91 − 120 = 50.",
+   "order": 193,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Min both = A + B − Total (if positive)."
+  },
+  {
+   "questionText": "Among 50 residents of a Hyderabad apartment complex, 32 speak Hindi and 34 speak Telugu. Some may speak neither. What is the minimum possible number who speak both?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "66"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (50): both ≥ 32 + 34 − 50 = 16.",
+   "order": 194,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Min both = A + B − Total (if positive)."
+  },
+  {
+   "questionText": "Among 120 students in a Chennai college, 89 play hockey and 82 play kabaddi. Some may play neither. What is the minimum possible number who play both?",
+   "options": [
+    {
+     "text": "171"
+    },
+    {
+     "text": "82"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (120): both ≥ 89 + 82 − 120 = 51.",
+   "order": 195,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Min both = A + B − Total (if positive)."
+  },
+  {
+   "questionText": "Among 50 visitors to a Mysuru restaurant, 38 order dosa and 38 order idli. Some may order neither. What is the minimum possible number who order both?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "76"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (50): both ≥ 38 + 38 − 50 = 26.",
+   "order": 196,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Min both = A + B − Total (if positive)."
+  },
+  {
+   "questionText": "Among 200 families in a Madurai colony, 64 watch Pro Kabaddi and 72 watch IPL. What is the maximum possible number who watch neither?",
+   "options": [
+    {
+     "text": "136"
+    },
+    {
+     "text": "133"
+    },
+    {
+     "text": "128"
+    },
+    {
+     "text": "64"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Neither is largest when the smaller set sits entirely inside the larger (union = 72). Maximum neither = 200 − 72 = 128.",
+   "order": 197,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "shortcut": "Max neither: nest the smaller set in the larger → Total − larger set."
+  },
+  {
+   "questionText": "Among 200 visitors to a Mysuru restaurant, 115 order idli and 109 order pongal. What is the maximum possible number who order neither?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "91"
+    },
+    {
+     "text": "90"
+    },
+    {
+     "text": "85"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Neither is largest when the smaller set sits entirely inside the larger (union = 115). Maximum neither = 200 − 115 = 85.",
+   "order": 198,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "shortcut": "Max neither: nest the smaller set in the larger → Total − larger set."
+  },
+  {
+   "questionText": "Among 150 customers at a Mumbai mall, 30 pay using PhonePe and 55 pay using Google Pay. What is the maximum possible number who pay using neither?",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "100"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Neither is largest when the smaller set sits entirely inside the larger (union = 55). Maximum neither = 150 − 55 = 95.",
+   "order": 199,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "shortcut": "Max neither: nest the smaller set in the larger → Total − larger set."
+  },
+  {
+   "questionText": "Of 120 Class X students in Jaipur, 92 take Sanskrit and 81 take Maths. Which of the following CANNOT be the number who take both?",
+   "options": [
+    {
+     "text": "75"
+    },
+    {
+     "text": "85"
+    },
+    {
+     "text": "59"
+    },
+    {
+     "text": "70"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both ranges from 53 (= 92 + 81 − 120) to 81 (= the smaller set). So every value from 53 to 81 is possible, and 85 lies outside that range.",
+   "order": 200,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B)."
+  },
+  {
+   "questionText": "Of 120 residents of a Hyderabad apartment complex, 89 speak Telugu and 79 speak English. Which of the following CANNOT be the number who speak both?",
+   "options": [
+    {
+     "text": "68"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "82"
+    },
+    {
+     "text": "56"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Both ranges from 48 (= 89 + 79 − 120) to 79 (= the smaller set). So every value from 48 to 79 is possible, and 82 lies outside that range.",
+   "order": 201,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B)."
+  },
+  {
+   "questionText": "Of 120 students in a Chennai college, 90 play cricket and 81 play kabaddi. Which of the following CANNOT be the number who play both?",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "69"
+    },
+    {
+     "text": "76"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Both ranges from 51 (= 90 + 81 − 120) to 81 (= the smaller set). So every value from 51 to 81 is possible, and 47 lies outside that range.",
+   "order": 202,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B)."
+  },
+  {
+   "questionText": "In a Venn diagram, Doctors and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Women are not Humans"
+    },
+    {
+     "text": "No Doctors are Women"
+    },
+    {
+     "text": "No Women are Humans"
+    },
+    {
+     "text": "All Doctors are Humans"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Doctors and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Only 'All Doctors are Humans' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 203,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Teachers and Singers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Which statement must be true?",
+   "options": [
+    {
+     "text": "Some Singers are not Humans"
+    },
+    {
+     "text": "All Teachers are Humans"
+    },
+    {
+     "text": "All Teachers are Singers"
+    },
+    {
+     "text": "No Singers are Humans"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Teachers and Singers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Only 'All Teachers are Humans' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 204,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Boys and Girls are two separate circles, and the circle of Cricketers cuts across both of them partly. Which statement must be true?",
+   "options": [
+    {
+     "text": "No Boys are Cricketers"
+    },
+    {
+     "text": "Some Boys are Girls"
+    },
+    {
+     "text": "Some Boys are not Cricketers"
+    },
+    {
+     "text": "All Girls are Cricketers"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Boys and Girls are two separate circles, and the circle of Cricketers cuts across both of them partly. Only 'Some Boys are not Cricketers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 205,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Men and Women are two separate circles, and the circle of Teachers cuts across both of them partly. Which statement must be true?",
+   "options": [
+    {
+     "text": "No Women are Teachers"
+    },
+    {
+     "text": "No Men are Women"
+    },
+    {
+     "text": "No Men are Teachers"
+    },
+    {
+     "text": "All Men are Teachers"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Men and Women are two separate circles, and the circle of Teachers cuts across both of them partly. Only 'No Men are Women' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 206,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons. Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "Some Cricketers are not Engineers"
+    },
+    {
+     "text": "No Engineers are Cricketers"
+    },
+    {
+     "text": "All Engineers are Cricketers"
+    },
+    {
+     "text": "No Cricketers are Persons"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons. Only 'Some Cricketers are not Engineers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 207,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "In a Venn diagram, Males and Females are two separate circles, and the circle of Doctors cuts across both of them partly. Which of the following conclusions definitely follows?",
+   "options": [
+    {
+     "text": "All Females are Doctors"
+    },
+    {
+     "text": "All Males are Doctors"
+    },
+    {
+     "text": "Some Males are Females"
+    },
+    {
+     "text": "Some Males are Doctors"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Males and Females are two separate circles, and the circle of Doctors cuts across both of them partly. Only 'Some Males are Doctors' is true in every such drawing; each of the other statements contradicts the picture.",
+   "order": 208,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'."
+  },
+  {
+   "questionText": "Of 60 people at a Kolkata book fair, 41 read The Hindu and 37 read Anandabazar Patrika. Which of the following CANNOT be the number who read both?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both ranges from 18 (= 41 + 37 − 60) to 37 (= the smaller set). So every value from 18 to 37 is possible, and 17 lies outside that range.",
+   "order": 209,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B)."
+  },
+  {
+   "questionText": "Of 80 students in a Chennai college, 47 play football and 52 play kabaddi. Which of the following CANNOT be the number who play both?",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both ranges from 19 (= 47 + 52 − 80) to 47 (= the smaller set). So every value from 19 to 47 is possible, and 50 lies outside that range.",
+   "order": 210,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B)."
+  },
+  {
+   "questionText": "Among 100 commuters in Bengaluru, 60 use the bus, 83 use a bike taxi and 76 use an auto-rickshaw. What is the minimum possible number who use all three?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "119"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People outside each set: 40, 17, 24 at most. Those missing at least one set ≤ 81. So all-three ≥ 100 − 81 = 19.",
+   "order": 211,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Min all-three = A + B + C − 2N."
+  },
+  {
+   "questionText": "Among 150 visitors to a Mysuru restaurant, 99 order idli, 119 order vada and 108 order dosa. What is the minimum possible number who order all three?",
+   "options": [
+    {
+     "text": "176"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "68"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "People outside each set: 51, 31, 42 at most. Those missing at least one set ≤ 124. So all-three ≥ 150 − 124 = 26.",
+   "order": 212,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Min all-three = A + B + C − 2N."
+  },
+  {
+   "questionText": "Among 150 employees of a Pune IT firm, 93 know Java, 100 know SQL and 108 know C++. What is the minimum possible number who know all three?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "151"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "People outside each set: 57, 50, 42 at most. Those missing at least one set ≤ 149. So all-three ≥ 150 − 149 = 1.",
+   "order": 213,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Min all-three = A + B + C − 2N."
+  },
+  {
+   "questionText": "Among 100 residents of a Hyderabad apartment complex, 67 speak Telugu, 82 speak English and 66 speak Urdu. What is the minimum possible number who speak all three?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "115"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People outside each set: 33, 18, 34 at most. Those missing at least one set ≤ 85. So all-three ≥ 100 − 85 = 15.",
+   "order": 214,
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Min all-three = A + B + C − 2N."
+  }
+ ]
+}

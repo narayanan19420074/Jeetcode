@@ -1,0 +1,945 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "Statement: Many pedestrians in a market area have been injured by speeding vehicles.\nCourses of action:\nI. Speed breakers and speed-limit signs should be put up in the area.\nII. All vehicles should be banned from the city permanently.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is practical and targets speeding. II is extreme.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Several students of a school in Madurai fell ill after eating the mid-day meal.\nCourses of action:\nI. The school should be closed permanently.\nII. Food samples should be tested and the kitchen inspected.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II finds the cause. Closing the school forever is extreme and does not address the cause.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Water supply to a colony in Chennai has been irregular for a week.\nCourses of action:\nI. The Water Board should find the fault and restore regular supply.\nII. The residents should be asked to leave the colony.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I fixes the problem directly. II is not a reasonable remedy.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Frequent power cuts in a village are disrupting irrigation of farms.\nCourses of action:\nI. Farmers should stop farming altogether.\nII. The electricity board should check the faults and fix a regular supply schedule for pumps.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II is a practical remedy. I gives up instead of solving the problem.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Plastic waste is clogging the drains of a town.\nCourses of action:\nI. The municipality should enforce the ban on thin plastic and run awareness drives.\nII. The town should stop collecting garbage altogether.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I tackles the source of waste. II would worsen the problem.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Trains on a route run late almost daily because of frequent signal failures.\nCourses of action:\nI. Passengers should be told to stop travelling by train.\nII. The railways should repair and upgrade the signalling system on the route.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II removes the cause. I is no solution.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Many students of a school have failed Mathematics this year.\nCourses of action:\nI. The school should arrange extra remedial classes for weak students.\nII. Mathematics should be removed from the syllabus.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is practical and relevant. II avoids the problem rather than solving it.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Patients at a government hospital wait for hours at the registration counter.\nCourses of action:\nI. More registration counters should be opened.\nII. An online appointment facility should be introduced.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical steps that directly reduce waiting time.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Dengue cases are rising in a ward of the city.\nCourses of action:\nI. The corporation should carry out fogging and clear stagnant water.\nII. Residents should be made aware of how to avoid water stagnation around homes.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both target the breeding of mosquitoes and are practical.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Customers complain that ATMs in a locality are often out of cash.\nCourses of action:\nI. The bank should shut all its ATMs.\nII. Customers should be asked never to use ATMs.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are extreme and do not solve the problem of cash availability.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A few cases of cheating were found in the semester exam of a college.\nCourses of action:\nI. All students of the college should be debarred without any inquiry.\nII. The college should give the question paper to the students a day earlier.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I punishes the innocent and is premature. II would encourage cheating.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Many shops in a market sell goods above the printed MRP.\nCourses of action:\nI. The consumer affairs department should inspect the shops and penalise offenders.\nII. Customers should be advised to stop shopping in all markets.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is a practical and direct remedy. II is not workable.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Road accidents have increased at a particular junction.\nCourses of action:\nI. A traffic signal and a traffic constable should be placed at the junction.\nII. Warning boards should be put up before the junction.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical safety measures aimed at the problem.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Many people in a village cannot read or write.\nCourses of action:\nI. Adult literacy classes should be started in the village.\nII. The whole village should be shifted to a city.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I directly addresses illiteracy. II is impractical.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Milk sold in a town has been found adulterated.\nCourses of action:\nI. Food safety officers should test milk samples regularly.\nII. All dairies in the town should be shut down permanently.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is a practical check. II is extreme and punishes honest dairies.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Commuters complain that city buses are overcrowded during peak hours.\nCourses of action:\nI. Commuters should be banned from travelling during peak hours.\nII. The transport corporation should add more buses on busy routes during peak hours.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II increases capacity. I is impractical.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A survey finds that many children in a district are underweight.\nCourses of action:\nI. The government should strengthen nutrition programmes such as the mid-day meal.\nII. Health check-ups should be held in schools and anganwadis to identify malnourished children.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical and directly relevant to child nutrition.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: The pass percentage of a college in the university examination has dropped sharply.\nCourses of action:\nI. The management should identify the weak subjects and improve teaching in them.\nII. The college should be closed down at once.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is a targeted remedy. II is extreme and premature.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Many complaints have been received about poor road repair work in a town.\nCourses of action:\nI. All road repair work in the country should be stopped.\nII. The contractors should be given extra payment as encouragement.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is extreme and II rewards poor work. Neither addresses the quality issue.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A lake in Bengaluru is covered with foam because sewage is flowing into it.\nCourses of action:\nI. The lake should be drained completely and filled with new water.\nII. Authorities should stop untreated sewage from entering the lake and treat the water.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II removes the cause. I is impractical and does not stop fresh sewage.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A large number of online payment frauds have been reported in a state.\nCourses of action:\nI. Banks should run campaigns on safe digital payment practices.\nII. The police should set up a cyber helpline to receive and act on fraud complaints.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical: prevention through awareness and quicker action on complaints.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Attendance in a primary school in a remote village is low because children must walk 6 km to reach it.\nCourses of action:\nI. The government should arrange transport or set up a school nearer the village.\nII. Children should be made to run to school to build stamina.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I removes the distance problem. II ignores the cause.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Heavy rain has flooded the low-lying areas of a city for the third time this year.\nCourses of action:\nI. Authorities should desilt and upgrade the storm-water drains.\nII. The residents of the low-lying areas should be fined for the flooding.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I tackles the drainage cause. II blames the victims.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Farmers in a district are not getting fair prices for tomatoes at harvest time.\nCourses of action:\nI. Farmers should be asked to stop growing any crop.\nII. The sale of tomatoes should be prohibited for a year.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are extreme and harm farmers and consumers without solving the pricing problem.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Patients at a district hospital complain of a shortage of doctors.\nCourses of action:\nI. The state should fill the vacant doctor posts.\nII. Teleconsultation with doctors of nearby city hospitals should be arranged in the meantime.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I fixes the root cause and II gives practical interim help.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: The number of stray dogs in a locality has increased and several residents have been bitten.\nCourses of action:\nI. Residents should be stopped from leaving their homes.\nII. The municipality should run sterilisation and vaccination drives.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II is a practical and targeted remedy. I is absurd.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Employees of a company complain that the canteen food is unhygienic.\nCourses of action:\nI. Employees should be asked to stop eating lunch.\nII. The management should inspect the canteen and enforce hygiene standards.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II addresses the cause. I does not solve anything.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Tourist arrivals at a hill station have fallen because the roads leading to it are in bad condition.\nCourses of action:\nI. The government should repair the roads leading to the hill station.\nII. The transport department should run regular bus services to the hill station.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical and directly improve access.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Students of a coaching centre complain that the faculty does not complete the syllabus on time.\nCourses of action:\nI. The centre should be closed immediately without any inquiry.\nII. Students should stop attending any coaching class for ever.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is premature and extreme; II is an over-reaction that is not a remedy.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Mobile network in a town is poor in the evenings because of heavy load.\nCourses of action:\nI. Residents should be stopped from using mobile phones in the evenings.\nII. The telecom operators should increase network capacity in the town.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II solves the capacity problem. I is impractical.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Cases of lung disease are increasing among workers of a stone quarry.\nCourses of action:\nI. The owner should provide masks and dust-control measures.\nII. Regular medical check-ups for the workers should be arranged.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical: prevent exposure and detect illness early.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A railway level crossing in a town is blocked for long periods, causing traffic jams.\nCourses of action:\nI. A flyover or underpass should be built at the crossing.\nII. All trains should be stopped from passing through the town.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I solves the jam in a practical way. II is impossible and extreme.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Library books in a college are often not returned on time.\nCourses of action:\nI. The library should charge a small late fine and send reminders.\nII. Students should not be given any books.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I encourages timely return. II defeats the purpose of a library.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A sudden fall in the price of cotton has hit farmers in Maharashtra.\nCourses of action:\nI. The government should ban the export of all agricultural products.\nII. Cotton cultivation should be stopped in the whole country.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are extreme and unrelated to the specific problem.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Cheating with hidden electronic devices has been reported at some centres of an entrance test.\nCourses of action:\nI. Candidates should be frisked strictly and signal jammers installed at the centres.\nII. Invigilators should be trained and their number increased.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical measures aimed at stopping cheating.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: The only well of a village has dried up and families walk 3 km for water.\nCourses of action:\nI. The panchayat should arrange tanker supply and plan a new water source.\nII. The villagers should be asked to migrate to another state.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I gives immediate and long-term relief. II is extreme.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A private school bus was found carrying far more children than its capacity.\nCourses of action:\nI. The management should be directed to carry only as many children as the seats allow.\nII. The school should stop admitting new students for ever.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I enforces safety. II is irrelevant and extreme.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Complaints of overcharging by autorickshaws at a railway station are rising.\nCourses of action:\nI. A prepaid auto booth should be set up at the station.\nII. Authorities should display official fare charts at the station.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical ways to stop overcharging.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A software firm's new employees leave within a year of joining.\nCourses of action:\nI. The firm should stop hiring new employees.\nII. The firm should find out through exit interviews why they leave and fix the causes.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II targets the cause. I avoids the problem.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A new highway has cut travel time between two cities, but its toll rates are criticised as high.\nCourses of action:\nI. The highway should be closed to all vehicles.\nII. The old road should be dug up so nobody can use it.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are drastic and do not address the toll issue.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A leading newspaper reports that the number of students dropping out of government schools in a district has doubled in a year.\nCourses of action:\nI. The education department should study the reasons for the dropouts and act on them.\nII. All government schools in the district should be merged with private schools immediately.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I is a sensible first step to find the cause. II is drastic and not linked to any known cause.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Fish are dying downstream of a chemical factory and its effluents are suspected to be polluting the river.\nCourses of action:\nI. The factory should be closed permanently without any test.\nII. The pollution control board should test the water and the effluents.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II verifies the cause before action. I is premature.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Customers of a bank complain that loan approvals take more than a month.\nCourses of action:\nI. The bank should review and simplify its approval process.\nII. The bank should give loans to every applicant at once without verification.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I speeds up the process responsibly. II is reckless and ignores risk.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Air pollution in a city rises sharply every winter.\nCourses of action:\nI. The government should regulate stubble burning and construction dust.\nII. Public transport should be strengthened to reduce the use of private vehicles.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both address real sources of pollution and are practical.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Many first-year engineering students find it hard to cope with the syllabus.\nCourses of action:\nI. The college should conduct bridge courses for first-year students.\nII. Mentors should be assigned to students who are struggling.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are practical, targeted academic supports.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: The government has found that a large number of ration cards in a state are fake.\nCourses of action:\nI. All ration cards should be cancelled immediately and reissued after a year.\nII. The cards should be verified through Aadhaar-based checks.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II weeds out fake cards. I would deprive genuine holders for a year, which is extreme.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: A bridge built last year has developed cracks.\nCourses of action:\nI. Engineers should inspect it and keep heavy vehicles off till it is declared safe.\nII. The contractor who built it should be awarded another contract.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I protects the public and finds the fault. II rewards a possibly faulty job.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Overcrowding is reported at the ticket counters of a cricket stadium.\nCourses of action:\nI. The cricket board should stop selling tickets for all matches in India.\nII. Spectators should be asked never to watch matches.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. Both are extreme and do not solve the crowding at one stadium.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Prices of pulses have risen sharply because of a poor monsoon.\nCourses of action:\nI. The government should release pulses from its buffer stock and ease imports.\nII. The government should ask people to stop eating pulses.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. I increases supply and lowers prices. II is not a practical remedy.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Employees of a firm often reach late because the company bus runs behind schedule.\nCourses of action:\nI. Employees who reach late should be dismissed immediately.\nII. The management should review the bus schedule and add a trip if needed.\nWhich of the following follows?",
+      "options": [
+        "Only I follows",
+        "Only II follows",
+        "Both I and II follow",
+        "Neither I nor II follows"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A course of action follows if it is practical, relevant to the problem and not extreme or premature. II removes the cause. I is harsh and punishes for a problem the employees did not create.",
+      "shortcut": "Reject drastic steps (ban, close, punish everyone) and irrelevant steps; accept practical, targeted remedies.",
+      "subPattern": "statement-course-of-action",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    }
+  ]
+}

@@ -10,8 +10,12 @@
 //                   section when its clock ends; unused time does not carry).
 // No negative marking: TCS and Infosys both publish none.
 //
-// Verbal / Data Interpretation / pseudo-code content does not exist yet, so
-// those sections are listed under `comingSoon` and are NOT part of the paper.
+// Pseudo-code content is not wired into mocks yet, so it is listed under
+// `comingSoon` and is NOT part of the paper.
+// A section draws stand-alone questions from `slugs`. Add `sets: { slugs, questions }`
+// to also draw WHOLE shared-stimulus sets (RC passage, DI table, seating
+// conditions); those questions count toward the section's `questions`, and a set
+// is never split. Sections without `sets` stay stand-alone only.
 
 export const MOCK_MIX = { easy: 0.3, hard: 0.2 }; // medium = remainder
 export const MOCK_FREE_ATTEMPTS_PER_PAPER = 1; // non-Pro users
@@ -21,36 +25,48 @@ const QUANT_CORE = [
   'speed-time-and-distance', 'averages', 'number-system', 'simple-and-compound-interest',
   'probability', 'permutation-and-combination', 'problems-on-ages', 'mixtures-and-alligations',
 ];
-const REASONING_CORE = ['number-series', 'letter-and-alphabet-series', 'coding-decoding', 'blood-relations', 'direction-sense'];
+const REASONING_CORE = [
+  'number-series', 'letter-and-alphabet-series', 'coding-decoding', 'blood-relations', 'direction-sense',
+  'ranking-and-order', 'seating-arrangement', 'logical-puzzles', 'syllogisms', 'statements-and-conclusions',
+  'venn-diagrams', 'cubes-and-dice', 'analogy-and-classification', 'mathematical-operations',
+  'coded-inequalities', 'data-sufficiency', 'critical-reasoning', 'input-output-and-machine',
+];
+const DI_SETS = ['di-tables', 'di-bar-graphs', 'di-line-graphs', 'di-pie-charts', 'di-caselets', 'di-mixed-charts'];
+const VERBAL_CORE = [
+  'sentence-correction', 'fill-in-the-blanks', 'synonyms-and-antonyms', 'idioms-and-phrases',
+  'one-word-substitution', 'para-jumbles', 'voice-and-speech', 'english-grammar', 'vocabulary-and-spellings',
+];
 
 export const MOCK_PAPERS = [
   {
     id: 'tcs-nqt-foundation',
     company: 'TCS',
     title: 'TCS NQT · Foundation',
-    short: 'Numerical + Reasoning',
-    blurb: 'Part A of the NQT, the part Ninja shortlisting leans on. Two timed sections, no negative marking.',
+    short: 'Numerical + Verbal + Reasoning',
+    blurb: 'Part A of the NQT, the part Ninja shortlisting leans on. Three timed sections, no negative marking.',
     reported: 'Reported: 65 questions in 75 min (Numerical, Verbal, Reasoning)',
     officialUrl: 'https://www.tcsion.com/hub/national-qualifier-test',
     sections: [
       { key: 'numerical', title: 'Numerical Ability', questions: 20, minutes: 25, slugs: QUANT_CORE },
+      { key: 'verbal', title: 'Verbal Ability', questions: 25, minutes: 25, slugs: VERBAL_CORE },
       { key: 'reasoning', title: 'Reasoning Ability', questions: 20, minutes: 25, slugs: REASONING_CORE },
     ],
-    comingSoon: ['Verbal Ability'],
+    comingSoon: [],
   },
   {
     id: 'infosys-aptitude',
     company: 'Infosys',
     title: 'Infosys · Aptitude',
-    short: 'Maths + Reasoning',
+    short: 'Maths + Reasoning + Verbal',
     blurb: 'Sectional-timer aptitude round for Systems Engineer drives. Speed and elimination decide the score.',
     reported: 'Reported: about 100 min across 5 sections, sectional cut-offs',
     officialUrl: 'https://www.infosys.com/careers/',
     sections: [
       { key: 'maths', title: 'Mathematical Ability', questions: 10, minutes: 35, slugs: QUANT_CORE },
       { key: 'reasoning', title: 'Logical Reasoning', questions: 15, minutes: 25, slugs: REASONING_CORE },
+      { key: 'verbal', title: 'Verbal Ability', questions: 20, minutes: 20, slugs: VERBAL_CORE },
     ],
-    comingSoon: ['Verbal Ability', 'Pseudocode', 'Puzzle Solving'],
+    comingSoon: ['Pseudocode', 'Puzzle Solving'],
   },
   {
     id: 'cognizant-genc',
@@ -61,6 +77,21 @@ export const MOCK_PAPERS = [
     reported: 'Reported: 25 questions in 35 min',
     officialUrl: 'https://careers.cognizant.com',
     sections: [{ key: 'aptitude', title: 'Aptitude', questions: 25, minutes: 35, slugs: [...QUANT_CORE.slice(0, 8), ...REASONING_CORE] }],
+    comingSoon: [],
+  },
+  {
+    id: 'cat-style-sectional',
+    company: 'Practice',
+    title: 'CAT-style · Sectional',
+    short: 'VARC + DILR + Quant',
+    blurb: 'Three sections in the CAT mould: passages, data sets and logic sets, then quant. Each section is locked when its clock ends.',
+    reported: 'JeetCode practice paper in the CAT layout (66 questions, 3 x 40 min)',
+    officialUrl: null,
+    sections: [
+      { key: 'varc', title: 'Verbal Ability and Reading Comprehension', questions: 24, minutes: 40, slugs: ['para-jumbles', 'sentence-correction'], sets: { slugs: ['reading-comprehension'], questions: 15 } },
+      { key: 'dilr', title: 'Data Interpretation and Logical Reasoning', questions: 20, minutes: 40, slugs: [], sets: { slugs: [...DI_SETS, 'seating-arrangement', 'logical-puzzles'], questions: 20 } },
+      { key: 'qa', title: 'Quantitative Ability', questions: 22, minutes: 40, slugs: [...QUANT_CORE, 'mensuration', 'algebra', 'hcf-and-lcm', 'geometry'] },
+    ],
     comingSoon: [],
   },
   {

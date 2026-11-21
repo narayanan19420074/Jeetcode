@@ -1,0 +1,665 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Shalini, Nisha, Sangeeta and Sathish are 4 persons of different ages. Sathish is older than Nisha. Sangeeta is older than Shalini. Nisha is older than Sangeeta. Who is the 2nd oldest?",
+   "options": [
+    "Shalini",
+    "Sangeeta",
+    "Sathish",
+    "Nisha"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Sathish > Nisha > Sangeeta > Shalini. So the answer is Nisha.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Padma, Gurpreet, Tara and Balaji are 4 persons of different heights. Balaji is taller than Tara. Gurpreet is taller than Padma. Tara is taller than Gurpreet. Who is the second shortest?",
+   "options": [
+    "Balaji",
+    "Gurpreet",
+    "Tara",
+    "Padma"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Balaji > Tara > Gurpreet > Padma. So the answer is Gurpreet.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Ganesh, Vijay, Revathi and Harleen are 4 persons of different ages. Revathi is older than Vijay. Ganesh is older than Revathi. Vijay is older than Harleen. Who is the youngest?",
+   "options": [
+    "Ganesh",
+    "Vijay",
+    "Harleen",
+    "Revathi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Ganesh > Revathi > Vijay > Harleen. So the answer is Harleen.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Ishita, Ashok, Kiran and Prakash are 4 persons of different ages. Prakash is older than Kiran. Kiran is older than Ashok. Ishita is older than Prakash. Who is the oldest?",
+   "options": [
+    "Kiran",
+    "Ishita",
+    "Prakash",
+    "Ashok"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Ishita > Prakash > Kiran > Ashok. So the answer is Ishita.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Maria, Ishita, Sneha and Gurpreet are 4 persons of different speeds. Sneha is faster than Gurpreet. Maria is faster than Ishita. Ishita is faster than Sneha. Who is the second slowest?",
+   "options": [
+    "Maria",
+    "Ishita",
+    "Sneha",
+    "Gurpreet"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Maria > Ishita > Sneha > Gurpreet. So the answer is Sneha.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Priya, Rahul, Prakash and Bhavani are 4 persons of different heights. Rahul is taller than Priya. Bhavani is taller than Rahul. Priya is taller than Prakash. Who is the shortest?",
+   "options": [
+    "Bhavani",
+    "Priya",
+    "Rahul",
+    "Prakash"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Bhavani > Rahul > Priya > Prakash. So the answer is Prakash.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Swathi, Revathi, Sangeeta and Harleen are 4 persons of different weights. Swathi is heavier than Revathi. Revathi is heavier than Harleen. Sangeeta is heavier than Swathi. Who is the heaviest?",
+   "options": [
+    "Sangeeta",
+    "Harleen",
+    "Revathi",
+    "Swathi"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Sangeeta > Swathi > Revathi > Harleen. So the answer is Sangeeta.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "The weights of 6 friends are: Bhavani 57 kg, Tara 65 kg, Balaji 38 kg, Priya 67 kg, Vijay 74 kg, Sangeeta 42 kg. Who is 3rd when arranged from heaviest to lightest?",
+   "options": [
+    "Bhavani",
+    "Priya",
+    "Sangeeta",
+    "Tara"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Arranged in descending order: Vijay (74), Priya (67), Tara (65), Bhavani (57), Sangeeta (42), Balaji (38). The 3rd is Tara.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "The weights of 5 friends are: Vijay 58 kg, Jaya 51 kg, Sangeeta 50 kg, Mala 84 kg, Nisha 57 kg. Who is 4th when arranged from heaviest to lightest?",
+   "options": [
+    "Sangeeta",
+    "Mala",
+    "Jaya",
+    "Vijay"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arranged in descending order: Mala (84), Vijay (58), Nisha (57), Jaya (51), Sangeeta (50). The 4th is Jaya.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "The heights of 6 friends are: Harleen 168 cm, Harish 170 cm, Suresh 175 cm, Geeta 157 cm, Pooja 189 cm, Vijay 164 cm. Who is 3rd when arranged from tallest to shortest?",
+   "options": [
+    "Geeta",
+    "Harish",
+    "Vijay",
+    "Pooja"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Arranged in descending order: Pooja (189), Suresh (175), Harish (170), Harleen (168), Vijay (164), Geeta (157). The 3rd is Harish.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "The heights of 6 friends are: Joseph 177 cm, Manoj 176 cm, Venkat 157 cm, Prakash 164 cm, Jaya 169 cm, Bhavani 158 cm. Who is 2nd when arranged from tallest to shortest?",
+   "options": [
+    "Manoj",
+    "Prakash",
+    "Venkat",
+    "Bhavani"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Arranged in descending order: Joseph (177), Manoj (176), Jaya (169), Prakash (164), Bhavani (158), Venkat (157). The 2nd is Manoj.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "Yash, Balaji, Vikram, Ashok and Naveen are 5 persons of different heights. Ashok is taller than Yash but shorter than Vikram. Naveen is taller than Balaji but shorter than Ashok. Balaji is taller than Yash but shorter than Ashok. How many persons are taller than Ashok?",
+   "options": [
+    "2",
+    "0",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Vikram > Ashok > Naveen > Balaji > Yash. Reading from this order, the answer is 1.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Yash, Lakshmi, Ravi, Sathish and Rahul are 5 persons of different ages. Lakshmi is older than Yash but younger than Rahul. Sathish is older than Yash but younger than Lakshmi. Ravi is older than Yash but younger than Lakshmi. Sathish is older than Ravi. Who is the 4th oldest?",
+   "options": [
+    "Yash",
+    "Lakshmi",
+    "Rahul",
+    "Ravi"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Rahul > Lakshmi > Sathish > Ravi > Yash. So the answer is Ravi.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Deepa, Naveen, Uma, Venkat and Jaya are 5 persons of different weights. Jaya is heavier than Deepa but lighter than Venkat. Uma is heavier than Deepa but lighter than Naveen. Uma is heavier than Venkat. How many persons are heavier than Uma?",
+   "options": [
+    "2",
+    "0",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Naveen > Uma > Venkat > Jaya > Deepa. Reading from this order, the answer is 1.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Imran, Tarun, Kiran, Venkat and Tara are 5 persons of different weights. Tarun is heavier than Tara but lighter than Imran. Tarun is heavier than Kiran but lighter than Venkat. Tara is heavier than Kiran. Venkat is heavier than Tara but lighter than Imran. Who is the heaviest?",
+   "options": [
+    "Tara",
+    "Venkat",
+    "Kiran",
+    "Imran"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Imran > Venkat > Tarun > Tara > Kiran. So the answer is Imran.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Mohan, Priya, Jaya, Anita and Ravi are 5 persons of different heights. Anita is taller than Priya but shorter than Mohan. Ravi is taller than Priya but shorter than Mohan. Jaya is taller than Ravi but shorter than Anita. How many persons are taller than Jaya?",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Mohan > Anita > Jaya > Ravi > Priya. Reading from this order, the answer is 2.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Manoj, Imran, Zoya, Balaji and Gurpreet are 5 persons of different ages. Zoya is older than Imran but younger than Gurpreet. Imran is older than Manoj. Manoj is older than Balaji. How many persons are younger than Manoj?",
+   "options": [
+    "2",
+    "1",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Gurpreet > Zoya > Imran > Manoj > Balaji. Reading from this order, the answer is 1.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Sangeeta, Sathish, Ishita, Shalini and Tarun are 5 persons of different heights. Sangeeta is taller than Tarun but shorter than Sathish. Shalini is taller than Ishita but shorter than Sathish. Ishita is taller than Sangeeta but shorter than Shalini. Who is the 2nd tallest?",
+   "options": [
+    "Ishita",
+    "Sangeeta",
+    "Sathish",
+    "Shalini"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Sathish > Shalini > Ishita > Sangeeta > Tarun. So the answer is Shalini.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Imran, Arjun, Swathi, Venkat and Anita are 5 persons of different speeds. Imran is faster than Arjun but slower than Swathi. Venkat is faster than Imran. Anita is faster than Venkat but slower than Swathi. Who is the 3rd fastest?",
+   "options": [
+    "Arjun",
+    "Venkat",
+    "Anita",
+    "Imran"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Swathi > Anita > Venkat > Imran > Arjun. So the answer is Venkat.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Deepa, Uma, Padma, Sangeeta and Nandini are 5 persons of different ages. Uma is older than Nandini but younger than Padma. Nandini is older than Sangeeta. Deepa is older than Padma. Who is the youngest?",
+   "options": [
+    "Deepa",
+    "Sangeeta",
+    "Nandini",
+    "Uma"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Deepa > Padma > Uma > Nandini > Sangeeta. So the answer is Sangeeta.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Meena, Anita, Pooja, Sathish and Dinesh are 5 persons of different speeds. Dinesh is faster than Pooja. Anita is faster than Meena but slower than Dinesh. Sathish is faster than Anita but slower than Pooja. Who is in the middle when all are arranged by speed?",
+   "options": [
+    "Dinesh",
+    "Anita",
+    "Pooja",
+    "Sathish"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Dinesh > Pooja > Sathish > Anita > Meena. So the answer is Sathish.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Mohan, Revathi, Zoya, Vijay and Bhavani are 5 persons of different heights. Revathi is taller than Vijay but shorter than Bhavani. Bhavani is taller than Vijay but shorter than Zoya. Zoya is taller than Vijay but shorter than Mohan. Who is the shortest?",
+   "options": [
+    "Vijay",
+    "Zoya",
+    "Revathi",
+    "Mohan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Mohan > Zoya > Bhavani > Revathi > Vijay. So the answer is Vijay.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Swathi, Sathish, Ganesh, Rohit and Kiran are 5 persons of different weights. Swathi is heavier than Kiran but lighter than Rohit. Rohit is heavier than Kiran but lighter than Sathish. Sathish is heavier than Swathi but lighter than Ganesh. Who is the lightest?",
+   "options": [
+    "Sathish",
+    "Swathi",
+    "Rohit",
+    "Kiran"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Ganesh > Sathish > Rohit > Swathi > Kiran. So the answer is Kiran.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Kiran, Tara, Imran, Bhavani and Zoya are 5 persons of different ages. Tara is older than Bhavani but younger than Zoya. Imran is older than Bhavani but younger than Tara. Kiran is older than Bhavani but younger than Imran. How many persons are older than Kiran?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Zoya > Tara > Imran > Kiran > Bhavani. Reading from this order, the answer is 3.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Vikram, Zoya, Gurpreet, Bhavani and Anil are 5 persons of different weights. Bhavani is heavier than Vikram but lighter than Gurpreet. Zoya is heavier than Vikram but lighter than Anil. Anil is heavier than Vikram but lighter than Bhavani. Who is the 2nd heaviest?",
+   "options": [
+    "Anil",
+    "Vikram",
+    "Bhavani",
+    "Gurpreet"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Gurpreet > Bhavani > Anil > Zoya > Vikram. So the answer is Bhavani.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Karthik, Mohan, Kiran, Naveen and Arjun are 5 persons of different speeds. Karthik is faster than Kiran. Arjun is faster than Naveen but slower than Mohan. Karthik is the 4th fastest. Who is the 3rd fastest?",
+   "options": [
+    "Karthik",
+    "Kiran",
+    "Mohan",
+    "Naveen"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Mohan > Arjun > Naveen > Karthik > Kiran. So the answer is Naveen.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Padma, Karthik, Sanjay, Imran and Vijay are 5 persons of different weights. Padma is heavier than Imran but lighter than Karthik. Imran is heavier than Sanjay but lighter than Karthik. Vijay is heavier than Padma but lighter than Karthik. Who is in the middle when all are arranged by weight?",
+   "options": [
+    "Imran",
+    "Vijay",
+    "Padma",
+    "Sanjay"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Karthik > Vijay > Padma > Imran > Sanjay. So the answer is Padma.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Maria, Ganesh, Anita, Swathi and Priya are 5 persons of different speeds. Priya is faster than Ganesh. Anita is faster than Swathi but slower than Priya. Ganesh is faster than Anita but slower than Maria. Priya is faster than Anita but slower than Maria. Who is in the middle when all are arranged by speed?",
+   "options": [
+    "Anita",
+    "Ganesh",
+    "Swathi",
+    "Maria"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Maria > Priya > Ganesh > Anita > Swathi. So the answer is Ganesh.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Tara, Arjun, Mala, Mohan, Pooja and Sangeeta are 6 persons of different heights. Exactly 3 persons are between Tara and Mala in height order. Exactly 2 persons are between Sangeeta and Mohan in height order. Sangeeta is taller than Mala but shorter than Tara. Arjun is taller than Mohan but shorter than Pooja. How many persons are taller than Mala?",
+   "options": [
+    "5",
+    "4",
+    "3",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Tara > Pooja > Sangeeta > Arjun > Mala > Mohan. Reading from this order, the answer is 4.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Gurpreet, Prakash, Imran, Venkat, Faisal and Suresh are 6 persons of different heights. Prakash is taller than Suresh but shorter than Gurpreet. Exactly 3 persons are between Faisal and Suresh in height order. Suresh is the 5th tallest. Venkat is the 3rd tallest. How many persons are shorter than Venkat?",
+   "options": [
+    "4",
+    "3",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Faisal > Gurpreet > Venkat > Prakash > Suresh > Imran. Reading from this order, the answer is 3.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Tarun, Vijay, Ganesh, Sathish, Shalini and Nandini are 6 persons of different speeds. Shalini is faster than Ganesh. Nandini is faster than Shalini. Tarun is faster than Nandini. Vijay is faster than Sathish but slower than Shalini. Ganesh is faster than Vijay. How many persons are slower than Shalini?",
+   "options": [
+    "4",
+    "2",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Tarun > Nandini > Shalini > Ganesh > Vijay > Sathish. Reading from this order, the answer is 3.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Sneha, Harish, Shalini, Suresh, Karthik and Rahul are 6 persons of different weights. Harish is heavier than Shalini. Exactly 2 persons are between Rahul and Harish in weight order. Sneha is heavier than Harish but lighter than Suresh. Suresh is heavier than Sneha but lighter than Karthik. Who is the 3rd heaviest?",
+   "options": [
+    "Shalini",
+    "Rahul",
+    "Karthik",
+    "Suresh"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Karthik > Rahul > Suresh > Sneha > Harish > Shalini. So the answer is Suresh.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Rohit, Divya, Meena, Imran, Faisal and Zoya are 6 persons of different weights. Zoya is heavier than Meena but lighter than Imran. Meena is heavier than Divya but lighter than Rohit. Exactly 3 persons are between Rohit and Meena in weight order. Exactly 1 person is between Faisal and Meena in weight order. How many persons are lighter than Imran?",
+   "options": [
+    "5",
+    "3",
+    "6",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Rohit > Imran > Faisal > Zoya > Meena > Divya. Reading from this order, the answer is 4.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Ganesh, Jaya, Kavya, Prakash, Joseph and Nandini are 6 persons of different speeds. Joseph is faster than Ganesh but slower than Prakash. Exactly 2 persons are between Jaya and Kavya in speed order. Exactly 3 persons are between Jaya and Joseph in speed order. Nandini is faster than Prakash. Who is the 2nd fastest?",
+   "options": [
+    "Prakash",
+    "Jaya",
+    "Nandini",
+    "Ganesh"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Jaya > Nandini > Prakash > Kavya > Joseph > Ganesh. So the answer is Nandini.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Naveen, Lakshmi, Nandini, Sneha, Yash and Uma are 6 persons of different heights. Uma is taller than Sneha but shorter than Naveen. Yash is taller than Lakshmi. Exactly 3 persons are between Naveen and Yash in height order. Exactly 2 persons are between Uma and Lakshmi in height order. How many persons are there between Uma and Yash in height order?",
+   "options": [
+    "2",
+    "1",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Naveen > Nandini > Uma > Sneha > Yash > Lakshmi. Reading from this order, the answer is 1.",
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  }
+ ]
+}

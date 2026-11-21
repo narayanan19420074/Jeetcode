@@ -1,0 +1,575 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Double the numbers at even positions.\nOperation 2: Arrange the numbers in descending order.\nInput: 14 20 56 46 30. What is the final output?",
+   "options": [
+    "56 92 30 40 14",
+    "92 56 40 30 14",
+    "56 46 30 20 14",
+    "14 40 56 92 30"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After operation 1: 14 40 56 92 30 | After operation 2: 92 56 40 30 14. The final output is 92 56 40 30 14.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Add 2 to every number.\nOperation 2: Double the numbers at even positions.\nInput: 24 55 19 26 33. What is the final output?",
+   "options": [
+    "26 114 21 56 35",
+    "26 112 21 54 35",
+    "26 57 21 28 35",
+    "24 110 19 52 33"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After operation 1: 26 57 21 28 35 | After operation 2: 26 114 21 56 35. The final output is 26 114 21 56 35.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Reverse the letters of the longest word.\nOperation 2: Reverse the letters of the words at even positions.\nInput: lamp pencil orange rocket library. What is the final output?",
+   "options": [
+    "lamp licnep orange tekcor yrarbil",
+    "lamp licnep orange tekcor library",
+    "lamp licnep yrarbil tekcor orange",
+    "lamp pencil orange rocket yrarbil"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After operation 1: lamp pencil orange rocket yrarbil | After operation 2: lamp licnep orange tekcor yrarbil. The final output is lamp licnep orange tekcor yrarbil.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Subtract 4 from the numbers at even positions.\nOperation 2: Subtract 8 from every number.\nInput: 36 35 56 17 25. What is the final output?",
+   "options": [
+    "28 23 48 4 17",
+    "36 31 56 13 25",
+    "28 27 48 9 17",
+    "28 23 48 5 17"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: 36 31 56 13 25 | After operation 2: 28 23 48 5 17. The final output is 28 23 48 5 17.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Arrange the numbers in descending order.\nOperation 2: Reverse the order of the numbers.\nInput: 48 36 44 23 20. What is the final output?",
+   "options": [
+    "20 23 36 44 58",
+    "48 44 36 23 20",
+    "20 23 36 44 48",
+    "20 23 44 36 48"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: 48 44 36 23 20 | After operation 2: 20 23 36 44 48. The final output is 20 23 36 44 48.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Keep only the first three letters of every word.\nOperation 2: Move the last word to the front.\nInput: kitchen umbrella lamp chair elephant. What is the final output?",
+   "options": [
+    "kit umb lam cha ele",
+    "elephant kitchen umbrella lamp chair",
+    "ele kit umb lam cha",
+    "cha kit umb lam ele"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: kit umb lam cha ele | After operation 2: ele kit umb lam cha. The final output is ele kit umb lam cha.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Add 8 to every number.\nOperation 2: Subtract 7 from every number.\nInput: 25 58 46 16 17. What is the final output?",
+   "options": [
+    "26 59 46 17 18",
+    "26 59 47 17 18",
+    "33 66 54 24 25",
+    "18 51 39 9 10"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After operation 1: 33 66 54 24 25 | After operation 2: 26 59 47 17 18. The final output is 26 59 47 17 18.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Subtract 2 from the numbers at even positions.\nOperation 2: Add 6 to every number.\nInput: 19 26 31 51 46. What is the final output?",
+   "options": [
+    "19 24 31 49 46",
+    "25 30 37 55 52",
+    "25 32 37 57 52",
+    "24 30 37 55 52"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After operation 1: 19 24 31 49 46 | After operation 2: 25 30 37 55 52. The final output is 25 30 37 55 52.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Interchange the first and the last words.\nOperation 2: Reverse the letters of every word.\nInput: rose train lamp pavilion tree. What is the final output?",
+   "options": [
+    "esor niart pmal noilivap eert",
+    "tree train lamp pavilion rose",
+    "noilivap niart pmal eert esor",
+    "eert niart pmal noilivap esor"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: tree train lamp pavilion rose | After operation 2: eert niart pmal noilivap esor. The final output is eert niart pmal noilivap esor.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In odd-numbered steps the word that is shortest among those not yet fixed goes to the left end; in even-numbered steps the word that is longest among those not yet fixed goes to the right end. The number of letters is used for comparison. Input: classroom newspaper football garden ghost coin. What is the final arrangement?",
+   "options": [
+    "classroom coin football garden ghost newspaper",
+    "newspaper classroom football garden ghost coin",
+    "coin ghost garden football newspaper classroom",
+    "newspaper ghost garden football coin classroom"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Input: classroom newspaper football garden ghost coin | Step I: coin classroom newspaper football garden ghost | Step II: coin newspaper football garden ghost classroom | Step III: coin ghost newspaper football garden classroom | Step IV: coin ghost football garden newspaper classroom | Step V: coin ghost garden football newspaper classroom. The final arrangement is coin ghost garden football newspaper classroom.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Double the numbers at even positions.\nOperation 2: Arrange the numbers in descending order.\nOperation 3: Add 9 to every number.\nInput: 45 13 18 35 42 40. What is the final output?",
+   "options": [
+    "89 79 54 51 35 27",
+    "54 35 27 79 51 89",
+    "80 70 45 42 26 18",
+    "54 51 49 44 27 22"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After operation 1: 45 26 18 70 42 80 | After operation 2: 80 70 45 42 26 18 | After operation 3: 89 79 54 51 35 27. The final output is 89 79 54 51 35 27.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Arrange the words in alphabetical order.\nOperation 2: Move the last word to the front.\nOperation 3: Interchange the first and the last words.\nInput: pencil football house plant milk elephant. What is the final output?",
+   "options": [
+    "plant elephant football house milk pencil",
+    "pencil elephant football house milk plant",
+    "milk pencil football house plant elephant",
+    "plant football house milk pencil elephant"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After operation 1: elephant football house milk pencil plant | After operation 2: plant elephant football house milk pencil | After operation 3: pencil elephant football house milk plant. The final output is pencil elephant football house milk plant.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Interchange the first and the last numbers.\nOperation 2: Arrange the numbers in ascending order.\nOperation 3: Multiply every number by 3.\nInput: 37 46 13 31 52 40. What is the final output?",
+   "options": [
+    "120 138 39 93 156 111",
+    "13 31 37 40 46 52",
+    "39 93 111 120 138 156",
+    "41 93 111 120 138 156"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: 40 46 13 31 52 37 | After operation 2: 13 31 37 40 46 52 | After operation 3: 39 93 111 120 138 156. The final output is 39 93 111 120 138 156.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Decrease the smallest number by 3.\nOperation 2: Interchange the numbers at positions 4 and 6.\nOperation 3: Add 7 to the numbers at odd positions.\nInput: 53 26 17 49 21 22. What is the final output?",
+   "options": [
+    "60 26 24 22 28 49",
+    "53 26 14 22 21 49",
+    "60 26 21 22 28 49",
+    "60 26 21 49 28 22"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: 53 26 14 49 21 22 | After operation 2: 53 26 14 22 21 49 | After operation 3: 60 26 21 22 28 49. The final output is 60 26 21 22 28 49.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Reverse the letters of every word.\nOperation 2: Keep only the first three letters of every word.\nOperation 3: Interchange the first and the last words.\nInput: market birthday festival rose plant window. What is the final output?",
+   "options": [
+    "tek yad lav eso tna wod",
+    "win bir fes ros pla mar",
+    "wod yad lav eso tna tek",
+    "wodniw yadhtrib lavitsef esor tnalp tekram"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: tekram yadhtrib lavitsef esor tnalp wodniw | After operation 2: tek yad lav eso tna wod | After operation 3: wod yad lav eso tna tek. The final output is wod yad lav eso tna tek.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Move the first number to the end of the line.\nOperation 2: Subtract 7 from every number.\nOperation 3: Interchange the numbers at positions 4 and 6.\nInput: 43 50 32 17 15 25. What is the final output?",
+   "options": [
+    "50 32 17 43 25 15",
+    "36 43 25 18 8 10",
+    "43 25 10 8 18 36",
+    "43 25 10 36 18 8"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: 50 32 17 15 25 43 | After operation 2: 43 25 10 8 18 36 | After operation 3: 43 25 10 36 18 8. The final output is 43 25 10 36 18 8.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Add 2 to the numbers at odd positions.\nOperation 2: Subtract 3 from every number.\nOperation 3: Reverse the order of the numbers.\nInput: 16 52 26 42 44 47. What is the final output?",
+   "options": [
+    "15 49 25 39 43 44",
+    "47 46 42 28 52 18",
+    "44 41 39 23 49 13",
+    "44 43 39 25 49 15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: 18 52 28 42 46 47 | After operation 2: 15 49 25 39 43 44 | After operation 3: 44 43 39 25 49 15. The final output is 44 43 39 25 49 15.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Move the last word to the front.\nOperation 2: Reverse the letters of the words at even positions.\nOperation 3: Interchange the words in each adjacent pair (1st with 2nd, 3rd with 4th, and so on).\nInput: chair garden rose gold balloon journey. What is the final output?",
+   "options": [
+    "chair yenruoj rose nedrag balloon dlog",
+    "nedrag chair dlog rose yenruoj balloon",
+    "riahc journey esor garden noollab gold",
+    "journey riahc garden esor gold noollab"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: journey chair garden rose gold balloon | After operation 2: journey riahc garden esor gold noollab | After operation 3: riahc journey esor garden noollab gold. The final output is riahc journey esor garden noollab gold.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Decrease the smallest number by 4.\nOperation 2: Add 6 to every number.\nOperation 3: Reverse the order of the numbers.\nInput: 52 25 36 32 56 13. What is the final output?",
+   "options": [
+    "15 62 38 42 31 58",
+    "58 31 42 38 62 15",
+    "19 62 38 42 31 58",
+    "9 56 32 36 25 52"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After operation 1: 52 25 36 32 56 9 | After operation 2: 58 31 42 38 62 15 | After operation 3: 15 62 38 42 31 58. The final output is 15 62 38 42 31 58.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In each step, the word that is longest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. The number of letters is used for comparison. Input: tea tiger window chocolate rose newspaper. What is the final arrangement?",
+   "options": [
+    "window tiger tea rose newspaper chocolate",
+    "chocolate newspaper window tiger rose tea",
+    "newspaper chocolate window tiger rose tea",
+    "chocolate newspaper rose tea tiger window"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Input: tea tiger window chocolate rose newspaper | Step I: chocolate tea tiger window rose newspaper | Step II: chocolate newspaper tea tiger window rose | Step III: chocolate newspaper window tea tiger rose | Step IV: chocolate newspaper window tiger tea rose | Step V: chocolate newspaper window tiger rose tea. The final arrangement is chocolate newspaper window tiger rose tea.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Move the first word to the end of the line.\nOperation 2: Interchange the words in each adjacent pair (1st with 2nd, 3rd with 4th, and so on).\nOperation 3: Arrange the words in alphabetical order.\nInput: bell house station football blanket gold. What is the final output?",
+   "options": [
+    "bell station football gold house blanket",
+    "station house blanket football bell gold",
+    "bell blanket football gold house station",
+    "blanket bell gold football station house"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: house station football blanket gold bell | After operation 2: station house blanket football bell gold | After operation 3: bell blanket football gold house station. The final output is bell blanket football gold house station.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Interchange the first and the last numbers.\nOperation 2: Multiply every number by 3.\nOperation 3: Decrease the smallest number by 6.\nInput: 48 58 51 37 13 57. What is the final output?",
+   "options": [
+    "171 174 153 111 39 144",
+    "171 174 153 111 21 144",
+    "171 174 153 111 33 144",
+    "144 174 153 111 33 171"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: 57 58 51 37 13 48 | After operation 2: 171 174 153 111 39 144 | After operation 3: 171 174 153 111 33 144. The final output is 171 174 153 111 33 144.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Interchange the numbers in each adjacent pair (1st with 2nd, 3rd with 4th, and so on).\nOperation 2: Double the numbers at even positions.\nOperation 3: Decrease the smallest number by 6.\nInput: 53 49 19 14 59 23. What is the final output?",
+   "options": [
+    "49 106 14 38 23 118",
+    "49 53 8 19 23 59",
+    "53 98 13 28 59 46",
+    "49 106 8 38 23 118"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: 49 53 14 19 23 59 | After operation 2: 49 106 14 38 23 118 | After operation 3: 49 106 8 38 23 118. The final output is 49 106 8 38 23 118.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Interchange the words in each adjacent pair (1st with 2nd, 3rd with 4th, and so on).\nOperation 2: Move the first word to the end of the line.\nOperation 3: Reverse the order of the words in the line.\nInput: milk diamond house harvest lamp kitchen. What is the final output?",
+   "options": [
+    "lamp kitchen house harvest milk diamond",
+    "milk kitchen lamp harvest house diamond",
+    "diamond lamp kitchen house harvest milk",
+    "milk harvest house kitchen lamp diamond"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: diamond milk harvest house kitchen lamp | After operation 2: milk harvest house kitchen lamp diamond | After operation 3: diamond lamp kitchen house harvest milk. The final output is diamond lamp kitchen house harvest milk.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Arrange the numbers in descending order.\nOperation 2: Reverse the order of the numbers.\nOperation 3: Interchange the numbers at positions 2 and 4.\nOperation 4: Add 7 to every number.\nInput: 33 16 13 52 39 38. What is the final output?",
+   "options": [
+    "20 45 40 23 46 59",
+    "45 20 59 46 23 40",
+    "13 38 33 16 39 52",
+    "59 40 45 46 23 20"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After operation 1: 52 39 38 33 16 13 | After operation 2: 13 16 33 38 39 52 | After operation 3: 13 38 33 16 39 52 | After operation 4: 20 45 40 23 46 59. The final output is 20 45 40 23 46 59.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Add 9 to the numbers at odd positions.\nOperation 2: Add 4 to every number.\nOperation 3: Interchange the numbers at positions 3 and 5.\nOperation 4: Multiply every number by 3.\nInput: 28 58 21 32 27 26. What is the final output?",
+   "options": [
+    "96 186 93 108 75 90",
+    "41 62 40 36 34 30",
+    "123 186 102 108 120 90",
+    "123 186 120 108 102 90"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: 37 58 30 32 36 26 | After operation 2: 41 62 34 36 40 30 | After operation 3: 41 62 40 36 34 30 | After operation 4: 123 186 120 108 102 90. The final output is 123 186 120 108 102 90.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of words by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Move the first word to the end of the line.\nOperation 2: Reverse the letters of the longest word.\nOperation 3: Reverse the letters of every word.\nOperation 4: Reverse the letters of the words at even positions.\nInput: diamond ghost cotton notebook station rose. What is the final output?",
+   "options": [
+    "tsohg nottoc notebook noitats esor dnomaid",
+    "tsohg cotton koobeton station esor diamond",
+    "ghost nottoc koobeton noitats rose dnomaid",
+    "tsohg cotton notebook station esor diamond"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After operation 1: ghost cotton notebook station rose diamond | After operation 2: ghost cotton koobeton station rose diamond | After operation 3: tsohg nottoc notebook noitats esor dnomaid | After operation 4: tsohg cotton notebook station esor diamond. The final output is tsohg cotton notebook station esor diamond.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Interchange the numbers at positions 1 and 6.\nOperation 2: Arrange the numbers in ascending order.\nOperation 3: Decrease the smallest number by 3.\nOperation 4: Move the first number to the end of the line.\nInput: 45 48 19 55 54 59. What is the final output?",
+   "options": [
+    "48 16 55 54 45 59",
+    "16 45 48 54 55 59",
+    "45 48 54 55 59 16",
+    "45 48 54 55 59 19"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After operation 1: 59 48 19 55 54 45 | After operation 2: 19 45 48 54 55 59 | After operation 3: 16 45 48 54 55 59 | After operation 4: 45 48 54 55 59 16. The final output is 45 48 54 55 59 16.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine processes a line of numbers by applying the following operations one after another. Positions are counted from the left.\nOperation 1: Arrange the numbers in descending order.\nOperation 2: Decrease the smallest number by 2.\nOperation 3: Subtract 3 from the numbers at even positions.\nOperation 4: Interchange the numbers at positions 1 and 2.\nInput: 21 44 20 35 58 43. What is the final output?",
+   "options": [
+    "41 58 43 32 21 15",
+    "44 55 43 32 21 15",
+    "44 58 43 35 21 18",
+    "58 41 43 32 21 15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After operation 1: 58 44 43 35 21 20 | After operation 2: 58 44 43 35 21 18 | After operation 3: 58 41 43 32 21 15 | After operation 4: 41 58 43 32 21 15. The final output is 41 58 43 32 21 15.",
+   "shortcut": "Apply the operations strictly in the order given and write the line after each one; do not merge steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In odd-numbered steps the word that is shortest among those not yet fixed goes to the left end; in even-numbered steps the word that is longest among those not yet fixed goes to the right end. The number of letters is used for comparison. Input: playground notebook ink fish mango diamond landscape silver. What is the final arrangement?",
+   "options": [
+    "silver playground notebook mango landscape ink fish diamond",
+    "ink fish mango silver diamond notebook landscape playground",
+    "playground landscape notebook diamond silver mango fish ink",
+    "ink fish mango diamond silver notebook landscape playground"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Input: playground notebook ink fish mango diamond landscape silver | Step I: ink playground notebook fish mango diamond landscape silver | Step II: ink notebook fish mango diamond landscape silver playground | Step III: ink fish notebook mango diamond landscape silver playground | Step IV: ink fish notebook mango diamond silver landscape playground | Step V: ink fish mango notebook diamond silver landscape playground | Step VI: ink fish mango diamond silver notebook landscape playground | Step VII: ink fish mango silver diamond notebook landscape playground. The final arrangement is ink fish mango silver diamond notebook landscape playground.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "final-output-prediction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

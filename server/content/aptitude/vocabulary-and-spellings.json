@@ -1,0 +1,3257 @@
+{
+ "pattern": {
+  "title": "Vocabulary and Spellings",
+  "slug": "vocabulary-and-spellings",
+  "description": "Spelling and word-use.",
+  "order": 56,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "spelling-correction",
+    "title": "Spelling correction"
+   },
+   {
+    "slug": "commonly-confused-words",
+    "title": "Commonly confused words"
+   },
+   {
+    "slug": "word-formation-prefix-suffix",
+    "title": "Word formation (prefix/suffix)"
+   },
+   {
+    "slug": "verbal-analogies",
+    "title": "Verbal analogies"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to provide room or lodging for)",
+   "options": [
+    {
+     "text": "accomodate"
+    },
+    {
+     "text": "accomodete"
+    },
+    {
+     "text": "accommodate"
+    },
+    {
+     "text": "acommodate"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'accommodate'. It has double c and double m.",
+   "order": 1,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Remember: two c's, two m's."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: needed; essential)",
+   "options": [
+    {
+     "text": "necesary"
+    },
+    {
+     "text": "necessary"
+    },
+    {
+     "text": "neccesary"
+    },
+    {
+     "text": "neccessary"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'necessary'. One c, two s's.",
+   "order": 2,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One collar (c), two sleeves (s)."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to divide or set apart)",
+   "options": [
+    {
+     "text": "separate"
+    },
+    {
+     "text": "separete"
+    },
+    {
+     "text": "sepparate"
+    },
+    {
+     "text": "seperate"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'separate'. The middle syllable is 'par' (there is 'a rat' in sep-a-rat-e).",
+   "order": 3,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "There is 'a rat' in separate."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: without any doubt)",
+   "options": [
+    {
+     "text": "definitly"
+    },
+    {
+     "text": "defenitely"
+    },
+    {
+     "text": "definately"
+    },
+    {
+     "text": "definitely"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'definitely'. Built on 'definite' + -ly; the stem has 'finite' in it.",
+   "order": 4,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Think 'finite' inside definitely."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to make someone feel awkward)",
+   "options": [
+    {
+     "text": "embarass"
+    },
+    {
+     "text": "embarras"
+    },
+    {
+     "text": "emberrass"
+    },
+    {
+     "text": "embarrass"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'embarrass'. Double r and double s.",
+   "order": 5,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Two r's and two s's."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to get something sent to you)",
+   "options": [
+    {
+     "text": "recieve"
+    },
+    {
+     "text": "receve"
+    },
+    {
+     "text": "receive"
+    },
+    {
+     "text": "riceive"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'receive'. Rule: 'i before e, except after c'; after c the order is 'ei'.",
+   "order": 6,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "i before e except after c."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the surroundings in which we live)",
+   "options": [
+    {
+     "text": "environment"
+    },
+    {
+     "text": "envirnment"
+    },
+    {
+     "text": "enviroment"
+    },
+    {
+     "text": "environmant"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'environment'. It comes from 'environ' + -ment, so the 'n' before 'm' is kept.",
+   "order": 7,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the body that rules a country)",
+   "options": [
+    {
+     "text": "governmant"
+    },
+    {
+     "text": "government"
+    },
+    {
+     "text": "goverment"
+    },
+    {
+     "text": "govenment"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'government'. The word is 'govern' + -ment; the n before -ment is kept.",
+   "order": 8,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "govern + ment."
+  },
+  {
+   "questionText": "Which of the following words is spelt incorrectly? Hint: the correct form of the odd one means the day after today.",
+   "options": [
+    {
+     "text": "sorrow"
+    },
+    {
+     "text": "borrow"
+    },
+    {
+     "text": "morrow"
+    },
+    {
+     "text": "tommorow"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'tommorow' is a misspelling; the correct form is 'tomorrow'. Tomorrow has one m followed by double r.",
+   "order": 9,
+   "subPattern": "spelling-correction",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Spot the double/single letter or the ie/ei slip first."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: something that happens)",
+   "options": [
+    {
+     "text": "occurence"
+    },
+    {
+     "text": "occurrence"
+    },
+    {
+     "text": "ocurrence"
+    },
+    {
+     "text": "occurrance"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'occurrence'. Double c, double r, and the ending is -ence.",
+   "order": 10,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: something accomplished through effort)",
+   "options": [
+    {
+     "text": "acheivement"
+    },
+    {
+     "text": "acheivment"
+    },
+    {
+     "text": "achievement"
+    },
+    {
+     "text": "achievment"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'achievement'. After 'ch' the order is 'ie' (achieve) and the e of achieve is kept before -ment.",
+   "order": 11,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the inner sense of right and wrong)",
+   "options": [
+    {
+     "text": "conscience"
+    },
+    {
+     "text": "consience"
+    },
+    {
+     "text": "concience"
+    },
+    {
+     "text": "conscence"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'conscience'. The spelling is con-science, with 'sc' followed by 'ie'.",
+   "order": 12,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a special right or advantage)",
+   "options": [
+    {
+     "text": "privilage"
+    },
+    {
+     "text": "priviledge"
+    },
+    {
+     "text": "privelege"
+    },
+    {
+     "text": "privilege"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'privilege'. Ends in -lege; there is no d.",
+   "order": 13,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the act of keeping something in good condition)",
+   "options": [
+    {
+     "text": "maintenance"
+    },
+    {
+     "text": "maintanance"
+    },
+    {
+     "text": "maintainance"
+    },
+    {
+     "text": "maintenence"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'maintenance'. The verb is 'maintain' but the noun is 'maintenance' (main-ten-ance).",
+   "order": 14,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Maintain loses its 'ai' in the noun."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a period of one thousand years)",
+   "options": [
+    {
+     "text": "milenium"
+    },
+    {
+     "text": "milennium"
+    },
+    {
+     "text": "millennium"
+    },
+    {
+     "text": "millenium"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'millennium'. Double l and double n (from Latin mille + annus).",
+   "order": 15,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Two l's, two n's."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a set of written questions for a survey)",
+   "options": [
+    {
+     "text": "questionnair"
+    },
+    {
+     "text": "questionnaire"
+    },
+    {
+     "text": "quesionnaire"
+    },
+    {
+     "text": "questionaire"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'questionnaire'. It has double n and ends in -aire.",
+   "order": 16,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Two n's, ends -aire."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a group appointed for a particular task)",
+   "options": [
+    {
+     "text": "committe"
+    },
+    {
+     "text": "commitee"
+    },
+    {
+     "text": "committee"
+    },
+    {
+     "text": "comittee"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'committee'. Double m, double t, double e.",
+   "order": 17,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Two m's, two t's, two e's."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a regular pattern of beats)",
+   "options": [
+    {
+     "text": "rhythm"
+    },
+    {
+     "text": "rythm"
+    },
+    {
+     "text": "rhythem"
+    },
+    {
+     "text": "rhythym"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'rhythm'. Two h's and no vowel except y; it ends -thm.",
+   "order": 18,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rhythm Helps Your Two Hips Move."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a strong desire to know)",
+   "options": [
+    {
+     "text": "curiosty"
+    },
+    {
+     "text": "curiosity"
+    },
+    {
+     "text": "curiousity"
+    },
+    {
+     "text": "curosity"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'curiosity'. The adjective 'curious' loses 'ou' to 'curio' in the noun: curi-osity.",
+   "order": 19,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: to describe as larger than the truth)",
+   "options": [
+    {
+     "text": "exagerrate"
+    },
+    {
+     "text": "exaggarate"
+    },
+    {
+     "text": "exagerate"
+    },
+    {
+     "text": "exaggerate"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'exaggerate'. Double g, then -erate.",
+   "order": 20,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Two g's."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a formal promise or assurance)",
+   "options": [
+    {
+     "text": "guarantee"
+    },
+    {
+     "text": "gaurantee"
+    },
+    {
+     "text": "garantee"
+    },
+    {
+     "text": "guarentee"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'guarantee'. The order is g-u-a-r-a-n-t-e-e.",
+   "order": 21,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: the way a word is spoken)",
+   "options": [
+    {
+     "text": "pronounciation"
+    },
+    {
+     "text": "pronunciation"
+    },
+    {
+     "text": "pronunsiation"
+    },
+    {
+     "text": "pronunciaton"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'pronunciation'. The verb 'pronounce' drops the 'o': pronunciation.",
+   "order": 22,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Pronounce has 'ou', pronunciation does not."
+  },
+  {
+   "questionText": "Which of the following words is spelt incorrectly? Hint: the correct form of the odd one means not controlled by others.",
+   "options": [
+    {
+     "text": "consistent"
+    },
+    {
+     "text": "permanent"
+    },
+    {
+     "text": "independant"
+    },
+    {
+     "text": "excellent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'independant' is a misspelling; the correct form is 'independent'. The adjective ends in -ent, like the other three words which are correctly spelt.",
+   "order": 23,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Spot the double/single letter or the ie/ei slip first."
+  },
+  {
+   "questionText": "Which of the following words is spelt incorrectly? Hint: the correct form of the odd one means a particular time or event.",
+   "options": [
+    {
+     "text": "admission"
+    },
+    {
+     "text": "discussion"
+    },
+    {
+     "text": "expression"
+    },
+    {
+     "text": "occassion"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'occassion' is a misspelling; the correct form is 'occasion'. 'Occasion' has a double c but only one s.",
+   "order": 24,
+   "subPattern": "spelling-correction",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Spot the double/single letter or the ie/ei slip first."
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: administration by officials and fixed procedures)",
+   "options": [
+    {
+     "text": "buerocracy"
+    },
+    {
+     "text": "bureacracy"
+    },
+    {
+     "text": "bureaucracy"
+    },
+    {
+     "text": "beaurocracy"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'bureaucracy'. From French 'bureau' + -cracy, so it begins 'bureau-'.",
+   "order": 25,
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: steady persistence despite difficulty)",
+   "options": [
+    {
+     "text": "persaverance"
+    },
+    {
+     "text": "perserverance"
+    },
+    {
+     "text": "perseverence"
+    },
+    {
+     "text": "perseverance"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'perseverance'. The noun is 'persevere' + -ance, with the e of the verb dropped: perseverance (not -erence).",
+   "order": 26,
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a person one knows slightly)",
+   "options": [
+    {
+     "text": "acquaintance"
+    },
+    {
+     "text": "acquaintence"
+    },
+    {
+     "text": "acquaintanse"
+    },
+    {
+     "text": "aquaintance"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The correct spelling is 'acquaintance'. Starts with 'acq' (double-letter sound) and ends -ance.",
+   "order": 27,
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a system ranked by levels of authority)",
+   "options": [
+    {
+     "text": "heirarchy"
+    },
+    {
+     "text": "hierarchy"
+    },
+    {
+     "text": "hierachy"
+    },
+    {
+     "text": "hiearchy"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The correct spelling is 'hierarchy'. The word begins 'hier-' (from Greek hieros) followed by '-archy'.",
+   "order": 28,
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: a person who starts a business)",
+   "options": [
+    {
+     "text": "entrepeneur"
+    },
+    {
+     "text": "enterpreneur"
+    },
+    {
+     "text": "entrepreneur"
+    },
+    {
+     "text": "entreprenuer"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The correct spelling is 'entrepreneur'. French origin: entre- + -preneur.",
+   "order": 29,
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correctly spelt word. (meaning: made up of various kinds)",
+   "options": [
+    {
+     "text": "mispellaneous"
+    },
+    {
+     "text": "miscellanious"
+    },
+    {
+     "text": "miscelaneous"
+    },
+    {
+     "text": "miscellaneous"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The correct spelling is 'miscellaneous'. Double l, and the ending is -eous.",
+   "order": 30,
+   "subPattern": "spelling-correction",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The new fuel policy will ___ the prices of vegetables.",
+   "options": [
+    {
+     "text": "effet"
+    },
+    {
+     "text": "affect"
+    },
+    {
+     "text": "affort"
+    },
+    {
+     "text": "effect"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Affect' is a verb meaning to influence; 'effect' is normally a noun meaning result. Here a verb is needed.",
+   "order": 31,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Affect = Action (verb); Effect = End result (noun)."
+  },
+  {
+   "questionText": "Choose the right word: The ___ of the new medicine was visible within two days.",
+   "options": [
+    {
+     "text": "effect"
+    },
+    {
+     "text": "affects"
+    },
+    {
+     "text": "affected"
+    },
+    {
+     "text": "affect"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Effect' is the noun meaning result; the article 'The' before the blank signals a noun.",
+   "order": 32,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The ___ of the school addressed the assembly on Independence Day.",
+   "options": [
+    {
+     "text": "principle"
+    },
+    {
+     "text": "principel"
+    },
+    {
+     "text": "principals'"
+    },
+    {
+     "text": "principal"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Principal' means head of an institution (a person); 'principle' means a rule or belief.",
+   "order": 33,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "The princiPAL is your PAL."
+  },
+  {
+   "questionText": "Choose the right word: Honesty is a guiding ___ of his life.",
+   "options": [
+    {
+     "text": "principal"
+    },
+    {
+     "text": "principle"
+    },
+    {
+     "text": "principel"
+    },
+    {
+     "text": "principles"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Principle' is a rule or belief; the singular noun is needed after 'a guiding'.",
+   "order": 34,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Her teacher paid her a warm ___ on the project.",
+   "options": [
+    {
+     "text": "compliment"
+    },
+    {
+     "text": "complimant"
+    },
+    {
+     "text": "complament"
+    },
+    {
+     "text": "complement"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Compliment' means an expression of praise.",
+   "order": 35,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Be careful not to ___ your wallet in the crowded market.",
+   "options": [
+    {
+     "text": "loose"
+    },
+    {
+     "text": "losse"
+    },
+    {
+     "text": "lose"
+    },
+    {
+     "text": "loss"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Lose' is a verb meaning to misplace; 'loose' is an adjective meaning not tight.",
+   "order": 36,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Loose has a loose extra o."
+  },
+  {
+   "questionText": "Choose the right word: After the thali, we ordered ice cream for ___.",
+   "options": [
+    {
+     "text": "dessart"
+    },
+    {
+     "text": "desert"
+    },
+    {
+     "text": "dessert"
+    },
+    {
+     "text": "desssert"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Dessert' (double s) is the sweet course of a meal; 'desert' is dry land or to abandon.",
+   "order": 37,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Dessert has double s: Sweet Stuff."
+  },
+  {
+   "questionText": "Choose the right word: I am not sure ___ he will attend the meeting.",
+   "options": [
+    {
+     "text": "wheather"
+    },
+    {
+     "text": "whether"
+    },
+    {
+     "text": "weather"
+    },
+    {
+     "text": "wether"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Whether' introduces an alternative; 'weather' refers to the climate.",
+   "order": 38,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Everyone ___ Mohan has submitted the form.",
+   "options": [
+    {
+     "text": "excepts"
+    },
+    {
+     "text": "accept"
+    },
+    {
+     "text": "expect"
+    },
+    {
+     "text": "except"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Except' means excluding; 'accept' means to receive; 'expect' means to anticipate.",
+   "order": 39,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Ravi bought a notebook and pens from the ___ shop.",
+   "options": [
+    {
+     "text": "stationery"
+    },
+    {
+     "text": "stationairy"
+    },
+    {
+     "text": "stationary"
+    },
+    {
+     "text": "stationeries"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Stationery' means writing materials; 'stationary' means not moving.",
+   "order": 40,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "stationERy = pEnciLs, envelopES (E for envelope)."
+  },
+  {
+   "questionText": "Choose the right word: The train remained ___ at the signal for twenty minutes.",
+   "options": [
+    {
+     "text": "stationairy"
+    },
+    {
+     "text": "stationery"
+    },
+    {
+     "text": "stationnary"
+    },
+    {
+     "text": "stationary"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Stationary' (adjective) means not moving; 'stationery' means writing material.",
+   "order": 41,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: A glass of lassi is a perfect ___ to a spicy biryani.",
+   "options": [
+    {
+     "text": "compliment"
+    },
+    {
+     "text": "complement"
+    },
+    {
+     "text": "complimint"
+    },
+    {
+     "text": "complament"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Complement' means something that completes or goes well with another; 'compliment' means praise.",
+   "order": 42,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Complement completes; compliment is praise (i = I like it)."
+  },
+  {
+   "questionText": "Choose the right word: The city ___ approved the budget for new roads.",
+   "options": [
+    {
+     "text": "counsel"
+    },
+    {
+     "text": "counsil"
+    },
+    {
+     "text": "council"
+    },
+    {
+     "text": "consul"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Council' is an administrative body; 'counsel' means advice (or to advise); 'consul' is a diplomat.",
+   "order": 43,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The lawyer gave the young entrepreneur sound ___ before the deal.",
+   "options": [
+    {
+     "text": "counsel"
+    },
+    {
+     "text": "counsil"
+    },
+    {
+     "text": "consul"
+    },
+    {
+     "text": "council"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Counsel' means advice; the lawyer gives advice, not a governing body.",
+   "order": 44,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Of the two proposals, the ___ is cheaper.",
+   "options": [
+    {
+     "text": "lattar"
+    },
+    {
+     "text": "latest"
+    },
+    {
+     "text": "later"
+    },
+    {
+     "text": "latter"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Latter' refers to the second of two things just mentioned; 'later' refers to time.",
+   "order": 45,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Please ___ that all the windows are closed before you leave.",
+   "options": [
+    {
+     "text": "ensue"
+    },
+    {
+     "text": "insure"
+    },
+    {
+     "text": "ensure"
+    },
+    {
+     "text": "assure"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Ensure' means to make certain; 'insure' means to cover with insurance; 'assure' is said to a person.",
+   "order": 46,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Mr Sharma wants to ___ his new car against theft and fire.",
+   "options": [
+    {
+     "text": "assue"
+    },
+    {
+     "text": "insure"
+    },
+    {
+     "text": "ensure"
+    },
+    {
+     "text": "ensue"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Insure' means to arrange financial cover through an insurance policy.",
+   "order": 47,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The engineers had to ___ a new method to cut costs.",
+   "options": [
+    {
+     "text": "devise"
+    },
+    {
+     "text": "device"
+    },
+    {
+     "text": "devize"
+    },
+    {
+     "text": "divise"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Devise' is a verb meaning to plan or invent; 'device' is a noun meaning a gadget.",
+   "order": 48,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Verb has S (devise), noun has C (device)."
+  },
+  {
+   "questionText": "Choose the right word: The construction ___ was fenced to keep people away.",
+   "options": [
+    {
+     "text": "cite"
+    },
+    {
+     "text": "site's"
+    },
+    {
+     "text": "sight"
+    },
+    {
+     "text": "site"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Site' means a place; 'sight' is vision; 'cite' means to quote.",
+   "order": 49,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: ___ English, Lakshmi speaks Tamil and Telugu fluently.",
+   "options": [
+    {
+     "text": "By side"
+    },
+    {
+     "text": "Besides"
+    },
+    {
+     "text": "Beside"
+    },
+    {
+     "text": "Besides of"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Besides' means in addition to; 'beside' means next to.",
+   "order": 50,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: In the calendar, Monday ___ Tuesday.",
+   "options": [
+    {
+     "text": "precedes"
+    },
+    {
+     "text": "procedes"
+    },
+    {
+     "text": "proceeds"
+    },
+    {
+     "text": "preceeds"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Precede' means to come before; 'proceed' means to go forward.",
+   "order": 51,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Be ___ while discussing salaries with your colleagues.",
+   "options": [
+    {
+     "text": "discret"
+    },
+    {
+     "text": "discrete"
+    },
+    {
+     "text": "discreet"
+    },
+    {
+     "text": "discreat"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Discreet' means careful and tactful; 'discrete' means separate.",
+   "order": 52,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The ___ department handles recruitment and leave.",
+   "options": [
+    {
+     "text": "personal"
+    },
+    {
+     "text": "personals"
+    },
+    {
+     "text": "personel"
+    },
+    {
+     "text": "personnel"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Personnel' means the staff of an organisation; 'personal' means private.",
+   "order": 53,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Personnel has double n: staff Numbers."
+  },
+  {
+   "questionText": "Choose the right word: The detective tried to ___ the truth from the suspect by gentle questioning.",
+   "options": [
+    {
+     "text": "elicit"
+    },
+    {
+     "text": "elisit"
+    },
+    {
+     "text": "ellicit"
+    },
+    {
+     "text": "illicit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Elicit' is a verb meaning to draw out; 'illicit' is an adjective meaning illegal.",
+   "order": 54,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The police seized a large stock of ___ liquor.",
+   "options": [
+    {
+     "text": "elicit"
+    },
+    {
+     "text": "illicit"
+    },
+    {
+     "text": "illisit"
+    },
+    {
+     "text": "ellicit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Illicit' (adjective) means unlawful; the blank needs an adjective before 'liquor'.",
+   "order": 55,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: A/An ___ scientist from ISRO inaugurated the exhibition.",
+   "options": [
+    {
+     "text": "imminent"
+    },
+    {
+     "text": "emminent"
+    },
+    {
+     "text": "eminent"
+    },
+    {
+     "text": "immanent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Eminent' means famous and respected; 'imminent' means about to happen.",
+   "order": 56,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Dark clouds show that a thunderstorm is ___.",
+   "options": [
+    {
+     "text": "iminent"
+    },
+    {
+     "text": "imminent"
+    },
+    {
+     "text": "immanent"
+    },
+    {
+     "text": "eminent"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Imminent' means about to happen very soon.",
+   "order": 57,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Candidates ___ door to door for votes before the election.",
+   "options": [
+    {
+     "text": "canvess"
+    },
+    {
+     "text": "canvas"
+    },
+    {
+     "text": "canvass"
+    },
+    {
+     "text": "canvasse"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Canvass' is a verb meaning to solicit votes; 'canvas' is a coarse cloth.",
+   "order": 58,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The bus to Madurai leaves on ___ days, that is, every second day.",
+   "options": [
+    {
+     "text": "alternate"
+    },
+    {
+     "text": "alternet"
+    },
+    {
+     "text": "alternative"
+    },
+    {
+     "text": "alternating"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Alternate' means every second one; 'alternative' means another possible choice.",
+   "order": 59,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: She is writing a ___ novel set in the Chola period.",
+   "options": [
+    {
+     "text": "historian"
+    },
+    {
+     "text": "history"
+    },
+    {
+     "text": "historic"
+    },
+    {
+     "text": "historical"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Historical' means connected with history; 'historic' means important enough to be remembered.",
+   "order": 60,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: Yesterday Meena ___ on the sofa for an hour, reading.",
+   "options": [
+    {
+     "text": "lay"
+    },
+    {
+     "text": "laid"
+    },
+    {
+     "text": "lied"
+    },
+    {
+     "text": "layed"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Lie' (to recline) has the past tense 'lay'; 'laid' is the past of 'lay' (to put), which needs an object.",
+   "order": 61,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the right word: The family has ___ the loss with great courage.",
+   "options": [
+    {
+     "text": "bourne"
+    },
+    {
+     "text": "borne"
+    },
+    {
+     "text": "born"
+    },
+    {
+     "text": "boren"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Borne' is the past participle of 'bear' meaning to endure; 'born' relates to birth.",
+   "order": 62,
+   "subPattern": "commonly-confused-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct opposite of 'legal' using a prefix.",
+   "options": [
+    {
+     "text": "unlegal"
+    },
+    {
+     "text": "inlegal"
+    },
+    {
+     "text": "illegal"
+    },
+    {
+     "text": "dislegal"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before a word beginning with 'l', the negative prefix in- becomes il-: illegal.",
+   "order": 63,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "in- before l becomes il-."
+  },
+  {
+   "questionText": "Choose the correct opposite of 'regular' using a prefix.",
+   "options": [
+    {
+     "text": "unregular"
+    },
+    {
+     "text": "disregular"
+    },
+    {
+     "text": "inregular"
+    },
+    {
+     "text": "irregular"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before a word beginning with 'r', in- becomes ir-: irregular.",
+   "order": 64,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct opposite of 'possible' using a prefix.",
+   "options": [
+    {
+     "text": "inpossible"
+    },
+    {
+     "text": "unpossible"
+    },
+    {
+     "text": "impossible"
+    },
+    {
+     "text": "dispossible"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before words beginning with p (and b, m), in- becomes im-: impossible.",
+   "order": 65,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "in- becomes im- before p, b, m."
+  },
+  {
+   "questionText": "Choose the correct opposite of 'mortal' using a prefix.",
+   "options": [
+    {
+     "text": "inmortal"
+    },
+    {
+     "text": "immortal"
+    },
+    {
+     "text": "dismortal"
+    },
+    {
+     "text": "unmortal"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before m, in- becomes im-: immortal.",
+   "order": 66,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct opposite of 'happy' using a prefix.",
+   "options": [
+    {
+     "text": "nonhappy"
+    },
+    {
+     "text": "inhappy"
+    },
+    {
+     "text": "dishappy"
+    },
+    {
+     "text": "unhappy"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The prefix un- is used with the native word 'happy'.",
+   "order": 67,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'beauty'.",
+   "options": [
+    {
+     "text": "beautiful"
+    },
+    {
+     "text": "beautyful"
+    },
+    {
+     "text": "beautious"
+    },
+    {
+     "text": "beautical"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The suffix -ful replaces y with i after a consonant: beauty becomes beautiful.",
+   "order": 68,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Consonant + y changes to i before -ful."
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'danger'.",
+   "options": [
+    {
+     "text": "dangery"
+    },
+    {
+     "text": "dangerish"
+    },
+    {
+     "text": "dangerous"
+    },
+    {
+     "text": "dangerful"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The suffix -ous forms the adjective: dangerous.",
+   "order": 69,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Add a suffix to 'hope' to mean 'without hope'.",
+   "options": [
+    {
+     "text": "hopeles"
+    },
+    {
+     "text": "hopeless"
+    },
+    {
+     "text": "hopeness"
+    },
+    {
+     "text": "hopeful"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The suffix -less means without; the silent e of 'hope' is kept before the consonant l.",
+   "order": 70,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct word meaning 'to understand wrongly'.",
+   "options": [
+    {
+     "text": "misunderstand"
+    },
+    {
+     "text": "disunderstand"
+    },
+    {
+     "text": "dysunderstand"
+    },
+    {
+     "text": "ununderstand"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The prefix mis- means wrongly: misunderstand.",
+   "order": 71,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which prefix means 'against'?",
+   "options": [
+    {
+     "text": "semi-"
+    },
+    {
+     "text": "pre-"
+    },
+    {
+     "text": "sub-"
+    },
+    {
+     "text": "anti-"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Anti- means against (anti-corruption); semi- is half, pre- is before, sub- is under.",
+   "order": 72,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which prefix means 'half'?",
+   "options": [
+    {
+     "text": "anti-"
+    },
+    {
+     "text": "ultra-"
+    },
+    {
+     "text": "tri-"
+    },
+    {
+     "text": "semi-"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Semi- means half, as in semicircle.",
+   "order": 73,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun form of 'strong'.",
+   "options": [
+    {
+     "text": "strength"
+    },
+    {
+     "text": "strengthy"
+    },
+    {
+     "text": "strongth"
+    },
+    {
+     "text": "strongness"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The noun form of the adjective 'strong' is 'strength' (with the g and th).",
+   "order": 74,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun formed from the adjective 'free'.",
+   "options": [
+    {
+     "text": "freeness"
+    },
+    {
+     "text": "freeship"
+    },
+    {
+     "text": "freedom"
+    },
+    {
+     "text": "freedomness"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The suffix -dom forms a noun meaning state or condition: freedom.",
+   "order": 75,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct opposite of 'appear' using a prefix.",
+   "options": [
+    {
+     "text": "inappear"
+    },
+    {
+     "text": "disappear"
+    },
+    {
+     "text": "misappear"
+    },
+    {
+     "text": "unappear"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The prefix dis- reverses the verb: disappear.",
+   "order": 76,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun formed from 'friend' meaning 'the state of being friends'.",
+   "options": [
+    {
+     "text": "friendship"
+    },
+    {
+     "text": "friendity"
+    },
+    {
+     "text": "friendment"
+    },
+    {
+     "text": "friendhood"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The suffix -ship forms nouns of state or relation: friendship.",
+   "order": 77,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the correct opposite of 'responsible' using a prefix.",
+   "options": [
+    {
+     "text": "unresponsible"
+    },
+    {
+     "text": "disresponsible"
+    },
+    {
+     "text": "irresponsible"
+    },
+    {
+     "text": "inresponsible"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before r, in- becomes ir-, giving irresponsible.",
+   "order": 78,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun form of the verb 'decide'.",
+   "options": [
+    {
+     "text": "decisement"
+    },
+    {
+     "text": "decideion"
+    },
+    {
+     "text": "decidation"
+    },
+    {
+     "text": "decision"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Verbs ending in -de often change to -sion in the noun: decide becomes decision.",
+   "order": 79,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun form of the verb 'succeed'.",
+   "options": [
+    {
+     "text": "succession"
+    },
+    {
+     "text": "success"
+    },
+    {
+     "text": "succeedance"
+    },
+    {
+     "text": "succeedment"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The noun meaning achievement is 'success'; 'succession' means a following in order.",
+   "order": 80,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which prefix means 'across' or 'beyond' as in 'transport'?",
+   "options": [
+    {
+     "text": "sub-"
+    },
+    {
+     "text": "inter-"
+    },
+    {
+     "text": "extra-"
+    },
+    {
+     "text": "trans-"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Trans- means across, as in transport and transfer.",
+   "order": 81,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which prefix means 'between' as in 'international'?",
+   "options": [
+    {
+     "text": "inter-"
+    },
+    {
+     "text": "trans-"
+    },
+    {
+     "text": "super-"
+    },
+    {
+     "text": "intra-"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inter- means between or among; intra- means within.",
+   "order": 82,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun form of 'long'.",
+   "options": [
+    {
+     "text": "lengthy"
+    },
+    {
+     "text": "longth"
+    },
+    {
+     "text": "length"
+    },
+    {
+     "text": "longness"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The noun for how long something is, is 'length'; 'lengthy' is an adjective.",
+   "order": 83,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct verb formed from the adjective 'large' with the prefix en-.",
+   "options": [
+    {
+     "text": "dislarge"
+    },
+    {
+     "text": "enlarge"
+    },
+    {
+     "text": "inlarge"
+    },
+    {
+     "text": "unlarge"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The prefix en- means 'to make'; enlarge means to make larger.",
+   "order": 84,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct adverb formed from 'true'.",
+   "options": [
+    {
+     "text": "trueley"
+    },
+    {
+     "text": "truely"
+    },
+    {
+     "text": "truly"
+    },
+    {
+     "text": "truley"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The final e of 'true' is dropped before -ly: truly.",
+   "order": 85,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "true + ly = truly (drops e)."
+  },
+  {
+   "questionText": "Choose the correct noun formed from the adjective 'absent'.",
+   "options": [
+    {
+     "text": "absence"
+    },
+    {
+     "text": "absency"
+    },
+    {
+     "text": "absentness"
+    },
+    {
+     "text": "absentance"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Adjectives ending in -ent usually form nouns in -ence: absence.",
+   "order": 86,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun formed from the verb 'prove'.",
+   "options": [
+    {
+     "text": "prove-ment"
+    },
+    {
+     "text": "provance"
+    },
+    {
+     "text": "provision"
+    },
+    {
+     "text": "proof"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The noun of 'prove' is 'proof'; the v changes to f.",
+   "order": 87,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct noun formed from the verb 'maintain'.",
+   "options": [
+    {
+     "text": "maintainance"
+    },
+    {
+     "text": "maintenance"
+    },
+    {
+     "text": "maintention"
+    },
+    {
+     "text": "maintainment"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The standard noun is 'maintenance'.",
+   "order": 88,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the prefix which means 'bad' or 'badly' as in 'malfunction'.",
+   "options": [
+    {
+     "text": "pro-"
+    },
+    {
+     "text": "mal-"
+    },
+    {
+     "text": "neo-"
+    },
+    {
+     "text": "hyper-"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mal- means bad; malnutrition is bad nutrition.",
+   "order": 89,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the opposite of 'visible' using a prefix.",
+   "options": [
+    {
+     "text": "imvisible"
+    },
+    {
+     "text": "disvisible"
+    },
+    {
+     "text": "unvisible"
+    },
+    {
+     "text": "invisible"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Visible takes in-, giving invisible; im- is used only before b, m, p.",
+   "order": 90,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'courage'.",
+   "options": [
+    {
+     "text": "couragous"
+    },
+    {
+     "text": "couragious"
+    },
+    {
+     "text": "courageous"
+    },
+    {
+     "text": "courageful"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The e of courage is kept before -ous so that g stays soft: courageous.",
+   "order": 91,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'envy'.",
+   "options": [
+    {
+     "text": "envious"
+    },
+    {
+     "text": "envyous"
+    },
+    {
+     "text": "enviable"
+    },
+    {
+     "text": "envyful"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Noun ending in y changes y to i before -ous: envious. 'Enviable' means worth envying.",
+   "order": 92,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "How many affixes (prefixes plus suffixes) does the word 'unforgettable' have?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "un- (prefix) + forget + -able (suffix), with the t doubled in spelling; so there are two affixes.",
+   "order": 93,
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Doctor : Hospital :: Teacher : ?",
+   "options": [
+    {
+     "text": "Student"
+    },
+    {
+     "text": "Chalk"
+    },
+    {
+     "text": "School"
+    },
+    {
+     "text": "Book"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A doctor works in a hospital; a teacher works in a school (worker : workplace).",
+   "order": 94,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Hot : Cold :: Day : ?",
+   "options": [
+    {
+     "text": "Night"
+    },
+    {
+     "text": "Morning"
+    },
+    {
+     "text": "Sun"
+    },
+    {
+     "text": "Light"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hot and cold are opposites; day and night are opposites.",
+   "order": 95,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Pen : Write :: Knife : ?",
+   "options": [
+    {
+     "text": "Handle"
+    },
+    {
+     "text": "Steel"
+    },
+    {
+     "text": "Sharpen"
+    },
+    {
+     "text": "Cut"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A pen is used to write; a knife is used to cut (tool : function).",
+   "order": 96,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Bird : Nest :: Bee : ?",
+   "options": [
+    {
+     "text": "Hive"
+    },
+    {
+     "text": "Sting"
+    },
+    {
+     "text": "Honey"
+    },
+    {
+     "text": "Flower"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A nest is the home of a bird; a hive is the home of a bee.",
+   "order": 97,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Calf : Cow :: Foal : ?",
+   "options": [
+    {
+     "text": "Dog"
+    },
+    {
+     "text": "Sheep"
+    },
+    {
+     "text": "Horse"
+    },
+    {
+     "text": "Goat"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A calf is the young of a cow; a foal is the young of a horse.",
+   "order": 98,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Eye : See :: Ear : ?",
+   "options": [
+    {
+     "text": "Sound"
+    },
+    {
+     "text": "Hear"
+    },
+    {
+     "text": "Listen"
+    },
+    {
+     "text": "Speak"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The eye is the organ for seeing; the ear is the organ for hearing.",
+   "order": 99,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Tailor : Cloth :: Carpenter : ?",
+   "options": [
+    {
+     "text": "Hammer"
+    },
+    {
+     "text": "Furniture"
+    },
+    {
+     "text": "Nails"
+    },
+    {
+     "text": "Wood"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A tailor works on cloth; a carpenter works on wood (worker : raw material).",
+   "order": 100,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Dentist : Teeth :: Optician : ?",
+   "options": [
+    {
+     "text": "Eyes"
+    },
+    {
+     "text": "Skin"
+    },
+    {
+     "text": "Bones"
+    },
+    {
+     "text": "Ears"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A dentist treats teeth; an optician takes care of eyes.",
+   "order": 101,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Brave : Cowardly :: Generous : ?",
+   "options": [
+    {
+     "text": "Kind"
+    },
+    {
+     "text": "Miserly"
+    },
+    {
+     "text": "Polite"
+    },
+    {
+     "text": "Rich"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Brave and cowardly are antonyms; generous and miserly are antonyms.",
+   "order": 102,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Zoology : Animals :: Botany : ?",
+   "options": [
+    {
+     "text": "Insects"
+    },
+    {
+     "text": "Stars"
+    },
+    {
+     "text": "Rocks"
+    },
+    {
+     "text": "Plants"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Zoology is the study of animals; botany is the study of plants.",
+   "order": 103,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Sculptor : Statue :: Poet : ?",
+   "options": [
+    {
+     "text": "Pen"
+    },
+    {
+     "text": "Audience"
+    },
+    {
+     "text": "Poem"
+    },
+    {
+     "text": "Poetry book"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A sculptor creates a statue; a poet creates a poem.",
+   "order": 104,
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Lion : Pride :: Wolf : ?",
+   "options": [
+    {
+     "text": "Swarm"
+    },
+    {
+     "text": "Flock"
+    },
+    {
+     "text": "Pack"
+    },
+    {
+     "text": "Herd"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A group of lions is a pride; a group of wolves is a pack.",
+   "order": 105,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Author : Book :: Composer : ?",
+   "options": [
+    {
+     "text": "Orchestra"
+    },
+    {
+     "text": "Notation"
+    },
+    {
+     "text": "Stage"
+    },
+    {
+     "text": "Symphony"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An author creates a book; a composer creates a symphony (creator : creation).",
+   "order": 106,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Thermometer : Temperature :: Barometer : ?",
+   "options": [
+    {
+     "text": "Atmospheric pressure"
+    },
+    {
+     "text": "Wind speed"
+    },
+    {
+     "text": "Humidity"
+    },
+    {
+     "text": "Rainfall"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A thermometer measures temperature; a barometer measures atmospheric pressure.",
+   "order": 107,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Hunger : Food :: Thirst : ?",
+   "options": [
+    {
+     "text": "Drink"
+    },
+    {
+     "text": "Water"
+    },
+    {
+     "text": "Hot"
+    },
+    {
+     "text": "Sleep"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hunger is satisfied by food; thirst is satisfied by water.",
+   "order": 108,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Soldier : Army :: Player : ?",
+   "options": [
+    {
+     "text": "Team"
+    },
+    {
+     "text": "Coach"
+    },
+    {
+     "text": "Match"
+    },
+    {
+     "text": "Ground"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A soldier is a member of an army; a player is a member of a team.",
+   "order": 109,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Lock : Key :: Computer : ?",
+   "options": [
+    {
+     "text": "Keyboard"
+    },
+    {
+     "text": "Screen"
+    },
+    {
+     "text": "Password"
+    },
+    {
+     "text": "Mouse"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A key opens a lock; a password opens (gives access to) a computer.",
+   "order": 110,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Rain : Flood :: Spark : ?",
+   "options": [
+    {
+     "text": "Smoke"
+    },
+    {
+     "text": "Fire"
+    },
+    {
+     "text": "Match"
+    },
+    {
+     "text": "Heat"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Excessive rain can cause a flood; a spark can cause a fire (cause : effect).",
+   "order": 111,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Kilogram : Mass :: Metre : ?",
+   "options": [
+    {
+     "text": "Distance"
+    },
+    {
+     "text": "Weight"
+    },
+    {
+     "text": "Area"
+    },
+    {
+     "text": "Length"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kilogram is a unit of mass; metre is a unit of length.",
+   "order": 112,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Pilot : Aeroplane :: Mahout : ?",
+   "options": [
+    {
+     "text": "Camel"
+    },
+    {
+     "text": "Horse"
+    },
+    {
+     "text": "Elephant"
+    },
+    {
+     "text": "Jungle"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A pilot controls an aeroplane; a mahout controls an elephant.",
+   "order": 113,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Big : Huge :: Small : ?",
+   "options": [
+    {
+     "text": "Short"
+    },
+    {
+     "text": "Narrow"
+    },
+    {
+     "text": "Light"
+    },
+    {
+     "text": "Tiny"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Huge is a stronger degree of big; tiny is a stronger degree of small.",
+   "order": 114,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Seed : Plant :: Egg : ?",
+   "options": [
+    {
+     "text": "Shell"
+    },
+    {
+     "text": "Bird"
+    },
+    {
+     "text": "Nest"
+    },
+    {
+     "text": "Feather"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A seed grows into a plant; a bird comes out of an egg after hatching (origin : product).",
+   "order": 115,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Scissors : Cut :: Needle : ?",
+   "options": [
+    {
+     "text": "Sew"
+    },
+    {
+     "text": "Cloth"
+    },
+    {
+     "text": "Pierce"
+    },
+    {
+     "text": "Thread"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Scissors are used to cut; a needle is used to sew. (Pierce is only a part of what a needle does.)",
+   "order": 116,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Mason : Bricks :: Potter : ?",
+   "options": [
+    {
+     "text": "Wheel"
+    },
+    {
+     "text": "Pot"
+    },
+    {
+     "text": "Kiln"
+    },
+    {
+     "text": "Clay"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A mason works with bricks; a potter works with clay (worker : material).",
+   "order": 117,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Chapter : Book :: Scene : ?",
+   "options": [
+    {
+     "text": "Dialogue"
+    },
+    {
+     "text": "Stage"
+    },
+    {
+     "text": "Play"
+    },
+    {
+     "text": "Actor"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A chapter is a division of a book; a scene is a division of a play (part : whole).",
+   "order": 118,
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Ornithology : Birds :: Entomology : ?",
+   "options": [
+    {
+     "text": "Insects"
+    },
+    {
+     "text": "Fossils"
+    },
+    {
+     "text": "Reptiles"
+    },
+    {
+     "text": "Fishes"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ornithology is the study of birds; entomology is the study of insects.",
+   "order": 119,
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Warm : Scorching :: Cool : ?",
+   "options": [
+    {
+     "text": "Cold-hearted"
+    },
+    {
+     "text": "Freezing"
+    },
+    {
+     "text": "Mild"
+    },
+    {
+     "text": "Pleasant"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Scorching is an extreme of warm; freezing is an extreme of cool.",
+   "order": 120,
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Like : Love :: Dislike : ?",
+   "options": [
+    {
+     "text": "Disgrace"
+    },
+    {
+     "text": "Anger"
+    },
+    {
+     "text": "Envy"
+    },
+    {
+     "text": "Hatred"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Love is an intense form of like; hatred is an intense form of dislike.",
+   "order": 121,
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Cartographer : Maps :: Lexicographer : ?",
+   "options": [
+    {
+     "text": "Novels"
+    },
+    {
+     "text": "Dictionaries"
+    },
+    {
+     "text": "Languages"
+    },
+    {
+     "text": "Grammar"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A cartographer compiles maps; a lexicographer compiles dictionaries.",
+   "order": 122,
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Orphan : Parents :: Widow : ?",
+   "options": [
+    {
+     "text": "Wealth"
+    },
+    {
+     "text": "Wedding"
+    },
+    {
+     "text": "Husband"
+    },
+    {
+     "text": "Children"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An orphan has lost parents; a widow has lost her husband.",
+   "order": 123,
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  },
+  {
+   "questionText": "Tributary : River :: Branch : ?",
+   "options": [
+    {
+     "text": "Tree"
+    },
+    {
+     "text": "Leaf"
+    },
+    {
+     "text": "Forest"
+    },
+    {
+     "text": "Root"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A tributary is a smaller stream that joins a river; a branch is a part that grows out of a tree.",
+   "order": 124,
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Find the exact relation between the first pair, then apply it."
+  }
+ ]
+}

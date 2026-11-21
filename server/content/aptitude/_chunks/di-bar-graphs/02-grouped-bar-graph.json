@@ -1,0 +1,1666 @@
+{
+ "sets": [
+  {
+   "id": "di-bar-graphs-s012",
+   "type": "bar",
+   "title": "Board exam results of schools (Number of students); grouped bars: Appeared vs Passed",
+   "chart": {
+    "xLabel": "School",
+    "yLabel": "Number of students",
+    "series": [
+     {
+      "name": "Appeared",
+      "data": [
+       {
+        "label": "Vidya Mandir",
+        "value": 120
+       },
+       {
+        "label": "Tagore Vidyalaya",
+        "value": 270
+       },
+       {
+        "label": "Kalam Academy",
+        "value": 100
+       },
+       {
+        "label": "Nehru School",
+        "value": 190
+       }
+      ]
+     },
+     {
+      "name": "Passed",
+      "data": [
+       {
+        "label": "Vidya Mandir",
+        "value": 90
+       },
+       {
+        "label": "Tagore Vidyalaya",
+        "value": 130
+       },
+       {
+        "label": "Kalam Academy",
+        "value": 50
+       },
+       {
+        "label": "Nehru School",
+        "value": 130
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s013",
+   "type": "bar",
+   "title": "Students placed from engineering colleges (Students placed); grouped bars: 2022 vs 2023",
+   "chart": {
+    "xLabel": "College",
+    "yLabel": "Students placed",
+    "series": [
+     {
+      "name": "2022",
+      "data": [
+       {
+        "label": "PSG",
+        "value": 320
+       },
+       {
+        "label": "CIT",
+        "value": 310
+       },
+       {
+        "label": "Kumaraguru",
+        "value": 480
+       },
+       {
+        "label": "Thiagarajar",
+        "value": 170
+       },
+       {
+        "label": "SRM",
+        "value": 250
+       },
+       {
+        "label": "VIT",
+        "value": 420
+       }
+      ]
+     },
+     {
+      "name": "2023",
+      "data": [
+       {
+        "label": "PSG",
+        "value": 290
+       },
+       {
+        "label": "CIT",
+        "value": 310
+       },
+       {
+        "label": "Kumaraguru",
+        "value": 430
+       },
+       {
+        "label": "Thiagarajar",
+        "value": 70
+       },
+       {
+        "label": "SRM",
+        "value": 250
+       },
+       {
+        "label": "VIT",
+        "value": 420
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s014",
+   "type": "bar",
+   "title": "Cars sold by a dealer (Cars sold (hundreds)); grouped bars: Hatchback vs SUV vs Sedan",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Cars sold (hundreds)",
+    "series": [
+     {
+      "name": "Hatchback",
+      "data": [
+       {
+        "label": "April",
+        "value": 104
+       },
+       {
+        "label": "May",
+        "value": 36
+       },
+       {
+        "label": "June",
+        "value": 92
+       },
+       {
+        "label": "July",
+        "value": 100
+       },
+       {
+        "label": "August",
+        "value": 24
+       },
+       {
+        "label": "September",
+        "value": 16
+       }
+      ]
+     },
+     {
+      "name": "SUV",
+      "data": [
+       {
+        "label": "April",
+        "value": 36
+       },
+       {
+        "label": "May",
+        "value": 64
+       },
+       {
+        "label": "June",
+        "value": 24
+       },
+       {
+        "label": "July",
+        "value": 116
+       },
+       {
+        "label": "August",
+        "value": 28
+       },
+       {
+        "label": "September",
+        "value": 84
+       }
+      ]
+     },
+     {
+      "name": "Sedan",
+      "data": [
+       {
+        "label": "April",
+        "value": 68
+       },
+       {
+        "label": "May",
+        "value": 16
+       },
+       {
+        "label": "June",
+        "value": 120
+       },
+       {
+        "label": "July",
+        "value": 24
+       },
+       {
+        "label": "August",
+        "value": 72
+       },
+       {
+        "label": "September",
+        "value": 100
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s015",
+   "type": "bar",
+   "title": "Net profit of companies (Net profit (₹ crore)); grouped bars: Company P vs Company Q",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Net profit (₹ crore)",
+    "series": [
+     {
+      "name": "Company P",
+      "data": [
+       {
+        "label": "2018",
+        "value": 155
+       },
+       {
+        "label": "2019",
+        "value": 105
+       },
+       {
+        "label": "2020",
+        "value": 75
+       },
+       {
+        "label": "2021",
+        "value": 30
+       }
+      ]
+     },
+     {
+      "name": "Company Q",
+      "data": [
+       {
+        "label": "2018",
+        "value": 40
+       },
+       {
+        "label": "2019",
+        "value": 80
+       },
+       {
+        "label": "2020",
+        "value": 130
+       },
+       {
+        "label": "2021",
+        "value": 55
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s016",
+   "type": "bar",
+   "title": "Tourists visiting hill stations in a year (Visitors (thousands)); grouped bars: Domestic vs Foreign",
+   "chart": {
+    "xLabel": "Hill station",
+    "yLabel": "Visitors (thousands)",
+    "series": [
+     {
+      "name": "Domestic",
+      "data": [
+       {
+        "label": "Wayanad",
+        "value": 170
+       },
+       {
+        "label": "Coorg",
+        "value": 110
+       },
+       {
+        "label": "Ooty",
+        "value": 100
+       },
+       {
+        "label": "Munnar",
+        "value": 100
+       },
+       {
+        "label": "Kodaikanal",
+        "value": 60
+       }
+      ]
+     },
+     {
+      "name": "Foreign",
+      "data": [
+       {
+        "label": "Wayanad",
+        "value": 110
+       },
+       {
+        "label": "Coorg",
+        "value": 50
+       },
+       {
+        "label": "Ooty",
+        "value": 240
+       },
+       {
+        "label": "Munnar",
+        "value": 210
+       },
+       {
+        "label": "Kodaikanal",
+        "value": 80
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s017",
+   "type": "bar",
+   "title": "Patients treated in a hospital in a month (Patients treated); grouped bars: Male vs Female",
+   "chart": {
+    "xLabel": "Department",
+    "yLabel": "Patients treated",
+    "series": [
+     {
+      "name": "Male",
+      "data": [
+       {
+        "label": "Paediatrics",
+        "value": 160
+       },
+       {
+        "label": "Cardiology",
+        "value": 440
+       },
+       {
+        "label": "Neurology",
+        "value": 400
+       },
+       {
+        "label": "Dermatology",
+        "value": 280
+       },
+       {
+        "label": "ENT",
+        "value": 220
+       }
+      ]
+     },
+     {
+      "name": "Female",
+      "data": [
+       {
+        "label": "Paediatrics",
+        "value": 370
+       },
+       {
+        "label": "Cardiology",
+        "value": 210
+       },
+       {
+        "label": "Neurology",
+        "value": 170
+       },
+       {
+        "label": "Dermatology",
+        "value": 210
+       },
+       {
+        "label": "ENT",
+        "value": 220
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s018",
+   "type": "bar",
+   "title": "Deposits collected by branches of a bank (Deposits (₹ crore)); grouped bars: Savings vs Current",
+   "chart": {
+    "xLabel": "Branch city",
+    "yLabel": "Deposits (₹ crore)",
+    "series": [
+     {
+      "name": "Savings",
+      "data": [
+       {
+        "label": "Chennai",
+        "value": 390
+       },
+       {
+        "label": "Kochi",
+        "value": 270
+       },
+       {
+        "label": "Mumbai",
+        "value": 40
+       },
+       {
+        "label": "Jaipur",
+        "value": 370
+       }
+      ]
+     },
+     {
+      "name": "Current",
+      "data": [
+       {
+        "label": "Chennai",
+        "value": 240
+       },
+       {
+        "label": "Kochi",
+        "value": 50
+       },
+       {
+        "label": "Mumbai",
+        "value": 110
+       },
+       {
+        "label": "Jaipur",
+        "value": 360
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s019",
+   "type": "bar",
+   "title": "Monthly rainfall recorded (Rainfall (mm)); grouped bars: Kochi vs Mumbai",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Rainfall (mm)",
+    "series": [
+     {
+      "name": "Kochi",
+      "data": [
+       {
+        "label": "July",
+        "value": 110
+       },
+       {
+        "label": "August",
+        "value": 100
+       },
+       {
+        "label": "September",
+        "value": 320
+       },
+       {
+        "label": "October",
+        "value": 250
+       }
+      ]
+     },
+     {
+      "name": "Mumbai",
+      "data": [
+       {
+        "label": "July",
+        "value": 150
+       },
+       {
+        "label": "August",
+        "value": 140
+       },
+       {
+        "label": "September",
+        "value": 340
+       },
+       {
+        "label": "October",
+        "value": 220
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s020",
+   "type": "bar",
+   "title": "Employees of a manufacturing company by department (Employees); grouped bars: Permanent vs Contract",
+   "chart": {
+    "xLabel": "Department",
+    "yLabel": "Employees",
+    "series": [
+     {
+      "name": "Permanent",
+      "data": [
+       {
+        "label": "Finance",
+        "value": 130
+       },
+       {
+        "label": "HR",
+        "value": 350
+       },
+       {
+        "label": "Sales",
+        "value": 270
+       },
+       {
+        "label": "Quality",
+        "value": 70
+       }
+      ]
+     },
+     {
+      "name": "Contract",
+      "data": [
+       {
+        "label": "Finance",
+        "value": 240
+       },
+       {
+        "label": "HR",
+        "value": 160
+       },
+       {
+        "label": "Sales",
+        "value": 270
+       },
+       {
+        "label": "Quality",
+        "value": 110
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s021",
+   "type": "bar",
+   "title": "Milk supplied by dairy cooperatives in a day (Milk supplied (thousand litres)); grouped bars: Morning vs Evening",
+   "chart": {
+    "xLabel": "Dairy",
+    "yLabel": "Milk supplied (thousand litres)",
+    "series": [
+     {
+      "name": "Morning",
+      "data": [
+       {
+        "label": "Aavin",
+        "value": 170
+       },
+       {
+        "label": "Amul",
+        "value": 105
+       },
+       {
+        "label": "Nandini",
+        "value": 60
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 25
+       },
+       {
+        "label": "Heritage",
+        "value": 70
+       },
+       {
+        "label": "Milma",
+        "value": 115
+       }
+      ]
+     },
+     {
+      "name": "Evening",
+      "data": [
+       {
+        "label": "Aavin",
+        "value": 190
+       },
+       {
+        "label": "Amul",
+        "value": 95
+       },
+       {
+        "label": "Nandini",
+        "value": 80
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 125
+       },
+       {
+        "label": "Heritage",
+        "value": 145
+       },
+       {
+        "label": "Milma",
+        "value": 160
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s022",
+   "type": "bar",
+   "title": "Exports and imports of a firm (Value (₹ crore)); grouped bars: Exports vs Imports",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Value (₹ crore)",
+    "series": [
+     {
+      "name": "Exports",
+      "data": [
+       {
+        "label": "2020",
+        "value": 140
+       },
+       {
+        "label": "2021",
+        "value": 80
+       },
+       {
+        "label": "2022",
+        "value": 410
+       },
+       {
+        "label": "2023",
+        "value": 440
+       }
+      ]
+     },
+     {
+      "name": "Imports",
+      "data": [
+       {
+        "label": "2020",
+        "value": 380
+       },
+       {
+        "label": "2021",
+        "value": 250
+       },
+       {
+        "label": "2022",
+        "value": 470
+       },
+       {
+        "label": "2023",
+        "value": 120
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the difference between the results for Appeared and Passed in Vidya Mandir?",
+   "options": [
+    "30 students",
+    "210 students",
+    "40 students",
+    "20 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In Vidya Mandir: Appeared = 120, Passed = 90. Difference = 30. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s012"
+  },
+  {
+   "questionText": "What is the total results of all 2 series together in Kalam Academy?",
+   "options": [
+    "150 students",
+    "50 students",
+    "160 students",
+    "140 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add the bars of Kalam Academy: 100 + 50 = 150. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s012"
+  },
+  {
+   "questionText": "The figure for Appeared in Kalam Academy and the figure for Passed in Nehru School: the larger is what percentage more than the smaller (correct to one decimal place)?",
+   "options": [
+    "30%",
+    "23.1%",
+    "130%",
+    "37%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values 100 (Appeared, Kalam Academy) and 130 (Passed, Nehru School). (130 - 100)/100 × 100 = 30 ≈ 30%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s012"
+  },
+  {
+   "questionText": "In Nehru School, the figure for Appeared is what percentage of that for Passed (correct to one decimal place)?",
+   "options": [
+    "146.2%",
+    "68.4%",
+    "46.2%",
+    "59.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "190/130 × 100 = 146.15 ≈ 146.2%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'What % of Y' has Y as the denominator.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s012"
+  },
+  {
+   "questionText": "What is the ratio of the total results of Passed to that of Appeared across all 4 schools?",
+   "options": [
+    "10 : 17",
+    "17 : 10",
+    "11 : 17",
+    "10 : 18"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total Passed = 400; total Appeared = 680. Ratio 400 : 680 simplifies to 10 : 17.",
+   "shortcut": "Add each series fully, then divide both by the HCF.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s012"
+  },
+  {
+   "questionText": "For which college is the figure of 2023 the lowest?",
+   "options": [
+    "Thiagarajar",
+    "PSG",
+    "CIT",
+    "Kumaraguru"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest 2023 bar is 70 at Thiagarajar. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s013"
+  },
+  {
+   "questionText": "The figure for 2023 in PSG and the figure for 2022 in Thiagarajar: the larger is what percentage more than the smaller (correct to one decimal place)?",
+   "options": [
+    "70.6%",
+    "41.4%",
+    "170.6%",
+    "77.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values 290 (2023, PSG) and 170 (2022, Thiagarajar). (290 - 170)/170 × 100 = 70.59 ≈ 70.6%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s013"
+  },
+  {
+   "questionText": "In which college is the excess of 2022 over 2023 the largest?",
+   "options": [
+    "Thiagarajar",
+    "PSG",
+    "CIT",
+    "Kumaraguru"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess per college: PSG: 30, CIT: 0, Kumaraguru: 50, Thiagarajar: 100, SRM: 0, VIT: 0. Largest at Thiagarajar.",
+   "shortcut": "Compute A - B for each category and take the largest.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s013"
+  },
+  {
+   "questionText": "What is the combined placements of 2022 in CIT and PSG?",
+   "options": [
+    "630 students",
+    "10 students",
+    "640 students",
+    "620 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "310 + 320 = 630. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s013"
+  },
+  {
+   "questionText": "In Kumaraguru, if the figure for 2022 rises by 10% and that for 2023 falls by 10%, what will be the new difference (2022 minus 2023; correct to one decimal place)?",
+   "options": [
+    "141 students",
+    "50 students",
+    "98 students",
+    "93 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New 2022 = 480 × 1.1 = 528; new 2023 = 430 × 0.9 = 387. Difference = 141.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s013"
+  },
+  {
+   "questionText": "For which month is the figure of Hatchback the lowest?",
+   "options": [
+    "September",
+    "April",
+    "May",
+    "June"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest Hatchback bar is 16 at September. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s014"
+  },
+  {
+   "questionText": "In how many months is the figure for Sedan greater than that for SUV?",
+   "options": [
+    "4",
+    "3",
+    "5",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare the pair in each month: Sedan is larger in 4 of 6. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s014"
+  },
+  {
+   "questionText": "What is the average of the figures for all 3 series in April (correct to one decimal place)?",
+   "options": [
+    "69.3 hundred cars",
+    "52 hundred cars",
+    "204 hundred cars",
+    "73.3 hundred cars"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum for April = 208; average = 208/3 = 69.33. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s014"
+  },
+  {
+   "questionText": "What is the average cars sold of Hatchback over all 6 months shown (correct to one decimal place)?",
+   "options": [
+    "62 hundred cars",
+    "74.4 hundred cars",
+    "66 hundred cars",
+    "60 hundred cars"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of Hatchback bars = 372; divide by 6 = 62. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s014"
+  },
+  {
+   "questionText": "In April, if the figure for Hatchback rises by 25% and that for Sedan falls by 25%, what will be the new difference (Hatchback minus Sedan; correct to one decimal place)?",
+   "options": [
+    "79 hundred cars",
+    "36 hundred cars",
+    "62 hundred cars",
+    "53 hundred cars"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New Hatchback = 104 × 1.25 = 130; new Sedan = 68 × 0.75 = 51. Difference = 79.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s014"
+  },
+  {
+   "questionText": "What is the difference between the net profit for Company Q and Company P in 2020?",
+   "options": [
+    "₹ 55 crore",
+    "₹ 205 crore",
+    "₹ 60 crore",
+    "₹ 50 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 2020: Company Q = 130, Company P = 75. Difference = 55. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s015"
+  },
+  {
+   "questionText": "In which year is the excess of Company Q over Company P the largest?",
+   "options": [
+    "2020",
+    "2018",
+    "2019",
+    "2021"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess per year: 2018: -115, 2019: -25, 2020: 55, 2021: 25. Largest at 2020.",
+   "shortcut": "Compute A - B for each category and take the largest.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s015"
+  },
+  {
+   "questionText": "What is the combined net profit of Company P in 2021 and 2019?",
+   "options": [
+    "₹ 135 crore",
+    "₹ 75 crore",
+    "₹ 140 crore",
+    "₹ 130 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "30 + 105 = 135. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s015"
+  },
+  {
+   "questionText": "What is the average of the figures for all 2 series in 2019 (correct to one decimal place)?",
+   "options": [
+    "₹ 92.5 crore",
+    "₹ 61.7 crore",
+    "₹ 180 crore",
+    "₹ 97.5 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum for 2019 = 185; average = 185/2 = 92.5. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s015"
+  },
+  {
+   "questionText": "In which year does Company Q form the largest share of the combined figure of Company Q and Company P?",
+   "options": [
+    "2021",
+    "2018",
+    "2019",
+    "2020"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares: 2018: 20.5%, 2019: 43.2%, 2020: 63.4%, 2021: 64.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Compare A/(A+B), not A - B.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s015"
+  },
+  {
+   "questionText": "What is the difference between the tourist arrivals for Domestic and Foreign in Ooty?",
+   "options": [
+    "140 thousand visitors",
+    "340 thousand visitors",
+    "150 thousand visitors",
+    "130 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In Ooty: Domestic = 100, Foreign = 240. Difference = 140. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s016"
+  },
+  {
+   "questionText": "For which hill station is the figure of Foreign the lowest?",
+   "options": [
+    "Coorg",
+    "Wayanad",
+    "Ooty",
+    "Munnar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest Foreign bar is 50 at Coorg. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s016"
+  },
+  {
+   "questionText": "What is the combined tourist arrivals of Domestic in Ooty and Wayanad?",
+   "options": [
+    "270 thousand visitors",
+    "70 thousand visitors",
+    "280 thousand visitors",
+    "260 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "100 + 170 = 270. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s016"
+  },
+  {
+   "questionText": "What is the average of the figures for all 2 series in Munnar (correct to one decimal place)?",
+   "options": [
+    "155 thousand visitors",
+    "103.3 thousand visitors",
+    "300 thousand visitors",
+    "165 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum for Munnar = 310; average = 310/2 = 155. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s016"
+  },
+  {
+   "questionText": "In which hill station does Foreign form the largest share of the combined figure of Foreign and Domestic?",
+   "options": [
+    "Ooty",
+    "Wayanad",
+    "Coorg",
+    "Munnar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares: Wayanad: 39.3%, Coorg: 31.3%, Ooty: 70.6%, Munnar: 67.7%, Kodaikanal: 57.1%.",
+   "shortcut": "Compare A/(A+B), not A - B.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s016"
+  },
+  {
+   "questionText": "For which department is the figure of Male the lowest?",
+   "options": [
+    "Paediatrics",
+    "Cardiology",
+    "Neurology",
+    "Dermatology"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest Male bar is 160 at Paediatrics. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s017"
+  },
+  {
+   "questionText": "The figure for Female in Cardiology and the figure for Male in ENT: the larger is what percentage more than the smaller (correct to one decimal place)?",
+   "options": [
+    "4.8%",
+    "4.5%",
+    "104.8%",
+    "11.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values 210 (Female, Cardiology) and 220 (Male, ENT). (220 - 210)/210 × 100 = 4.76 ≈ 4.8%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s017"
+  },
+  {
+   "questionText": "What is the combined patients treated of Female in Paediatrics and Dermatology?",
+   "options": [
+    "580 patients",
+    "160 patients",
+    "590 patients",
+    "570 patients"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "370 + 210 = 580. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s017"
+  },
+  {
+   "questionText": "What is the average of the figures for all 2 series in ENT (correct to one decimal place)?",
+   "options": [
+    "220 patients",
+    "146.7 patients",
+    "430 patients",
+    "230 patients"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum for ENT = 440; average = 440/2 = 220. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s017"
+  },
+  {
+   "questionText": "In which department does Male form the largest share of the combined figure of Male and Female?",
+   "options": [
+    "Neurology",
+    "Paediatrics",
+    "Cardiology",
+    "Dermatology"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares: Paediatrics: 30.2%, Cardiology: 67.7%, Neurology: 70.2%, Dermatology: 57.1%, ENT: 50%.",
+   "shortcut": "Compare A/(A+B), not A - B.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s017"
+  },
+  {
+   "questionText": "In which branch was the figure for Savings the highest (deposits)?",
+   "options": [
+    "Chennai",
+    "Kochi",
+    "Mumbai",
+    "Jaipur"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare only the Savings bars: the largest is 390 at Chennai. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Ignore the other series completely.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s018"
+  },
+  {
+   "questionText": "For which branch is the figure of Savings the lowest?",
+   "options": [
+    "Mumbai",
+    "Chennai",
+    "Kochi",
+    "Jaipur"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest Savings bar is 40 at Mumbai. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s018"
+  },
+  {
+   "questionText": "What is the average deposits of Current over all 4 branchs shown (correct to one decimal place)?",
+   "options": [
+    "₹ 190 crore",
+    "₹ 253.3 crore",
+    "₹ 200 crore",
+    "₹ 205 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of Current bars = 760; divide by 4 = 190. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s018"
+  },
+  {
+   "questionText": "What is the combined deposits of Current in Mumbai and Jaipur?",
+   "options": [
+    "₹ 470 crore",
+    "₹ 250 crore",
+    "₹ 480 crore",
+    "₹ 460 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "110 + 360 = 470. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s018"
+  },
+  {
+   "questionText": "In Chennai, if the figure for Savings rises by 10% and that for Current falls by 10%, what will be the new difference (Savings minus Current; correct to one decimal place)?",
+   "options": [
+    "₹ 213 crore",
+    "₹ 150 crore",
+    "₹ 189 crore",
+    "₹ 174 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New Savings = 390 × 1.1 = 429; new Current = 240 × 0.9 = 216. Difference = 213.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s018"
+  },
+  {
+   "questionText": "What is the total rainfall of all 2 series together in October?",
+   "options": [
+    "470 mm",
+    "220 mm",
+    "480 mm",
+    "460 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add the bars of October: 250 + 220 = 470. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s019"
+  },
+  {
+   "questionText": "In October, the figure for Mumbai is what percentage of that for Kochi (correct to one decimal place)?",
+   "options": [
+    "88%",
+    "113.6%",
+    "46.8%",
+    "94%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "220/250 × 100 = 88 ≈ 88%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'What % of Y' has Y as the denominator.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s019"
+  },
+  {
+   "questionText": "The figure for Mumbai in October and the figure for Kochi in August: the larger is what percentage more than the smaller (correct to one decimal place)?",
+   "options": [
+    "120%",
+    "54.5%",
+    "220%",
+    "127%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values 220 (Mumbai, October) and 100 (Kochi, August). (220 - 100)/100 × 100 = 120 ≈ 120%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s019"
+  },
+  {
+   "questionText": "In which month is the excess of Kochi over Mumbai the largest?",
+   "options": [
+    "October",
+    "July",
+    "August",
+    "September"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess per month: July: -40, August: -40, September: -20, October: 30. Largest at October.",
+   "shortcut": "Compute A - B for each category and take the largest.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s019"
+  },
+  {
+   "questionText": "The total for Kochi over all months is what percentage of the total for Mumbai (correct to one decimal place)?",
+   "options": [
+    "91.8%",
+    "109%",
+    "47.9%",
+    "96.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "780/850 × 100 = 91.76 ≈ 91.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series on top, the 'of' series below.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s019"
+  },
+  {
+   "questionText": "For which department is the figure of Contract the lowest?",
+   "options": [
+    "Quality",
+    "Finance",
+    "HR",
+    "Sales"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest Contract bar is 110 at Quality. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s020"
+  },
+  {
+   "questionText": "In which department was the figure for Contract the highest (employees)?",
+   "options": [
+    "Sales",
+    "Finance",
+    "HR",
+    "Quality"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare only the Contract bars: the largest is 270 at Sales. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Ignore the other series completely.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s020"
+  },
+  {
+   "questionText": "What is the combined employees of Contract in Sales and Finance?",
+   "options": [
+    "510 employees",
+    "30 employees",
+    "520 employees",
+    "500 employees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "270 + 240 = 510. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s020"
+  },
+  {
+   "questionText": "What is the average of the figures for all 2 series in Finance (correct to one decimal place)?",
+   "options": [
+    "185 employees",
+    "123.3 employees",
+    "360 employees",
+    "195 employees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum for Finance = 370; average = 370/2 = 185. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s020"
+  },
+  {
+   "questionText": "What is the ratio of the total employees of Permanent to that of Contract across all 4 departments?",
+   "options": [
+    "41 : 39",
+    "39 : 41",
+    "42 : 39",
+    "41 : 40"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total Permanent = 820; total Contract = 780. Ratio 820 : 780 simplifies to 41 : 39.",
+   "shortcut": "Add each series fully, then divide both by the HCF.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s020"
+  },
+  {
+   "questionText": "For which dairy is the figure of Morning the lowest?",
+   "options": [
+    "Mother Dairy",
+    "Aavin",
+    "Amul",
+    "Nandini"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest Morning bar is 25 at Mother Dairy. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Only scan the one series.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s021"
+  },
+  {
+   "questionText": "What is the total milk supplied of all 2 series together in Heritage?",
+   "options": [
+    "215 thousand litres",
+    "145 thousand litres",
+    "220 thousand litres",
+    "210 thousand litres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add the bars of Heritage: 70 + 145 = 215. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s021"
+  },
+  {
+   "questionText": "What is the average milk supplied of Morning over all 6 dairys shown (correct to one decimal place)?",
+   "options": [
+    "90.8 thousand litres",
+    "109 thousand litres",
+    "95.8 thousand litres",
+    "97.5 thousand litres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of Morning bars = 545; divide by 6 = 90.83. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s021"
+  },
+  {
+   "questionText": "In Milma, the figure for Evening is what percentage of that for Morning (correct to one decimal place)?",
+   "options": [
+    "139.1%",
+    "71.9%",
+    "39.1%",
+    "58.2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "160/115 × 100 = 139.13 ≈ 139.1%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'What % of Y' has Y as the denominator.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s021"
+  },
+  {
+   "questionText": "In Mother Dairy, if the figure for Evening rises by 20% and that for Morning falls by 20%, what will be the new difference (Evening minus Morning; correct to one decimal place)?",
+   "options": [
+    "130 thousand litres",
+    "100 thousand litres",
+    "125 thousand litres",
+    "105 thousand litres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New Evening = 125 × 1.2 = 150; new Morning = 25 × 0.8 = 20. Difference = 130.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s021"
+  },
+  {
+   "questionText": "What is the difference between the trade value for Imports and Exports in 2021?",
+   "options": [
+    "₹ 170 crore",
+    "₹ 330 crore",
+    "₹ 180 crore",
+    "₹ 160 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 2021: Imports = 250, Exports = 80. Difference = 170. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s022"
+  },
+  {
+   "questionText": "In how many years is the figure for Imports greater than that for Exports?",
+   "options": [
+    "3",
+    "2",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare the pair in each year: Imports is larger in 3 of 4. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s022"
+  },
+  {
+   "questionText": "In 2023, the figure for Imports is what percentage of that for Exports (correct to one decimal place)?",
+   "options": [
+    "27.3%",
+    "366.7%",
+    "21.4%",
+    "33.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "120/440 × 100 = 27.27 ≈ 27.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'What % of Y' has Y as the denominator.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s022"
+  },
+  {
+   "questionText": "The figure for Exports in 2022 and the figure for Imports in 2021: the larger is what percentage more than the smaller (correct to one decimal place)?",
+   "options": [
+    "64%",
+    "39%",
+    "164%",
+    "71%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values 410 (Exports, 2022) and 250 (Imports, 2021). (410 - 250)/250 × 100 = 64 ≈ 64%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s022"
+  },
+  {
+   "questionText": "The total for Imports over all years is what percentage of the total for Exports (correct to one decimal place)?",
+   "options": [
+    "114%",
+    "87.7%",
+    "14%",
+    "53.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1220/1070 × 100 = 114.02 ≈ 114%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series on top, the 'of' series below.",
+   "subPattern": "grouped-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s022"
+  }
+ ]
+}

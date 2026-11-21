@@ -1,0 +1,821 @@
+{
+ "sets": [
+  {
+   "id": "di-line-graphs-s001",
+   "type": "line",
+   "title": "Rice production of a state (in lakh tonnes)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Rice production (lakh tonnes)",
+    "series": [
+     {
+      "name": "Rice production",
+      "data": [
+       {
+        "label": "2017",
+        "value": 42
+       },
+       {
+        "label": "2018",
+        "value": 48
+       },
+       {
+        "label": "2019",
+        "value": 45
+       },
+       {
+        "label": "2020",
+        "value": 56
+       },
+       {
+        "label": "2021",
+        "value": 61
+       },
+       {
+        "label": "2022",
+        "value": 58
+       },
+       {
+        "label": "2023",
+        "value": 67
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s002",
+   "type": "line",
+   "title": "Monthly footfall at a Coimbatore showroom (in thousands)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Footfall (thousand customers)",
+    "series": [
+     {
+      "name": "Footfall",
+      "data": [
+       {
+        "label": "Apr",
+        "value": 120
+       },
+       {
+        "label": "May",
+        "value": 135
+       },
+       {
+        "label": "Jun",
+        "value": 128
+       },
+       {
+        "label": "Jul",
+        "value": 150
+       },
+       {
+        "label": "Aug",
+        "value": 172
+       },
+       {
+        "label": "Sep",
+        "value": 160
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s003",
+   "type": "line",
+   "title": "Annual turnover of a Tiruppur textile mill (in ₹ crore)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Turnover (₹ crore)",
+    "series": [
+     {
+      "name": "Turnover",
+      "data": [
+       {
+        "label": "2016",
+        "value": 80
+       },
+       {
+        "label": "2017",
+        "value": 92
+       },
+       {
+        "label": "2018",
+        "value": 88
+       },
+       {
+        "label": "2019",
+        "value": 105
+       },
+       {
+        "label": "2020",
+        "value": 96
+       },
+       {
+        "label": "2021",
+        "value": 120
+       },
+       {
+        "label": "2022",
+        "value": 135
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s004",
+   "type": "line",
+   "title": "Runs scored by a batter in each IPL season (in runs)",
+   "chart": {
+    "xLabel": "Season",
+    "yLabel": "Run tally (runs)",
+    "series": [
+     {
+      "name": "Runs",
+      "data": [
+       {
+        "label": "2015",
+        "value": 380
+       },
+       {
+        "label": "2016",
+        "value": 450
+       },
+       {
+        "label": "2017",
+        "value": 410
+       },
+       {
+        "label": "2018",
+        "value": 520
+       },
+       {
+        "label": "2019",
+        "value": 490
+       },
+       {
+        "label": "2020",
+        "value": 600
+       },
+       {
+        "label": "2021",
+        "value": 555
+       },
+       {
+        "label": "2022",
+        "value": 640
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s005",
+   "type": "line",
+   "title": "Monthly rainfall at a hill station (in mm)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Rainfall (mm)",
+    "series": [
+     {
+      "name": "Rainfall",
+      "data": [
+       {
+        "label": "Jun",
+        "value": 55
+       },
+       {
+        "label": "Jul",
+        "value": 80
+       },
+       {
+        "label": "Aug",
+        "value": 110
+       },
+       {
+        "label": "Sep",
+        "value": 95
+       },
+       {
+        "label": "Oct",
+        "value": 180
+       },
+       {
+        "label": "Nov",
+        "value": 240
+       },
+       {
+        "label": "Dec",
+        "value": 130
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s006",
+   "type": "line",
+   "title": "Students placed through campus drives (in number of students)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Number of students placed (students)",
+    "series": [
+     {
+      "name": "Students placed",
+      "data": [
+       {
+        "label": "2018",
+        "value": 320
+       },
+       {
+        "label": "2019",
+        "value": 360
+       },
+       {
+        "label": "2020",
+        "value": 300
+       },
+       {
+        "label": "2021",
+        "value": 410
+       },
+       {
+        "label": "2022",
+        "value": 450
+       },
+       {
+        "label": "2023",
+        "value": 520
+       },
+       {
+        "label": "2024",
+        "value": 480
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "According to the graph, what was the rice production in 2021 (in lakh tonnes)?",
+   "options": [
+    "56",
+    "58",
+    "65",
+    "61"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the point of the line at 2021: the value is 61 lakh tonnes.",
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "What is the difference between the rice production in 2017 and in 2021 (in lakh tonnes)?",
+   "options": [
+    "103",
+    "24",
+    "20",
+    "19"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 2017 = 42, 2021 = 61. Difference = 61 - 42 = 19.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "In which year was the increase in rice production over the previous year the largest?",
+   "options": [
+    "2018",
+    "2020",
+    "2023",
+    "2019"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Year-on-year changes: 2018: +6, 2019: -3, 2020: +11, 2021: +5, 2022: -3, 2023: +9. Largest rise is 11 in 2020.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "The rice production in 2021 was what percent of that in 2022? (Correct to one decimal place.)",
+   "options": [
+    "95.1%",
+    "5.2%",
+    "105.2%",
+    "112.6%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Required % = 61/58 x 100 = 105.2%.",
+   "shortcut": "Part over whole: the base is the value after the word 'of'.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "By what percent is the highest rice production shown greater than the lowest? (Correct to one decimal place.)",
+   "options": [
+    "37.3%",
+    "59.5%",
+    "159.5%",
+    "63.7%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Highest = 67, lowest = 42. Excess = 25 over base 42: 25/42 x 100 = 59.5%.",
+   "shortcut": "Base is the lowest value, since the question compares 'greater than the lowest'.",
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "In which month was the footfall the highest according to the graph?",
+   "options": [
+    "Jun",
+    "Jul",
+    "May",
+    "Aug"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Scan all points: the highest value is 172 thousand customers, at Aug.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "What is the total footfall in Jul and Sep together (in thousand customers)?",
+   "options": [
+    "10",
+    "320",
+    "332",
+    "310"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Jul: 150; Sep: 160. Total = 150 + 160 = 310.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "What is the average footfall from May to Jul (both included) (in thousand customers)? (Correct to one decimal place.)",
+   "options": [
+    "137.7",
+    "144.2",
+    "131.5",
+    "147.3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values: 135, 128, 150. Sum = 413; average = 413/3 = 137.7.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "By what percent did the footfall increase from May to Sep? (Give the answer correct to one decimal place.)",
+   "options": [
+    "18.5%",
+    "15.6%",
+    "25.0%",
+    "19.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Increase = 160 - 135 = 25. Percentage increase = 25/135 x 100 = 18.5%.",
+   "shortcut": "Always divide the change by the earlier (base) value.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "Find the average of those values of footfall that are above the overall average of all 6 months. (Correct to one decimal place.)",
+   "options": [
+    "144.2",
+    "127.7",
+    "171.9",
+    "160.7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Overall average = 144.17. Values above it: 150, 172, 160; their sum = 482, so average = 482/3 = 160.7.",
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "According to the graph, what was the turnover in 2017 (in ₹ crore)?",
+   "options": [
+    "92",
+    "80",
+    "88",
+    "98"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at 2017: the value is 92 ₹ crore.",
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "What is the difference between the turnover in 2016 and in 2020 (in ₹ crore)?",
+   "options": [
+    "176",
+    "16",
+    "21",
+    "17"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values: 2016 = 80, 2020 = 96. Difference = 96 - 80 = 16.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "What is the average turnover over the 7 years shown (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    "106.0",
+    "96.8",
+    "102.3",
+    "135.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of all values = 716. Average = 716/7 = 102.3.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "In which year was the increase in turnover over the previous year the largest?",
+   "options": [
+    "2020",
+    "2021",
+    "2017",
+    "2022"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Year-on-year changes: 2017: +12, 2018: -4, 2019: +17, 2020: -9, 2021: +24, 2022: +15. Largest rise is 24 in 2021.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "The turnover in 2019 is what percent of the total turnover over all 7 years shown? (Correct to one decimal place.)",
+   "options": [
+    "102.7%",
+    "77.8%",
+    "15.7%",
+    "14.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = 716. Share = 105/716 x 100 = 14.7%.",
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "In which season was the run tally the highest according to the graph?",
+   "options": [
+    "2022",
+    "2015",
+    "2020",
+    "2018"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Scan all points: the highest value is 640 runs, at 2022.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "The run tally in 2019 was what percent of that in 2020? (Correct to one decimal place.)",
+   "options": [
+    "122.4%",
+    "18.3%",
+    "87.4%",
+    "81.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required % = 490/600 x 100 = 81.7%.",
+   "shortcut": "Part over whole: the base is the value after the word 'of'.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "What is the average run tally from 2017 to 2019 (both included) (in runs)? (Correct to one decimal place.)",
+   "options": [
+    "505.6",
+    "473.3",
+    "465.0",
+    "506.4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values: 410, 520, 490. Sum = 1420; average = 1420/3 = 473.3.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "By what percent did the run tally increase from 2015 to 2022? (Give the answer correct to one decimal place.)",
+   "options": [
+    "40.6%",
+    "260.0%",
+    "73.2%",
+    "68.4%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Increase = 640 - 380 = 260. Percentage increase = 260/380 x 100 = 68.4%.",
+   "shortcut": "Always divide the change by the earlier (base) value.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "In how many seasons was the run tally above the average of all 8 seasons shown?",
+   "options": [
+    "5",
+    "3",
+    "6",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average = 4045/8 = 505.62. Values above it: 520, 600, 555, 640, so the count is 4.",
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "According to the graph, what was the rainfall in Aug (in mm)?",
+   "options": [
+    "80",
+    "95",
+    "110",
+    "118"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the point of the line at Aug: the value is 110 mm.",
+   "shortcut": "Locate the month on the x-axis and read straight up to the line.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "What is the average rainfall from Jun to Aug (both included) (in mm)? (Correct to one decimal place.)",
+   "options": [
+    "127.1",
+    "67.5",
+    "87.4",
+    "81.7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 55, 80, 110. Sum = 245; average = 245/3 = 81.7.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "By what percent did the rainfall increase from Sep to Nov? (Give the answer correct to one decimal place.)",
+   "options": [
+    "60.4%",
+    "152.6%",
+    "145.0%",
+    "163.3%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Increase = 240 - 95 = 145. Percentage increase = 145/95 x 100 = 152.6%.",
+   "shortcut": "Always divide the change by the earlier (base) value.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "What is the average rainfall over the 7 months shown (in mm)? (Correct to one decimal place.)",
+   "options": [
+    "127.1",
+    "139.2",
+    "126.7",
+    "240.0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of all values = 890. Average = 890/7 = 127.1.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "If the rainfall in Jun had been 10% higher than shown, what would the average over all 7 months be? (Correct to one decimal place.)",
+   "options": [
+    "127.1",
+    "128.7",
+    "136.9",
+    "127.9"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Extra = 10% of 55 = 5.50. New sum = 890 + 5.50 = 895.50. New average = 895.50/7 = 127.9.",
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "In which year was the number of students placed the lowest according to the graph?",
+   "options": [
+    "2020",
+    "2023",
+    "2022",
+    "2019"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Scan all points: the lowest value is 300 students, at 2020.",
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "What is the average number of students placed over the 7 years shown (in students)? (Correct to one decimal place.)",
+   "options": [
+    "420.0",
+    "405.7",
+    "393.3",
+    "520.0"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of all values = 2840. Average = 2840/7 = 405.7.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "In which year was the increase in number of students placed over the previous year the largest?",
+   "options": [
+    "2023",
+    "2024",
+    "2020",
+    "2021"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Year-on-year changes: 2019: +40, 2020: -60, 2021: +110, 2022: +40, 2023: +70, 2024: -40. Largest rise is 110 in 2021.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "The number of students placed in 2022 was what percent of that in 2023? (Correct to one decimal place.)",
+   "options": [
+    "115.6%",
+    "86.5%",
+    "13.5%",
+    "92.6%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required % = 450/520 x 100 = 86.5%.",
+   "shortcut": "Part over whole: the base is the value after the word 'of'.",
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "By what percent is the highest number of students placed shown greater than the lowest? (Correct to one decimal place.)",
+   "options": [
+    "73.3%",
+    "42.3%",
+    "173.3%",
+    "78.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest = 520, lowest = 300. Excess = 220 over base 300: 220/300 x 100 = 73.3%.",
+   "shortcut": "Base is the lowest value, since the question compares 'greater than the lowest'.",
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s006"
+  }
+ ]
+}

@@ -1,0 +1,449 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Convert the decimal number 45 to binary.",
+   "options": [
+    "101101",
+    "101011",
+    "110110",
+    "110101"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "45 = 32 + 8 + 4 + 1 = 2⁵ + 2³ + 2² + 2⁰, so the binary form is 101101.",
+   "shortcut": "Repeated division by 2, read remainders upwards.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the decimal value of the binary number 110101?",
+   "options": [
+    "51",
+    "53",
+    "55",
+    "43"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "110101₂ = 32 + 16 + 0 + 4 + 0 + 1 = 53.",
+   "shortcut": "Add place values 32, 16, 8, 4, 2, 1.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Convert the octal number (157)₈ to decimal.",
+   "options": [
+    "119",
+    "125",
+    "111",
+    "112"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "157₈ = 1 × 64 + 5 × 8 + 7 = 64 + 40 + 7 = 111.",
+   "shortcut": "Place values are powers of 8.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Convert the decimal number 200 to octal.",
+   "options": [
+    "301",
+    "320",
+    "311",
+    "310"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "200 ÷ 8 = 25 rem 0; 25 ÷ 8 = 3 rem 1; 3 ÷ 8 = 0 rem 3. Reading upwards: 310₈.",
+   "shortcut": "Divide by 8 repeatedly.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the decimal value of the hexadecimal number 3F?",
+   "options": [
+    "63",
+    "61",
+    "65",
+    "47"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hex digits: F stands for 15. So 3F₁₆ = 3 × 16¹ + 15 × 16⁰ = 48 + 15 = 63.",
+   "shortcut": "F = 15 in hexadecimal.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many 1s are there in the binary representation of 255?",
+   "options": [
+    "7",
+    "8",
+    "9",
+    "255"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "255 = 2⁸ − 1, and 2ⁿ − 1 is written as n ones in binary. So 255 = 11111111₂, which has eight 1s.",
+   "shortcut": "2ⁿ − 1 is n ones.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the largest decimal number that can be stored in 8 bits (unsigned)?",
+   "options": [
+    "256",
+    "127",
+    "255",
+    "128"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With 8 bits the values range from 0 to 2⁸ − 1 = 255.",
+   "shortcut": "2ⁿ − 1.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Add the binary numbers 1101 and 1011. Give the answer in binary.",
+   "options": [
+    "10111",
+    "11001",
+    "10110",
+    "11000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1101₂ = 13 and 1011₂ = 11. Sum = 24 = 11000₂. Binary addition: 1+1 = 10 carries 1, and so on, giving 11000.",
+   "shortcut": "Convert, add, convert back — or add with carries.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Multiply the binary numbers 101 and 11. Give the answer in binary.",
+   "options": [
+    "1111",
+    "1110",
+    "10001",
+    "1101"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "101₂ = 5, 11₂ = 3, product = 15 = 1111₂.",
+   "shortcut": "Convert to decimal for a quick check.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Subtract: 10010₂ − 1101₂ = ? (answer in binary)",
+   "options": [
+    "111",
+    "101",
+    "110",
+    "100"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "10010₂ = 18, 1101₂ = 13. 18 − 13 = 5 = 101₂.",
+   "shortcut": "Convert, subtract, convert back.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Convert the binary number 11010110 to hexadecimal.",
+   "options": [
+    "D5",
+    "C6",
+    "D6",
+    "D7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Group in fours from the right: 1101 = D, 0110 = 6, so D6₁₆.",
+   "shortcut": "Group bits in fours.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Convert the hexadecimal number 2F to binary.",
+   "options": [
+    "101110",
+    "110111",
+    "101011",
+    "101111"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2 = 0010 and F = 1111, so 2F₁₆ = 00101111₂ = 101111₂.",
+   "shortcut": "Each hex digit is four bits.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the decimal value of (243)₅?",
+   "options": [
+    "73",
+    "63",
+    "83",
+    "74"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "243₅ = 2 × 25 + 4 × 5 + 3 = 50 + 20 + 3 = 73.",
+   "shortcut": "Place values 25, 5, 1.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain number system, 5 × 6 = 42. What is the base of this number system?",
+   "options": [
+    "6",
+    "7",
+    "8",
+    "9"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In base b, 42 means 4b + 2. We have 5 × 6 = 30 so 4b + 2 = 30, giving b = 7. Digit 6 is valid in base 7.",
+   "shortcut": "Write the written result as an expression in b.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Add the hexadecimal numbers 2F and 3C. Give the answer in hexadecimal.",
+   "options": [
+    "6C",
+    "5B",
+    "6B",
+    "7B"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Convert: 2F = 47, 3C = 60, sum = 107 = 6B₁₆ (6 × 16 + 11).",
+   "shortcut": "F + C = 27 = 1B, carry 1.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the minimum number of bits required to represent the decimal number 1000 in binary?",
+   "options": [
+    "9",
+    "11",
+    "8",
+    "10"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2⁹ = 512 ≤ 1000 < 1024 = 2¹⁰, so 1000 needs 10 bits.",
+   "shortcut": "Find the smallest n with 2ⁿ > N.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Convert the decimal fraction 0.625 to binary.",
+   "options": [
+    "0.101",
+    "0.110",
+    "0.011",
+    "0.1001"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Multiply the fractional part by 2 repeatedly and note the integer parts. 0.625 × 2 = 1.25 → 1; 0.25 × 2 = 0.5 → 0; 0.5 × 2 = 1.0 → 1. So 0.101₂.",
+   "shortcut": "Multiply the fraction by 2 repeatedly.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the decimal value of the largest four-digit number in base 6?",
+   "options": [
+    "1296",
+    "1295",
+    "1080",
+    "1289"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The largest 4-digit base-6 number is 5555₆ = 6⁴ − 1 = 1295.",
+   "shortcut": "Largest n-digit number in base b is bⁿ − 1.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Convert the octal number (725)₈ to binary.",
+   "options": [
+    "111100101",
+    "111010011",
+    "111010101",
+    "111010102"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Write each octal digit as three bits: 7 = 111, 2 = 010, 5 = 101. Joining them gives 111010101₂.",
+   "shortcut": "Each octal digit is three bits.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In base b, the number 121 equals 64 in decimal. What is b?",
+   "options": [
+    "6",
+    "8",
+    "9",
+    "7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "121₍b₎ = b² + 2b + 1 = (b + 1)² = 64, so b + 1 = 8 and b = 7.",
+   "shortcut": "Recognise the perfect square.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many integers from 1 to 100 have exactly three 1s in their binary representation?",
+   "options": [
+    "33",
+    "36",
+    "30",
+    "38"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers below 64 (up to six bits): C(6,3) = 20. From 64 to 100, the leading bit is 1 and the remaining six bits (value up to 36) must hold exactly two 1s; enumerating gives 13. Total = 20 + 13 = 33.",
+   "shortcut": "Split at the power of 2 nearest the limit.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Express 2024 (decimal) in base 7.",
+   "options": [
+    "5645",
+    "5621",
+    "5654",
+    "6554"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2024 ÷ 7 = 289 rem 1; 289 ÷ 7 = 41 rem 2; 41 ÷ 7 = 5 rem 6; 5 ÷ 7 = 0 rem 5. Reading upwards: 5621₇.",
+   "shortcut": "Repeated division, read remainders from the bottom.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the 8-bit two's complement representation of −37?",
+   "options": [
+    "00100101",
+    "11011010",
+    "11011011",
+    "11011100"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "37 = 00100101. Invert: 11011010. Add 1: 11011011. So −37 is 11011011.",
+   "shortcut": "Invert the bits and add 1.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In which base does the number 1331 represent the decimal number 343?",
+   "options": [
+    "5",
+    "7",
+    "8",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1331₍b₎ = b³ + 3b² + 3b + 1 = (b + 1)³ = 343, so b + 1 = 7 and b = 6.",
+   "shortcut": "1331 is the cube pattern (b+1)³.",
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

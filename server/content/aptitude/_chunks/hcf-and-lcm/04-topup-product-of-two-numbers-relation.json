@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "The HCF and LCM of two numbers are 8 and 160. If one of the numbers is 32, find the other.",
+   "options": [
+    "5",
+    "128",
+    "48",
+    "40"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Product of numbers = HCF × LCM, so other = 8 × 160 / 32 = 40.",
+   "shortcut": "Other = HCF × LCM / given number.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers have HCF 21 and LCM 378. What is the product of the two numbers?",
+   "options": [
+    "18",
+    "7938",
+    "7959",
+    "399"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Product = HCF × LCM = 21 × 378 = 7938.",
+   "shortcut": "Product of two numbers = HCF × LCM.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The product of two numbers is 27783 and their HCF is 21. What is their LCM?",
+   "options": [
+    "1344",
+    "1323",
+    "27783",
+    "27762"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = product / HCF = 27783 / 21 = 1323.",
+   "shortcut": "LCM = product / HCF.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers have HCF 12 and LCM 1056. What is the product of the two numbers?",
+   "options": [
+    "12672",
+    "1068",
+    "88",
+    "12684"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product = HCF × LCM = 12 × 1056 = 12672.",
+   "shortcut": "Product of two numbers = HCF × LCM.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers have HCF 25 and LCM 500. What is the product of the two numbers?",
+   "options": [
+    "12500",
+    "12525",
+    "20",
+    "525"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product = HCF × LCM = 25 × 500 = 12500.",
+   "shortcut": "Product of two numbers = HCF × LCM.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers have HCF 21 and LCM 1386. What is the product of the two numbers?",
+   "options": [
+    "66",
+    "1407",
+    "29127",
+    "29106"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Product = HCF × LCM = 21 × 1386 = 29106.",
+   "shortcut": "Product of two numbers = HCF × LCM.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The product of two numbers is 61875 and their HCF is 25. What is their LCM?",
+   "options": [
+    "61875",
+    "2475",
+    "2500",
+    "61850"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "LCM = product / HCF = 61875 / 25 = 2475.",
+   "shortcut": "LCM = product / HCF.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are in the ratio 3:4 and their HCF is 12. Find their LCM.",
+   "options": [
+    "12",
+    "1728",
+    "144",
+    "84"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Numbers are 3×12 = 36 and 4×12 = 48. Since 3 and 4 are co-prime, LCM = 12×3×4 = 144.",
+   "shortcut": "Ratio a:b in lowest terms, HCF h → LCM = h·a·b.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 72 and their HCF is 12. If one number is 36, what is the sum of the two numbers?",
+   "options": [
+    "72",
+    "48",
+    "84",
+    "60"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Other number = 12×72/36 = 24. Sum = 36 + 24 = 60.",
+   "shortcut": "Find the other with HCF × LCM / given, then add.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 1344 and their HCF is 16. If one number is 112, what is the sum of the two numbers?",
+   "options": [
+    "128",
+    "1360",
+    "320",
+    "304"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Other number = 16×1344/112 = 192. Sum = 112 + 192 = 304.",
+   "shortcut": "Find the other with HCF × LCM / given, then add.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The sum of two numbers is 54 and their HCF is 6. If the numbers are in the ratio 4:5, what is their product?",
+   "options": [
+    "324",
+    "20",
+    "720",
+    "120"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Numbers are 24 and 30. Product = 24 × 30 = 720.",
+   "shortcut": "Numbers = h·a and h·b; product = h²ab.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The sum of two numbers is 78 and their HCF is 6. If the numbers are in the ratio 5:8, what is their product?",
+   "options": [
+    "240",
+    "40",
+    "468",
+    "1440"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Numbers are 30 and 48. Product = 30 × 48 = 1440.",
+   "shortcut": "Numbers = h·a and h·b; product = h²ab.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The sum of two numbers is 60 and their HCF is 4. If the numbers are in the ratio 7:8, what is their product?",
+   "options": [
+    "896",
+    "240",
+    "56",
+    "224"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers are 28 and 32. Product = 28 × 32 = 896.",
+   "shortcut": "Numbers = h·a and h·b; product = h²ab.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are in the ratio 3:4 and their HCF is 13. Find their LCM.",
+   "options": [
+    "12",
+    "156",
+    "2028",
+    "91"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Numbers are 3×13 = 39 and 4×13 = 52. Since 3 and 4 are co-prime, LCM = 13×3×4 = 156.",
+   "shortcut": "Ratio a:b in lowest terms, HCF h → LCM = h·a·b.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 1512 and their HCF is 21. If one number is 168, what is the sum of the two numbers?",
+   "options": [
+    "189",
+    "1533",
+    "378",
+    "357"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Other number = 21×1512/168 = 189. Sum = 168 + 189 = 357.",
+   "shortcut": "Find the other with HCF × LCM / given, then add.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are in the ratio 5:8 and their HCF is 12. Find their LCM.",
+   "options": [
+    "480",
+    "156",
+    "5760",
+    "40"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers are 5×12 = 60 and 8×12 = 96. Since 5 and 8 are co-prime, LCM = 12×5×8 = 480.",
+   "shortcut": "Ratio a:b in lowest terms, HCF h → LCM = h·a·b.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The sum of two numbers is 60 and their HCF is 6. If the numbers are in the ratio 3:7, what is their product?",
+   "options": [
+    "756",
+    "360",
+    "126",
+    "21"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Numbers are 18 and 42. Product = 18 × 42 = 756.",
+   "shortcut": "Numbers = h·a and h·b; product = h²ab.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are in the ratio 5:7 and their HCF is 15. Find their LCM.",
+   "options": [
+    "35",
+    "180",
+    "7875",
+    "525"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Numbers are 5×15 = 75 and 7×15 = 105. Since 5 and 7 are co-prime, LCM = 15×5×7 = 525.",
+   "shortcut": "Ratio a:b in lowest terms, HCF h → LCM = h·a·b.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many pairs of positive integers (order not important) have HCF 7 and LCM 210?",
+   "options": [
+    "3",
+    "8",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Write the numbers as 7x and 7y with x·y = 30 and x, y co-prime. 30 has 3 distinct primes (2 , 3 , 5); each prime goes wholly to x or y, giving 2^3 ordered pairs, i.e. 4 unordered pairs.",
+   "shortcut": "Unordered pairs = 2^(k−1), k = distinct primes of LCM/HCF.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many pairs of positive integers (order not important) have HCF 5 and LCM 210?",
+   "options": [
+    "3",
+    "4",
+    "8",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Write the numbers as 5x and 5y with x·y = 42 and x, y co-prime. 42 has 3 distinct primes (2 , 3 , 7); each prime goes wholly to x or y, giving 2^3 ordered pairs, i.e. 4 unordered pairs.",
+   "shortcut": "Unordered pairs = 2^(k−1), k = distinct primes of LCM/HCF.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The HCF of two numbers is 4, their LCM is 440 and their sum is 84. What is the difference between the numbers?",
+   "options": [
+    "80",
+    "4",
+    "110",
+    "8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Numbers = 4x and 4y with xy = 440/4 = 110 and x + y = 21. So (x, y) = (10, 11), numbers are 40 and 44, difference 4.",
+   "shortcut": "Divide through by HCF: find co-prime x, y with given product and sum.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many pairs of positive integers (order not important) have HCF 6 and LCM 1260?",
+   "options": [
+    "9",
+    "8",
+    "4",
+    "16"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Write the numbers as 6x and 6y with x·y = 210 and x, y co-prime. 210 has 4 distinct primes (2 , 3 , 5 , 7); each prime goes wholly to x or y, giving 2^4 ordered pairs, i.e. 8 unordered pairs.",
+   "shortcut": "Unordered pairs = 2^(k−1), k = distinct primes of LCM/HCF.",
+   "subPattern": "product-of-two-numbers-relation",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

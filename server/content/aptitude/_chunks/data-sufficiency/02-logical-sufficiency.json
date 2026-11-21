@@ -1,0 +1,1425 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "5 students are Nisha, Ganesh, Rohit, Arjun and Deepa. Heights are all different.\nWho is the second from the top (second tallest)?\nStatement I: Ganesh ranks above both Nisha and Arjun.\nStatement II: Deepa is taller than Rohit.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Nisha = 2, Ganesh = 0, Rohit = 4, Arjun = 1, Deepa = 3 the answer is Arjun, but with Nisha = 2, Ganesh = 1, Rohit = 0, Arjun = 3, Deepa = 4 it is Ganesh. Statement II is not enough: with Nisha = 2, Ganesh = 0, Rohit = 4, Arjun = 1, Deepa = 3 the answer is Arjun, but with Nisha = 0, Ganesh = 1, Rohit = 3, Arjun = 4, Deepa = 2 it is Ganesh. Taking both together is not enough: with Nisha = 2, Ganesh = 0, Rohit = 4, Arjun = 1, Deepa = 3 the answer is Arjun, but with Nisha = 2, Ganesh = 1, Rohit = 3, Arjun = 4, Deepa = 0 it is Ganesh. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students are Nisha, Ganesh, Rohit, Arjun and Deepa. Heights are all different.\nWho is the tallest?\nStatement I: Ganesh ranks above both Nisha and Arjun.\nStatement II: Arjun ranks above both Rohit and Deepa.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Nisha = 2, Ganesh = 0, Rohit = 4, Arjun = 1, Deepa = 3 the answer is Ganesh, but with Nisha = 2, Ganesh = 1, Rohit = 0, Arjun = 3, Deepa = 4 it is Rohit. Statement II is not enough: with Nisha = 2, Ganesh = 0, Rohit = 4, Arjun = 1, Deepa = 3 the answer is Ganesh, but with Nisha = 0, Ganesh = 1, Rohit = 3, Arjun = 2, Deepa = 4 it is Nisha. Taking both together fixes the answer uniquely as Ganesh. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 runners in a race are Naveen, Pooja, Rahul, Ganesh and Nisha. There were no ties.\nWho is in the middle when they are arranged from winner to last finisher?\nStatement I: Ganesh ranks between Naveen and Pooja. Also, Ganesh ranks between Rahul and Nisha.\nStatement II: Exactly one person ranks between Rahul and Ganesh.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Ganesh. Statement II is not enough: with Naveen = 1, Pooja = 3, Rahul = 0, Ganesh = 2, Nisha = 4 the answer is Ganesh, but with Naveen = 0, Pooja = 1, Rahul = 2, Ganesh = 4, Nisha = 3 it is Rahul. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 runners in a race are Naveen, Pooja, Rahul, Ganesh and Nisha. There were no ties.\nWho is the second from the top (second winner)?\nStatement I: Rahul is the winner.\nStatement II: Pooja finished ahead of Nisha.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Naveen = 1, Pooja = 3, Rahul = 0, Ganesh = 2, Nisha = 4 the answer is Naveen, but with Naveen = 2, Pooja = 1, Rahul = 0, Ganesh = 3, Nisha = 4 it is Pooja. Statement II is not enough: with Naveen = 1, Pooja = 3, Rahul = 0, Ganesh = 2, Nisha = 4 the answer is Naveen, but with Naveen = 0, Pooja = 1, Rahul = 2, Ganesh = 3, Nisha = 4 it is Pooja. Taking both together is not enough: with Naveen = 1, Pooja = 3, Rahul = 0, Ganesh = 2, Nisha = 4 the answer is Naveen, but with Naveen = 2, Pooja = 1, Rahul = 0, Ganesh = 3, Nisha = 4 it is Pooja. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "4 students are Deepa, Ganesh, Harish and Anita. Heights are all different.\nWho is the second from the top (second tallest)?\nStatement I: Deepa ranks between Ganesh and Anita.\nStatement II: Exactly 3 of the others rank above Harish.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Deepa = 1, Ganesh = 2, Harish = 3, Anita = 0 the answer is Deepa, but with Deepa = 2, Ganesh = 1, Harish = 0, Anita = 3 it is Ganesh. Statement II is not enough: with Deepa = 1, Ganesh = 2, Harish = 3, Anita = 0 the answer is Deepa, but with Deepa = 0, Ganesh = 1, Harish = 3, Anita = 2 it is Ganesh. Taking both together fixes the answer uniquely as Deepa. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "4 students are Deepa, Ganesh, Harish and Anita. Heights are all different.\nWho is the shortest?\nStatement I: Deepa is not the tallest.\nStatement II: Harish is the shortest.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with Deepa = 1, Ganesh = 2, Harish = 3, Anita = 0 the answer is Harish, but with Deepa = 1, Ganesh = 0, Harish = 2, Anita = 3 it is Anita. Statement II fixes the answer uniquely as Harish. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 friends are Anita, Gopal, Priya, Pooja and Nisha. No two of them have the same age.\nWho is the youngest?\nStatement I: Exactly 4 of the others rank above Pooja.\nStatement II: Pooja is the youngest.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as Pooja. Statement II fixes the answer uniquely as Pooja. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 friends are Anita, Gopal, Priya, Pooja and Nisha. No two of them have the same age.\nWho is the second from the top (second oldest)?\nStatement I: Priya ranks above both Gopal and Nisha.\nStatement II: Exactly 1 of the others rank above Anita.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Anita = 1, Gopal = 2, Priya = 0, Pooja = 4, Nisha = 3 the answer is Anita, but with Anita = 2, Gopal = 1, Priya = 0, Pooja = 3, Nisha = 4 it is Gopal. Statement II fixes the answer uniquely as Anita. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students in an exam are Vikram, Rohit, Meena, Naveen and Rahul. No two of them scored the same marks.\nWho is the topper?\nStatement I: Exactly 0 of the others rank above Rahul.\nStatement II: Rohit ranks above both Meena and Naveen.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Rahul. Statement II is not enough: with Vikram = 3, Rohit = 1, Meena = 2, Naveen = 4, Rahul = 0 the answer is Rahul, but with Vikram = 0, Rohit = 1, Meena = 2, Naveen = 3, Rahul = 4 it is Vikram. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students in an exam are Vikram, Rohit, Meena, Naveen and Rahul. No two of them scored the same marks.\nWho is in the middle when they are arranged from topper to lowest scorer?\nStatement I: Vikram scored more marks than Naveen.\nStatement II: Rahul ranks above both Meena and Naveen. Also, Rahul ranks above both Vikram and Meena.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Vikram = 3, Rohit = 1, Meena = 2, Naveen = 4, Rahul = 0 the answer is Meena, but with Vikram = 0, Rohit = 1, Meena = 3, Naveen = 2, Rahul = 4 it is Naveen. Statement II is not enough: with Vikram = 3, Rohit = 1, Meena = 2, Naveen = 4, Rahul = 0 the answer is Meena, but with Vikram = 1, Rohit = 3, Meena = 4, Naveen = 2, Rahul = 0 it is Naveen. Taking both together is not enough: with Vikram = 3, Rohit = 1, Meena = 2, Naveen = 4, Rahul = 0 the answer is Meena, but with Vikram = 1, Rohit = 3, Meena = 4, Naveen = 2, Rahul = 0 it is Naveen. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students in an exam are Anita, Swati, Pooja, Imran and Deepa. No two of them scored the same marks.\nWho is in the middle when they are arranged from topper to lowest scorer?\nStatement I: Exactly 2 of the others rank above Anita.\nStatement II: No one ranks between Deepa and Imran.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Anita. Statement II is not enough: with Anita = 2, Swati = 1, Pooja = 0, Imran = 3, Deepa = 4 the answer is Anita, but with Anita = 0, Swati = 1, Pooja = 2, Imran = 3, Deepa = 4 it is Pooja. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students in an exam are Anita, Swati, Pooja, Imran and Deepa. No two of them scored the same marks.\nWho is the second from the top (second topper)?\nStatement I: Swati ranks above both Anita and Deepa.\nStatement II: Swati ranks between Pooja and Imran.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Anita = 2, Swati = 1, Pooja = 0, Imran = 3, Deepa = 4 the answer is Swati, but with Anita = 2, Swati = 0, Pooja = 1, Imran = 3, Deepa = 4 it is Pooja. Statement II is not enough: with Anita = 2, Swati = 1, Pooja = 0, Imran = 3, Deepa = 4 the answer is Swati, but with Anita = 0, Swati = 2, Pooja = 1, Imran = 3, Deepa = 4 it is Pooja. Taking both together fixes the answer uniquely as Swati. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 wrestlers are Arjun, Naveen, Rahul, Ganesh and Vikram. No two of them have the same weight.\nWho is the heaviest?\nStatement I: Exactly one person ranks between Naveen and Ganesh.\nStatement II: Exactly 0 of the others rank above Vikram.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Arjun = 2, Naveen = 3, Rahul = 4, Ganesh = 1, Vikram = 0 the answer is Vikram, but with Arjun = 0, Naveen = 1, Rahul = 2, Ganesh = 3, Vikram = 4 it is Arjun. Statement II fixes the answer uniquely as Vikram. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 wrestlers are Arjun, Naveen, Rahul, Ganesh and Vikram. No two of them have the same weight.\nWho is the lightest?\nStatement I: Rahul is the lightest.\nStatement II: Exactly 4 of the others rank above Rahul.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as Rahul. Statement II fixes the answer uniquely as Rahul. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Karthik, Ganesh, Vikram, Pooja and Rohit, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits in the middle?\nStatement I: Karthik sits at an odd-numbered position.\nStatement II: Pooja does not sit at either end.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Karthik = 2, Ganesh = 3, Vikram = 4, Pooja = 1, Rohit = 0 the answer is Karthik, but with Karthik = 0, Ganesh = 1, Vikram = 2, Pooja = 3, Rohit = 4 it is Vikram. Statement II is not enough: with Karthik = 2, Ganesh = 3, Vikram = 4, Pooja = 1, Rohit = 0 the answer is Karthik, but with Karthik = 0, Ganesh = 1, Vikram = 2, Pooja = 3, Rohit = 4 it is Vikram. Taking both together is not enough: with Karthik = 2, Ganesh = 3, Vikram = 4, Pooja = 1, Rohit = 0 the answer is Karthik, but with Karthik = 0, Ganesh = 1, Vikram = 2, Pooja = 3, Rohit = 4 it is Vikram. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Karthik, Ganesh, Vikram, Pooja and Rohit, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme right?\nStatement I: Exactly 3 persons sit between Rohit and Vikram.\nStatement II: Ganesh sits somewhere to the left of Vikram.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Karthik = 2, Ganesh = 3, Vikram = 4, Pooja = 1, Rohit = 0 the answer is Vikram, but with Karthik = 1, Ganesh = 2, Vikram = 0, Pooja = 3, Rohit = 4 it is Rohit. Statement II is not enough: with Karthik = 2, Ganesh = 3, Vikram = 4, Pooja = 1, Rohit = 0 the answer is Vikram, but with Karthik = 0, Ganesh = 1, Vikram = 2, Pooja = 3, Rohit = 4 it is Rohit. Taking both together fixes the answer uniquely as Vikram. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Kavya, Arjun, Gopal, Swati and Vikram, sit on a sofa row at a cinema in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme right?\nStatement I: Swati sits somewhere between Kavya and Vikram.\nStatement II: Exactly 1 person sit between Gopal and Swati.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Kavya = 1, Arjun = 0, Gopal = 4, Swati = 2, Vikram = 3 the answer is Gopal, but with Kavya = 0, Arjun = 1, Gopal = 2, Swati = 3, Vikram = 4 it is Vikram. Statement II is not enough: with Kavya = 1, Arjun = 0, Gopal = 4, Swati = 2, Vikram = 3 the answer is Gopal, but with Kavya = 0, Arjun = 2, Gopal = 1, Swati = 3, Vikram = 4 it is Vikram. Taking both together is not enough: with Kavya = 1, Arjun = 0, Gopal = 4, Swati = 2, Vikram = 3 the answer is Gopal, but with Kavya = 0, Arjun = 2, Gopal = 1, Swati = 3, Vikram = 4 it is Vikram. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Kavya, Arjun, Gopal, Swati and Vikram, sit on a sofa row at a cinema in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits in the middle?\nStatement I: Swati sits somewhere between Arjun and Gopal.\nStatement II: Swati sits somewhere between Kavya and Vikram.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Kavya = 1, Arjun = 0, Gopal = 4, Swati = 2, Vikram = 3 the answer is Swati, but with Kavya = 0, Arjun = 4, Gopal = 2, Swati = 3, Vikram = 1 it is Gopal. Statement II is not enough: with Kavya = 1, Arjun = 0, Gopal = 4, Swati = 2, Vikram = 3 the answer is Swati, but with Kavya = 0, Arjun = 1, Gopal = 2, Swati = 3, Vikram = 4 it is Gopal. Taking both together fixes the answer uniquely as Swati. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Farida, Naveen, Rahul, Imran and Nisha, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme left?\nStatement I: Nisha sits in position 1.\nStatement II: Exactly 1 person sit between Farida and Naveen.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Nisha. Statement II is not enough: with Farida = 2, Naveen = 4, Rahul = 1, Imran = 3, Nisha = 0 the answer is Nisha, but with Farida = 0, Naveen = 2, Rahul = 1, Imran = 3, Nisha = 4 it is Farida. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Farida, Naveen, Rahul, Imran and Nisha, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits in the middle?\nStatement I: Rahul sits immediately to the left of Farida. Also, Rahul sits somewhere between Imran and Nisha.\nStatement II: Exactly 1 person sit between Rahul and Imran. Also, Exactly 3 persons sit between Nisha and Naveen.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Farida = 2, Naveen = 4, Rahul = 1, Imran = 3, Nisha = 0 the answer is Farida, but with Farida = 3, Naveen = 0, Rahul = 2, Imran = 1, Nisha = 4 it is Rahul. Statement II fixes the answer uniquely as Farida. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Karthik, Arjun, Priya, Manoj and Divya, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme right?\nStatement I: Exactly 3 persons sit between Manoj and Priya. Also, Manoj sits in position 5.\nStatement II: Manoj sits in position 5. Also, Exactly 0 persons sit between Manoj and Arjun.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as Manoj. Statement II fixes the answer uniquely as Manoj. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Karthik, Arjun, Priya, Manoj and Divya, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme left?\nStatement I: Priya sits in position 1. Also, Divya sits immediately to the left of Arjun.\nStatement II: Karthik sits somewhere between Priya and Divya. Also, Karthik sits somewhere to the left of Divya.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Priya. Statement II is not enough: with Karthik = 1, Arjun = 3, Priya = 0, Manoj = 4, Divya = 2 the answer is Priya, but with Karthik = 2, Arjun = 0, Priya = 1, Manoj = 3, Divya = 4 it is Arjun. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Pooja, Imran, Suresh, Divya and Anita, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme left?\nStatement I: Exactly 0 persons sit between Pooja and Anita.\nStatement II: Divya sits at an odd-numbered position.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Pooja = 4, Imran = 1, Suresh = 0, Divya = 2, Anita = 3 the answer is Suresh, but with Pooja = 0, Imran = 2, Suresh = 3, Divya = 4, Anita = 1 it is Pooja. Statement II is not enough: with Pooja = 4, Imran = 1, Suresh = 0, Divya = 2, Anita = 3 the answer is Suresh, but with Pooja = 0, Imran = 1, Suresh = 2, Divya = 4, Anita = 3 it is Pooja. Taking both together is not enough: with Pooja = 4, Imran = 1, Suresh = 0, Divya = 2, Anita = 3 the answer is Suresh, but with Pooja = 0, Imran = 2, Suresh = 3, Divya = 4, Anita = 1 it is Pooja. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Pooja, Imran, Suresh, Divya and Anita, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme right?\nStatement I: Imran sits somewhere between Pooja and Suresh. Also, Suresh sits immediately to the left of Imran.\nStatement II: Pooja sits at one of the two ends.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Pooja = 4, Imran = 1, Suresh = 0, Divya = 2, Anita = 3 the answer is Pooja, but with Pooja = 2, Imran = 1, Suresh = 0, Divya = 3, Anita = 4 it is Anita. Statement II is not enough: with Pooja = 4, Imran = 1, Suresh = 0, Divya = 2, Anita = 3 the answer is Pooja, but with Pooja = 0, Imran = 1, Suresh = 2, Divya = 3, Anita = 4 it is Anita. Taking both together fixes the answer uniquely as Pooja. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Imran, Deepa, Pooja, Divya and Rohit, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits in the middle?\nStatement I: Divya sits somewhere to the left of Rohit.\nStatement II: Deepa sits in the middle.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Imran = 3, Deepa = 2, Pooja = 1, Divya = 0, Rohit = 4 the answer is Deepa, but with Imran = 0, Deepa = 1, Pooja = 2, Divya = 3, Rohit = 4 it is Pooja. Statement II fixes the answer uniquely as Deepa. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Imran, Deepa, Pooja, Divya and Rohit, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme right?\nStatement I: Imran sits somewhere between Pooja and Rohit.\nStatement II: Rohit sits in position 5.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Imran = 3, Deepa = 2, Pooja = 1, Divya = 0, Rohit = 4 the answer is Rohit, but with Imran = 1, Deepa = 2, Pooja = 0, Divya = 4, Rohit = 3 it is Divya. Statement II fixes the answer uniquely as Rohit. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Karthik, Suresh, Rohit, Swati and Anita, sit in a row of chairs in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme right?\nStatement I: Swati sits in position 5.\nStatement II: Rohit sits somewhere to the left of Swati.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Swati. Statement II is not enough: with Karthik = 2, Suresh = 3, Rohit = 0, Swati = 4, Anita = 1 the answer is Swati, but with Karthik = 0, Suresh = 1, Rohit = 2, Swati = 3, Anita = 4 it is Anita. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Karthik, Suresh, Rohit, Swati and Anita, sit in a row of chairs in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nWho sits at the extreme left?\nStatement I: Exactly 0 persons sit between Karthik and Suresh. Also, Exactly 1 person sit between Rohit and Karthik.\nStatement II: Exactly 0 persons sit between Suresh and Swati. Also, Rohit sits at an odd-numbered position.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Karthik = 2, Suresh = 3, Rohit = 0, Swati = 4, Anita = 1 the answer is Rohit, but with Karthik = 0, Suresh = 1, Rohit = 2, Swati = 3, Anita = 4 it is Karthik. Statement II is not enough: with Karthik = 2, Suresh = 3, Rohit = 0, Swati = 4, Anita = 1 the answer is Rohit, but with Karthik = 0, Suresh = 1, Rohit = 4, Swati = 2, Anita = 3 it is Karthik. Taking both together is not enough: with Karthik = 2, Suresh = 3, Rohit = 0, Swati = 4, Anita = 1 the answer is Rohit, but with Karthik = 2, Suresh = 1, Rohit = 4, Swati = 0, Anita = 3 it is Swati. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rahul's birthday falls in one of the twelve months of a calendar year.\nIn which month is the birthday?\nStatement I: The month name ends with the letter 't'. Also, It is not in any of July, September, November, January or May.\nStatement II: The name of the month starts with the letter A.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as August. Statement II is not enough: with month = 7 the answer is August, but with month = 3 it is April. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: It is earlier in the week than Sunday.\nStatement II: It is not on Friday, Monday or Tuesday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with day = 3 the answer is Thursday, but with day = 0 it is Monday. Statement II is not enough: with day = 3 the answer is Thursday, but with day = 2 it is Wednesday. Taking both together is not enough: with day = 3 the answer is Thursday, but with day = 2 it is Wednesday. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Arjun's birthday falls in one of the twelve months of a calendar year.\nIn which month is the birthday?\nStatement I: The name of the month has 3 letters.\nStatement II: The month after it is June.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as May. Statement II fixes the answer uniquely as May. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The quality audit is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: It is neither on Sunday nor on Thursday.\nStatement II: The day before it is Friday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with day = 5 the answer is Saturday, but with day = 0 it is Monday. Statement II fixes the answer uniquely as Saturday. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Harish's birthday falls in one of the twelve months of a calendar year.\nIn which month is the birthday?\nStatement I: It is not in October, February or December.\nStatement II: The name of the month starts with the letter M.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with month = 2 the answer is March, but with month = 1 it is February. Statement II is not enough: with month = 2 the answer is March, but with month = 4 it is May. Taking both together fixes the answer uniquely as March. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Harish's birthday falls in one of the twelve months of a calendar year.\nIn which month is the birthday?\nStatement I: The name of the month has 4 letters.\nStatement II: It is not in any of May, November, January, December or June.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with month = 6 the answer is July, but with month = 5 it is June. Statement II is not enough: with month = 6 the answer is July, but with month = 1 it is February. Taking both together fixes the answer uniquely as July. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Meena's birthday falls in one of the twelve months of a calendar year.\nIn which month is the birthday?\nStatement I: It is not in any of August, April, May, November or October. Also, The birthday is in June.\nStatement II: The month has fewer than 31 days. Also, It is not in any of August, April, May, November or October.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as June. Statement II is not enough: with month = 5 the answer is June, but with month = 1 it is February. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: It is not on Thursday, Monday or Friday.\nStatement II: It is neither on Wednesday nor on Friday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with day = 6 the answer is Sunday, but with day = 1 it is Tuesday. Statement II is not enough: with day = 6 the answer is Sunday, but with day = 1 it is Tuesday. Taking both together is not enough: with day = 6 the answer is Sunday, but with day = 1 it is Tuesday. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The vendor meeting is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: It is neither on Tuesday nor on Saturday.\nStatement II: Two days after it falls on Friday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with day = 2 the answer is Wednesday, but with day = 0 it is Monday. Statement II fixes the answer uniquely as Wednesday. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The annual day rehearsal is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: The day after it is Thursday.\nStatement II: Two days after it falls on Friday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as Wednesday. Statement II fixes the answer uniquely as Wednesday. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The annual day rehearsal is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: The name of the day starts with the letter F.\nStatement II: It is held on a weekday (Monday to Friday).\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as Friday. Statement II is not enough: with day = 4 the answer is Friday, but with day = 0 it is Monday. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: It is earlier in the week than Friday.\nStatement II: The name of the day starts with the letter W.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with day = 2 the answer is Wednesday, but with day = 0 it is Monday. Statement II fixes the answer uniquely as Wednesday. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The blood donation camp is scheduled on one day of a particular week (Monday to Sunday).\nOn which day is it held?\nStatement I: The name of the day starts with the letter F.\nStatement II: The day after it is Saturday. Also, It is earlier in the week than Saturday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as Friday. Statement II fixes the answer uniquely as Friday. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Priya's birthday falls in one of the twelve months of a calendar year.\nIn which month is the birthday?\nStatement I: The month has 31 days.\nStatement II: It is not in March, June or February.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with month = 7 the answer is August, but with month = 0 it is January. Statement II is not enough: with month = 7 the answer is August, but with month = 2 it is March. Taking both together is not enough: with month = 7 the answer is August, but with month = 2 it is March. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places B, A and Q lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is Q from B?\nStatement I: Q is 5 km due north of A.\nStatement II: A is 5 km due south of B.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Q east of B = 0, Q north of B = 0, A east of B = 0, A north of B = -5 the answer is 0 km, but with Q east of B = -10, Q north of B = 10, A east of B = -10, A north of B = 5 it is √200 km. Statement II is not enough: with Q east of B = 0, Q north of B = 0, A east of B = 0, A north of B = -5 the answer is 0 km, but with Q east of B = -10, Q north of B = -10, A east of B = 0, A north of B = -5 it is √200 km. Taking both together fixes the answer uniquely as 0 km. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places B, A and Q lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is Q from B?\nStatement I: Q is 5 km due north of A.\nStatement II: Q is due north of A.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Q east of B = 0, Q north of B = 0, A east of B = 0, A north of B = -5 the answer is the same place, but with Q east of B = -10, Q north of B = -5, A east of B = -10, A north of B = -10 it is south-west. Statement II is not enough: with Q east of B = 0, Q north of B = 0, A east of B = 0, A north of B = -5 the answer is the same place, but with Q east of B = -10, Q north of B = -9, A east of B = -10, A north of B = -10 it is south-west. Taking both together is not enough: with Q east of B = 0, Q north of B = 0, A east of B = 0, A north of B = -5 the answer is the same place, but with Q east of B = -10, Q north of B = -5, A east of B = -10, A north of B = -10 it is south-west. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places F, T and S lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is S from F?\nStatement I: S is 10 km from F.\nStatement II: F is 6 km due north of T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 10 km. Statement II is not enough: with S east of F = 8, S north of F = -6, T east of F = 0, T north of F = -6 the answer is 10 km, but with S east of F = -10, S north of F = -10, T east of F = 0, T north of F = -6 it is √200 km. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places F, T and S lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is S from F?\nStatement I: T is 6 km from F. Also, S is 8 km from T.\nStatement II: T is 6 km due south of F. Also, S is due east of T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with S east of F = 8, S north of F = -6, T east of F = 0, T north of F = -6 the answer is south-east, but with S east of F = -8, S north of F = -6, T east of F = 0, T north of F = -6 it is south-west. Statement II fixes the answer uniquely as south-east. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places F, S and E lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is E from F?\nStatement I: F is 6 km due west of S. Also, E is 3 km due south of S.\nStatement II: E is 3 km due south of S. Also, S is due east of F.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as south-east. Statement II fixes the answer uniquely as south-east. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places F, S and E lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is E from F?\nStatement I: S is 6 km due east of F. Also, E is due south of S.\nStatement II: E is 3 km from S. Also, F is 6 km due west of S.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with E east of F = 6, E north of F = -3, S east of F = 6, S north of F = 0 the answer is √45 km, but with E east of F = 6, E north of F = -10, S east of F = 6, S north of F = 0 it is √136 km. Statement II is not enough: with E east of F = 6, E north of F = -3, S east of F = 6, S north of F = 0 the answer is √45 km, but with E east of F = 9, E north of F = 0, S east of F = 6, S north of F = 0 it is 9 km. Taking both together fixes the answer uniquely as √45 km. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places A, R and E lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is E from A?\nStatement I: R is due north of A.\nStatement II: R is 3 km from A.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with E east of A = -4, E north of A = 3, R east of A = 0, R north of A = 3 the answer is north-west, but with E east of A = -10, E north of A = -10, R east of A = 0, R north of A = 1 it is south-west. Statement II is not enough: with E east of A = -4, E north of A = 3, R east of A = 0, R north of A = 3 the answer is north-west, but with E east of A = -10, E north of A = -10, R east of A = -3, R north of A = 0 it is south-west. Taking both together is not enough: with E east of A = -4, E north of A = 3, R east of A = 0, R north of A = 3 the answer is north-west, but with E east of A = -10, E north of A = -10, R east of A = 0, R north of A = 3 it is south-west. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places A, R and E lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is E from A?\nStatement I: E is 4 km from R.\nStatement II: E is 5 km from A.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with E east of A = -4, E north of A = 3, R east of A = 0, R north of A = 3 the answer is 5 km, but with E east of A = -10, E north of A = -10, R east of A = -10, R north of A = -6 it is √200 km. Statement II fixes the answer uniquely as 5 km. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places P, T and S lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is S from P?\nStatement I: S is due east of T.\nStatement II: S is 3 km from T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with S east of P = 3, S north of P = -6, T east of P = 0, T north of P = -6 the answer is √45 km, but with S east of P = 10, S north of P = -10, T east of P = -10, T north of P = -10 it is √200 km. Statement II is not enough: with S east of P = 3, S north of P = -6, T east of P = 0, T north of P = -6 the answer is √45 km, but with S east of P = -10, S north of P = -10, T east of P = -10, T north of P = -7 it is √200 km. Taking both together is not enough: with S east of P = 3, S north of P = -6, T east of P = 0, T north of P = -6 the answer is √45 km, but with S east of P = 10, S north of P = -10, T east of P = 7, T north of P = -10 it is √200 km. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places P, T and S lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is S from P?\nStatement I: T is 6 km due south of P. Also, S is due east of T.\nStatement II: T is 6 km from P. Also, S is due east of T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as south-east. Statement II is not enough: with S east of P = 3, S north of P = -6, T east of P = 0, T north of P = -6 the answer is south-east, but with S east of P = -5, S north of P = 0, T east of P = -6, T north of P = 0 it is west. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places D, R and B lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is B from D?\nStatement I: D is 3 km due west of R. Also, B is 4 km due east of R.\nStatement II: B is 4 km due east of R. Also, R is due east of D.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as east. Statement II fixes the answer uniquely as east. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places D, R and B lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is B from D?\nStatement I: B is 4 km due east of R.\nStatement II: R is 3 km due east of D.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with B east of D = 7, B north of D = 0, R east of D = 3, R north of D = 0 the answer is 7 km, but with B east of D = 10, B north of D = -10, R east of D = 6, R north of D = -10 it is √200 km. Statement II is not enough: with B east of D = 7, B north of D = 0, R east of D = 3, R north of D = 0 the answer is 7 km, but with B east of D = -10, B north of D = -10, R east of D = 3, R north of D = 0 it is √200 km. Taking both together fixes the answer uniquely as 7 km. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places P, S and A lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIn which direction is A from P?\nStatement I: A is 2 km due east of S. Also, S is due east of P.\nStatement II: S is 7 km from P. Also, A is 2 km from S.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as east. Statement II is not enough: with A east of P = 9, A north of P = 0, S east of P = 7, S north of P = 0 the answer is east, but with A east of P = -7, A north of P = -2, S east of P = -7, S north of P = 0 it is south-west. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places P, S and A lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nHow far is A from P?\nStatement I: S is 7 km from P.\nStatement II: A is 9 km from P.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with A east of P = 9, A north of P = 0, S east of P = 7, S north of P = 0 the answer is 9 km, but with A east of P = -10, A north of P = -10, S east of P = -7, S north of P = 0 it is √200 km. Statement II fixes the answer uniquely as 9 km. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 students in an exam are Divya, Farida, Swati, Karthik, Meena and Ganesh. No two of them scored the same marks.\nIs it true that Swati scored more marks than Meena?\nStatement I: Divya scored more marks than Swati.\nStatement II: Meena ranks between Swati and Karthik.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Divya = 1, Farida = 5, Swati = 2, Karthik = 4, Meena = 3, Ganesh = 0 the answer is Yes, but with Divya = 0, Farida = 1, Swati = 3, Karthik = 4, Meena = 2, Ganesh = 5 it is No. Statement II is not enough: with Divya = 1, Farida = 5, Swati = 2, Karthik = 4, Meena = 3, Ganesh = 0 the answer is Yes, but with Divya = 0, Farida = 1, Swati = 4, Karthik = 2, Meena = 3, Ganesh = 5 it is No. Taking both together is not enough: with Divya = 1, Farida = 5, Swati = 2, Karthik = 4, Meena = 3, Ganesh = 0 the answer is Yes, but with Divya = 0, Farida = 1, Swati = 4, Karthik = 2, Meena = 3, Ganesh = 5 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 students in an exam are Divya, Farida, Swati, Karthik, Meena and Ganesh. No two of them scored the same marks.\nIs Swati the topper?\nStatement I: Divya scored more marks than Farida.\nStatement II: Divya scored more marks than Swati.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Divya = 1, Farida = 5, Swati = 2, Karthik = 4, Meena = 3, Ganesh = 0 the answer is No, but with Divya = 1, Farida = 2, Swati = 0, Karthik = 3, Meena = 4, Ganesh = 5 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 wrestlers are Naveen, Harish, Meena, Imran and Suresh. No two of them have the same weight.\nIs Suresh the heaviest?\nStatement I: Naveen ranks above both Meena and Imran.\nStatement II: Exactly 1 of the others rank above Imran.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Naveen = 0, Harish = 2, Meena = 3, Imran = 1, Suresh = 4 the answer is No, but with Naveen = 1, Harish = 2, Meena = 3, Imran = 4, Suresh = 0 it is Yes. Statement II is not enough: with Naveen = 0, Harish = 2, Meena = 3, Imran = 1, Suresh = 4 the answer is No, but with Naveen = 2, Harish = 3, Meena = 4, Imran = 1, Suresh = 0 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 wrestlers are Naveen, Harish, Meena, Imran and Suresh. No two of them have the same weight.\nIs Meena the lightest?\nStatement I: Exactly 4 of the others rank above Suresh.\nStatement II: Naveen ranks above both Imran and Suresh.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with Naveen = 0, Harish = 2, Meena = 3, Imran = 1, Suresh = 4 the answer is No, but with Naveen = 0, Harish = 1, Meena = 4, Imran = 2, Suresh = 3 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students are Gopal, Arjun, Priya, Manoj and Pooja. Heights are all different.\nIs it true that Pooja is taller than Arjun?\nStatement I: Pooja ranks above both Gopal and Arjun.\nStatement II: Pooja is taller than Arjun.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 students are Gopal, Arjun, Priya, Manoj and Pooja. Heights are all different.\nIs Manoj the shortest?\nStatement I: Manoj is taller than Priya.\nStatement II: Pooja is taller than Arjun.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with Gopal = 2, Arjun = 4, Priya = 3, Manoj = 0, Pooja = 1 the answer is No, but with Gopal = 0, Arjun = 2, Priya = 3, Manoj = 4, Pooja = 1 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Naveen, Swati, Harish, Nisha and Manoj, sit on a sofa row at a cinema in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDo Swati and Manoj sit next to each other?\nStatement I: Swati sits somewhere to the left of Nisha.\nStatement II: Naveen sits somewhere to the left of Harish.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Naveen = 1, Swati = 3, Harish = 2, Nisha = 4, Manoj = 0 the answer is No, but with Naveen = 0, Swati = 1, Harish = 3, Nisha = 4, Manoj = 2 it is Yes. Statement II is not enough: with Naveen = 1, Swati = 3, Harish = 2, Nisha = 4, Manoj = 0 the answer is No, but with Naveen = 0, Swati = 1, Harish = 3, Nisha = 4, Manoj = 2 it is Yes. Taking both together is not enough: with Naveen = 1, Swati = 3, Harish = 2, Nisha = 4, Manoj = 0 the answer is No, but with Naveen = 0, Swati = 1, Harish = 3, Nisha = 4, Manoj = 2 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Naveen, Swati, Harish, Nisha and Manoj, sit on a sofa row at a cinema in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Swati sit at one of the two ends?\nStatement I: Naveen sits somewhere to the left of Harish.\nStatement II: Swati does not sit at either end.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with Naveen = 1, Swati = 3, Harish = 2, Nisha = 4, Manoj = 0 the answer is No, but with Naveen = 0, Swati = 4, Harish = 1, Nisha = 2, Manoj = 3 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Rohit, Swati, Nisha, Lakshmi and Farida, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Swati sit at one of the two ends?\nStatement I: Rohit sits at one of the two ends.\nStatement II: Lakshmi sits in position 3. Also, Nisha sits in position 5.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Rohit = 0, Swati = 3, Nisha = 4, Lakshmi = 2, Farida = 1 the answer is No, but with Rohit = 0, Swati = 4, Nisha = 1, Lakshmi = 2, Farida = 3 it is Yes. Statement II is not enough: with Rohit = 0, Swati = 3, Nisha = 4, Lakshmi = 2, Farida = 1 the answer is No, but with Rohit = 1, Swati = 0, Nisha = 4, Lakshmi = 2, Farida = 3 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Rohit, Swati, Nisha, Lakshmi and Farida, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDo Swati and Lakshmi sit next to each other?\nStatement I: Swati and Lakshmi sit next to each other.\nStatement II: Exactly 1 person sit between Nisha and Lakshmi.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with Rohit = 0, Swati = 3, Nisha = 4, Lakshmi = 2, Farida = 1 the answer is Yes, but with Rohit = 0, Swati = 1, Nisha = 2, Lakshmi = 4, Farida = 3 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Rohit, Suresh, Pooja, Divya and Vikram, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDo Suresh and Divya sit next to each other?\nStatement I: Divya sits immediately to the left of Suresh.\nStatement II: Exactly 0 persons sit between Divya and Suresh.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Rohit, Suresh, Pooja, Divya and Vikram, sit in a queue at a counter in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Suresh sit to the left of Divya?\nStatement I: Exactly 0 persons sit between Pooja and Rohit. Also, Rohit and Divya sit next to each other.\nStatement II: Vikram sits in position 1.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Rohit = 2, Suresh = 4, Pooja = 1, Divya = 3, Vikram = 0 the answer is No, but with Rohit = 2, Suresh = 0, Pooja = 1, Divya = 3, Vikram = 4 it is Yes. Statement II is not enough: with Rohit = 2, Suresh = 4, Pooja = 1, Divya = 3, Vikram = 0 the answer is No, but with Rohit = 1, Suresh = 2, Pooja = 3, Divya = 4, Vikram = 0 it is Yes. Taking both together is not enough: with Rohit = 2, Suresh = 4, Pooja = 1, Divya = 3, Vikram = 0 the answer is No, but with Rohit = 3, Suresh = 1, Pooja = 2, Divya = 4, Vikram = 0 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on a weekday (Monday to Friday)?\nStatement I: It is not on Monday, Sunday or Wednesday.\nStatement II: It is held on a weekday (Monday to Friday).\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with day = 4 the answer is Yes, but with day = 5 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on or before Wednesday?\nStatement I: It is held on a weekday (Monday to Friday).\nStatement II: It is neither on Thursday nor on Wednesday.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with day = 4 the answer is No, but with day = 0 it is Yes. Statement II is not enough: with day = 4 the answer is No, but with day = 1 it is Yes. Taking both together is not enough: with day = 4 the answer is No, but with day = 1 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Swati's birthday falls in one of the twelve months of a calendar year.\nIs the birthday in the first half of the year (January to June)?\nStatement I: The month is after June and before October.\nStatement II: The name of the month has 4 letters.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with month = 6 the answer is No, but with month = 5 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Swati's birthday falls in one of the twelve months of a calendar year.\nDoes the birthday month have 31 days?\nStatement I: It is not in any of August, February, December, April or June.\nStatement II: The name of the month has 4 letters.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with month = 6 the answer is Yes, but with month = 8 it is No. Statement II is not enough: with month = 6 the answer is Yes, but with month = 5 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on or before Wednesday?\nStatement I: It is held on Saturday.\nStatement II: It is held on a weekend.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Pongal celebration is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on a weekday (Monday to Friday)?\nStatement I: It is neither on Wednesday nor on Friday. Also, It is held on Saturday.\nStatement II: It is not on Wednesday, Monday or Friday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with day = 5 the answer is No, but with day = 1 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places R, T and P lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs P more than 5 km from R?\nStatement I: T is 8 km due west of R.\nStatement II: P is 10 km from R.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with P east of R = -8, P north of R = -6, T east of R = -8, T north of R = 0 the answer is Yes, but with P east of R = -5, P north of R = 0, T east of R = -8, T north of R = 0 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places R, T and P lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs P to the east of R (that is, further east)?\nStatement I: P is 6 km from T.\nStatement II: P is 10 km from R.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with P east of R = -8, P north of R = -6, T east of R = -8, T north of R = 0 the answer is No, but with P east of R = 1, P north of R = -10, T east of R = -5, T north of R = -10 it is Yes. Statement II is not enough: with P east of R = -8, P north of R = -6, T east of R = -8, T north of R = 0 the answer is No, but with P east of R = 6, P north of R = -8, T east of R = -10, T north of R = -10 it is Yes. Taking both together is not enough: with P east of R = -8, P north of R = -6, T east of R = -8, T north of R = 0 the answer is No, but with P east of R = 6, P north of R = -8, T east of R = 0, T north of R = -8 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places A, B and P lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs P more than 5 km from A?\nStatement I: P is 2 km from A.\nStatement II: B is 6 km from A.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with P east of A = 2, P north of A = 0, B east of A = -6, B north of A = 0 the answer is No, but with P east of A = -10, P north of A = -10, B east of A = -6, B north of A = 0 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places A, B and P lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs P to the east of A (that is, further east)?\nStatement I: P is 8 km due east of B.\nStatement II: A is 6 km due east of B.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with P east of A = 2, P north of A = 0, B east of A = -6, B north of A = 0 the answer is Yes, but with P east of A = -2, P north of A = -10, B east of A = -10, B north of A = -10 it is No. Statement II is not enough: with P east of A = 2, P north of A = 0, B east of A = -6, B north of A = 0 the answer is Yes, but with P east of A = -10, P north of A = -10, B east of A = -6, B north of A = 0 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places A, S and B lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs B to the north of A (that is, further north)?\nStatement I: B is due north of S. Also, S is 4 km due east of A.\nStatement II: S is 4 km due east of A. Also, B is due north of S.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places A, S and B lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs B to the east of A (that is, further east)?\nStatement I: B is 4 km due north of S.\nStatement II: S is 4 km due east of A.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with B east of A = 4, B north of A = 4, S east of A = 4, S north of A = 0 the answer is Yes, but with B east of A = -10, B north of A = -6, S east of A = -10, S north of A = -10 it is No. Statement II is not enough: with B east of A = 4, B north of A = 4, S east of A = 4, S north of A = 0 the answer is Yes, but with B east of A = -10, B north of A = -10, S east of A = 4, S north of A = 0 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "logical-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

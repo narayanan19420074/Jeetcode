@@ -1,0 +1,4569 @@
+{
+ "pattern": {
+  "title": "Active-Passive Voice and Direct-Indirect Speech",
+  "slug": "voice-and-speech",
+  "description": "Voice and reported speech.",
+  "order": 54,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "active-to-passive",
+    "title": "Active to passive"
+   },
+   {
+    "slug": "passive-to-active",
+    "title": "Passive to active"
+   },
+   {
+    "slug": "direct-to-indirect",
+    "title": "Direct to indirect"
+   },
+   {
+    "slug": "indirect-to-direct",
+    "title": "Indirect to direct"
+   },
+   {
+    "slug": "mixed-tenses-questions",
+    "title": "Mixed tenses & questions"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the correct passive voice of: “Ravi writes a letter.”",
+   "options": [
+    {
+     "text": "A letter was written by Ravi."
+    },
+    {
+     "text": "A letter is written by Ravi."
+    },
+    {
+     "text": "A letter is being written by Ravi."
+    },
+    {
+     "text": "Ravi is written by a letter."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: object becomes subject; verb = is/am/are + V3 for simple present; the old subject follows 'by'. Here: A letter + is written + by Ravi.",
+   "order": 1,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Meena sang a song.”",
+   "options": [
+    {
+     "text": "A song was sang by Meena."
+    },
+    {
+     "text": "A song is sung by Meena."
+    },
+    {
+     "text": "A song has been sung by Meena."
+    },
+    {
+     "text": "A song was sung by Meena."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: simple past becomes was/were + V3. 'sang' (V2) becomes 'sung' (V3): A song was sung by Meena.",
+   "order": 2,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The farmer is ploughing the field.”",
+   "options": [
+    {
+     "text": "The field is being ploughed by the farmer."
+    },
+    {
+     "text": "The field was being ploughed by the farmer."
+    },
+    {
+     "text": "The field is ploughed by the farmer."
+    },
+    {
+     "text": "The field has been ploughed by the farmer."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: present continuous becomes is/am/are + being + V3. The field is being ploughed by the farmer.",
+   "order": 3,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The police have arrested the thief.”",
+   "options": [
+    {
+     "text": "The thief was arrested by the police."
+    },
+    {
+     "text": "The thief is being arrested by the police."
+    },
+    {
+     "text": "The thief has been arrested by the police."
+    },
+    {
+     "text": "The thief had been arrested by the police."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: present perfect becomes has/have + been + V3; 'thief' is singular so 'has been arrested'.",
+   "order": 4,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Arjun will finish the project.”",
+   "options": [
+    {
+     "text": "The project will have been finished by Arjun."
+    },
+    {
+     "text": "The project would be finished by Arjun."
+    },
+    {
+     "text": "The project will be finished by Arjun."
+    },
+    {
+     "text": "The project is finished by Arjun."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: simple future becomes will + be + V3. The project will be finished by Arjun.",
+   "order": 5,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The cook prepares sambar every morning.”",
+   "options": [
+    {
+     "text": "Sambar was prepared by the cook every morning."
+    },
+    {
+     "text": "Sambar is being prepared by the cook every morning."
+    },
+    {
+     "text": "The cook is prepared by sambar every morning."
+    },
+    {
+     "text": "Sambar is prepared by the cook every morning."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: simple present gives is/are + V3; the object 'sambar' becomes the subject.",
+   "order": 6,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Kavya wrote the report.”",
+   "options": [
+    {
+     "text": "The report was written by Kavya."
+    },
+    {
+     "text": "The report was being written by Kavya."
+    },
+    {
+     "text": "The report is written by Kavya."
+    },
+    {
+     "text": "The report had been written by Kavya."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: simple past gives was/were + V3. The report was written by Kavya.",
+   "order": 7,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The teacher punished the naughty boys.”",
+   "options": [
+    {
+     "text": "The naughty boys had been punished by the teacher."
+    },
+    {
+     "text": "The naughty boys were punished by the teacher."
+    },
+    {
+     "text": "The naughty boys are punished by the teacher."
+    },
+    {
+     "text": "The naughty boys was punished by the teacher."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: simple past gives was/were + V3; the plural subject 'boys' takes 'were'.",
+   "order": 8,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Sachin hit a six.”",
+   "options": [
+    {
+     "text": "A six was being hit by Sachin."
+    },
+    {
+     "text": "A six has been hit by Sachin."
+    },
+    {
+     "text": "A six is hit by Sachin."
+    },
+    {
+     "text": "A six was hit by Sachin."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: simple past gives was + V3 (hit is the same in V3). A six was hit by Sachin.",
+   "order": 9,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The gardener waters the plants.”",
+   "options": [
+    {
+     "text": "The plants is watered by the gardener."
+    },
+    {
+     "text": "The plants were watered by the gardener."
+    },
+    {
+     "text": "The plants are watered by the gardener."
+    },
+    {
+     "text": "The plants are being watered by the gardener."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: simple present gives is/are + V3; plural 'plants' takes 'are'.",
+   "order": 10,
+   "subPattern": "active-to-passive",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The students were reading novels.”",
+   "options": [
+    {
+     "text": "Novels were being read by the students."
+    },
+    {
+     "text": "Novels are being read by the students."
+    },
+    {
+     "text": "Novels had been read by the students."
+    },
+    {
+     "text": "Novels were read by the students."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: past continuous becomes was/were + being + V3. Novels were being read by the students.",
+   "order": 11,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Priya had cooked dinner.”",
+   "options": [
+    {
+     "text": "Dinner had been cooking by Priya."
+    },
+    {
+     "text": "Dinner had been cooked by Priya."
+    },
+    {
+     "text": "Dinner was cooked by Priya."
+    },
+    {
+     "text": "Dinner has been cooked by Priya."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: past perfect becomes had + been + V3. Dinner had been cooked by Priya.",
+   "order": 12,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Ramesh is writing an email.”",
+   "options": [
+    {
+     "text": "An email was being written by Ramesh."
+    },
+    {
+     "text": "An email is being written by Ramesh."
+    },
+    {
+     "text": "An email is written by Ramesh."
+    },
+    {
+     "text": "An email has been written by Ramesh."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: present continuous becomes is/am/are + being + V3. An email is being written by Ramesh.",
+   "order": 13,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The manager will have signed the contract by noon.”",
+   "options": [
+    {
+     "text": "The contract will have been signed by the manager by noon."
+    },
+    {
+     "text": "The contract has been signed by the manager by noon."
+    },
+    {
+     "text": "The contract will be signed by the manager by noon."
+    },
+    {
+     "text": "The contract would have been signed by the manager by noon."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: future perfect becomes will have + been + V3.",
+   "order": 14,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “You must obey the rules.”",
+   "options": [
+    {
+     "text": "The rules are obeyed by you."
+    },
+    {
+     "text": "The rules must obeyed by you."
+    },
+    {
+     "text": "The rules must have been obeyed by you."
+    },
+    {
+     "text": "The rules must be obeyed by you."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: modal + verb becomes modal + be + V3. The rules must be obeyed by you.",
+   "order": 15,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The committee can solve this problem.”",
+   "options": [
+    {
+     "text": "This problem can be solving by the committee."
+    },
+    {
+     "text": "This problem can solved by the committee."
+    },
+    {
+     "text": "This problem can be solved by the committee."
+    },
+    {
+     "text": "This problem could be solved by the committee."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: modal + verb becomes modal + be + V3, keeping the same modal (can).",
+   "order": 16,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Who wrote this poem?”",
+   "options": [
+    {
+     "text": "By whom was this poem written?"
+    },
+    {
+     "text": "By whom is this poem written?"
+    },
+    {
+     "text": "By whom has this poem been written?"
+    },
+    {
+     "text": "Who was this poem written by whom?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: for 'Who + V + object' use 'By whom + aux + object + V3'; simple past gives 'was ... written'.",
+   "order": 17,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Did Anil break the window?”",
+   "options": [
+    {
+     "text": "Did the window break by Anil?"
+    },
+    {
+     "text": "Has the window been broken by Anil?"
+    },
+    {
+     "text": "Is the window broken by Anil?"
+    },
+    {
+     "text": "Was the window broken by Anil?"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Did + S + V1 + O' becomes 'Was/Were + O + V3 + by S'.",
+   "order": 18,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Does she sing songs?”",
+   "options": [
+    {
+     "text": "Were songs sung by her?"
+    },
+    {
+     "text": "Are songs sung by her?"
+    },
+    {
+     "text": "Is songs sung by her?"
+    },
+    {
+     "text": "Do songs sung by her?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Does/Do + S + V1 + O' becomes 'Is/Are + O + V3 + by S'. 'Songs' is plural so 'Are'; the agent pronoun 'she' becomes 'her'.",
+   "order": 19,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Have you completed the assignment?”",
+   "options": [
+    {
+     "text": "Is the assignment completed by you?"
+    },
+    {
+     "text": "Have the assignment been completed by you?"
+    },
+    {
+     "text": "Has the assignment been completed by you?"
+    },
+    {
+     "text": "Had the assignment been completed by you?"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Have/Has + S + V3 + O' becomes 'Has/Have + O + been + V3 + by S'. Singular 'assignment' takes 'Has'.",
+   "order": 20,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Nobody has solved the puzzle.”",
+   "options": [
+    {
+     "text": "The puzzle has not been solved by anybody."
+    },
+    {
+     "text": "The puzzle has been solved by nobody not."
+    },
+    {
+     "text": "The puzzle had not been solved by anybody."
+    },
+    {
+     "text": "The puzzle was not solved by anybody."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Nobody' becomes 'not ... by anybody' in the passive; present perfect becomes has + been + V3.",
+   "order": 21,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The company gave Ravi a laptop.”",
+   "options": [
+    {
+     "text": "Ravi has been given a laptop by the company."
+    },
+    {
+     "text": "Ravi was given a laptop by the company."
+    },
+    {
+     "text": "Ravi was gave a laptop by the company."
+    },
+    {
+     "text": "Ravi is given a laptop by the company."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: with two objects either can become the subject; simple past gives was + V3. Ravi was given a laptop by the company.",
+   "order": 22,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Please open the window.”",
+   "options": [
+    {
+     "text": "The window is opened."
+    },
+    {
+     "text": "Let the window was opened."
+    },
+    {
+     "text": "Let the window being opened."
+    },
+    {
+     "text": "Let the window be opened."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: an imperative becomes 'Let + object + be + V3'. Let the window be opened.",
+   "order": 23,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “People speak Tamil in Coimbatore.”",
+   "options": [
+    {
+     "text": "Tamil is being spoken in Coimbatore."
+    },
+    {
+     "text": "Tamil was spoken in Coimbatore."
+    },
+    {
+     "text": "Tamil is spoken in Coimbatore."
+    },
+    {
+     "text": "Tamil has been spoken in Coimbatore."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: simple present gives is + V3; a vague agent such as 'people' is dropped. Tamil is spoken in Coimbatore.",
+   "order": 24,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The workers were building a bridge over the Cauvery.”",
+   "options": [
+    {
+     "text": "A bridge over the Cauvery is being built by the workers."
+    },
+    {
+     "text": "A bridge over the Cauvery was being built by the workers."
+    },
+    {
+     "text": "A bridge over the Cauvery was built by the workers."
+    },
+    {
+     "text": "A bridge over the Cauvery were being built by the workers."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: past continuous becomes was/were + being + V3; the singular 'bridge' takes 'was'.",
+   "order": 25,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Everybody loves Dhoni.”",
+   "options": [
+    {
+     "text": "Everybody is loved by Dhoni."
+    },
+    {
+     "text": "Dhoni was loved by everybody."
+    },
+    {
+     "text": "Dhoni has been loved by everybody."
+    },
+    {
+     "text": "Dhoni is loved by everybody."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: simple present gives is + V3. Dhoni is loved by everybody.",
+   "order": 26,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Lata is going to buy a saree.”",
+   "options": [
+    {
+     "text": "A saree was going to be bought by Lata."
+    },
+    {
+     "text": "A saree will be bought by Lata."
+    },
+    {
+     "text": "A saree is going to be bought by Lata."
+    },
+    {
+     "text": "A saree is going to buy by Lata."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'is going to + V1' becomes 'is going to + be + V3', keeping the tense of 'going to'.",
+   "order": 27,
+   "subPattern": "active-to-passive",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Ravi asked me a question.”",
+   "options": [
+    {
+     "text": "I was asked a question by Ravi."
+    },
+    {
+     "text": "I am asked a question by Ravi."
+    },
+    {
+     "text": "Me was asked a question by Ravi."
+    },
+    {
+     "text": "I had been asked a question by Ravi."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: the object pronoun 'me' becomes the subject pronoun 'I'; simple past gives was + V3.",
+   "order": 28,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Who is teaching you mathematics?”",
+   "options": [
+    {
+     "text": "By whom are you being taught mathematics?"
+    },
+    {
+     "text": "By whom are you taught mathematics?"
+    },
+    {
+     "text": "By whom were you being taught mathematics?"
+    },
+    {
+     "text": "By whom have you been taught mathematics?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: present continuous becomes is/are + being + V3; 'Who' becomes 'By whom'; 'you' stays 'you' as the object-turned-subject.",
+   "order": 29,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Why did the principal cancel the function?”",
+   "options": [
+    {
+     "text": "Why has the function been cancelled by the principal?"
+    },
+    {
+     "text": "Why did the function cancel by the principal?"
+    },
+    {
+     "text": "Why is the function cancelled by the principal?"
+    },
+    {
+     "text": "Why was the function cancelled by the principal?"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: keep the question word; 'did + V1' becomes 'was/were + V3'. Why was the function cancelled by the principal?",
+   "order": 30,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “The captain ordered the team to practise daily.”",
+   "options": [
+    {
+     "text": "The team was ordered by the captain for practising daily."
+    },
+    {
+     "text": "The team was ordered by the captain to practise daily."
+    },
+    {
+     "text": "The team is ordered by the captain to practise daily."
+    },
+    {
+     "text": "The team had been ordered by the captain to practise daily."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: simple past gives was + V3; collective 'team' is treated as singular here; the infinitive phrase stays unchanged.",
+   "order": 31,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Someone has stolen my bicycle.”",
+   "options": [
+    {
+     "text": "My bicycle was stolen."
+    },
+    {
+     "text": "My bicycle had been stolen."
+    },
+    {
+     "text": "My bicycle has been stolen."
+    },
+    {
+     "text": "My bicycle is being stolen."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: present perfect becomes has + been + V3; the indefinite agent 'someone' is dropped.",
+   "order": 32,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “They had not informed the guests about the change.”",
+   "options": [
+    {
+     "text": "The guests were not informed about the change."
+    },
+    {
+     "text": "The guests had not been informed about the change."
+    },
+    {
+     "text": "The guests have not been informed about the change."
+    },
+    {
+     "text": "The guests had not informed about the change."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: past perfect negative becomes had + not + been + V3.",
+   "order": 33,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+  },
+  {
+   "questionText": "Choose the correct passive voice of: “Do not waste water.”",
+   "options": [
+    {
+     "text": "Let not water be wasted."
+    },
+    {
+     "text": "Let water not wasting."
+    },
+    {
+     "text": "Let not water was wasted."
+    },
+    {
+     "text": "Water is not wasted."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: a negative imperative becomes 'Let not + object + be + V3'.",
+   "order": 34,
+   "subPattern": "active-to-passive",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “A letter is written by Ravi.”",
+   "options": [
+    {
+     "text": "Ravi wrote a letter."
+    },
+    {
+     "text": "Ravi is writing a letter."
+    },
+    {
+     "text": "Ravi writes a letter."
+    },
+    {
+     "text": "A letter writes Ravi."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: the agent after 'by' becomes the subject; 'is written' (present) becomes 'writes'. Ravi writes a letter.",
+   "order": 35,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The thief was caught by the police.”",
+   "options": [
+    {
+     "text": "The thief caught the police."
+    },
+    {
+     "text": "The police had caught the thief."
+    },
+    {
+     "text": "The police catch the thief."
+    },
+    {
+     "text": "The police caught the thief."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'was + V3' becomes simple past V2. The police caught the thief.",
+   "order": 36,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The song was sung by Meena.”",
+   "options": [
+    {
+     "text": "Meena has sung the song."
+    },
+    {
+     "text": "Meena sings the song."
+    },
+    {
+     "text": "Meena sang the song."
+    },
+    {
+     "text": "Meena sung the song."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'was sung' becomes simple past 'sang' (V2, not V3).",
+   "order": 37,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Sambar is prepared by the cook.”",
+   "options": [
+    {
+     "text": "The cook has prepared sambar."
+    },
+    {
+     "text": "The cook prepared sambar."
+    },
+    {
+     "text": "The cook is preparing sambar."
+    },
+    {
+     "text": "The cook prepares sambar."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'is + V3' becomes simple present V1(s). The cook prepares sambar.",
+   "order": 38,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The project will be finished by Arjun.”",
+   "options": [
+    {
+     "text": "Arjun finishes the project."
+    },
+    {
+     "text": "Arjun will finish the project."
+    },
+    {
+     "text": "Arjun will have finished the project."
+    },
+    {
+     "text": "Arjun would finish the project."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'will be + V3' becomes 'will + V1'.",
+   "order": 39,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The window was broken by Anil.”",
+   "options": [
+    {
+     "text": "Anil broke the window."
+    },
+    {
+     "text": "Anil was breaking the window."
+    },
+    {
+     "text": "Anil has broken the window."
+    },
+    {
+     "text": "Anil breaks the window."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'was broken' becomes simple past 'broke'.",
+   "order": 40,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The cake has been baked by Divya.”",
+   "options": [
+    {
+     "text": "Divya had baked the cake."
+    },
+    {
+     "text": "Divya has baked the cake."
+    },
+    {
+     "text": "Divya is baking the cake."
+    },
+    {
+     "text": "Divya baked the cake."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'has been + V3' becomes 'has + V3'.",
+   "order": 41,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The plants are watered by the gardener.”",
+   "options": [
+    {
+     "text": "The gardener watered the plants."
+    },
+    {
+     "text": "The gardener is watering the plants."
+    },
+    {
+     "text": "The gardener waters the plants."
+    },
+    {
+     "text": "The gardener water the plants."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'are + V3' becomes simple present; singular subject 'gardener' takes 'waters'.",
+   "order": 42,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The match was won by India.”",
+   "options": [
+    {
+     "text": "India won the match."
+    },
+    {
+     "text": "India has won the match."
+    },
+    {
+     "text": "India had won the match."
+    },
+    {
+     "text": "India wins the match."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'was won' becomes simple past 'won'.",
+   "order": 43,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “She is loved by all.”",
+   "options": [
+    {
+     "text": "All loved her."
+    },
+    {
+     "text": "All are loving her."
+    },
+    {
+     "text": "All loves her."
+    },
+    {
+     "text": "All love her."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'is loved' becomes simple present 'love' with plural subject 'all'; the subject 'She' becomes the object 'her'.",
+   "order": 44,
+   "subPattern": "passive-to-active",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “He was seen by her.”",
+   "options": [
+    {
+     "text": "She had seen him."
+    },
+    {
+     "text": "He saw her."
+    },
+    {
+     "text": "She saw him."
+    },
+    {
+     "text": "She sees him."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: swap subject and object, using 'She' as subject and 'him' as object; 'was seen' becomes 'saw'.",
+   "order": 45,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “We are taught English by Mr. Iyer.”",
+   "options": [
+    {
+     "text": "We teach Mr. Iyer English."
+    },
+    {
+     "text": "Mr. Iyer teaches we English."
+    },
+    {
+     "text": "Mr. Iyer taught us English."
+    },
+    {
+     "text": "Mr. Iyer teaches us English."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'are taught' becomes 'teaches'; the subject 'We' becomes the object 'us'.",
+   "order": 46,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The letter is being typed by the clerk.”",
+   "options": [
+    {
+     "text": "The clerk is typing the letter."
+    },
+    {
+     "text": "The clerk has typed the letter."
+    },
+    {
+     "text": "The clerk types the letter."
+    },
+    {
+     "text": "The clerk was typing the letter."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'is being + V3' becomes 'is + V-ing'.",
+   "order": 47,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The exam had been conducted by the university.”",
+   "options": [
+    {
+     "text": "The university had been conducting the exam."
+    },
+    {
+     "text": "The university had conducted the exam."
+    },
+    {
+     "text": "The university has conducted the exam."
+    },
+    {
+     "text": "The university conducted the exam."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'had been + V3' becomes 'had + V3'.",
+   "order": 48,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Has the bill been paid by you?”",
+   "options": [
+    {
+     "text": "Have you paid the bill?"
+    },
+    {
+     "text": "Had you paid the bill?"
+    },
+    {
+     "text": "Did you pay the bill?"
+    },
+    {
+     "text": "Has you paid the bill?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Has + O + been + V3 + by S' becomes 'Have + S + V3 + O'; 'you' takes 'Have'.",
+   "order": 49,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “By whom was this bridge built?”",
+   "options": [
+    {
+     "text": "Who has built this bridge?"
+    },
+    {
+     "text": "Who builds this bridge?"
+    },
+    {
+     "text": "Who built this bridge?"
+    },
+    {
+     "text": "Whom built this bridge?"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'By whom was + O + V3' becomes 'Who + V2 + O'.",
+   "order": 50,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Was the door locked by him?”",
+   "options": [
+    {
+     "text": "Does he lock the door?"
+    },
+    {
+     "text": "Has he locked the door?"
+    },
+    {
+     "text": "Did he locked the door?"
+    },
+    {
+     "text": "Did he lock the door?"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Was + O + V3 + by S' becomes 'Did + S + V1 + O'.",
+   "order": 51,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The rules must be followed by everyone.”",
+   "options": [
+    {
+     "text": "Everyone must followed the rules."
+    },
+    {
+     "text": "Everyone must follow the rules."
+    },
+    {
+     "text": "Everyone must have followed the rules."
+    },
+    {
+     "text": "Everyone should follow the rules."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'modal + be + V3' becomes 'modal + V1', keeping the same modal.",
+   "order": 52,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “I was given a gift by my uncle.”",
+   "options": [
+    {
+     "text": "My uncle had given me a gift."
+    },
+    {
+     "text": "My uncle gave I a gift."
+    },
+    {
+     "text": "My uncle gave me a gift."
+    },
+    {
+     "text": "My uncle gives me a gift."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'was given' becomes 'gave'; subject 'I' becomes object 'me'.",
+   "order": 53,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Let the work be finished at once.”",
+   "options": [
+    {
+     "text": "Finish the work at once."
+    },
+    {
+     "text": "The work is finished at once."
+    },
+    {
+     "text": "Let finish the work at once."
+    },
+    {
+     "text": "The work will be finished at once."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Let + O + be + V3' becomes an imperative: V1 + object.",
+   "order": 54,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The fruits were being sold by the vendor.”",
+   "options": [
+    {
+     "text": "The vendor sold the fruits."
+    },
+    {
+     "text": "The vendor was selling the fruits."
+    },
+    {
+     "text": "The vendor had sold the fruits."
+    },
+    {
+     "text": "The vendor is selling the fruits."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'were being + V3' becomes 'was/were + V-ing'; singular 'vendor' takes 'was'.",
+   "order": 55,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The bus will be driven by Murugan.”",
+   "options": [
+    {
+     "text": "Murugan will drove the bus."
+    },
+    {
+     "text": "Murugan drives the bus."
+    },
+    {
+     "text": "Murugan will have driven the bus."
+    },
+    {
+     "text": "Murugan will drive the bus."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'will be + V3' becomes 'will + V1'.",
+   "order": 56,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The poem was not written by Kalidas.”",
+   "options": [
+    {
+     "text": "Kalidas does not write the poem."
+    },
+    {
+     "text": "Kalidas did not write the poem."
+    },
+    {
+     "text": "Kalidas did not wrote the poem."
+    },
+    {
+     "text": "Kalidas had not written the poem."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: negative 'was not + V3' becomes 'did not + V1'.",
+   "order": 57,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Cricket is loved by Indians.”",
+   "options": [
+    {
+     "text": "Indians love cricket."
+    },
+    {
+     "text": "Indians loves cricket."
+    },
+    {
+     "text": "Indians are loving cricket."
+    },
+    {
+     "text": "Indians loved cricket."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'is loved' becomes simple present 'love' with the plural subject 'Indians'.",
+   "order": 58,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “This house was built by my grandfather in 1950.”",
+   "options": [
+    {
+     "text": "My grandfather had built this house in 1950."
+    },
+    {
+     "text": "My grandfather builds this house in 1950."
+    },
+    {
+     "text": "My grandfather built this house in 1950 by him."
+    },
+    {
+     "text": "My grandfather built this house in 1950."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'was built' becomes simple past 'built'; the agent is the new subject.",
+   "order": 59,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The sweets have been distributed by the volunteers.”",
+   "options": [
+    {
+     "text": "The volunteers are distributing the sweets."
+    },
+    {
+     "text": "The volunteers had distributed the sweets."
+    },
+    {
+     "text": "The volunteers have distributed the sweets."
+    },
+    {
+     "text": "The volunteers distributed the sweets."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'have been + V3' becomes 'have + V3'.",
+   "order": 60,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Why was the meeting postponed by the director?”",
+   "options": [
+    {
+     "text": "Why does the director postpone the meeting?"
+    },
+    {
+     "text": "Why has the director postponed the meeting?"
+    },
+    {
+     "text": "Why did the director postpone the meeting?"
+    },
+    {
+     "text": "Why the director postponed the meeting?"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'was + V3' with a question word becomes 'did + S + V1'.",
+   "order": 61,
+   "subPattern": "passive-to-active",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The tiger was shot dead by the hunter.”",
+   "options": [
+    {
+     "text": "The hunter shot the tiger dead."
+    },
+    {
+     "text": "The hunter had shot the tiger dead."
+    },
+    {
+     "text": "The hunter shoots the tiger dead."
+    },
+    {
+     "text": "The hunter was shooting the tiger dead."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'was shot' becomes simple past 'shot'; the complement 'dead' stays after the object.",
+   "order": 62,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The matter is being discussed by the committee.”",
+   "options": [
+    {
+     "text": "The committee has discussed the matter."
+    },
+    {
+     "text": "The committee is discussing the matter."
+    },
+    {
+     "text": "The committee was discussing the matter."
+    },
+    {
+     "text": "The committee discussed the matter."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'is being + V3' becomes 'is + V-ing'.",
+   "order": 63,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Who is being taught by Mr. Rao?”",
+   "options": [
+    {
+     "text": "Whom is Mr. Rao taught?"
+    },
+    {
+     "text": "Whom Mr. Rao is teaching?"
+    },
+    {
+     "text": "Whom was Mr. Rao teaching?"
+    },
+    {
+     "text": "Whom is Mr. Rao teaching?"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: passive 'Who is being taught by X' becomes 'Whom is X teaching'; 'is being + V3' becomes 'is + V-ing', and the questioned person is the object so 'Whom'.",
+   "order": 64,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “I was told by the doctor to take rest.”",
+   "options": [
+    {
+     "text": "The doctor told I to take rest."
+    },
+    {
+     "text": "The doctor tells me to take rest."
+    },
+    {
+     "text": "The doctor told me to take rest."
+    },
+    {
+     "text": "The doctor had told me to take rest."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'was told' becomes 'told'; 'I' becomes 'me'; the infinitive phrase stays.",
+   "order": 65,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “He is known to everyone.”",
+   "options": [
+    {
+     "text": "Everyone knows him."
+    },
+    {
+     "text": "Everyone knew him."
+    },
+    {
+     "text": "Everyone is knowing him."
+    },
+    {
+     "text": "Everyone know him."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'is known to' becomes 'knows'; 'everyone' is singular; 'He' becomes 'him'.",
+   "order": 66,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “The prize will have been won by Kiran by evening.”",
+   "options": [
+    {
+     "text": "Kiran would have won the prize by evening."
+    },
+    {
+     "text": "Kiran has won the prize by evening."
+    },
+    {
+     "text": "Kiran will win the prize by evening."
+    },
+    {
+     "text": "Kiran will have won the prize by evening."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'will have been + V3' becomes 'will have + V3'.",
+   "order": 67,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Is the new road being built by the municipality?”",
+   "options": [
+    {
+     "text": "Was the municipality building the new road?"
+    },
+    {
+     "text": "Is the municipality building the new road?"
+    },
+    {
+     "text": "Does the municipality build the new road?"
+    },
+    {
+     "text": "Has the municipality built the new road?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Is + O + being + V3 + by S' becomes 'Is + S + V-ing + O'.",
+   "order": 68,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct active voice of: “Let the letter be posted by him.”",
+   "options": [
+    {
+     "text": "He posts the letter."
+    },
+    {
+     "text": "Let he post the letter."
+    },
+    {
+     "text": "Let him posted the letter."
+    },
+    {
+     "text": "Let him post the letter."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Let + O + be + V3 + by X' becomes 'Let + X (object form) + V1 + O'; 'he' becomes 'him' after 'let'.",
+   "order": 69,
+   "subPattern": "passive-to-active",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Drop 'by', make its noun the subject, turn the be-form + V3 back to the active tense of the same time frame."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said, “I am busy.”",
+   "options": [
+    {
+     "text": "He said that I was busy."
+    },
+    {
+     "text": "He said that he was busy."
+    },
+    {
+     "text": "He said that he is busy."
+    },
+    {
+     "text": "He said that he had been busy."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: reporting verb in past, so present tense shifts back (am becomes was) and 'I' becomes 'he'.",
+   "order": 70,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said, “I like mangoes.”",
+   "options": [
+    {
+     "text": "She said that she liked mangoes."
+    },
+    {
+     "text": "She said that she had liked mangoes."
+    },
+    {
+     "text": "She said that I liked mangoes."
+    },
+    {
+     "text": "She said that she likes mangoes."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: simple present backshifts to simple past; 'I' becomes 'she'.",
+   "order": 71,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Ravi said to me, “I will help you.”",
+   "options": [
+    {
+     "text": "Ravi told me that he would help him."
+    },
+    {
+     "text": "Ravi told me that I would help him."
+    },
+    {
+     "text": "Ravi told me that he would help me."
+    },
+    {
+     "text": "Ravi told me that he will help me."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'said to' becomes 'told'; will becomes would; 'I' becomes 'he' (the speaker) and 'you' becomes 'me' (the listener).",
+   "order": 72,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Mother said, “I have cooked dinner.”",
+   "options": [
+    {
+     "text": "Mother said that I had cooked dinner."
+    },
+    {
+     "text": "Mother said that she has cooked dinner."
+    },
+    {
+     "text": "Mother said that she would cook dinner."
+    },
+    {
+     "text": "Mother said that she had cooked dinner."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: present perfect becomes past perfect; 'I' becomes 'she'.",
+   "order": 73,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Kumar said, “I wrote a poem.”",
+   "options": [
+    {
+     "text": "Kumar said that he wrote a poem."
+    },
+    {
+     "text": "Kumar said that he had written a poem."
+    },
+    {
+     "text": "Kumar said that I had written a poem."
+    },
+    {
+     "text": "Kumar said that he has written a poem."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: simple past backshifts to past perfect; 'I' becomes 'he'.",
+   "order": 74,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: The teacher said, “The earth moves round the sun.”",
+   "options": [
+    {
+     "text": "The teacher said that the earth would move round the sun."
+    },
+    {
+     "text": "The teacher said that the earth had moved round the sun."
+    },
+    {
+     "text": "The teacher said that the earth moves round the sun."
+    },
+    {
+     "text": "The teacher said that the earth moved round the sun."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: a universal truth keeps its present tense even after a past reporting verb.",
+   "order": 75,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said, “I can swim.”",
+   "options": [
+    {
+     "text": "He said that he could swim."
+    },
+    {
+     "text": "He said that I could swim."
+    },
+    {
+     "text": "He said that he can swim."
+    },
+    {
+     "text": "He said that he would swim."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: can becomes could; 'I' becomes 'he'.",
+   "order": 76,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said to him, “You are late.”",
+   "options": [
+    {
+     "text": "She told him that he had been late."
+    },
+    {
+     "text": "She told him that he is late."
+    },
+    {
+     "text": "She told him that he was late."
+    },
+    {
+     "text": "She told him that she was late."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'said to' becomes 'told'; 'you' becomes 'him' (the listener); are becomes was.",
+   "order": 77,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: They said, “We are playing cricket.”",
+   "options": [
+    {
+     "text": "They said that they were playing cricket."
+    },
+    {
+     "text": "They said that we were playing cricket."
+    },
+    {
+     "text": "They said that they had been playing cricket."
+    },
+    {
+     "text": "They said that they are playing cricket."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: present continuous backshifts to past continuous; 'we' becomes 'they'.",
+   "order": 78,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Anita said, “I may go to Madurai.”",
+   "options": [
+    {
+     "text": "Anita said that I might go to Madurai."
+    },
+    {
+     "text": "Anita said that she might go to Madurai."
+    },
+    {
+     "text": "Anita said that she could go to Madurai."
+    },
+    {
+     "text": "Anita said that she may go to Madurai."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: may becomes might; 'I' becomes 'she'.",
+   "order": 79,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said to me, “Where do you live?”",
+   "options": [
+    {
+     "text": "He asked me where he lived."
+    },
+    {
+     "text": "He asked me where did I live."
+    },
+    {
+     "text": "He asked me that where I lived."
+    },
+    {
+     "text": "He asked me where I lived."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: a wh-question becomes a statement-order clause (no auxiliary 'do'); present backshifts to past; 'you' becomes 'I' (me, the listener).",
+   "order": 80,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said to him, “Are you coming?”",
+   "options": [
+    {
+     "text": "She asked him if he is coming."
+    },
+    {
+     "text": "She asked him if was he coming."
+    },
+    {
+     "text": "She asked him if he was coming."
+    },
+    {
+     "text": "She asked him that he was coming."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: a yes/no question uses 'if/whether' with statement word order; present continuous becomes past continuous.",
+   "order": 81,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: The teacher said to the students, “Open your books.”",
+   "options": [
+    {
+     "text": "The teacher asked the students if they opened their books."
+    },
+    {
+     "text": "The teacher ordered the students to open your books."
+    },
+    {
+     "text": "The teacher ordered the students that they open their books."
+    },
+    {
+     "text": "The teacher ordered the students to open their books."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: an imperative uses a verb like ordered/told plus 'to' + V1; 'your' becomes 'their'.",
+   "order": 82,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: The doctor said to the patient, “Do not eat oily food.”",
+   "options": [
+    {
+     "text": "The doctor advised the patient that he did not eat oily food."
+    },
+    {
+     "text": "The doctor advised the patient not to eat oily food."
+    },
+    {
+     "text": "The doctor advised the patient do not eat oily food."
+    },
+    {
+     "text": "The doctor advised the patient to not eating oily food."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: a negative imperative becomes 'not to + V1' after advised/told.",
+   "order": 83,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Ravi said, “Hurrah! We have won the match.”",
+   "options": [
+    {
+     "text": "Ravi exclaimed with joy that they had won the match."
+    },
+    {
+     "text": "Ravi exclaimed with sorrow that they had won the match."
+    },
+    {
+     "text": "Ravi exclaimed with joy that they would win the match."
+    },
+    {
+     "text": "Ravi exclaimed with joy that we have won the match."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: exclamation words (Hurrah) become 'exclaimed with joy'; present perfect becomes past perfect; 'we' becomes 'they'.",
+   "order": 84,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said, “Alas! I have lost my purse.”",
+   "options": [
+    {
+     "text": "She exclaimed with sorrow that she has lost her purse."
+    },
+    {
+     "text": "She exclaimed with sorrow that she had lost her purse."
+    },
+    {
+     "text": "She exclaimed with sorrow that I had lost my purse."
+    },
+    {
+     "text": "She exclaimed with joy that she had lost her purse."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Alas' becomes 'exclaimed with sorrow'; present perfect becomes past perfect; 'I/my' become 'she/her'.",
+   "order": 85,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Arun said to Babu, “Will you lend me your pen?”",
+   "options": [
+    {
+     "text": "Arun asked Babu if he would lend him his pen."
+    },
+    {
+     "text": "Arun asked Babu if he will lend him his pen."
+    },
+    {
+     "text": "Arun asked Babu if I would lend you my pen."
+    },
+    {
+     "text": "Arun asked Babu would he lend him his pen."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: a yes/no question uses 'if'; will becomes would; pronouns follow the speaker and listener (me becomes him, your becomes his).",
+   "order": 86,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said, “I have been waiting since morning.”",
+   "options": [
+    {
+     "text": "He said that he has been waiting since morning."
+    },
+    {
+     "text": "He said that he was waiting since morning."
+    },
+    {
+     "text": "He said that he had been waiting since morning."
+    },
+    {
+     "text": "He said that I had been waiting since morning."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: present perfect continuous becomes past perfect continuous.",
+   "order": 87,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said, “I met her yesterday.”",
+   "options": [
+    {
+     "text": "He said that he had met her the next day."
+    },
+    {
+     "text": "He said that he has met her the previous day."
+    },
+    {
+     "text": "He said that he met her yesterday."
+    },
+    {
+     "text": "He said that he had met her the previous day."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: simple past becomes past perfect; 'yesterday' becomes 'the previous day'.",
+   "order": 88,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said, “I will come tomorrow.”",
+   "options": [
+    {
+     "text": "She said that she would come the previous day."
+    },
+    {
+     "text": "She said that she would have come the next day."
+    },
+    {
+     "text": "She said that she would come the next day."
+    },
+    {
+     "text": "She said that she will come tomorrow."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: will becomes would; 'tomorrow' becomes 'the next day'.",
+   "order": 89,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said, “I am leaving today.”",
+   "options": [
+    {
+     "text": "He said that he had left that day."
+    },
+    {
+     "text": "He said that he was leaving that day."
+    },
+    {
+     "text": "He said that he was leaving today."
+    },
+    {
+     "text": "He said that he is leaving that day."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'today' becomes 'that day'; present continuous becomes past continuous.",
+   "order": 90,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: “I saw him here last night,” said Meera.",
+   "options": [
+    {
+     "text": "Meera said that she had seen him there the previous night."
+    },
+    {
+     "text": "Meera said that I had seen him there the previous night."
+    },
+    {
+     "text": "Meera said that she had seen him here the previous night."
+    },
+    {
+     "text": "Meera said that she saw him here last night."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: simple past becomes past perfect; 'here' becomes 'there'; 'last night' becomes 'the previous night'.",
+   "order": 91,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Rohit said to Mani, “Why are you crying?”",
+   "options": [
+    {
+     "text": "Rohit asked Mani why was he crying."
+    },
+    {
+     "text": "Rohit asked Mani why you were crying."
+    },
+    {
+     "text": "Rohit asked Mani why he is crying."
+    },
+    {
+     "text": "Rohit asked Mani why he was crying."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: wh-question keeps its question word but takes statement word order; present continuous becomes past continuous; 'you' becomes 'he'.",
+   "order": 92,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said, “What a beautiful garden this is!”",
+   "options": [
+    {
+     "text": "She exclaimed that it was a very beautiful garden."
+    },
+    {
+     "text": "She asked what a beautiful garden it was."
+    },
+    {
+     "text": "She exclaimed that it is a very beautiful garden."
+    },
+    {
+     "text": "She exclaimed that this is a very beautiful garden."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: an exclamation becomes a statement with 'exclaimed that'; 'What a' becomes 'a very'; 'this' becomes 'it' and is becomes was.",
+   "order": 93,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: The manager said to the clerk, “Please send the file.”",
+   "options": [
+    {
+     "text": "The manager ordered the clerk to send the file please."
+    },
+    {
+     "text": "The manager requested the clerk that he sends the file."
+    },
+    {
+     "text": "The manager asked the clerk if he sent the file."
+    },
+    {
+     "text": "The manager requested the clerk to send the file."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: an imperative with 'please' becomes 'requested ... to + V1'.",
+   "order": 94,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Father said to me, “You must study hard.”",
+   "options": [
+    {
+     "text": "Father told me that you must study hard."
+    },
+    {
+     "text": "Father told me that I had must study hard."
+    },
+    {
+     "text": "Father told me that I must study hard."
+    },
+    {
+     "text": "Father told me that he must study hard."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'must' stays unchanged in reported speech; 'you' becomes 'I' (the listener, me).",
+   "order": 95,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: “Don't make noise,” said the teacher to the boys.",
+   "options": [
+    {
+     "text": "The teacher asked the boys if they made noise."
+    },
+    {
+     "text": "The teacher forbade the boys to make noise."
+    },
+    {
+     "text": "The teacher forbade the boys to made noise."
+    },
+    {
+     "text": "The teacher forbade the boys that they do not make noise."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: a negative command can be reported with 'forbade ... to + V1' (or 'told ... not to').",
+   "order": 96,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: The captain said to the players, “Let us win this match.”",
+   "options": [
+    {
+     "text": "The captain proposed to the players that they should win that match."
+    },
+    {
+     "text": "The captain proposed to the players that we should win this match."
+    },
+    {
+     "text": "The captain proposed to the players that they will win that match."
+    },
+    {
+     "text": "The captain asked the players to let them win that match."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Let us' (suggestion) becomes 'proposed that ... should'; 'us' becomes 'they'; 'this' becomes 'that'.",
+   "order": 97,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said to her, “Did you see the film yesterday?”",
+   "options": [
+    {
+     "text": "He asked her if he had seen the film the previous day."
+    },
+    {
+     "text": "He asked her if she had seen the film the previous day."
+    },
+    {
+     "text": "He asked her did she see the film the previous day."
+    },
+    {
+     "text": "He asked her if she saw the film yesterday."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: yes/no question uses 'if'; simple past becomes past perfect; 'yesterday' becomes 'the previous day'; 'you' becomes 'she'.",
+   "order": 98,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: The judge said to the accused, “Why did you steal the money?”",
+   "options": [
+    {
+     "text": "The judge asked the accused why he stole the money."
+    },
+    {
+     "text": "The judge asked the accused why you had stolen the money."
+    },
+    {
+     "text": "The judge asked the accused why he had stolen the money."
+    },
+    {
+     "text": "The judge asked the accused why did he steal the money."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: wh-question takes statement order; simple past becomes past perfect; 'you' becomes 'he'.",
+   "order": 99,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: She said, “My brother will be coming here next week.”",
+   "options": [
+    {
+     "text": "She said that her brother would come there the previous week."
+    },
+    {
+     "text": "She said that my brother would be coming there the following week."
+    },
+    {
+     "text": "She said that her brother will be coming here next week."
+    },
+    {
+     "text": "She said that her brother would be coming there the following week."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: will be coming becomes would be coming; 'here' becomes 'there'; 'next week' becomes 'the following week'; 'my' becomes 'her'.",
+   "order": 100,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Raju said to me, “I shall help you if you ask me.”",
+   "options": [
+    {
+     "text": "Raju told me that he will help me if I ask him."
+    },
+    {
+     "text": "Raju told me that he would help me if I asked him."
+    },
+    {
+     "text": "Raju told me that I would help him if I asked him."
+    },
+    {
+     "text": "Raju told me that he would help me if you asked me."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: shall becomes would and the present in the 'if' clause becomes past; 'I' becomes 'he', 'you' becomes 'I', 'me' becomes 'him'.",
+   "order": 101,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: Gopal said to Sita, “How did you reach here so early?”",
+   "options": [
+    {
+     "text": "Gopal asked Sita how did she reach there so early."
+    },
+    {
+     "text": "Gopal asked Sita how she reached here so early."
+    },
+    {
+     "text": "Gopal asked Sita how she had reached there so early."
+    },
+    {
+     "text": "Gopal asked Sita how he had reached there so early."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: wh-question takes statement order; simple past becomes past perfect; 'you' becomes 'she'; 'here' becomes 'there'.",
+   "order": 102,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reporting verb in past: backshift the tense (am/is to was, will to would, V2 to had + V3); fix pronouns by speaker/listener; today/tomorrow/here become that day/next day/there."
+  },
+  {
+   "questionText": "Choose the correct indirect speech of: He said, “I had finished my work before she came.”",
+   "options": [
+    {
+     "text": "He said that he had finished his work before she has come."
+    },
+    {
+     "text": "He said that I had finished my work before she came."
+    },
+    {
+     "text": "He said that he has finished his work before she came."
+    },
+    {
+     "text": "He said that he had finished his work before she came."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: past perfect cannot backshift further, so it stays 'had finished'; only the pronouns change (I becomes he, my becomes his).",
+   "order": 103,
+   "subPattern": "direct-to-indirect",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he was busy.",
+   "options": [
+    {
+     "text": "He said, “I am busy.”"
+    },
+    {
+     "text": "He said, “He was busy.”"
+    },
+    {
+     "text": "He said, “I was busy.”"
+    },
+    {
+     "text": "He said, “You are busy.”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: to restore direct speech, shift the tense forward (was becomes am) and 'he' becomes 'I'.",
+   "order": 104,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She said that she liked mangoes.",
+   "options": [
+    {
+     "text": "She said, “She likes mangoes.”"
+    },
+    {
+     "text": "She said, “I like mangoes.”"
+    },
+    {
+     "text": "She said, “I liked mangoes.”"
+    },
+    {
+     "text": "She said, “I will like mangoes.”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: past in the reported clause returns to simple present; 'she' becomes 'I'.",
+   "order": 105,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Mother said that she had cooked dinner.",
+   "options": [
+    {
+     "text": "Mother said, “She has cooked dinner.”"
+    },
+    {
+     "text": "Mother said, “I will cook dinner.”"
+    },
+    {
+     "text": "Mother said, “I am cooking dinner.”"
+    },
+    {
+     "text": "Mother said, “I have cooked dinner.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: past perfect returns to present perfect (had cooked becomes have cooked); 'she' becomes 'I'.",
+   "order": 106,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Ravi told me that he would help me.",
+   "options": [
+    {
+     "text": "Ravi said to me, “He will help you.”"
+    },
+    {
+     "text": "Ravi said to me, “You will help me.”"
+    },
+    {
+     "text": "Ravi said to me, “I will help you.”"
+    },
+    {
+     "text": "Ravi said to me, “I would help you.”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: would becomes will; 'he' becomes 'I' (speaker) and 'me' becomes 'you' (listener).",
+   "order": 107,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher said that the earth moves round the sun.",
+   "options": [
+    {
+     "text": "The teacher said, “The earth moves round the sun.”"
+    },
+    {
+     "text": "The teacher said, “The earth is moving round the sun.”"
+    },
+    {
+     "text": "The teacher said, “The earth moved round the sun.”"
+    },
+    {
+     "text": "The teacher said, “The earth will move round the sun.”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: a universal truth is unchanged in tense, so direct speech keeps the simple present.",
+   "order": 108,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he could swim.",
+   "options": [
+    {
+     "text": "He said, “He can swim.”"
+    },
+    {
+     "text": "He said, “I could swim.”"
+    },
+    {
+     "text": "He said, “I can swim.”"
+    },
+    {
+     "text": "He said, “I will swim.”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: could becomes can; 'he' becomes 'I'.",
+   "order": 109,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: They said that they were playing cricket.",
+   "options": [
+    {
+     "text": "They said, “We play cricket.”"
+    },
+    {
+     "text": "They said, “We are playing cricket.”"
+    },
+    {
+     "text": "They said, “They are playing cricket.”"
+    },
+    {
+     "text": "They said, “We were playing cricket.”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: past continuous returns to present continuous; 'they' becomes 'we'.",
+   "order": 110,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Anita said that she might go to Madurai.",
+   "options": [
+    {
+     "text": "Anita said, “She may go to Madurai.”"
+    },
+    {
+     "text": "Anita said, “I might go to Madurai.”"
+    },
+    {
+     "text": "Anita said, “I will go to Madurai.”"
+    },
+    {
+     "text": "Anita said, “I may go to Madurai.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: might becomes may; 'she' becomes 'I'.",
+   "order": 111,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She told him that he was late.",
+   "options": [
+    {
+     "text": "She said to him, “You are late.”"
+    },
+    {
+     "text": "She said to him, “I am late.”"
+    },
+    {
+     "text": "She said to him, “He is late.”"
+    },
+    {
+     "text": "She said to him, “You were late.”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'told' becomes 'said to'; 'he' (the listener) becomes 'you'; was becomes are.",
+   "order": 112,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he would come the next day.",
+   "options": [
+    {
+     "text": "He said, “I would come tomorrow.”"
+    },
+    {
+     "text": "He said, “He will come tomorrow.”"
+    },
+    {
+     "text": "He said, “I will come tomorrow.”"
+    },
+    {
+     "text": "He said, “I will come yesterday.”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: would becomes will; 'the next day' becomes 'tomorrow'; 'he' becomes 'I'.",
+   "order": 113,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He asked me where I lived.",
+   "options": [
+    {
+     "text": "He said to me, “Where do you live?”"
+    },
+    {
+     "text": "He said to me, “Where does he live?”"
+    },
+    {
+     "text": "He said to me, “Where I live?”"
+    },
+    {
+     "text": "He said to me, “Where did you live?”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: restore question order with auxiliary 'do'; past returns to present; 'I' (the listener) becomes 'you'.",
+   "order": 114,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She asked him if he was coming.",
+   "options": [
+    {
+     "text": "She said to him, “Is he coming?”"
+    },
+    {
+     "text": "She said to him, “Are you coming?”"
+    },
+    {
+     "text": "She said to him, “Am I coming?”"
+    },
+    {
+     "text": "She said to him, “Were you coming?”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'if' clause becomes a yes/no question with inverted order; was becomes are; 'he' becomes 'you'.",
+   "order": 115,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher ordered the students to open their books.",
+   "options": [
+    {
+     "text": "The teacher said to the students, “Open their books.”"
+    },
+    {
+     "text": "The teacher said to the students, “You open your books?”"
+    },
+    {
+     "text": "The teacher said to the students, “Opens your books.”"
+    },
+    {
+     "text": "The teacher said to the students, “Open your books.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'ordered ... to + V1' becomes an imperative; 'their' becomes 'your'.",
+   "order": 116,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The doctor advised the patient not to eat oily food.",
+   "options": [
+    {
+     "text": "The doctor said to the patient, “Does not eat oily food.”"
+    },
+    {
+     "text": "The doctor said to the patient, “Not to eat oily food.”"
+    },
+    {
+     "text": "The doctor said to the patient, “You did not eat oily food.”"
+    },
+    {
+     "text": "The doctor said to the patient, “Do not eat oily food.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'advised ... not to + V1' becomes a negative imperative 'Do not + V1'.",
+   "order": 117,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Ravi exclaimed with joy that they had won the match.",
+   "options": [
+    {
+     "text": "Ravi said, “Alas! We have won the match.”"
+    },
+    {
+     "text": "Ravi said, “Hurrah! We have won the match.”"
+    },
+    {
+     "text": "Ravi said, “Hurrah! They have won the match.”"
+    },
+    {
+     "text": "Ravi said, “Hurrah! We will win the match.”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'exclaimed with joy' becomes an interjection (Hurrah); past perfect returns to present perfect; 'they' becomes 'we'.",
+   "order": 118,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Arun asked Babu if he would lend him his pen.",
+   "options": [
+    {
+     "text": "Arun said to Babu, “You will lend me your pen.”"
+    },
+    {
+     "text": "Arun said to Babu, “Will he lend me his pen?”"
+    },
+    {
+     "text": "Arun said to Babu, “Will you lend me your pen?”"
+    },
+    {
+     "text": "Arun said to Babu, “Would he lend him his pen?”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'if' clause becomes a direct question; would becomes will; 'he' becomes 'you', 'him' becomes 'me', 'his' becomes 'your'.",
+   "order": 119,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he had met her the previous day.",
+   "options": [
+    {
+     "text": "He said, “I met her yesterday.”"
+    },
+    {
+     "text": "He said, “I meet her yesterday.”"
+    },
+    {
+     "text": "He said, “I will meet her tomorrow.”"
+    },
+    {
+     "text": "He said, “He met her yesterday.”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'the previous day' becomes 'yesterday'; the reported past perfect is restored to the simple past; 'he' becomes 'I'.",
+   "order": 120,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She said that she would leave that evening.",
+   "options": [
+    {
+     "text": "She said, “I will leave this evening.”"
+    },
+    {
+     "text": "She said, “I would leave that evening.”"
+    },
+    {
+     "text": "She said, “She will leave this evening.”"
+    },
+    {
+     "text": "She said, “I left this evening.”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: would becomes will; 'that evening' becomes 'this evening'; 'she' becomes 'I'.",
+   "order": 121,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Meera said that she had seen him there the previous night.",
+   "options": [
+    {
+     "text": "Meera said, “I will see him here tonight.”"
+    },
+    {
+     "text": "Meera said, “I had seen him there last night.”"
+    },
+    {
+     "text": "Meera said, “I saw him here last night.”"
+    },
+    {
+     "text": "Meera said, “She saw him here last night.”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'there' becomes 'here'; 'the previous night' becomes 'last night'; past perfect returns to simple past; 'she' becomes 'I'.",
+   "order": 122,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Rohit asked Mani why he was crying.",
+   "options": [
+    {
+     "text": "Rohit said to Mani, “Why was he crying?”"
+    },
+    {
+     "text": "Rohit said to Mani, “Why am I crying?”"
+    },
+    {
+     "text": "Rohit said to Mani, “Why you are crying?”"
+    },
+    {
+     "text": "Rohit said to Mani, “Why are you crying?”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: restore question word order; was crying becomes are crying; 'he' (the listener) becomes 'you'.",
+   "order": 123,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The manager requested the clerk to send the file.",
+   "options": [
+    {
+     "text": "The manager said to the clerk, “Please sent the file.”"
+    },
+    {
+     "text": "The manager said to the clerk, “Please send the file.”"
+    },
+    {
+     "text": "The manager said to the clerk, “He sends the file.”"
+    },
+    {
+     "text": "The manager said to the clerk, “Will he send the file?”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'requested ... to + V1' becomes an imperative with 'Please'.",
+   "order": 124,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher forbade the boys to make noise.",
+   "options": [
+    {
+     "text": "The teacher said to the boys, “Did not make noise.”"
+    },
+    {
+     "text": "The teacher said to the boys, “Do not make noise.”"
+    },
+    {
+     "text": "The teacher said to the boys, “You do not made noise.”"
+    },
+    {
+     "text": "The teacher said to the boys, “Make noise.”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'forbade ... to + V1' becomes a negative imperative 'Do not + V1'.",
+   "order": 125,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She exclaimed that it was a very beautiful garden.",
+   "options": [
+    {
+     "text": "She said, “It is a very beautiful garden?”"
+    },
+    {
+     "text": "She said, “How beautiful the garden was!”"
+    },
+    {
+     "text": "She said, “What a beautiful garden this is!”"
+    },
+    {
+     "text": "She said, “What a beautiful garden that was!”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'exclaimed that ... very' becomes an exclamation 'What a + adjective + noun + subject + verb!'; was becomes is; 'it' becomes 'this'.",
+   "order": 126,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that his sister was learning music then.",
+   "options": [
+    {
+     "text": "He said, “My sister is learning music now.”"
+    },
+    {
+     "text": "He said, “My sister was learning music now.”"
+    },
+    {
+     "text": "He said, “His sister is learning music now.”"
+    },
+    {
+     "text": "He said, “My sister is learning music then.”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'then' becomes 'now'; past continuous returns to present continuous; 'his' becomes 'my'.",
+   "order": 127,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Sunita said that she had been working there for ten years.",
+   "options": [
+    {
+     "text": "Sunita said, “I will be working here for ten years.”"
+    },
+    {
+     "text": "Sunita said, “She has been working here for ten years.”"
+    },
+    {
+     "text": "Sunita said, “I have been working there for ten years.”"
+    },
+    {
+     "text": "Sunita said, “I have been working here for ten years.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: past perfect continuous returns to present perfect continuous; 'there' becomes 'here'; 'she' becomes 'I'.",
+   "order": 128,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He told me that he would not forgive me.",
+   "options": [
+    {
+     "text": "He said to me, “You will not forgive me.”"
+    },
+    {
+     "text": "He said to me, “I will not forgive you.”"
+    },
+    {
+     "text": "He said to me, “I would not forgive you.”"
+    },
+    {
+     "text": "He said to me, “He will not forgive you.”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: would becomes will; 'he' becomes 'I' and 'me' becomes 'you'.",
+   "order": 129,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Father asked me whether I had finished my homework.",
+   "options": [
+    {
+     "text": "Father said to me, “Have you finished your homework?”"
+    },
+    {
+     "text": "Father said to me, “Have I finished my homework?”"
+    },
+    {
+     "text": "Father said to me, “Had I finished my homework?”"
+    },
+    {
+     "text": "Father said to me, “Did you finished your homework?”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'whether' clause becomes an inverted question; past perfect returns to present perfect; 'I' (the listener) becomes 'you' and 'my' becomes 'your'.",
+   "order": 130,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She asked the guard what time the train left.",
+   "options": [
+    {
+     "text": "She said to the guard, “What time did the train leave?”"
+    },
+    {
+     "text": "She said to the guard, “What time the train leaves?”"
+    },
+    {
+     "text": "She said to the guard, “What time will the train leave?”"
+    },
+    {
+     "text": "She said to the guard, “What time does the train leave?”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: restore auxiliary 'does' before the subject; the past 'left' returns to present 'leave'.",
+   "order": 131,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The judge asked the accused why he had stolen the money.",
+   "options": [
+    {
+     "text": "The judge said to the accused, “Why do you steal the money?”"
+    },
+    {
+     "text": "The judge said to the accused, “Why will you steal the money?”"
+    },
+    {
+     "text": "The judge said to the accused, “Why did you steal the money?”"
+    },
+    {
+     "text": "The judge said to the accused, “Why did he steal the money?”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: restore question order with 'did'; past perfect returns to simple past; 'he' becomes 'you'.",
+   "order": 132,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Gopal asked Sita how she had reached there so early.",
+   "options": [
+    {
+     "text": "Gopal said to Sita, “How did you reach here so early?”"
+    },
+    {
+     "text": "Gopal said to Sita, “How will you reach here so early?”"
+    },
+    {
+     "text": "Gopal said to Sita, “How did she reach there so early?”"
+    },
+    {
+     "text": "Gopal said to Sita, “How do you reach here so early?”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: restore 'did' + V1; 'there' becomes 'here'; 'she' becomes 'you'.",
+   "order": 133,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She said that her brother would be coming there the following week.",
+   "options": [
+    {
+     "text": "She said, “Her brother will be coming here next week.”"
+    },
+    {
+     "text": "She said, “My brother would be coming here next week.”"
+    },
+    {
+     "text": "She said, “My brother will be coming there last week.”"
+    },
+    {
+     "text": "She said, “My brother will be coming here next week.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: would be coming becomes will be coming; 'there' becomes 'here'; 'the following week' becomes 'next week'; 'her' becomes 'my'.",
+   "order": 134,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he had finished his work before she came.",
+   "options": [
+    {
+     "text": "He said, “I will finish my work before she came.”"
+    },
+    {
+     "text": "He said, “I have finished my work before she came.”"
+    },
+    {
+     "text": "He said, “I had finished my work before she came.”"
+    },
+    {
+     "text": "He said, “He had finished his work before she came.”"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: this past perfect is already in the 'earlier past' and stays as it is; only the pronouns change (he becomes I, his becomes my).",
+   "order": 135,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Raju told me that he would help me if I asked him.",
+   "options": [
+    {
+     "text": "Raju said to me, “He will help you if you ask him.”"
+    },
+    {
+     "text": "Raju said to me, “I shall help you if you ask me.”"
+    },
+    {
+     "text": "Raju said to me, “I would help you if you asked me.”"
+    },
+    {
+     "text": "Raju said to me, “I shall help you if I ask you.”"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: would becomes shall/will and the past 'asked' returns to 'ask'; 'he' becomes 'I', 'I' becomes 'you', 'him' becomes 'me'.",
+   "order": 136,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher said that honesty is the best policy.",
+   "options": [
+    {
+     "text": "The teacher said, “Honesty was the best policy.”"
+    },
+    {
+     "text": "The teacher said, “Honesty is best policy.”"
+    },
+    {
+     "text": "The teacher said, “Honesty will be the best policy.”"
+    },
+    {
+     "text": "The teacher said, “Honesty is the best policy.”"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: a proverb or general truth stays in the simple present in both forms.",
+   "order": 137,
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Who broke the glass?",
+   "options": [
+    {
+     "text": "By whom was the glass broken?"
+    },
+    {
+     "text": "By whom is the glass broken?"
+    },
+    {
+     "text": "Who was the glass broken by whom?"
+    },
+    {
+     "text": "By whom has the glass been broken?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Who + V2 + O' becomes 'By whom + was + O + V3'.",
+   "order": 138,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to me, “What is your name?”",
+   "options": [
+    {
+     "text": "He asked me what his name was."
+    },
+    {
+     "text": "He asked me what was my name."
+    },
+    {
+     "text": "He asked me what my name was."
+    },
+    {
+     "text": "He asked me what is my name."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: wh-question gets statement order; is becomes was; 'your' becomes 'my'.",
+   "order": 139,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Does he play chess?",
+   "options": [
+    {
+     "text": "Was chess played by him?"
+    },
+    {
+     "text": "Is chess played by him?"
+    },
+    {
+     "text": "Are chess played by him?"
+    },
+    {
+     "text": "Does chess played by him?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Does + S + V1 + O' becomes 'Is/Are + O + V3 + by S'; 'chess' is singular so 'Is'.",
+   "order": 140,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Did she help you?",
+   "options": [
+    {
+     "text": "Are you helped by her?"
+    },
+    {
+     "text": "Were you helped by her?"
+    },
+    {
+     "text": "Have you been helped by her?"
+    },
+    {
+     "text": "Was you helped by her?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Did + S + V1 + O' becomes 'Was/Were + O + V3 + by S'; 'you' takes 'were'.",
+   "order": 141,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: The teacher said to Ravi, “Are you ill?”",
+   "options": [
+    {
+     "text": "The teacher asked Ravi if he is ill."
+    },
+    {
+     "text": "The teacher asked Ravi if you were ill."
+    },
+    {
+     "text": "The teacher asked Ravi that he was ill."
+    },
+    {
+     "text": "The teacher asked Ravi if he was ill."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: yes/no question uses 'if'; are becomes was; 'you' becomes 'he'.",
+   "order": 142,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Is Ravi writing a letter?",
+   "options": [
+    {
+     "text": "Is a letter being written by Ravi?"
+    },
+    {
+     "text": "Has a letter been written by Ravi?"
+    },
+    {
+     "text": "Is a letter written by Ravi?"
+    },
+    {
+     "text": "Was a letter being written by Ravi?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Is + S + V-ing + O' becomes 'Is + O + being + V3 + by S'.",
+   "order": 143,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Will you help the poor?",
+   "options": [
+    {
+     "text": "Would the poor be helped by you?"
+    },
+    {
+     "text": "Will the poor helped by you?"
+    },
+    {
+     "text": "Will the poor be helped by you?"
+    },
+    {
+     "text": "Will the poor have been helped by you?"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Will + S + V1 + O' becomes 'Will + O + be + V3 + by S'.",
+   "order": 144,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to her, “Where did you go?”",
+   "options": [
+    {
+     "text": "He asked her where did she go."
+    },
+    {
+     "text": "He asked her where he had gone."
+    },
+    {
+     "text": "He asked her where she had gone."
+    },
+    {
+     "text": "He asked her where she went."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: wh-question uses statement order; simple past becomes past perfect; 'you' becomes 'she'.",
+   "order": 145,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Have they finished the work?",
+   "options": [
+    {
+     "text": "Has the work been finished by them?"
+    },
+    {
+     "text": "Had the work been finished by them?"
+    },
+    {
+     "text": "Was the work finished by them?"
+    },
+    {
+     "text": "Have the work been finished by them?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Have + S + V3 + O' becomes 'Has/Have + O + been + V3 + by S'; 'work' is singular so 'Has'.",
+   "order": 146,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: She said to me, “Do you know him?”",
+   "options": [
+    {
+     "text": "She asked me if she knew him."
+    },
+    {
+     "text": "She asked me if I knew him."
+    },
+    {
+     "text": "She asked me do I know him."
+    },
+    {
+     "text": "She asked me if I know him."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: yes/no question uses 'if'; present becomes past; 'you' becomes 'I'.",
+   "order": 147,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Can you solve this sum?",
+   "options": [
+    {
+     "text": "Could this sum be solved by you?"
+    },
+    {
+     "text": "Is this sum solved by you?"
+    },
+    {
+     "text": "Can this sum solved by you?"
+    },
+    {
+     "text": "Can this sum be solved by you?"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Modal + S + V1 + O' becomes 'Modal + O + be + V3 + by S', keeping 'can'.",
+   "order": 148,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: “Why are you laughing?” Rani said to Mohan.",
+   "options": [
+    {
+     "text": "Rani asked Mohan why was he laughing."
+    },
+    {
+     "text": "Rani asked Mohan why you were laughing."
+    },
+    {
+     "text": "Rani asked Mohan why he had laughed."
+    },
+    {
+     "text": "Rani asked Mohan why he was laughing."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: wh-question uses statement order; present continuous becomes past continuous; 'you' becomes 'he'.",
+   "order": 149,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Why do they sell tickets so early?",
+   "options": [
+    {
+     "text": "Why were tickets sold so early?"
+    },
+    {
+     "text": "Why do tickets sold so early?"
+    },
+    {
+     "text": "Why are tickets sold so early?"
+    },
+    {
+     "text": "Why are tickets selling so early?"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Why do + S + V1 + O' becomes 'Why are + O + V3'; the vague agent 'they' is dropped.",
+   "order": 150,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: What did the teacher give you?",
+   "options": [
+    {
+     "text": "What were you given by the teacher?"
+    },
+    {
+     "text": "What are you given by the teacher?"
+    },
+    {
+     "text": "What was you given by the teacher?"
+    },
+    {
+     "text": "What had you been given by the teacher?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: with two objects, 'you' becomes the subject; 'did give' becomes 'were given'.",
+   "order": 151,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Whom did you invite?",
+   "options": [
+    {
+     "text": "Who is invited by you?"
+    },
+    {
+     "text": "Who was invited by you?"
+    },
+    {
+     "text": "Who were invited by you?"
+    },
+    {
+     "text": "Whom was invited by you?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Whom + did + S + V1' becomes 'Who + was + V3 + by S' because the questioned word is now the subject.",
+   "order": 152,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Whose pen did he take?",
+   "options": [
+    {
+     "text": "Whose pen did he taken?"
+    },
+    {
+     "text": "Whose pen was taken by him?"
+    },
+    {
+     "text": "Whose pen is taken by him?"
+    },
+    {
+     "text": "Whose pen has been taken by him?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Whose + noun' acts as the object phrase and becomes the subject: 'was taken by him'.",
+   "order": 153,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to me, “How are you?”",
+   "options": [
+    {
+     "text": "He asked me how he was."
+    },
+    {
+     "text": "He asked me how am I."
+    },
+    {
+     "text": "He asked me how I was."
+    },
+    {
+     "text": "He asked me how was I."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: wh-question uses statement order; are becomes was; 'you' becomes 'I'.",
+   "order": 154,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Mother said to Seetha, “Why have you not eaten?”",
+   "options": [
+    {
+     "text": "Mother asked Seetha why you had not eaten."
+    },
+    {
+     "text": "Mother asked Seetha why she has not eaten."
+    },
+    {
+     "text": "Mother asked Seetha why had she not eaten."
+    },
+    {
+     "text": "Mother asked Seetha why she had not eaten."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: present perfect becomes past perfect; statement order; 'you' becomes 'she'.",
+   "order": 155,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: The manager said to him, “Where will you stay in Chennai?”",
+   "options": [
+    {
+     "text": "The manager asked him where he would stay in Chennai."
+    },
+    {
+     "text": "The manager asked him where you would stay in Chennai."
+    },
+    {
+     "text": "The manager asked him where would he stay in Chennai."
+    },
+    {
+     "text": "The manager asked him where he will stay in Chennai."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: will becomes would; statement order; 'you' becomes 'he'.",
+   "order": 156,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: How did he solve the puzzle?",
+   "options": [
+    {
+     "text": "How was the puzzle solved by him?"
+    },
+    {
+     "text": "How has the puzzle been solved by him?"
+    },
+    {
+     "text": "How is the puzzle solved by him?"
+    },
+    {
+     "text": "How did the puzzle solved by him?"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'did + V1' becomes 'was + V3'; the question word stays first.",
+   "order": 157,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: “Shall we go for a walk?” said Vimal to Karthik.",
+   "options": [
+    {
+     "text": "Vimal asked Karthik whether he went for a walk."
+    },
+    {
+     "text": "Vimal suggested to Karthik that we should go for a walk."
+    },
+    {
+     "text": "Vimal asked Karthik if they shall go for a walk."
+    },
+    {
+     "text": "Vimal suggested to Karthik that they should go for a walk."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Shall we' (a suggestion) becomes 'suggested that ... should'; 'we' becomes 'they'.",
+   "order": 158,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Do it at once.",
+   "options": [
+    {
+     "text": "Let it done at once."
+    },
+    {
+     "text": "Let it be done at once."
+    },
+    {
+     "text": "Let it was done at once."
+    },
+    {
+     "text": "It is done at once."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: an imperative becomes 'Let + O + be + V3'.",
+   "order": 159,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: The coach said to the players, “Don't lose heart.”",
+   "options": [
+    {
+     "text": "The coach advised the players that they not lose heart."
+    },
+    {
+     "text": "The coach asked the players if they lost heart."
+    },
+    {
+     "text": "The coach advised the players not to lose heart."
+    },
+    {
+     "text": "The coach advised the players to not lost heart."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: a negative imperative becomes 'advised/told ... not to + V1'.",
+   "order": 160,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Who has opened the box?",
+   "options": [
+    {
+     "text": "By whom has the box opened?"
+    },
+    {
+     "text": "By whom had the box been opened?"
+    },
+    {
+     "text": "By whom was the box opened?"
+    },
+    {
+     "text": "By whom has the box been opened?"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: present perfect passive is 'has + been + V3'; 'Who' becomes 'By whom'.",
+   "order": 161,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Where did they keep the keys?",
+   "options": [
+    {
+     "text": "Where have the keys been kept?"
+    },
+    {
+     "text": "Where were the keys kept?"
+    },
+    {
+     "text": "Where are the keys kept?"
+    },
+    {
+     "text": "Where was the keys kept?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'did + V1' becomes 'were + V3' for the plural 'keys'; the vague agent 'they' is dropped.",
+   "order": 162,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Who teaches you science?",
+   "options": [
+    {
+     "text": "By whom is science taught you?"
+    },
+    {
+     "text": "By whom were you taught science?"
+    },
+    {
+     "text": "By whom are you taught science?"
+    },
+    {
+     "text": "By whom are you being taught science?"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: simple present gives 'are + V3' (no 'being'); 'Who' becomes 'By whom'.",
+   "order": 163,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: He asked me whether I would join the club.",
+   "options": [
+    {
+     "text": "He said to me, “Will you join the club?”"
+    },
+    {
+     "text": "He said to me, “Do you join the club?”"
+    },
+    {
+     "text": "He said to me, “Will he join the club?”"
+    },
+    {
+     "text": "He said to me, “Would you join the club?”"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'whether' clause becomes an inverted direct question; would becomes will; 'I' becomes 'you'.",
+   "order": 164,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: By whom was the letter posted?",
+   "options": [
+    {
+     "text": "Whom posted the letter?"
+    },
+    {
+     "text": "Who posted the letter?"
+    },
+    {
+     "text": "Who has posted the letter?"
+    },
+    {
+     "text": "Who posts the letter?"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'By whom + was + O + V3' becomes 'Who + V2 + O'.",
+   "order": 165,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: People say that honesty pays.",
+   "options": [
+    {
+     "text": "It is said that honesty pays."
+    },
+    {
+     "text": "It is said that honesty paid."
+    },
+    {
+     "text": "Honesty is said that pays."
+    },
+    {
+     "text": "It was said that honesty pays."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'People say that ...' becomes 'It is said that ...'; the present tense is retained.",
+   "order": 166,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Everyone expected that he would win.",
+   "options": [
+    {
+     "text": "It is expected that he would win."
+    },
+    {
+     "text": "It was expected that he will win."
+    },
+    {
+     "text": "He was expected that would win."
+    },
+    {
+     "text": "It was expected that he would win."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'S + V2 + that-clause' becomes 'It was + V3 + that-clause'; the that-clause is unchanged.",
+   "order": 167,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to her, “Please do not leave me.”",
+   "options": [
+    {
+     "text": "He requested her that she did not leave him."
+    },
+    {
+     "text": "He requested her not to leave me."
+    },
+    {
+     "text": "He requested her not to leave him."
+    },
+    {
+     "text": "He ordered her do not leave him."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: a polite negative command becomes 'requested ... not to + V1'; 'me' becomes 'him'.",
+   "order": 168,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: She said, “How I wish I were a bird!”",
+   "options": [
+    {
+     "text": "She wished that I were a bird."
+    },
+    {
+     "text": "She wished that she were a bird."
+    },
+    {
+     "text": "She asked how she wished to be a bird."
+    },
+    {
+     "text": "She wished that she is a bird."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: an exclamation of wish becomes 'wished that'; 'I' becomes 'she'; the subjunctive 'were' is retained.",
+   "order": 169,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the correct transformation of: Someone must have left the gate open.",
+   "options": [
+    {
+     "text": "The gate must be left open."
+    },
+    {
+     "text": "The gate must have left open."
+    },
+    {
+     "text": "The gate must have been left open."
+    },
+    {
+     "text": "The gate had been left open."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'modal + have + V3' becomes 'modal + have been + V3'; the indefinite agent 'someone' is dropped.",
+   "order": 170,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: The doctor said to the patient, “If you take rest, you will recover soon.”",
+   "options": [
+    {
+     "text": "The doctor told the patient that if he took rest, he had recovered soon."
+    },
+    {
+     "text": "The doctor told the patient that if I took rest, I would recover soon."
+    },
+    {
+     "text": "The doctor told the patient that if he takes rest, he will recover soon."
+    },
+    {
+     "text": "The doctor told the patient that if he took rest, he would recover soon."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: in a conditional, the present tense becomes past and will becomes would; 'you' becomes 'he'.",
+   "order": 171,
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  }
+ ]
+}

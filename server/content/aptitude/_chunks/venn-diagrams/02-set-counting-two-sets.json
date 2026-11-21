@@ -1,0 +1,689 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Among the Class X students in Jaipur, 82 take Social Science, 28 take Sanskrit and 20 take both Social Science and Sanskrit. How many take at least one of the two?",
+   "options": [
+    "82",
+    "110",
+    "90",
+    "130"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 82 + 28 − 20 = 90.",
+   "shortcut": "Union = sum of both − common (the common part is counted twice).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 84 speak Telugu, 56 speak English and 24 speak both Telugu and English. How many speak at least one of the two?",
+   "options": [
+    "116",
+    "164",
+    "84",
+    "140"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 84 + 56 − 24 = 116.",
+   "shortcut": "Union = sum of both − common (the common part is counted twice).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 47 play hockey, 32 play cricket and 13 play both hockey and cricket. How many play at least one of the two?",
+   "options": [
+    "47",
+    "66",
+    "79",
+    "92"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 47 + 32 − 13 = 66.",
+   "shortcut": "Union = sum of both − common (the common part is counted twice).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 98 speak Urdu, 89 speak Hindi and 29 speak both Urdu and Hindi. How many speak at least one of the two?",
+   "options": [
+    "158",
+    "187",
+    "216",
+    "98"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "n(A ∪ B) = n(A) + n(B) − n(A ∩ B) = 98 + 89 − 29 = 158.",
+   "shortcut": "Union = sum of both − common (the common part is counted twice).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a hostel-mess survey of commuters in Bengaluru, 83 use the bus, 88 use an auto-rickshaw, and 142 use at least one of them. How many use both?",
+   "options": [
+    "313",
+    "59",
+    "54",
+    "29"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both = n(A) + n(B) − n(A ∪ B) = 83 + 88 − 142 = 29.",
+   "shortcut": "Both = A + B − Union.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a hostel-mess survey of farmers in a Punjab village, 78 grow maize, 47 grow wheat, and 90 grow at least one of them. How many grow both?",
+   "options": [
+    "215",
+    "12",
+    "43",
+    "35"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both = n(A) + n(B) − n(A ∪ B) = 78 + 47 − 90 = 35.",
+   "shortcut": "Both = A + B − Union.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a hostel-mess survey of customers at a Mumbai mall, 59 pay using Paytm, 44 pay using a credit card, and 98 pay using at least one of them. How many pay using both?",
+   "options": [
+    "39",
+    "5",
+    "201",
+    "54"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both = n(A) + n(B) − n(A ∪ B) = 59 + 44 − 98 = 5.",
+   "shortcut": "Both = A + B − Union.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 126 students in a Chennai college, 52 play hockey, 99 play kabaddi and 35 play both. How many play neither?",
+   "options": [
+    "74",
+    "27",
+    "116",
+    "10"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 52 + 99 − 35 = 116. Neither = 126 − 116 = 10.",
+   "shortcut": "Neither = Total − (A + B − Both).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 111 employees of a Pune IT firm, 88 know Java, 41 know SQL and 23 know both. How many know neither?",
+   "options": [
+    "23",
+    "106",
+    "5",
+    "70"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 88 + 41 − 23 = 106. Neither = 111 − 106 = 5.",
+   "shortcut": "Neither = Total − (A + B − Both).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 154 customers at a Mumbai mall, 94 pay using Google Pay, 67 pay using a credit card and 27 pay using both. How many pay using neither?",
+   "options": [
+    "20",
+    "134",
+    "60",
+    "87"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 94 + 67 − 27 = 134. Neither = 154 − 134 = 20.",
+   "shortcut": "Neither = Total − (A + B − Both).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 105 Class X students in Jaipur, 81 take Science, 45 take Maths and 21 take both. How many take neither?",
+   "options": [
+    "60",
+    "105",
+    "0",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 81 + 45 − 21 = 105. Neither = 105 − 105 = 0.",
+   "shortcut": "Neither = Total − (A + B − Both).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 145 customers at a Mumbai mall, 5 pay using neither a credit card nor PhonePe. 80 pay using a credit card and 78 pay using PhonePe. How many pay using both?",
+   "options": [
+    "18",
+    "62",
+    "13",
+    "60"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 145 − 5 = 140. Both = n(A) + n(B) − union = 80 + 78 − 140 = 18.",
+   "shortcut": "Both = A + B − (Total − Neither).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 82 visitors to a Mysuru restaurant, 15 order neither pongal nor dosa. 40 order pongal and 37 order dosa. How many order both?",
+   "options": [
+    "10",
+    "27",
+    "30",
+    "25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 82 − 15 = 67. Both = n(A) + n(B) − union = 40 + 37 − 67 = 10.",
+   "shortcut": "Both = A + B − (Total − Neither).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 53 people at a Kolkata book fair, 10 read neither Anandabazar Patrika nor The Telegraph. 36 read Anandabazar Patrika and 21 read The Telegraph. How many read both?",
+   "options": [
+    "22",
+    "4",
+    "14",
+    "7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 53 − 10 = 43. Both = n(A) + n(B) − union = 36 + 21 − 43 = 14.",
+   "shortcut": "Both = A + B − (Total − Neither).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 152 commuters in Bengaluru, 12 use neither the metro nor an auto-rickshaw. 105 use the metro and 70 use an auto-rickshaw. How many use both?",
+   "options": [
+    "35",
+    "70",
+    "23",
+    "47"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 152 − 12 = 140. Both = n(A) + n(B) − union = 105 + 70 − 140 = 35.",
+   "shortcut": "Both = A + B − (Total − Neither).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 142 families in a Madurai colony, 30 watch neither ISL nor Hockey India League. 68 watch ISL and 54 watch Hockey India League. How many watch both?",
+   "options": [
+    "40",
+    "10",
+    "58",
+    "44"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 142 − 30 = 112. Both = n(A) + n(B) − union = 68 + 54 − 112 = 10.",
+   "shortcut": "Both = A + B − (Total − Neither).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 84 people at a Kolkata book fair, 20 read neither The Hindu nor The Telegraph. 52 read The Hindu and 36 read The Telegraph. How many read both?",
+   "options": [
+    "4",
+    "24",
+    "28",
+    "12"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 84 − 20 = 64. Both = n(A) + n(B) − union = 52 + 36 − 64 = 24.",
+   "shortcut": "Both = A + B − (Total − Neither).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of commuters in Bengaluru, 60% use the bus, 47% use an auto-rickshaw and 15% use neither. What percentage use both?",
+   "options": [
+    "22%",
+    "38%",
+    "25%",
+    "7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 60 + 47 − 85 = 22%.",
+   "shortcut": "Both% = A% + B% − (100 − Neither%).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of customers at a Mumbai mall, 46% pay using PhonePe, 53% pay using a credit card and 15% pay using neither. What percentage pay using both?",
+   "options": [
+    "32%",
+    "39%",
+    "84%",
+    "14%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 46 + 53 − 85 = 14%.",
+   "shortcut": "Both% = A% + B% − (100 − Neither%).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of Class X students in Jaipur, 67% take Maths, 61% take Sanskrit and 15% take neither. What percentage take both?",
+   "options": [
+    "28%",
+    "43%",
+    "24%",
+    "18%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 67 + 61 − 85 = 43%.",
+   "shortcut": "Both% = A% + B% − (100 − Neither%).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of customers at a Mumbai mall, 46% pay using PhonePe, 47% pay using Paytm and 15% pay using neither. What percentage pay using both?",
+   "options": [
+    "38%",
+    "39%",
+    "78%",
+    "8%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 100 − 15 = 85%. Both = 46 + 47 − 85 = 8%.",
+   "shortcut": "Both% = A% + B% − (100 − Neither%).",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey covered 600 farmers in a Punjab village: 44% grow wheat, 69% grow rice, and 10% grow neither. How many grow both?",
+   "options": [
+    "126",
+    "276",
+    "78",
+    "138"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 90%. Both = 44% + 69% − 90% = 23% of 600 = 138.",
+   "shortcut": "Find Both% first, then take that percentage of the total.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey covered 400 residents of a Hyderabad apartment complex: 52% speak English, 49% speak Urdu, and 20% speak neither. How many speak both?",
+   "options": [
+    "4",
+    "124",
+    "84",
+    "112"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 80%. Both = 52% + 49% − 80% = 21% of 400 = 84.",
+   "shortcut": "Find Both% first, then take that percentage of the total.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey covered 600 families in a Madurai colony: 62% watch Pro Kabaddi, 66% watch Hockey India League, and 15% watch neither. How many watch both?",
+   "options": [
+    "168",
+    "114",
+    "258",
+    "138"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 85%. Both = 62% + 66% − 85% = 43% of 600 = 258.",
+   "shortcut": "Find Both% first, then take that percentage of the total.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the staff in a Kochi office surveyed, 47 drink only lime juice, 28 drink only buttermilk and 21 drink both. How many drink lime juice in all?",
+   "options": [
+    "47",
+    "49",
+    "96",
+    "68"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total for a set = only that set + both. Here it is 47 + 21 = 68.",
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the visitors to a Mysuru restaurant surveyed, 48 order only dosa, 40 order only pongal and 7 order both. How many order dosa in all?",
+   "options": [
+    "47",
+    "48",
+    "95",
+    "55"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total for a set = only that set + both. Here it is 48 + 7 = 55.",
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the employees of a Pune IT firm surveyed, 44 know only C++, 52 know only Python and 3 know both. How many know C++ in all?",
+   "options": [
+    "47",
+    "44",
+    "99",
+    "55"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total for a set = only that set + both. Here it is 44 + 3 = 47.",
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the staff in a Kochi office surveyed, 64 drink only lime juice, 10 drink only buttermilk and 33 drink both. How many drink lime juice in all?",
+   "options": [
+    "97",
+    "107",
+    "64",
+    "43"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total for a set = only that set + both. Here it is 64 + 33 = 97.",
+   "shortcut": "'Only' counts exclude the overlap; add Both back for the full set.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Every one of the families in a Madurai colony watch at least one of Pro Kabaddi and ISL. 2/3 of them watch Pro Kabaddi, 5/6 of them watch ISL, and 9 watch both. How many people are there in the group?",
+   "options": [
+    "15",
+    "18",
+    "36",
+    "12"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 2/3 + 5/6 − 1 = 1/2. Total = 9 ÷ 1/2 = 18.",
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Every one of the farmers in a Punjab village grow at least one of rice and sugarcane. 3/4 of them grow rice, 2/3 of them grow sugarcane, and 30 grow both. How many people are there in the group?",
+   "options": [
+    "120",
+    "72",
+    "48",
+    "54"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 3/4 + 2/3 − 1 = 5/12. Total = 30 ÷ 5/12 = 72.",
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Every one of the Class X students in Jaipur take at least one of Science and Social Science. 2/3 of them take Science, 5/6 of them take Social Science, and 6 take both. How many people are there in the group?",
+   "options": [
+    "8",
+    "10",
+    "24",
+    "12"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 2/3 + 5/6 − 1 = 1/2. Total = 6 ÷ 1/2 = 12.",
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Every one of the students in a Chennai college play at least one of kabaddi and football. 5/8 of them play kabaddi, 1/2 of them play football, and 5 play both. How many people are there in the group?",
+   "options": [
+    "40",
+    "20",
+    "25",
+    "45"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everyone is in at least one set, so fa + fb − Both fraction = 1. Both fraction = 5/8 + 1/2 − 1 = 1/8. Total = 5 ÷ 1/8 = 40.",
+   "shortcut": "Both fraction = fa + fb − 1 (when nobody is outside); Total = Both ÷ that fraction.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 87 people at a Kolkata book fair, 20 read neither The Hindu nor Anandabazar Patrika, and 22 read both. The number who read only The Hindu and the number who read only Anandabazar Patrika are in the ratio 3 : 2. How many read The Hindu (in all)?",
+   "options": [
+    "67",
+    "45",
+    "27",
+    "49"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only The Hindu + only Anandabazar Patrika = 87 − 20 − 22 = 45. Split 3:2 → 3k + 2k = 45, k = 9, only The Hindu = 27. Total The Hindu = 27 + 22 = 49.",
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 80 farmers in a Punjab village, 20 grow neither maize nor rice, and 24 grow both. The number who grow only maize and the number who grow only rice are in the ratio 2 : 1. How many grow maize (in all)?",
+   "options": [
+    "36",
+    "60",
+    "24",
+    "48"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only maize + only rice = 80 − 20 − 24 = 36. Split 2:1 → 2k + 1k = 36, k = 12, only maize = 24. Total maize = 24 + 24 = 48.",
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 78 farmers in a Punjab village, 15 grow neither wheat nor sugarcane, and 7 grow both. The number who grow only wheat and the number who grow only sugarcane are in the ratio 4 : 3. How many grow wheat (in all)?",
+   "options": [
+    "63",
+    "39",
+    "32",
+    "56"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only wheat + only sugarcane = 78 − 15 − 7 = 56. Split 4:3 → 4k + 3k = 56, k = 8, only wheat = 32. Total wheat = 32 + 7 = 39.",
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 135 students in a Chennai college, 15 play neither football nor kabaddi, and 29 play both. The number who play only football and the number who play only kabaddi are in the ratio 4 : 3. How many play football (in all)?",
+   "options": [
+    "91",
+    "52",
+    "120",
+    "81"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only football + only kabaddi = 135 − 15 − 29 = 91. Split 4:3 → 4k + 3k = 91, k = 13, only football = 52. Total football = 52 + 29 = 81.",
+   "shortcut": "Remove Neither and Both first; split the rest in the given ratio; add Both back.",
+   "subPattern": "set-counting-two-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,468 @@
+{
+ "sets": [
+  {
+   "id": "reading-comprehension-s013",
+   "type": "text",
+   "title": "The Quiet Revolution of Anganwadis",
+   "text": "Few outsiders notice an anganwadi centre, usually a single room at the edge of a village, yet it is the first point at which many Indian children meet the state. A worker, often a local woman paid a modest honorarium, weighs infants, serves a hot meal, keeps vaccination records and teaches songs and numbers. Surveys credit these centres with helping to reduce stunting, and the mid-day food has quietly kept many girls in the habit of attending school. The workers, however, carry heavy burdens. They are asked to collect census data, register voters and record each household on a mobile application, tasks that leave less time for the children. Training is irregular, and some centres lack even drinking water. Reformers argue that the scheme's success so far rests on the dedication of its workers rather than on the support it receives, and that this cannot continue indefinitely. If it is to grow stronger, they say, the state must pay and equip the worker as it would any other professional."
+  },
+  {
+   "id": "reading-comprehension-s019",
+   "type": "text",
+   "title": "Online Classes and the Village Child",
+   "text": "When schools closed during the pandemic, lessons moved to phones, and for many children in cities the shift was awkward but bearable. In a village in Odisha, however, a single smartphone in a household had to serve a father who worked in the fields, a mother who ran the home and three children of different ages. Network signals were weak, so lessons were often caught in the evening, when data was cheaper but the child was tired. A teacher in the area began recording short lessons and sharing them through loudspeakers at the temple square, which reached children who had no phones at all. Educators note that such improvisation kept many children from forgetting what they had learnt, but cannot replace the daily presence of a teacher. Several months after schools reopened, tests showed that reading skills among younger pupils had slipped by more than a year. The experience, they say, has shown that technology can extend a school's reach but cannot replace the school itself."
+  },
+  {
+   "id": "reading-comprehension-s025",
+   "type": "text",
+   "title": "A Turn at the Spinning Wheel",
+   "text": "When Mahatma Gandhi took up the charkha, he did not see it merely as a means to produce cloth. For him, spinning was a daily act that bound the educated to the labouring poor, since a lawyer and a farmer sat before the same wheel. It also taught a quiet kind of self-reliance, for a nation that wove its own clothing would be harder to command from afar. Critics of the time, including some admirers, argued that hand spinning was too slow to compete with mills and that the effort could be used more profitably elsewhere. Gandhi replied that the aim was not the lowest price but the widest participation, because millions of rural households had idle hours and no means of using them. Whatever one thinks of the economics, the sight of leaders sitting at the wheel gave a distant struggle for freedom a visible, everyday form that every household could share."
+  },
+  {
+   "id": "reading-comprehension-s031",
+   "type": "text",
+   "title": "Two Tickets to the Cinema",
+   "text": "Single-screen cinemas in small Indian towns have been closing for years, replaced by multiplexes in malls that sell popcorn at the price of a meal. In one town in Uttar Pradesh, a theatre that opened in 1962 still shows films for forty rupees a ticket, and its owner, now in his seventies, refuses to sell the building to a developer. He admits that most seats are empty on weekdays, and that the projector, bought second-hand, needs constant repair. On Fridays, however, the hall is full of students and labourers who could not afford a multiplex, and the whistles that greet a hero's entry can be heard in the street. Film historians observe that such halls once did more than screen films: they brought together people of different castes and incomes in a shared darkness. If these theatres vanish, the loss will be measured not only in tickets but in the places where a town used to laugh together."
+  },
+  {
+   "id": "reading-comprehension-s037",
+   "type": "text",
+   "title": "Millets Return to the Plate",
+   "text": "Until the 1960s, millets such as ragi and kodo were staples across the drylands of southern and central India. The Green Revolution then brought high-yielding rice and wheat with assured prices and subsidised supply through ration shops, and millet fields were quietly turned over to the new crops. Today, nutritionists point out that millets are rich in fibre and minerals, require little water and grow in poor soils. A few state governments now include millets in school meals, and urban cafes have begun to serve millet cookies and dosas. Farmers' groups say, however, that demand from towns does not benefit growers unless the market pays them better than rice, and that the processing of millets, which is laborious, still lacks machinery. A farmer in Karnataka says that his grandmother grew ragi because she had to, while he would grow it because he can earn from it, and that the difference is what the new campaign must bring about."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "It can be inferred from the passage that restoring a single lake in isolation",
+   "options": [
+    "is unlikely to bring full benefit without reviving the linked channels",
+    "is impossible under any circumstance",
+    "is more costly than building a new reservoir",
+    "has already solved the city's water shortage"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Engineers say restoring one lake achieves little unless the connecting channels are restored too. The passage does not say it is impossible or compare costs.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s010"
+  },
+  {
+   "questionText": "Which of the following can be inferred from the passage?",
+   "options": [
+    "Young people in weaving families often see other careers as more attractive.",
+    "Power looms produce cloth that is of better quality than handloom cloth.",
+    "Geographical indication tags have ended all imitation.",
+    "Designers are unwelcome in the weaving cooperatives."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says many youngsters prefer hotel or call-centre jobs. Nothing supports the other claims; the cooperatives actually hold workshops for designers.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s011"
+  },
+  {
+   "questionText": "It can be inferred that one delay on a route spreads across the network because",
+   "options": [
+    "trains and crews are reused for later journeys",
+    "signals stop working across the region",
+    "passengers refuse to board late trains",
+    "the railways do not publish timetables in winter"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says the same rakes and crews are needed for the next journey, so a delay passes on from one run to another.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s012"
+  },
+  {
+   "questionText": "Which of the following can be inferred from the passage? (Passage: “The Quiet Revolution of Anganwadis”)",
+   "options": [
+    "The scheme's gains depend heavily on the personal commitment of its workers.",
+    "Anganwadi workers are well paid and well equipped.",
+    "The centres do not influence children's school attendance.",
+    "Mobile applications have improved the quality of teaching at the centres."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Reformers say success rests on the workers' dedication rather than support. The passage says the pay is modest and that extra tasks cut into teaching time.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s013"
+  },
+  {
+   "questionText": "From the passage, it can be inferred that the economist",
+   "options": [
+    "believes the scheme's value depends on whether it raises women's participation in paid work",
+    "is certain that the scheme will fail",
+    "considers public transport unnecessary",
+    "opposes all government schemes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "She says it may pay for itself if it helps even a small share of women enter paid work, but evidence is needed.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s015"
+  },
+  {
+   "questionText": "It can be inferred from the passage that comparing a child with cousins is",
+   "options": [
+    "discouraged by the psychologists and schools described",
+    "recommended during examination months",
+    "irrelevant to a child's wellbeing",
+    "a requirement of the board"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Parents are advised to avoid comparisons, so the practice is regarded as harmful.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s016"
+  },
+  {
+   "questionText": "It can be inferred from the passage that traders' advances of money",
+   "options": [
+    "keep some workers bound in debt from season to season",
+    "guarantee a fair price to every family",
+    "are given only to families with solar pumps",
+    "have been banned by welfare groups"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says some families remain in debt to traders who advance them money, and that this cycle must be broken.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s017"
+  },
+  {
+   "questionText": "It can be inferred from the passage that the trekking clubs mentioned",
+   "options": [
+    "believe visitors have a duty towards the places they enjoy",
+    "want trekking to be banned during the monsoon",
+    "earn their main income from tea stalls",
+    "are unconcerned about safety"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They carry back waste and insist on registration, showing they think visitors are responsible for care.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s018"
+  },
+  {
+   "questionText": "It can be inferred from the passage that the teacher who used the temple loudspeaker",
+   "options": [
+    "found a way around a lack of phones in the community",
+    "disliked the use of smartphones in lessons",
+    "could not reach any child",
+    "charged parents for the lessons"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Because many children had no phones, he used a shared loudspeaker, a workaround for the lack of devices.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s019"
+  },
+  {
+   "questionText": "It can be inferred from the passage that the organisers",
+   "options": [
+    "believe that interest in reading will broaden once people read regularly",
+    "intend to stop the scheme soon",
+    "think only Malayalam books are valuable",
+    "pay their librarians high salaries"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They say the first aim is to restore the reading habit, and other tastes will grow after that.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s021"
+  },
+  {
+   "questionText": "It can be inferred from the passage that many families return to wood because",
+   "options": [
+    "refills are expensive relative to irregular incomes",
+    "gas is unavailable in any form",
+    "wood gives off less smoke",
+    "they dislike tea"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says the refill costs several hundred rupees, a large sum when income is irregular.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s022"
+  },
+  {
+   "questionText": "It can be inferred that a family that speaks only English at home",
+   "options": [
+    "risks the gradual disappearance of the mother tongue among its children",
+    "will always raise children who are slow in speech",
+    "cannot understand Hindi films",
+    "has a larger vocabulary in every language"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says the home language can fade when a family stops using it.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s023"
+  },
+  {
+   "questionText": "It can be inferred from the passage that housing near metro stations tends to become",
+   "options": [
+    "costlier as stations open",
+    "cheaper because of noise",
+    "reserved only for the rich",
+    "unavailable to anyone"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Planners say new lines push up rents near stations.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s024"
+  },
+  {
+   "questionText": "It can be inferred that Gandhi valued the charkha primarily for its",
+   "options": [
+    "moral and social significance rather than its price advantage",
+    "low cost compared with mills",
+    "role as an ornament",
+    "use in commercial trade abroad"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He stressed participation and bonding, and said the aim was not the lowest price.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s025"
+  },
+  {
+   "questionText": "It can be inferred from the passage that shopkeepers who regret the decline of bargaining",
+   "options": [
+    "value the relationship with customers that haggling creates",
+    "want malls to be shut down",
+    "dislike offering tea",
+    "prefer printed price tags"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They say without bargaining a customer is no longer a guest, so they value the personal relationship.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s027"
+  },
+  {
+   "questionText": "It can be inferred that government copies of johads without community control",
+   "options": [
+    "fail because the social management is as important as the structure",
+    "succeed more than village johads",
+    "are unaffected by who manages them",
+    "are cheaper than village johads"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage says such programmes have mostly failed, stressing the role of community control.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s028"
+  },
+  {
+   "questionText": "It can be inferred that experts believe boredom",
+   "options": [
+    "can lead to creativity and patience",
+    "is always harmful",
+    "should replace all schooling",
+    "is a sign of laziness"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They say it prompts the mind to make its own entertainment and builds patience and imagination.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s029"
+  },
+  {
+   "questionText": "It can be inferred from the passage that collective weddings",
+   "options": [
+    "are meant to lower the financial burden on families",
+    "are illegal in most communities",
+    "increase the guest list",
+    "are held only for wealthy couples"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "They are described as marrying several couples at modest cost, a response to the pressure of lavishness.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s030"
+  },
+  {
+   "questionText": "It can be inferred that the theatre owner continues to run the cinema because",
+   "options": [
+    "he values its role for people who cannot afford alternatives and its meaning to the town",
+    "he earns large profits every week",
+    "the multiplex has offered him a job",
+    "the government pays for repairs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He refuses to sell despite empty weekdays, and the hall serves those who cannot afford multiplexes.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s031"
+  },
+  {
+   "questionText": "From the guard's last remark one can infer that he believes the railway",
+   "options": [
+    "has a charm that ordinary roads lack",
+    "is dangerous",
+    "should be replaced by a highway",
+    "is useless to tourists"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People wish to watch the train pass, unlike a highway, implying its special appeal.",
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s033"
+  },
+  {
+   "questionText": "It can be inferred from the passage that some owners worry about the supply companies' applications because",
+   "options": [
+    "the companies might use the data to compete with them",
+    "the applications are too expensive to buy",
+    "the applications cannot record sales",
+    "they have no phones"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage states the worry that platforms may use data to open competing outlets.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s034"
+  },
+  {
+   "questionText": "It can be inferred from the final sentence that Dr Meena",
+   "options": [
+    "finds fulfilment in being useful and does not regard her choice as a sacrifice",
+    "regrets her decision to remain",
+    "plans to move to the city soon",
+    "dislikes her colleagues"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "She says someone useful where needed does not feel anything has been given up.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s035"
+  },
+  {
+   "questionText": "It can be inferred that engineers consider standard symbols preferable to text because",
+   "options": [
+    "symbols can be understood by drivers regardless of the language they read",
+    "symbols are cheaper to paint",
+    "text is illegal on highways",
+    "symbols are funnier"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The engineers recommend symbols that do not depend on language.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "reading-comprehension-s036"
+  },
+  {
+   "questionText": "It can be inferred from the passage that millet cultivation declined mainly because",
+   "options": [
+    "rice and wheat were backed by assured prices and public supply",
+    "millets cannot grow in poor soil",
+    "millets are poisonous",
+    "people stopped eating cereals"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Subsidised supply and assured prices promoted rice and wheat over millets.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s037"
+  }
+ ]
+}

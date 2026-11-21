@@ -1,0 +1,774 @@
+{
+ "sets": [
+  {
+   "id": "cloze-test-s009",
+   "type": "text",
+   "title": "The Honest Farmer",
+   "text": "(1) honest farmer from Salem found (2) purse lying on the road one morning while he was walking to his field. Inside it were five thousand rupees and (3) identity card in the name of (4) university lecturer from Chennai. The farmer could easily have kept the money, for he had borrowed heavily to buy seeds that season. Instead, he walked to (5) nearest police station, five kilometres away, and handed over the purse. The lecturer, who had been searching for it all evening, travelled to the village the next day to thank him in person and offered him a reward, which the farmer politely refused."
+  },
+  {
+   "id": "cloze-test-s010",
+   "type": "text",
+   "title": "Priya Moves to Bengaluru",
+   "text": "Priya (1) in Pune for six years before she moved to Bengaluru last month. She (2) for a software firm since March, and she (3) three projects already. Her manager says that if she (4) the next one on time, the company (5) her to its London office next year. Priya, however, is not sure whether she wants to leave India so soon, because her parents are ageing and she is their only child. She has promised herself that she will decide only after speaking to them at length."
+  },
+  {
+   "id": "cloze-test-s011",
+   "type": "text",
+   "title": "The ISRO Team",
+   "text": "A scientist from ISRO, along with two assistants, (1) working on the new satellite. Neither the director nor the engineers (2) satisfied with the first test results. Each of the components (3) checked twice before the launch date is announced. The news about the delays (4) disappointing, but the project manager, together with her colleagues, remains hopeful. Two-thirds of the budget (5) already been spent on the instruments."
+  },
+  {
+   "id": "cloze-test-s012",
+   "type": "text",
+   "title": "A Morning by the Cauvery",
+   "text": "Rohan was born (1) a small village on the banks of the Cauvery. He is fond (2) cycling, and every Sunday he rides along the river road before sunrise. Though he is good (3) mathematics, he often gets lost in his thoughts during class. His teacher is annoyed (4) his careless mistakes but admires his sincerity. Rohan is looking forward (5) his first marathon next March, and he has already begun to train every morning before school."
+  },
+  {
+   "id": "cloze-test-s013",
+   "type": "text",
+   "title": "Cousins in the Same Lane",
+   "text": "I live with my cousin Meena, (1) lives in the same lane as my grandparents. (2) of us studies in a different school, but both share the same tuition teacher, (3) classes are held on a terrace. Last week, the teacher asked Meena and (4) to prepare a short speech. Meena told me that she would write (5) own speech and would not copy from anyone, and I promised to do the same."
+  },
+  {
+   "id": "cloze-test-s014",
+   "type": "text",
+   "title": "The Old Bridge",
+   "text": "The old bridge across the Cauvery (1) in 1923 and (2) by thousands of commuters every day since then. Last monsoon, heavy floods (3) one of its pillars, and the authorities decided that the bridge should (4) immediately. The repair work, which (5) six months, will begin next week. Until it is completed, vehicles are being diverted through a narrow lane near the market, causing long jams every evening."
+  },
+  {
+   "id": "cloze-test-s015",
+   "type": "text",
+   "title": "Another Attempt",
+   "text": "If I (1) the bank exam last year, I would have joined a branch by now. My brother, who (2) in Mumbai, advises me to apply again. He says that I ought (3) study harder this time. The exam, (4) was held in April, had negative marking, which made many candidates cautious. If I practise daily, I (5) clear it, and I will be able to repay the loan my father took for my coaching."
+  },
+  {
+   "id": "cloze-test-s016",
+   "type": "text",
+   "title": "The Coach's Instructions",
+   "text": "The coach announced that the match (1) place the following day. He told the players that they (2) reach the ground by seven. Then he asked Arjun where the nets (3). Arjun replied that he (4) them in the storeroom the previous evening. The coach asked him (5) them out before the players arrived, and Arjun hurried to the storeroom with two helpers."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The Honest Farmer\".",
+   "options": [
+    "An",
+    "A",
+    "The",
+    "No article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Honest' begins with a silent h, so it starts with a vowel sound: 'an honest'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s009"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The Honest Farmer\".",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "No article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A purse is mentioned for the first time and starts with a consonant sound: 'a purse'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s009"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The Honest Farmer\".",
+   "options": [
+    "an",
+    "a",
+    "the",
+    "No article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Identity' begins with a vowel sound /aɪ/, so 'an' is used.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s009"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The Honest Farmer\".",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "No article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'University' begins with the consonant sound /j/, so 'a university lecturer'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s009"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The Honest Farmer\".",
+   "options": [
+    "the",
+    "a",
+    "an",
+    "No article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A superlative ('nearest') takes 'the'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s009"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Priya Moves to Bengaluru\".",
+   "options": [
+    "lived",
+    "has lived",
+    "is living",
+    "lives"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The period in Pune is finished and followed by 'moved ... last month', so the simple past 'lived' is used.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s010"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Priya Moves to Bengaluru\".",
+   "options": [
+    "has been working",
+    "is working",
+    "works",
+    "worked"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since March' with an ongoing action needs the present perfect continuous.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s010"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Priya Moves to Bengaluru\".",
+   "options": [
+    "has completed",
+    "completes",
+    "will complete",
+    "had complete"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Already' with a result relevant now takes the present perfect: has completed.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s010"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Priya Moves to Bengaluru\".",
+   "options": [
+    "completes",
+    "will complete",
+    "would complete",
+    "completed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In a first conditional the if-clause uses the simple present: if she completes.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s010"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Priya Moves to Bengaluru\".",
+   "options": [
+    "will send",
+    "would send",
+    "sends",
+    "sent"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A first conditional has 'will' in the main clause: the company will send her.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s010"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The ISRO Team\".",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Along with' does not change the subject; the subject is the singular 'A scientist', so 'is'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s011"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The ISRO Team\".",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither ... nor' the verb agrees with the nearer subject 'engineers' (plural): are.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s011"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The ISRO Team\".",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular, so 'is checked' is correct.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s011"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The ISRO Team\".",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'News' is an uncountable singular noun, so 'is'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s011"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The ISRO Team\".",
+   "options": [
+    "has",
+    "have",
+    "were",
+    "are"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Two-thirds of the budget' takes a singular verb because 'budget' is a singular noun; 'has already been spent'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s011"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A Morning by the Cauvery\".",
+   "options": [
+    "in",
+    "on",
+    "at",
+    "by"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Born in' a village is the standard collocation.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s012"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A Morning by the Cauvery\".",
+   "options": [
+    "of",
+    "for",
+    "with",
+    "to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Fond of' is the correct adjective-preposition pair.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s012"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A Morning by the Cauvery\".",
+   "options": [
+    "at",
+    "in",
+    "on",
+    "with"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Good at' a subject is the correct collocation.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s012"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A Morning by the Cauvery\".",
+   "options": [
+    "with",
+    "at",
+    "of",
+    "to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Annoyed with' a person or 'about' a thing is standard; the mistakes here are the person's own, so 'with'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s012"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A Morning by the Cauvery\".",
+   "options": [
+    "to",
+    "for",
+    "at",
+    "on"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look forward to' always takes 'to', followed by a noun or gerund.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s012"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Cousins in the Same Lane\".",
+   "options": [
+    "who",
+    "whom",
+    "whose",
+    "which"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun refers to a person and is the subject of 'lives', so 'who'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s013"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Cousins in the Same Lane\".",
+   "options": [
+    "Each",
+    "Both",
+    "All",
+    "Several"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb 'studies' is singular, so a singular word like 'Each' is needed.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s013"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Cousins in the Same Lane\".",
+   "options": [
+    "whose",
+    "who",
+    "which",
+    "whom"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The classes belong to the teacher, so the possessive 'whose' is correct.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s013"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Cousins in the Same Lane\".",
+   "options": [
+    "me",
+    "I",
+    "myself",
+    "mine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Meena and ___' is the object of 'asked', so the objective case 'me' is needed.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s013"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Cousins in the Same Lane\".",
+   "options": [
+    "her",
+    "hers",
+    "she",
+    "herself"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive adjective is needed before the noun 'speech': her own speech.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s013"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The Old Bridge\".",
+   "options": [
+    "was built",
+    "built",
+    "has built",
+    "is built"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A passive past form is needed for an action in a specific past year: was built.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s014"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The Old Bridge\".",
+   "options": [
+    "has been used",
+    "has used",
+    "was used",
+    "is using"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since then' with a passive, continuing use needs the present perfect passive.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s014"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The Old Bridge\".",
+   "options": [
+    "damaged",
+    "damage",
+    "were damaged",
+    "damaging"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The floods acted on the pillar, so the active simple past 'damaged' is needed.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s014"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The Old Bridge\".",
+   "options": [
+    "be repaired",
+    "repair",
+    "repaired",
+    "be repairing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'should' the passive base 'be repaired' is needed because the bridge receives the action.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s014"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The Old Bridge\".",
+   "options": [
+    "will take",
+    "will be taken",
+    "is took",
+    "would took"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The work performs the action 'take', so active 'will take' agrees with 'will begin next week'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s014"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Another Attempt\".",
+   "options": [
+    "had cleared",
+    "cleared",
+    "would clear",
+    "have cleared"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A third conditional ('would have joined') needs the past perfect in the if-clause.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s015"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Another Attempt\".",
+   "options": [
+    "works",
+    "work",
+    "working",
+    "is worked"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A non-restrictive relative clause with 'who' and singular 'brother' takes 'works'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s015"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Another Attempt\".",
+   "options": [
+    "to",
+    "for",
+    "that",
+    "not"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Ought' is followed by 'to' plus the base verb.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s015"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Another Attempt\".",
+   "options": [
+    "which",
+    "who",
+    "whom",
+    "whose"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative clause refers to a thing (the exam), so 'which' is used.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s015"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Another Attempt\".",
+   "options": [
+    "will",
+    "would",
+    "did",
+    "had"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A first conditional ('If I practise') takes 'will' in the main clause.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s015"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The Coach's Instructions\".",
+   "options": [
+    "would take",
+    "will take",
+    "takes",
+    "is taking"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In reported speech after a past reporting verb, 'will' becomes 'would'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s016"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The Coach's Instructions\".",
+   "options": [
+    "had to",
+    "have to",
+    "has to",
+    "having to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In reported speech after 'told', 'must' or 'have to' changes to 'had to'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s016"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The Coach's Instructions\".",
+   "options": [
+    "were",
+    "are",
+    "was",
+    "be"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Reported questions use statement order and shift present to past; plural 'nets' takes 'were'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s016"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The Coach's Instructions\".",
+   "options": [
+    "had kept",
+    "has kept",
+    "keeps",
+    "would keep"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Reported past action before the reporting time requires the past perfect: had kept.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s016"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The Coach's Instructions\".",
+   "options": [
+    "to take",
+    "take",
+    "taking",
+    "took"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Ask someone to do' requires the infinitive with 'to'.",
+   "subPattern": "grammar-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": "cloze-test-s016"
+  }
+ ]
+}

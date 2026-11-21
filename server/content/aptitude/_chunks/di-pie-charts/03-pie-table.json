@@ -1,0 +1,1396 @@
+{
+ "sets": [
+  {
+   "id": "di-pie-charts-s021",
+   "type": "table",
+   "title": "Units produced by a footwear company across plants: pie chart shares and table. Total = 20,000 units. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Plant",
+     "Share of total production (%)",
+     "Defective units (%)"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      16,
+      10
+     ],
+     [
+      "Trichy",
+      15,
+      10
+     ],
+     [
+      "Salem",
+      26,
+      3
+     ],
+     [
+      "Madurai",
+      11,
+      2
+     ],
+     [
+      "Erode",
+      9,
+      6
+     ],
+     [
+      "Tiruppur",
+      23,
+      6
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s022",
+   "type": "table",
+   "title": "Voters in a district by constituency: pie chart shares and table. Total = 2,00,000 voters. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Constituency",
+     "Share of total voters (%)",
+     "Women voters (%)"
+    ],
+    "rows": [
+     [
+      "North",
+      6,
+      55
+     ],
+     [
+      "South",
+      10,
+      60
+     ],
+     [
+      "East",
+      21,
+      55
+     ],
+     [
+      "West",
+      19,
+      60
+     ],
+     [
+      "Central",
+      28,
+      60
+     ],
+     [
+      "Rural",
+      16,
+      50
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s023",
+   "type": "table",
+   "title": "Candidates appearing for an exam across centres: pie chart shares and table. Total = 20,000 candidates. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Centre",
+     "Share of total candidates (%)",
+     "Pass percentage (%)"
+    ],
+    "rows": [
+     [
+      "Chennai",
+      18,
+      35
+     ],
+     [
+      "Coimbatore",
+      24,
+      20
+     ],
+     [
+      "Madurai",
+      11,
+      70
+     ],
+     [
+      "Trichy",
+      19,
+      60
+     ],
+     [
+      "Salem",
+      8,
+      20
+     ],
+     [
+      "Vellore",
+      20,
+      45
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s024",
+   "type": "table",
+   "title": "Students of a university by faculty: pie chart shares and table. Total = 40,000 students. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Faculty",
+     "Share of total students (%)",
+     "Boys : Girls"
+    ],
+    "rows": [
+     [
+      "Engineering",
+      29,
+      "7:3"
+     ],
+     [
+      "Arts",
+      12,
+      "1:1"
+     ],
+     [
+      "Science",
+      8,
+      "7:3"
+     ],
+     [
+      "Law",
+      6,
+      "7:3"
+     ],
+     [
+      "Management",
+      30,
+      "7:3"
+     ],
+     [
+      "Medicine",
+      15,
+      "1:2"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s025",
+   "type": "table",
+   "title": "Employees of a software firm by department: pie chart shares and table. Total = 10,000 employees. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Department",
+     "Share of total employees (%)",
+     "Male : Female"
+    ],
+    "rows": [
+     [
+      "Development",
+      26,
+      "1:1"
+     ],
+     [
+      "Testing",
+      13,
+      "3:1"
+     ],
+     [
+      "Support",
+      6,
+      "1:2"
+     ],
+     [
+      "HR",
+      17,
+      "3:2"
+     ],
+     [
+      "Sales",
+      10,
+      "3:2"
+     ],
+     [
+      "Finance",
+      28,
+      "4:1"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s026",
+   "type": "table",
+   "title": "Visitors to a theme park by gate: pie chart shares and table. Total = 40,000 visitors. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Gate",
+     "Share of total visitors (%)",
+     "Adults : Children"
+    ],
+    "rows": [
+     [
+      "Gate 1",
+      16,
+      "1:1"
+     ],
+     [
+      "Gate 2",
+      22,
+      "5:3"
+     ],
+     [
+      "Gate 3",
+      15,
+      "2:3"
+     ],
+     [
+      "Gate 4",
+      13,
+      "7:3"
+     ],
+     [
+      "Gate 5",
+      11,
+      "3:2"
+     ],
+     [
+      "Gate 6",
+      23,
+      "3:2"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s027",
+   "type": "table",
+   "title": "Mobile phones sold by a retailer, by brand: pie chart shares and table. Total = 5,000 phones. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Brand",
+     "Share of total units sold (%)",
+     "Price per unit (Rs thousand)"
+    ],
+    "rows": [
+     [
+      "Samsung",
+      11,
+      20
+     ],
+     [
+      "Redmi",
+      18,
+      30
+     ],
+     [
+      "Realme",
+      17,
+      15
+     ],
+     [
+      "Vivo",
+      14,
+      60
+     ],
+     [
+      "Oppo",
+      25,
+      60
+     ],
+     [
+      "Apple",
+      15,
+      12
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s028",
+   "type": "table",
+   "title": "Cultivated area of a district by crop: pie chart shares and table. Total = 50,000 hectares. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Crop",
+     "Share of total area (%)",
+     "Yield per hectare (quintals)"
+    ],
+    "rows": [
+     [
+      "Paddy",
+      29,
+      100
+     ],
+     [
+      "Sugarcane",
+      15,
+      100
+     ],
+     [
+      "Cotton",
+      14,
+      80
+     ],
+     [
+      "Groundnut",
+      12,
+      80
+     ],
+     [
+      "Maize",
+      7,
+      100
+     ],
+     [
+      "Banana",
+      23,
+      60
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s029",
+   "type": "table",
+   "title": "Employees of a manufacturing group by department: pie chart shares and table. Total = 5,000 employees. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Department",
+     "Share of total employees (%)",
+     "Average monthly salary (Rs thousand)"
+    ],
+    "rows": [
+     [
+      "Moulding",
+      26,
+      35
+     ],
+     [
+      "Quality",
+      18,
+      20
+     ],
+     [
+      "Stores",
+      22,
+      40
+     ],
+     [
+      "Packing",
+      13,
+      35
+     ],
+     [
+      "Maintenance",
+      15,
+      30
+     ],
+     [
+      "Admin",
+      6,
+      25
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s030",
+   "type": "table",
+   "title": "Passengers of a railway division by train: pie chart shares and table. Total = 50,000 passengers. Shares in the pie are percentages of the total.",
+   "table": {
+    "columns": [
+     "Train",
+     "Share of total passengers (%)",
+     "Average fare (Rs)"
+    ],
+    "rows": [
+     [
+      "Express A",
+      15,
+      250
+     ],
+     [
+      "Express B",
+      9,
+      500
+     ],
+     [
+      "Passenger C",
+      29,
+      320
+     ],
+     [
+      "Intercity D",
+      12,
+      400
+     ],
+     [
+      "Mail E",
+      10,
+      500
+     ],
+     [
+      "Special F",
+      25,
+      250
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "In Tiruppur, how many units produced are there that do NOT form part of the number of defective units? (Answer as the remaining count.)",
+   "options": [
+    "276",
+    "4,876",
+    "4,324",
+    "4,600"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total in Tiruppur = 4,600; number of defective units = 276. Remaining = 4,324.",
+   "shortcut": "Subtract the table part from the pie amount.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s021"
+  },
+  {
+   "questionText": "How many units produced are there in Erode?",
+   "options": [
+    "3,600 units",
+    "2,800 units",
+    "900 units",
+    "1,800 units"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "9% of 20,000 = 1,800 units. So the required answer is 1,800 units.",
+   "shortcut": "Percentage of the total.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s021"
+  },
+  {
+   "questionText": "In which plant is the number of defective units the highest?",
+   "options": [
+    "Madurai",
+    "Salem",
+    "Tiruppur",
+    "Coimbatore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Computed values: Coimbatore 320, Trichy 300, Salem 156, Madurai 44, Erode 108, Tiruppur 276. Highest is Coimbatore.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s021"
+  },
+  {
+   "questionText": "By how much does the number of defective units in Trichy exceed that in Tiruppur?",
+   "options": [
+    "424 units",
+    "576 units",
+    "1,600 units",
+    "24 units"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Trichy: 300; Tiruppur: 276. Difference = 24 units.",
+   "shortcut": "Compute each, then subtract.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s021"
+  },
+  {
+   "questionText": "By how much does the number of defective units in Salem differ (in absolute terms) from the average number of defective units per row? (Round to one decimal place if needed.)",
+   "options": [
+    "200.7 units",
+    "44.7 units",
+    "244.7 units",
+    "156 units"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = 1,204; average over 6 rows = 200.67. Salem = 156. Difference = 44.7 units.",
+   "shortcut": "Average = total / number of rows.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s021"
+  },
+  {
+   "questionText": "What is the number of women voters in Central?",
+   "options": [
+    "33,600 voters",
+    "67,200 voters",
+    "16,800 voters",
+    "56,000 voters"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Central: share 28% of 2,00,000 = 56,000 (voters). Using the table value gives 33,600 voters.",
+   "shortcut": "Find the pie amount first, then apply the table value.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s022"
+  },
+  {
+   "questionText": "What is the ratio of the number of women voters in West to that in North, in simplest form?",
+   "options": [
+    "19:6",
+    "11:38",
+    "38:11",
+    "3:2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "West: 22,800; North: 6,600. Ratio = 38:11.",
+   "shortcut": "Compute both values, then reduce.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s022"
+  },
+  {
+   "questionText": "What is the combined number of women voters in North and Central?",
+   "options": [
+    "40,200 voters",
+    "68,000 voters",
+    "27,000 voters",
+    "50,200 voters"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "North: 6,600; Central: 33,600. Sum = 40,200 voters.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s022"
+  },
+  {
+   "questionText": "In which constituency is the number of women voters the highest?",
+   "options": [
+    "North",
+    "Central",
+    "South",
+    "Rural"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Computed values: North 6,600, South 12,000, East 23,100, West 22,800, Central 33,600, Rural 16,000. Highest is Central.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s022"
+  },
+  {
+   "questionText": "By how much does the number of women voters in East differ (in absolute terms) from the average number of women voters per row? (Round to one decimal place if needed.)",
+   "options": [
+    "4,083.3 voters",
+    "6,083.3 voters",
+    "23,100 voters",
+    "19,016.7 voters"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 1,14,100; average over 6 rows = 19,016.67. East = 23,100. Difference = 4,083.3 voters.",
+   "shortcut": "Average = total / number of rows.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s022"
+  },
+  {
+   "questionText": "What is the number of candidates who passed in Chennai?",
+   "options": [
+    "1,260 candidates",
+    "2,520 candidates",
+    "630 candidates",
+    "3,600 candidates"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chennai: share 18% of 20,000 = 3,600 (candidates). Using the table value gives 1,260 candidates.",
+   "shortcut": "Find the pie amount first, then apply the table value.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s023"
+  },
+  {
+   "questionText": "How many candidates are there in Chennai?",
+   "options": [
+    "4,600 candidates",
+    "3,600 candidates",
+    "7,200 candidates",
+    "1,800 candidates"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "18% of 20,000 = 3,600 candidates. So the required answer is 3,600 candidates.",
+   "shortcut": "Percentage of the total.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s023"
+  },
+  {
+   "questionText": "In which centre is the number of candidates who passed the highest?",
+   "options": [
+    "Salem",
+    "Coimbatore",
+    "Chennai",
+    "Trichy"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Computed values: Chennai 1,260, Coimbatore 960, Madurai 1,540, Trichy 2,280, Salem 320, Vellore 1,800. Highest is Trichy.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s023"
+  },
+  {
+   "questionText": "The number of candidates who passed across all rows is what percent of the total candidates? (Round to one decimal place.)",
+   "options": [
+    "40.8%",
+    "42.8%",
+    "38.8%",
+    "41.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum over all rows = 8,160. Percentage = 8,160/20,000 x 100 = 40.8%.",
+   "shortcut": "Add the row values; a simple average of the column is wrong because weights differ.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s023"
+  },
+  {
+   "questionText": "What percentage of the total number of candidates who passed (across all rows) is contributed by Coimbatore and Vellore together? (Round to one decimal place.)",
+   "options": [
+    "33.8%",
+    "29.8%",
+    "44%",
+    "37.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(960 + 1,800) / 8,160 x 100 = 33.8%. So the required answer is 33.8%.",
+   "shortcut": "Compute all rows first.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s023"
+  },
+  {
+   "questionText": "How many students are there in Law?",
+   "options": [
+    "4,400 students",
+    "4,800 students",
+    "2,400 students",
+    "1,200 students"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "6% of 40,000 = 2,400 students. So the required answer is 2,400 students.",
+   "shortcut": "Percentage of the total.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s024"
+  },
+  {
+   "questionText": "In which faculty is the number of girls the highest?",
+   "options": [
+    "Medicine",
+    "Management",
+    "Engineering",
+    "Law"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Computed values: Engineering 3,480, Arts 2,400, Science 960, Law 720, Management 3,600, Medicine 4,000. Highest is Medicine.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s024"
+  },
+  {
+   "questionText": "What is the combined number of girls in Science and Engineering?",
+   "options": [
+    "6,440 girls",
+    "14,800 girls",
+    "4,440 girls",
+    "2,520 girls"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Science: 960; Engineering: 3,480. Sum = 4,440 girls.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s024"
+  },
+  {
+   "questionText": "By how much does the number of girls in Medicine exceed that in Management?",
+   "options": [
+    "400 girls",
+    "1,200 girls",
+    "7,600 girls",
+    "6,000 girls"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Medicine: 4,000; Management: 3,600. Difference = 400 girls.",
+   "shortcut": "Compute each, then subtract.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s024"
+  },
+  {
+   "questionText": "By how much does the number of girls in Management differ (in absolute terms) from the average number of girls per row? (Round to one decimal place if needed.)",
+   "options": [
+    "1,473.3 girls",
+    "3,600 girls",
+    "1,073.3 girls",
+    "2,526.7 girls"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 15,160; average over 6 rows = 2,526.67. Management = 3,600. Difference = 1,073.3 girls.",
+   "shortcut": "Average = total / number of rows.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s024"
+  },
+  {
+   "questionText": "What is the number of female employees in HR?",
+   "options": [
+    "1,360 female employees",
+    "340 female employees",
+    "680 female employees",
+    "1,700 female employees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HR: share 17% of 10,000 = 1,700 (employees). Using the table value gives 680 female employees.",
+   "shortcut": "Find the pie amount first, then apply the table value.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s025"
+  },
+  {
+   "questionText": "In which department is the number of female employees the highest?",
+   "options": [
+    "Support",
+    "Development",
+    "Finance",
+    "Sales"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Computed values: Development 1,300, Testing 325, Support 400, HR 680, Sales 400, Finance 560. Highest is Development.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s025"
+  },
+  {
+   "questionText": "What is the ratio of the number of female employees in HR to that in Testing, in simplest form?",
+   "options": [
+    "65:136",
+    "3:2",
+    "17:13",
+    "136:65"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HR: 680; Testing: 325. Ratio = 136:65. So the required answer is 136:65.",
+   "shortcut": "Compute both values, then reduce.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s025"
+  },
+  {
+   "questionText": "What is the combined number of female employees in Finance and HR?",
+   "options": [
+    "1,240 female employees",
+    "120 female employees",
+    "4,500 female employees",
+    "1,740 female employees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Finance: 560; HR: 680. Sum = 1,240 female employees.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s025"
+  },
+  {
+   "questionText": "What percentage of the total number of female employees (across all rows) is contributed by Finance and Support together? (Round to one decimal place.)",
+   "options": [
+    "34%",
+    "30.2%",
+    "26.2%",
+    "22.2%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(560 + 400) / 3,665 x 100 = 26.2%. So the required answer is 26.2%.",
+   "shortcut": "Compute all rows first.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s025"
+  },
+  {
+   "questionText": "In which gate is the number of children the highest?",
+   "options": [
+    "Gate 3",
+    "Gate 4",
+    "Gate 6",
+    "Gate 2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Computed values: Gate 1 3,200, Gate 2 3,300, Gate 3 3,600, Gate 4 1,560, Gate 5 1,760, Gate 6 3,680. Highest is Gate 6.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s026"
+  },
+  {
+   "questionText": "What is the ratio of the number of children in Gate 6 to that in Gate 4, in simplest form?",
+   "options": [
+    "3:2",
+    "23:13",
+    "39:92",
+    "92:39"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gate 6: 3,680; Gate 4: 1,560. Ratio = 92:39.",
+   "shortcut": "Compute both values, then reduce.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s026"
+  },
+  {
+   "questionText": "By how much does the number of children in Gate 2 exceed that in Gate 4?",
+   "options": [
+    "2,540 children",
+    "3,600 children",
+    "4,860 children",
+    "1,740 children"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gate 2: 3,300; Gate 4: 1,560. Difference = 1,740 children.",
+   "shortcut": "Compute each, then subtract.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s026"
+  },
+  {
+   "questionText": "What is the combined number of children in Gate 3 and Gate 1?",
+   "options": [
+    "400 children",
+    "6,800 children",
+    "8,800 children",
+    "12,400 children"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gate 3: 3,600; Gate 1: 3,200. Sum = 6,800 children.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s026"
+  },
+  {
+   "questionText": "The number of children in Gate 2 is what percent more than that in Gate 4? (Round to one decimal place.)",
+   "options": [
+    "111.5%",
+    "211.5%",
+    "116.5%",
+    "52.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gate 2 = 3,300, Gate 4 = 1,560. (3,300 - 1,560)/1,560 x 100 = 111.5%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s026"
+  },
+  {
+   "questionText": "In which brand is the total sales revenue (Rs thousand) the highest?",
+   "options": [
+    "Redmi",
+    "Samsung",
+    "Oppo",
+    "Realme"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Computed values: Samsung 11,000, Redmi 27,000, Realme 12,750, Vivo 42,000, Oppo 75,000, Apple 9,000. Highest is Oppo.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s027"
+  },
+  {
+   "questionText": "What is the total sales revenue (Rs thousand) in Realme?",
+   "options": [
+    "Rs 850 thousand",
+    "Rs 25,500 thousand",
+    "Rs 12,750 thousand",
+    "Rs 6,375 thousand"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Realme: share 17% of 5,000 = 850 (phones sold). Using the table value gives Rs 12,750 thousand.",
+   "shortcut": "Find the pie amount first, then apply the table value.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s027"
+  },
+  {
+   "questionText": "What is the combined total sales revenue (Rs thousand) in Realme and Samsung?",
+   "options": [
+    "Rs 1,400 thousand",
+    "Rs 23,750 thousand",
+    "Rs 24,000 thousand",
+    "Rs 1,750 thousand"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Realme: 12,750; Samsung: 11,000. Sum = Rs 23,750 thousand.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s027"
+  },
+  {
+   "questionText": "By how much does the total sales revenue (Rs thousand) in Redmi exceed that in Realme?",
+   "options": [
+    "Rs 50 thousand",
+    "Rs 39,750 thousand",
+    "Rs 14,350 thousand",
+    "Rs 14,250 thousand"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Redmi: 27,000; Realme: 12,750. Difference = Rs 14,250 thousand.",
+   "shortcut": "Compute each, then subtract.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s027"
+  },
+  {
+   "questionText": "What percentage of the total total sales revenue (Rs thousand) (across all rows) is contributed by Oppo and Vivo together? (Round to one decimal place.)",
+   "options": [
+    "66.2%",
+    "39%",
+    "62.2%",
+    "70.2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(75,000 + 42,000) / 1,76,750 x 100 = 66.2%.",
+   "shortcut": "Compute all rows first.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s027"
+  },
+  {
+   "questionText": "In which crop is the total production (quintals) the highest?",
+   "options": [
+    "Cotton",
+    "Paddy",
+    "Groundnut",
+    "Maize"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Computed values: Paddy 14,50,000, Sugarcane 7,50,000, Cotton 5,60,000, Groundnut 4,80,000, Maize 3,50,000, Banana 6,90,000. Highest is Paddy.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s028"
+  },
+  {
+   "questionText": "By how much does the total production (quintals) in Paddy exceed that in Banana?",
+   "options": [
+    "21,40,000 quintals",
+    "7,61,000 quintals",
+    "3,000 quintals",
+    "7,60,000 quintals"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Paddy: 14,50,000; Banana: 6,90,000. Difference = 7,60,000 quintals.",
+   "shortcut": "Compute each, then subtract.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s028"
+  },
+  {
+   "questionText": "Taking all rows together, what is the overall average of the last column of the data (that is, the sum of the total production (quintals) over all rows divided by the total hectares cultivated)? (Round to one decimal place.)",
+   "options": [
+    "88.6 quintals",
+    "82.6 quintals",
+    "85.6 quintals",
+    "86.7 quintals"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 42,80,000. Overall average = 42,80,000/50,000 = 85.6 quintals.",
+   "shortcut": "Weighted average, not a simple average of the table column.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s028"
+  },
+  {
+   "questionText": "What is the combined total production (quintals) in Sugarcane and Groundnut?",
+   "options": [
+    "13,500 quintals",
+    "2,70,000 quintals",
+    "12,32,500 quintals",
+    "12,30,000 quintals"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sugarcane: 7,50,000; Groundnut: 4,80,000. Sum = 12,30,000 quintals.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s028"
+  },
+  {
+   "questionText": "What percentage of the total total production (quintals) (across all rows) is contributed by Cotton? (Round to one decimal place.)",
+   "options": [
+    "10.1%",
+    "13.1%",
+    "14%",
+    "16.1%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cotton = 5,60,000; total over all rows = 42,80,000. Share = 13.1%.",
+   "shortcut": "Compute all rows, then divide.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s028"
+  },
+  {
+   "questionText": "In which department is the monthly payroll (Rs thousand) the highest?",
+   "options": [
+    "Admin",
+    "Packing",
+    "Moulding",
+    "Maintenance"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Computed values: Moulding 45,500, Quality 18,000, Stores 44,000, Packing 22,750, Maintenance 22,500, Admin 7,500. Highest is Moulding.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s029"
+  },
+  {
+   "questionText": "What is the monthly payroll (Rs thousand) in Moulding?",
+   "options": [
+    "Rs 22,750 thousand",
+    "Rs 45,500 thousand",
+    "Rs 1,300 thousand",
+    "Rs 91,000 thousand"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Moulding: share 26% of 5,000 = 1,300 (employees). Using the table value gives Rs 45,500 thousand.",
+   "shortcut": "Find the pie amount first, then apply the table value.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s029"
+  },
+  {
+   "questionText": "What is the combined monthly payroll (Rs thousand) in Admin and Quality?",
+   "options": [
+    "Rs 10,500 thousand",
+    "Rs 25,500 thousand",
+    "Rs 1,200 thousand",
+    "Rs 25,750 thousand"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Admin: 7,500; Quality: 18,000. Sum = Rs 25,500 thousand.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s029"
+  },
+  {
+   "questionText": "By how much does the monthly payroll (Rs thousand) in Moulding exceed that in Admin?",
+   "options": [
+    "Rs 1,000 thousand",
+    "Rs 38,100 thousand",
+    "Rs 53,000 thousand",
+    "Rs 38,000 thousand"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Moulding: 45,500; Admin: 7,500. Difference = Rs 38,000 thousand.",
+   "shortcut": "Compute each, then subtract.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s029"
+  },
+  {
+   "questionText": "The monthly payroll (Rs thousand) in Stores is what percent more than that in Quality? (Round to one decimal place.)",
+   "options": [
+    "244.4%",
+    "149.4%",
+    "59.1%",
+    "144.4%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Stores = 44,000, Quality = 18,000. (44,000 - 18,000)/18,000 x 100 = 144.4%.",
+   "shortcut": "Smaller value is the base.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s029"
+  },
+  {
+   "questionText": "What is the total fare collection (Rs) in Express B?",
+   "options": [
+    "Rs 11,25,000",
+    "Rs 45,00,000",
+    "Rs 22,50,000",
+    "Rs 4,500"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Express B: share 9% of 50,000 = 4,500 (passengers). Using the table value gives Rs 22,50,000.",
+   "shortcut": "Find the pie amount first, then apply the table value.",
+   "subPattern": "pie-table",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s030"
+  },
+  {
+   "questionText": "In which train is the total fare collection (Rs) the highest?",
+   "options": [
+    "Passenger C",
+    "Express A",
+    "Express B",
+    "Special F"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Computed values: Express A 18,75,000, Express B 22,50,000, Passenger C 46,40,000, Intercity D 24,00,000, Mail E 25,00,000, Special F 31,25,000. Highest is Passenger C.",
+   "shortcut": "Compute every row; the largest share need not give the largest answer.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s030"
+  },
+  {
+   "questionText": "What is the combined total fare collection (Rs) in Express B and Express A?",
+   "options": [
+    "Rs 12,000",
+    "Rs 41,27,500",
+    "Rs 41,25,000",
+    "Rs 3,75,000"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Express B: 22,50,000; Express A: 18,75,000. Sum = Rs 41,25,000.",
+   "shortcut": "Compute each row, then add.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s030"
+  },
+  {
+   "questionText": "What is the ratio of the total fare collection (Rs) in Special F to that in Express B, in simplest form?",
+   "options": [
+    "25:18",
+    "25:9",
+    "3:2",
+    "18:25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Special F: 31,25,000; Express B: 22,50,000. Ratio = 25:18.",
+   "shortcut": "Compute both values, then reduce.",
+   "subPattern": "pie-table",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s030"
+  },
+  {
+   "questionText": "What percentage of the total total fare collection (Rs) (across all rows) is contributed by Passenger C and Express B together? (Round to one decimal place.)",
+   "options": [
+    "45%",
+    "37%",
+    "38%",
+    "41%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(46,40,000 + 22,50,000) / 1,67,90,000 x 100 = 41%.",
+   "shortcut": "Compute all rows first.",
+   "subPattern": "pie-table",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-pie-charts-s030"
+  }
+ ]
+}

@@ -1,0 +1,644 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which letter is the 3rd to the right of the 4th letter from the left in the English alphabet?",
+   "options": [
+    "H",
+    "D",
+    "G",
+    "F"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Position = 4 + 3 = 7, and the 7th letter is G.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which letter is the 9th to the right of the 3rd letter from the left in the English alphabet?",
+   "options": [
+    "J",
+    "L",
+    "M",
+    "I"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Position = 3 + 9 = 12, and the 12th letter is L.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which letter is the 4th to the right of the 12th letter from the left in the English alphabet?",
+   "options": [
+    "S",
+    "P",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Position = 12 + 4 = 16, and the 16th letter is P.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which letter is the 3rd to the right of the 12th letter from the left in the English alphabet?",
+   "options": [
+    "N",
+    "Q",
+    "P",
+    "O"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Position = 12 + 3 = 15, and the 15th letter is O.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which is the 10th letter from the right end of the English alphabet?",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Position from left = 27 − 10 = 17, which is Q.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Left position = 27 − right position."
+  },
+  {
+   "questionText": "Which is the 9th letter from the right end of the English alphabet?",
+   "options": [
+    "U",
+    "R",
+    "O",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Position from left = 27 − 9 = 18, which is R.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Left position = 27 − right position."
+  },
+  {
+   "questionText": "Which is the 8th letter from the right end of the English alphabet?",
+   "options": [
+    "U",
+    "R",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Position from left = 27 − 8 = 19, which is S.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Left position = 27 − right position."
+  },
+  {
+   "questionText": "Arrange the numbers 1190, 1118, 2410, 6557, 2620 in descending order. Which number is 3rd from the left?",
+   "options": [
+    "1190",
+    "1118",
+    "6557",
+    "2410"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Order: 6557, 2620, 2410, 1190, 1118. The 3rd is 2410.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Compare thousands digit first, then hundreds."
+  },
+  {
+   "questionText": "Arrange the numbers 9031, 5556, 6651, 4210, 1791 in ascending order. Which number is 3rd from the left?",
+   "options": [
+    "9031",
+    "6651",
+    "5556",
+    "4210"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Order: 1791, 4210, 5556, 6651, 9031. The 3rd is 5556.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Compare thousands digit first, then hundreds."
+  },
+  {
+   "questionText": "Arrange the numbers 2126, 4091, 7550, 6523, 7197 in descending order. Which number is 2nd from the left?",
+   "options": [
+    "2126",
+    "4091",
+    "7197",
+    "7550"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Order: 7550, 7197, 6523, 4091, 2126. The 2nd is 7197.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Compare thousands digit first, then hundreds."
+  },
+  {
+   "questionText": "If the letters of the word CANDLE are arranged in alphabetical order, which letter will be 3rd from the right?",
+   "options": [
+    "E",
+    "D",
+    "A",
+    "C"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Alphabetical order: A C D E L N. The 3rd from the right is E.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "If the letters of the word POCKET are arranged in alphabetical order, which letter will be 2nd from the left?",
+   "options": [
+    "K",
+    "E",
+    "T",
+    "C"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Alphabetical order: C E K O P T. The 2nd from the left is E.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "If the letters of the word BLACKSMITH are arranged in alphabetical order, which letter will be 4th from the left?",
+   "options": [
+    "M",
+    "A",
+    "H",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alphabetical order: A B C H I K L M S T. The 4th from the left is H.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "If the letters of the word CRAYON are arranged in alphabetical order, which letter will be 2nd from the left?",
+   "options": [
+    "C",
+    "N",
+    "A",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Alphabetical order: A C N O R Y. The 2nd from the left is C.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "How many letters in the word JOURNEY will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sorted word: EJNORUY. Comparing JOURNEY with EJNORUY position by position, 1 letter(s) match.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "How many letters in the word TRAVEL will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    "1",
+    "0",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sorted word: AELRTV. Comparing TRAVEL with AELRTV position by position, 0 letter(s) match.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "How many letters in the word BASKET will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sorted word: ABEKST. Comparing BASKET with ABEKST position by position, 2 letter(s) match.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "How many letters in the word GARDEN will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sorted word: ADEGNR. Comparing GARDEN with ADEGNR position by position, 0 letter(s) match.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "Arrange the words PAINT, STORM, SOLVED, FRUIT, BASKET in dictionary (alphabetical) order. Which word comes 2nd?",
+   "options": [
+    "STORM",
+    "PAINT",
+    "BASKET",
+    "FRUIT"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dictionary order: BASKET, FRUIT, PAINT, SOLVED, STORM. The 2nd word is FRUIT.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words SOLVED, CRAYON, HUNTER, MONKEY, MANGO in dictionary (alphabetical) order. Which word comes 2nd?",
+   "options": [
+    "CRAYON",
+    "MONKEY",
+    "HUNTER",
+    "SOLVED"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dictionary order: CRAYON, HUNTER, MANGO, MONKEY, SOLVED. The 2nd word is HUNTER.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words BRIDGE, BASKET, PLANET, TICKET, ORANGE in dictionary (alphabetical) order. Which word comes 3rd?",
+   "options": [
+    "BRIDGE",
+    "PLANET",
+    "BASKET",
+    "ORANGE"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dictionary order: BASKET, BRIDGE, ORANGE, PLANET, TICKET. The 3rd word is ORANGE.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words BRIDGE, SILVER, PLANET, NIGHT, MONKEY in dictionary (alphabetical) order. Which word comes 4th?",
+   "options": [
+    "PLANET",
+    "BRIDGE",
+    "SILVER",
+    "NIGHT"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dictionary order: BRIDGE, MONKEY, NIGHT, PLANET, SILVER. The 4th word is PLANET.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words TRAVEL, RIVER, STORM, SOLVED, FINGER in dictionary (alphabetical) order. Which word comes 3rd?",
+   "options": [
+    "RIVER",
+    "FINGER",
+    "TRAVEL",
+    "SOLVED"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dictionary order: FINGER, RIVER, SOLVED, STORM, TRAVEL. The 3rd word is SOLVED.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "How many digits of the number 8641235 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    "0",
+    "1",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ascending arrangement: 1234568. Comparing with 8641235 place by place gives 0 match(es).",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "How many digits of the number 4962157 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    "1",
+    "0",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ascending arrangement: 1245679. Comparing with 4962157 place by place gives 0 match(es).",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "How many digits of the number 4918263 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ascending arrangement: 1234689. Comparing with 4918263 place by place gives 0 match(es).",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "How many digits of the number 172648 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    "4",
+    "5",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ascending arrangement: 124678. Comparing with 172648 place by place gives 3 match(es).",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "In the word JOURNEY, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    "4",
+    "5",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: JN, JE, UY. Count = 3.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "In the word WORKINGS, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    "2",
+    "3",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: IG. Count = 1.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "In the word DANGEROUS, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: DG. Count = 1.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "In the word BLACKSMITH, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: BI, AH, KM. Count = 3.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is the 4th to the left of the 20th letter from the right end?",
+   "options": [
+    "Y",
+    "U",
+    "X",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The 20th letter from the right is at position 7 from the left; 4 places to the left gives position 3, which in Z..A is X.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the alphabet mentally: Z=1, Y=2, X=3 ... ; then count."
+  },
+  {
+   "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is the 8th to the right of the 7th letter from the left?",
+   "options": [
+    "I",
+    "M",
+    "N",
+    "L"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In the reversed series the 15th letter from the left is the 7th+8. Position 15 in Z..A is L.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the alphabet mentally: Z=1, Y=2, X=3 ... ; then count."
+  },
+  {
+   "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is the 3rd to the left of the 15th letter from the right end?",
+   "options": [
+    "U",
+    "T",
+    "R",
+    "V"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The 15th letter from the right is at position 12 from the left; 3 places to the left gives position 9, which in Z..A is R.",
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the alphabet mentally: Z=1, Y=2, X=3 ... ; then count."
+  }
+ ]
+}

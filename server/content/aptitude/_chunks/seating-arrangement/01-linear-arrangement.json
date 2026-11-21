@@ -1,0 +1,1218 @@
+{
+ "sets": [
+  {
+   "id": "seating-arrangement-s001",
+   "type": "text",
+   "title": "Row of 6 friends - Diwali dinner in Pune",
+   "text": "6 friends - Bhavna, Esha, Manoj, Naveen, Swati, Vikram - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Manoj sits to the immediate left of Esha.\n2. Naveen sits second from the left end.\n3. Exactly two persons sit between Swati and Vikram.\n4. Bhavna and Swati are immediate neighbours."
+  },
+  {
+   "id": "seating-arrangement-s002",
+   "type": "text",
+   "title": "Row of 7 friends - Holi gathering in Madurai",
+   "text": "7 friends - Bhavna, Esha, Gopal, Lakshmi, Manoj, Omkar, Zoya - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Omkar sits somewhere to the left of Gopal.\n2. Zoya sits fifth from the right end.\n3. Exactly three persons sit between Bhavna and Lakshmi.\n4. Lakshmi and Zoya are immediate neighbours.\n5. Bhavna sits between Esha and Manoj (immediately next to both).\n6. Exactly two persons sit between Esha and Lakshmi."
+  },
+  {
+   "id": "seating-arrangement-s003",
+   "type": "text",
+   "title": "Row of 8 friends - cricket club meet in Kochi",
+   "text": "8 friends - Arjun, Esha, Farhan, Imran, Lakshmi, Rahul, Uma, Yamini - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Yamini sits somewhere to the left of Arjun.\n2. Rahul sits between Uma and Yamini (immediately next to both).\n3. Arjun sits second from the right end.\n4. Imran sits between Esha and Yamini (immediately next to both).\n5. Uma sits third from the right end.\n6. Arjun and Farhan are not immediate neighbours."
+  },
+  {
+   "id": "seating-arrangement-s004",
+   "type": "text",
+   "title": "Row of 6 friends - wedding reception in Ranchi",
+   "text": "6 friends - Arjun, Chirag, Gopal, Nisha, Priya, Tarun - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Arjun sits somewhere to the left of Chirag.\n2. Exactly two persons sit between Nisha and Priya.\n3. Arjun sits fourth from the left end.\n4. Priya sits between Arjun and Gopal (immediately next to both)."
+  },
+  {
+   "id": "seating-arrangement-s005",
+   "type": "text",
+   "title": "Row of 7 friends - college reunion in Coimbatore",
+   "text": "7 friends - Divya, Karthik, Meera, Omkar, Pooja, Sneha, Swati - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Divya and Meera are immediate neighbours.\n2. Omkar sits second to the left of Swati.\n3. Omkar sits between Karthik and Sneha (immediately next to both).\n4. Sneha sits second to the left of Pooja.\n5. Meera sits second to the left of Karthik."
+  },
+  {
+   "id": "seating-arrangement-s006",
+   "type": "text",
+   "title": "Row of 8 friends - training workshop in Indore",
+   "text": "8 friends - Esha, Imran, Lakshmi, Manoj, Rahul, Rohan, Swati, Yamini - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Esha sits between Lakshmi and Rohan (immediately next to both).\n2. Exactly three persons sit between Lakshmi and Swati.\n3. Rohan and Yamini are immediate neighbours.\n4. Rahul sits between Lakshmi and Manoj (immediately next to both).\n5. Esha sits to the immediate left of Lakshmi.\n6. Rohan sits sixth from the right end."
+  },
+  {
+   "id": "seating-arrangement-s007",
+   "type": "text",
+   "title": "Row of 6 friends - Onam sadhya in Nagpur",
+   "text": "6 friends - Farhan, Jaya, Rahul, Rohan, Suresh, Yamini - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Rohan and Yamini are immediate neighbours.\n2. Exactly one person sits between Farhan and Suresh.\n3. Suresh sits between Jaya and Rohan (immediately next to both).\n4. Jaya sits fifth from the right end."
+  },
+  {
+   "id": "seating-arrangement-s008",
+   "type": "text",
+   "title": "Row of 7 friends - Pongal lunch in Jaipur",
+   "text": "7 friends - Gopal, Harini, Meera, Rohan, Uma, Vikram, Zoya - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Gopal and Rohan are not immediate neighbours.\n2. Gopal sits sixth from the left end.\n3. Exactly one person sits between Harini and Meera.\n4. Harini sits to the immediate left of Vikram.\n5. Zoya sits somewhere to the left of Rohan.\n6. Vikram sits somewhere to the left of Meera."
+  },
+  {
+   "id": "seating-arrangement-s009",
+   "type": "text",
+   "title": "Row of 8 friends - quiz night in Surat",
+   "text": "8 friends - Anand, Arjun, Bhavna, Farhan, Harini, Nisha, Rohan, Swati - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Rohan sits somewhere to the left of Bhavna.\n2. Arjun sits fourth from the left end.\n3. Harini sits seventh from the right end.\n4. Nisha sits second to the left of Farhan.\n5. Farhan sits second to the left of Rohan.\n6. Exactly two persons sit between Farhan and Swati.\n7. Exactly three persons sit between Arjun and Bhavna."
+  },
+  {
+   "id": "seating-arrangement-s010",
+   "type": "text",
+   "title": "Row of 6 friends - book-club evening in Lucknow",
+   "text": "6 friends - Anand, Harini, Jaya, Nisha, Priya, Swati - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Nisha sits at the extreme right end of the row.\n2. Anand sits between Harini and Jaya (immediately next to both).\n3. Jaya sits somewhere to the left of Harini.\n4. Anand sits fifth from the right end.\n5. Exactly one person sits between Harini and Priya."
+  },
+  {
+   "id": "seating-arrangement-s011",
+   "type": "text",
+   "title": "Row of 7 friends - Navratri garba break in Vizag",
+   "text": "7 friends - Divya, Farhan, Jaya, Lakshmi, Meera, Rahul, Suresh - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Meera does not sit at either end of the row.\n2. Divya sits fifth from the left end.\n3. Jaya sits between Divya and Rahul (immediately next to both).\n4. Rahul sits somewhere to the left of Suresh.\n5. Divya sits between Jaya and Lakshmi (immediately next to both)."
+  },
+  {
+   "id": "seating-arrangement-s012",
+   "type": "text",
+   "title": "Row of 8 friends - office farewell in Bhopal",
+   "text": "8 friends - Deepa, Gopal, Harini, Kiran, Lakshmi, Omkar, Priya, Yamini - sit in a row. All of them face north, so a person's left is towards the west end (the left end of the row).\n\nConditions:\n1. Yamini sits fourth from the left end.\n2. Harini sits second to the left of Lakshmi.\n3. Exactly three persons sit between Kiran and Yamini.\n4. Deepa sits somewhere to the left of Omkar.\n5. Gopal sits third from the right end.\n6. Deepa sits between Omkar and Priya (immediately next to both)."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Regarding the Diwali dinner in Pune seating: Who sits at the extreme left end of the row?",
+   "options": [
+    "Manoj",
+    "Swati",
+    "Naveen",
+    "Vikram"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Vikram, Naveen, Bhavna, Swati, Manoj, Esha. Therefore the person at the extreme left end is Vikram.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s001"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Pune seating: Who sits fourth from the left end of the row?",
+   "options": [
+    "Swati",
+    "Esha",
+    "Bhavna",
+    "Manoj"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Vikram, Naveen, Bhavna, Swati, Manoj, Esha. Therefore the fourth person from the left end is Swati.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s001"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Pune seating: Which of the following pairs of persons sits at the two extreme ends of the row?",
+   "options": [
+    "Esha and Vikram",
+    "Naveen and Vikram",
+    "Esha and Manoj",
+    "Manoj and Naveen"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Vikram, Naveen, Bhavna, Swati, Manoj, Esha. Therefore the two ends are occupied by Esha and Vikram.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s001"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Pune seating: Who sits second to the left of Bhavna?",
+   "options": [
+    "Vikram",
+    "Manoj",
+    "Naveen",
+    "Esha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Vikram, Naveen, Bhavna, Swati, Manoj, Esha. Therefore the person second to the left of Bhavna is Vikram.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s001"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Pune seating: How many persons sit between the person at the extreme left end and the person sitting to the immediate right of Bhavna?",
+   "options": [
+    "6",
+    "0",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Vikram, Naveen, Bhavna, Swati, Manoj, Esha. Therefore the person right of Bhavna is in place 4, so 2 persons lie between that person and the left end.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s001"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Madurai seating: Who sits sixth from the left end of the row?",
+   "options": [
+    "Omkar",
+    "Lakshmi",
+    "Esha",
+    "Bhavna"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Omkar, Lakshmi, Zoya, Gopal, Esha, Bhavna, Manoj. Therefore the sixth person from the left end is Bhavna.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s002"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Madurai seating: Which of the following pairs of persons sits at the two extreme ends of the row?",
+   "options": [
+    "Manoj and Omkar",
+    "Omkar and Zoya",
+    "Bhavna and Manoj",
+    "Gopal and Manoj"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Omkar, Lakshmi, Zoya, Gopal, Esha, Bhavna, Manoj. Therefore the two ends are occupied by Manoj and Omkar.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s002"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Madurai seating: How many persons sit between Esha and Zoya?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Omkar, Lakshmi, Zoya, Gopal, Esha, Bhavna, Manoj. Therefore the persons between Esha and Zoya number 1.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s002"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Madurai seating: Who sits second to the right of Zoya?",
+   "options": [
+    "Gopal",
+    "Esha",
+    "Omkar",
+    "Bhavna"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Omkar, Lakshmi, Zoya, Gopal, Esha, Bhavna, Manoj. Therefore the person second to the right of Zoya is Esha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s002"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Madurai seating: Who sits to the immediate right of the person who sits second to the left of Zoya?",
+   "options": [
+    "Lakshmi",
+    "Bhavna",
+    "Omkar",
+    "Esha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Omkar, Lakshmi, Zoya, Gopal, Esha, Bhavna, Manoj. Therefore second to the left of Zoya is Omkar, whose right neighbour is Lakshmi.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s002"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Kochi seating: Who sits sixth from the right end of the row?",
+   "options": [
+    "Lakshmi",
+    "Esha",
+    "Uma",
+    "Imran"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Esha, Imran, Yamini, Rahul, Uma, Arjun, Lakshmi. Therefore the person sixth from the right end is Imran.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s003"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Kochi seating: Who sits at the extreme right end of the row?",
+   "options": [
+    "Farhan",
+    "Imran",
+    "Lakshmi",
+    "Esha"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Esha, Imran, Yamini, Rahul, Uma, Arjun, Lakshmi. Therefore the person at the extreme right end is Lakshmi.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s003"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Kochi seating: How many persons sit to the left of Rahul?",
+   "options": [
+    "7",
+    "0",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Esha, Imran, Yamini, Rahul, Uma, Arjun, Lakshmi. Therefore 4 persons sit to the left of Rahul.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s003"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Kochi seating: How many persons sit to the right of Esha?",
+   "options": [
+    "1",
+    "6",
+    "7",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Esha, Imran, Yamini, Rahul, Uma, Arjun, Lakshmi. Therefore 6 persons sit to the right of Esha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s003"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Kochi seating: If Esha and Uma interchange their places, who will sit to the immediate right of Rahul?",
+   "options": [
+    "Farhan",
+    "Imran",
+    "Lakshmi",
+    "Esha"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Esha, Imran, Yamini, Rahul, Uma, Arjun, Lakshmi. Therefore after Esha and Uma swap, the person to the immediate right of Rahul is Esha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s003"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Ranchi seating: Who sits third from the left end of the row?",
+   "options": [
+    "Priya",
+    "Gopal",
+    "Tarun",
+    "Arjun"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Tarun, Gopal, Priya, Arjun, Chirag, Nisha. Therefore the third person from the left end is Priya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s004"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Ranchi seating: How many persons sit to the left of Priya?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Tarun, Gopal, Priya, Arjun, Chirag, Nisha. Therefore 2 persons sit to the left of Priya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s004"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Ranchi seating: How many persons sit between Priya and Nisha?",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Tarun, Gopal, Priya, Arjun, Chirag, Nisha. Therefore the persons between Priya and Nisha number 2.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s004"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Ranchi seating: How many persons sit to the right of Priya?",
+   "options": [
+    "2",
+    "3",
+    "5",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Tarun, Gopal, Priya, Arjun, Chirag, Nisha. Therefore 3 persons sit to the right of Priya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s004"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Ranchi seating: Who sits second to the right of the person who sits immediate left of Priya?",
+   "options": [
+    "Chirag",
+    "Gopal",
+    "Nisha",
+    "Arjun"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Tarun, Gopal, Priya, Arjun, Chirag, Nisha. Therefore immediate left of Priya is Gopal; second to that person's right is Arjun.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s004"
+  },
+  {
+   "questionText": "Regarding the college reunion in Coimbatore seating: Who sits to the immediate left of Pooja?",
+   "options": [
+    "Divya",
+    "Swati",
+    "Sneha",
+    "Omkar"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Meera, Divya, Karthik, Omkar, Sneha, Swati, Pooja. Therefore the person immediately to the left of Pooja is Swati.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s005"
+  },
+  {
+   "questionText": "Regarding the college reunion in Coimbatore seating: Who sits fifth from the left end of the row?",
+   "options": [
+    "Divya",
+    "Omkar",
+    "Sneha",
+    "Karthik"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Meera, Divya, Karthik, Omkar, Sneha, Swati, Pooja. Therefore the fifth person from the left end is Sneha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s005"
+  },
+  {
+   "questionText": "Regarding the college reunion in Coimbatore seating: How many persons sit to the left of Karthik?",
+   "options": [
+    "4",
+    "6",
+    "2",
+    "0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Meera, Divya, Karthik, Omkar, Sneha, Swati, Pooja. Therefore 2 persons sit to the left of Karthik.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s005"
+  },
+  {
+   "questionText": "Regarding the college reunion in Coimbatore seating: How many persons sit between Sneha and Divya?",
+   "options": [
+    "2",
+    "3",
+    "0",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Meera, Divya, Karthik, Omkar, Sneha, Swati, Pooja. Therefore the persons between Sneha and Divya number 2.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s005"
+  },
+  {
+   "questionText": "Regarding the college reunion in Coimbatore seating: Who sits second to the right of the person who sits immediate left of Karthik?",
+   "options": [
+    "Divya",
+    "Omkar",
+    "Swati",
+    "Meera"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Meera, Divya, Karthik, Omkar, Sneha, Swati, Pooja. Therefore immediate left of Karthik is Divya; second to that person's right is Omkar.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s005"
+  },
+  {
+   "questionText": "Regarding the training workshop in Indore seating: Who sits to the immediate left of Lakshmi?",
+   "options": [
+    "Swati",
+    "Yamini",
+    "Rahul",
+    "Esha"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Swati, Yamini, Rohan, Esha, Lakshmi, Rahul, Manoj, Imran. Therefore the person immediately to the left of Lakshmi is Esha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s006"
+  },
+  {
+   "questionText": "Regarding the training workshop in Indore seating: Who sits exactly in the middle of Manoj and Swati?",
+   "options": [
+    "Lakshmi",
+    "Esha",
+    "Yamini",
+    "Imran"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Swati, Yamini, Rohan, Esha, Lakshmi, Rahul, Manoj, Imran. Therefore the person exactly midway between Manoj and Swati is Esha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s006"
+  },
+  {
+   "questionText": "Regarding the training workshop in Indore seating: How many persons sit to the left of Yamini?",
+   "options": [
+    "3",
+    "7",
+    "5",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Swati, Yamini, Rohan, Esha, Lakshmi, Rahul, Manoj, Imran. Therefore 1 person sit to the left of Yamini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s006"
+  },
+  {
+   "questionText": "Regarding the training workshop in Indore seating: Which of the following pairs of persons sits at the two extreme ends of the row?",
+   "options": [
+    "Imran and Swati",
+    "Imran and Manoj",
+    "Lakshmi and Swati",
+    "Swati and Yamini"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Swati, Yamini, Rohan, Esha, Lakshmi, Rahul, Manoj, Imran. Therefore the two ends are occupied by Imran and Swati.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s006"
+  },
+  {
+   "questionText": "Regarding the training workshop in Indore seating: Who sits second to the right of the person who sits immediate left of Lakshmi?",
+   "options": [
+    "Imran",
+    "Swati",
+    "Manoj",
+    "Rahul"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Swati, Yamini, Rohan, Esha, Lakshmi, Rahul, Manoj, Imran. Therefore immediate left of Lakshmi is Esha; second to that person's right is Rahul.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s006"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Nagpur seating: Who sits to the immediate right of Jaya?",
+   "options": [
+    "Farhan",
+    "Rahul",
+    "Rohan",
+    "Suresh"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Jaya, Suresh, Rohan, Yamini, Rahul. Therefore the person immediately to the right of Jaya is Suresh.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s007"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Nagpur seating: Who sits fourth from the right end of the row?",
+   "options": [
+    "Rohan",
+    "Yamini",
+    "Farhan",
+    "Suresh"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Jaya, Suresh, Rohan, Yamini, Rahul. Therefore the person fourth from the right end is Suresh.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s007"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Nagpur seating: How many persons sit between Farhan and Yamini?",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Jaya, Suresh, Rohan, Yamini, Rahul. Therefore the persons between Farhan and Yamini number 3.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s007"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Nagpur seating: Who sits second to the left of Yamini?",
+   "options": [
+    "Suresh",
+    "Jaya",
+    "Rahul",
+    "Rohan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Jaya, Suresh, Rohan, Yamini, Rahul. Therefore the person second to the left of Yamini is Suresh.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s007"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Nagpur seating: If every person moves one place to the right (the person at the right end moves to the left end), who will sit to the immediate left of Jaya?",
+   "options": [
+    "Yamini",
+    "Farhan",
+    "Suresh",
+    "Rohan"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Jaya, Suresh, Rohan, Yamini, Rahul. Therefore after everyone shifts one place right, the person to the left of Jaya is Farhan.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s007"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Jaipur seating: Who sits second from the left end of the row?",
+   "options": [
+    "Zoya",
+    "Uma",
+    "Rohan",
+    "Vikram"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Zoya, Rohan, Harini, Vikram, Meera, Gopal, Uma. Therefore the second person from the left end is Rohan.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s008"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Jaipur seating: Who sits second to the right of Harini?",
+   "options": [
+    "Rohan",
+    "Meera",
+    "Gopal",
+    "Zoya"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Zoya, Rohan, Harini, Vikram, Meera, Gopal, Uma. Therefore the person second to the right of Harini is Meera.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s008"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Jaipur seating: Who sits exactly in the middle of Meera and Zoya?",
+   "options": [
+    "Harini",
+    "Rohan",
+    "Uma",
+    "Gopal"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Zoya, Rohan, Harini, Vikram, Meera, Gopal, Uma. Therefore the person exactly midway between Meera and Zoya is Harini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s008"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Jaipur seating: How many persons sit to the left of Harini?",
+   "options": [
+    "2",
+    "0",
+    "5",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Zoya, Rohan, Harini, Vikram, Meera, Gopal, Uma. Therefore 2 persons sit to the left of Harini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s008"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Jaipur seating: If every person moves one place to the right (the person at the right end moves to the left end), who will sit to the immediate left of Harini?",
+   "options": [
+    "Meera",
+    "Gopal",
+    "Rohan",
+    "Zoya"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Zoya, Rohan, Harini, Vikram, Meera, Gopal, Uma. Therefore after everyone shifts one place right, the person to the left of Harini is Rohan.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s008"
+  },
+  {
+   "questionText": "Regarding the quiz night in Surat seating: Who sits sixth from the left end of the row?",
+   "options": [
+    "Rohan",
+    "Arjun",
+    "Harini",
+    "Swati"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Nisha, Harini, Farhan, Arjun, Rohan, Swati, Anand, Bhavna. Therefore the sixth person from the left end is Swati.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s009"
+  },
+  {
+   "questionText": "Regarding the quiz night in Surat seating: Who sits to the immediate left of Anand?",
+   "options": [
+    "Farhan",
+    "Bhavna",
+    "Harini",
+    "Swati"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Nisha, Harini, Farhan, Arjun, Rohan, Swati, Anand, Bhavna. Therefore the person immediately to the left of Anand is Swati.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s009"
+  },
+  {
+   "questionText": "Regarding the quiz night in Surat seating: How many persons sit between Farhan and Anand?",
+   "options": [
+    "3",
+    "0",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Nisha, Harini, Farhan, Arjun, Rohan, Swati, Anand, Bhavna. Therefore the persons between Farhan and Anand number 3.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s009"
+  },
+  {
+   "questionText": "Regarding the quiz night in Surat seating: Who sits exactly in the middle of Farhan and Nisha?",
+   "options": [
+    "Anand",
+    "Bhavna",
+    "Rohan",
+    "Harini"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Nisha, Harini, Farhan, Arjun, Rohan, Swati, Anand, Bhavna. Therefore the person exactly midway between Farhan and Nisha is Harini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s009"
+  },
+  {
+   "questionText": "Regarding the quiz night in Surat seating: How many persons sit between the person at the extreme left end and the person sitting to the immediate right of Swati?",
+   "options": [
+    "2",
+    "6",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Nisha, Harini, Farhan, Arjun, Rohan, Swati, Anand, Bhavna. Therefore the person right of Swati is in place 7, so 5 persons lie between that person and the left end.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s009"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Lucknow seating: Who sits to the immediate left of Swati?",
+   "options": [
+    "Anand",
+    "Nisha",
+    "Jaya",
+    "Harini"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Jaya, Anand, Harini, Swati, Priya, Nisha. Therefore the person immediately to the left of Swati is Harini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s010"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Lucknow seating: Who sits second to the right of Swati?",
+   "options": [
+    "Nisha",
+    "Priya",
+    "Harini",
+    "Anand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Jaya, Anand, Harini, Swati, Priya, Nisha. Therefore the person second to the right of Swati is Nisha.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s010"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Lucknow seating: How many persons sit to the right of Jaya?",
+   "options": [
+    "2",
+    "3",
+    "0",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Jaya, Anand, Harini, Swati, Priya, Nisha. Therefore 5 persons sit to the right of Jaya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s010"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Lucknow seating: How many persons sit to the left of Harini?",
+   "options": [
+    "4",
+    "0",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Jaya, Anand, Harini, Swati, Priya, Nisha. Therefore 2 persons sit to the left of Harini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s010"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Lucknow seating: If Harini and Anand interchange their places, who will sit to the immediate right of Jaya?",
+   "options": [
+    "Priya",
+    "Swati",
+    "Harini",
+    "Nisha"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Jaya, Anand, Harini, Swati, Priya, Nisha. Therefore after Harini and Anand swap, the person to the immediate right of Jaya is Harini.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s010"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Vizag seating: Who sits at the extreme right end of the row?",
+   "options": [
+    "Divya",
+    "Suresh",
+    "Lakshmi",
+    "Rahul"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Meera, Rahul, Jaya, Divya, Lakshmi, Suresh. Therefore the person at the extreme right end is Suresh.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s011"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Vizag seating: Who sits to the immediate right of Rahul?",
+   "options": [
+    "Farhan",
+    "Meera",
+    "Jaya",
+    "Divya"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Meera, Rahul, Jaya, Divya, Lakshmi, Suresh. Therefore the person immediately to the right of Rahul is Jaya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s011"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Vizag seating: Who sits exactly in the middle of Rahul and Suresh?",
+   "options": [
+    "Lakshmi",
+    "Farhan",
+    "Jaya",
+    "Divya"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Meera, Rahul, Jaya, Divya, Lakshmi, Suresh. Therefore the person exactly midway between Rahul and Suresh is Divya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s011"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Vizag seating: How many persons sit between Divya and Farhan?",
+   "options": [
+    "3",
+    "5",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Meera, Rahul, Jaya, Divya, Lakshmi, Suresh. Therefore the persons between Divya and Farhan number 3.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s011"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Vizag seating: Who sits to the immediate right of the person who sits second to the left of Lakshmi?",
+   "options": [
+    "Divya",
+    "Meera",
+    "Jaya",
+    "Farhan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Farhan, Meera, Rahul, Jaya, Divya, Lakshmi, Suresh. Therefore second to the left of Lakshmi is Jaya, whose right neighbour is Divya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s011"
+  },
+  {
+   "questionText": "Regarding the office farewell in Bhopal seating: Who sits to the immediate left of Lakshmi?",
+   "options": [
+    "Priya",
+    "Omkar",
+    "Gopal",
+    "Deepa"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Priya, Deepa, Omkar, Yamini, Harini, Gopal, Lakshmi, Kiran. Therefore the person immediately to the left of Lakshmi is Gopal.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s012"
+  },
+  {
+   "questionText": "Regarding the office farewell in Bhopal seating: Who sits second to the right of Priya?",
+   "options": [
+    "Omkar",
+    "Gopal",
+    "Deepa",
+    "Kiran"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Priya, Deepa, Omkar, Yamini, Harini, Gopal, Lakshmi, Kiran. Therefore the person second to the right of Priya is Omkar.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s012"
+  },
+  {
+   "questionText": "Regarding the office farewell in Bhopal seating: Which of the following pairs of persons sits at the two extreme ends of the row?",
+   "options": [
+    "Kiran and Lakshmi",
+    "Kiran and Priya",
+    "Priya and Yamini",
+    "Deepa and Kiran"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Priya, Deepa, Omkar, Yamini, Harini, Gopal, Lakshmi, Kiran. Therefore the two ends are occupied by Kiran and Priya.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s012"
+  },
+  {
+   "questionText": "Regarding the office farewell in Bhopal seating: How many persons sit to the left of Omkar?",
+   "options": [
+    "4",
+    "3",
+    "7",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Priya, Deepa, Omkar, Yamini, Harini, Gopal, Lakshmi, Kiran. Therefore 2 persons sit to the left of Omkar.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s012"
+  },
+  {
+   "questionText": "Regarding the office farewell in Bhopal seating: How many persons sit between the person at the extreme left end and the person sitting to the immediate right of Deepa?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north) the order is: Priya, Deepa, Omkar, Yamini, Harini, Gopal, Lakshmi, Kiran. Therefore the person right of Deepa is in place 3, so 1 person lie between that person and the left end.",
+   "shortcut": "Mark the definite statements first (ends, 'between', exact positions), then attach the relative ones to them.",
+   "subPattern": "linear-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s012"
+  }
+ ]
+}

@@ -1,0 +1,651 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The meeting is scheduled ____ 10 a.m.",
+   "options": [
+    "on",
+    "in",
+    "at",
+    "by"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'At' is used with exact clock times.",
+   "shortcut": "Clock time = at.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She was born ____ 12 March 1999.",
+   "options": [
+    "at",
+    "in",
+    "by",
+    "on"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'On' is used with specific dates and days.",
+   "shortcut": "Date/day = on.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We usually go to Ooty ____ summer.",
+   "options": [
+    "in",
+    "on",
+    "at",
+    "by"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'In' is used with months, seasons and years.",
+   "shortcut": "Month/season/year = in.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He has been working here ____ 2018.",
+   "options": [
+    "for",
+    "since",
+    "from",
+    "during"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Since' is used with a point in time at which a continuing action began.",
+   "shortcut": "since + point; for + period.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has been waiting ____ two hours.",
+   "options": [
+    "since",
+    "from",
+    "for",
+    "by"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'For' is used with a period of time.",
+   "shortcut": "for + period.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The book is ____ the table.",
+   "options": [
+    "in",
+    "at",
+    "by",
+    "on"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'On' shows a surface contact position.",
+   "shortcut": "Surface = on.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is jealous ____ her colleague's success.",
+   "options": [
+    "of",
+    "to",
+    "at",
+    "with"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The adjective 'jealous' is followed by 'of': jealous of her colleague's success.",
+   "shortcut": "jealous of.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The thief jumped ____ the wall and ran away.",
+   "options": [
+    "above",
+    "over",
+    "upon",
+    "on"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Over' shows movement across and beyond an obstacle.",
+   "shortcut": "Movement across = over.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I have no objection ____ your plan.",
+   "options": [
+    "with",
+    "for",
+    "to",
+    "on"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The noun 'objection' is followed by the preposition 'to': objection to your plan.",
+   "shortcut": "objection to.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is addicted ____ online games.",
+   "options": [
+    "with",
+    "for",
+    "by",
+    "to"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Addicted' is followed by 'to'.",
+   "shortcut": "addicted to.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is afraid ____ spiders.",
+   "options": [
+    "of",
+    "from",
+    "with",
+    "to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The adjective 'afraid' is always followed by 'of': afraid of spiders.",
+   "shortcut": "afraid of.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The teacher congratulated him ____ his success.",
+   "options": [
+    "for",
+    "on",
+    "at",
+    "with"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Congratulate' takes 'on' with the achievement.",
+   "shortcut": "congratulate on.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This road leads ____ the railway station.",
+   "options": [
+    "at",
+    "for",
+    "to",
+    "in"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Lead' takes 'to' for a destination.",
+   "shortcut": "lead to.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He has been suffering ____ fever since Monday.",
+   "options": [
+    "of",
+    "with",
+    "by",
+    "from"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Suffer' takes 'from' with an illness.",
+   "shortcut": "suffer from.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The accused was charged ____ murder.",
+   "options": [
+    "with",
+    "of",
+    "for",
+    "on"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Charge' takes 'with' for the offence alleged.",
+   "shortcut": "charged with.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The boy is fond ____ chocolates.",
+   "options": [
+    "to",
+    "of",
+    "for",
+    "with"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The adjective 'fond' is always followed by 'of': fond of chocolates.",
+   "shortcut": "fond of.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is married ____ a doctor.",
+   "options": [
+    "with",
+    "by",
+    "to",
+    "for"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The adjective 'married' is followed by 'to' before the spouse: married to a doctor.",
+   "shortcut": "married to.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He insisted ____ paying the bill.",
+   "options": [
+    "to",
+    "for",
+    "at",
+    "on"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb 'insist' is followed by 'on' and then a gerund: insist on paying.",
+   "shortcut": "insist on.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I am looking forward ____ meeting you.",
+   "options": [
+    "to",
+    "for",
+    "at",
+    "with"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look forward' takes 'to'; 'to' is a preposition so a gerund follows.",
+   "shortcut": "look forward to + -ing.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The shop remains closed ____ Sundays.",
+   "options": [
+    "at",
+    "on",
+    "in",
+    "by"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'On' is used with days of the week.",
+   "shortcut": "day = on.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The project must be completed ____ Friday, not later.",
+   "options": [
+    "until",
+    "at",
+    "by",
+    "since"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'By' means not later than a deadline.",
+   "shortcut": "by = deadline.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He stayed in the library ____ 8 p.m. and then left.",
+   "options": [
+    "by",
+    "at",
+    "since",
+    "until"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Until' shows continuing action up to a time.",
+   "shortcut": "until = continuing till.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Taj Mahal is ____ the banks of the Yamuna.",
+   "options": [
+    "on",
+    "in",
+    "at",
+    "over"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'On' is used with banks of a river.",
+   "shortcut": "on the bank(s).",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He sat ____ his two friends on the bench.",
+   "options": [
+    "among",
+    "between",
+    "amid",
+    "within"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Between' is used for two persons or things, here sitting with one at each side.",
+   "shortcut": "Two = between; many = among.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The sweets were distributed ____ the children.",
+   "options": [
+    "between",
+    "amid",
+    "among",
+    "with"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Among' is used for more than two persons.",
+   "shortcut": "Many = among.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is senior ____ me by two years.",
+   "options": [
+    "than",
+    "from",
+    "of",
+    "to"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Senior' takes 'to', not 'than'.",
+   "shortcut": "senior/junior/superior/prefer + to.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I prefer tea ____ coffee.",
+   "options": [
+    "to",
+    "than",
+    "over",
+    "from"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb 'prefer' takes 'to', not 'than', for comparison: prefer tea to coffee.",
+   "shortcut": "prefer X to Y.",
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The passengers got ____ the bus at Salem.",
+   "options": [
+    "out",
+    "off",
+    "under",
+    "away"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Get off' is used with buses, trains and planes.",
+   "shortcut": "bus/train: get on/off; car: get in/out.",
+   "subPattern": "prepositions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She was angry ____ me for being late.",
+   "options": [
+    "to",
+    "from",
+    "with",
+    "of"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Angry' takes 'with' before a person.",
+   "shortcut": "angry with + person.",
+   "subPattern": "prepositions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is angry ____ the delay in delivery.",
+   "options": [
+    "to",
+    "from",
+    "of",
+    "at"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Angry' takes 'at' before a thing or situation.",
+   "shortcut": "angry at + thing.",
+   "subPattern": "prepositions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The committee is composed ____ ten members.",
+   "options": [
+    "of",
+    "with",
+    "by",
+    "from"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The participle 'composed' is followed by 'of': composed of ten members.",
+   "shortcut": "composed of.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This soap differs ____ the one I used earlier in its fragrance.",
+   "options": [
+    "to",
+    "from",
+    "than",
+    "with"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The verb 'differ' is followed by 'from': differs from the one used earlier.",
+   "shortcut": "differ from.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The new rule is applicable ____ all employees.",
+   "options": [
+    "for",
+    "on",
+    "to",
+    "at"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The adjective 'applicable' is followed by 'to': applicable to all employees.",
+   "shortcut": "applicable to.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He apologised ____ the delay to the customer.",
+   "options": [
+    "of",
+    "on",
+    "with",
+    "for"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Apologise' takes 'for' with the fault.",
+   "shortcut": "apologise for.",
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

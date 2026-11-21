@@ -1,0 +1,4389 @@
+{
+ "pattern": {
+  "title": "One Word Substitution",
+  "slug": "one-word-substitution",
+  "description": "A single word for a phrase.",
+  "order": 51,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "people-professions",
+    "title": "People & professions"
+   },
+   {
+    "slug": "fear-study-terms",
+    "title": "Fear & study terms"
+   },
+   {
+    "slug": "collective-nouns",
+    "title": "Collective nouns"
+   },
+   {
+    "slug": "abstract-nouns",
+    "title": "Abstract nouns"
+   },
+   {
+    "slug": "miscellaneous",
+    "title": "Miscellaneous"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who scientifically studies the stars, planets and other celestial bodies\"",
+   "options": [
+    {
+     "text": "meteorologist"
+    },
+    {
+     "text": "astronomer"
+    },
+    {
+     "text": "geologist"
+    },
+    {
+     "text": "astrologer"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"astronomer\": one who scientifically studies stars, planets and other celestial bodies. The other options mean: astrologer: one who predicts human fortunes and events from the positions of stars; geologist: a scientist who studies the earth's rocks and structure; meteorologist: a scientist who studies weather and the atmosphere.",
+   "order": 1,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who hates women\"",
+   "options": [
+    {
+     "text": "misanthrope"
+    },
+    {
+     "text": "bigot"
+    },
+    {
+     "text": "misogynist"
+    },
+    {
+     "text": "philanderer"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"misogynist\": a person who hates women. The other options mean: misanthrope: a person who hates or distrusts mankind; philanderer: a man who has casual love affairs with many women; bigot: a person who is intolerantly attached to his own opinions.",
+   "order": 2,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Miso- = hate; gyne = woman."
+  },
+  {
+   "questionText": "Which one word stands for \"A person who hates or distrusts mankind\"?",
+   "options": [
+    {
+     "text": "philanthropist"
+    },
+    {
+     "text": "pessimist"
+    },
+    {
+     "text": "misogynist"
+    },
+    {
+     "text": "misanthrope"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"misanthrope\": a person who hates or distrusts mankind. The other options mean: misogynist: a person who hates women; philanthropist: a person who loves mankind and helps it through charity; pessimist: a person who expects the worst.",
+   "order": 3,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Miso- = hate; anthropos = mankind."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who loves mankind and works for its welfare through charity\"?",
+   "options": [
+    {
+     "text": "philanthropist"
+    },
+    {
+     "text": "cynic"
+    },
+    {
+     "text": "misanthrope"
+    },
+    {
+     "text": "hermit"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"philanthropist\": a person who loves mankind and helps it through charity. The other options mean: misanthrope: a person who hates or distrusts mankind; cynic: a person who distrusts the motives of others; hermit: a person who lives alone, away from society.",
+   "order": 4,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Philo- = love; anthropos = mankind."
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A lover and collector of books\"",
+   "options": [
+    {
+     "text": "numismatist"
+    },
+    {
+     "text": "bibliophile"
+    },
+    {
+     "text": "philatelist"
+    },
+    {
+     "text": "lexicographer"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"bibliophile\": a lover and collector of books. The other options mean: philatelist: a collector and student of postage stamps; numismatist: a collector or student of coins and medals; lexicographer: one who compiles dictionaries.",
+   "order": 5,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Biblio- = book; -phile = lover."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who collects postage stamps as a hobby\"",
+   "options": [
+    {
+     "text": "bibliophile"
+    },
+    {
+     "text": "numismatist"
+    },
+    {
+     "text": "antiquarian"
+    },
+    {
+     "text": "philatelist"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"philatelist\": a collector and student of postage stamps. The other options mean: numismatist: a collector or student of coins and medals; bibliophile: a lover and collector of books; antiquarian: a collector or student of antiques and ancient objects.",
+   "order": 6,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Phil- = love; ateleia = freedom from tax (postage stamp)."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who writes in shorthand\"",
+   "options": [
+    {
+     "text": "calligrapher"
+    },
+    {
+     "text": "cryptographer"
+    },
+    {
+     "text": "stenographer"
+    },
+    {
+     "text": "typographer"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"stenographer\": one who writes in shorthand. The other options mean: calligrapher: an expert in beautiful handwriting; cryptographer: one who writes or designs secret codes; typographer: one who designs or arranges printed type.",
+   "order": 7,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A doctor who specialises in diseases of the eye\"",
+   "options": [
+    {
+     "text": "ophthalmologist"
+    },
+    {
+     "text": "cardiologist"
+    },
+    {
+     "text": "neurologist"
+    },
+    {
+     "text": "dermatologist"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"ophthalmologist\": a doctor who specialises in diseases of the eye. The other options mean: cardiologist: a doctor who specialises in diseases of the heart; neurologist: a doctor who specialises in diseases of the nerves and brain; dermatologist: a doctor who specialises in diseases of the skin.",
+   "order": 8,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A doctor who specialises in diseases of the heart\"?",
+   "options": [
+    {
+     "text": "dermatologist"
+    },
+    {
+     "text": "neurologist"
+    },
+    {
+     "text": "pulmonologist"
+    },
+    {
+     "text": "cardiologist"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"cardiologist\": a doctor who specialises in diseases of the heart. The other options mean: pulmonologist: a doctor who specialises in diseases of the lungs; neurologist: a doctor who specialises in diseases of the nerves and brain; dermatologist: a doctor who specialises in diseases of the skin.",
+   "order": 9,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A doctor who treats the diseases of children\"",
+   "options": [
+    {
+     "text": "paediatrician"
+    },
+    {
+     "text": "geriatrician"
+    },
+    {
+     "text": "gynaecologist"
+    },
+    {
+     "text": "dermatologist"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"paediatrician\": a doctor who treats children's diseases. The other options mean: geriatrician: a doctor who treats the diseases of old people; gynaecologist: a doctor who treats women's reproductive health; dermatologist: a doctor who specialises in diseases of the skin.",
+   "order": 10,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A scientist who studies birds\"",
+   "options": [
+    {
+     "text": "ichthyologist"
+    },
+    {
+     "text": "herpetologist"
+    },
+    {
+     "text": "ornithologist"
+    },
+    {
+     "text": "entomologist"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"ornithologist\": a scientist who studies birds. The other options mean: entomologist: a scientist who studies insects; herpetologist: a scientist who studies reptiles and amphibians; ichthyologist: a scientist who studies fish.",
+   "order": 11,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who travels on foot\"?",
+   "options": [
+    {
+     "text": "passenger"
+    },
+    {
+     "text": "pedestrian"
+    },
+    {
+     "text": "nomad"
+    },
+    {
+     "text": "pilgrim"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"pedestrian\": a person who travels on foot. The other options mean: pilgrim: a person who journeys to a sacred place; passenger: a person who travels in a vehicle without driving it; nomad: a member of a tribe that moves from place to place in search of pasture.",
+   "order": 12,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who always looks on the bright side and expects the best\"",
+   "options": [
+    {
+     "text": "pessimist"
+    },
+    {
+     "text": "sceptic"
+    },
+    {
+     "text": "cynic"
+    },
+    {
+     "text": "optimist"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"optimist\": a person who always expects the best and looks on the bright side. The other options mean: pessimist: a person who expects the worst; cynic: a person who distrusts the motives of others; sceptic: a person who doubts accepted opinions.",
+   "order": 13,
+   "subPattern": "people-professions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A person who collects or studies coins and medals\"?",
+   "options": [
+    {
+     "text": "lexicographer"
+    },
+    {
+     "text": "numismatist"
+    },
+    {
+     "text": "philatelist"
+    },
+    {
+     "text": "cartographer"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"numismatist\": a collector or student of coins and medals. The other options mean: philatelist: a collector and student of postage stamps; cartographer: one who draws or makes maps; lexicographer: one who compiles dictionaries.",
+   "order": 14,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who draws or makes maps\"?",
+   "options": [
+    {
+     "text": "biographer"
+    },
+    {
+     "text": "stenographer"
+    },
+    {
+     "text": "cartographer"
+    },
+    {
+     "text": "lexicographer"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"cartographer\": one who draws or makes maps. The other options mean: lexicographer: one who compiles dictionaries; stenographer: one who writes in shorthand; biographer: one who writes the life story of another person.",
+   "order": 15,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who compiles dictionaries\"",
+   "options": [
+    {
+     "text": "lexicographer"
+    },
+    {
+     "text": "cartographer"
+    },
+    {
+     "text": "biographer"
+    },
+    {
+     "text": "calligrapher"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"lexicographer\": one who compiles dictionaries. The other options mean: cartographer: one who draws or makes maps; biographer: one who writes the life story of another person; calligrapher: an expert in beautiful handwriting.",
+   "order": 16,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A person who is an expert in beautiful handwriting\"?",
+   "options": [
+    {
+     "text": "calligrapher"
+    },
+    {
+     "text": "stenographer"
+    },
+    {
+     "text": "graphologist"
+    },
+    {
+     "text": "cryptographer"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"calligrapher\": an expert in beautiful handwriting. The other options mean: stenographer: one who writes in shorthand; graphologist: an expert who studies handwriting to judge a person's character; cryptographer: one who writes or designs secret codes.",
+   "order": 17,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who designs or solves secret codes\"",
+   "options": [
+    {
+     "text": "stenographer"
+    },
+    {
+     "text": "cryptographer"
+    },
+    {
+     "text": "lexicographer"
+    },
+    {
+     "text": "calligrapher"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"cryptographer\": one who writes or designs secret codes. The other options mean: stenographer: one who writes in shorthand; lexicographer: one who compiles dictionaries; calligrapher: an expert in beautiful handwriting.",
+   "order": 18,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A doctor who specialises in diseases of the kidneys\"?",
+   "options": [
+    {
+     "text": "gastroenterologist"
+    },
+    {
+     "text": "cardiologist"
+    },
+    {
+     "text": "nephrologist"
+    },
+    {
+     "text": "hepatologist"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"nephrologist\": a doctor who specialises in diseases of the kidneys. The other options mean: hepatologist: a doctor who specialises in diseases of the liver; gastroenterologist: a doctor who specialises in diseases of the stomach and intestines; cardiologist: a doctor who specialises in diseases of the heart.",
+   "order": 19,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A dentist who corrects teeth that are irregularly placed\"",
+   "options": [
+    {
+     "text": "orthopaedist"
+    },
+    {
+     "text": "chiropodist"
+    },
+    {
+     "text": "paediatrician"
+    },
+    {
+     "text": "orthodontist"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"orthodontist\": a dentist who corrects irregularly placed teeth. The other options mean: chiropodist: one who treats minor ailments of the feet; orthopaedist: a doctor who treats disorders of the bones and joints; paediatrician: a doctor who treats children's diseases.",
+   "order": 20,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A doctor who specialises in the care of elderly people\"?",
+   "options": [
+    {
+     "text": "psychiatrist"
+    },
+    {
+     "text": "radiologist"
+    },
+    {
+     "text": "geriatrician"
+    },
+    {
+     "text": "paediatrician"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"geriatrician\": a doctor who treats the diseases of old people. The other options mean: paediatrician: a doctor who treats children's diseases; psychiatrist: a doctor who treats mental illness; radiologist: a doctor who diagnoses illness using X-rays and scans.",
+   "order": 21,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A scientist who studies the origin and development of mankind and its customs\"?",
+   "options": [
+    {
+     "text": "anthropologist"
+    },
+    {
+     "text": "archaeologist"
+    },
+    {
+     "text": "ornithologist"
+    },
+    {
+     "text": "entomologist"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"anthropologist\": a scientist who studies the origin, development and customs of mankind. The other options mean: archaeologist: one who studies ancient civilisations through excavated remains; ornithologist: a scientist who studies birds; entomologist: a scientist who studies insects.",
+   "order": 22,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who studies ancient civilisations by digging up and examining their remains\"",
+   "options": [
+    {
+     "text": "linguist"
+    },
+    {
+     "text": "ornithologist"
+    },
+    {
+     "text": "geologist"
+    },
+    {
+     "text": "archaeologist"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"archaeologist\": one who studies ancient civilisations through excavated remains. The other options mean: ornithologist: a scientist who studies birds; geologist: a scientist who studies the earth's rocks and structure; linguist: one who studies language scientifically.",
+   "order": 23,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A scientist who studies insects\"?",
+   "options": [
+    {
+     "text": "ornithologist"
+    },
+    {
+     "text": "entomologist"
+    },
+    {
+     "text": "etymologist"
+    },
+    {
+     "text": "herpetologist"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"entomologist\": a scientist who studies insects. The other options mean: ornithologist: a scientist who studies birds; etymologist: one who studies the origin and historical development of words; herpetologist: a scientist who studies reptiles and amphibians.",
+   "order": 24,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who knows or speaks many languages\"",
+   "options": [
+    {
+     "text": "pedant"
+    },
+    {
+     "text": "elocutionist"
+    },
+    {
+     "text": "polyglot"
+    },
+    {
+     "text": "orator"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"polyglot\": a person who knows or speaks many languages. The other options mean: orator: a skilled public speaker; pedant: a person who makes a show of learning or is overly concerned with minor rules; elocutionist: an expert in the art of clear and effective speaking.",
+   "order": 25,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A teacher or schoolmaster\"",
+   "options": [
+    {
+     "text": "pedlar"
+    },
+    {
+     "text": "pedant"
+    },
+    {
+     "text": "demagogue"
+    },
+    {
+     "text": "pedagogue"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"pedagogue\": a teacher or schoolmaster. The other options mean: pedant: a person who makes a show of learning or is overly concerned with minor rules; demagogue: a political leader who wins support by appealing to popular passions and prejudices; pedlar: a person who sells small goods by going from door to door.",
+   "order": 26,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Paid- (child) + agogos (leader): leads children, a teacher."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A ruler who holds absolute power\"?",
+   "options": [
+    {
+     "text": "autocrat"
+    },
+    {
+     "text": "bureaucrat"
+    },
+    {
+     "text": "democrat"
+    },
+    {
+     "text": "aristocrat"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"autocrat\": a ruler with absolute power. The other options mean: democrat: a believer in rule by the people; bureaucrat: an official in a government department; aristocrat: a member of the hereditary noble class.",
+   "order": 27,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A person who practises severe self-discipline and avoids worldly pleasures\"?",
+   "options": [
+    {
+     "text": "sceptic"
+    },
+    {
+     "text": "ascetic"
+    },
+    {
+     "text": "hedonist"
+    },
+    {
+     "text": "epicure"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"ascetic\": a person who lives a life of severe self-discipline and avoids worldly pleasures. The other options mean: epicure: a person who takes refined pleasure in good food and drink; hedonist: a person who believes that pleasure is the chief aim of life; sceptic: a person who doubts accepted opinions.",
+   "order": 28,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who does an activity for love of it and not for money\"",
+   "options": [
+    {
+     "text": "professional"
+    },
+    {
+     "text": "veteran"
+    },
+    {
+     "text": "amateur"
+    },
+    {
+     "text": "pedant"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"amateur\": a person who takes part in an activity for love of it, not for money. The other options mean: professional: a person who earns a living from an activity; veteran: a person with long experience, especially an ex-soldier; pedant: a person who makes a show of learning or is overly concerned with minor rules.",
+   "order": 29,
+   "subPattern": "people-professions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"An expert who studies a person's handwriting to judge his character\"?",
+   "options": [
+    {
+     "text": "phrenologist"
+    },
+    {
+     "text": "graphologist"
+    },
+    {
+     "text": "palmist"
+    },
+    {
+     "text": "calligrapher"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"graphologist\": an expert who studies handwriting to judge a person's character. The other options mean: calligrapher: an expert in beautiful handwriting; palmist: one who tells fortunes by reading the lines of the palm; phrenologist: one who studies the shape of the skull to judge character.",
+   "order": 30,
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Graph = writing; -ologist = expert who studies."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"A person who studies the origin and historical development of words\"?",
+   "options": [
+    {
+     "text": "ethnologist"
+    },
+    {
+     "text": "ornithologist"
+    },
+    {
+     "text": "entomologist"
+    },
+    {
+     "text": "etymologist"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"etymologist\": one who studies the origin and historical development of words. The other options mean: entomologist: a scientist who studies insects; ornithologist: a scientist who studies birds; ethnologist: one who studies the different races of people and their cultures.",
+   "order": 31,
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"A political leader who wins power by appealing to the emotions and prejudices of the common people\"?",
+   "options": [
+    {
+     "text": "demagogue"
+    },
+    {
+     "text": "pedagogue"
+    },
+    {
+     "text": "bureaucrat"
+    },
+    {
+     "text": "democrat"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"demagogue\": a political leader who wins support by appealing to popular passions and prejudices. The other options mean: pedagogue: a teacher or schoolmaster; democrat: a believer in rule by the people; bureaucrat: an official in a government department.",
+   "order": 32,
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person whose power or influence comes from his great wealth\"",
+   "options": [
+    {
+     "text": "plutocrat"
+    },
+    {
+     "text": "bureaucrat"
+    },
+    {
+     "text": "aristocrat"
+    },
+    {
+     "text": "democrat"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"plutocrat\": a person whose power comes from his wealth. The other options mean: aristocrat: a member of the hereditary noble class; democrat: a believer in rule by the people; bureaucrat: an official in a government department.",
+   "order": 33,
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A person who takes refined pleasure in good food and drink\"",
+   "options": [
+    {
+     "text": "glutton"
+    },
+    {
+     "text": "epicure"
+    },
+    {
+     "text": "ascetic"
+    },
+    {
+     "text": "cynic"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"epicure\": a person who takes refined pleasure in good food and drink. The other options mean: glutton: a person who eats greedily and too much; ascetic: a person who lives a life of severe self-discipline and avoids worldly pleasures; cynic: a person who distrusts the motives of others.",
+   "order": 34,
+   "subPattern": "people-professions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"An abnormal fear of confined or closed spaces\"",
+   "options": [
+    {
+     "text": "hydrophobia"
+    },
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "agoraphobia"
+    },
+    {
+     "text": "claustrophobia"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"claustrophobia\": abnormal fear of confined or closed spaces. The other options mean: agoraphobia: abnormal fear of open or crowded public places; acrophobia: abnormal fear of heights; hydrophobia: abnormal fear of water.",
+   "order": 35,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Claustro- = closed space. Phobia = fear."
+  },
+  {
+   "questionText": "Which one word stands for \"An abnormal fear of heights\"?",
+   "options": [
+    {
+     "text": "claustrophobia"
+    },
+    {
+     "text": "photophobia"
+    },
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "hydrophobia"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"acrophobia\": abnormal fear of heights. The other options mean: hydrophobia: abnormal fear of water; claustrophobia: abnormal fear of confined or closed spaces; photophobia: abnormal dread of, or sensitivity to, light.",
+   "order": 36,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Acro- = height (acropolis, acrobat)."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"An abnormal fear of water\"?",
+   "options": [
+    {
+     "text": "hydrophobia"
+    },
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "pyrophobia"
+    },
+    {
+     "text": "xenophobia"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"hydrophobia\": abnormal fear of water. The other options mean: acrophobia: abnormal fear of heights; pyrophobia: abnormal fear of fire; xenophobia: fear or hatred of strangers and foreigners.",
+   "order": 37,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Hydro- = water (hydroelectric, dehydrate)."
+  },
+  {
+   "questionText": "Which one word stands for \"The scientific study of fish\"?",
+   "options": [
+    {
+     "text": "mycology"
+    },
+    {
+     "text": "herpetology"
+    },
+    {
+     "text": "ichthyology"
+    },
+    {
+     "text": "ornithology"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"ichthyology\": the scientific study of fish. The other options mean: ornithology: the scientific study of birds; herpetology: the scientific study of reptiles and amphibians; mycology: the scientific study of fungi.",
+   "order": 38,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Ichthy- = fish. -ology = study of."
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The scientific study of earthquakes\"",
+   "options": [
+    {
+     "text": "oceanography"
+    },
+    {
+     "text": "seismology"
+    },
+    {
+     "text": "geology"
+    },
+    {
+     "text": "meteorology"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"seismology\": the scientific study of earthquakes. The other options mean: meteorology: the scientific study of weather and the atmosphere; geology: the scientific study of the earth's rocks and structure; oceanography: the study of the oceans.",
+   "order": 39,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Seismos = shaking, so earthquakes."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The scientific study of weather and the atmosphere\"",
+   "options": [
+    {
+     "text": "astronomy"
+    },
+    {
+     "text": "hydrology"
+    },
+    {
+     "text": "seismology"
+    },
+    {
+     "text": "meteorology"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"meteorology\": the scientific study of weather and the atmosphere. The other options mean: seismology: the scientific study of earthquakes; hydrology: the scientific study of water and its movement over and under the earth; astronomy: the scientific study of celestial bodies.",
+   "order": 40,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The study of God and religious belief\"",
+   "options": [
+    {
+     "text": "philosophy"
+    },
+    {
+     "text": "theology"
+    },
+    {
+     "text": "mythology"
+    },
+    {
+     "text": "ideology"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"theology\": the study of God and religious belief. The other options mean: mythology: a body of myths, or the study of myths; philosophy: the study of the fundamental nature of knowledge, reality and existence; ideology: a system of ideas and ideals.",
+   "order": 41,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"The scientific study of the earth's rocks and structure\"?",
+   "options": [
+    {
+     "text": "genealogy"
+    },
+    {
+     "text": "ecology"
+    },
+    {
+     "text": "geology"
+    },
+    {
+     "text": "geometry"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"geology\": the scientific study of the earth's rocks and structure. The other options mean: genealogy: the study of family descent and lineage; ecology: the study of how living things relate to one another and to their environment; geometry: the branch of mathematics dealing with shapes and sizes.",
+   "order": 42,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Geo- = earth."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"The scientific study of animals\"?",
+   "options": [
+    {
+     "text": "botany"
+    },
+    {
+     "text": "geology"
+    },
+    {
+     "text": "mycology"
+    },
+    {
+     "text": "zoology"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"zoology\": the scientific study of animals. The other options mean: botany: the scientific study of plants; geology: the scientific study of the earth's rocks and structure; mycology: the scientific study of fungi.",
+   "order": 43,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Zoo- = animal."
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The scientific study of plants\"",
+   "options": [
+    {
+     "text": "botany"
+    },
+    {
+     "text": "genealogy"
+    },
+    {
+     "text": "zoology"
+    },
+    {
+     "text": "geology"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"botany\": the scientific study of plants. The other options mean: zoology: the scientific study of animals; geology: the scientific study of the earth's rocks and structure; genealogy: the study of family descent and lineage.",
+   "order": 44,
+   "subPattern": "fear-study-terms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Botane = plant."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"An abnormal fear of open or crowded public places\"",
+   "options": [
+    {
+     "text": "agoraphobia"
+    },
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "claustrophobia"
+    },
+    {
+     "text": "xenophobia"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"agoraphobia\": abnormal fear of open or crowded public places. The other options mean: claustrophobia: abnormal fear of confined or closed spaces; xenophobia: fear or hatred of strangers and foreigners; acrophobia: abnormal fear of heights.",
+   "order": 45,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A fear or hatred of strangers and foreigners\"",
+   "options": [
+    {
+     "text": "hydrophobia"
+    },
+    {
+     "text": "xenophobia"
+    },
+    {
+     "text": "agoraphobia"
+    },
+    {
+     "text": "technophobia"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"xenophobia\": fear or hatred of strangers and foreigners. The other options mean: technophobia: fear or dislike of advanced technology; agoraphobia: abnormal fear of open or crowded public places; hydrophobia: abnormal fear of water.",
+   "order": 46,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Xeno- = stranger or foreigner."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"An abnormal dread of, or sensitivity to, light\"",
+   "options": [
+    {
+     "text": "claustrophobia"
+    },
+    {
+     "text": "nyctophobia"
+    },
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "photophobia"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"photophobia\": abnormal dread of, or sensitivity to, light. The other options mean: nyctophobia: abnormal fear of darkness or night; claustrophobia: abnormal fear of confined or closed spaces; acrophobia: abnormal fear of heights.",
+   "order": 47,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Photo- = light (photograph, photosynthesis)."
+  },
+  {
+   "questionText": "Which one word stands for \"An abnormal fear of fire\"?",
+   "options": [
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "hydrophobia"
+    },
+    {
+     "text": "pyrophobia"
+    },
+    {
+     "text": "haemophobia"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"pyrophobia\": abnormal fear of fire. The other options mean: hydrophobia: abnormal fear of water; haemophobia: abnormal fear of blood; acrophobia: abnormal fear of heights.",
+   "order": 48,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Pyro- = fire (pyre, pyromaniac)."
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"An abnormal fear of blood\"",
+   "options": [
+    {
+     "text": "hydrophobia"
+    },
+    {
+     "text": "haemophobia"
+    },
+    {
+     "text": "technophobia"
+    },
+    {
+     "text": "pyrophobia"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"haemophobia\": abnormal fear of blood. The other options mean: hydrophobia: abnormal fear of water; pyrophobia: abnormal fear of fire; technophobia: fear or dislike of advanced technology.",
+   "order": 49,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Haem- = blood."
+  },
+  {
+   "questionText": "Which one word stands for \"A fear or dislike of advanced technology and machines\"?",
+   "options": [
+    {
+     "text": "xenophobia"
+    },
+    {
+     "text": "claustrophobia"
+    },
+    {
+     "text": "haemophobia"
+    },
+    {
+     "text": "technophobia"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"technophobia\": fear or dislike of advanced technology. The other options mean: xenophobia: fear or hatred of strangers and foreigners; haemophobia: abnormal fear of blood; claustrophobia: abnormal fear of confined or closed spaces.",
+   "order": 50,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"The scientific study of reptiles and amphibians\"?",
+   "options": [
+    {
+     "text": "herpetology"
+    },
+    {
+     "text": "ichthyology"
+    },
+    {
+     "text": "mycology"
+    },
+    {
+     "text": "ornithology"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"herpetology\": the scientific study of reptiles and amphibians. The other options mean: ichthyology: the scientific study of fish; ornithology: the scientific study of birds; mycology: the scientific study of fungi.",
+   "order": 51,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Herpeton = creeping thing, so reptiles."
+  },
+  {
+   "questionText": "Which one word stands for \"The scientific study of fungi\"?",
+   "options": [
+    {
+     "text": "botany"
+    },
+    {
+     "text": "ichthyology"
+    },
+    {
+     "text": "mycology"
+    },
+    {
+     "text": "zoology"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"mycology\": the scientific study of fungi. The other options mean: botany: the scientific study of plants; zoology: the scientific study of animals; ichthyology: the scientific study of fish.",
+   "order": 52,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Mykes = fungus (mushroom)."
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"The study of family descent and lineage\"?",
+   "options": [
+    {
+     "text": "genetics"
+    },
+    {
+     "text": "genealogy"
+    },
+    {
+     "text": "geography"
+    },
+    {
+     "text": "geology"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"genealogy\": the study of family descent and lineage. The other options mean: geology: the scientific study of the earth's rocks and structure; genetics: the study of heredity and genes; geography: the study of the earth's surface, climate and people.",
+   "order": 53,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The branch of medicine that deals with the study and treatment of cancer\"",
+   "options": [
+    {
+     "text": "oncology"
+    },
+    {
+     "text": "pathology"
+    },
+    {
+     "text": "cardiology"
+    },
+    {
+     "text": "neurology"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"oncology\": the study and treatment of cancer. The other options mean: cardiology: the study and treatment of heart diseases; pathology: the study of the causes and nature of diseases; neurology: the study of the nervous system.",
+   "order": 54,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"The study of how living things are related to one another and to their surroundings\"?",
+   "options": [
+    {
+     "text": "ethology"
+    },
+    {
+     "text": "zoology"
+    },
+    {
+     "text": "geology"
+    },
+    {
+     "text": "ecology"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"ecology\": the study of how living things relate to one another and to their environment. The other options mean: zoology: the scientific study of animals; ethology: the study of animal behaviour; geology: the scientific study of the earth's rocks and structure.",
+   "order": 55,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The scientific study of water and its movement over and under the earth\"",
+   "options": [
+    {
+     "text": "seismology"
+    },
+    {
+     "text": "cartography"
+    },
+    {
+     "text": "hydrology"
+    },
+    {
+     "text": "geology"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"hydrology\": the scientific study of water and its movement over and under the earth. The other options mean: geology: the scientific study of the earth's rocks and structure; seismology: the scientific study of earthquakes; cartography: the science of drawing maps.",
+   "order": 56,
+   "subPattern": "fear-study-terms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"An abnormal fear of spiders\"?",
+   "options": [
+    {
+     "text": "arachnophobia"
+    },
+    {
+     "text": "ailurophobia"
+    },
+    {
+     "text": "ophidiophobia"
+    },
+    {
+     "text": "cynophobia"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"arachnophobia\": abnormal fear of spiders. The other options mean: ophidiophobia: abnormal fear of snakes; cynophobia: abnormal fear of dogs; ailurophobia: abnormal fear of cats.",
+   "order": 57,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Arachne = spider."
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"An abnormal fear of dogs\"",
+   "options": [
+    {
+     "text": "ophidiophobia"
+    },
+    {
+     "text": "cynophobia"
+    },
+    {
+     "text": "arachnophobia"
+    },
+    {
+     "text": "ailurophobia"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"cynophobia\": abnormal fear of dogs. The other options mean: ailurophobia: abnormal fear of cats; arachnophobia: abnormal fear of spiders; ophidiophobia: abnormal fear of snakes.",
+   "order": 58,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"An abnormal fear of darkness or night\"?",
+   "options": [
+    {
+     "text": "claustrophobia"
+    },
+    {
+     "text": "photophobia"
+    },
+    {
+     "text": "nyctophobia"
+    },
+    {
+     "text": "acrophobia"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"nyctophobia\": abnormal fear of darkness or night. The other options mean: photophobia: abnormal dread of, or sensitivity to, light; claustrophobia: abnormal fear of confined or closed spaces; acrophobia: abnormal fear of heights.",
+   "order": 59,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"An abnormal fear of the number thirteen\"",
+   "options": [
+    {
+     "text": "arachnophobia"
+    },
+    {
+     "text": "acrophobia"
+    },
+    {
+     "text": "xenophobia"
+    },
+    {
+     "text": "triskaidekaphobia"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"triskaidekaphobia\": abnormal fear of the number thirteen. The other options mean: xenophobia: fear or hatred of strangers and foreigners; arachnophobia: abnormal fear of spiders; acrophobia: abnormal fear of heights.",
+   "order": 60,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"An abnormal fear of snakes\"",
+   "options": [
+    {
+     "text": "ophidiophobia"
+    },
+    {
+     "text": "cynophobia"
+    },
+    {
+     "text": "arachnophobia"
+    },
+    {
+     "text": "pyrophobia"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"ophidiophobia\": abnormal fear of snakes. The other options mean: arachnophobia: abnormal fear of spiders; cynophobia: abnormal fear of dogs; pyrophobia: abnormal fear of fire.",
+   "order": 61,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The study of the causes and nature of diseases\"",
+   "options": [
+    {
+     "text": "physiology"
+    },
+    {
+     "text": "oncology"
+    },
+    {
+     "text": "pathology"
+    },
+    {
+     "text": "pharmacology"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"pathology\": the study of the causes and nature of diseases. The other options mean: oncology: the study and treatment of cancer; physiology: the study of the normal functioning of living organisms; pharmacology: the study of drugs and their effects.",
+   "order": 62,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"The study of fossils and the life of ancient geological periods\"?",
+   "options": [
+    {
+     "text": "geology"
+    },
+    {
+     "text": "anthropology"
+    },
+    {
+     "text": "archaeology"
+    },
+    {
+     "text": "palaeontology"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"palaeontology\": the study of fossils and the life of ancient geological periods. The other options mean: archaeology: the study of human history through excavated remains; geology: the scientific study of the earth's rocks and structure; anthropology: the study of human origins, societies and cultures.",
+   "order": 63,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The study of poisons and their effects\"",
+   "options": [
+    {
+     "text": "physiology"
+    },
+    {
+     "text": "toxicology"
+    },
+    {
+     "text": "pharmacology"
+    },
+    {
+     "text": "pathology"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"toxicology\": the study of poisons and their effects. The other options mean: pharmacology: the study of drugs and their effects; pathology: the study of the causes and nature of diseases; physiology: the study of the normal functioning of living organisms.",
+   "order": 64,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word stands for \"The science of measuring time and the art of making clocks and watches\"?",
+   "options": [
+    {
+     "text": "numismatics"
+    },
+    {
+     "text": "horology"
+    },
+    {
+     "text": "horticulture"
+    },
+    {
+     "text": "cryptography"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"horology\": the science of measuring time and the art of making clocks and watches. The other options mean: horticulture: the art of growing gardens, flowers and vegetables; numismatics: the study or collection of coins; cryptography: the art of writing or solving secret codes.",
+   "order": 65,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the one-word substitute for: \"The study of people's efficiency and comfort in their working environment\"?",
+   "options": [
+    {
+     "text": "ecology"
+    },
+    {
+     "text": "economics"
+    },
+    {
+     "text": "ergonomics"
+    },
+    {
+     "text": "ethology"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"ergonomics\": the study of people's efficiency and comfort in their working environment. The other options mean: economics: the study of production, trade and wealth; ecology: the study of how living things relate to one another and to their environment; ethology: the study of animal behaviour.",
+   "order": 66,
+   "subPattern": "fear-study-terms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of lions\"",
+   "options": [
+    {
+     "text": "pride"
+    },
+    {
+     "text": "pack"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "herd"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"pride\": the collective noun for lions. Do not confuse it with \"herd\": a group of cattle, elephants or deer.",
+   "order": 67,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of wolves or hunting dogs\"",
+   "options": [
+    {
+     "text": "shoal"
+    },
+    {
+     "text": "pride"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "pack"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"pack\": the collective noun for wolves or hounds. Do not confuse it with \"pride\": a group of lions.",
+   "order": 68,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of sheep\"",
+   "options": [
+    {
+     "text": "flock"
+    },
+    {
+     "text": "pride"
+    },
+    {
+     "text": "shoal"
+    },
+    {
+     "text": "litter"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"flock\": the collective noun for sheep, and also for birds. Do not confuse it with \"pride\": a group of lions.",
+   "order": 69,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of cattle or elephants\"",
+   "options": [
+    {
+     "text": "troop"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "herd"
+    },
+    {
+     "text": "pack"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"herd\": the collective noun for cattle and elephants. Do not confuse it with \"flock\": a group of sheep or birds.",
+   "order": 70,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of fish swimming together\"",
+   "options": [
+    {
+     "text": "flock"
+    },
+    {
+     "text": "litter"
+    },
+    {
+     "text": "swarm"
+    },
+    {
+     "text": "shoal"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"shoal\": the collective noun for fish. Do not confuse it with \"swarm\": a large group of flying insects such as bees.",
+   "order": 71,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of bees flying together\"",
+   "options": [
+    {
+     "text": "shoal"
+    },
+    {
+     "text": "swarm"
+    },
+    {
+     "text": "herd"
+    },
+    {
+     "text": "pride"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"swarm\": the collective noun for bees and other flying insects. Do not confuse it with \"shoal\": a group of fish.",
+   "order": 72,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of singers performing together\"",
+   "options": [
+    {
+     "text": "orchestra"
+    },
+    {
+     "text": "crew"
+    },
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "choir"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"choir\": an organised group of singers. Do not confuse it with \"orchestra\": a group of instrumentalists.",
+   "order": 73,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of musicians playing different instruments together\"",
+   "options": [
+    {
+     "text": "crew"
+    },
+    {
+     "text": "choir"
+    },
+    {
+     "text": "orchestra"
+    },
+    {
+     "text": "troupe"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"orchestra\": a large group of instrumentalists. Do not confuse it with \"choir\": a group of singers.",
+   "order": 74,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A number of grapes growing together\"",
+   "options": [
+    {
+     "text": "batch"
+    },
+    {
+     "text": "bunch"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "pack"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"bunch\": a cluster of fruit such as grapes or bananas on one stem. Do not confuse it with \"flock\": a group of animals, especially sheep.",
+   "order": 75,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of cards used in a game\"",
+   "options": [
+    {
+     "text": "pack"
+    },
+    {
+     "text": "set"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "bunch"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"pack\": a complete set of playing cards. Do not confuse it with \"bunch\": things growing together on a stem.",
+   "order": 76,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of players forming one side in a game\"",
+   "options": [
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "gang"
+    },
+    {
+     "text": "staff"
+    },
+    {
+     "text": "team"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"team\": a group of players forming one side in a sport. Do not confuse it with \"gang\": a group of criminals acting together.",
+   "order": 77,
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of ships sailing together under one command\"",
+   "options": [
+    {
+     "text": "squad"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "fleet"
+    },
+    {
+     "text": "litter"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"fleet\": a number of ships under one command. Do not confuse it with \"squad\": a small group of soldiers or workers.",
+   "order": 78,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of newborn puppies or kittens born at one time\"",
+   "options": [
+    {
+     "text": "brood"
+    },
+    {
+     "text": "litter"
+    },
+    {
+     "text": "pack"
+    },
+    {
+     "text": "clutch"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"litter\": the young born to an animal at one birth. Do not confuse it with \"brood\": the young birds hatched together.",
+   "order": 79,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of eggs laid or hatched at one time\"",
+   "options": [
+    {
+     "text": "clutch"
+    },
+    {
+     "text": "litter"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "bunch"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"clutch\": a set of eggs laid by a bird in one nest. Do not confuse it with \"litter\": the young born to a mammal at one birth.",
+   "order": 80,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of young birds hatched together and cared for by the mother\"",
+   "options": [
+    {
+     "text": "herd"
+    },
+    {
+     "text": "swarm"
+    },
+    {
+     "text": "brood"
+    },
+    {
+     "text": "litter"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"brood\": the young birds hatched at one time. Do not confuse it with \"litter\": the young of mammals born at one birth.",
+   "order": 81,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of stars forming a recognised pattern in the sky\"",
+   "options": [
+    {
+     "text": "galaxy"
+    },
+    {
+     "text": "constellation"
+    },
+    {
+     "text": "cluster"
+    },
+    {
+     "text": "orbit"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"constellation\": a named pattern of stars. Do not confuse it with \"galaxy\": a vast system of millions of stars.",
+   "order": 82,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of steps between two floors\"",
+   "options": [
+    {
+     "text": "bunch"
+    },
+    {
+     "text": "fleet"
+    },
+    {
+     "text": "row"
+    },
+    {
+     "text": "flight"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"flight\": a series of stairs between landings. Do not confuse it with \"fleet\": a group of ships.",
+   "order": 83,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The people who work together on a ship or aircraft\"",
+   "options": [
+    {
+     "text": "crew"
+    },
+    {
+     "text": "staff"
+    },
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "team"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"crew\": the people operating a ship, aircraft or train. Do not confuse it with \"staff\": the permanent employees of an organisation.",
+   "order": 84,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of people gathered to hear a speaker or performance\"",
+   "options": [
+    {
+     "text": "staff"
+    },
+    {
+     "text": "mob"
+    },
+    {
+     "text": "audience"
+    },
+    {
+     "text": "choir"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"audience\": the people attending a performance or speech to listen. Do not confuse it with \"mob\": a large disorderly crowd.",
+   "order": 85,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of worshippers gathered in a place of worship\"",
+   "options": [
+    {
+     "text": "congregation"
+    },
+    {
+     "text": "committee"
+    },
+    {
+     "text": "audience"
+    },
+    {
+     "text": "mob"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"congregation\": a group assembled for religious worship. Do not confuse it with \"audience\": people gathered to listen to or watch a performance.",
+   "order": 86,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of officers chosen to conduct some business on behalf of a larger body\"",
+   "options": [
+    {
+     "text": "mob"
+    },
+    {
+     "text": "crew"
+    },
+    {
+     "text": "audience"
+    },
+    {
+     "text": "committee"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"committee\": a group appointed to carry out a specific task. Do not confuse it with \"audience\": people gathered to listen or watch.",
+   "order": 87,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of mountains forming a connected chain\"",
+   "options": [
+    {
+     "text": "bunch"
+    },
+    {
+     "text": "range"
+    },
+    {
+     "text": "fleet"
+    },
+    {
+     "text": "cluster"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"range\": a line of connected mountains. Do not confuse it with \"cluster\": a number of similar things close together.",
+   "order": 88,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of islands\"",
+   "options": [
+    {
+     "text": "delta"
+    },
+    {
+     "text": "archipelago"
+    },
+    {
+     "text": "isthmus"
+    },
+    {
+     "text": "peninsula"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"archipelago\": a chain or cluster of islands. Do not confuse it with \"peninsula\": a piece of land almost surrounded by water.",
+   "order": 89,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of travellers or merchants journeying together across a desert\"",
+   "options": [
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "crew"
+    },
+    {
+     "text": "caravan"
+    },
+    {
+     "text": "fleet"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"caravan\": a company travelling together through desert or hazardous country. Do not confuse it with \"fleet\": a number of ships under one command.",
+   "order": 90,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A large number of people gathered together in a disorderly manner\"",
+   "options": [
+    {
+     "text": "mob"
+    },
+    {
+     "text": "audience"
+    },
+    {
+     "text": "choir"
+    },
+    {
+     "text": "committee"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"mob\": a large disorderly crowd. Do not confuse it with \"audience\": people gathered to hear a performance.",
+   "order": 91,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of criminals or hooligans acting together\"",
+   "options": [
+    {
+     "text": "staff"
+    },
+    {
+     "text": "pack"
+    },
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "gang"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"gang\": a group of people, often criminals, acting together. Do not confuse it with \"pack\": a group of wolves or hunting dogs.",
+   "order": 92,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The employees who work in an office, school or hospital\"",
+   "options": [
+    {
+     "text": "troop"
+    },
+    {
+     "text": "crew"
+    },
+    {
+     "text": "squad"
+    },
+    {
+     "text": "staff"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"staff\": the people employed by an organisation. Do not confuse it with \"crew\": the people operating a ship or aircraft.",
+   "order": 93,
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of actors performing together on stage\"",
+   "options": [
+    {
+     "text": "crew"
+    },
+    {
+     "text": "troop"
+    },
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "gang"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"troupe\": a company of actors or performers. Do not confuse it with \"troop\": a group of soldiers or scouts.",
+   "order": 94,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of soldiers, especially on the march\"",
+   "options": [
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "troop"
+    },
+    {
+     "text": "crew"
+    },
+    {
+     "text": "squad"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"troop\": a body of soldiers or scouts. Do not confuse it with \"troupe\": a company of actors or acrobats.",
+   "order": 95,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of geese flying in a V-formation\"",
+   "options": [
+    {
+     "text": "skein"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "gaggle"
+    },
+    {
+     "text": "swarm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"skein\": a flight of geese or wild fowl in the air. Do not confuse it with \"gaggle\": geese on the ground, a noisy group.",
+   "order": 96,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of geese on the ground\"",
+   "options": [
+    {
+     "text": "pack"
+    },
+    {
+     "text": "gaggle"
+    },
+    {
+     "text": "skein"
+    },
+    {
+     "text": "herd"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"gaggle\": a collective noun for geese when they are not flying. Do not confuse it with \"skein\": geese flying in formation.",
+   "order": 97,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of owls\"",
+   "options": [
+    {
+     "text": "committee"
+    },
+    {
+     "text": "council"
+    },
+    {
+     "text": "parliament"
+    },
+    {
+     "text": "senate"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"parliament\": the traditional collective noun for owls. Do not confuse it with \"senate\": a ruling body, not a group of birds.",
+   "order": 98,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of crows\"",
+   "options": [
+    {
+     "text": "murder"
+    },
+    {
+     "text": "flock"
+    },
+    {
+     "text": "pride"
+    },
+    {
+     "text": "gaggle"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"murder\": the traditional collective noun for crows. Do not confuse it with \"flock\": the collective noun for lions.",
+   "order": 99,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A number of cattle or sheep driven together\"",
+   "options": [
+    {
+     "text": "choir"
+    },
+    {
+     "text": "crew"
+    },
+    {
+     "text": "troupe"
+    },
+    {
+     "text": "drove"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"drove\": a number of cattle or sheep driven in a body. Do not confuse it with \"troupe\": a company of actors.",
+   "order": 100,
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The quality of being brave\"",
+   "options": [
+    {
+     "text": "bravery"
+    },
+    {
+     "text": "bravado"
+    },
+    {
+     "text": "brutality"
+    },
+    {
+     "text": "bravo"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"bravery\": the quality of courage in the face of danger. Do not confuse it with \"bravado\": a show of boldness meant to impress.",
+   "order": 101,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The state of being a child\"",
+   "options": [
+    {
+     "text": "boyhood"
+    },
+    {
+     "text": "adulthood"
+    },
+    {
+     "text": "childhood"
+    },
+    {
+     "text": "childishness"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"childhood\": the period or state of being a child. Do not confuse it with \"boyhood\": the period of being a boy only.",
+   "order": 102,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The quality of being honest\"",
+   "options": [
+    {
+     "text": "honour"
+    },
+    {
+     "text": "honesty"
+    },
+    {
+     "text": "humility"
+    },
+    {
+     "text": "hospitality"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"honesty\": truthfulness and freedom from deceit. Do not confuse it with \"honour\": high respect or good name.",
+   "order": 103,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The quality of being generous\"",
+   "options": [
+    {
+     "text": "geniality"
+    },
+    {
+     "text": "gentility"
+    },
+    {
+     "text": "genius"
+    },
+    {
+     "text": "generosity"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"generosity\": willingness to give freely. Do not confuse it with \"geniality\": friendly cheerfulness.",
+   "order": 104,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"Strong dislike or ill will towards another\"",
+   "options": [
+    {
+     "text": "jealousy"
+    },
+    {
+     "text": "grief"
+    },
+    {
+     "text": "hatred"
+    },
+    {
+     "text": "anger"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"hatred\": intense dislike or ill will. Do not confuse it with \"anger\": a feeling of strong annoyance.",
+   "order": 105,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The quality of being wise\"",
+   "options": [
+    {
+     "text": "wealth"
+    },
+    {
+     "text": "wit"
+    },
+    {
+     "text": "wariness"
+    },
+    {
+     "text": "wisdom"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"wisdom\": good judgement based on knowledge and experience. Do not confuse it with \"wit\": quick and inventive humour.",
+   "order": 106,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The state of being friends with someone\"",
+   "options": [
+    {
+     "text": "friendship"
+    },
+    {
+     "text": "familiarity"
+    },
+    {
+     "text": "fiction"
+    },
+    {
+     "text": "friction"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"friendship\": the bond or state of being friends. Do not confuse it with \"friction\": conflict or rubbing between persons or surfaces.",
+   "order": 107,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The quality of being able to do something well\"",
+   "options": [
+    {
+     "text": "affinity"
+    },
+    {
+     "text": "ability"
+    },
+    {
+     "text": "agility"
+    },
+    {
+     "text": "amenity"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"ability\": the power or skill to do something. Do not confuse it with \"agility\": quickness and ease of movement.",
+   "order": 108,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The condition of being healthy\"",
+   "options": [
+    {
+     "text": "hearsay"
+    },
+    {
+     "text": "health"
+    },
+    {
+     "text": "hearth"
+    },
+    {
+     "text": "wealth"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"health\": the state of being free from illness. Do not confuse it with \"wealth\": abundance of money or possessions.",
+   "order": 109,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The feeling of discontent at another's good fortune\"",
+   "options": [
+    {
+     "text": "greed"
+    },
+    {
+     "text": "pity"
+    },
+    {
+     "text": "envy"
+    },
+    {
+     "text": "pride"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"envy\": resentful longing for what another has. Do not confuse it with \"pride\": sorrow felt for the suffering of others.",
+   "order": 110,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The quality of being loyal to a person or cause\"",
+   "options": [
+    {
+     "text": "loyalty"
+    },
+    {
+     "text": "legality"
+    },
+    {
+     "text": "royalty"
+    },
+    {
+     "text": "liberty"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"loyalty\": firm and constant support or allegiance. Do not confuse it with \"royalty\": the status of a king or queen.",
+   "order": 111,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The quality of being modest and not proud\"",
+   "options": [
+    {
+     "text": "hospitality"
+    },
+    {
+     "text": "humanity"
+    },
+    {
+     "text": "humour"
+    },
+    {
+     "text": "humility"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"humility\": a modest view of one's own importance. Do not confuse it with \"humour\": the quality of being amusing.",
+   "order": 112,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The state of being able to bear pain or delay calmly\"",
+   "options": [
+    {
+     "text": "persistence"
+    },
+    {
+     "text": "penitence"
+    },
+    {
+     "text": "patience"
+    },
+    {
+     "text": "patronage"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"patience\": the capacity to endure delay or hardship calmly. Do not confuse it with \"patronage\": support given by a patron.",
+   "order": 113,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The strong desire to possess more than one needs\"",
+   "options": [
+    {
+     "text": "greed"
+    },
+    {
+     "text": "grief"
+    },
+    {
+     "text": "gloom"
+    },
+    {
+     "text": "grace"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"greed\": intense selfish desire for wealth or possessions. Do not confuse it with \"grief\": deep sorrow, especially at a loss.",
+   "order": 114,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The state of being exact and free from error\"",
+   "options": [
+    {
+     "text": "adversity"
+    },
+    {
+     "text": "accuracy"
+    },
+    {
+     "text": "agility"
+    },
+    {
+     "text": "anxiety"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"accuracy\": exactness and freedom from error. Do not confuse it with \"agility\": quickness and ease of movement.",
+   "order": 115,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The state of perfect happiness\"",
+   "options": [
+    {
+     "text": "blame"
+    },
+    {
+     "text": "bile"
+    },
+    {
+     "text": "bias"
+    },
+    {
+     "text": "bliss"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"bliss\": perfect happiness; great joy. Do not confuse it with \"bias\": an unfair leaning towards one side.",
+   "order": 116,
+   "subPattern": "abstract-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The state of being a slave\"",
+   "options": [
+    {
+     "text": "sovereignty"
+    },
+    {
+     "text": "slavishness"
+    },
+    {
+     "text": "slavery"
+    },
+    {
+     "text": "solitude"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"slavery\": the state of being owned by another and forced to labour. Do not confuse it with \"slavishness\": excessive servility in character.",
+   "order": 117,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The state of being a widow\"",
+   "options": [
+    {
+     "text": "widowhood"
+    },
+    {
+     "text": "wifehood"
+    },
+    {
+     "text": "bereavement"
+    },
+    {
+     "text": "spinsterhood"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"widowhood\": the condition of a woman whose husband has died. Do not confuse it with \"spinsterhood\": the state of being an unmarried woman.",
+   "order": 118,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The state of being free from all trouble and anxiety\"",
+   "options": [
+    {
+     "text": "sobriety"
+    },
+    {
+     "text": "serenity"
+    },
+    {
+     "text": "solitude"
+    },
+    {
+     "text": "severity"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"serenity\": a state of calm and peace. Do not confuse it with \"solitude\": the state of being alone.",
+   "order": 119,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The state of being poor\"",
+   "options": [
+    {
+     "text": "prosperity"
+    },
+    {
+     "text": "penance"
+    },
+    {
+     "text": "pity"
+    },
+    {
+     "text": "poverty"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"poverty\": the state of lacking money and basic necessities. Do not confuse it with \"prosperity\": a state of wealth and success.",
+   "order": 120,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The quality of being proud of oneself in an excessive manner\"",
+   "options": [
+    {
+     "text": "affection"
+    },
+    {
+     "text": "arrogance"
+    },
+    {
+     "text": "anxiety"
+    },
+    {
+     "text": "ambition"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"arrogance\": an offensive display of superiority. Do not confuse it with \"ambition\": a strong desire to achieve something.",
+   "order": 121,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The quality of being thankful\"",
+   "options": [
+    {
+     "text": "gratification"
+    },
+    {
+     "text": "grace"
+    },
+    {
+     "text": "gratuity"
+    },
+    {
+     "text": "gratitude"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"gratitude\": the quality of being thankful. Do not confuse it with \"gratuity\": a sum of money paid on retirement or a tip.",
+   "order": 122,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The state of being an adult male\"",
+   "options": [
+    {
+     "text": "manhood"
+    },
+    {
+     "text": "manner"
+    },
+    {
+     "text": "mankind"
+    },
+    {
+     "text": "manager"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"manhood\": the state of being an adult male. Do not confuse it with \"mankind\": the human race as a whole.",
+   "order": 123,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The quality of being kind and gentle to those in distress\"",
+   "options": [
+    {
+     "text": "compliance"
+    },
+    {
+     "text": "compulsion"
+    },
+    {
+     "text": "compassion"
+    },
+    {
+     "text": "comparison"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"compassion\": sympathy and concern for the sufferings of others. Do not confuse it with \"compulsion\": a force that compels one to act.",
+   "order": 124,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The habit of avoiding spending or giving too much money\"",
+   "options": [
+    {
+     "text": "thirst"
+    },
+    {
+     "text": "thrift"
+    },
+    {
+     "text": "theft"
+    },
+    {
+     "text": "thrill"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"thrift\": careful and economical use of money. Do not confuse it with \"theft\": the act of stealing.",
+   "order": 125,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The state of being a member of a club or society\"",
+   "options": [
+    {
+     "text": "membership"
+    },
+    {
+     "text": "ownership"
+    },
+    {
+     "text": "friendship"
+    },
+    {
+     "text": "leadership"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"membership\": the state of belonging to a group or society. Do not confuse it with \"friendship\": the bond between friends.",
+   "order": 126,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The state of having no money to pay one's debts\"",
+   "options": [
+    {
+     "text": "austerity"
+    },
+    {
+     "text": "penalty"
+    },
+    {
+     "text": "bankruptcy"
+    },
+    {
+     "text": "poverty"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"bankruptcy\": the legal state of being unable to pay one's debts. Do not confuse it with \"poverty\": the state of having very little money, not necessarily owing debts.",
+   "order": 127,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The quality of being very careful to avoid risk or error\"",
+   "options": [
+    {
+     "text": "courtesy"
+    },
+    {
+     "text": "cowardice"
+    },
+    {
+     "text": "curiosity"
+    },
+    {
+     "text": "caution"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"caution\": care taken to avoid danger or mistakes. Do not confuse it with \"cowardice\": lack of courage in the face of danger.",
+   "order": 128,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The quality of being punctual\"",
+   "options": [
+    {
+     "text": "popularity"
+    },
+    {
+     "text": "punctuality"
+    },
+    {
+     "text": "perseverance"
+    },
+    {
+     "text": "partiality"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"punctuality\": the habit of being on time. Do not confuse it with \"perseverance\": steady effort despite difficulties.",
+   "order": 129,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"The state of being dependent on a drug or habit\"",
+   "options": [
+    {
+     "text": "addiction"
+    },
+    {
+     "text": "ambition"
+    },
+    {
+     "text": "attraction"
+    },
+    {
+     "text": "affliction"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"addiction\": compulsive dependence on a substance or activity. Do not confuse it with \"affliction\": a condition of suffering or distress.",
+   "order": 130,
+   "subPattern": "abstract-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The legal status of being a citizen of a country\"",
+   "options": [
+    {
+     "text": "civilisation"
+    },
+    {
+     "text": "citation"
+    },
+    {
+     "text": "citizenship"
+    },
+    {
+     "text": "civility"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"citizenship\": the legal status of being a citizen. Do not confuse it with \"citation\": an official quotation or a mention for bravery.",
+   "order": 131,
+   "subPattern": "abstract-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The act of telling a lie under oath in a court of law\"",
+   "options": [
+    {
+     "text": "treason"
+    },
+    {
+     "text": "forgery"
+    },
+    {
+     "text": "slander"
+    },
+    {
+     "text": "perjury"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"perjury\": deliberately telling an untruth after taking an oath. Do not confuse it with \"forgery\": the act of making a false document.",
+   "order": 132,
+   "subPattern": "abstract-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"That which cannot be read because it is badly written\"",
+   "options": [
+    {
+     "text": "invisible"
+    },
+    {
+     "text": "illiterate"
+    },
+    {
+     "text": "inaudible"
+    },
+    {
+     "text": "illegible"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"illegible\": not clear enough to be read. Do not confuse it with \"inaudible\": not loud enough to be heard.",
+   "order": 133,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"That which cannot be avoided\"",
+   "options": [
+    {
+     "text": "incredible"
+    },
+    {
+     "text": "invincible"
+    },
+    {
+     "text": "inevitable"
+    },
+    {
+     "text": "inedible"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"inevitable\": certain to happen; unavoidable. Do not confuse it with \"incredible\": too extraordinary to be believed.",
+   "order": 134,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The life story of a person written by that person\"",
+   "options": [
+    {
+     "text": "memoir"
+    },
+    {
+     "text": "autobiography"
+    },
+    {
+     "text": "diary"
+    },
+    {
+     "text": "biography"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"autobiography\": a person's life story written by himself or herself. Do not confuse it with \"biography\": a life story written by someone else.",
+   "order": 135,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"Fit to be eaten\"",
+   "options": [
+    {
+     "text": "edible"
+    },
+    {
+     "text": "eligible"
+    },
+    {
+     "text": "audible"
+    },
+    {
+     "text": "legible"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"edible\": safe and fit to be eaten. Do not confuse it with \"eligible\": qualified to be chosen.",
+   "order": 136,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A fixed sum of money paid regularly to a person after retirement\"",
+   "options": [
+    {
+     "text": "pension"
+    },
+    {
+     "text": "pittance"
+    },
+    {
+     "text": "stipend"
+    },
+    {
+     "text": "bonus"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"pension\": a regular payment made to a retired person. Do not confuse it with \"pittance\": a very small amount of money.",
+   "order": 137,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A building where grain is stored\"",
+   "options": [
+    {
+     "text": "armoury"
+    },
+    {
+     "text": "granary"
+    },
+    {
+     "text": "aviary"
+    },
+    {
+     "text": "arsenal"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"granary\": a storehouse for grain. Do not confuse it with \"armoury\": a place where weapons are stored.",
+   "order": 138,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"Done of one's own free will\"",
+   "options": [
+    {
+     "text": "obligatory"
+    },
+    {
+     "text": "compulsory"
+    },
+    {
+     "text": "voluntary"
+    },
+    {
+     "text": "mandatory"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"voluntary\": done by choice, not by compulsion. Do not confuse it with \"compulsory\": required by rule.",
+   "order": 139,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"That which cannot be seen\"",
+   "options": [
+    {
+     "text": "illegible"
+    },
+    {
+     "text": "intangible"
+    },
+    {
+     "text": "inaudible"
+    },
+    {
+     "text": "invisible"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"invisible\": unable to be seen. Do not confuse it with \"inaudible\": unable to be heard.",
+   "order": 140,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"That which cannot be heard\"",
+   "options": [
+    {
+     "text": "inaudible"
+    },
+    {
+     "text": "intangible"
+    },
+    {
+     "text": "illegible"
+    },
+    {
+     "text": "invisible"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"inaudible\": unable to be heard. Do not confuse it with \"invisible\": unable to be seen.",
+   "order": 141,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A school or institution where children without parents are looked after\"",
+   "options": [
+    {
+     "text": "asylum"
+    },
+    {
+     "text": "orphanage"
+    },
+    {
+     "text": "nursery"
+    },
+    {
+     "text": "hospice"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"orphanage\": an institution caring for children without parents. Do not confuse it with \"hospice\": a home caring for the terminally ill.",
+   "order": 142,
+   "subPattern": "miscellaneous",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A speech delivered without any preparation\"",
+   "options": [
+    {
+     "text": "oration"
+    },
+    {
+     "text": "soliloquy"
+    },
+    {
+     "text": "monologue"
+    },
+    {
+     "text": "extempore"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"extempore\": spoken or done without preparation. Do not confuse it with \"monologue\": a long speech by one person in a conversation or play.",
+   "order": 143,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A person or habit that cannot be corrected\"",
+   "options": [
+    {
+     "text": "irreparable"
+    },
+    {
+     "text": "incurable"
+    },
+    {
+     "text": "incorrigible"
+    },
+    {
+     "text": "inevitable"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"incorrigible\": not able to be corrected or reformed. Do not confuse it with \"incurable\": not able to be healed of a disease.",
+   "order": 144,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"Government by a small group of people\"",
+   "options": [
+    {
+     "text": "oligarchy"
+    },
+    {
+     "text": "theocracy"
+    },
+    {
+     "text": "democracy"
+    },
+    {
+     "text": "monarchy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"oligarchy\": rule by a few. Do not confuse it with \"democracy\": rule by the people through elected representatives.",
+   "order": 145,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"Present everywhere at the same time\"",
+   "options": [
+    {
+     "text": "omniscient"
+    },
+    {
+     "text": "omnivorous"
+    },
+    {
+     "text": "omnipresent"
+    },
+    {
+     "text": "omnipotent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"omnipresent\": present in all places at once. Do not confuse it with \"omniscient\": knowing everything.",
+   "order": 146,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The killing of a king\"",
+   "options": [
+    {
+     "text": "homicide"
+    },
+    {
+     "text": "regicide"
+    },
+    {
+     "text": "fratricide"
+    },
+    {
+     "text": "patricide"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"regicide\": the act of killing a king. Do not confuse it with \"fratricide\": the killing of one's brother.",
+   "order": 147,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A large cage or house in which birds are kept\"",
+   "options": [
+    {
+     "text": "apiary"
+    },
+    {
+     "text": "aquarium"
+    },
+    {
+     "text": "menagerie"
+    },
+    {
+     "text": "aviary"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"aviary\": a place where birds are kept. Do not confuse it with \"apiary\": a place where bees are kept.",
+   "order": 148,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"Something that can never be satisfied\"",
+   "options": [
+    {
+     "text": "insatiable"
+    },
+    {
+     "text": "insoluble"
+    },
+    {
+     "text": "insolvent"
+    },
+    {
+     "text": "inimitable"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"insatiable\": impossible to satisfy. Do not confuse it with \"insolvent\": unable to pay one's debts.",
+   "order": 149,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A home or centre that cares for the terminally ill\"",
+   "options": [
+    {
+     "text": "hospital"
+    },
+    {
+     "text": "asylum"
+    },
+    {
+     "text": "orphanage"
+    },
+    {
+     "text": "hospice"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"hospice\": a place caring for the dying. Do not confuse it with \"hospital\": an institution for treating the sick and injured generally.",
+   "order": 150,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A person who is unable to pay his debts\"",
+   "options": [
+    {
+     "text": "insatiable"
+    },
+    {
+     "text": "insomniac"
+    },
+    {
+     "text": "insolvent"
+    },
+    {
+     "text": "indolent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"insolvent\": unable to pay one's debts. Do not confuse it with \"insomniac\": a person who cannot sleep.",
+   "order": 151,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A remedy for all diseases\"",
+   "options": [
+    {
+     "text": "antidote"
+    },
+    {
+     "text": "panacea"
+    },
+    {
+     "text": "placebo"
+    },
+    {
+     "text": "elixir"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"panacea\": a cure for all ills. Do not confuse it with \"antidote\": a medicine that counteracts a poison.",
+   "order": 152,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A substance that counteracts the effect of a poison\"",
+   "options": [
+    {
+     "text": "tonic"
+    },
+    {
+     "text": "vaccine"
+    },
+    {
+     "text": "panacea"
+    },
+    {
+     "text": "antidote"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"antidote\": a remedy that works against a poison. Do not confuse it with \"panacea\": a supposed cure for all diseases.",
+   "order": 153,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"One who knows everything\"",
+   "options": [
+    {
+     "text": "omnipotent"
+    },
+    {
+     "text": "omnipresent"
+    },
+    {
+     "text": "omniscient"
+    },
+    {
+     "text": "omnivorous"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"omniscient\": all-knowing. Do not confuse it with \"omnipresent\": present everywhere.",
+   "order": 154,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"The killing of one's own father\"",
+   "options": [
+    {
+     "text": "patricide"
+    },
+    {
+     "text": "genocide"
+    },
+    {
+     "text": "fratricide"
+    },
+    {
+     "text": "matricide"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"patricide\": the act of killing one's father. Do not confuse it with \"matricide\": the killing of one's mother.",
+   "order": 155,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The killing of one's own brother or sister\"",
+   "options": [
+    {
+     "text": "suicide"
+    },
+    {
+     "text": "fratricide"
+    },
+    {
+     "text": "infanticide"
+    },
+    {
+     "text": "patricide"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"fratricide\": the act of killing a brother or sister. Do not confuse it with \"patricide\": the killing of one's father.",
+   "order": 156,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"Lasting for a very short time\"",
+   "options": [
+    {
+     "text": "perennial"
+    },
+    {
+     "text": "eternal"
+    },
+    {
+     "text": "immortal"
+    },
+    {
+     "text": "ephemeral"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"ephemeral\": short-lived. Do not confuse it with \"eternal\": lasting forever.",
+   "order": 157,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A person who leaves his country to live permanently in another\"",
+   "options": [
+    {
+     "text": "emigrant"
+    },
+    {
+     "text": "refugee"
+    },
+    {
+     "text": "immigrant"
+    },
+    {
+     "text": "nomad"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"emigrant\": a person who leaves his own country to settle elsewhere. Do not confuse it with \"immigrant\": a person who comes into a country to settle there.",
+   "order": 158,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A person who comes to settle permanently in a foreign country\"",
+   "options": [
+    {
+     "text": "tourist"
+    },
+    {
+     "text": "immigrant"
+    },
+    {
+     "text": "emigrant"
+    },
+    {
+     "text": "refugee"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"immigrant\": a person who comes to live permanently in another country. Do not confuse it with \"emigrant\": a person who leaves his own country to settle elsewhere.",
+   "order": 159,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A place where dead bodies are kept before burial or cremation\"",
+   "options": [
+    {
+     "text": "sanatorium"
+    },
+    {
+     "text": "cemetery"
+    },
+    {
+     "text": "mortuary"
+    },
+    {
+     "text": "crematorium"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"mortuary\": a place where dead bodies are kept temporarily. Do not confuse it with \"cemetery\": a place where bodies are buried.",
+   "order": 160,
+   "subPattern": "miscellaneous",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A system of government carried out by officials who are not elected\"",
+   "options": [
+    {
+     "text": "bureaucracy"
+    },
+    {
+     "text": "aristocracy"
+    },
+    {
+     "text": "autocracy"
+    },
+    {
+     "text": "anarchy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"bureaucracy\": administration by appointed officials. Do not confuse it with \"autocracy\": rule by one person with absolute power.",
+   "order": 161,
+   "subPattern": "miscellaneous",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A speech by one character alone on the stage speaking his thoughts aloud\"",
+   "options": [
+    {
+     "text": "epilogue"
+    },
+    {
+     "text": "dialogue"
+    },
+    {
+     "text": "soliloquy"
+    },
+    {
+     "text": "monologue"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"soliloquy\": speaking one's thoughts aloud when alone, especially in a play. Do not confuse it with \"monologue\": a long speech by one person addressed to others.",
+   "order": 162,
+   "subPattern": "miscellaneous",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A person who has personally seen a crime or accident and can testify about it\"",
+   "options": [
+    {
+     "text": "accomplice"
+    },
+    {
+     "text": "culprit"
+    },
+    {
+     "text": "plaintiff"
+    },
+    {
+     "text": "eyewitness"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"eyewitness\": a person who has personally seen an event, especially a crime or accident. Do not confuse it with \"accomplice\": a person who helps another commit a crime.",
+   "order": 163,
+   "subPattern": "miscellaneous",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A handwriting that is difficult to read or a document that cannot be understood\"",
+   "options": [
+    {
+     "text": "illiterate"
+    },
+    {
+     "text": "indecipherable"
+    },
+    {
+     "text": "insoluble"
+    },
+    {
+     "text": "irrelevant"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"indecipherable\": impossible to read or understand. Do not confuse it with \"illiterate\": unable to read or write.",
+   "order": 164,
+   "subPattern": "miscellaneous",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A medicine or treatment that prevents the occurrence of a disease\"",
+   "options": [
+    {
+     "text": "curative"
+    },
+    {
+     "text": "preventive"
+    },
+    {
+     "text": "palliative"
+    },
+    {
+     "text": "corrective"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"preventive\": intended to stop something from happening. Do not confuse it with \"curative\": intended to heal an existing illness.",
+   "order": 165,
+   "subPattern": "miscellaneous",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A medicine that relieves pain without curing the disease\"",
+   "options": [
+    {
+     "text": "palliative"
+    },
+    {
+     "text": "vaccine"
+    },
+    {
+     "text": "antidote"
+    },
+    {
+     "text": "preventive"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"palliative\": easing pain or a problem without removing its cause. Do not confuse it with \"preventive\": stopping something from happening.",
+   "order": 166,
+   "subPattern": "miscellaneous",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  }
+ ]
+}

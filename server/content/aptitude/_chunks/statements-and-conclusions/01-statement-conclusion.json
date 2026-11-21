@@ -1,0 +1,945 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statement: Every bus on route 21 passes through Gandhipuram. The 8:30 am bus from the depot is a route 21 bus.\nConclusions:\nI. The 8:30 am bus passes through Gandhipuram.\nII. Every bus passing through Gandhipuram is a route 21 bus.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. I follows by applying the rule for route 21 buses to this bus. II reverses the statement, which is not allowed.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The state government has made helmets compulsory for all two-wheeler riders and pillion riders from 1 January.\nConclusions:\nI. Pillion riders will also have to wear helmets from 1 January.\nII. From 1 January, a two-wheeler rider without a helmet is not complying with the rule.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Both are direct readings of the rule: pillion riders are named, and a rider without a helmet breaks it.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The company announced a 10% hike in fuel allowance for its sales staff.\nConclusions:\nI. The salary of the sales staff has increased by 10%.\nII. The profit of the company has gone up.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Only the fuel allowance is said to rise. Total salary and company profit are not mentioned, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: In a survey of 200 households in Madurai, 140 were found to own a two-wheeler.\nConclusions:\nI. All households in Madurai own a two-wheeler.\nII. More than half of the surveyed households own a two-wheeler.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 140 out of 200 is 70%, which is more than half, so II follows. I generalises from a sample to all households, which the statement does not support.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Only graduates can apply for the post of Probationary Officer. Meena has applied for the post.\nConclusions:\nI. Meena is a graduate.\nII. Every graduate has applied for the post.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 'Only graduates can apply' means any applicant is a graduate, so I follows. II reverses the statement.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A bakery in Coimbatore sells 400 loaves daily, of which 60% are whole-wheat.\nConclusions:\nI. The bakery sells 240 whole-wheat loaves daily.\nII. The bakery sells 160 loaves daily that are not whole-wheat.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 60% of 400 = 240 whole-wheat loaves, leaving 400 - 240 = 160 loaves that are not whole-wheat. Both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some students of the college play cricket. Some students of the college play chess.\nConclusions:\nI. Some students who play cricket also play chess.\nII. No student of the college plays both cricket and chess.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Two 'some' statements do not tell us whether the groups overlap. I is not certain and II is not certain, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The shop accepts payment only through UPI or cards.\nConclusions:\nI. Customers cannot pay at the shop in cash.\nII. All customers of the shop prefer UPI to cards.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Accepting only UPI or cards excludes cash, so I follows. Customer preference is not mentioned.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No member of the club is a smoker. Some smokers are cricketers.\nConclusions:\nI. Some cricketers are not members of the club.\nII. No cricketer is a member of the club.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The cricketers who smoke cannot be members, so I follows. Other cricketers may be members, so II does not follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All members of the Salem Rotary club are donors. Some members of the club are doctors.\nConclusions:\nI. Some doctors are donors.\nII. Some donors are doctors.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The doctors who are members are donors, so some doctors are donors and some donors are doctors. Both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The fuel price in a city rose from ₹100 to ₹110 per litre in a month.\nConclusions:\nI. The price rose by 10% in that month.\nII. The price will rise further next month.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. (110-100)/100 = 10%, so I follows. A future rise is a prediction not supported by the statement.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Ravi is taller than Suresh, and Suresh is taller than Kiran.\nConclusions:\nI. Ravi is taller than Kiran.\nII. Kiran is taller than Ravi.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Height order gives Ravi > Suresh > Kiran, so I follows and II contradicts it.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The price of onions in a market rose from ₹20 per kg to ₹30 per kg in one week.\nConclusions:\nI. The price of onions will keep rising next week.\nII. The price of onions rose by 50% in the week.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. (30-20)/20 = 50%, so II follows. I is a prediction and does not follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Between 2020 and 2024, the number of ATMs in a town rose from 12 to 30.\nConclusions:\nI. The number of ATMs more than doubled.\nII. The town gained 18 ATMs in this period.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 30 is more than twice 12, and 30 - 12 = 18. Both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Most of the shops on Brigade Road remain open till 10 pm.\nConclusions:\nI. Some shops on Brigade Road remain open till 10 pm.\nII. No shop on Brigade Road closes before 10 pm.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 'Most' includes 'some', so I follows. Since only most shops are open till 10, some may close earlier, so II does not follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All pens in the box are blue. Some blue things are expensive.\nConclusions:\nI. Some pens in the box are expensive.\nII. All pens in the box are expensive.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The expensive blue things may not be pens, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Students with attendance below 75% will not be allowed to sit for the final exam. Karthik was allowed to sit for the final exam.\nConclusions:\nI. Karthik scored well in the previous tests.\nII. Karthik's attendance was at least 75%.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. If Karthik were below 75% he would not have been allowed, so II follows. His marks are not mentioned.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Neither the Chennai plant nor the Bengaluru plant of the company met its target in September.\nConclusions:\nI. The Chennai plant did not meet its target in September.\nII. The Bengaluru plant did not meet its target in September.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 'Neither...nor' denies the target for each plant separately, so both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some teachers are poets. All poets are dreamers.\nConclusions:\nI. Some teachers are dreamers.\nII. All dreamers are poets.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The teachers who are poets are dreamers, so I follows. II reverses 'All poets are dreamers' and does not follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All lawyers in the firm are graduates. Some graduates in the firm are musicians.\nConclusions:\nI. Some lawyers in the firm are musicians.\nII. No lawyer in the firm is a musician.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The musician graduates may or may not be lawyers, so I is not certain and II is not certain.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The library remains closed on all Sundays and on Republic Day.\nConclusions:\nI. The library is closed on a Sunday.\nII. The library is closed on Republic Day.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Both closures are stated directly.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Kerala recorded more rainfall than Tamil Nadu in June, and Tamil Nadu recorded more rainfall than Rajasthan.\nConclusions:\nI. Rajasthan recorded the highest rainfall of the three.\nII. Kerala recorded more rainfall than Rajasthan.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The order is Kerala > Tamil Nadu > Rajasthan, so II follows and I contradicts it.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The temperature in Shimla dropped to 2°C on Tuesday morning.\nConclusions:\nI. Tuesday was the coldest day of the year in Shimla.\nII. Water froze in Shimla on Tuesday morning.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 2°C is above freezing and nothing is said about other days, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Only candidates with a valid ID card are allowed into the exam hall. Priya was allowed into the exam hall.\nConclusions:\nI. Priya had a valid ID card.\nII. Every candidate with a valid ID card was allowed into the hall.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 'Only those with ID' makes ID necessary, so I follows. II treats ID as sufficient, which is not stated.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All buses of route 21 pass through Gandhipuram. Some buses of route 21 are air-conditioned.\nConclusions:\nI. Some air-conditioned buses pass through Gandhipuram.\nII. Some buses passing through Gandhipuram are air-conditioned.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The air-conditioned route 21 buses pass through Gandhipuram, so both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Most participants in the quiz were from Tamil Nadu.\nConclusions:\nI. Every participant in the quiz was from Tamil Nadu.\nII. Participants from Tamil Nadu were fewer than those from all other states together.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 'Most' means more than half but not necessarily all, so I does not follow. II contradicts 'most'. Neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The Railway Board has decided to run 20 additional special trains during Diwali.\nConclusions:\nI. The existing trains were enough for the Diwali rush.\nII. More trains than usual will run during Diwali.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Additional trains mean a higher number than usual, so II follows. I is not supported.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The Ranji Trophy match was abandoned on day 3 due to rain, and no result was declared.\nConclusions:\nI. Rain was the reason the match was abandoned.\nII. No team was declared the winner of the match.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Both are stated directly.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No bird in the zoo is a mammal. All bats in the zoo are mammals.\nConclusions:\nI. Some bats in the zoo are birds.\nII. No bat in the zoo is a bird.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Bats are mammals and no bird is a mammal, so no bat is a bird. II follows and I contradicts it.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Only teachers are members of the committee. Some members of the committee are women.\nConclusions:\nI. Some women are teachers.\nII. All teachers are women.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The women members are teachers, so I follows. II reverses the statement.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The 100 m final was won by Anil, who finished ahead of Bhaskar.\nConclusions:\nI. Bhaskar did not win the final.\nII. Bhaskar finished last in the final.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Anil won, so Bhaskar did not. His exact position is not given.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The dairy increased the price of milk by ₹2 per litre.\nConclusions:\nI. The dairy's sales will fall.\nII. Customers will stop buying the dairy's milk.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Customer reaction is not given, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Out of 50 employees of a firm, 35 use the company bus.\nConclusions:\nI. A majority of the employees use the company bus.\nII. 15 of the employees do not use the company bus.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 35 out of 50 is more than half, and 50 - 35 = 15 do not use it. Both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The state government has banned plastic carry bags thinner than 50 microns.\nConclusions:\nI. All plastic carry bags are banned.\nII. This ban does not cover carry bags of 50 microns or more.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The ban is limited to bags thinner than 50 microns, so II follows and I does not.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Either Mohan or Salim will captain the team. Mohan has declined the captaincy.\nConclusions:\nI. Salim will captain the team.\nII. The team will have no captain.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. With Mohan out, the only remaining option is Salim, so I follows and II contradicts the statement.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Many of the patients treated at the clinic recovered within a week.\nConclusions:\nI. All the patients treated at the clinic recovered within a week.\nII. A majority of the patients treated at the clinic recovered within a week.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 'Many' does not mean all, so I does not follow, and it does not mean more than half, so II does not follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Every student who scored above 90% in Mathematics got a scholarship. Anu scored 94% in Mathematics.\nConclusions:\nI. Anu got a scholarship.\nII. At least one student received a scholarship.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 94% is above 90%, so Anu got a scholarship, which also means at least one student did.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Out of 120 trees planted along a highway, 30 did not survive.\nConclusions:\nI. 75% of the trees survived.\nII. Most of the planted trees did not survive.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 90 of 120 survived, which is 75%. So I follows and II is false.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some engineers are artists. Some artists are cricketers.\nConclusions:\nI. Some engineers are cricketers.\nII. Some cricketers are engineers.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Two 'some' statements joined through 'artists' do not give a certain link between engineers and cricketers. Neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All coins in the bag are old. No old coin is silver.\nConclusions:\nI. Some coins in the bag are silver.\nII. No coin in the bag is silver.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Every coin in the bag is old, and no old coin is silver, so no coin in the bag is silver. II follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The cinema hall is fully occupied for the 6 pm show.\nConclusions:\nI. No seat is vacant for the 6 pm show.\nII. The film is a super hit.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Fully occupied means no vacant seat, so I follows. The film's success is not stated.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Amit gave ₹500 to a shopkeeper and received ₹120 as change.\nConclusions:\nI. Amit's purchase cost ₹380.\nII. Amit paid more than the price of what he bought.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 500 - 120 = 380, so I follows. Because he got change, he paid more than the price, so II follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The new bridge across the Godavari has been opened to traffic.\nConclusions:\nI. The old bridge will be demolished.\nII. Traffic jams in the area will end.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Nothing is said about the old bridge or future traffic, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: In a class of 40 students, 25 passed in Physics and 30 passed in Chemistry.\nConclusions:\nI. At least 15 students passed in both subjects.\nII. Every student passed in at least one subject.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 25 + 30 = 55, which exceeds 40 by 15, so at least 15 passed both. II is not certain.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The government has increased the minimum support price of wheat by 7%.\nConclusions:\nI. Farmers' income will rise by 7%.\nII. The price of wheat flour will rise by 7%.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The statement is about the support price only. Income and flour prices depend on other factors, so neither follows.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Anita is the sister of Rahul, and Rahul is the father of Sneha.\nConclusions:\nI. Anita is an aunt of Sneha.\nII. Sneha's father has a sister.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. Anita is the sister of Sneha's father, so she is Sneha's paternal aunt. Both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: All candidates who cleared the written test were called for the interview. Vikram was not called for the interview.\nConclusions:\nI. Vikram did not clear the written test.\nII. Vikram cleared the written test but was left out of the interview list.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. If Vikram had cleared the test he would have been called, so I follows and II contradicts the statement.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A wall clock loses exactly 5 minutes every day.\nConclusions:\nI. The clock will show the correct time at noon tomorrow.\nII. After two days the clock will be 10 minutes behind.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. 2 x 5 = 10 minutes behind, so II follows. A clock that loses time cannot show the correct time next day, so I does not follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Some women are doctors. All doctors are graduates.\nConclusions:\nI. Some women are graduates.\nII. Some graduates are women.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The women who are doctors are graduates, so both follow.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: No fruit in the basket is sour. Some sour things are green.\nConclusions:\nI. Some green things are not fruits in the basket.\nII. Some green things are fruits in the basket.\nWhich of the following is correct?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A conclusion follows only if it is directly supported by the statement, with no outside knowledge. The green things that are sour cannot be fruits in the basket, so I follows. II is not supported.",
+   "shortcut": "Test each conclusion on its own against the statement only. Reject anything that is a reversal, a prediction or an outside fact.",
+   "subPattern": "statement-conclusion",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

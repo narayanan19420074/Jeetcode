@@ -1,0 +1,613 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "She is ____ honest girl.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Honest begins with a vowel SOUND (silent h), so 'an' is used.",
+   "shortcut": "Go by sound, not spelling.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He bought ____ umbrella yesterday.",
+   "options": [
+    "a",
+    "the",
+    "an",
+    "no article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Umbrella begins with a vowel sound, so the indefinite article is 'an'.",
+   "shortcut": "Vowel sound = an.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "My brother is ____ M.B.A. from IIM Ahmedabad.",
+   "options": [
+    "a",
+    "the",
+    "no article",
+    "an"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "M is pronounced 'em', a vowel sound, so 'an' is used.",
+   "shortcut": "Letters like F, H, L, M, N, R, S, X start with a vowel sound.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is studying at ____ university in Pune.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "University begins with the consonant sound /j/, so 'a' is used.",
+   "shortcut": "Sound /ju/ takes 'a'.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ sun rises in the east.",
+   "options": [
+    "A",
+    "The",
+    "An",
+    "No article"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Unique objects such as the sun, moon and earth take the definite article.",
+   "shortcut": "Unique thing = the.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ Ganga is considered a holy river in India.",
+   "options": [
+    "A",
+    "An",
+    "The",
+    "No article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of rivers take 'the'.",
+   "shortcut": "Rivers, seas, oceans take the.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Mount Everest is ____ highest peak in the world.",
+   "options": [
+    "a",
+    "an",
+    "no article",
+    "the"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A superlative adjective takes 'the': the highest.",
+   "shortcut": "Superlative = the.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He plays ____ guitar very well.",
+   "options": [
+    "the",
+    "a",
+    "an",
+    "one"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With musical instruments, 'play' takes 'the': play the guitar.",
+   "shortcut": "play + the + instrument.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rahul is ____ one-eyed man.",
+   "options": [
+    "an",
+    "a",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'One' begins with the consonant sound /w/, so 'a' is used.",
+   "shortcut": "Sound /w/ takes 'a'.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She goes to ____ school at 8 a.m.",
+   "options": [
+    "the",
+    "a",
+    "no article",
+    "an"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When school is visited for its primary purpose (studying), no article is used.",
+   "shortcut": "Institution used for its purpose = no article.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The mother went to ____ school to meet the principal.",
+   "options": [
+    "no article",
+    "a",
+    "an",
+    "the"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Here the school is visited as a building for a different purpose, so 'the' is used.",
+   "shortcut": "Building visit, not purpose = the.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She travels to office by ____ bus.",
+   "options": [
+    "no article",
+    "the",
+    "a",
+    "an"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Means of transport after 'by' takes no article: by bus, by train.",
+   "shortcut": "by + vehicle = no article.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ gold is a precious metal.",
+   "options": [
+    "The",
+    "No article",
+    "A",
+    "An"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Material nouns used in a general sense take no article.",
+   "shortcut": "General material noun = no article.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She wears ____ expensive watch.",
+   "options": [
+    "a",
+    "the",
+    "an",
+    "no article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Expensive starts with a vowel sound, and the watch is introduced for the first time, so 'an'.",
+   "shortcut": "First mention = a/an.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I saw a film yesterday. ____ film was very entertaining.",
+   "options": [
+    "A",
+    "An",
+    "No article",
+    "The"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A noun already mentioned takes 'the' on second mention.",
+   "shortcut": "Second mention = the.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is ____ European by birth.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "European begins with the consonant sound /j/, so 'a' is used.",
+   "shortcut": "Eu- sounds like 'you', takes a.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It took me ____ hour to reach the station.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hour has a silent h and starts with a vowel sound, so 'an'.",
+   "shortcut": "Silent h = an.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ Himalayas are the highest mountain range in the world.",
+   "options": [
+    "A",
+    "An",
+    "The",
+    "No article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of mountain ranges take 'the'.",
+   "shortcut": "Ranges and plural island groups take the.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ Mahatma Gandhi was born in Porbandar.",
+   "options": [
+    "The",
+    "A",
+    "An",
+    "No article"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Names of persons take no article.",
+   "shortcut": "Proper name of a person = no article.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is ____ best player in the team.",
+   "options": [
+    "the",
+    "a",
+    "an",
+    "no article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The superlative 'best' needs the definite article.",
+   "shortcut": "Superlative = the.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She had ____ breakfast at 7 a.m.",
+   "options": [
+    "the",
+    "no article",
+    "a",
+    "an"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Names of meals used in general take no article.",
+   "shortcut": "Meals take no article.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We had ____ wonderful breakfast at the hotel.",
+   "options": [
+    "the",
+    "an",
+    "a",
+    "no article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When an adjective qualifies a meal and it is a particular instance, 'a' is used.",
+   "shortcut": "Adjective + meal = a.",
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is ____ MLA from Tamil Nadu.",
+   "options": [
+    "a",
+    "the",
+    "no article",
+    "an"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "MLA is pronounced 'em-el-ay', beginning with a vowel sound, so 'an'.",
+   "shortcut": "Initialisms: go by the first letter's sound.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Tamil is ____ ancient language.",
+   "options": [
+    "an",
+    "a",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ancient begins with a vowel sound, and Tamil is described by a general adjective phrase, so 'an'.",
+   "shortcut": "Vowel sound = an.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ poor are often neglected by society.",
+   "options": [
+    "A",
+    "The",
+    "An",
+    "No article"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'The' with an adjective denotes a whole class of people: the poor.",
+   "shortcut": "the + adjective = a class.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Both of ____ boys passed the test.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'both of', a definite plural noun requires 'the'.",
+   "shortcut": "both of + the.",
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is ____ more intelligent of the two brothers.",
+   "options": [
+    "a",
+    "an",
+    "no article",
+    "the"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In a comparison between two, the comparative takes 'the': the more intelligent of the two.",
+   "shortcut": "the + comparative + of the two.",
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She reads ____ Times of India every morning.",
+   "options": [
+    "the",
+    "a",
+    "an",
+    "no article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of newspapers take 'the'.",
+   "shortcut": "Newspaper names take the.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Mr Sharma is ____ engineer.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Engineer begins with a vowel sound, and a profession is described with an indefinite article.",
+   "shortcut": "Profession = a/an.",
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "They travelled to ____ Maldives last summer.",
+   "options": [
+    "a",
+    "an",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of island groups take 'the': the Maldives.",
+   "shortcut": "Plural island groups take the.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is a man of ____ word.",
+   "options": [
+    "the",
+    "a",
+    "an",
+    "his"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In the idiom 'a man of his word' the possessive his is required.",
+   "shortcut": "Idiom: man of his word.",
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has ____ MBBS degree but wants to do an MD.",
+   "options": [
+    "an",
+    "a",
+    "the",
+    "no article"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "MBBS begins with 'em', a vowel sound, so 'an'.",
+   "shortcut": "Initialism sound rule.",
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

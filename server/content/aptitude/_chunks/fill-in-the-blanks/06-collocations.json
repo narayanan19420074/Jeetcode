@@ -1,0 +1,947 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "I think I ___ a mistake in the third answer.",
+   "options": [
+    "made",
+    "did",
+    "took",
+    "gave"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Make a mistake' is the fixed collocation; 'do a mistake' is wrong.",
+   "shortcut": "Mistake, effort, noise -> make.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Have you ___ your homework?",
+   "options": [
+    "made",
+    "done",
+    "taken",
+    "kept"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Do homework' is the collocation; 'make homework' is incorrect.",
+   "shortcut": "Homework, work, duty -> do.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Please ___ attention to the instructions.",
+   "options": [
+    "make",
+    "take",
+    "pay",
+    "do"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The collocation is 'pay attention'.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ___ her promise and returned the money on time.",
+   "options": [
+    "did",
+    "held",
+    "took",
+    "kept"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Keep a promise' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We ___ a lot of fun at the picnic.",
+   "options": [
+    "had",
+    "did",
+    "made",
+    "took"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Have fun' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Can you ___ a photo of us?",
+   "options": [
+    "make",
+    "take",
+    "do",
+    "keep"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Take a photo' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "There was ___ rain last night, and the streets flooded.",
+   "options": [
+    "strong",
+    "big",
+    "heavy",
+    "high"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rain is described as 'heavy', not 'strong' or 'big'.",
+   "shortcut": "Heavy rain, strong wind.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ___ a lie to avoid punishment.",
+   "options": [
+    "said",
+    "spoke",
+    "made",
+    "told"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Tell a lie' is the fixed collocation.",
+   "shortcut": "Tell a lie / a story; say a word.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "You must ___ care of your health during the exams.",
+   "options": [
+    "take",
+    "do",
+    "make",
+    "keep"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Take care of' is the fixed expression.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Shall I ___ some tea for you?",
+   "options": [
+    "do",
+    "make",
+    "build",
+    "cook"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Make tea' is the collocation; 'cook tea' is not used.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Take a taxi to ___ time.",
+   "options": [
+    "keep",
+    "hold",
+    "save",
+    "stop"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Save time' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Can you ___ a secret?",
+   "options": [
+    "put",
+    "get",
+    "make",
+    "keep"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Keep a secret' is the collocation.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The baby was ___ asleep within minutes.",
+   "options": [
+    "fast",
+    "quick",
+    "soon",
+    "rapid"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Fast asleep' is a fixed collocation meaning deeply asleep.",
+   "shortcut": "Fast asleep, wide awake.",
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We must ___ an effort to reduce waste.",
+   "options": [
+    "do",
+    "make",
+    "take",
+    "hold"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Make an effort' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The government ___ a ban on plastic bags.",
+   "options": [
+    "fitted",
+    "planted",
+    "imposed",
+    "ordered"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Impose a ban' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She drives a hard ___ with every supplier.",
+   "options": [
+    "deal",
+    "trade",
+    "price",
+    "bargain"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Drive a hard bargain' is an idiom meaning to negotiate firmly.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The minister ___ his resignation to the Prime Minister.",
+   "options": [
+    "tendered",
+    "rested",
+    "dealt",
+    "fixed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Tender one's resignation' is the formal collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We should ___ a close watch on the situation.",
+   "options": [
+    "make",
+    "keep",
+    "take",
+    "give"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Keep a close watch' is the fixed collocation.",
+   "shortcut": "Keep a watch / an eye.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The firm ___ heavy losses last year.",
+   "options": [
+    "achieved",
+    "gained",
+    "incurred",
+    "won"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Losses are 'incurred'; achieved, gained and won go with positive things.",
+   "shortcut": "Incur losses/expenses.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "They ___ a warm welcome to the chief guest.",
+   "options": [
+    "moved",
+    "lifted",
+    "carried",
+    "extended"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Extend a welcome' is the formal collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It is time we ___ an end to this dispute.",
+   "options": [
+    "put",
+    "made",
+    "did",
+    "gave"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Put an end to' is the fixed expression.",
+   "shortcut": "Put an end to.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ___ a deep sigh of relief.",
+   "options": [
+    "poured",
+    "heaved",
+    "pushed",
+    "threw"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Heave a sigh' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The detective ___ a blank when asked about the motive.",
+   "options": [
+    "made",
+    "took",
+    "drew",
+    "kept"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Draw a blank' means to fail to find or recall anything.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He was deep ___ debt after the business failed.",
+   "options": [
+    "on",
+    "at",
+    "with",
+    "in"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Deep in debt' is the fixed collocation with 'in'.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The passengers had a narrow ___ when the bus skidded.",
+   "options": [
+    "escape",
+    "run",
+    "flight",
+    "rescue"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Narrow escape' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It is an open ___ that he plans to retire.",
+   "options": [
+    "rumour",
+    "secret",
+    "fact",
+    "truth"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Open secret' means something known to everyone though officially secret.",
+   "shortcut": "Open secret.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The patient is in ___ condition after the accident.",
+   "options": [
+    "sharp",
+    "rough",
+    "critical",
+    "hard"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A seriously ill patient is in 'critical condition'.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ___ his best to reach on time.",
+   "options": [
+    "made",
+    "took",
+    "kept",
+    "did"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Do one's best' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The thief was caught ___-handed.",
+   "options": [
+    "red",
+    "black",
+    "blue",
+    "green"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Caught red-handed' is the idiom.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ___ a complaint with the police.",
+   "options": [
+    "pitched",
+    "lodged",
+    "fixed",
+    "stuck"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Lodge a complaint' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The company ___ bankrupt after the scam.",
+   "options": [
+    "ran",
+    "rolled",
+    "went",
+    "walked"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Go bankrupt' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The jury ___ the wrong conclusion from the evidence.",
+   "options": [
+    "took",
+    "found",
+    "held",
+    "drew"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Draw a conclusion' is the standard collocation.",
+   "shortcut": "Draw a conclusion.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The rule is hard and ___; no exceptions are allowed.",
+   "options": [
+    "fast",
+    "strong",
+    "rough",
+    "solid"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hard and fast rules' is a fixed phrase.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She was ___ with grief after her father's death.",
+   "options": [
+    "overdone",
+    "overcome",
+    "overlooked",
+    "overthrown"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Overcome with grief' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The accused was granted ___ on a bond of ₹50,000.",
+   "options": [
+    "parole",
+    "remand",
+    "bail",
+    "pardon"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Release pending trial against a bond is 'bail'.",
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The chief minister laid the ___ stone of the hospital.",
+   "options": [
+    "base",
+    "root",
+    "ground",
+    "foundation"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Lay the foundation stone' is the fixed expression.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The villagers turned a ___ ear to the officer's appeal.",
+   "options": [
+    "deaf",
+    "blind",
+    "dumb",
+    "closed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Turn a deaf ear' means to refuse to listen.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The candidate ___ his election promise within a year of winning.",
+   "options": [
+    "cracked",
+    "broke",
+    "tore",
+    "split"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Break a promise' is the collocation.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The neighbours finally buried the ___ and became friends.",
+   "options": [
+    "axe",
+    "sword",
+    "hatchet",
+    "knife"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Bury the hatchet' is the idiom for ending a quarrel.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lack of sleep can ___ havoc with your health.",
+   "options": [
+    "make",
+    "take",
+    "hold",
+    "play"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Play havoc with' is the fixed expression.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has a sweet ___ and cannot resist desserts.",
+   "options": [
+    "tooth",
+    "mouth",
+    "tongue",
+    "lip"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Sweet tooth' means a liking for sweet food.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The speaker was given a standing ___ at the end.",
+   "options": [
+    "praise",
+    "ovation",
+    "clap",
+    "cheer"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Standing ovation' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The minister ___ the blame on the previous government.",
+   "options": [
+    "flew",
+    "ran",
+    "laid",
+    "kept"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Lay the blame on' is the standard expression.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The company ___ a profit of ₹5 crore this quarter.",
+   "options": [
+    "did",
+    "kept",
+    "held",
+    "made"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Make a profit' is the standard collocation.",
+   "shortcut": "Make a profit/loss.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Do not take the matter ___; it is only a joke.",
+   "options": [
+    "lightly",
+    "slightly",
+    "softly",
+    "weakly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Take lightly' is the standard collocation.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is a ___ sleeper and wakes at the slightest noise.",
+   "options": [
+    "small",
+    "light",
+    "thin",
+    "soft"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Light sleeper' is the fixed collocation.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Virat ___ the record for most centuries in the tournament.",
+   "options": [
+    "cracked",
+    "tore",
+    "broke",
+    "split"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Break a record' is the collocation.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Many small firms ___ business in this lane.",
+   "options": [
+    "make",
+    "take",
+    "give",
+    "do"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Do business' is the collocation.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Don't ___ your time on gossip.",
+   "options": [
+    "waste",
+    "pass",
+    "drop",
+    "throw"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Waste time' is the collocation; 'pass time' means to occupy time and does not fit the warning.",
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

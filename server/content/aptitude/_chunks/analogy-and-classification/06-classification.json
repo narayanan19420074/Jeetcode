@@ -1,0 +1,537 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which pair does not belong with the others? Cow – Milk ; Hen – Egg ; Bee – Honey ; Camel – Desert",
+   "options": [
+    "Cow – Milk",
+    "Camel – Desert",
+    "Hen – Egg",
+    "Bee – Honey"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In the other pairs the animal gives a product (milk, egg, honey). Camel – Desert gives a habitat, not a product.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which pair does not belong with the others? Pen – Writing ; Knife – Cutting ; Needle – Stitching ; Table – Wood",
+   "options": [
+    "Table – Wood",
+    "Pen – Writing",
+    "Knife – Cutting",
+    "Needle – Stitching"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The other pairs give a tool and its function; Table – Wood gives an object and its material.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which pair does not belong with the others? Delhi – India ; Dhaka – Bangladesh ; Kathmandu – Nepal ; Mumbai – Maharashtra",
+   "options": [
+    "Delhi – India",
+    "Dhaka – Bangladesh",
+    "Kathmandu – Nepal",
+    "Mumbai – Maharashtra"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The other pairs are a national capital and its country; Mumbai is the capital of a state, Maharashtra.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which pair does not belong with the others? Sachin – Cricket ; Sindhu – Badminton ; Mary Kom – Boxing ; Ramanujan – Mathematics",
+   "options": [
+    "Sachin – Cricket",
+    "Sindhu – Badminton",
+    "Ramanujan – Mathematics",
+    "Mary Kom – Boxing"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The other pairs are sportspersons with their sport; Ramanujan was a mathematician, so the field is academic.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which pair does not belong with the others? Eye – Sight ; Ear – Hearing ; Nose – Smell ; Brain – Skull",
+   "options": [
+    "Eye – Sight",
+    "Brain – Skull",
+    "Ear – Hearing",
+    "Nose – Smell"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The other pairs name a sense organ and its sense; Brain – Skull names an organ and the bone that protects it.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of words is different from the other three? Mango – Apple – Grapes ; Carrot – Beetroot – Radish ; Guava – Papaya – Banana ; Orange – Pear – Plum",
+   "options": [
+    "Carrot – Beetroot – Radish",
+    "Mango – Apple – Grapes",
+    "Guava – Papaya – Banana",
+    "Orange – Pear – Plum"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three groups consist of fruits; carrot, beetroot and radish are root vegetables.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of words is different from the other three? Hockey – Football – Cricket ; Kabaddi – Kho-kho – Volleyball ; Chess – Carrom – Ludo ; Basketball – Handball – Polo",
+   "options": [
+    "Hockey – Football – Cricket",
+    "Kabaddi – Kho-kho – Volleyball",
+    "Basketball – Handball – Polo",
+    "Chess – Carrom – Ludo"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three groups are outdoor or court team sports; chess, carrom and ludo are indoor board/table games.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of words is different from the other three? Ganga – Yamuna – Kaveri ; Krishna – Narmada – Tapti ; Godavari – Mahanadi – Sutlej ; Thar – Gobi – Sahara",
+   "options": [
+    "Ganga – Yamuna – Kaveri",
+    "Krishna – Narmada – Tapti",
+    "Thar – Gobi – Sahara",
+    "Godavari – Mahanadi – Sutlej"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three groups are all rivers; Thar, Gobi and Sahara are deserts.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of words is different from the other three? Sitar – Sarod – Veena ; Violin – Guitar – Santoor ; Flute – Shehnai – Nadaswaram ; Tanpura – Rabab – Ektara",
+   "options": [
+    "Sitar – Sarod – Veena",
+    "Flute – Shehnai – Nadaswaram",
+    "Violin – Guitar – Santoor",
+    "Tanpura – Rabab – Ektara"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three groups consist of stringed instruments; flute, shehnai and nadaswaram are wind instruments.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of words is different from the other three? Mercury – Venus ; Mars – Jupiter ; Saturn – Neptune ; Sun – Sirius",
+   "options": [
+    "Sun – Sirius",
+    "Mercury – Venus",
+    "Mars – Jupiter",
+    "Saturn – Neptune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three groups consist of two planets of the Solar System; the Sun and Sirius are stars.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of words is different from the other three? Rose – Lotus – Jasmine ; Marigold – Lily – Tulip ; Hibiscus – Sunflower – Dahlia ; Neem – Banyan – Peepal",
+   "options": [
+    "Rose – Lotus – Jasmine",
+    "Marigold – Lily – Tulip",
+    "Hibiscus – Sunflower – Dahlia",
+    "Neem – Banyan – Peepal"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three groups consist of flowering plants known for their flowers; neem, banyan and peepal are large trees.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which word does not belong to the group of parts of speech? Quickly ; Slowly ; Carefully ; Quick",
+   "options": [
+    "Quickly",
+    "Slowly",
+    "Quick",
+    "Carefully"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Quickly, slowly and carefully are adverbs; quick is an adjective.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which word does not belong to the group of parts of speech? Run ; Jump ; Swim ; Beauty",
+   "options": [
+    "Run",
+    "Beauty",
+    "Jump",
+    "Swim"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Run, jump and swim are verbs (action words); beauty is a noun.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which word does not belong to the group of nouns? Honesty ; Courage ; Freedom ; Teacher",
+   "options": [
+    "Teacher",
+    "Honesty",
+    "Courage",
+    "Freedom"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Honesty, courage and freedom are abstract nouns; teacher is a common (concrete) noun.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Classify the words by gender. Which one does not belong? Mother ; Sister ; Aunt ; Uncle",
+   "options": [
+    "Mother",
+    "Sister",
+    "Aunt",
+    "Uncle"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Mother, sister and aunt are female relatives; uncle is a male relative.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one does not belong to the group? Monday ; Friday ; Sunday ; March",
+   "options": [
+    "Monday",
+    "Friday",
+    "March",
+    "Sunday"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Monday, Friday and Sunday are days of the week; March is a month.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one does not belong to the group? Tree ; Fish ; Crow ; Stone",
+   "options": [
+    "Tree",
+    "Stone",
+    "Fish",
+    "Crow"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tree, fish and crow are living things; a stone is non-living.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one does not belong to the group? Tea ; Coffee ; Milk ; Petrol",
+   "options": [
+    "Petrol",
+    "Tea",
+    "Coffee",
+    "Milk"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Tea, coffee and milk are drinks; petrol is a fuel and not fit to drink.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which pair does not belong with the others? Kanpur – Ganga ; Ahmedabad – Sabarmati ; Lucknow – Gomti ; Mumbai – Arabian Sea",
+   "options": [
+    "Kanpur – Ganga",
+    "Ahmedabad – Sabarmati",
+    "Lucknow – Gomti",
+    "Mumbai – Arabian Sea"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The other pairs are a city and the river on whose bank it stands; Mumbai lies on a sea coast, not on a river.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one does not belong to the group? Vitamin A ; Vitamin C ; Vitamin D ; Calcium",
+   "options": [
+    "Vitamin A",
+    "Vitamin C",
+    "Calcium",
+    "Vitamin D"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Vitamin A, C and D are vitamins (organic nutrients); calcium is a mineral.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one does not belong to the group? Sodium ; Potassium ; Calcium ; Chlorine",
+   "options": [
+    "Sodium",
+    "Chlorine",
+    "Potassium",
+    "Calcium"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sodium, potassium and calcium are metals; chlorine is a non-metal (a gas).",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one does not belong to the group? Tendulkar ; Kohli ; Dhoni ; Bolt",
+   "options": [
+    "Bolt",
+    "Tendulkar",
+    "Kohli",
+    "Dhoni"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Tendulkar, Kohli and Dhoni are Indian cricketers; Usain Bolt is a sprinter.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of numbers is different from the other three? 3, 5, 7 ; 11, 13, 17 ; 19, 23, 29 ; 21, 27, 33",
+   "options": [
+    "3, 5, 7",
+    "11, 13, 17",
+    "19, 23, 29",
+    "21, 27, 33"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three groups contain only prime numbers; every number in (21, 27, 33) is a multiple of 3 greater than 3, so it is composite.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of numbers is different from the other three? 4, 9, 25 ; 16, 36, 49 ; 64, 81, 100 ; 8, 27, 125",
+   "options": [
+    "4, 9, 25",
+    "16, 36, 49",
+    "8, 27, 125",
+    "64, 81, 100"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three groups contain perfect squares; (8, 27, 125) are perfect cubes (2³, 3³, 5³).",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of numbers is different from the other three? 12, 18, 24 ; 30, 42, 54 ; 36, 48, 60 ; 14, 21, 35",
+   "options": [
+    "12, 18, 24",
+    "14, 21, 35",
+    "30, 42, 54",
+    "36, 48, 60"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three groups contain only multiples of 6; (14, 21, 35) are multiples of 7 and not of 6.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of numbers is different from the other three? 101, 111, 121 ; 232, 242, 252 ; 343, 353, 363 ; 145, 154, 164",
+   "options": [
+    "145, 154, 164",
+    "101, 111, 121",
+    "232, 242, 252",
+    "343, 353, 363"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three groups contain palindromic numbers; 145, 154 and 164 do not read the same backwards.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of numbers is different from the other three? 2, 3, 5 ; 5, 8, 13 ; 13, 21, 34 ; 4, 7, 12",
+   "options": [
+    "2, 3, 5",
+    "5, 8, 13",
+    "13, 21, 34",
+    "4, 7, 12"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In three groups the third number is the sum of the first two (2+3=5, 5+8=13, 13+21=34). In (4, 7, 12), 4+7 = 11, not 12.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which group of numbers is different from the other three? 2, 4, 8 ; 3, 9, 27 ; 5, 25, 125 ; 6, 12, 20",
+   "options": [
+    "2, 4, 8",
+    "3, 9, 27",
+    "6, 12, 20",
+    "5, 25, 125"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three groups are in geometric progression (ratio 2, 3 and 5). (6, 12, 20) is not: 6→12 is ×2 but 12→20 is not.",
+   "shortcut": "Name the category each item belongs to; the one outside the shared category is the answer.",
+   "subPattern": "classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

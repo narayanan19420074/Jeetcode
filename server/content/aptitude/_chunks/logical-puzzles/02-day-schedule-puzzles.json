@@ -1,0 +1,786 @@
+{
+ "sets": [
+  {
+   "id": "logical-puzzles-s011",
+   "type": "text",
+   "title": "Puzzle 11: 4 lectures between Monday and Thursday",
+   "text": "A college schedules 4 lectures (Economics, Chemistry, History, English) on 4 different days between Monday and Thursday, one lecture per day. Conditions:\n1. The Economics lecture is not on Monday.\n2. The English lecture is held on the day immediately after the History lecture.\n3. The History lecture is not on Monday.\n4. The English lecture is not on Thursday."
+  },
+  {
+   "id": "logical-puzzles-s012",
+   "type": "text",
+   "title": "Puzzle 12: 4 lectures between Tuesday and Friday",
+   "text": "4 people (Omkar, Uma, Priya, Rohit) each have a lecture with a manager, on 4 different days between Tuesday and Friday, at most one per day. Conditions:\n1. Uma's lecture is on a later day than Omkar's.\n2. Exactly 2 days separate the lectures of Omkar and Priya.\n3. Uma's lecture is not on Wednesday."
+  },
+  {
+   "id": "logical-puzzles-s013",
+   "type": "text",
+   "title": "Puzzle 13: 4 lectures between Monday and Friday",
+   "text": "A college schedules 4 lectures (History, Biology, English, Economics) on 4 different days between Monday and Friday, one lecture per day, so exactly one day in this period has no lecture. Conditions:\n1. Exactly 2 days separate the English lecture and the Biology lecture.\n2. Exactly 3 days separate the Economics lecture and the Biology lecture.\n3. The History lecture is held on the day immediately after the English lecture."
+  },
+  {
+   "id": "logical-puzzles-s014",
+   "type": "text",
+   "title": "Puzzle 14: 5 lectures between Tuesday and Sunday",
+   "text": "A college schedules 5 lectures (English, Maths, Economics, Chemistry, Computer Science) on 5 different days between Tuesday and Sunday, one lecture per day, so exactly one day in this period has no lecture. Conditions:\n1. The Maths lecture is held either on Wednesday or on Tuesday.\n2. The Chemistry lecture is held on the day immediately after the Maths lecture.\n3. The Chemistry lecture is held on a later day than the Economics lecture.\n4. The Computer Science lecture is not on Sunday.\n5. The English lecture is held on Saturday."
+  },
+  {
+   "id": "logical-puzzles-s015",
+   "type": "text",
+   "title": "Puzzle 15: 5 lectures between Tuesday and Sunday",
+   "text": "A college schedules 5 lectures (Maths, History, English, Biology, Chemistry) on 5 different days between Tuesday and Sunday, one lecture per day, so exactly one day in this period has no lecture. Conditions:\n1. The English lecture is held either on Tuesday or on Wednesday.\n2. The Biology lecture is held on Sunday.\n3. The History lecture is held on a later day than the Maths lecture.\n4. The English lecture is held on a later day than the Chemistry lecture.\n5. Exactly 1 day separates the Maths lecture and the English lecture."
+  },
+  {
+   "id": "logical-puzzles-s016",
+   "type": "text",
+   "title": "Puzzle 16: 5 meetings between Monday and Saturday",
+   "text": "5 people (Mohan, Ishita, Jayant, Jagan, Lakshmi) each have a meeting with a manager, on 5 different days between Monday and Saturday, at most one per day, leaving exactly one day free. Conditions:\n1. Ishita's meeting is on Monday or Tuesday.\n2. Mohan's meeting is on the day immediately after Jagan's.\n3. Lakshmi's meeting is on Tuesday.\n4. Jagan's meeting is on Thursday or Tuesday.\n5. Jagan's meeting is on the day immediately after Jayant's."
+  },
+  {
+   "id": "logical-puzzles-s017",
+   "type": "text",
+   "title": "Puzzle 17: 5 visits between Monday and Saturday",
+   "text": "5 people (Imran, Divya, Balaji, Dinesh, Omkar) each have a visit with a manager, on 5 different days between Monday and Saturday, at most one per day, leaving exactly one day free. Conditions:\n1. Divya's visit is on Monday or Thursday.\n2. Omkar's visit is on a later day than Balaji's.\n3. Dinesh's visit is on Wednesday.\n4. Exactly 3 days separate the visits of Imran and Divya.\n5. Balaji's visit is on the day immediately after Dinesh's."
+  },
+  {
+   "id": "logical-puzzles-s018",
+   "type": "text",
+   "title": "Puzzle 18: 5 visits between Tuesday and Sunday",
+   "text": "5 people (Pranav, Balaji, Arjun, Ramesh, Bharat) each have a visit with a manager, on 5 different days between Tuesday and Sunday, at most one per day, leaving exactly one day free. Conditions:\n1. Bharat's visit is on the day immediately after Ramesh's.\n2. Arjun's visit is on Tuesday.\n3. Pranav's visit is not on Friday.\n4. Ramesh's visit is on Saturday.\n5. Balaji's visit is on Sunday or Thursday."
+  },
+  {
+   "id": "logical-puzzles-s019",
+   "type": "text",
+   "title": "Puzzle 19: 6 lectures between Monday and Sunday",
+   "text": "A college schedules 6 lectures (Economics, Chemistry, Physics, Computer Science, History, Maths) on 6 different days between Monday and Sunday, one lecture per day, so exactly one day in this period has no lecture. Conditions:\n1. The Computer Science lecture is held on the day immediately after the Maths lecture.\n2. The Maths lecture is held on Wednesday.\n3. The Chemistry lecture is held on a later day than the History lecture.\n4. The Physics lecture is held on Sunday.\n5. The Economics lecture is held on the day immediately after the History lecture.\n6. The Chemistry lecture is held either on Saturday or on Tuesday."
+  },
+  {
+   "id": "logical-puzzles-s020",
+   "type": "text",
+   "title": "Puzzle 20: 6 meetings between Monday and Sunday",
+   "text": "6 people (Nandini, Tarun, Farhan, Lakshmi, Chitra, Manoj) each have a meeting with a manager, on 6 different days between Monday and Sunday, at most one per day, leaving exactly one day free. Conditions:\n1. Exactly 3 days separate the meetings of Manoj and Chitra.\n2. Manoj's meeting is on a later day than Farhan's.\n3. Manoj's meeting is on Wednesday or Thursday.\n4. Farhan's meeting is on the day immediately after Nandini's.\n5. Tarun's meeting is on Saturday or Sunday.\n6. Lakshmi's meeting is on Monday or Friday."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "On which day is the English lecture held?",
+   "options": [
+    "Tuesday",
+    "Wednesday",
+    "Monday",
+    "Thursday"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Monday: Chemistry; Tuesday: History; Wednesday: English; Thursday: Economics. It falls on Wednesday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s011"
+  },
+  {
+   "questionText": "How many of the 4 are scheduled before the Chemistry lecture?",
+   "options": [
+    "3",
+    "0",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Monday: Chemistry; Tuesday: History; Wednesday: English; Thursday: Economics. 0 entries fall on earlier days than Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s011"
+  },
+  {
+   "questionText": "Which is scheduled on the last of the occupied days?",
+   "options": [
+    "History",
+    "English",
+    "Economics",
+    "Chemistry"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: Chemistry; Tuesday: History; Wednesday: English; Thursday: Economics. The last occupied day is Thursday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s011"
+  },
+  {
+   "questionText": "How many days lie between the English lecture and the History lecture?",
+   "options": [
+    "0",
+    "2",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Chemistry; Tuesday: History; Wednesday: English; Thursday: Economics. Wednesday and Tuesday have 0 days in between.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s011"
+  },
+  {
+   "questionText": "In Puzzle 12: Which is scheduled on the last of the occupied days?",
+   "options": [
+    "Priya",
+    "Rohit",
+    "Omkar",
+    "Uma"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Omkar; Wednesday: Rohit; Thursday: Uma; Friday: Priya. The last occupied day is Friday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s012"
+  },
+  {
+   "questionText": "Which is scheduled on the earliest of the occupied days?",
+   "options": [
+    "Omkar",
+    "Rohit",
+    "Priya",
+    "Uma"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Omkar; Wednesday: Rohit; Thursday: Uma; Friday: Priya. The earliest occupied day is Tuesday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s012"
+  },
+  {
+   "questionText": "On which day is Priya's lecture held?",
+   "options": [
+    "Friday",
+    "Wednesday",
+    "Thursday",
+    "Tuesday"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Omkar; Wednesday: Rohit; Thursday: Uma; Friday: Priya. It falls on Friday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s012"
+  },
+  {
+   "questionText": "On which day is Uma's lecture held?",
+   "options": [
+    "Friday",
+    "Tuesday",
+    "Thursday",
+    "Wednesday"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Omkar; Wednesday: Rohit; Thursday: Uma; Friday: Priya. It falls on Thursday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s012"
+  },
+  {
+   "questionText": "In Puzzle 13: Which is scheduled on the earliest of the occupied days?",
+   "options": [
+    "Biology",
+    "English",
+    "History",
+    "Economics"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions fix a unique schedule - Monday: Economics; Tuesday: English; Wednesday: History; Thursday: free; Friday: Biology. The earliest occupied day is Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s013"
+  },
+  {
+   "questionText": "How many of the 4 are scheduled before the Economics lecture?",
+   "options": [
+    "0",
+    "2",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Economics; Tuesday: English; Wednesday: History; Thursday: free; Friday: Biology. 0 entries fall on earlier days than Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s013"
+  },
+  {
+   "questionText": "What is scheduled on the day immediately after the English lecture?",
+   "options": [
+    "Biology",
+    "Economics",
+    "English",
+    "History"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions fix a unique schedule - Monday: Economics; Tuesday: English; Wednesday: History; Thursday: free; Friday: Biology. After Tuesday comes Wednesday: History.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s013"
+  },
+  {
+   "questionText": "On which day is the Biology lecture held?",
+   "options": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Friday"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions fix a unique schedule - Monday: Economics; Tuesday: English; Wednesday: History; Thursday: free; Friday: Biology. It falls on Friday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s013"
+  },
+  {
+   "questionText": "In Puzzle 14: Which is scheduled on the earliest of the occupied days?",
+   "options": [
+    "Chemistry",
+    "Maths",
+    "English",
+    "Economics"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Economics; Wednesday: Maths; Thursday: Chemistry; Friday: Computer Science; Saturday: English; Sunday: free. The earliest occupied day is Tuesday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s014"
+  },
+  {
+   "questionText": "On which day is the Chemistry lecture held?",
+   "options": [
+    "Saturday",
+    "Sunday",
+    "Thursday",
+    "Friday"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Economics; Wednesday: Maths; Thursday: Chemistry; Friday: Computer Science; Saturday: English; Sunday: free. It falls on Thursday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s014"
+  },
+  {
+   "questionText": "In Puzzle 14: What is scheduled on the day immediately after the English lecture?",
+   "options": [
+    "None (free day)",
+    "Economics",
+    "Computer Science",
+    "Maths"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Economics; Wednesday: Maths; Thursday: Chemistry; Friday: Computer Science; Saturday: English; Sunday: free. After Saturday comes Sunday: None (free day).",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s014"
+  },
+  {
+   "questionText": "In Puzzle 14: Which is scheduled on the last of the occupied days?",
+   "options": [
+    "English",
+    "Maths",
+    "Chemistry",
+    "Economics"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Economics; Wednesday: Maths; Thursday: Chemistry; Friday: Computer Science; Saturday: English; Sunday: free. The last occupied day is Saturday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s014"
+  },
+  {
+   "questionText": "In Puzzle 15: Which is scheduled on the earliest of the occupied days?",
+   "options": [
+    "Maths",
+    "Chemistry",
+    "History",
+    "Biology"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Chemistry; Wednesday: English; Thursday: free; Friday: Maths; Saturday: History; Sunday: Biology. The earliest occupied day is Tuesday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s015"
+  },
+  {
+   "questionText": "How many days lie between the Maths lecture and the English lecture?",
+   "options": [
+    "2",
+    "4",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Chemistry; Wednesday: English; Thursday: free; Friday: Maths; Saturday: History; Sunday: Biology. Friday and Wednesday have 1 days in between.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s015"
+  },
+  {
+   "questionText": "How many of the 5 are scheduled before the Chemistry lecture?",
+   "options": [
+    "4",
+    "2",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Chemistry; Wednesday: English; Thursday: free; Friday: Maths; Saturday: History; Sunday: Biology. 0 entries fall on earlier days than Tuesday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s015"
+  },
+  {
+   "questionText": "In Puzzle 15: Which is scheduled on the last of the occupied days?",
+   "options": [
+    "English",
+    "Biology",
+    "History",
+    "Maths"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Chemistry; Wednesday: English; Thursday: free; Friday: Maths; Saturday: History; Sunday: Biology. The last occupied day is Sunday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s015"
+  },
+  {
+   "questionText": "What is scheduled on the day immediately after Lakshmi's meeting?",
+   "options": [
+    "Jayant",
+    "Jagan",
+    "Mohan",
+    "Lakshmi"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Ishita; Tuesday: Lakshmi; Wednesday: Jayant; Thursday: Jagan; Friday: Mohan; Saturday: free. After Tuesday comes Wednesday: Jayant.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s016"
+  },
+  {
+   "questionText": "In Puzzle 16: Which is scheduled on the last of the occupied days?",
+   "options": [
+    "Jagan",
+    "Jayant",
+    "Mohan",
+    "Lakshmi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: Ishita; Tuesday: Lakshmi; Wednesday: Jayant; Thursday: Jagan; Friday: Mohan; Saturday: free. The last occupied day is Friday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s016"
+  },
+  {
+   "questionText": "Which day in this period has nothing scheduled?",
+   "options": [
+    "Saturday",
+    "Thursday",
+    "Tuesday",
+    "Monday"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Ishita; Tuesday: Lakshmi; Wednesday: Jayant; Thursday: Jagan; Friday: Mohan; Saturday: free. Only Saturday has no entry.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s016"
+  },
+  {
+   "questionText": "Whose meeting is on Friday?",
+   "options": [
+    "Ishita",
+    "Jagan",
+    "Mohan",
+    "Jayant"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: Ishita; Tuesday: Lakshmi; Wednesday: Jayant; Thursday: Jagan; Friday: Mohan; Saturday: free. On Friday it is Mohan.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s016"
+  },
+  {
+   "questionText": "In Puzzle 17: Which is scheduled on the last of the occupied days?",
+   "options": [
+    "Omkar",
+    "Dinesh",
+    "Divya",
+    "Imran"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Divya; Tuesday: free; Wednesday: Dinesh; Thursday: Balaji; Friday: Imran; Saturday: Omkar. The last occupied day is Saturday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s017"
+  },
+  {
+   "questionText": "In Puzzle 17: Which is scheduled on the earliest of the occupied days?",
+   "options": [
+    "Divya",
+    "Dinesh",
+    "Balaji",
+    "Imran"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Divya; Tuesday: free; Wednesday: Dinesh; Thursday: Balaji; Friday: Imran; Saturday: Omkar. The earliest occupied day is Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s017"
+  },
+  {
+   "questionText": "On which day is Divya's visit held?",
+   "options": [
+    "Wednesday",
+    "Saturday",
+    "Monday",
+    "Tuesday"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: Divya; Tuesday: free; Wednesday: Dinesh; Thursday: Balaji; Friday: Imran; Saturday: Omkar. It falls on Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s017"
+  },
+  {
+   "questionText": "Whose visit is on Saturday?",
+   "options": [
+    "Omkar",
+    "Dinesh",
+    "Imran",
+    "Balaji"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: Divya; Tuesday: free; Wednesday: Dinesh; Thursday: Balaji; Friday: Imran; Saturday: Omkar. On Saturday it is Omkar.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s017"
+  },
+  {
+   "questionText": "What is scheduled on the day immediately after Ramesh's visit?",
+   "options": [
+    "None (free day)",
+    "Bharat",
+    "Arjun",
+    "Balaji"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Arjun; Wednesday: Pranav; Thursday: Balaji; Friday: free; Saturday: Ramesh; Sunday: Bharat. After Saturday comes Sunday: Bharat.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s018"
+  },
+  {
+   "questionText": "On which day is Ramesh's visit held?",
+   "options": [
+    "Tuesday",
+    "Saturday",
+    "Sunday",
+    "Wednesday"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Arjun; Wednesday: Pranav; Thursday: Balaji; Friday: free; Saturday: Ramesh; Sunday: Bharat. It falls on Saturday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s018"
+  },
+  {
+   "questionText": "In Puzzle 18: Which day in this period has nothing scheduled?",
+   "options": [
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Tuesday"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Arjun; Wednesday: Pranav; Thursday: Balaji; Friday: free; Saturday: Ramesh; Sunday: Bharat. Only Friday has no entry.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s018"
+  },
+  {
+   "questionText": "How many of the 5 are scheduled before Bharat's visit?",
+   "options": [
+    "2",
+    "1",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Tuesday: Arjun; Wednesday: Pranav; Thursday: Balaji; Friday: free; Saturday: Ramesh; Sunday: Bharat. 4 entries fall on earlier days than Sunday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s018"
+  },
+  {
+   "questionText": "What is scheduled on the day immediately after the Chemistry lecture?",
+   "options": [
+    "Physics",
+    "None (free day)",
+    "Chemistry",
+    "Economics"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The conditions fix a unique schedule - Monday: History; Tuesday: Economics; Wednesday: Maths; Thursday: Computer Science; Friday: free; Saturday: Chemistry; Sunday: Physics. After Saturday comes Sunday: Physics.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s019"
+  },
+  {
+   "questionText": "How many of the 6 are scheduled before the History lecture?",
+   "options": [
+    "1",
+    "0",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Monday: History; Tuesday: Economics; Wednesday: Maths; Thursday: Computer Science; Friday: free; Saturday: Chemistry; Sunday: Physics. 0 entries fall on earlier days than Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s019"
+  },
+  {
+   "questionText": "On which day is the History lecture held?",
+   "options": [
+    "Saturday",
+    "Friday",
+    "Monday",
+    "Wednesday"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: History; Tuesday: Economics; Wednesday: Maths; Thursday: Computer Science; Friday: free; Saturday: Chemistry; Sunday: Physics. It falls on Monday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s019"
+  },
+  {
+   "questionText": "How many days lie between the Maths lecture and the History lecture?",
+   "options": [
+    "2",
+    "1",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Monday: History; Tuesday: Economics; Wednesday: Maths; Thursday: Computer Science; Friday: free; Saturday: Chemistry; Sunday: Physics. Wednesday and Monday have 1 days in between.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s019"
+  },
+  {
+   "questionText": "Whose meeting is on Sunday?",
+   "options": [
+    "Lakshmi",
+    "Nandini",
+    "Chitra",
+    "Tarun"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: Nandini; Tuesday: Farhan; Wednesday: Manoj; Thursday: free; Friday: Lakshmi; Saturday: Tarun; Sunday: Chitra. On Sunday it is Chitra.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s020"
+  },
+  {
+   "questionText": "What is scheduled on the day immediately after Farhan's meeting?",
+   "options": [
+    "Farhan",
+    "Manoj",
+    "Nandini",
+    "Lakshmi"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The conditions fix a unique schedule - Monday: Nandini; Tuesday: Farhan; Wednesday: Manoj; Thursday: free; Friday: Lakshmi; Saturday: Tarun; Sunday: Chitra. After Tuesday comes Wednesday: Manoj.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s020"
+  },
+  {
+   "questionText": "How many of the 6 are scheduled before Farhan's meeting?",
+   "options": [
+    "0",
+    "3",
+    "5",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conditions fix a unique schedule - Monday: Nandini; Tuesday: Farhan; Wednesday: Manoj; Thursday: free; Friday: Lakshmi; Saturday: Tarun; Sunday: Chitra. 1 entries fall on earlier days than Tuesday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s020"
+  },
+  {
+   "questionText": "In Puzzle 20: Which is scheduled on the last of the occupied days?",
+   "options": [
+    "Manoj",
+    "Nandini",
+    "Chitra",
+    "Tarun"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conditions fix a unique schedule - Monday: Nandini; Tuesday: Farhan; Wednesday: Manoj; Thursday: free; Friday: Lakshmi; Saturday: Tarun; Sunday: Chitra. The last occupied day is Sunday.",
+   "subPattern": "day-schedule-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s020"
+  }
+ ]
+}

@@ -1,0 +1,1653 @@
+{
+ "sets": [
+  {
+   "id": "di-tables-s023",
+   "type": "table",
+   "title": "Export value of 6 items from India (₹ crore)",
+   "table": {
+    "columns": [
+     "Item",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023"
+    ],
+    "rows": [
+     [
+      "Basmati rice",
+      2300,
+      1450,
+      1410,
+      1570,
+      2250
+     ],
+     [
+      "Handicrafts",
+      440,
+      770,
+      670,
+      640,
+      530
+     ],
+     [
+      "Spices",
+      3360,
+      4050,
+      4030,
+      3370,
+      4170
+     ],
+     [
+      "Tea",
+      3310,
+      3040,
+      2140,
+      2340,
+      2360
+     ],
+     [
+      "Textiles",
+      3580,
+      3290,
+      2840,
+      2900,
+      2770
+     ],
+     [
+      "Leather goods",
+      3280,
+      3290,
+      2710,
+      3000,
+      2340
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s024",
+   "type": "table",
+   "title": "Runs scored by 5 Ranji Trophy teams in a season",
+   "table": {
+    "columns": [
+     "Team",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2020-21",
+     "2021-22"
+    ],
+    "rows": [
+     [
+      "Vidarbha",
+      3070,
+      1930,
+      1830,
+      2690,
+      1750
+     ],
+     [
+      "Tamil Nadu",
+      3020,
+      3470,
+      3710,
+      3010,
+      3730
+     ],
+     [
+      "Bengal",
+      2500,
+      3160,
+      2170,
+      3070,
+      1980
+     ],
+     [
+      "Mumbai",
+      3040,
+      3160,
+      3350,
+      3240,
+      3280
+     ],
+     [
+      "Karnataka",
+      4660,
+      3810,
+      3780,
+      4530,
+      3110
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s025",
+   "type": "table",
+   "title": "Monthly two-wheeler sales of 5 brands (in thousand units)",
+   "table": {
+    "columns": [
+     "Brand",
+     "April",
+     "May",
+     "June",
+     "July",
+     "August",
+     "September"
+    ],
+    "rows": [
+     [
+      "Arjun",
+      212,
+      188,
+      140,
+      134,
+      230,
+      186
+     ],
+     [
+      "Garuda",
+      296,
+      182,
+      308,
+      260,
+      278,
+      212
+     ],
+     [
+      "Veera",
+      170,
+      198,
+      210,
+      264,
+      198,
+      214
+     ],
+     [
+      "Suraj",
+      206,
+      194,
+      208,
+      166,
+      178,
+      180
+     ],
+     [
+      "Vayu",
+      214,
+      224,
+      176,
+      252,
+      196,
+      232
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s026",
+   "type": "table",
+   "title": "Passengers carried by 4 railway zones (in lakh)",
+   "table": {
+    "columns": [
+     "Zone",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023"
+    ],
+    "rows": [
+     [
+      "South Central",
+      1130,
+      1230,
+      1310,
+      1100,
+      1430
+     ],
+     [
+      "Western",
+      1390,
+      1140,
+      1550,
+      1300,
+      1440
+     ],
+     [
+      "Northern",
+      1160,
+      880,
+      790,
+      700,
+      780
+     ],
+     [
+      "Eastern",
+      1450,
+      960,
+      950,
+      1300,
+      1360
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s027",
+   "type": "table",
+   "title": "Tea production of 4 states (in million kg)",
+   "table": {
+    "columns": [
+     "State",
+     "2019",
+     "2020",
+     "2021",
+     "2022",
+     "2023"
+    ],
+    "rows": [
+     [
+      "Karnataka",
+      355,
+      345,
+      405,
+      250,
+      270
+     ],
+     [
+      "West Bengal",
+      505,
+      635,
+      695,
+      750,
+      650
+     ],
+     [
+      "Kerala",
+      530,
+      495,
+      670,
+      425,
+      610
+     ],
+     [
+      "Tamil Nadu",
+      350,
+      405,
+      405,
+      535,
+      565
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s028",
+   "type": "table",
+   "title": "Books sold by a publisher in 5 cities",
+   "table": {
+    "columns": [
+     "Month",
+     "Vellore",
+     "Trichy",
+     "Coimbatore",
+     "Madurai",
+     "Salem"
+    ],
+    "rows": [
+     [
+      "March",
+      780,
+      1920,
+      720,
+      1490,
+      1850
+     ],
+     [
+      "April",
+      540,
+      1370,
+      1030,
+      1840,
+      1160
+     ],
+     [
+      "May",
+      730,
+      2350,
+      740,
+      1430,
+      1780
+     ],
+     [
+      "June",
+      830,
+      1890,
+      1160,
+      1930,
+      1650
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s029",
+   "type": "table",
+   "title": "Deposits collected by 6 bank branches (₹ crore)",
+   "table": {
+    "columns": [
+     "Branch",
+     "2021",
+     "2022",
+     "2023",
+     "2024"
+    ],
+    "rows": [
+     [
+      "Adyar",
+      300,
+      205,
+      300,
+      335
+     ],
+     [
+      "Anna Nagar",
+      355,
+      510,
+      440,
+      490
+     ],
+     [
+      "Tambaram",
+      185,
+      255,
+      250,
+      240
+     ],
+     [
+      "Velachery",
+      745,
+      675,
+      600,
+      755
+     ],
+     [
+      "Guindy",
+      455,
+      660,
+      580,
+      755
+     ],
+     [
+      "T. Nagar",
+      635,
+      685,
+      435,
+      730
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s030",
+   "type": "table",
+   "title": "Outpatients treated in 6 hospitals (in hundreds)",
+   "table": {
+    "columns": [
+     "Hospital",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "rows": [
+     [
+      "Dhanvantari",
+      296,
+      294,
+      306,
+      312,
+      396
+     ],
+     [
+      "Medicity",
+      102,
+      102,
+      118,
+      150,
+      158
+     ],
+     [
+      "Apollo Care",
+      184,
+      246,
+      188,
+      242,
+      226
+     ],
+     [
+      "Lifeline",
+      196,
+      152,
+      160,
+      250,
+      188
+     ],
+     [
+      "Shanti",
+      86,
+      60,
+      76,
+      60,
+      74
+     ],
+     [
+      "Sanjeevani",
+      324,
+      250,
+      232,
+      358,
+      344
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s031",
+   "type": "table",
+   "title": "Annual car production of 4 companies (in thousand units)",
+   "table": {
+    "columns": [
+     "Company",
+     "2021",
+     "2022",
+     "2023",
+     "2024"
+    ],
+    "rows": [
+     [
+      "Maruti Suzuki",
+      275,
+      230,
+      245,
+      255
+     ],
+     [
+      "Tata Motors",
+      350,
+      245,
+      410,
+      250
+     ],
+     [
+      "Hyundai India",
+      500,
+      450,
+      415,
+      510
+     ],
+     [
+      "Mahindra",
+      385,
+      305,
+      285,
+      325
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s032",
+   "type": "table",
+   "title": "Monthly rainfall recorded in 6 cities (in mm)",
+   "table": {
+    "columns": [
+     "City",
+     "June",
+     "July",
+     "August",
+     "September"
+    ],
+    "rows": [
+     [
+      "Pune",
+      505,
+      540,
+      520,
+      490
+     ],
+     [
+      "Hyderabad",
+      45,
+      55,
+      75,
+      75
+     ],
+     [
+      "Bengaluru",
+      80,
+      90,
+      60,
+      80
+     ],
+     [
+      "Kochi",
+      425,
+      395,
+      405,
+      400
+     ],
+     [
+      "Lucknow",
+      560,
+      335,
+      460,
+      370
+     ],
+     [
+      "Chennai",
+      75,
+      65,
+      45,
+      75
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s033",
+   "type": "table",
+   "title": "Wheat production of 6 states (in lakh tonnes)",
+   "table": {
+    "columns": [
+     "Year",
+     "Madhya Pradesh",
+     "Punjab",
+     "Rajasthan",
+     "Bihar",
+     "Haryana",
+     "Gujarat"
+    ],
+    "rows": [
+     [
+      "2019",
+      55,
+      70,
+      180,
+      130,
+      110,
+      200
+     ],
+     [
+      "2020",
+      50,
+      95,
+      175,
+      165,
+      85,
+      155
+     ],
+     [
+      "2021",
+      35,
+      60,
+      155,
+      100,
+      90,
+      190
+     ],
+     [
+      "2022",
+      60,
+      95,
+      235,
+      130,
+      120,
+      185
+     ],
+     [
+      "2023",
+      35,
+      85,
+      150,
+      105,
+      115,
+      185
+     ],
+     [
+      "2024",
+      60,
+      85,
+      150,
+      150,
+      105,
+      260
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What was the average export value of the 6 items in 2020? (Correct to one decimal place.)",
+   "options": [
+    "₹15,890.0 crore",
+    "₹2,403.3 crore",
+    "₹2,648.3 crore",
+    "₹2,270.0 crore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total for 2020 = 15,890. Average = 15,890 / 6 = 2648.3.",
+   "shortcut": "Check the answer lies between the smallest and largest value in the column.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s023"
+  },
+  {
+   "questionText": "Between which two consecutive years did the export value for Spices show the highest percentage growth?",
+   "options": [
+    "2022 to 2023",
+    "2019 to 2020",
+    "2020 to 2021",
+    "2021 to 2022"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth % = change / earlier value × 100: 2019 to 2020: 20.5%; 2020 to 2021: -0.5%; 2021 to 2022: -16.4%; 2022 to 2023: 23.7%. Highest is 2022 to 2023.",
+   "shortcut": "A big absolute jump on a small base can beat a bigger jump on a large base; always divide by the starting value.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s023"
+  },
+  {
+   "questionText": "What was the average export value for Basmati rice per year over the period shown? (Correct to one decimal place.)",
+   "options": [
+    "₹8,980.0 crore",
+    "₹1,670.0 crore",
+    "₹1,496.7 crore",
+    "₹1,796.0 crore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = 8,980 over 5 years. Average = 8,980 / 5 = 1796.0.",
+   "shortcut": "Average = total / number of periods; count the columns, do not assume.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s023"
+  },
+  {
+   "questionText": "What was the average combined export value of all items per year? (Correct to one decimal place.)",
+   "options": [
+    "₹14,840.0 crore",
+    "₹2,473.3 crore",
+    "₹74,200.0 crore",
+    "₹12,366.7 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Grand total of the table = 74,200; number of years = 5. Average combined export value = 74,200/5 = 14840.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s023"
+  },
+  {
+   "questionText": "Leaving out the highest and the lowest year for Textiles, what is the average export value of the remaining years? (Correct to one decimal place.)",
+   "options": [
+    "₹3,076.0 crore",
+    "₹2,950.0 crore",
+    "₹1,806.0 crore",
+    "₹3,010.0 crore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Row total = 15,380; highest 3580, lowest 2770. Remaining sum = 9030, count = 3. Average = 3010.0.",
+   "shortcut": "Subtract the two extremes from the total and divide by the reduced count.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s023"
+  },
+  {
+   "questionText": "Between which two consecutive seasons did the runs scored for Bengal show the highest percentage growth?",
+   "options": [
+    "2017-18 to 2018-19",
+    "2020-21 to 2021-22",
+    "2018-19 to 2019-20",
+    "2019-20 to 2020-21"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Growth % = change / earlier value × 100: 2017-18 to 2018-19: 26.4%; 2018-19 to 2019-20: -31.3%; 2019-20 to 2020-21: 41.5%; 2020-21 to 2021-22: -35.5%. Highest is 2019-20 to 2020-21.",
+   "shortcut": "A big absolute jump on a small base can beat a bigger jump on a large base; always divide by the starting value.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s024"
+  },
+  {
+   "questionText": "By how much did the runs scored for Mumbai increase on average per season from 2017-18 to 2021-22? (Correct to one decimal place.)",
+   "options": [
+    "48.0 runs",
+    "240.0 runs",
+    "60.0 runs",
+    "80.0 runs"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 3280 - 3040 = 240, spread over 4 intervals. Average rise = 240/4 = 60.0.",
+   "shortcut": "Number of intervals is one less than the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s024"
+  },
+  {
+   "questionText": "What was the average combined runs scored of all teams per season? (Correct to one decimal place.)",
+   "options": [
+    "3,082.0 runs",
+    "77,050.0 runs",
+    "12,841.7 runs",
+    "15,410.0 runs"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Grand total of the table = 77,050; number of seasons = 5. Average combined runs scored = 77,050/5 = 15410.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s024"
+  },
+  {
+   "questionText": "What was the average runs scored of the 5 teams in 2018-19? (Correct to one decimal place.)",
+   "options": [
+    "15,530.0 runs",
+    "2,770.0 runs",
+    "2,588.3 runs",
+    "3,106.0 runs"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total for 2018-19 = 15,530. Average = 15,530 / 5 = 3106.0.",
+   "shortcut": "Check the answer lies between the smallest and largest value in the column.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s024"
+  },
+  {
+   "questionText": "By what percent is the average runs scored of Tamil Nadu per season higher than that of Mumbai? (Correct to one decimal place.)",
+   "options": [
+    "5.1%",
+    "105.4%",
+    "5.3%",
+    "5.4%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both averages use the same 5 periods, so compare totals: 16,940 and 16,070. Percent higher = (16,940-16,070)/16,070 × 100 = 5.4%.",
+   "shortcut": "The common divisor cancels, so use totals directly.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s024"
+  },
+  {
+   "questionText": "What was the average sales of the 5 brands in July? (Correct to one decimal place.)",
+   "options": [
+    "1,076.0 thousand units",
+    "215.2 thousand units",
+    "219.6 thousand units",
+    "179.3 thousand units"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for July = 1,076. Average = 1,076 / 5 = 215.2.",
+   "shortcut": "Check the answer lies between the smallest and largest value in the column.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s025"
+  },
+  {
+   "questionText": "By what percent is the average sales of Veera per month higher than that of Arjun? (Correct to one decimal place.)",
+   "options": [
+    "13.1%",
+    "115.0%",
+    "14.0%",
+    "15.0%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both averages use the same 6 periods, so compare totals: 1,254 and 1,090. Percent higher = (1,254-1,090)/1,090 × 100 = 15.0%.",
+   "shortcut": "The common divisor cancels, so use totals directly.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s025"
+  },
+  {
+   "questionText": "By how much does the average sales per month of Veera exceed that of Suraj? (Correct to one decimal place.)",
+   "options": [
+    "397.7 thousand units",
+    "36.0 thousand units",
+    "20.3 thousand units",
+    "24.4 thousand units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Average of Veera = 1,254/6 = 209.0; average of Suraj = 1,132/6 = 188.7. Difference = 20.3.",
+   "shortcut": "Both averages share the same divisor, so you can also subtract totals first and divide once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s025"
+  },
+  {
+   "questionText": "By what percent did the combined sales of all brands change from April to September? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "7.2% decrease",
+    "6.7% increase",
+    "6.7% decrease",
+    "3.5% decrease"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total in April = 1,098; total in September = 1,024. Change = 74; percent = 74/1,098 × 100 = 6.7% decrease.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s025"
+  },
+  {
+   "questionText": "What was the average combined sales of all brands per month? (Correct to one decimal place.)",
+   "options": [
+    "210.2 thousand units",
+    "6,306.0 thousand units",
+    "1,051.0 thousand units",
+    "900.9 thousand units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Grand total of the table = 6,306; number of months = 6. Average combined sales = 6,306/6 = 1051.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s025"
+  },
+  {
+   "questionText": "What was the average passenger traffic for South Central per year over the period shown? (Correct to one decimal place.)",
+   "options": [
+    "6,200.0 lakh",
+    "1,192.5 lakh",
+    "1,240.0 lakh",
+    "1,033.3 lakh"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 6,200 over 5 years. Average = 6,200 / 5 = 1240.0.",
+   "shortcut": "Average = total / number of periods; count the columns, do not assume.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s026"
+  },
+  {
+   "questionText": "By what percent did the combined passenger traffic of all zones change from 2019 to 2023? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "2.4% decrease",
+    "2.3% increase",
+    "1.2% decrease",
+    "2.3% decrease"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total in 2019 = 5,130; total in 2023 = 5,010. Change = 120; percent = 120/5,130 × 100 = 2.3% decrease.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s026"
+  },
+  {
+   "questionText": "What was the average combined passenger traffic of all zones per year? (Correct to one decimal place.)",
+   "options": [
+    "1,167.5 lakh",
+    "4,670.0 lakh",
+    "23,350.0 lakh",
+    "3,891.7 lakh"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Grand total of the table = 23,350; number of years = 5. Average combined passenger traffic = 23,350/5 = 4670.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s026"
+  },
+  {
+   "questionText": "What was the average passenger traffic of the 4 zones in 2021? (Correct to one decimal place.)",
+   "options": [
+    "4,600.0 lakh",
+    "1,282.5 lakh",
+    "1,150.0 lakh",
+    "920.0 lakh"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total for 2021 = 4,600. Average = 4,600 / 4 = 1150.0.",
+   "shortcut": "Check the answer lies between the smallest and largest value in the column.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s026"
+  },
+  {
+   "questionText": "By what percent is the average passenger traffic of Western per year higher than that of Northern? (Correct to one decimal place.)",
+   "options": [
+    "36.8%",
+    "158.2%",
+    "58.2%",
+    "45.1%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Both averages use the same 5 periods, so compare totals: 6,820 and 4,310. Percent higher = (6,820-4,310)/4,310 × 100 = 58.2%.",
+   "shortcut": "The common divisor cancels, so use totals directly.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s026"
+  },
+  {
+   "questionText": "By what percent did the combined tea production of all states change from 2019 to 2023? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "16.9% increase",
+    "20.4% increase",
+    "20.4% decrease",
+    "9.3% increase"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total in 2019 = 1,740; total in 2023 = 2,095. Change = 355; percent = 355/1,740 × 100 = 20.4% increase.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s027"
+  },
+  {
+   "questionText": "Which state registered the highest percentage growth in tea production from 2019 to 2023?",
+   "options": [
+    "Tamil Nadu",
+    "West Bengal",
+    "Kerala",
+    "Karnataka"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth % = (last - first)/first × 100: Karnataka -23.9%; West Bengal 28.7%; Kerala 15.1%; Tamil Nadu 61.4%. Highest: Tamil Nadu.",
+   "shortcut": "Compare the ratio last/first, not the absolute increase.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s027"
+  },
+  {
+   "questionText": "What was the average combined tea production of all states per year? (Correct to one decimal place.)",
+   "options": [
+    "492.5 million kg",
+    "1,970.0 million kg",
+    "9,850.0 million kg",
+    "1,641.7 million kg"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Grand total of the table = 9,850; number of years = 5. Average combined tea production = 9,850/5 = 1970.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s027"
+  },
+  {
+   "questionText": "What was the average tea production for Karnataka per year over the period shown? (Correct to one decimal place.)",
+   "options": [
+    "1,625.0 million kg",
+    "325.0 million kg",
+    "305.0 million kg",
+    "270.8 million kg"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = 1,625 over 5 years. Average = 1,625 / 5 = 325.0.",
+   "shortcut": "Average = total / number of periods; count the columns, do not assume.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s027"
+  },
+  {
+   "questionText": "By how much does the average tea production per year of Tamil Nadu exceed that of Karnataka? (Correct to one decimal place.)",
+   "options": [
+    "777.0 million kg",
+    "5.0 million kg",
+    "158.8 million kg",
+    "127.0 million kg"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average of Tamil Nadu = 2,260/5 = 452.0; average of Karnataka = 1,625/5 = 325.0. Difference = 127.0.",
+   "shortcut": "Both averages share the same divisor, so you can also subtract totals first and divide once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s027"
+  },
+  {
+   "questionText": "By how much does the average book sales per month of Madurai exceed that of Vellore? (Correct to one decimal place.)",
+   "options": [
+    "2,392.5 books",
+    "710.0 books",
+    "1,270.0 books",
+    "952.5 books"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average of Madurai = 6,690/4 = 1672.5; average of Vellore = 2,880/4 = 720.0. Difference = 952.5.",
+   "shortcut": "Both averages share the same divisor, so you can also subtract totals first and divide once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s028"
+  },
+  {
+   "questionText": "By what percent did the combined book sales of all cities change from March to June? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "10.4% increase",
+    "9.4% increase",
+    "10.4% decrease",
+    "4.9% increase"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total in March = 6,760; total in June = 7,460. Change = 700; percent = 700/6,760 × 100 = 10.4% increase.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s028"
+  },
+  {
+   "questionText": "By what percent did the book sales for Vellore change from March to June? (State whether it is an increase or decrease, correct to one decimal place.)",
+   "options": [
+    "6.0% increase",
+    "6.4% increase",
+    "6.4% decrease",
+    "16.4% increase"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Change = 830 - 780 = +50. Percent change = 50/780 × 100 = 6.4% increase (base is the earlier value).",
+   "shortcut": "Growth is always measured on the earlier (starting) value.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s028"
+  },
+  {
+   "questionText": "Find the average of the year-on-year percentage changes (period to period) in the book sales for Madurai across the table. (Correct to one decimal place; a fall counts as a negative change.)",
+   "options": [
+    "9.8%",
+    "29.5%",
+    "9.0%",
+    "12.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Successive % changes: 23.49, -22.28, 34.97. Their mean = 12.06 ≈ 12.1%.",
+   "shortcut": "Compute each change on its own starting value, then take the simple mean of the changes.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s028"
+  },
+  {
+   "questionText": "By how much did the book sales for Coimbatore increase on average per month from March to June? (Correct to one decimal place.)",
+   "options": [
+    "110.0 books",
+    "440.0 books",
+    "146.7 books",
+    "220.0 books"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 1160 - 720 = 440, spread over 3 intervals. Average rise = 440/3 = 146.7.",
+   "shortcut": "Number of intervals is one less than the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s028"
+  },
+  {
+   "questionText": "By how much does the average deposits per year of Velachery exceed that of T. Nagar? (Correct to one decimal place.)",
+   "options": [
+    "₹1,315.0 crore",
+    "₹72.5 crore",
+    "₹110.0 crore",
+    "₹96.7 crore"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Average of Velachery = 2,775/4 = 693.8; average of T. Nagar = 2,485/4 = 621.2. Difference = 72.5.",
+   "shortcut": "Both averages share the same divisor, so you can also subtract totals first and divide once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s029"
+  },
+  {
+   "questionText": "By what percent did the deposits for Adyar change from 2021 to 2024? (State whether it is an increase or decrease, correct to one decimal place.)",
+   "options": [
+    "11.7% increase",
+    "10.4% increase",
+    "11.7% decrease",
+    "21.7% increase"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Change = 335 - 300 = +35. Percent change = 35/300 × 100 = 11.7% increase (base is the earlier value).",
+   "shortcut": "Growth is always measured on the earlier (starting) value.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s029"
+  },
+  {
+   "questionText": "Find the average of the year-on-year percentage changes (period to period) in the deposits for Anna Nagar across the table. (Correct to one decimal place; a fall counts as a negative change.)",
+   "options": [
+    "12.7%",
+    "38.0%",
+    "13.8%",
+    "10.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Successive % changes: 43.66, -13.73, 11.36. Their mean = 13.77 ≈ 13.8%.",
+   "shortcut": "Compute each change on its own starting value, then take the simple mean of the changes.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s029"
+  },
+  {
+   "questionText": "What was the average deposits for Adyar per year over the period shown? (Correct to one decimal place.)",
+   "options": [
+    "₹1,140.0 crore",
+    "₹268.3 crore",
+    "₹228.0 crore",
+    "₹285.0 crore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = 1,140 over 4 years. Average = 1,140 / 4 = 285.0.",
+   "shortcut": "Average = total / number of periods; count the columns, do not assume.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s029"
+  },
+  {
+   "questionText": "By how much did the deposits for Tambaram increase on average per year from 2021 to 2024? (Correct to one decimal place.)",
+   "options": [
+    "₹13.8 crore",
+    "₹55.0 crore",
+    "₹18.3 crore",
+    "₹27.5 crore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 240 - 185 = 55, spread over 3 intervals. Average rise = 55/3 = 18.3.",
+   "shortcut": "Number of intervals is one less than the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s029"
+  },
+  {
+   "questionText": "What was the average outpatient count for Sanjeevani per month over the period shown? (Correct to one decimal place.)",
+   "options": [
+    "1,508.0 hundred",
+    "287.5 hundred",
+    "251.3 hundred",
+    "301.6 hundred"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = 1,508 over 5 months. Average = 1,508 / 5 = 301.6.",
+   "shortcut": "Average = total / number of periods; count the columns, do not assume.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s030"
+  },
+  {
+   "questionText": "Leaving out the highest and the lowest month for Apollo Care, what is the average outpatient count of the remaining months? (Correct to one decimal place.)",
+   "options": [
+    "217.2 hundred",
+    "210.0 hundred",
+    "131.2 hundred",
+    "218.7 hundred"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Row total = 1,086; highest 246, lowest 184. Remaining sum = 656, count = 3. Average = 218.7.",
+   "shortcut": "Subtract the two extremes from the total and divide by the reduced count.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s030"
+  },
+  {
+   "questionText": "By what percent did the combined outpatient count of all hospitals change from Feb to Jun? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "14.3% increase",
+    "16.7% increase",
+    "16.7% decrease",
+    "7.7% increase"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total in Feb = 1,188; total in Jun = 1,386. Change = 198; percent = 198/1,188 × 100 = 16.7% increase.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s030"
+  },
+  {
+   "questionText": "What was the average combined outpatient count of all hospitals per month? (Correct to one decimal place.)",
+   "options": [
+    "204.3 hundred",
+    "1,226.0 hundred",
+    "6,130.0 hundred",
+    "1,021.7 hundred"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Grand total of the table = 6,130; number of months = 5. Average combined outpatient count = 6,130/5 = 1226.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s030"
+  },
+  {
+   "questionText": "Between which two consecutive months did the outpatient count for Sanjeevani show the highest percentage growth?",
+   "options": [
+    "May to Jun",
+    "Apr to May",
+    "Feb to Mar",
+    "Mar to Apr"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Growth % = change / earlier value × 100: Feb to Mar: -22.8%; Mar to Apr: -7.2%; Apr to May: 54.3%; May to Jun: -3.9%. Highest is Apr to May.",
+   "shortcut": "A big absolute jump on a small base can beat a bigger jump on a large base; always divide by the starting value.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s030"
+  },
+  {
+   "questionText": "Find the average of the year-on-year percentage changes (period to period) in the production for Mahindra across the table. (Correct to one decimal place; a fall counts as a negative change.)",
+   "options": [
+    "-5.2%",
+    "-15.6%",
+    "-4.4%",
+    "-3.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Successive % changes: -20.78, -6.56, 14.04. Their mean = -4.43 ≈ -4.4%.",
+   "shortcut": "Compute each change on its own starting value, then take the simple mean of the changes.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s031"
+  },
+  {
+   "questionText": "By how much did the production for Hyundai India increase on average per year from 2021 to 2024? (Correct to one decimal place.)",
+   "options": [
+    "2.5 thousand units",
+    "10.0 thousand units",
+    "3.3 thousand units",
+    "5.0 thousand units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 510 - 500 = 10, spread over 3 intervals. Average rise = 10/3 = 3.3.",
+   "shortcut": "Number of intervals is one less than the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s031"
+  },
+  {
+   "questionText": "By what percent did the combined production of all companies change from 2021 to 2024? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "12.7% decrease",
+    "11.3% increase",
+    "11.3% decrease",
+    "6.0% decrease"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total in 2021 = 1,510; total in 2024 = 1,340. Change = 170; percent = 170/1,510 × 100 = 11.3% decrease.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s031"
+  },
+  {
+   "questionText": "What was the average production of the 4 companies in 2021? (Correct to one decimal place.)",
+   "options": [
+    "1,510.0 thousand units",
+    "377.5 thousand units",
+    "338.8 thousand units",
+    "302.0 thousand units"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total for 2021 = 1,510. Average = 1,510 / 4 = 377.5.",
+   "shortcut": "Check the answer lies between the smallest and largest value in the column.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s031"
+  },
+  {
+   "questionText": "By what percent did the production for Maruti Suzuki change from 2021 to 2024? (State whether it is an increase or decrease, correct to one decimal place.)",
+   "options": [
+    "7.3% decrease",
+    "7.8% decrease",
+    "7.3% increase",
+    "17.3% decrease"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Change = 255 - 275 = -20. Percent change = 20/275 × 100 = 7.3% decrease (base is the earlier value).",
+   "shortcut": "Growth is always measured on the earlier (starting) value.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s031"
+  },
+  {
+   "questionText": "By how much did the rainfall for Hyderabad increase on average per month from June to September? (Correct to one decimal place.)",
+   "options": [
+    "7.5 mm",
+    "30.0 mm",
+    "10.0 mm",
+    "15.0 mm"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 75 - 45 = 30, spread over 3 intervals. Average rise = 30/3 = 10.0.",
+   "shortcut": "Number of intervals is one less than the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s032"
+  },
+  {
+   "questionText": "By how much does the average rainfall per month of Pune exceed that of Kochi? (Correct to one decimal place.)",
+   "options": [
+    "920.0 mm",
+    "80.0 mm",
+    "143.3 mm",
+    "107.5 mm"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average of Pune = 2,055/4 = 513.8; average of Kochi = 1,625/4 = 406.2. Difference = 107.5.",
+   "shortcut": "Both averages share the same divisor, so you can also subtract totals first and divide once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s032"
+  },
+  {
+   "questionText": "Find the average of the year-on-year percentage changes (period to period) in the rainfall for Bengaluru across the table. (Correct to one decimal place; a fall counts as a negative change.)",
+   "options": [
+    "4.2%",
+    "0.0%",
+    "3.1%",
+    "2.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Successive % changes: 12.50, -33.33, 33.33. Their mean = 4.17 ≈ 4.2%.",
+   "shortcut": "Compute each change on its own starting value, then take the simple mean of the changes.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s032"
+  },
+  {
+   "questionText": "By what percent did the combined rainfall of all cities change from June to September? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "11.8% decrease",
+    "13.4% decrease",
+    "11.8% increase",
+    "6.3% decrease"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total in June = 1,690; total in September = 1,490. Change = 200; percent = 200/1,690 × 100 = 11.8% decrease.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s032"
+  },
+  {
+   "questionText": "By what percent did the rainfall for Pune change from June to September? (State whether it is an increase or decrease, correct to one decimal place.)",
+   "options": [
+    "3.1% decrease",
+    "3.0% increase",
+    "13.0% decrease",
+    "3.0% decrease"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Change = 490 - 505 = -15. Percent change = 15/505 × 100 = 3.0% decrease (base is the earlier value).",
+   "shortcut": "Growth is always measured on the earlier (starting) value.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s032"
+  },
+  {
+   "questionText": "Which state registered the highest percentage growth in wheat production from 2019 to 2024?",
+   "options": [
+    "Punjab",
+    "Bihar",
+    "Rajasthan",
+    "Gujarat"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Growth % = (last - first)/first × 100: Madhya Pradesh 9.1%; Punjab 21.4%; Rajasthan -16.7%; Bihar 15.4%; Haryana -4.5%; Gujarat 30.0%. Highest: Gujarat.",
+   "shortcut": "Compare the ratio last/first, not the absolute increase.",
+   "difficulty": "hard",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s033"
+  },
+  {
+   "questionText": "What was the average combined wheat production of all states per year? (Correct to one decimal place.)",
+   "options": [
+    "122.5 lakh tonnes",
+    "735.0 lakh tonnes",
+    "4,410.0 lakh tonnes",
+    "630.0 lakh tonnes"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Grand total of the table = 4,410; number of years = 6. Average combined wheat production = 4,410/6 = 735.0.",
+   "shortcut": "'Combined' means add across entities first; divide only by the number of periods.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s033"
+  },
+  {
+   "questionText": "By what percent did the wheat production for Punjab change from 2019 to 2024? (State whether it is an increase or decrease, correct to one decimal place.)",
+   "options": [
+    "17.6% increase",
+    "21.4% decrease",
+    "21.4% increase",
+    "31.4% increase"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Change = 85 - 70 = +15. Percent change = 15/70 × 100 = 21.4% increase (base is the earlier value).",
+   "shortcut": "Growth is always measured on the earlier (starting) value.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s033"
+  },
+  {
+   "questionText": "By what percent did the combined wheat production of all states change from 2019 to 2024? (State increase or decrease, correct to one decimal place.)",
+   "options": [
+    "8.0% increase",
+    "8.7% decrease",
+    "8.7% increase",
+    "4.2% increase"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total in 2019 = 745; total in 2024 = 810. Change = 65; percent = 65/745 × 100 = 8.7% increase.",
+   "shortcut": "Add the two columns first, then apply the growth formula once.",
+   "difficulty": "medium",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s033"
+  },
+  {
+   "questionText": "What was the average wheat production for Gujarat per year over the period shown? (Correct to one decimal place.)",
+   "options": [
+    "195.8 lakh tonnes",
+    "1,175.0 lakh tonnes",
+    "183.0 lakh tonnes",
+    "167.9 lakh tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 1,175 over 6 years. Average = 1,175 / 6 = 195.8.",
+   "shortcut": "Average = total / number of periods; count the columns, do not assume.",
+   "difficulty": "easy",
+   "subPattern": "average-growth-from-tables",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s033"
+  }
+ ]
+}

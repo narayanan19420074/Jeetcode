@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "Three ropes of lengths 24 m, 36 m and 60 m are to be cut into pieces of equal length with no wastage. What is the greatest possible length of each piece?",
+   "options": [
+    "24 m",
+    "360 m",
+    "12 m",
+    "6 m"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Greatest equal length = HCF(24, 36, 60) = 12 m.",
+   "shortcut": "Greatest equal piece = HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A hall floor is 600 cm long and 420 cm wide. What is the side of the largest square tile that exactly covers the floor without cutting?",
+   "options": [
+    "30 cm",
+    "60 cm",
+    "4200 cm",
+    "120 cm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Largest square tile side = HCF(600, 420) = 60 cm.",
+   "shortcut": "Largest square tile = HCF of the dimensions.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A hall floor is 840 cm long and 630 cm wide. What is the side of the largest square tile that exactly covers the floor without cutting?",
+   "options": [
+    "210 cm",
+    "420 cm",
+    "2520 cm",
+    "105 cm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Largest square tile side = HCF(840, 630) = 210 cm.",
+   "shortcut": "Largest square tile = HCF of the dimensions.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A hall floor is 1050 cm long and 750 cm wide. What is the side of the largest square tile that exactly covers the floor without cutting?",
+   "options": [
+    "5250 cm",
+    "300 cm",
+    "75 cm",
+    "150 cm"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Largest square tile side = HCF(1050, 750) = 150 cm.",
+   "shortcut": "Largest square tile = HCF of the dimensions.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A teacher has 96 boys and 64 girls and wants to seat them in rows so that every row has the same number of students and no row mixes boys and girls. What is the maximum number of students per row?",
+   "options": [
+    "192",
+    "64",
+    "160",
+    "32"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Maximum per row = HCF(96, 64) = 32.",
+   "shortcut": "Largest group size = HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A teacher has 84 boys and 60 girls and wants to seat them in rows so that every row has the same number of students and no row mixes boys and girls. What is the maximum number of students per row?",
+   "options": [
+    "24",
+    "12",
+    "144",
+    "420"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Maximum per row = HCF(84, 60) = 12.",
+   "shortcut": "Largest group size = HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three ropes of lengths 40 m, 64 m and 88 m are to be cut into pieces of equal length with no wastage. What is the greatest possible length of each piece?",
+   "options": [
+    "4 m",
+    "3520 m",
+    "16 m",
+    "8 m"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Greatest equal length = HCF(40, 64, 88) = 8 m.",
+   "shortcut": "Greatest equal piece = HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three wires of length 120 m, 180 m and 252 m are cut into pieces of equal, greatest possible length. How many pieces are obtained in all?",
+   "options": [
+    "45",
+    "46",
+    "47",
+    "12"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Piece length = HCF = 12 m. Pieces = 10 + 15 + 21 = 46.",
+   "shortcut": "Total pieces = sum of (length/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A rectangular courtyard measures 1050 cm by 630 cm. It is to be paved with identical square tiles of the largest possible size. How many tiles are needed?",
+   "options": [
+    "3150",
+    "15",
+    "36",
+    "1575"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Side = HCF(1050, 630) = 210 cm. Tiles = (1050/210) × (630/210) = 5 × 3 = 15.",
+   "shortcut": "Tiles = (l/HCF) × (b/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A rectangular courtyard measures 1350 cm by 900 cm. It is to be paved with identical square tiles of the largest possible size. How many tiles are needed?",
+   "options": [
+    "6",
+    "51",
+    "1350",
+    "2700"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Side = HCF(1350, 900) = 450 cm. Tiles = (1350/450) × (900/450) = 3 × 2 = 6.",
+   "shortcut": "Tiles = (l/HCF) × (b/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Fence posts are to be placed around a rectangular field 450 m long and 300 m wide at equal distances, with a post at each corner. What is the minimum number of posts required?",
+   "options": [
+    "5",
+    "10",
+    "11",
+    "9"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Maximum equal gap = HCF(450, 300) = 150 m. Perimeter = 1500 m. Posts = 1500/150 = 10.",
+   "shortcut": "Closed loop: posts = perimeter / HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three wires of length 144 m, 216 m and 360 m are cut into pieces of equal, greatest possible length. How many pieces are obtained in all?",
+   "options": [
+    "11",
+    "10",
+    "9",
+    "72"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Piece length = HCF = 72 m. Pieces = 2 + 3 + 5 = 10.",
+   "shortcut": "Total pieces = sum of (length/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three wires of length 132 m, 198 m and 330 m are cut into pieces of equal, greatest possible length. How many pieces are obtained in all?",
+   "options": [
+    "10",
+    "11",
+    "9",
+    "66"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Piece length = HCF = 66 m. Pieces = 2 + 3 + 5 = 10.",
+   "shortcut": "Total pieces = sum of (length/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Fence posts are to be placed around a rectangular field 420 m long and 280 m wide at equal distances, with a post at each corner. What is the minimum number of posts required?",
+   "options": [
+    "11",
+    "5",
+    "9",
+    "10"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Maximum equal gap = HCF(420, 280) = 140 m. Perimeter = 1400 m. Posts = 1400/140 = 10.",
+   "shortcut": "Closed loop: posts = perimeter / HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A rectangular courtyard measures 900 cm by 600 cm. It is to be paved with identical square tiles of the largest possible size. How many tiles are needed?",
+   "options": [
+    "6",
+    "36",
+    "900",
+    "1800"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Side = HCF(900, 600) = 300 cm. Tiles = (900/300) × (600/300) = 3 × 2 = 6.",
+   "shortcut": "Tiles = (l/HCF) × (b/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three wires of length 168 m, 240 m and 360 m are cut into pieces of equal, greatest possible length. How many pieces are obtained in all?",
+   "options": [
+    "33",
+    "24",
+    "31",
+    "32"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Piece length = HCF = 24 m. Pieces = 7 + 10 + 15 = 32.",
+   "shortcut": "Total pieces = sum of (length/HCF).",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Fence posts are to be placed around a rectangular field 360 m long and 240 m wide at equal distances, with a post at each corner. What is the minimum number of posts required?",
+   "options": [
+    "5",
+    "11",
+    "10",
+    "9"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Maximum equal gap = HCF(360, 240) = 120 m. Perimeter = 1200 m. Posts = 1200/120 = 10.",
+   "shortcut": "Closed loop: posts = perimeter / HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Fence posts are to be placed around a rectangular field 180 m long and 120 m wide at equal distances, with a post at each corner. What is the minimum number of posts required?",
+   "options": [
+    "9",
+    "10",
+    "5",
+    "11"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Maximum equal gap = HCF(180, 120) = 60 m. Perimeter = 600 m. Posts = 600/60 = 10.",
+   "shortcut": "Closed loop: posts = perimeter / HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A solid cuboid of 60 cm × 48 cm × 36 cm is to be cut into identical cubes with no wastage. What is the least number of cubes obtainable?",
+   "options": [
+    "144",
+    "72",
+    "60",
+    "120"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Largest cube edge = HCF(60, 48, 36) = 12 cm. Cubes = (60/12)(48/12)(36/12) = 60.",
+   "shortcut": "Fewest cubes ↔ biggest edge = HCF.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper in Trichy has 45 kg of banana chips, 60 kg of Ooty varkey and 90 kg of jaggery sweets. He packs each into identical bags of the same weight, using the heaviest bag possible and keeping the products separate. What is the minimum number of bags needed?",
+   "options": [
+    "13",
+    "14",
+    "15",
+    "12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Heaviest bag = HCF(45, 60, 90) = 15 kg. Bags = 3 + 4 + 6 = 13.",
+   "shortcut": "HCF for size, sum of quotients for count.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper in Trichy has 36 kg of banana chips, 48 kg of Ooty varkey and 60 kg of jaggery sweets. He packs each into identical bags of the same weight, using the heaviest bag possible and keeping the products separate. What is the minimum number of bags needed?",
+   "options": [
+    "12",
+    "144",
+    "13",
+    "11"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Heaviest bag = HCF(36, 48, 60) = 12 kg. Bags = 3 + 4 + 5 = 12.",
+   "shortcut": "HCF for size, sum of quotients for count.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A rectangular plot measures 819 m by 585 m. It is divided into the least number of identical square beds, and each bed costs ₹2925 to prepare (cost per side-metre is not charged separately). What is the total preparation cost?",
+   "options": [
+    "₹875",
+    "₹102,375",
+    "₹444,600",
+    "₹11,977,875"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Largest square side = HCF(819, 585) = 117 m. Beds = (819/117) × (585/117) = 35. Cost = 35 × ₹2925 = ₹102,375.",
+   "shortcut": "HCF for bed size, then multiply the count by the per-bed cost.",
+   "subPattern": "tiles-ropes-cutting-hcf",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

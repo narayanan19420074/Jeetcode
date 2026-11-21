@@ -1,0 +1,945 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Some bought tea from the stall.\nQ. The train was delayed by two hours.\nR. At last, the whistle blew and everyone rushed forward.\nS. Passengers waited restlessly on the platform.",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence R closes the paragraph. Final: 'At last' marks the end of waiting.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Harvesting begins when the grain turns golden.\nQ. They weed the fields regularly as the crop grows.\nR. Finally, the produce is carried to the market.\nS. Farmers sow seeds at the start of the rainy season.",
+   "options": [
+    "Q",
+    "P",
+    "S",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R closes the paragraph. 'Finally' marks the end of the process.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. He solved hundreds of practice papers.\nQ. His efforts were rewarded when he topped the state.\nR. Ankit studied hard for months.\nS. On the exam day, he stayed calm.",
+   "options": [
+    "R",
+    "S",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q closes the paragraph. Result as the closing.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Birds returned to their nests.\nQ. Soon, the whole valley was asleep.\nR. The sun set behind the hills.\nS. The village lamps flickered on one by one.",
+   "options": [
+    "R",
+    "P",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence Q closes the paragraph. 'Soon... asleep' ends the day.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Vehicles emit harmful gases.\nQ. Pollution has many causes.\nR. Factories release smoke and chemicals.\nS. Together, these sources make the air unsafe to breathe.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S closes the paragraph. 'Together, these sources' is a concluding summary.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. One day, he did not come, and the river felt empty.\nQ. He fed the fish with crumbs.\nR. The old man sat by the river every morning.\nS. Children came to watch him.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P closes the paragraph. The one-day event is the climax; nothing can follow.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Ramesh opened a shop in the market.\nQ. Within three years, he had become the busiest trader in town.\nR. In the first year, sales were low.\nS. He started home delivery.",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. Final outcome.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Gardens were laid out with fountains.\nQ. Arches and domes became common.\nR. Hence, many cities still bear their stamp.\nS. The Mughals introduced new styles of architecture.",
+   "options": [
+    "R",
+    "P",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R closes the paragraph. 'Hence' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The patient recovered completely within a week.\nQ. The doctor examined the patient carefully.\nR. Medicines were prescribed for five days.\nS. He noted a high fever.",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P closes the paragraph. Recovery comes after the treatment.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. This is why coal is called a fossil fuel.\nQ. Layers of earth cover the remains for millions of years.\nR. Coal is formed from the remains of ancient plants.\nS. Heat and pressure change them into a hard black rock.",
+   "options": [
+    "S",
+    "P",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P closes the paragraph. 'This is why' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The plane took off on time.\nQ. The pilot assured everyone and the flight landed safely.\nR. An hour later, it began to shake with turbulence.\nS. Meera boarded a flight to Delhi.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q closes the paragraph. Landing ends the flight.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. This simple act defied British law and shook the empire.\nQ. Gandhi launched the Dandi March in 1930.\nR. He walked to the sea with seventy-eight followers.\nS. On reaching Dandi, he picked up a lump of salt.",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P closes the paragraph. 'This simple act' evaluates the climax.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. In short, regular exposure is the key to fluency.\nQ. Speaking builds confidence.\nR. Listening helps in picking up sounds.\nS. Learning a language needs daily practice.",
+   "options": [
+    "S",
+    "P",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P closes the paragraph. 'In short' sums up.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Ponds filled in days.\nQ. The monsoon arrived early this year.\nR. Soon, green shoots covered the barren fields.\nS. Frogs began to croak at night.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R closes the paragraph. 'Soon' final transformation.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. He traced the owner using the address.\nQ. Ravi found a wallet on the road.\nR. The owner thanked him with tears of relief.\nS. It contained cash and an ID card.",
+   "options": [
+    "P",
+    "S",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence R closes the paragraph. Reaction of owner is final.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Together, they make the laws of the country.\nQ. The Parliament has two houses.\nR. The Lok Sabha is directly elected by the people.\nS. The Rajya Sabha represents the states.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P closes the paragraph. 'Together' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. She poured the batter into a tin.\nQ. The tin went into a hot oven.\nR. Forty minutes later, the aroma of fresh cake filled the house.\nS. Sheela mixed flour, sugar and butter.",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence R closes the paragraph. Last step in time.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. In the process, pollen sticks to their legs.\nQ. Bees visit flowers to collect nectar.\nR. They carry it to the next flower.\nS. Thus, bees help plants reproduce.",
+   "options": [
+    "Q",
+    "R",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S closes the paragraph. 'Thus' is the conclusion.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. They imagine higher salaries and better facilities.\nQ. Many young people dream of working abroad.\nR. Few consider the loneliness of living away from home.\nS. Such a decision should therefore be taken with a clear mind.",
+   "options": [
+    "S",
+    "P",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S closes the paragraph. 'therefore' wraps up the argument.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Winds uprooted trees and electric poles.\nQ. Fishermen had already been moved to shelters.\nR. The cyclone hit the coast at midnight.\nS. By morning, the storm had weakened and the sea grew calm.",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S closes the paragraph. Time moves to 'by morning'.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The journey was full of songs and jokes.\nQ. Our class planned a picnic to the hills.\nR. We returned home tired but happy.\nS. We hired a bus and packed lunch.",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence R closes the paragraph. The return is the final event.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. It comforts in solitude.\nQ. Hence, one should cultivate the habit of reading.\nR. A good book is a friend for life.\nS. It teaches without scolding.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence Q closes the paragraph. 'Hence' draws the lesson.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. He sighed and locked the drawer for the night.\nQ. Most were small coins.\nR. A few notes lay at the bottom.\nS. The shopkeeper counted his earnings.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P closes the paragraph. Locking the drawer is the ending action.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Farmers thank the sun for the harvest.\nQ. Rice is boiled in new pots until it overflows.\nR. The Tamil month of Thai begins in mid-January.\nS. The festival that marks this is called Pongal.",
+   "options": [
+    "S",
+    "P",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S closes the paragraph. Names the festival after the description.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. He practised every evening.\nQ. Satish was selected for the cricket team.\nR. In the first match, he scored a duck.\nS. He did not quit and scored a century in the next.",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S closes the paragraph. Comeback ends.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Glaciers store water in the highest peaks.\nQ. Thus, the mountains feed the plains below.\nR. Rivers cut valleys through them.\nS. Mountains are formed by the movement of the earth's plates.",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. 'Thus' conclusion.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The thief entered through the window.\nQ. The sleeping owner woke and raised an alarm.\nR. A floorboard creaked under his foot.\nS. He searched the drawers quietly.",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. Alarm follows creak.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. It also increases general knowledge.\nQ. Editorials teach how arguments are built.\nR. These benefits explain why toppers read them daily.\nS. Reading newspapers improves vocabulary.",
+   "options": [
+    "P",
+    "Q",
+    "S",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R closes the paragraph. 'These benefits explain' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Carrying heavy bags, she headed home.\nQ. Asha went to the market with a list.\nR. At the last shop, she picked up some spices.\nS. She bought vegetables and fruits.",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P closes the paragraph. Heading home ends it.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Water was available for drinking and farming.\nQ. Boats carried goods and people.\nR. Many ancient cities grew along rivers.\nS. This is why civilisations like the Indus Valley flourished near the Indus.",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S closes the paragraph. 'This is why' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The receptionist told him the panel had not yet arrived.\nQ. He sat down, relieved, and took a deep breath.\nR. Gaurav was late to the interview.\nS. He ran up the stairs in a panic.",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. Relief ends.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. He ended with a promise of full support to the affected.\nQ. He thanked doctors and nurses for their service.\nR. He urged citizens to follow safety rules.\nS. The prime minister addressed the nation on Sunday.",
+   "options": [
+    "R",
+    "P",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P closes the paragraph. 'ended with' marks the close.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. It is then shaped and placed in a tin.\nQ. The first step in baking bread is to mix the dough.\nR. The dough is left to rise for an hour.\nS. Finally, the bread is baked until golden.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S closes the paragraph. 'Finally' marks the end.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The nearest one is twenty kilometres away.\nQ. A health centre in the village is therefore an urgent need.\nR. Emergency patients suffer on the way.\nS. Our village has no hospital.",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. 'therefore' conclusion.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. He filled it and attached his documents.\nQ. Prashant went to the bank to open an account.\nR. A week later, his passbook arrived at his door.\nS. The clerk gave him a form.",
+   "options": [
+    "R",
+    "P",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R closes the paragraph. Last event in time.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The wood is dried for months.\nQ. Cricket bats are made from willow wood.\nR. The final product is polished and fitted with a handle.\nS. Craftsmen then shape it with planes.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R closes the paragraph. The finished product comes at the end.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. This puts pressure on food, water and housing.\nQ. Controlling growth is therefore essential for development.\nR. Cities become crowded and unhygienic.\nS. India's population is growing rapidly.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q closes the paragraph. 'therefore' wraps up.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The magician waved his wand.\nQ. A white dove appeared from his empty hat.\nR. The crowd held its breath.\nS. The hall erupted in applause.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S closes the paragraph. Applause is the reaction.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Anita lost her job during the slowdown.\nQ. She started a small tiffin service from her home.\nR. Today she employs six women from her neighbourhood.\nS. Orders grew through word of mouth.",
+   "options": [
+    "R",
+    "P",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R closes the paragraph. 'Today' last.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Songs and dances have a special charm.\nQ. They are popular in Russia and the Middle East.\nR. Hindi films are watched across the world.\nS. This soft power helps India's global image.",
+   "options": [
+    "R",
+    "P",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence S closes the paragraph. 'This soft power' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The channel was showing a cricket match.\nQ. The last ball was hit for a six and the nation cheered.\nR. India needed ten runs from the last over.\nS. Naveen switched on the television.",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. Result of the over.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. It gathers water from rain and melting snow.\nQ. A river begins as a stream in the mountains.\nR. Finally, it merges with the sea.\nS. As it moves down, it becomes wider.",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R closes the paragraph. 'Finally' marks the end.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. The state's economy thus depends heavily on tourism.\nQ. Its beaches are lined with palm trees.\nR. Goa attracts tourists from around the world.\nS. Portuguese churches add colonial charm.",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P closes the paragraph. 'thus' concluding inference.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Stitching took two days.\nQ. On the third day, the customer collected a perfectly fitting suit.\nR. The tailor measured the customer carefully.\nS. He cut the cloth with sharp shears.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q closes the paragraph. Collection is last.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Debates train students to think quickly.\nQ. For these reasons, schools should organise debates regularly.\nR. Shy students gain confidence.\nS. They also teach how to respect opposing views.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. 'For these reasons' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Within a month, work on the road began.\nQ. The villagers were angry about the broken road.\nR. They gathered outside the panchayat office.\nS. The sarpanch promised an inquiry.",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P closes the paragraph. Action ends.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Raju planted a mango sapling in his backyard.\nQ. He distributed the first mangoes to the entire street.\nR. He watered it daily.\nS. After five years, it began to bear fruit.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence Q closes the paragraph. Final act of sharing.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. Honesty is the best policy.\nQ. This is why trust is the foundation of every relationship.\nR. A liar needs a good memory.\nS. An honest person has nothing to hide.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q closes the paragraph. 'This is why' concludes.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. They remain only as intelligent as the people who program them.\nQ. They can also process it at great speed.\nR. Computers can store huge amounts of data.\nS. However, they cannot think on their own.",
+   "options": [
+    "S",
+    "P",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P closes the paragraph. Final comment on limitation.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come last to make a coherent paragraph?\nP. By midnight, the grounds were empty and silent.\nQ. A magician performed near the gate.\nR. The fair began on Saturday evening.\nS. Stalls sold bangles, toys and sweets.",
+   "options": [
+    "Q",
+    "S",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P closes the paragraph. Ending time.",
+   "shortcut": "The closer concludes, sums up or states a result; nothing can logically follow it.",
+   "subPattern": "closing-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

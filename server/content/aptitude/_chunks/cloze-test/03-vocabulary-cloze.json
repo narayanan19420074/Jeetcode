@@ -1,0 +1,774 @@
+{
+  "sets": [
+    {
+      "id": "cloze-test-s017",
+      "type": "text",
+      "title": "Fireworks of Sivakasi",
+      "text": "Sivakasi is (1) for its fireworks and match factories, which employ thousands of families. In the months before Diwali, the factories work (2), with workers putting in extra shifts to meet orders. Safety, however, remains a (3) concern, since the chemicals used are highly (4). The authorities regularly inspect units and (5) the licences of those that break the rules."
+    },
+    {
+      "id": "cloze-test-s018",
+      "type": "text",
+      "title": "A Young Spinner",
+      "text": "The young spinner from Tirunelveli made a (1) debut in the Ranji match, taking six wickets in his first innings. The captain (2) his bowling, saying that his control was remarkable for his age. The batters, however, were (3) by the sharp turn he got on a dry pitch. Selectors now (4) him to improve his fitness before the next season. If he stays (5), a national call-up may not be far away."
+    },
+    {
+      "id": "cloze-test-s019",
+      "type": "text",
+      "title": "Broadband in the Village",
+      "text": "The government's scheme to (1) broadband to villages has changed daily life in Thanjavur district. Farmers now (2) market prices on their phones before selling produce, which (3) them from being cheated by middlemen. Students attend online classes that were once (4) to city children alone. Yet, a few elders remain (5) about using such technology."
+    },
+    {
+      "id": "cloze-test-s020",
+      "type": "text",
+      "title": "The Cyclone Warning",
+      "text": "When the cyclone warning was issued, the Chennai administration acted (1). Boats were kept ready, and residents of low-lying areas were (2) to relief camps. Despite these efforts, many roads were (3) under knee-deep water for two days. Volunteers distributed food to the (4) families, and the state announced compensation to (5) the losses."
+    },
+    {
+      "id": "cloze-test-s021",
+      "type": "text",
+      "title": "Tea of the Nilgiris",
+      "text": "The tea gardens of the Nilgiris are (1) in mist every morning, giving the hills a dreamlike look. Pluckers, mostly women, (2) the tender leaves with remarkable speed. The leaves are then (3) in a factory, where they are withered, rolled and dried. A good tea depends on the (4) of the leaf and the care taken in processing. Exporters take (5) pride in the aroma of Nilgiri tea."
+    },
+    {
+      "id": "cloze-test-s022",
+      "type": "text",
+      "title": "Savings Groups",
+      "text": "Many rural families once kept their savings at home, (1) to theft and fire. The opening of a post-office branch in the village (2) this habit. Today, women's groups save small amounts every month and lend them to members at (3) interest. Such loans help families to (4) emergencies like illness without borrowing from moneylenders. The scheme has proved (5) to the village economy."
+    },
+    {
+      "id": "cloze-test-s023",
+      "type": "text",
+      "title": "The Trek",
+      "text": "The trek to Kedarkantha is (1) for beginners, as the climb is gradual and the trails are well marked. Guides (2) trekkers to carry warm clothes, since temperatures drop sharply at night. Along the way, the (3) snow-covered peaks offer breathtaking views. Trekkers are also expected to (4) the environment by taking their waste back. Those who do so (5) the forest for generations to come."
+    },
+    {
+      "id": "cloze-test-s024",
+      "type": "text",
+      "title": "The Newspaper Vendor",
+      "text": "Murugan has been a newspaper vendor in Coimbatore for thirty years. Every morning he (1) before dawn to collect bundles from the press. Despite the (2) hours and modest earnings, he never complains. He believes honesty is the (3) of any trade. His customers, who trust him (4), often leave their keys with him. Murugan hopes his daughter will (5) a career in teaching."
+    }
+  ],
+  "questions": [
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"Fireworks of Sivakasi\".",
+      "options": [
+        "renowned",
+        "ruined",
+        "reserved",
+        "reluctant"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Renowned for' means famous for, which suits a town known for its industry.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s017"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"Fireworks of Sivakasi\".",
+      "options": [
+        "tirelessly",
+        "lazily",
+        "rarely",
+        "casually"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Extra shifts to meet orders show hard, continuous effort: tirelessly.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s017"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"Fireworks of Sivakasi\".",
+      "options": [
+        "major",
+        "trivial",
+        "distant",
+        "pleasant"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'However' signals that safety is a serious matter, so 'major' fits; 'trivial' contradicts the dangerous chemicals.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s017"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"Fireworks of Sivakasi\".",
+      "options": [
+        "inflammable",
+        "edible",
+        "reliable",
+        "tolerant"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Chemicals that create a safety concern are likely to catch fire easily: inflammable.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s017"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"Fireworks of Sivakasi\".",
+      "options": [
+        "revoke",
+        "renew",
+        "reward",
+        "request"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Units that break rules lose their licences, so the authorities revoke them.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s017"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"A Young Spinner\".",
+      "options": [
+        "sensational",
+        "shameful",
+        "sluggish",
+        "secretive"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Six wickets on debut is spectacular, so 'sensational' fits; 'shameful' and 'sluggish' contradict it.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s018"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"A Young Spinner\".",
+      "options": [
+        "lauded",
+        "ridiculed",
+        "ignored",
+        "dreaded"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Remarkable control is a reason for praise: the captain lauded his bowling.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s018"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"A Young Spinner\".",
+      "options": [
+        "baffled",
+        "delighted",
+        "relieved",
+        "entertained"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'However' signals trouble for the batters, who were baffled by the turn.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s018"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"A Young Spinner\".",
+      "options": [
+        "urge",
+        "forbid",
+        "deny",
+        "mock"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One urges someone to improve; 'forbid him to improve' makes no sense.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s018"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"A Young Spinner\".",
+      "options": [
+        "consistent",
+        "careless",
+        "reluctant",
+        "hostile"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A call-up is likely only if his performances stay consistent.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s018"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"Broadband in the Village\".",
+      "options": [
+        "extend",
+        "extinguish",
+        "exempt",
+        "expel"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "One extends a service to a place; the other verbs do not take 'broadband to villages'.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s019"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"Broadband in the Village\".",
+      "options": [
+        "monitor",
+        "mimic",
+        "mislead",
+        "murmur"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Farmers keep watch on prices: monitor.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s019"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"Broadband in the Village\".",
+      "options": [
+        "shields",
+        "exposes",
+        "drives",
+        "delays"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Knowing prices protects farmers from being cheated: 'shields them from'.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s019"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"Broadband in the Village\".",
+      "options": [
+        "confined",
+        "opposed",
+        "scattered",
+        "invented"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Confined to' means limited only to; classes were limited to city children.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s019"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"Broadband in the Village\".",
+      "options": [
+        "sceptical",
+        "eager",
+        "grateful",
+        "curious"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Yet' introduces a contrast with the benefits, so doubtful 'sceptical' fits.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s019"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"The Cyclone Warning\".",
+      "options": [
+        "promptly",
+        "reluctantly",
+        "grudgingly",
+        "belatedly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Boats were kept ready in advance, showing quick action: promptly.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s020"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"The Cyclone Warning\".",
+      "options": [
+        "evacuated",
+        "evaded",
+        "evoked",
+        "evolved"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "People are moved out of danger areas: evacuated.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s020"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"The Cyclone Warning\".",
+      "options": [
+        "submerged",
+        "subsidised",
+        "submitted",
+        "subdued"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Roads under knee-deep water are submerged.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s020"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"The Cyclone Warning\".",
+      "options": [
+        "stranded",
+        "strengthened",
+        "stretched",
+        "stifled"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Families cut off by floods are stranded and need food.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s020"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"The Cyclone Warning\".",
+      "options": [
+        "offset",
+        "offend",
+        "offer",
+        "offload"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Compensation is meant to offset (make up for) losses.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s020"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"Tea of the Nilgiris\".",
+      "options": [
+        "shrouded",
+        "shattered",
+        "stuffed",
+        "shunned"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Shrouded in mist' means covered or wrapped in mist.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s021"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"Tea of the Nilgiris\".",
+      "options": [
+        "pick",
+        "peel",
+        "pour",
+        "pierce"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pluckers pick tender tea leaves.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s021"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"Tea of the Nilgiris\".",
+      "options": [
+        "processed",
+        "pardoned",
+        "pursued",
+        "plundered"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Withering, rolling and drying are stages of processing.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s021"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"Tea of the Nilgiris\".",
+      "options": [
+        "freshness",
+        "fashion",
+        "frequency",
+        "frailty"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Tea quality depends on how fresh the leaf is.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s021"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"Tea of the Nilgiris\".",
+      "options": [
+        "immense",
+        "immune",
+        "imminent",
+        "immoral"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Immense pride' is the standard collocation.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s021"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"Savings Groups\".",
+      "options": [
+        "vulnerable",
+        "immune",
+        "resistant",
+        "indifferent"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Vulnerable to' means exposed to risk; cash kept at home can be stolen or burnt.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s022"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"Savings Groups\".",
+      "options": [
+        "altered",
+        "aggravated",
+        "avoided",
+        "accused"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The branch changed the old habit: altered.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s022"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"Savings Groups\".",
+      "options": [
+        "nominal",
+        "notorious",
+        "nocturnal",
+        "nutritious"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Group loans carry a very small, nominal rate of interest.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s022"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"Savings Groups\".",
+      "options": [
+        "overcome",
+        "overlook",
+        "oversee",
+        "overturn"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Loans help families overcome (deal with) emergencies.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s022"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"Savings Groups\".",
+      "options": [
+        "beneficial",
+        "bothersome",
+        "barren",
+        "brittle"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A scheme that helps the economy is beneficial.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s022"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"The Trek\".",
+      "options": [
+        "suitable",
+        "sensitive",
+        "sullen",
+        "scarce"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A gradual, well-marked climb is suitable for beginners.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s023"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"The Trek\".",
+      "options": [
+        "advise",
+        "avoid",
+        "afford",
+        "abuse"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Guides advise trekkers about precautions.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s023"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"The Trek\".",
+      "options": [
+        "majestic",
+        "miserable",
+        "minute",
+        "mediocre"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Breathtaking snow-covered peaks are majestic.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s023"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"The Trek\".",
+      "options": [
+        "preserve",
+        "pollute",
+        "plunder",
+        "provoke"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Taking waste back protects, i.e. preserves, the environment.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s023"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"The Trek\".",
+      "options": [
+        "safeguard",
+        "sacrifice",
+        "scatter",
+        "squander"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Preserving the environment helps to safeguard the forest for the future.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s023"
+    },
+    {
+      "questionText": "Choose the word that fits blank (1) in the passage \"The Newspaper Vendor\".",
+      "options": [
+        "rises",
+        "raises",
+        "resides",
+        "rouses"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "\"Rise\" is intransitive and means to get up from bed, which fits getting up before dawn.\n\"Raises\" and \"rouses\" need an object (raise something, rouse someone), and \"resides\" means lives in a place, so none of them completes the sentence.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "easy",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s024"
+    },
+    {
+      "questionText": "Choose the word that fits blank (2) in the passage \"The Newspaper Vendor\".",
+      "options": [
+        "gruelling",
+        "gracious",
+        "gleaming",
+        "graceful"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Pre-dawn work is exhausting, so 'gruelling' fits the hours.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s024"
+    },
+    {
+      "questionText": "Choose the word that fits blank (3) in the passage \"The Newspaper Vendor\".",
+      "options": [
+        "foundation",
+        "fountain",
+        "fraction",
+        "fragrance"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Honesty is the foundation (base) of any trade.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s024"
+    },
+    {
+      "questionText": "Choose the word that fits blank (4) in the passage \"The Newspaper Vendor\".",
+      "options": [
+        "implicitly",
+        "implausibly",
+        "impatiently",
+        "imperfectly"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Trust implicitly' means to trust completely; customers leaving keys shows this.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "medium",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s024"
+    },
+    {
+      "questionText": "Choose the word that fits blank (5) in the passage \"The Newspaper Vendor\".",
+      "options": [
+        "pursue",
+        "persecute",
+        "perish",
+        "pester"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The blank needs a verb that takes \"a career\" as its object and fits a hope for the daughter's future.\n\"Pursue\" means to follow or work towards a career, so \"Murugan hopes his daughter will pursue a career in teaching\" is natural and correct.\n\"Persecute\" means to harass cruelly, \"perish\" means to die (and takes no object), and \"pester\" means to annoy; none of these can be paired with a career.",
+      "subPattern": "vocabulary-cloze",
+      "difficulty": "hard",
+      "examStyles": [
+        "general",
+        "campus-it"
+      ],
+      "setId": "cloze-test-s024"
+    }
+  ]
+}

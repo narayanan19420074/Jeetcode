@@ -1,0 +1,917 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [have not finished] her lunch yet.",
+   "options": [
+    "has not finished",
+    "do not finished",
+    "did not finished",
+    "is not finishing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Singular subject 'she' needs 'has' with the present perfect; 'yet' signals present perfect.",
+   "shortcut": "she / he / it + has + pp.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The children [was playing] in the park when it started to rain.",
+   "options": [
+    "were playing",
+    "is playing",
+    "has played",
+    "were played"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Children' is plural, so the past continuous needs 'were playing'.",
+   "shortcut": "Plural subject -> were.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He is [more taller than] his brother.",
+   "options": [
+    "taller than",
+    "most taller than",
+    "more tall than",
+    "tallest than"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A one-syllable adjective forms its comparative with -er; the double comparative 'more taller' is wrong.",
+   "shortcut": "No 'more' before an -er adjective.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I look forward [to see you] at the wedding.",
+   "options": [
+    "to seeing you",
+    "to saw you",
+    "for seeing you",
+    "to have seen you"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 'look forward to', 'to' is a preposition, so a gerund follows: 'to seeing'.",
+   "shortcut": "look forward to + -ing.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [did not went] to office yesterday.",
+   "options": [
+    "did not go",
+    "does not went",
+    "had not went",
+    "was not go"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'did not' the verb takes its base form: 'did not go'.",
+   "shortcut": "did + base verb.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Walking along the road, a snake bit the old man.]",
+   "options": [
+    "Walking along the road, the old man was bitten by a snake.",
+    "No improvement",
+    "Walking along the road, a snake was biting the old man.",
+    "Walking along the road, the snake's bite hurt the old man."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An opening participle phrase must describe the subject that follows. Only the old man can be walking, so he must be the subject.",
+   "shortcut": "Participle phrase -> its doer must come right after the comma.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Everyone in the office [were] invited to the party.",
+   "options": [
+    "was",
+    "are",
+    "have been",
+    "were being"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Everyone' is singular and takes a singular verb: 'was invited'.",
+   "shortcut": "Everyone / everybody / someone -> singular.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) If I [would have known] the truth, I would have told you.",
+   "options": [
+    "had known",
+    "will have known",
+    "would know",
+    "knew have"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third conditional: 'if + past perfect, would have + past participle'. The if-clause cannot contain 'would have'.",
+   "shortcut": "if + had + pp, would have + pp.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [said me that] he would come late.",
+   "options": [
+    "told me that",
+    "told to me that",
+    "says me that",
+    "said me to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Say' is not followed directly by a person; 'tell' takes a direct object: 'told me that'.",
+   "shortcut": "tell + person; say + (to person).",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [is working] in this company since 2018.",
+   "options": [
+    "has been working",
+    "works",
+    "worked",
+    "was working"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since' with a point of time and an action continuing to now requires the present perfect continuous.",
+   "shortcut": "since / for + continuing action -> has / have been + -ing.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [suggested me] to take rest.",
+   "options": [
+    "advised me",
+    "suggested to me",
+    "proposed me",
+    "recommended me"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Suggest', 'propose' and 'recommend' cannot take 'object + to-infinitive'; 'advise' can.",
+   "shortcut": "advise / ask / tell + me + to; suggest never.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Rahul as well as his friends [are] coming to the party.",
+   "options": [
+    "is",
+    "have been",
+    "were",
+    "are being"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'as well as' the verb agrees with the first subject, Rahul (singular): 'is coming'.",
+   "shortcut": "as well as: first subject decides.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Despite of] the heavy rain, the match continued.",
+   "options": [
+    "Despite",
+    "In despite of",
+    "Despite from",
+    "In spite"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Despite' is never followed by 'of'; 'in spite of' is the form with 'of'.",
+   "shortcut": "Despite = in spite of (no 'of' after despite).",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She gave the beggar [an one-rupee coin].",
+   "options": [
+    "a one-rupee coin",
+    "the one-rupee coins",
+    "an one rupees coin",
+    "a one-rupees coin"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'One' begins with the consonant sound /w/, so 'a' is used; a compound adjective before a noun stays singular.",
+   "shortcut": "Use 'a' before a consonant SOUND.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He is the [taller of the three] brothers.",
+   "options": [
+    "tallest of the three",
+    "more tall of the three",
+    "taller among three",
+    "most taller of three"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "For comparison among three or more, the superlative is used: 'tallest of the three'.",
+   "shortcut": "2 -> comparative; 3 or more -> superlative.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Of the two sisters, Meena is [the more intelligent].",
+   "options": [
+    "No improvement",
+    "the most intelligent",
+    "more intelligent than",
+    "most intelligent"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "For two persons, the comparative with 'the' ('the more intelligent') is correct; the superlative is for three or more.",
+   "shortcut": "Of the two -> the + comparative.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I [have seen him] yesterday at the market.",
+   "options": [
+    "saw him",
+    "have been seeing him",
+    "had seen him",
+    "am seeing him"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Yesterday' fixes a definite past time, so the simple past is required.",
+   "shortcut": "Definite past time -> simple past.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The man [whom I thought was honest] cheated me.",
+   "options": [
+    "who I thought was honest",
+    "whom I thought were honest",
+    "which I thought was honest",
+    "whose I thought was honest"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun is the subject of 'was honest' ('I thought' is parenthetical), so the subject form 'who' is needed.",
+   "shortcut": "Who = subject of the verb that follows.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [don't like] spicy food.",
+   "options": [
+    "doesn't like",
+    "didn't likes",
+    "not likes",
+    "aren't liking"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third person singular in the present takes 'does not' + base verb.",
+   "shortcut": "he / she / it -> doesn't + base verb.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) There [is] many books on the shelf.",
+   "options": [
+    "are",
+    "has been",
+    "is being",
+    "does"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'There' is followed by a verb that agrees with the real subject 'books' (plural): 'There are'.",
+   "shortcut": "There + verb agrees with the noun after it.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Neither Asha nor Meena [have] finished the work.",
+   "options": [
+    "has",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither ... nor' takes a singular verb when both subjects are singular.",
+   "shortcut": "Neither-nor with singular nouns -> singular verb.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) This is the [most easiest] way to solve it.",
+   "options": [
+    "easiest",
+    "more easiest",
+    "most easy",
+    "much easiest"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A superlative takes either 'most' + base adjective or the -est ending, never both.",
+   "shortcut": "No double superlative.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I am [use to] waking up early.",
+   "options": [
+    "used to",
+    "used for",
+    "use for",
+    "using to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The adjective phrase 'be used to' (accustomed to) is followed by a gerund; the form needs the -d.",
+   "shortcut": "be used to + -ing.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Because of he was late], he missed the train.",
+   "options": [
+    "Because he was late",
+    "Because of he is late",
+    "Because that he was late",
+    "Due to he was late"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Because of' and 'due to' are followed by a noun; a full clause requires 'because'.",
+   "shortcut": "Because + clause; Because of + noun.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She asked me [where was I going].",
+   "options": [
+    "where I was going",
+    "where am I going",
+    "where was I going to",
+    "where were I going"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In reported questions the word order is that of a statement: subject before verb, and the tense shifts to the past.",
+   "shortcut": "Reported question: no inversion.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The prices of vegetables [has risen] sharply this month.",
+   "options": [
+    "have risen",
+    "is risen",
+    "has been rise",
+    "have rose"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject 'prices' is plural, so 'have risen' is needed (past participle of rise is risen).",
+   "shortcut": "Plural subject -> have + pp.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Unless you [do not work] hard, you will fail.",
+   "options": [
+    "work",
+    "will not work",
+    "didn't work",
+    "would not work"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Unless' already means 'if ... not', so the verb must be positive to avoid a double negative.",
+   "shortcut": "Unless + positive verb.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [as well as his sons were] arrested.",
+   "options": [
+    "as well as his sons was",
+    "and his sons was",
+    "as well as his sons are",
+    "along with his sons were"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'as well as' the verb agrees with the first subject 'he' and the tense stays past: 'was arrested'.",
+   "shortcut": "as well as: first subject; keep the tense.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Had he studied harder, he [would pass] the exam.",
+   "options": [
+    "would have passed",
+    "will pass",
+    "would passed",
+    "had passed"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An inverted 'Had he studied' is a third conditional; the main clause takes 'would have + past participle'.",
+   "shortcut": "Had + subject + pp -> would have + pp.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The Prime Minister, along with his ministers, [have] arrived.",
+   "options": [
+    "has",
+    "were",
+    "are",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Along with' does not alter the number; the subject is 'the Prime Minister' (singular).",
+   "shortcut": "along with: ignore the add-on.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She is too tired to walk any further.",
+   "options": [
+    "No improvement",
+    "so tired to walk",
+    "very tired to walk",
+    "too tired for walk"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Too ... to' is the correct pattern expressing an unwanted result; the bracket-free sentence is already right.",
+   "shortcut": "too + adj + to-infinitive.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I [am knowing] him since childhood.",
+   "options": [
+    "have known him",
+    "know him",
+    "am known him",
+    "was knowing him"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Know' is a stative verb (no continuous form) and 'since' requires the present perfect: 'have known'.",
+   "shortcut": "Stative verbs: no -ing; since -> present perfect.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [prevented me to go] there.",
+   "options": [
+    "prevented me from going",
+    "prevented me going to",
+    "prevented to me go",
+    "prevented me from go"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Prevent' takes 'from + gerund': 'prevented me from going'.",
+   "shortcut": "prevent / stop / keep + object + FROM + -ing.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Scarcely he had] entered the room when the phone rang.",
+   "options": [
+    "Scarcely had he",
+    "Scarcely he has",
+    "Scarcely did he have",
+    "Scarcely he was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Scarcely' at the start requires inversion of auxiliary and subject: 'Scarcely had he entered'.",
+   "shortcut": "Negative adverb first -> inversion.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The boy [who's bag] was stolen reported it to the police.",
+   "options": [
+    "whose bag",
+    "who bag",
+    "whom bag",
+    "which bag"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The possessive relative pronoun for a person is 'whose' ('who's' = 'who is').",
+   "shortcut": "Possession -> whose.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [did a mistake] in the calculation.",
+   "options": [
+    "made a mistake",
+    "has done a mistake",
+    "had do a mistake",
+    "does a mistake"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The fixed collocation is 'make a mistake' (not 'do').",
+   "shortcut": "make a mistake; do homework.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He gave me [a good advice] before the interview.",
+   "options": [
+    "good advice",
+    "a good advices",
+    "good advices",
+    "an good advice"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Advice' is uncountable: no 'a' and no plural -s.",
+   "shortcut": "advice / information: no a, no -s.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He prefers cycling [than walking].",
+   "options": [
+    "to walking",
+    "from walking",
+    "rather walking",
+    "than to walk"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Prefer' is followed by 'to', not 'than': prefer X to Y.",
+   "shortcut": "prefer X TO Y.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Having been completed the work,] the engineers left the site.",
+   "options": [
+    "Having completed the work,",
+    "Being completed the work,",
+    "Have completed the work,",
+    "Having been completed work,"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The engineers did the work, so the active participle 'having completed' is needed; the passive 'been completed' cannot take an object.",
+   "shortcut": "Doer subject -> active participle.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) It is high time you [start] preparing for the exam.",
+   "options": [
+    "started",
+    "starts",
+    "will start",
+    "have start"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'It is high time' is followed by a past-tense verb (a present need expressed with the past).",
+   "shortcut": "It is (high) time + subject + past tense.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I wish I [was] a bird so that I could fly.",
+   "options": [
+    "were",
+    "am",
+    "will be",
+    "would be"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'wish' an unreal present wish takes the subjunctive 'were' for every person.",
+   "shortcut": "wish + subject + were.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [does not hardly speak] to anyone.",
+   "options": [
+    "hardly speaks",
+    "does not hardly speaks",
+    "doesn't scarcely speak",
+    "hardly does not speak"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' is already negative; adding 'not' creates a double negative.",
+   "shortcut": "hardly / scarcely / barely: no 'not'.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Each of the players have] received a medal.",
+   "options": [
+    "Each of the players has",
+    "Each of the player has",
+    "Each of the players are",
+    "Each of the players were"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular and takes 'has'; 'of the players' needs the plural noun.",
+   "shortcut": "Each of + plural noun + singular verb.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [cannot but to admire] his courage.",
+   "options": [
+    "cannot but admire",
+    "cannot help to admire",
+    "cannot but admiring",
+    "can not but to admire"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Cannot but' is followed by the bare infinitive: 'cannot but admire'.",
+   "shortcut": "cannot but + base verb.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) No sooner did he reach home [when] it began to rain.",
+   "options": [
+    "than",
+    "as",
+    "then",
+    "while"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'No sooner' is paired with 'than'; 'hardly / scarcely' pair with 'when'.",
+   "shortcut": "No sooner ... THAN.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Water [boil] at 100 degrees Celsius at sea level.",
+   "options": [
+    "boils",
+    "boiled",
+    "is boil",
+    "are boiling"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A scientific fact takes the simple present, and the singular subject 'water' needs -s.",
+   "shortcut": "Universal truth -> simple present.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The student, together with his parents, [are] meeting the principal tomorrow.",
+   "options": [
+    "is",
+    "were",
+    "have",
+    "are being"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Together with' does not change the number of the subject; 'the student' is singular: 'is meeting'.",
+   "shortcut": "together with: ignore add-on.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Mohan [as well as his brother has] won a scholarship.",
+   "options": [
+    "No improvement",
+    "as well as his brother have",
+    "and his brother has",
+    "with his brother have"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb agrees with the first subject Mohan: 'has'. The sentence is already correct.",
+   "shortcut": "as well as: first subject; singular here.",
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

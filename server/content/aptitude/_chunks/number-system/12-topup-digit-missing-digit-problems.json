@@ -1,0 +1,212 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The sum of the digits of a two-digit number is 9. If 27 is added to the number, its digits get reversed. What is the number?",
+   "options": [
+    "36",
+    "27",
+    "45",
+    "63"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the number be 10a + b with a + b = 9. Reversed − original = 9(b − a) = 27, so b − a = 3. With a + b = 9: a = 3, b = 6. The number is 36.",
+   "shortcut": "Reverse − original = 9 × (difference of digits).",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The product of the digits of a two-digit number is 24. If 18 is added to the number, the digits interchange places. What is the number?",
+   "options": [
+    "38",
+    "46",
+    "83",
+    "47"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Possible digit pairs with product 24: (3, 8), (4, 6). For reversal to add 18, b − a = 2, so the pair is (4, 6): the number is 46 (46 + 18 = 64).",
+   "shortcut": "9(b − a) = 18 ⇒ digits differ by 2.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many times does the digit 7 appear when writing all the numbers from 1 to 100?",
+   "options": [
+    "10",
+    "11",
+    "20",
+    "19"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Units place: 7, 17, ..., 97 gives 10. Tens place: 70 to 79 gives 10. Total = 20.",
+   "shortcut": "Count units and tens places separately.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a three-digit number the hundreds digit is twice the units digit, the sum of the digits is 14, and the tens digit is greater than the hundreds digit. What is the number?",
+   "options": [
+    "653",
+    "824",
+    "572",
+    "482"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let units = u, hundreds = 2u, tens = 14 − 3u. Valid for u = 2, 3, 4: numbers 482, 653, 824. Only 482 has tens digit (8) greater than hundreds digit (4).",
+   "shortcut": "Express all three digits in terms of one variable.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For a two-digit number, the digits add up to 8 and the number exceeds the number formed by reversing its digits by 36. What is the number?",
+   "options": [
+    "62",
+    "26",
+    "35",
+    "71"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Number − reverse = 9(a − b) = 36, so a − b = 4. With a + b = 8: a = 6, b = 2. The number is 62.",
+   "shortcut": "9 × (tens − units) = difference.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many three-digit numbers have a digit sum equal to 5?",
+   "options": [
+    "12",
+    "15",
+    "18",
+    "21"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let the hundreds digit be h ≥ 1 and put h' = h − 1. Then h' + t + u = 4 with non-negative digits: C(6,2) = 15 solutions.",
+   "shortcut": "Stars and bars after reducing the hundreds digit by 1.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many times is the digit 1 used when writing all the numbers from 1 to 200?",
+   "options": [
+    "120",
+    "160",
+    "140",
+    "141"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Units place: 20 times (1, 11, ..., 191). Tens place: 20 times (10–19, 110–119). Hundreds place: 100 times (100–199). Total = 20 + 20 + 100 = 140.",
+   "shortcut": "Count each place value separately.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many digits are used in numbering the pages of a book that has 120 pages?",
+   "options": [
+    "240",
+    "360",
+    "253",
+    "252"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pages 1–9: 9 digits. Pages 10–99: 90 × 2 = 180. Pages 100–120: 21 × 3 = 63. Total = 9 + 180 + 63 = 252.",
+   "shortcut": "Split by number of digits.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest three-digit number whose digits have a product of 36?",
+   "options": [
+    "149",
+    "166",
+    "194",
+    "229"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hundreds digit must be 1 for the smallest number, so the other two digits multiply to 36: (4, 9), (6, 6), (9, 4). The smallest is 149.",
+   "shortcut": "Minimise the hundreds digit first.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many three-digit numbers have their digits in strictly increasing order from left to right (such as 148 or 359)?",
+   "options": [
+    "56",
+    "84",
+    "72",
+    "120"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Choosing any three distinct digits from 1–9 and arranging them in increasing order gives exactly one number; zero cannot be used since it would be smaller than the hundreds digit. So C(9, 3) = 84.",
+   "shortcut": "Choose 3 distinct digits from 1–9; order is forced.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of all the three-digit numbers that can be formed using the digits 1, 3 and 5, each used exactly once?",
+   "options": [
+    "2109",
+    "999",
+    "1998",
+    "1665"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each digit appears 2 times in each place. Sum = 2 × (1 + 3 + 5) × 111 = 2 × 9 × 111 = 1998.",
+   "shortcut": "Sum = (n−1)! × (sum of digits) × 111.",
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,945 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "Statement: Should helmets be compulsory for all two-wheeler riders?\nArguments:\nI. Yes, helmets greatly reduce the risk of fatal head injuries in accidents.\nII. No, some riders find helmets uncomfortable.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I gives a serious, relevant reason. II is a minor inconvenience that does not outweigh safety.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should smoking in public places be banned?\nArguments:\nI. No, smokers enjoy smoking.\nII. Yes, passive smoking harms the health of non-smokers.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II points to real harm to others. I is a personal preference.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should education up to class 8 be free in India?\nArguments:\nI. Yes, it ensures that children of poor families can also study.\nII. No, the government has many other things to do.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is specific and relevant. II is vague.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should plastic carry bags be banned?\nArguments:\nI. No, they look attractive.\nII. Yes, they clog drains and harm animals that swallow them.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II names real harms. Appearance in I is trivial.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the sale of tobacco to persons below 18 years be banned?\nArguments:\nI. Yes, young people are more prone to addiction and early use harms health for life.\nII. No, many adults also smoke.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is relevant to the age limit. II is irrelevant to the question about minors.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government subsidise rooftop solar panels?\nArguments:\nI. No, solar panels look ugly.\nII. Yes, they cut electricity bills and reduce dependence on coal-based power.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II gives economic and environmental reasons. I is a matter of taste.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should yoga be included in the school curriculum?\nArguments:\nI. Yes, it improves fitness and concentration among students.\nII. No, yoga is a very old practice.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I names direct benefits. The age of yoga in II is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should loudspeakers be banned at night in cities?\nArguments:\nI. No, loudspeakers were invented long ago.\nII. Yes, night noise disturbs sleep and harms the health of residents.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is relevant and important. I is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should CCTV cameras be installed in all railway coaches?\nArguments:\nI. Yes, they would deter crime and help identify offenders.\nII. No, trains already have window grills.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is directly relevant to safety. II does not address crime inside coaches.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should schools have a four-day week?\nArguments:\nI. Yes, because students like holidays.\nII. No, because it is a new idea.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Liking holidays and newness are not valid reasons; both are weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government ban all private cars in cities?\nArguments:\nI. Yes, because some people drive badly.\nII. No, because everyone loves cars.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I generalises from a few drivers and II is an exaggerated claim. Both are weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government provide free internet access to students?\nArguments:\nI. No, students may spend time on games.\nII. Yes, it gives all students equal access to online learning resources.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is specific and relevant. I is speculative and applies to any facility.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should fireworks be banned in cities with severe air pollution?\nArguments:\nI. Yes, they sharply raise pollutants and harm people with breathing problems.\nII. No, children enjoy them.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is a serious health reason. Enjoyment in II is trivial next to it.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government stop printing currency notes altogether?\nArguments:\nI. No, many people without digital access still depend on cash for daily transactions.\nII. Yes, because notes get dirty.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is relevant and important. Dirt in II can be fixed by replacing notes and is trivial.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should government hospitals treat accident victims free of charge in emergencies?\nArguments:\nI. No, because hospitals use a lot of paper.\nII. Yes, delay caused by payment issues can cost lives.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is about life and death. I is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "easy",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should rear-seat passengers also be required to wear seat belts?\nArguments:\nI. No, rear seats are used less often.\nII. Yes, rear passengers too suffer serious injuries in crashes.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is relevant to safety. I is not a reason to skip safety.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government set up more vocational training institutes?\nArguments:\nI. Yes, they provide job-oriented skills to the youth.\nII. No, youth prefer degrees.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I names a specific benefit. II is a sweeping claim about preference.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should village panchayats be given greater financial powers?\nArguments:\nI. Yes, they know local needs best and can spend accordingly.\nII. Yes, they can take quick decisions on local works without waiting for approvals.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Both give relevant, specific advantages of local control.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government encourage organic farming?\nArguments:\nI. Yes, it reduces chemical residues in food and damage to soil.\nII. No, organic farming has never been practised anywhere.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I names real benefits. II is a false and irrelevant claim.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should mobile phones be banned inside school premises?\nArguments:\nI. No, the mobile phone is a modern invention.\nII. Yes, they distract students during lessons.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is directly relevant to learning. I is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government build more cold storage facilities near farms?\nArguments:\nI. Yes, they reduce post-harvest losses of fruits and vegetables.\nII. No, farmers do not like storing produce.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is specific. II is a vague, unsupported claim.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the sale of fast food be banned in school canteens?\nArguments:\nI. Yes, because fast food was first made in the USA.\nII. No, because children like fast food.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Place of origin is irrelevant and liking is not a good reason. Both are weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should foreign universities be allowed to set up campuses in India?\nArguments:\nI. Yes, Indian students could get international education without going abroad.\nII. No, they may charge fees that most students cannot afford.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Both are relevant, specific consequences for students.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should medicines be sold only on a doctor's prescription?\nArguments:\nI. Yes, wrong self-medication can seriously harm patients.\nII. No, because chemists would lose some business.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is about public health. II is a narrow commercial concern.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government give free bicycles to school girls in rural areas?\nArguments:\nI. Yes, it helps girls reach distant schools and reduces dropouts.\nII. No, cycles are slow.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is relevant to school access. Speed in II is beside the point.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should all mobile phone chargers follow one common standard?\nArguments:\nI. No, chargers are small devices.\nII. Yes, it reduces electronic waste and expenses for consumers.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II gives real benefits. I is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should child labour in firecracker factories be banned?\nArguments:\nI. Yes, such work endangers children's lives and denies them schooling.\nII. No, because children are small.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is serious and relevant. II is meaningless as a reason.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the cricket World Cup be held only in India?\nArguments:\nI. Yes, because Indians love cricket.\nII. No, because other countries also have stadiums.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Neither reason addresses the question of exclusivity in a specific, important way.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government immediately stop free electricity to farmers?\nArguments:\nI. Yes, because farmers do not pay for anything.\nII. No, an abrupt stop would raise irrigation costs and hurt small farmers.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II names a specific consequence. I is a false generalisation.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should all city buses be fitted with GPS trackers?\nArguments:\nI. No, GPS uses satellites.\nII. Yes, passengers can know bus arrival times and plan journeys.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is practical benefit. I is not a disadvantage.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should rainwater harvesting be compulsory in all new buildings?\nArguments:\nI. Yes, it recharges groundwater.\nII. Yes, it reduces dependence on tanker or piped water in dry months.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Both give relevant and important benefits.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the number of working days of Parliament be increased?\nArguments:\nI. Yes, because Members like attending.\nII. No, because the Parliament building is old.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Members' liking and the age of the building are irrelevant. Both are weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government regulate fees charged by private coaching institutes?\nArguments:\nI. Yes, unregulated high fees put quality coaching out of reach for middle-class students.\nII. No, coaching institutes advertise heavily.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I names a real consequence. Advertising in II is irrelevant to fees.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government stop all funding for scientific research?\nArguments:\nI. No, research leads to new technologies and improvements in health and agriculture.\nII. Yes, because research results take years to come.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I shows lasting benefits. Delay in II is not a reason to stop funding.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should every village be given broadband internet?\nArguments:\nI. Yes, it gives rural students and farmers access to information and services.\nII. No, villagers do not use anything modern.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is specific. II is a false generalisation.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should first-aid training be compulsory in schools?\nArguments:\nI. Yes, trained students can help in the crucial minutes after an accident.\nII. Yes, it builds confidence and a habit of care in emergencies.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Both are relevant and meaningful benefits.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should school uniforms be abolished?\nArguments:\nI. Yes, because children like colourful clothes.\nII. No, because tailors earn from uniforms.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Liking colours and tailors' income are not important grounds for the policy. Both are weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the sale of liquor near highways be banned?\nArguments:\nI. Yes, it reduces accidents caused by drunk driving.\nII. No, because liquor shops are found everywhere.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is relevant to safety. II is not a reason.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should large buildings undergo a fire-safety audit every year?\nArguments:\nI. Yes, regular audits find faulty equipment and blocked exits before a fire occurs.\nII. No, because fire engines are red.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is directly relevant to safety. II is meaningless.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government cut import duty on pulses when their prices are very high?\nArguments:\nI. Yes, cheaper imports would raise supply and bring down prices for consumers.\nII. No, because pulses are tasty.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is relevant and specific. Taste in II is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government set up fast-track courts for cyber fraud cases?\nArguments:\nI. Yes, such cases are rising fast and delayed trials discourage victims from reporting.\nII. No, because computers are used in courts.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is specific and important. II is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should employers have unlimited access to employees' personal phone data?\nArguments:\nI. Yes, because employers pay the salaries.\nII. No, it violates employees' privacy, which a job does not waive.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II rests on privacy. Paying a salary does not give a right to personal data, so I is weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should a toll-free number be started for complaints against corruption?\nArguments:\nI. Yes, citizens can report quickly and without fear of being identified.\nII. No, toll-free numbers are easy to remember.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is a real benefit. II is not a reason against.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the study of the regional language be compulsory in all schools of a state?\nArguments:\nI. Yes, it preserves the language and culture of the state.\nII. Yes, it helps students communicate locally and use state services.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Both give relevant and important reasons.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should paper land records be replaced by digital records?\nArguments:\nI. Yes, digital records reduce tampering and speed up verification.\nII. No, paper records have been used for centuries.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I names concrete benefits. Tradition in II is not an argument.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the government subsidise electric buses for city transport?\nArguments:\nI. No, a bus is used only by some people.\nII. Yes, they have no tailpipe emissions and low running cost per kilometre.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II gives specific advantages. I is vague and wrong in scope.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should the sale of energy drinks to children be restricted?\nArguments:\nI. Yes, their high caffeine and sugar content harms children's health.\nII. No, energy drinks are advertised during cricket matches.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. I is a health reason. Advertising in II does not justify selling to children.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should every university declare results within 30 days of the exam?\nArguments:\nI. No, evaluators also work in the evening.\nII. Yes, delayed results hamper students' admissions and job applications.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II is a relevant effect on students. I is irrelevant.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should registration of all pet dogs be made compulsory?\nArguments:\nI. Yes, because dogs have four legs.\nII. No, because some people keep cats.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. Neither reason has any bearing on registration. Both are weak.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Statement: Should national highways have more rest areas?\nArguments:\nI. No, highways are meant for moving vehicles.\nII. Yes, driver fatigue is a major cause of highway accidents and rest areas let drivers rest.\nWhich of the following is a strong argument?",
+      "options": [
+        "Only I is strong",
+        "Only II is strong",
+        "Both I and II are strong",
+        "Neither I nor II is strong"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "A strong argument is relevant, specific and important to the question; vague, trivial, irrelevant or purely personal reasons are weak. II links rest areas to safety. I is a vague statement of purpose.",
+      "shortcut": "Ask: does the reason bear directly on the question with real consequences? Reject trivial, vague or irrelevant reasons.",
+      "subPattern": "statement-argument",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "general"
+      ],
+      "setId": null
+    }
+  ]
+}

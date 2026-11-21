@@ -1,0 +1,774 @@
+{
+ "sets": [
+  {
+   "id": "cloze-test-s001",
+   "type": "text",
+   "title": "Monsoon in Kerala",
+   "text": "The southwest monsoon usually (1) over the Kerala coast in the first week of June, bringing relief after a scorching summer. Farmers in Palakkad wait for the first showers with great (2), because the paddy sowing depends on them. Fishermen, on the other hand, are (3) cautious, as rough seas make it dangerous to venture out. The government therefore bans deep-sea fishing for about two months; (4), the fishing families receive rice and a small allowance during this period. Although the rains cause occasional floods, most Kerala households (5) them as a blessing rather than a curse."
+  },
+  {
+   "id": "cloze-test-s002",
+   "type": "text",
+   "title": "A Banana Chips Unit in Trichy",
+   "text": "Ramesh started a small unit in Trichy that makes banana chips. In the beginning, he (1) all the work himself, from peeling the raw bananas to packing the finished product. Orders grew steadily, (2) he soon hired four women from his neighbourhood. He insisted on (3) hygiene, so every worker wore gloves and a cap. The chips were fried in fresh coconut oil, which gave them a (4) flavour that customers could not find in factory-made brands. By the end of the year, his chips were (5) in shops across three districts."
+  },
+  {
+   "id": "cloze-test-s003",
+   "type": "text",
+   "title": "Digital Payments in India",
+   "text": "UPI has transformed the way Indians pay for everyday goods. A vegetable seller in Madurai can now accept money from a customer within seconds, (1) carrying a single rupee of change. The system is (2) popular among young people, who rarely keep cash in their wallets. (3), the rapid growth has raised concerns about online fraud. Banks regularly (4) customers not to share their PIN with anyone, not even with a person claiming to be a bank employee. Experts believe that awareness, rather than technology alone, will (5) the key to safer payments."
+  },
+  {
+   "id": "cloze-test-s004",
+   "type": "text",
+   "title": "A Railway Journey",
+   "text": "Travelling by train across India is an experience that no one can easily (1). The Rajdhani leaves Delhi at dusk, and by the time passengers have finished dinner, the plains of Uttar Pradesh are (2) past the window in darkness. Strangers soon become friends (3) they share food, newspapers and stories. In the morning, the (4) of hot tea and the cry of vendors wake everyone up. Even though flights are faster, many people (5) the slow comfort of the railways."
+  },
+  {
+   "id": "cloze-test-s005",
+   "type": "text",
+   "title": "Water Conservation in Rajasthan",
+   "text": "In the dry villages of Rajasthan, water has always been a (1) resource. Generations ago, people built stepwells and tanks to collect rainwater, (2) modern pipelines were even imagined. Today, many such structures have been (3) and are being repaired by local communities. The villagers (4) that every drop saved during the rains helps them survive the long summer. If the practice (5) across the state, the dependence on tanker water would fall sharply."
+  },
+  {
+   "id": "cloze-test-s006",
+   "type": "text",
+   "title": "Coaching Young Cricketers",
+   "text": "Many young cricketers in small towns dream of playing for India, but talent alone is not (1). Without proper coaching, even a gifted batter may develop faults in technique that go (2) for years. A good coach does not merely teach shots; he also builds (3) in the player. Sudha, a coach in Hosur, makes her students practise in all weather conditions, (4) match situations never wait for perfect weather. Her trainees have won district trophies, and two of them (5) selected for the state under-19 squad."
+  },
+  {
+   "id": "cloze-test-s007",
+   "type": "text",
+   "title": "A Library for a Village School",
+   "text": "The panchayat school in a village near Erode had no library until last year. Students had to (1) on their textbooks alone, and few of them had ever read a story book. Then a retired teacher donated nearly five hundred books, (2) a small room was converted into a reading corner. Within months, children who were once shy began to (3) their favourite characters with enthusiasm. Attendance also improved, (4) the library had become the most attractive place in the school. The headmaster now hopes to (5) the collection to a thousand books by next year."
+  },
+  {
+   "id": "cloze-test-s008",
+   "type": "text",
+   "title": "The Heritage of Madurai",
+   "text": "Madurai is among the oldest living cities in India, (1) history stretches back more than two thousand years. The Meenakshi temple, with its tall gateways covered in colourful sculptures, (2) lakhs of visitors every year. During the Chithirai festival, the entire city (3) into a sea of devotees. Local guides recommend that tourists arrive early, (4) the crowds are smaller and the stone floors are still cool. The city is equally famous for its jasmine, which is (5) into garlands and sold in every street."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Monsoon in Kerala\".",
+   "options": [
+    "sets in",
+    "sets up",
+    "sets down",
+    "sets aside"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Set in' is the fixed phrasal verb for the arrival of a season or weather pattern: the monsoon sets in.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s001"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Monsoon in Kerala\".",
+   "options": [
+    "anticipation",
+    "anticipate",
+    "anticipated",
+    "anticipating"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the adjective 'great' a noun is needed; 'anticipation' is the noun form.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s001"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Monsoon in Kerala\".",
+   "options": [
+    "understandably",
+    "understandable",
+    "understanding",
+    "understood"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An adverb is needed to modify the adjective 'cautious'; 'understandably' fits.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s001"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Monsoon in Kerala\".",
+   "options": [
+    "In return",
+    "On the contrary",
+    "Nevertheless",
+    "Otherwise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The allowance is given in exchange for the ban, so 'In return' links the two ideas; the others signal opposition or a threat.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s001"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Monsoon in Kerala\".",
+   "options": [
+    "regard",
+    "regret",
+    "resemble",
+    "reserve"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Regard X as Y' is the correct pattern: regard them as a blessing.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s001"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A Banana Chips Unit in Trichy\".",
+   "options": [
+    "did",
+    "does",
+    "will do",
+    "has done"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'In the beginning' refers to a finished past period, so the simple past 'did' is needed.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s002"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A Banana Chips Unit in Trichy\".",
+   "options": [
+    "so",
+    "although",
+    "unless",
+    "because"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth in orders is the reason for hiring, so the result connector 'so' is correct.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s002"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A Banana Chips Unit in Trichy\".",
+   "options": [
+    "maintaining",
+    "maintain",
+    "maintained",
+    "to maintain"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Insist on' is followed by a gerund (verb + ing): insisted on maintaining.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s002"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A Banana Chips Unit in Trichy\".",
+   "options": [
+    "distinctive",
+    "distinction",
+    "distinctively",
+    "distinguish"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An adjective is needed before the noun 'flavour'; 'distinctive' means characteristic and unique.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s002"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A Banana Chips Unit in Trichy\".",
+   "options": [
+    "available",
+    "avoidable",
+    "valuable",
+    "reliable"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chips being sold in shops means they were 'available' there.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s002"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Digital Payments in India\".",
+   "options": [
+    "without",
+    "with",
+    "besides",
+    "through"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The benefit is that no change needs to be carried, so 'without carrying' is right.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s003"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Digital Payments in India\".",
+   "options": [
+    "especially",
+    "especial",
+    "specialty",
+    "specialise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An adverb is needed to modify 'popular'; 'especially' fits.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s003"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Digital Payments in India\".",
+   "options": [
+    "However",
+    "Therefore",
+    "Similarly",
+    "Moreover"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The sentence introduces a drawback after praise, so a contrast word, 'However', is needed.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s003"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Digital Payments in India\".",
+   "options": [
+    "advise",
+    "suggest",
+    "discuss",
+    "describe"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Advise someone not to do' takes an object plus infinitive; 'suggest' needs a 'that' clause.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s003"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Digital Payments in India\".",
+   "options": [
+    "be",
+    "being",
+    "been",
+    "is"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the modal 'will' the base form 'be' is used.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s003"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A Railway Journey\".",
+   "options": [
+    "forget",
+    "forgot",
+    "forgetting",
+    "forgotten"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the modal 'can' the base form 'forget' is used.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s004"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A Railway Journey\".",
+   "options": [
+    "rushing",
+    "rushed",
+    "rush",
+    "rushes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Are' needs a present participle to form the continuous tense: are rushing.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s004"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A Railway Journey\".",
+   "options": [
+    "as",
+    "unless",
+    "although",
+    "until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Friendship grows because of sharing, so 'as' (meaning because/while) is correct.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s004"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A Railway Journey\".",
+   "options": [
+    "aroma",
+    "aroused",
+    "arena",
+    "armour"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The aroma (pleasant smell) of tea can wake people; the other words do not fit the sentence.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s004"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A Railway Journey\".",
+   "options": [
+    "prefer",
+    "preferring",
+    "preferred",
+    "prefers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The plural subject 'many people' takes the present form 'prefer', matching the general statement.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s004"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Water Conservation in Rajasthan\".",
+   "options": [
+    "precious",
+    "previous",
+    "pretty",
+    "precise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Water scarce in a desert region is a 'precious' resource.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s005"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Water Conservation in Rajasthan\".",
+   "options": [
+    "before",
+    "after",
+    "unless",
+    "since"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The stepwells came earlier than pipelines, so 'before' is logical.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s005"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Water Conservation in Rajasthan\".",
+   "options": [
+    "neglected",
+    "negotiated",
+    "neglecting",
+    "neglect"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The structures need repair, so they were 'neglected'; the passive needs the past participle.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s005"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Water Conservation in Rajasthan\".",
+   "options": [
+    "realise",
+    "realises",
+    "realising",
+    "to realise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Plural subject 'villagers' with a present-tense general truth takes 'realise'.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s005"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Water Conservation in Rajasthan\".",
+   "options": [
+    "spread",
+    "spreads",
+    "spreading",
+    "will spread"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Would fall' in the main clause signals an unreal conditional, which needs the simple past form 'spread' in the if-clause.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s005"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Coaching Young Cricketers\".",
+   "options": [
+    "enough",
+    "plenty",
+    "several",
+    "any"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Not enough' is the natural phrase after 'is'; the other words do not fit grammatically.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s006"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Coaching Young Cricketers\".",
+   "options": [
+    "unnoticed",
+    "unnoticing",
+    "unnotice",
+    "unnoticeable"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Go unnoticed' is the fixed expression meaning not be observed.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s006"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Coaching Young Cricketers\".",
+   "options": [
+    "confidence",
+    "confident",
+    "confidently",
+    "confide"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A noun is needed after 'builds'; 'confidence' fits.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s006"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Coaching Young Cricketers\".",
+   "options": [
+    "because",
+    "although",
+    "unless",
+    "hence"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The second clause gives the reason for practising in all weather, so 'because' is right.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s006"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Coaching Young Cricketers\".",
+   "options": [
+    "were",
+    "was",
+    "is",
+    "being"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Plural subject 'two of them' and a past achievement need 'were'.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s006"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A Library for a Village School\".",
+   "options": [
+    "depend",
+    "wait",
+    "look",
+    "dwell"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Depend on' means to rely upon, which fits the sentence.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s007"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A Library for a Village School\".",
+   "options": [
+    "and",
+    "but",
+    "unless",
+    "though"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The second event follows naturally from the donation, so the additive 'and' is correct.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s007"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A Library for a Village School\".",
+   "options": [
+    "discuss",
+    "converse",
+    "chat",
+    "talk"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Discuss' takes a direct object; 'converse', 'chat' and 'talk' need 'about' or 'with'.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s007"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A Library for a Village School\".",
+   "options": [
+    "as",
+    "although",
+    "unless",
+    "if"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As' means 'because' here and gives the reason for improved attendance.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s007"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A Library for a Village School\".",
+   "options": [
+    "raise",
+    "rise",
+    "arise",
+    "rouse"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Raise' is transitive (raise the collection to); 'rise' and 'arise' cannot take an object.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s007"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The Heritage of Madurai\".",
+   "options": [
+    "whose",
+    "who",
+    "which",
+    "whom"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun shows possession of 'history' by the city, so 'whose' is needed.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s008"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The Heritage of Madurai\".",
+   "options": [
+    "attracts",
+    "attract",
+    "attracted",
+    "attracting"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Singular subject 'temple' and a habitual present need 'attracts'.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s008"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The Heritage of Madurai\".",
+   "options": [
+    "turns",
+    "turn",
+    "turned",
+    "turning"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Singular subject 'city' in a present-tense description takes 'turns'.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s008"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The Heritage of Madurai\".",
+   "options": [
+    "when",
+    "where",
+    "why",
+    "what"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The time (early morning) is being described, so 'when' is correct.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s008"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The Heritage of Madurai\".",
+   "options": [
+    "strung",
+    "strong",
+    "stringing",
+    "string"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Is' needs a past participle: jasmine is strung into garlands.",
+   "subPattern": "passage-with-5-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s008"
+  }
+ ]
+}

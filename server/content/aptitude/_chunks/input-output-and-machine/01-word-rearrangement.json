@@ -1,0 +1,575 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: station rose gold mountain landscape. Step I: gold station rose mountain landscape. Step II: gold rose mountain landscape station. Following the same rule, what will Step III be?",
+   "options": [
+    "gold landscape rose mountain station",
+    "rose gold station mountain landscape",
+    "station rose mountain landscape gold",
+    "station rose mountain gold landscape"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the right end. Applying it: Input: station rose gold mountain landscape | Step I: gold station rose mountain landscape | Step II: gold rose mountain landscape station | Step III: gold landscape rose mountain station. So Step III is gold landscape rose mountain station.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: ink house calendar butterfly chocolate. Step I: butterfly ink house calendar chocolate. Step II: butterfly calendar ink house chocolate. Following the same rule, what will Step III be?",
+   "options": [
+    "butterfly chocolate calendar house ink",
+    "butterfly calendar chocolate ink house",
+    "ink house chocolate calendar butterfly",
+    "butterfly calendar chocolate house ink"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: ink house calendar butterfly chocolate | Step I: butterfly ink house calendar chocolate | Step II: butterfly calendar ink house chocolate | Step III: butterfly calendar chocolate ink house. So Step III is butterfly calendar chocolate ink house.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: pencil motorcycle house bell rain. Step I: pencil motorcycle house rain bell. Step II: pencil motorcycle rain house bell. Following the same rule, what will Step III be?",
+   "options": [
+    "bell house motorcycle pencil rain",
+    "pencil rain motorcycle house bell",
+    "rain pencil motorcycle house bell",
+    "bell house pencil motorcycle rain"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: pencil motorcycle house bell rain | Step I: pencil motorcycle house rain bell | Step II: pencil motorcycle rain house bell | Step III: pencil rain motorcycle house bell. So Step III is pencil rain motorcycle house bell.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: playground passenger pavilion diamond tree. Step I: tree playground passenger pavilion diamond. Step II: tree diamond playground passenger pavilion. Following the same rule, what will Step III be?",
+   "options": [
+    "playground passenger pavilion diamond tree",
+    "tree playground passenger pavilion diamond",
+    "playground tree pavilion passenger diamond",
+    "tree diamond pavilion playground passenger"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is shortest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: playground passenger pavilion diamond tree | Step I: tree playground passenger pavilion diamond | Step II: tree diamond playground passenger pavilion | Step III: tree diamond pavilion playground passenger. So Step III is tree diamond pavilion playground passenger.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: train pen fan temple coin. Step I: pen fan temple coin train. Step II: pen fan coin temple train. Following the same rule, what will Step III be?",
+   "options": [
+    "coin fan pen temple train",
+    "train temple pen fan coin",
+    "fan coin pen temple train",
+    "train temple coin fan pen"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: train pen fan temple coin | Step I: pen fan temple coin train | Step II: pen fan coin temple train | Step III: fan coin pen temple train. So Step III is fan coin pen temple train.",
+   "shortcut": "Fix the largest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: notebook temple restaurant map mango. Step I: map notebook temple restaurant mango. Step II: map notebook temple mango restaurant. Following the same rule, what will Step III be?",
+   "options": [
+    "mango map notebook temple restaurant",
+    "map mango notebook temple restaurant",
+    "temple restaurant notebook map mango",
+    "mango map notebook restaurant temple"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In odd-numbered steps the word that is shortest among those not yet fixed goes to the left end; in even-numbered steps the word that is longest among those not yet fixed goes to the right end. Applying it: Input: notebook temple restaurant map mango | Step I: map notebook temple restaurant mango | Step II: map notebook temple mango restaurant | Step III: map mango notebook temple restaurant. So Step III is map mango notebook temple restaurant.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: balloon elephant silver landscape sunshine. Step I: sunshine balloon elephant silver landscape. Step II: sunshine silver balloon elephant landscape. Following the same rule, what will Step III be?",
+   "options": [
+    "sunshine silver landscape elephant balloon",
+    "landscape elephant balloon sunshine silver",
+    "balloon elephant landscape silver sunshine",
+    "sunshine silver landscape balloon elephant"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: balloon elephant silver landscape sunshine | Step I: sunshine balloon elephant silver landscape | Step II: sunshine silver balloon elephant landscape | Step III: sunshine silver landscape balloon elephant. So Step III is sunshine silver landscape balloon elephant.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: newspaper harvest train lamp classroom. Step I: newspaper harvest lamp classroom train. Step II: harvest lamp classroom newspaper train. Following the same rule, what will Step III be?",
+   "options": [
+    "newspaper train lamp harvest classroom",
+    "newspaper classroom harvest train lamp",
+    "harvest classroom lamp newspaper train",
+    "classroom harvest lamp newspaper train"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: newspaper harvest train lamp classroom | Step I: newspaper harvest lamp classroom train | Step II: harvest lamp classroom newspaper train | Step III: harvest classroom lamp newspaper train. So Step III is harvest classroom lamp newspaper train.",
+   "shortcut": "Fix the largest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. The alphabetical order is used for comparison. Input: pen lamp balloon rose window. What is Step II?",
+   "options": [
+    "pen rose window lamp balloon",
+    "pen lamp rose window balloon",
+    "window rose pen lamp balloon",
+    "window pen lamp rose balloon"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: pen lamp balloon rose window | Step I: pen lamp rose window balloon | Step II: pen rose window lamp balloon. So Step II is pen rose window lamp balloon.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: tree pavilion market tea chocolate blanket. Step I: chocolate tree pavilion market tea blanket. Step II: chocolate tree pavilion market blanket tea. Following the same rule, what will Step IV be?",
+   "options": [
+    "chocolate pavilion market blanket tree tea",
+    "tea tree market blanket pavilion chocolate",
+    "tree tea pavilion market chocolate blanket",
+    "blanket chocolate pavilion market tea tree"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the word that is longest among those not yet fixed goes to the left end; in even-numbered steps the word that is shortest among those not yet fixed goes to the right end. Applying it: Input: tree pavilion market tea chocolate blanket | Step I: chocolate tree pavilion market tea blanket | Step II: chocolate tree pavilion market blanket tea | Step III: chocolate pavilion tree market blanket tea | Step IV: chocolate pavilion market blanket tree tea. So Step IV is chocolate pavilion market blanket tree tea.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: tea cat bus kite festival gold. Step I: bus tea cat kite festival gold. Step II: bus cat tea kite festival gold. Following the same rule, what will Step IV be?",
+   "options": [
+    "tea cat bus kite festival gold",
+    "tea cat bus gold kite festival",
+    "festival kite gold tea cat bus",
+    "bus cat festival gold tea kite"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: tea cat bus kite festival gold | Step I: bus tea cat kite festival gold | Step II: bus cat tea kite festival gold | Step III: bus cat festival tea kite gold | Step IV: bus cat festival gold tea kite. So Step IV is bus cat festival gold tea kite.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: bus harvest tiger rose passenger bridge. Step I: passenger bus harvest tiger rose bridge. Step II: passenger harvest bus tiger rose bridge. Following the same rule, what will Step IV be?",
+   "options": [
+    "passenger harvest bridge bus tiger rose",
+    "bus rose tiger bridge harvest passenger",
+    "passenger harvest bridge tiger bus rose",
+    "tiger rose passenger harvest bus bridge"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is longest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: bus harvest tiger rose passenger bridge | Step I: passenger bus harvest tiger rose bridge | Step II: passenger harvest bus tiger rose bridge | Step III: passenger harvest bridge bus tiger rose | Step IV: passenger harvest bridge tiger bus rose. So Step IV is passenger harvest bridge tiger bus rose.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: pencil cricket landscape village umbrella bus. Step I: pencil cricket landscape umbrella bus village. Step II: pencil cricket landscape bus umbrella village. Following the same rule, what will Step IV be?",
+   "options": [
+    "landscape umbrella cricket village pencil bus",
+    "cricket bus landscape pencil umbrella village",
+    "village umbrella pencil landscape cricket bus",
+    "cricket landscape bus pencil umbrella village"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: pencil cricket landscape village umbrella bus | Step I: pencil cricket landscape umbrella bus village | Step II: pencil cricket landscape bus umbrella village | Step III: cricket landscape bus pencil umbrella village | Step IV: cricket bus landscape pencil umbrella village. So Step IV is cricket bus landscape pencil umbrella village.",
+   "shortcut": "Fix the largest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In odd-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the right end. The alphabetical order is used for comparison. Input: lemon birthday playground hen pavilion kitchen. What is Step III?",
+   "options": [
+    "hen lemon kitchen birthday playground pavilion",
+    "birthday hen lemon pavilion kitchen playground",
+    "lemon playground pavilion kitchen hen birthday",
+    "birthday hen lemon kitchen pavilion playground"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Input: lemon birthday playground hen pavilion kitchen | Step I: birthday lemon playground hen pavilion kitchen | Step II: birthday lemon hen pavilion kitchen playground | Step III: birthday hen lemon pavilion kitchen playground. So Step III is birthday hen lemon pavilion kitchen playground.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In each step, the word that is last in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. The alphabetical order is used for comparison. Input: calendar river sunshine gold classroom lamp. What is Step III?",
+   "options": [
+    "gold lamp river calendar sunshine classroom",
+    "river sunshine lamp gold classroom calendar",
+    "sunshine river lamp calendar gold classroom",
+    "gold lamp calendar river sunshine classroom"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Input: calendar river sunshine gold classroom lamp | Step I: sunshine calendar river gold classroom lamp | Step II: sunshine river calendar gold classroom lamp | Step III: sunshine river lamp calendar gold classroom. So Step III is sunshine river lamp calendar gold classroom.",
+   "shortcut": "Fix the largest-key item at the left each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: fan butterfly tiger chocolate hen playground. Step I: tiger fan butterfly chocolate hen playground. Step II: tiger fan chocolate hen playground butterfly. Following the same rule, what will Step IV be?",
+   "options": [
+    "fan hen tiger chocolate butterfly playground",
+    "tiger playground hen fan chocolate butterfly",
+    "tiger playground fan hen chocolate butterfly",
+    "playground butterfly chocolate tiger fan hen"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In odd-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the right end. Applying it: Input: fan butterfly tiger chocolate hen playground | Step I: tiger fan butterfly chocolate hen playground | Step II: tiger fan chocolate hen playground butterfly | Step III: tiger playground fan chocolate hen butterfly | Step IV: tiger playground fan hen chocolate butterfly. So Step IV is tiger playground fan hen chocolate butterfly.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: chocolate cat cricket window milk plant. Step I: cat chocolate cricket window milk plant. Step II: cat cricket window milk plant chocolate. Which word will be 2nd from the right end in Step III?",
+   "options": [
+    "cat",
+    "plant",
+    "chocolate",
+    "cricket"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In odd-numbered steps the word that is shortest among those not yet fixed goes to the left end; in even-numbered steps the word that is longest among those not yet fixed goes to the right end. Input: chocolate cat cricket window milk plant | Step I: cat chocolate cricket window milk plant | Step II: cat cricket window milk plant chocolate | Step III: cat milk cricket window plant chocolate. In Step III the 2nd word from the right is plant.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: sun ghost mango restaurant market cow. Step I: cow sun ghost mango restaurant market. Step II: cow ghost sun mango restaurant market. Following the same rule, what will Step IV be?",
+   "options": [
+    "cow ghost mango market sun restaurant",
+    "restaurant market ghost mango cow sun",
+    "cow ghost mango sun restaurant market",
+    "restaurant market mango ghost cow sun"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: sun ghost mango restaurant market cow | Step I: cow sun ghost mango restaurant market | Step II: cow ghost sun mango restaurant market | Step III: cow ghost mango sun restaurant market | Step IV: cow ghost mango market sun restaurant. So Step IV is cow ghost mango market sun restaurant.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: chocolate sunshine kite bridge fan journey. Step I: fan chocolate sunshine kite bridge journey. Step II: fan kite chocolate sunshine bridge journey. Following the same rule, what will Step IV be?",
+   "options": [
+    "fan kite bridge journey chocolate sunshine",
+    "fan kite bridge journey sunshine chocolate",
+    "chocolate bridge fan journey kite sunshine",
+    "chocolate sunshine journey bridge kite fan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In each step, the word that is shortest among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Applying it: Input: chocolate sunshine kite bridge fan journey | Step I: fan chocolate sunshine kite bridge journey | Step II: fan kite chocolate sunshine bridge journey | Step III: fan kite bridge chocolate sunshine journey | Step IV: fan kite bridge journey chocolate sunshine. So Step IV is fan kite bridge journey chocolate sunshine.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: station river passenger festival tree village. Step I: station river passenger tree village festival. Step II: station river tree village passenger festival. Following the same rule, what will Step IV be?",
+   "options": [
+    "passenger festival river station tree village",
+    "station tree village river passenger festival",
+    "tree village station river passenger festival",
+    "festival passenger station river tree village"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: station river passenger festival tree village | Step I: station river passenger tree village festival | Step II: station river tree village passenger festival | Step III: station tree village river passenger festival | Step IV: tree village station river passenger festival. So Step IV is tree village station river passenger festival.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In odd-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the right end. The alphabetical order is used for comparison. Input: garden pencil bell mountain chocolate gold. What is Step III?",
+   "options": [
+    "pencil mountain garden chocolate gold bell",
+    "bell chocolate garden pencil mountain gold",
+    "chocolate mountain garden pencil bell gold",
+    "pencil bell gold garden mountain chocolate"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: garden pencil bell mountain chocolate gold | Step I: pencil garden bell mountain chocolate gold | Step II: pencil garden mountain chocolate gold bell | Step III: pencil mountain garden chocolate gold bell. So Step III is pencil mountain garden chocolate gold bell.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: rocket flame bridge playground calendar ghost. Step I: bridge rocket flame playground calendar ghost. Step II: bridge calendar rocket flame playground ghost. Which word will be 5th from the left end in Step III?",
+   "options": [
+    "rocket",
+    "flame",
+    "ghost",
+    "playground"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In each step, the word that is earliest in alphabetical order among those not yet fixed is moved to the left end, next to those already fixed; the rest keep their order. Input: rocket flame bridge playground calendar ghost | Step I: bridge rocket flame playground calendar ghost | Step II: bridge calendar rocket flame playground ghost | Step III: bridge calendar flame rocket playground ghost. In Step III the 5th word from the left is playground.",
+   "shortcut": "Fix the smallest-key item at the left each step; the untouched items never change their order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: butterfly map garden chair bell playground. Step I: butterfly garden chair bell playground map. Step II: butterfly garden chair playground bell map. Following the same rule, what will Step IV be?",
+   "options": [
+    "butterfly bell chair garden map playground",
+    "playground butterfly garden chair bell map",
+    "butterfly playground garden chair bell map",
+    "map playground garden chair butterfly bell"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: In each step, the word that is shortest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: butterfly map garden chair bell playground | Step I: butterfly garden chair bell playground map | Step II: butterfly garden chair playground bell map | Step III: butterfly garden playground chair bell map | Step IV: butterfly playground garden chair bell map. So Step IV is butterfly playground garden chair bell map.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In each step, the word that is longest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. The number of letters is used for comparison. Input: motorcycle festival cotton flame cricket fish. What is Step III?",
+   "options": [
+    "cotton flame fish cricket festival motorcycle",
+    "motorcycle festival cricket cotton flame fish",
+    "motorcycle flame festival cricket fish cotton",
+    "fish flame festival cotton cricket motorcycle"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: motorcycle festival cotton flame cricket fish | Step I: festival cotton flame cricket fish motorcycle | Step II: cotton flame cricket fish festival motorcycle | Step III: cotton flame fish cricket festival motorcycle. So Step III is cotton flame fish cricket festival motorcycle.",
+   "shortcut": "Fix the largest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In each step, the word that is shortest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. The number of letters is used for comparison. Input: garden sun birthday mango library telephone playground. What is Step IV?",
+   "options": [
+    "birthday telephone playground library garden mango sun",
+    "playground telephone garden birthday library mango sun",
+    "garden sun mango library birthday telephone playground",
+    "sun mango garden library birthday telephone playground"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Input: garden sun birthday mango library telephone playground | Step I: garden birthday mango library telephone playground sun | Step II: garden birthday library telephone playground mango sun | Step III: birthday library telephone playground garden mango sun | Step IV: birthday telephone playground library garden mango sun. So Step IV is birthday telephone playground library garden mango sun.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: tree chocolate restaurant ink silver calendar lemon cricket. Step I: restaurant tree chocolate ink silver calendar lemon cricket. Step II: restaurant tree chocolate silver calendar lemon cricket ink. Following the same rule, what will Step V be?",
+   "options": [
+    "ink tree lemon silver cricket chocolate restaurant calendar",
+    "ink tree lemon silver calendar cricket chocolate restaurant",
+    "chocolate calendar cricket ink lemon restaurant silver tree",
+    "restaurant chocolate calendar silver lemon cricket tree ink"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In odd-numbered steps the word that is longest among those not yet fixed goes to the left end; in even-numbered steps the word that is shortest among those not yet fixed goes to the right end. Applying it: Input: tree chocolate restaurant ink silver calendar lemon cricket | Step I: restaurant tree chocolate ink silver calendar lemon cricket | Step II: restaurant tree chocolate silver calendar lemon cricket ink | Step III: restaurant chocolate tree silver calendar lemon cricket ink | Step IV: restaurant chocolate silver calendar lemon cricket tree ink | Step V: restaurant chocolate calendar silver lemon cricket tree ink. So Step V is restaurant chocolate calendar silver lemon cricket tree ink.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: journey elephant orange lamp bus telephone motorcycle flame. Step I: bus journey elephant orange lamp telephone motorcycle flame. Step II: bus journey elephant orange lamp telephone flame motorcycle. Following the same rule, what will Step V be?",
+   "options": [
+    "bus lamp flame journey elephant orange telephone motorcycle",
+    "motorcycle telephone elephant journey orange flame lamp bus",
+    "bus lamp flame journey orange elephant telephone motorcycle",
+    "orange telephone motorcycle lamp journey flame elephant bus"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: In odd-numbered steps the word that is shortest among those not yet fixed goes to the left end; in even-numbered steps the word that is longest among those not yet fixed goes to the right end. Applying it: Input: journey elephant orange lamp bus telephone motorcycle flame | Step I: bus journey elephant orange lamp telephone motorcycle flame | Step II: bus journey elephant orange lamp telephone flame motorcycle | Step III: bus lamp journey elephant orange telephone flame motorcycle | Step IV: bus lamp journey elephant orange flame telephone motorcycle | Step V: bus lamp flame journey elephant orange telephone motorcycle. So Step V is bus lamp flame journey elephant orange telephone motorcycle.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule. Input: river pencil gold sun calendar chocolate diamond. Step I: chocolate river pencil gold sun calendar diamond. Step II: chocolate river pencil gold calendar diamond sun. Which word will be 1st from the left end in Step IV?",
+   "options": [
+    "sun",
+    "pencil",
+    "calendar",
+    "chocolate"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: In odd-numbered steps the word that is longest among those not yet fixed goes to the left end; in even-numbered steps the word that is shortest among those not yet fixed goes to the right end. Input: river pencil gold sun calendar chocolate diamond | Step I: chocolate river pencil gold sun calendar diamond | Step II: chocolate river pencil gold calendar diamond sun | Step III: chocolate calendar river pencil gold diamond sun | Step IV: chocolate calendar river pencil diamond gold sun. In Step IV the 1st word from the left is chocolate.",
+   "shortcut": "Work from both ends: largest to the left on odd steps, smallest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words by a fixed rule, step by step. Input: temple ghost notebook landscape lamp blanket cow motorcycle. Step I: temple ghost notebook landscape lamp blanket motorcycle cow. Step II: temple ghost notebook landscape blanket motorcycle lamp cow. Following the same rule, what will Step V be?",
+   "options": [
+    "temple notebook motorcycle landscape lamp ghost blanket cow",
+    "notebook landscape motorcycle blanket temple ghost lamp cow",
+    "motorcycle landscape notebook blanket temple ghost lamp cow",
+    "motorcycle landscape notebook temple ghost blanket lamp cow"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: In each step, the word that is shortest among those not yet fixed is moved to the right end, next to those already fixed; the rest keep their order. Applying it: Input: temple ghost notebook landscape lamp blanket cow motorcycle | Step I: temple ghost notebook landscape lamp blanket motorcycle cow | Step II: temple ghost notebook landscape blanket motorcycle lamp cow | Step III: temple notebook landscape blanket motorcycle ghost lamp cow | Step IV: notebook landscape blanket motorcycle temple ghost lamp cow | Step V: notebook landscape motorcycle blanket temple ghost lamp cow. So Step V is notebook landscape motorcycle blanket temple ghost lamp cow.",
+   "shortcut": "Fix the smallest-key item at the right each step; the rest stay in the original order.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A machine rearranges a line of words step by step. Rule: In odd-numbered steps the word that is earliest in alphabetical order among those not yet fixed goes to the left end; in even-numbered steps the word that is last in alphabetical order among those not yet fixed goes to the right end. The alphabetical order is used for comparison. Input: pencil river sun classroom garden notebook cricket. What is Step IV?",
+   "options": [
+    "classroom notebook cricket garden pencil river sun",
+    "classroom notebook pencil garden cricket river sun",
+    "sun river pencil notebook classroom garden cricket",
+    "classroom cricket pencil garden notebook river sun"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Input: pencil river sun classroom garden notebook cricket | Step I: classroom pencil river sun garden notebook cricket | Step II: classroom pencil river garden notebook cricket sun | Step III: classroom cricket pencil river garden notebook sun | Step IV: classroom cricket pencil garden notebook river sun. So Step IV is classroom cricket pencil garden notebook river sun.",
+   "shortcut": "Work from both ends: smallest to the left on odd steps, largest to the right on even steps.",
+   "subPattern": "word-rearrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

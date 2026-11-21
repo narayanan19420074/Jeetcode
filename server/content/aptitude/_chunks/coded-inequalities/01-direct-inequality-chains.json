@@ -1,0 +1,972 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: P > U > H. Conclusions: I. H ≥ P  II. H ≤ U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. P > U > H is already fixed, so H ≥ P is false.\nII. U > H gives H ≤ U: true.\nHence: Only II follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: U > L > E ≥ R. Conclusions: I. R < U  II. U < L",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. U > L > E ≥ R gives R < U: true.\nII. U > L is already fixed, so U < L is false.\nHence: Only I follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: H < P < T. Conclusions: I. H > P  II. H < P",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. P > H is already fixed, so H > P is false.\nII. P > H gives H < P: true.\nHence: Only II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G < S ≤ Y < A < U. Conclusions: I. Y < A  II. S ≤ Y",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. A > Y gives Y < A: true.\nII. Y ≥ S gives S ≤ Y: true.\nHence: Both I and II follow.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: B > K ≥ U; S ≤ A < B. Conclusions: I. U ≤ A  II. U > K",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles U against A (it can be =, >, <), so U ≤ A is not certain.\nII. K ≥ U is already fixed, so U > K is false.\nHence: Neither I nor II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: H ≥ R ≥ C > X. Conclusions: I. C > X  II. H ≥ R",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. C > X gives C > X: true.\nII. H ≥ R gives H ≥ R: true.\nHence: Both I and II follow.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: K ≥ C > J > R; W < S < K. Conclusions: I. W ≥ C  II. R > K",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles W against C (it can be =, >, <), so W ≥ C is not certain.\nII. K ≥ C > J > R is already fixed, so R > K is false.\nHence: Neither I nor II follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D > N = H > P. Conclusions: I. P < N  II. D = P",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. N = H > P gives P < N: true.\nII. D > N = H > P is already fixed, so D = P is false.\nHence: Only I follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: W > L > C = U. Conclusions: I. U > W  II. L ≥ C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. W > L > C = U is already fixed, so U > W is false.\nII. L > C gives L ≥ C: true.\nHence: Only II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: H > X > R > G; G < Y < J. Conclusions: I. X < J  II. R = G",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles X against J (it can be =, >, <), so X < J is not certain.\nII. R > G is already fixed, so R = G is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Z > G ≥ D ≥ L. Conclusions: I. G ≥ L  II. D > G",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. G ≥ D ≥ L gives G ≥ L: true.\nII. G ≥ D is already fixed, so D > G is false.\nHence: Only I follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G ≥ C > S; E ≥ C > M. Conclusions: I. M ≥ S  II. C < M",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles M against S (it can be =, >, <), so M ≥ S is not certain.\nII. C > M is already fixed, so C < M is false.\nHence: Neither I nor II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: X > R ≥ P. Conclusions: I. R ≤ P  II. R = X",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles R against P (it can be =, >), so R ≤ P is not certain.\nII. X > R is already fixed, so R = X is false.\nHence: Neither I nor II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P < S < C; A < S < U. Conclusions: I. P = C  II. P < S",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. C > S > P is already fixed, so P = C is false.\nII. S > P gives P < S: true.\nHence: Only II follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: S > B > H ≥ Z; F ≤ B < T. Conclusions: I. S > H  II. F < T",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. S > B > H gives S > H: true.\nII. T > B ≥ F gives F < T: true.\nHence: Both I and II follow.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: B > E ≥ J; J > F = D. Conclusions: I. J > F  II. E = F",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. J > F gives J > F: true.\nII. E ≥ J > F is already fixed, so E = F is false.\nHence: Only I follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: F ≥ T > B. Conclusions: I. B = F  II. F > B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. F ≥ T > B is already fixed, so B = F is false.\nII. F ≥ T > B gives F > B: true.\nHence: Only II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: X > R ≥ A; T < R ≤ P. Conclusions: I. R > X  II. A < X",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. X > R is already fixed, so R > X is false.\nII. X > R ≥ A gives A < X: true.\nHence: Only II follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: N < P < T; F ≤ L < P. Conclusions: I. N > L  II. L = P",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles N against L (it can be =, >, <), so N > L is not certain.\nII. P > L is already fixed, so L = P is false.\nHence: Neither I nor II follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: W > K > J; J < S < E. Conclusions: I. E > S  II. E > J",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. E > S gives E > S: true.\nII. E > S > J gives E > J: true.\nHence: Both I and II follow.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V ≤ B < S; F < J < S. Conclusions: I. V = B  II. J > B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles V against B (it can be =, <), so V = B is not certain.\nII. No chain settles J against B (it can be =, >, <), so J > B is not certain.\nHence: Neither I nor II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P < H < T ≤ D < U. Conclusions: I. D ≤ U  II. T < D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. U > D gives D ≤ U: true.\nII. No chain settles T against D (it can be =, <), so T < D is not certain.\nHence: Only I follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: T ≥ W > Y ≥ K; A ≤ P < W. Conclusions: I. T > A  II. P > K",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. T ≥ W > P ≥ A gives T > A: true.\nII. No chain settles P against K (it can be =, >, <), so P > K is not certain.\nHence: Only I follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R > A > J. Conclusions: I. A < R  II. A > J",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. R > A gives A < R: true.\nII. A > J gives A > J: true.\nHence: Both I and II follow.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Y > A > D > H ≥ R. Conclusions: I. R < H  II. R > Y  III. A < D. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No chain settles R against H (it can be =, <), so R < H is not certain.\nII. Y > A > D > H ≥ R is already fixed, so R > Y is false.\nIII. A > D is already fixed, so A < D is false.\nCount = 0: none of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R < T = F ≤ D ≤ M. Conclusions: I. M > F  II. M ≤ F  III. F ≤ M. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. No chain settles M against F (it can be =, >), so M > F is not certain.\nII. No chain settles M against F (it can be =, >), so M ≤ F is not certain.\nIII. M ≥ D ≥ F gives F ≤ M: true.\nCount = 1: only one of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Y = S ≤ D > Z ≥ E. Conclusions: I. D ≥ S  II. E < S  III. D ≥ E. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. D ≥ S gives D ≥ S: true.\nII. No chain settles E against S (it can be =, >, <), so E < S is not certain.\nIII. D > Z ≥ E gives D ≥ E: true.\nCount = 2: only two of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G ≤ U < P ≤ X = S. Conclusions: I. S ≥ P  II. P ≥ U  III. G < X. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. S = X ≥ P gives S ≥ P: true.\nII. P > U gives P ≥ U: true.\nIII. X ≥ P > U ≥ G gives G < X: true.\nCount = 3: all three of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: E > C > Z < T < Y. Conclusions: I. T > E  II. T < Z  III. C < E. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. No chain settles T against E (it can be =, >, <), so T > E is not certain.\nII. T > Z is already fixed, so T < Z is false.\nIII. E > C gives C < E: true.\nCount = 1: only one of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G > R > M; P = G ≥ Y. Conclusions: I. G ≥ R  II. P > R  III. G > P. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. G > R gives G ≥ R: true.\nII. P = G > R gives P > R: true.\nIII. P = G is already fixed, so G > P is false.\nCount = 2: only two of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: N < P < B ≤ Z. Conclusions: I. Z ≤ B  II. B < N  III. P > Z. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No chain settles Z against B (it can be =, >), so Z ≤ B is not certain.\nII. B > P > N is already fixed, so B < N is false.\nIII. Z ≥ B > P is already fixed, so P > Z is false.\nCount = 0: none of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: C > P > K ≥ G > N. Conclusions: I. P ≥ G  II. N < G  III. P ≥ K. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. P > K ≥ G gives P ≥ G: true.\nII. G > N gives N < G: true.\nIII. P > K gives P ≥ K: true.\nCount = 3: all three of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J < K < A; N < J ≤ M. Conclusions: I. J ≥ A  II. A = K  III. K ≥ J. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. A > K > J is already fixed, so J ≥ A is false.\nII. A > K is already fixed, so A = K is false.\nIII. K > J gives K ≥ J: true.\nCount = 1: only one of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D > P > K; M < B ≤ P. Conclusions: I. B ≤ P  II. P > D  III. B < D. How many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one of them",
+    "Only two of them",
+    "All three of them"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. P ≥ B gives B ≤ P: true.\nII. D > P is already fixed, so P > D is false.\nIII. D > P ≥ B gives B < D: true.\nCount = 2: only two of them.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G ≤ K < F ≤ A. Which of the following is definitely true?",
+   "options": [
+    "F < A",
+    "A ≥ F",
+    "G > A",
+    "G = A"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "No chain settles F against A (it can be =, <), so F < A is not certain.\nA ≥ F gives A ≥ F: true.\nA ≥ F > K ≥ G is already fixed, so G > A is false.\nA ≥ F > K ≥ G is already fixed, so G = A is false.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: U ≤ C < A < W ≤ G. Which of the following is definitely true?",
+   "options": [
+    "C ≤ U",
+    "W < C",
+    "C = A",
+    "C < A"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles C against U (it can be =, >), so C ≤ U is not certain.\nW > A > C is already fixed, so W < C is false.\nA > C is already fixed, so C = A is false.\nA > C gives C < A: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V < C ≤ P ≤ W. Which of the following is definitely true?",
+   "options": [
+    "C > P",
+    "P = V",
+    "W < V",
+    "V < P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "P ≥ C is already fixed, so C > P is false.\nP ≥ C > V is already fixed, so P = V is false.\nW ≥ P ≥ C > V is already fixed, so W < V is false.\nP ≥ C > V gives V < P: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P < G < T < V; N ≤ P ≤ E. Which of the following is definitely true?",
+   "options": [
+    "G = V",
+    "P > T",
+    "G ≤ P",
+    "G < T"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "V > T > G is already fixed, so G = V is false.\nT > G > P is already fixed, so P > T is false.\nG > P is already fixed, so G ≤ P is false.\nT > G gives G < T: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: L = D ≥ N > P; D ≤ Y < C. Which of the following is definitely true?",
+   "options": [
+    "P > C",
+    "L ≤ P",
+    "C ≥ P",
+    "P ≥ L"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "C > Y ≥ D ≥ N > P is already fixed, so P > C is false.\nL = D ≥ N > P is already fixed, so L ≤ P is false.\nC > Y ≥ D ≥ N > P gives C ≥ P: true.\nL = D ≥ N > P is already fixed, so P ≥ L is false.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G = B > N > H; N ≤ E = X. Which of the following is definitely true?",
+   "options": [
+    "H = B",
+    "E ≤ B",
+    "N > B",
+    "B ≥ H"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "B > N > H is already fixed, so H = B is false.\nNo chain settles E against B (it can be =, >, <), so E ≤ B is not certain.\nB > N is already fixed, so N > B is false.\nB > N > H gives B ≥ H: true.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'G ? P ≤ H = R', which symbol in place of ? makes 'G < H' definitely true?",
+   "options": [
+    "≤",
+    "<",
+    ">",
+    "≥"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With < in place of ?: G < P ≤ H = R.\nH ≥ P > G gives G < H: true.\nThe other symbols either break the chain or give a different relation between G and H.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'P ≤ Y ? K', which symbol in place of ? makes 'P < K' definitely true?",
+   "options": [
+    "≥",
+    "<",
+    "=",
+    ">"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With < in place of ?: P ≤ Y < K.\nK > Y ≥ P gives P < K: true.\nThe other symbols either break the chain or give a different relation between P and K.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'N < C ? P', which symbol in place of ? makes 'P < C' definitely true?",
+   "options": [
+    "=",
+    "≥",
+    "<",
+    ">"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With > in place of ?: N < C > P.\nC > P gives P < C: true.\nThe other symbols either break the chain or give a different relation between P and C.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'D ? P ≤ L', which symbol in place of ? makes 'D < P' definitely true?",
+   "options": [
+    "≤",
+    "=",
+    "<",
+    "≥"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With < in place of ?: D < P ≤ L.\nP > D gives D < P: true.\nThe other symbols either break the chain or give a different relation between D and P.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'C ? E < K < N < X', which symbol in place of ? makes 'E > C' definitely true?",
+   "options": [
+    "≥",
+    "<",
+    "≤",
+    ">"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With < in place of ?: C < E < K < N < X.\nE > C gives E > C: true.\nThe other symbols either break the chain or give a different relation between E and C.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'E ? L > Y', which symbol in place of ? makes 'L < E' definitely true?",
+   "options": [
+    "≤",
+    "=",
+    "≥",
+    ">"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With > in place of ?: E > L > Y.\nE > L gives L < E: true.\nThe other symbols either break the chain or give a different relation between L and E.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'C ? S ≤ X', which symbol in place of ? makes 'S < C' definitely true?",
+   "options": [
+    ">",
+    "≥",
+    "≤",
+    "<"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With > in place of ?: C > S ≤ X.\nC > S gives S < C: true.\nThe other symbols either break the chain or give a different relation between S and C.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the expression 'V > P ? B', which symbol in place of ? makes 'B < P' definitely true?",
+   "options": [
+    "≥",
+    "≤",
+    ">",
+    "="
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With > in place of ?: V > P > B.\nP > B gives B < P: true.\nThe other symbols either break the chain or give a different relation between B and P.",
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Z > B = F > J. Conclusions: I. Z ≥ J  II. Z < B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Z > B = F > J gives Z ≥ J: true.\nII. Z > B is already fixed, so Z < B is false.\nHence: Only I follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D > M > F ≥ Z. Conclusions: I. D < M  II. M ≥ F",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. D > M is already fixed, so D < M is false.\nII. M > F gives M ≥ F: true.\nHence: Only II follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D < U < F < H; F > B > E. Conclusions: I. B > D  II. D < B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles B against D (it can be =, >, <), so B > D is not certain.\nII. No chain settles D against B (it can be =, >, <), so D < B is not certain.\nHence: Neither I nor II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D < X < T ≤ Y < N. Conclusions: I. D ≤ N  II. X < Y",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. N > Y ≥ T > X > D gives D ≤ N: true.\nII. Y ≥ T > X gives X < Y: true.\nHence: Both I and II follow.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,1366 @@
+{
+ "sets": [
+  {
+   "id": "di-pie-charts-s011",
+   "type": "table",
+   "title": "Fuel consumption of a bus corporation: two pie charts (2022 and 2023). Total for 2022 = 8,000 kilolitres; total for 2023 = 4,000 kilolitres. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: 2022 (%)",
+     "Pie 2: 2023 (%)"
+    ],
+    "rows": [
+     [
+      "Express",
+      24,
+      21
+     ],
+     [
+      "Ordinary",
+      19,
+      30
+     ],
+     [
+      "Mofussil",
+      9,
+      19
+     ],
+     [
+      "Night service",
+      31,
+      5
+     ],
+     [
+      "Staff vans",
+      17,
+      25
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s012",
+   "type": "table",
+   "title": "Waste collected by a corporation: two pie charts (Morning shift and Evening shift). Total for Morning shift = 6,000 tonnes; total for Evening shift = 4,000 tonnes. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Morning shift (%)",
+     "Pie 2: Evening shift (%)"
+    ],
+    "rows": [
+     [
+      "Paper",
+      12,
+      22
+     ],
+     [
+      "Plastic",
+      30,
+      24
+     ],
+     [
+      "Metal",
+      20,
+      30
+     ],
+     [
+      "Glass",
+      14,
+      13
+     ],
+     [
+      "Organic",
+      24,
+      11
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s013",
+   "type": "table",
+   "title": "Budget allocation of a state government: two pie charts (Urban area and Rural area). Total for Urban area = ₹ 12,000 crore; total for Rural area = ₹ 80,000 crore. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Urban area (%)",
+     "Pie 2: Rural area (%)"
+    ],
+    "rows": [
+     [
+      "Agriculture",
+      17,
+      27
+     ],
+     [
+      "Administration",
+      31,
+      13
+     ],
+     [
+      "Roads",
+      16,
+      5
+     ],
+     [
+      "Education",
+      9,
+      26
+     ],
+     [
+      "Health",
+      27,
+      29
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s014",
+   "type": "table",
+   "title": "Matches played by a club in a decade: two pie charts (Year 2019 and Year 2024). Total for Year 2019 = 800 matches; total for Year 2024 = 1,000 matches. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Year 2019 (%)",
+     "Pie 2: Year 2024 (%)"
+    ],
+    "rows": [
+     [
+      "Delhi",
+      23,
+      29
+     ],
+     [
+      "Chennai",
+      12,
+      28
+     ],
+     [
+      "Mumbai",
+      30,
+      10
+     ],
+     [
+      "Kolkata",
+      21,
+      7
+     ],
+     [
+      "Bengaluru",
+      14,
+      26
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s015",
+   "type": "table",
+   "title": "Monthly working hours of a shopfloor team: two pie charts (Salem unit and Erode unit). Total for Salem unit = 4,000 hours; total for Erode unit = 2,000 hours. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Salem unit (%)",
+     "Pie 2: Erode unit (%)"
+    ],
+    "rows": [
+     [
+      "Stitching",
+      7,
+      20
+     ],
+     [
+      "Moulding",
+      20,
+      12
+     ],
+     [
+      "Cutting",
+      22,
+      18
+     ],
+     [
+      "Quality check",
+      19,
+      9
+     ],
+     [
+      "Packing",
+      6,
+      14
+     ],
+     [
+      "Maintenance",
+      26,
+      27
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s016",
+   "type": "table",
+   "title": "Sales of a mobile store in a quarter (units): two pie charts (Plant A and Plant B). Total for Plant A = 2,000 units; total for Plant B = 5,000 units. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Plant A (%)",
+     "Pie 2: Plant B (%)"
+    ],
+    "rows": [
+     [
+      "Vivo",
+      5,
+      15
+     ],
+     [
+      "Redmi",
+      8,
+      11
+     ],
+     [
+      "OnePlus",
+      24,
+      20
+     ],
+     [
+      "Apple",
+      20,
+      10
+     ],
+     [
+      "Realme",
+      21,
+      30
+     ],
+     [
+      "Samsung",
+      22,
+      14
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s017",
+   "type": "table",
+   "title": "Monthly sales of Happy Break snack stall: two pie charts (2022 and 2023). Total for 2022 = ₹ 6,00,000; total for 2023 = ₹ 4,00,000. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: 2022 (%)",
+     "Pie 2: 2023 (%)"
+    ],
+    "rows": [
+     [
+      "Banana chips",
+      20,
+      25
+     ],
+     [
+      "Peanut chikki",
+      15,
+      17
+     ],
+     [
+      "Sweets",
+      30,
+      21
+     ],
+     [
+      "Varkey",
+      24,
+      23
+     ],
+     [
+      "Mixture",
+      11,
+      14
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s018",
+   "type": "table",
+   "title": "Students enrolled in an engineering college: two pie charts (Morning shift and Evening shift). Total for Morning shift = 2,400 students; total for Evening shift = 3,200 students. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Morning shift (%)",
+     "Pie 2: Evening shift (%)"
+    ],
+    "rows": [
+     [
+      "Civil",
+      22,
+      5
+     ],
+     [
+      "Biotech",
+      7,
+      17
+     ],
+     [
+      "EEE",
+      12,
+      20
+     ],
+     [
+      "ECE",
+      14,
+      24
+     ],
+     [
+      "CSE",
+      29,
+      6
+     ],
+     [
+      "Mechanical",
+      16,
+      28
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s019",
+   "type": "table",
+   "title": "Medals won by a country in a sports meet: two pie charts (North zone and South zone). Total for North zone = 200 medals; total for South zone = 400 medals. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: North zone (%)",
+     "Pie 2: South zone (%)"
+    ],
+    "rows": [
+     [
+      "Shooting",
+      27,
+      26
+     ],
+     [
+      "Wrestling",
+      8,
+      15
+     ],
+     [
+      "Boxing",
+      9,
+      32
+     ],
+     [
+      "Swimming",
+      30,
+      16
+     ],
+     [
+      "Hockey",
+      26,
+      11
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s020",
+   "type": "table",
+   "title": "Monthly income sources of a farmer cooperative: two pie charts (Morning shift and Evening shift). Total for Morning shift = ₹ 9,00,000; total for Evening shift = ₹ 15,00,000. Sector values are percentages.",
+   "table": {
+    "columns": [
+     "Category",
+     "Pie 1: Morning shift (%)",
+     "Pie 2: Evening shift (%)"
+    ],
+    "rows": [
+     [
+      "Handicrafts",
+      27,
+      22
+     ],
+     [
+      "Subsidy",
+      12,
+      17
+     ],
+     [
+      "Poultry",
+      8,
+      5
+     ],
+     [
+      "Vegetables",
+      17,
+      19
+     ],
+     [
+      "Fruits",
+      11,
+      9
+     ],
+     [
+      "Milk",
+      25,
+      28
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "For 2022, what percentage of the total do Staff vans and Ordinary account for together?",
+   "options": [
+    "31%",
+    "36%",
+    "2%",
+    "41%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "17% + 19% = 36%. So the required answer is 36%.",
+   "shortcut": "Add the shares in the same pie.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s011"
+  },
+  {
+   "questionText": "For 2023, which category has the lowest share?",
+   "options": [
+    "Ordinary",
+    "Mofussil",
+    "Express",
+    "Night service"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Scan Pie 2: the lowest share is 5%, for Night service.",
+   "shortcut": "Read the right column.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s011"
+  },
+  {
+   "questionText": "What is the combined value of Ordinary and Express for 2022?",
+   "options": [
+    "3,840 kilolitres",
+    "3,640 kilolitres",
+    "3,440 kilolitres",
+    "400 kilolitres"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combined share = 43% of 8,000 kilolitres = 3,440 kilolitres.",
+   "shortcut": "Add shares, then apply the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s011"
+  },
+  {
+   "questionText": "What is the average of the values of Ordinary for the two pies? (Round to one decimal place if needed.)",
+   "options": [
+    "980 kilolitres",
+    "2,720 kilolitres",
+    "1,360 kilolitres",
+    "1,960 kilolitres"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(1,520 + 1,200)/2 = 1,360 kilolitres. So the required answer is 1,360 kilolitres.",
+   "shortcut": "Average the amounts, not the percentages.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s011"
+  },
+  {
+   "questionText": "Take the value of Night service for 2022 and the value of Express for 2023. What percentage of the sum of the two totals is their sum? (Round to one decimal place.)",
+   "options": [
+    "25.7%",
+    "29.7%",
+    "26%",
+    "27.7%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Night service (2022) = 2,480; Express (2023) = 840. Sum = 3,320. Sum of totals = 12,000. Percentage = 27.7%.",
+   "shortcut": "Use amounts; the totals differ.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s011"
+  },
+  {
+   "questionText": "What is the difference between the percentage shares of Glass in the two pies (in percentage points)?",
+   "options": [
+    "1 percentage points",
+    "3 percentage points",
+    "27 percentage points",
+    "6 percentage points"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "|14 - 13| = 1 percentage points. So the required answer is 1 percentage points.",
+   "shortcut": "Subtract the two shares.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s012"
+  },
+  {
+   "questionText": "For which category is the value for Evening shift greater than that for Morning shift by the largest amount?",
+   "options": [
+    "Glass",
+    "Paper",
+    "Metal",
+    "Plastic"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compute each category's value in both pies: Paper: 160, Plastic: -840, Metal: 0, Glass: -320, Organic: -1,000 (value for Evening shift minus Morning shift). Largest = Paper.",
+   "shortcut": "Compute amounts, not just percentage points.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s012"
+  },
+  {
+   "questionText": "What is the average of the values of Plastic for the two pies? (Round to one decimal place if needed.)",
+   "options": [
+    "2,760 tonnes",
+    "1,620 tonnes",
+    "1,080 tonnes",
+    "1,380 tonnes"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(1,800 + 960)/2 = 1,380 tonnes. So the required answer is 1,380 tonnes.",
+   "shortcut": "Average the amounts, not the percentages.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s012"
+  },
+  {
+   "questionText": "What is the ratio of the value of Organic for Morning shift to the value of Organic for Evening shift, in simplest form?",
+   "options": [
+    "36:11",
+    "3:2",
+    "11:36",
+    "24:11"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value for Morning shift = 1,440; value for Evening shift = 440. Ratio = 36:11.",
+   "shortcut": "Compute both amounts using each pie's own total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s012"
+  },
+  {
+   "questionText": "If the total for Evening shift rises by 50% while the distribution remains the same, how much less will the value of Organic for Evening shift then be compared with the value of Organic for Morning shift?",
+   "options": [
+    "1,000 tonnes",
+    "780 tonnes",
+    "2,100 tonnes",
+    "220 tonnes"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New Organic for Evening shift = 440 x 150/100 = 660. Compare with 1,440: difference = 780 tonnes (less).",
+   "shortcut": "Same share means the value scales with the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s012"
+  },
+  {
+   "questionText": "For Rural area, what percentage of the total do Roads and Health account for together?",
+   "options": [
+    "29%",
+    "39%",
+    "34%",
+    "24%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "5% + 29% = 34%. So the required answer is 34%.",
+   "shortcut": "Add the shares in the same pie.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s013"
+  },
+  {
+   "questionText": "What is the difference between the percentage shares of Education in the two pies (in percentage points)?",
+   "options": [
+    "35 percentage points",
+    "19 percentage points",
+    "17 percentage points",
+    "22 percentage points"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "|9 - 26| = 17 percentage points. So the required answer is 17 percentage points.",
+   "shortcut": "Subtract the two shares.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s013"
+  },
+  {
+   "questionText": "What is the absolute difference between the values of Agriculture for Urban area and Rural area?",
+   "options": [
+    "₹ 23,640 crore",
+    "₹ 8,000 crore",
+    "₹ 19,560 crore",
+    "₹ 1,200 crore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Urban area: 2,040; Rural area: 21,600. Difference = ₹ 19,560 crore.",
+   "shortcut": "Totals differ, so do not subtract percentages directly.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s013"
+  },
+  {
+   "questionText": "What is the ratio of the value of Administration for Urban area to the value of Administration for Rural area, in simplest form?",
+   "options": [
+    "31:13",
+    "260:93",
+    "93:260",
+    "3:20"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value for Urban area = 3,720; value for Rural area = 10,400. Ratio = 93:260.",
+   "shortcut": "Compute both amounts using each pie's own total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s013"
+  },
+  {
+   "questionText": "For which category is the percentage growth in value from Urban area to Rural area the highest?",
+   "options": [
+    "Administration",
+    "Agriculture",
+    "Education",
+    "Roads"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth % per category = Agriculture: 958.8%, Administration: 179.6%, Roads: 108.3%, Education: 1,825.9%, Health: 616%. Highest = Education.",
+   "shortcut": "Compute amounts for both pies, then (new - old)/old.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s013"
+  },
+  {
+   "questionText": "For Year 2024, which category has the highest share?",
+   "options": [
+    "Bengaluru",
+    "Chennai",
+    "Mumbai",
+    "Delhi"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Scan Pie 2: the highest share is 29%, for Delhi.",
+   "shortcut": "Read the right column.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s014"
+  },
+  {
+   "questionText": "What is the ratio of the value of Kolkata for Year 2019 to the value of Kolkata for Year 2024, in simplest form?",
+   "options": [
+    "5:12",
+    "3:1",
+    "12:5",
+    "4:5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value for Year 2019 = 168; value for Year 2024 = 70. Ratio = 12:5.",
+   "shortcut": "Compute both amounts using each pie's own total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s014"
+  },
+  {
+   "questionText": "What is the combined value of Kolkata and Chennai for Year 2024?",
+   "options": [
+    "390 matches",
+    "350 matches",
+    "400 matches",
+    "210 matches"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combined share = 35% of 1,000 matches = 350 matches.",
+   "shortcut": "Add shares, then apply the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s014"
+  },
+  {
+   "questionText": "For which category is the value for Year 2024 greater than that for Year 2019 by the largest amount?",
+   "options": [
+    "Bengaluru",
+    "Mumbai",
+    "Delhi",
+    "Chennai"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Compute each category's value in both pies: Delhi: 106, Chennai: 184, Mumbai: -140, Kolkata: -98, Bengaluru: 148 (value for Year 2024 minus Year 2019). Largest = Chennai.",
+   "shortcut": "Compute amounts, not just percentage points.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s014"
+  },
+  {
+   "questionText": "The two totals are merged into a single total. What percentage of the merged total is the combined value of Mumbai from both pies? (Round to two decimal places.)",
+   "options": [
+    "20%",
+    "19.89%",
+    "17.89%",
+    "18.89%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Mumbai combined = 240 + 100 = 340. Merged total = 800 + 1,000 = 1,800. Share = 18.89%.",
+   "shortcut": "A simple average of the two percentages is wrong when the totals differ.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s014"
+  },
+  {
+   "questionText": "In the given data, what is the value for Moulding for Salem unit?",
+   "options": [
+    "800 hours",
+    "1,600 hours",
+    "400 hours",
+    "1,000 hours"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Moulding share for Salem unit = 20% of 4,000 hours. Value = 800 hours.",
+   "shortcut": "Use the total of the correct pie.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s015"
+  },
+  {
+   "questionText": "What is the difference between the percentage shares of Moulding in the two pies (in percentage points)?",
+   "options": [
+    "32 percentage points",
+    "10 percentage points",
+    "8 percentage points",
+    "13 percentage points"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "|20 - 12| = 8 percentage points. So the required answer is 8 percentage points.",
+   "shortcut": "Subtract the two shares.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s015"
+  },
+  {
+   "questionText": "What is the absolute difference between the values of Stitching for Salem unit and Erode unit?",
+   "options": [
+    "260 hours",
+    "680 hours",
+    "120 hours",
+    "520 hours"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Salem unit: 280; Erode unit: 400. Difference = 120 hours.",
+   "shortcut": "Totals differ, so do not subtract percentages directly.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s015"
+  },
+  {
+   "questionText": "What is the ratio of the value of Stitching for Salem unit to the value of Stitching for Erode unit, in simplest form?",
+   "options": [
+    "10:7",
+    "7:10",
+    "2:1",
+    "7:20"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value for Salem unit = 280; value for Erode unit = 400. Ratio = 7:10.",
+   "shortcut": "Compute both amounts using each pie's own total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s015"
+  },
+  {
+   "questionText": "For which category is the percentage growth in value from Salem unit to Erode unit the highest?",
+   "options": [
+    "Cutting",
+    "Packing",
+    "Stitching",
+    "Maintenance"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth % per category = Stitching: 42.9%, Moulding: -70%, Cutting: -59.1%, Quality check: -76.3%, Packing: 16.7%, Maintenance: -48.1%. Highest = Stitching.",
+   "shortcut": "Compute amounts for both pies, then (new - old)/old.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s015"
+  },
+  {
+   "questionText": "For Plant B, which category has the lowest share?",
+   "options": [
+    "Realme",
+    "OnePlus",
+    "Apple",
+    "Vivo"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Scan Pie 2: the lowest share is 10%, for Apple.",
+   "shortcut": "Read the right column.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s016"
+  },
+  {
+   "questionText": "What is the average of the values of OnePlus for the two pies? (Round to one decimal place if needed.)",
+   "options": [
+    "1,100 units",
+    "440 units",
+    "740 units",
+    "1,480 units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(480 + 1,000)/2 = 740 units. So the required answer is 740 units.",
+   "shortcut": "Average the amounts, not the percentages.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s016"
+  },
+  {
+   "questionText": "What is the absolute difference between the values of Vivo for Plant A and Plant B?",
+   "options": [
+    "850 units",
+    "200 units",
+    "650 units",
+    "500 units"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Plant A: 100; Plant B: 750. Difference = 650 units.",
+   "shortcut": "Totals differ, so do not subtract percentages directly.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s016"
+  },
+  {
+   "questionText": "What is the percentage change (ignore the sign, round to one decimal place) in the value of Realme from Plant A to Plant B?",
+   "options": [
+    "72%",
+    "42.9%",
+    "9%",
+    "257.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 420 to 1,500. Change = |1,500 - 420|/420 x 100 = 257.1% (increase).",
+   "shortcut": "Base is the earlier value (Pie 1).",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s016"
+  },
+  {
+   "questionText": "If the total for Plant B rises by 25% while the distribution remains the same, how much more will the value of Realme for Plant B then be compared with the value of Realme for Plant A?",
+   "options": [
+    "1,455 units",
+    "375 units",
+    "2,295 units",
+    "1,080 units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New Realme for Plant B = 1,500 x 125/100 = 1,875. Compare with 420: difference = 1,455 units (more).",
+   "shortcut": "Same share means the value scales with the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s016"
+  },
+  {
+   "questionText": "For 2022, which category has the highest share?",
+   "options": [
+    "Varkey",
+    "Sweets",
+    "Peanut chikki",
+    "Banana chips"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Scan Pie 1: the highest share is 30%, for Sweets.",
+   "shortcut": "Read the right column.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s017"
+  },
+  {
+   "questionText": "What is the difference between the percentage shares of Varkey in the two pies (in percentage points)?",
+   "options": [
+    "6 percentage points",
+    "3 percentage points",
+    "1 percentage points",
+    "47 percentage points"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "|24 - 23| = 1 percentage points. So the required answer is 1 percentage points.",
+   "shortcut": "Subtract the two shares.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s017"
+  },
+  {
+   "questionText": "What is the percentage change (ignore the sign, round to one decimal place) in the value of Varkey from 2022 to 2023?",
+   "options": [
+    "4.2%",
+    "36.1%",
+    "1%",
+    "56.5%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values: 1,44,000 to 92,000. Change = |92,000 - 1,44,000|/1,44,000 x 100 = 36.1% (decrease).",
+   "shortcut": "Base is the earlier value (Pie 1).",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s017"
+  },
+  {
+   "questionText": "What is the combined value of Sweets and Mixture for 2022?",
+   "options": [
+    "₹ 1,14,000",
+    "₹ 2,76,000",
+    "₹ 2,66,000",
+    "₹ 2,46,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combined share = 41% of ₹ 6,00,000 = ₹ 2,46,000.",
+   "shortcut": "Add shares, then apply the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s017"
+  },
+  {
+   "questionText": "If the total for 2023 rises by 25% while the distribution remains the same, how much more will the value of Banana chips for 2023 then be compared with the value of Banana chips for 2022?",
+   "options": [
+    "₹ 2,45,000",
+    "₹ 25,000",
+    "₹ 5,000",
+    "₹ 20,000"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New Banana chips for 2023 = 1,00,000 x 125/100 = 1,25,000. Compare with 1,20,000: difference = ₹ 5,000 (more).",
+   "shortcut": "Same share means the value scales with the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s017"
+  },
+  {
+   "questionText": "For Evening shift, what percentage of the total do Mechanical and ECE account for together?",
+   "options": [
+    "47%",
+    "4%",
+    "52%",
+    "57%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "28% + 24% = 52%. So the required answer is 52%.",
+   "shortcut": "Add the shares in the same pie.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s018"
+  },
+  {
+   "questionText": "What is the percentage change (ignore the sign, round to one decimal place) in the value of EEE from Morning shift to Evening shift?",
+   "options": [
+    "122.2%",
+    "8%",
+    "66.7%",
+    "55%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values: 288 to 640. Change = |640 - 288|/288 x 100 = 122.2% (increase).",
+   "shortcut": "Base is the earlier value (Pie 1).",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s018"
+  },
+  {
+   "questionText": "What is the ratio of the value of ECE for Morning shift to the value of ECE for Evening shift, in simplest form?",
+   "options": [
+    "16:7",
+    "7:12",
+    "7:16",
+    "3:4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value for Morning shift = 336; value for Evening shift = 768. Ratio = 7:16.",
+   "shortcut": "Compute both amounts using each pie's own total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s018"
+  },
+  {
+   "questionText": "What is the absolute difference between the values of CSE for Morning shift and Evening shift?",
+   "options": [
+    "504 students",
+    "552 students",
+    "736 students",
+    "888 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Morning shift: 696; Evening shift: 192. Difference = 504 students.",
+   "shortcut": "Totals differ, so do not subtract percentages directly.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s018"
+  },
+  {
+   "questionText": "Take the value of Biotech for Morning shift and the value of CSE for Evening shift. What percentage of the sum of the two totals is their sum? (Round to one decimal place.)",
+   "options": [
+    "6.5%",
+    "6.4%",
+    "4.4%",
+    "8.4%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Biotech (Morning shift) = 168; CSE (Evening shift) = 192. Sum = 360. Sum of totals = 5,600. Percentage = 6.4%.",
+   "shortcut": "Use amounts; the totals differ.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s018"
+  },
+  {
+   "questionText": "In the given data, what is the value for Shooting for South zone?",
+   "options": [
+    "208 medals",
+    "104 medals",
+    "124 medals",
+    "52 medals"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Shooting share for South zone = 26% of 400 medals. Value = 104 medals.",
+   "shortcut": "Use the total of the correct pie.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s019"
+  },
+  {
+   "questionText": "For North zone, which category has the highest share?",
+   "options": [
+    "Swimming",
+    "Shooting",
+    "Boxing",
+    "Hockey"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Scan Pie 1: the highest share is 30%, for Swimming.",
+   "shortcut": "Read the right column.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s019"
+  },
+  {
+   "questionText": "What is the percentage change (ignore the sign, round to one decimal place) in the value of Boxing from North zone to South zone?",
+   "options": [
+    "255.6%",
+    "23%",
+    "85.9%",
+    "611.1%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 18 to 128. Change = |128 - 18|/18 x 100 = 611.1% (increase).",
+   "shortcut": "Base is the earlier value (Pie 1).",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s019"
+  },
+  {
+   "questionText": "What is the combined value of Shooting and Hockey for North zone?",
+   "options": [
+    "126 medals",
+    "106 medals",
+    "2 medals",
+    "116 medals"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combined share = 53% of 200 medals = 106 medals.",
+   "shortcut": "Add shares, then apply the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s019"
+  },
+  {
+   "questionText": "Take the value of Shooting for North zone and the value of Hockey for South zone. What percentage of the sum of the two totals is their sum? (Round to one decimal place.)",
+   "options": [
+    "14.3%",
+    "19%",
+    "16.3%",
+    "18.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Shooting (North zone) = 54; Hockey (South zone) = 44. Sum = 98. Sum of totals = 600. Percentage = 16.3%.",
+   "shortcut": "Use amounts; the totals differ.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s019"
+  },
+  {
+   "questionText": "For Evening shift, which category has the lowest share?",
+   "options": [
+    "Subsidy",
+    "Fruits",
+    "Milk",
+    "Poultry"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Scan Pie 2: the lowest share is 5%, for Poultry.",
+   "shortcut": "Read the right column.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s020"
+  },
+  {
+   "questionText": "What is the percentage change (ignore the sign, round to one decimal place) in the value of Vegetables from Morning shift to Evening shift?",
+   "options": [
+    "2%",
+    "86.3%",
+    "46.3%",
+    "11.8%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values: 1,53,000 to 2,85,000. Change = |2,85,000 - 1,53,000|/1,53,000 x 100 = 86.3% (increase).",
+   "shortcut": "Base is the earlier value (Pie 1).",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s020"
+  },
+  {
+   "questionText": "What is the combined value of Subsidy and Poultry for Morning shift?",
+   "options": [
+    "₹ 2,25,000",
+    "₹ 1,80,000",
+    "₹ 36,000",
+    "₹ 2,55,000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combined share = 20% of ₹ 9,00,000 = ₹ 1,80,000.",
+   "shortcut": "Add shares, then apply the total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s020"
+  },
+  {
+   "questionText": "What is the ratio of the value of Handicrafts for Morning shift to the value of Handicrafts for Evening shift, in simplest form?",
+   "options": [
+    "3:5",
+    "110:81",
+    "27:22",
+    "81:110"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Value for Morning shift = 2,43,000; value for Evening shift = 3,30,000. Ratio = 81:110.",
+   "shortcut": "Compute both amounts using each pie's own total.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s020"
+  },
+  {
+   "questionText": "The two totals are merged into a single total. What percentage of the merged total is the combined value of Fruits from both pies? (Round to two decimal places.)",
+   "options": [
+    "9.75%",
+    "10%",
+    "10.75%",
+    "8.75%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fruits combined = 99,000 + 1,35,000 = 2,34,000. Merged total = 9,00,000 + 15,00,000 = 24,00,000. Share = 9.75%.",
+   "shortcut": "A simple average of the two percentages is wrong when the totals differ.",
+   "subPattern": "two-pie-charts",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-pie-charts-s020"
+  }
+ ]
+}

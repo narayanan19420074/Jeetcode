@@ -1,0 +1,7188 @@
+{
+ "pattern": {
+  "title": "Sentence Correction and Error Spotting",
+  "slug": "sentence-correction",
+  "description": "Find and fix grammatical errors.",
+  "order": 47,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "spot-the-error",
+    "title": "Spot the error"
+   },
+   {
+    "slug": "sentence-improvement",
+    "title": "Sentence improvement"
+   },
+   {
+    "slug": "subject-verb-agreement-errors",
+    "title": "Subject-verb agreement errors"
+   },
+   {
+    "slug": "tense-modifier-errors",
+    "title": "Tense & modifier errors"
+   },
+   {
+    "slug": "parallelism",
+    "title": "Parallelism"
+   },
+   {
+    "slug": "pronoun-errors",
+    "title": "Pronoun errors"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Find the part of the sentence that has an error: The principal as well as the teachers / were present / at the annual day function / in the school auditorium.",
+   "options": [
+    {
+     "text": "The principal as well as the teachers"
+    },
+    {
+     "text": "in the school auditorium."
+    },
+    {
+     "text": "at the annual day function"
+    },
+    {
+     "text": "were present"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 'as well as', 'along with', 'together with', the verb agrees with the FIRST subject (the principal, singular). So 'was present' is correct.",
+   "order": 1,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "as well as / along with: verb follows the first subject."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Each of the students / have submitted / the project report / before the deadline.",
+   "options": [
+    {
+     "text": "have submitted"
+    },
+    {
+     "text": "the project report"
+    },
+    {
+     "text": "before the deadline."
+    },
+    {
+     "text": "Each of the students"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each of' takes a singular verb, so 'has submitted' is correct.",
+   "order": 2,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Each / every / either / neither + singular verb."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The news about the floods / were / very disturbing / to everyone.",
+   "options": [
+    {
+     "text": "to everyone."
+    },
+    {
+     "text": "very disturbing"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "The news about the floods"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'News' is an uncountable noun that takes a singular verb, so 'was' is correct.",
+   "order": 3,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "news, mathematics, physics, gallows = singular."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Mathematics / are / my favourite subject / in school.",
+   "options": [
+    {
+     "text": "in school."
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "my favourite subject"
+    },
+    {
+     "text": "Mathematics"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Names of subjects such as mathematics, physics and economics are singular, so the verb must be 'is'.",
+   "order": 4,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "Subject names ending in -s still take 'is'."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She prefers tea / than coffee / in the morning / before going to work.",
+   "options": [
+    {
+     "text": "in the morning"
+    },
+    {
+     "text": "before going to work."
+    },
+    {
+     "text": "than coffee"
+    },
+    {
+     "text": "She prefers tea"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Prefer' is followed by 'to', not 'than': prefer X to Y. The correct phrase is 'to coffee'.",
+   "order": 5,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "prefer X TO Y (never than)."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I have been living / in Coimbatore / since five years / and I like it.",
+   "options": [
+    {
+     "text": "in Coimbatore"
+    },
+    {
+     "text": "since five years"
+    },
+    {
+     "text": "and I like it."
+    },
+    {
+     "text": "I have been living"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Since' is used with a point of time (since 2015); 'for' is used with a period (for five years).",
+   "order": 6,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "since = point in time, for = duration."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He is senior / than me / by two years / in the company.",
+   "options": [
+    {
+     "text": "than me"
+    },
+    {
+     "text": "He is senior"
+    },
+    {
+     "text": "by two years"
+    },
+    {
+     "text": "in the company."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Senior', 'junior', 'superior', 'inferior' are followed by 'to', not 'than': 'senior to me'.",
+   "order": 7,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "senior / junior / superior / inferior + TO."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The furniture in the hall / were / recently / polished.",
+   "options": [
+    {
+     "text": "polished."
+    },
+    {
+     "text": "recently"
+    },
+    {
+     "text": "The furniture in the hall"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Furniture' is uncountable and takes a singular verb: 'was recently polished'.",
+   "order": 8,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "furniture, luggage, scenery, information: uncountable, singular."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: One of the best players / of our team / have / been selected for the state squad.",
+   "options": [
+    {
+     "text": "of our team"
+    },
+    {
+     "text": "One of the best players"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "been selected for the state squad."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'One of the + plural noun' takes a singular verb: the subject is 'one'. Correct: 'has been selected'.",
+   "order": 9,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "One of + plural noun -> singular verb."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The teacher along with her students / are going / on a field trip / to Mysuru.",
+   "options": [
+    {
+     "text": "The teacher along with her students"
+    },
+    {
+     "text": "on a field trip"
+    },
+    {
+     "text": "to Mysuru."
+    },
+    {
+     "text": "are going"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Along with' does not make the subject plural; the verb agrees with 'the teacher'. Correct: 'is going'.",
+   "order": 10,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "along with / together with: ignore the added noun."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Why did he / not told / me about / the change in schedule?",
+   "options": [
+    {
+     "text": "not told"
+    },
+    {
+     "text": "Why did he"
+    },
+    {
+     "text": "the change in schedule?"
+    },
+    {
+     "text": "me about"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'did' the main verb takes its base form: 'did not tell'.",
+   "order": 11,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "did / does / do + base verb."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The sceneries / of Kerala / are / breathtaking.",
+   "options": [
+    {
+     "text": "of Kerala"
+    },
+    {
+     "text": "The sceneries"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "breathtaking."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Scenery' is an uncountable noun and has no plural form. Correct: 'The scenery of Kerala is breathtaking'.",
+   "order": 12,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "scenery, furniture, luggage, advice: no plural -s."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He gave me / many informations / about the / admission process.",
+   "options": [
+    {
+     "text": "many informations"
+    },
+    {
+     "text": "about the"
+    },
+    {
+     "text": "admission process."
+    },
+    {
+     "text": "He gave me"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Information' is uncountable: 'a lot of information' / 'much information'.",
+   "order": 13,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "information, advice, knowledge: no -s."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: All the luggages / were loaded / onto the / waiting truck.",
+   "options": [
+    {
+     "text": "waiting truck."
+    },
+    {
+     "text": "onto the"
+    },
+    {
+     "text": "were loaded"
+    },
+    {
+     "text": "All the luggages"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Luggage' is uncountable and cannot take -s. Correct: 'All the luggage was loaded'.",
+   "order": 14,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "luggage / baggage: never plural."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The sun rises / in the east and / sets in the west. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "The sun rises"
+    },
+    {
+     "text": "No error"
+    },
+    {
+     "text": "sets in the west."
+    },
+    {
+     "text": "in the east and"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Universal truths take the simple present, and all agreements are correct, so the sentence has no error.",
+   "order": 15,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Each of the boys / has completed / his assignment. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "Each of the boys"
+    },
+    {
+     "text": "his assignment."
+    },
+    {
+     "text": "No error"
+    },
+    {
+     "text": "has completed"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Each of' takes a singular verb ('has') and the singular pronoun 'his'; the sentence is correct.",
+   "order": 16,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She has been working / here / since January. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "She has been working"
+    },
+    {
+     "text": "No error"
+    },
+    {
+     "text": "since January."
+    },
+    {
+     "text": "here"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Present perfect continuous with 'since' plus a point in time is correct.",
+   "order": 17,
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Neither Ravi nor his brothers / is willing / to join / the cricket team.",
+   "options": [
+    {
+     "text": "is willing"
+    },
+    {
+     "text": "Neither Ravi nor his brothers"
+    },
+    {
+     "text": "to join"
+    },
+    {
+     "text": "the cricket team."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither ... nor', the verb agrees with the nearer subject. 'Brothers' is plural, so 'are willing' is required.",
+   "order": 18,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Neither-nor: verb agrees with the noun right next to it."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Hardly had he reached the station / than the train / started moving / slowly.",
+   "options": [
+    {
+     "text": "than the train"
+    },
+    {
+     "text": "slowly."
+    },
+    {
+     "text": "Hardly had he reached the station"
+    },
+    {
+     "text": "started moving"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' and 'scarcely' are followed by 'when'; 'no sooner' is followed by 'than'. So 'when the train' is correct.",
+   "order": 19,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Hardly / scarcely ... WHEN; no sooner ... THAN."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The number of applicants / for the clerical posts / are / increasing every year.",
+   "options": [
+    {
+     "text": "for the clerical posts"
+    },
+    {
+     "text": "The number of applicants"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "increasing every year."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'The number of' is singular, so the verb is 'is'. ('A number of' would be plural.)",
+   "order": 20,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "The number of = singular; A number of = plural."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: A number of students / was / absent / due to the heavy rain.",
+   "options": [
+    {
+     "text": "absent"
+    },
+    {
+     "text": "due to the heavy rain."
+    },
+    {
+     "text": "A number of students"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'A number of' means 'several' and takes a plural verb: 'were absent'.",
+   "order": 21,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "A number of = plural; The number of = singular."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Many a student / have / failed / in the first attempt.",
+   "options": [
+    {
+     "text": "Many a student"
+    },
+    {
+     "text": "in the first attempt."
+    },
+    {
+     "text": "failed"
+    },
+    {
+     "text": "have"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Many a' is followed by a singular noun and a singular verb: 'Many a student has failed'.",
+   "order": 22,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Many a + singular noun + singular verb."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Fifty rupees / are / too much / for this notebook.",
+   "options": [
+    {
+     "text": "Fifty rupees"
+    },
+    {
+     "text": "too much"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "for this notebook."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A sum of money, distance or time treated as one amount takes a singular verb: 'Fifty rupees is too much'.",
+   "order": 23,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Sum / distance / time as one unit -> singular."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The police / has / arrested / the suspect.",
+   "options": [
+    {
+     "text": "has"
+    },
+    {
+     "text": "the suspect."
+    },
+    {
+     "text": "The police"
+    },
+    {
+     "text": "arrested"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Police' is always plural, so the verb must be 'have arrested'.",
+   "order": 24,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "police, cattle, people = plural."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He asked me / that where / I was going / at that hour.",
+   "options": [
+    {
+     "text": "at that hour."
+    },
+    {
+     "text": "that where"
+    },
+    {
+     "text": "He asked me"
+    },
+    {
+     "text": "I was going"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In reported questions the question word itself introduces the clause; 'that' must not be added: 'He asked me where I was going'.",
+   "order": 25,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Reported question: no 'that' with wh-words."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The cost of living / in metropolitan cities / are rising / faster than in towns.",
+   "options": [
+    {
+     "text": "are rising"
+    },
+    {
+     "text": "The cost of living"
+    },
+    {
+     "text": "in metropolitan cities"
+    },
+    {
+     "text": "faster than in towns."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'the cost' (singular); 'of living' and 'in cities' are modifiers. Correct: 'is rising'.",
+   "order": 26,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the head noun; ignore the phrase after it."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I would have gone / to the match / if he would have / invited me.",
+   "options": [
+    {
+     "text": "invited me."
+    },
+    {
+     "text": "to the match"
+    },
+    {
+     "text": "I would have gone"
+    },
+    {
+     "text": "if he would have"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Third conditional: 'if + past perfect, would have + past participle'. Correct: 'if he had invited me'.",
+   "order": 27,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "if-clause never takes 'would'."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: If I was / you, I would / apologise to / the manager immediately.",
+   "options": [
+    {
+     "text": "the manager immediately."
+    },
+    {
+     "text": "If I was"
+    },
+    {
+     "text": "apologise to"
+    },
+    {
+     "text": "you, I would"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An imaginary (unreal) condition uses the subjunctive 'were' for all persons: 'If I were you'.",
+   "order": 28,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Unreal if-clause: If I WERE."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She is looking forward / to meet / her cousin / next month.",
+   "options": [
+    {
+     "text": "She is looking forward"
+    },
+    {
+     "text": "next month."
+    },
+    {
+     "text": "to meet"
+    },
+    {
+     "text": "her cousin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In 'look forward to', 'to' is a preposition and must be followed by a gerund: 'to meeting'.",
+   "order": 29,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "look forward TO + -ing."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Neither of the two candidates / were / suitable for / the post.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "Neither of the two candidates"
+    },
+    {
+     "text": "suitable for"
+    },
+    {
+     "text": "the post."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither of' with a plural noun takes a singular verb in standard usage: 'Neither of the two candidates was suitable'.",
+   "order": 30,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Neither of / either of -> singular verb."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Between you and I / the plan / is not / practical at all.",
+   "options": [
+    {
+     "text": "practical at all."
+    },
+    {
+     "text": "is not"
+    },
+    {
+     "text": "Between you and I"
+    },
+    {
+     "text": "the plan"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A preposition takes the object form of the pronoun: 'between you and me'.",
+   "order": 31,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Preposition + me / him / her / us / them."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She is more intelligent / than any / other girls / in her class.",
+   "options": [
+    {
+     "text": "She is more intelligent"
+    },
+    {
+     "text": "other girls"
+    },
+    {
+     "text": "than any"
+    },
+    {
+     "text": "in her class."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Any other' must be followed by a singular noun in this comparison: 'any other girl'.",
+   "order": 32,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Comparative + any other + SINGULAR noun."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The old man / was so weak / that he cannot / walk without support.",
+   "options": [
+    {
+     "text": "that he cannot"
+    },
+    {
+     "text": "walk without support."
+    },
+    {
+     "text": "was so weak"
+    },
+    {
+     "text": "The old man"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main clause is in the past ('was'), so the result clause must also be in the past: 'could not'.",
+   "order": 33,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Past main clause -> past in the subordinate clause."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She did not know / whether he / will come / or not.",
+   "options": [
+    {
+     "text": "whether he"
+    },
+    {
+     "text": "She did not know"
+    },
+    {
+     "text": "or not."
+    },
+    {
+     "text": "will come"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The main verb is in the past ('did not know'), so the noun clause needs 'would come' (sequence of tenses).",
+   "order": 34,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Past + reporting -> will becomes would."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I congratulate you / for your / success in / the examination.",
+   "options": [
+    {
+     "text": "the examination."
+    },
+    {
+     "text": "I congratulate you"
+    },
+    {
+     "text": "for your"
+    },
+    {
+     "text": "success in"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Congratulate' takes 'on' for the occasion: 'congratulate you on your success'.",
+   "order": 35,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "congratulate ON."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She was accused / for theft / by the shop owner / last week.",
+   "options": [
+    {
+     "text": "by the shop owner"
+    },
+    {
+     "text": "She was accused"
+    },
+    {
+     "text": "last week."
+    },
+    {
+     "text": "for theft"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Accuse' is followed by 'of': 'accused of theft'.",
+   "order": 36,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "accuse OF; charge WITH."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He is very much / fond for / cricket and / plays daily.",
+   "options": [
+    {
+     "text": "He is very much"
+    },
+    {
+     "text": "fond for"
+    },
+    {
+     "text": "plays daily."
+    },
+    {
+     "text": "cricket and"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Fond' is followed by 'of': 'fond of cricket'.",
+   "order": 37,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "fond OF; good AT; afraid OF."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Neither the captain / nor the players / were told the schedule. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "No error"
+    },
+    {
+     "text": "Neither the captain"
+    },
+    {
+     "text": "nor the players"
+    },
+    {
+     "text": "were told the schedule."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither ... nor' the verb agrees with the nearer subject 'players' (plural), so 'were' is correct.",
+   "order": 38,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The number of vacancies / has increased / this year. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "No error"
+    },
+    {
+     "text": "has increased"
+    },
+    {
+     "text": "The number of vacancies"
+    },
+    {
+     "text": "this year."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The number of' takes a singular verb, so 'has increased' is correct.",
+   "order": 39,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I prefer walking / to driving / in this heavy traffic. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "No error"
+    },
+    {
+     "text": "in this heavy traffic."
+    },
+    {
+     "text": "I prefer walking"
+    },
+    {
+     "text": "to driving"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Prefer X to Y' with two gerunds is correct, so there is no error.",
+   "order": 40,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Hardly had we reached / the hall when / the lights went out. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "Hardly had we reached"
+    },
+    {
+     "text": "the lights went out."
+    },
+    {
+     "text": "the hall when"
+    },
+    {
+     "text": "No error"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Hardly had ... when' is the correct pair and the inversion is correct.",
+   "order": 41,
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Two-thirds of the land / in this village / are / under cultivation.",
+   "options": [
+    {
+     "text": "Two-thirds of the land"
+    },
+    {
+     "text": "under cultivation."
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "in this village"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With fractions, the verb agrees with the noun after 'of'. 'Land' is uncountable (singular), so 'is under cultivation' is correct.",
+   "order": 42,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Fraction + of + noun: verb matches the noun."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The manager suggested / me to take / a few days off / after the audit.",
+   "options": [
+    {
+     "text": "after the audit."
+    },
+    {
+     "text": "me to take"
+    },
+    {
+     "text": "a few days off"
+    },
+    {
+     "text": "The manager suggested"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Suggest' cannot take 'object + to-infinitive'. Correct: 'suggested that I take' or 'suggested my taking'.",
+   "order": 43,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "suggest never takes 'me to ...'."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He is one of those players / who has / never missed / a practice session.",
+   "options": [
+    {
+     "text": "who has"
+    },
+    {
+     "text": "never missed"
+    },
+    {
+     "text": "He is one of those players"
+    },
+    {
+     "text": "a practice session."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Who' refers to 'players' (plural), not 'one'. Correct: 'who have never missed'.",
+   "order": 44,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "one of those + plural noun + who + PLURAL verb."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: This is the most unique / painting that / I have ever seen / in a gallery.",
+   "options": [
+    {
+     "text": "in a gallery."
+    },
+    {
+     "text": "This is the most unique"
+    },
+    {
+     "text": "I have ever seen"
+    },
+    {
+     "text": "painting that"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Unique' means one of a kind, so it cannot be graded with 'most' or 'more'. Correct: 'This is a unique painting'.",
+   "order": 45,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "unique, perfect, complete: no 'most / very'."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Had I known / about the delay, I / will have / started earlier.",
+   "options": [
+    {
+     "text": "started earlier."
+    },
+    {
+     "text": "about the delay, I"
+    },
+    {
+     "text": "Had I known"
+    },
+    {
+     "text": "will have"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In 'Had I known ...' (third conditional inverted) the result is 'would have + past participle'. 'Will have' is wrong.",
+   "order": 46,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Had + subject + pp -> would have + pp."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The reason for his failure / is because / he did not / prepare properly.",
+   "options": [
+    {
+     "text": "he did not"
+    },
+    {
+     "text": "The reason for his failure"
+    },
+    {
+     "text": "is because"
+    },
+    {
+     "text": "prepare properly."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'The reason ... is that' is the correct pattern; 'because' repeats the idea of reason.",
+   "order": 47,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "reason ... is THAT, never because."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Not only the students / but also the teacher / were / disappointed with the result.",
+   "options": [
+    {
+     "text": "disappointed with the result."
+    },
+    {
+     "text": "but also the teacher"
+    },
+    {
+     "text": "Not only the students"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 'not only ... but also', the verb agrees with the nearer subject 'the teacher' (singular): 'was disappointed'.",
+   "order": 48,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Not only-but also: nearer subject decides."
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Had she known the truth, / she would have / acted differently. (If the sentence is correct, choose No error.)",
+   "options": [
+    {
+     "text": "she would have"
+    },
+    {
+     "text": "acted differently."
+    },
+    {
+     "text": "No error"
+    },
+    {
+     "text": "Had she known the truth,"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Third conditional: 'Had + subject + past participle, would have + past participle'. The sentence is correct.",
+   "order": 49,
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [have not finished] her lunch yet.",
+   "options": [
+    {
+     "text": "has not finished"
+    },
+    {
+     "text": "did not finished"
+    },
+    {
+     "text": "do not finished"
+    },
+    {
+     "text": "is not finishing"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Singular subject 'she' needs 'has' with the present perfect; 'yet' signals present perfect.",
+   "order": 50,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "she / he / it + has + pp."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The children [was playing] in the park when it started to rain.",
+   "options": [
+    {
+     "text": "has played"
+    },
+    {
+     "text": "were playing"
+    },
+    {
+     "text": "were played"
+    },
+    {
+     "text": "is playing"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Children' is plural, so the past continuous needs 'were playing'.",
+   "order": 51,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Plural subject -> were."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He is [more taller than] his brother.",
+   "options": [
+    {
+     "text": "tallest than"
+    },
+    {
+     "text": "most taller than"
+    },
+    {
+     "text": "taller than"
+    },
+    {
+     "text": "more tall than"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A one-syllable adjective forms its comparative with -er; the double comparative 'more taller' is wrong.",
+   "order": 52,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "No 'more' before an -er adjective."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I look forward [to see you] at the wedding.",
+   "options": [
+    {
+     "text": "to seeing you"
+    },
+    {
+     "text": "to have seen you"
+    },
+    {
+     "text": "for seeing you"
+    },
+    {
+     "text": "to saw you"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 'look forward to', 'to' is a preposition, so a gerund follows: 'to seeing'.",
+   "order": 53,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "look forward to + -ing."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [did not went] to office yesterday.",
+   "options": [
+    {
+     "text": "had not went"
+    },
+    {
+     "text": "did not go"
+    },
+    {
+     "text": "was not go"
+    },
+    {
+     "text": "does not went"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After 'did not' the verb takes its base form: 'did not go'.",
+   "order": 54,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "did + base verb."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Everyone in the office [were] invited to the party.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were being"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Everyone' is singular and takes a singular verb: 'was invited'.",
+   "order": 55,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Everyone / everybody / someone -> singular."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [don't like] spicy food.",
+   "options": [
+    {
+     "text": "doesn't like"
+    },
+    {
+     "text": "not likes"
+    },
+    {
+     "text": "aren't liking"
+    },
+    {
+     "text": "didn't likes"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third person singular in the present takes 'does not' + base verb.",
+   "order": 56,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "he / she / it -> doesn't + base verb."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) There [is] many books on the shelf.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is being"
+    },
+    {
+     "text": "does"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'There' is followed by a verb that agrees with the real subject 'books' (plural): 'There are'.",
+   "order": 57,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "There + verb agrees with the noun after it."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) This is the [most easiest] way to solve it.",
+   "options": [
+    {
+     "text": "much easiest"
+    },
+    {
+     "text": "most easy"
+    },
+    {
+     "text": "easiest"
+    },
+    {
+     "text": "more easiest"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A superlative takes either 'most' + base adjective or the -est ending, never both.",
+   "order": 58,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "No double superlative."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Water [boil] at 100 degrees Celsius at sea level.",
+   "options": [
+    {
+     "text": "is boil"
+    },
+    {
+     "text": "boils"
+    },
+    {
+     "text": "are boiling"
+    },
+    {
+     "text": "boiled"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A scientific fact takes the simple present, and the singular subject 'water' needs -s.",
+   "order": 59,
+   "subPattern": "sentence-improvement",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "shortcut": "Universal truth -> simple present."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Walking along the road, a snake bit the old man.]",
+   "options": [
+    {
+     "text": "Walking along the road, the old man was bitten by a snake."
+    },
+    {
+     "text": "No improvement"
+    },
+    {
+     "text": "Walking along the road, the snake's bite hurt the old man."
+    },
+    {
+     "text": "Walking along the road, a snake was biting the old man."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An opening participle phrase must describe the subject that follows. Only the old man can be walking, so he must be the subject.",
+   "order": 60,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Participle phrase -> its doer must come right after the comma."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) If I [would have known] the truth, I would have told you.",
+   "options": [
+    {
+     "text": "would know"
+    },
+    {
+     "text": "had known"
+    },
+    {
+     "text": "will have known"
+    },
+    {
+     "text": "knew have"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Third conditional: 'if + past perfect, would have + past participle'. The if-clause cannot contain 'would have'.",
+   "order": 61,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "if + had + pp, would have + pp."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [said me that] he would come late.",
+   "options": [
+    {
+     "text": "says me that"
+    },
+    {
+     "text": "told to me that"
+    },
+    {
+     "text": "told me that"
+    },
+    {
+     "text": "said me to"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Say' is not followed directly by a person; 'tell' takes a direct object: 'told me that'.",
+   "order": 62,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "tell + person; say + (to person)."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [is working] in this company since 2018.",
+   "options": [
+    {
+     "text": "works"
+    },
+    {
+     "text": "was working"
+    },
+    {
+     "text": "worked"
+    },
+    {
+     "text": "has been working"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Since' with a point of time and an action continuing to now requires the present perfect continuous.",
+   "order": 63,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "since / for + continuing action -> has / have been + -ing."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [suggested me] to take rest.",
+   "options": [
+    {
+     "text": "advised me"
+    },
+    {
+     "text": "suggested to me"
+    },
+    {
+     "text": "proposed me"
+    },
+    {
+     "text": "recommended me"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Suggest', 'propose' and 'recommend' cannot take 'object + to-infinitive'; 'advise' can.",
+   "order": 64,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "advise / ask / tell + me + to; suggest never."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Rahul as well as his friends [are] coming to the party.",
+   "options": [
+    {
+     "text": "are being"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 'as well as' the verb agrees with the first subject, Rahul (singular): 'is coming'.",
+   "order": 65,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "as well as: first subject decides."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Despite of] the heavy rain, the match continued.",
+   "options": [
+    {
+     "text": "In spite"
+    },
+    {
+     "text": "Despite"
+    },
+    {
+     "text": "In despite of"
+    },
+    {
+     "text": "Despite from"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Despite' is never followed by 'of'; 'in spite of' is the form with 'of'.",
+   "order": 66,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Despite = in spite of (no 'of' after despite)."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She gave the beggar [an one-rupee coin].",
+   "options": [
+    {
+     "text": "the one-rupee coins"
+    },
+    {
+     "text": "an one rupees coin"
+    },
+    {
+     "text": "a one-rupee coin"
+    },
+    {
+     "text": "a one-rupees coin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'One' begins with the consonant sound /w/, so 'a' is used; a compound adjective before a noun stays singular.",
+   "order": 67,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use 'a' before a consonant SOUND."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He is the [taller of the three] brothers.",
+   "options": [
+    {
+     "text": "tallest of the three"
+    },
+    {
+     "text": "taller among three"
+    },
+    {
+     "text": "more tall of the three"
+    },
+    {
+     "text": "most taller of three"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "For comparison among three or more, the superlative is used: 'tallest of the three'.",
+   "order": 68,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "2 -> comparative; 3 or more -> superlative."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Of the two sisters, Meena is [the more intelligent].",
+   "options": [
+    {
+     "text": "most intelligent"
+    },
+    {
+     "text": "more intelligent than"
+    },
+    {
+     "text": "the most intelligent"
+    },
+    {
+     "text": "No improvement"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "For two persons, the comparative with 'the' ('the more intelligent') is correct; the superlative is for three or more.",
+   "order": 69,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Of the two -> the + comparative."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I [have seen him] yesterday at the market.",
+   "options": [
+    {
+     "text": "have been seeing him"
+    },
+    {
+     "text": "saw him"
+    },
+    {
+     "text": "had seen him"
+    },
+    {
+     "text": "am seeing him"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Yesterday' fixes a definite past time, so the simple past is required.",
+   "order": 70,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Definite past time -> simple past."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Neither Asha nor Meena [have] finished the work.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Neither ... nor' takes a singular verb when both subjects are singular.",
+   "order": 71,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Neither-nor with singular nouns -> singular verb."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I am [use to] waking up early.",
+   "options": [
+    {
+     "text": "used for"
+    },
+    {
+     "text": "used to"
+    },
+    {
+     "text": "use for"
+    },
+    {
+     "text": "using to"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The adjective phrase 'be used to' (accustomed to) is followed by a gerund; the form needs the -d.",
+   "order": 72,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "be used to + -ing."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Because of he was late], he missed the train.",
+   "options": [
+    {
+     "text": "Because he was late"
+    },
+    {
+     "text": "Because that he was late"
+    },
+    {
+     "text": "Because of he is late"
+    },
+    {
+     "text": "Due to he was late"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Because of' and 'due to' are followed by a noun; a full clause requires 'because'.",
+   "order": 73,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Because + clause; Because of + noun."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She asked me [where was I going].",
+   "options": [
+    {
+     "text": "where were I going"
+    },
+    {
+     "text": "where am I going"
+    },
+    {
+     "text": "where was I going to"
+    },
+    {
+     "text": "where I was going"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In reported questions the word order is that of a statement: subject before verb, and the tense shifts to the past.",
+   "order": 74,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Reported question: no inversion."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The prices of vegetables [has risen] sharply this month.",
+   "options": [
+    {
+     "text": "have rose"
+    },
+    {
+     "text": "has been rise"
+    },
+    {
+     "text": "have risen"
+    },
+    {
+     "text": "is risen"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The subject 'prices' is plural, so 'have risen' is needed (past participle of rise is risen).",
+   "order": 75,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Plural subject -> have + pp."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The Prime Minister, along with his ministers, [have] arrived.",
+   "options": [
+    {
+     "text": "has"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Along with' does not alter the number; the subject is 'the Prime Minister' (singular).",
+   "order": 76,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "along with: ignore the add-on."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She is too tired to walk any further.",
+   "options": [
+    {
+     "text": "so tired to walk"
+    },
+    {
+     "text": "too tired for walk"
+    },
+    {
+     "text": "No improvement"
+    },
+    {
+     "text": "very tired to walk"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Too ... to' is the correct pattern expressing an unwanted result; the bracket-free sentence is already right.",
+   "order": 77,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "too + adj + to-infinitive."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I [am knowing] him since childhood.",
+   "options": [
+    {
+     "text": "was knowing him"
+    },
+    {
+     "text": "am known him"
+    },
+    {
+     "text": "know him"
+    },
+    {
+     "text": "have known him"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Know' is a stative verb (no continuous form) and 'since' requires the present perfect: 'have known'.",
+   "order": 78,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Stative verbs: no -ing; since -> present perfect."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [prevented me to go] there.",
+   "options": [
+    {
+     "text": "prevented me going to"
+    },
+    {
+     "text": "prevented me from going"
+    },
+    {
+     "text": "prevented to me go"
+    },
+    {
+     "text": "prevented me from go"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Prevent' takes 'from + gerund': 'prevented me from going'.",
+   "order": 79,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "prevent / stop / keep + object + FROM + -ing."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Scarcely he had] entered the room when the phone rang.",
+   "options": [
+    {
+     "text": "Scarcely had he"
+    },
+    {
+     "text": "Scarcely he was"
+    },
+    {
+     "text": "Scarcely did he have"
+    },
+    {
+     "text": "Scarcely he has"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Scarcely' at the start requires inversion of auxiliary and subject: 'Scarcely had he entered'.",
+   "order": 80,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Negative adverb first -> inversion."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The boy [who's bag] was stolen reported it to the police.",
+   "options": [
+    {
+     "text": "which bag"
+    },
+    {
+     "text": "whom bag"
+    },
+    {
+     "text": "who bag"
+    },
+    {
+     "text": "whose bag"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The possessive relative pronoun for a person is 'whose' ('who's' = 'who is').",
+   "order": 81,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Possession -> whose."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [did a mistake] in the calculation.",
+   "options": [
+    {
+     "text": "had do a mistake"
+    },
+    {
+     "text": "made a mistake"
+    },
+    {
+     "text": "has done a mistake"
+    },
+    {
+     "text": "does a mistake"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The fixed collocation is 'make a mistake' (not 'do').",
+   "order": 82,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "make a mistake; do homework."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He gave me [a good advice] before the interview.",
+   "options": [
+    {
+     "text": "an good advice"
+    },
+    {
+     "text": "good advices"
+    },
+    {
+     "text": "good advice"
+    },
+    {
+     "text": "a good advices"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Advice' is uncountable: no 'a' and no plural -s.",
+   "order": 83,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "advice / information: no a, no -s."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He prefers cycling [than walking].",
+   "options": [
+    {
+     "text": "rather walking"
+    },
+    {
+     "text": "to walking"
+    },
+    {
+     "text": "from walking"
+    },
+    {
+     "text": "than to walk"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Prefer' is followed by 'to', not 'than': prefer X to Y.",
+   "order": 84,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "prefer X TO Y."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Each of the players have] received a medal.",
+   "options": [
+    {
+     "text": "Each of the players has"
+    },
+    {
+     "text": "Each of the players were"
+    },
+    {
+     "text": "Each of the players are"
+    },
+    {
+     "text": "Each of the player has"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular and takes 'has'; 'of the players' needs the plural noun.",
+   "order": 85,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Each of + plural noun + singular verb."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) She [cannot but to admire] his courage.",
+   "options": [
+    {
+     "text": "cannot help to admire"
+    },
+    {
+     "text": "can not but to admire"
+    },
+    {
+     "text": "cannot but admire"
+    },
+    {
+     "text": "cannot but admiring"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Cannot but' is followed by the bare infinitive: 'cannot but admire'.",
+   "order": 86,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "cannot but + base verb."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The student, together with his parents, [are] meeting the principal tomorrow.",
+   "options": [
+    {
+     "text": "are being"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Together with' does not change the number of the subject; 'the student' is singular: 'is meeting'.",
+   "order": 87,
+   "subPattern": "sentence-improvement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "together with: ignore add-on."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) The man [whom I thought was honest] cheated me.",
+   "options": [
+    {
+     "text": "whom I thought were honest"
+    },
+    {
+     "text": "whose I thought was honest"
+    },
+    {
+     "text": "who I thought was honest"
+    },
+    {
+     "text": "which I thought was honest"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The relative pronoun is the subject of 'was honest' ('I thought' is parenthetical), so the subject form 'who' is needed.",
+   "order": 88,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Who = subject of the verb that follows."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Unless you [do not work] hard, you will fail.",
+   "options": [
+    {
+     "text": "work"
+    },
+    {
+     "text": "would not work"
+    },
+    {
+     "text": "will not work"
+    },
+    {
+     "text": "didn't work"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Unless' already means 'if ... not', so the verb must be positive to avoid a double negative.",
+   "order": 89,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Unless + positive verb."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [as well as his sons were] arrested.",
+   "options": [
+    {
+     "text": "as well as his sons are"
+    },
+    {
+     "text": "as well as his sons was"
+    },
+    {
+     "text": "and his sons was"
+    },
+    {
+     "text": "along with his sons were"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With 'as well as' the verb agrees with the first subject 'he' and the tense stays past: 'was arrested'.",
+   "order": 90,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "as well as: first subject; keep the tense."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Had he studied harder, he [would pass] the exam.",
+   "options": [
+    {
+     "text": "had passed"
+    },
+    {
+     "text": "will pass"
+    },
+    {
+     "text": "would passed"
+    },
+    {
+     "text": "would have passed"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An inverted 'Had he studied' is a third conditional; the main clause takes 'would have + past participle'.",
+   "order": 91,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Had + subject + pp -> would have + pp."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) [Having been completed the work,] the engineers left the site.",
+   "options": [
+    {
+     "text": "Being completed the work,"
+    },
+    {
+     "text": "Having been completed work,"
+    },
+    {
+     "text": "Have completed the work,"
+    },
+    {
+     "text": "Having completed the work,"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The engineers did the work, so the active participle 'having completed' is needed; the passive 'been completed' cannot take an object.",
+   "order": 92,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Doer subject -> active participle."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) It is high time you [start] preparing for the exam.",
+   "options": [
+    {
+     "text": "starts"
+    },
+    {
+     "text": "have start"
+    },
+    {
+     "text": "started"
+    },
+    {
+     "text": "will start"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'It is high time' is followed by a past-tense verb (a present need expressed with the past).",
+   "order": 93,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "It is (high) time + subject + past tense."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) I wish I [was] a bird so that I could fly.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "will be"
+    },
+    {
+     "text": "am"
+    },
+    {
+     "text": "would be"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'wish' an unreal present wish takes the subjunctive 'were' for every person.",
+   "order": 94,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "wish + subject + were."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) He [does not hardly speak] to anyone.",
+   "options": [
+    {
+     "text": "hardly does not speak"
+    },
+    {
+     "text": "hardly speaks"
+    },
+    {
+     "text": "does not hardly speaks"
+    },
+    {
+     "text": "doesn't scarcely speak"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Hardly' is already negative; adding 'not' creates a double negative.",
+   "order": 95,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "hardly / scarcely / barely: no 'not'."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) No sooner did he reach home [when] it began to rain.",
+   "options": [
+    {
+     "text": "as"
+    },
+    {
+     "text": "then"
+    },
+    {
+     "text": "than"
+    },
+    {
+     "text": "while"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'No sooner' is paired with 'than'; 'hardly / scarcely' pair with 'when'.",
+   "order": 96,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "No sooner ... THAN."
+  },
+  {
+   "questionText": "Choose the option that best replaces the part in square brackets. (If the sentence is already correct, choose No improvement.) Mohan [as well as his brother has] won a scholarship.",
+   "options": [
+    {
+     "text": "as well as his brother have"
+    },
+    {
+     "text": "and his brother has"
+    },
+    {
+     "text": "with his brother have"
+    },
+    {
+     "text": "No improvement"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb agrees with the first subject Mohan: 'has'. The sentence is already correct.",
+   "order": 97,
+   "subPattern": "sentence-improvement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "as well as: first subject; singular here."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The price of vegetables ___ rising every month.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The subject is the singular noun 'price', not 'vegetables'. A singular subject takes the singular verb 'is'.",
+   "order": 98,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the head noun; ignore 'of ...' phrases."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Either Meena or her sisters ___ going to attend the wedding today.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'either...or', the verb agrees with the subject nearest to it. 'Her sisters' is plural, so 'are'.",
+   "order": 99,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "either/or, neither/nor: match the nearer subject."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the manager nor the clerks ___ aware of the new rule.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With 'neither...nor', the verb agrees with the nearer subject. 'Clerks' is plural, so 'are'.",
+   "order": 100,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Nearer subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the clerks nor the manager ___ aware of the new rule.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With 'neither...nor', the verb agrees with the nearer subject. 'Manager' is singular, so 'is'.",
+   "order": 101,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Nearer subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Bread and butter ___ my usual breakfast.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two nouns that form one single idea or dish are treated as a singular subject, so 'is'.",
+   "order": 102,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One idea joined by 'and' -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Politics ___ a subject of great interest to him.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Names of subjects such as politics, physics, mathematics and economics look plural but take a singular verb.",
+   "order": 103,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Subject names ending in -s are singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Measles ___ a contagious disease.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of diseases ending in -s (measles, mumps, diabetes) take a singular verb.",
+   "order": 104,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Disease names in -s are singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Everybody in the hall ___ standing right now.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Everybody' is a singular indefinite pronoun, so it takes 'is'. 'Right now' also rules out the past forms.",
+   "order": 105,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "every-/some-/any-/no- + body/one -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The scissors on the table ___ very sharp.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Scissors' is a plural-only noun (a tool with two blades) and takes a plural verb.",
+   "order": 106,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "scissors, trousers, spectacles: plural verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. My trousers ___ too long for me.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Trousers' is a plural-only noun and takes a plural verb.",
+   "order": 107,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Pair-nouns used alone are plural."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. A pair of shoes ___ kept near the door.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The subject is the singular word 'pair'; 'of shoes' only describes it. So the verb is 'is'.",
+   "order": 108,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "'A pair of' -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Each of the four sisters ___ a talented singer.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Each' is singular, so it takes 'is' regardless of the plural noun that follows 'of'.",
+   "order": 109,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Each/every/either/neither + singular verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Nobody except the two guards ___ the secret code.",
+   "options": [
+    {
+     "text": "knows"
+    },
+    {
+     "text": "know"
+    },
+    {
+     "text": "are knowing"
+    },
+    {
+     "text": "have known"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'nobody' (singular). 'Except the two guards' is only an exclusion phrase, so the verb is 'knows'.",
+   "order": 110,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "'except', 'but', 'besides' phrases do not change the subject."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The quality of the mangoes sold in this market ___ excellent.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The subject is 'quality' (singular). The plural 'mangoes' sits inside a modifying phrase, so the verb is 'is'.",
+   "order": 111,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Ignore the intervening phrase."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The mother, along with her two children, ___ visiting the temple today.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Along with' is not a conjunction; the verb agrees with the first subject 'the mother', which is singular.",
+   "order": 112,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "along with / together with / as well as: first subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. A number of passengers ___ waiting at the platform now.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'A number of' means 'several' and acts as a plural subject, so the verb is 'are'.",
+   "order": 113,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "A number of -> plural; The number of -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The number of passengers waiting at the platform ___ increasing now.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'The number of' refers to the number itself, which is singular, so the verb is 'is'.",
+   "order": 114,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The number of -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. One of the reasons for the current delay ___ the heavy rain.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The subject is 'one' (singular); 'of the reasons' is a modifying phrase. 'Current' marks present time.",
+   "order": 115,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "One of + plural noun -> singular verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She is one of those teachers who ___ always encouraging students to ask questions.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In 'one of those ... who', the relative pronoun 'who' refers to the plural 'teachers', so the verb is plural: 'are'.",
+   "order": 116,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "one of those who -> plural verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He is the only one of the clerks who ___ the software well.",
+   "options": [
+    {
+     "text": "have known"
+    },
+    {
+     "text": "know"
+    },
+    {
+     "text": "knows"
+    },
+    {
+     "text": "are knowing"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With 'the only one of ... who', 'who' refers to 'one' (singular), so the verb is 'knows'.",
+   "order": 117,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "the only one who -> singular verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Ten kilometres ___ a long distance to walk every day.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A distance treated as a single unit takes a singular verb.",
+   "order": 118,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Distance, money, time as one unit -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Two-fifths of the water in the tank ___ already been used.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With fractions, the verb agrees with the noun after 'of'. 'Water' is uncountable and singular, so 'has'.",
+   "order": 119,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Fraction + of + noun: verb follows the noun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Two-fifths of the students in the class ___ already left.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With fractions, the verb agrees with the noun after 'of'. 'Students' is plural, so 'have'.",
+   "order": 120,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Fraction + of + noun: verb follows the noun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither of the two roads ___ leading to the village.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Neither' is singular, so it takes 'is'.",
+   "order": 121,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Neither/either + singular verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Not only the principal but also the teachers ___ present at the meeting today.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'not only ... but also', the verb agrees with the nearer subject. 'Teachers' is plural, so 'are'.",
+   "order": 122,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Nearer subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Many a candidate ___ failed the aptitude round in the past.",
+   "options": [
+    {
+     "text": "have"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Many a' is followed by a singular noun and takes a singular verb, so 'has'.",
+   "order": 123,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Many a + singular noun + singular verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. More than one candidate ___ applied for the post.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'More than one' takes a singular noun and a singular verb, so 'has'.",
+   "order": 124,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "More than one -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Gold and silver ___ both precious metals.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two different nouns joined by 'and' form a plural subject, and 'both' confirms it, so 'are'.",
+   "order": 125,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "A and B (two things) -> plural."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Every boy and every girl in the school ___ expected to wear a uniform.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When singular nouns joined by 'and' are each preceded by 'every' or 'each', the subject is singular, so 'is'.",
+   "order": 126,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "every X and every Y -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Each of the employees, along with the supervisor, ___ required to wear a helmet.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The subject is 'each' (singular). 'Along with the supervisor' does not add to the subject.",
+   "order": 127,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "each + along with -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The main attraction of the fair ___ the elephants and the camels.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb agrees with the subject 'attraction' (singular), not with the complement 'elephants and camels'.",
+   "order": 128,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Verb agrees with the subject, not the complement."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. There ___ several mistakes in your report.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In 'there ... ' sentences the real subject follows the verb. 'Mistakes' is plural, so 'are'.",
+   "order": 129,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "There + be: look at the noun after the verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Principal and Chairman of the college ___ presiding over the function.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "One article before two titles ('the Principal and Chairman') shows one person holding both posts, so the subject is singular.",
+   "order": 130,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "One article, two nouns -> one person -> singular."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Principal and the Chairman of the college ___ presiding over the function.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A separate article before each noun ('the Principal and the Chairman') shows two different persons, so the subject is plural.",
+   "order": 131,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Article repeated -> two persons -> plural."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the coach nor the players, who had trained for months, ___ satisfied with the result.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 'neither...nor' the verb agrees with the nearer subject, 'players' (plural). 'Had trained' sets the past time, so 'were'.",
+   "order": 132,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Nearer subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The chief, together with his ministers, ___ expected to arrive shortly.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Together with' does not make the subject plural; the verb agrees with 'the chief', which is singular.",
+   "order": 133,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "together with: first subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is the engineers, not the manager, who ___ responsible for the delay.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The relative pronoun 'who' refers to the noun it follows, 'engineers' (plural). So 'are'.",
+   "order": 134,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "'who' takes the number of its antecedent."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is the manager, not the engineers, who ___ responsible for the delay.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The relative pronoun 'who' refers to 'the manager' (singular), so the verb is 'is'.",
+   "order": 135,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "'who' takes the number of its antecedent."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Half of the mangoes in the basket ___ rotten.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'half of', the verb follows the noun after 'of'. 'Mangoes' is plural, so 'are'.",
+   "order": 136,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Fraction + of + noun: verb follows the noun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The stars, as well as the moon, ___ visible tonight.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As well as' does not join subjects; the verb agrees with the first subject, 'the stars' (plural), so 'are'.",
+   "order": 137,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "as well as: first subject decides."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Where ___ the keys and the wallet kept?",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "has been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In a question the subject follows the verb. 'The keys and the wallet' is a plural subject (two things joined by 'and'), so 'are'.",
+   "order": 138,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Rearrange the question to find the subject."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Here ___ the documents you asked for.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'Here', the subject follows the verb. 'Documents' is plural, so 'are'.",
+   "order": 139,
+   "subPattern": "subject-verb-agreement-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Here/There + verb + subject: agree with the subject."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She ___ in Mumbai since 2019.",
+   "options": [
+    {
+     "text": "has lived"
+    },
+    {
+     "text": "lived"
+    },
+    {
+     "text": "is living"
+    },
+    {
+     "text": "lives"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since 2019' marks a period that started in the past and continues now, so the present perfect 'has lived' is needed.",
+   "order": 140,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "since / for + continuing period -> present perfect."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ him yesterday at the station.",
+   "options": [
+    {
+     "text": "had met"
+    },
+    {
+     "text": "meet"
+    },
+    {
+     "text": "met"
+    },
+    {
+     "text": "have met"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Yesterday' names a finished past time, so the simple past 'met' is used.",
+   "order": 141,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Definite past time -> simple past."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. By the time the police arrived, the thieves ___.",
+   "options": [
+    {
+     "text": "have escaped"
+    },
+    {
+     "text": "had escaped"
+    },
+    {
+     "text": "would escape"
+    },
+    {
+     "text": "escape"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'By the time' with a past clause needs the past perfect for the earlier action: 'had escaped'.",
+   "order": 142,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "By the time + simple past -> past perfect in the main clause."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The train ___ before we reached the platform.",
+   "options": [
+    {
+     "text": "is leaving"
+    },
+    {
+     "text": "leaves"
+    },
+    {
+     "text": "has left"
+    },
+    {
+     "text": "had left"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The train's departure happened before another past action, so the past perfect 'had left' is used.",
+   "order": 143,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Earlier of two past actions -> past perfect."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Look! The bus ___.",
+   "options": [
+    {
+     "text": "came"
+    },
+    {
+     "text": "comes"
+    },
+    {
+     "text": "is coming"
+    },
+    {
+     "text": "will came"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Look!' points to an action happening right now, so the present continuous 'is coming' is used.",
+   "order": 144,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Happening now -> present continuous."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ in the garden at 6 p.m. yesterday.",
+   "options": [
+    {
+     "text": "was walking"
+    },
+    {
+     "text": "have walked"
+    },
+    {
+     "text": "am walking"
+    },
+    {
+     "text": "walk"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An action in progress at a specific past moment takes the past continuous: 'was walking'.",
+   "order": 145,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "In progress at a past time -> past continuous."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If it rains tomorrow, the match ___ postponed.",
+   "options": [
+    {
+     "text": "would be"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "is being"
+    },
+    {
+     "text": "will be"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A first conditional (real future possibility) uses present simple in the if-clause and 'will' in the main clause.",
+   "order": 146,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "If + present, will + verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Water ___ at 100 degrees Celsius.",
+   "options": [
+    {
+     "text": "has boiled"
+    },
+    {
+     "text": "boils"
+    },
+    {
+     "text": "is boiling"
+    },
+    {
+     "text": "boiled"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A scientific fact is stated in the simple present, so 'boils'.",
+   "order": 147,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "General truth -> simple present."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. My sister ___ her homework already.",
+   "options": [
+    {
+     "text": "has finished"
+    },
+    {
+     "text": "finishes"
+    },
+    {
+     "text": "is finishing"
+    },
+    {
+     "text": "will finish"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Already' with a completed action that is relevant now takes the present perfect: 'has finished'.",
+   "order": 148,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "already / yet / just -> present perfect."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I have never ___ such a beautiful sunset.",
+   "options": [
+    {
+     "text": "see"
+    },
+    {
+     "text": "saw"
+    },
+    {
+     "text": "seen"
+    },
+    {
+     "text": "seeing"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The present perfect 'have ... ' needs the past participle. The past participle of 'see' is 'seen'.",
+   "order": 149,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "have/has + past participle."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither of the boys ___ the answer yesterday.",
+   "options": [
+    {
+     "text": "knows"
+    },
+    {
+     "text": "know"
+    },
+    {
+     "text": "has known"
+    },
+    {
+     "text": "knew"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Yesterday' fixes the time in the past, so the simple past 'knew' is used.",
+   "order": 150,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Past time marker -> simple past."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. We ___ this house in 2015.",
+   "options": [
+    {
+     "text": "buy"
+    },
+    {
+     "text": "bought"
+    },
+    {
+     "text": "are buying"
+    },
+    {
+     "text": "have bought"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A specific past year ('in 2015') requires the simple past, not the present perfect.",
+   "order": 151,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Definite past time -> simple past."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Hardly ___ the gate when it began to rain.",
+   "options": [
+    {
+     "text": "had I reached"
+    },
+    {
+     "text": "I had reached"
+    },
+    {
+     "text": "I reached"
+    },
+    {
+     "text": "did I reach"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' at the start takes inversion with the past perfect: 'Hardly had I reached ... when ...'.",
+   "order": 152,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Hardly/Scarcely/No sooner + had + subject + pp."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. By next March, she ___ in this company for ten years.",
+   "options": [
+    {
+     "text": "had worked"
+    },
+    {
+     "text": "will have worked"
+    },
+    {
+     "text": "will work"
+    },
+    {
+     "text": "has worked"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A future deadline ('by next March') plus a duration calls for the future perfect: 'will have worked'.",
+   "order": 153,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "By + future time -> future perfect."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ for you since morning.",
+   "options": [
+    {
+     "text": "am waiting"
+    },
+    {
+     "text": "waited"
+    },
+    {
+     "text": "was waiting"
+    },
+    {
+     "text": "have been waiting"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Since morning' shows an action continuing up to now, so the present perfect continuous is used.",
+   "order": 154,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "since/for + continuing action -> have/has been + -ing."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If he ___ harder, he would have passed the exam.",
+   "options": [
+    {
+     "text": "would work"
+    },
+    {
+     "text": "has worked"
+    },
+    {
+     "text": "had worked"
+    },
+    {
+     "text": "worked"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A third conditional (unreal past) uses the past perfect in the if-clause and 'would have + pp' in the main clause.",
+   "order": 155,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "If + had + pp, would have + pp."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She looked as if she ___ a ghost.",
+   "options": [
+    {
+     "text": "had seen"
+    },
+    {
+     "text": "sees"
+    },
+    {
+     "text": "will see"
+    },
+    {
+     "text": "has seen"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Looked' is past, and the seeing came before the looking, so the past perfect 'had seen' is needed.",
+   "order": 156,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Earlier than a past main verb -> past perfect."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Titanic ___ in 1912 after hitting an iceberg.",
+   "options": [
+    {
+     "text": "has sunk"
+    },
+    {
+     "text": "sinks"
+    },
+    {
+     "text": "had sunk"
+    },
+    {
+     "text": "sank"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A historical event with a given year takes the simple past: 'sank'.",
+   "order": 157,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Historical date -> simple past."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Since the new manager joined, sales ___ steadily.",
+   "options": [
+    {
+     "text": "had grown"
+    },
+    {
+     "text": "have grown"
+    },
+    {
+     "text": "grew"
+    },
+    {
+     "text": "grow"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Since + past event' shows a change continuing up to now, so the present perfect 'have grown'.",
+   "order": 158,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Since + past point -> present perfect."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Walking down the road, a stray dog barked at Rahul.\nB. Walking down the road, Rahul was barked at by a stray dog.\nC. Walking down the road, the bark of a stray dog startled Rahul.\nD. Rahul was barked at by a stray dog, walking down the road.",
+   "options": [
+    {
+     "text": "C. Walking down the road, the bark of a stray dog startled Rahul."
+    },
+    {
+     "text": "A. Walking down the road, a stray dog barked at Rahul."
+    },
+    {
+     "text": "B. Walking down the road, Rahul was barked at by a stray dog."
+    },
+    {
+     "text": "D. Rahul was barked at by a stray dog, walking down the road."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An opening participle phrase must modify the subject that follows it. Only in B is the subject (Rahul) the one walking. In A and C the dog or the bark seems to walk; in D the phrase is placed so that it modifies the dog.",
+   "order": 159,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The word right after the comma must be the doer of the opening phrase."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Having finished the exam, ___.",
+   "options": [
+    {
+     "text": "the question paper was handed in"
+    },
+    {
+     "text": "the hall was left empty"
+    },
+    {
+     "text": "Priya left the hall"
+    },
+    {
+     "text": "the bell was rung"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The participle phrase 'Having finished the exam' must modify the person who finished it. Only 'Priya' can; the other options give a thing as subject (dangling modifier).",
+   "order": 160,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Opening -ing/-ed phrase: the next noun must be its doer."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. To get a bank loan, ___.",
+   "options": [
+    {
+     "text": "the process is lengthy"
+    },
+    {
+     "text": "the applicant must submit income proof"
+    },
+    {
+     "text": "income proof must be submitted"
+    },
+    {
+     "text": "a form is necessary"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The infinitive phrase 'To get a bank loan' needs a doer as the subject of the main clause. Only 'the applicant' can get a loan; the others leave the phrase dangling.",
+   "order": 161,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Purpose phrase 'To do X' -> subject must be the doer."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The teacher gave a book to the boy with a red cover.\nB. The teacher gave the boy a book with a red cover.\nC. The teacher with a red cover gave the boy a book.\nD. With a red cover, the teacher gave a book to the boy.",
+   "options": [
+    {
+     "text": "A. The teacher gave a book to the boy with a red cover."
+    },
+    {
+     "text": "D. With a red cover, the teacher gave a book to the boy."
+    },
+    {
+     "text": "C. The teacher with a red cover gave the boy a book."
+    },
+    {
+     "text": "B. The teacher gave the boy a book with a red cover."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A modifier must sit next to the word it describes. The red cover belongs to the book, so it must follow 'a book' (B). In A it attaches to the boy, in C to the teacher, and in D it floats at the front.",
+   "order": 162,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Place the modifier right beside what it describes."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The meeting ___ at 10 a.m. tomorrow, so please be on time.",
+   "options": [
+    {
+     "text": "starts"
+    },
+    {
+     "text": "will be start"
+    },
+    {
+     "text": "started"
+    },
+    {
+     "text": "has started"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A scheduled or fixed future event is expressed with the simple present: 'starts'.",
+   "order": 163,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Timetable future -> simple present."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. No sooner ___ the bell rung than the students ran out.",
+   "options": [
+    {
+     "text": "did"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "had"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'No sooner' is followed by the past perfect (inverted): 'No sooner had the bell rung than ...'.",
+   "order": 164,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "No sooner + had + subject + pp + than."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Scarcely ___ he finished speaking when the audience applauded.",
+   "options": [
+    {
+     "text": "would"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "had"
+    },
+    {
+     "text": "did"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Scarcely' takes the past perfect with inversion and is followed by 'when': 'Scarcely had he finished ... when ...'.",
+   "order": 165,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Scarcely/Hardly + had ... when."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She ___ the piano for an hour when the guests arrived.",
+   "options": [
+    {
+     "text": "was played"
+    },
+    {
+     "text": "had been playing"
+    },
+    {
+     "text": "is playing"
+    },
+    {
+     "text": "has been playing"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An action continuing up to a past moment ('when the guests arrived') uses the past perfect continuous.",
+   "order": 166,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Duration up to a past point -> had been + -ing."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If you ___ the instructions carefully, you would not have made this mistake.",
+   "options": [
+    {
+     "text": "had read"
+    },
+    {
+     "text": "have read"
+    },
+    {
+     "text": "read"
+    },
+    {
+     "text": "would read"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main clause 'would not have made' is a third conditional, so the if-clause needs the past perfect 'had read'.",
+   "order": 167,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "would have + pp needs if + had + pp."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. By the time we reached Ooty, the sun ___ set.",
+   "options": [
+    {
+     "text": "would"
+    },
+    {
+     "text": "had"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'By the time we reached' (past) needs the earlier action in the past perfect: 'had set'.",
+   "order": 168,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "By the time + past -> had + pp."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ him since last year.",
+   "options": [
+    {
+     "text": "don't see"
+    },
+    {
+     "text": "hadn't seen"
+    },
+    {
+     "text": "haven't seen"
+    },
+    {
+     "text": "didn't see"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Since last year' marks a period continuing to now, so the present perfect 'haven't seen' is used.",
+   "order": 169,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "since + point of time -> present perfect."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. If water ___, it turns into steam.",
+   "options": [
+    {
+     "text": "will heat"
+    },
+    {
+     "text": "heated"
+    },
+    {
+     "text": "heats"
+    },
+    {
+     "text": "is heated"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A scientific fact uses the zero conditional: present simple in both clauses. Water receives the action, so the passive 'is heated' is needed.",
+   "order": 170,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "General truth: if + present, present."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I am looking forward to ___ you.",
+   "options": [
+    {
+     "text": "seeing"
+    },
+    {
+     "text": "have seen"
+    },
+    {
+     "text": "saw"
+    },
+    {
+     "text": "see"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look forward to' ends in the preposition 'to', which is followed by a gerund (-ing form): 'seeing'.",
+   "order": 171,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "look forward to + -ing."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Not having received any reply, ___.",
+   "options": [
+    {
+     "text": "the delay was irritating"
+    },
+    {
+     "text": "an email was drafted"
+    },
+    {
+     "text": "the manager sent a reminder"
+    },
+    {
+     "text": "a reminder was sent"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The opening participle phrase must be followed by its doer. Only 'the manager' could have been waiting for a reply; the others dangle the modifier.",
+   "order": 172,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Opening phrase -> doer must come next."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The match ___ by the time we reach the stadium.",
+   "options": [
+    {
+     "text": "had started"
+    },
+    {
+     "text": "has started"
+    },
+    {
+     "text": "started"
+    },
+    {
+     "text": "will have started"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'By the time we reach' (present form for the future) calls for the future perfect in the main clause: 'will have started'.",
+   "order": 173,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "By the time + present -> will have + pp."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Had the committee ___ the proposal earlier, the project would have finished on time.",
+   "options": [
+    {
+     "text": "approves"
+    },
+    {
+     "text": "approved"
+    },
+    {
+     "text": "approve"
+    },
+    {
+     "text": "been approving"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inverted third conditional: 'Had + subject + past participle'. The past participle of 'approve' is 'approved'.",
+   "order": 174,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Had + S + pp, would have + pp."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Unless you ___ the fee by Friday, your admission will be cancelled.",
+   "options": [
+    {
+     "text": "pay"
+    },
+    {
+     "text": "are paying"
+    },
+    {
+     "text": "will pay"
+    },
+    {
+     "text": "paid"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'unless' in a first conditional, the present simple is used for the future: 'Unless you pay ...'. 'Will' is not used in the unless-clause.",
+   "order": 175,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Unless / if + present, never will."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She would have joined us if she ___ about the plan.",
+   "options": [
+    {
+     "text": "had known"
+    },
+    {
+     "text": "has known"
+    },
+    {
+     "text": "knew"
+    },
+    {
+     "text": "would have known"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main clause 'would have joined' is a third conditional, so the if-clause takes the past perfect 'had known'.",
+   "order": 176,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "would have + pp <- if + had + pp."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Having been warned about the storm, the boats were kept in the harbour by the fishermen.\nB. Having been warned about the storm, the fishermen kept the boats in the harbour.\nC. Having warned about the storm, the fishermen kept the boats in the harbour.\nD. Having been warned about the storm, the harbour held the fishermen's boats.",
+   "options": [
+    {
+     "text": "C. Having warned about the storm, the fishermen kept the boats in the harbour."
+    },
+    {
+     "text": "B. Having been warned about the storm, the fishermen kept the boats in the harbour."
+    },
+    {
+     "text": "A. Having been warned about the storm, the boats were kept in the harbour by the fishermen."
+    },
+    {
+     "text": "D. Having been warned about the storm, the harbour held the fishermen's boats."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The phrase 'Having been warned' describes the people who received the warning, so they must be the subject that follows. In B the fishermen are. In A and D the boats and harbour cannot be warned, and C uses the wrong form ('having warned').",
+   "order": 177,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Opening phrase and subject must name the same person."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rohan, who ___ to Pune last year, now works in Bengaluru.",
+   "options": [
+    {
+     "text": "is moving"
+    },
+    {
+     "text": "has moved"
+    },
+    {
+     "text": "moves"
+    },
+    {
+     "text": "moved"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Last year' is a finished, definite past time, so the simple past 'moved' is used.",
+   "order": 178,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Definite past time -> simple past."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ this novel for a week now and I am still on chapter three.",
+   "options": [
+    {
+     "text": "was reading"
+    },
+    {
+     "text": "read"
+    },
+    {
+     "text": "have been reading"
+    },
+    {
+     "text": "had read"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'For a week now' shows an action continuing up to the present, so the present perfect continuous 'have been reading' is used.",
+   "order": 179,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "for + duration up to now -> have been + -ing."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Stuck in traffic, the flight was missed by Ananya.\nB. Stuck in traffic, Ananya missed her flight.\nC. Stuck in traffic, a flight was missed.\nD. Stuck in traffic, the delay cost Ananya her flight.",
+   "options": [
+    {
+     "text": "B. Stuck in traffic, Ananya missed her flight."
+    },
+    {
+     "text": "C. Stuck in traffic, a flight was missed."
+    },
+    {
+     "text": "D. Stuck in traffic, the delay cost Ananya her flight."
+    },
+    {
+     "text": "A. Stuck in traffic, the flight was missed by Ananya."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Stuck in traffic' must modify the noun directly after the comma. Only Ananya can be stuck in traffic. In A the flight, in C nothing, and in D the delay is the subject, so the modifier dangles.",
+   "order": 180,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Check who or what is directly after the comma."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I ___ to the gym every morning before I injured my knee.",
+   "options": [
+    {
+     "text": "was used to go"
+    },
+    {
+     "text": "am used to go"
+    },
+    {
+     "text": "used to go"
+    },
+    {
+     "text": "use to go"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Used to + base verb' expresses a past habit that no longer exists. 'Be used to' takes -ing, and 'use to' is incorrect in the affirmative.",
+   "order": 181,
+   "subPattern": "tense-modifier-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Past habit -> used to + verb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She enjoys singing, dancing and ___.",
+   "options": [
+    {
+     "text": "paint"
+    },
+    {
+     "text": "to paint"
+    },
+    {
+     "text": "to be painting"
+    },
+    {
+     "text": "painting"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After 'enjoy' items in a list must be gerunds (-ing forms) for parallel structure: singing, dancing, painting.",
+   "order": 182,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Keep every list item in the same form."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He likes to read, to write and ___.",
+   "options": [
+    {
+     "text": "painted"
+    },
+    {
+     "text": "to paint"
+    },
+    {
+     "text": "a painter"
+    },
+    {
+     "text": "painting"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The earlier items are full infinitives ('to read', 'to write'), so the last must be an infinitive too: 'to paint'.",
+   "order": 183,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Match infinitive with infinitive."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The manager was efficient, honest and ___.",
+   "options": [
+    {
+     "text": "with hard work"
+    },
+    {
+     "text": "works hard"
+    },
+    {
+     "text": "a hard worker"
+    },
+    {
+     "text": "hardworking"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The series is of adjectives (efficient, honest), so the third item must be an adjective: 'hardworking'.",
+   "order": 184,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Adjective, adjective, adjective."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He is not only intelligent but also ___.",
+   "options": [
+    {
+     "text": "works hard"
+    },
+    {
+     "text": "hardworking"
+    },
+    {
+     "text": "with hard work"
+    },
+    {
+     "text": "a hard worker"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Not only ... but also' must join items of the same form. 'Intelligent' is an adjective, so 'hardworking' is needed.",
+   "order": 185,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Both sides of a correlative must match."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. We can travel by bus, by train or ___.",
+   "options": [
+    {
+     "text": "by air"
+    },
+    {
+     "text": "an aeroplane"
+    },
+    {
+     "text": "flying"
+    },
+    {
+     "text": "the sky"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each item is a 'by + noun' phrase, so the last item should also be 'by air'.",
+   "order": 186,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Repeat the same phrase pattern."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rahul is tall, dark and ___.",
+   "options": [
+    {
+     "text": "with handsomeness"
+    },
+    {
+     "text": "a handsome person"
+    },
+    {
+     "text": "handsome"
+    },
+    {
+     "text": "has handsome"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The list consists of adjectives, so the final item must also be an adjective: 'handsome'.",
+   "order": 187,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Adjective, adjective, adjective."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The job requires patience, accuracy and ___.",
+   "options": [
+    {
+     "text": "speed"
+    },
+    {
+     "text": "to be fast"
+    },
+    {
+     "text": "quick workers"
+    },
+    {
+     "text": "being fast"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of abstract nouns (patience, accuracy), so the last item should be a noun: 'speed'.",
+   "order": 188,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Noun, noun, noun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She told me to sit down, to relax and ___.",
+   "options": [
+    {
+     "text": "waiting"
+    },
+    {
+     "text": "that I wait"
+    },
+    {
+     "text": "to wait"
+    },
+    {
+     "text": "she waited"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The earlier items are infinitives ('to sit', 'to relax'), so the last must be 'to wait'.",
+   "order": 189,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Infinitive list stays infinitive."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I came, I saw and I ___.",
+   "options": [
+    {
+     "text": "conquering"
+    },
+    {
+     "text": "conquered"
+    },
+    {
+     "text": "had conquer"
+    },
+    {
+     "text": "was conquering"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each clause is a simple-past clause with its own subject: 'I came, I saw, I conquered'.",
+   "order": 190,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Same tense and clause pattern."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Ananya likes cooking, gardening and ___.",
+   "options": [
+    {
+     "text": "read"
+    },
+    {
+     "text": "to be reading"
+    },
+    {
+     "text": "to read"
+    },
+    {
+     "text": "reading"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The first two items are gerunds, so the third must be a gerund too: 'reading'.",
+   "order": 191,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Gerund, gerund, gerund."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Our teacher is kind, fair and ___.",
+   "options": [
+    {
+     "text": "patiently"
+    },
+    {
+     "text": "with patience"
+    },
+    {
+     "text": "has patience"
+    },
+    {
+     "text": "patient"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kind and fair are adjectives. 'Patient' is the adjective that keeps the list parallel.",
+   "order": 192,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Adjective, adjective, adjective."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The shop sells shirts, trousers and ___.",
+   "options": [
+    {
+     "text": "to sell shoes"
+    },
+    {
+     "text": "shoes' sale"
+    },
+    {
+     "text": "shoes"
+    },
+    {
+     "text": "shoe-selling"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The list is of plural nouns (shirts, trousers), so the last must be a plural noun: 'shoes'.",
+   "order": 193,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Noun, noun, noun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He neither smokes nor ___.",
+   "options": [
+    {
+     "text": "drinks"
+    },
+    {
+     "text": "drank"
+    },
+    {
+     "text": "is drinking"
+    },
+    {
+     "text": "drinking"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither ... nor' joins items of the same form. 'Smokes' is simple present, so the item after 'nor' is 'drinks'.",
+   "order": 194,
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Neither/nor: same form on both sides."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The coach told the players to warm up, to practise hard and that they should not be late.\nB. The coach told the players to warm up, to practise hard and not to be late.\nC. The coach told the players to warm up, practising hard and not being late.\nD. The coach told the players to warm up, practise hard and being not late.",
+   "options": [
+    {
+     "text": "D. The coach told the players to warm up, practise hard and being not late."
+    },
+    {
+     "text": "B. The coach told the players to warm up, to practise hard and not to be late."
+    },
+    {
+     "text": "C. The coach told the players to warm up, practising hard and not being late."
+    },
+    {
+     "text": "A. The coach told the players to warm up, to practise hard and that they should not be late."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "All items after 'told the players' must be infinitives: 'to warm up, to practise hard and not to be late'. A mixes in a clause, C uses gerunds, and D is mixed.",
+   "order": 195,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Same grammatical form for every list item."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She is both a talented singer and ___.",
+   "options": [
+    {
+     "text": "dancing"
+    },
+    {
+     "text": "dances excellently"
+    },
+    {
+     "text": "an excellent dancer"
+    },
+    {
+     "text": "excellent in dance"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Both ... and' must join the same kind of element. 'A talented singer' is a noun phrase, so 'an excellent dancer' completes it.",
+   "order": 196,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Both A and B: A and B same form."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The new policy will not only reduce costs but also ___.",
+   "options": [
+    {
+     "text": "quality will be improved"
+    },
+    {
+     "text": "improve quality"
+    },
+    {
+     "text": "improving quality"
+    },
+    {
+     "text": "the improvement of quality"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After 'not only' we have 'reduce costs' (verb + object), so after 'but also' we need the same: 'improve quality'.",
+   "order": 197,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Not only X but also Y: X and Y parallel."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Teena prefers reading to ___ television.",
+   "options": [
+    {
+     "text": "to watch"
+    },
+    {
+     "text": "watch"
+    },
+    {
+     "text": "watched"
+    },
+    {
+     "text": "watching"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Prefer' with a gerund takes 'to' plus another gerund: 'prefers reading to watching'.",
+   "order": 198,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "prefer + -ing to + -ing."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rahul is more interested in reading novels than in ___.",
+   "options": [
+    {
+     "text": "writing poems"
+    },
+    {
+     "text": "write poems"
+    },
+    {
+     "text": "to write poems"
+    },
+    {
+     "text": "writes poems"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The comparison is 'in + gerund' on both sides: 'in reading novels than in writing poems'.",
+   "order": 199,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Compared items must share the same form."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The brochure describes the course content, the fee structure and ___.",
+   "options": [
+    {
+     "text": "to get admitted"
+    },
+    {
+     "text": "the admission procedure"
+    },
+    {
+     "text": "admitted"
+    },
+    {
+     "text": "how can one get admitted"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The list consists of noun phrases (the course content, the fee structure), so the last must be a noun phrase too.",
+   "order": 200,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Noun phrase, noun phrase, noun phrase."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The speaker was confident, impressive and spoke clearly.\nB. The speaker was confident, impressive and clear.\nC. The speaker was confidence, impressive and clearly.\nD. The speaker had confidence, was impressive and clear.",
+   "options": [
+    {
+     "text": "A. The speaker was confident, impressive and spoke clearly."
+    },
+    {
+     "text": "D. The speaker had confidence, was impressive and clear."
+    },
+    {
+     "text": "C. The speaker was confidence, impressive and clearly."
+    },
+    {
+     "text": "B. The speaker was confident, impressive and clear."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After 'was', all three items must be adjectives: confident, impressive, clear. A, C and D mix adjectives with verbs, nouns or adverbs.",
+   "order": 201,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One form for the whole list."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Not only did she win the race, but she also ___ a record.",
+   "options": [
+    {
+     "text": "broke"
+    },
+    {
+     "text": "had broken"
+    },
+    {
+     "text": "breaking"
+    },
+    {
+     "text": "to break"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'but she also' the verb must match the simple past 'did she win' pattern, so 'broke' is used.",
+   "order": 202,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Correlative halves share the tense."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Applicants must complete the form, ___ and submit it by noon.",
+   "options": [
+    {
+     "text": "to sign it"
+    },
+    {
+     "text": "signing it"
+    },
+    {
+     "text": "sign it"
+    },
+    {
+     "text": "be signing it"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'must', all verbs are in the base form: complete, sign, submit.",
+   "order": 203,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Verbs after one modal share the base form."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. In the interview, he was asked about his skills, his experience and ___.",
+   "options": [
+    {
+     "text": "to explain the reasons"
+    },
+    {
+     "text": "why does he want the job"
+    },
+    {
+     "text": "wanted the job why"
+    },
+    {
+     "text": "his reasons for wanting the job"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The list consists of noun phrases ('his skills', 'his experience'), so the last must be a noun phrase too.",
+   "order": 204,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Noun phrase list."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The company offers free training, flexible hours and to give bonuses.\nB. The company offers free training, flexible hours and bonuses.\nC. The company offers free training, flexible hours and giving bonuses.\nD. The company offers to train free, flexible hours and bonuses.",
+   "options": [
+    {
+     "text": "C. The company offers free training, flexible hours and giving bonuses."
+    },
+    {
+     "text": "B. The company offers free training, flexible hours and bonuses."
+    },
+    {
+     "text": "D. The company offers to train free, flexible hours and bonuses."
+    },
+    {
+     "text": "A. The company offers free training, flexible hours and to give bonuses."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "All items after 'offers' must be noun phrases: free training, flexible hours, bonuses. A uses an infinitive, C a gerund, and D mixes forms.",
+   "order": 205,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Make every list item a noun phrase."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She wanted either to study law or ___ medicine.",
+   "options": [
+    {
+     "text": "studies"
+    },
+    {
+     "text": "she studied"
+    },
+    {
+     "text": "to study"
+    },
+    {
+     "text": "studying"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Either ... or' joins parallel items. The first is the infinitive 'to study law', so the second must be 'to study medicine'.",
+   "order": 206,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Either/or: same form on each side."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The more you practise, the ___ you become.",
+   "options": [
+    {
+     "text": "better"
+    },
+    {
+     "text": "more good"
+    },
+    {
+     "text": "goodest"
+    },
+    {
+     "text": "best"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The structure 'The + comparative, the + comparative' needs two comparatives. 'Better' is the comparative of 'good'.",
+   "order": 207,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The + comparative, the + comparative."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He spoke slowly, clearly and ___.",
+   "options": [
+    {
+     "text": "with confident"
+    },
+    {
+     "text": "confidently"
+    },
+    {
+     "text": "being confident"
+    },
+    {
+     "text": "confident"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Slowly' and 'clearly' are adverbs, so the third item must be an adverb: 'confidently'.",
+   "order": 208,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Adverb, adverb, adverb."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The teacher praised the students for being punctual, for being honest and for ___.",
+   "options": [
+    {
+     "text": "their helpfulness"
+    },
+    {
+     "text": "helping"
+    },
+    {
+     "text": "being helpful"
+    },
+    {
+     "text": "to be helpful"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each item repeats 'for being + adjective'. The last must follow: 'for being helpful'.",
+   "order": 209,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Repeat the pattern."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The report was accurate in facts, clear in language and ___ in style.",
+   "options": [
+    {
+     "text": "concise"
+    },
+    {
+     "text": "conciseness"
+    },
+    {
+     "text": "being concise"
+    },
+    {
+     "text": "concisely"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pattern is 'adjective + in + noun'. The adjective 'concise' completes it.",
+   "order": 210,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Adjective + in + noun, repeated."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He promised to work hard, to save money and ___ his parents.",
+   "options": [
+    {
+     "text": "having looked after"
+    },
+    {
+     "text": "looked after"
+    },
+    {
+     "text": "looking after"
+    },
+    {
+     "text": "to look after"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The list is of infinitives ('to work', 'to save'), so the third must be 'to look after'.",
+   "order": 211,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Infinitive list stays infinitive."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The recipe needs two cups of flour, a cup of sugar and ___.",
+   "options": [
+    {
+     "text": "salting"
+    },
+    {
+     "text": "to salt"
+    },
+    {
+     "text": "a spoon of salt"
+    },
+    {
+     "text": "salty"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The list consists of quantity + noun phrases, so 'a spoon of salt' completes it.",
+   "order": 212,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Quantity phrase list."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Both the minister ___ the secretary were present.",
+   "options": [
+    {
+     "text": "and"
+    },
+    {
+     "text": "nor"
+    },
+    {
+     "text": "or"
+    },
+    {
+     "text": "but"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Both' always pairs with 'and'.",
+   "order": 213,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Both ... and."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the manager ___ the clerk was aware of the plan.",
+   "options": [
+    {
+     "text": "than"
+    },
+    {
+     "text": "or"
+    },
+    {
+     "text": "and"
+    },
+    {
+     "text": "nor"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Neither' always pairs with 'nor'.",
+   "order": 214,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Neither ... nor."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She not only sings well but also ___ well.",
+   "options": [
+    {
+     "text": "to dance"
+    },
+    {
+     "text": "dances"
+    },
+    {
+     "text": "dancing"
+    },
+    {
+     "text": "danced"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After 'not only' we have the verb 'sings' (present simple), so 'but also' must be followed by a verb in the same form: 'dances'.",
+   "order": 215,
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Not only V1 but also V2: same tense."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The proposal was criticised for its high cost, for being delayed and because it lacked clarity.\nB. The proposal was criticised for its high cost, its delay and its lack of clarity.\nC. The proposal was criticised for being costly, delay and lacking clarity.\nD. The proposal was criticised for high cost, being delayed and lack of clarity.",
+   "options": [
+    {
+     "text": "A. The proposal was criticised for its high cost, for being delayed and because it lacked clarity."
+    },
+    {
+     "text": "D. The proposal was criticised for high cost, being delayed and lack of clarity."
+    },
+    {
+     "text": "C. The proposal was criticised for being costly, delay and lacking clarity."
+    },
+    {
+     "text": "B. The proposal was criticised for its high cost, its delay and its lack of clarity."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "B lists three parallel noun phrases, each beginning with 'its'. A, C and D mix nouns, gerunds and clauses.",
+   "order": 216,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Same pattern for each item."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Ravi is as strong, if not stronger than, his brother.\nB. Ravi is as strong as, if not stronger than, his brother.\nC. Ravi is as strong if not stronger than his brother.\nD. Ravi is so strong as, if not stronger than, his brother.",
+   "options": [
+    {
+     "text": "A. Ravi is as strong, if not stronger than, his brother."
+    },
+    {
+     "text": "B. Ravi is as strong as, if not stronger than, his brother."
+    },
+    {
+     "text": "C. Ravi is as strong if not stronger than his brother."
+    },
+    {
+     "text": "D. Ravi is so strong as, if not stronger than, his brother."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both comparisons need their own particle: 'as strong as' and 'stronger than'. B is the only sentence with both 'as ... as' and 'than'.",
+   "order": 217,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "as ... as, if not ...-er than."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The new software helps users to track expenses, to prepare budgets and ___.",
+   "options": [
+    {
+     "text": "forecasting savings"
+    },
+    {
+     "text": "forecast of savings"
+    },
+    {
+     "text": "to forecast savings"
+    },
+    {
+     "text": "for savings forecast"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The list is of infinitives ('to track', 'to prepare'), so the last must be 'to forecast savings'.",
+   "order": 218,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Infinitive list stays infinitive."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The lecture was neither informative nor was it interesting.\nB. The lecture was neither informative nor interesting.\nC. The lecture neither was informative nor interesting.\nD. The lecture was neither informative or interesting.",
+   "options": [
+    {
+     "text": "B. The lecture was neither informative nor interesting."
+    },
+    {
+     "text": "A. The lecture was neither informative nor was it interesting."
+    },
+    {
+     "text": "C. The lecture neither was informative nor interesting."
+    },
+    {
+     "text": "D. The lecture was neither informative or interesting."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' must be followed by 'nor' and must be placed so that both parts are alike. B joins two adjectives. A adds a clause, C places 'neither' before the verb, and D uses 'or'.",
+   "order": 219,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Place neither/nor directly before the parallel items."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The candidate should have either submitted the form earlier or ___ an extension.",
+   "options": [
+    {
+     "text": "has applied for"
+    },
+    {
+     "text": "to apply for"
+    },
+    {
+     "text": "applying for"
+    },
+    {
+     "text": "applied for"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Either ... or' joins parallel verb forms. 'Should have submitted' is followed by past participles, so 'applied for' completes it.",
+   "order": 220,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Either/or: same verb form."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Whether you succeed or if you fail, you must keep trying.\nB. Whether you succeed or fail, you must keep trying.\nC. Whether succeeding or you fail, you must keep trying.\nD. Whether you succeed or failing, you must keep trying.",
+   "options": [
+    {
+     "text": "A. Whether you succeed or if you fail, you must keep trying."
+    },
+    {
+     "text": "B. Whether you succeed or fail, you must keep trying."
+    },
+    {
+     "text": "D. Whether you succeed or failing, you must keep trying."
+    },
+    {
+     "text": "C. Whether succeeding or you fail, you must keep trying."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Whether ... or' needs parallel verbs: 'succeed or fail'. The other options mix a clause with 'if', a gerund, or both.",
+   "order": 221,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Whether X or Y: same form."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is better to be silent than ___ unkind words.",
+   "options": [
+    {
+     "text": "speaking"
+    },
+    {
+     "text": "spoken"
+    },
+    {
+     "text": "to speak"
+    },
+    {
+     "text": "have spoken"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Better to be silent than to speak' compares two infinitives. 'To speak' keeps the comparison parallel.",
+   "order": 222,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Compare infinitive with infinitive."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The hostel offers nutritious meals, a laundry service and ___.",
+   "options": [
+    {
+     "text": "a quiet study room"
+    },
+    {
+     "text": "to study in quiet"
+    },
+    {
+     "text": "rooms where quiet study"
+    },
+    {
+     "text": "studying quietly in a room"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of noun phrases (nutritious meals, a laundry service), so the last should be a noun phrase: 'a quiet study room'.",
+   "order": 223,
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Noun phrase list."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Between you and ___, the plan will not work.",
+   "options": [
+    {
+     "text": "mine"
+    },
+    {
+     "text": "I"
+    },
+    {
+     "text": "me"
+    },
+    {
+     "text": "myself"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After a preposition ('between') the object form 'me' is used.",
+   "order": 224,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Preposition + object pronoun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The prize was shared between Rahul and ___.",
+   "options": [
+    {
+     "text": "she"
+    },
+    {
+     "text": "hers"
+    },
+    {
+     "text": "herself"
+    },
+    {
+     "text": "her"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Between' is a preposition, so the object pronoun 'her' is needed.",
+   "order": 225,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Preposition + object pronoun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. ___ and I went to the station together.",
+   "options": [
+    {
+     "text": "Hers"
+    },
+    {
+     "text": "She"
+    },
+    {
+     "text": "Herself"
+    },
+    {
+     "text": "Her"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The pronoun is the subject of 'went', so the subject form 'she' is used.",
+   "order": 226,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Subject -> I, he, she, we, they."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither Anita nor ___ was late.",
+   "options": [
+    {
+     "text": "she"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "hers"
+    },
+    {
+     "text": "herself"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'was', so the subject form 'she' is needed.",
+   "order": 227,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subject -> nominative form."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The teacher praised Rohan and ___ for the neat work.",
+   "options": [
+    {
+     "text": "myself"
+    },
+    {
+     "text": "I"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "me"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Me' is the object of the verb 'praised'.",
+   "order": 228,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Object of verb -> me, him, her, us, them."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rohit hurt ___ while playing cricket.",
+   "options": [
+    {
+     "text": "himself"
+    },
+    {
+     "text": "him"
+    },
+    {
+     "text": "hisself"
+    },
+    {
+     "text": "his"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When the subject and object are the same person, a reflexive pronoun is used: 'himself'. 'Hisself' is not standard English.",
+   "order": 229,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Same doer and receiver -> reflexive."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I made this cake ___.",
+   "options": [
+    {
+     "text": "mine"
+    },
+    {
+     "text": "my"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "me"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Myself' is used for emphasis, showing that I made it, not someone else.",
+   "order": 230,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Emphatic -> -self."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. This pen is not yours; it is ___.",
+   "options": [
+    {
+     "text": "myself"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "me"
+    },
+    {
+     "text": "my"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A possessive pronoun that stands alone (no noun after it) is 'mine'. 'My' must be followed by a noun.",
+   "order": 231,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "my + noun; mine alone."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The company has changed ___ policy.",
+   "options": [
+    {
+     "text": "itself"
+    },
+    {
+     "text": "it's"
+    },
+    {
+     "text": "its"
+    },
+    {
+     "text": "it"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The possessive determiner for a singular thing is 'its' (no apostrophe). 'It's' means 'it is'.",
+   "order": 232,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "its = possessive; it's = it is/has."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He and ___ are cousins.",
+   "options": [
+    {
+     "text": "mine"
+    },
+    {
+     "text": "I"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "me"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The pronoun is part of the subject of 'are', so 'I' is used.",
+   "order": 233,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Subject -> I."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Let him and ___ go.",
+   "options": [
+    {
+     "text": "I"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "me"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Let' is followed by an object pronoun: 'let him and me go'.",
+   "order": 234,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Let + object pronoun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Whose is this bag? It is ___.",
+   "options": [
+    {
+     "text": "hers"
+    },
+    {
+     "text": "she"
+    },
+    {
+     "text": "herself"
+    },
+    {
+     "text": "her"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A standalone possessive is 'hers'. 'Her' needs a noun after it.",
+   "order": 235,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Possessive pronoun alone: mine, yours, hers, ours, theirs."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The students lost ___ way in the forest.",
+   "options": [
+    {
+     "text": "their"
+    },
+    {
+     "text": "they're"
+    },
+    {
+     "text": "them"
+    },
+    {
+     "text": "there"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive determiner is needed before 'way'. 'Their' is the possessive of 'they'.",
+   "order": 236,
+   "subPattern": "pronoun-errors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "their = belonging to them."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The boy ___ won the prize is my cousin.",
+   "options": [
+    {
+     "text": "whose"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "whom"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The pronoun is the subject of 'won' and refers to a person, so 'who' is used.",
+   "order": 237,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Person as subject -> who."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The person ___ I met yesterday was the director.",
+   "options": [
+    {
+     "text": "whose"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "where"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The pronoun is the object of 'met' and refers to a person, so the object form 'whom' is used.",
+   "order": 238,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Person as object -> whom."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The book ___ cover is torn belongs to Rita.",
+   "options": [
+    {
+     "text": "who"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word shows possession ('the book's cover'), so 'whose' is needed.",
+   "order": 239,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Possession -> whose."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither of the girls has brought ___ lunch.",
+   "options": [
+    {
+     "text": "her"
+    },
+    {
+     "text": "our"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "its"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither of the girls' is singular and female, so the matching possessive is 'her'.",
+   "order": 240,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Neither + singular -> her/his."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Each of the boys must bring ___ own books.",
+   "options": [
+    {
+     "text": "her"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "our"
+    },
+    {
+     "text": "its"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Each' is singular and refers to boys, so the possessive is 'his'.",
+   "order": 241,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Each + singular -> his/her."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. A student must carry ___ identity card.",
+   "options": [
+    {
+     "text": "your"
+    },
+    {
+     "text": "its"
+    },
+    {
+     "text": "his or her"
+    },
+    {
+     "text": "our"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'A student' is a singular person of unspecified sex, so 'his or her' agrees with it. 'Its', 'your' and 'our' do not match.",
+   "order": 242,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Singular antecedent -> singular pronoun."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Rahul told Mohan that he had won the lottery.\nB. Rahul told Mohan, \"You have won the lottery.\"\nC. Rahul told Mohan that it was won by him.\nD. The mother told her daughter that she was ill.",
+   "options": [
+    {
+     "text": "C. Rahul told Mohan that it was won by him."
+    },
+    {
+     "text": "A. Rahul told Mohan that he had won the lottery."
+    },
+    {
+     "text": "D. The mother told her daughter that she was ill."
+    },
+    {
+     "text": "B. Rahul told Mohan, \"You have won the lottery.\""
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A pronoun must clearly refer to one noun. In A, C and D 'he', 'him' and 'she' could refer to either person. Direct speech in B removes the ambiguity.",
+   "order": 243,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "If 'he/she' could mean two people, rewrite."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Me and my friend went to the cinema.\nB. My friend and me went to the cinema.\nC. My friend and I went to the cinema.\nD. Myself and my friend went to the cinema.",
+   "options": [
+    {
+     "text": "C. My friend and I went to the cinema."
+    },
+    {
+     "text": "A. Me and my friend went to the cinema."
+    },
+    {
+     "text": "D. Myself and my friend went to the cinema."
+    },
+    {
+     "text": "B. My friend and me went to the cinema."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is part of the subject of 'went', so it must be 'I'. 'Me' is the object form and 'myself' is reflexive; neither can be a subject.",
+   "order": 244,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Remove the other person: 'I went' -> 'my friend and I went'."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The manager gave the report to Priya and I.\nB. The manager gave the report to Priya and me.\nC. The manager gave the report to Priya and myself.\nD. The manager gave the report to I and Priya.",
+   "options": [
+    {
+     "text": "D. The manager gave the report to I and Priya."
+    },
+    {
+     "text": "A. The manager gave the report to Priya and I."
+    },
+    {
+     "text": "C. The manager gave the report to Priya and myself."
+    },
+    {
+     "text": "B. The manager gave the report to Priya and me."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After the preposition 'to' the object form 'me' is needed. 'I' is a subject form, and 'myself' is reflexive and has no earlier 'I' in the clause to reflect.",
+   "order": 245,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Remove the other name: 'to me' not 'to I'."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. ___ of the two paths is shorter?",
+   "options": [
+    {
+     "text": "Who"
+    },
+    {
+     "text": "Whom"
+    },
+    {
+     "text": "Which"
+    },
+    {
+     "text": "What"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When the choice is among a limited, known set (two paths), 'which' is used.",
+   "order": 246,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Limited choice -> which."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Both of the players received ___ medals.",
+   "options": [
+    {
+     "text": "its"
+    },
+    {
+     "text": "their"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "her"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Both of the players' is plural, so the possessive is 'their'.",
+   "order": 247,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Plural antecedent -> their."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The teacher, ___ I respect a lot, retires next month.",
+   "options": [
+    {
+     "text": "which"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "whomever"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The pronoun is the object of 'respect' and refers to a person, so 'whom' is used.",
+   "order": 248,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Person as object -> whom."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The tree has lost all ___ leaves.",
+   "options": [
+    {
+     "text": "it"
+    },
+    {
+     "text": "its"
+    },
+    {
+     "text": "it's"
+    },
+    {
+     "text": "their"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The possessive of a singular thing is 'its'. 'It's' always means 'it is' or 'it has'.",
+   "order": 249,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "its (no apostrophe) = possessive."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is I who ___ responsible.",
+   "options": [
+    {
+     "text": "be"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "am"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A relative pronoun 'who' takes the person of its antecedent. Here the antecedent is 'I' (first person), so the verb is 'am'.",
+   "order": 250,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "who takes the person of its antecedent."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. We should respect ___ elders.",
+   "options": [
+    {
+     "text": "our"
+    },
+    {
+     "text": "us"
+    },
+    {
+     "text": "we"
+    },
+    {
+     "text": "ours"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A possessive determiner is needed before the noun 'elders'. The subject is 'we', so 'our'.",
+   "order": 251,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Possessive before a noun: my, our, your, their."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The principal gave the trophy to ___ had scored the highest.",
+   "options": [
+    {
+     "text": "whomever"
+    },
+    {
+     "text": "whoever"
+    },
+    {
+     "text": "anyone whom"
+    },
+    {
+     "text": "whom"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The pronoun is the subject of 'had scored', so the subject form 'whoever' is used, even after 'to'.",
+   "order": 252,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The pronoun's role inside its own clause decides the case."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. You and him are invited.\nB. You and he are invited.\nC. Him and you are invited.\nD. You and himself are invited.",
+   "options": [
+    {
+     "text": "B. You and he are invited."
+    },
+    {
+     "text": "C. Him and you are invited."
+    },
+    {
+     "text": "D. You and himself are invited."
+    },
+    {
+     "text": "A. You and him are invited."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronouns are the subject of 'are', so the subject form 'he' is needed. 'Him' is the object form, and 'himself' is reflexive.",
+   "order": 253,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Subject -> he."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The Smiths have sold ___ house.",
+   "options": [
+    {
+     "text": "its"
+    },
+    {
+     "text": "there"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "their"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'The Smiths' is plural, so the possessive is 'their'.",
+   "order": 254,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Plural family name -> their."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Ramesh, along with his friends, has lost ___ way.",
+   "options": [
+    {
+     "text": "its"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "their"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Along with' does not change the subject, which is 'Ramesh' (singular masculine). So 'his'.",
+   "order": 255,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Pronoun agrees with the main subject."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I do not know ___ has taken my pen.",
+   "options": [
+    {
+     "text": "who"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the subject of 'has taken', so the subject form 'who' is used.",
+   "order": 256,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Subject of its clause -> who."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. All the guests except Sheela and ___ had left.",
+   "options": [
+    {
+     "text": "I"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "me"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Except' is a preposition, so it takes the object form 'me'.",
+   "order": 257,
+   "subPattern": "pronoun-errors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "except/but/between + object pronoun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He is the man ___ I believe is guilty.",
+   "options": [
+    {
+     "text": "which"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'I believe' is a parenthetical clause. 'Who' is the subject of 'is guilty', so the subject form is needed.",
+   "order": 258,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Drop 'I believe' and test: '___ is guilty'."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The reward will go to ___ the committee thinks is most deserving.",
+   "options": [
+    {
+     "text": "whomever"
+    },
+    {
+     "text": "whoever"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "whom"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inside its clause, the pronoun is the subject of 'is most deserving' ('the committee thinks' is parenthetical), so 'whoever'.",
+   "order": 259,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Drop the parenthetical clause and test the case."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Neither of the sisters wanted to share their room.\nB. Neither of the sisters wanted to share her room.\nC. Neither of the sisters wanted to share its room.\nD. Neither of the sisters wanted to share our room.",
+   "options": [
+    {
+     "text": "C. Neither of the sisters wanted to share its room."
+    },
+    {
+     "text": "B. Neither of the sisters wanted to share her room."
+    },
+    {
+     "text": "D. Neither of the sisters wanted to share our room."
+    },
+    {
+     "text": "A. Neither of the sisters wanted to share their room."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Neither' is singular, so the pronoun that refers to it must be singular and feminine: 'her'. 'Their' is plural, 'its' is for things, and 'our' changes the speaker.",
+   "order": 260,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Neither/each/either: singular pronoun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Those of ___ who attended the camp were awarded certificates.",
+   "options": [
+    {
+     "text": "us"
+    },
+    {
+     "text": "ourselves"
+    },
+    {
+     "text": "ours"
+    },
+    {
+     "text": "we"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Of' is a preposition, so the object form 'us' follows it.",
+   "order": 261,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Preposition + object pronoun."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The Government has announced its decision, and they will implement it soon.\nB. The Government has announced its decision, and it will implement it soon.\nC. The Government have announced its decision, and they will implement it soon.\nD. The Government has announced their decision, and it will implement it soon.",
+   "options": [
+    {
+     "text": "D. The Government has announced their decision, and it will implement it soon."
+    },
+    {
+     "text": "A. The Government has announced its decision, and they will implement it soon."
+    },
+    {
+     "text": "C. The Government have announced its decision, and they will implement it soon."
+    },
+    {
+     "text": "B. The Government has announced its decision, and it will implement it soon."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A collective noun acting as a single body takes singular pronouns throughout. B is consistent: 'has', 'its', 'it'. The others shift between singular and plural.",
+   "order": 262,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Keep one number for the same noun."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The chief guest, ___ speech inspired everyone, left early.",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "who"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word shows possession (the guest's speech), so 'whose' is needed.",
+   "order": 263,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Possession -> whose."
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. It is me who is responsible.\nB. It is I who is responsible.\nC. It is I who am responsible.\nD. It is me who am responsible.",
+   "options": [
+    {
+     "text": "A. It is me who is responsible."
+    },
+    {
+     "text": "D. It is me who am responsible."
+    },
+    {
+     "text": "C. It is I who am responsible."
+    },
+    {
+     "text": "B. It is I who is responsible."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'it is', the formal complement is the subject form 'I'. The relative 'who' takes the person of 'I', so the verb is 'am'.",
+   "order": 264,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "It is I who am."
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The people ___ I work with are friendly.",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "what"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pronoun is the object of the preposition 'with' and refers to people, so 'whom' is used.",
+   "order": 265,
+   "subPattern": "pronoun-errors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Person as object -> whom."
+  }
+ ]
+}

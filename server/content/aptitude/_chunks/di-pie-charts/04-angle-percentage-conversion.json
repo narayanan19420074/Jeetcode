@@ -1,0 +1,1320 @@
+{
+ "sets": [
+  {
+   "id": "di-pie-charts-s031",
+   "type": "pie",
+   "title": "Students enrolled in an engineering college - total 6,000 students (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Students enrolled in an engineering college",
+      "data": [
+       {
+        "label": "ECE",
+        "value": 72
+       },
+       {
+        "label": "Civil",
+        "value": 108
+       },
+       {
+        "label": "EEE",
+        "value": 90
+       },
+       {
+        "label": "Mechanical",
+        "value": 45
+       },
+       {
+        "label": "Biotech",
+        "value": 18
+       },
+       {
+        "label": "CSE",
+        "value": 27
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s032",
+   "type": "pie",
+   "title": "Employees of an IT company by department - total 20,000 employees (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Employees of an IT company by department",
+      "data": [
+       {
+        "label": "Testing",
+        "value": 81
+       },
+       {
+        "label": "Sales",
+        "value": 108
+       },
+       {
+        "label": "Development",
+        "value": 36
+       },
+       {
+        "label": "Admin",
+        "value": 90
+       },
+       {
+        "label": "HR",
+        "value": 18
+       },
+       {
+        "label": "Research",
+        "value": 27
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s033",
+   "type": "pie",
+   "title": "Monthly income sources of a farmer cooperative - total ₹ 6,00,000 (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Monthly income sources of a farmer cooperative",
+      "data": [
+       {
+        "label": "Handicrafts",
+        "value": 36
+       },
+       {
+        "label": "Vegetables",
+        "value": 45
+       },
+       {
+        "label": "Poultry",
+        "value": 108
+       },
+       {
+        "label": "Fruits",
+        "value": 63
+       },
+       {
+        "label": "Milk",
+        "value": 90
+       },
+       {
+        "label": "Subsidy",
+        "value": 18
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s034",
+   "type": "pie",
+   "title": "Monthly sales of Happy Break snack stall - total ₹ 4,00,000 (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Monthly sales of Happy Break snack stall",
+      "data": [
+       {
+        "label": "Banana chips",
+        "value": 54
+       },
+       {
+        "label": "Varkey",
+        "value": 117
+       },
+       {
+        "label": "Sweets",
+        "value": 63
+       },
+       {
+        "label": "Murukku",
+        "value": 18
+       },
+       {
+        "label": "Peanut chikki",
+        "value": 108
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s035",
+   "type": "pie",
+   "title": "Matches played by a club in a decade - total 200 matches (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Matches played by a club in a decade",
+      "data": [
+       {
+        "label": "Mumbai",
+        "value": 126
+       },
+       {
+        "label": "Pune",
+        "value": 36
+       },
+       {
+        "label": "Bengaluru",
+        "value": 45
+       },
+       {
+        "label": "Chennai",
+        "value": 99
+       },
+       {
+        "label": "Delhi",
+        "value": 54
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s036",
+   "type": "pie",
+   "title": "Population of a taluk by occupation - total 8,00,000 persons (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Population of a taluk by occupation",
+      "data": [
+       {
+        "label": "Transport",
+        "value": 99
+       },
+       {
+        "label": "Services",
+        "value": 117
+       },
+       {
+        "label": "Farming",
+        "value": 27
+       },
+       {
+        "label": "Industry",
+        "value": 54
+       },
+       {
+        "label": "Unemployed",
+        "value": 18
+       },
+       {
+        "label": "Trade",
+        "value": 45
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s037",
+   "type": "pie",
+   "title": "Loans sanctioned by a cooperative bank - total ₹ 5,000 crore (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Loans sanctioned by a cooperative bank",
+      "data": [
+       {
+        "label": "Agriculture",
+        "value": 81
+       },
+       {
+        "label": "Vehicle",
+        "value": 18
+       },
+       {
+        "label": "Business",
+        "value": 27
+       },
+       {
+        "label": "Personal",
+        "value": 108
+       },
+       {
+        "label": "Housing",
+        "value": 54
+       },
+       {
+        "label": "Education",
+        "value": 72
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s038",
+   "type": "pie",
+   "title": "Waste collected by a corporation - total 2,000 tonnes (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Waste collected by a corporation",
+      "data": [
+       {
+        "label": "E-waste",
+        "value": 126
+       },
+       {
+        "label": "Paper",
+        "value": 36
+       },
+       {
+        "label": "Glass",
+        "value": 72
+       },
+       {
+        "label": "Organic",
+        "value": 99
+       },
+       {
+        "label": "Metal",
+        "value": 27
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s039",
+   "type": "pie",
+   "title": "Complaints received by a consumer forum - total 4,000 complaints (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Complaints received by a consumer forum",
+      "data": [
+       {
+        "label": "Housing",
+        "value": 108
+       },
+       {
+        "label": "Banking",
+        "value": 63
+       },
+       {
+        "label": "Travel",
+        "value": 27
+       },
+       {
+        "label": "Insurance",
+        "value": 45
+       },
+       {
+        "label": "Retail",
+        "value": 117
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-pie-charts-s040",
+   "type": "pie",
+   "title": "Monthly budget of a Coimbatore textile unit - total ₹ 12,00,000 (sectors shown in degrees)",
+   "chart": {
+    "series": [
+     {
+      "name": "Monthly budget of a Coimbatore textile unit",
+      "data": [
+       {
+        "label": "Power",
+        "value": 63
+       },
+       {
+        "label": "Rent",
+        "value": 18
+       },
+       {
+        "label": "Taxes",
+        "value": 72
+       },
+       {
+        "label": "Wages",
+        "value": 126
+       },
+       {
+        "label": "Marketing",
+        "value": 27
+       },
+       {
+        "label": "Raw material",
+        "value": 54
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Which category has the largest central angle?",
+   "options": [
+    "CSE",
+    "ECE",
+    "Civil",
+    "Mechanical"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The largest degree value is 108, for Civil.",
+   "shortcut": "Compare the degrees directly.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s031"
+  },
+  {
+   "questionText": "What central angle (in degrees) corresponds to a sector that is 5% of a pie chart?",
+   "options": [
+    "20 degrees",
+    "15 degrees",
+    "27 degrees",
+    "18 degrees"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Angle = 5/100 x 360 = 18 degrees. So the required answer is 18 degrees.",
+   "shortcut": "1% = 3.6 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s031"
+  },
+  {
+   "questionText": "By how much does the value for Civil exceed that for EEE? (Use the angles given in the data.)",
+   "options": [
+    "1,080 students",
+    "300 students",
+    "466.67 students",
+    "3,300 students"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle difference = 108 - 90 = 18 degrees. Value = 18/360 x 6,000 = 300 students.",
+   "shortcut": "Subtract angles, then angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s031"
+  },
+  {
+   "questionText": "What is the combined value of Mechanical, Biotech and ECE? (Use the angles given in the data.)",
+   "options": [
+    "2,083.33 students",
+    "2,416.67 students",
+    "2,250 students",
+    "8,100 students"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of angles = 45 + 18 + 72 = 135 degrees. Value = 135/360 x 6,000 = 2,250 students.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s031"
+  },
+  {
+   "questionText": "The angle for Biotech is 18 degrees. If its value drops by 25% next year, what will its value be?",
+   "options": [
+    "225 students",
+    "75 students",
+    "375 students",
+    "275 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present value = 18/360 x 6,000 = 300. After a 25% fall = 300 x 75/100 = 225 students.",
+   "shortcut": "Find the value, then apply the % change.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s031"
+  },
+  {
+   "questionText": "Sector Research has a central angle of 27 degrees. What is its value?",
+   "options": [
+    "3,000 employees",
+    "1,500 employees",
+    "5,400 employees",
+    "2,055.56 employees"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value = 27/360 x 20,000 = 1,500 employees.",
+   "shortcut": "angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s032"
+  },
+  {
+   "questionText": "The sectors of HR and Research together subtend an angle of 45 degrees at the centre. What percentage of the total do they form?",
+   "options": [
+    "12.5%",
+    "2.5%",
+    "15%",
+    "11.2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Percentage = 45/360 x 100 = 12.5%. So the required answer is 12.5%.",
+   "shortcut": "Divide the combined angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s032"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Research add up to 333 degrees. What is the central angle for Research in the given pie?",
+   "options": [
+    "306 degrees",
+    "333 degrees",
+    "27 degrees",
+    "45 degrees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total angle = 360. Angle for Research = 360 - 333 = 27 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s032"
+  },
+  {
+   "questionText": "What is the combined value of HR, Development and Sales? (Use the angles given in the data.)",
+   "options": [
+    "32,400 employees",
+    "9,000 employees",
+    "9,555.56 employees",
+    "8,444.44 employees"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of angles = 18 + 36 + 108 = 162 degrees. Value = 162/360 x 20,000 = 9,000 employees.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s032"
+  },
+  {
+   "questionText": "The sectors of Admin and Sales together have a value that stays fixed while the total grows by 20%. If their present angles are 90 and 108 degrees, what is their combined angle after the change? (Round to one decimal place.)",
+   "options": [
+    "174 degrees",
+    "198 degrees",
+    "165 degrees",
+    "237.6 degrees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fixed value = 11,000; new total = 24,000. New angle = 11,000/24,000 x 360 = 165 degrees. (Equivalently 198 x 100/120.)",
+   "shortcut": "Angle scales by old total / new total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s032"
+  },
+  {
+   "questionText": "The sector for Poultry has a central angle of 108 degrees. What percentage of the total does it represent?",
+   "options": [
+    "27%",
+    "30%",
+    "36%",
+    "38.9%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percentage = 108/360 x 100 = 30%. So the required answer is 30%.",
+   "shortcut": "Divide the angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s033"
+  },
+  {
+   "questionText": "Sector Milk has a central angle of 90 degrees. What is its value?",
+   "options": [
+    "₹ 3,00,000",
+    "₹ 5,40,000",
+    "₹ 1,66,666.67",
+    "₹ 1,50,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Value = 90/360 x 6,00,000 = ₹ 1,50,000. So the required answer is ₹ 1,50,000.",
+   "shortcut": "angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s033"
+  },
+  {
+   "questionText": "What is the combined value of Vegetables, Handicrafts and Fruits? (Use the angles given in the data.)",
+   "options": [
+    "₹ 8,64,000",
+    "₹ 2,40,000",
+    "₹ 2,56,666.67",
+    "₹ 30,000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of angles = 45 + 36 + 63 = 144 degrees. Value = 144/360 x 6,00,000 = ₹ 2,40,000.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s033"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Subsidy add up to 342 degrees. What is the central angle for Subsidy in the given pie?",
+   "options": [
+    "324 degrees",
+    "18 degrees",
+    "342 degrees",
+    "36 degrees"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total angle = 360. Angle for Subsidy = 360 - 342 = 18 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s033"
+  },
+  {
+   "questionText": "The angle for Poultry is 108 degrees. If its value drops by 20% next year, what will its value be?",
+   "options": [
+    "₹ 36,000",
+    "₹ 2,16,000",
+    "₹ 1,79,980",
+    "₹ 1,44,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Present value = 108/360 x 6,00,000 = 1,80,000. After a 20% fall = 1,80,000 x 80/100 = ₹ 1,44,000.",
+   "shortcut": "Find the value, then apply the % change.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s033"
+  },
+  {
+   "questionText": "What central angle (in degrees) corresponds to a sector that is 12% of a pie chart?",
+   "options": [
+    "36 degrees",
+    "52.2 degrees",
+    "43.2 degrees",
+    "48 degrees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Angle = 12/100 x 360 = 43.2 degrees. So the required answer is 43.2 degrees.",
+   "shortcut": "1% = 3.6 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s034"
+  },
+  {
+   "questionText": "By how much does the value for Banana chips exceed that for Murukku? (Use the angles given in the data.)",
+   "options": [
+    "₹ 51,111.11",
+    "₹ 40,000",
+    "₹ 1,44,000",
+    "₹ 80,000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle difference = 54 - 18 = 36 degrees. Value = 36/360 x 4,00,000 = ₹ 40,000.",
+   "shortcut": "Subtract angles, then angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s034"
+  },
+  {
+   "questionText": "What is the combined value of Sweets, Murukku and Banana chips? (Use the angles given in the data.)",
+   "options": [
+    "₹ 30,000",
+    "₹ 1,61,111.11",
+    "₹ 5,40,000",
+    "₹ 1,50,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum of angles = 63 + 18 + 54 = 135 degrees. Value = 135/360 x 4,00,000 = ₹ 1,50,000.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s034"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Peanut chikki add up to 252 degrees. What is the central angle for Peanut chikki in the given pie?",
+   "options": [
+    "144 degrees",
+    "126 degrees",
+    "108 degrees",
+    "252 degrees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total angle = 360. Angle for Peanut chikki = 360 - 252 = 108 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s034"
+  },
+  {
+   "questionText": "The central angle of Peanut chikki is 108 degrees and that of Sweets is 63 degrees. The value for Peanut chikki is what percent more than that for Sweets? (Round to one decimal place.)",
+   "options": [
+    "41.7%",
+    "71.4%",
+    "12.5%",
+    "171.4%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value ratio = angle ratio. (108 - 63)/63 x 100 = 71.4%.",
+   "shortcut": "Percent more uses the smaller as base.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s034"
+  },
+  {
+   "questionText": "What central angle (in degrees) corresponds to a sector that is 35% of a pie chart?",
+   "options": [
+    "105 degrees",
+    "140 degrees",
+    "135 degrees",
+    "126 degrees"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Angle = 35/100 x 360 = 126 degrees. So the required answer is 126 degrees.",
+   "shortcut": "1% = 3.6 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s035"
+  },
+  {
+   "questionText": "Sector Delhi has a central angle of 54 degrees. What is its value?",
+   "options": [
+    "108 matches",
+    "35.56 matches",
+    "60 matches",
+    "30 matches"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Value = 54/360 x 200 = 30 matches. So the required answer is 30 matches.",
+   "shortcut": "angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s035"
+  },
+  {
+   "questionText": "What is the combined value of Delhi, Chennai and Pune? (Use the angles given in the data.)",
+   "options": [
+    "65 matches",
+    "378 matches",
+    "105 matches",
+    "110.56 matches"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of angles = 54 + 99 + 36 = 189 degrees. Value = 189/360 x 200 = 105 matches.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s035"
+  },
+  {
+   "questionText": "The sectors of Delhi and Bengaluru together subtend an angle of 99 degrees at the centre. What percentage of the total do they form?",
+   "options": [
+    "33%",
+    "27.5%",
+    "24.8%",
+    "2.5%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Percentage = 99/360 x 100 = 27.5%. So the required answer is 27.5%.",
+   "shortcut": "Divide the combined angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s035"
+  },
+  {
+   "questionText": "If the value for Chennai (currently with an angle of 99 degrees) increases by 100% and all other values remain the same, what will be its new central angle? (Round to one decimal place.)",
+   "options": [
+    "198 degrees",
+    "156.5 degrees",
+    "155.3 degrees",
+    "199 degrees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Old value = 55; new = 110; new total = 255. Angle = 110/255 x 360 = 155.3 degrees.",
+   "shortcut": "The total changes too, so recompute the proportion.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s035"
+  },
+  {
+   "questionText": "Sector Services has a central angle of 117 degrees. What is its value?",
+   "options": [
+    "2,82,222.22 persons",
+    "5,20,000 persons",
+    "2,60,000 persons",
+    "9,36,000 persons"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value = 117/360 x 8,00,000 = 2,60,000 persons.",
+   "shortcut": "angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s036"
+  },
+  {
+   "questionText": "The sectors of Unemployed and Industry together subtend an angle of 72 degrees at the centre. What percentage of the total do they form?",
+   "options": [
+    "10%",
+    "18%",
+    "24%",
+    "20%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = 72/360 x 100 = 20%. So the required answer is 20%.",
+   "shortcut": "Divide the combined angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s036"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Trade add up to 315 degrees. What is the central angle for Trade in the given pie?",
+   "options": [
+    "63 degrees",
+    "315 degrees",
+    "270 degrees",
+    "45 degrees"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total angle = 360. Angle for Trade = 360 - 315 = 45 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s036"
+  },
+  {
+   "questionText": "By how much does the value for Services exceed that for Farming? (Use the angles given in the data.)",
+   "options": [
+    "2,22,222.22 persons",
+    "2,00,000 persons",
+    "3,20,000 persons",
+    "7,20,000 persons"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle difference = 117 - 27 = 90 degrees. Value = 90/360 x 8,00,000 = 2,00,000 persons.",
+   "shortcut": "Subtract angles, then angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s036"
+  },
+  {
+   "questionText": "The central angle of Trade is 45 degrees and that of Unemployed is 18 degrees. The value for Trade is what percent more than that for Unemployed? (Round to one decimal place.)",
+   "options": [
+    "60%",
+    "250%",
+    "150%",
+    "7.5%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Value ratio = angle ratio. (45 - 18)/18 x 100 = 150%.",
+   "shortcut": "Percent more uses the smaller as base.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s036"
+  },
+  {
+   "questionText": "The sector for Education has a central angle of 72 degrees. What percentage of the total does it represent?",
+   "options": [
+    "25.9%",
+    "24%",
+    "18%",
+    "20%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = 72/360 x 100 = 20%. So the required answer is 20%.",
+   "shortcut": "Divide the angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s037"
+  },
+  {
+   "questionText": "Which category has the smallest central angle?",
+   "options": [
+    "Business",
+    "Housing",
+    "Personal",
+    "Vehicle"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The smallest degree value is 18, for Vehicle.",
+   "shortcut": "Compare the degrees directly.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s037"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Education add up to 288 degrees. What is the central angle for Education in the given pie?",
+   "options": [
+    "90 degrees",
+    "72 degrees",
+    "288 degrees",
+    "216 degrees"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total angle = 360. Angle for Education = 360 - 288 = 72 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s037"
+  },
+  {
+   "questionText": "By how much does the value for Agriculture exceed that for Education? (Use the angles given in the data.)",
+   "options": [
+    "₹ 2,125 crore",
+    "₹ 125 crore",
+    "₹ 263.89 crore",
+    "₹ 450 crore"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle difference = 81 - 72 = 9 degrees. Value = 9/360 x 5,000 = ₹ 125 crore.",
+   "shortcut": "Subtract angles, then angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s037"
+  },
+  {
+   "questionText": "The angle for Personal is 108 degrees. If its value drops by 25% next year, what will its value be?",
+   "options": [
+    "₹ 1,125 crore",
+    "₹ 375 crore",
+    "₹ 1,875 crore",
+    "₹ 1,475 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present value = 108/360 x 5,000 = 1,500. After a 25% fall = 1,500 x 75/100 = ₹ 1,125 crore.",
+   "shortcut": "Find the value, then apply the % change.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s037"
+  },
+  {
+   "questionText": "Sector Metal has a central angle of 27 degrees. What is its value?",
+   "options": [
+    "205.56 tonnes",
+    "150 tonnes",
+    "300 tonnes",
+    "540 tonnes"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Value = 27/360 x 2,000 = 150 tonnes. So the required answer is 150 tonnes.",
+   "shortcut": "angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s038"
+  },
+  {
+   "questionText": "What is the combined value of Glass, Metal and Paper? (Use the angles given in the data.)",
+   "options": [
+    "2,700 tonnes",
+    "750 tonnes",
+    "350 tonnes",
+    "805.56 tonnes"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of angles = 72 + 27 + 36 = 135 degrees. Value = 135/360 x 2,000 = 750 tonnes.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s038"
+  },
+  {
+   "questionText": "The sectors of Glass and E-waste together subtend an angle of 198 degrees at the centre. What percentage of the total do they form?",
+   "options": [
+    "15%",
+    "49.5%",
+    "66%",
+    "55%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = 198/360 x 100 = 55%. So the required answer is 55%.",
+   "shortcut": "Divide the combined angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s038"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Metal add up to 333 degrees. What is the central angle for Metal in the given pie?",
+   "options": [
+    "45 degrees",
+    "333 degrees",
+    "27 degrees",
+    "306 degrees"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total angle = 360. Angle for Metal = 360 - 333 = 27 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s038"
+  },
+  {
+   "questionText": "If the value for E-waste (currently with an angle of 126 degrees) increases by 20% and all other values remain the same, what will be its new central angle? (Round to one decimal place.)",
+   "options": [
+    "151.2 degrees",
+    "100.8 degrees",
+    "146 degrees",
+    "141.3 degrees"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Old value = 700; new = 840; new total = 2,140. Angle = 840/2,140 x 360 = 141.3 degrees.",
+   "shortcut": "The total changes too, so recompute the proportion.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s038"
+  },
+  {
+   "questionText": "The sector for Travel has a central angle of 27 degrees. What percentage of the total does it represent?",
+   "options": [
+    "6.8%",
+    "9.7%",
+    "9%",
+    "7.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = 27/360 x 100 = 7.5%. So the required answer is 7.5%.",
+   "shortcut": "Divide the angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s039"
+  },
+  {
+   "questionText": "Sector Housing has a central angle of 108 degrees. What is its value?",
+   "options": [
+    "1,200 complaints",
+    "1,311.11 complaints",
+    "4,320 complaints",
+    "2,400 complaints"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Value = 108/360 x 4,000 = 1,200 complaints.",
+   "shortcut": "angle/360 x total.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s039"
+  },
+  {
+   "questionText": "What is the combined value of Banking, Insurance and Travel? (Use the angles given in the data.)",
+   "options": [
+    "900 complaints",
+    "1,611.11 complaints",
+    "1,500 complaints",
+    "5,400 complaints"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of angles = 63 + 45 + 27 = 135 degrees. Value = 135/360 x 4,000 = 1,500 complaints.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s039"
+  },
+  {
+   "questionText": "The sectors of Housing and Banking together subtend an angle of 171 degrees at the centre. What percentage of the total do they form?",
+   "options": [
+    "42.8%",
+    "57%",
+    "12.5%",
+    "47.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = 171/360 x 100 = 47.5%. So the required answer is 47.5%.",
+   "shortcut": "Divide the combined angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s039"
+  },
+  {
+   "questionText": "If the value for Housing (currently with an angle of 108 degrees) increases by 25% and all other values remain the same, what will be its new central angle? (Round to one decimal place.)",
+   "options": [
+    "135 degrees",
+    "125.6 degrees",
+    "133 degrees",
+    "81 degrees"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Old value = 1,200; new = 1,500; new total = 4,300. Angle = 1,500/4,300 x 360 = 125.6 degrees.",
+   "shortcut": "The total changes too, so recompute the proportion.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s039"
+  },
+  {
+   "questionText": "What central angle (in degrees) corresponds to a sector that is 40% of a pie chart?",
+   "options": [
+    "144 degrees",
+    "153 degrees",
+    "120 degrees",
+    "160 degrees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Angle = 40/100 x 360 = 144 degrees. So the required answer is 144 degrees.",
+   "shortcut": "1% = 3.6 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s040"
+  },
+  {
+   "questionText": "The angles at the centre for the categories other than Raw material add up to 306 degrees. What is the central angle for Raw material in the given pie?",
+   "options": [
+    "306 degrees",
+    "54 degrees",
+    "72 degrees",
+    "252 degrees"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total angle = 360. Angle for Raw material = 360 - 306 = 54 degrees.",
+   "shortcut": "Angles sum to 360 degrees.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s040"
+  },
+  {
+   "questionText": "The sectors of Marketing and Power together subtend an angle of 90 degrees at the centre. What percentage of the total do they form?",
+   "options": [
+    "10%",
+    "22.5%",
+    "30%",
+    "25%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Percentage = 90/360 x 100 = 25%. So the required answer is 25%.",
+   "shortcut": "Divide the combined angle by 3.6.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s040"
+  },
+  {
+   "questionText": "What is the combined value of Raw material, Taxes and Wages? (Use the angles given in the data.)",
+   "options": [
+    "₹ 8,40,000",
+    "₹ 8,06,666.67",
+    "₹ 30,24,000",
+    "₹ 8,73,333.33"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of angles = 54 + 72 + 126 = 252 degrees. Value = 252/360 x 12,00,000 = ₹ 8,40,000.",
+   "shortcut": "Add the angles first.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s040"
+  },
+  {
+   "questionText": "The angle for Wages is 126 degrees. If its value drops by 20% next year, what will its value be?",
+   "options": [
+    "₹ 3,36,000",
+    "₹ 5,04,000",
+    "₹ 4,19,980",
+    "₹ 84,000"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present value = 126/360 x 12,00,000 = 4,20,000. After a 20% fall = 4,20,000 x 80/100 = ₹ 3,36,000.",
+   "shortcut": "Find the value, then apply the % change.",
+   "subPattern": "angle-percentage-conversion",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": "di-pie-charts-s040"
+  }
+ ]
+}

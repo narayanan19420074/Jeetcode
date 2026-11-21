@@ -1,0 +1,928 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Find the part of the sentence that has an error: The principal as well as the teachers / were present / at the annual day function / in the school auditorium.",
+   "options": [
+    "were present",
+    "The principal as well as the teachers",
+    "at the annual day function",
+    "in the school auditorium."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'as well as', 'along with', 'together with', the verb agrees with the FIRST subject (the principal, singular). So 'was present' is correct.",
+   "shortcut": "as well as / along with: verb follows the first subject.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Each of the students / have submitted / the project report / before the deadline.",
+   "options": [
+    "have submitted",
+    "Each of the students",
+    "the project report",
+    "before the deadline."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each of' takes a singular verb, so 'has submitted' is correct.",
+   "shortcut": "Each / every / either / neither + singular verb.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Neither Ravi nor his brothers / is willing / to join / the cricket team.",
+   "options": [
+    "is willing",
+    "Neither Ravi nor his brothers",
+    "to join",
+    "the cricket team."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither ... nor', the verb agrees with the nearer subject. 'Brothers' is plural, so 'are willing' is required.",
+   "shortcut": "Neither-nor: verb agrees with the noun right next to it.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The news about the floods / were / very disturbing / to everyone.",
+   "options": [
+    "were",
+    "The news about the floods",
+    "very disturbing",
+    "to everyone."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'News' is an uncountable noun that takes a singular verb, so 'was' is correct.",
+   "shortcut": "news, mathematics, physics, gallows = singular.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Mathematics / are / my favourite subject / in school.",
+   "options": [
+    "are",
+    "Mathematics",
+    "my favourite subject",
+    "in school."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of subjects such as mathematics, physics and economics are singular, so the verb must be 'is'.",
+   "shortcut": "Subject names ending in -s still take 'is'.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She prefers tea / than coffee / in the morning / before going to work.",
+   "options": [
+    "than coffee",
+    "She prefers tea",
+    "in the morning",
+    "before going to work."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Prefer' is followed by 'to', not 'than': prefer X to Y. The correct phrase is 'to coffee'.",
+   "shortcut": "prefer X TO Y (never than).",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I have been living / in Coimbatore / since five years / and I like it.",
+   "options": [
+    "since five years",
+    "I have been living",
+    "in Coimbatore",
+    "and I like it."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since' is used with a point of time (since 2015); 'for' is used with a period (for five years).",
+   "shortcut": "since = point in time, for = duration.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He is senior / than me / by two years / in the company.",
+   "options": [
+    "than me",
+    "He is senior",
+    "by two years",
+    "in the company."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Senior', 'junior', 'superior', 'inferior' are followed by 'to', not 'than': 'senior to me'.",
+   "shortcut": "senior / junior / superior / inferior + TO.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The furniture in the hall / were / recently / polished.",
+   "options": [
+    "were",
+    "The furniture in the hall",
+    "recently",
+    "polished."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Furniture' is uncountable and takes a singular verb: 'was recently polished'.",
+   "shortcut": "furniture, luggage, scenery, information: uncountable, singular.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Hardly had he reached the station / than the train / started moving / slowly.",
+   "options": [
+    "than the train",
+    "Hardly had he reached the station",
+    "started moving",
+    "slowly."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' and 'scarcely' are followed by 'when'; 'no sooner' is followed by 'than'. So 'when the train' is correct.",
+   "shortcut": "Hardly / scarcely ... WHEN; no sooner ... THAN.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: One of the best players / of our team / have / been selected for the state squad.",
+   "options": [
+    "have",
+    "One of the best players",
+    "of our team",
+    "been selected for the state squad."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'One of the + plural noun' takes a singular verb: the subject is 'one'. Correct: 'has been selected'.",
+   "shortcut": "One of + plural noun -> singular verb.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The number of applicants / for the clerical posts / are / increasing every year.",
+   "options": [
+    "are",
+    "The number of applicants",
+    "for the clerical posts",
+    "increasing every year."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The number of' is singular, so the verb is 'is'. ('A number of' would be plural.)",
+   "shortcut": "The number of = singular; A number of = plural.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: A number of students / was / absent / due to the heavy rain.",
+   "options": [
+    "was",
+    "A number of students",
+    "absent",
+    "due to the heavy rain."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'A number of' means 'several' and takes a plural verb: 'were absent'.",
+   "shortcut": "A number of = plural; The number of = singular.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The teacher along with her students / are going / on a field trip / to Mysuru.",
+   "options": [
+    "are going",
+    "The teacher along with her students",
+    "on a field trip",
+    "to Mysuru."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Along with' does not make the subject plural; the verb agrees with 'the teacher'. Correct: 'is going'.",
+   "shortcut": "along with / together with: ignore the added noun.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Many a student / have / failed / in the first attempt.",
+   "options": [
+    "have",
+    "Many a student",
+    "failed",
+    "in the first attempt."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Many a' is followed by a singular noun and a singular verb: 'Many a student has failed'.",
+   "shortcut": "Many a + singular noun + singular verb.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Fifty rupees / are / too much / for this notebook.",
+   "options": [
+    "are",
+    "Fifty rupees",
+    "too much",
+    "for this notebook."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A sum of money, distance or time treated as one amount takes a singular verb: 'Fifty rupees is too much'.",
+   "shortcut": "Sum / distance / time as one unit -> singular.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Two-thirds of the land / in this village / are / under cultivation.",
+   "options": [
+    "are",
+    "Two-thirds of the land",
+    "in this village",
+    "under cultivation."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With fractions, the verb agrees with the noun after 'of'. 'Land' is uncountable (singular), so 'is under cultivation' is correct.",
+   "shortcut": "Fraction + of + noun: verb matches the noun.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Why did he / not told / me about / the change in schedule?",
+   "options": [
+    "not told",
+    "Why did he",
+    "me about",
+    "the change in schedule?"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'did' the main verb takes its base form: 'did not tell'.",
+   "shortcut": "did / does / do + base verb.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The police / has / arrested / the suspect.",
+   "options": [
+    "has",
+    "The police",
+    "arrested",
+    "the suspect."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Police' is always plural, so the verb must be 'have arrested'.",
+   "shortcut": "police, cattle, people = plural.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He asked me / that where / I was going / at that hour.",
+   "options": [
+    "that where",
+    "He asked me",
+    "I was going",
+    "at that hour."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In reported questions the question word itself introduces the clause; 'that' must not be added: 'He asked me where I was going'.",
+   "shortcut": "Reported question: no 'that' with wh-words.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The cost of living / in metropolitan cities / are rising / faster than in towns.",
+   "options": [
+    "are rising",
+    "The cost of living",
+    "in metropolitan cities",
+    "faster than in towns."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'the cost' (singular); 'of living' and 'in cities' are modifiers. Correct: 'is rising'.",
+   "shortcut": "Find the head noun; ignore the phrase after it.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I would have gone / to the match / if he would have / invited me.",
+   "options": [
+    "if he would have",
+    "I would have gone",
+    "to the match",
+    "invited me."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third conditional: 'if + past perfect, would have + past participle'. Correct: 'if he had invited me'.",
+   "shortcut": "if-clause never takes 'would'.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: If I was / you, I would / apologise to / the manager immediately.",
+   "options": [
+    "If I was",
+    "you, I would",
+    "apologise to",
+    "the manager immediately."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An imaginary (unreal) condition uses the subjunctive 'were' for all persons: 'If I were you'.",
+   "shortcut": "Unreal if-clause: If I WERE.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She is looking forward / to meet / her cousin / next month.",
+   "options": [
+    "to meet",
+    "She is looking forward",
+    "her cousin",
+    "next month."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 'look forward to', 'to' is a preposition and must be followed by a gerund: 'to meeting'.",
+   "shortcut": "look forward TO + -ing.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The manager suggested / me to take / a few days off / after the audit.",
+   "options": [
+    "me to take",
+    "The manager suggested",
+    "a few days off",
+    "after the audit."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Suggest' cannot take 'object + to-infinitive'. Correct: 'suggested that I take' or 'suggested my taking'.",
+   "shortcut": "suggest never takes 'me to ...'.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He is one of those players / who has / never missed / a practice session.",
+   "options": [
+    "who has",
+    "He is one of those players",
+    "never missed",
+    "a practice session."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Who' refers to 'players' (plural), not 'one'. Correct: 'who have never missed'.",
+   "shortcut": "one of those + plural noun + who + PLURAL verb.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Neither of the two candidates / were / suitable for / the post.",
+   "options": [
+    "were",
+    "Neither of the two candidates",
+    "suitable for",
+    "the post."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither of' with a plural noun takes a singular verb in standard usage: 'Neither of the two candidates was suitable'.",
+   "shortcut": "Neither of / either of -> singular verb.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Between you and I / the plan / is not / practical at all.",
+   "options": [
+    "Between you and I",
+    "the plan",
+    "is not",
+    "practical at all."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A preposition takes the object form of the pronoun: 'between you and me'.",
+   "shortcut": "Preposition + me / him / her / us / them.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She is more intelligent / than any / other girls / in her class.",
+   "options": [
+    "other girls",
+    "She is more intelligent",
+    "than any",
+    "in her class."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Any other' must be followed by a singular noun in this comparison: 'any other girl'.",
+   "shortcut": "Comparative + any other + SINGULAR noun.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: This is the most unique / painting that / I have ever seen / in a gallery.",
+   "options": [
+    "This is the most unique",
+    "painting that",
+    "I have ever seen",
+    "in a gallery."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Unique' means one of a kind, so it cannot be graded with 'most' or 'more'. Correct: 'This is a unique painting'.",
+   "shortcut": "unique, perfect, complete: no 'most / very'.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The old man / was so weak / that he cannot / walk without support.",
+   "options": [
+    "that he cannot",
+    "The old man",
+    "was so weak",
+    "walk without support."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main clause is in the past ('was'), so the result clause must also be in the past: 'could not'.",
+   "shortcut": "Past main clause -> past in the subordinate clause.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Had I known / about the delay, I / will have / started earlier.",
+   "options": [
+    "will have",
+    "Had I known",
+    "about the delay, I",
+    "started earlier."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 'Had I known ...' (third conditional inverted) the result is 'would have + past participle'. 'Will have' is wrong.",
+   "shortcut": "Had + subject + pp -> would have + pp.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The reason for his failure / is because / he did not / prepare properly.",
+   "options": [
+    "is because",
+    "The reason for his failure",
+    "he did not",
+    "prepare properly."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The reason ... is that' is the correct pattern; 'because' repeats the idea of reason.",
+   "shortcut": "reason ... is THAT, never because.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Not only the students / but also the teacher / were / disappointed with the result.",
+   "options": [
+    "were",
+    "Not only the students",
+    "but also the teacher",
+    "disappointed with the result."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'not only ... but also', the verb agrees with the nearer subject 'the teacher' (singular): 'was disappointed'.",
+   "shortcut": "Not only-but also: nearer subject decides.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The sceneries / of Kerala / are / breathtaking.",
+   "options": [
+    "The sceneries",
+    "of Kerala",
+    "are",
+    "breathtaking."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Scenery' is an uncountable noun and has no plural form. Correct: 'The scenery of Kerala is breathtaking'.",
+   "shortcut": "scenery, furniture, luggage, advice: no plural -s.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He gave me / many informations / about the / admission process.",
+   "options": [
+    "many informations",
+    "He gave me",
+    "about the",
+    "admission process."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Information' is uncountable: 'a lot of information' / 'much information'.",
+   "shortcut": "information, advice, knowledge: no -s.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: All the luggages / were loaded / onto the / waiting truck.",
+   "options": [
+    "All the luggages",
+    "were loaded",
+    "onto the",
+    "waiting truck."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Luggage' is uncountable and cannot take -s. Correct: 'All the luggage was loaded'.",
+   "shortcut": "luggage / baggage: never plural.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She did not know / whether he / will come / or not.",
+   "options": [
+    "will come",
+    "She did not know",
+    "whether he",
+    "or not."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The main verb is in the past ('did not know'), so the noun clause needs 'would come' (sequence of tenses).",
+   "shortcut": "Past + reporting -> will becomes would.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I congratulate you / for your / success in / the examination.",
+   "options": [
+    "for your",
+    "I congratulate you",
+    "success in",
+    "the examination."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Congratulate' takes 'on' for the occasion: 'congratulate you on your success'.",
+   "shortcut": "congratulate ON.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She was accused / for theft / by the shop owner / last week.",
+   "options": [
+    "for theft",
+    "She was accused",
+    "by the shop owner",
+    "last week."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Accuse' is followed by 'of': 'accused of theft'.",
+   "shortcut": "accuse OF; charge WITH.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: He is very much / fond for / cricket and / plays daily.",
+   "options": [
+    "fond for",
+    "He is very much",
+    "cricket and",
+    "plays daily."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Fond' is followed by 'of': 'fond of cricket'.",
+   "shortcut": "fond OF; good AT; afraid OF.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The sun rises / in the east and / sets in the west. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "The sun rises",
+    "in the east and",
+    "sets in the west."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Universal truths take the simple present, and all agreements are correct, so the sentence has no error.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Each of the boys / has completed / his assignment. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "Each of the boys",
+    "has completed",
+    "his assignment."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each of' takes a singular verb ('has') and the singular pronoun 'his'; the sentence is correct.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Neither the captain / nor the players / were told the schedule. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "Neither the captain",
+    "nor the players",
+    "were told the schedule."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither ... nor' the verb agrees with the nearer subject 'players' (plural), so 'were' is correct.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: The number of vacancies / has increased / this year. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "The number of vacancies",
+    "has increased",
+    "this year."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The number of' takes a singular verb, so 'has increased' is correct.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Had she known the truth, / she would have / acted differently. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "Had she known the truth,",
+    "she would have",
+    "acted differently."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third conditional: 'Had + subject + past participle, would have + past participle'. The sentence is correct.",
+   "subPattern": "spot-the-error",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: I prefer walking / to driving / in this heavy traffic. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "I prefer walking",
+    "to driving",
+    "in this heavy traffic."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Prefer X to Y' with two gerunds is correct, so there is no error.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: Hardly had we reached / the hall when / the lights went out. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "Hardly had we reached",
+    "the hall when",
+    "the lights went out."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly had ... when' is the correct pair and the inversion is correct.",
+   "subPattern": "spot-the-error",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the part of the sentence that has an error: She has been working / here / since January. (If the sentence is correct, choose No error.)",
+   "options": [
+    "No error",
+    "She has been working",
+    "here",
+    "since January."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Present perfect continuous with 'since' plus a point in time is correct.",
+   "subPattern": "spot-the-error",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

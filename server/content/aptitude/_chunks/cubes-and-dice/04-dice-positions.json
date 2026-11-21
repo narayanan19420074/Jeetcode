@@ -1,0 +1,2361 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "2",
+    "1",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Track the faces after each move — cw: top 6, front 5, right 3. So the top face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once backward (towards you), then rolled once backward (towards you), then rolled once to the left, then rolled once to the right. Which number is now on the top face?",
+   "options": [
+    "6",
+    "2",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — back: top 6, front 4, right 2; back: top 3, front 6, right 2; left: top 2, front 6, right 4; right: top 3, front 6, right 2. So the top face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is rolled once forward (away from you), then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "5",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — forward: top 4, front 1, right 5; ccw: top 4, front 2, right 1; ccw: top 4, front 6, right 2. So the top face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is rolled once to the right, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "6",
+    "5",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — right: top 2, front 4, right 6; ccw: top 2, front 1, right 4. So the bottom face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 3 facing you, 4 at the back, 2 on the left and 5 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once forward (away from you), then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once to the left. Which number is now on the front (facing you) face?",
+   "options": [
+    "2",
+    "5",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — ccw: top 1, front 2, right 3; forward: top 2, front 6, right 3; ccw: top 2, front 4, right 6; left: top 6, front 4, right 5. So the front face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 3 facing you, 4 at the back, 2 on the left and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "4",
+    "3",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — cw: top 1, front 5, right 4; ccw: top 1, front 3, right 5. So the top face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 2 facing you, 5 at the back, 4 on the left and 3 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once to the left, then rolled once forward (away from you). Which number is now on the front (facing you) face?",
+   "options": [
+    "5",
+    "2",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — ccw: top 1, front 4, right 2; left: top 2, front 4, right 6; forward: top 4, front 5, right 6. So the front face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is rolled once backward (towards you), then rolled once to the right. Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "4",
+    "5",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — back: top 3, front 6, right 5; right: top 2, front 6, right 3. So the bottom face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place, then turned 90° clockwise (seen from above) about the vertical axis, staying in place, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "1",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — cw: top 4, front 2, right 6; cw: top 4, front 6, right 5; ccw: top 4, front 2, right 6. So the top face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once to the right, then rolled once to the left. Which number is now on the top face?",
+   "options": [
+    "2",
+    "6",
+    "5",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Track the faces after each move — right: top 5, front 1, right 4; left: top 4, front 1, right 2. So the top face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 2 on top, 5 on the bottom, 1 facing you, 6 at the back, 3 on the left and 4 on the right. It is rolled once forward (away from you), then turned 90° clockwise (seen from above) about the vertical axis, staying in place, then rolled once to the right. Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "6",
+    "5",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — forward: top 1, front 5, right 4; cw: top 1, front 4, right 2; right: top 5, front 4, right 1. So the bottom face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 3 facing you, 4 at the back, 2 on the left and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place, then rolled once forward (away from you). Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "3",
+    "2",
+    "6",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — cw: top 1, front 5, right 4; forward: top 5, front 6, right 4. So the bottom face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is rolled once to the right, then rolled once forward (away from you), then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once forward (away from you). Which number is now on the top face?",
+   "options": [
+    "6",
+    "4",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Track the faces after each move — right: top 2, front 4, right 6; forward: top 4, front 5, right 6; ccw: top 4, front 1, right 5; forward: top 1, front 3, right 5. So the top face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once to the left, then rolled once to the left, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once forward (away from you). Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "4",
+    "1",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — left: top 2, front 1, right 3; left: top 3, front 1, right 5; ccw: top 3, front 2, right 1; forward: top 2, front 4, right 1. So the bottom face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 2 on top, 5 on the bottom, 1 facing you, 6 at the back, 3 on the left and 4 on the right. It is rolled once to the left, then rolled once to the right, then rolled once to the right. Which number is now on the top face?",
+   "options": [
+    "2",
+    "5",
+    "3",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — left: top 4, front 1, right 5; right: top 2, front 1, right 4; right: top 3, front 1, right 2. So the top face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "6",
+    "4",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — ccw: top 6, front 2, right 4. So the top face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 2 on top, 5 on the bottom, 1 facing you, 6 at the back, 3 on the left and 4 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place, then turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "6",
+    "1",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — cw: top 2, front 4, right 6; cw: top 2, front 6, right 3. So the top face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once to the left, then rolled once to the left. Which number is now on the top face?",
+   "options": [
+    "4",
+    "3",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — left: top 2, front 1, right 3; left: top 3, front 1, right 5. So the top face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 3 facing you, 4 at the back, 2 on the left and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place, then rolled once backward (towards you), then rolled once to the right, then rolled once to the right. Which number is now on the top face?",
+   "options": [
+    "4",
+    "3",
+    "5",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — cw: top 1, front 5, right 4; back: top 2, front 1, right 4; right: top 3, front 1, right 2; right: top 5, front 1, right 3. So the top face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is rolled once to the left, then rolled once backward (towards you). Which number is now on the front (facing you) face?",
+   "options": [
+    "6",
+    "1",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Track the faces after each move — left: top 5, front 4, right 1; back: top 3, front 5, right 1. So the front face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place, then turned 90° clockwise (seen from above) about the vertical axis, staying in place, then rolled once to the left, then rolled once forward (away from you). Which number is now on the right face?",
+   "options": [
+    "6",
+    "3",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — cw: top 6, front 5, right 3; cw: top 6, front 3, right 2; left: top 2, front 3, right 1; forward: top 3, front 5, right 1. So the right face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once backward (towards you), then rolled once forward (away from you), then rolled once forward (away from you), then rolled once to the left. Which number is now on the right face?",
+   "options": [
+    "4",
+    "1",
+    "6",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — back: top 6, front 4, right 2; forward: top 4, front 1, right 2; forward: top 1, front 3, right 2; left: top 2, front 3, right 6. So the right face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once to the right, then rolled once to the left. Which number is now on the top face?",
+   "options": [
+    "4",
+    "6",
+    "5",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — ccw: top 4, front 5, right 1; right: top 6, front 5, right 4; left: top 4, front 5, right 1. So the top face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 3 facing you, 4 at the back, 2 on the left and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the right face?",
+   "options": [
+    "4",
+    "6",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — cw: top 1, front 5, right 4. So the right face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once forward (away from you), then rolled once backward (towards you). Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — forward: top 1, front 3, right 2; back: top 4, front 1, right 2. So the bottom face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the front (facing you) face?",
+   "options": [
+    "4",
+    "5",
+    "1",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Track the faces after each move — ccw: top 4, front 5, right 1; cw: top 4, front 1, right 2. So the front face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 3 facing you, 4 at the back, 2 on the left and 5 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once to the left, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the top face?",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — ccw: top 1, front 2, right 3; left: top 3, front 2, right 6; ccw: top 3, front 1, right 2. So the top face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 4 on top, 3 on the bottom, 1 facing you, 6 at the back, 5 on the left and 2 on the right. It is rolled once to the right, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — right: top 5, front 1, right 4; ccw: top 5, front 3, right 1. So the bottom face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 6 on top, 1 on the bottom, 4 facing you, 3 at the back, 2 on the left and 5 on the right. It is rolled once backward (towards you), then turned 90° clockwise (seen from above) about the vertical axis, staying in place, then turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the bottom (touching the surface) face?",
+   "options": [
+    "4",
+    "1",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Track the faces after each move — back: top 3, front 6, right 5; cw: top 3, front 5, right 1; ccw: top 3, front 6, right 5. So the bottom face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A dice rests on a flat surface with 1 on top, 6 on the bottom, 2 facing you, 5 at the back, 4 on the left and 3 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place, then rolled once forward (away from you). Which number is now on the top face?",
+   "options": [
+    "3",
+    "4",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Track the faces after each move — ccw: top 1, front 4, right 2; forward: top 4, front 6, right 2. So the top face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right brings the left face to the top; rolling forward brings the front face to the top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 5 in front and 1 on the right. It is rolled once to the left. Which number is now on the left face?",
+   "options": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 3, bottom 4, front 5, back 2, left 6, right 1. After the move (left): top 1, bottom 6, front 5, back 2, left 3, right 4. So the left face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 6 in front and 3 on the right. It is rolled once to the left. Which number is now on the right face?",
+   "options": [
+    "3",
+    "2",
+    "5",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 2, bottom 5, front 6, back 1, left 4, right 3. After the move (left): top 3, bottom 4, front 6, back 1, left 2, right 5. So the right face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 3 in front and 2 on the right. It is rolled once forward (away from you). Which number is now on the left face?",
+   "options": [
+    "5",
+    "2",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 6, bottom 1, front 3, back 4, left 5, right 2. After the move (forward): top 3, bottom 4, front 1, back 6, left 5, right 2. So the left face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 3 in front and 2 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the left face?",
+   "options": [
+    "1",
+    "4",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 3, back 4, left 5, right 2. After the move (cw): top 6, bottom 1, front 2, back 5, left 3, right 4. So the left face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 5 in front and 4 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the front face?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 1, bottom 6, front 5, back 2, left 3, right 4. After the move (ccw): top 1, bottom 6, front 3, back 4, left 2, right 5. So the front face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 1 in front and 2 on the right. It is rolled once forward (away from you). Which number is now on the front face?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 1, back 6, left 5, right 2. After the move (forward): top 1, bottom 6, front 4, back 3, left 5, right 2. So the front face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 4 in front and 6 on the right. It is rolled once backward (towards you). Which number is now on the front face?",
+   "options": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 2, bottom 5, front 4, back 3, left 1, right 6. After the move (back): top 3, bottom 4, front 2, back 5, left 1, right 6. So the front face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 1 in front and 2 on the right. It is rolled once to the right. Which number is now on the top face?",
+   "options": [
+    "2",
+    "1",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 3, bottom 4, front 1, back 6, left 5, right 2. After the move (right): top 5, bottom 2, front 1, back 6, left 4, right 3. So the top face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 5 in front and 1 on the right. It is rolled once forward (away from you). Which number is now on the back face?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 3, bottom 4, front 5, back 2, left 6, right 1. After the move (forward): top 5, bottom 2, front 4, back 3, left 6, right 1. So the back face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 6 in front and 2 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the back face?",
+   "options": [
+    "5",
+    "2",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 4, bottom 3, front 6, back 1, left 5, right 2. After the move (cw): top 4, bottom 3, front 2, back 5, left 6, right 1. So the back face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 1 in front and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the back face?",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 4, bottom 3, front 1, back 6, left 2, right 5. After the move (cw): top 4, bottom 3, front 5, back 2, left 1, right 6. So the back face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 6 in front and 4 on the right. It is rolled once to the right. Which number is now on the back face?",
+   "options": [
+    "3",
+    "4",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 5, bottom 2, front 6, back 1, left 3, right 4. After the move (right): top 3, bottom 4, front 6, back 1, left 2, right 5. So the back face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 1 in front and 3 on the right. It is rolled once forward (away from you). Which number is now on the bottom face?",
+   "options": [
+    "1",
+    "6",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 5, bottom 2, front 1, back 6, left 4, right 3. After the move (forward): top 1, bottom 6, front 2, back 5, left 4, right 3. So the bottom face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 4 in front and 1 on the right. It is rolled once forward (away from you). Which number is now on the back face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 5, bottom 2, front 4, back 3, left 6, right 1. After the move (forward): top 4, bottom 3, front 2, back 5, left 6, right 1. So the back face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 2 in front and 4 on the right. It is rolled once backward (towards you). Which number is now on the bottom face?",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 2, back 5, left 3, right 4. After the move (back): top 5, bottom 2, front 6, back 1, left 3, right 4. So the bottom face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 6 in front and 2 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the left face?",
+   "options": [
+    "4",
+    "1",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 4, bottom 3, front 6, back 1, left 5, right 2. After the move (ccw): top 4, bottom 3, front 5, back 2, left 1, right 6. So the left face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 5 in front and 6 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the right face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 4, bottom 3, front 5, back 2, left 1, right 6. After the move (cw): top 4, bottom 3, front 6, back 1, left 5, right 2. So the right face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 4 in front and 1 on the right. It is rolled once forward (away from you). Which number is now on the bottom face?",
+   "options": [
+    "1",
+    "4",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 5, bottom 2, front 4, back 3, left 6, right 1. After the move (forward): top 4, bottom 3, front 2, back 5, left 6, right 1. So the bottom face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 2 in front and 6 on the right. It is rolled once to the left. Which number is now on the left face?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 3, bottom 4, front 2, back 5, left 1, right 6. After the move (left): top 6, bottom 1, front 2, back 5, left 3, right 4. So the left face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 3 in front and 1 on the right. It is rolled once forward (away from you). Which number is now on the right face?",
+   "options": [
+    "2",
+    "4",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 2, bottom 5, front 3, back 4, left 6, right 1. After the move (forward): top 3, bottom 4, front 5, back 2, left 6, right 1. So the right face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 1 in front and 4 on the right. It is rolled once forward (away from you). Which number is now on the front face?",
+   "options": [
+    "5",
+    "3",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 2, bottom 5, front 1, back 6, left 3, right 4. After the move (forward): top 1, bottom 6, front 5, back 2, left 3, right 4. So the front face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 1 in front and 5 on the right. It is rolled once to the left. Which number is now on the back face?",
+   "options": [
+    "2",
+    "1",
+    "6",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 4, bottom 3, front 1, back 6, left 2, right 5. After the move (left): top 5, bottom 2, front 1, back 6, left 4, right 3. So the back face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 5 in front and 1 on the right. It is rolled once backward (towards you). Which number is now on the bottom face?",
+   "options": [
+    "2",
+    "1",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 3, bottom 4, front 5, back 2, left 6, right 1. After the move (back): top 2, bottom 5, front 3, back 4, left 6, right 1. So the bottom face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 3 in front and 5 on the right. It is rolled once forward (away from you). Which number is now on the bottom face?",
+   "options": [
+    "2",
+    "4",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 1, bottom 6, front 3, back 4, left 2, right 5. After the move (forward): top 3, bottom 4, front 6, back 1, left 2, right 5. So the bottom face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 5 in front and 1 on the right. It is rolled once to the left. Which number is now on the right face?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 5, back 2, left 6, right 1. After the move (left): top 1, bottom 6, front 5, back 2, left 3, right 4. So the right face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 6 in front and 3 on the right. It is rolled once to the right. Which number is now on the front face?",
+   "options": [
+    "1",
+    "6",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 2, bottom 5, front 6, back 1, left 4, right 3. After the move (right): top 4, bottom 3, front 6, back 1, left 5, right 2. So the front face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 5 in front and 1 on the right. It is rolled once backward (towards you). Which number is now on the top face?",
+   "options": [
+    "1",
+    "3",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 5, back 2, left 6, right 1. After the move (back): top 2, bottom 5, front 3, back 4, left 6, right 1. So the top face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 6 in front and 4 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the front face?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 5, bottom 2, front 6, back 1, left 3, right 4. After the move (ccw): top 5, bottom 2, front 3, back 4, left 1, right 6. So the front face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 6 in front and 4 on the right. It is rolled once to the right. Which number is now on the left face?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 5, bottom 2, front 6, back 1, left 3, right 4. After the move (right): top 3, bottom 4, front 6, back 1, left 2, right 5. So the left face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 5 in front and 6 on the right. It is rolled once forward (away from you). Which number is now on the right face?",
+   "options": [
+    "1",
+    "3",
+    "6",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 4, bottom 3, front 5, back 2, left 1, right 6. After the move (forward): top 5, bottom 2, front 3, back 4, left 1, right 6. So the right face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 5 in front and 6 on the right. It is rolled once backward (towards you). Which number is now on the left face?",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 4, bottom 3, front 5, back 2, left 1, right 6. After the move (back): top 2, bottom 5, front 4, back 3, left 1, right 6. So the left face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 5 in front and 1 on the right. It is rolled once backward (towards you). Which number is now on the left face?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 5, back 2, left 6, right 1. After the move (back): top 2, bottom 5, front 3, back 4, left 6, right 1. So the left face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 2 in front and 4 on the right. It is rolled once to the right. Which number is now on the front face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 6, bottom 1, front 2, back 5, left 3, right 4. After the move (right): top 3, bottom 4, front 2, back 5, left 1, right 6. So the front face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 2 in front and 1 on the right. It is rolled once to the right. Which number is now on the bottom face?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 4, bottom 3, front 2, back 5, left 6, right 1. After the move (right): top 6, bottom 1, front 2, back 5, left 3, right 4. So the bottom face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 2 in front and 6 on the right. It is rolled once to the right. Which number is now on the bottom face?",
+   "options": [
+    "6",
+    "3",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 3, bottom 4, front 2, back 5, left 1, right 6. After the move (right): top 1, bottom 6, front 2, back 5, left 4, right 3. So the bottom face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 5 in front and 4 on the right. It is rolled once to the right. Which number is now on the bottom face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 1, bottom 6, front 5, back 2, left 3, right 4. After the move (right): top 3, bottom 4, front 5, back 2, left 6, right 1. So the bottom face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 5 in front and 3 on the right. It is rolled once forward (away from you). Which number is now on the front face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 6, bottom 1, front 5, back 2, left 4, right 3. After the move (forward): top 5, bottom 2, front 1, back 6, left 4, right 3. So the front face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 5 in front and 4 on the right. It is rolled once to the right. Which number is now on the back face?",
+   "options": [
+    "4",
+    "1",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 1, bottom 6, front 5, back 2, left 3, right 4. After the move (right): top 3, bottom 4, front 5, back 2, left 6, right 1. So the back face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 3 in front and 2 on the right. It is rolled once to the left. Which number is now on the left face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 3, back 4, left 5, right 2. After the move (left): top 2, bottom 5, front 3, back 4, left 6, right 1. So the left face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 2 in front and 4 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the left face?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 6, bottom 1, front 2, back 5, left 3, right 4. After the move (cw): top 6, bottom 1, front 4, back 3, left 2, right 5. So the left face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 1 in front and 3 on the right. It is rolled once to the right. Which number is now on the right face?",
+   "options": [
+    "5",
+    "3",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 5, bottom 2, front 1, back 6, left 4, right 3. After the move (right): top 4, bottom 3, front 1, back 6, left 2, right 5. So the right face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 1 in front and 3 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the left face?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 5, bottom 2, front 1, back 6, left 4, right 3. After the move (ccw): top 5, bottom 2, front 4, back 3, left 6, right 1. So the left face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 4 in front and 6 on the right. It is rolled once to the left. Which number is now on the left face?",
+   "options": [
+    "3",
+    "2",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 2, bottom 5, front 4, back 3, left 1, right 6. After the move (left): top 6, bottom 1, front 4, back 3, left 2, right 5. So the left face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 2 in front and 6 on the right. It is rolled once forward (away from you). Which number is now on the bottom face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 2, back 5, left 1, right 6. After the move (forward): top 2, bottom 5, front 4, back 3, left 1, right 6. So the bottom face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 1 in front and 5 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the front face?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 4, bottom 3, front 1, back 6, left 2, right 5. After the move (cw): top 4, bottom 3, front 5, back 2, left 1, right 6. So the front face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 6 in front and 4 on the right. It is rolled once to the left. Which number is now on the bottom face?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 5, bottom 2, front 6, back 1, left 3, right 4. After the move (left): top 4, bottom 3, front 6, back 1, left 5, right 2. So the bottom face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 2 in front and 6 on the right. It is rolled once to the right. Which number is now on the back face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 2, back 5, left 1, right 6. After the move (right): top 1, bottom 6, front 2, back 5, left 4, right 3. So the back face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 4 in front and 1 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the right face?",
+   "options": [
+    "3",
+    "4",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 5, bottom 2, front 4, back 3, left 6, right 1. After the move (ccw): top 5, bottom 2, front 6, back 1, left 3, right 4. So the right face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 4 in front and 1 on the right. It is rolled once to the right. Which number is now on the top face?",
+   "options": [
+    "1",
+    "6",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 5, bottom 2, front 4, back 3, left 6, right 1. After the move (right): top 6, bottom 1, front 4, back 3, left 2, right 5. So the top face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 2 in front and 1 on the right. It is rolled once to the left. Which number is now on the bottom face?",
+   "options": [
+    "6",
+    "3",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 4, bottom 3, front 2, back 5, left 6, right 1. After the move (left): top 1, bottom 6, front 2, back 5, left 4, right 3. So the bottom face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 3 in front and 5 on the right. It is rolled once forward (away from you). Which number is now on the left face?",
+   "options": [
+    "4",
+    "1",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 1, bottom 6, front 3, back 4, left 2, right 5. After the move (forward): top 3, bottom 4, front 6, back 1, left 2, right 5. So the left face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 6 in front and 5 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the right face?",
+   "options": [
+    "3",
+    "6",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 3, bottom 4, front 6, back 1, left 2, right 5. After the move (ccw): top 3, bottom 4, front 2, back 5, left 1, right 6. So the right face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 3 in front and 5 on the right. It is rolled once backward (towards you). Which number is now on the left face?",
+   "options": [
+    "2",
+    "1",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 1, bottom 6, front 3, back 4, left 2, right 5. After the move (back): top 4, bottom 3, front 1, back 6, left 2, right 5. So the left face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 2 on top, 1 in front and 4 on the right. It is rolled once backward (towards you). Which number is now on the back face?",
+   "options": [
+    "1",
+    "2",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 2, bottom 5, front 1, back 6, left 3, right 4. After the move (back): top 6, bottom 1, front 2, back 5, left 3, right 4. So the back face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 2 in front and 1 on the right. It is rolled once forward (away from you). Which number is now on the front face?",
+   "options": [
+    "2",
+    "4",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 4, bottom 3, front 2, back 5, left 6, right 1. After the move (forward): top 2, bottom 5, front 3, back 4, left 6, right 1. So the front face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 4 in front and 5 on the right. It is rolled once backward (towards you). Which number is now on the right face?",
+   "options": [
+    "1",
+    "3",
+    "5",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 6, bottom 1, front 4, back 3, left 2, right 5. After the move (back): top 3, bottom 4, front 6, back 1, left 2, right 5. So the right face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 4 in front and 2 on the right. It is rolled once forward (away from you). Which number is now on the front face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 1, bottom 6, front 4, back 3, left 5, right 2. After the move (forward): top 4, bottom 3, front 6, back 1, left 5, right 2. So the front face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 2 in front and 3 on the right. It is rolled once forward (away from you). Which number is now on the right face?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 1, bottom 6, front 2, back 5, left 4, right 3. After the move (forward): top 2, bottom 5, front 6, back 1, left 4, right 3. So the right face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 1 in front and 2 on the right. It is rolled once to the left. Which number is now on the front face?",
+   "options": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 3, bottom 4, front 1, back 6, left 5, right 2. After the move (left): top 2, bottom 5, front 1, back 6, left 3, right 4. So the front face shows 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 4 in front and 5 on the right. It is rolled once backward (towards you). Which number is now on the top face?",
+   "options": [
+    "2",
+    "4",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 4, back 3, left 2, right 5. After the move (back): top 3, bottom 4, front 6, back 1, left 2, right 5. So the top face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 2 in front and 3 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the right face?",
+   "options": [
+    "5",
+    "3",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 1, bottom 6, front 2, back 5, left 4, right 3. After the move (cw): top 1, bottom 6, front 3, back 4, left 2, right 5. So the right face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 5 on top, 1 in front and 3 on the right. It is rolled once to the right. Which number is now on the back face?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 5, bottom 2, front 1, back 6, left 4, right 3. After the move (right): top 4, bottom 3, front 1, back 6, left 2, right 5. So the back face shows 6.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 4 in front and 2 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the front face?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 1, bottom 6, front 4, back 3, left 5, right 2. After the move (cw): top 1, bottom 6, front 2, back 5, left 4, right 3. So the front face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 2 in front and 1 on the right. It is rolled once to the left. Which number is now on the front face?",
+   "options": [
+    "1",
+    "4",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 4, bottom 3, front 2, back 5, left 6, right 1. After the move (left): top 1, bottom 6, front 2, back 5, left 4, right 3. So the front face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 3 on top, 6 in front and 5 on the right. It is turned 90° anticlockwise (seen from above) about the vertical axis, staying in place. Which number is now on the front face?",
+   "options": [
+    "1",
+    "4",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 3, bottom 4, front 6, back 1, left 2, right 5. After the move (ccw): top 3, bottom 4, front 2, back 5, left 1, right 6. So the front face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 2 in front and 4 on the right. It is rolled once forward (away from you). Which number is now on the left face?",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 2, back 5, left 3, right 4. After the move (forward): top 2, bottom 5, front 1, back 6, left 3, right 4. So the left face shows 3.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 3 in front and 2 on the right. It is rolled once to the right. Which number is now on the bottom face?",
+   "options": [
+    "4",
+    "1",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 3, back 4, left 5, right 2. After the move (right): top 5, bottom 2, front 3, back 4, left 1, right 6. So the bottom face shows 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 1 on top, 5 in front and 4 on the right. It is rolled once backward (towards you). Which number is now on the bottom face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 1, bottom 6, front 5, back 2, left 3, right 4. After the move (back): top 2, bottom 5, front 1, back 6, left 3, right 4. So the bottom face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 5 in front and 6 on the right. It is rolled once to the left. Which number is now on the left face?",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before the move: top 4, bottom 3, front 5, back 2, left 1, right 6. After the move (left): top 6, bottom 1, front 5, back 2, left 4, right 3. So the left face shows 4.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 1 in front and 5 on the right. It is rolled once forward (away from you). Which number is now on the right face?",
+   "options": [
+    "1",
+    "5",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before the move: top 4, bottom 3, front 1, back 6, left 2, right 5. After the move (forward): top 1, bottom 6, front 3, back 4, left 2, right 5. So the right face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 6 on top, 3 in front and 2 on the right. It is turned 90° clockwise (seen from above) about the vertical axis, staying in place. Which number is now on the back face?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before the move: top 6, bottom 1, front 3, back 4, left 5, right 2. After the move (cw): top 6, bottom 1, front 2, back 5, left 3, right 4. So the back face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A standard dice (opposite faces add to 7) has 4 on top, 1 in front and 5 on the right. It is rolled once to the left. Which number is now on the top face?",
+   "options": [
+    "3",
+    "2",
+    "5",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before the move: top 4, bottom 3, front 1, back 6, left 2, right 5. After the move (left): top 5, bottom 2, front 1, back 6, left 4, right 3. So the top face shows 5.",
+   "subPattern": "dice-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rolling right: left face goes to top; rolling forward: front face goes to top."
+  },
+  {
+   "questionText": "A dice has six different faces: 4, 2, 6, 1, 5, 3. In the first position its top, front and right faces show 3, 1 and 4 respectively. In the second position its top, front and right faces show 6, 4 and 5 respectively. Which face is opposite to 6?",
+   "options": [
+    "5",
+    "4",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Faces shown together in a position are mutually adjacent: (3, 1, 4) and (6, 4, 5). The common face(s) 4 appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs 1–6, 2–4, 3–5. Hence the face opposite 6 is 1.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: R, S, T, Q, U, P. In the first position its top, front and right faces show U, Q and S respectively. In the second position its top, front and right faces show T, R and U respectively. Which face is opposite to T?",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "U"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (U, Q, S) and (T, R, U). The common face(s) U appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs P–U, Q–T, R–S. Hence the face opposite T is Q.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: 1, 4, 6, 2, 3, 5. In the first position its top, front and right faces show 2, 3 and 1 respectively. In the second position its top, front and right faces show 4, 6 and 3 respectively. Which face is opposite to 6?",
+   "options": [
+    "4",
+    "3",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Faces shown together in a position are mutually adjacent: (2, 3, 1) and (4, 6, 3). The common face(s) 3 appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs 1–4, 2–6, 3–5. Hence the face opposite 6 is 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: F, B, E, A, D, C. In the first position its top, front and right faces show A, C and B respectively. In the second position its top, front and right faces show A, D and F respectively. Which face is opposite to C?",
+   "options": [
+    "D",
+    "E",
+    "F",
+    "B"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (A, C, B) and (A, D, F). The common face(s) A appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–E, B–F, C–D. Hence the face opposite C is D.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: U, R, P, S, T, Q. In the first position its top, front and right faces show P, T and R respectively. In the second position its top, front and right faces show Q, R and S respectively. Which face is opposite to S?",
+   "options": [
+    "U",
+    "T",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Faces shown together in a position are mutually adjacent: (P, T, R) and (Q, R, S). The common face(s) R appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs P–S, Q–T, R–U. Hence the face opposite S is P.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: C, F, D, A, E, B. In the first position its top, front and right faces show B, D and F respectively. In the second position its top, front and right faces show E, A and F respectively. Which face is opposite to C?",
+   "options": [
+    "F",
+    "E",
+    "A",
+    "D"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (B, D, F) and (E, A, F). The common face(s) F appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–D, B–E, C–F. Hence the face opposite C is F.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: P, T, Q, R, U, S. In the first position its top, front and right faces show T, S and Q respectively. In the second position its top, front and right faces show R, T and U respectively. Which face is opposite to U?",
+   "options": [
+    "T",
+    "P",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Faces shown together in a position are mutually adjacent: (T, S, Q) and (R, T, U). The common face(s) T appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs P–T, Q–R, S–U. Hence the face opposite U is S.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: S, T, P, R, U, Q. In the first position its top, front and right faces show P, Q and S respectively. In the second position its top, front and right faces show U, S and R respectively. Which face is opposite to T?",
+   "options": [
+    "S",
+    "R",
+    "U",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (P, Q, S) and (U, S, R). The common face(s) S appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs P–R, Q–U, S–T. Hence the face opposite T is S.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: A, D, C, B, E, F. In the first position its top, front and right faces show E, B and D respectively. In the second position its top, front and right faces show C, D and F respectively. Which face is opposite to D?",
+   "options": [
+    "C",
+    "E",
+    "A",
+    "B"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Faces shown together in a position are mutually adjacent: (E, B, D) and (C, D, F). The common face(s) D appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–D, B–C, E–F. Hence the face opposite D is A.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: C, B, E, D, F, A. In the first position its top, front and right faces show C, D and F respectively. In the second position its top, front and right faces show A, B and D respectively. Which face is opposite to B?",
+   "options": [
+    "F",
+    "E",
+    "C",
+    "D"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Faces shown together in a position are mutually adjacent: (C, D, F) and (A, B, D). The common face(s) D appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–F, B–C, D–E. Hence the face opposite B is C.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: A, E, C, B, D, F. In the first position its top, front and right faces show A, D and C respectively. In the second position its top, front and right faces show E, D and B respectively. Which face is opposite to C?",
+   "options": [
+    "D",
+    "A",
+    "E",
+    "B"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Faces shown together in a position are mutually adjacent: (A, D, C) and (E, D, B). The common face(s) D appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–E, B–C, D–F. Hence the face opposite C is B.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: G, L, J, K, M, H. In the first position its top, front and right faces show H, L and K respectively. In the second position its top, front and right faces show M, L and J respectively. Which face is opposite to H?",
+   "options": [
+    "M",
+    "J",
+    "L",
+    "G"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (H, L, K) and (M, L, J). The common face(s) L appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs G–L, H–M, J–K. Hence the face opposite H is M.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: T, R, U, S, Q, P. In the first position its top, front and right faces show U, P and T respectively. In the second position its top, front and right faces show P, R and S respectively. Which face is opposite to Q?",
+   "options": [
+    "U",
+    "R",
+    "P",
+    "T"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Faces shown together in a position are mutually adjacent: (U, P, T) and (P, R, S). The common face(s) P appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs P–Q, R–T, S–U. Hence the face opposite Q is P.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: G, M, K, L, J, H. In the first position its top, front and right faces show G, J and K respectively. In the second position its top, front and right faces show H, K and M respectively. Which face is opposite to L?",
+   "options": [
+    "J",
+    "K",
+    "G",
+    "M"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Faces shown together in a position are mutually adjacent: (G, J, K) and (H, K, M). The common face(s) K appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs G–M, H–J, K–L. Hence the face opposite L is K.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: J, H, G, K, M, L. In the first position its top, front and right faces show L, G and H respectively. In the second position its top, front and right faces show G, J and M respectively. Which face is opposite to K?",
+   "options": [
+    "G",
+    "J",
+    "H",
+    "M"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (L, G, H) and (G, J, M). The common face(s) G appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs G–K, H–J, L–M. Hence the face opposite K is G.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: B, D, F, E, C, A. In the first position its top, front and right faces show A, B and F respectively. In the second position its top, front and right faces show D, F and C respectively. Which face is opposite to C?",
+   "options": [
+    "F",
+    "B",
+    "A",
+    "D"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Faces shown together in a position are mutually adjacent: (A, B, F) and (D, F, C). The common face(s) F appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–C, B–D, E–F. Hence the face opposite C is A.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: A, B, F, C, D, E. In the first position its top, front and right faces show B, D and C respectively. In the second position its top, front and right faces show D, F and A respectively. Which face is opposite to F?",
+   "options": [
+    "D",
+    "C",
+    "A",
+    "B"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Faces shown together in a position are mutually adjacent: (B, D, C) and (D, F, A). The common face(s) D appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–B, C–F, D–E. Hence the face opposite F is C.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: G, L, H, M, K, J. In the first position its top, front and right faces show M, G and J respectively. In the second position its top, front and right faces show L, J and H respectively. Which face is opposite to G?",
+   "options": [
+    "H",
+    "M",
+    "L",
+    "K"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Faces shown together in a position are mutually adjacent: (M, G, J) and (L, J, H). The common face(s) J appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs G–L, H–M, J–K. Hence the face opposite G is L.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: 4, 6, 3, 2, 1, 5. In the first position its top, front and right faces show 6, 3 and 1 respectively. In the second position its top, front and right faces show 2, 1 and 4 respectively. Which face is opposite to 3?",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Faces shown together in a position are mutually adjacent: (6, 3, 1) and (2, 1, 4). The common face(s) 1 appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs 1–5, 2–3, 4–6. Hence the face opposite 3 is 2.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: L, H, G, M, K, J. In the first position its top, front and right faces show K, H and G respectively. In the second position its top, front and right faces show M, K and L respectively. Which face is opposite to K?",
+   "options": [
+    "H",
+    "J",
+    "L",
+    "G"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Faces shown together in a position are mutually adjacent: (K, H, G) and (M, K, L). The common face(s) K appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs G–M, H–L, J–K. Hence the face opposite K is J.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: R, Q, P, T, S, U. In the first position its top, front and right faces show P, Q and U respectively. In the second position its top, front and right faces show R, S and P respectively. Which face is opposite to S?",
+   "options": [
+    "P",
+    "U",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Faces shown together in a position are mutually adjacent: (P, Q, U) and (R, S, P). The common face(s) P appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs P–T, Q–R, S–U. Hence the face opposite S is U.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  },
+  {
+   "questionText": "A dice has six different faces: B, E, D, C, F, A. In the first position its top, front and right faces show A, C and B respectively. In the second position its top, front and right faces show C, E and F respectively. Which face is opposite to E?",
+   "options": [
+    "B",
+    "F",
+    "C",
+    "D"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Faces shown together in a position are mutually adjacent: (A, C, B) and (C, E, F). The common face(s) C appear in both positions, so the dice has been turned about that face. Matching the top → front → right order of the two corners fixes the layout uniquely, giving the opposite pairs A–F, B–E, C–D. Hence the face opposite E is B.",
+   "subPattern": "dice-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Same cyclic order of three faces at a corner means the same corner; use it to match the two views."
+  }
+ ]
+}

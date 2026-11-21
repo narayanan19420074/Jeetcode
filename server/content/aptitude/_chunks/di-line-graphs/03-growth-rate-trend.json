@@ -1,0 +1,837 @@
+{
+ "sets": [
+  {
+   "id": "di-line-graphs-s013",
+   "type": "line",
+   "title": "Population of a town (in thousands)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Population (thousand)",
+    "series": [
+     {
+      "name": "Population",
+      "data": [
+       {
+        "label": "2015",
+        "value": 200
+       },
+       {
+        "label": "2016",
+        "value": 220
+       },
+       {
+        "label": "2017",
+        "value": 242
+       },
+       {
+        "label": "2018",
+        "value": 254
+       },
+       {
+        "label": "2019",
+        "value": 279
+       },
+       {
+        "label": "2020",
+        "value": 307
+       },
+       {
+        "label": "2021",
+        "value": 322
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s014",
+   "type": "line",
+   "title": "Internet users in a district (in lakh)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Number of internet users (lakh)",
+    "series": [
+     {
+      "name": "Internet users",
+      "data": [
+       {
+        "label": "2018",
+        "value": 40
+       },
+       {
+        "label": "2019",
+        "value": 50
+       },
+       {
+        "label": "2020",
+        "value": 70
+       },
+       {
+        "label": "2021",
+        "value": 84
+       },
+       {
+        "label": "2022",
+        "value": 105
+       },
+       {
+        "label": "2023",
+        "value": 136
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s015",
+   "type": "line",
+   "title": "Production of two products A and B at a plant (in thousand units)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Production (thousand units)",
+    "series": [
+     {
+      "name": "Product A",
+      "data": [
+       {
+        "label": "2018",
+        "value": 80
+       },
+       {
+        "label": "2019",
+        "value": 92
+       },
+       {
+        "label": "2020",
+        "value": 100
+       },
+       {
+        "label": "2021",
+        "value": 120
+       },
+       {
+        "label": "2022",
+        "value": 126
+       },
+       {
+        "label": "2023",
+        "value": 153
+       }
+      ]
+     },
+     {
+      "name": "Product B",
+      "data": [
+       {
+        "label": "2018",
+        "value": 60
+       },
+       {
+        "label": "2019",
+        "value": 66
+       },
+       {
+        "label": "2020",
+        "value": 90
+       },
+       {
+        "label": "2021",
+        "value": 81
+       },
+       {
+        "label": "2022",
+        "value": 108
+       },
+       {
+        "label": "2023",
+        "value": 117
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s016",
+   "type": "line",
+   "title": "Closing price of a share on month-end (in ₹)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Share price (₹)",
+    "series": [
+     {
+      "name": "Share price",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 250
+       },
+       {
+        "label": "Feb",
+        "value": 300
+       },
+       {
+        "label": "Mar",
+        "value": 285
+       },
+       {
+        "label": "Apr",
+        "value": 342
+       },
+       {
+        "label": "May",
+        "value": 376
+       },
+       {
+        "label": "Jun",
+        "value": 451
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s017",
+   "type": "line",
+   "title": "Solar capacity installed by a district (in MW)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Installed solar capacity (MW)",
+    "series": [
+     {
+      "name": "Capacity",
+      "data": [
+       {
+        "label": "2017",
+        "value": 12
+       },
+       {
+        "label": "2018",
+        "value": 15
+       },
+       {
+        "label": "2019",
+        "value": 24
+       },
+       {
+        "label": "2020",
+        "value": 30
+       },
+       {
+        "label": "2021",
+        "value": 36
+       },
+       {
+        "label": "2022",
+        "value": 54
+       },
+       {
+        "label": "2023",
+        "value": 72
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s018",
+   "type": "line",
+   "title": "Monthly savings of Ravi in a recurring plan (in ₹ thousand)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Amount saved (₹ thousand)",
+    "series": [
+     {
+      "name": "Savings",
+      "data": [
+       {
+        "label": "Jul",
+        "value": 40
+       },
+       {
+        "label": "Aug",
+        "value": 48
+       },
+       {
+        "label": "Sep",
+        "value": 45
+       },
+       {
+        "label": "Oct",
+        "value": 60
+       },
+       {
+        "label": "Nov",
+        "value": 66
+       },
+       {
+        "label": "Dec",
+        "value": 90
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "According to the graph, what was the population in 2016 (in thousand)?",
+   "options": [
+    "200",
+    "220",
+    "242",
+    "235"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the point of the line at 2016: the value is 220 thousand.",
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "By how much did the population rise from 2016 to 2017 (in thousand)?",
+   "options": [
+    "242",
+    "220",
+    "22",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2016: 220; 2017: 242. Change = 22.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "What was the average increase per year in the population from 2015 to 2021 (in thousand)? (Correct to one decimal place.)",
+   "options": [
+    "17.4",
+    "61.0",
+    "21.7",
+    "20.3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total rise = 322 - 200 = 122 over 6 intervals. Average = 20.3.",
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "What was the overall percentage growth in the population from 2015 to 2021? (Correct to one decimal place.)",
+   "options": [
+    "61.0%",
+    "37.9%",
+    "49.7%",
+    "65.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rise = 322 - 200 = 122. Percent = 122/200 x 100 = 61.0%.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "If the population grows in the next year by the same percentage as it did in the last year shown (2021 over 2020), what will it be? (Correct to one decimal place.)",
+   "options": [
+    "337.0",
+    "353.5",
+    "337.7",
+    "361.3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Last growth factor = 322/307 = 1.0489. Next value = 322 x 1.0489 = 337.7.",
+   "shortcut": "Same percentage growth means multiply by the same factor, not add the same amount.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "According to the graph, what was the number of internet users in 2022 (in lakh)?",
+   "options": [
+    "84",
+    "136",
+    "105",
+    "112"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the point of the line at 2022: the value is 105 lakh.",
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "By how much did the number of internet users rise from 2021 to 2022 (in lakh)?",
+   "options": [
+    "105",
+    "84",
+    "22",
+    "21"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2021: 84; 2022: 105. Change = 21.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "In which year was the percentage growth in number of internet users over the previous year the lowest?",
+   "options": [
+    "2020",
+    "2021",
+    "2022",
+    "2019"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Growth rates: 2019: 25.0%, 2020: 40.0%, 2021: 20.0%, 2022: 25.0%, 2023: 29.5%. Lowest is in 2021.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "In which year did the number of internet users first exceed twice its 2018 level?",
+   "options": [
+    "2022",
+    "2021",
+    "2023",
+    "2020"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Twice the 2018 level = 80. First value above this is 84 in 2021.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "What is the difference, in percentage points, between the highest and the lowest year-to-year percentage growth rates of the number of internet users in the period shown? (Correct to one decimal place.)",
+   "options": [
+    "96.0",
+    "20.0",
+    "40.0",
+    "21.4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Growth rates: 25.00%, 40.00%, 20.00%, 25.00%, 29.52%. Highest 40.00%, lowest 20.00%; difference = 20.0 points.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "By how much did the production of Product B rise from 2021 to 2022 (in thousand units)?",
+   "options": [
+    "108",
+    "81",
+    "29",
+    "27"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2021: 81; 2022: 108. Change = 27.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "In how many years did the production of Product B fall compared with the previous year?",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare consecutive points: a fall happens 1 time(s).",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "What was the percentage growth in the production of Product B in 2022 over 2021? (Correct to one decimal place.)",
+   "options": [
+    "25.0%",
+    "27.0%",
+    "35.6%",
+    "33.3%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Growth = 108 - 81 = 27. Percent = 27/81 x 100 = 33.3%.",
+   "shortcut": "Growth % uses the earlier year as base.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "In which year was the percentage growth in production of Product A over the previous year the highest?",
+   "options": [
+    "2020",
+    "2022",
+    "2019",
+    "2023"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Growth rates: 2019: 15.0%, 2020: 8.7%, 2021: 20.0%, 2022: 5.0%, 2023: 21.4%. Highest is in 2023.",
+   "shortcut": "The biggest absolute rise need not give the biggest percentage rise - check against the base.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "If the production of Product A grows in the next year by the same percentage as it did in the last year shown (2023 over 2022), what will it be? (Correct to one decimal place.)",
+   "options": [
+    "180.0",
+    "218.6",
+    "198.8",
+    "185.8"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Last growth factor = 153/126 = 1.2143. Next value = 153 x 1.2143 = 185.8.",
+   "shortcut": "Same percentage growth means multiply by the same factor, not add the same amount.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "According to the graph, what was the share price in Feb (in ₹)?",
+   "options": [
+    "300",
+    "250",
+    "285",
+    "321"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at Feb: the value is 300 ₹.",
+   "shortcut": "Locate the month on the x-axis and read straight up to the line.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What was the average increase per month in the share price from Jan to Jun (in ₹)? (Correct to one decimal place.)",
+   "options": [
+    "33.5",
+    "80.4",
+    "40.2",
+    "43.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total rise = 451 - 250 = 201 over 5 intervals. Average = 40.2.",
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What was the overall percentage growth in the share price from Jan to Jun? (Correct to one decimal place.)",
+   "options": [
+    "44.6%",
+    "80.4%",
+    "64.9%",
+    "86.0%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rise = 451 - 250 = 201. Percent = 201/250 x 100 = 80.4%.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What was the percentage growth in the share price in Apr over Mar? (Correct to one decimal place.)",
+   "options": [
+    "16.7%",
+    "20.0%",
+    "57.0%",
+    "21.4%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Growth = 342 - 285 = 57. Percent = 57/285 x 100 = 20.0%.",
+   "shortcut": "Growth % uses the earlier year as base.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What is the difference, in percentage points, between the highest and the lowest month-to-month percentage growth rates of the share price in the period shown? (Correct to one decimal place.)",
+   "options": [
+    "25.0",
+    "201.0",
+    "20.0",
+    "26.8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth rates: 20.00%, -5.00%, 20.00%, 9.94%, 19.95%. Highest 20.00%, lowest -5.00%; difference = 25.0 points.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "According to the graph, what was the installed solar capacity in 2020 (in MW)?",
+   "options": [
+    "30",
+    "24",
+    "36",
+    "32"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at 2020: the value is 30 MW.",
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "What was the overall percentage growth in the installed solar capacity from 2017 to 2023? (Correct to one decimal place.)",
+   "options": [
+    "83.3%",
+    "213.3%",
+    "500.0%",
+    "535.0%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rise = 72 - 12 = 60. Percent = 60/12 x 100 = 500.0%.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "In which year was the percentage growth in installed solar capacity over the previous year the lowest?",
+   "options": [
+    "2020",
+    "2019",
+    "2021",
+    "2023"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth rates: 2018: 25.0%, 2019: 60.0%, 2020: 25.0%, 2021: 20.0%, 2022: 50.0%, 2023: 33.3%. Lowest is in 2021.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "In which year did the installed solar capacity first exceed twice its 2017 level?",
+   "options": [
+    "2021",
+    "2020",
+    "2018",
+    "2022"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Twice the 2017 level = 24. First value above this is 30 in 2020.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "If the installed solar capacity grows in the next year by the same percentage as it did in the last year shown (2023 over 2022), what will it be? (Correct to one decimal place.)",
+   "options": [
+    "90.0",
+    "120.0",
+    "96.0",
+    "102.7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Last growth factor = 72/54 = 1.3333. Next value = 72 x 1.3333 = 96.0.",
+   "shortcut": "Same percentage growth means multiply by the same factor, not add the same amount.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "By how much did the amount saved rise from Oct to Nov (in ₹ thousand)?",
+   "options": [
+    "6",
+    "66",
+    "60",
+    "7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Oct: 60; Nov: 66. Change = 6.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "In which month did the amount saved first exceed twice its Jul level?",
+   "options": [
+    "Sep",
+    "Dec",
+    "Aug",
+    "Oct"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Twice the Jul level = 80. First value above this is 90 in Dec.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "What was the percentage growth in the amount saved in Dec over Nov? (Correct to one decimal place.)",
+   "options": [
+    "26.7%",
+    "24.0%",
+    "36.4%",
+    "38.9%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth = 90 - 66 = 24. Percent = 24/66 x 100 = 36.4%.",
+   "shortcut": "Growth % uses the earlier year as base.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "In which month was the percentage growth in amount saved over the previous month the highest?",
+   "options": [
+    "Aug",
+    "Nov",
+    "Dec",
+    "Sep"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth rates: Aug: 20.0%, Sep: -6.2%, Oct: 33.3%, Nov: 10.0%, Dec: 36.4%. Highest is in Dec.",
+   "shortcut": "The biggest absolute rise need not give the biggest percentage rise - check against the base.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "What is the difference, in percentage points, between the highest and the lowest month-to-month percentage growth rates of the amount saved in the period shown? (Correct to one decimal place.)",
+   "options": [
+    "42.6",
+    "50.0",
+    "36.4",
+    "45.6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth rates: 20.00%, -6.25%, 33.33%, 10.00%, 36.36%. Highest 36.36%, lowest -6.25%; difference = 42.6 points.",
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s018"
+  }
+ ]
+}

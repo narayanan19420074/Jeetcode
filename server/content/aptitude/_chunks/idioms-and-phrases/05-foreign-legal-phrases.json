@@ -1,0 +1,635 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "What does the phrase 'ad hoc' mean?",
+   "options": [
+    "for ever",
+    "by mutual consent",
+    "for a particular purpose only",
+    "without cause"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ad hoc, Latin, describes something arranged for a specific purpose, e.g. an ad hoc committee.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'bona fide' is used to mean:",
+   "options": [
+    "fake",
+    "secret",
+    "genuine; in good faith",
+    "in bad faith"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Bona fide is Latin for good faith, so it means genuine.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'status quo'.",
+   "options": [
+    "a future plan",
+    "a legal claim",
+    "a high rank",
+    "the existing state of affairs"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Status quo means the situation as it currently stands.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'vice versa' mean?",
+   "options": [
+    "in place of",
+    "against the rule",
+    "the other way round",
+    "versus"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Vice versa means with the order reversed.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'per capita' is used to mean:",
+   "options": [
+    "per unit area",
+    "for each person",
+    "per year",
+    "per hundred"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Per capita literally means by heads, i.e. per person.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'de facto'.",
+   "options": [
+    "by law",
+    "in theory",
+    "by custom only",
+    "in fact, whether or not by law"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "De facto means actual or existing in practice, even without legal sanction.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'de jure' mean?",
+   "options": [
+    "by force",
+    "in practice",
+    "temporarily",
+    "according to law"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "De jure means by right or by law.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'alibi' is used to mean:",
+   "options": [
+    "a confession",
+    "a witness",
+    "a punishment",
+    "a plea of having been elsewhere when a crime was committed"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alibi is Latin for elsewhere; it is a defence based on absence from the scene.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'prima facie'.",
+   "options": [
+    "at first sight; on the face of it",
+    "finally",
+    "in secret",
+    "beyond doubt"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A prima facie case appears valid on first appearance.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'sine die' mean?",
+   "options": [
+    "without a fixed date for resuming",
+    "every day",
+    "on a holiday",
+    "for a day"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A meeting adjourned sine die has no new date fixed.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'pro bono' is used to mean:",
+   "options": [
+    "done free of charge for public good",
+    "against the law",
+    "in a hurry",
+    "for a fee"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pro bono work, often legal, is done without payment.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'quid pro quo'.",
+   "options": [
+    "a free gift",
+    "a question",
+    "a legal order",
+    "something given in return for something"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Quid pro quo means one thing in exchange for another.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'ex officio' mean?",
+   "options": [
+    "without any office",
+    "after office hours",
+    "outside the country",
+    "by virtue of one's office"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An ex officio member holds a seat because of his official position.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'in camera' is used to mean:",
+   "options": [
+    "in public",
+    "on film",
+    "in private, not in open court",
+    "by photograph"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In camera proceedings are held in a judge's chamber, away from the public.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'habeas corpus'.",
+   "options": [
+    "a death sentence",
+    "a post-mortem report",
+    "a bail bond",
+    "a writ to bring a detained person before a court"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Habeas corpus protects against unlawful detention.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'mutatis mutandis' mean?",
+   "options": [
+    "with necessary changes made",
+    "without any change",
+    "by mutual wish",
+    "in all cases"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mutatis mutandis means making the necessary alterations.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'persona non grata' is used to mean:",
+   "options": [
+    "a famous person",
+    "an unwelcome person",
+    "an unknown person",
+    "a diplomat"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The phrase is used for a person who is not acceptable, especially to a government.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'carte blanche'.",
+   "options": [
+    "a ban",
+    "complete freedom to act",
+    "a white card game",
+    "a blank cheque only"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Carte blanche, French, means unrestricted authority.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'ipso facto' mean?",
+   "options": [
+    "by that very fact",
+    "after the fact",
+    "in fiction",
+    "in a fact"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ipso facto means as a direct consequence of the fact itself.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'en route' is used to mean:",
+   "options": [
+    "at home",
+    "by train only",
+    "on a road",
+    "on the way"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "En route, French, means on the way to a place.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'fait accompli'.",
+   "options": [
+    "a legal notice",
+    "a fair deal",
+    "a future plan",
+    "an accomplished fact that cannot be changed"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A fait accompli is something already done and irreversible.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'bête noire' mean?",
+   "options": [
+    "a black animal",
+    "a close friend",
+    "a person or thing one particularly dislikes",
+    "a hidden talent"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Bête noire, French, means a pet aversion.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'sub judice' is used to mean:",
+   "options": [
+    "fully judged",
+    "below a judge",
+    "a court fee",
+    "under judicial consideration, not yet decided"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A sub judice matter is pending in court and should not be commented on.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'ultra vires'.",
+   "options": [
+    "within one's power",
+    "beyond one's legal power",
+    "a type of virus",
+    "very strong"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An act ultra vires exceeds the authority legally given.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'caveat emptor' mean?",
+   "options": [
+    "a free sample",
+    "let the seller beware",
+    "let the buyer beware",
+    "a cautious seller"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Under caveat emptor, the buyer is responsible for checking quality before buying.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'magnum opus' is used to mean:",
+   "options": [
+    "a big opera",
+    "a debut work",
+    "the greatest work of an artist or writer",
+    "a minor work"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Magnum opus is Latin for great work.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'modus operandi'.",
+   "options": [
+    "a type of operation",
+    "a mode of payment",
+    "a method of working",
+    "a kind of machine"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Modus operandi means the particular manner of doing something, often abbreviated M.O.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'terra firma' mean?",
+   "options": [
+    "dry land; solid ground",
+    "the earth's core",
+    "a firm contract",
+    "a warm region"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Terra firma is Latin for firm land.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'in toto' is used to mean:",
+   "options": [
+    "in a total silence",
+    "in a summary",
+    "as a whole; completely",
+    "in part"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In toto, Latin, means as a whole, i.e. completely.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'alma mater'.",
+   "options": [
+    "a motherland",
+    "the school or college one attended",
+    "a female teacher",
+    "a mother's blessing"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Alma mater, Latin for nourishing mother, denotes one's former institution.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'verbatim' mean?",
+   "options": [
+    "word by word meaning",
+    "in a loud voice",
+    "in a summary",
+    "in exactly the same words"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A verbatim report reproduces the exact words spoken.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'tabula rasa' is used to mean:",
+   "options": [
+    "a final result",
+    "a broken table",
+    "a table of rates",
+    "a clean slate"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Tabula rasa, Latin for blank slate, refers to a blank mind or fresh start.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the phrase 'pro rata'.",
+   "options": [
+    "in advance",
+    "at random",
+    "in proportion",
+    "for free"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pro rata means proportionally, e.g. pay calculated in proportion to the time worked.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the phrase 'a priori' mean?",
+   "options": [
+    "from experience",
+    "by chance",
+    "after the event",
+    "reasoning from cause to effect, before experience"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A priori, Latin, reasoning proceeds from known principles to conclusions, not from observation.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The expression 'per annum' is used to mean:",
+   "options": [
+    "every day",
+    "for each year",
+    "for ever",
+    "for each month"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Per annum, Latin, means for each year, i.e. yearly.",
+   "subPattern": "foreign-legal-phrases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

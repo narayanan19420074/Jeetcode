@@ -58,10 +58,91 @@
  "sets": [],
  "questions": [
   {
+   "questionText": "How many prime numbers lie between 40 and 80?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Primes between 40 and 80: 41, 43, 47, 53, 59, 61, 67, 71, 73, 79. Count = 10.",
+   "order": 1,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "List only numbers not divisible by 2, 3, 5, 7."
+  },
+  {
+   "questionText": "How many perfect squares lie between 200 and 900 (both inclusive)?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "15² = 225 is the first square ≥ 200 and 30² = 900 is the last. Squares of 15 to 30 give 30 − 15 + 1 = 16 numbers.",
+   "order": 2,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Count the integers from ceil(√200) to floor(√900)."
+  },
+  {
+   "questionText": "Which of the following is an irrational number?",
+   "options": [
+    {
+     "text": "0.121212... (recurring)"
+    },
+    {
+     "text": "√75"
+    },
+    {
+     "text": "√(49/81)"
+    },
+    {
+     "text": "√0.0016"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "√(49/81) = 7/9, √0.0016 = 0.04 and 0.1212... = 4/33 are all rational. 75 = 25 × 3 is not a perfect square, so √75 = 5√3 is irrational.",
+   "order": 3,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Non-perfect-square under a root is irrational."
+  },
+  {
    "questionText": "What is the smallest number by which 968 must be multiplied to make it a perfect square?",
    "options": [
     {
-     "text": "2"
+     "text": "484"
     },
     {
      "text": "1"
@@ -70,12 +151,12 @@
      "text": "4"
     },
     {
-     "text": "484"
+     "text": "2"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "968 = 2^3 x 11^2. Primes with odd powers: 2. Their product = 2, and 968 x 2 = 1936 = 44^2.",
-   "order": 1,
+   "order": 4,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "easy",
    "examStyles": [
@@ -90,18 +171,18 @@
      "text": "8"
     },
     {
-     "text": "4"
+     "text": "3"
     },
     {
-     "text": "3"
+     "text": "4"
     },
     {
      "text": "400"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "1200 = 2^4 x 3 x 5^2. Primes with odd powers: 3. Their product = 3, and 1200 x 3 = 3600 = 60^2.",
-   "order": 2,
+   "order": 5,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "easy",
    "examStyles": [
@@ -114,21 +195,21 @@
    "questionText": "What is the smallest number by which 180 must be multiplied to make it a perfect square?",
    "options": [
     {
-     "text": "36"
-    },
-    {
-     "text": "5"
+     "text": "7"
     },
     {
      "text": "6"
     },
     {
-     "text": "7"
+     "text": "36"
+    },
+    {
+     "text": "5"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "180 = 2^2 x 3^2 x 5. Primes with odd powers: 5. Their product = 5, and 180 x 5 = 900 = 30^2.",
-   "order": 3,
+   "order": 6,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "easy",
    "examStyles": [
@@ -140,21 +221,21 @@
    "questionText": "What is the smallest number by which 360 must be multiplied to make it a perfect square?",
    "options": [
     {
-     "text": "9"
+     "text": "10"
     },
     {
-     "text": "36"
+     "text": "9"
     },
     {
      "text": "8"
     },
     {
-     "text": "10"
+     "text": "36"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 0,
    "explanation": "360 = 2^3 x 3^2 x 5. Primes with odd powers: 2, 5. Their product = 10, and 360 x 10 = 3600 = 60^2.",
-   "order": 4,
+   "order": 7,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "easy",
    "examStyles": [
@@ -164,24 +245,185 @@
    "shortcut": "Multiply by each prime that appears an odd number of times."
   },
   {
+   "questionText": "What is the least number that must be added to 5000 so that the sum is a perfect square?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "5041"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "71"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "70² = 4900 < 5000 < 71² = 5041. Required number = 5041 − 5000 = 41.",
+   "order": 8,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Find the next square above the number."
+  },
+  {
+   "questionText": "By what smallest number should 1323 be multiplied so that the product is a perfect square?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "1323 = 3³ × 7². The prime 3 has an odd power, so multiply by 3 to get 3⁴ × 7² = (9 × 7)² = 63².",
+   "order": 9,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Multiply by the primes that carry odd exponents."
+  },
+  {
+   "questionText": "What is the smallest number by which 1800 must be multiplied to obtain a perfect cube?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "15"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1800 = 2³ × 3² × 5². For a cube every exponent must be a multiple of 3, so multiply by 3 × 5 = 15 to get 2³ × 3³ × 5³.",
+   "order": 10,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Raise each exponent to the next multiple of 3."
+  },
+  {
+   "questionText": "A perfect number equals the sum of its proper divisors (for example 6 = 1 + 2 + 3). How many perfect numbers are there below 1000?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The perfect numbers below 1000 are 6, 28, 496. Count = 3.",
+   "order": 11,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Known perfect numbers: 6, 28, 496, 8128."
+  },
+  {
+   "questionText": "Twin primes are two primes that differ by 2, such as (3, 5). How many pairs of twin primes are there with both numbers below 60?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pairs: (3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61). Total = 7.",
+   "order": 12,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Twin primes (beyond 3,5) are of the form 6k − 1 and 6k + 1."
+  },
+  {
+   "questionText": "Which of the following pairs of numbers is co-prime?",
+   "options": [
+    {
+     "text": "39 and 91"
+    },
+    {
+     "text": "35 and 48"
+    },
+    {
+     "text": "34 and 51"
+    },
+    {
+     "text": "57 and 95"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF(34, 51) = 17, HCF(39, 91) = 13, HCF(57, 95) = 19, but HCF(35, 48) = 1 since 35 = 5 × 7 and 48 = 2⁴ × 3 share no factor.",
+   "order": 13,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Factorise both and look for a common prime."
+  },
+  {
    "questionText": "What is the least number that must be subtracted from 8194 to make it a perfect square?",
    "options": [
     {
-     "text": "188"
+     "text": "47"
     },
     {
-     "text": "94"
+     "text": "188"
     },
     {
      "text": "87"
     },
     {
-     "text": "47"
+     "text": "94"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "The nearest square below 8194 is 90^2 = 8100. Subtract 8194 - 8100 = 94.",
-   "order": 5,
+   "order": 14,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "medium",
    "examStyles": [
@@ -193,21 +435,21 @@
    "questionText": "What is the least number that must be subtracted from 219 to make it a perfect square?",
    "options": [
     {
-     "text": "18"
+     "text": "23"
     },
     {
      "text": "25"
     },
     {
-     "text": "6"
+     "text": "18"
     },
     {
-     "text": "23"
+     "text": "6"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 0,
    "explanation": "The nearest square below 219 is 14^2 = 196. Subtract 219 - 196 = 23.",
-   "order": 6,
+   "order": 15,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "medium",
    "examStyles": [
@@ -220,21 +462,21 @@
    "questionText": "What is the least number that must be subtracted from 7818 to make it a perfect square?",
    "options": [
     {
-     "text": "74"
-    },
-    {
-     "text": "148"
+     "text": "37"
     },
     {
      "text": "103"
     },
     {
-     "text": "37"
+     "text": "74"
+    },
+    {
+     "text": "148"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 2,
    "explanation": "The nearest square below 7818 is 88^2 = 7744. Subtract 7818 - 7744 = 74.",
-   "order": 7,
+   "order": 16,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "medium",
    "examStyles": [
@@ -246,21 +488,21 @@
    "questionText": "What is the least number that must be subtracted from 2168 to make it a perfect square?",
    "options": [
     {
-     "text": "78"
-    },
-    {
-     "text": "104"
-    },
-    {
      "text": "52"
     },
     {
      "text": "41"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "104"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 0,
    "explanation": "The nearest square below 2168 is 46^2 = 2116. Subtract 2168 - 2116 = 52.",
-   "order": 8,
+   "order": 17,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "medium",
    "examStyles": [
@@ -273,21 +515,21 @@
    "questionText": "What is the least number that must be subtracted from 6114 to make it a perfect square?",
    "options": [
     {
-     "text": "127"
-    },
-    {
      "text": "25"
     },
     {
-     "text": "30"
+     "text": "127"
     },
     {
      "text": "24"
+    },
+    {
+     "text": "30"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "The nearest square below 6114 is 78^2 = 6084. Subtract 6114 - 6084 = 30.",
-   "order": 9,
+   "order": 18,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "medium",
    "examStyles": [
@@ -300,9 +542,6 @@
    "questionText": "What is the least number that must be subtracted from 4657 to make it a perfect square?",
    "options": [
     {
-     "text": "28"
-    },
-    {
      "text": "104"
     },
     {
@@ -310,11 +549,14 @@
     },
     {
      "text": "33"
+    },
+    {
+     "text": "28"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 2,
    "explanation": "The nearest square below 4657 is 68^2 = 4624. Subtract 4657 - 4624 = 33.",
-   "order": 10,
+   "order": 19,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "medium",
    "examStyles": [
@@ -324,24 +566,77 @@
    "shortcut": "Subtract the nearest perfect square below the number."
   },
   {
+   "questionText": "How many composite numbers are there from 1 to 40 (inclusive)?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Primes up to 40: 2,3,5,7,11,13,17,19,23,29,31,37 (12 of them). 1 is neither prime nor composite. Composite = 40 − 12 − 1 = 27.",
+   "order": 20,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Total − primes − 1."
+  },
+  {
+   "questionText": "How many integers from 1 to 500 are neither perfect squares nor perfect cubes?",
+   "options": [
+    {
+     "text": "473"
+    },
+    {
+     "text": "469"
+    },
+    {
+     "text": "471"
+    },
+    {
+     "text": "478"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Squares ≤ 500: 22 (22² = 484). Cubes ≤ 500: 7 (7³ = 343). Both (sixth powers 1 and 64): 2. Union = 22 + 7 − 2 = 27. Answer = 500 − 27 = 473.",
+   "order": 21,
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Inclusion–exclusion with sixth powers for the overlap."
+  },
+  {
    "questionText": "What is the least number that must be added to 2787 to make it a perfect square?",
    "options": [
     {
      "text": "83"
     },
     {
+     "text": "17"
+    },
+    {
      "text": "22"
     },
     {
      "text": "33"
-    },
-    {
-     "text": "17"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 2,
    "explanation": "The next square above 2787 is 53^2 = 2809. Add 2809 - 2787 = 22.",
-   "order": 11,
+   "order": 22,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "hard",
    "examStyles": [
@@ -354,21 +649,21 @@
    "questionText": "What is the smallest number by which 250 must be multiplied to make it a perfect cube?",
    "options": [
     {
-     "text": "4"
+     "text": "9"
     },
     {
-     "text": "9"
+     "text": "3"
     },
     {
      "text": "62"
     },
     {
-     "text": "3"
+     "text": "4"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "250 = 2 x 5^3. For a cube every exponent must be a multiple of 3, so multiply by 2^2 = 4.",
-   "order": 12,
+   "order": 23,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "hard",
    "examStyles": [
@@ -380,21 +675,21 @@
    "questionText": "What is the smallest number by which 2000 must be multiplied to make it a perfect cube?",
    "options": [
     {
-     "text": "2"
+     "text": "3"
     },
     {
      "text": "4"
     },
     {
-     "text": "500"
+     "text": "2"
     },
     {
-     "text": "3"
+     "text": "500"
     }
    ],
    "correctOptionIndex": 1,
    "explanation": "2000 = 2^4 x 5^3. For a cube every exponent must be a multiple of 3, so multiply by 2^2 = 4.",
-   "order": 13,
+   "order": 24,
    "subPattern": "types-of-numbers-classification",
    "difficulty": "hard",
    "examStyles": [
@@ -404,13 +699,94 @@
    "shortcut": "Raise each prime's exponent to the next multiple of 3."
   },
   {
+   "questionText": "For which digit d is the number 4d72 divisible by 9?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Digit sum = 4 + d + 7 + 2 = 18 must be a multiple of 9, so d = 5.",
+   "order": 25,
+   "subPattern": "divisibility-rules",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Digit sum multiple of 9."
+  },
+  {
+   "questionText": "Which of the following numbers is divisible by 8?",
+   "options": [
+    {
+     "text": "58416"
+    },
+    {
+     "text": "40722"
+    },
+    {
+     "text": "73614"
+    },
+    {
+     "text": "90314"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check the last three digits: 416 ÷ 8 = 52, exactly. The others leave non-zero remainders on their last three digits.",
+   "order": 26,
+   "subPattern": "divisibility-rules",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Last three digits divisible by 8."
+  },
+  {
+   "questionText": "What is the greatest 4-digit number exactly divisible by 17?",
+   "options": [
+    {
+     "text": "9997"
+    },
+    {
+     "text": "9999"
+    },
+    {
+     "text": "9996"
+    },
+    {
+     "text": "9979"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "9999 ÷ 17 leaves remainder 3. 9999 − 3 = 9996.",
+   "order": 27,
+   "subPattern": "divisibility-rules",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Subtract the remainder from 9999."
+  },
+  {
    "questionText": "Which of the following numbers is exactly divisible by 4?",
    "options": [
     {
-     "text": "799"
+     "text": "803"
     },
     {
-     "text": "803"
+     "text": "799"
     },
     {
      "text": "801"
@@ -421,7 +797,7 @@
    ],
    "correctOptionIndex": 3,
    "explanation": "800 / 4 = 200 exactly. The others leave remainders: 803 -> 3, 799 -> 3, 801 -> 1.",
-   "order": 14,
+   "order": 28,
    "subPattern": "divisibility-rules",
    "difficulty": "easy",
    "examStyles": [
@@ -434,21 +810,21 @@
    "questionText": "Which of the following numbers is exactly divisible by 9?",
    "options": [
     {
-     "text": "486"
+     "text": "491"
     },
     {
      "text": "479"
     },
     {
-     "text": "491"
+     "text": "486"
     },
     {
      "text": "494"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 2,
    "explanation": "486 / 9 = 54 exactly. The others leave remainders: 494 -> 8, 479 -> 2, 491 -> 5.",
-   "order": 15,
+   "order": 29,
    "subPattern": "divisibility-rules",
    "difficulty": "easy",
    "examStyles": [
@@ -460,9 +836,6 @@
    "questionText": "Which of the following numbers is exactly divisible by 11?",
    "options": [
     {
-     "text": "542"
-    },
-    {
      "text": "538"
     },
     {
@@ -470,11 +843,14 @@
     },
     {
      "text": "534"
+    },
+    {
+     "text": "542"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "539 / 11 = 49 exactly. The others leave remainders: 538 -> 10, 534 -> 6, 542 -> 3.",
-   "order": 16,
+   "order": 30,
    "subPattern": "divisibility-rules",
    "difficulty": "easy",
    "examStyles": [
@@ -486,21 +862,21 @@
    "questionText": "Which of the following numbers is exactly divisible by 8?",
    "options": [
     {
-     "text": "576"
-    },
-    {
-     "text": "572"
+     "text": "583"
     },
     {
      "text": "580"
     },
     {
-     "text": "583"
+     "text": "572"
+    },
+    {
+     "text": "576"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "576 / 8 = 72 exactly. The others leave remainders: 580 -> 4, 572 -> 4, 583 -> 7.",
-   "order": 17,
+   "order": 31,
    "subPattern": "divisibility-rules",
    "difficulty": "easy",
    "examStyles": [
@@ -510,24 +886,186 @@
    "shortcut": "A number is divisible by 8 if its last three digits are divisible by 8."
   },
   {
-   "questionText": "If the number 836x8 (x is a single digit) is divisible by 9, what is the value of x?",
+   "questionText": "If the five-digit number 84x67 is divisible by 11, what is the digit x?",
    "options": [
     {
-     "text": "9"
+     "text": "6"
     },
     {
      "text": "7"
     },
     {
-     "text": "5"
+     "text": "0"
     },
     {
-     "text": "2"
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Odd-place digits (1st,3rd,5th): 8 + x + 7 = 21. Even-place: 4 + 6 = 10. Difference 11 must be 0 or 11, so x = 6.",
+   "order": 32,
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Alternating sum divisible by 11."
+  },
+  {
+   "questionText": "How many numbers from 1 to 300 are divisible by 4 or by 6?",
+   "options": [
+    {
+     "text": "112"
+    },
+    {
+     "text": "113"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "100"
     }
    ],
    "correctOptionIndex": 3,
+   "explanation": "Divisible by 4: 75; by 6: 50; by both (LCM 12): 25. Total = 75 + 50 − 25 = 100.",
+   "order": 33,
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "n(A∪B) = n(A) + n(B) − n(A∩B) with the LCM."
+  },
+  {
+   "questionText": "What is the least number that must be subtracted from 98765 so that it becomes divisible by 13?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "98765 = 13 × 7597 + 4. Subtract the remainder 4.",
+   "order": 34,
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Remainder is the number to subtract."
+  },
+  {
+   "questionText": "The number 4x78y (a five-digit number) is divisible by 45. What is the value of x + y?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Divisible by 5 means y = 0 or 5; by 9 means 4 + x + 7 + 8 + y = 19+x+y is a multiple of 9. y = 0 gives x = 8 (sum 8); y = 5 gives x = 3 (sum 8). Both give x + y = 8, so x + y = 8 either way.",
+   "order": 35,
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Combine the rules for 5 and 9."
+  },
+  {
+   "questionText": "A six-digit number is formed by writing a three-digit number twice, such as 482482. Which of the following always divides such a number?",
+   "options": [
+    {
+     "text": "111"
+    },
+    {
+     "text": "101"
+    },
+    {
+     "text": "143"
+    },
+    {
+     "text": "99"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "abcabc = abc × 1001 = abc × 7 × 11 × 13. So 143 = 11 × 13 always divides it. 99, 101 and 111 do not divide every such number (e.g. 100100 is not divisible by any of them).",
+   "order": 36,
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "abcabc = abc × 1001 = abc × 7 × 11 × 13."
+  },
+  {
+   "questionText": "What is the smallest five-digit number divisible by both 3 and 11?",
+   "options": [
+    {
+     "text": "10000"
+    },
+    {
+     "text": "10032"
+    },
+    {
+     "text": "9999"
+    },
+    {
+     "text": "10065"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Divisible by 3 and 11 means divisible by 33. 10000 ÷ 33 leaves remainder 1, so add 32: 10032.",
+   "order": 37,
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Use the LCM 33."
+  },
+  {
+   "questionText": "If the number 836x8 (x is a single digit) is divisible by 9, what is the value of x?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 0,
    "explanation": "Digit sum of the other digits = 25. Total must be a multiple of 9, so x = 2 (number 83628).",
-   "order": 18,
+   "order": 38,
    "subPattern": "divisibility-rules",
    "difficulty": "medium",
    "examStyles": [
@@ -539,21 +1077,21 @@
    "questionText": "If the number 4x72 (x is a single digit) is divisible by 11, what is the value of x?",
    "options": [
     {
-     "text": "5"
-    },
-    {
      "text": "6"
     },
     {
-     "text": "9"
+     "text": "1"
     },
     {
-     "text": "1"
+     "text": "5"
+    },
+    {
+     "text": "9"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "Digits of 4972: odd-place sum = 11, even-place sum = 11. For 11 the difference must be 0 or a multiple of 11, which gives x = 9.",
-   "order": 19,
+   "order": 39,
    "subPattern": "divisibility-rules",
    "difficulty": "medium",
    "examStyles": [
@@ -569,18 +1107,18 @@
      "text": "7"
     },
     {
-     "text": "4"
+     "text": "0"
     },
     {
-     "text": "0"
+     "text": "4"
     },
     {
      "text": "6"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 2,
    "explanation": "Digit sum of the other digits = 14. Total must be a multiple of 9, so x = 4 (number 34146).",
-   "order": 20,
+   "order": 40,
    "subPattern": "divisibility-rules",
    "difficulty": "medium",
    "examStyles": [
@@ -596,18 +1134,18 @@
      "text": "2"
     },
     {
-     "text": "5"
+     "text": "4"
     },
     {
      "text": "1"
     },
     {
-     "text": "4"
+     "text": "5"
     }
    ],
    "correctOptionIndex": 0,
    "explanation": "Digit sum of the other digits = 25. Total must be a multiple of 9, so x = 2 (number 72738).",
-   "order": 21,
+   "order": 41,
    "subPattern": "divisibility-rules",
    "difficulty": "medium",
    "examStyles": [
@@ -620,9 +1158,6 @@
    "questionText": "If the number 2x74 (x is a single digit) is divisible by 9, what is the value of x?",
    "options": [
     {
-     "text": "7"
-    },
-    {
      "text": "0"
     },
     {
@@ -630,11 +1165,14 @@
     },
     {
      "text": "9"
+    },
+    {
+     "text": "7"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "Digit sum of the other digits = 13. Total must be a multiple of 9, so x = 5 (number 2574).",
-   "order": 22,
+   "order": 42,
    "subPattern": "divisibility-rules",
    "difficulty": "medium",
    "examStyles": [
@@ -646,10 +1184,10 @@
    "questionText": "If the number 195x (x is a single digit) is divisible by 9, what is the value of x?",
    "options": [
     {
-     "text": "2"
+     "text": "9"
     },
     {
-     "text": "9"
+     "text": "2"
     },
     {
      "text": "0"
@@ -660,7 +1198,7 @@
    ],
    "correctOptionIndex": 3,
    "explanation": "Digit sum of the other digits = 15. Total must be a multiple of 9, so x = 3 (number 1953).",
-   "order": 23,
+   "order": 43,
    "subPattern": "divisibility-rules",
    "difficulty": "medium",
    "examStyles": [
@@ -669,24 +1207,76 @@
    "shortcut": "A number is divisible by 9 if the sum of its digits is divisible by 9."
   },
   {
+   "questionText": "Consider the numbers 1, 11, 111, ... up to the one with 30 digits (all digits 1). How many of them are divisible by 7?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The repunit with n ones is divisible by 7 exactly when n is a multiple of 6 (111111 = 7 × 15873). Multiples of 6 up to 30: 6, 12, 18, 24, 30, i.e. 5 numbers.",
+   "order": 44,
+   "subPattern": "divisibility-rules",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "111111 = 3 × 7 × 11 × 13 × 37; period is 6."
+  },
+  {
+   "questionText": "How many three-digit numbers are divisible by 7 and also have a digit sum that is divisible by 7?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Enumerating the multiples of 7 from 105 to 994 and testing their digit sums gives 18 numbers.",
+   "order": 45,
+   "subPattern": "divisibility-rules",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Check each multiple of 7 systematically."
+  },
+  {
    "questionText": "If the number 6883x (x is a single digit) is divisible by 11, what is the value of x?",
    "options": [
     {
      "text": "0"
     },
     {
-     "text": "8"
+     "text": "3"
     },
     {
      "text": "1"
     },
     {
-     "text": "3"
+     "text": "8"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "Digits of 68838: odd-place sum = 22, even-place sum = 11. The difference must be 0 or a multiple of 11, which gives x = 8.",
-   "order": 24,
+   "order": 46,
    "subPattern": "divisibility-rules",
    "difficulty": "hard",
    "examStyles": [
@@ -704,15 +1294,15 @@
      "text": "5"
     },
     {
-     "text": "13"
+     "text": "7"
     },
     {
-     "text": "7"
+     "text": "13"
     }
    ],
    "correctOptionIndex": 1,
    "explanation": "55291 = 3071 x 18 + 13. Remainder = 13, so the least number to add = 18 - 13 = 5.",
-   "order": 25,
+   "order": 47,
    "subPattern": "divisibility-rules",
    "difficulty": "hard",
    "examStyles": [
@@ -720,6 +1310,87 @@
     "ssc"
    ],
    "shortcut": "Least number to add = divisor - remainder."
+  },
+  {
+   "questionText": "How many positive factors does 360 have?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "360 = 2³ × 3² × 5. Number of factors = (3+1)(2+1)(1+1) = 24.",
+   "order": 48,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Add 1 to each exponent and multiply."
+  },
+  {
+   "questionText": "What is the sum of all positive factors of 120?",
+   "options": [
+    {
+     "text": "390"
+    },
+    {
+     "text": "359"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "360"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "120 = 2³ × 3 × 5. Sum = (1+2+4+8)(1+3)(1+5) = 15 × 4 × 6 = 360.",
+   "order": 49,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Sum = product of (p^(a+1) − 1)/(p − 1)."
+  },
+  {
+   "questionText": "How many odd factors does 180 have?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "180 = 2² × 3² × 5. Odd factors come from 3² × 5 only: (2+1)(1+1) = 6.",
+   "order": 50,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Ignore the power of 2."
   },
   {
    "questionText": "How many positive factors does 24 have?",
@@ -731,15 +1402,15 @@
      "text": "16"
     },
     {
-     "text": "4"
+     "text": "7"
     },
     {
-     "text": "7"
+     "text": "4"
     }
    ],
    "correctOptionIndex": 0,
    "explanation": "24 = 2^3 x 3. Number of factors = (3 + 1) x (1 + 1) = 8.",
-   "order": 26,
+   "order": 51,
    "subPattern": "factors-number-of-factors",
    "difficulty": "easy",
    "examStyles": [
@@ -752,7 +1423,7 @@
    "questionText": "How many positive factors does 441 have?",
    "options": [
     {
-     "text": "6"
+     "text": "4"
     },
     {
      "text": "8"
@@ -761,12 +1432,12 @@
      "text": "9"
     },
     {
-     "text": "4"
+     "text": "6"
     }
    ],
    "correctOptionIndex": 2,
    "explanation": "441 = 3^2 x 7^2. Number of factors = (2 + 1) x (2 + 1) = 9.",
-   "order": 27,
+   "order": 52,
    "subPattern": "factors-number-of-factors",
    "difficulty": "easy",
    "examStyles": [
@@ -779,21 +1450,21 @@
    "questionText": "How many positive factors does 135 have?",
    "options": [
     {
-     "text": "4"
+     "text": "12"
     },
     {
-     "text": "12"
+     "text": "8"
     },
     {
      "text": "6"
     },
     {
-     "text": "8"
+     "text": "4"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 1,
    "explanation": "135 = 3^3 x 5. Number of factors = (3 + 1) x (1 + 1) = 8.",
-   "order": 28,
+   "order": 53,
    "subPattern": "factors-number-of-factors",
    "difficulty": "easy",
    "examStyles": [
@@ -803,13 +1474,174 @@
    "shortcut": "Add 1 to each exponent and multiply."
   },
   {
+   "questionText": "In how many ways can 720 be written as a product of two different natural numbers (order not important)?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "720 = 2⁴ × 3² × 5 has 5 × 3 × 2 = 30 factors. These pair up into 30 ÷ 2 = 15 pairs; 720 is not a perfect square so no factor pairs with itself.",
+   "order": 54,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Number of factors ÷ 2 (for a non-square)."
+  },
+  {
+   "questionText": "The product of all the positive factors of 144 is equal to which of the following?",
+   "options": [
+    {
+     "text": "144^15"
+    },
+    {
+     "text": "12^16"
+    },
+    {
+     "text": "12^14"
+    },
+    {
+     "text": "12^15"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "144 has 15 factors (2⁴ × 3² gives 5 × 3). Product of all factors = 144^(15/2) = (12²)^(15/2) = 12^15.",
+   "order": 55,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Product of factors = N^(d/2)."
+  },
+  {
+   "questionText": "What is the smallest natural number that has exactly 15 positive factors?",
+   "options": [
+    {
+     "text": "225"
+    },
+    {
+     "text": "196"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "256"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "15 = 15 × 1 or 5 × 3. Options: 2¹⁴ = 16384 or 2⁴ × 3² = 144. The smaller is 144.",
+   "order": 56,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Write 15 as a product of (exponent + 1) terms; give larger exponents to smaller primes."
+  },
+  {
+   "questionText": "How many factors of 2⁶ × 3⁴ × 5³ × 7 are perfect squares?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A square factor needs even exponents: 2: 0,2,4,6 (4 ways); 3: 0,2,4 (3 ways); 5: 0,2 (2 ways); 7: 0 (1 way). Total = 4 × 3 × 2 × 1 = 24.",
+   "order": 57,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Count even exponents for each prime."
+  },
+  {
+   "questionText": "How many positive factors of 1800 are exact multiples of 10?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1800 = 2³ × 3² × 5². A multiple of 10 has at least one 2 and one 5: 2 has 3 choices (1–3), 3 has 3 choices (0–2), 5 has 2 choices (1–2). Total = 3 × 3 × 2 = 18.",
+   "order": 58,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Fix one 2 and one 5, then count the rest."
+  },
+  {
+   "questionText": "How many numbers from 1 to 100 have exactly three positive factors?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly three factors means the number is the square of a prime: 4, 9, 25, 49. So 4 numbers.",
+   "order": 59,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Three factors ⇒ p²."
+  },
+  {
    "questionText": "What is the sum of all positive factors of 1250?",
    "options": [
     {
-     "text": "10"
+     "text": "1562"
     },
     {
-     "text": "1562"
+     "text": "10"
     },
     {
      "text": "2343"
@@ -820,7 +1652,7 @@
    ],
    "correctOptionIndex": 2,
    "explanation": "1250 = 2 x 5^4. Sum of factors = (1+2) x (1+5+25+125+625) = 2343.",
-   "order": 29,
+   "order": 60,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -832,21 +1664,21 @@
    "questionText": "How many odd positive factors does 7056 have?",
    "options": [
     {
-     "text": "6"
+     "text": "45"
+    },
+    {
+     "text": "8"
     },
     {
      "text": "9"
     },
     {
-     "text": "45"
-    },
-    {
-     "text": "8"
+     "text": "6"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 2,
    "explanation": "7056 = 2^4 x 3^2 x 7^2. Ignore the power of 2; odd factors = (2 + 1) x (2 + 1) = 9.",
-   "order": 30,
+   "order": 61,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -858,21 +1690,21 @@
    "questionText": "What is the sum of all positive factors of 18522?",
    "options": [
     {
-     "text": "18523"
-    },
-    {
      "text": "32"
     },
     {
-     "text": "43200"
+     "text": "48000"
     },
     {
-     "text": "48000"
+     "text": "18523"
+    },
+    {
+     "text": "43200"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 1,
    "explanation": "18522 = 2 x 3^3 x 7^3. Sum of factors = (1+2) x (1+3+9+27) x (1+7+49+343) = 48000.",
-   "order": 31,
+   "order": 62,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -885,21 +1717,21 @@
    "questionText": "What is the sum of all positive factors of 504?",
    "options": [
     {
-     "text": "1560"
+     "text": "2080"
+    },
+    {
+     "text": "505"
     },
     {
      "text": "24"
     },
     {
-     "text": "2080"
-    },
-    {
-     "text": "505"
+     "text": "1560"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "504 = 2^3 x 3^2 x 7. Sum of factors = (1+2+4+8) x (1+3+9) x (1+7) = 1560.",
-   "order": 32,
+   "order": 63,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -912,21 +1744,21 @@
    "questionText": "What is the sum of all positive factors of 100?",
    "options": [
     {
-     "text": "101"
-    },
-    {
-     "text": "9"
+     "text": "217"
     },
     {
      "text": "434"
     },
     {
-     "text": "217"
+     "text": "101"
+    },
+    {
+     "text": "9"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 0,
    "explanation": "100 = 2^2 x 5^2. Sum of factors = (1+2+4) x (1+5+25) = 217.",
-   "order": 33,
+   "order": 64,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -939,21 +1771,21 @@
    "questionText": "What is the sum of all positive factors of 3920?",
    "options": [
     {
-     "text": "5301"
-    },
-    {
-     "text": "10602"
+     "text": "30"
     },
     {
      "text": "3921"
     },
     {
-     "text": "30"
+     "text": "5301"
+    },
+    {
+     "text": "10602"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "3920 = 2^4 x 5 x 7^2. Sum of factors = (1+2+4+8+16) x (1+5) x (1+7+49) = 10602.",
-   "order": 34,
+   "order": 65,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -972,15 +1804,15 @@
      "text": "11"
     },
     {
-     "text": "14"
+     "text": "48"
     },
     {
-     "text": "48"
+     "text": "14"
     }
    ],
    "correctOptionIndex": 0,
    "explanation": "20580 = 2^2 x 3 x 5 x 7^3. Ignore the power of 2; odd factors = (1 + 1) x (1 + 1) x (3 + 1) = 16.",
-   "order": 35,
+   "order": 66,
    "subPattern": "factors-number-of-factors",
    "difficulty": "medium",
    "examStyles": [
@@ -989,24 +1821,77 @@
    "shortcut": "Odd factors come only from the odd prime powers."
   },
   {
+   "questionText": "How many factors of 2⁵ × 3⁴ × 5³ are divisible by 6 but not divisible by 5?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Divisible by 6: power of 2 from 1 to 5 (5 choices), power of 3 from 1 to 4 (4 choices). Not divisible by 5: power of 5 is 0 (1 choice). Total = 5 × 4 × 1 = 20.",
+   "order": 67,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Fix the restrictions prime by prime."
+  },
+  {
+   "questionText": "What is the sum of all even factors of 360?",
+   "options": [
+    {
+     "text": "780"
+    },
+    {
+     "text": "1092"
+    },
+    {
+     "text": "1170"
+    },
+    {
+     "text": "1093"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "360 = 2³ × 3² × 5. Even factors: 2 × (2⁰+2¹+2²) × (1+3+9) × (1+5) = 2 × 7 × 13 × 6 = 1092.",
+   "order": 68,
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Take out one factor of 2, then use the sum formula."
+  },
+  {
    "questionText": "How many positive factors of 50 are perfect squares?",
    "options": [
     {
      "text": "6"
     },
     {
-     "text": "3"
+     "text": "7"
     },
     {
      "text": "2"
     },
     {
-     "text": "7"
+     "text": "3"
     }
    ],
    "correctOptionIndex": 2,
    "explanation": "50 = 2 x 5^2. A square factor needs even exponents: (0 + 1) x (1 + 1) = 2.",
-   "order": 36,
+   "order": 69,
    "subPattern": "factors-number-of-factors",
    "difficulty": "hard",
    "examStyles": [
@@ -1019,21 +1904,21 @@
    "questionText": "How many positive factors of 1323 are perfect squares?",
    "options": [
     {
-     "text": "6"
+     "text": "3"
     },
     {
-     "text": "4"
+     "text": "6"
     },
     {
      "text": "12"
     },
     {
-     "text": "3"
+     "text": "4"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "1323 = 3^3 x 7^2. A square factor needs even exponents: (1 + 1) x (1 + 1) = 4.",
-   "order": 37,
+   "order": 70,
    "subPattern": "factors-number-of-factors",
    "difficulty": "hard",
    "examStyles": [
@@ -1059,7 +1944,7 @@
    ],
    "correctOptionIndex": 0,
    "explanation": "1875 = 3 x 5^4. A square factor needs even exponents: (0 + 1) x (2 + 1) = 3.",
-   "order": 38,
+   "order": 71,
    "subPattern": "factors-number-of-factors",
    "difficulty": "hard",
    "examStyles": [
@@ -1068,24 +1953,105 @@
    "shortcut": "Square factors: use exponents 0, 2, 4, ... up to each prime's exponent."
   },
   {
-   "questionText": "What is the remainder when 64230 is divided by 11?",
+   "questionText": "What is the remainder when 345 × 678 is divided by 7?",
    "options": [
     {
-     "text": "9"
-    },
-    {
-     "text": "4"
+     "text": "1"
     },
     {
      "text": "5"
     },
     {
+     "text": "6"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "345 mod 7 = 2, 678 mod 7 = 6. Product of remainders = 12, and 12 mod 7 = 5.",
+   "order": 72,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Multiply remainders, then reduce."
+  },
+  {
+   "questionText": "What is the remainder when 3¹⁰⁰ is divided by 5?",
+   "options": [
+    {
      "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Powers of 3 mod 5 repeat 3, 4, 2, 1 with cycle 4. 100 is a multiple of 4, so the remainder is 1.",
+   "order": 73,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Use the cycle length and exponent mod cycle."
+  },
+  {
+   "questionText": "What is the remainder when 6789 is divided by 9?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
     }
    ],
    "correctOptionIndex": 3,
+   "explanation": "Digit sum = 6 + 7 + 8 + 9 = 30, and 30 mod 9 = 3.",
+   "order": 74,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Remainder by 9 equals digit sum mod 9."
+  },
+  {
+   "questionText": "What is the remainder when 64230 is divided by 11?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
    "explanation": "64230 = 11 x 5839 + 1, so the remainder is 1.",
-   "order": 39,
+   "order": 75,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "easy",
    "examStyles": [
@@ -1097,21 +2063,21 @@
    "questionText": "What is the remainder when 52310 is divided by 13?",
    "options": [
     {
-     "text": "0"
-    },
-    {
-     "text": "8"
+     "text": "3"
     },
     {
      "text": "11"
     },
     {
-     "text": "3"
+     "text": "0"
+    },
+    {
+     "text": "8"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "52310 = 13 x 4023 + 11, so the remainder is 11.",
-   "order": 40,
+   "order": 76,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "easy",
    "examStyles": [
@@ -1124,21 +2090,21 @@
    "questionText": "What is the remainder when 22532 is divided by 18?",
    "options": [
     {
-     "text": "14"
-    },
-    {
-     "text": "15"
-    },
-    {
      "text": "7"
     },
     {
+     "text": "14"
+    },
+    {
      "text": "2"
+    },
+    {
+     "text": "15"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 1,
    "explanation": "22532 = 18 x 1251 + 14, so the remainder is 14.",
-   "order": 41,
+   "order": 77,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "easy",
    "examStyles": [
@@ -1151,6 +2117,9 @@
    "questionText": "What is the remainder when 49877 is divided by 16?",
    "options": [
     {
+     "text": "9"
+    },
+    {
      "text": "14"
     },
     {
@@ -1158,14 +2127,11 @@
     },
     {
      "text": "1"
-    },
-    {
-     "text": "9"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 2,
    "explanation": "49877 = 16 x 3117 + 5, so the remainder is 5.",
-   "order": 42,
+   "order": 78,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "easy",
    "examStyles": [
@@ -1175,7 +2141,88 @@
    "shortcut": "Divide and keep the leftover."
   },
   {
-   "questionText": "What is the remainder when 11^40 is divided by 9?",
+   "questionText": "What is the remainder when 17²⁵ is divided by 9?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "17 ≡ 8 ≡ −1 (mod 9). So 17²⁵ ≡ (−1)²⁵ = −1 ≡ 8.",
+   "order": 79,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Use −1 as the remainder when it is close to the divisor."
+  },
+  {
+   "questionText": "Find the remainder when 5⁹⁹ is divided by 13.",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "5² = 25 ≡ −1 (mod 13), so 5⁴ ≡ 1. 99 = 4 × 24 + 3, hence 5⁹⁹ ≡ 5³ = 125 ≡ 8 (mod 13).",
+   "order": 80,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Find the power that gives 1 or −1."
+  },
+  {
+   "questionText": "What is the smallest positive number which leaves remainder 3 when divided by 4, 5 and 6, and is exactly divisible by 7?",
+   "options": [
+    {
+     "text": "64"
+    },
+    {
+     "text": "183"
+    },
+    {
+     "text": "63"
+    },
+    {
+     "text": "123"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The number has the form 60k + 3 (LCM of 4, 5, 6 is 60). We need 60k + 3 ≡ 0 (mod 7), i.e. 4k + 3 ≡ 0, so 4k ≡ 4 and k ≡ 1 (mod 7). The smallest k is 1, giving 63 = 7 × 9. The answer is 63.",
+   "order": 81,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Number = LCM × k + common remainder."
+  },
+  {
+   "questionText": "What is the remainder when 1! + 2! + 3! + ... + 50! is divided by 12?",
    "options": [
     {
      "text": "3"
@@ -1184,15 +2231,95 @@
      "text": "6"
     },
     {
+     "text": "10"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "From 4! = 24 onwards every factorial is divisible by 12. So the remainder is (1! + 2! + 3!) mod 12 = (1 + 2 + 6) mod 12 = 9.",
+   "order": 82,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Factorials beyond a point vanish mod the divisor."
+  },
+  {
+   "questionText": "What is the remainder when 32^(32^32) is divided by 7?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "32 ≡ 4 (mod 7). Powers of 4 mod 7: 4, 2, 1 (cycle 3). Exponent 32^32 mod 3: 32 ≡ 2, 2^32 = (2²)^16 ≡ 1 (mod 3). So 4^(3m+1) ≡ 4.",
+   "order": 83,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Reduce the exponent modulo the cycle length."
+  },
+  {
+   "questionText": "A number leaves remainder 29 when divided by 56. What is the remainder when it is divided by 8?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Since 8 divides 56, the remainder mod 8 equals 29 mod 8 = 5.",
+   "order": 84,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Remainder carries over when the new divisor divides the old one."
+  },
+  {
+   "questionText": "What is the remainder when 11^40 is divided by 9?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
      "text": "0"
     },
     {
      "text": "7"
+    },
+    {
+     "text": "6"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 2,
    "explanation": "Powers of 11 mod 9 repeat every 6: 2, 4, 8, 7, 5, 1. 40 mod 6 = 4, so the remainder is 7.",
-   "order": 43,
+   "order": 85,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "medium",
    "examStyles": [
@@ -1205,9 +2332,6 @@
    "questionText": "What is the remainder when 4^26 is divided by 7?",
    "options": [
     {
-     "text": "6"
-    },
-    {
      "text": "0"
     },
     {
@@ -1215,11 +2339,14 @@
     },
     {
      "text": "3"
+    },
+    {
+     "text": "6"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "Powers of 4 mod 7 repeat every 3: 4, 2, 1. 26 mod 3 = 2, so the remainder is 2.",
-   "order": 44,
+   "order": 86,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "medium",
    "examStyles": [
@@ -1232,21 +2359,21 @@
    "questionText": "What is the remainder when 2^78 is divided by 5?",
    "options": [
     {
-     "text": "0"
-    },
-    {
-     "text": "3"
-    },
-    {
      "text": "4"
     },
     {
      "text": "1"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 0,
    "explanation": "Powers of 2 mod 5 repeat every 4: 2, 4, 3, 1. 78 mod 4 = 2, so the remainder is 4.",
-   "order": 45,
+   "order": 87,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "medium",
    "examStyles": [
@@ -1259,13 +2386,13 @@
    "questionText": "What is the remainder when 9^59 is divided by 11?",
    "options": [
     {
-     "text": "8"
-    },
-    {
      "text": "0"
     },
     {
      "text": "7"
+    },
+    {
+     "text": "8"
     },
     {
      "text": "5"
@@ -1273,7 +2400,7 @@
    ],
    "correctOptionIndex": 3,
    "explanation": "Powers of 9 mod 11 repeat every 5: 9, 4, 3, 5, 1. 59 mod 5 = 4, so the remainder is 5.",
-   "order": 46,
+   "order": 88,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "medium",
    "examStyles": [
@@ -1289,18 +2416,18 @@
      "text": "3"
     },
     {
-     "text": "2"
-    },
-    {
      "text": "1"
     },
     {
      "text": "4"
+    },
+    {
+     "text": "2"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "Powers of 2 mod 7 repeat every 3: 2, 4, 1. 67 mod 3 = 1, so the remainder is 2.",
-   "order": 47,
+   "order": 89,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "medium",
    "examStyles": [
@@ -1313,21 +2440,21 @@
    "questionText": "What is the remainder when 3^91 is divided by 7?",
    "options": [
     {
-     "text": "3"
-    },
-    {
-     "text": "0"
-    },
-    {
      "text": "2"
     },
     {
      "text": "6"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 2,
    "explanation": "Powers of 3 mod 7 repeat every 6: 3, 2, 6, 4, 5, 1. 91 mod 6 = 1, so the remainder is 3.",
-   "order": 48,
+   "order": 90,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "medium",
    "examStyles": [
@@ -1336,24 +2463,77 @@
    "shortcut": "Find the cycle of remainders, then reduce the power modulo the cycle length."
   },
   {
+   "questionText": "What is the remainder when 7^(7^7) is divided by 100?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "49"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "7⁴ = 2401 ≡ 1 (mod 100), so the cycle is 4. 7⁷ mod 4: 7 ≡ −1, so 7⁷ ≡ −1 ≡ 3. Hence 7^(7⁷) ≡ 7³ = 343 ≡ 43.",
+   "order": 91,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Find cycle of 7 mod 100 (it is 4), then exponent mod 4."
+  },
+  {
+   "questionText": "What is the remainder when 1 + 2 + 2² + 2³ + ... + 2¹⁰⁰ is divided by 7?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum = 2¹⁰¹ − 1. 2³ ≡ 1 (mod 7); 101 = 3 × 33 + 2, so 2¹⁰¹ ≡ 4. Remainder = 4 − 1 = 3.",
+   "order": 92,
+   "subPattern": "remainder-theorems-cyclicity",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Geometric sum 2^(n+1) − 1, then use the cycle of 3."
+  },
+  {
    "questionText": "What is the remainder when 263 x 837 x 984 is divided by 17?",
    "options": [
     {
      "text": "5"
     },
     {
-     "text": "1"
-    },
-    {
      "text": "0"
     },
     {
      "text": "4"
+    },
+    {
+     "text": "1"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 2,
    "explanation": "Remainders: 263 -> 8, 837 -> 4, 984 -> 15. Product of remainders = 480, which leaves 4 when divided by 17.",
-   "order": 49,
+   "order": 93,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "hard",
    "examStyles": [
@@ -1366,13 +2546,13 @@
    "questionText": "What is the remainder when 628 x 532 x 909 is divided by 11?",
    "options": [
     {
-     "text": "1"
+     "text": "9"
     },
     {
      "text": "6"
     },
     {
-     "text": "9"
+     "text": "1"
     },
     {
      "text": "5"
@@ -1380,7 +2560,7 @@
    ],
    "correctOptionIndex": 1,
    "explanation": "Remainders: 628 -> 1, 532 -> 4, 909 -> 7. Product of remainders = 28, which leaves 6 when divided by 11.",
-   "order": 50,
+   "order": 94,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "hard",
    "examStyles": [
@@ -1393,21 +2573,21 @@
    "questionText": "What is the remainder when 683 x 356 x 283 is divided by 8?",
    "options": [
     {
-     "text": "4"
+     "text": "5"
     },
     {
-     "text": "5"
+     "text": "3"
     },
     {
      "text": "1"
     },
     {
-     "text": "3"
+     "text": "4"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Remainders: 683 -> 3, 356 -> 4, 283 -> 3. Product of remainders = 36, which leaves 4 when divided by 8.",
-   "order": 51,
+   "order": 95,
    "subPattern": "remainder-theorems-cyclicity",
    "difficulty": "hard",
    "examStyles": [
@@ -1417,24 +2597,105 @@
    "shortcut": "Multiply the individual remainders, then take the remainder again."
   },
   {
+   "questionText": "What is the units digit of 7⁴⁵?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Units digits of powers of 7 repeat 7, 9, 3, 1. 45 = 4 × 11 + 1, so the digit is 7.",
+   "order": 96,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Cycle of 4; use exponent mod 4."
+  },
+  {
+   "questionText": "What is the units digit of 123 × 456 × 789?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Units digits multiply: 3 × 6 = 18 → 8; 8 × 9 = 72 → 2. Units digit = 2.",
+   "order": 97,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Multiply only the last digits."
+  },
+  {
+   "questionText": "What is the units digit of 29³⁷?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Units digit of 29³⁷ is that of 9³⁷. Powers of 9 alternate 9, 1; the exponent 37 is odd, so the digit is 9.",
+   "order": 98,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Digit 9 alternates between 9 and 1."
+  },
+  {
    "questionText": "What is the unit digit of 3^136?",
    "options": [
     {
      "text": "7"
     },
     {
+     "text": "6"
+    },
+    {
      "text": "4"
     },
     {
      "text": "1"
-    },
-    {
-     "text": "6"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "The unit digits of powers of 3 repeat every 4 steps: 3, 9, 7, 1. 136 mod 4 = 0, so the unit digit is 1.",
-   "order": 52,
+   "order": 99,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "easy",
    "examStyles": [
@@ -1446,21 +2707,21 @@
    "questionText": "What is the unit digit of 2^197?",
    "options": [
     {
-     "text": "8"
+     "text": "2"
     },
     {
-     "text": "2"
+     "text": "7"
     },
     {
      "text": "3"
     },
     {
-     "text": "7"
+     "text": "8"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 0,
    "explanation": "The unit digits of powers of 2 repeat every 4 steps: 2, 4, 8, 6. 197 mod 4 = 1, so the unit digit is 2.",
-   "order": 53,
+   "order": 100,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "easy",
    "examStyles": [
@@ -1473,21 +2734,21 @@
    "questionText": "What is the unit digit of 2^125?",
    "options": [
     {
-     "text": "2"
-    },
-    {
-     "text": "6"
-    },
-    {
      "text": "0"
     },
     {
+     "text": "2"
+    },
+    {
      "text": "3"
+    },
+    {
+     "text": "6"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 1,
    "explanation": "The unit digits of powers of 2 repeat every 4 steps: 2, 4, 8, 6. 125 mod 4 = 1, so the unit digit is 2.",
-   "order": 54,
+   "order": 101,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "easy",
    "examStyles": [
@@ -1500,21 +2761,21 @@
    "questionText": "What is the unit digit of 7^190?",
    "options": [
     {
-     "text": "6"
+     "text": "9"
     },
     {
-     "text": "3"
+     "text": "6"
     },
     {
      "text": "2"
     },
     {
-     "text": "9"
+     "text": "3"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 0,
    "explanation": "The unit digits of powers of 7 repeat every 4 steps: 7, 9, 3, 1. 190 mod 4 = 2, so the unit digit is 9.",
-   "order": 55,
+   "order": 102,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "easy",
    "examStyles": [
@@ -1524,24 +2785,186 @@
    "shortcut": "Find the cycle of unit digits, reduce the power modulo the cycle length."
   },
   {
-   "questionText": "What is the unit digit of 3^49 x 2^93?",
+   "questionText": "What is the units digit of 2⁷⁷ + 3⁵⁵ + 4³³?",
    "options": [
     {
-     "text": "4"
+     "text": "2"
     },
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2⁷⁷: 77 mod 4 = 1 → 2. 3⁵⁵: 55 mod 4 = 3 → 7. 4³³: odd exponent → 4. Sum = 2 + 7 + 4 = 13 → units digit 3.",
+   "order": 103,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find each units digit separately, then add."
+  },
+  {
+   "questionText": "What is the units digit of 1! + 2! + 3! + ... + 20!?",
+   "options": [
     {
      "text": "7"
     },
     {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "From 5! onwards every factorial ends in 0. Sum of units digits of 1! to 4! = 1 + 2 + 6 + 4 = 13 → 3.",
+   "order": 104,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Factorials from 5! end in 0."
+  },
+  {
+   "questionText": "What are the last two digits of 3¹⁰⁰?",
+   "options": [
+    {
+     "text": "81"
+    },
+    {
+     "text": "03"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "01"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "3²⁰ = 3486784401 ends in 01. Then 3¹⁰⁰ = (3²⁰)⁵ ends in 01⁵ = 01.",
+   "order": 105,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Find a power ending in 01 and raise it."
+  },
+  {
+   "questionText": "What are the last two digits of 7⁵⁵?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "07"
+    },
+    {
+     "text": "01"
+    },
+    {
+     "text": "49"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "7⁴ ≡ 01 (mod 100). 55 = 4 × 13 + 3, so 7⁵⁵ ≡ 7³ = 343 → 43.",
+   "order": 106,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "7⁴ ends in 01."
+  },
+  {
+   "questionText": "What is the units digit of 2^(3⁴)?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
      "text": "6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "3⁴ = 81. Units digits of powers of 2 repeat 2, 4, 8, 6; 81 mod 4 = 1, so the digit is 2.",
+   "order": 107,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Evaluate the inner power first, then mod 4."
+  },
+  {
+   "questionText": "What is the units digit of the product 1 × 3 × 5 × 7 × ... × 99 (all odd numbers up to 99)?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "5"
     },
     {
      "text": "3"
     }
    ],
    "correctOptionIndex": 2,
+   "explanation": "The product contains 5 and other odd numbers, so it is odd and divisible by 5. A number that is odd and a multiple of 5 ends in 5.",
+   "order": 108,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Odd × multiple of 5 ends in 5."
+  },
+  {
+   "questionText": "What is the unit digit of 3^49 x 2^93?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 2,
    "explanation": "Unit digit of 3^49 = 3. Unit digit of 2^93 = 2. Product 3 x 2 ends in 6.",
-   "order": 56,
+   "order": 109,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "medium",
    "examStyles": [
@@ -1556,18 +2979,18 @@
      "text": "5"
     },
     {
+     "text": "2"
+    },
+    {
      "text": "9"
     },
     {
      "text": "8"
-    },
-    {
-     "text": "2"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 1,
    "explanation": "Unit digit of 4^52 = 6. Unit digit of 8^143 = 2. Product 6 x 2 ends in 2.",
-   "order": 57,
+   "order": 110,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "medium",
    "examStyles": [
@@ -1580,21 +3003,21 @@
    "questionText": "What is the unit digit of 9^64 x 3^69?",
    "options": [
     {
-     "text": "3"
+     "text": "4"
+    },
+    {
+     "text": "9"
     },
     {
      "text": "7"
     },
     {
-     "text": "4"
-    },
-    {
-     "text": "9"
+     "text": "3"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Unit digit of 9^64 = 1. Unit digit of 3^69 = 3. Product 1 x 3 ends in 3.",
-   "order": 58,
+   "order": 111,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "medium",
    "examStyles": [
@@ -1607,21 +3030,21 @@
    "questionText": "What is the unit digit of 3^126 x 7^47?",
    "options": [
     {
-     "text": "5"
-    },
-    {
      "text": "7"
     },
     {
-     "text": "9"
+     "text": "5"
     },
     {
      "text": "3"
+    },
+    {
+     "text": "9"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 0,
    "explanation": "Unit digit of 3^126 = 9. Unit digit of 7^47 = 3. Product 9 x 3 ends in 7.",
-   "order": 59,
+   "order": 112,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "medium",
    "examStyles": [
@@ -1634,21 +3057,21 @@
    "questionText": "What is the unit digit of 9^117 x 8^58?",
    "options": [
     {
-     "text": "8"
+     "text": "4"
     },
     {
-     "text": "4"
+     "text": "9"
     },
     {
      "text": "6"
     },
     {
-     "text": "9"
+     "text": "8"
     }
    ],
    "correctOptionIndex": 2,
    "explanation": "Unit digit of 9^117 = 9. Unit digit of 8^58 = 4. Product 9 x 4 ends in 6.",
-   "order": 60,
+   "order": 113,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "medium",
    "examStyles": [
@@ -1664,18 +3087,18 @@
      "text": "7"
     },
     {
+     "text": "5"
+    },
+    {
      "text": "6"
     },
     {
      "text": "1"
-    },
-    {
-     "text": "5"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "Unit digit of 3^58 = 9. Unit digit of 7^62 = 9. Product 9 x 9 ends in 1.",
-   "order": 61,
+   "order": 114,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "medium",
    "examStyles": [
@@ -1684,24 +3107,77 @@
    "shortcut": "Find each unit digit separately, multiply them, keep the last digit."
   },
   {
-   "questionText": "What is the unit digit of 1! + 2! + 3! + ... + 68!?",
+   "questionText": "What are the last two digits of 17¹⁷?",
+   "options": [
+    {
+     "text": "77"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "17² = 289 ≡ 89, 17⁴ ≡ 89² = 7921 ≡ 21, 17⁸ ≡ 441 ≡ 41, 17¹⁶ ≡ 1681 ≡ 81. 17¹⁷ ≡ 81 × 17 = 1377 → 77.",
+   "order": 115,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Repeated squaring mod 100."
+  },
+  {
+   "questionText": "What is the units digit of 7^(8⁹)?",
    "options": [
     {
      "text": "9"
+    },
+    {
+     "text": "1"
     },
     {
      "text": "3"
     },
     {
      "text": "7"
-    },
-    {
-     "text": "1"
     }
    ],
    "correctOptionIndex": 1,
+   "explanation": "The cycle of 7 is 4, and 8⁹ is a multiple of 4, so 7^(8⁹) ends in the digit for exponent ≡ 0 (mod 4), which is 1.",
+   "order": 116,
+   "subPattern": "unit-digit-last-two-digits",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Exponent a multiple of 4 gives units digit 1 for 3, 7, 9."
+  },
+  {
+   "questionText": "What is the unit digit of 1! + 2! + 3! + ... + 68!?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
    "explanation": "From 5! onwards every factorial ends in 0. So only 1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33 matters. The unit digit is 3.",
-   "order": 62,
+   "order": 117,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "hard",
    "examStyles": [
@@ -1714,21 +3190,21 @@
    "questionText": "What is the unit digit of 1! + 2! + 3! + ... + 38!?",
    "options": [
     {
-     "text": "7"
-    },
-    {
-     "text": "6"
+     "text": "3"
     },
     {
      "text": "8"
     },
     {
-     "text": "3"
+     "text": "7"
+    },
+    {
+     "text": "6"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 0,
    "explanation": "From 5! onwards every factorial ends in 0. So only 1! + 2! + 3! + 4! = 1 + 2 + 6 + 24 = 33 matters. The unit digit is 3.",
-   "order": 63,
+   "order": 118,
    "subPattern": "unit-digit-last-two-digits",
    "difficulty": "hard",
    "examStyles": [
@@ -1738,10 +3214,91 @@
    "shortcut": "Factorials from 5! upward end in 0, so add only the first four."
   },
   {
+   "questionText": "How many zeros are there at the end of 30!?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "⌊30/5⌋ + ⌊30/25⌋ = 6 + 1 = 7.",
+   "order": 119,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide by 5, 25, ..."
+  },
+  {
+   "questionText": "How many trailing zeros does 100! have?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "⌊100/5⌋ + ⌊100/25⌋ = 20 + 4 = 24.",
+   "order": 120,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add the quotients by 5, 25, 125..."
+  },
+  {
+   "questionText": "How many zeros are at the end of the product 25 × 40 × 50 × 16?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "25 = 5², 40 = 2³ × 5, 50 = 2 × 5², 16 = 2⁴. Powers of 2: 3+1+4 = 8; powers of 5: 2+1+2 = 5. Zeros = min(8, 5) = 5. Indeed the product is 800000.",
+   "order": 121,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Count pairs of 2 and 5."
+  },
+  {
    "questionText": "How many zeros are there at the end of 60! (factorial)?",
    "options": [
     {
-     "text": "14"
+     "text": "13"
     },
     {
      "text": "19"
@@ -1750,12 +3307,12 @@
      "text": "12"
     },
     {
-     "text": "13"
+     "text": "14"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Zeros = number of factors of 5 in 60! = 12 + 2 = 14.",
-   "order": 64,
+   "order": 122,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "easy",
    "examStyles": [
@@ -1767,21 +3324,21 @@
    "questionText": "How many zeros are there at the end of 200! (factorial)?",
    "options": [
     {
-     "text": "40"
+     "text": "54"
     },
     {
-     "text": "54"
+     "text": "49"
     },
     {
      "text": "50"
     },
     {
-     "text": "49"
+     "text": "40"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 1,
    "explanation": "Zeros = number of factors of 5 in 200! = 40 + 8 + 1 = 49.",
-   "order": 65,
+   "order": 123,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "easy",
    "examStyles": [
@@ -1799,15 +3356,15 @@
      "text": "36"
     },
     {
-     "text": "15"
+     "text": "16"
     },
     {
-     "text": "16"
+     "text": "15"
     }
    ],
    "correctOptionIndex": 0,
    "explanation": "Zeros = number of factors of 5 in 75! = 15 + 3 = 18.",
-   "order": 66,
+   "order": 124,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "easy",
    "examStyles": [
@@ -1820,21 +3377,21 @@
    "questionText": "How many zeros are there at the end of 150! (factorial)?",
    "options": [
     {
-     "text": "38"
+     "text": "37"
     },
     {
      "text": "30"
     },
     {
-     "text": "37"
+     "text": "38"
     },
     {
      "text": "36"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 0,
    "explanation": "Zeros = number of factors of 5 in 150! = 30 + 6 + 1 = 37.",
-   "order": 67,
+   "order": 125,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "easy",
    "examStyles": [
@@ -1844,24 +3401,186 @@
    "shortcut": "Divide by 5, 25, 125, ... and add the quotients."
   },
   {
-   "questionText": "What is the highest power of 7 that divides 120! exactly?",
+   "questionText": "What is the smallest n for which n! ends in exactly 7 zeros?",
    "options": [
     {
-     "text": "17"
+     "text": "25"
     },
     {
+     "text": "30"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "tz(n) = 7. 30! has ⌊30/5⌋ + ⌊30/25⌋ = 7 zeros while 29! has 5 + 1 = 6. So n = 30.",
+   "order": 126,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Zeros only increase at multiples of 5."
+  },
+  {
+   "questionText": "What is the highest power of 3 that divides 50! exactly?",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "⌊50/3⌋ + ⌊50/9⌋ + ⌊50/27⌋ = 16 + 5 + 1 = 22.",
+   "order": 127,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Legendre: sum of ⌊n/pᵏ⌋."
+  },
+  {
+   "questionText": "What is the highest power of 6 that divides 40! exactly?",
+   "options": [
+    {
      "text": "19"
+    },
+    {
+     "text": "17"
     },
     {
      "text": "18"
     },
     {
-     "text": "38"
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Power of 2 in 40! = 20+10+5+2+1 = 38; power of 3 = 13+4+1 = 18. Since 6 = 2 × 3, the limit is min(38, 18) = 18.",
+   "order": 128,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "The larger prime is the bottleneck."
+  },
+  {
+   "questionText": "How many zeros does the product 15! × 20! end with?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
     }
    ],
    "correctOptionIndex": 1,
+   "explanation": "15! has 3 zeros and 20! has 4 zeros. Trailing zeros of a product need both counts of 2s and 5s: 5s = 3 + 4 = 7, and 2s are far more numerous, so 7 zeros.",
+   "order": 129,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add the powers of 5 and check 2s are enough."
+  },
+  {
+   "questionText": "How many zeros are at the end of 2⁶⁰ × 5²⁰ × 7³?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pairs of (2, 5) = min(60, 20) = 20, so 10²⁰ is a factor: 20 trailing zeros. The factor 7³ = 343 does not end in 0 so it adds none.",
+   "order": 130,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Zeros = min(power of 2, power of 5)."
+  },
+  {
+   "questionText": "How many zeros does 100!/50! end with?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "100! has 24 zeros and 50! has 12 zeros. Since the quotient has plenty of 2s left, zeros = 24 − 12 = 12.",
+   "order": 131,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Subtract the powers of 5."
+  },
+  {
+   "questionText": "What is the highest power of 7 that divides 120! exactly?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 3,
    "explanation": "Highest power = floor(120/7) + floor(120/49) = 17 + 2 = 19.",
-   "order": 68,
+   "order": 132,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "medium",
    "examStyles": [
@@ -1877,18 +3596,18 @@
      "text": "219"
     },
     {
-     "text": "292"
+     "text": "146"
     },
     {
-     "text": "146"
+     "text": "292"
     },
     {
      "text": "75"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "Highest power = floor(150/2) + floor(150/4) + floor(150/8) + floor(150/16) + floor(150/32) + floor(150/64) + floor(150/128) = 75 + 37 + 18 + 9 + 4 + 2 + 1 = 146.",
-   "order": 69,
+   "order": 133,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "medium",
    "examStyles": [
@@ -1901,7 +3620,7 @@
    "questionText": "What is the highest power of 11 that divides 100! exactly?",
    "options": [
     {
-     "text": "18"
+     "text": "9"
     },
     {
      "text": "8"
@@ -1910,12 +3629,12 @@
      "text": "4"
     },
     {
-     "text": "9"
+     "text": "18"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 0,
    "explanation": "Highest power = floor(100/11) = 9 = 9.",
-   "order": 70,
+   "order": 134,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "medium",
    "examStyles": [
@@ -1928,21 +3647,21 @@
    "questionText": "What is the highest power of 3 that divides 40! exactly?",
    "options": [
     {
-     "text": "18"
+     "text": "9"
     },
     {
-     "text": "9"
+     "text": "13"
     },
     {
      "text": "12"
     },
     {
-     "text": "13"
+     "text": "18"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Highest power = floor(40/3) + floor(40/9) + floor(40/27) = 13 + 4 + 1 = 18.",
-   "order": 71,
+   "order": 135,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "medium",
    "examStyles": [
@@ -1955,6 +3674,9 @@
    "questionText": "What is the highest power of 7 that divides 50! exactly?",
    "options": [
     {
+     "text": "4"
+    },
+    {
      "text": "7"
     },
     {
@@ -1962,14 +3684,11 @@
     },
     {
      "text": "10"
-    },
-    {
-     "text": "4"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 2,
    "explanation": "Highest power = floor(50/7) + floor(50/49) = 7 + 1 = 8.",
-   "order": 72,
+   "order": 136,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "medium",
    "examStyles": [
@@ -1982,21 +3701,21 @@
    "questionText": "What is the highest power of 11 that divides 80! exactly?",
    "options": [
     {
-     "text": "7"
+     "text": "12"
     },
     {
      "text": "14"
     },
     {
-     "text": "12"
+     "text": "7"
     },
     {
      "text": "9"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 2,
    "explanation": "Highest power = floor(80/11) = 7 = 7.",
-   "order": 73,
+   "order": 137,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "medium",
    "examStyles": [
@@ -2006,13 +3725,65 @@
    "shortcut": "Legendre: add the integer parts of n/p, n/p^2, n/p^3 and so on."
   },
   {
+   "questionText": "For how many positive integers n does n! end in exactly 6 zeros?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "24! has 4 zeros and 25! has 6 zeros; 29! has 6 and 30! has 7. So n = 25, 26, 27, 28, 29: 5 values.",
+   "order": 138,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Zeros jump only at multiples of 5 (twice at 25)."
+  },
+  {
+   "questionText": "What is the highest power of 72 that divides 60! exactly?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "72 = 2³ × 3². Power of 2 in 60! = 30+15+7+3+1 = 56 → 56 ÷ 3 gives 18. Power of 3 = 20+6+2 = 28 → 28 ÷ 2 gives 14. Minimum = 14.",
+   "order": 139,
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Divide each prime power by its exponent, take the min."
+  },
+  {
    "questionText": "How many zeros are there at the end of the product 6^6 x 10^6 x 15^2?",
    "options": [
     {
-     "text": "12"
+     "text": "16"
     },
     {
-     "text": "16"
+     "text": "12"
     },
     {
      "text": "10"
@@ -2023,7 +3794,7 @@
    ],
    "correctOptionIndex": 3,
    "explanation": "Total power of 2 = 12, total power of 5 = 8. Each zero needs one 2 and one 5, so zeros = min(12, 8) = 8.",
-   "order": 74,
+   "order": 140,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "hard",
    "examStyles": [
@@ -2036,21 +3807,21 @@
    "questionText": "How many zeros are there at the end of the product 16^4 x 25^6 x 18^4?",
    "options": [
     {
-     "text": "24"
+     "text": "7"
     },
     {
      "text": "20"
     },
     {
-     "text": "12"
+     "text": "24"
     },
     {
-     "text": "7"
+     "text": "12"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "Total power of 2 = 20, total power of 5 = 12. Each zero needs one 2 and one 5, so zeros = min(20, 12) = 12.",
-   "order": 75,
+   "order": 141,
    "subPattern": "trailing-zeros-factorials",
    "difficulty": "hard",
    "examStyles": [
@@ -2059,8 +3830,2040 @@
    "shortcut": "Count the 2s and 5s in the prime factorisation; zeros = the smaller count."
   },
   {
+   "questionText": "Convert the decimal number 45 to binary.",
+   "options": [
+    {
+     "text": "101011"
+    },
+    {
+     "text": "101101"
+    },
+    {
+     "text": "110101"
+    },
+    {
+     "text": "110110"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "45 = 32 + 8 + 4 + 1 = 2⁵ + 2³ + 2² + 2⁰, so the binary form is 101101.",
+   "order": 142,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Repeated division by 2, read remainders upwards."
+  },
+  {
+   "questionText": "What is the decimal value of the binary number 110101?",
+   "options": [
+    {
+     "text": "53"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "51"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "110101₂ = 32 + 16 + 0 + 4 + 0 + 1 = 53.",
+   "order": 143,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Add place values 32, 16, 8, 4, 2, 1."
+  },
+  {
+   "questionText": "Convert the octal number (157)₈ to decimal.",
+   "options": [
+    {
+     "text": "112"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "111"
+    },
+    {
+     "text": "119"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "157₈ = 1 × 64 + 5 × 8 + 7 = 64 + 40 + 7 = 111.",
+   "order": 144,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Place values are powers of 8."
+  },
+  {
+   "questionText": "Convert the decimal number 200 to octal.",
+   "options": [
+    {
+     "text": "320"
+    },
+    {
+     "text": "310"
+    },
+    {
+     "text": "301"
+    },
+    {
+     "text": "311"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "200 ÷ 8 = 25 rem 0; 25 ÷ 8 = 3 rem 1; 3 ÷ 8 = 0 rem 3. Reading upwards: 310₈.",
+   "order": 145,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Divide by 8 repeatedly."
+  },
+  {
+   "questionText": "What is the decimal value of the hexadecimal number 3F?",
+   "options": [
+    {
+     "text": "61"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "63"
+    },
+    {
+     "text": "47"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Hex digits: F stands for 15. So 3F₁₆ = 3 × 16¹ + 15 × 16⁰ = 48 + 15 = 63.",
+   "order": 146,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "F = 15 in hexadecimal."
+  },
+  {
+   "questionText": "How many 1s are there in the binary representation of 255?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "255"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "255 = 2⁸ − 1, and 2ⁿ − 1 is written as n ones in binary. So 255 = 11111111₂, which has eight 1s.",
+   "order": 147,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "2ⁿ − 1 is n ones."
+  },
+  {
+   "questionText": "What is the largest decimal number that can be stored in 8 bits (unsigned)?",
+   "options": [
+    {
+     "text": "127"
+    },
+    {
+     "text": "128"
+    },
+    {
+     "text": "256"
+    },
+    {
+     "text": "255"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 8 bits the values range from 0 to 2⁸ − 1 = 255.",
+   "order": 148,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "2ⁿ − 1."
+  },
+  {
+   "questionText": "Add the binary numbers 1101 and 1011. Give the answer in binary.",
+   "options": [
+    {
+     "text": "11001"
+    },
+    {
+     "text": "10110"
+    },
+    {
+     "text": "10111"
+    },
+    {
+     "text": "11000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1101₂ = 13 and 1011₂ = 11. Sum = 24 = 11000₂. Binary addition: 1+1 = 10 carries 1, and so on, giving 11000.",
+   "order": 149,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert, add, convert back — or add with carries."
+  },
+  {
+   "questionText": "Multiply the binary numbers 101 and 11. Give the answer in binary.",
+   "options": [
+    {
+     "text": "1101"
+    },
+    {
+     "text": "10001"
+    },
+    {
+     "text": "1111"
+    },
+    {
+     "text": "1110"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "101₂ = 5, 11₂ = 3, product = 15 = 1111₂.",
+   "order": 150,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Convert to decimal for a quick check."
+  },
+  {
+   "questionText": "Subtract: 10010₂ − 1101₂ = ? (answer in binary)",
+   "options": [
+    {
+     "text": "101"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "100"
+    },
+    {
+     "text": "111"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "10010₂ = 18, 1101₂ = 13. 18 − 13 = 5 = 101₂.",
+   "order": 151,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert, subtract, convert back."
+  },
+  {
+   "questionText": "Convert the binary number 11010110 to hexadecimal.",
+   "options": [
+    {
+     "text": "D5"
+    },
+    {
+     "text": "D6"
+    },
+    {
+     "text": "D7"
+    },
+    {
+     "text": "C6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Group in fours from the right: 1101 = D, 0110 = 6, so D6₁₆.",
+   "order": 152,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Group bits in fours."
+  },
+  {
+   "questionText": "Convert the hexadecimal number 2F to binary.",
+   "options": [
+    {
+     "text": "101111"
+    },
+    {
+     "text": "101110"
+    },
+    {
+     "text": "101011"
+    },
+    {
+     "text": "110111"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2 = 0010 and F = 1111, so 2F₁₆ = 00101111₂ = 101111₂.",
+   "order": 153,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each hex digit is four bits."
+  },
+  {
+   "questionText": "What is the decimal value of (243)₅?",
+   "options": [
+    {
+     "text": "83"
+    },
+    {
+     "text": "73"
+    },
+    {
+     "text": "63"
+    },
+    {
+     "text": "74"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "243₅ = 2 × 25 + 4 × 5 + 3 = 50 + 20 + 3 = 73.",
+   "order": 154,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Place values 25, 5, 1."
+  },
+  {
+   "questionText": "In a certain number system, 5 × 6 = 42. What is the base of this number system?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In base b, 42 means 4b + 2. We have 5 × 6 = 30 so 4b + 2 = 30, giving b = 7. Digit 6 is valid in base 7.",
+   "order": 155,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Write the written result as an expression in b."
+  },
+  {
+   "questionText": "Add the hexadecimal numbers 2F and 3C. Give the answer in hexadecimal.",
+   "options": [
+    {
+     "text": "6C"
+    },
+    {
+     "text": "7B"
+    },
+    {
+     "text": "5B"
+    },
+    {
+     "text": "6B"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Convert: 2F = 47, 3C = 60, sum = 107 = 6B₁₆ (6 × 16 + 11).",
+   "order": 156,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "F + C = 27 = 1B, carry 1."
+  },
+  {
+   "questionText": "What is the minimum number of bits required to represent the decimal number 1000 in binary?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2⁹ = 512 ≤ 1000 < 1024 = 2¹⁰, so 1000 needs 10 bits.",
+   "order": 157,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Find the smallest n with 2ⁿ > N."
+  },
+  {
+   "questionText": "Convert the decimal fraction 0.625 to binary.",
+   "options": [
+    {
+     "text": "0.101"
+    },
+    {
+     "text": "0.110"
+    },
+    {
+     "text": "0.1001"
+    },
+    {
+     "text": "0.011"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Multiply the fractional part by 2 repeatedly and note the integer parts. 0.625 × 2 = 1.25 → 1; 0.25 × 2 = 0.5 → 0; 0.5 × 2 = 1.0 → 1. So 0.101₂.",
+   "order": 158,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Multiply the fraction by 2 repeatedly."
+  },
+  {
+   "questionText": "What is the decimal value of the largest four-digit number in base 6?",
+   "options": [
+    {
+     "text": "1289"
+    },
+    {
+     "text": "1296"
+    },
+    {
+     "text": "1295"
+    },
+    {
+     "text": "1080"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The largest 4-digit base-6 number is 5555₆ = 6⁴ − 1 = 1295.",
+   "order": 159,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Largest n-digit number in base b is bⁿ − 1."
+  },
+  {
+   "questionText": "Convert the octal number (725)₈ to binary.",
+   "options": [
+    {
+     "text": "111100101"
+    },
+    {
+     "text": "111010101"
+    },
+    {
+     "text": "111010102"
+    },
+    {
+     "text": "111010011"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Write each octal digit as three bits: 7 = 111, 2 = 010, 5 = 101. Joining them gives 111010101₂.",
+   "order": 160,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Each octal digit is three bits."
+  },
+  {
+   "questionText": "In base b, the number 121 equals 64 in decimal. What is b?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "121₍b₎ = b² + 2b + 1 = (b + 1)² = 64, so b + 1 = 8 and b = 7.",
+   "order": 161,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Recognise the perfect square."
+  },
+  {
+   "questionText": "How many integers from 1 to 100 have exactly three 1s in their binary representation?",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Numbers below 64 (up to six bits): C(6,3) = 20. From 64 to 100, the leading bit is 1 and the remaining six bits (value up to 36) must hold exactly two 1s; enumerating gives 13. Total = 20 + 13 = 33.",
+   "order": 162,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Split at the power of 2 nearest the limit."
+  },
+  {
+   "questionText": "Express 2024 (decimal) in base 7.",
+   "options": [
+    {
+     "text": "5645"
+    },
+    {
+     "text": "5654"
+    },
+    {
+     "text": "6554"
+    },
+    {
+     "text": "5621"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2024 ÷ 7 = 289 rem 1; 289 ÷ 7 = 41 rem 2; 41 ÷ 7 = 5 rem 6; 5 ÷ 7 = 0 rem 5. Reading upwards: 5621₇.",
+   "order": 163,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Repeated division, read remainders from the bottom."
+  },
+  {
+   "questionText": "What is the 8-bit two's complement representation of −37?",
+   "options": [
+    {
+     "text": "11011100"
+    },
+    {
+     "text": "00100101"
+    },
+    {
+     "text": "11011011"
+    },
+    {
+     "text": "11011010"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "37 = 00100101. Invert: 11011010. Add 1: 11011011. So −37 is 11011011.",
+   "order": 164,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Invert the bits and add 1."
+  },
+  {
+   "questionText": "In which base does the number 1331 represent the decimal number 343?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1331₍b₎ = b³ + 3b² + 3b + 1 = (b + 1)³ = 343, so b + 1 = 7 and b = 6.",
+   "order": 165,
+   "subPattern": "base-conversion-binary",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "1331 is the cube pattern (b+1)³."
+  },
+  {
+   "questionText": "Which of the following numbers is prime?",
+   "options": [
+    {
+     "text": "91"
+    },
+    {
+     "text": "87"
+    },
+    {
+     "text": "97"
+    },
+    {
+     "text": "93"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "87 = 3 × 29, 91 = 7 × 13 and 93 = 3 × 31 are composite. 97 has no prime divisor up to 9 (2, 3, 5, 7), so it is prime.",
+   "order": 166,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Test divisibility by primes up to √n."
+  },
+  {
+   "questionText": "What is the smallest prime number greater than 90?",
+   "options": [
+    {
+     "text": "91"
+    },
+    {
+     "text": "97"
+    },
+    {
+     "text": "99"
+    },
+    {
+     "text": "93"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "91 = 7 × 13, 92 even, 93 = 3 × 31, 94 even, 95 = 5 × 19, 96 even. 97 is prime.",
+   "order": 167,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Skip evens and multiples of 3, 5, 7."
+  },
+  {
+   "questionText": "What is the sum of the first eight prime numbers?",
+   "options": [
+    {
+     "text": "77"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "80"
+    },
+    {
+     "text": "75"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2 + 3 + 5 + 7 + 11 + 13 + 17 + 19 = 77.",
+   "order": 168,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "List the primes and add carefully."
+  },
+  {
+   "questionText": "How many prime numbers are there from 1 to 50?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47: that is 15 primes.",
+   "order": 169,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Remember the count: 25 primes below 100, 15 below 50."
+  },
+  {
+   "questionText": "What is the largest prime factor of 2310?",
+   "options": [
+    {
+     "text": "1155"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2310 = 2 × 3 × 5 × 7 × 11. The largest prime factor is 11.",
+   "order": 170,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Divide out small primes first."
+  },
+  {
+   "questionText": "Which is the only even prime number?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Every even number greater than 2 is divisible by 2 and hence composite. So 2 is the only even prime.",
+   "order": 171,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Memorise it."
+  },
+  {
+   "questionText": "What is the smallest prime number that is also a factor of 3003?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "3003 is odd, so 2 is not a factor. Digit sum = 6, so 3 divides it: 3003 = 3 × 1001. The smallest prime factor is 3.",
+   "order": 172,
+   "subPattern": "prime-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Test 2, 3, 5 in order."
+  },
+  {
+   "questionText": "To test whether 391 is prime by trial division, what is the largest prime you need to try as a divisor?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "√391 ≈ 19.8, so test primes up to 19. In fact 391 = 17 × 23 is composite, and 17 is found while testing.",
+   "order": 173,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Test all primes ≤ √n."
+  },
+  {
+   "questionText": "Two prime numbers have sum 60 and product 899. What is the larger prime?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "p + q = 60, pq = 899. Then (q − p)² = 3600 − 3596 = 4, so q − p = 2. q = 31, p = 29.",
+   "order": 174,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Use (q − p)² = (p + q)² − 4pq."
+  },
+  {
+   "questionText": "What is the largest prime factor of 8051?",
+   "options": [
+    {
+     "text": "101"
+    },
+    {
+     "text": "97"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "89"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "8051 = 8100 − 49 = 90² − 7² = (90 − 7)(90 + 7) = 83 × 97. Both are prime, so the largest is 97.",
+   "order": 175,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Look for a difference of squares."
+  },
+  {
+   "questionText": "What is the sum of the distinct prime factors of 3003?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "429"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "3003 = 3 × 7 × 11 × 13. Sum = 3 + 7 + 11 + 13 = 34.",
+   "order": 176,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Factorise using 1001 = 7 × 11 × 13."
+  },
+  {
+   "questionText": "The expression n² + n + 41 gives primes for many natural numbers n. What is the smallest natural number n for which it is composite?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "41"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It stays prime for n = 1 to 39, and fails at n = 40: 40² + 40 + 41 = 1681 = 41².",
+   "order": 177,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Look for n where n² + n + 41 is a multiple of 41, i.e. n = 40."
+  },
+  {
+   "questionText": "How many prime numbers lie between 100 and 130?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Primes in the range: 101, 103, 107, 109, 113, 127. Count = 6.",
+   "order": 178,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Check only numbers of the form 6k ± 1."
+  },
+  {
+   "questionText": "Every prime greater than 3 is of the form 6k ± 1. How many primes below 60 are of the form 6k + 1?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Primes below 60 that leave remainder 1 on division by 6: 7, 13, 19, 31, 37, 43. Count = 6.",
+   "order": 179,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "6k + 1 primes: 7, 13, 19, 31, 37, 43..."
+  },
+  {
+   "questionText": "If p is a prime greater than 3, then p² − 1 is always divisible by which of the following?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "p is of the form 6k ± 1, so p² − 1 = (p − 1)(p + 1) is a product of two consecutive even numbers (one a multiple of 4) and also contains a multiple of 3. So 8 × 3 = 24 always divides it.",
+   "order": 180,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "(p − 1)(p + 1): even, multiple of 8 and of 3."
+  },
+  {
+   "questionText": "How many prime numbers p are there such that p, p + 2 and p + 4 are all prime?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Among p, p + 2, p + 4 one is a multiple of 3 for any p. So all three can be prime only if that multiple is 3 itself: (3, 5, 7). Exactly 1 such prime.",
+   "order": 181,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Three numbers in steps of 2 cover all residues mod 3."
+  },
+  {
+   "questionText": "The product of two consecutive primes is 1763. What is the larger prime?",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "41"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "√1763 ≈ 42, so look at the primes near 42: 41 × 43 = 1763. The larger prime is 43.",
+   "order": 182,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Take the square root and look at adjacent primes."
+  },
+  {
+   "questionText": "What is the sum of all prime numbers between 50 and 70?",
+   "options": [
+    {
+     "text": "247"
+    },
+    {
+     "text": "230"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "183"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Primes between 50 and 70: 53, 59, 61, 67. Sum = 240.",
+   "order": 183,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "List 6k ± 1 numbers and test them."
+  },
+  {
+   "questionText": "What is the total number of prime factors (counting repetitions) in the product 4¹¹ × 7⁵ × 11²?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "4¹¹ = 2²² contributes 22 prime factors, 7⁵ contributes 5 and 11² contributes 2. Total = 22 + 5 + 2 = 29.",
+   "order": 184,
+   "subPattern": "prime-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Convert every base to primes first."
+  },
+  {
+   "questionText": "How many primes p less than 100 are there such that p + 6 is also prime?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pairs (p, p + 6): (5,11), (7,13), (11,17), (13,19), (17,23), (23,29), (31,37), (37,43), (41,47), (47,53), (53,59), (61,67), (67,73), (73,79), (83,89), (97,103). Count = 16.",
+   "order": 185,
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Enumerate primes below 100 and test p + 6."
+  },
+  {
+   "questionText": "In how many ways can 50 be written as the sum of two prime numbers (order not counted)?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pairs: 3+47, 7+43, 13+37, 19+31. Total = 4.",
+   "order": 186,
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Try each prime ≤ 25 and check the partner."
+  },
+  {
+   "questionText": "Find the sum of all prime numbers p below 30 for which 2p + 1 is also prime.",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "73"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "p = 2 (5), 3 (7), 5 (11), 11 (23), 23 (47), 29 (59). Sum = 2 + 3 + 5 + 11 + 23 + 29 = 73. Others like 7 (15), 13 (27), 17 (35), 19 (39) fail.",
+   "order": 187,
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Test 2p + 1 for each prime below 30."
+  },
+  {
+   "questionText": "What is the greatest prime factor of 3¹² − 1?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "73"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "3¹² − 1 = (3⁶ − 1)(3⁶ + 1) = 728 × 730 = (2³ × 7 × 13)(2 × 5 × 73). Greatest prime factor = 73.",
+   "order": 188,
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Use a² − b² repeatedly."
+  },
+  {
+   "questionText": "How many two-digit prime numbers have the property that the number obtained by reversing the digits is also prime (palindromic primes such as 11 are included)?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Qualifying primes: 11, 13, 17, 31, 37, 71, 73, 79, 97. Count = 9.",
+   "order": 189,
+   "subPattern": "prime-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Primes with digits 2, 4, 5, 6, 8, 0 in the tens or units place are ruled out."
+  },
+  {
+   "questionText": "Express 0.333... (3 recurring) as a fraction.",
+   "options": [
+    {
+     "text": "3/100"
+    },
+    {
+     "text": "1/30"
+    },
+    {
+     "text": "1/3"
+    },
+    {
+     "text": "3/10"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let x = 0.333...; then 10x = 3.333..., so 10x − x = 3 and 9x = 3. Hence x = 3/9 = 1/3.",
+   "order": 190,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Single recurring digit d gives d/9."
+  },
+  {
+   "questionText": "Express 0.4545... (45 recurring) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "5/11"
+    },
+    {
+     "text": "9/20"
+    },
+    {
+     "text": "45/100"
+    },
+    {
+     "text": "45/90"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A two-digit block repeating gives 45/99. Divide numerator and denominator by 9: 0.(45) = 45/99 = 5/11.",
+   "order": 191,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Two recurring digits ab give ab/99."
+  },
+  {
+   "questionText": "Which of the following fractions has a terminating decimal expansion?",
+   "options": [
+    {
+     "text": "5/12"
+    },
+    {
+     "text": "11/30"
+    },
+    {
+     "text": "4/15"
+    },
+    {
+     "text": "7/40"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "7/40 has denominator 2³ × 5, which contains only 2 and 5, so it terminates (0.175). The other denominators 12, 15, 30 contain the factor 3.",
+   "order": 192,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Denominator with only 2s and 5s ⇒ terminating."
+  },
+  {
+   "questionText": "What is the value of 0.777... + 0.222...?",
+   "options": [
+    {
+     "text": "9/10"
+    },
+    {
+     "text": "0.999"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0.9"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "0.(7) = 7/9 and 0.(2) = 2/9. Sum = 9/9 = 1 (equivalently 0.999... = 1).",
+   "order": 193,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Add the fractions d/9."
+  },
+  {
+   "questionText": "What is the length of the repeating block in the decimal expansion of 1/7?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Divide 1 by 7: 1/7 = 0.142857 142857... The remainders cycle through 1, 3, 2, 6, 4, 5. So the repeating block 142857 has 6 digits.",
+   "order": 194,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "For prime p, period divides p − 1; 1/7 has the full period 6."
+  },
+  {
+   "questionText": "Which of the following decimals is rational?",
+   "options": [
+    {
+     "text": "0.131313..."
+    },
+    {
+     "text": "0.1010010001..."
+    },
+    {
+     "text": "0.12345678910111213..."
+    },
+    {
+     "text": "√0.02"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "0.1313... is a recurring decimal equal to 13/99, so it is rational. The other three are non-terminating, non-repeating (or the root of a non-square), hence irrational.",
+   "order": 195,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Recurring or terminating ⇒ rational."
+  },
+  {
+   "questionText": "Convert 5/16 into a decimal.",
+   "options": [
+    {
+     "text": "0.325"
+    },
+    {
+     "text": "0.3125"
+    },
+    {
+     "text": "0.3025"
+    },
+    {
+     "text": "0.3215"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "5/16 = 5 × 625/10000 = 3125/10000 = 0.3125.",
+   "order": 196,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Multiply numerator and denominator to make the denominator 10ⁿ."
+  },
+  {
+   "questionText": "What is the value of 142857 × 7?",
+   "options": [
+    {
+     "text": "999999"
+    },
+    {
+     "text": "999998"
+    },
+    {
+     "text": "857142"
+    },
+    {
+     "text": "1000000"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "142857 is the repeating block of 1/7, so 142857 × 7 = 999999.",
+   "order": 197,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "1/7 = 0.(142857) ⇒ 142857 × 7 = 999999."
+  },
+  {
+   "questionText": "Express 0.1232323... (that is, 0.1(23) with 23 recurring) as a fraction in lowest terms.",
+   "options": [
+    {
+     "text": "122/999"
+    },
+    {
+     "text": "123/999"
+    },
+    {
+     "text": "61/495"
+    },
+    {
+     "text": "123/990"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let x = 0.1(23). 1000x − 10x = 123 − 1 = 122, so x = 122/990 = 61/495.",
+   "order": 198,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Mixed recurring: (all digits − non-repeating digits) / (9s for repeating then 0s for non-repeating)."
+  },
+  {
+   "questionText": "Express 2.363636... (36 recurring) as an improper fraction.",
+   "options": [
+    {
+     "text": "236/99"
+    },
+    {
+     "text": "26/11"
+    },
+    {
+     "text": "13/5"
+    },
+    {
+     "text": "236/100"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2.(36) = 2 + 36/99 = 2 + 4/11 = 26/11.",
+   "order": 199,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Whole part + ab/99."
+  },
+  {
+   "questionText": "What is 0.2727... + 0.3636... as a fraction in lowest terms?",
+   "options": [
+    {
+     "text": "63/100"
+    },
+    {
+     "text": "63/198"
+    },
+    {
+     "text": "7/10"
+    },
+    {
+     "text": "7/11"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "0.(27) + 0.(36) = (27 + 36)/99 = 63/99 = 7/11.",
+   "order": 200,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Add the numerators over 99."
+  },
+  {
+   "questionText": "What is the 50th digit after the decimal point in the expansion of 3/7?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "3/7 = 0.428571 428571... with block length 6. 50 = 6 × 8 + 2, so the 50th digit is the 2nd digit of the block: 2.",
+   "order": 201,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Position mod block length."
+  },
+  {
+   "questionText": "1/13 = 0.076923 076923... What is the sum of the digits in one repeating block?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "0 + 7 + 6 + 9 + 2 + 3 = 27.",
+   "order": 202,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Add the six digits of the block."
+  },
+  {
+   "questionText": "What is the length of the repeating block in the decimal expansion of 1/17?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "17"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The order of 10 modulo 17 is 16 (10 is a primitive root mod 17), so the block has 16 digits.",
+   "order": 203,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Period = order of 10 modulo the denominator."
+  },
+  {
+   "questionText": "For how many integers n from 1 to 60 does n/60 have a terminating decimal expansion?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "60 = 2² × 3 × 5. The fraction terminates only if the factor 3 cancels, i.e. n is a multiple of 3. Multiples of 3 from 1 to 60: 20.",
+   "order": 204,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "The unwanted prime must cancel."
+  },
+  {
+   "questionText": "What is the length of the repeating block in the decimal expansion of 1/27?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1/27 = 0.037037..., so the block 037 repeats with length 3.",
+   "order": 205,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "27 divides 999."
+  },
+  {
+   "questionText": "What is 0.6666... − 0.4444... as a fraction?",
+   "options": [
+    {
+     "text": "1/5"
+    },
+    {
+     "text": "2/9"
+    },
+    {
+     "text": "1/9"
+    },
+    {
+     "text": "2/3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "0.(6) = 6/9 = 2/3 and 0.(4) = 4/9. Difference = 6/9 − 4/9 = 2/9.",
+   "order": 206,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Subtract d/9 forms directly."
+  },
+  {
+   "questionText": "How many positive integers d not exceeding 50 are there for which 1/d has a terminating decimal expansion?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "d must be of the form 2ᵃ5ᵇ: 1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50. That is 12 values.",
+   "order": 207,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "List numbers made only of 2s and 5s."
+  },
+  {
+   "questionText": "If 5/33 = 0.ababab... (ab recurring), what is a + b?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "5/33 = 15/99 = 0.(15), so a = 1, b = 5 and a + b = 6.",
+   "order": 208,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Convert the denominator to 99."
+  },
+  {
+   "questionText": "The decimal expansion of 1/7 is 0.142857 142857... What is the 100th digit after the decimal point?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The block length is 6. 100 = 6 × 16 + 4, so the 100th digit is the 4th digit of the block 142857, which is 8.",
+   "order": 209,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Position mod 6."
+  },
+  {
+   "questionText": "Which of the following fractions has a non-terminating recurring decimal expansion?",
+   "options": [
+    {
+     "text": "17/125"
+    },
+    {
+     "text": "13/60"
+    },
+    {
+     "text": "9/80"
+    },
+    {
+     "text": "21/250"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "60 = 2² × 3 × 5; 13 is not divisible by 3, so the factor 3 remains in the denominator and the decimal recurs. 80 = 2⁴ × 5, 125 = 5³ and 250 = 2 × 5³ all terminate.",
+   "order": 210,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Reduce the fraction first, then inspect the denominator."
+  },
+  {
+   "questionText": "What is the value of 0.111... + 0.0111... + 0.00111... (each with 1 recurring) as a fraction in lowest terms?",
+   "options": [
+    {
+     "text": "37/300"
+    },
+    {
+     "text": "111/1000"
+    },
+    {
+     "text": "11/81"
+    },
+    {
+     "text": "1/8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "0.(1) = 1/9; 0.0(1) = 1/90; 0.00(1) = 1/900. Sum = (100 + 10 + 1)/900 = 111/900 = 37/300.",
+   "order": 211,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Each term is the previous one divided by 10."
+  },
+  {
+   "questionText": "What is the sum of the first 100 digits after the decimal point in the expansion of 1/7?",
+   "options": [
+    {
+     "text": "450"
+    },
+    {
+     "text": "443"
+    },
+    {
+     "text": "447"
+    },
+    {
+     "text": "451"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each block 142857 has digit sum 27. 100 = 6 × 16 + 4. Sixteen full blocks give 16 × 27 = 432; the next four digits 1, 4, 2, 8 add 15. Total = 447.",
+   "order": 212,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Full blocks × block sum + leftover digits."
+  },
+  {
+   "questionText": "If x = 0.1(23), that is 0.1232323... with 23 recurring, what is 1/x as a fraction in lowest terms?",
+   "options": [
+    {
+     "text": "99/12"
+    },
+    {
+     "text": "495/62"
+    },
+    {
+     "text": "495/61"
+    },
+    {
+     "text": "990/123"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x = (123 − 1)/990 = 122/990 = 61/495. Therefore 1/x = 495/61.",
+   "order": 213,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Convert to a fraction first, then invert."
+  },
+  {
+   "questionText": "For how many integers n from 1 to 210 does n/210 have a terminating decimal expansion?",
+   "options": [
+    {
+     "text": "21"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "210 = 2 × 3 × 5 × 7. The primes 3 and 7 must cancel, so n must be a multiple of 21. Multiples of 21 up to 210: 10.",
+   "order": 214,
+   "subPattern": "recurring-decimals-rational-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Cancel every prime other than 2 and 5."
+  },
+  {
+   "questionText": "What is the sum of the natural numbers from 1 to 50?",
+   "options": [
+    {
+     "text": "1275"
+    },
+    {
+     "text": "1250"
+    },
+    {
+     "text": "2550"
+    },
+    {
+     "text": "1300"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "n(n + 1)/2 = 50 × 51/2 = 1275.",
+   "order": 215,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "n(n+1)/2."
+  },
+  {
+   "questionText": "What is the sum of the first 20 odd natural numbers?",
+   "options": [
+    {
+     "text": "420"
+    },
+    {
+     "text": "400"
+    },
+    {
+     "text": "210"
+    },
+    {
+     "text": "380"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The sum of the first n odd numbers is n² = 20² = 400.",
+   "order": 216,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Sum of first n odd numbers = n²."
+  },
+  {
+   "questionText": "What is the sum of all even numbers from 2 to 60?",
+   "options": [
+    {
+     "text": "960"
+    },
+    {
+     "text": "930"
+    },
+    {
+     "text": "900"
+    },
+    {
+     "text": "1830"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "There are 30 even numbers; sum = n(n + 1) = 30 × 31 = 930.",
+   "order": 217,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Sum of first n even numbers = n(n+1)."
+  },
+  {
    "questionText": "What is the sum of the first 50 even natural numbers?",
    "options": [
+    {
+     "text": "1275"
+    },
     {
      "text": "2500"
     },
@@ -2069,14 +5872,11 @@
     },
     {
      "text": "2805"
-    },
-    {
-     "text": "1275"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 2,
    "explanation": "Sum of the first 50 even natural numbers = n(n + 1) = 50 x 51 = 2550.",
-   "order": 76,
+   "order": 218,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "easy",
    "examStyles": [
@@ -2089,10 +5889,10 @@
    "questionText": "What is the sum of the first 20 even natural numbers?",
    "options": [
     {
-     "text": "400"
+     "text": "420"
     },
     {
-     "text": "420"
+     "text": "400"
     },
     {
      "text": "504"
@@ -2101,9 +5901,9 @@
      "text": "378"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 0,
    "explanation": "Sum of the first 20 even natural numbers = n(n + 1) = 20 x 21 = 420.",
-   "order": 77,
+   "order": 219,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "easy",
    "examStyles": [
@@ -2116,21 +5916,21 @@
    "questionText": "What is the sum of the first 50 natural numbers?",
    "options": [
     {
-     "text": "2500"
-    },
-    {
      "text": "1700"
     },
     {
-     "text": "1275"
+     "text": "2550"
     },
     {
-     "text": "2550"
+     "text": "2500"
+    },
+    {
+     "text": "1275"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "Sum of the first 50 natural numbers = n(n + 1)/2 = 50 x 51/2 = 1275.",
-   "order": 78,
+   "order": 220,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "easy",
    "examStyles": [
@@ -2142,21 +5942,21 @@
    "questionText": "What is the sum of the first 75 natural numbers?",
    "options": [
     {
-     "text": "2850"
-    },
-    {
-     "text": "1425"
+     "text": "5625"
     },
     {
      "text": "1900"
     },
     {
-     "text": "5625"
+     "text": "1425"
+    },
+    {
+     "text": "2850"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Sum of the first 75 natural numbers = n(n + 1)/2 = 75 x 76/2 = 2850.",
-   "order": 79,
+   "order": 221,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "easy",
    "examStyles": [
@@ -2166,24 +5966,186 @@
    "shortcut": "n(n+1)/2"
   },
   {
-   "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 12^2?",
+   "questionText": "What is the value of 1² + 2² + 3² + ... + 15²?",
    "options": [
     {
-     "text": "520"
+     "text": "1240"
     },
+    {
+     "text": "1200"
+    },
+    {
+     "text": "1015"
+    },
+    {
+     "text": "1360"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "n(n + 1)(2n + 1)/6 = 15 × 16 × 31/6 = 1240.",
+   "order": 222,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "n(n+1)(2n+1)/6."
+  },
+  {
+   "questionText": "What is the value of 1³ + 2³ + 3³ + ... + 10³?",
+   "options": [
+    {
+     "text": "2500"
+    },
+    {
+     "text": "3025"
+    },
+    {
+     "text": "3205"
+    },
+    {
+     "text": "385"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The sum of cubes = (n(n + 1)/2)² = 55² = 3025.",
+   "order": 223,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Sum of cubes = (sum of numbers)²."
+  },
+  {
+   "questionText": "What is the value of 1 × 2 + 2 × 3 + 3 × 4 + ... + 10 × 11?",
+   "options": [
+    {
+     "text": "385"
+    },
+    {
+     "text": "330"
+    },
+    {
+     "text": "440"
+    },
+    {
+     "text": "550"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = n(n + 1)(n + 2)/3 = 10 × 11 × 12/3 = 440.",
+   "order": 224,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "n(n+1)(n+2)/3."
+  },
+  {
+   "questionText": "What is the sum of all multiples of 7 that are less than 200?",
+   "options": [
+    {
+     "text": "2842"
+    },
+    {
+     "text": "2843"
+    },
+    {
+     "text": "2780"
+    },
+    {
+     "text": "2940"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Multiples: 7, 14, ..., 196 (28 terms). Sum = 7 × (28 × 29/2) = 7 × 406 = 2842.",
+   "order": 225,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Take 7 common, then use n(n+1)/2."
+  },
+  {
+   "questionText": "For which value of n is 1 + 2 + 3 + ... + n equal to 666?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "37"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "n(n + 1) = 1332 = 36 × 37, so n = 36.",
+   "order": 226,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find two consecutive numbers with product 2 × sum."
+  },
+  {
+   "questionText": "What is the sum of all integers from 1 to 100 that are not multiples of 5?",
+   "options": [
+    {
+     "text": "5050"
+    },
+    {
+     "text": "4050"
+    },
+    {
+     "text": "3950"
+    },
+    {
+     "text": "4000"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum of 1 to 100 = 5050. Multiples of 5: 5 × (20 × 21/2) = 1050. Required = 5050 − 1050 = 4000.",
+   "order": 227,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Subtract the multiples from the total."
+  },
+  {
+   "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 12^2?",
+   "options": [
     {
      "text": "325"
     },
     {
-     "text": "6084"
+     "text": "650"
     },
     {
-     "text": "650"
+     "text": "520"
+    },
+    {
+     "text": "6084"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 1,
    "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 12 x 13 x 25/6 = 650.",
-   "order": 80,
+   "order": 228,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "medium",
    "examStyles": [
@@ -2196,21 +6158,21 @@
    "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 9^2?",
    "options": [
     {
-     "text": "342"
+     "text": "285"
     },
     {
      "text": "2025"
     },
     {
-     "text": "285"
+     "text": "342"
     },
     {
      "text": "570"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 0,
    "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 9 x 10 x 19/6 = 285.",
-   "order": 81,
+   "order": 229,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "medium",
    "examStyles": [
@@ -2225,18 +6187,18 @@
      "text": "2700"
     },
     {
-     "text": "2430"
-    },
-    {
      "text": "285"
     },
     {
      "text": "2025"
+    },
+    {
+     "text": "2430"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 2,
    "explanation": "Sum of cubes = [n(n + 1)/2]^2 = (45)^2 = 2025.",
-   "order": 82,
+   "order": 230,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "medium",
    "examStyles": [
@@ -2248,21 +6210,21 @@
    "questionText": "What is the value of 1^2 + 2^2 + 3^2 + ... + 20^2?",
    "options": [
     {
-     "text": "2870"
+     "text": "44100"
+    },
+    {
+     "text": "3157"
     },
     {
      "text": "3444"
     },
     {
-     "text": "44100"
-    },
-    {
-     "text": "3157"
+     "text": "2870"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 20 x 21 x 41/6 = 2870.",
-   "order": 83,
+   "order": 231,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "medium",
    "examStyles": [
@@ -2280,15 +6242,15 @@
      "text": "1240"
     },
     {
-     "text": "1116"
+     "text": "14400"
     },
     {
-     "text": "14400"
+     "text": "1116"
     }
    ],
    "correctOptionIndex": 1,
    "explanation": "Sum of squares = n(n + 1)(2n + 1)/6 = 15 x 16 x 31/6 = 1240.",
-   "order": 84,
+   "order": 232,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "medium",
    "examStyles": [
@@ -2301,21 +6263,21 @@
    "questionText": "What is the value of 1^3 + 2^3 + 3^3 + ... + 10^3?",
    "options": [
     {
-     "text": "6050"
+     "text": "3025"
+    },
+    {
+     "text": "385"
     },
     {
      "text": "3630"
     },
     {
-     "text": "3025"
-    },
-    {
-     "text": "385"
+     "text": "6050"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 0,
    "explanation": "Sum of cubes = [n(n + 1)/2]^2 = (55)^2 = 3025.",
-   "order": 85,
+   "order": 233,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "medium",
    "examStyles": [
@@ -2325,24 +6287,77 @@
    "shortcut": "Sum of cubes = (sum of first n numbers)^2."
   },
   {
+   "questionText": "What is the value of 1² − 2² + 3² − 4² + ... + 19² − 20²?",
+   "options": [
+    {
+     "text": "-200"
+    },
+    {
+     "text": "-190"
+    },
+    {
+     "text": "-210"
+    },
+    {
+     "text": "210"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Group as (1² − 2²) + (3² − 4²) + ... + (19² − 20²). Each pair (2k − 1)² − (2k)² = −(4k − 1) = −(2k − 1 + 2k). So the total is −(1 + 2 + 3 + ... + 20) = −210.",
+   "order": 234,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "a² − b² = (a − b)(a + b); every pair has a − b = −1."
+  },
+  {
+   "questionText": "What is the value of 21² + 22² + 23² + ... + 40²?",
+   "options": [
+    {
+     "text": "20470"
+    },
+    {
+     "text": "19270"
+    },
+    {
+     "text": "18430"
+    },
+    {
+     "text": "22140"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum of squares up to 40 = 40 × 41 × 81/6 = 22140. Sum up to 20 = 20 × 21 × 41/6 = 2870. Difference = 22140 − 2870 = 19270.",
+   "order": 235,
+   "subPattern": "sum-of-series-natural-squares-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Subtract two standard sums."
+  },
+  {
    "questionText": "What is the sum of all numbers between 90 and 450 that are divisible by 9?",
    "options": [
     {
      "text": "12636"
     },
     {
-     "text": "10530"
-    },
-    {
      "text": "10431"
     },
     {
      "text": "10980"
+    },
+    {
+     "text": "10530"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 3,
    "explanation": "First = 99, last = 441, count = 39. Sum = count x (first + last)/2 = 39 x 540/2 = 10530.",
-   "order": 86,
+   "order": 236,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "hard",
    "examStyles": [
@@ -2354,10 +6369,10 @@
    "questionText": "What is the sum of all numbers between 51 and 315 that are divisible by 6?",
    "options": [
     {
-     "text": "8052"
+     "text": "8370"
     },
     {
-     "text": "8370"
+     "text": "8052"
     },
     {
      "text": "7998"
@@ -2366,9 +6381,9 @@
      "text": "6039"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 1,
    "explanation": "First = 54, last = 312, count = 44. Sum = count x (first + last)/2 = 44 x 366/2 = 8052.",
-   "order": 87,
+   "order": 237,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "hard",
    "examStyles": [
@@ -2381,9 +6396,6 @@
    "questionText": "What is the sum of all numbers between 78 and 293 that are divisible by 7?",
    "options": [
     {
-     "text": "5481"
-    },
-    {
      "text": "5859"
     },
     {
@@ -2391,11 +6403,14 @@
     },
     {
      "text": "5565"
+    },
+    {
+     "text": "5481"
     }
    ],
-   "correctOptionIndex": 3,
+   "correctOptionIndex": 2,
    "explanation": "First = 84, last = 287, count = 30. Sum = count x (first + last)/2 = 30 x 371/2 = 5565.",
-   "order": 88,
+   "order": 238,
    "subPattern": "sum-of-series-natural-squares-cubes",
    "difficulty": "hard",
    "examStyles": [
@@ -2405,8 +6420,92 @@
    "shortcut": "Evenly spaced terms: sum = count x (first + last)/2."
   },
   {
+   "questionText": "The sum of the digits of a two-digit number is 9. If 27 is added to the number, its digits get reversed. What is the number?",
+   "options": [
+    {
+     "text": "63"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let the number be 10a + b with a + b = 9. Reversed − original = 9(b − a) = 27, so b − a = 3. With a + b = 9: a = 3, b = 6. The number is 36.",
+   "order": 239,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Reverse − original = 9 × (difference of digits)."
+  },
+  {
+   "questionText": "The product of the digits of a two-digit number is 24. If 18 is added to the number, the digits interchange places. What is the number?",
+   "options": [
+    {
+     "text": "46"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Possible digit pairs with product 24: (3, 8), (4, 6). For reversal to add 18, b − a = 2, so the pair is (4, 6): the number is 46 (46 + 18 = 64).",
+   "order": 240,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "9(b − a) = 18 ⇒ digits differ by 2."
+  },
+  {
+   "questionText": "How many times does the digit 7 appear when writing all the numbers from 1 to 100?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Units place: 7, 17, ..., 97 gives 10. Tens place: 70 to 79 gives 10. Total = 20.",
+   "order": 241,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "shortcut": "Count units and tens places separately."
+  },
+  {
    "questionText": "The sum of the digits of a two-digit number is 6. If the number exceeds the number formed by reversing its digits by 18, what is the number?",
    "options": [
+    {
+     "text": "37"
+    },
     {
      "text": "44"
     },
@@ -2414,15 +6513,12 @@
      "text": "24"
     },
     {
-     "text": "37"
-    },
-    {
      "text": "42"
     }
    ],
    "correctOptionIndex": 3,
    "explanation": "Let the number be 10a + b. a + b = 6 and 9(a - b) = 18, so a - b = 2. Then a = 4, b = 2 and the number is 42.",
-   "order": 89,
+   "order": 242,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "easy",
    "examStyles": [
@@ -2435,21 +6531,21 @@
    "questionText": "The sum of the digits of a two-digit number is 14. If the number exceeds the number formed by reversing its digits by 18, what is the number?",
    "options": [
     {
-     "text": "172"
-    },
-    {
-     "text": "129"
+     "text": "68"
     },
     {
      "text": "86"
     },
     {
-     "text": "68"
+     "text": "172"
+    },
+    {
+     "text": "129"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 1,
    "explanation": "Let the number be 10a + b. a + b = 14 and 9(a - b) = 18, so a - b = 2. Then a = 8, b = 6 and the number is 86.",
-   "order": 90,
+   "order": 243,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "easy",
    "examStyles": [
@@ -2464,18 +6560,18 @@
      "text": "87"
     },
     {
-     "text": "78"
-    },
-    {
      "text": "174"
     },
     {
      "text": "58"
+    },
+    {
+     "text": "78"
     }
    ],
    "correctOptionIndex": 0,
    "explanation": "Let the number be 10a + b. a + b = 15 and 9(a - b) = 9, so a - b = 1. Then a = 8, b = 7 and the number is 87.",
-   "order": 91,
+   "order": 244,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "easy",
    "examStyles": [
@@ -2484,24 +6580,185 @@
    "shortcut": "Number - reversed = 9 x (tens digit - units digit)."
   },
   {
+   "questionText": "In a three-digit number the hundreds digit is twice the units digit, the sum of the digits is 14, and the tens digit is greater than the hundreds digit. What is the number?",
+   "options": [
+    {
+     "text": "824"
+    },
+    {
+     "text": "482"
+    },
+    {
+     "text": "653"
+    },
+    {
+     "text": "572"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let units = u, hundreds = 2u, tens = 14 − 3u. Valid for u = 2, 3, 4: numbers 482, 653, 824. Only 482 has tens digit (8) greater than hundreds digit (4).",
+   "order": 245,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Express all three digits in terms of one variable."
+  },
+  {
+   "questionText": "For a two-digit number, the digits add up to 8 and the number exceeds the number formed by reversing its digits by 36. What is the number?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "62"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Number − reverse = 9(a − b) = 36, so a − b = 4. With a + b = 8: a = 6, b = 2. The number is 62.",
+   "order": 246,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "9 × (tens − units) = difference."
+  },
+  {
+   "questionText": "How many three-digit numbers have a digit sum equal to 5?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let the hundreds digit be h ≥ 1 and put h' = h − 1. Then h' + t + u = 4 with non-negative digits: C(6,2) = 15 solutions.",
+   "order": 247,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Stars and bars after reducing the hundreds digit by 1."
+  },
+  {
+   "questionText": "How many times is the digit 1 used when writing all the numbers from 1 to 200?",
+   "options": [
+    {
+     "text": "141"
+    },
+    {
+     "text": "160"
+    },
+    {
+     "text": "140"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Units place: 20 times (1, 11, ..., 191). Tens place: 20 times (10–19, 110–119). Hundreds place: 100 times (100–199). Total = 20 + 20 + 100 = 140.",
+   "order": 248,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "ssc"
+   ],
+   "shortcut": "Count each place value separately."
+  },
+  {
+   "questionText": "How many digits are used in numbering the pages of a book that has 120 pages?",
+   "options": [
+    {
+     "text": "253"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "252"
+    },
+    {
+     "text": "360"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pages 1–9: 9 digits. Pages 10–99: 90 × 2 = 180. Pages 100–120: 21 × 3 = 63. Total = 9 + 180 + 63 = 252.",
+   "order": 249,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "shortcut": "Split by number of digits."
+  },
+  {
+   "questionText": "What is the smallest three-digit number whose digits have a product of 36?",
+   "options": [
+    {
+     "text": "149"
+    },
+    {
+     "text": "194"
+    },
+    {
+     "text": "229"
+    },
+    {
+     "text": "166"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hundreds digit must be 1 for the smallest number, so the other two digits multiply to 36: (4, 9), (6, 6), (9, 4). The smallest is 149.",
+   "order": 250,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Minimise the hundreds digit first."
+  },
+  {
    "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 88. If the digits differ by 2 and the tens digit is larger, what is the number?",
    "options": [
     {
-     "text": "51"
+     "text": "35"
     },
     {
      "text": "53"
     },
     {
-     "text": "35"
+     "text": "48"
     },
     {
-     "text": "48"
+     "text": "51"
     }
    ],
    "correctOptionIndex": 1,
    "explanation": "Number + reverse = 11(a + b) = 88, so a + b = 8. With a - b = 2: a = 5, b = 3. The number is 53.",
-   "order": 92,
+   "order": 251,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2514,6 +6771,9 @@
    "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 187. If the digits differ by 1 and the tens digit is larger, what is the number?",
    "options": [
     {
+     "text": "49"
+    },
+    {
      "text": "89"
     },
     {
@@ -2521,14 +6781,11 @@
     },
     {
      "text": "98"
-    },
-    {
-     "text": "49"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 3,
    "explanation": "Number + reverse = 11(a + b) = 187, so a + b = 17. With a - b = 1: a = 9, b = 8. The number is 98.",
-   "order": 93,
+   "order": 252,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2541,13 +6798,13 @@
    "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 66. If the digits differ by 2 and the tens digit is larger, what is the number?",
    "options": [
     {
-     "text": "24"
+     "text": "43"
     },
     {
      "text": "42"
     },
     {
-     "text": "43"
+     "text": "24"
     },
     {
      "text": "63"
@@ -2555,7 +6812,7 @@
    ],
    "correctOptionIndex": 1,
    "explanation": "Number + reverse = 11(a + b) = 66, so a + b = 6. With a - b = 2: a = 4, b = 2. The number is 42.",
-   "order": 94,
+   "order": 253,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2581,7 +6838,7 @@
    ],
    "correctOptionIndex": 3,
    "explanation": "Number + reverse = 11(a + b) = 55, so a + b = 5. With a - b = 5: a = 5, b = 0. The number is 50.",
-   "order": 95,
+   "order": 254,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2594,21 +6851,21 @@
    "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 110. If the digits differ by 6 and the tens digit is larger, what is the number?",
    "options": [
     {
-     "text": "82"
-    },
-    {
      "text": "28"
     },
     {
      "text": "41"
     },
     {
+     "text": "82"
+    },
+    {
      "text": "164"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 2,
    "explanation": "Number + reverse = 11(a + b) = 110, so a + b = 10. With a - b = 6: a = 8, b = 2. The number is 82.",
-   "order": 96,
+   "order": 255,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2621,21 +6878,21 @@
    "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 143. If the digits differ by 1 and the tens digit is larger, what is the number?",
    "options": [
     {
-     "text": "38"
-    },
-    {
      "text": "76"
     },
     {
-     "text": "67"
+     "text": "95"
     },
     {
-     "text": "95"
+     "text": "38"
+    },
+    {
+     "text": "67"
     }
    ],
-   "correctOptionIndex": 1,
+   "correctOptionIndex": 0,
    "explanation": "Number + reverse = 11(a + b) = 143, so a + b = 13. With a - b = 1: a = 7, b = 6. The number is 76.",
-   "order": 97,
+   "order": 256,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2648,21 +6905,21 @@
    "questionText": "The sum of a two-digit number and the number obtained by reversing its digits is 99. If the digits differ by 7 and the tens digit is larger, what is the number?",
    "options": [
     {
-     "text": "18"
-    },
-    {
-     "text": "162"
-    },
-    {
      "text": "81"
     },
     {
+     "text": "18"
+    },
+    {
      "text": "54"
+    },
+    {
+     "text": "162"
     }
    ],
-   "correctOptionIndex": 2,
+   "correctOptionIndex": 0,
    "explanation": "Number + reverse = 11(a + b) = 99, so a + b = 9. With a - b = 7: a = 8, b = 1. The number is 81.",
-   "order": 98,
+   "order": 257,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "medium",
    "examStyles": [
@@ -2672,16 +6929,69 @@
    "shortcut": "Number + reverse = 11 x (sum of digits)."
   },
   {
+   "questionText": "How many three-digit numbers have their digits in strictly increasing order from left to right (such as 148 or 359)?",
+   "options": [
+    {
+     "text": "72"
+    },
+    {
+     "text": "120"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "56"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Choosing any three distinct digits from 1–9 and arranging them in increasing order gives exactly one number; zero cannot be used since it would be smaller than the hundreds digit. So C(9, 3) = 84.",
+   "order": 258,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Choose 3 distinct digits from 1–9; order is forced."
+  },
+  {
+   "questionText": "What is the sum of all the three-digit numbers that can be formed using the digits 1, 3 and 5, each used exactly once?",
+   "options": [
+    {
+     "text": "2109"
+    },
+    {
+     "text": "1998"
+    },
+    {
+     "text": "1665"
+    },
+    {
+     "text": "999"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each digit appears 2 times in each place. Sum = 2 × (1 + 3 + 5) × 111 = 2 × 9 × 111 = 1998.",
+   "order": 259,
+   "subPattern": "digit-missing-digit-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "shortcut": "Sum = (n−1)! × (sum of digits) × 111."
+  },
+  {
    "questionText": "In a two-digit number the digits are in the ratio 4:1 (tens : units). If the number exceeds the number formed by reversing its digits by 54, what is the number?",
    "options": [
     {
-     "text": "28"
+     "text": "123"
     },
     {
      "text": "164"
     },
     {
-     "text": "123"
+     "text": "28"
     },
     {
      "text": "82"
@@ -2689,7 +6999,7 @@
    ],
    "correctOptionIndex": 3,
    "explanation": "Let the digits be 4x and 1x. Number - reversed = 9(4x - 1x) = 54, so x = 2. Digits = 8 and 2; the number is 82.",
-   "order": 99,
+   "order": 260,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "hard",
    "examStyles": [
@@ -2701,21 +7011,21 @@
    "questionText": "In a two-digit number the digits are in the ratio 7:6 (tens : units). If the number exceeds the number formed by reversing its digits by 9, what is the number?",
    "options": [
     {
-     "text": "76"
-    },
-    {
-     "text": "152"
+     "text": "114"
     },
     {
      "text": "67"
     },
     {
-     "text": "114"
+     "text": "152"
+    },
+    {
+     "text": "76"
     }
    ],
-   "correctOptionIndex": 0,
+   "correctOptionIndex": 3,
    "explanation": "Let the digits be 7x and 6x. Number - reversed = 9(7x - 6x) = 9, so x = 1. Digits = 7 and 6; the number is 76.",
-   "order": 100,
+   "order": 261,
    "subPattern": "digit-missing-digit-problems",
    "difficulty": "hard",
    "examStyles": [

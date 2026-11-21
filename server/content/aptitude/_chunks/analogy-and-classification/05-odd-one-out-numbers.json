@@ -1,0 +1,499 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Find the odd one out among the numbers: 27, 64, 125, 150",
+   "options": [
+    "150",
+    "27",
+    "64",
+    "125"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are cubes of 3, 4 and 5 (27, 64, 125). 150 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 3, 5, 7, 9",
+   "options": [
+    "3",
+    "9",
+    "5",
+    "7"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers share a property: they are prime numbers. 9 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 16, 25, 36, 45",
+   "options": [
+    "16",
+    "25",
+    "45",
+    "36"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three of the numbers share a property: they are perfect squares (4², 5², 6²). 45 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 21, 35, 56, 60",
+   "options": [
+    "21",
+    "35",
+    "56",
+    "60"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three of the numbers share a property: they are multiples of 7 (7×3, 7×5, 7×8). 60 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 242, 252, 262, 264",
+   "options": [
+    "264",
+    "242",
+    "252",
+    "262"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are palindromes (read the same both ways). 264 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 9, 25, 49, 64",
+   "options": [
+    "9",
+    "64",
+    "25",
+    "49"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers are squares of odd numbers (3², 5², 7²); 64 = 8² is the square of an even number. Hence 64 is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 11, 13, 17, 21",
+   "options": [
+    "11",
+    "13",
+    "21",
+    "17"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three of the numbers share a property: they are prime numbers (21 = 3 × 7). 21 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 9, 15, 21, 22",
+   "options": [
+    "9",
+    "15",
+    "21",
+    "22"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three of the numbers share a property: they are multiples of 3. 22 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 3, 6, 15, 16",
+   "options": [
+    "16",
+    "3",
+    "6",
+    "15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are triangular numbers (1+2, 1+2+3, 1+2+3+4+5). 16 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 5, 8, 13, 20",
+   "options": [
+    "5",
+    "20",
+    "8",
+    "13"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers share a property: they are Fibonacci numbers (each is the sum of the previous two). 20 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 3, 8, 15, 26",
+   "options": [
+    "3",
+    "8",
+    "26",
+    "15"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three of the numbers share a property: they are numbers of the form n² − 1 (2²−1, 3²−1, 4²−1); 26 = 5² + 1. 26 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 18, 27, 36, 41",
+   "options": [
+    "18",
+    "27",
+    "36",
+    "41"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three of the numbers share a property: they are multiples of 9 (digit sum 9). 41 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 23, 29, 31, 39",
+   "options": [
+    "39",
+    "23",
+    "29",
+    "31"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are prime numbers (39 = 3 × 13). 39 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 27, 125, 343, 400",
+   "options": [
+    "27",
+    "400",
+    "125",
+    "343"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers share a property: they are cubes of 3, 5 and 7 (cubes of odd numbers); 400 is not a cube. 400 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 54, 72, 90, 100",
+   "options": [
+    "54",
+    "72",
+    "100",
+    "90"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three of the numbers share a property: they are multiples of 18 (54 = 18×3, 72 = 18×4, 90 = 18×5). 100 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 29, 37, 41, 51",
+   "options": [
+    "29",
+    "37",
+    "41",
+    "51"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three of the numbers share a property: they are prime numbers (51 = 3 × 17). 51 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 4, 9, 25, 36",
+   "options": [
+    "36",
+    "4",
+    "9",
+    "25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are squares of prime numbers (2², 3², 5²); 36 = 6² and 6 is not prime. 36 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 6, 12, 20, 25",
+   "options": [
+    "6",
+    "25",
+    "12",
+    "20"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers share a property: they are products of two consecutive numbers (2×3, 3×4, 4×5); 25 is not (4×5 = 20, 5×6 = 30). 25 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 1, 8, 27, 60",
+   "options": [
+    "1",
+    "8",
+    "60",
+    "27"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three of the numbers share a property: they are perfect cubes (1³, 2³, 3³). 60 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 45, 54, 63, 70",
+   "options": [
+    "45",
+    "54",
+    "63",
+    "70"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three of the numbers share a property: they are multiples of 9 (9×5, 9×6, 9×7); 70 is not. 70 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 1221, 1331, 1441, 1451",
+   "options": [
+    "1451",
+    "1221",
+    "1331",
+    "1441"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are palindromes (1221, 1331, 1441 read the same both ways). 1451 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 31, 63, 127, 100",
+   "options": [
+    "31",
+    "100",
+    "63",
+    "127"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers share a property: they are numbers of the form 2ⁿ − 1 (2⁵−1, 2⁶−1, 2⁷−1). 100 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 196, 256, 324, 360",
+   "options": [
+    "196",
+    "256",
+    "360",
+    "324"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Three of the numbers share a property: they are perfect squares (14², 16², 18²). 360 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 26, 39, 65, 50",
+   "options": [
+    "26",
+    "39",
+    "65",
+    "50"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Three of the numbers share a property: they are multiples of 13. 50 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 39, 48, 57, 68",
+   "options": [
+    "68",
+    "39",
+    "48",
+    "57"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three of the numbers share a property: they are numbers whose digit sum is 12 (3+9, 4+8, 5+7); 6+8 = 14. 68 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the numbers: 5, 10, 17, 24",
+   "options": [
+    "5",
+    "24",
+    "10",
+    "17"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Three of the numbers share a property: they are numbers of the form n² + 1 (2²+1, 3²+1, 4²+1); 24 = 5² − 1. 24 does not fit, so it is the odd one out.",
+   "shortcut": "Check parity, primes, squares/cubes, multiples and digit sums; the property that isolates exactly one number is the answer.",
+   "subPattern": "odd-one-out-numbers",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

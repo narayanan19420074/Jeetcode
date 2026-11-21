@@ -1,0 +1,689 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Among the Class X students in Jaipur, 66 take Sanskrit, 62 take Science and 66 take Social Science; 38 take both Sanskrit and Science, 31 take both Science and Social Science, 38 take both Sanskrit and Social Science, and 24 take all three. How many take at least one of the three?",
+   "options": [
+    "194",
+    "111",
+    "87",
+    "63"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 194 − 107 + 24 = 111.",
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 54 know C++, 81 know SQL and 73 know Java; 36 know both C++ and SQL, 40 know both SQL and Java, 17 know both C++ and Java, and 13 know all three. How many know at least one of the three?",
+   "options": [
+    "115",
+    "128",
+    "208",
+    "102"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 208 − 93 + 13 = 128.",
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 80 speak English, 90 speak Telugu and 79 speak Urdu; 44 speak both English and Telugu, 43 speak both Telugu and Urdu, 28 speak both English and Urdu, and 17 speak all three. How many speak at least one of the three?",
+   "options": [
+    "249",
+    "117",
+    "134",
+    "151"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 249 − 115 + 17 = 151.",
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 69 speak Hindi, 60 speak English and 65 speak Urdu; 32 speak both Hindi and English, 31 speak both English and Urdu, 48 speak both Hindi and Urdu, and 27 speak all three. How many speak at least one of the three?",
+   "options": [
+    "56",
+    "194",
+    "110",
+    "83"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "n(A∪B∪C) = A + B + C − (AB + BC + AC) + ABC = 194 − 111 + 27 = 110.",
+   "shortcut": "Inclusion–exclusion: singles − pairs + triple.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 113 families in a Madurai colony, 55 watch Hockey India League, 63 watch ISL and 62 watch Pro Kabaddi; 29 watch both Hockey India League and ISL, 38 watch both ISL and Pro Kabaddi, 28 watch both Hockey India League and Pro Kabaddi, and 20 watch all three. How many watch none of the three?",
+   "options": [
+    "28",
+    "8",
+    "13",
+    "48"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "At least one = 180 − 95 + 20 = 105. None = 113 − 105 = 8.",
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 102 visitors to a Mysuru restaurant, 49 order vada, 64 order pongal and 41 order idli; 28 order both vada and pongal, 24 order both pongal and idli, 18 order both vada and idli, and 14 order all three. How many order none of the three?",
+   "options": [
+    "4",
+    "6",
+    "18",
+    "32"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 154 − 70 + 14 = 98. None = 102 − 98 = 4.",
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 144 employees of a Pune IT firm, 87 know C++, 60 know SQL and 84 know Java; 37 know both C++ and SQL, 38 know both SQL and Java, 49 know both C++ and Java, and 27 know all three. How many know none of the three?",
+   "options": [
+    "37",
+    "11",
+    "10",
+    "64"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 231 − 124 + 27 = 134. None = 144 − 134 = 10.",
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 88 employees of a Pune IT firm, 56 know C++, 46 know Java and 41 know SQL; 23 know both C++ and Java, 29 know both Java and SQL, 23 know both C++ and SQL, and 16 know all three. How many know none of the three?",
+   "options": [
+    "20",
+    "5",
+    "36",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 143 − 75 + 16 = 84. None = 88 − 84 = 4.",
+   "shortcut": "Union by inclusion–exclusion, then subtract from the total.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 28 know only SQL, 16 know only Python, 6 know only Java, 21 know exactly SQL and Python, 14 know exactly Python and Java, 24 know exactly SQL and Java, and 28 know all three. How many know SQL in all?",
+   "options": [
+    "73",
+    "115",
+    "56",
+    "101"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Everyone in set SQL: only SQL + SQL-Python only + SQL-Java only + all three = 28 + 21 + 24 + 28 = 101.",
+   "shortcut": "Add every region that lies inside the circle, including the centre.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the residents of a Hyderabad apartment complex, 8 speak only Hindi, 9 speak only Telugu, 20 speak only Urdu, 13 speak exactly Hindi and Telugu, 12 speak exactly Telugu and Urdu, 9 speak exactly Hindi and Urdu, and 30 speak all three. How many speak Hindi in all?",
+   "options": [
+    "30",
+    "60",
+    "72",
+    "38"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everyone in set Hindi: only Hindi + Hindi-Telugu only + Hindi-Urdu only + all three = 8 + 13 + 9 + 30 = 60.",
+   "shortcut": "Add every region that lies inside the circle, including the centre.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the people at a Kolkata book fair, 20 read only The Hindu, 9 read only Anandabazar Patrika, 13 read only The Telegraph, 10 read exactly The Hindu and Anandabazar Patrika, 10 read exactly Anandabazar Patrika and The Telegraph, 28 read exactly The Hindu and The Telegraph, and 8 read all three. How many read The Hindu in all?",
+   "options": [
+    "66",
+    "58",
+    "76",
+    "28"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everyone in set The Hindu: only The Hindu + The Hindu-Anandabazar Patrika only + The Hindu-The Telegraph only + all three = 20 + 10 + 28 + 8 = 66.",
+   "shortcut": "Add every region that lies inside the circle, including the centre.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of commuters in Bengaluru, 79 use an auto-rickshaw, 67 use a bike taxi and 64 use the bus. 46 use both an auto-rickshaw and a bike taxi, 37 use both a bike taxi and the bus, 48 use both an auto-rickshaw and the bus. Everyone use at least one of the three and the total is 104. How many use all three?",
+   "options": [
+    "24",
+    "28",
+    "30",
+    "25"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 104 − 210 + 131 = 25.",
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of families in a Madurai colony, 74 watch Pro Kabaddi, 62 watch Hockey India League and 73 watch ISL. 29 watch both Pro Kabaddi and Hockey India League, 41 watch both Hockey India League and ISL, 45 watch both Pro Kabaddi and ISL. Everyone watch at least one of the three and the total is 117. How many watch all three?",
+   "options": [
+    "22",
+    "26",
+    "28",
+    "23"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 117 − 209 + 115 = 23.",
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of families in a Madurai colony, 67 watch IPL, 55 watch Hockey India League and 66 watch Pro Kabaddi. 33 watch both IPL and Hockey India League, 31 watch both Hockey India League and Pro Kabaddi, 30 watch both IPL and Pro Kabaddi. Everyone watch at least one of the three and the total is 110. How many watch all three?",
+   "options": [
+    "16",
+    "19",
+    "21",
+    "15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 110 − 188 + 94 = 16.",
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of customers at a Mumbai mall, 82 pay using a credit card, 84 pay using Paytm and 101 pay using PhonePe. 31 pay using both a credit card and Paytm, 50 pay using both Paytm and PhonePe, 48 pay using both a credit card and PhonePe. Everyone pay using at least one of the three and the total is 162. How many pay using all three?",
+   "options": [
+    "27",
+    "24",
+    "29",
+    "23"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 162 − 267 + 129 = 24.",
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of commuters in Bengaluru, 70 use a bike taxi, 62 use an auto-rickshaw and 82 use the metro. 36 use both a bike taxi and an auto-rickshaw, 34 use both an auto-rickshaw and the metro, 40 use both a bike taxi and the metro. Everyone use at least one of the three and the total is 123. How many use all three?",
+   "options": [
+    "19",
+    "22",
+    "18",
+    "24"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "U = A + B + C − pairs + ABC, so ABC = U − A − B − C + pairs = 123 − 214 + 110 = 19.",
+   "shortcut": "ABC = Union − (A + B + C) + (sum of pairs).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a town survey of Class X students in Jaipur, 32% take Sanskrit, 27% take Maths, 32% take Science; 9% take Sanskrit and Maths, 9% take Maths and Science, 21% take Sanskrit and Science; 6% take all three. What percentage take none of the three?",
+   "options": [
+    "9%",
+    "58%",
+    "42%",
+    "48%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 91 − 39 + 6 = 58%. None = 100 − 58 = 42%.",
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a town survey of residents of a Hyderabad apartment complex, 30% speak Urdu, 31% speak Hindi, 25% speak English; 11% speak Urdu and Hindi, 8% speak Hindi and English, 13% speak Urdu and English; 2% speak all three. What percentage speak none of the three?",
+   "options": [
+    "56%",
+    "14%",
+    "46%",
+    "44%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 86 − 32 + 2 = 56%. None = 100 − 56 = 44%.",
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a town survey of residents of a Hyderabad apartment complex, 34% speak Urdu, 24% speak Hindi, 35% speak English; 11% speak Urdu and Hindi, 12% speak Hindi and English, 17% speak Urdu and English; 5% speak all three. What percentage speak none of the three?",
+   "options": [
+    "7%",
+    "47%",
+    "58%",
+    "42%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 93 − 40 + 5 = 58%. None = 100 − 58 = 42%.",
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a town survey of commuters in Bengaluru, 20% use the metro, 31% use a bike taxi, 25% use the bus; 8% use the metro and a bike taxi, 16% use a bike taxi and the bus, 6% use the metro and the bus; 2% use all three. What percentage use none of the three?",
+   "options": [
+    "24%",
+    "48%",
+    "52%",
+    "54%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 76 − 30 + 2 = 48%. None = 100 − 48 = 52%.",
+   "shortcut": "Union% by inclusion–exclusion; None% = 100 − Union%.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the commuters in Bengaluru, 7 use only an auto-rickshaw, 25 use only the bus, 18 use only the metro, 14 use exactly an auto-rickshaw and the bus, 15 use exactly the bus and the metro, 30 use exactly an auto-rickshaw and the metro, and 4 use all three. How many use at least one of an auto-rickshaw or the bus?",
+   "options": [
+    "95",
+    "50",
+    "113",
+    "98"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everything except 'only the metro' lies in an auto-rickshaw or the bus: 113 − 18 = 95. (Equivalent: add every region touching an auto-rickshaw or the bus.)",
+   "shortcut": "Total of regions minus the region outside both circles (only third set).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 3 take only Sanskrit, 24 take only Science, 20 take only Maths, 12 take exactly Sanskrit and Science, 30 take exactly Science and Maths, 9 take exactly Sanskrit and Maths, and 14 take all three. How many take at least one of Sanskrit or Science?",
+   "options": [
+    "118",
+    "53",
+    "92",
+    "112"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Everything except 'only Maths' lies in Sanskrit or Science: 112 − 20 = 92. (Equivalent: add every region touching Sanskrit or Science.)",
+   "shortcut": "Total of regions minus the region outside both circles (only third set).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 15 take only Sanskrit, 22 take only Maths, 9 take only Science, 27 take exactly Sanskrit and Maths, 18 take exactly Maths and Science, 18 take exactly Sanskrit and Science, and 18 take all three. How many take at least one of Sanskrit or Maths?",
+   "options": [
+    "118",
+    "127",
+    "82",
+    "163"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Everything except 'only Science' lies in Sanskrit or Maths: 127 − 9 = 118. (Equivalent: add every region touching Sanskrit or Maths.)",
+   "shortcut": "Total of regions minus the region outside both circles (only third set).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 29 grow only wheat, 30 grow only maize, 23 grow only sugarcane, 20 grow exactly wheat and maize, 18 grow exactly maize and sugarcane, 24 grow exactly wheat and sugarcane, and 6 grow all three. How many grow at least one of wheat or maize?",
+   "options": [
+    "153",
+    "127",
+    "85",
+    "150"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Everything except 'only sugarcane' lies in wheat or maize: 150 − 23 = 127. (Equivalent: add every region touching wheat or maize.)",
+   "shortcut": "Total of regions minus the region outside both circles (only third set).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the visitors to a Mysuru restaurant, 85 order idli, 70 order vada and 81 order pongal. Exactly 19 order idli and vada only, exactly 22 order vada and pongal only, exactly 15 order idli and pongal only, and 22 order all three. How many order at least one of the three?",
+   "options": [
+    "180",
+    "136",
+    "236",
+    "158"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 236 − 56 − 2×22 = 136.",
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 66 play football, 82 play kabaddi and 86 play hockey. Exactly 11 play football and kabaddi only, exactly 27 play kabaddi and hockey only, exactly 22 play football and hockey only, and 24 play all three. How many play at least one of the three?",
+   "options": [
+    "234",
+    "126",
+    "150",
+    "174"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 234 − 60 − 2×24 = 126.",
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the visitors to a Mysuru restaurant, 25 order idli, 73 order vada and 61 order pongal. Exactly 12 order idli and vada only, exactly 26 order vada and pongal only, exactly 4 order idli and pongal only, and 5 order all three. How many order at least one of the three?",
+   "options": [
+    "112",
+    "107",
+    "159",
+    "117"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 159 − 42 − 2×5 = 107.",
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 71 take Sanskrit, 60 take Maths and 48 take Science. Exactly 27 take Sanskrit and Maths only, exactly 5 take Maths and Science only, exactly 8 take Sanskrit and Science only, and 17 take all three. How many take at least one of the three?",
+   "options": [
+    "105",
+    "179",
+    "139",
+    "122"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pair-only people are counted twice in A + B + C, and the all-three people three times. Union = 179 − 40 − 2×17 = 105.",
+   "shortcut": "Union = A + B + C − (pair-only) − 2×(all three).",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 135 students in a Chennai college, 4 play none of kabaddi, football, cricket. 88 play kabaddi, 71 play football and 84 play cricket; 34 play both kabaddi and football, 51 play both football and cricket, 49 play both kabaddi and cricket. How many play all three?",
+   "options": [
+    "20",
+    "24",
+    "22",
+    "26"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 135 − 4 = 131. U = A + B + C − pairs + ABC ⇒ ABC = 131 − 243 + 134 = 22.",
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 131 Class X students in Jaipur, 6 take none of Sanskrit, Social Science, Science. 69 take Sanskrit, 83 take Social Science and 83 take Science; 37 take both Sanskrit and Social Science, 50 take both Social Science and Science, 51 take both Sanskrit and Science. How many take all three?",
+   "options": [
+    "28",
+    "32",
+    "30",
+    "26"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 131 − 6 = 125. U = A + B + C − pairs + ABC ⇒ ABC = 125 − 235 + 138 = 28.",
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 148 residents of a Hyderabad apartment complex, 12 speak none of Hindi, Urdu, Telugu. 83 speak Hindi, 89 speak Urdu and 83 speak Telugu; 48 speak both Hindi and Urdu, 43 speak both Urdu and Telugu, 57 speak both Hindi and Telugu. How many speak all three?",
+   "options": [
+    "29",
+    "33",
+    "27",
+    "31"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 148 − 12 = 136. U = A + B + C − pairs + ABC ⇒ ABC = 136 − 255 + 148 = 29.",
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 110 residents of a Hyderabad apartment complex, 12 speak none of Telugu, English, Urdu. 67 speak Telugu, 52 speak English and 66 speak Urdu; 36 speak both Telugu and English, 32 speak both English and Urdu, 42 speak both Telugu and Urdu. How many speak all three?",
+   "options": [
+    "27",
+    "21",
+    "25",
+    "23"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least one = 110 − 12 = 98. U = A + B + C − pairs + ABC ⇒ ABC = 98 − 185 + 110 = 23.",
+   "shortcut": "First strip off 'none', then solve inclusion–exclusion for ABC.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey of 130 employees of a Pune IT firm covers on Python, SQL and Java. 12 know none of them, 70 know exactly one, and the three headcounts add up to 181 (i.e. Python + SQL + Java = 181). How many know all three?",
+   "options": [
+    "18",
+    "13",
+    "15",
+    "33"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let t = exactly two, h = all three. t + h = 130 − 12 − 70 = 48. Also 70 + 2t + 3h = 181 ⇒ 2t + 3h = 111. Subtract 2×(t + h): h = 111 − 96 = 15.",
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey of 128 residents of a Hyderabad apartment complex covers on English, Hindi and Telugu. 12 speak none of them, 50 speak exactly one, and the three headcounts add up to 209 (i.e. English + Hindi + Telugu = 209). How many speak all three?",
+   "options": [
+    "27",
+    "25",
+    "39",
+    "30"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let t = exactly two, h = all three. t + h = 128 − 12 − 50 = 66. Also 50 + 2t + 3h = 209 ⇒ 2t + 3h = 159. Subtract 2×(t + h): h = 159 − 132 = 27.",
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey of 97 employees of a Pune IT firm covers on SQL, Java and Python. 0 know none of them, 39 know exactly one, and the three headcounts add up to 170 (i.e. SQL + Java + Python = 170). How many know all three?",
+   "options": [
+    "18",
+    "15",
+    "43",
+    "13"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Let t = exactly two, h = all three. t + h = 97 − 0 − 39 = 58. Also 39 + 2t + 3h = 170 ⇒ 2t + 3h = 131. Subtract 2×(t + h): h = 131 − 116 = 15.",
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A survey of 111 families in a Madurai colony covers on Pro Kabaddi, ISL and IPL. 10 watch none of them, 56 watch exactly one, and the three headcounts add up to 149 (i.e. Pro Kabaddi + ISL + IPL = 149). How many watch all three?",
+   "options": [
+    "7",
+    "42",
+    "6",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Let t = exactly two, h = all three. t + h = 111 − 10 − 56 = 45. Also 56 + 2t + 3h = 149 ⇒ 2t + 3h = 93. Subtract 2×(t + h): h = 93 − 90 = 3.",
+   "shortcut": "Memberships: S = 1·(one) + 2·(two) + 3·(three). Use it with the head-count of 'at least one'.",
+   "subPattern": "set-counting-three-sets",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

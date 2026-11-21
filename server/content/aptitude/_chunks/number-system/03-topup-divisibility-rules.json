@@ -1,0 +1,212 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "For which digit d is the number 4d72 divisible by 9?",
+   "options": [
+    "5",
+    "6",
+    "7",
+    "8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Digit sum = 4 + d + 7 + 2 = 18 must be a multiple of 9, so d = 5.",
+   "shortcut": "Digit sum multiple of 9.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following numbers is divisible by 8?",
+   "options": [
+    "73614",
+    "58416",
+    "40722",
+    "90314"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check the last three digits: 416 ÷ 8 = 52, exactly. The others leave non-zero remainders on their last three digits.",
+   "shortcut": "Last three digits divisible by 8.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the greatest 4-digit number exactly divisible by 17?",
+   "options": [
+    "9999",
+    "9979",
+    "9996",
+    "9997"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "9999 ÷ 17 leaves remainder 3. 9999 − 3 = 9996.",
+   "shortcut": "Subtract the remainder from 9999.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If the five-digit number 84x67 is divisible by 11, what is the digit x?",
+   "options": [
+    "7",
+    "8",
+    "0",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Odd-place digits (1st,3rd,5th): 8 + x + 7 = 21. Even-place: 4 + 6 = 10. Difference 11 must be 0 or 11, so x = 6.",
+   "shortcut": "Alternating sum divisible by 11.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many numbers from 1 to 300 are divisible by 4 or by 6?",
+   "options": [
+    "100",
+    "125",
+    "113",
+    "112"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Divisible by 4: 75; by 6: 50; by both (LCM 12): 25. Total = 75 + 50 − 25 = 100.",
+   "shortcut": "n(A∪B) = n(A) + n(B) − n(A∩B) with the LCM.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the least number that must be subtracted from 98765 so that it becomes divisible by 13?",
+   "options": [
+    "9",
+    "4",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "98765 = 13 × 7597 + 4. Subtract the remainder 4.",
+   "shortcut": "Remainder is the number to subtract.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The number 4x78y (a five-digit number) is divisible by 45. What is the value of x + y?",
+   "options": [
+    "7",
+    "9",
+    "8",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Divisible by 5 means y = 0 or 5; by 9 means 4 + x + 7 + 8 + y = 19+x+y is a multiple of 9. y = 0 gives x = 8 (sum 8); y = 5 gives x = 3 (sum 8). Both give x + y = 8, so x + y = 8 either way.",
+   "shortcut": "Combine the rules for 5 and 9.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A six-digit number is formed by writing a three-digit number twice, such as 482482. Which of the following always divides such a number?",
+   "options": [
+    "99",
+    "101",
+    "111",
+    "143"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "abcabc = abc × 1001 = abc × 7 × 11 × 13. So 143 = 11 × 13 always divides it. 99, 101 and 111 do not divide every such number (e.g. 100100 is not divisible by any of them).",
+   "shortcut": "abcabc = abc × 1001 = abc × 7 × 11 × 13.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest five-digit number divisible by both 3 and 11?",
+   "options": [
+    "10032",
+    "10000",
+    "10065",
+    "9999"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Divisible by 3 and 11 means divisible by 33. 10000 ÷ 33 leaves remainder 1, so add 32: 10032.",
+   "shortcut": "Use the LCM 33.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Consider the numbers 1, 11, 111, ... up to the one with 30 digits (all digits 1). How many of them are divisible by 7?",
+   "options": [
+    "4",
+    "5",
+    "6",
+    "7"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The repunit with n ones is divisible by 7 exactly when n is a multiple of 6 (111111 = 7 × 15873). Multiples of 6 up to 30: 6, 12, 18, 24, 30, i.e. 5 numbers.",
+   "shortcut": "111111 = 3 × 7 × 11 × 13 × 37; period is 6.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many three-digit numbers are divisible by 7 and also have a digit sum that is divisible by 7?",
+   "options": [
+    "20",
+    "16",
+    "18",
+    "22"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Enumerating the multiples of 7 from 105 to 994 and testing their digit sums gives 18 numbers.",
+   "shortcut": "Check each multiple of 7 systematically.",
+   "subPattern": "divisibility-rules",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

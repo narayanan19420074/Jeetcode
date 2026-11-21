@@ -1,0 +1,212 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "How many zeros are there at the end of 30!?",
+   "options": [
+    "7",
+    "5",
+    "6",
+    "8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "⌊30/5⌋ + ⌊30/25⌋ = 6 + 1 = 7.",
+   "shortcut": "Divide by 5, 25, ...",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many trailing zeros does 100! have?",
+   "options": [
+    "20",
+    "24",
+    "22",
+    "25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "⌊100/5⌋ + ⌊100/25⌋ = 20 + 4 = 24.",
+   "shortcut": "Add the quotients by 5, 25, 125...",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many zeros are at the end of the product 25 × 40 × 50 × 16?",
+   "options": [
+    "2",
+    "3",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "25 = 5², 40 = 2³ × 5, 50 = 2 × 5², 16 = 2⁴. Powers of 2: 3+1+4 = 8; powers of 5: 2+1+2 = 5. Zeros = min(8, 5) = 5. Indeed the product is 800000.",
+   "shortcut": "Count pairs of 2 and 5.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest n for which n! ends in exactly 7 zeros?",
+   "options": [
+    "25",
+    "28",
+    "35",
+    "30"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "tz(n) = 7. 30! has ⌊30/5⌋ + ⌊30/25⌋ = 7 zeros while 29! has 5 + 1 = 6. So n = 30.",
+   "shortcut": "Zeros only increase at multiples of 5.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the highest power of 3 that divides 50! exactly?",
+   "options": [
+    "22",
+    "16",
+    "20",
+    "23"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "⌊50/3⌋ + ⌊50/9⌋ + ⌊50/27⌋ = 16 + 5 + 1 = 22.",
+   "shortcut": "Legendre: sum of ⌊n/pᵏ⌋.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the highest power of 6 that divides 40! exactly?",
+   "options": [
+    "19",
+    "18",
+    "20",
+    "17"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Power of 2 in 40! = 20+10+5+2+1 = 38; power of 3 = 13+4+1 = 18. Since 6 = 2 × 3, the limit is min(38, 18) = 18.",
+   "shortcut": "The larger prime is the bottleneck.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many zeros does the product 15! × 20! end with?",
+   "options": [
+    "3",
+    "5",
+    "7",
+    "8"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "15! has 3 zeros and 20! has 4 zeros. Trailing zeros of a product need both counts of 2s and 5s: 5s = 3 + 4 = 7, and 2s are far more numerous, so 7 zeros.",
+   "shortcut": "Add the powers of 5 and check 2s are enough.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many zeros are at the end of 2⁶⁰ × 5²⁰ × 7³?",
+   "options": [
+    "3",
+    "23",
+    "60",
+    "20"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pairs of (2, 5) = min(60, 20) = 20, so 10²⁰ is a factor: 20 trailing zeros. The factor 7³ = 343 does not end in 0 so it adds none.",
+   "shortcut": "Zeros = min(power of 2, power of 5).",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many zeros does 100!/50! end with?",
+   "options": [
+    "12",
+    "10",
+    "14",
+    "13"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "100! has 24 zeros and 50! has 12 zeros. Since the quotient has plenty of 2s left, zeros = 24 − 12 = 12.",
+   "shortcut": "Subtract the powers of 5.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For how many positive integers n does n! end in exactly 6 zeros?",
+   "options": [
+    "4",
+    "5",
+    "6",
+    "25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "24! has 4 zeros and 25! has 6 zeros; 29! has 6 and 30! has 7. So n = 25, 26, 27, 28, 29: 5 values.",
+   "shortcut": "Zeros jump only at multiples of 5 (twice at 25).",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the highest power of 72 that divides 60! exactly?",
+   "options": [
+    "28",
+    "26",
+    "14",
+    "15"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "72 = 2³ × 3². Power of 2 in 60! = 30+15+7+3+1 = 56 → 56 ÷ 3 gives 18. Power of 3 = 20+6+2 = 28 → 28 ÷ 2 gives 14. Minimum = 14.",
+   "shortcut": "Divide each prime power by its exponent, take the min.",
+   "subPattern": "trailing-zeros-factorials",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,672 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In a certain operation, 12 ⊗ 11 = 120, 11 ⊗ 2 = 11, 8 ⊗ 6 = 40. Using the same rule, what is 11 ⊗ 6 ?",
+   "options": [
+    "16",
+    "133",
+    "55",
+    "77"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 12 ⊗ 11 = 120 fits a×b − a (a = 12, b = 11). The same rule also gives 11 and 40 for the other two. So a ⊗ b = a×b − a, and 11 ⊗ 6 = 55.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 8 × 2 = 22, 12 × 6 = 42, 6 × 5 = 27. Using the same rule, what is 11 × 5 ?",
+   "options": [
+    "5516",
+    "116",
+    "146",
+    "37"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 8 × 2 = 22 fits 2a + 3b (a = 8, b = 2). The same rule also gives 42 and 27 for the other two. So a × b = 2a + 3b, and 11 × 5 = 37.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 9 % 8 = 81, 12 % 2 = 36, 7 % 2 = 21. Using the same rule, what is 8 % 3 ?",
+   "options": [
+    "30",
+    "32",
+    "18",
+    "120"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 9 % 8 = 81 fits a×b + a (a = 9, b = 8). The same rule also gives 36 and 21 for the other two. So a % b = a×b + a, and 8 % 3 = 32.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 ★ 10 = 134, 12 ★ 4 = 140, 8 ★ 4 = 60. Using the same rule, what is 10 ★ 8 ?",
+   "options": [
+    "4",
+    "12",
+    "92",
+    "180"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 12 ★ 10 = 134 fits a² − b (a = 12, b = 10). The same rule also gives 140 and 60 for the other two. So a ★ b = a² − b, and 10 ★ 8 = 92.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 10 − 9 = 92, 11 − 7 = 79, 11 − 2 = 24. Using the same rule, what is 11 − 8 ?",
+   "options": [
+    "90",
+    "113",
+    "1988",
+    "388"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 10 − 9 = 92 fits a×b + 2 (a = 10, b = 9). The same rule also gives 79 and 24 for the other two. So a − b = a×b + 2, and 11 − 8 = 90.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 3 # 1 = 4, 8 # 2 = 12, 11 # 2 = 15. Using the same rule, what is 10 # 9 ?",
+   "options": [
+    "361",
+    "109",
+    "91",
+    "10"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 3 # 1 = 4 fits a + b² (a = 3, b = 1). The same rule also gives 12 and 15 for the other two. So a # b = a + b², and 10 # 9 = 91.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 % 9 = 87, 9 % 7 = 47, 6 % 4 = 14. Using the same rule, what is 7 % 3 ?",
+   "options": [
+    "95",
+    "11",
+    "16",
+    "1021"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 12 % 9 = 87 fits a×b − (a + b) (a = 12, b = 9). The same rule also gives 47 and 14 for the other two. So a % b = a×b − (a + b), and 7 % 3 = 11.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 & 11 = 144, 12 & 8 = 108, 10 & 8 = 90. Using the same rule, what is 5 & 2 ?",
+   "options": [
+    "49",
+    "15",
+    "107",
+    "103"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 12 & 11 = 144 fits a×b + a (a = 12, b = 11). The same rule also gives 108 and 90 for the other two. So a & b = a×b + a, and 5 & 2 = 15.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 10 @ 9 = 11, 12 @ 5 = 19, 12 @ 11 = 13. Using the same rule, what is 10 @ 8 ?",
+   "options": [
+    "10064",
+    "44",
+    "12",
+    "116"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 10 @ 9 = 11 fits 2a − b (a = 10, b = 9). The same rule also gives 19 and 13 for the other two. So a @ b = 2a − b, and 10 @ 8 = 12.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 8 Δ 7 = 49, 8 Δ 2 = 14, 9 Δ 6 = 48. Using the same rule, what is 11 Δ 5 ?",
+   "options": [
+    "1655",
+    "23",
+    "50",
+    "71"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 8 Δ 7 = 49 fits a×b − b (a = 8, b = 7). The same rule also gives 14 and 48 for the other two. So a Δ b = a×b − b, and 11 Δ 5 = 50.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 5 # 3 = 12, 9 # 7 = 56, 10 # 7 = 63. Using the same rule, what is 10 # 2 ?",
+   "options": [
+    "26",
+    "18",
+    "22",
+    "24"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 5 # 3 = 12 fits a×b − b (a = 5, b = 3). The same rule also gives 56 and 63 for the other two. So a # b = a×b − b, and 10 # 2 = 18.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 ⊗ 10 = 22120, 12 ⊗ 4 = 1648, 10 ⊗ 8 = 1880. Using the same rule, what is 4 ⊗ 3 ?",
+   "options": [
+    "13",
+    "19",
+    "712",
+    "49"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 12 ⊗ 10 = 22120 fits (a + b) written next to (a × b) (a = 12, b = 10). The same rule also gives 1648 and 1880 for the other two. So a ⊗ b = (a + b) written next to (a × b), and 4 ⊗ 3 = 712.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 ⊕ 8 = 420, 7 ⊕ 1 = 68, 10 ⊕ 7 = 317. Using the same rule, what is 9 ⊕ 4 ?",
+   "options": [
+    "513",
+    "85",
+    "158",
+    "20"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 12 ⊕ 8 = 420 fits (a − b) written next to (a + b) (a = 12, b = 8). The same rule also gives 68 and 317 for the other two. So a ⊕ b = (a − b) written next to (a + b), and 9 ⊕ 4 = 513.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 # 8 = 204, 11 # 7 = 184, 8 # 4 = 124. Using the same rule, what is 10 # 7 ?",
+   "options": [
+    "173",
+    "72",
+    "13",
+    "10049"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 12 # 8 = 204 fits (a + b) written next to (a − b) (a = 12, b = 8). The same rule also gives 184 and 124 for the other two. So a # b = (a + b) written next to (a − b), and 10 # 7 = 173.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 10 ÷ 9 = 919, 12 ÷ 4 = 1712, 8 ÷ 4 = 496. Using the same rule, what is 6 ÷ 5 ?",
+   "options": [
+    "191",
+    "111",
+    "35",
+    "6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 10 ÷ 9 = 919 fits a³ − b² (a = 10, b = 9). The same rule also gives 1712 and 496 for the other two. So a ÷ b = a³ − b², and 6 ÷ 5 = 191.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 12 @ 11 = 231, 2 @ 1 = 31, 11 @ 5 = 166. Using the same rule, what is 8 @ 5 ?",
+   "options": [
+    "403",
+    "313",
+    "15",
+    "133"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 12 @ 11 = 231 fits (a + b) written next to (a − b) (a = 12, b = 11). The same rule also gives 31 and 166 for the other two. So a @ b = (a + b) written next to (a − b), and 8 @ 5 = 133.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a certain operation, 6 $ 1 = 75, 11 $ 3 = 148, 6 $ 5 = 111. Using the same rule, what is 10 $ 8 ?",
+   "options": [
+    "36",
+    "182",
+    "10064",
+    "218"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 6 $ 1 = 75 fits (a + b) written next to (a − b) (a = 6, b = 1). The same rule also gives 148 and 111 for the other two. So a $ b = (a + b) written next to (a − b), and 10 $ 8 = 182.",
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 # 11 = 143, 7 # 5 = 40, 11 # 10 = 120, then find the value of x (a positive integer smaller than 9) in 9 # x = 40.",
+   "options": [
+    "8",
+    "2",
+    "4",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First find the rule from the examples: a # b = a×b + b. Then 9 # x = 40 becomes 9×x + x = 40. Checking values of x, only x = 4 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 ÷ 7 = 158, 8 ÷ 5 = 74, 7 ÷ 2 = 53, then find the value of x (a positive integer smaller than 13) in 13 ÷ x = 173.",
+   "options": [
+    "2",
+    "0",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First find the rule from the examples: a ÷ b = a² + 2b. Then 13 ÷ x = 173 becomes 13² + 2×x = 173. Checking values of x, only x = 2 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 ★ 5 = 65, 11 ★ 8 = 96, 12 ★ 11 = 143, then find the value of x (a positive integer smaller than 11) in 11 ★ x = 24.",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First find the rule from the examples: a ★ b = a×b + b. Then 11 ★ x = 24 becomes 11×x + x = 24. Checking values of x, only x = 2 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 10 ÷ 9 = 100, 10 ÷ 5 = 60, 9 ÷ 8 = 81, then find the value of x (a positive integer smaller than 9) in 9 ÷ x = 27.",
+   "options": [
+    "0",
+    "7",
+    "2",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First find the rule from the examples: a ÷ b = a×b + a. Then 9 ÷ x = 27 becomes 9×x + 9 = 27. Checking values of x, only x = 2 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 & 10 = 1718, 11 & 7 = 1324, 12 & 3 = 1725, then find the value of x (a positive integer smaller than 14) in 14 & x = 2737.",
+   "options": [
+    "7",
+    "5",
+    "9",
+    "14"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First find the rule from the examples: a & b = a³ − b. Then 14 & x = 2737 becomes 14³ − x = 2737. Checking values of x, only x = 7 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 % 10 = 130, 7 % 5 = 40, 9 % 7 = 70, then find the value of x (a positive integer smaller than 11) in 11 % x = 60.",
+   "options": [
+    "3",
+    "5",
+    "10",
+    "6"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First find the rule from the examples: a % b = a×b + b. Then 11 % x = 60 becomes 11×x + x = 60. Checking values of x, only x = 5 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 11 × 7 = 324, 8 × 5 = 169, 7 × 2 = 81, then find the value of x (a positive integer smaller than 13) in 13 × x = 289.",
+   "options": [
+    "3",
+    "2",
+    "6",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First find the rule from the examples: a × b = (a + b)². Then 13 × x = 289 becomes (13 + x)² = 289. Checking values of x, only x = 4 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 7 Δ 4 = 65, 9 Δ 8 = 145, 11 Δ 9 = 202, then find the value of x (a positive integer smaller than 6) in 6 Δ x = 45.",
+   "options": [
+    "4",
+    "3",
+    "6",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First find the rule from the examples: a Δ b = a² + b². Then 6 Δ x = 45 becomes 6² + x² = 45. Checking values of x, only x = 3 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 11 ★ 9 = 101, 9 ★ 7 = 65, 10 ★ 6 = 62, then find the value of x (a positive integer smaller than 14) in 14 ★ x = 142.",
+   "options": [
+    "8",
+    "9",
+    "10",
+    "11"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First find the rule from the examples: a ★ b = a×b + 2. Then 14 ★ x = 142 becomes 14×x + 2 = 142. Checking values of x, only x = 10 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 8 × 2 = 22, 11 × 8 = 46, 7 × 3 = 23, then find the value of x (a positive integer smaller than 6) in 6 × x = 21.",
+   "options": [
+    "3",
+    "1",
+    "6",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First find the rule from the examples: a × b = 2a + 3b. Then 6 × x = 21 becomes 2×6 + 3×x = 21. Checking values of x, only x = 3 works.",
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 10 × 9 = 9, 9 × 5 = 20, 12 × 1 = 11, then what is the value of (6 × 4) × 4 ?",
+   "options": [
+    "16",
+    "21",
+    "12",
+    "17"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rule is a × b = (a − b) × b. Work inside the bracket first: 6 × 4 = 8. Then 8 × 4 = 16.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 10 % 5 = 150, 11 % 10 = 231, 11 % 5 = 176, then what is the value of (6 % 4) % 9 ?",
+   "options": [
+    "4145",
+    "4140",
+    "69",
+    "4141"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The rule is a % b = (a + b) × a. Work inside the bracket first: 6 % 4 = 60. Then 60 % 9 = 4140.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 4 ⊕ 1 = 3, 11 ⊕ 10 = 100, 8 ⊕ 6 = 42, then what is the value of (8 ⊕ 5) ⊕ 9 ?",
+   "options": [
+    "307",
+    "303",
+    "44",
+    "306"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The rule is a ⊕ b = a×b − b. Work inside the bracket first: 8 ⊕ 5 = 35. Then 35 ⊕ 9 = 306.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 11 % 10 = 121, 3 % 2 = 9, 9 % 8 = 81, then what is the value of (7 % 5) % 1 ?",
+   "options": [
+    "84",
+    "77",
+    "89",
+    "43"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rule is a % b = a×b + a. Work inside the bracket first: 7 % 5 = 42. Then 42 % 1 = 84.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 8 @ 2 = 28, 12 @ 1 = 38, 12 @ 7 = 50, then what is the value of (9 @ 6) @ 9 ?",
+   "options": [
+    "48",
+    "136",
+    "137",
+    "135"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The rule is a @ b = 3a + 2b. Work inside the bracket first: 9 @ 6 = 39. Then 39 @ 9 = 135.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 10 Δ 9 = 190, 12 Δ 11 = 276, 7 Δ 5 = 84, then what is the value of (7 Δ 5) Δ 3 ?",
+   "options": [
+    "7308",
+    "7305",
+    "329",
+    "87"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rule is a Δ b = (a + b) × a. Work inside the bracket first: 7 Δ 5 = 84. Then 84 Δ 3 = 7308.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 # 4 = 50, 12 # 11 = 134, 12 # 1 = 14, then what is the value of (5 # 3) # 10 ?",
+   "options": [
+    "27",
+    "172",
+    "169",
+    "173"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The rule is a # b = a×b + 2. Work inside the bracket first: 5 # 3 = 17. Then 17 # 10 = 172.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 12 + 11 = 58, 11 + 10 = 53, 11 + 5 = 43, then what is the value of (9 + 2) + 1 ?",
+   "options": [
+    "43",
+    "32",
+    "95",
+    "92"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The rule is a + b = 3a + 2b. Work inside the bracket first: 9 + 2 = 31. Then 31 + 1 = 95.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If 11 + 1 = 122, 11 + 9 = 202, 9 + 8 = 145, then what is the value of (3 + 2) + 12 ?",
+   "options": [
+    "314",
+    "310",
+    "313",
+    "25"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The rule is a + b = a² + b². Work inside the bracket first: 3 + 2 = 13. Then 13 + 12 = 313.",
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'.",
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

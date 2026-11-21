@@ -1,0 +1,800 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: E < V = A ≤ Z. Conclusions: I. A < Z  II. A ≥ Z",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles A against Z (it can be =, <), so A < Z is not certain.\nII. No chain settles A against Z (it can be =, <), so A ≥ Z is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Y ≥ J = F = L. Conclusions: I. Y > J  II. J ≥ Y",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Y against J (it can be =, >), so Y > J is not certain.\nII. No chain settles J against Y (it can be =, <), so J ≥ Y is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: S < J ≥ P < M < V. Conclusions: I. V > S  II. V ≤ S",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles V against S (it can be =, >, <), so V > S is not certain.\nII. No chain settles V against S (it can be =, >, <), so V ≤ S is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R ≤ L < J. Conclusions: I. L > R  II. L ≤ R",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles L against R (it can be =, >), so L > R is not certain.\nII. No chain settles L against R (it can be =, >), so L ≤ R is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: H < Z ≤ B < W; L > H = T. Conclusions: I. Z < B  II. B ≤ Z",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Z against B (it can be =, <), so Z < B is not certain.\nII. No chain settles B against Z (it can be =, >), so B ≤ Z is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P < G < D; X ≤ D < Y. Conclusions: I. X < P  II. P ≤ X",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles X against P (it can be =, >, <), so X < P is not certain.\nII. No chain settles P against X (it can be =, >, <), so P ≤ X is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J > Y > Z; U > B ≥ J. Conclusions: I. J < B  II. J ≥ B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles J against B (it can be =, <), so J < B is not certain.\nII. No chain settles J against B (it can be =, <), so J ≥ B is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J ≤ L < Y > B ≥ W. Conclusions: I. W < B  II. B ≤ W",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles W against B (it can be =, <), so W < B is not certain.\nII. No chain settles B against W (it can be =, >), so B ≤ W is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: M ≥ C ≥ Y ≥ F; N < M ≤ R. Conclusions: I. N > C  II. C ≥ N",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles N against C (it can be =, >, <), so N > C is not certain.\nII. No chain settles C against N (it can be =, >, <), so C ≥ N is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: L ≥ P = Y = J; A ≥ Y ≥ D. Conclusions: I. J < A  II. A ≤ J",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles J against A (it can be =, <), so J < A is not certain.\nII. No chain settles A against J (it can be =, >), so A ≤ J is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: A ≥ L ≥ H. Conclusions: I. L < A  II. L ≥ A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles L against A (it can be =, <), so L < A is not certain.\nII. No chain settles L against A (it can be =, <), so L ≥ A is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: D ≥ E > N ≥ U. Conclusions: I. N ≤ U  II. N > U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles N against U (it can be =, >), so N ≤ U is not certain.\nII. No chain settles N against U (it can be =, >), so N > U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R ≥ U > K. Conclusions: I. U ≥ R  II. R > U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles U against R (it can be =, <), so U ≥ R is not certain.\nII. No chain settles R against U (it can be =, >), so R > U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: M = A ≥ H; F = M < W. Conclusions: I. A > H  II. H ≥ A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles A against H (it can be =, >), so A > H is not certain.\nII. No chain settles H against A (it can be =, <), so H ≥ A is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V < Y ≤ P. Conclusions: I. Y < P  II. P ≤ Y",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Y against P (it can be =, <), so Y < P is not certain.\nII. No chain settles P against Y (it can be =, >), so P ≤ Y is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: N < Z ≤ M ≤ X < H. Conclusions: I. Z ≥ X  II. Z < X",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Z against X (it can be =, <), so Z ≥ X is not certain.\nII. No chain settles Z against X (it can be =, <), so Z < X is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P ≥ D ≥ W > R. Conclusions: I. D ≥ P  II. D < P",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles D against P (it can be =, <), so D ≥ P is not certain.\nII. No chain settles D against P (it can be =, <), so D < P is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Z < X ≤ U ≤ W; R < Z = H. Conclusions: I. X ≥ W  II. W > X",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles X against W (it can be =, <), so X ≥ W is not certain.\nII. No chain settles W against X (it can be =, >), so W > X is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: K ≥ G ≥ R; S > T ≥ R. Conclusions: I. G > R  II. G ≤ R",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles G against R (it can be =, >), so G > R is not certain.\nII. No chain settles G against R (it can be =, >), so G ≤ R is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: L ≥ D ≤ S ≤ Y < U. Conclusions: I. L > D  II. L ≤ D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles L against D (it can be =, >), so L > D is not certain.\nII. No chain settles L against D (it can be =, >), so L ≤ D is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V ≤ S ≤ U = A. Conclusions: I. U > V  II. V ≥ U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles U against V (it can be =, >), so U > V is not certain.\nII. No chain settles V against U (it can be =, <), so V ≥ U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: R ≥ T > V = K ≥ D. Conclusions: I. D < V  II. V ≤ D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles D against V (it can be =, <), so D < V is not certain.\nII. No chain settles V against D (it can be =, >), so V ≤ D is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: E > P > F > U; M > E ≥ L. Conclusions: I. P < L  II. L ≤ P",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles P against L (it can be =, >, <), so P < L is not certain.\nII. No chain settles L against P (it can be =, >, <), so L ≤ P is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P ≤ R ≤ M; V > P > X. Conclusions: I. P ≥ R  II. P < R",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles P against R (it can be =, <), so P ≥ R is not certain.\nII. No chain settles P against R (it can be =, <), so P < R is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: L > B ≥ D; M ≥ H > D. Conclusions: I. D ≥ B  II. B > D",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles D against B (it can be =, <), so D ≥ B is not certain.\nII. No chain settles B against D (it can be =, >), so B > D is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: G = W > T > B; K ≤ Y < G. Conclusions: I. T > K  II. K ≥ T",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles T against K (it can be =, >, <), so T > K is not certain.\nII. No chain settles K against T (it can be =, >, <), so K ≥ T is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: V ≥ E > J > F; T ≥ B > V. Conclusions: I. B ≥ J  II. J > B",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. B > V ≥ E > J gives B ≥ J: true.\nII. B > V ≥ E > J is already fixed, so J > B is false.\nHence: Only I follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: M < H = Z < D. Conclusions: I. M > H  II. M ≤ H",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. H > M is already fixed, so M > H is false.\nII. H > M gives M ≤ H: true.\nHence: Only II follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: L ≥ P ≥ B > V; G > L > T. Conclusions: I. B > V  II. B ≤ V",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. B > V gives B > V: true.\nII. B > V is already fixed, so B ≤ V is false.\nHence: Only I follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: M < H < K < C < N. Conclusions: I. K > N  II. C < N",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. N > C > K is already fixed, so K > N is false.\nII. N > C gives C < N: true.\nHence: Only II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Z < R < Y. Conclusions: I. Z ≤ Y  II. Z > Y",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Y > R > Z gives Z ≤ Y: true.\nII. Y > R > Z is already fixed, so Z > Y is false.\nHence: Only I follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: B < C < M < A ≤ F. Conclusions: I. M > A  II. M ≤ A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. A > M is already fixed, so M > A is false.\nII. A > M gives M ≤ A: true.\nHence: Only II follows.",
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: P < Z < W. Conclusions: I. P > Z  II. P > W",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Z > P is already fixed, so P > Z is false.\nII. W > Z > P is already fixed, so P > W is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: U ≥ X > D; U ≤ K ≤ M. Conclusions: I. X ≥ K  II. U < M",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles X against K (it can be =, <), so X ≥ K is not certain.\nII. No chain settles U against M (it can be =, <), so U < M is not certain.\nHence: Neither I nor II follows.",
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: J < U ≤ S < Z < L. Conclusions: I. Z < U  II. L < J",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Z > S ≥ U is already fixed, so Z < U is false.\nII. L > Z > S ≥ U > J is already fixed, so L < J is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: C < V < Z. Conclusions: I. V = Z  II. C > V",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Z > V is already fixed, so V = Z is false.\nII. V > C is already fixed, so C > V is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols #, !, $, &, @ are used with the meanings given: 'P & Q' means 'P is not greater than Q'; 'P @ Q' means 'P is equal to Q'; 'P $ Q' means 'P is smaller than Q'; 'P # Q' means 'P is greater than Q'; 'P ! Q' means 'P is either greater than or equal to Q'. Statements: A $ Z $ P # T. Conclusions: I. A $ T  II. T & A",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: A < Z < P > T.\nI. No chain settles A against T (it can be =, >, <), so A < T is not certain.\nII. No chain settles T against A (it can be =, >, <), so T ≤ A is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, *, !, %, & are used with the meanings given: 'P % Q' means 'P is not greater than Q'; 'P & Q' means 'P is equal to Q'; 'P * Q' means 'P is not smaller than Q'; 'P ! Q' means 'P is smaller than Q'; 'P $ Q' means 'P is greater than Q'. Statements: W $ U * B $ M. Conclusions: I. B * U  II. B ! U",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: W > U ≥ B > M.\nI. No chain settles B against U (it can be =, <), so B ≥ U is not certain.\nII. No chain settles B against U (it can be =, <), so B < U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ©, %, !, &, $ are used with the meanings given: 'P ! Q' means 'P is smaller than Q'; 'P $ Q' means 'P is equal to Q'; 'P & Q' means 'P is not greater than Q'; 'P © Q' means 'P is greater than Q'; 'P % Q' means 'P is not smaller than Q'. Statements: D ! C ! W % M ! P. Conclusions: I. P & W  II. W ! P",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: D < C < W ≥ M < P.\nI. No chain settles P against W (it can be =, >, <), so P ≤ W is not certain.\nII. No chain settles W against P (it can be =, >, <), so W < P is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ^, #, *, @, © are used with the meanings given: 'P @ Q' means 'P is either smaller than or equal to Q'; 'P © Q' means 'P is equal to Q'; 'P * Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is greater than Q'; 'P # Q' means 'P is either greater than or equal to Q'. Statements: W ^ A # N; W # D # K. Conclusions: I. N ^ K  II. N @ K",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Either I or II follows",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: W > A ≥ N; W ≥ D ≥ K.\nI. No chain settles N against K (it can be =, >, <), so N > K is not certain.\nII. No chain settles N against K (it can be =, >, <), so N ≤ K is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols $, !, @, ©, % are used with the meanings given: 'P © Q' means 'P is not greater than Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P $ Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'; 'P @ Q' means 'P is smaller than Q'. Statements: C © U @ W @ S % N. Conclusions: I. C @ W  II. W © C",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: C ≤ U < W < S = N.\nI. W > U ≥ C gives C < W: true.\nII. W > U ≥ C is already fixed, so W ≤ C is false.\nHence: Only I follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ©, @, ~, #, ^ are used with the meanings given: 'P © Q' means 'P is greater than Q'; 'P ~ Q' means 'P is smaller than Q'; 'P # Q' means 'P is not greater than Q'; 'P @ Q' means 'P is not smaller than Q'; 'P ^ Q' means 'P is equal to Q'. Statements: W # M # P ~ Z # K. Conclusions: I. P ^ K  II. P © K",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: W ≤ M ≤ P < Z ≤ K.\nI. K ≥ Z > P is already fixed, so P = K is false.\nII. K ≥ Z > P is already fixed, so P > K is false.\nHence: Neither I nor II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the following question, the symbols ©, @, ^, #, * are used with the meanings given: 'P ^ Q' means 'P is smaller than Q'; 'P © Q' means 'P is greater than Q'; 'P * Q' means 'P is equal to Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is either greater than or equal to Q'. Statements: B @ S @ M © C © W. Conclusions: I. C ^ W  II. C @ W",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: B ≥ S ≥ M > C > W.\nI. C > W is already fixed, so C < W is false.\nII. C > W gives C ≥ W: true.\nHence: Only II follows.",
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule.",
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

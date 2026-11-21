@@ -1,0 +1,1687 @@
+{
+ "sets": [
+  {
+   "id": "di-bar-graphs-s023",
+   "type": "bar",
+   "title": "Students enrolled in a university by stream (Students enrolled); stacked: each series adds to the total bar (Boys + Girls)",
+   "chart": {
+    "xLabel": "Stream",
+    "yLabel": "Students enrolled",
+    "series": [
+     {
+      "name": "Boys",
+      "data": [
+       {
+        "label": "Arts",
+        "value": 200
+       },
+       {
+        "label": "Science",
+        "value": 580
+       },
+       {
+        "label": "Commerce",
+        "value": 590
+       },
+       {
+        "label": "Engineering",
+        "value": 230
+       },
+       {
+        "label": "Law",
+        "value": 360
+       },
+       {
+        "label": "Management",
+        "value": 470
+       }
+      ]
+     },
+     {
+      "name": "Girls",
+      "data": [
+       {
+        "label": "Arts",
+        "value": 400
+       },
+       {
+        "label": "Science",
+        "value": 390
+       },
+       {
+        "label": "Commerce",
+        "value": 170
+       },
+       {
+        "label": "Engineering",
+        "value": 470
+       },
+       {
+        "label": "Law",
+        "value": 450
+       },
+       {
+        "label": "Management",
+        "value": 380
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s024",
+   "type": "bar",
+   "title": "Electricity consumed in a town (Consumption (thousand units)); stacked: each series adds to the total bar (Domestic + Industrial)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Consumption (thousand units)",
+    "series": [
+     {
+      "name": "Domestic",
+      "data": [
+       {
+        "label": "March",
+        "value": 55
+       },
+       {
+        "label": "April",
+        "value": 120
+       },
+       {
+        "label": "May",
+        "value": 95
+       },
+       {
+        "label": "June",
+        "value": 180
+       }
+      ]
+     },
+     {
+      "name": "Industrial",
+      "data": [
+       {
+        "label": "March",
+        "value": 105
+       },
+       {
+        "label": "April",
+        "value": 120
+       },
+       {
+        "label": "May",
+        "value": 20
+       },
+       {
+        "label": "June",
+        "value": 130
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s025",
+   "type": "bar",
+   "title": "Cement output of plants (Output (thousand tonnes)); stacked: each series adds to the total bar (Grey cement + White cement)",
+   "chart": {
+    "xLabel": "Plant",
+    "yLabel": "Output (thousand tonnes)",
+    "series": [
+     {
+      "name": "Grey cement",
+      "data": [
+       {
+        "label": "Satna",
+        "value": 160
+       },
+       {
+        "label": "Nagpur",
+        "value": 280
+       },
+       {
+        "label": "Tandur",
+        "value": 330
+       },
+       {
+        "label": "Coimbatore",
+        "value": 340
+       }
+      ]
+     },
+     {
+      "name": "White cement",
+      "data": [
+       {
+        "label": "Satna",
+        "value": 260
+       },
+       {
+        "label": "Nagpur",
+        "value": 380
+       },
+       {
+        "label": "Tandur",
+        "value": 330
+       },
+       {
+        "label": "Coimbatore",
+        "value": 230
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s026",
+   "type": "bar",
+   "title": "Tickets sold at railway stations in a month (Tickets sold (thousands)); stacked: each series adds to the total bar (Reserved + Unreserved)",
+   "chart": {
+    "xLabel": "Station",
+    "yLabel": "Tickets sold (thousands)",
+    "series": [
+     {
+      "name": "Reserved",
+      "data": [
+       {
+        "label": "Chennai Central",
+        "value": 110
+       },
+       {
+        "label": "Coimbatore",
+        "value": 165
+       },
+       {
+        "label": "Madurai",
+        "value": 105
+       },
+       {
+        "label": "Trichy",
+        "value": 155
+       },
+       {
+        "label": "Salem",
+        "value": 180
+       },
+       {
+        "label": "Erode",
+        "value": 150
+       }
+      ]
+     },
+     {
+      "name": "Unreserved",
+      "data": [
+       {
+        "label": "Chennai Central",
+        "value": 100
+       },
+       {
+        "label": "Coimbatore",
+        "value": 170
+       },
+       {
+        "label": "Madurai",
+        "value": 170
+       },
+       {
+        "label": "Trichy",
+        "value": 140
+       },
+       {
+        "label": "Salem",
+        "value": 25
+       },
+       {
+        "label": "Erode",
+        "value": 145
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s027",
+   "type": "bar",
+   "title": "Cars sold by a dealer (Cars sold (hundreds)); stacked: each series adds to the total bar (Hatchback + SUV + Sedan)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Cars sold (hundreds)",
+    "series": [
+     {
+      "name": "Hatchback",
+      "data": [
+       {
+        "label": "April",
+        "value": 84
+       },
+       {
+        "label": "May",
+        "value": 24
+       },
+       {
+        "label": "June",
+        "value": 36
+       },
+       {
+        "label": "July",
+        "value": 120
+       },
+       {
+        "label": "August",
+        "value": 36
+       }
+      ]
+     },
+     {
+      "name": "SUV",
+      "data": [
+       {
+        "label": "April",
+        "value": 36
+       },
+       {
+        "label": "May",
+        "value": 88
+       },
+       {
+        "label": "June",
+        "value": 20
+       },
+       {
+        "label": "July",
+        "value": 20
+       },
+       {
+        "label": "August",
+        "value": 96
+       }
+      ]
+     },
+     {
+      "name": "Sedan",
+      "data": [
+       {
+        "label": "April",
+        "value": 108
+       },
+       {
+        "label": "May",
+        "value": 12
+       },
+       {
+        "label": "June",
+        "value": 84
+       },
+       {
+        "label": "July",
+        "value": 64
+       },
+       {
+        "label": "August",
+        "value": 76
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s028",
+   "type": "bar",
+   "title": "Patients treated in a hospital in a month (Patients treated); stacked: each series adds to the total bar (Male + Female)",
+   "chart": {
+    "xLabel": "Department",
+    "yLabel": "Patients treated",
+    "series": [
+     {
+      "name": "Male",
+      "data": [
+       {
+        "label": "Cardiology",
+        "value": 360
+       },
+       {
+        "label": "Orthopaedics",
+        "value": 240
+       },
+       {
+        "label": "Paediatrics",
+        "value": 60
+       },
+       {
+        "label": "Neurology",
+        "value": 60
+       },
+       {
+        "label": "ENT",
+        "value": 50
+       },
+       {
+        "label": "Dermatology",
+        "value": 360
+       }
+      ]
+     },
+     {
+      "name": "Female",
+      "data": [
+       {
+        "label": "Cardiology",
+        "value": 230
+       },
+       {
+        "label": "Orthopaedics",
+        "value": 440
+       },
+       {
+        "label": "Paediatrics",
+        "value": 260
+       },
+       {
+        "label": "Neurology",
+        "value": 250
+       },
+       {
+        "label": "ENT",
+        "value": 380
+       },
+       {
+        "label": "Dermatology",
+        "value": 130
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s029",
+   "type": "bar",
+   "title": "Employees of a manufacturing company by department (Employees); stacked: each series adds to the total bar (Permanent + Contract)",
+   "chart": {
+    "xLabel": "Department",
+    "yLabel": "Employees",
+    "series": [
+     {
+      "name": "Permanent",
+      "data": [
+       {
+        "label": "Production",
+        "value": 320
+       },
+       {
+        "label": "Finance",
+        "value": 230
+       },
+       {
+        "label": "Quality",
+        "value": 180
+       },
+       {
+        "label": "Sales",
+        "value": 30
+       },
+       {
+        "label": "IT",
+        "value": 40
+       }
+      ]
+     },
+     {
+      "name": "Contract",
+      "data": [
+       {
+        "label": "Production",
+        "value": 40
+       },
+       {
+        "label": "Finance",
+        "value": 80
+       },
+       {
+        "label": "Quality",
+        "value": 120
+       },
+       {
+        "label": "Sales",
+        "value": 240
+       },
+       {
+        "label": "IT",
+        "value": 140
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s030",
+   "type": "bar",
+   "title": "Milk supplied by dairy cooperatives in a day (Milk supplied (thousand litres)); stacked: each series adds to the total bar (Morning + Evening)",
+   "chart": {
+    "xLabel": "Dairy",
+    "yLabel": "Milk supplied (thousand litres)",
+    "series": [
+     {
+      "name": "Morning",
+      "data": [
+       {
+        "label": "Milma",
+        "value": 140
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 30
+       },
+       {
+        "label": "Nandini",
+        "value": 95
+       },
+       {
+        "label": "Aavin",
+        "value": 60
+       }
+      ]
+     },
+     {
+      "name": "Evening",
+      "data": [
+       {
+        "label": "Milma",
+        "value": 185
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 70
+       },
+       {
+        "label": "Nandini",
+        "value": 140
+       },
+       {
+        "label": "Aavin",
+        "value": 40
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s031",
+   "type": "bar",
+   "title": "Books issued by a city library (Books issued); stacked: each series adds to the total bar (Fiction + Non-fiction)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Books issued",
+    "series": [
+     {
+      "name": "Fiction",
+      "data": [
+       {
+        "label": "April",
+        "value": 320
+       },
+       {
+        "label": "May",
+        "value": 640
+       },
+       {
+        "label": "June",
+        "value": 260
+       },
+       {
+        "label": "July",
+        "value": 400
+       },
+       {
+        "label": "August",
+        "value": 220
+       }
+      ]
+     },
+     {
+      "name": "Non-fiction",
+      "data": [
+       {
+        "label": "April",
+        "value": 260
+       },
+       {
+        "label": "May",
+        "value": 760
+       },
+       {
+        "label": "June",
+        "value": 620
+       },
+       {
+        "label": "July",
+        "value": 280
+       },
+       {
+        "label": "August",
+        "value": 820
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s032",
+   "type": "bar",
+   "title": "Tourists visiting hill stations in a year (Visitors (thousands)); stacked: each series adds to the total bar (Domestic + Foreign)",
+   "chart": {
+    "xLabel": "Hill station",
+    "yLabel": "Visitors (thousands)",
+    "series": [
+     {
+      "name": "Domestic",
+      "data": [
+       {
+        "label": "Ooty",
+        "value": 100
+       },
+       {
+        "label": "Kodaikanal",
+        "value": 160
+       },
+       {
+        "label": "Munnar",
+        "value": 110
+       },
+       {
+        "label": "Coorg",
+        "value": 30
+       },
+       {
+        "label": "Yercaud",
+        "value": 120
+       },
+       {
+        "label": "Wayanad",
+        "value": 80
+       }
+      ]
+     },
+     {
+      "name": "Foreign",
+      "data": [
+       {
+        "label": "Ooty",
+        "value": 300
+       },
+       {
+        "label": "Kodaikanal",
+        "value": 180
+       },
+       {
+        "label": "Munnar",
+        "value": 120
+       },
+       {
+        "label": "Coorg",
+        "value": 290
+       },
+       {
+        "label": "Yercaud",
+        "value": 30
+       },
+       {
+        "label": "Wayanad",
+        "value": 120
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s033",
+   "type": "bar",
+   "title": "Mobile phones sold by brands in a quarter (Phones sold (thousands)); stacked: each series adds to the total bar (Online + Offline)",
+   "chart": {
+    "xLabel": "Brand",
+    "yLabel": "Phones sold (thousands)",
+    "series": [
+     {
+      "name": "Online",
+      "data": [
+       {
+        "label": "Brand A",
+        "value": 195
+       },
+       {
+        "label": "Brand D",
+        "value": 105
+       },
+       {
+        "label": "Brand C",
+        "value": 125
+       },
+       {
+        "label": "Brand F",
+        "value": 100
+       }
+      ]
+     },
+     {
+      "name": "Offline",
+      "data": [
+       {
+        "label": "Brand A",
+        "value": 130
+       },
+       {
+        "label": "Brand D",
+        "value": 25
+       },
+       {
+        "label": "Brand C",
+        "value": 110
+       },
+       {
+        "label": "Brand F",
+        "value": 55
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Which stream has the shortest stacked bar (lowest total student enrolment)?",
+   "options": [
+    "Arts",
+    "Science",
+    "Commerce",
+    "Engineering"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Arts 600, Science 970, Commerce 760, Engineering 700, Law 810, Management 850. Lowest: Arts.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s023"
+  },
+  {
+   "questionText": "What is the difference between the total student enrolment of Engineering and Management?",
+   "options": [
+    "150 students",
+    "1550 students",
+    "160 students",
+    "170 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Engineering = 700, Management = 850; difference = 150. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s023"
+  },
+  {
+   "questionText": "The total bar of Management is what percentage more than the total bar of Arts (correct to one decimal place)?",
+   "options": [
+    "41.7%",
+    "29.4%",
+    "141.7%",
+    "47.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(850 - 600)/600 × 100 = 41.67 ≈ 41.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the smaller total.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s023"
+  },
+  {
+   "questionText": "In Engineering, what is the ratio of the Boys segment to the Girls segment?",
+   "options": [
+    "23 : 47",
+    "47 : 23",
+    "24 : 47",
+    "23 : 48"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "230 : 470 reduced by their HCF gives 23 : 47. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide both by the HCF.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s023"
+  },
+  {
+   "questionText": "Over all 6 streams together, what percentage of the overall total student enrolment is contributed by Girls (correct to one decimal place)?",
+   "options": [
+    "48.2%",
+    "376.7%",
+    "66.7%",
+    "51.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Girls total = 2260; grand total = 4690; ratio = 48.19 ≈ 48.2%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Use sums, not an average of per-bar percentages.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s023"
+  },
+  {
+   "questionText": "What is the difference between the total electricity consumption of May and June?",
+   "options": [
+    "195 thousand units",
+    "425 thousand units",
+    "200 thousand units",
+    "205 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: May = 115, June = 310; difference = 195. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s024"
+  },
+  {
+   "questionText": "In which month does Domestic form the largest fraction of the bar's total?",
+   "options": [
+    "May",
+    "March",
+    "April",
+    "June"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Domestic: March 34.4%, April 50%, May 82.6%, June 58.1%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s024"
+  },
+  {
+   "questionText": "What percentage of the total electricity consumption of March is contributed by Industrial (correct to one decimal place)?",
+   "options": [
+    "65.6%",
+    "34.4%",
+    "190.9%",
+    "33.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Industrial = 105, bar total = 160; 105/160 × 100 = 65.63 ≈ 65.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Denominator is the whole stacked bar.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s024"
+  },
+  {
+   "questionText": "The total bar of June is what percentage more than the total bar of March (correct to one decimal place)?",
+   "options": [
+    "93.8%",
+    "48.4%",
+    "193.8%",
+    "99.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(310 - 160)/160 × 100 = 93.75 ≈ 93.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the smaller total.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s024"
+  },
+  {
+   "questionText": "Over all 4 months together, what percentage of the overall total electricity consumption is contributed by Domestic (correct to one decimal place)?",
+   "options": [
+    "54.5%",
+    "112.5%",
+    "34.4%",
+    "45.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Domestic total = 450; grand total = 825; ratio = 54.55 ≈ 54.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Use sums, not an average of per-bar percentages.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s024"
+  },
+  {
+   "questionText": "By how much does the Grey cement segment of Satna differ from that of Nagpur?",
+   "options": [
+    "120 thousand tonnes",
+    "440 thousand tonnes",
+    "130 thousand tonnes",
+    "140 thousand tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Grey cement: 160 in Satna and 280 in Nagpur; difference 120. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s025"
+  },
+  {
+   "questionText": "Which plant has the shortest stacked bar (lowest total cement output)?",
+   "options": [
+    "Satna",
+    "Nagpur",
+    "Tandur",
+    "Coimbatore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Satna 420, Nagpur 660, Tandur 660, Coimbatore 570. Lowest: Satna.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s025"
+  },
+  {
+   "questionText": "The total bar of Nagpur is what percentage more than the total bar of Satna (correct to one decimal place)?",
+   "options": [
+    "57.1%",
+    "36.4%",
+    "157.1%",
+    "63.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(660 - 420)/420 × 100 = 57.14 ≈ 57.1%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the smaller total.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s025"
+  },
+  {
+   "questionText": "In which plant does White cement form the largest fraction of the bar's total?",
+   "options": [
+    "Satna",
+    "Nagpur",
+    "Tandur",
+    "Coimbatore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of White cement: Satna 61.9%, Nagpur 57.6%, Tandur 50%, Coimbatore 40.4%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s025"
+  },
+  {
+   "questionText": "If the White cement segment of Coimbatore were doubled while the other segments stayed the same, what percentage of the new bar total would White cement form (correct to one decimal place)?",
+   "options": [
+    "57.5%",
+    "80.7%",
+    "40.4%",
+    "28.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New White cement = 460; new total = 570 + 230 = 800; 460/800 × 100 = 57.5 ≈ 57.5%.",
+   "shortcut": "The total also grows when a part is doubled.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s025"
+  },
+  {
+   "questionText": "Which station has the shortest stacked bar (lowest total tickets sold)?",
+   "options": [
+    "Salem",
+    "Chennai Central",
+    "Coimbatore",
+    "Madurai"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Chennai Central 210, Coimbatore 335, Madurai 275, Trichy 295, Salem 205, Erode 295. Lowest: Salem.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s026"
+  },
+  {
+   "questionText": "What is the sum of the Reserved segments over all 6 stations?",
+   "options": [
+    "865 thousand tickets",
+    "1615 thousand tickets",
+    "870 thousand tickets",
+    "860 thousand tickets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add Reserved bars: 110 + 165 + 105 + 155 + 180 + 150 = 865. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s026"
+  },
+  {
+   "questionText": "The total bar of Madurai is what percentage more than the total bar of Salem (correct to one decimal place)?",
+   "options": [
+    "34.1%",
+    "25.5%",
+    "134.1%",
+    "40.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(275 - 205)/205 × 100 = 34.15 ≈ 34.1%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the smaller total.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s026"
+  },
+  {
+   "questionText": "In Coimbatore, what is the ratio of the Unreserved segment to the Reserved segment?",
+   "options": [
+    "34 : 33",
+    "33 : 34",
+    "35 : 33",
+    "34 : 34"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "170 : 165 reduced by their HCF gives 34 : 33. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide both by the HCF.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s026"
+  },
+  {
+   "questionText": "Over all 6 stations together, what percentage of the overall total tickets sold is contributed by Reserved (correct to one decimal place)?",
+   "options": [
+    "53.6%",
+    "144.2%",
+    "52.4%",
+    "46.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Reserved total = 865; grand total = 1615; ratio = 53.56 ≈ 53.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Use sums, not an average of per-bar percentages.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s026"
+  },
+  {
+   "questionText": "Which month has the shortest stacked bar (lowest total cars sold)?",
+   "options": [
+    "May",
+    "April",
+    "June",
+    "July"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: April 228, May 124, June 140, July 204, August 208. Lowest: May.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s027"
+  },
+  {
+   "questionText": "Which month has the tallest stacked bar (highest total cars sold)?",
+   "options": [
+    "April",
+    "May",
+    "June",
+    "July"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: April 228, May 124, June 140, July 204, August 208. Highest: April.",
+   "shortcut": "Add the segments of every bar before comparing.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s027"
+  },
+  {
+   "questionText": "What percentage of the total cars sold of April is contributed by Hatchback (correct to one decimal place)?",
+   "options": [
+    "36.8%",
+    "63.2%",
+    "58.3%",
+    "40.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hatchback = 84, bar total = 228; 84/228 × 100 = 36.84 ≈ 36.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Denominator is the whole stacked bar.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s027"
+  },
+  {
+   "questionText": "In May, what is the ratio of the Sedan segment to the Hatchback segment?",
+   "options": [
+    "1 : 2",
+    "2 : 1",
+    "2 : 2",
+    "1 : 3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "12 : 24 reduced by their HCF gives 1 : 2. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide both by the HCF.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s027"
+  },
+  {
+   "questionText": "Over all 5 months together, what percentage of the overall total cars sold is contributed by SUV (correct to one decimal place)?",
+   "options": [
+    "28.8%",
+    "52%",
+    "15.8%",
+    "71.2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "SUV total = 260; grand total = 904; ratio = 28.76 ≈ 28.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Use sums, not an average of per-bar percentages.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s027"
+  },
+  {
+   "questionText": "Which department has the shortest stacked bar (lowest total patients treated)?",
+   "options": [
+    "Neurology",
+    "Cardiology",
+    "Orthopaedics",
+    "Paediatrics"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Cardiology 590, Orthopaedics 680, Paediatrics 320, Neurology 310, ENT 430, Dermatology 490. Lowest: Neurology.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s028"
+  },
+  {
+   "questionText": "What is the average total patients treated per bar across all 6 departments (correct to one decimal place)?",
+   "options": [
+    "470 patients",
+    "564 patients",
+    "188.3 patients",
+    "480 patients"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Grand total = 2820; divide by 6 = 470. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s028"
+  },
+  {
+   "questionText": "In which department does Female form the largest fraction of the bar's total?",
+   "options": [
+    "ENT",
+    "Cardiology",
+    "Orthopaedics",
+    "Paediatrics"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Female: Cardiology 39%, Orthopaedics 64.7%, Paediatrics 81.3%, Neurology 80.6%, ENT 88.4%, Dermatology 26.5%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s028"
+  },
+  {
+   "questionText": "What is the sum of the Male segments over all 6 departments?",
+   "options": [
+    "1130 patients",
+    "2820 patients",
+    "1140 patients",
+    "1120 patients"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add Male bars: 360 + 240 + 60 + 60 + 50 + 360 = 1130. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s028"
+  },
+  {
+   "questionText": "If the Female segment of Orthopaedics were doubled while the other segments stayed the same, what percentage of the new bar total would Female form (correct to one decimal place)?",
+   "options": [
+    "78.6%",
+    "129.4%",
+    "64.7%",
+    "39.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New Female = 880; new total = 680 + 440 = 1120; 880/1120 × 100 = 78.57 ≈ 78.6%.",
+   "shortcut": "The total also grows when a part is doubled.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s028"
+  },
+  {
+   "questionText": "Which department has the shortest stacked bar (lowest total employees)?",
+   "options": [
+    "IT",
+    "Production",
+    "Finance",
+    "Quality"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Production 360, Finance 310, Quality 300, Sales 270, IT 180. Lowest: IT.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s029"
+  },
+  {
+   "questionText": "Which department has the tallest stacked bar (highest total employees)?",
+   "options": [
+    "Production",
+    "Finance",
+    "Quality",
+    "Sales"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Production 360, Finance 310, Quality 300, Sales 270, IT 180. Highest: Production.",
+   "shortcut": "Add the segments of every bar before comparing.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s029"
+  },
+  {
+   "questionText": "In Production, what is the ratio of the Contract segment to the Permanent segment?",
+   "options": [
+    "1 : 8",
+    "8 : 1",
+    "2 : 8",
+    "1 : 9"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "40 : 320 reduced by their HCF gives 1 : 8. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide both by the HCF.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s029"
+  },
+  {
+   "questionText": "In which department does Contract form the largest fraction of the bar's total?",
+   "options": [
+    "Sales",
+    "Production",
+    "Finance",
+    "Quality"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Contract: Production 11.1%, Finance 25.8%, Quality 40%, Sales 88.9%, IT 77.8%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s029"
+  },
+  {
+   "questionText": "Over all 5 departments together, what percentage of the overall total employees is contributed by Contract (correct to one decimal place)?",
+   "options": [
+    "43.7%",
+    "124%",
+    "11.1%",
+    "56.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Contract total = 620; grand total = 1420; ratio = 43.66 ≈ 43.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Use sums, not an average of per-bar percentages.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s029"
+  },
+  {
+   "questionText": "What is the difference between the total milk supplied of Aavin and Milma?",
+   "options": [
+    "225 thousand litres",
+    "425 thousand litres",
+    "230 thousand litres",
+    "235 thousand litres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Aavin = 100, Milma = 325; difference = 225. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s030"
+  },
+  {
+   "questionText": "In which dairy does Evening form the largest fraction of the bar's total?",
+   "options": [
+    "Mother Dairy",
+    "Milma",
+    "Nandini",
+    "Aavin"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Evening: Milma 56.9%, Mother Dairy 70%, Nandini 59.6%, Aavin 40%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s030"
+  },
+  {
+   "questionText": "The total bar of Milma is what percentage more than the total bar of Aavin (correct to one decimal place)?",
+   "options": [
+    "225%",
+    "69.2%",
+    "325%",
+    "231%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(325 - 100)/100 × 100 = 225 ≈ 225%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the smaller total.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s030"
+  },
+  {
+   "questionText": "What percentage of the total milk supplied of Nandini is contributed by Evening (correct to one decimal place)?",
+   "options": [
+    "59.6%",
+    "40.4%",
+    "147.4%",
+    "43.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Evening = 140, bar total = 235; 140/235 × 100 = 59.57 ≈ 59.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Denominator is the whole stacked bar.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s030"
+  },
+  {
+   "questionText": "Over all 4 dairys together, what percentage of the overall total milk supplied is contributed by Morning (correct to one decimal place)?",
+   "options": [
+    "42.8%",
+    "81.3%",
+    "43.1%",
+    "57.2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Morning total = 325; grand total = 760; ratio = 42.76 ≈ 42.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Use sums, not an average of per-bar percentages.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s030"
+  },
+  {
+   "questionText": "What is the difference between the total books issued of April and July?",
+   "options": [
+    "100 books",
+    "1260 books",
+    "120 books",
+    "140 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: April = 580, July = 680; difference = 100. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s031"
+  },
+  {
+   "questionText": "By how much does the Non-fiction segment of April differ from that of August?",
+   "options": [
+    "560 books",
+    "1080 books",
+    "580 books",
+    "600 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Non-fiction: 260 in April and 820 in August; difference 560. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s031"
+  },
+  {
+   "questionText": "In which month does Fiction form the largest fraction of the bar's total?",
+   "options": [
+    "July",
+    "April",
+    "May",
+    "June"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Fiction: April 55.2%, May 45.7%, June 29.5%, July 58.8%, August 21.2%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s031"
+  },
+  {
+   "questionText": "What is the average total books issued per bar across all 5 months (correct to one decimal place)?",
+   "options": [
+    "916 books",
+    "1145 books",
+    "368 books",
+    "936 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Grand total = 4580; divide by 5 = 916. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s031"
+  },
+  {
+   "questionText": "The Non-fiction segments of August and July together form what percentage of the combined total bars of August and July (correct to one decimal place)?",
+   "options": [
+    "64%",
+    "60%",
+    "36%",
+    "78.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Segments: 820 + 280 = 1100; bars: 1040 + 680 = 1720; share = 63.95 ≈ 64%.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s031"
+  },
+  {
+   "questionText": "Which hill station has the shortest stacked bar (lowest total tourist arrivals)?",
+   "options": [
+    "Yercaud",
+    "Ooty",
+    "Kodaikanal",
+    "Munnar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Ooty 400, Kodaikanal 340, Munnar 230, Coorg 320, Yercaud 150, Wayanad 200. Lowest: Yercaud.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s032"
+  },
+  {
+   "questionText": "Which hill station has the tallest stacked bar (highest total tourist arrivals)?",
+   "options": [
+    "Ooty",
+    "Kodaikanal",
+    "Munnar",
+    "Coorg"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Ooty 400, Kodaikanal 340, Munnar 230, Coorg 320, Yercaud 150, Wayanad 200. Highest: Ooty.",
+   "shortcut": "Add the segments of every bar before comparing.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s032"
+  },
+  {
+   "questionText": "In which hill station does Domestic form the largest fraction of the bar's total?",
+   "options": [
+    "Yercaud",
+    "Ooty",
+    "Kodaikanal",
+    "Munnar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Domestic: Ooty 25%, Kodaikanal 47.1%, Munnar 47.8%, Coorg 9.4%, Yercaud 80%, Wayanad 40%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s032"
+  },
+  {
+   "questionText": "What is the average total tourist arrivals per bar across all 6 hill stations (correct to one decimal place)?",
+   "options": [
+    "273.3 thousand visitors",
+    "328 thousand visitors",
+    "100 thousand visitors",
+    "283.3 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Grand total = 1640; divide by 6 = 273.33. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s032"
+  },
+  {
+   "questionText": "In which hill station is the ratio of the Foreign segment to the Domestic segment the highest?",
+   "options": [
+    "Coorg",
+    "Ooty",
+    "Kodaikanal",
+    "Munnar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: Ooty 3, Kodaikanal 1.13, Munnar 1.09, Coorg 9.67, Yercaud 0.25, Wayanad 1.5. Highest at Coorg.",
+   "shortcut": "Compare A/B directly; larger A alone can mislead.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s032"
+  },
+  {
+   "questionText": "Which brand has the tallest stacked bar (highest total mobile phones sold)?",
+   "options": [
+    "Brand A",
+    "Brand D",
+    "Brand C",
+    "Brand F"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: Brand A 325, Brand D 130, Brand C 235, Brand F 155. Highest: Brand A.",
+   "shortcut": "Add the segments of every bar before comparing.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s033"
+  },
+  {
+   "questionText": "What is the total mobile phones sold (full stacked bar) of Brand C?",
+   "options": [
+    "235 thousand phones",
+    "110 thousand phones",
+    "240 thousand phones",
+    "230 thousand phones"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total bar = 125 + 110 = 235. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s033"
+  },
+  {
+   "questionText": "In which brand does Offline form the largest fraction of the bar's total?",
+   "options": [
+    "Brand C",
+    "Brand A",
+    "Brand D",
+    "Brand F"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Shares of Offline: Brand A 40%, Brand D 19.2%, Brand C 46.8%, Brand F 35.5%.",
+   "shortcut": "Compare segment/total, not the segment alone.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s033"
+  },
+  {
+   "questionText": "What percentage of the total mobile phones sold of Brand F is contributed by Offline (correct to one decimal place)?",
+   "options": [
+    "35.5%",
+    "64.5%",
+    "55%",
+    "16.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Offline = 55, bar total = 155; 55/155 × 100 = 35.48 ≈ 35.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Denominator is the whole stacked bar.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s033"
+  },
+  {
+   "questionText": "The Offline segments of Brand A and Brand C together form what percentage of the combined total bars of Brand A and Brand C (correct to one decimal place)?",
+   "options": [
+    "42.9%",
+    "43.4%",
+    "57.1%",
+    "40%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Segments: 130 + 110 = 240; bars: 325 + 235 = 560; share = 42.86 ≈ 42.9%.",
+   "subPattern": "stacked-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s033"
+  }
+ ]
+}

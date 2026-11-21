@@ -1,0 +1,739 @@
+{
+ "sets": [
+  {
+   "id": "di-caselets-s021",
+   "type": "text",
+   "title": "Banana chips sales at a Trichy shop",
+   "text": "A snack shop in Trichy sold 1,200 packets of banana chips in January at ₹40 per packet. In February the number of packets sold was 25% more than in January, and the price stayed the same. In March the number of packets sold was 20% less than in February, but the price was raised to ₹45 per packet. The shop buys each packet at ₹32 in January and February and at ₹36 in March."
+  },
+  {
+   "id": "di-caselets-s022",
+   "type": "text",
+   "title": "Tiruppur T-shirt factory",
+   "text": "A garment factory in Tiruppur has three production units. Unit A makes 4,500 T-shirts per day. Unit B makes 20% more than Unit A, and Unit C makes 3/5 of what Unit B makes. The rejection rates are 2% for Unit A, 3% for Unit B and 5% for Unit C. The factory works 26 days in a month."
+  },
+  {
+   "id": "di-caselets-s023",
+   "type": "text",
+   "title": "Students of a Jaipur school",
+   "text": "A Kendriya Vidyalaya in Jaipur has 1,500 students, of whom 60% are boys. Among the boys, 40% have taken the Science stream, and among the girls 50% have taken Science. Of all students who have not taken Science, three-fourths are in Commerce and the rest are in Arts. 30% of the Science students scored a distinction."
+  },
+  {
+   "id": "di-caselets-s024",
+   "type": "text",
+   "title": "Chennai to Madurai bus service",
+   "text": "A private operator runs a Chennai–Madurai service with 40-seat buses at a fare of ₹650 per passenger. On weekdays (Monday to Friday) it runs 6 trips a day with 85% of seats occupied. On Saturday and Sunday it runs 10 trips a day with every seat occupied. The operating cost (fuel, driver and toll) is ₹9,000 per trip. Assume each trip is one-way and uses its own bus."
+  },
+  {
+   "id": "di-caselets-s025",
+   "type": "text",
+   "title": "Murugan's 20-acre farm",
+   "text": "Farmer Murugan cultivates 20 acres near Thanjavur: 45% under paddy, 30% under sugarcane and the rest under groundnut. Yield per acre is 30 quintals for paddy (sold at ₹2,200 per quintal), 40 tonnes for sugarcane (sold at ₹3,100 per tonne) and 12 quintals for groundnut (sold at ₹6,000 per quintal). The cultivation expense per acre is ₹28,000 for paddy, ₹45,000 for sugarcane and ₹30,000 for groundnut."
+  },
+  {
+   "id": "di-caselets-s026",
+   "type": "text",
+   "title": "Online store weekly orders",
+   "text": "An online store in Bengaluru received 8,000 orders in a week with an average order value of ₹1,200. 15% of the orders were cancelled before dispatch. Of the orders dispatched, 10% were returned and fully refunded. The store pays ₹60 as delivery cost for every dispatched order (including those later returned)."
+  },
+  {
+   "id": "di-caselets-s027",
+   "type": "text",
+   "title": "Vellore hospital occupancy",
+   "text": "A hospital in Vellore has 250 beds, of which 40 are ICU beds and the rest are general beds. Average occupancy is 90% in the ICU and 70% in general wards. An ICU patient stays 4 days on average and pays ₹12,000 per day; a general-ward patient stays 3 days on average and pays ₹3,000 per day. Assume a 30-day month and steady occupancy."
+  },
+  {
+   "id": "di-caselets-s028",
+   "type": "text",
+   "title": "Cricket academy in Pune",
+   "text": "A cricket academy in Pune has 120 trainees: 50% in batting, 30% in bowling and the rest in wicketkeeping. The monthly fee is ₹3,000 for batting, ₹3,500 for bowling and ₹4,000 for wicketkeeping. 10% of the batting trainees and 25% of the bowling trainees receive a scholarship that halves their fee. The academy's monthly expenses are ₹2,10,000."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "How many packets were sold in February?",
+   "options": [
+    "300",
+    "1500",
+    "900",
+    "1350"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "February sales = 1200 × 125/100 = 1,500 packets.",
+   "shortcut": "Add 25% = add one quarter: 1200 + 300.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "How many packets were sold in March?",
+   "options": [
+    "960",
+    "1200",
+    "1080",
+    "1320"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "March = 80% of 1,500 = 1,200 packets (25% up then 20% down brings back to the original).",
+   "shortcut": "x% up followed by x/(100+x)×100% down restores the base.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "What was the total revenue from the three months together?",
+   "options": [
+    "₹1,56,000",
+    "₹1,62,000",
+    "₹1,75,500",
+    "₹1,45,800"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Jan = 1200×40 = 48,000; Feb = 1500×40 = 60,000; Mar = 1200×45 = 54,000. Total = ₹1,62,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "By what percentage did revenue in March decrease from the revenue in February?",
+   "options": [
+    "20%",
+    "10%",
+    "12%",
+    "9%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Feb revenue = 60,000; Mar revenue = 54,000. Decrease = 6,000/60,000 × 100 = 10%.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "What was the overall profit percentage of the shop over the three months?",
+   "options": [
+    "20%",
+    "25%",
+    "22%",
+    "28%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue = 1,62,000. Cost = 2700×32 + 1200×36 = 86,400 + 43,200 = 1,29,600. Profit = 32,400. Profit % = 32,400/1,29,600 × 100 = 25%.",
+   "shortcut": "Profit % is on cost: 32400/129600 = 1/4.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s021"
+  },
+  {
+   "questionText": "How many T-shirts does Unit B make per day?",
+   "options": [
+    "5400",
+    "900",
+    "5850",
+    "4860"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Unit B = 4500 × 1.2 = 5,400.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many T-shirts does Unit C make per day?",
+   "options": [
+    "3240",
+    "2700",
+    "2160",
+    "2916"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Unit B = 5,400, so Unit C = 5,400 × 3/5 = 3,240.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many T-shirts are rejected per day in the whole factory?",
+   "options": [
+    "414",
+    "394",
+    "252",
+    "373"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A: 90, B: 162, C: 162. Total rejects = 414 per day.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many acceptable T-shirts does the factory make in a month?",
+   "options": [
+    "330876",
+    "341640",
+    "381780",
+    "297788"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Daily output = 13,140; accepted = 13,140 − 414 = 12,726. Monthly = 12,726 × 26 = 3,30,876.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "What is the overall rejection percentage of the factory, to two decimal places?",
+   "options": [
+    "3.15%",
+    "3.33%",
+    "3.25%",
+    "2.84%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total rejected 414 out of 13,140 produced: 414/13140 × 100 = 3.15%.",
+   "shortcut": "Do not average 2, 3, 5 — the units have different outputs (weighted average).",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s022"
+  },
+  {
+   "questionText": "How many girls are there in the school?",
+   "options": [
+    "900",
+    "750",
+    "540",
+    "600"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Girls = 40% of 1,500 = 600.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "How many students have taken the Science stream?",
+   "options": [
+    "675",
+    "600",
+    "594",
+    "660"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Boys in Science = 900 × 0.4 = 360; girls in Science = 600 × 0.5 = 300. Total = 660.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "How many students are in the Arts stream?",
+   "options": [
+    "630",
+    "165",
+    "189",
+    "210"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Non-Science = 1,500 − 660 = 840. Arts = 1/4 of 840 = 210.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "The Arts students form what percentage of all students in the school?",
+   "options": [
+    "25%",
+    "32%",
+    "13%",
+    "14%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Boys = 60% of 1,500 = 900, girls = 600. Science: boys 40% of 900 = 360, girls 50% of 600 = 300, total 660. Non-Science = 1,500 − 660 = 840; Arts = 1/4 of 840 = 210. Percentage = 210/1,500 × 100 = 14%.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "Suppose 20% of Commerce students and 40% of Arts students also scored a distinction. Together with the Science distinctions, what percentage of the school scored a distinction?",
+   "options": [
+    "13.2%",
+    "30.0%",
+    "24.5%",
+    "27.2%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Science: 660×0.3 = 198; Commerce: 630×0.2 = 126; Arts: 210×0.4 = 84. Total = 408. 408/1500 × 100 = 27.2%.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s023"
+  },
+  {
+   "questionText": "How many passengers travel on an average weekday trip?",
+   "options": [
+    "6",
+    "32",
+    "34",
+    "31"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "85% of 40 seats = 34 passengers.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "What is the total fare collected on one weekend day?",
+   "options": [
+    "₹1,56,000",
+    "₹2,21,000",
+    "₹2,60,000",
+    "₹2,34,000"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "10 trips × 40 passengers × ₹650 = ₹2,60,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "What is the total fare collected in one full week (Monday to Sunday)?",
+   "options": [
+    "₹9,28,200",
+    "₹13,00,000",
+    "₹11,83,000",
+    "₹10,64,700"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Weekdays: 5 × 6 × 34 × 650 = 6,63,000. Weekend: 2 × 2,60,000 = 5,20,000. Total = ₹11,83,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "What is the operator's total profit in one week?",
+   "options": [
+    "₹8,05,000",
+    "₹2,83,000",
+    "₹7,33,000",
+    "₹6,59,700"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue = 11,83,000. Trips per week = 30 + 20 = 50; cost = 50 × 9,000 = 4,50,000. Profit = ₹7,33,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "Profit in a week is what percentage of the fare revenue, to one decimal place?",
+   "options": [
+    "162.9%",
+    "38.0%",
+    "62.0%",
+    "55.8%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "733000/1183000 × 100 = 61.96% ≈ 62.0%.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s024"
+  },
+  {
+   "questionText": "How many acres are under groundnut?",
+   "options": [
+    "6",
+    "5",
+    "9",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Groundnut = 100 − 45 − 30 = 25% of 20 = 5 acres.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "What is the profit from the sugarcane crop?",
+   "options": [
+    "₹7,44,000",
+    "₹4,74,000",
+    "₹5,76,000",
+    "₹4,26,600"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sugarcane area = 6 acres. Revenue = 6×40×3100 = 7,44,000. Cost = 6×45,000 = 2,70,000. Profit = ₹4,74,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "What is the total revenue from all three crops?",
+   "options": [
+    "₹13,38,000",
+    "₹16,98,000",
+    "₹13,74,000",
+    "₹15,28,200"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Paddy = 9×30×2200 = 5,94,000; sugarcane = 7,44,000; groundnut = 5×12×6000 = 3,60,000. Total = ₹16,98,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "What is the profit per acre from groundnut?",
+   "options": [
+    "₹72,000",
+    "₹42,000",
+    "₹44,000",
+    "₹37,800"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revenue per acre = 12 × 6000 = 72,000. Profit = 72,000 − 30,000 = ₹42,000 per acre.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "If Murugan shifts 2 acres from paddy to sugarcane, by how much does his total profit change?",
+   "options": [
+    "₹68,000",
+    "₹82,000",
+    "₹1,58,000",
+    "₹73,800"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Paddy profit/acre = 66,000 − 28,000 = 38,000. Sugarcane profit/acre = 1,24,000 − 45,000 = 79,000. Gain = 2 × (79,000 − 38,000) = ₹82,000 increase.",
+   "shortcut": "Only the per-acre profit difference matters.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s025"
+  },
+  {
+   "questionText": "How many orders were cancelled before dispatch?",
+   "options": [
+    "1200",
+    "6800",
+    "800",
+    "1080"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "15% of 8,000 = 1,200 orders.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "How many orders were returned?",
+   "options": [
+    "680",
+    "800",
+    "120",
+    "612"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dispatched = 8,000 − 1,200 = 6,800. Returned = 10% of 6,800 = 680.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "What was the revenue retained after cancellations and returns?",
+   "options": [
+    "₹73,44,000",
+    "₹81,60,000",
+    "₹86,40,000",
+    "₹66,09,600"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Orders kept = 6,800 − 680 = 6,120. Revenue = 6,120 × 1,200 = ₹73,44,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "What was the total delivery cost for the week?",
+   "options": [
+    "₹4,08,000",
+    "₹3,67,200",
+    "₹4,80,000",
+    "₹4,48,800"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Delivery is paid on dispatched orders: 6,800 × 60 = ₹4,08,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "What was the retained revenue after deducting the delivery cost?",
+   "options": [
+    "₹69,36,000",
+    "₹69,76,800",
+    "₹77,52,000",
+    "₹62,42,400"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "7,344,000 − 4,08,000 = ₹69,36,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-caselets-s026"
+  },
+  {
+   "questionText": "On an average day, how many ICU beds are occupied?",
+   "options": [
+    "28",
+    "4",
+    "32",
+    "36"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "ICU beds = 40 and average occupancy is 90%. Occupied ICU beds = 0.90 × 40 = 36 beds.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "On an average day, how many general beds are occupied?",
+   "options": [
+    "175",
+    "28",
+    "132",
+    "147"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "General beds = 210; 70% of 210 = 147.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "What is the hospital's revenue per day from bed charges?",
+   "options": [
+    "₹11,10,000",
+    "₹4,32,000",
+    "₹7,85,700",
+    "₹8,73,000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "ICU: 36 × 12,000 = 4,32,000. General: 147 × 3,000 = 4,41,000. Total = ₹8,73,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "How many patients are admitted in a 30-day month (ICU and general together)?",
+   "options": [
+    "5490",
+    "1830",
+    "1566",
+    "1740"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Admissions = bed-days ÷ average stay. ICU: 36×30/4 = 270. General: 147×30/3 = 1,470. Total = 1,740.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "What is the average revenue per admitted patient in the month, to the nearest rupee?",
+   "options": [
+    "₹4,770",
+    "₹502",
+    "₹13,547",
+    "₹15,052"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Monthly revenue = 8,73,000 × 30 = 2,61,90,000. Divided by 1,740 admissions = ₹15,052 (approx).",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-caselets-s027"
+  },
+  {
+   "questionText": "How many wicketkeeping trainees are there?",
+   "options": [
+    "36",
+    "60",
+    "24",
+    "22"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Wicketkeeping = 100 − 50 − 30 = 20% of 120 = 24.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "How many trainees receive a scholarship?",
+   "options": [
+    "18",
+    "6",
+    "15",
+    "14"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Batting: 10% of 60 = 6. Bowling: 25% of 36 = 9. Total = 15.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "What is the fee collected from batting trainees in a month?",
+   "options": [
+    "₹1,80,000",
+    "₹1,62,000",
+    "₹1,71,000",
+    "₹1,53,900"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "54 pay full fee = 1,62,000; 6 pay half = 9,000. Total = ₹1,71,000.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "What is the total monthly fee collection of the academy?",
+   "options": [
+    "₹4,02,000",
+    "₹3,54,750",
+    "₹3,77,250",
+    "₹3,39,525"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Batting 1,71,000; bowling 27×3500 + 9×1750 = 94,500 + 15,750 = 1,10,250; wicketkeeping 24×4000 = 96,000. Total = ₹3,77,250.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  },
+  {
+   "questionText": "Monthly surplus (fees minus expenses) is what percentage of the expenses, to one decimal place?",
+   "options": [
+    "44.3%",
+    "179.6%",
+    "79.6%",
+    "71.7%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Surplus = 3,77,250 − 2,10,000 = 1,67,250. 1,67,250/2,10,000 × 100 = 79.6%.",
+   "subPattern": "paragraph-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-caselets-s028"
+  }
+ ]
+}

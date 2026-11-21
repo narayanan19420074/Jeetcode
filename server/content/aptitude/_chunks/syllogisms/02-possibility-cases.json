@@ -1,0 +1,1115 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: Some caps are flowers. No flowers are gardens.\nConclusions:\nI. It is possible that no flowers are caps.\nII. Some flowers can be gardens.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No flowers are caps: not possible; the opposite Some flowers are caps holds in every diagram.\nII. Some flowers are gardens: not possible; the opposite No flowers are gardens holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All apples are tractors. Some locks are not tractors.\nConclusions:\nI. All locks can be tractors.\nII. No tractors are locks.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All locks are tractors: not possible; the opposite Some locks are not tractors holds in every diagram.\nII. No tractors are locks does not follow: in a diagram where only these regions are occupied: an item that belongs to locks only, not to tractors or apples; an item that belongs to locks and tractors, not to apples, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No bulbs are trees. Some trees are not folders.\nConclusions:\nI. Some folders can be trees.\nII. All folders are bulbs.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some folders are trees: possible; in a diagram where only these regions are occupied: an item that belongs to trees only, not to folders or bulbs; an item that belongs to folders and trees, not to bulbs, the statements hold and this is true.\nII. All folders are bulbs does not follow: in a diagram where only these regions are occupied: an item that belongs to folders only, not to trees or bulbs; an item that belongs to trees only, not to folders or bulbs, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All boxes are fans. Some boxes are peas.\nConclusions:\nI. It is possible that no fans are boxes.\nII. All peas can be boxes.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No fans are boxes: not possible; the opposite Some fans are boxes holds in every diagram.\nII. All peas are boxes: possible; in a diagram where only this region is occupied: an item that belongs to peas and boxes and fans, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some canals are not bats. All canals are kites.\nConclusions:\nI. It is possible that some bats are canals.\nII. All bats can be canals.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some bats are canals: possible; in a diagram where only these regions are occupied: an item that belongs to kites and canals, not to bats; an item that belongs to kites and canals and bats, the statements hold and this is true.\nII. All bats are canals: possible; in a diagram where only this region is occupied: an item that belongs to kites and canals, not to bats, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some banks are not laptops. Some hills are banks.\nConclusions:\nI. Some banks can be laptops.\nII. It is possible that no banks are hills.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some banks are laptops: possible; in a diagram where only these regions are occupied: an item that belongs to hills and banks, not to laptops; an item that belongs to banks and laptops, not to hills, the statements hold and this is true.\nII. No banks are hills: not possible; the opposite Some banks are hills holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No windows are curtains. Some windows are doctors.\nConclusions:\nI. It is possible that no curtains are doctors.\nII. It is possible that no windows are doctors.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No curtains are doctors: possible; in a diagram where only this region is occupied: an item that belongs to doctors and windows, not to curtains, the statements hold and this is true.\nII. No windows are doctors: not possible; the opposite Some windows are doctors holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All engines are biscuits. Some erasers are engines.\nConclusions:\nI. It is possible that no biscuits are engines.\nII. It is possible that some erasers are biscuits.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No biscuits are engines: not possible; the opposite Some biscuits are engines holds in every diagram.\nII. Some erasers are biscuits: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to biscuits and engines and erasers, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some knives are notes. All knives are cups.\nConclusions:\nI. No knives are cups.\nII. It is possible that no notes are knives.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No knives are cups does not follow: in a diagram where only this region is occupied: an item that belongs to cups and knives and notes, the statements hold but this fails.\nII. No notes are knives: not possible; the opposite Some notes are knives holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No temples are windows. No canals are temples.\nConclusions:\nI. It is possible that some canals are not temples.\nII. It is possible that some windows are temples.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some canals are not temples: possible; in a diagram where only this region is occupied: an item that belongs to canals only, not to windows or temples, the statements hold and this is true.\nII. Some windows are temples: not possible; the opposite No windows are temples holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No schools are notes. No schools are wheels.\nConclusions:\nI. No wheels are schools.\nII. It is possible that some notes are wheels.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No wheels are schools follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some notes are wheels: possible; in a diagram where only this region is occupied: an item that belongs to notes and wheels, not to schools, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some erasers are buses. No watches are buses.\nConclusions:\nI. All buses can be watches.\nII. Some buses can be watches.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All buses are watches: not possible; the opposite Some buses are not watches holds in every diagram.\nII. Some buses are watches: not possible; the opposite No buses are watches holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No temples are clocks. All clocks are grapes.\nConclusions:\nI. All temples are clocks.\nII. It is possible that some clocks are not temples.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All temples are clocks does not follow: in a diagram where only this region is occupied: an item that belongs to temples only, not to grapes or clocks, the statements hold but this fails.\nII. Some clocks are not temples: possible; in a diagram where only this region is occupied: an item that belongs to grapes and clocks, not to temples, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some tunnels are balls. No balls are drums.\nConclusions:\nI. Some balls can be drums.\nII. Some tunnels are not balls.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some balls are drums: not possible; the opposite No balls are drums holds in every diagram.\nII. Some tunnels are not balls does not follow: in a diagram where only this region is occupied: an item that belongs to tunnels and balls, not to drums, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some switches are chains. Some combs are switches.\nConclusions:\nI. It is possible that no switches are combs.\nII. Some combs are chains.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No switches are combs: not possible; the opposite Some switches are combs holds in every diagram.\nII. Some combs are chains does not follow: in a diagram where only these regions are occupied: an item that belongs to chains and switches, not to combs; an item that belongs to switches and combs, not to chains, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some phones are knives. All buses are phones.\nConclusions:\nI. It is possible that some buses are not phones.\nII. It is possible that some phones are not knives.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some buses are not phones: not possible; the opposite All buses are phones holds in every diagram.\nII. Some phones are not knives: possible; in a diagram where only these regions are occupied: an item that belongs to phones only, not to knives or buses; an item that belongs to knives and phones, not to buses, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All diaries are shops. No plates are shops.\nConclusions:\nI. Some shops are plates.\nII. It is possible that some plates are diaries.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some shops are plates does not follow: in a diagram where only this region is occupied: an item that belongs to shops only, not to diaries or plates, the statements hold but this fails.\nII. Some plates are diaries: not possible; the opposite No plates are diaries holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some lamps are not bags. All lamps are wires.\nConclusions:\nI. It is possible that no lamps are wires.\nII. It is possible that some wires are not bags.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No lamps are wires: not possible; the opposite Some lamps are wires holds in every diagram.\nII. Some wires are not bags: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to wires and lamps, not to bags, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No boxes are tunnels. Some boxes are not mirrors.\nConclusions:\nI. It is possible that no tunnels are mirrors.\nII. Some tunnels are boxes.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No tunnels are mirrors: possible; in a diagram where only this region is occupied: an item that belongs to boxes only, not to tunnels or mirrors, the statements hold and this is true.\nII. Some tunnels are boxes does not follow: in a diagram where only this region is occupied: an item that belongs to boxes only, not to tunnels or mirrors, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some bags are not soaps. All soaps are horns.\nConclusions:\nI. It is possible that some soaps are not horns.\nII. It is possible that some horns are soaps.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some soaps are not horns: not possible; the opposite All soaps are horns holds in every diagram.\nII. Some horns are soaps: possible; in a diagram where only these regions are occupied: an item that belongs to bags only, not to soaps or horns; an item that belongs to soaps and horns, not to bags, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No towels are grapes. Some towels are bridges.\nConclusions:\nI. It is possible that no bridges are towels.\nII. It is possible that no grapes are bridges.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No bridges are towels: not possible; the opposite Some bridges are towels holds in every diagram.\nII. No grapes are bridges: possible; in a diagram where only this region is occupied: an item that belongs to towels and bridges, not to grapes, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No watches are drums. Some drums are clocks.\nConclusions:\nI. It is possible that no drums are watches.\nII. Some clocks can be watches.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No drums are watches: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to drums and clocks, not to watches, the statements hold and this is true.\nII. Some clocks are watches: possible; in a diagram where only these regions are occupied: an item that belongs to watches and clocks, not to drums; an item that belongs to drums and clocks, not to watches, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No grapes are wires. All pans are grapes.\nConclusions:\nI. It is possible that some wires are not pans.\nII. It is possible that some grapes are wires.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some wires are not pans: possible; in a diagram where only this region is occupied: an item that belongs to wires only, not to grapes or pans, the statements hold and this is true.\nII. Some grapes are wires: not possible; the opposite No grapes are wires holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some peas are not trains. All trains are trucks.\nConclusions:\nI. Some peas are not trucks.\nII. It is possible that some trucks are not peas.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some peas are not trucks does not follow: in a diagram where only this region is occupied: an item that belongs to trucks and peas, not to trains, the statements hold but this fails.\nII. Some trucks are not peas: possible; in a diagram where only these regions are occupied: an item that belongs to trucks only, not to trains or peas; an item that belongs to peas only, not to trucks or trains, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All biscuits are mangoes. No biscuits are buckets.\nConclusions:\nI. It is possible that some biscuits are buckets.\nII. Some mangoes can be biscuits.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some biscuits are buckets: not possible; the opposite No biscuits are buckets holds in every diagram.\nII. Some mangoes are biscuits: possible; in a diagram where only this region is occupied: an item that belongs to mangoes and biscuits, not to buckets, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No files are belts. Some files are tractors.\nConclusions:\nI. It is possible that some files are not tractors.\nII. It is possible that some tractors are belts.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some files are not tractors: possible; in a diagram where only these regions are occupied: an item that belongs to files only, not to tractors or belts; an item that belongs to tractors and files, not to belts, the statements hold and this is true.\nII. Some tractors are belts: possible; in a diagram where only these regions are occupied: an item that belongs to tractors and files, not to belts; an item that belongs to tractors and belts, not to files, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No balls are mats. No belts are mats.\nConclusions:\nI. It is possible that some belts are not balls.\nII. It is possible that some belts are not mats.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some belts are not balls: possible; in a diagram where only this region is occupied: an item that belongs to belts only, not to mats or balls, the statements hold and this is true.\nII. Some belts are not mats: possible; in a diagram where only this region is occupied: an item that belongs to belts only, not to mats or balls, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No tunnels are grapes. Some tunnels are not horns.\nConclusions:\nI. It is possible that some tunnels are not grapes.\nII. It is possible that no horns are grapes.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some tunnels are not grapes: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to tunnels only, not to grapes or horns, the statements hold and this is true.\nII. No horns are grapes: possible; in a diagram where only this region is occupied: an item that belongs to tunnels only, not to grapes or horns, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All hills are roofs. Some locks are hills.\nConclusions:\nI. It is possible that no hills are locks.\nII. It is possible that all hills are locks.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No hills are locks: not possible; the opposite Some hills are locks holds in every diagram.\nII. All hills are locks: possible; in a diagram where only this region is occupied: an item that belongs to roofs and hills and locks, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No chairs are gardens. Some chairs are not pens.\nConclusions:\nI. All pens are gardens.\nII. Some gardens can be chairs.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All pens are gardens does not follow: in a diagram where only these regions are occupied: an item that belongs to pens only, not to chairs or gardens; an item that belongs to chairs only, not to pens or gardens, the statements hold but this fails.\nII. Some gardens are chairs: not possible; the opposite No gardens are chairs holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some parks are schools. All pans are parks.\nConclusions:\nI. Some pans are not schools.\nII. It is possible that no schools are parks.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some pans are not schools does not follow: in a diagram where only this region is occupied: an item that belongs to schools and parks, not to pans, the statements hold but this fails.\nII. No schools are parks: not possible; the opposite Some schools are parks holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No windows are clouds. Some clouds are knives.\nConclusions:\nI. Some knives are not clouds.\nII. It is possible that some clouds are not windows.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some knives are not clouds does not follow: in a diagram where only this region is occupied: an item that belongs to clouds and knives, not to windows, the statements hold but this fails.\nII. Some clouds are not windows: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to clouds and knives, not to windows, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some boats are not sweets. All sarees are boats.\nConclusions:\nI. It is possible that no sweets are boats.\nII. All sweets can be boats.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No sweets are boats: possible; in a diagram where only this region is occupied: an item that belongs to boats only, not to sweets or sarees, the statements hold and this is true.\nII. All sweets are boats: possible; in a diagram where only this region is occupied: an item that belongs to boats only, not to sweets or sarees, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No roads are cakes. All plates are cakes.\nConclusions:\nI. All plates can be roads.\nII. Some cakes are not plates.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All plates are roads: possible; in a diagram where only this region is occupied: an item that belongs to roads only, not to cakes or plates, the statements hold and this is true.\nII. Some cakes are not plates does not follow: in a diagram where only this region is occupied: an item that belongs to roads only, not to cakes or plates, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some bulbs are sweets. Some bulbs are banks.\nConclusions:\nI. It is possible that some sweets are not banks.\nII. No sweets are bulbs.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some sweets are not banks: possible; in a diagram where only these regions are occupied: an item that belongs to banks and bulbs, not to sweets; an item that belongs to bulbs and sweets, not to banks, the statements hold and this is true.\nII. No sweets are bulbs does not follow: in a diagram where only this region is occupied: an item that belongs to banks and bulbs and sweets, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All canals are cards. All tables are canals.\nConclusions:\nI. It is possible that some canals are not cards.\nII. It is possible that some cards are not canals.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some canals are not cards: not possible; the opposite All canals are cards holds in every diagram.\nII. Some cards are not canals: possible; in a diagram where only this region is occupied: an item that belongs to cards only, not to canals or tables, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some buses are not poles. All carrots are poles.\nConclusions:\nI. Some buses can be carrots.\nII. It is possible that some buses are not carrots.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some buses are carrots: possible; in a diagram where only these regions are occupied: an item that belongs to buses only, not to poles or carrots; an item that belongs to buses and poles and carrots, the statements hold and this is true.\nII. Some buses are not carrots: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to buses only, not to poles or carrots, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some seeds are shops. All mats are shops.\nConclusions:\nI. It is possible that some shops are not mats.\nII. It is possible that some mats are not shops.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some shops are not mats: possible; in a diagram where only this region is occupied: an item that belongs to seeds and shops, not to mats, the statements hold and this is true.\nII. Some mats are not shops: not possible; the opposite All mats are shops holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All onions are pans. Some onions are not wells.\nConclusions:\nI. It is possible that no onions are wells.\nII. All pans are wells.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No onions are wells: possible; in a diagram where only this region is occupied: an item that belongs to pans and onions, not to wells, the statements hold and this is true.\nII. All pans are wells does not follow: in a diagram where only this region is occupied: an item that belongs to pans and onions, not to wells, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No tomatoes are laptops. All tomatoes are balls.\nConclusions:\nI. It is possible that some balls are not laptops.\nII. It is possible that some laptops are balls.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some balls are not laptops: possible; in a diagram where only this region is occupied: an item that belongs to balls only, not to tomatoes or laptops, the statements hold and this is true.\nII. Some laptops are balls: possible; in a diagram where only this region is occupied: an item that belongs to balls and laptops, not to tomatoes, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All doctors are parks. Some gardens are doctors.\nConclusions:\nI. Some doctors are gardens.\nII. It is possible that some doctors are not parks.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some doctors are gardens follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some doctors are not parks: not possible; the opposite All doctors are parks holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All stars are chairs. Some tables are not stars.\nConclusions:\nI. All tables can be stars.\nII. No tables are stars.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tables are stars: not possible; the opposite Some tables are not stars holds in every diagram.\nII. No tables are stars does not follow: in a diagram where only these regions are occupied: an item that belongs to tables only, not to chairs or stars; an item that belongs to chairs and stars and tables, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some spoons are not buckets. Some pillows are spoons.\nConclusions:\nI. It is possible that no buckets are pillows.\nII. It is possible that some spoons are buckets.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No buckets are pillows: possible; in a diagram where only this region is occupied: an item that belongs to spoons and pillows, not to buckets, the statements hold and this is true.\nII. Some spoons are buckets: possible; in a diagram where only these regions are occupied: an item that belongs to buckets and spoons, not to pillows; an item that belongs to spoons and pillows, not to buckets, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All brushes are blankets. Some brushes are not balls.\nConclusions:\nI. Some blankets can be balls.\nII. No blankets are brushes.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some blankets are balls: possible; in a diagram where only these regions are occupied: an item that belongs to balls and blankets, not to brushes; an item that belongs to brushes and blankets, not to balls, the statements hold and this is true.\nII. No blankets are brushes does not follow: in a diagram where only this region is occupied: an item that belongs to brushes and blankets, not to balls, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some tomatoes are not seats. Some tomatoes are not carpets.\nConclusions:\nI. Some tomatoes can be carpets.\nII. All tomatoes can be carpets.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some tomatoes are carpets: possible; in a diagram where only these regions are occupied: an item that belongs to tomatoes only, not to seats or carpets; an item that belongs to tomatoes and carpets, not to seats, the statements hold and this is true.\nII. All tomatoes are carpets: not possible; the opposite Some tomatoes are not carpets holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some carpets are stars. All stars are bags.\nConclusions:\nI. It is possible that all stars are carpets.\nII. It is possible that no carpets are stars.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All stars are carpets: possible; in a diagram where only this region is occupied: an item that belongs to carpets and stars and bags, the statements hold and this is true.\nII. No carpets are stars: not possible; the opposite Some carpets are stars holds in every diagram.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All schools are knives. Some knives are not tables.\nConclusions:\nI. Some tables are knives.\nII. It is possible that no knives are tables.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some tables are knives does not follow: in a diagram where only this region is occupied: an item that belongs to knives only, not to schools or tables, the statements hold but this fails.\nII. No knives are tables: possible; in a diagram where only this region is occupied: an item that belongs to knives only, not to schools or tables, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All lamps are kurtas. Some jugs are lamps.\nConclusions:\nI. It is possible that all jugs are lamps.\nII. It is possible that some kurtas are lamps.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All jugs are lamps: possible; in a diagram where only this region is occupied: an item that belongs to kurtas and lamps and jugs, the statements hold and this is true.\nII. Some kurtas are lamps: possible (it even definitely follows); in a diagram where only this region is occupied: an item that belongs to kurtas and lamps and jugs, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No tractors are parks. No mirrors are tractors.\nConclusions:\nI. All mirrors can be parks.\nII. It is possible that all parks are tractors.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All mirrors are parks: possible; in a diagram where only this region is occupied: an item that belongs to parks only, not to tractors or mirrors, the statements hold and this is true.\nII. All parks are tractors: possible; in a diagram where only this region is occupied: an item that belongs to tractors only, not to parks or mirrors, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No chairs are phones. Some tents are not chairs.\nConclusions:\nI. All chairs can be tents.\nII. It is possible that no tents are phones.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All chairs are tents: possible; in a diagram where only this region is occupied: an item that belongs to tents only, not to chairs or phones, the statements hold and this is true.\nII. No tents are phones: possible; in a diagram where only this region is occupied: an item that belongs to tents only, not to chairs or phones, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some notes are not wheels. Some notes are trees.\nConclusions:\nI. It is possible that no wheels are trees.\nII. All notes can be trees.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No wheels are trees: possible; in a diagram where only this region is occupied: an item that belongs to notes and trees, not to wheels, the statements hold and this is true.\nII. All notes are trees: possible; in a diagram where only this region is occupied: an item that belongs to notes and trees, not to wheels, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No planets are watches. No letters are planets.\nConclusions:\nI. It is possible that some planets are letters.\nII. No watches are letters.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some planets are letters: not possible; the opposite No planets are letters holds in every diagram.\nII. No watches are letters does not follow: in a diagram where only this region is occupied: an item that belongs to watches and letters, not to planets, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All bags are watches. Some bags are not wires.\nConclusions:\nI. All watches are wires.\nII. It is possible that no wires are watches.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All watches are wires does not follow: in a diagram where only this region is occupied: an item that belongs to watches and bags, not to wires, the statements hold but this fails.\nII. No wires are watches: possible; in a diagram where only this region is occupied: an item that belongs to watches and bags, not to wires, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some tractors are not blankets. Some tractors are not stones.\nConclusions:\nI. Some stones are blankets.\nII. All stones can be tractors.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some stones are blankets does not follow: in a diagram where only this region is occupied: an item that belongs to tractors only, not to stones or blankets, the statements hold but this fails.\nII. All stones are tractors: possible; in a diagram where only this region is occupied: an item that belongs to tractors only, not to stones or blankets, the statements hold and this is true.\nSo only conclusion II holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No pans are cycles. All biscuits are cycles.\nConclusions:\nI. All pans can be cycles.\nII. Some biscuits can be pans.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All pans are cycles: possible; in a diagram where only this region is occupied: an item that belongs to cycles only, not to pans or biscuits, the statements hold and this is true.\nII. Some biscuits are pans: not possible; the statements force the opposite: All biscuits are cycles + No cycles are pans => No biscuits are pans.\nSo only conclusion I holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some potatoes are not stars. Some signals are stars.\nConclusions:\nI. All potatoes can be stars.\nII. It is possible that no signals are stars.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All potatoes are stars: not possible; the opposite Some potatoes are not stars holds in every diagram.\nII. No signals are stars: not possible; the opposite Some signals are stars holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some diaries are keys. All diaries are tyres.\nConclusions:\nI. Some tyres are not diaries.\nII. It is possible that no keys are tyres.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some tyres are not diaries does not follow: in a diagram where only this region is occupied: an item that belongs to keys and diaries and tyres, the statements hold but this fails.\nII. No keys are tyres: not possible; the statements force the opposite: Some keys are diaries + All diaries are tyres => Some keys are tyres.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some teachers are not shoes. No doctors are teachers.\nConclusions:\nI. Some doctors are shoes.\nII. It is possible that some doctors are teachers.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some doctors are shoes does not follow: in a diagram where only this region is occupied: an item that belongs to teachers only, not to doctors or shoes, the statements hold but this fails.\nII. Some doctors are teachers: not possible; the opposite No doctors are teachers holds in every diagram.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some watches are not birds. Some boats are not birds.\nConclusions:\nI. All watches can be birds.\nII. All boats are birds.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All watches are birds: not possible; the opposite Some watches are not birds holds in every diagram.\nII. All boats are birds does not follow: in a diagram where only this region is occupied: an item that belongs to watches and boats, not to birds, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some carrots are not kurtas. All carrots are doors.\nConclusions:\nI. It is possible that no carrots are kurtas.\nII. It is possible that no kurtas are doors.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No carrots are kurtas: possible; in a diagram where only this region is occupied: an item that belongs to carrots and doors, not to kurtas, the statements hold and this is true.\nII. No kurtas are doors: possible; in a diagram where only this region is occupied: an item that belongs to carrots and doors, not to kurtas, the statements hold and this is true.\nSo both conclusions hold.\nConvention used: a possibility conclusion follows if at least one Venn diagram that fits the statements makes it true; 'Some' means at least one, and a definite conclusion follows only if true in every such diagram.",
+   "shortcut": "Possibility holds unless the statements force the opposite; test by drawing one diagram that keeps both statements true.",
+   "subPattern": "possibility-cases",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

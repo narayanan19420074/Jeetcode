@@ -1,0 +1,2019 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A solid clay cube of side 6 cm is cut into smaller cubes of side 2 cm. How many small cubes are obtained?",
+   "options": [
+    "8",
+    "9",
+    "54",
+    "27"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cubes along each edge = 6/2 = 3. Total = 3³ = 27.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid soap cube of side 12 cm is cut into smaller cubes of side 3 cm. How many small cubes are obtained?",
+   "options": [
+    "96",
+    "16",
+    "27",
+    "64"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cubes along each edge = 12/3 = 4. Total = 4³ = 64.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid marble cube of side 10 cm is cut into smaller cubes of side 2 cm. How many small cubes are obtained?",
+   "options": [
+    "64",
+    "25",
+    "150",
+    "125"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cubes along each edge = 10/2 = 5. Total = 5³ = 125.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid marble cube of side 15 cm is cut into smaller cubes of side 3 cm. How many small cubes are obtained?",
+   "options": [
+    "125",
+    "150",
+    "64",
+    "25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cubes along each edge = 15/3 = 5. Total = 5³ = 125.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid clay cube of side 20 cm is cut into smaller cubes of side 4 cm. How many small cubes are obtained?",
+   "options": [
+    "125",
+    "25",
+    "64",
+    "150"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cubes along each edge = 20/4 = 5. Total = 5³ = 125.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid cake cube of side 24 cm is cut into smaller cubes of side 6 cm. How many small cubes are obtained?",
+   "options": [
+    "96",
+    "27",
+    "64",
+    "16"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes along each edge = 24/6 = 4. Total = 4³ = 64.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid cheese cube of side 18 cm is cut into smaller cubes of side 3 cm. How many small cubes are obtained?",
+   "options": [
+    "216",
+    "36",
+    "222",
+    "125"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cubes along each edge = 18/3 = 6. Total = 6³ = 216.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid clay cube of side 30 cm is cut into smaller cubes of side 5 cm. How many small cubes are obtained?",
+   "options": [
+    "216",
+    "36",
+    "125",
+    "222"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cubes along each edge = 30/5 = 6. Total = 6³ = 216.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid cake cube of side 16 cm is cut into smaller cubes of side 4 cm. How many small cubes are obtained?",
+   "options": [
+    "16",
+    "64",
+    "27",
+    "96"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cubes along each edge = 16/4 = 4. Total = 4³ = 64.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "A solid clay cube of side 9 cm is cut into smaller cubes of side 3 cm. How many small cubes are obtained?",
+   "options": [
+    "54",
+    "27",
+    "8",
+    "9"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cubes along each edge = 9/3 = 3. Total = 3³ = 27.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (edge ÷ small edge)³."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 6 cm cube into 27 cubes of side 2 cm?",
+   "options": [
+    "2",
+    "9",
+    "26",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each of the three directions needs 3−1 = 2 cuts. Total = 3 × 2 = 6.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 8 cm cube into 64 cubes of side 2 cm?",
+   "options": [
+    "12",
+    "3",
+    "63",
+    "9"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each of the three directions needs 4−1 = 3 cuts. Total = 3 × 3 = 9.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 9 cm cube into 27 cubes of side 3 cm?",
+   "options": [
+    "6",
+    "2",
+    "9",
+    "26"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each of the three directions needs 3−1 = 2 cuts. Total = 3 × 2 = 6.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 12 cm cube into 64 cubes of side 3 cm?",
+   "options": [
+    "12",
+    "9",
+    "3",
+    "63"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each of the three directions needs 4−1 = 3 cuts. Total = 3 × 3 = 9.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 10 cm cube into 8 cubes of side 5 cm?",
+   "options": [
+    "7",
+    "3",
+    "6",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each of the three directions needs 2−1 = 1 cuts. Total = 3 × 1 = 3.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 12 cm cube into 216 cubes of side 2 cm?",
+   "options": [
+    "15",
+    "5",
+    "18",
+    "215"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each of the three directions needs 6−1 = 5 cuts. Total = 3 × 5 = 15.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "What is the minimum number of straight cuts (each cut a plane through the whole block, pieces not rearranged) needed to cut a 20 cm cube into 64 cubes of side 5 cm?",
+   "options": [
+    "12",
+    "9",
+    "63",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each of the three directions needs 4−1 = 3 cuts. Total = 3 × 3 = 9.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Cuts = 3(n−1) for n slices per edge."
+  },
+  {
+   "questionText": "A cheese cuboid measuring 4 cm × 3 cm × 3 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have no painted face?",
+   "options": [
+    "2",
+    "3",
+    "14",
+    "10"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inner cubes: (a−2)(b−2)(c−2) = 2×1×1 = 2.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Remove the outer layer from every dimension."
+  },
+  {
+   "questionText": "A granite cuboid measuring 5 cm × 4 cm × 3 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have exactly two painted faces?",
+   "options": [
+    "36",
+    "25",
+    "32",
+    "24"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Edge cubes: 4[(a−2)+(b−2)+(c−2)] = 4×6 = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Four edges of each length, each contributes (length − 2) cubes."
+  },
+  {
+   "questionText": "A paneer cuboid measuring 6 cm × 4 cm × 3 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have exactly two painted faces?",
+   "options": [
+    "28",
+    "40",
+    "36",
+    "29"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Edge cubes: 4[(a−2)+(b−2)+(c−2)] = 4×7 = 28.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Four edges of each length, each contributes (length − 2) cubes."
+  },
+  {
+   "questionText": "A teak wood cuboid measuring 5 cm × 5 cm × 3 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have exactly one painted face?",
+   "options": [
+    "42",
+    "31",
+    "38",
+    "30"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Face cubes: 2[(a−2)(b−2)+(b−2)(c−2)+(c−2)(a−2)] = 2[9+3+3] = 30.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Count each pair of opposite faces separately."
+  },
+  {
+   "questionText": "A marble cuboid measuring 6 cm × 5 cm × 4 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have no painted face?",
+   "options": [
+    "25",
+    "36",
+    "24",
+    "32"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inner cubes: (a−2)(b−2)(c−2) = 4×3×2 = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Remove the outer layer from every dimension."
+  },
+  {
+   "questionText": "A soap cuboid measuring 7 cm × 4 cm × 3 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have exactly one painted face?",
+   "options": [
+    "35",
+    "42",
+    "34",
+    "46"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Face cubes: 2[(a−2)(b−2)+(b−2)(c−2)+(c−2)(a−2)] = 2[10+2+5] = 34.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Count each pair of opposite faces separately."
+  },
+  {
+   "questionText": "A soap cuboid measuring 8 cm × 5 cm × 3 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have exactly two painted faces?",
+   "options": [
+    "48",
+    "52",
+    "41",
+    "40"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Edge cubes: 4[(a−2)+(b−2)+(c−2)] = 4×10 = 40.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Four edges of each length, each contributes (length − 2) cubes."
+  },
+  {
+   "questionText": "A granite cuboid measuring 6 cm × 6 cm × 4 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have no painted face?",
+   "options": [
+    "44",
+    "33",
+    "40",
+    "32"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Inner cubes: (a−2)(b−2)(c−2) = 4×4×2 = 32.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Remove the outer layer from every dimension."
+  },
+  {
+   "questionText": "A ice cuboid measuring 7 cm × 5 cm × 4 cm is painted on all six faces and then cut into 1 cm cubes. How many of the 1 cm cubes have exactly one painted face?",
+   "options": [
+    "74",
+    "62",
+    "70",
+    "63"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Face cubes: 2[(a−2)(b−2)+(b−2)(c−2)+(c−2)(a−2)] = 2[15+6+10] = 62.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Count each pair of opposite faces separately."
+  },
+  {
+   "questionText": "A 5 cm cube of granite is painted only on its top and bottom faces and then cut into 125 identical 1 cm cubes. How many cubes have exactly one painted face?",
+   "options": [
+    "80",
+    "51",
+    "50",
+    "25"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only the top and bottom layers have paint, each cube there has one painted face: 2 × 5² = 50.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Layer-wise counting: painted layers vs unpainted layers."
+  },
+  {
+   "questionText": "A 6 cm cube of cheese is painted only on its top and bottom faces and then cut into 216 identical 1 cm cubes. How many cubes have no painted face?",
+   "options": [
+    "150",
+    "36",
+    "72",
+    "144"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Unpainted cubes lie in the 4 middle layers: 6² × 4 = 144.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Layer-wise counting: painted layers vs unpainted layers."
+  },
+  {
+   "questionText": "A 8 cm cube of sandalwood is painted only on its top and bottom faces and then cut into 512 identical 1 cm cubes. How many cubes have exactly one painted face?",
+   "options": [
+    "128",
+    "64",
+    "392",
+    "129"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only the top and bottom layers have paint, each cube there has one painted face: 2 × 8² = 128.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Layer-wise counting: painted layers vs unpainted layers."
+  },
+  {
+   "questionText": "Two adjacent faces of a 3 cm cube are painted red and the other four faces are left unpainted. The cube is cut into 1 cm cubes. How many small cubes have exactly two red faces?",
+   "options": [
+    "4",
+    "6",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two red faces lie along the common edge of the two painted faces, which has 3 unit cubes. Answer = 3.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Only the shared edge gives two painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 3 cm cube are painted green, the rest stay plain. After cutting into 1 cm cubes, how many have exactly one green face?",
+   "options": [
+    "12",
+    "13",
+    "11",
+    "18"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each painted face has 3² cubes; the 3 cubes on the common edge have two faces painted. Exactly one = 2(3² − 3) = 12.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "One-face = 2(n² − n) for two adjacent painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 4 cm cube are painted red and the other four faces are left unpainted. The cube is cut into 1 cm cubes. How many small cubes have exactly two red faces?",
+   "options": [
+    "2",
+    "5",
+    "4",
+    "8"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two red faces lie along the common edge of the two painted faces, which has 4 unit cubes. Answer = 4.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Only the shared edge gives two painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 4 cm cube are painted green, the rest stay plain. After cutting into 1 cm cubes, how many have exactly one green face?",
+   "options": [
+    "32",
+    "24",
+    "23",
+    "25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each painted face has 4² cubes; the 4 cubes on the common edge have two faces painted. Exactly one = 2(4² − 4) = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "One-face = 2(n² − n) for two adjacent painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 5 cm cube are painted red and the other four faces are left unpainted. The cube is cut into 1 cm cubes. How many small cubes have exactly two red faces?",
+   "options": [
+    "10",
+    "3",
+    "5",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two red faces lie along the common edge of the two painted faces, which has 5 unit cubes. Answer = 5.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Only the shared edge gives two painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 5 cm cube are painted green, the rest stay plain. After cutting into 1 cm cubes, how many have exactly one green face?",
+   "options": [
+    "39",
+    "50",
+    "40",
+    "41"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each painted face has 5² cubes; the 5 cubes on the common edge have two faces painted. Exactly one = 2(5² − 5) = 40.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "One-face = 2(n² − n) for two adjacent painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 6 cm cube are painted red and the other four faces are left unpainted. The cube is cut into 1 cm cubes. How many small cubes have exactly two red faces?",
+   "options": [
+    "6",
+    "4",
+    "12",
+    "7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cubes with two red faces lie along the common edge of the two painted faces, which has 6 unit cubes. Answer = 6.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Only the shared edge gives two painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 6 cm cube are painted green, the rest stay plain. After cutting into 1 cm cubes, how many have exactly one green face?",
+   "options": [
+    "60",
+    "72",
+    "59",
+    "61"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each painted face has 6² cubes; the 6 cubes on the common edge have two faces painted. Exactly one = 2(6² − 6) = 60.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "One-face = 2(n² − n) for two adjacent painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 7 cm cube are painted red and the other four faces are left unpainted. The cube is cut into 1 cm cubes. How many small cubes have exactly two red faces?",
+   "options": [
+    "14",
+    "5",
+    "8",
+    "7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cubes with two red faces lie along the common edge of the two painted faces, which has 7 unit cubes. Answer = 7.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Only the shared edge gives two painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 7 cm cube are painted green, the rest stay plain. After cutting into 1 cm cubes, how many have exactly one green face?",
+   "options": [
+    "85",
+    "83",
+    "98",
+    "84"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Each painted face has 7² cubes; the 7 cubes on the common edge have two faces painted. Exactly one = 2(7² − 7) = 84.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "One-face = 2(n² − n) for two adjacent painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 8 cm cube are painted red and the other four faces are left unpainted. The cube is cut into 1 cm cubes. How many small cubes have exactly two red faces?",
+   "options": [
+    "16",
+    "9",
+    "8",
+    "6"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two red faces lie along the common edge of the two painted faces, which has 8 unit cubes. Answer = 8.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Only the shared edge gives two painted faces."
+  },
+  {
+   "questionText": "Two adjacent faces of a 8 cm cube are painted green, the rest stay plain. After cutting into 1 cm cubes, how many have exactly one green face?",
+   "options": [
+    "128",
+    "112",
+    "111",
+    "113"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each painted face has 8² cubes; the 8 cubes on the common edge have two faces painted. Exactly one = 2(8² − 8) = 112.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "One-face = 2(n² − n) for two adjacent painted faces."
+  },
+  {
+   "questionText": "A 3 cm cube has its top and bottom faces painted red and its four side faces painted green. It is cut into 27 unit cubes. How many unit cubes have exactly one red face and exactly one green face?",
+   "options": [
+    "4",
+    "8",
+    "12",
+    "16"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Such cubes lie on the 8 edges where a red face meets a green face (top and bottom rims). Each such edge has 1 non-corner cubes: 8 × 1 = 8.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Red–green edges = 8; corners excluded, so 8(n−2)."
+  },
+  {
+   "questionText": "A cube of side 3 cm is painted red on top and bottom and green on the four sides, then cut into 1 cm cubes. How many cubes have two green faces and no red face?",
+   "options": [
+    "12",
+    "8",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two green faces and no red lie on the 4 vertical edges, excluding the end cubes at top and bottom: 4 × (3−2) = 4.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Vertical edges only: 4(n−2)."
+  },
+  {
+   "questionText": "A 4 cm cube has its top and bottom faces painted red and its four side faces painted green. It is cut into 64 unit cubes. How many unit cubes have exactly one red face and exactly one green face?",
+   "options": [
+    "24",
+    "17",
+    "16",
+    "8"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Such cubes lie on the 8 edges where a red face meets a green face (top and bottom rims). Each such edge has 2 non-corner cubes: 8 × 2 = 16.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Red–green edges = 8; corners excluded, so 8(n−2)."
+  },
+  {
+   "questionText": "A cube of side 4 cm is painted red on top and bottom and green on the four sides, then cut into 1 cm cubes. How many cubes have two green faces and no red face?",
+   "options": [
+    "12",
+    "16",
+    "24",
+    "8"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cubes with two green faces and no red lie on the 4 vertical edges, excluding the end cubes at top and bottom: 4 × (4−2) = 8.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Vertical edges only: 4(n−2)."
+  },
+  {
+   "questionText": "A 5 cm cube has its top and bottom faces painted red and its four side faces painted green. It is cut into 125 unit cubes. How many unit cubes have exactly one red face and exactly one green face?",
+   "options": [
+    "36",
+    "24",
+    "12",
+    "32"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Such cubes lie on the 8 edges where a red face meets a green face (top and bottom rims). Each such edge has 3 non-corner cubes: 8 × 3 = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Red–green edges = 8; corners excluded, so 8(n−2)."
+  },
+  {
+   "questionText": "A cube of side 5 cm is painted red on top and bottom and green on the four sides, then cut into 1 cm cubes. How many cubes have two green faces and no red face?",
+   "options": [
+    "20",
+    "16",
+    "12",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two green faces and no red lie on the 4 vertical edges, excluding the end cubes at top and bottom: 4 × (5−2) = 12.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Vertical edges only: 4(n−2)."
+  },
+  {
+   "questionText": "A 6 cm cube has its top and bottom faces painted red and its four side faces painted green. It is cut into 216 unit cubes. How many unit cubes have exactly one red face and exactly one green face?",
+   "options": [
+    "40",
+    "16",
+    "48",
+    "32"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Such cubes lie on the 8 edges where a red face meets a green face (top and bottom rims). Each such edge has 4 non-corner cubes: 8 × 4 = 32.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Red–green edges = 8; corners excluded, so 8(n−2)."
+  },
+  {
+   "questionText": "A cube of side 6 cm is painted red on top and bottom and green on the four sides, then cut into 1 cm cubes. How many cubes have two green faces and no red face?",
+   "options": [
+    "20",
+    "24",
+    "16",
+    "32"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two green faces and no red lie on the 4 vertical edges, excluding the end cubes at top and bottom: 4 × (6−2) = 16.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Vertical edges only: 4(n−2)."
+  },
+  {
+   "questionText": "A 7 cm cube has its top and bottom faces painted red and its four side faces painted green. It is cut into 343 unit cubes. How many unit cubes have exactly one red face and exactly one green face?",
+   "options": [
+    "40",
+    "20",
+    "60",
+    "48"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Such cubes lie on the 8 edges where a red face meets a green face (top and bottom rims). Each such edge has 5 non-corner cubes: 8 × 5 = 40.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Red–green edges = 8; corners excluded, so 8(n−2)."
+  },
+  {
+   "questionText": "A cube of side 7 cm is painted red on top and bottom and green on the four sides, then cut into 1 cm cubes. How many cubes have two green faces and no red face?",
+   "options": [
+    "28",
+    "20",
+    "24",
+    "40"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cubes with two green faces and no red lie on the 4 vertical edges, excluding the end cubes at top and bottom: 4 × (7−2) = 20.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Vertical edges only: 4(n−2)."
+  },
+  {
+   "questionText": "A 8 cm cube has its top and bottom faces painted red and its four side faces painted green. It is cut into 512 unit cubes. How many unit cubes have exactly one red face and exactly one green face?",
+   "options": [
+    "56",
+    "24",
+    "72",
+    "48"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Such cubes lie on the 8 edges where a red face meets a green face (top and bottom rims). Each such edge has 6 non-corner cubes: 8 × 6 = 48.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Red–green edges = 8; corners excluded, so 8(n−2)."
+  },
+  {
+   "questionText": "A cube of side 8 cm is painted red on top and bottom and green on the four sides, then cut into 1 cm cubes. How many cubes have two green faces and no red face?",
+   "options": [
+    "32",
+    "28",
+    "24",
+    "48"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Cubes with two green faces and no red lie on the 4 vertical edges, excluding the end cubes at top and bottom: 4 × (8−2) = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Vertical edges only: 4(n−2)."
+  },
+  {
+   "questionText": "A cube of side 6 cm is cut into cubes of side 2 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "216",
+    "648",
+    "432",
+    "456"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Original area = 6 × 6² = 216. New total = 27 × 6 × 2² = 648. Increase = 432 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube is cut into cubes whose edge is 1/3 of the original edge. The total surface area of all the small cubes is how many times the original surface area?",
+   "options": [
+    "27",
+    "2",
+    "3",
+    "9"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each small cube has area 6(a/3)² = 6a²/9; with 27 cubes the total = 27/9 × 6a² = 3 × original.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area = n × original when edge is divided into n."
+  },
+  {
+   "questionText": "A cube of side 12 cm is cut into cubes of side 3 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "2646",
+    "3456",
+    "864",
+    "2592"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Original area = 6 × 12² = 864. New total = 64 × 6 × 3² = 3456. Increase = 2592 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube is cut into cubes whose edge is 1/4 of the original edge. The total surface area of all the small cubes is how many times the original surface area?",
+   "options": [
+    "64",
+    "4",
+    "16",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each small cube has area 6(a/4)² = 6a²/16; with 64 cubes the total = 64/16 × 6a² = 4 × original.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area = n × original when edge is divided into n."
+  },
+  {
+   "questionText": "A cube of side 10 cm is cut into cubes of side 2 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "2400",
+    "2424",
+    "3000",
+    "600"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Original area = 6 × 10² = 600. New total = 125 × 6 × 2² = 3000. Increase = 2400 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube is cut into cubes whose edge is 1/5 of the original edge. The total surface area of all the small cubes is how many times the original surface area?",
+   "options": [
+    "125",
+    "5",
+    "4",
+    "25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each small cube has area 6(a/5)² = 6a²/25; with 125 cubes the total = 125/25 × 6a² = 5 × original.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area = n × original when edge is divided into n."
+  },
+  {
+   "questionText": "A cube of side 15 cm is cut into cubes of side 3 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "5400",
+    "1350",
+    "6750",
+    "5454"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Original area = 6 × 15² = 1350. New total = 125 × 6 × 3² = 6750. Increase = 5400 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube of side 8 cm is cut into cubes of side 2 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "1176",
+    "1152",
+    "1536",
+    "384"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Original area = 6 × 8² = 384. New total = 64 × 6 × 2² = 1536. Increase = 1152 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube of side 20 cm is cut into cubes of side 5 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "9600",
+    "7350",
+    "7200",
+    "2400"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Original area = 6 × 20² = 2400. New total = 64 × 6 × 5² = 9600. Increase = 7200 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube of side 12 cm is cut into cubes of side 4 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "864",
+    "1728",
+    "2592",
+    "1824"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Original area = 6 × 12² = 864. New total = 27 × 6 × 4² = 2592. Increase = 1728 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A cube of side 9 cm is cut into cubes of side 3 cm. By how many cm² does the total surface area increase?",
+   "options": [
+    "1026",
+    "972",
+    "1458",
+    "486"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Original area = 6 × 9² = 486. New total = 27 × 6 × 3² = 1458. Increase = 972 cm².",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total area becomes n times the original: increase = 6S²(n−1)."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 54 of the small cubes have exactly one painted face, how many small cubes are there in all?",
+   "options": [
+    "125",
+    "25",
+    "216",
+    "64"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "6(n−2)² = 54 → (n−2)² = 9 → n−2 = 3, so n = 5. Total cubes = 5³ = 125.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Divide by 6, take the square root, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 96 of the small cubes have exactly one painted face, how many small cubes are there in all?",
+   "options": [
+    "216",
+    "343",
+    "125",
+    "36"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "6(n−2)² = 96 → (n−2)² = 16 → n−2 = 4, so n = 6. Total cubes = 6³ = 216.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Divide by 6, take the square root, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 60 of the small cubes have exactly two painted faces, how many small cubes are there in all?",
+   "options": [
+    "512",
+    "343",
+    "216",
+    "49"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "12(n−2) = 60 → n−2 = 5, so n = 7. Total cubes = 7³ = 343.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Divide by 12, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 72 of the small cubes have exactly two painted faces, how many small cubes are there in all?",
+   "options": [
+    "343",
+    "64",
+    "512",
+    "729"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "12(n−2) = 72 → n−2 = 6, so n = 8. Total cubes = 8³ = 512.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Divide by 12, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 64 of the small cubes have no painted faces, how many small cubes are there in all?",
+   "options": [
+    "36",
+    "343",
+    "125",
+    "216"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(n−2)³ = 64 → n−2 = 4, so n = 6. Total cubes = 6³ = 216.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Take the cube root, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 125 of the small cubes have no painted faces, how many small cubes are there in all?",
+   "options": [
+    "216",
+    "512",
+    "49",
+    "343"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(n−2)³ = 125 → n−2 = 5, so n = 7. Total cubes = 7³ = 343.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Take the cube root, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 294 of the small cubes have exactly one painted face, how many small cubes are there in all?",
+   "options": [
+    "512",
+    "729",
+    "81",
+    "1000"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "6(n−2)² = 294 → (n−2)² = 49 → n−2 = 7, so n = 9. Total cubes = 9³ = 729.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Divide by 6, take the square root, add 2."
+  },
+  {
+   "questionText": "A solid cube is painted on every face and cut into equal small cubes. If 96 of the small cubes have exactly two painted faces, how many small cubes are there in all?",
+   "options": [
+    "100",
+    "1000",
+    "729",
+    "1331"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "12(n−2) = 96 → n−2 = 8, so n = 10. Total cubes = 10³ = 1000.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Divide by 12, add 2."
+  },
+  {
+   "questionText": "A cuboid block 12 cm × 18 cm × 24 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "48",
+    "24",
+    "30",
+    "13"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Largest cube edge = HCF(12,18,24) = 6 cm. Number = (12/6) × (18/6) × (24/6) = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 15 cm × 20 cm × 35 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "84",
+    "89",
+    "168",
+    "43"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Largest cube edge = HCF(15,20,35) = 5 cm. Number = (15/5) × (20/5) × (35/5) = 84.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 16 cm × 24 cm × 40 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "38",
+    "60",
+    "16",
+    "30"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Largest cube edge = HCF(16,24,40) = 8 cm. Number = (16/8) × (24/8) × (40/8) = 30.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 21 cm × 35 cm × 28 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "67",
+    "60",
+    "31",
+    "120"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Largest cube edge = HCF(21,35,28) = 7 cm. Number = (21/7) × (35/7) × (28/7) = 60.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 30 cm × 45 cm × 60 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "24",
+    "39",
+    "13",
+    "48"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Largest cube edge = HCF(30,45,60) = 15 cm. Number = (30/15) × (45/15) × (60/15) = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 18 cm × 27 cm × 36 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "24",
+    "13",
+    "48",
+    "33"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Largest cube edge = HCF(18,27,36) = 9 cm. Number = (18/9) × (27/9) × (36/9) = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 14 cm × 21 cm × 35 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "60",
+    "16",
+    "37",
+    "30"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Largest cube edge = HCF(14,21,35) = 7 cm. Number = (14/7) × (21/7) × (35/7) = 30.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cuboid block 20 cm × 30 cm × 50 cm is to be cut into identical cubes with no wastage. What is the least possible number of cubes?",
+   "options": [
+    "60",
+    "16",
+    "30",
+    "40"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Largest cube edge = HCF(20,30,50) = 10 cm. Number = (20/10) × (30/10) × (50/10) = 30.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Fewest cubes means biggest cube: use HCF."
+  },
+  {
+   "questionText": "A cube is painted on all faces and cut into 64 equal cubes. What percentage of the small cubes have no paint on any face?",
+   "options": [
+    "25%",
+    "12.5%",
+    "87.5%",
+    "37.5%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Unpainted = (4−2)³ = 8. Percentage = 8/64 × 100 = 12.5%.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Unpainted fraction = ((n−2)/n)³."
+  },
+  {
+   "questionText": "A cube is painted on all faces and cut into 125 equal cubes. What percentage of the small cubes have no paint on any face?",
+   "options": [
+    "36%",
+    "78.4%",
+    "21.6%",
+    "43.2%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Unpainted = (5−2)³ = 27. Percentage = 27/125 × 100 = 21.6%.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Unpainted fraction = ((n−2)/n)³."
+  },
+  {
+   "questionText": "A cube is painted on all faces and cut into 1000 equal cubes. What percentage of the small cubes have no paint on any face?",
+   "options": [
+    "48.8%",
+    "64%",
+    "51.2%",
+    "38.4%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Unpainted = (10−2)³ = 512. Percentage = 512/1000 × 100 = 51.2%.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Unpainted fraction = ((n−2)/n)³."
+  },
+  {
+   "questionText": "A cube is painted on all faces and cut into 8000 equal cubes. What percentage of the small cubes have no paint on any face?",
+   "options": [
+    "81%",
+    "27.1%",
+    "72.9%",
+    "24.3%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Unpainted = (20−2)³ = 5832. Percentage = 5832/8000 × 100 = 72.9%.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Unpainted fraction = ((n−2)/n)³."
+  },
+  {
+   "questionText": "A cube of side 4 cm is painted on all faces and cut into unit cubes. How many unit cubes have at least two painted faces?",
+   "options": [
+    "36",
+    "33",
+    "32",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Corners 8 + edge cubes 12(4−2) = 8 + 24 = 32.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Use total − complement."
+  },
+  {
+   "questionText": "A cube of side 5 cm is painted on all faces and cut into unit cubes. How many unit cubes have at least one painted face?",
+   "options": [
+    "99",
+    "98",
+    "103",
+    "90"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total − unpainted = 125 − 27 = 98.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Use total − complement."
+  },
+  {
+   "questionText": "A cube of side 5 cm is painted on all faces and cut into unit cubes. How many unit cubes have at most one painted face?",
+   "options": [
+    "81",
+    "82",
+    "86",
+    "73"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total − (corners + edge cubes) = 125 − 44 = 81.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Use total − complement."
+  },
+  {
+   "questionText": "A cube of side 6 cm is painted on all faces and cut into unit cubes. How many unit cubes have at least two painted faces?",
+   "options": [
+    "57",
+    "56",
+    "48",
+    "62"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Corners 8 + edge cubes 12(6−2) = 8 + 48 = 56.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Use total − complement."
+  },
+  {
+   "questionText": "A cube of side 8 cm is painted on all faces and cut into unit cubes. How many unit cubes have at least two painted faces?",
+   "options": [
+    "72",
+    "80",
+    "88",
+    "81"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Corners 8 + edge cubes 12(8−2) = 8 + 72 = 80.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Use total − complement."
+  },
+  {
+   "questionText": "A rectangular block is cut by 1 plane(s) parallel to its length-breadth face, 1 plane(s) parallel to its breadth-height face and 1 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "4",
+    "9",
+    "8",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Slices in the three directions are 2, 2 and 2. Pieces = 2 × 2 × 2 = 8.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "A rectangular block is cut by 2 plane(s) parallel to its length-breadth face, 1 plane(s) parallel to its breadth-height face and 1 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "12",
+    "5",
+    "13",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Slices in the three directions are 3, 2 and 2. Pieces = 3 × 2 × 2 = 12.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "A rectangular block is cut by 2 plane(s) parallel to its length-breadth face, 2 plane(s) parallel to its breadth-height face and 1 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "4",
+    "6",
+    "19",
+    "18"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Slices in the three directions are 3, 3 and 2. Pieces = 3 × 3 × 2 = 18.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "A rectangular block is cut by 2 plane(s) parallel to its length-breadth face, 2 plane(s) parallel to its breadth-height face and 2 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "28",
+    "27",
+    "7",
+    "8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Slices in the three directions are 3, 3 and 3. Pieces = 3 × 3 × 3 = 27.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "A rectangular block is cut by 3 plane(s) parallel to its length-breadth face, 1 plane(s) parallel to its breadth-height face and 2 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "6",
+    "7",
+    "24",
+    "25"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Slices in the three directions are 4, 2 and 3. Pieces = 4 × 2 × 3 = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "A rectangular block is cut by 1 plane(s) parallel to its length-breadth face, 3 plane(s) parallel to its breadth-height face and 3 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "9",
+    "8",
+    "33",
+    "32"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Slices in the three directions are 2, 4 and 4. Pieces = 2 × 4 × 4 = 32.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "A rectangular block is cut by 4 plane(s) parallel to its length-breadth face, 2 plane(s) parallel to its breadth-height face and 1 plane(s) parallel to its length-height face. How many pieces are formed?",
+   "options": [
+    "30",
+    "29",
+    "31",
+    "8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Slices in the three directions are 5, 3 and 2. Pieces = 5 × 3 × 2 = 30.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Pieces = (a+1)(b+1)(c+1)."
+  },
+  {
+   "questionText": "What is the maximum number of pieces a cube can be divided into using exactly 3 plane cuts (rearranging pieces not allowed)?",
+   "options": [
+    "6",
+    "9",
+    "8",
+    "7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each plane can at most double the pieces in the best case: 3 mutually perpendicular planes through the centre give 2×2×2 = 8 pieces.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "3 planes in 3 directions: 2×2×2."
+  },
+  {
+   "questionText": "A cube is cut by 6 planes, 2 parallel to each pair of opposite faces, with all cuts equally spaced. How many pieces are formed?",
+   "options": [
+    "27",
+    "18",
+    "26",
+    "24"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each direction is cut into 3 slices: 3 × 3 × 3 = 27.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "(2+1)³ = 27."
+  },
+  {
+   "questionText": "A 4 × 4 × 4 cube made of unit cubes is painted on all faces and dismantled. If all the unit cubes with at least one painted face are removed and the rest are glued into one solid, what is its shape and number of cubes?",
+   "options": [
+    "A 3 × 3 × 3 cube of 27 cubes",
+    "A 2 × 2 × 4 cuboid of 16 cubes",
+    "A 4 × 4 × 2 slab of 32 cubes",
+    "A 2 × 2 × 2 cube of 8 cubes"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Unpainted cubes form the inner (4−2)³ = 2³ block: a 2 × 2 × 2 cube of 8 cubes.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Inner block is (n−2) per side."
+  },
+  {
+   "questionText": "A cube of side 10 cm is painted on all faces and cut into 1 cm cubes. What is the total number of painted small faces on all the unit cubes together?",
+   "options": [
+    "384",
+    "1000",
+    "6000",
+    "600"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total painted area = 6 × 10² = 600 cm², so 600 unit faces are painted.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Painted faces = 6n²."
+  },
+  {
+   "questionText": "A 5 cm cube painted on all faces is cut into 1 cm cubes. If the cubes having exactly three painted faces and the cubes having no painted faces are removed, how many cubes remain?",
+   "options": [
+    "117",
+    "90",
+    "125",
+    "98"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total 125; three-face cubes = 8; unpainted = 27. Remaining = 125 − 8 − 27 = 90.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Remaining = edges + faces = 36 + 54 = 90."
+  },
+  {
+   "questionText": "A cube is painted on all faces and cut into 1 cm cubes. The number of cubes with exactly one painted face is 6 times the number with no painted face. What is the side of the cube in cm?",
+   "options": [
+    "6",
+    "3",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "6(n−2)² = 6(n−2)³ → n−2 = 1 → n = 3. Check: 6 cubes with one face, 1 with none.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Set 6(n−2)² = 6(n−2)³."
+  },
+  {
+   "questionText": "In a painted cube cut into unit cubes, exactly 24 unit cubes have two painted faces. How many unit cubes have exactly one painted face?",
+   "options": [
+    "24",
+    "96",
+    "8",
+    "28"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "12(n−2) = 24 → n−2 = 2 → n = 4. One-face cubes = 6(n−2)² = 6 × 4 = 24.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find n from 12(n−2), then apply 6(n−2)²."
+  },
+  {
+   "questionText": "In a painted cube cut into unit cubes, exactly 36 unit cubes have two painted faces. How many unit cubes have exactly one painted face?",
+   "options": [
+    "27",
+    "59",
+    "54",
+    "150"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "12(n−2) = 36 → n−2 = 3 → n = 5. One-face cubes = 6(n−2)² = 6 × 9 = 54.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find n from 12(n−2), then apply 6(n−2)²."
+  },
+  {
+   "questionText": "In a painted cube cut into unit cubes, exactly 48 unit cubes have two painted faces. How many unit cubes have exactly one painted face?",
+   "options": [
+    "64",
+    "102",
+    "96",
+    "216"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "12(n−2) = 48 → n−2 = 4 → n = 6. One-face cubes = 6(n−2)² = 6 × 16 = 96.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find n from 12(n−2), then apply 6(n−2)²."
+  },
+  {
+   "questionText": "In a painted cube cut into unit cubes, exactly 60 unit cubes have two painted faces. How many unit cubes have exactly one painted face?",
+   "options": [
+    "150",
+    "294",
+    "125",
+    "157"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "12(n−2) = 60 → n−2 = 5 → n = 7. One-face cubes = 6(n−2)² = 6 × 25 = 150.",
+   "subPattern": "cutting-cubes",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find n from 12(n−2), then apply 6(n−2)²."
+  }
+ ]
+}

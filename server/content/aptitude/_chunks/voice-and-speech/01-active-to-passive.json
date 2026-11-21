@@ -1,0 +1,634 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "Choose the correct passive voice of: “Ravi writes a letter.”",
+      "options": [
+        "A letter is written by Ravi.",
+        "A letter was written by Ravi.",
+        "A letter is being written by Ravi.",
+        "Ravi is written by a letter."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: object becomes subject; verb = is/am/are + V3 for simple present; the old subject follows 'by'. Here: A letter + is written + by Ravi.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Meena sang a song.”",
+      "options": [
+        "A song is sung by Meena.",
+        "A song was sung by Meena.",
+        "A song has been sung by Meena.",
+        "A song was sang by Meena."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: simple past becomes was/were + V3. 'sang' (V2) becomes 'sung' (V3): A song was sung by Meena.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The farmer is ploughing the field.”",
+      "options": [
+        "The field was being ploughed by the farmer.",
+        "The field is ploughed by the farmer.",
+        "The field is being ploughed by the farmer.",
+        "The field has been ploughed by the farmer."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: present continuous becomes is/am/are + being + V3. The field is being ploughed by the farmer.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The police have arrested the thief.”",
+      "options": [
+        "The thief had been arrested by the police.",
+        "The thief is being arrested by the police.",
+        "The thief was arrested by the police.",
+        "The thief has been arrested by the police."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: present perfect becomes has/have + been + V3; 'thief' is singular so 'has been arrested'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Arjun will finish the project.”",
+      "options": [
+        "The project will be finished by Arjun.",
+        "The project would be finished by Arjun.",
+        "The project will have been finished by Arjun.",
+        "The project is finished by Arjun."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: simple future becomes will + be + V3. The project will be finished by Arjun.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The cook prepares sambar every morning.”",
+      "options": [
+        "Sambar was prepared by the cook every morning.",
+        "Sambar is prepared by the cook every morning.",
+        "The cook is prepared by sambar every morning.",
+        "Sambar is being prepared by the cook every morning."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: simple present gives is/are + V3; the object 'sambar' becomes the subject.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Kavya wrote the report.”",
+      "options": [
+        "The report is written by Kavya.",
+        "The report had been written by Kavya.",
+        "The report was written by Kavya.",
+        "The report was being written by Kavya."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: simple past gives was/were + V3. The report was written by Kavya.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The teacher punished the naughty boys.”",
+      "options": [
+        "The naughty boys was punished by the teacher.",
+        "The naughty boys are punished by the teacher.",
+        "The naughty boys had been punished by the teacher.",
+        "The naughty boys were punished by the teacher."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: simple past gives was/were + V3; the plural subject 'boys' takes 'were'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Sachin hit a six.”",
+      "options": [
+        "A six was hit by Sachin.",
+        "A six is hit by Sachin.",
+        "A six has been hit by Sachin.",
+        "A six was being hit by Sachin."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: simple past gives was + V3 (hit is the same in V3). A six was hit by Sachin.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The gardener waters the plants.”",
+      "options": [
+        "The plants were watered by the gardener.",
+        "The plants are watered by the gardener.",
+        "The plants is watered by the gardener.",
+        "The plants are being watered by the gardener."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: simple present gives is/are + V3; plural 'plants' takes 'are'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "easy",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The students were reading novels.”",
+      "options": [
+        "Novels are being read by the students.",
+        "Novels were read by the students.",
+        "Novels were being read by the students.",
+        "Novels had been read by the students."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: past continuous becomes was/were + being + V3. Novels were being read by the students.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Priya had cooked dinner.”",
+      "options": [
+        "Dinner has been cooked by Priya.",
+        "Dinner was cooked by Priya.",
+        "Dinner had been cooking by Priya.",
+        "Dinner had been cooked by Priya."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: past perfect becomes had + been + V3. Dinner had been cooked by Priya.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Ramesh is writing an email.”",
+      "options": [
+        "An email is being written by Ramesh.",
+        "An email was being written by Ramesh.",
+        "An email is written by Ramesh.",
+        "An email has been written by Ramesh."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: present continuous becomes is/am/are + being + V3. An email is being written by Ramesh.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The manager will have signed the contract by noon.”",
+      "options": [
+        "The contract will be signed by the manager by noon.",
+        "The contract will have been signed by the manager by noon.",
+        "The contract would have been signed by the manager by noon.",
+        "The contract has been signed by the manager by noon."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: future perfect becomes will have + been + V3.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “You must obey the rules.”",
+      "options": [
+        "The rules must obeyed by you.",
+        "The rules must have been obeyed by you.",
+        "The rules must be obeyed by you.",
+        "The rules are obeyed by you."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: modal + verb becomes modal + be + V3. The rules must be obeyed by you.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The committee can solve this problem.”",
+      "options": [
+        "This problem can solved by the committee.",
+        "This problem could be solved by the committee.",
+        "This problem can be solving by the committee.",
+        "This problem can be solved by the committee."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: modal + verb becomes modal + be + V3, keeping the same modal (can).",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Who wrote this poem?”",
+      "options": [
+        "By whom was this poem written?",
+        "By whom is this poem written?",
+        "By whom has this poem been written?",
+        "Who was this poem written by whom?"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: for 'Who + V + object' use 'By whom + aux + object + V3'; simple past gives 'was ... written'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Did Anil break the window?”",
+      "options": [
+        "Is the window broken by Anil?",
+        "Was the window broken by Anil?",
+        "Has the window been broken by Anil?",
+        "Did the window break by Anil?"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: 'Did + S + V1 + O' becomes 'Was/Were + O + V3 + by S'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Does she sing songs?”",
+      "options": [
+        "Were songs sung by her?",
+        "Is songs sung by her?",
+        "Are songs sung by her?",
+        "Do songs sung by her?"
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: 'Does/Do + S + V1 + O' becomes 'Is/Are + O + V3 + by S'. 'Songs' is plural so 'Are'; the agent pronoun 'she' becomes 'her'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Have you completed the assignment?”",
+      "options": [
+        "Have the assignment been completed by you?",
+        "Had the assignment been completed by you?",
+        "Is the assignment completed by you?",
+        "Has the assignment been completed by you?"
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: 'Have/Has + S + V3 + O' becomes 'Has/Have + O + been + V3 + by S'. Singular 'assignment' takes 'Has'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Nobody has solved the puzzle.”",
+      "options": [
+        "The puzzle has not been solved by anybody.",
+        "The puzzle has been solved by nobody not.",
+        "The puzzle was not solved by anybody.",
+        "The puzzle had not been solved by anybody."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: 'Nobody' becomes 'not ... by anybody' in the passive; present perfect becomes has + been + V3.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The company gave Ravi a laptop.”",
+      "options": [
+        "Ravi is given a laptop by the company.",
+        "Ravi was given a laptop by the company.",
+        "Ravi has been given a laptop by the company.",
+        "Ravi was gave a laptop by the company."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: with two objects either can become the subject; simple past gives was + V3. Ravi was given a laptop by the company.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Please open the window.”",
+      "options": [
+        "The window is opened.",
+        "Let the window was opened.",
+        "Let the window be opened.",
+        "Let the window being opened."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: an imperative becomes 'Let + object + be + V3'. Let the window be opened.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “People speak Tamil in Coimbatore.”",
+      "options": [
+        "Tamil was spoken in Coimbatore.",
+        "Tamil is being spoken in Coimbatore.",
+        "Tamil has been spoken in Coimbatore.",
+        "Tamil is spoken in Coimbatore."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: simple present gives is + V3; a vague agent such as 'people' is dropped. Tamil is spoken in Coimbatore.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The workers were building a bridge over the Cauvery.”",
+      "options": [
+        "A bridge over the Cauvery was being built by the workers.",
+        "A bridge over the Cauvery is being built by the workers.",
+        "A bridge over the Cauvery was built by the workers.",
+        "A bridge over the Cauvery were being built by the workers."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: past continuous becomes was/were + being + V3; the singular 'bridge' takes 'was'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Everybody loves Dhoni.”",
+      "options": [
+        "Dhoni was loved by everybody.",
+        "Dhoni is loved by everybody.",
+        "Dhoni has been loved by everybody.",
+        "Everybody is loved by Dhoni."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: simple present gives is + V3. Dhoni is loved by everybody.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Lata is going to buy a saree.”",
+      "options": [
+        "A saree was going to be bought by Lata.",
+        "A saree is going to buy by Lata.",
+        "A saree is going to be bought by Lata.",
+        "A saree will be bought by Lata."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: 'is going to + V1' becomes 'is going to + be + V3', keeping the tense of 'going to'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "medium",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Ravi asked me a question.”",
+      "options": [
+        "Me was asked a question by Ravi.",
+        "I am asked a question by Ravi.",
+        "I had been asked a question by Ravi.",
+        "I was asked a question by Ravi."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: the object pronoun 'me' becomes the subject pronoun 'I'; simple past gives was + V3.",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Who is teaching you mathematics?”",
+      "options": [
+        "By whom are you being taught mathematics?",
+        "By whom were you being taught mathematics?",
+        "By whom are you taught mathematics?",
+        "By whom have you been taught mathematics?"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: present continuous becomes is/are + being + V3; 'Who' becomes 'By whom'; 'you' stays 'you' as the object-turned-subject.",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Why did the principal cancel the function?”",
+      "options": [
+        "Why is the function cancelled by the principal?",
+        "Why was the function cancelled by the principal?",
+        "Why did the function cancel by the principal?",
+        "Why has the function been cancelled by the principal?"
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: keep the question word; 'did + V1' becomes 'was/were + V3'. Why was the function cancelled by the principal?",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “The captain ordered the team to practise daily.”",
+      "options": [
+        "The team is ordered by the captain to practise daily.",
+        "The team was ordered by the captain for practising daily.",
+        "The team was ordered by the captain to practise daily.",
+        "The team had been ordered by the captain to practise daily."
+      ],
+      "correctOptionIndex": 2,
+      "explanation": "Rule: simple past gives was + V3; collective 'team' is treated as singular here; the infinitive phrase stays unchanged.",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "ssc",
+        "banking"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Someone has stolen my bicycle.”",
+      "options": [
+        "My bicycle was stolen.",
+        "My bicycle had been stolen.",
+        "My bicycle is being stolen.",
+        "My bicycle has been stolen."
+      ],
+      "correctOptionIndex": 3,
+      "explanation": "Rule: present perfect becomes has + been + V3; the indefinite agent 'someone' is dropped.",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": null
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “They had not informed the guests about the change.”",
+      "options": [
+        "The guests had not been informed about the change.",
+        "The guests were not informed about the change.",
+        "The guests have not been informed about the change.",
+        "The guests had not informed about the change."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Rule: past perfect negative becomes had + not + been + V3.",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "campus-it",
+        "ssc"
+      ],
+      "setId": null,
+      "shortcut": "Find the object, make it the subject, then use the be-form of the tense + V3, and put the old subject after 'by'."
+    },
+    {
+      "questionText": "Choose the correct passive voice of: “Do not waste water.”",
+      "options": [
+        "Water is not wasted.",
+        "Let not water be wasted.",
+        "Let not water was wasted.",
+        "Let water not wasting."
+      ],
+      "correctOptionIndex": 1,
+      "explanation": "Rule: a negative imperative becomes 'Let not + object + be + V3'.",
+      "subPattern": "active-to-passive",
+      "difficulty": "hard",
+      "examStyles": [
+        "banking",
+        "general"
+      ],
+      "setId": null
+    }
+  ]
+}

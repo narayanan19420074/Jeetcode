@@ -1,0 +1,579 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Doctor : Hospital :: Teacher : ?",
+   "options": [
+    "School",
+    "Student",
+    "Book",
+    "Chalk"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A doctor works in a hospital; a teacher works in a school (worker : workplace).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hot : Cold :: Day : ?",
+   "options": [
+    "Sun",
+    "Night",
+    "Light",
+    "Morning"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hot and cold are opposites; day and night are opposites.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lion : Pride :: Wolf : ?",
+   "options": [
+    "Herd",
+    "Flock",
+    "Pack",
+    "Swarm"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A group of lions is a pride; a group of wolves is a pack.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pen : Write :: Knife : ?",
+   "options": [
+    "Sharpen",
+    "Handle",
+    "Steel",
+    "Cut"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A pen is used to write; a knife is used to cut (tool : function).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Bird : Nest :: Bee : ?",
+   "options": [
+    "Hive",
+    "Honey",
+    "Flower",
+    "Sting"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A nest is the home of a bird; a hive is the home of a bee.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Calf : Cow :: Foal : ?",
+   "options": [
+    "Dog",
+    "Horse",
+    "Sheep",
+    "Goat"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A calf is the young of a cow; a foal is the young of a horse.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Author : Book :: Composer : ?",
+   "options": [
+    "Orchestra",
+    "Stage",
+    "Symphony",
+    "Notation"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An author creates a book; a composer creates a symphony (creator : creation).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Thermometer : Temperature :: Barometer : ?",
+   "options": [
+    "Rainfall",
+    "Wind speed",
+    "Humidity",
+    "Atmospheric pressure"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A thermometer measures temperature; a barometer measures atmospheric pressure.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Eye : See :: Ear : ?",
+   "options": [
+    "Hear",
+    "Listen",
+    "Sound",
+    "Speak"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The eye is the organ for seeing; the ear is the organ for hearing.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Tailor : Cloth :: Carpenter : ?",
+   "options": [
+    "Nails",
+    "Wood",
+    "Hammer",
+    "Furniture"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A tailor works on cloth; a carpenter works on wood (worker : raw material).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hunger : Food :: Thirst : ?",
+   "options": [
+    "Hot",
+    "Drink",
+    "Water",
+    "Sleep"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Hunger is satisfied by food; thirst is satisfied by water.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Soldier : Army :: Player : ?",
+   "options": [
+    "Match",
+    "Coach",
+    "Ground",
+    "Team"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A soldier is a member of an army; a player is a member of a team.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lock : Key :: Computer : ?",
+   "options": [
+    "Password",
+    "Keyboard",
+    "Screen",
+    "Mouse"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A key opens a lock; a password opens (gives access to) a computer.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Dentist : Teeth :: Optician : ?",
+   "options": [
+    "Ears",
+    "Eyes",
+    "Skin",
+    "Bones"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A dentist treats teeth; an optician takes care of eyes.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Brave : Cowardly :: Generous : ?",
+   "options": [
+    "Kind",
+    "Rich",
+    "Miserly",
+    "Polite"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Brave and cowardly are antonyms; generous and miserly are antonyms.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rain : Flood :: Spark : ?",
+   "options": [
+    "Smoke",
+    "Match",
+    "Heat",
+    "Fire"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Excessive rain can cause a flood; a spark can cause a fire (cause : effect).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kilogram : Mass :: Metre : ?",
+   "options": [
+    "Length",
+    "Distance",
+    "Weight",
+    "Area"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Kilogram is a unit of mass; metre is a unit of length.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Zoology : Animals :: Botany : ?",
+   "options": [
+    "Rocks",
+    "Plants",
+    "Stars",
+    "Insects"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Zoology is the study of animals; botany is the study of plants.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ornithology : Birds :: Entomology : ?",
+   "options": [
+    "Fishes",
+    "Fossils",
+    "Insects",
+    "Reptiles"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ornithology is the study of birds; entomology is the study of insects.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pilot : Aeroplane :: Mahout : ?",
+   "options": [
+    "Horse",
+    "Camel",
+    "Jungle",
+    "Elephant"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A pilot controls an aeroplane; a mahout controls an elephant.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Sculptor : Statue :: Poet : ?",
+   "options": [
+    "Poem",
+    "Pen",
+    "Poetry book",
+    "Audience"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A sculptor creates a statue; a poet creates a poem.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Big : Huge :: Small : ?",
+   "options": [
+    "Short",
+    "Tiny",
+    "Light",
+    "Narrow"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Huge is a stronger degree of big; tiny is a stronger degree of small.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Warm : Scorching :: Cool : ?",
+   "options": [
+    "Pleasant",
+    "Mild",
+    "Freezing",
+    "Cold-hearted"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Scorching is an extreme of warm; freezing is an extreme of cool.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Like : Love :: Dislike : ?",
+   "options": [
+    "Anger",
+    "Envy",
+    "Disgrace",
+    "Hatred"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Love is an intense form of like; hatred is an intense form of dislike.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Seed : Plant :: Egg : ?",
+   "options": [
+    "Bird",
+    "Nest",
+    "Shell",
+    "Feather"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A seed grows into a plant; a bird comes out of an egg after hatching (origin : product).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Scissors : Cut :: Needle : ?",
+   "options": [
+    "Thread",
+    "Sew",
+    "Pierce",
+    "Cloth"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Scissors are used to cut; a needle is used to sew. (Pierce is only a part of what a needle does.)",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Cartographer : Maps :: Lexicographer : ?",
+   "options": [
+    "Novels",
+    "Grammar",
+    "Dictionaries",
+    "Languages"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A cartographer compiles maps; a lexicographer compiles dictionaries.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Orphan : Parents :: Widow : ?",
+   "options": [
+    "Children",
+    "Wealth",
+    "Wedding",
+    "Husband"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An orphan has lost parents; a widow has lost her husband.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Tributary : River :: Branch : ?",
+   "options": [
+    "Tree",
+    "Leaf",
+    "Root",
+    "Forest"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A tributary is a smaller stream that joins a river; a branch is a part that grows out of a tree.",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Mason : Bricks :: Potter : ?",
+   "options": [
+    "Wheel",
+    "Clay",
+    "Pot",
+    "Kiln"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A mason works with bricks; a potter works with clay (worker : material).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Chapter : Book :: Scene : ?",
+   "options": [
+    "Stage",
+    "Actor",
+    "Play",
+    "Dialogue"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A chapter is a division of a book; a scene is a division of a play (part : whole).",
+   "shortcut": "Find the exact relation between the first pair, then apply it.",
+   "subPattern": "verbal-analogies",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

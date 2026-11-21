@@ -1,0 +1,651 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The box of mangoes ____ on the table.",
+   "options": [
+    "are",
+    "were",
+    "have been",
+    "is"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The subject is the singular 'box'; 'of mangoes' does not change it. Singular subject takes 'is'.",
+   "shortcut": "Ignore the phrase between subject and verb.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Each of the students ____ a separate locker.",
+   "options": [
+    "has",
+    "have",
+    "are having",
+    "were having"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular and takes a singular verb: has.",
+   "shortcut": "Each/every/either/neither = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Neither of the two answers ____ correct.",
+   "options": [
+    "are",
+    "is",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Neither' used with 'of' is treated as singular: is.",
+   "shortcut": "Neither of = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ravi and Karthik ____ going to the match tomorrow.",
+   "options": [
+    "is",
+    "was",
+    "are",
+    "has been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two subjects joined by 'and' take a plural verb: are.",
+   "shortcut": "A and B = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Bread and butter ____ my usual breakfast.",
+   "options": [
+    "are",
+    "were",
+    "have been",
+    "is"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two nouns forming one idea are treated as a single unit: Bread and butter is.",
+   "shortcut": "One idea joined by and = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Either the manager or his assistants ____ responsible for the error.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With either...or, the verb agrees with the nearer subject, 'assistants' (plural): are.",
+   "shortcut": "Either...or / neither...nor: nearer subject.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Neither the players nor the coach ____ happy with the result.",
+   "options": [
+    "were",
+    "was",
+    "are",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With neither...nor, the verb agrees with the nearer subject 'coach' (singular); the past context gives was.",
+   "shortcut": "Nearer subject rule.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Mathematics ____ my favourite subject.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of subjects ending in -s, such as mathematics, are singular.",
+   "shortcut": "Mathematics, physics, economics = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The news about the strike ____ shocking.",
+   "options": [
+    "were",
+    "are",
+    "have been",
+    "was"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'News' is uncountable and singular: was.",
+   "shortcut": "News = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The police ____ arrested the suspect last night.",
+   "options": [
+    "have",
+    "has",
+    "is",
+    "was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Police' is a plural collective noun and takes a plural verb: have.",
+   "shortcut": "Police, cattle, people = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Fifty rupees ____ too much for this pen.",
+   "options": [
+    "are",
+    "is",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A sum of money treated as a single amount takes a singular verb: is.",
+   "shortcut": "Sum/distance/time as a whole = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The number of vacancies ____ increasing every year.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'The number of' takes a singular verb: is.",
+   "shortcut": "The number of = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A number of candidates ____ absent today.",
+   "options": [
+    "is",
+    "was",
+    "has been",
+    "are"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'A number of' means 'many' and takes a plural verb: are.",
+   "shortcut": "A number of = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "One of my cousins ____ in Dubai.",
+   "options": [
+    "lives",
+    "live",
+    "are living",
+    "have lived"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'one', singular, so 'lives'.",
+   "shortcut": "One of + plural noun = singular verb.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The jury ____ divided in their opinions.",
+   "options": [
+    "was",
+    "were",
+    "is",
+    "has been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When the members act individually, a collective noun takes a plural verb: were.",
+   "shortcut": "Collective noun as individuals = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Lok Sabha ____ adjourned till Monday.",
+   "options": [
+    "were",
+    "are",
+    "was",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The name of a single body such as the Lok Sabha is treated as singular, so the past singular 'was' is used.",
+   "shortcut": "Name of one institution = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Where ____ my glasses?",
+   "options": [
+    "is",
+    "was",
+    "has",
+    "are"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Glasses' (spectacles) is a plural noun: are.",
+   "shortcut": "Scissors, trousers, glasses = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A pair of scissors ____ on the table.",
+   "options": [
+    "is",
+    "are",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'pair', which is singular: is.",
+   "shortcut": "A pair of = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Everyone in the room ____ clapping.",
+   "options": [
+    "were",
+    "was",
+    "are",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Everyone' is singular: was.",
+   "shortcut": "Everyone/everybody = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The teacher, along with her students, ____ visiting the museum.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Along with' does not make the subject plural; the subject 'teacher' is singular: is.",
+   "shortcut": "along with / as well as / with = ignore.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "My friend as well as my brothers ____ invited to the wedding.",
+   "options": [
+    "were",
+    "are",
+    "have been",
+    "was"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb agrees with the first subject 'friend' (singular) when 'as well as' is used: was.",
+   "shortcut": "A as well as B: agree with A.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Not only the principal but also the teachers ____ present.",
+   "options": [
+    "were",
+    "was",
+    "is",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With not only...but also, the verb agrees with the nearer subject 'teachers': were.",
+   "shortcut": "Nearer subject.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The poet and the painter ____ great friends.",
+   "options": [
+    "is",
+    "are",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two subjects joined by 'and' take a plural verb: are.",
+   "shortcut": "A and B = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The secretary and treasurer ____ resigned.",
+   "options": [
+    "have",
+    "are",
+    "has",
+    "were"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With one article before both nouns, both titles refer to one person, so the verb is singular: has.",
+   "shortcut": "One article = one person.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "There ____ many reasons for his failure.",
+   "options": [
+    "is",
+    "was",
+    "has",
+    "are"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In a 'there' sentence the verb agrees with the real subject 'reasons' (plural): are.",
+   "shortcut": "There is/are: check the noun after it.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "There ____ two books and a pen on the desk.",
+   "options": [
+    "are",
+    "is",
+    "was",
+    "has been"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In a 'there' sentence the verb agrees with the first noun that follows, 'two books' (plural): are.",
+   "shortcut": "There + first noun.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two-thirds of the land ____ under cultivation.",
+   "options": [
+    "are",
+    "is",
+    "were",
+    "have been"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With fractions, agreement follows the noun after 'of'; 'land' is singular: is.",
+   "shortcut": "Fraction of singular = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two-thirds of the apples ____ rotten.",
+   "options": [
+    "is",
+    "was",
+    "are",
+    "has been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With fractions, agreement follows the noun after 'of'; 'apples' is plural: are.",
+   "shortcut": "Fraction of plural = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Who ____ the author of this novel?",
+   "options": [
+    "are",
+    "were",
+    "have been",
+    "is"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Who' asking about one person takes a singular verb: is.",
+   "shortcut": "Who + is for one person.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The scholar and the poet ____ both attended the function.",
+   "options": [
+    "have",
+    "has",
+    "is",
+    "was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Both' together with two subjects joined by 'and' shows plural: have.",
+   "shortcut": "Both = plural.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It is I who ____ responsible for this decision.",
+   "options": [
+    "is",
+    "am",
+    "are",
+    "be"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In a relative clause the verb agrees with the antecedent 'I': am.",
+   "shortcut": "who takes the person of its antecedent.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ten kilometres ____ a long distance to walk in an hour.",
+   "options": [
+    "are",
+    "were",
+    "is",
+    "have been"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A distance considered as one unit takes a singular verb: is.",
+   "shortcut": "Distance as a whole = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Arabian Nights ____ a collection of stories.",
+   "options": [
+    "are",
+    "were",
+    "have been",
+    "is"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The title of a single work is singular: is.",
+   "shortcut": "Title of a work = singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Many a student ____ failed in this paper.",
+   "options": [
+    "has",
+    "have",
+    "are",
+    "were"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Many a' is followed by a singular noun and singular verb: has.",
+   "shortcut": "Many a + singular.",
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

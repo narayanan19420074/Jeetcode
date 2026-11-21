@@ -1,0 +1,727 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Among the staff in a Kochi office, 50 drink tea, 56 drink buttermilk and 13 drink both. How many drink only tea?",
+   "options": [
+    "50",
+    "24",
+    "63",
+    "37"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only tea = n(tea) − both = 50 − 13 = 37.",
+   "shortcut": "Only A = A − Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the families in a Madurai colony, 21 watch IPL, 72 watch ISL and 10 watch both. How many watch only IPL?",
+   "options": [
+    "1",
+    "11",
+    "31",
+    "21"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only IPL = n(IPL) − both = 21 − 10 = 11.",
+   "shortcut": "Only A = A − Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the people at a Kolkata book fair, 97 read The Telegraph, 53 read Times of India and 30 read both. How many read only The Telegraph?",
+   "options": [
+    "67",
+    "97",
+    "127",
+    "37"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only The Telegraph = n(The Telegraph) − both = 97 − 30 = 67.",
+   "shortcut": "Only A = A − Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 61 pay using Paytm, 37 pay using a credit card and 19 pay using both. How many pay using only Paytm?",
+   "options": [
+    "42",
+    "61",
+    "80",
+    "23"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only Paytm = n(Paytm) − both = 61 − 19 = 42.",
+   "shortcut": "Only A = A − Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the commuters in Bengaluru surveyed, 29 use the metro, 22 use an auto-rickshaw and 8 use both. How many use exactly one of the two (either the metro or an auto-rickshaw but not both)?",
+   "options": [
+    "59",
+    "35",
+    "51",
+    "43"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = (A − both) + (B − both) = 29 + 22 − 2×8 = 35.",
+   "shortcut": "Exactly one = A + B − 2 × Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the Class X students in Jaipur surveyed, 42 take Sanskrit, 82 take Social Science and 14 take both. How many take exactly one of the two (either Sanskrit or Social Science but not both)?",
+   "options": [
+    "138",
+    "110",
+    "124",
+    "96"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = (A − both) + (B − both) = 42 + 82 − 2×14 = 96.",
+   "shortcut": "Exactly one = A + B − 2 × Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the visitors to a Mysuru restaurant surveyed, 27 order dosa, 78 order vada and 19 order both. How many order exactly one of the two (either dosa or vada but not both)?",
+   "options": [
+    "67",
+    "105",
+    "86",
+    "124"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = (A − both) + (B − both) = 27 + 78 − 2×19 = 67.",
+   "shortcut": "Exactly one = A + B − 2 × Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the farmers in a Punjab village surveyed, 64 grow rice, 15 grow sugarcane and 4 grow both. How many grow exactly one of the two (either rice or sugarcane but not both)?",
+   "options": [
+    "75",
+    "79",
+    "71",
+    "83"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = (A − both) + (B − both) = 64 + 15 − 2×4 = 71.",
+   "shortcut": "Exactly one = A + B − 2 × Both.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 106 commuters in Bengaluru, 25 use neither the bus nor a bike taxi. 67 use a bike taxi, and 25 of those also use the bus. How many use the bus only?",
+   "options": [
+    "56",
+    "39",
+    "14",
+    "81"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "At least one = 106 − 25 = 81. Anyone not in a bike taxi but in the union is only the bus: 81 − 67 = 14.",
+   "shortcut": "Only A = Union − B.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 98 commuters in Bengaluru, 0 use neither the bus nor a bike taxi. 79 use a bike taxi, and 10 of those also use the bus. How many use the bus only?",
+   "options": [
+    "19",
+    "88",
+    "98",
+    "29"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 98 − 0 = 98. Anyone not in a bike taxi but in the union is only the bus: 98 − 79 = 19.",
+   "shortcut": "Only A = Union − B.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 131 Class X students in Jaipur, 20 take neither Sanskrit nor Science. 51 take Science, and 21 of those also take Sanskrit. How many take Sanskrit only?",
+   "options": [
+    "60",
+    "111",
+    "80",
+    "90"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least one = 131 − 20 = 111. Anyone not in Science but in the union is only Sanskrit: 111 − 51 = 60.",
+   "shortcut": "Only A = Union − B.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 92 know C++, 83 know Java, 99 know SQL; 49 know C++ and Java; 55 know Java and SQL; 39 know C++ and SQL; 25 know all three. How many know only C++?",
+   "options": [
+    "29",
+    "4",
+    "32",
+    "54"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only C++ = A − (A∩B) − (A∩C) + (A∩B∩C) = 92 − 49 − 39 + 25 = 29.",
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the visitors to a Mysuru restaurant, 68 order pongal, 51 order dosa, 67 order vada; 34 order pongal and dosa; 35 order dosa and vada; 37 order pongal and vada; 24 order all three. How many order only pongal?",
+   "options": [
+    "45",
+    "19",
+    "21",
+    "26"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only pongal = A − (A∩B) − (A∩C) + (A∩B∩C) = 68 − 34 − 37 + 24 = 21.",
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 56 pay using a credit card, 65 pay using Google Pay, 77 pay using Paytm; 29 pay using a credit card and Google Pay; 53 pay using Google Pay and Paytm; 40 pay using a credit card and Paytm; 25 pay using all three. How many pay using only a credit card?",
+   "options": [
+    "37",
+    "12",
+    "13",
+    "10"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Only a credit card = A − (A∩B) − (A∩C) + (A∩B∩C) = 56 − 29 − 40 + 25 = 12.",
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the families in a Madurai colony, 69 watch IPL, 87 watch Pro Kabaddi, 76 watch Hockey India League; 37 watch IPL and Pro Kabaddi; 38 watch Pro Kabaddi and Hockey India League; 35 watch IPL and Hockey India League; 12 watch all three. How many watch only IPL?",
+   "options": [
+    "9",
+    "6",
+    "21",
+    "11"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only IPL = A − (A∩B) − (A∩C) + (A∩B∩C) = 69 − 37 − 35 + 12 = 9.",
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 91 take Social Science, 69 take Maths, 73 take Science; 38 take Social Science and Maths; 37 take Maths and Science; 49 take Social Science and Science; 22 take all three. How many take only Social Science?",
+   "options": [
+    "29",
+    "4",
+    "26",
+    "48"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only Social Science = A − (A∩B) − (A∩C) + (A∩B∩C) = 91 − 38 − 49 + 22 = 26.",
+   "shortcut": "Only A = A − AB − AC + ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 95 grow rice, 101 grow wheat, 88 grow sugarcane; 43 grow rice and wheat; 48 grow wheat and sugarcane; 43 grow rice and sugarcane; 18 grow all three. How many grow exactly two of the three?",
+   "options": [
+    "80",
+    "98",
+    "116",
+    "134"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 134 − 3×18 = 80.",
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three).",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 64 pay using a credit card, 54 pay using PhonePe, 81 pay using Paytm; 16 pay using a credit card and PhonePe; 34 pay using PhonePe and Paytm; 32 pay using a credit card and Paytm; 12 pay using all three. How many pay using exactly two of the three?",
+   "options": [
+    "70",
+    "82",
+    "46",
+    "58"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 82 − 3×12 = 46.",
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three).",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 61 play kabaddi, 61 play hockey, 72 play cricket; 35 play kabaddi and hockey; 30 play hockey and cricket; 20 play kabaddi and cricket; 7 play all three. How many play exactly two of the three?",
+   "options": [
+    "71",
+    "64",
+    "85",
+    "78"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 85 − 3×7 = 64.",
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three).",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the customers at a Mumbai mall, 56 pay using PhonePe, 45 pay using Google Pay, 68 pay using Paytm; 29 pay using PhonePe and Google Pay; 32 pay using Google Pay and Paytm; 47 pay using PhonePe and Paytm; 23 pay using all three. How many pay using exactly two of the three?",
+   "options": [
+    "85",
+    "108",
+    "39",
+    "62"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Each 'all three' person is counted in all three pair totals. Exactly two = 108 − 3×23 = 39.",
+   "shortcut": "Exactly two = (sum of pair totals) − 3 × (all three).",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the students in a Chennai college, 77 play cricket, 56 play hockey, 83 play kabaddi; 32 play cricket and hockey; 44 play hockey and kabaddi; 47 play cricket and kabaddi; 25 play all three. How many play cricket and hockey but not kabaddi?",
+   "options": [
+    "32",
+    "7",
+    "10",
+    "57"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "(A∩B) includes those in kabaddi too. Required = 32 − 25 = 7.",
+   "shortcut": "(A and B but not C) = AB − ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 36 grow rice, 43 grow wheat, 44 grow sugarcane; 19 grow rice and wheat; 25 grow wheat and sugarcane; 12 grow rice and sugarcane; 8 grow all three. How many grow rice and wheat but not sugarcane?",
+   "options": [
+    "3",
+    "19",
+    "27",
+    "11"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(A∩B) includes those in sugarcane too. Required = 19 − 8 = 11.",
+   "shortcut": "(A and B but not C) = AB − ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 89 grow rice, 68 grow sugarcane, 62 grow wheat; 56 grow rice and sugarcane; 33 grow sugarcane and wheat; 37 grow rice and wheat; 30 grow all three. How many grow rice and sugarcane but not wheat?",
+   "options": [
+    "86",
+    "56",
+    "26",
+    "19"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "(A∩B) includes those in wheat too. Required = 56 − 30 = 26.",
+   "shortcut": "(A and B but not C) = AB − ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 47 know C++, 58 know Python, 53 know SQL; 29 know C++ and Python; 17 know Python and SQL; 17 know C++ and SQL; 7 know all three. How many know C++ and Python but not SQL?",
+   "options": [
+    "29",
+    "15",
+    "36",
+    "22"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "(A∩B) includes those in SQL too. Required = 29 − 7 = 22.",
+   "shortcut": "(A and B but not C) = AB − ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of students in a Chennai college, 51% play kabaddi, 41% play cricket and 15% play both. What percentage play exactly one of the two?",
+   "options": [
+    "77%",
+    "92%",
+    "62%",
+    "36%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = 51 + 41 − 2×15 = 62%.",
+   "shortcut": "Exactly one = A% + B% − 2×Both%.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of visitors to a Mysuru restaurant, 41% order dosa, 33% order vada and 24% order both. What percentage order exactly one of the two?",
+   "options": [
+    "74%",
+    "50%",
+    "17%",
+    "26%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = 41 + 33 − 2×24 = 26%.",
+   "shortcut": "Exactly one = A% + B% − 2×Both%.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of residents of a Hyderabad apartment complex, 46% speak Telugu, 30% speak Hindi and 17% speak both. What percentage speak exactly one of the two?",
+   "options": [
+    "42%",
+    "59%",
+    "29%",
+    "76%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = 46 + 30 − 2×17 = 42%.",
+   "shortcut": "Exactly one = A% + B% − 2×Both%.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a survey of Class X students in Jaipur, 48% take Social Science, 37% take Maths and 21% take both. What percentage take exactly one of the two?",
+   "options": [
+    "85%",
+    "27%",
+    "43%",
+    "64%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = 48 + 37 − 2×21 = 43%.",
+   "shortcut": "Exactly one = A% + B% − 2×Both%.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the people at a Kolkata book fair, 86 read Times of India, 76 read The Hindu, 59 read The Telegraph; 46 read Times of India and The Hindu; 27 read The Hindu and The Telegraph; 29 read Times of India and The Telegraph; 18 read all three. How many read exactly one of the three?",
+   "options": [
+    "71",
+    "17",
+    "35",
+    "137"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 221 − 204 + 54 = 71.",
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the farmers in a Punjab village, 65 grow sugarcane, 29 grow rice, 68 grow maize; 11 grow sugarcane and rice; 16 grow rice and maize; 32 grow sugarcane and maize; 5 grow all three. How many grow exactly one of the three?",
+   "options": [
+    "108",
+    "59",
+    "49",
+    "44"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 162 − 118 + 15 = 59.",
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the Class X students in Jaipur, 81 take Sanskrit, 88 take Science, 71 take Maths; 53 take Sanskrit and Science; 44 take Science and Maths; 43 take Sanskrit and Maths; 27 take all three. How many take exactly one of the three?",
+   "options": [
+    "43",
+    "127",
+    "14",
+    "41"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 240 − 280 + 81 = 41.",
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among the employees of a Pune IT firm, 76 know Python, 52 know SQL, 82 know C++; 31 know Python and SQL; 40 know SQL and C++; 47 know Python and C++; 26 know all three. How many know exactly one of the three?",
+   "options": [
+    "118",
+    "52",
+    "26",
+    "0"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exactly one = (A + B + C) − 2×(pair totals) + 3×(all three) = 210 − 236 + 78 = 52.",
+   "shortcut": "Exactly one = A+B+C − 2(AB+BC+CA) + 3ABC.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Out of 138 students in a Chennai college, 54 play hockey, 72 play football, 83 play cricket; 27 play hockey and football; 32 play football and cricket; 36 play hockey and cricket; 12 play all three. How many play at most one of the three (that is, one or none)?",
+   "options": [
+    "67",
+    "55",
+    "43",
+    "79"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 95 − 24 = 71. At most one = 138 − 71 = 67.",
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Out of 162 residents of a Hyderabad apartment complex, 93 speak Urdu, 71 speak Telugu, 90 speak Hindi; 39 speak Urdu and Telugu; 42 speak Telugu and Hindi; 42 speak Urdu and Hindi; 16 speak all three. How many speak at most one of the three (that is, one or none)?",
+   "options": [
+    "55",
+    "87",
+    "39",
+    "71"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 123 − 32 = 91. At most one = 162 − 91 = 71.",
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Out of 127 commuters in Bengaluru, 55 use the metro, 70 use a bike taxi, 76 use the bus; 28 use the metro and a bike taxi; 39 use a bike taxi and the bus; 40 use the metro and the bus; 23 use all three. How many use at most one of the three (that is, one or none)?",
+   "options": [
+    "89",
+    "20",
+    "43",
+    "66"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 107 − 46 = 61. At most one = 127 − 61 = 66.",
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Out of 157 customers at a Mumbai mall, 74 pay using Google Pay, 65 pay using Paytm, 76 pay using a credit card; 32 pay using Google Pay and Paytm; 18 pay using Paytm and a credit card; 32 pay using Google Pay and a credit card; 4 pay using all three. How many pay using at most one of the three (that is, one or none)?",
+   "options": [
+    "75",
+    "87",
+    "79",
+    "83"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "At least two = (sum of pair totals) − 2×(all three) = 82 − 8 = 74. At most one = 157 − 74 = 83.",
+   "shortcut": "At least two = AB+BC+CA − 2ABC; subtract from the total.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 124 commuters in Bengaluru, 15 use none of the metro, the bus, an auto-rickshaw. 52 use exactly two of them and 4 use all three. How many use exactly one?",
+   "options": [
+    "68",
+    "105",
+    "53",
+    "57"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exactly one = 124 − none − exactly two − all three = 124 − 15 − 52 − 4 = 53.",
+   "shortcut": "Partition the group: none + one + two + three = Total.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 138 employees of a Pune IT firm, 8 know none of C++, Java, SQL. 58 know exactly two of them and 11 know all three. How many know exactly one?",
+   "options": [
+    "61",
+    "69",
+    "119",
+    "72"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly one = 138 − none − exactly two − all three = 138 − 8 − 58 − 11 = 61.",
+   "shortcut": "Partition the group: none + one + two + three = Total.",
+   "subPattern": "overlap-only-in-one-set",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

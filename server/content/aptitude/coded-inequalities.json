@@ -1,0 +1,5083 @@
+{
+ "pattern": {
+  "title": "Coded Inequalities",
+  "slug": "coded-inequalities",
+  "description": "Inequality chains with symbols.",
+  "order": 42,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "direct-inequality-chains",
+    "title": "Direct inequality chains"
+   },
+   {
+    "slug": "coded-symbols",
+    "title": "Coded symbols"
+   },
+   {
+    "slug": "either-or-conclusions",
+    "title": "Either-or conclusions"
+   },
+   {
+    "slug": "definite-vs-possible-conclusions",
+    "title": "Definite vs possible conclusions"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: P > U > H. Conclusions: I. H ≥ P  II. H ≤ U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. P > U > H is already fixed, so H ≥ P is false.\nII. U > H gives H ≤ U: true.\nHence: Only II follows.",
+   "order": 1,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: U > L > E ≥ R. Conclusions: I. R < U  II. U < L",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. U > L > E ≥ R gives R < U: true.\nII. U > L is already fixed, so U < L is false.\nHence: Only I follows.",
+   "order": 2,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: H < P < T. Conclusions: I. H > P  II. H < P",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. P > H is already fixed, so H > P is false.\nII. P > H gives H < P: true.\nHence: Only II follows.",
+   "order": 3,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: H ≥ R ≥ C > X. Conclusions: I. C > X  II. H ≥ R",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. C > X gives C > X: true.\nII. H ≥ R gives H ≥ R: true.\nHence: Both I and II follow.",
+   "order": 4,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: D > N = H > P. Conclusions: I. P < N  II. D = P",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. N = H > P gives P < N: true.\nII. D > N = H > P is already fixed, so D = P is false.\nHence: Only I follows.",
+   "order": 5,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: W > L > C = U. Conclusions: I. U > W  II. L ≥ C",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. W > L > C = U is already fixed, so U > W is false.\nII. L > C gives L ≥ C: true.\nHence: Only II follows.",
+   "order": 6,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: Z > G ≥ D ≥ L. Conclusions: I. G ≥ L  II. D > G",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. G ≥ D ≥ L gives G ≥ L: true.\nII. G ≥ D is already fixed, so D > G is false.\nHence: Only I follows.",
+   "order": 7,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: X > R ≥ P. Conclusions: I. R ≤ P  II. R = X",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles R against P (it can be =, >), so R ≤ P is not certain.\nII. X > R is already fixed, so R = X is false.\nHence: Neither I nor II follows.",
+   "order": 8,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: F ≥ T > B. Conclusions: I. B = F  II. F > B",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. F ≥ T > B is already fixed, so B = F is false.\nII. F ≥ T > B gives F > B: true.\nHence: Only II follows.",
+   "order": 9,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: R > A > J. Conclusions: I. A < R  II. A > J",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. R > A gives A < R: true.\nII. A > J gives A > J: true.\nHence: Both I and II follow.",
+   "order": 10,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: N < P < B ≤ Z. Conclusions: I. Z ≤ B  II. B < N  III. P > Z. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No chain settles Z against B (it can be =, >), so Z ≤ B is not certain.\nII. B > P > N is already fixed, so B < N is false.\nIII. Z ≥ B > P is already fixed, so P > Z is false.\nCount = 0: none of them.",
+   "order": 11,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: G ≤ K < F ≤ A. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "F < A"
+    },
+    {
+     "text": "G > A"
+    },
+    {
+     "text": "A ≥ F"
+    },
+    {
+     "text": "G = A"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No chain settles F against A (it can be =, <), so F < A is not certain.\nA ≥ F gives A ≥ F: true.\nA ≥ F > K ≥ G is already fixed, so G > A is false.\nA ≥ F > K ≥ G is already fixed, so G = A is false.",
+   "order": 12,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: V < C ≤ P ≤ W. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "C > P"
+    },
+    {
+     "text": "V < P"
+    },
+    {
+     "text": "P = V"
+    },
+    {
+     "text": "W < V"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P ≥ C is already fixed, so C > P is false.\nP ≥ C > V is already fixed, so P = V is false.\nW ≥ P ≥ C > V is already fixed, so W < V is false.\nP ≥ C > V gives V < P: true.",
+   "order": 13,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the expression 'P ≤ Y ? K', which symbol in place of ? makes 'P < K' definitely true?",
+   "options": [
+    {
+     "text": "≥"
+    },
+    {
+     "text": "="
+    },
+    {
+     "text": ">"
+    },
+    {
+     "text": "<"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With < in place of ?: P ≤ Y < K.\nK > Y ≥ P gives P < K: true.\nThe other symbols either break the chain or give a different relation between P and K.",
+   "order": 14,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "In the expression 'E ? L > Y', which symbol in place of ? makes 'L < E' definitely true?",
+   "options": [
+    {
+     "text": ">"
+    },
+    {
+     "text": "="
+    },
+    {
+     "text": "≥"
+    },
+    {
+     "text": "≤"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With > in place of ?: E > L > Y.\nE > L gives L < E: true.\nThe other symbols either break the chain or give a different relation between L and E.",
+   "order": 15,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "Statements: Z > B = F > J. Conclusions: I. Z ≥ J  II. Z < B",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Z > B = F > J gives Z ≥ J: true.\nII. Z > B is already fixed, so Z < B is false.\nHence: Only I follows.",
+   "order": 16,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: D > M > F ≥ Z. Conclusions: I. D < M  II. M ≥ F",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. D > M is already fixed, so D < M is false.\nII. M > F gives M ≥ F: true.\nHence: Only II follows.",
+   "order": 17,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: G < S ≤ Y < A < U. Conclusions: I. Y < A  II. S ≤ Y",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. A > Y gives Y < A: true.\nII. Y ≥ S gives S ≤ Y: true.\nHence: Both I and II follow.",
+   "order": 18,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: B > K ≥ U; S ≤ A < B. Conclusions: I. U ≤ A  II. U > K",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles U against A (it can be =, >, <), so U ≤ A is not certain.\nII. K ≥ U is already fixed, so U > K is false.\nHence: Neither I nor II follows.",
+   "order": 19,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: G ≥ C > S; E ≥ C > M. Conclusions: I. M ≥ S  II. C < M",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles M against S (it can be =, >, <), so M ≥ S is not certain.\nII. C > M is already fixed, so C < M is false.\nHence: Neither I nor II follows.",
+   "order": 20,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: P < S < C; A < S < U. Conclusions: I. P = C  II. P < S",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. C > S > P is already fixed, so P = C is false.\nII. S > P gives P < S: true.\nHence: Only II follows.",
+   "order": 21,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: B > E ≥ J; J > F = D. Conclusions: I. J > F  II. E = F",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. J > F gives J > F: true.\nII. E ≥ J > F is already fixed, so E = F is false.\nHence: Only I follows.",
+   "order": 22,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: X > R ≥ A; T < R ≤ P. Conclusions: I. R > X  II. A < X",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. X > R is already fixed, so R > X is false.\nII. X > R ≥ A gives A < X: true.\nHence: Only II follows.",
+   "order": 23,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: N < P < T; F ≤ L < P. Conclusions: I. N > L  II. L = P",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles N against L (it can be =, >, <), so N > L is not certain.\nII. P > L is already fixed, so L = P is false.\nHence: Neither I nor II follows.",
+   "order": 24,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: W > K > J; J < S < E. Conclusions: I. E > S  II. E > J",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. E > S gives E > S: true.\nII. E > S > J gives E > J: true.\nHence: Both I and II follow.",
+   "order": 25,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: V ≤ B < S; F < J < S. Conclusions: I. V = B  II. J > B",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles V against B (it can be =, <), so V = B is not certain.\nII. No chain settles J against B (it can be =, >, <), so J > B is not certain.\nHence: Neither I nor II follows.",
+   "order": 26,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: P < H < T ≤ D < U. Conclusions: I. D ≤ U  II. T < D",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. U > D gives D ≤ U: true.\nII. No chain settles T against D (it can be =, <), so T < D is not certain.\nHence: Only I follows.",
+   "order": 27,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: Y > A > D > H ≥ R. Conclusions: I. R < H  II. R > Y  III. A < D. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No chain settles R against H (it can be =, <), so R < H is not certain.\nII. Y > A > D > H ≥ R is already fixed, so R > Y is false.\nIII. A > D is already fixed, so A < D is false.\nCount = 0: none of them.",
+   "order": 28,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: R < T = F ≤ D ≤ M. Conclusions: I. M > F  II. M ≤ F  III. F ≤ M. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. No chain settles M against F (it can be =, >), so M > F is not certain.\nII. No chain settles M against F (it can be =, >), so M ≤ F is not certain.\nIII. M ≥ D ≥ F gives F ≤ M: true.\nCount = 1: only one of them.",
+   "order": 29,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: Y = S ≤ D > Z ≥ E. Conclusions: I. D ≥ S  II. E < S  III. D ≥ E. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. D ≥ S gives D ≥ S: true.\nII. No chain settles E against S (it can be =, >, <), so E < S is not certain.\nIII. D > Z ≥ E gives D ≥ E: true.\nCount = 2: only two of them.",
+   "order": 30,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: G ≤ U < P ≤ X = S. Conclusions: I. S ≥ P  II. P ≥ U  III. G < X. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. S = X ≥ P gives S ≥ P: true.\nII. P > U gives P ≥ U: true.\nIII. X ≥ P > U ≥ G gives G < X: true.\nCount = 3: all three of them.",
+   "order": 31,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: E > C > Z < T < Y. Conclusions: I. T > E  II. T < Z  III. C < E. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. No chain settles T against E (it can be =, >, <), so T > E is not certain.\nII. T > Z is already fixed, so T < Z is false.\nIII. E > C gives C < E: true.\nCount = 1: only one of them.",
+   "order": 32,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: G > R > M; P = G ≥ Y. Conclusions: I. G ≥ R  II. P > R  III. G > P. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. G > R gives G ≥ R: true.\nII. P = G > R gives P > R: true.\nIII. P = G is already fixed, so G > P is false.\nCount = 2: only two of them.",
+   "order": 33,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: C > P > K ≥ G > N. Conclusions: I. P ≥ G  II. N < G  III. P ≥ K. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. P > K ≥ G gives P ≥ G: true.\nII. G > N gives N < G: true.\nIII. P > K gives P ≥ K: true.\nCount = 3: all three of them.",
+   "order": 34,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: J < K < A; N < J ≤ M. Conclusions: I. J ≥ A  II. A = K  III. K ≥ J. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. A > K > J is already fixed, so J ≥ A is false.\nII. A > K is already fixed, so A = K is false.\nIII. K > J gives K ≥ J: true.\nCount = 1: only one of them.",
+   "order": 35,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: D > P > K; M < B ≤ P. Conclusions: I. B ≤ P  II. P > D  III. B < D. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. P ≥ B gives B ≤ P: true.\nII. D > P is already fixed, so P > D is false.\nIII. D > P ≥ B gives B < D: true.\nCount = 2: only two of them.",
+   "order": 36,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: U ≤ C < A < W ≤ G. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "C = A"
+    },
+    {
+     "text": "C < A"
+    },
+    {
+     "text": "C ≤ U"
+    },
+    {
+     "text": "W < C"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "No chain settles C against U (it can be =, >), so C ≤ U is not certain.\nW > A > C is already fixed, so W < C is false.\nA > C is already fixed, so C = A is false.\nA > C gives C < A: true.",
+   "order": 37,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the expression 'G ? P ≤ H = R', which symbol in place of ? makes 'G < H' definitely true?",
+   "options": [
+    {
+     "text": "≤"
+    },
+    {
+     "text": ">"
+    },
+    {
+     "text": "≥"
+    },
+    {
+     "text": "<"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With < in place of ?: G < P ≤ H = R.\nH ≥ P > G gives G < H: true.\nThe other symbols either break the chain or give a different relation between G and H.",
+   "order": 38,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "In the expression 'N < C ? P', which symbol in place of ? makes 'P < C' definitely true?",
+   "options": [
+    {
+     "text": ">"
+    },
+    {
+     "text": "="
+    },
+    {
+     "text": "≥"
+    },
+    {
+     "text": "<"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With > in place of ?: N < C > P.\nC > P gives P < C: true.\nThe other symbols either break the chain or give a different relation between P and C.",
+   "order": 39,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "In the expression 'C ? E < K < N < X', which symbol in place of ? makes 'E > C' definitely true?",
+   "options": [
+    {
+     "text": ">"
+    },
+    {
+     "text": "≤"
+    },
+    {
+     "text": "<"
+    },
+    {
+     "text": "≥"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With < in place of ?: C < E < K < N < X.\nE > C gives E > C: true.\nThe other symbols either break the chain or give a different relation between E and C.",
+   "order": 40,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "In the expression 'C ? S ≤ X', which symbol in place of ? makes 'S < C' definitely true?",
+   "options": [
+    {
+     "text": "≥"
+    },
+    {
+     "text": "<"
+    },
+    {
+     "text": "≤"
+    },
+    {
+     "text": ">"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With > in place of ?: C > S ≤ X.\nC > S gives S < C: true.\nThe other symbols either break the chain or give a different relation between S and C.",
+   "order": 41,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "Statements: D < X < T ≤ Y < N. Conclusions: I. D ≤ N  II. X < Y",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. N > Y ≥ T > X > D gives D ≤ N: true.\nII. Y ≥ T > X gives X < Y: true.\nHence: Both I and II follow.",
+   "order": 42,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: K ≥ C > J > R; W < S < K. Conclusions: I. W ≥ C  II. R > K",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles W against C (it can be =, >, <), so W ≥ C is not certain.\nII. K ≥ C > J > R is already fixed, so R > K is false.\nHence: Neither I nor II follows.",
+   "order": 43,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: H > X > R > G; G < Y < J. Conclusions: I. X < J  II. R = G",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles X against J (it can be =, >, <), so X < J is not certain.\nII. R > G is already fixed, so R = G is false.\nHence: Neither I nor II follows.",
+   "order": 44,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: S > B > H ≥ Z; F ≤ B < T. Conclusions: I. S > H  II. F < T",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. S > B > H gives S > H: true.\nII. T > B ≥ F gives F < T: true.\nHence: Both I and II follow.",
+   "order": 45,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: T ≥ W > Y ≥ K; A ≤ P < W. Conclusions: I. T > A  II. P > K",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. T ≥ W > P ≥ A gives T > A: true.\nII. No chain settles P against K (it can be =, >, <), so P > K is not certain.\nHence: Only I follows.",
+   "order": 46,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: P < G < T < V; N ≤ P ≤ E. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "P > T"
+    },
+    {
+     "text": "G = V"
+    },
+    {
+     "text": "G < T"
+    },
+    {
+     "text": "G ≤ P"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "V > T > G is already fixed, so G = V is false.\nT > G > P is already fixed, so P > T is false.\nG > P is already fixed, so G ≤ P is false.\nT > G gives G < T: true.",
+   "order": 47,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: L = D ≥ N > P; D ≤ Y < C. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "C ≥ P"
+    },
+    {
+     "text": "P > C"
+    },
+    {
+     "text": "L ≤ P"
+    },
+    {
+     "text": "P ≥ L"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "C > Y ≥ D ≥ N > P is already fixed, so P > C is false.\nL = D ≥ N > P is already fixed, so L ≤ P is false.\nC > Y ≥ D ≥ N > P gives C ≥ P: true.\nL = D ≥ N > P is already fixed, so P ≥ L is false.",
+   "order": 48,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: G = B > N > H; N ≤ E = X. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "H = B"
+    },
+    {
+     "text": "B ≥ H"
+    },
+    {
+     "text": "N > B"
+    },
+    {
+     "text": "E ≤ B"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "B > N > H is already fixed, so H = B is false.\nNo chain settles E against B (it can be =, >, <), so E ≤ B is not certain.\nB > N is already fixed, so N > B is false.\nB > N > H gives B ≥ H: true.",
+   "order": 49,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the expression 'D ? P ≤ L', which symbol in place of ? makes 'D < P' definitely true?",
+   "options": [
+    {
+     "text": "≤"
+    },
+    {
+     "text": "="
+    },
+    {
+     "text": "≥"
+    },
+    {
+     "text": "<"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With < in place of ?: D < P ≤ L.\nP > D gives D < P: true.\nThe other symbols either break the chain or give a different relation between D and P.",
+   "order": 50,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "In the expression 'V > P ? B', which symbol in place of ? makes 'B < P' definitely true?",
+   "options": [
+    {
+     "text": "≤"
+    },
+    {
+     "text": ">"
+    },
+    {
+     "text": "≥"
+    },
+    {
+     "text": "="
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With > in place of ?: V > P > B.\nP > B gives B < P: true.\nThe other symbols either break the chain or give a different relation between B and P.",
+   "order": 51,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Strict sign anywhere on the path gives > or <; '=' only when the chain is all '=' links."
+  },
+  {
+   "questionText": "Statements: D < U < F < H; F > B > E. Conclusions: I. B > D  II. D < B",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles B against D (it can be =, >, <), so B > D is not certain.\nII. No chain settles D against B (it can be =, >, <), so D < B is not certain.\nHence: Neither I nor II follows.",
+   "order": 52,
+   "subPattern": "direct-inequality-chains",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ~, ^, ★ are used with the meanings given: 'P ~ Q' means 'P is smaller than Q'; 'P @ Q' means 'P is greater than Q'; 'P ! Q' means 'P is not smaller than Q'; 'P ★ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is not greater than Q'. Statements: V ~ C ^ Y. Conclusions: I. V @ Y  II. Y ! C",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: V < C ≤ Y.\nI. Y ≥ C > V is already fixed, so V > Y is false.\nII. Y ≥ C gives Y ≥ C: true.\nHence: Only II follows.",
+   "order": 53,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols $, !, @, ©, ^ are used with the meanings given: 'P $ Q' means 'P is greater than Q'; 'P © Q' means 'P is either smaller than or equal to Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P @ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is equal to Q'. Statements: J @ U @ V. Conclusions: I. U @ V  II. J © V",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: J < U < V.\nI. V > U gives U < V: true.\nII. V > U > J gives J ≤ V: true.\nHence: Both I and II follow.",
+   "order": 54,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols %, $, *, !, # are used with the meanings given: 'P * Q' means 'P is smaller than Q'; 'P ! Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is equal to Q'; 'P % Q' means 'P is greater than Q'; 'P $ Q' means 'P is either greater than or equal to Q'. Statements: D % U % C. Conclusions: I. D * C  II. C % U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: D > U > C.\nI. D > U > C is already fixed, so D < C is false.\nII. U > C is already fixed, so C > U is false.\nHence: Neither I nor II follows.",
+   "order": 55,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols !, @, ©, &, ^ are used with the meanings given: 'P & Q' means 'P is not greater than Q'; 'P © Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is equal to Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is greater than Q'. Statements: C @ E ! Z @ M. Conclusions: I. C © M  II. Z @ M",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: C ≥ E > Z ≥ M.\nI. C ≥ E > Z ≥ M is already fixed, so C < M is false.\nII. Z ≥ M gives Z ≥ M: true.\nHence: Only II follows.",
+   "order": 56,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols &, ★, %, ©, # are used with the meanings given: 'P © Q' means 'P is not greater than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'; 'P % Q' means 'P is smaller than Q'; 'P & Q' means 'P is greater than Q'; 'P # Q' means 'P is equal to Q'. Statements: F # G & A & Z. Conclusions: I. G % Z  II. Z & F  III. F % A. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: F = G > A > Z.\nI. G > A > Z is already fixed, so G < Z is false.\nII. F = G > A > Z is already fixed, so Z > F is false.\nIII. F = G > A is already fixed, so F < A is false.\nCount = 0: none of them.",
+   "order": 57,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols @, ~, #, %, * are used with the meanings given: 'P * Q' means 'P is equal to Q'; 'P ~ Q' means 'P is not smaller than Q'; 'P % Q' means 'P is not greater than Q'; 'P # Q' means 'P is smaller than Q'; 'P @ Q' means 'P is greater than Q'. Statements: Y % T % H # S. Conclusions: I. T * Y  II. S ~ Y  III. S @ H. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: Y ≤ T ≤ H < S.\nI. No chain settles T against Y (it can be =, >), so T = Y is not certain.\nII. S > H ≥ T ≥ Y gives S ≥ Y: true.\nIII. S > H gives S > H: true.\nCount = 2: only two of them.",
+   "order": 58,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols !, ★, *, #, % are used with the meanings given: 'P % Q' means 'P is equal to Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P ! Q' means 'P is greater than Q'; 'P * Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'. Statements: Y ★ C ! E ! F. Conclusions: I. Y ! E  II. F * Y  III. F * C. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: Y ≥ C > E > F.\nI. Y ≥ C > E gives Y > E: true.\nII. Y ≥ C > E > F gives F < Y: true.\nIII. C > E > F gives F < C: true.\nCount = 3: all three of them.",
+   "order": 59,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols $, #, !, @, % are used with the meanings given: 'P ! Q' means 'P is smaller than Q'; 'P $ Q' means 'P is greater than Q'; 'P @ Q' means 'P is not greater than Q'; 'P % Q' means 'P is equal to Q'; 'P # Q' means 'P is either greater than or equal to Q'. Statements: S @ E @ P @ V. Conclusions: I. E # V  II. E $ V  III. P $ S. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: S ≤ E ≤ P ≤ V.\nI. No chain settles E against V (it can be =, <), so E ≥ V is not certain.\nII. V ≥ P ≥ E is already fixed, so E > V is false.\nIII. No chain settles P against S (it can be =, >), so P > S is not certain.\nCount = 0: none of them.",
+   "order": 60,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols &, *, %, ★, @ are used with the meanings given: 'P % Q' means 'P is smaller than Q'; 'P * Q' means 'P is either greater than or equal to Q'; 'P ★ Q' means 'P is either smaller than or equal to Q'; 'P & Q' means 'P is greater than Q'; 'P @ Q' means 'P is equal to Q'. In the expression 'N ★ C ? P', which symbol in place of ? makes 'N % P' definitely true?",
+   "options": [
+    {
+     "text": "%"
+    },
+    {
+     "text": "★"
+    },
+    {
+     "text": "*"
+    },
+    {
+     "text": "@"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded expression: N ≤ C ? P.\nWith < in place of ?: N ≤ C < P.\nP > C ≥ N gives N < P: true.\nThe other symbols either break the chain or give a different relation between N and P.",
+   "order": 61,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols *, #, &, !, @ are used with the meanings given: 'P @ Q' means 'P is equal to Q'; 'P & Q' means 'P is smaller than Q'; 'P ! Q' means 'P is not greater than Q'; 'P # Q' means 'P is not smaller than Q'; 'P * Q' means 'P is greater than Q'. In the expression 'Z * V ? F', which symbol in place of ? makes 'F & V' definitely true?",
+   "options": [
+    {
+     "text": "!"
+    },
+    {
+     "text": "@"
+    },
+    {
+     "text": "*"
+    },
+    {
+     "text": "&"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: Z > V ? F.\nWith > in place of ?: Z > V > F.\nV > F gives F < V: true.\nThe other symbols either break the chain or give a different relation between F and V.",
+   "order": 62,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ★, ^, !, @, * are used with the meanings given: 'P @ Q' means 'P is not greater than Q'; 'P ! Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is greater than Q'; 'P * Q' means 'P is equal to Q'; 'P ^ Q' means 'P is not smaller than Q'. In the expression 'U ★ K ? D', which symbol in place of ? makes 'K ! D' definitely true?",
+   "options": [
+    {
+     "text": "!"
+    },
+    {
+     "text": "★"
+    },
+    {
+     "text": "*"
+    },
+    {
+     "text": "@"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded expression: U > K ? D.\nWith < in place of ?: U > K < D.\nD > K gives K < D: true.\nThe other symbols either break the chain or give a different relation between K and D.",
+   "order": 63,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ★, $, *, @, % are used with the meanings given: 'P @ Q' means 'P is not greater than Q'; 'P $ Q' means 'P is not smaller than Q'; 'P % Q' means 'P is equal to Q'; 'P * Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is greater than Q'. In the expression 'E $ P ? L', which symbol in place of ? makes 'P ★ L' definitely true?",
+   "options": [
+    {
+     "text": "%"
+    },
+    {
+     "text": "@"
+    },
+    {
+     "text": "*"
+    },
+    {
+     "text": "★"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded expression: E ≥ P ? L.\nWith > in place of ?: E ≥ P > L.\nP > L gives P > L: true.\nThe other symbols either break the chain or give a different relation between P and L.",
+   "order": 64,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ~, !, #, *, ★ are used with the meanings given: 'P * Q' means 'P is not greater than Q'; 'P ! Q' means 'P is not smaller than Q'; 'P ~ Q' means 'P is greater than Q'; 'P ★ Q' means 'P is equal to Q'; 'P # Q' means 'P is smaller than Q'. Statements: B ~ L ~ W ~ M. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "W * B"
+    },
+    {
+     "text": "L ★ M"
+    },
+    {
+     "text": "M * B"
+    },
+    {
+     "text": "B ! M"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: B > L > W > M.\nB > L > W > M gives M ≤ B: true.\nL > W > M is already fixed, so L = M is false.\nB > L > W > M gives B ≥ M: true.\nB > L > W gives W ≤ B: true.",
+   "order": 65,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols $, @, ~, ©, ★ are used with the meanings given: 'P ~ Q' means 'P is smaller than Q'; 'P © Q' means 'P is not greater than Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P ★ Q' means 'P is equal to Q'; 'P $ Q' means 'P is greater than Q'. Statements: A ~ F ~ M. Conclusions: I. A ~ F  II. A @ M",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: A < F < M.\nI. F > A gives A < F: true.\nII. M > F > A is already fixed, so A ≥ M is false.\nHence: Only I follows.",
+   "order": 66,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols %, ©, ★, &, # are used with the meanings given: 'P # Q' means 'P is equal to Q'; 'P % Q' means 'P is greater than Q'; 'P © Q' means 'P is not smaller than Q'; 'P ★ Q' means 'P is smaller than Q'; 'P & Q' means 'P is either smaller than or equal to Q'. Statements: R % F % M © N. Conclusions: I. R ★ N  II. M ★ F",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: R > F > M ≥ N.\nI. R > F > M ≥ N is already fixed, so R < N is false.\nII. F > M gives M < F: true.\nHence: Only II follows.",
+   "order": 67,
+   "subPattern": "coded-symbols",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols #, @, *, ^, ★ are used with the meanings given: 'P @ Q' means 'P is not smaller than Q'; 'P ^ Q' means 'P is not greater than Q'; 'P ★ Q' means 'P is equal to Q'; 'P * Q' means 'P is smaller than Q'; 'P # Q' means 'P is greater than Q'. Statements: B @ J # P; S * N ★ J. Conclusions: I. S ^ J  II. J @ S",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: B ≥ J > P; S < N = J.\nI. J = N > S gives S ≤ J: true.\nII. J = N > S gives J ≥ S: true.\nHence: Both I and II follow.",
+   "order": 68,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ^, ★, !, &, % are used with the meanings given: 'P ! Q' means 'P is smaller than Q'; 'P % Q' means 'P is equal to Q'; 'P ★ Q' means 'P is not smaller than Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P ^ Q' means 'P is greater than Q'. Statements: J ! T ! Y & L ! D. Conclusions: I. Y & L  II. D % T",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: J < T < Y ≤ L < D.\nI. L ≥ Y gives Y ≤ L: true.\nII. D > L ≥ Y > T is already fixed, so D = T is false.\nHence: Only I follows.",
+   "order": 69,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols %, @, ^, &, ~ are used with the meanings given: 'P @ Q' means 'P is either greater than or equal to Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P ^ Q' means 'P is smaller than Q'; 'P % Q' means 'P is greater than Q'; 'P ~ Q' means 'P is equal to Q'. Statements: R ^ L ^ X; S & T & R. Conclusions: I. R @ L  II. T ^ S",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: R < L < X; S ≤ T ≤ R.\nI. L > R is already fixed, so R ≥ L is false.\nII. T ≥ S is already fixed, so T < S is false.\nHence: Neither I nor II follows.",
+   "order": 70,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols &, #, ©, ★, ~ are used with the meanings given: 'P ~ Q' means 'P is equal to Q'; 'P © Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is not greater than Q'; 'P & Q' means 'P is greater than Q'; 'P # Q' means 'P is not smaller than Q'. Statements: W & C & Y; E © T ★ C. Conclusions: I. T # Y  II. W # T",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: W > C > Y; E < T ≤ C.\nI. No chain settles T against Y (it can be =, >, <), so T ≥ Y is not certain.\nII. W > C ≥ T gives W ≥ T: true.\nHence: Only II follows.",
+   "order": 71,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ★, ^, % are used with the meanings given: 'P ★ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is either smaller than or equal to Q'; 'P % Q' means 'P is equal to Q'; 'P ! Q' means 'P is not smaller than Q'; 'P @ Q' means 'P is greater than Q'. Statements: K ! G @ T @ B @ N. Conclusions: I. N % T  II. T @ K",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: K ≥ G > T > B > N.\nI. T > B > N is already fixed, so N = T is false.\nII. K ≥ G > T is already fixed, so T > K is false.\nHence: Neither I nor II follows.",
+   "order": 72,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ©, &, @, %, ! are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P © Q' means 'P is greater than Q'; 'P % Q' means 'P is either smaller than or equal to Q'; 'P & Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is equal to Q'. Statements: X % H @ Y % Z @ A. Conclusions: I. A © Y  II. H % Z",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: X ≤ H < Y ≤ Z < A.\nI. A > Z ≥ Y gives A > Y: true.\nII. Z ≥ Y > H gives H ≤ Z: true.\nHence: Both I and II follow.",
+   "order": 73,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ^, !, &, ★, * are used with the meanings given: 'P & Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is greater than Q'; 'P ★ Q' means 'P is not greater than Q'; 'P * Q' means 'P is equal to Q'; 'P ! Q' means 'P is not smaller than Q'. Statements: N ! P * L ^ D ^ E. Conclusions: I. E & L  II. D ^ N",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: N ≥ P = L > D > E.\nI. L > D > E gives E < L: true.\nII. N ≥ P = L > D is already fixed, so D > N is false.\nHence: Only I follows.",
+   "order": 74,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ~, *, #, @, & are used with the meanings given: 'P # Q' means 'P is smaller than Q'; 'P @ Q' means 'P is not greater than Q'; 'P * Q' means 'P is not smaller than Q'; 'P & Q' means 'P is equal to Q'; 'P ~ Q' means 'P is greater than Q'. Statements: J ~ N # W; U @ L # J. Conclusions: I. W & U  II. N & U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: J > N < W; U ≤ L < J.\nI. No chain settles W against U (it can be =, >, <), so W = U is not certain.\nII. No chain settles N against U (it can be =, >, <), so N = U is not certain.\nHence: Neither I nor II follows.",
+   "order": 75,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols @, ★, *, #, ~ are used with the meanings given: 'P ★ Q' means 'P is not smaller than Q'; 'P # Q' means 'P is not greater than Q'; 'P @ Q' means 'P is greater than Q'; 'P * Q' means 'P is smaller than Q'; 'P ~ Q' means 'P is equal to Q'. Statements: E * C * P ~ D # X. Conclusions: I. C ★ E  II. C ★ D",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: E < C < P = D ≤ X.\nI. C > E gives C ≥ E: true.\nII. D = P > C is already fixed, so C ≥ D is false.\nHence: Only I follows.",
+   "order": 76,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols *, @, ~, &, # are used with the meanings given: 'P & Q' means 'P is either smaller than or equal to Q'; 'P * Q' means 'P is greater than Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P # Q' means 'P is equal to Q'; 'P ~ Q' means 'P is smaller than Q'. Statements: V ~ H & G; V & S & X. Conclusions: I. H # S  II. G ~ X",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: V < H ≤ G; V ≤ S ≤ X.\nI. No chain settles H against S (it can be =, >, <), so H = S is not certain.\nII. No chain settles G against X (it can be =, >, <), so G < X is not certain.\nHence: Neither I nor II follows.",
+   "order": 77,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols #, ★, !, &, © are used with the meanings given: 'P ★ Q' means 'P is not smaller than Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P ! Q' means 'P is smaller than Q'; 'P © Q' means 'P is equal to Q'; 'P # Q' means 'P is greater than Q'. Statements: N ! S ! W & F & X. Conclusions: I. N & W  II. X ! W",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: N < S < W ≤ F ≤ X.\nI. W > S > N gives N ≤ W: true.\nII. X ≥ F ≥ W is already fixed, so X < W is false.\nHence: Only I follows.",
+   "order": 78,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols $, ★, !, &, * are used with the meanings given: 'P ★ Q' means 'P is either greater than or equal to Q'; 'P $ Q' means 'P is greater than Q'; 'P * Q' means 'P is equal to Q'; 'P & Q' means 'P is not greater than Q'; 'P ! Q' means 'P is smaller than Q'. Statements: J ! P * E; P $ T $ M. Conclusions: I. J & M  II. J $ M",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: J < P = E; P > T > M.\nI. No chain settles J against M (it can be =, >, <), so J ≤ M is not certain.\nII. No chain settles J against M (it can be =, >, <), so J > M is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 79,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ^, #, $ are used with the meanings given: 'P ! Q' means 'P is either greater than or equal to Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is greater than Q'; 'P $ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is smaller than Q'. Statements: B # P ^ S; P ^ Z ^ X. Conclusions: I. Z ^ S  II. Z ! S",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: B ≤ P < S; P < Z < X.\nI. No chain settles Z against S (it can be =, >, <), so Z < S is not certain.\nII. No chain settles Z against S (it can be =, >, <), so Z ≥ S is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 80,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "In the following question, the symbols @, !, ^, &, ★ are used with the meanings given: 'P ^ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P & Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is greater than Q'; 'P ★ Q' means 'P is equal to Q'. Statements: L ! E @ A ! H ! U. Conclusions: I. U ^ E  II. A @ H  III. A ★ E. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: L ≥ E > A ≥ H ≥ U.\nI. E > A ≥ H ≥ U gives U < E: true.\nII. No chain settles A against H (it can be =, >), so A > H is not certain.\nIII. E > A is already fixed, so A = E is false.\nCount = 1: only one of them.",
+   "order": 81,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols *, @, !, #, © are used with the meanings given: 'P * Q' means 'P is greater than Q'; 'P © Q' means 'P is equal to Q'; 'P ! Q' means 'P is smaller than Q'; 'P @ Q' means 'P is not smaller than Q'; 'P # Q' means 'P is either smaller than or equal to Q'. Statements: H @ F * P; H * Y @ G. Conclusions: I. F ! P  II. G # Y  III. F © H. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: H ≥ F > P; H > Y ≥ G.\nI. F > P is already fixed, so F < P is false.\nII. Y ≥ G gives G ≤ Y: true.\nIII. No chain settles F against H (it can be =, <), so F = H is not certain.\nCount = 1: only one of them.",
+   "order": 82,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols *, ©, &, ★, % are used with the meanings given: 'P ★ Q' means 'P is not greater than Q'; 'P & Q' means 'P is smaller than Q'; 'P * Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'; 'P © Q' means 'P is not smaller than Q'. Statements: R ★ X & S & L ★ A. Conclusions: I. S * R  II. X ★ A  III. L © A. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: R ≤ X < S < L ≤ A.\nI. S > X ≥ R gives S > R: true.\nII. A ≥ L > S > X gives X ≤ A: true.\nIII. No chain settles L against A (it can be =, <), so L ≥ A is not certain.\nCount = 2: only two of them.",
+   "order": 83,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols *, #, @, ^, & are used with the meanings given: 'P * Q' means 'P is greater than Q'; 'P @ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is not greater than Q'; 'P # Q' means 'P is either greater than or equal to Q'; 'P & Q' means 'P is equal to Q'. Statements: F @ S @ W @ K & U. Conclusions: I. W ^ K  II. F @ W  III. W * F. How many of the conclusions definitely follow?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: F < S < W < K = U.\nI. K > W gives W ≤ K: true.\nII. W > S > F gives F < W: true.\nIII. W > S > F gives W > F: true.\nCount = 3: all three of them.",
+   "order": 84,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols %, ★, @, !, # are used with the meanings given: 'P # Q' means 'P is equal to Q'; 'P % Q' means 'P is greater than Q'; 'P ! Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is not smaller than Q'. In the expression 'T % N ★ P ? R # A', which symbol in place of ? makes 'R % P' definitely true?",
+   "options": [
+    {
+     "text": "#"
+    },
+    {
+     "text": "!"
+    },
+    {
+     "text": "@"
+    },
+    {
+     "text": "%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: T > N ≥ P ? R = A.\nWith < in place of ?: T > N ≥ P < R = A.\nR > P gives R > P: true.\nThe other symbols either break the chain or give a different relation between R and P.",
+   "order": 85,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ★, *, ©, @, ~ are used with the meanings given: 'P ★ Q' means 'P is greater than Q'; 'P ~ Q' means 'P is equal to Q'; 'P © Q' means 'P is smaller than Q'; 'P * Q' means 'P is either greater than or equal to Q'; 'P @ Q' means 'P is not greater than Q'. In the expression 'R ~ P ? A', which symbol in place of ? makes 'R ★ A' definitely true?",
+   "options": [
+    {
+     "text": "★"
+    },
+    {
+     "text": "©"
+    },
+    {
+     "text": "~"
+    },
+    {
+     "text": "@"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded expression: R = P ? A.\nWith > in place of ?: R = P > A.\nR = P > A gives R > A: true.\nThe other symbols either break the chain or give a different relation between R and A.",
+   "order": 86,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols %, ^, #, @, & are used with the meanings given: 'P & Q' means 'P is equal to Q'; 'P @ Q' means 'P is not greater than Q'; 'P # Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is either greater than or equal to Q'; 'P % Q' means 'P is greater than Q'. In the expression 'G @ T ? M', which symbol in place of ? makes 'M % G' definitely true?",
+   "options": [
+    {
+     "text": "&"
+    },
+    {
+     "text": "^"
+    },
+    {
+     "text": "#"
+    },
+    {
+     "text": "%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: G ≤ T ? M.\nWith < in place of ?: G ≤ T < M.\nM > T ≥ G gives M > G: true.\nThe other symbols either break the chain or give a different relation between M and G.",
+   "order": 87,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ^, @, *, ★, # are used with the meanings given: 'P ^ Q' means 'P is greater than Q'; 'P * Q' means 'P is smaller than Q'; 'P @ Q' means 'P is either greater than or equal to Q'; 'P ★ Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is equal to Q'. In the expression 'D * F * A ? Y', which symbol in place of ? makes 'Y * A' definitely true?",
+   "options": [
+    {
+     "text": "★"
+    },
+    {
+     "text": "*"
+    },
+    {
+     "text": "@"
+    },
+    {
+     "text": "^"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded expression: D < F < A ? Y.\nWith > in place of ?: D < F < A > Y.\nA > Y gives Y < A: true.\nThe other symbols either break the chain or give a different relation between Y and A.",
+   "order": 88,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols %, &, !, ^, @ are used with the meanings given: 'P & Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is smaller than Q'; 'P % Q' means 'P is greater than Q'; 'P @ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is either smaller than or equal to Q'. Statements: M & L % A; A ! V ^ Z. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "M @ A"
+    },
+    {
+     "text": "A ^ Z"
+    },
+    {
+     "text": "L % V"
+    },
+    {
+     "text": "L ! V"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: M ≥ L > A; A < V ≤ Z.\nZ ≥ V > A gives A ≤ Z: true.\nNo chain settles L against V (it can be =, >, <), so L < V is not certain.\nM ≥ L > A is already fixed, so M = A is false.\nNo chain settles L against V (it can be =, >, <), so L > V is not certain.",
+   "order": 89,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ~, ^, ©, !, @ are used with the meanings given: 'P ~ Q' means 'P is greater than Q'; 'P © Q' means 'P is smaller than Q'; 'P @ Q' means 'P is equal to Q'; 'P ^ Q' means 'P is either greater than or equal to Q'; 'P ! Q' means 'P is not greater than Q'. Statements: A ~ Z @ T; X ! A © U. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "X © U"
+    },
+    {
+     "text": "T @ U"
+    },
+    {
+     "text": "A © X"
+    },
+    {
+     "text": "X ~ T"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: A > Z = T; X ≤ A < U.\nNo chain settles X against T (it can be =, >, <), so X > T is not certain.\nU > A ≥ X gives X < U: true.\nU > A > Z = T is already fixed, so T = U is false.\nA ≥ X is already fixed, so A < X is false.",
+   "order": 90,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ~, @, ★, %, © are used with the meanings given: 'P @ Q' means 'P is not smaller than Q'; 'P % Q' means 'P is either smaller than or equal to Q'; 'P © Q' means 'P is equal to Q'; 'P ★ Q' means 'P is smaller than Q'; 'P ~ Q' means 'P is greater than Q'. Statements: U @ F ~ G; U % R % W. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "W © U"
+    },
+    {
+     "text": "W © F"
+    },
+    {
+     "text": "U © G"
+    },
+    {
+     "text": "G ★ F"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: U ≥ F > G; U ≤ R ≤ W.\nF > G gives G < F: true.\nNo chain settles W against U (it can be =, >), so W = U is not certain.\nU ≥ F > G is already fixed, so U = G is false.\nNo chain settles W against F (it can be =, >), so W = F is not certain.",
+   "order": 91,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols #, %, ©, ★, ! are used with the meanings given: 'P ★ Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is greater than Q'; 'P ! Q' means 'P is equal to Q'; 'P % Q' means 'P is not smaller than Q'; 'P © Q' means 'P is smaller than Q'. Statements: L © Y © N; Z ★ Y # S. Conclusions: I. Y © L  II. N ! Z",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: L < Y < N; Z ≤ Y > S.\nI. Y > L is already fixed, so Y < L is false.\nII. N > Y ≥ Z is already fixed, so N = Z is false.\nHence: Neither I nor II follows.",
+   "order": 92,
+   "subPattern": "coded-symbols",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ~, ★, %, #, ^ are used with the meanings given: 'P # Q' means 'P is not greater than Q'; 'P ~ Q' means 'P is greater than Q'; 'P ^ Q' means 'P is equal to Q'; 'P % Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'. Statements: X % A % F # J; K ~ P ~ J. Conclusions: I. F ^ A  II. X # A",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: X < A < F ≤ J; K > P > J.\nI. F > A is already fixed, so F = A is false.\nII. A > X gives X ≤ A: true.\nHence: Only II follows.",
+   "order": 93,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ^, ★, ©, ~, % are used with the meanings given: 'P © Q' means 'P is smaller than Q'; 'P ~ Q' means 'P is not greater than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'; 'P % Q' means 'P is equal to Q'; 'P ^ Q' means 'P is greater than Q'. Statements: P ^ D ^ R ^ M; V ~ R © G. Conclusions: I. M © R  II. P ★ R",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: P > D > R > M; V ≤ R < G.\nI. R > M gives M < R: true.\nII. P > D > R gives P ≥ R: true.\nHence: Both I and II follow.",
+   "order": 94,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols $, *, ^, ©, ! are used with the meanings given: 'P © Q' means 'P is not greater than Q'; 'P $ Q' means 'P is greater than Q'; 'P ! Q' means 'P is equal to Q'; 'P ^ Q' means 'P is smaller than Q'; 'P * Q' means 'P is not smaller than Q'. Statements: H ^ P ^ Y © X; C ^ H ^ W. Conclusions: I. P © Y  II. Y ^ C",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: H < P < Y ≤ X; C < H < W.\nI. Y > P gives P ≤ Y: true.\nII. Y > P > H > C is already fixed, so Y < C is false.\nHence: Only I follows.",
+   "order": 95,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ~, %, @, ^, © are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is not greater than Q'; 'P © Q' means 'P is equal to Q'; 'P % Q' means 'P is either greater than or equal to Q'; 'P ~ Q' means 'P is greater than Q'. Statements: U ^ K @ W @ E; U @ L ^ J. Conclusions: I. J @ L  II. K % L",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: U ≤ K < W < E; U < L ≤ J.\nI. J ≥ L is already fixed, so J < L is false.\nII. No chain settles K against L (it can be =, >, <), so K ≥ L is not certain.\nHence: Neither I nor II follows.",
+   "order": 96,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ©, &, @, #, % are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P & Q' means 'P is either greater than or equal to Q'; 'P © Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'. Statements: P @ Y @ B @ R; R & H & W. Conclusions: I. P © B  II. Y @ R",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: P < Y < B < R; R ≥ H ≥ W.\nI. B > Y > P is already fixed, so P > B is false.\nII. R > B > Y gives Y < R: true.\nHence: Only II follows.",
+   "order": 97,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ^, ~, ★, $, ! are used with the meanings given: 'P ★ Q' means 'P is smaller than Q'; 'P $ Q' means 'P is either smaller than or equal to Q'; 'P ~ Q' means 'P is not smaller than Q'; 'P ! Q' means 'P is equal to Q'; 'P ^ Q' means 'P is greater than Q'. In the expression 'C ? K ★ Y $ G', which symbol in place of ? makes 'C ^ K' definitely true?",
+   "options": [
+    {
+     "text": "~"
+    },
+    {
+     "text": "!"
+    },
+    {
+     "text": "^"
+    },
+    {
+     "text": "★"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded expression: C ? K < Y ≤ G.\nWith > in place of ?: C > K < Y ≤ G.\nC > K gives C > K: true.\nThe other symbols either break the chain or give a different relation between C and K.",
+   "order": 98,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols #, !, $, *, © are used with the meanings given: 'P © Q' means 'P is equal to Q'; 'P # Q' means 'P is greater than Q'; 'P $ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P * Q' means 'P is not greater than Q'. In the expression 'A # X ? T', which symbol in place of ? makes 'T # X' definitely true?",
+   "options": [
+    {
+     "text": "©"
+    },
+    {
+     "text": "$"
+    },
+    {
+     "text": "#"
+    },
+    {
+     "text": "!"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded expression: A > X ? T.\nWith < in place of ?: A > X < T.\nT > X gives T > X: true.\nThe other symbols either break the chain or give a different relation between T and X.",
+   "order": 99,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ★, *, #, ^, © are used with the meanings given: 'P * Q' means 'P is not smaller than Q'; 'P © Q' means 'P is equal to Q'; 'P ^ Q' means 'P is either smaller than or equal to Q'; 'P # Q' means 'P is smaller than Q'; 'P ★ Q' means 'P is greater than Q'. Statements: V ★ T * E ★ C; E ★ N © B. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "C © N"
+    },
+    {
+     "text": "N * T"
+    },
+    {
+     "text": "C ★ V"
+    },
+    {
+     "text": "B © E"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: V > T ≥ E > C; E > N = B.\nV > T ≥ E > C is already fixed, so C > V is false.\nNo chain settles C against N (it can be =, >, <), so C = N is not certain.\nE > N = B is already fixed, so B = E is false.\nT ≥ E > N is already fixed, so N ≥ T is false.",
+   "order": 100,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols #, $, *, !, ^ are used with the meanings given: 'P * Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is equal to Q'; 'P ! Q' means 'P is not greater than Q'; 'P $ Q' means 'P is either greater than or equal to Q'; 'P # Q' means 'P is greater than Q'. Statements: G ^ J ! Y * V; J # C # N. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "J * V"
+    },
+    {
+     "text": "Y ! J"
+    },
+    {
+     "text": "Y # V"
+    },
+    {
+     "text": "C # N"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: G = J ≤ Y < V; J > C > N.\nNo chain settles Y against J (it can be =, >), so Y ≤ J is not certain.\nV > Y is already fixed, so Y > V is false.\nC > N gives C > N: true.\nV > Y ≥ J gives J < V: true.",
+   "order": 101,
+   "subPattern": "coded-symbols",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "Statements: E < V = A ≤ Z. Conclusions: I. A < Z  II. A ≥ Z",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles A against Z (it can be =, <), so A < Z is not certain.\nII. No chain settles A against Z (it can be =, <), so A ≥ Z is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 102,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: Y ≥ J = F = L. Conclusions: I. Y > J  II. J ≥ Y",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Y against J (it can be =, >), so Y > J is not certain.\nII. No chain settles J against Y (it can be =, <), so J ≥ Y is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 103,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: R ≤ L < J. Conclusions: I. L > R  II. L ≤ R",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles L against R (it can be =, >), so L > R is not certain.\nII. No chain settles L against R (it can be =, >), so L ≤ R is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 104,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: A ≥ L ≥ H. Conclusions: I. L < A  II. L ≥ A",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles L against A (it can be =, <), so L < A is not certain.\nII. No chain settles L against A (it can be =, <), so L ≥ A is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 105,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: D ≥ E > N ≥ U. Conclusions: I. N ≤ U  II. N > U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles N against U (it can be =, >), so N ≤ U is not certain.\nII. No chain settles N against U (it can be =, >), so N > U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 106,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: R ≥ U > K. Conclusions: I. U ≥ R  II. R > U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles U against R (it can be =, <), so U ≥ R is not certain.\nII. No chain settles R against U (it can be =, >), so R > U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 107,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: V < Y ≤ P. Conclusions: I. Y < P  II. P ≤ Y",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Y against P (it can be =, <), so Y < P is not certain.\nII. No chain settles P against Y (it can be =, >), so P ≤ Y is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 108,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: P ≥ D ≥ W > R. Conclusions: I. D ≥ P  II. D < P",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles D against P (it can be =, <), so D ≥ P is not certain.\nII. No chain settles D against P (it can be =, <), so D < P is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 109,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: V ≤ S ≤ U = A. Conclusions: I. U > V  II. V ≥ U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles U against V (it can be =, >), so U > V is not certain.\nII. No chain settles V against U (it can be =, <), so V ≥ U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 110,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: M < H = Z < D. Conclusions: I. M > H  II. M ≤ H",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. H > M is already fixed, so M > H is false.\nII. H > M gives M ≤ H: true.\nHence: Only II follows.",
+   "order": 111,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: Z < R < Y. Conclusions: I. Z ≤ Y  II. Z > Y",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Y > R > Z gives Z ≤ Y: true.\nII. Y > R > Z is already fixed, so Z > Y is false.\nHence: Only I follows.",
+   "order": 112,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: P < Z < W. Conclusions: I. P > Z  II. P > W",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Z > P is already fixed, so P > Z is false.\nII. W > Z > P is already fixed, so P > W is false.\nHence: Neither I nor II follows.",
+   "order": 113,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: C < V < Z. Conclusions: I. V = Z  II. C > V",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Z > V is already fixed, so V = Z is false.\nII. V > C is already fixed, so C > V is false.\nHence: Neither I nor II follows.",
+   "order": 114,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the following question, the symbols #, !, $, &, @ are used with the meanings given: 'P & Q' means 'P is not greater than Q'; 'P @ Q' means 'P is equal to Q'; 'P $ Q' means 'P is smaller than Q'; 'P # Q' means 'P is greater than Q'; 'P ! Q' means 'P is either greater than or equal to Q'. Statements: A $ Z $ P # T. Conclusions: I. A $ T  II. T & A",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: A < Z < P > T.\nI. No chain settles A against T (it can be =, >, <), so A < T is not certain.\nII. No chain settles T against A (it can be =, >, <), so T ≤ A is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 115,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "In the following question, the symbols $, *, !, %, & are used with the meanings given: 'P % Q' means 'P is not greater than Q'; 'P & Q' means 'P is equal to Q'; 'P * Q' means 'P is not smaller than Q'; 'P ! Q' means 'P is smaller than Q'; 'P $ Q' means 'P is greater than Q'. Statements: W $ U * B $ M. Conclusions: I. B * U  II. B ! U",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: W > U ≥ B > M.\nI. No chain settles B against U (it can be =, <), so B ≥ U is not certain.\nII. No chain settles B against U (it can be =, <), so B < U is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 116,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: S < J ≥ P < M < V. Conclusions: I. V > S  II. V ≤ S",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles V against S (it can be =, >, <), so V > S is not certain.\nII. No chain settles V against S (it can be =, >, <), so V ≤ S is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 117,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: P < G < D; X ≤ D < Y. Conclusions: I. X < P  II. P ≤ X",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles X against P (it can be =, >, <), so X < P is not certain.\nII. No chain settles P against X (it can be =, >, <), so P ≤ X is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 118,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: J > Y > Z; U > B ≥ J. Conclusions: I. J < B  II. J ≥ B",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles J against B (it can be =, <), so J < B is not certain.\nII. No chain settles J against B (it can be =, <), so J ≥ B is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 119,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: J ≤ L < Y > B ≥ W. Conclusions: I. W < B  II. B ≤ W",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles W against B (it can be =, <), so W < B is not certain.\nII. No chain settles B against W (it can be =, >), so B ≤ W is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 120,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: M = A ≥ H; F = M < W. Conclusions: I. A > H  II. H ≥ A",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles A against H (it can be =, >), so A > H is not certain.\nII. No chain settles H against A (it can be =, <), so H ≥ A is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 121,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: N < Z ≤ M ≤ X < H. Conclusions: I. Z ≥ X  II. Z < X",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Z against X (it can be =, <), so Z ≥ X is not certain.\nII. No chain settles Z against X (it can be =, <), so Z < X is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 122,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: K ≥ G ≥ R; S > T ≥ R. Conclusions: I. G > R  II. G ≤ R",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles G against R (it can be =, >), so G > R is not certain.\nII. No chain settles G against R (it can be =, >), so G ≤ R is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 123,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: L ≥ D ≤ S ≤ Y < U. Conclusions: I. L > D  II. L ≤ D",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles L against D (it can be =, >), so L > D is not certain.\nII. No chain settles L against D (it can be =, >), so L ≤ D is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 124,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: R ≥ T > V = K ≥ D. Conclusions: I. D < V  II. V ≤ D",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles D against V (it can be =, <), so D < V is not certain.\nII. No chain settles V against D (it can be =, >), so V ≤ D is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 125,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: P ≤ R ≤ M; V > P > X. Conclusions: I. P ≥ R  II. P < R",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles P against R (it can be =, <), so P ≥ R is not certain.\nII. No chain settles P against R (it can be =, <), so P < R is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 126,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: L > B ≥ D; M ≥ H > D. Conclusions: I. D ≥ B  II. B > D",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles D against B (it can be =, <), so D ≥ B is not certain.\nII. No chain settles B against D (it can be =, >), so B > D is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 127,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: M < H < K < C < N. Conclusions: I. K > N  II. C < N",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. N > C > K is already fixed, so K > N is false.\nII. N > C gives C < N: true.\nHence: Only II follows.",
+   "order": 128,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: B < C < M < A ≤ F. Conclusions: I. M > A  II. M ≤ A",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. A > M is already fixed, so M > A is false.\nII. A > M gives M ≤ A: true.\nHence: Only II follows.",
+   "order": 129,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: U ≥ X > D; U ≤ K ≤ M. Conclusions: I. X ≥ K  II. U < M",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles X against K (it can be =, <), so X ≥ K is not certain.\nII. No chain settles U against M (it can be =, <), so U < M is not certain.\nHence: Neither I nor II follows.",
+   "order": 130,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "A '<' meeting a '>' at a letter breaks the chain: nothing can be said about the outer letters."
+  },
+  {
+   "questionText": "Statements: J < U ≤ S < Z < L. Conclusions: I. Z < U  II. L < J",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Z > S ≥ U is already fixed, so Z < U is false.\nII. L > Z > S ≥ U > J is already fixed, so L < J is false.\nHence: Neither I nor II follows.",
+   "order": 131,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the following question, the symbols ©, %, !, &, $ are used with the meanings given: 'P ! Q' means 'P is smaller than Q'; 'P $ Q' means 'P is equal to Q'; 'P & Q' means 'P is not greater than Q'; 'P © Q' means 'P is greater than Q'; 'P % Q' means 'P is not smaller than Q'. Statements: D ! C ! W % M ! P. Conclusions: I. P & W  II. W ! P",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: D < C < W ≥ M < P.\nI. No chain settles P against W (it can be =, >, <), so P ≤ W is not certain.\nII. No chain settles W against P (it can be =, >, <), so W < P is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 132,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "In the following question, the symbols ^, #, *, @, © are used with the meanings given: 'P @ Q' means 'P is either smaller than or equal to Q'; 'P © Q' means 'P is equal to Q'; 'P * Q' means 'P is smaller than Q'; 'P ^ Q' means 'P is greater than Q'; 'P # Q' means 'P is either greater than or equal to Q'. Statements: W ^ A # N; W # D # K. Conclusions: I. N ^ K  II. N @ K",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: W > A ≥ N; W ≥ D ≥ K.\nI. No chain settles N against K (it can be =, >, <), so N > K is not certain.\nII. No chain settles N against K (it can be =, >, <), so N ≤ K is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 133,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "In the following question, the symbols $, !, @, ©, % are used with the meanings given: 'P © Q' means 'P is not greater than Q'; 'P ! Q' means 'P is either greater than or equal to Q'; 'P $ Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'; 'P @ Q' means 'P is smaller than Q'. Statements: C © U @ W @ S % N. Conclusions: I. C @ W  II. W © C",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: C ≤ U < W < S = N.\nI. W > U ≥ C gives C < W: true.\nII. W > U ≥ C is already fixed, so W ≤ C is false.\nHence: Only I follows.",
+   "order": 134,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ©, @, ~, #, ^ are used with the meanings given: 'P © Q' means 'P is greater than Q'; 'P ~ Q' means 'P is smaller than Q'; 'P # Q' means 'P is not greater than Q'; 'P @ Q' means 'P is not smaller than Q'; 'P ^ Q' means 'P is equal to Q'. Statements: W # M # P ~ Z # K. Conclusions: I. P ^ K  II. P © K",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Decoded: W ≤ M ≤ P < Z ≤ K.\nI. K ≥ Z > P is already fixed, so P = K is false.\nII. K ≥ Z > P is already fixed, so P > K is false.\nHence: Neither I nor II follows.",
+   "order": 135,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols ©, @, ^, #, * are used with the meanings given: 'P ^ Q' means 'P is smaller than Q'; 'P © Q' means 'P is greater than Q'; 'P * Q' means 'P is equal to Q'; 'P # Q' means 'P is either smaller than or equal to Q'; 'P @ Q' means 'P is either greater than or equal to Q'. Statements: B @ S @ M © C © W. Conclusions: I. C ^ W  II. C @ W",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: B ≥ S ≥ M > C > W.\nI. C > W is already fixed, so C < W is false.\nII. C > W gives C ≥ W: true.\nHence: Only II follows.",
+   "order": 136,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "Statements: H < Z ≤ B < W; L > H = T. Conclusions: I. Z < B  II. B ≤ Z",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles Z against B (it can be =, <), so Z < B is not certain.\nII. No chain settles B against Z (it can be =, >), so B ≤ Z is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 137,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: M ≥ C ≥ Y ≥ F; N < M ≤ R. Conclusions: I. N > C  II. C ≥ N",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles N against C (it can be =, >, <), so N > C is not certain.\nII. No chain settles C against N (it can be =, >, <), so C ≥ N is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 138,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: L ≥ P = Y = J; A ≥ Y ≥ D. Conclusions: I. J < A  II. A ≤ J",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles J against A (it can be =, <), so J < A is not certain.\nII. No chain settles A against J (it can be =, >), so A ≤ J is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 139,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: Z < X ≤ U ≤ W; R < Z = H. Conclusions: I. X ≥ W  II. W > X",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles X against W (it can be =, <), so X ≥ W is not certain.\nII. No chain settles W against X (it can be =, >), so W > X is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 140,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: E > P > F > U; M > E ≥ L. Conclusions: I. P < L  II. L ≤ P",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles P against L (it can be =, >, <), so P < L is not certain.\nII. No chain settles L against P (it can be =, >, <), so L ≤ P is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 141,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: G = W > T > B; K ≤ Y < G. Conclusions: I. T > K  II. K ≥ T",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Either I or II follows"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. No chain settles T against K (it can be =, >, <), so T > K is not certain.\nII. No chain settles K against T (it can be =, >, <), so K ≥ T is not certain.\nI and II are complementary on the same pair, and neither is forced, so exactly one must hold: either I or II.",
+   "order": 142,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "If I and II are a complementary pair on the same two letters (> with ≤, or < with ≥) and neither follows alone, the answer is 'Either I or II'."
+  },
+  {
+   "questionText": "Statements: V ≥ E > J > F; T ≥ B > V. Conclusions: I. B ≥ J  II. J > B",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. B > V ≥ E > J gives B ≥ J: true.\nII. B > V ≥ E > J is already fixed, so J > B is false.\nHence: Only I follows.",
+   "order": 143,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "One strict sign (> or <) in a chain makes the end-to-end relation strict; if every link is weak (≥ or ≤) only ≥ or ≤ follows."
+  },
+  {
+   "questionText": "Statements: L ≥ P ≥ B > V; G > L > T. Conclusions: I. B > V  II. B ≤ V",
+   "options": [
+    {
+     "text": "Only I follows"
+    },
+    {
+     "text": "Only II follows"
+    },
+    {
+     "text": "Both I and II follow"
+    },
+    {
+     "text": "Neither I nor II follows"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. B > V gives B > V: true.\nII. B > V is already fixed, so B ≤ V is false.\nHence: Only I follows.",
+   "order": 144,
+   "subPattern": "either-or-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: A ≤ D < S ≤ F. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "A ≥ F"
+    },
+    {
+     "text": "S ≤ D"
+    },
+    {
+     "text": "D < S"
+    },
+    {
+     "text": "A ≥ D"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "F ≥ S > D ≥ A is already fixed, so A ≥ F is false.\nS > D is already fixed, so S ≤ D is false.\nNo chain settles A against D (it can be =, <), so A ≥ D is not certain.\nS > D gives D < S: true.",
+   "order": 145,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: C = A ≥ X ≥ U. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "U < C"
+    },
+    {
+     "text": "X ≤ C"
+    },
+    {
+     "text": "A > X"
+    },
+    {
+     "text": "U > X"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles A against X (it can be =, >), so A > X is not certain.\nC = A ≥ X gives X ≤ C: true.\nX ≥ U is already fixed, so U > X is false.\nNo chain settles U against C (it can be =, <), so U < C is not certain.",
+   "order": 146,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: F ≥ S ≥ U > K. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "S < F"
+    },
+    {
+     "text": "K > S"
+    },
+    {
+     "text": "F > U"
+    },
+    {
+     "text": "U ≥ S"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "No chain settles U against S (it can be =, <), so U ≥ S is not certain.\nNo chain settles F against U (it can be =, >), so F > U is not certain.\nNo chain settles S against F (it can be =, <), so S < F is not certain.\nS ≥ U > K is already fixed, so K > S is false.",
+   "order": 147,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: F ≤ U ≤ D ≤ L. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "U > L"
+    },
+    {
+     "text": "D ≤ U"
+    },
+    {
+     "text": "L > F"
+    },
+    {
+     "text": "U = L"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No chain settles L against F (it can be =, >), so L > F is not certain.\nNo chain settles D against U (it can be =, >), so D ≤ U is not certain.\nL ≥ D ≥ U is already fixed, so U > L is false.\nNo chain settles U against L (it can be =, <), so U = L is not certain.",
+   "order": 148,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: X > K ≥ M > W. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "X > K"
+    },
+    {
+     "text": "K > W"
+    },
+    {
+     "text": "K = X"
+    },
+    {
+     "text": "X ≥ M"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "K ≥ M > W gives K > W: true.\nX > K gives X > K: true.\nX > K ≥ M gives X ≥ M: true.\nX > K is already fixed, so K = X is false.",
+   "order": 149,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: E ≥ B > U > Y. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "B = Y"
+    },
+    {
+     "text": "Y ≥ E"
+    },
+    {
+     "text": "E = Y"
+    },
+    {
+     "text": "E > B"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "B > U > Y is already fixed, so B = Y is false.\nE ≥ B > U > Y is already fixed, so Y ≥ E is false.\nE ≥ B > U > Y is already fixed, so E = Y is false.\nNo chain settles E against B (it can be =, >), so E > B is not certain.",
+   "order": 150,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: R < L < K = M. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "R ≥ M"
+    },
+    {
+     "text": "L < R"
+    },
+    {
+     "text": "L < M"
+    },
+    {
+     "text": "K < L"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "L > R is already fixed, so L < R is false.\nM = K > L gives L < M: true.\nM = K > L > R is already fixed, so R ≥ M is false.\nK > L is already fixed, so K < L is false.",
+   "order": 151,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: S ≤ V < R ≤ Y. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "R < Y"
+    },
+    {
+     "text": "V ≥ R"
+    },
+    {
+     "text": "Y < V"
+    },
+    {
+     "text": "S > R"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "R > V is already fixed, so V ≥ R is false.\nY ≥ R > V is already fixed, so Y < V is false.\nNo chain settles R against Y (it can be =, <), so R < Y is not certain.\nR > V ≥ S is already fixed, so S > R is false.",
+   "order": 152,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: W ≥ S > C ≥ V. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "V > C"
+    },
+    {
+     "text": "S > W"
+    },
+    {
+     "text": "V = W"
+    },
+    {
+     "text": "V ≤ W"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "C ≥ V is already fixed, so V > C is false.\nW ≥ S > C ≥ V gives V ≤ W: true.\nW ≥ S is already fixed, so S > W is false.\nW ≥ S > C ≥ V is already fixed, so V = W is false.",
+   "order": 153,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: R = A > N ≥ K. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "A ≥ K"
+    },
+    {
+     "text": "N = K"
+    },
+    {
+     "text": "N < K"
+    },
+    {
+     "text": "A > R"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A > N ≥ K gives A ≥ K: true.\nN ≥ K is already fixed, so N < K is false.\nR = A is already fixed, so A > R is false.\nNo chain settles N against K (it can be =, >), so N = K is not certain.",
+   "order": 154,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: V < U ≤ Z < F. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "U < Z"
+    },
+    {
+     "text": "Z > F"
+    },
+    {
+     "text": "Z < U"
+    },
+    {
+     "text": "V ≤ F"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "F > Z ≥ U > V gives V ≤ F: true.\nNo chain settles U against Z (it can be =, <), so U < Z is not certain.\nF > Z is already fixed, so Z > F is false.\nZ ≥ U is already fixed, so Z < U is false.",
+   "order": 155,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: L = F < V ≤ K. Conclusions: I. F < K  II. V ≥ L  III. K < F. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. K ≥ V > F gives F < K: true.\nII. V > F = L gives V ≥ L: true.\nIII. K ≥ V > F is already fixed, so K < F is false.\nCount = 2: only two of them.",
+   "order": 156,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: F ≥ X > U ≥ Y. Conclusions: I. U > Y  II. F > U  III. Y < X. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles U against Y (it can be =, >), so U > Y is not certain.\nII. F ≥ X > U gives F > U: true.\nIII. X > U ≥ Y gives Y < X: true.\nCount = 3: all three of them.",
+   "order": 157,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: G < P > B < J. Conclusions: I. B = P  II. P = B  III. G < B. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. P > B is already fixed, so B = P is false.\nII. P > B is already fixed, so P = B is false.\nIII. No chain settles G against B (it can be =, >, <), so G < B is not certain.\nCount = 1: only one of them.",
+   "order": 158,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: W ≤ T < Z < E. Conclusions: I. Z > E  II. W > T  III. T < W. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. E > Z is already fixed, so Z > E is false.\nII. T ≥ W is already fixed, so W > T is false.\nIII. T ≥ W is already fixed, so T < W is false.\nCount = 0: none of them.",
+   "order": 159,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: U > E > B > T ≥ M. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "B ≥ E"
+    },
+    {
+     "text": "U ≤ T"
+    },
+    {
+     "text": "E > B"
+    },
+    {
+     "text": "M = B"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "U > E > B > T is already fixed, so U ≤ T is false.\nB > T ≥ M is already fixed, so M = B is false.\nE > B is already fixed, so B ≥ E is false.\nE > B gives E > B: true.",
+   "order": 160,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: X ≥ G > Y; G < N < T. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "X < G"
+    },
+    {
+     "text": "X ≥ Y"
+    },
+    {
+     "text": "T < X"
+    },
+    {
+     "text": "X > N"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "No chain settles X against N (it can be =, >, <), so X > N is not certain.\nNo chain settles T against X (it can be =, >, <), so T < X is not certain.\nX ≥ G is already fixed, so X < G is false.\nX ≥ G > Y gives X ≥ Y: true.",
+   "order": 161,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: T < J < W; G = J ≤ E. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "G < J"
+    },
+    {
+     "text": "J = E"
+    },
+    {
+     "text": "W < J"
+    },
+    {
+     "text": "J < W"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "G = J is already fixed, so G < J is false.\nW > J is already fixed, so W < J is false.\nNo chain settles J against E (it can be =, <), so J = E is not certain.\nW > J gives J < W: true.",
+   "order": 162,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: U > S > D > X > V. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "V = X"
+    },
+    {
+     "text": "S ≤ D"
+    },
+    {
+     "text": "V < X"
+    },
+    {
+     "text": "D < V"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "D > X > V is already fixed, so D < V is false.\nS > D is already fixed, so S ≤ D is false.\nX > V is already fixed, so V = X is false.\nX > V gives V < X: true.",
+   "order": 163,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: U ≤ J ≤ N < F ≤ B. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "B < N"
+    },
+    {
+     "text": "J > N"
+    },
+    {
+     "text": "B > F"
+    },
+    {
+     "text": "U ≤ F"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles B against F (it can be =, >), so B > F is not certain.\nB ≥ F > N is already fixed, so B < N is false.\nF > N ≥ J ≥ U gives U ≤ F: true.\nN ≥ J is already fixed, so J > N is false.",
+   "order": 164,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: V < R < X; Y < R < C. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "C > R"
+    },
+    {
+     "text": "Y > R"
+    },
+    {
+     "text": "V > Y"
+    },
+    {
+     "text": "X ≤ C"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No chain settles V against Y (it can be =, >, <), so V > Y is not certain.\nNo chain settles X against C (it can be =, >, <), so X ≤ C is not certain.\nR > Y is already fixed, so Y > R is false.\nC > R gives C > R: true.",
+   "order": 165,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: T ≤ M < W ≤ G < E. Which of the following is definitely true?",
+   "options": [
+    {
+     "text": "E < T"
+    },
+    {
+     "text": "G > M"
+    },
+    {
+     "text": "M = W"
+    },
+    {
+     "text": "T = W"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "G ≥ W > M gives G > M: true.\nW > M is already fixed, so M = W is false.\nE > G ≥ W > M ≥ T is already fixed, so E < T is false.\nW > M ≥ T is already fixed, so T = W is false.",
+   "order": 166,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: M < Z = B ≤ V = N. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "N > B"
+    },
+    {
+     "text": "M < Z"
+    },
+    {
+     "text": "Z < V"
+    },
+    {
+     "text": "B > Z"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles N against B (it can be =, >), so N > B is not certain.\nZ > M gives M < Z: true.\nNo chain settles Z against V (it can be =, <), so Z < V is not certain.\nZ = B is already fixed, so B > Z is false.",
+   "order": 167,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: R < K < J = P < N. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "P < K"
+    },
+    {
+     "text": "N ≥ K"
+    },
+    {
+     "text": "P = J"
+    },
+    {
+     "text": "P > R"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "P = J > K is already fixed, so P < K is false.\nN > P = J > K gives N ≥ K: true.\nP = J > K > R gives P > R: true.\nP = J and J = P, so P = J is true.",
+   "order": 168,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: P = Y < X; V ≤ P ≤ U. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "Y ≥ V"
+    },
+    {
+     "text": "X < Y"
+    },
+    {
+     "text": "U = P"
+    },
+    {
+     "text": "P ≤ U"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "No chain settles U against P (it can be =, >), so U = P is not certain.\nY = P ≥ V gives Y ≥ V: true.\nX > Y is already fixed, so X < Y is false.\nU ≥ P gives P ≤ U: true.",
+   "order": 169,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: P ≤ T < W ≤ N < S. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "N = S"
+    },
+    {
+     "text": "T > S"
+    },
+    {
+     "text": "W = N"
+    },
+    {
+     "text": "N < P"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "S > N is already fixed, so N = S is false.\nN ≥ W > T ≥ P is already fixed, so N < P is false.\nNo chain settles W against N (it can be =, <), so W = N is not certain.\nS > N ≥ W > T is already fixed, so T > S is false.",
+   "order": 170,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: N < Y ≤ L < D < C. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "C = Y"
+    },
+    {
+     "text": "D = L"
+    },
+    {
+     "text": "L < D"
+    },
+    {
+     "text": "N = D"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "D > L gives L < D: true.\nD > L is already fixed, so D = L is false.\nC > D > L ≥ Y is already fixed, so C = Y is false.\nD > L ≥ Y > N is already fixed, so N = D is false.",
+   "order": 171,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: N = G > Z; Z < X < T. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "G < Z"
+    },
+    {
+     "text": "Z ≥ N"
+    },
+    {
+     "text": "N < Z"
+    },
+    {
+     "text": "Z < N"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "N = G > Z gives Z < N: true.\nN = G > Z is already fixed, so Z ≥ N is false.\nG > Z is already fixed, so G < Z is false.\nN = G > Z is already fixed, so N < Z is false.",
+   "order": 172,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: J < N < P < X = U. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "X ≤ P"
+    },
+    {
+     "text": "X > J"
+    },
+    {
+     "text": "J > P"
+    },
+    {
+     "text": "U > X"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "P > N > J is already fixed, so J > P is false.\nX > P > N > J gives X > J: true.\nX = U is already fixed, so U > X is false.\nX > P is already fixed, so X ≤ P is false.",
+   "order": 173,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Eliminate every option contradicted by a derived relation; the survivor is possible."
+  },
+  {
+   "questionText": "Statements: J > P ≥ Z; R = J = B. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "Z = P"
+    },
+    {
+     "text": "J > B"
+    },
+    {
+     "text": "J > Z"
+    },
+    {
+     "text": "Z > P"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "P ≥ Z is already fixed, so Z > P is false.\nB = J is already fixed, so J > B is false.\nNo chain settles Z against P (it can be =, <), so Z = P is not certain.\nJ > P ≥ Z gives J > Z: true.",
+   "order": 174,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: D ≥ G ≥ W; W ≥ B = L. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "G ≥ B"
+    },
+    {
+     "text": "G = W"
+    },
+    {
+     "text": "D ≥ G"
+    },
+    {
+     "text": "G < W"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "D ≥ G gives D ≥ G: true.\nG ≥ W is already fixed, so G < W is false.\nG ≥ W ≥ B gives G ≥ B: true.\nNo chain settles G against W (it can be =, >), so G = W is not certain.",
+   "order": 175,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: J < D < H; N ≤ D < V. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "N = H"
+    },
+    {
+     "text": "H < N"
+    },
+    {
+     "text": "N = D"
+    },
+    {
+     "text": "H > D"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "H > D ≥ N is already fixed, so N = H is false.\nH > D gives H > D: true.\nH > D ≥ N is already fixed, so H < N is false.\nNo chain settles N against D (it can be =, <), so N = D is not certain.",
+   "order": 176,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: N > R = Z; N > C > G. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "Z < R"
+    },
+    {
+     "text": "Z < N"
+    },
+    {
+     "text": "C ≤ N"
+    },
+    {
+     "text": "G > Z"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "N > C gives C ≤ N: true.\nN > R = Z gives Z < N: true.\nZ = R is already fixed, so Z < R is false.\nNo chain settles G against Z (it can be =, >, <), so G > Z is not certain.",
+   "order": 177,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: G = A < F < X ≤ J. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "J = X"
+    },
+    {
+     "text": "A > X"
+    },
+    {
+     "text": "X > G"
+    },
+    {
+     "text": "F = G"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No chain settles J against X (it can be =, >), so J = X is not certain.\nX > F > A is already fixed, so A > X is false.\nF > A = G is already fixed, so F = G is false.\nX > F > A = G gives X > G: true.",
+   "order": 178,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: Z = D < R; X > H > D. Conclusions: I. H = Z  II. Z > D  III. X = D. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. H > D = Z is already fixed, so H = Z is false.\nII. D = Z is already fixed, so Z > D is false.\nIII. X > H > D is already fixed, so X = D is false.\nCount = 0: none of them.",
+   "order": 179,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: W > X ≥ Z; S ≤ A > X. Conclusions: I. S > W  II. S ≤ A  III. X > S. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. No chain settles S against W (it can be =, >, <), so S > W is not certain.\nII. A ≥ S gives S ≤ A: true.\nIII. No chain settles X against S (it can be =, >, <), so X > S is not certain.\nCount = 3: all three of them.",
+   "order": 180,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the following question, the symbols %, ★, #, &, ~ are used with the meanings given: 'P & Q' means 'P is either smaller than or equal to Q'; 'P % Q' means 'P is greater than Q'; 'P ★ Q' means 'P is either greater than or equal to Q'; 'P ~ Q' means 'P is equal to Q'; 'P # Q' means 'P is smaller than Q'. Statements: B ~ R % A % Y % C. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "A % R"
+    },
+    {
+     "text": "Y & A"
+    },
+    {
+     "text": "R & B"
+    },
+    {
+     "text": "R ★ A"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Decoded: B = R > A > Y > C.\nA > Y gives Y ≤ A: true.\nB = R gives R ≤ B: true.\nR > A is already fixed, so A > R is false.\nR > A gives R ≥ A: true.",
+   "order": 181,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "In the following question, the symbols !, $, @, ©, % are used with the meanings given: 'P @ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is greater than Q'; 'P % Q' means 'P is equal to Q'; 'P $ Q' means 'P is either greater than or equal to Q'; 'P © Q' means 'P is not greater than Q'. Statements: N % K $ M; E $ N ! D. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "N ! D"
+    },
+    {
+     "text": "D © N"
+    },
+    {
+     "text": "E ! N"
+    },
+    {
+     "text": "M ! N"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Decoded: N = K ≥ M; E ≥ N > D.\nN > D gives D ≤ N: true.\nN = K ≥ M is already fixed, so M > N is false.\nNo chain settles E against N (it can be =, >), so E > N is not certain.\nN > D gives N > D: true.",
+   "order": 182,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  },
+  {
+   "questionText": "Statements: R > A > W ≥ Y; C ≤ Y ≤ T. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "A > Y"
+    },
+    {
+     "text": "Y > T"
+    },
+    {
+     "text": "T ≤ R"
+    },
+    {
+     "text": "R ≥ T"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A > W ≥ Y gives A > Y: true.\nT ≥ Y is already fixed, so Y > T is false.\nNo chain settles T against R (it can be =, >, <), so T ≤ R is not certain.\nNo chain settles R against T (it can be =, >, <), so R ≥ T is not certain.",
+   "order": 183,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: Z > U > R > N; F > G > N. Which of the following can never be true?",
+   "options": [
+    {
+     "text": "U ≤ F"
+    },
+    {
+     "text": "U > N"
+    },
+    {
+     "text": "Z ≥ F"
+    },
+    {
+     "text": "G ≥ F"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "F > G is already fixed, so G ≥ F is false.\nNo chain settles U against F (it can be =, >, <), so U ≤ F is not certain.\nNo chain settles Z against F (it can be =, >, <), so Z ≥ F is not certain.\nU > R > N gives U > N: true.",
+   "order": 184,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Look for the reverse relation already forced by the chain; that option contradicts the statements."
+  },
+  {
+   "questionText": "Statements: A ≤ X < P < K; V < P < C. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "K ≥ C"
+    },
+    {
+     "text": "A > C"
+    },
+    {
+     "text": "C ≤ P"
+    },
+    {
+     "text": "P = A"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "P > X ≥ A is already fixed, so P = A is false.\nC > P > X ≥ A is already fixed, so A > C is false.\nC > P is already fixed, so C ≤ P is false.\nNo chain settles K against C (it can be =, >, <), so K ≥ C is not certain.",
+   "order": 185,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: A > D > S > G; L > A ≥ V. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "L ≤ A"
+    },
+    {
+     "text": "L < A"
+    },
+    {
+     "text": "D > A"
+    },
+    {
+     "text": "V = A"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No chain settles V against A (it can be =, <), so V = A is not certain.\nA > D is already fixed, so D > A is false.\nL > A is already fixed, so L ≤ A is false.\nL > A is already fixed, so L < A is false.",
+   "order": 186,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: D < H = W < Y; W < V ≤ T. Which of the following may be true but is not definitely true?",
+   "options": [
+    {
+     "text": "V ≥ W"
+    },
+    {
+     "text": "V > D"
+    },
+    {
+     "text": "T ≤ Y"
+    },
+    {
+     "text": "Y ≥ W"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No chain settles T against Y (it can be =, >, <), so T ≤ Y is not certain.\nV > W = H > D gives V > D: true.\nY > W gives Y ≥ W: true.\nV > W gives V ≥ W: true.",
+   "order": 187,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Options with no link between the letters (or only a weak link) are possible but not certain."
+  },
+  {
+   "questionText": "Statements: P ≥ T > X > K; V < K < N. Conclusions: I. N ≤ P  II. K ≥ T  III. X ≤ K. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. No chain settles N against P (it can be =, >, <), so N ≤ P is not certain.\nII. T > X > K is already fixed, so K ≥ T is false.\nIII. X > K is already fixed, so X ≤ K is false.\nCount = 1: only one of them.",
+   "order": 188,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "Statements: D ≥ M > V ≥ E; Z > B > V. Conclusions: I. B ≥ V  II. M < E  III. M ≥ D. How many of the conclusions can possibly be true (are not contradicted by the statements)?",
+   "options": [
+    {
+     "text": "None of them"
+    },
+    {
+     "text": "Only one of them"
+    },
+    {
+     "text": "Only two of them"
+    },
+    {
+     "text": "All three of them"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. B > V gives B ≥ V: true.\nII. M > V ≥ E is already fixed, so M < E is false.\nIII. No chain settles M against D (it can be =, <), so M ≥ D is not certain.\nCount = 2: only two of them.",
+   "order": 189,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Join the statements through the common letter; a conclusion follows only if one unbroken chain with the same direction links the two letters."
+  },
+  {
+   "questionText": "In the following question, the symbols !, &, ~, #, @ are used with the meanings given: 'P & Q' means 'P is either greater than or equal to Q'; 'P ~ Q' means 'P is smaller than Q'; 'P ! Q' means 'P is greater than Q'; 'P @ Q' means 'P is equal to Q'; 'P # Q' means 'P is not greater than Q'. Statements: F ~ H ~ A # W; C ~ Z # F. Which of the following can possibly be true?",
+   "options": [
+    {
+     "text": "F ~ Z"
+    },
+    {
+     "text": "W ! A"
+    },
+    {
+     "text": "W ~ A"
+    },
+    {
+     "text": "C & Z"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Decoded: F < H < A ≤ W; C < Z ≤ F.\nNo chain settles W against A (it can be =, >), so W > A is not certain.\nF ≥ Z is already fixed, so F < Z is false.\nZ > C is already fixed, so C ≥ Z is false.\nW ≥ A is already fixed, so W < A is false.",
+   "order": 190,
+   "subPattern": "definite-vs-possible-conclusions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Decode every symbol first, rewrite statements and conclusions in ordinary signs, then apply the chain rule."
+  }
+ ]
+}

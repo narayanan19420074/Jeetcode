@@ -1,0 +1,803 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She enjoys singing, dancing and ___.",
+   "options": [
+    "painting",
+    "to paint",
+    "paint",
+    "to be painting"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'enjoy' items in a list must be gerunds (-ing forms) for parallel structure: singing, dancing, painting.",
+   "shortcut": "Keep every list item in the same form.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He likes to read, to write and ___.",
+   "options": [
+    "to paint",
+    "painting",
+    "painted",
+    "a painter"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The earlier items are full infinitives ('to read', 'to write'), so the last must be an infinitive too: 'to paint'.",
+   "shortcut": "Match infinitive with infinitive.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The manager was efficient, honest and ___.",
+   "options": [
+    "hardworking",
+    "works hard",
+    "a hard worker",
+    "with hard work"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The series is of adjectives (efficient, honest), so the third item must be an adjective: 'hardworking'.",
+   "shortcut": "Adjective, adjective, adjective.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He is not only intelligent but also ___.",
+   "options": [
+    "hardworking",
+    "works hard",
+    "a hard worker",
+    "with hard work"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Not only ... but also' must join items of the same form. 'Intelligent' is an adjective, so 'hardworking' is needed.",
+   "shortcut": "Both sides of a correlative must match.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. We can travel by bus, by train or ___.",
+   "options": [
+    "by air",
+    "flying",
+    "an aeroplane",
+    "the sky"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each item is a 'by + noun' phrase, so the last item should also be 'by air'.",
+   "shortcut": "Repeat the same phrase pattern.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rahul is tall, dark and ___.",
+   "options": [
+    "handsome",
+    "has handsome",
+    "with handsomeness",
+    "a handsome person"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list consists of adjectives, so the final item must also be an adjective: 'handsome'.",
+   "shortcut": "Adjective, adjective, adjective.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The job requires patience, accuracy and ___.",
+   "options": [
+    "speed",
+    "being fast",
+    "to be fast",
+    "quick workers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of abstract nouns (patience, accuracy), so the last item should be a noun: 'speed'.",
+   "shortcut": "Noun, noun, noun.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She told me to sit down, to relax and ___.",
+   "options": [
+    "to wait",
+    "waiting",
+    "that I wait",
+    "she waited"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The earlier items are infinitives ('to sit', 'to relax'), so the last must be 'to wait'.",
+   "shortcut": "Infinitive list stays infinitive.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. I came, I saw and I ___.",
+   "options": [
+    "conquered",
+    "was conquering",
+    "had conquer",
+    "conquering"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each clause is a simple-past clause with its own subject: 'I came, I saw, I conquered'.",
+   "shortcut": "Same tense and clause pattern.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Ananya likes cooking, gardening and ___.",
+   "options": [
+    "reading",
+    "to read",
+    "read",
+    "to be reading"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The first two items are gerunds, so the third must be a gerund too: 'reading'.",
+   "shortcut": "Gerund, gerund, gerund.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Our teacher is kind, fair and ___.",
+   "options": [
+    "patient",
+    "has patience",
+    "with patience",
+    "patiently"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Kind and fair are adjectives. 'Patient' is the adjective that keeps the list parallel.",
+   "shortcut": "Adjective, adjective, adjective.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The shop sells shirts, trousers and ___.",
+   "options": [
+    "shoes",
+    "to sell shoes",
+    "shoe-selling",
+    "shoes' sale"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of plural nouns (shirts, trousers), so the last must be a plural noun: 'shoes'.",
+   "shortcut": "Noun, noun, noun.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He neither smokes nor ___.",
+   "options": [
+    "drinks",
+    "drinking",
+    "drank",
+    "is drinking"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither ... nor' joins items of the same form. 'Smokes' is simple present, so the item after 'nor' is 'drinks'.",
+   "shortcut": "Neither/nor: same form on both sides.",
+   "subPattern": "parallelism",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The coach told the players to warm up, to practise hard and that they should not be late.\nB. The coach told the players to warm up, to practise hard and not to be late.\nC. The coach told the players to warm up, practising hard and not being late.\nD. The coach told the players to warm up, practise hard and being not late.",
+   "options": [
+    "B. The coach told the players to warm up, to practise hard and not to be late.",
+    "A. The coach told the players to warm up, to practise hard and that they should not be late.",
+    "C. The coach told the players to warm up, practising hard and not being late.",
+    "D. The coach told the players to warm up, practise hard and being not late."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "All items after 'told the players' must be infinitives: 'to warm up, to practise hard and not to be late'. A mixes in a clause, C uses gerunds, and D is mixed.",
+   "shortcut": "Same grammatical form for every list item.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She is both a talented singer and ___.",
+   "options": [
+    "an excellent dancer",
+    "dances excellently",
+    "excellent in dance",
+    "dancing"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Both ... and' must join the same kind of element. 'A talented singer' is a noun phrase, so 'an excellent dancer' completes it.",
+   "shortcut": "Both A and B: A and B same form.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The new policy will not only reduce costs but also ___.",
+   "options": [
+    "improve quality",
+    "improving quality",
+    "the improvement of quality",
+    "quality will be improved"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'not only' we have 'reduce costs' (verb + object), so after 'but also' we need the same: 'improve quality'.",
+   "shortcut": "Not only X but also Y: X and Y parallel.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Teena prefers reading to ___ television.",
+   "options": [
+    "watching",
+    "to watch",
+    "watch",
+    "watched"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Prefer' with a gerund takes 'to' plus another gerund: 'prefers reading to watching'.",
+   "shortcut": "prefer + -ing to + -ing.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Rahul is more interested in reading novels than in ___.",
+   "options": [
+    "writing poems",
+    "to write poems",
+    "writes poems",
+    "write poems"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The comparison is 'in + gerund' on both sides: 'in reading novels than in writing poems'.",
+   "shortcut": "Compared items must share the same form.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The brochure describes the course content, the fee structure and ___.",
+   "options": [
+    "the admission procedure",
+    "how can one get admitted",
+    "to get admitted",
+    "admitted"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list consists of noun phrases (the course content, the fee structure), so the last must be a noun phrase too.",
+   "shortcut": "Noun phrase, noun phrase, noun phrase.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The speaker was confident, impressive and spoke clearly.\nB. The speaker was confident, impressive and clear.\nC. The speaker was confidence, impressive and clearly.\nD. The speaker had confidence, was impressive and clear.",
+   "options": [
+    "B. The speaker was confident, impressive and clear.",
+    "A. The speaker was confident, impressive and spoke clearly.",
+    "C. The speaker was confidence, impressive and clearly.",
+    "D. The speaker had confidence, was impressive and clear."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'was', all three items must be adjectives: confident, impressive, clear. A, C and D mix adjectives with verbs, nouns or adverbs.",
+   "shortcut": "One form for the whole list.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Not only did she win the race, but she also ___ a record.",
+   "options": [
+    "broke",
+    "breaking",
+    "to break",
+    "had broken"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'but she also' the verb must match the simple past 'did she win' pattern, so 'broke' is used.",
+   "shortcut": "Correlative halves share the tense.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Applicants must complete the form, ___ and submit it by noon.",
+   "options": [
+    "sign it",
+    "signing it",
+    "to sign it",
+    "be signing it"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'must', all verbs are in the base form: complete, sign, submit.",
+   "shortcut": "Verbs after one modal share the base form.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. In the interview, he was asked about his skills, his experience and ___.",
+   "options": [
+    "his reasons for wanting the job",
+    "why does he want the job",
+    "to explain the reasons",
+    "wanted the job why"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list consists of noun phrases ('his skills', 'his experience'), so the last must be a noun phrase too.",
+   "shortcut": "Noun phrase list.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The company offers free training, flexible hours and to give bonuses.\nB. The company offers free training, flexible hours and bonuses.\nC. The company offers free training, flexible hours and giving bonuses.\nD. The company offers to train free, flexible hours and bonuses.",
+   "options": [
+    "B. The company offers free training, flexible hours and bonuses.",
+    "A. The company offers free training, flexible hours and to give bonuses.",
+    "C. The company offers free training, flexible hours and giving bonuses.",
+    "D. The company offers to train free, flexible hours and bonuses."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "All items after 'offers' must be noun phrases: free training, flexible hours, bonuses. A uses an infinitive, C a gerund, and D mixes forms.",
+   "shortcut": "Make every list item a noun phrase.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She wanted either to study law or ___ medicine.",
+   "options": [
+    "to study",
+    "studying",
+    "she studied",
+    "studies"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Either ... or' joins parallel items. The first is the infinitive 'to study law', so the second must be 'to study medicine'.",
+   "shortcut": "Either/or: same form on each side.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The more you practise, the ___ you become.",
+   "options": [
+    "better",
+    "best",
+    "more good",
+    "goodest"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The structure 'The + comparative, the + comparative' needs two comparatives. 'Better' is the comparative of 'good'.",
+   "shortcut": "The + comparative, the + comparative.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He spoke slowly, clearly and ___.",
+   "options": [
+    "confidently",
+    "confident",
+    "with confident",
+    "being confident"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Slowly' and 'clearly' are adverbs, so the third item must be an adverb: 'confidently'.",
+   "shortcut": "Adverb, adverb, adverb.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The teacher praised the students for being punctual, for being honest and for ___.",
+   "options": [
+    "being helpful",
+    "helping",
+    "their helpfulness",
+    "to be helpful"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Each item repeats 'for being + adjective'. The last must follow: 'for being helpful'.",
+   "shortcut": "Repeat the pattern.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The report was accurate in facts, clear in language and ___ in style.",
+   "options": [
+    "concise",
+    "conciseness",
+    "concisely",
+    "being concise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The pattern is 'adjective + in + noun'. The adjective 'concise' completes it.",
+   "shortcut": "Adjective + in + noun, repeated.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. He promised to work hard, to save money and ___ his parents.",
+   "options": [
+    "to look after",
+    "looking after",
+    "looked after",
+    "having looked after"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of infinitives ('to work', 'to save'), so the third must be 'to look after'.",
+   "shortcut": "Infinitive list stays infinitive.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The recipe needs two cups of flour, a cup of sugar and ___.",
+   "options": [
+    "a spoon of salt",
+    "salting",
+    "salty",
+    "to salt"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list consists of quantity + noun phrases, so 'a spoon of salt' completes it.",
+   "shortcut": "Quantity phrase list.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Both the minister ___ the secretary were present.",
+   "options": [
+    "and",
+    "or",
+    "nor",
+    "but"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Both' always pairs with 'and'.",
+   "shortcut": "Both ... and.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. Neither the manager ___ the clerk was aware of the plan.",
+   "options": [
+    "nor",
+    "or",
+    "and",
+    "than"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' always pairs with 'nor'.",
+   "shortcut": "Neither ... nor.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. She not only sings well but also ___ well.",
+   "options": [
+    "dances",
+    "dancing",
+    "to dance",
+    "danced"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'not only' we have the verb 'sings' (present simple), so 'but also' must be followed by a verb in the same form: 'dances'.",
+   "shortcut": "Not only V1 but also V2: same tense.",
+   "subPattern": "parallelism",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The proposal was criticised for its high cost, for being delayed and because it lacked clarity.\nB. The proposal was criticised for its high cost, its delay and its lack of clarity.\nC. The proposal was criticised for being costly, delay and lacking clarity.\nD. The proposal was criticised for high cost, being delayed and lack of clarity.",
+   "options": [
+    "B. The proposal was criticised for its high cost, its delay and its lack of clarity.",
+    "A. The proposal was criticised for its high cost, for being delayed and because it lacked clarity.",
+    "C. The proposal was criticised for being costly, delay and lacking clarity.",
+    "D. The proposal was criticised for high cost, being delayed and lack of clarity."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "B lists three parallel noun phrases, each beginning with 'its'. A, C and D mix nouns, gerunds and clauses.",
+   "shortcut": "Same pattern for each item.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Ravi is as strong, if not stronger than, his brother.\nB. Ravi is as strong as, if not stronger than, his brother.\nC. Ravi is as strong if not stronger than his brother.\nD. Ravi is so strong as, if not stronger than, his brother.",
+   "options": [
+    "B. Ravi is as strong as, if not stronger than, his brother.",
+    "A. Ravi is as strong, if not stronger than, his brother.",
+    "C. Ravi is as strong if not stronger than his brother.",
+    "D. Ravi is so strong as, if not stronger than, his brother."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Both comparisons need their own particle: 'as strong as' and 'stronger than'. B is the only sentence with both 'as ... as' and 'than'.",
+   "shortcut": "as ... as, if not ...-er than.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The new software helps users to track expenses, to prepare budgets and ___.",
+   "options": [
+    "to forecast savings",
+    "forecast of savings",
+    "forecasting savings",
+    "for savings forecast"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of infinitives ('to track', 'to prepare'), so the last must be 'to forecast savings'.",
+   "shortcut": "Infinitive list stays infinitive.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. The lecture was neither informative nor was it interesting.\nB. The lecture was neither informative nor interesting.\nC. The lecture neither was informative nor interesting.\nD. The lecture was neither informative or interesting.",
+   "options": [
+    "B. The lecture was neither informative nor interesting.",
+    "A. The lecture was neither informative nor was it interesting.",
+    "C. The lecture neither was informative nor interesting.",
+    "D. The lecture was neither informative or interesting."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' must be followed by 'nor' and must be placed so that both parts are alike. B joins two adjectives. A adds a clause, C places 'neither' before the verb, and D uses 'or'.",
+   "shortcut": "Place neither/nor directly before the parallel items.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The candidate should have either submitted the form earlier or ___ an extension.",
+   "options": [
+    "applied for",
+    "applying for",
+    "to apply for",
+    "has applied for"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Either ... or' joins parallel verb forms. 'Should have submitted' is followed by past participles, so 'applied for' completes it.",
+   "shortcut": "Either/or: same verb form.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the grammatically correct sentence. A. Whether you succeed or if you fail, you must keep trying.\nB. Whether you succeed or fail, you must keep trying.\nC. Whether succeeding or you fail, you must keep trying.\nD. Whether you succeed or failing, you must keep trying.",
+   "options": [
+    "B. Whether you succeed or fail, you must keep trying.",
+    "A. Whether you succeed or if you fail, you must keep trying.",
+    "C. Whether succeeding or you fail, you must keep trying.",
+    "D. Whether you succeed or failing, you must keep trying."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Whether ... or' needs parallel verbs: 'succeed or fail'. The other options mix a clause with 'if', a gerund, or both.",
+   "shortcut": "Whether X or Y: same form.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. It is better to be silent than ___ unkind words.",
+   "options": [
+    "to speak",
+    "speaking",
+    "spoken",
+    "have spoken"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Better to be silent than to speak' compares two infinitives. 'To speak' keeps the comparison parallel.",
+   "shortcut": "Compare infinitive with infinitive.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the option that correctly completes the sentence. The hostel offers nutritious meals, a laundry service and ___.",
+   "options": [
+    "a quiet study room",
+    "studying quietly in a room",
+    "to study in quiet",
+    "rooms where quiet study"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The list is of noun phrases (nutritious meals, a laundry service), so the last should be a noun phrase: 'a quiet study room'.",
+   "shortcut": "Noun phrase list.",
+   "subPattern": "parallelism",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

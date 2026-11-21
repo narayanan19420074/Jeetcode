@@ -1,0 +1,460 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: All 60 students of a class registered for the quiz, the debate or both. 35 registered for the quiz and 40 for the debate. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Nobody registered for both.",
+    "30 students registered only for the debate.",
+    "Exactly 15 students registered for both.",
+    "More than 20 students registered only for the quiz."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Both = 35 + 40 − 60 = 15. Only quiz = 35 − 15 = 20 and only debate = 40 − 15 = 25, so the other options are false.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Both = A + B − Total when everyone is in at least one group."
+  },
+  {
+   "questionText": "Read the following: Only candidates holding a valid ID card are allowed into the examination hall. Ramesh was allowed into the examination hall. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Every holder of a valid ID card was allowed in.",
+    "Ramesh passed the examination.",
+    "Ramesh holds a valid ID card.",
+    "Ramesh arrived before others."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Entry requires a valid ID, so anyone who entered has one. The reverse (everyone with an ID entered) is not stated.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Rainfall in Wayanad district this July was 20% higher than last July. Last July the district received 800 mm of rain. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "This July's rainfall was 820 mm.",
+    "This July's rainfall was 1,000 mm.",
+    "This July's rainfall was 960 mm.",
+    "This July's rainfall was 640 mm."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rainfall this July = 800 + 20% of 800 = 800 + 160 = 960 mm, so the other values do not match the data.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Increase by x% means multiply by (100 + x)/100."
+  },
+  {
+   "questionText": "Read the following: Every train on a certain railway route halts at Erode. Train 12674 does not halt at Erode. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Train 12674 is a slow train.",
+    "Train 12674 runs late.",
+    "Train 12674 does not run on that route.",
+    "Every train that halts at Erode runs on that route."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If all route trains halt at Erode, a train that does not halt there cannot belong to the route (contrapositive). The last option is a reversal that is not given.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A company has 130 employees in three offices. Pune has twice as many employees as Chennai, and Chennai has 10 more than Delhi. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Pune has 65 employees.",
+    "Chennai has 40 employees.",
+    "Pune has 70 employees.",
+    "Delhi has 30 employees."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Let Delhi = x, Chennai = x + 10, Pune = 2x + 20. Total 4x + 30 = 130, so x = 25. Delhi 25, Chennai 35, Pune 70.",
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In a survey of Bengaluru commuters, each person named one main mode of travel. 70% named public transport and 25% named two-wheelers; the rest named other modes. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "10% of the commuters named other modes.",
+    "Two-wheeler users outnumber public transport users.",
+    "5% of the commuters named other modes.",
+    "Two-wheeler users are fewer than those using other modes."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Other = 100 − 70 − 25 = 5%. Since 25% is more than 5%, two-wheeler users are not fewer than the other group, and 70% is more than 25%.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Add the given shares and subtract from 100."
+  },
+  {
+   "questionText": "Read the following: Anil is older than Bala. Bala is older than Chitra. Dev is younger than Chitra. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Dev is older than Bala.",
+    "Chitra is the oldest.",
+    "Anil is older than Dev.",
+    "Bala is younger than Dev."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Order of ages: Anil > Bala > Chitra > Dev. So Anil is older than Dev.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A shop gives a free gift on any purchase above ₹2,000. Kavya did not get a free gift. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Kavya's purchase was less than ₹1,000.",
+    "Kavya did not make a purchase.",
+    "Kavya's purchase was ₹2,000 or less.",
+    "The shop ran out of gifts."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No gift implies the condition 'above ₹2,000' was not met, so the purchase was at most ₹2,000. Nothing narrower can be inferred.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The pass percentage in a district's Class 10 results was 78% in 2024 with 5,000 candidates and 84% in 2025 with 4,000 candidates. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "More students passed in 2025 than in 2024.",
+    "The same number of students passed in both years.",
+    "More students passed in 2024 than in 2025.",
+    "The number of passes cannot be compared from this data."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "2024: 0.78 × 5,000 = 3,900. 2025: 0.84 × 4,000 = 3,360. A higher percentage can still mean fewer passes.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Some poets are painters. All painters are travellers. No traveller is a landlord. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "All poets are travellers.",
+    "Some landlords are poets.",
+    "Some poets are not landlords.",
+    "No poet is a painter."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Those poets who are painters are travellers, and no traveller is a landlord, so those poets are not landlords. The other statements are not supported or contradict the first statement.",
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The village well runs dry in summer whenever the previous monsoon's rainfall is below 600 mm. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "If the well ran dry, the previous monsoon brought less than 600 mm.",
+    "If the previous monsoon brought 700 mm, the well will not run dry.",
+    "If the previous monsoon brought 500 mm, the well will run dry in the summer.",
+    "The well runs dry only in summer."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The statement gives a sufficient condition: rain below 600 mm leads to a dry well. It does not say that this is the only cause, so only the first option follows.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Five employees have an average salary of ₹40,000. When one of them, who earned ₹50,000, leaves, the average of the remaining four becomes ₹37,500. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "The remaining four together earn ₹1,60,000.",
+    "The leaving employee had the highest salary.",
+    "The remaining four employees together earn ₹1,50,000.",
+    "The total salary of the five was ₹2,40,000."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total of five = 5 × 40,000 = 2,00,000. Remove 50,000 to get 1,50,000 = 4 × 37,500. Nothing says the leaver was the highest paid.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A cricket team has won every match in which Kohli scored a fifty. The team lost its match against Australia. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Kohli scored a fifty and the team still lost.",
+    "Kohli did not play against Australia.",
+    "Kohli did not score a fifty in the match against Australia.",
+    "The team loses whenever Kohli fails."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If a fifty by Kohli always means a win, then a loss means he did not score a fifty. Whether he played or what happens in other matches is not stated.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Textbooks must reach schools by 1 June. Printing takes 3 weeks, binding takes 1 week and distribution takes 1 week, and each step begins only after the previous one has ended. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Printing must begin at least 3 weeks before 1 June.",
+    "Binding must begin 5 weeks before 1 June.",
+    "Printing must begin at least 5 weeks before 1 June.",
+    "Distribution can begin before binding ends."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The steps run one after another: 3 + 1 + 1 = 5 weeks. So printing must start at least 5 weeks before 1 June.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Of 200 candidates, 120 passed the aptitude round, 90 passed the interview and 50 passed both. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "50 candidates failed in both.",
+    "60 candidates passed only the aptitude round.",
+    "40 candidates failed in both.",
+    "30 candidates passed only the interview."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Passed at least one = 120 + 90 − 50 = 160, so 200 − 160 = 40 failed in both. Only aptitude = 70, only interview = 40.",
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A bus leaves Madurai at 6:00 am and reaches Chennai at 1:30 pm, with a 30-minute halt on the way. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "The bus was running for 7.5 hours.",
+    "The bus was running for 8 hours.",
+    "The bus was running for 7 hours.",
+    "The bus halted for more than one hour."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total time = 7.5 hours. Subtract the 30-minute halt: running time = 7 hours.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Some hostel students are cricketers. No cricketer in the hostel is a vegetarian. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "All hostel students are cricketers.",
+    "No hostel student is a vegetarian.",
+    "Some hostel students are not vegetarians.",
+    "Some vegetarians are cricketers."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The hostel students who are cricketers are not vegetarians, so at least some hostel students are non-vegetarian.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A town's population grew from 2.5 lakh in 2020 to 3 lakh in 2025. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "The population grew by 25% in five years.",
+    "The population grew by 5% every year.",
+    "The population grew by 20% in five years.",
+    "The population grew by 0.5 lakh every year."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth = 0.5/2.5 = 20% over the five years. Year-wise growth is not given.",
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Most of the participants in a marathon were from outside Kerala. Most of the participants were above 30 years of age. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Most participants from outside Kerala were above 30.",
+    "All participants above 30 were from outside Kerala.",
+    "At least some participants from outside Kerala were above 30.",
+    "No participant from Kerala was above 30."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If more than half are in each group, the two groups must overlap, so some participants are in both. Stronger statements do not follow.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Two groups each over 50% must overlap."
+  },
+  {
+   "questionText": "Read the following: Neha is twice as old as Ria. In 6 years, Neha will be one and a half times as old as Ria. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Ria is 8 years old now.",
+    "Neha is 16 years old now.",
+    "Ria is 6 years old now.",
+    "Ria is 12 years old now."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ria = x, Neha = 2x. 2x + 6 = 1.5(x + 6), so 0.5x = 3, x = 6.",
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: 3 kg of rice and 2 kg of dal cost ₹290. 3 kg of rice and 4 kg of dal cost ₹450. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "Dal costs ₹70 per kg.",
+    "Rice costs ₹50 per kg.",
+    "Dal costs ₹80 per kg.",
+    "Dal costs ₹90 per kg."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Subtracting: 2 kg dal = ₹160, so dal = ₹80/kg. Then 3 kg rice = ₹130, about ₹43.33/kg.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: No student who copies gets a certificate. Some students who got certificates are from Class 10. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "All Class 10 students copied.",
+    "No Class 10 student got a certificate.",
+    "Some Class 10 students did not copy.",
+    "Some Class 10 students who did not get a certificate copied."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The Class 10 students who got certificates did not copy, so some Class 10 students did not copy.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A cricket team played 8 matches without a draw or a tie, and won more matches than it lost. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "The team won exactly 5 matches.",
+    "The team won 6 matches.",
+    "The team won at least 5 matches.",
+    "The team lost at least 3 matches."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Wins + losses = 8 and wins > losses, so wins ≥ 5. Losses can be at most 3, so 'at least 3' is not guaranteed.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In a class, the average mark of the boys is 60 and the average mark of the girls is 70. The class average is 66. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "The ratio of boys to girls is 3 : 2.",
+    "The number of boys equals the number of girls.",
+    "The ratio of boys to girls is 2 : 3.",
+    "The class has more boys than girls."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "By alligation: boys : girls = (70 − 66) : (66 − 60) = 4 : 6 = 2 : 3.",
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Alligation: the ratio of quantities is inverse to the distances from the mean."
+  },
+  {
+   "questionText": "Read the following: A shopkeeper gives a 20% discount on the marked price and still makes a 12% profit. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    "The marked price is 32% above the cost price.",
+    "The marked price is 20% above the cost price.",
+    "The marked price is 40% above the cost price.",
+    "The marked price is 35% above the cost price."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Selling price = 0.8M = 1.12C, so M = 1.4C, i.e. 40% above cost.",
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

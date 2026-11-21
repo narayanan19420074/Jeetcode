@@ -1,0 +1,212 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "How many prime numbers lie between 40 and 80?",
+   "options": [
+    "10",
+    "9",
+    "11",
+    "12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Primes between 40 and 80: 41, 43, 47, 53, 59, 61, 67, 71, 73, 79. Count = 10.",
+   "shortcut": "List only numbers not divisible by 2, 3, 5, 7.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many perfect squares lie between 200 and 900 (both inclusive)?",
+   "options": [
+    "15",
+    "16",
+    "17",
+    "18"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "15² = 225 is the first square ≥ 200 and 30² = 900 is the last. Squares of 15 to 30 give 30 − 15 + 1 = 16 numbers.",
+   "shortcut": "Count the integers from ceil(√200) to floor(√900).",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following is an irrational number?",
+   "options": [
+    "√(49/81)",
+    "√0.0016",
+    "√75",
+    "0.121212... (recurring)"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "√(49/81) = 7/9, √0.0016 = 0.04 and 0.1212... = 4/33 are all rational. 75 = 25 × 3 is not a perfect square, so √75 = 5√3 is irrational.",
+   "shortcut": "Non-perfect-square under a root is irrational.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the least number that must be added to 5000 so that the sum is a perfect square?",
+   "options": [
+    "71",
+    "5041",
+    "40",
+    "41"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "70² = 4900 < 5000 < 71² = 5041. Required number = 5041 − 5000 = 41.",
+   "shortcut": "Find the next square above the number.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "By what smallest number should 1323 be multiplied so that the product is a perfect square?",
+   "options": [
+    "3",
+    "7",
+    "21",
+    "9"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1323 = 3³ × 7². The prime 3 has an odd power, so multiply by 3 to get 3⁴ × 7² = (9 × 7)² = 63².",
+   "shortcut": "Multiply by the primes that carry odd exponents.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest number by which 1800 must be multiplied to obtain a perfect cube?",
+   "options": [
+    "5",
+    "15",
+    "6",
+    "30"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "1800 = 2³ × 3² × 5². For a cube every exponent must be a multiple of 3, so multiply by 3 × 5 = 15 to get 2³ × 3³ × 5³.",
+   "shortcut": "Raise each exponent to the next multiple of 3.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A perfect number equals the sum of its proper divisors (for example 6 = 1 + 2 + 3). How many perfect numbers are there below 1000?",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The perfect numbers below 1000 are 6, 28, 496. Count = 3.",
+   "shortcut": "Known perfect numbers: 6, 28, 496, 8128.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Twin primes are two primes that differ by 2, such as (3, 5). How many pairs of twin primes are there with both numbers below 60?",
+   "options": [
+    "6",
+    "8",
+    "9",
+    "7"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pairs: (3, 5), (5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61). Total = 7.",
+   "shortcut": "Twin primes (beyond 3,5) are of the form 6k − 1 and 6k + 1.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the following pairs of numbers is co-prime?",
+   "options": [
+    "35 and 48",
+    "34 and 51",
+    "39 and 91",
+    "57 and 95"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "HCF(34, 51) = 17, HCF(39, 91) = 13, HCF(57, 95) = 19, but HCF(35, 48) = 1 since 35 = 5 × 7 and 48 = 2⁴ × 3 share no factor.",
+   "shortcut": "Factorise both and look for a common prime.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many composite numbers are there from 1 to 40 (inclusive)?",
+   "options": [
+    "28",
+    "27",
+    "26",
+    "29"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Primes up to 40: 2,3,5,7,11,13,17,19,23,29,31,37 (12 of them). 1 is neither prime nor composite. Composite = 40 − 12 − 1 = 27.",
+   "shortcut": "Total − primes − 1.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many integers from 1 to 500 are neither perfect squares nor perfect cubes?",
+   "options": [
+    "471",
+    "478",
+    "473",
+    "469"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Squares ≤ 500: 22 (22² = 484). Cubes ≤ 500: 7 (7³ = 343). Both (sixth powers 1 and 64): 2. Union = 22 + 7 − 2 = 27. Answer = 500 − 27 = 473.",
+   "shortcut": "Inclusion–exclusion with sixth powers for the overlap.",
+   "subPattern": "types-of-numbers-classification",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

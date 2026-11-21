@@ -1,0 +1,147 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "Which of the following is the most suitable title for the passage?",
+      "options": [
+        "Reading the Sky: Forecasts and the Farmer",
+        "The History of the Western Ghats",
+        "Why Supercomputers Cannot Predict Rain",
+        "How Markets React to April Outlooks"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage is about how forecasts reach and serve farmers. The other titles are too narrow or not supported (it never says supercomputers cannot predict rain).",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": "reading-comprehension-s001"
+    },
+    {
+      "questionText": "Which of the following is the most appropriate title for the passage?",
+      "options": [
+        "Scan and Pay: The Promise and the Gaps of UPI",
+        "A Madurai Vegetable Seller's Day",
+        "How Card Machines Work",
+        "Fraud in Digital Banking"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage covers both the benefits of UPI and the remaining gaps. Fraud, card machines or one seller are narrow parts of it.",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style"
+      ],
+      "setId": "reading-comprehension-s002"
+    },
+    {
+      "questionText": "The most suitable title for the passage is",
+      "options": [
+        "From Village Ground to Prime Time",
+        "The Rules of Kabaddi Explained",
+        "Why Purists Are Always Wrong",
+        "Schoolchildren and Their Mats"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage traces kabaddi's move from village grounds to televised league. The others are narrow or unsupported.",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": "reading-comprehension-s003"
+    },
+    {
+      "questionText": "Which title best suits the passage?",
+      "options": [
+        "Millets: The Return of the Poor Man's Grain",
+        "Why Rice Fails in Dry Land",
+        "School Meals Across India",
+        "Machines for Removing the Husk"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage covers decline, health value, official buying and farm economics of millets. The others are details.",
+      "subPattern": "title-selection",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": "reading-comprehension-s004"
+    },
+    {
+      "questionText": "The most appropriate title for the passage is",
+      "options": [
+        "Links in a Chain: Bengaluru's Vanishing Lakes",
+        "The History of Tank Building on the Deccan",
+        "Commuters in the Monsoon",
+        "The Rights of Builders"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The title should capture both the lost lake network and its link to floods. History of tank building alone is too narrow.",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": "reading-comprehension-s005"
+    },
+    {
+      "questionText": "Which title best expresses the theme of the passage?",
+      "options": [
+        "The Loom and the Livelihood: Handloom Weaving Under Pressure",
+        "How Ikat Saris Are Dyed",
+        "Why Delivery Riders Earn More",
+        "Exhibitions in Big Cities"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage covers the effort of weaving, competition from power looms and the young leaving the trade.",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": "reading-comprehension-s007"
+    },
+    {
+      "questionText": "Which of the following is the best title for the passage?",
+      "options": [
+        "Doctor on the Screen: Telemedicine in Remote India",
+        "Chest Pain in the Himalayas",
+        "Why Hospitals Should Close",
+        "Training Health Workers Abroad"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The title must cover the uses, limits and needs of telemedicine in remote places.",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style"
+      ],
+      "setId": "reading-comprehension-s008"
+    },
+    {
+      "questionText": "Which title would best suit the passage on coaching institutes and the Kota dream?",
+      "options": [
+        "Chasing Ranks: The Price of the Kota Dream",
+        "The Economy of Hostels and Tiffin Services",
+        "Why Psychologists Should Be Banned",
+        "Engineering Versus Medicine"
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The passage is about the pressure created by the race for ranks in Kota.",
+      "subPattern": "title-selection",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style",
+        "banking"
+      ],
+      "setId": "reading-comprehension-s009"
+    }
+  ]
+}

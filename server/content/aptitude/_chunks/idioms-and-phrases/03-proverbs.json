@@ -1,0 +1,617 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which meaning best fits the proverb 'A stitch in time saves nine'?",
+   "options": [
+    "Timely action prevents bigger trouble later",
+    "Sewing is a useful skill",
+    "Tailors should be paid on time",
+    "Nine people can do work faster"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fixing a small problem at once avoids a larger one.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'All that glitters is not gold' teaches that:",
+   "options": [
+    "Shiny things are always costly",
+    "Appearances can be deceptive",
+    "Jewellery should be avoided",
+    "Gold is not valuable"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Attractive outward looks do not guarantee real worth.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Look before you leap'?",
+   "options": [
+    "Jump quickly",
+    "Think carefully before acting",
+    "Watch others jump",
+    "Do not take any risk at all"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The proverb advises caution and forethought.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Strike while the iron is hot'?",
+   "options": [
+    "Avoid working with metals",
+    "Never hurry",
+    "Act at the right moment",
+    "Be patient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Opportunities should be used when they arise.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Too many cooks spoil the broth' teaches that:",
+   "options": [
+    "Chefs are always proud",
+    "Soup should be cooked slowly",
+    "Too many people on a task ruin it",
+    "Cooking requires many ingredients"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When too many people interfere, the work suffers.",
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'A rolling stone gathers no moss'?",
+   "options": [
+    "Stones are always smooth",
+    "A person who keeps changing places or jobs does not build up anything lasting",
+    "Nature protects the active",
+    "Moving objects become dirty"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Constant movement prevents one from settling and accumulating gains.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Honesty is the best policy'?",
+   "options": [
+    "Insurance is important",
+    "Lying is sometimes profitable",
+    "Policies should be written",
+    "Being truthful is the wisest course"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Truthfulness serves one better in the long run.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Where there is a will, there is a way' teaches that:",
+   "options": [
+    "Wishes are always granted",
+    "Roads exist everywhere",
+    "A determined person finds a means to succeed",
+    "Wills must be written"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Strong determination overcomes obstacles.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Actions speak louder than words'?",
+   "options": [
+    "What one does matters more than what one says",
+    "Loud people act more",
+    "Words are useless",
+    "Silence is impolite"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Deeds reveal true intentions better than promises.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Birds of a feather flock together'?",
+   "options": [
+    "Birds migrate in winter",
+    "Opposites attract",
+    "People of similar tastes stay together",
+    "Feathers are light"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Like-minded people associate with each other.",
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Empty vessels make the most noise' teaches that:",
+   "options": [
+    "Noise indicates wealth",
+    "Empty pots are cheap",
+    "Silent people are ignorant",
+    "Those with least knowledge talk the most"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Shallow people tend to be boastful and loud.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Slow and steady wins the race'?",
+   "options": [
+    "Tortoises are fast",
+    "Consistent effort leads to success",
+    "Races should be avoided",
+    "Speed is useless"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Patient, regular effort beats hasty, irregular bursts.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Necessity is the mother of invention'?",
+   "options": [
+    "Mothers invent gadgets",
+    "Need drives people to create new things",
+    "Inventions are unnecessary",
+    "Only the rich invent"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pressing needs push people to find new solutions.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'A friend in need is a friend indeed' teaches that:",
+   "options": [
+    "A true friend helps in times of trouble",
+    "Friends are needed always",
+    "Needy people make friends",
+    "Friendship needs money"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Real friendship shows itself during difficulty.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Early to bed and early to rise makes a man healthy, wealthy and wise'?",
+   "options": [
+    "Sleep is a waste of time",
+    "Wisdom needs no rest",
+    "Wealthy people sleep early only",
+    "Regular early habits bring good results"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The proverb recommends disciplined sleep habits.",
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Do not count your chickens before they are hatched'?",
+   "options": [
+    "Poultry farming is profitable",
+    "Do not rely on a result before it is certain",
+    "Eggs should be counted daily",
+    "Chickens hatch quickly"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "One should not assume success prematurely.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Charity begins at home' teaches that:",
+   "options": [
+    "Charity is a house rule",
+    "Give only to relatives",
+    "One's first duty is to one's family",
+    "Never help strangers"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kindness and help should start with those closest to us.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Make hay while the sun shines'?",
+   "options": [
+    "Avoid work in summer",
+    "Farming needs sunlight only",
+    "Use the favourable time to the full",
+    "Rest in sunshine"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Take advantage of good conditions while they last.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Better late than never'?",
+   "options": [
+    "Never be late",
+    "It is better to do something late than not at all",
+    "Always arrive late",
+    "Lateness is acceptable always"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A delayed action is still preferable to no action.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Prevention is better than cure' teaches that:",
+   "options": [
+    "Diseases cannot be avoided",
+    "Cures are always available",
+    "It is wiser to avoid trouble than to remedy it",
+    "Medicines are costly"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Taking precautions saves more effort than fixing problems.",
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'A bird in the hand is worth two in the bush'?",
+   "options": [
+    "Hunting is profitable",
+    "Birds are valuable pets",
+    "Take risks for rewards",
+    "A certain gain is better than a greater but uncertain one"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Value what you have over what you might get.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Out of sight, out of mind'?",
+   "options": [
+    "We soon forget what is no longer before us",
+    "Mind controls sight",
+    "Blind people forget",
+    "Hidden things are safe"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Absence tends to make people forget.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Every cloud has a silver lining' teaches that:",
+   "options": [
+    "Clouds are made of silver",
+    "Bad times never end",
+    "There is something good in every difficulty",
+    "Rain always follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Hardship usually has some hopeful side.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'The pen is mightier than the sword'?",
+   "options": [
+    "Swords are blunt",
+    "Writers are always rich",
+    "Pens are weapons",
+    "Writing and ideas are more powerful than violence"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ideas expressed in writing can influence more than force.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Rome was not built in a day'?",
+   "options": [
+    "Builders work slowly",
+    "Great achievements take time and patience",
+    "Cities are built by emperors",
+    "Rome was small"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Important work cannot be completed hastily.",
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'United we stand, divided we fall' teaches that:",
+   "options": [
+    "Division is good",
+    "Falling is unavoidable",
+    "Unity gives strength",
+    "Standing is tiring"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "People working together succeed; division leads to failure.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'One swallow does not make a summer'?",
+   "options": [
+    "Swallows are rare",
+    "One favourable sign is not proof of a trend",
+    "Birds predict weather exactly",
+    "Summer comes with birds"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A single instance is not enough to draw a conclusion.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Familiarity breeds contempt'?",
+   "options": [
+    "Too much closeness can lead to disrespect",
+    "Knowledge brings respect",
+    "Families are contemptuous",
+    "Strangers are friends"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Over-familiarity makes people lose respect for each other.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Half a loaf is better than no bread' teaches that:",
+   "options": [
+    "Bread is cheap",
+    "Half measures are always best",
+    "A little is better than nothing",
+    "Bakers should cut bread"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Accept a partial gain rather than get nothing.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Do not put all your eggs in one basket'?",
+   "options": [
+    "Do not risk everything on a single venture",
+    "Eggs break easily",
+    "Baskets are strong",
+    "Always buy in bulk"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Spread risk by diversifying.",
+   "subPattern": "proverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'A burnt child dreads the fire'?",
+   "options": [
+    "Burns heal slowly",
+    "One who has suffered is cautious afterwards",
+    "Fire is always dangerous",
+    "Children love fire"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A bad experience makes a person wary of its cause.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The proverb 'Haste makes waste' teaches that:",
+   "options": [
+    "Waste is unavoidable",
+    "Hurry brings success",
+    "Speed saves money",
+    "Doing things hurriedly leads to mistakes and loss"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rushing results in errors that waste effort.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the moral of the proverb 'Pride goes before a fall'?",
+   "options": [
+    "Proud people walk fast",
+    "Falls make people proud",
+    "Self-respect is a weakness",
+    "Arrogance leads to downfall"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Excessive pride is often followed by failure.",
+   "subPattern": "proverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which meaning best fits the proverb 'Time and tide wait for none'?",
+   "options": [
+    "Tides are regular",
+    "Opportunities do not wait for anyone",
+    "Clocks never stop",
+    "The sea has no time"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "One must act in time, because time cannot be held back.",
+   "subPattern": "proverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

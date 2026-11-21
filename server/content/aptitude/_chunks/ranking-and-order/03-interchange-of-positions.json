@@ -1,0 +1,627 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In a row of 37 persons, Harleen is 12th from the left and Imran is 16th from the right. After Harleen and Imran interchange their places, what is Harleen's position from the right end?",
+   "options": [
+    "16",
+    "12",
+    "26",
+    "22"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Harleen takes Imran's old place, which is 16th from the right. So Harleen's new right position = 16.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "In a row of 24 persons, Swathi is 7th from the left and Mala is 12th from the right. After Swathi and Mala interchange their places, what is Swathi's position from the right end?",
+   "options": [
+    "7",
+    "18",
+    "12",
+    "13"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Swathi takes Mala's old place, which is 12th from the right. So Swathi's new right position = 12.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "In a row of 43 persons, Venkat is 14th from the left and Sanjay is 11th from the right. After Venkat and Sanjay interchange their places, what is Venkat's position from the right end?",
+   "options": [
+    "14",
+    "11",
+    "30",
+    "33"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Venkat takes Sanjay's old place, which is 11th from the right. So Venkat's new right position = 11.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "In a row of 32 persons, Deepa is 6th from the left and Mala is 21st from the right. After Deepa and Mala interchange their places, what is Deepa's position from the right end?",
+   "options": [
+    "21",
+    "6",
+    "27",
+    "12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Deepa takes Mala's old place, which is 21st from the right. So Deepa's new right position = 21.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "Kiran and Imran exchange their places in a row. After the exchange, Kiran is 24th from the left. Imran was originally 7th from the right. How many persons are there in the row?",
+   "options": [
+    "31",
+    "29",
+    "13",
+    "30"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kiran's new place is Imran's old place, so Imran was 24th from the left and 7th from the right. Total = 24 + 7 − 1 = 30.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Priya and Rekha exchange their places in a row. After the exchange, Priya is 38th from the left. Rekha was originally 7th from the right. How many persons are there in the row?",
+   "options": [
+    "45",
+    "43",
+    "17",
+    "44"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Priya's new place is Rekha's old place, so Rekha was 38th from the left and 7th from the right. Total = 38 + 7 − 1 = 44.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Nisha and Priya exchange their places in a row. After the exchange, Nisha is 27th from the left. Priya was originally 11th from the right. How many persons are there in the row?",
+   "options": [
+    "37",
+    "38",
+    "36",
+    "15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nisha's new place is Priya's old place, so Priya was 27th from the left and 11th from the right. Total = 27 + 11 − 1 = 37.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Uma and Sanjay exchange their places in a row. After the exchange, Uma is 16th from the left. Sanjay was originally 16th from the right. How many persons are there in the row?",
+   "options": [
+    "32",
+    "30",
+    "31",
+    "22"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Uma's new place is Sanjay's old place, so Sanjay was 16th from the left and 16th from the right. Total = 16 + 16 − 1 = 31.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Jaya and Venkat exchange their places in a row. After the exchange, Jaya is 24th from the left. Venkat was originally 13th from the right. How many persons are there in the row?",
+   "options": [
+    "37",
+    "36",
+    "35",
+    "28"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Jaya's new place is Venkat's old place, so Venkat was 24th from the left and 13th from the right. Total = 24 + 13 − 1 = 36.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Sneha and Deepa exchange their places in a row. After the exchange, Sneha is 21st from the left. Deepa was originally 11th from the right. How many persons are there in the row?",
+   "options": [
+    "32",
+    "31",
+    "30",
+    "24"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sneha's new place is Deepa's old place, so Deepa was 21st from the left and 11th from the right. Total = 21 + 11 − 1 = 31.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Sneha is 6th from the left and Harish is 20th from the right in a row. They interchange positions, and now Sneha is 13th from the left. What is Harish's new position from the right end?",
+   "options": [
+    "6",
+    "20",
+    "19",
+    "27"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sneha now stands where Harish was, so Harish's original left position = 13. Total = 13 + 20 − 1 = 32. Harish now stands at Sneha's old place (6 from left), so from the right = 32 − 6 + 1 = 27.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Joseph is 21st from the left and Sangeeta is 17th from the right in a row. They interchange positions, and now Joseph is 26th from the left. What is Sangeeta's new position from the right end?",
+   "options": [
+    "21",
+    "17",
+    "22",
+    "16"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Joseph now stands where Sangeeta was, so Sangeeta's original left position = 26. Total = 26 + 17 − 1 = 42. Sangeeta now stands at Joseph's old place (21 from left), so from the right = 42 − 21 + 1 = 22.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Vijay is 11th from the left and Arjun is 10th from the right in a row. They interchange positions, and now Vijay is 31st from the left. What is Arjun's new position from the right end?",
+   "options": [
+    "11",
+    "30",
+    "10",
+    "9"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Vijay now stands where Arjun was, so Arjun's original left position = 31. Total = 31 + 10 − 1 = 40. Arjun now stands at Vijay's old place (11 from left), so from the right = 40 − 11 + 1 = 30.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Pooja is 8th from the left and Rahul is 7th from the right in a row. They interchange positions, and now Pooja is 33rd from the left. What is Rahul's new position from the right end?",
+   "options": [
+    "32",
+    "8",
+    "7",
+    "6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pooja now stands where Rahul was, so Rahul's original left position = 33. Total = 33 + 7 − 1 = 39. Rahul now stands at Pooja's old place (8 from left), so from the right = 39 − 8 + 1 = 32.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Mohan is 11th from the left and Tarun is 11th from the right in a row. They interchange positions, and now Mohan is 21st from the left. What is Tarun's new position from the right end?",
+   "options": [
+    "21",
+    "11",
+    "10",
+    "22"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mohan now stands where Tarun was, so Tarun's original left position = 21. Total = 21 + 11 − 1 = 31. Tarun now stands at Mohan's old place (11 from left), so from the right = 31 − 11 + 1 = 21.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Geeta is 9th from the left and Mala is 33rd from the right in a row. They interchange positions, and now Geeta is 13th from the left. What is Mala's new position from the right end?",
+   "options": [
+    "9",
+    "33",
+    "37",
+    "32"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Geeta now stands where Mala was, so Mala's original left position = 13. Total = 13 + 33 − 1 = 45. Mala now stands at Geeta's old place (9 from left), so from the right = 45 − 9 + 1 = 37.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "In a row of 32 persons, Prakash is 9th from the left and Harish is 8th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    "15",
+    "16",
+    "14",
+    "17"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Harish's left position = 32 − 8 + 1 = 25. Between them = 25 − 9 − 1 = 15. Swapping does not change the persons between them.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 40 persons, Vikram is 14th from the left and Ravi is 11th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    "16",
+    "14",
+    "15",
+    "17"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ravi's left position = 40 − 11 + 1 = 30. Between them = 30 − 14 − 1 = 15. Swapping does not change the persons between them.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 41 persons, Sanjay is 12th from the left and Jaya is 26th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    "4",
+    "2",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Jaya's left position = 41 − 26 + 1 = 16. Between them = 16 − 12 − 1 = 3. Swapping does not change the persons between them.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 37 persons, Bhavani is 16th from the left and Pooja is 11th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    "10",
+    "11",
+    "9",
+    "12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pooja's left position = 37 − 11 + 1 = 27. Between them = 27 − 16 − 1 = 10. Swapping does not change the persons between them.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 30 persons, Ashok is 10th from the left and Padma is 5th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    "16",
+    "14",
+    "17",
+    "15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Padma's left position = 30 − 5 + 1 = 26. Between them = 26 − 10 − 1 = 15. Swapping does not change the persons between them.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 36 persons, Nisha is 6th from the left and Yash is 5th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    "26",
+    "25",
+    "24",
+    "27"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Yash's left position = 36 − 5 + 1 = 32. Between them = 32 − 6 − 1 = 25. Swapping does not change the persons between them.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 47 persons, Tara is 23rd, Revathi is 26th and Deepa is 22nd from the left. First Tara and Revathi interchange places; then Revathi and Deepa interchange places. What is Revathi's final position from the right end?",
+   "options": [
+    "25",
+    "22",
+    "26",
+    "27"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After the first swap Revathi is at 23. In the second swap Revathi moves to Deepa's place, 22 from the left. From the right = 47 − 22 + 1 = 26.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 41 persons, Venkat is 25th, Farhan is 15th and Revathi is 13th from the left. First Venkat and Farhan interchange places; then Farhan and Revathi interchange places. What is Farhan's final position from the right end?",
+   "options": [
+    "29",
+    "17",
+    "27",
+    "13"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the first swap Farhan is at 25. In the second swap Farhan moves to Revathi's place, 13 from the left. From the right = 41 − 13 + 1 = 29.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 42 persons, Harleen is 34th, Jaya is 16th and Lakshmi is 35th from the left. First Harleen and Jaya interchange places; then Jaya and Lakshmi interchange places. What is Jaya's final position from the right end?",
+   "options": [
+    "9",
+    "8",
+    "27",
+    "35"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the first swap Jaya is at 34. In the second swap Jaya moves to Lakshmi's place, 35 from the left. From the right = 42 − 35 + 1 = 8.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 50 persons, Yash is 35th, Pooja is 37th and Gurpreet is 34th from the left. First Yash and Pooja interchange places; then Pooja and Gurpreet interchange places. What is Pooja's final position from the right end?",
+   "options": [
+    "16",
+    "17",
+    "14",
+    "34"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the first swap Pooja is at 35. In the second swap Pooja moves to Gurpreet's place, 34 from the left. From the right = 50 − 34 + 1 = 17.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 35 persons, Bhavani is 3rd, Tara is 27th and Kavya is 24th from the left. First Bhavani and Tara interchange places; then Tara and Kavya interchange places. What is Tara's final position from the right end?",
+   "options": [
+    "33",
+    "9",
+    "24",
+    "12"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After the first swap Tara is at 3. In the second swap Tara moves to Kavya's place, 24 from the left. From the right = 35 − 24 + 1 = 12.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "Arjun is 5th from the left and Rohit is 12th from the right in a row of 41. They exchange places. How many persons stand to the right of Rohit after the exchange?",
+   "options": [
+    "36",
+    "37",
+    "35",
+    "11"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rohit was at 30 from the left (41 − 12 + 1). Rohit now stands at position 5; persons to the right = 41 − 5 = 36.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "Padma is 11th from the left and Kavya is 6th from the right in a row of 41. They exchange places. How many persons stand to the left of Kavya after the exchange?",
+   "options": [
+    "11",
+    "9",
+    "10",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kavya was at 36 from the left (41 − 6 + 1). Kavya now stands at 11 from the left, so 10 persons are to the left.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "Venkat is 14th from the left and Uma is 13th from the right in a row of 30. They exchange places. How many persons stand to the left of Uma after the exchange?",
+   "options": [
+    "14",
+    "12",
+    "13",
+    "17"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Uma was at 18 from the left (30 − 13 + 1). Uma now stands at 14 from the left, so 13 persons are to the left.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "Prakash is 9th from the left and Maria is 5th from the right in a row of 34. They exchange places. How many persons stand to the right of Maria after the exchange?",
+   "options": [
+    "26",
+    "24",
+    "4",
+    "25"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Maria was at 30 from the left (34 − 5 + 1). Maria now stands at position 9; persons to the right = 34 − 9 = 25.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "In a row of 35 persons, Naveen is 5th, Maria is 33rd and Padma is 3rd from the left. First Naveen and Maria interchange places; then Maria and Padma interchange places. What is Maria's final position from the right end?",
+   "options": [
+    "31",
+    "3",
+    "33",
+    "34"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After the first swap Maria is at 5. In the second swap Maria moves to Padma's place, 3 from the left. From the right = 35 − 3 + 1 = 33.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 32 persons, Sneha is 17th, Tarun is 4th and Sangeeta is 2nd from the left. First Sneha and Tarun interchange places; then Tarun and Sangeeta interchange places. What is Tarun's final position from the right end?",
+   "options": [
+    "16",
+    "31",
+    "29",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the first swap Tarun is at 17. In the second swap Tarun moves to Sangeeta's place, 2 from the left. From the right = 32 − 2 + 1 = 31.",
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Track only the person asked about, swap by swap."
+  }
+ ]
+}

@@ -1,0 +1,805 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The soup was so ___ that the child refused to ___ it.",
+   "options": [
+    "bitter, swallow",
+    "sweet, swallow",
+    "bland, relish",
+    "tasty, drink"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A child refuses food that tastes bitter; 'swallow' completes the idea.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The students were ___ when the teacher announced that the test was ___.",
+   "options": [
+    "upset, cancelled",
+    "delighted, cancelled",
+    "delighted, mandatory",
+    "upset, postponed"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cancellation of a test pleases students; the other pairs are illogical.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "___ it was raining heavily, the match ___ on time.",
+   "options": [
+    "Because, started",
+    "Unless, started",
+    "Although, started",
+    "Since, started"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Contrast between rain and starting on time needs 'Although'.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The more you practise, the ___ you become and the ___ mistakes you make.",
+   "options": [
+    "better, less",
+    "best, fewer",
+    "good, few",
+    "better, fewer"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Comparative 'better'; 'fewer' with countable 'mistakes'.",
+   "shortcut": "Countable -> fewer; uncountable -> less.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She topped the class because she is ___ intelligent ___ hardworking.",
+   "options": [
+    "both, and",
+    "either, or",
+    "neither, nor",
+    "both, or"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Topping the class needs positive qualities joined by 'both ... and'.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "___ Ravi ___ his brother has passed the exam; both failed.",
+   "options": [
+    "Either, or",
+    "Neither, nor",
+    "Both, and",
+    "Not only, but"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Both failed' means neither passed: 'Neither ... nor'.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "By the time I ___ home, the match ___ already begun.",
+   "options": [
+    "reached, has",
+    "reach, had",
+    "reached, had",
+    "reached, have"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Past event with an earlier past action takes simple past + past perfect (had begun).",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If he ___ harder, he ___ the exam.",
+   "options": [
+    "worked, would have passed",
+    "had worked, will pass",
+    "would have worked, had passed",
+    "had worked, would have passed"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Third conditional: if + past perfect, would have + past participle.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The ___ of the hotel's food was so ___ that guests kept returning.",
+   "options": [
+    "quality, excellent",
+    "quality, poor",
+    "quantity, poor",
+    "speed, slow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Guests return when food quality is excellent.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is taller ___ her sister but not as fair ___ her.",
+   "options": [
+    "as, than",
+    "than, as",
+    "than, than",
+    "as, as"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Comparative 'taller' takes 'than'; 'not as fair' takes 'as'.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Please ___ me your pen; I will ___ it back tomorrow.",
+   "options": [
+    "borrow, return",
+    "lend, borrow",
+    "lend, return",
+    "borrow, lend"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "You lend something to someone; the borrower returns it.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The ___ of the movie was so ___ that people left halfway.",
+   "options": [
+    "plot, thrilling",
+    "ending, gripping",
+    "acting, superb",
+    "plot, dull"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "People leave a movie when the plot is dull.",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The patient was ___ to hospital after he ___ unconscious.",
+   "options": [
+    "rushed, fell",
+    "rushing, fell",
+    "rushed, falls",
+    "rush, fell"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Past passive 'was rushed' and past 'fell' (sequence of past events).",
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Not only ___ he win the race, ___ he broke the record.",
+   "options": [
+    "did, and",
+    "did, but",
+    "does, but",
+    "had, but"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Not only did he ..., but ...' is the correct inversion pattern.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Unless you ___ hard, you will ___ the exam.",
+   "options": [
+    "work, pass",
+    "do not work, fail",
+    "work, fail",
+    "worked, pass"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Unless' already carries a negative; the result of not working is failing.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The accused was ___ because the evidence was too ___ to convict him.",
+   "options": [
+    "convicted, weak",
+    "acquitted, strong",
+    "convicted, strong",
+    "acquitted, weak"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Weak evidence cannot convict, so he was acquitted.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the two candidates Arun is the ___ qualified, but among all the staff Meera is the ___ qualified.",
+   "options": [
+    "more, most",
+    "most, more",
+    "more, more",
+    "most, most"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two items: comparative 'more'; many items: superlative 'most'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ___ to the doctor, but the doctor ___ already left.",
+   "options": [
+    "goes, had",
+    "went, had",
+    "went, has",
+    "had gone, has"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Earlier past action (left) takes past perfect 'had'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Because the road was ___, the bus ___ slowly.",
+   "options": [
+    "slipperily, moved",
+    "slippery, moving",
+    "slippery, moved",
+    "slippery, will move"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Adjective 'slippery' describes the road; past tense 'moved'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The harder she studies, the ___ marks she ___.",
+   "options": [
+    "many, scores",
+    "more, score",
+    "most, scored",
+    "more, scores"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'The + comparative' pattern; singular subject takes 'scores'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "My uncle, ___ lives in Pune, ___ a retired engineer.",
+   "options": [
+    "who, is",
+    "whom, is",
+    "who, are",
+    "which, is"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Who' is the subject for a person; singular subject takes 'is'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The book ___ I bought yesterday ___ very interesting.",
+   "options": [
+    "who, is",
+    "which, is",
+    "which, are",
+    "whom, are"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Which' for things; 'book' is singular so 'is'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ___ for the bus for an hour when it finally ___.",
+   "options": [
+    "has been waiting, arrived",
+    "waits, arrived",
+    "had been waiting, arrived",
+    "had been waiting, arrives"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Past perfect continuous for the earlier ongoing action; simple past for the later event.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The river ___ its banks and ___ the villages.",
+   "options": [
+    "overflew, flooded",
+    "overflowed, flowed",
+    "overflown, flooded",
+    "overflowed, flooded"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Past of overflow is 'overflowed'; the water 'flooded' the villages.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Neither the captain ___ the players ___ ready for the final.",
+   "options": [
+    "nor, were",
+    "or, were",
+    "nor, was",
+    "and, was"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Neither' pairs with 'nor'; the verb agrees with the nearer subject, 'players' (were).",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A number of students ___ absent, but the number of absentees ___ small.",
+   "options": [
+    "was, were",
+    "were, was",
+    "were, were",
+    "was, was"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'A number of' takes plural; 'the number of' takes singular.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I would have called you if I ___ your number, but I ___ it.",
+   "options": [
+    "knew, did not know",
+    "had known, will not know",
+    "had known, did not know",
+    "would know, did not know"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Third conditional needs 'had known'; the real fact is past: 'did not know'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is ___ MBA and his brother is ___ engineer.",
+   "options": [
+    "a, an",
+    "an, a",
+    "a, a",
+    "an, an"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Article depends on sound: 'MBA' begins with the vowel sound 'em', and 'engineer' with a vowel.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is senior ___ me ___ three years.",
+   "options": [
+    "to, by",
+    "than, by",
+    "to, for",
+    "than, for"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Senior' takes 'to'; the difference is shown with 'by'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He prefers tea ___ coffee, ___ his sister prefers coffee to tea.",
+   "options": [
+    "than, but",
+    "to, but",
+    "to, because",
+    "than, so"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Prefer' takes 'to'; the two preferences contrast, so 'but'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has ___ been to Goa, so she is ___ excited about the trip.",
+   "options": [
+    "ever, very",
+    "never, much",
+    "never, very",
+    "ever, much"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Never' fits the 'so' clause of excitement; 'ever' is not used in a positive statement; 'very' goes with adjectives.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hardly ___ he sat down ___ the phone rang.",
+   "options": [
+    "did, when",
+    "had, than",
+    "has, when",
+    "had, when"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Hardly had ... when' is the fixed pattern ('than' goes with 'no sooner').",
+   "shortcut": "Hardly -> when; No sooner -> than.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ___ me yesterday that she ___ come the next day.",
+   "options": [
+    "told, would",
+    "said, would",
+    "told, will",
+    "said, will"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Told' takes an object; the reported past needs 'would'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The principal, as well as the teachers, ___ pleased, and the students ___ also happy.",
+   "options": [
+    "were, were",
+    "was, were",
+    "was, was",
+    "were, was"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'As well as' does not change the subject (principal: was); 'students' takes 'were'.",
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Had I ___ about the strike, I ___ left home earlier.",
+   "options": [
+    "known, would",
+    "knew, would have",
+    "known, would have",
+    "known, will have"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inverted third conditional: 'Had + past participle ..., would have + past participle'.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the two proposals, the second is the ___ and it is also ___ practical.",
+   "options": [
+    "best, most",
+    "better, most",
+    "best, more",
+    "better, more"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two items need comparatives: better, more.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She speaks as if she ___ the manager, though she ___ only a clerk.",
+   "options": [
+    "were, is",
+    "was, is",
+    "were, are",
+    "is, is"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As if' for an unreal comparison takes 'were'; the fact is stated in present 'is'.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The scheme, ___ aims at rural employment, ___ launched in 2006.",
+   "options": [
+    "who, was",
+    "which, was",
+    "which, were",
+    "whose, was"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Which' refers to the scheme (thing); singular 'was'.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The flowers ___ I received were so ___ that the entire room smelt wonderful.",
+   "options": [
+    "who, fragrant",
+    "which, fragile",
+    "which, fragrant",
+    "which, fragrance"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Which' for things; smelling wonderful requires the adjective 'fragrant'.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Seldom ___ he lose his temper, and rarely ___ he complain.",
+   "options": [
+    "do, do",
+    "does, do",
+    "did, do",
+    "does, does"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Negative adverbs at the start take auxiliary inversion; singular 'he' takes 'does'.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Each of the boys ___ his own bag, and all of them ___ ready to leave.",
+   "options": [
+    "has, are",
+    "have, are",
+    "has, is",
+    "have, is"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular (has); 'all of them' is plural (are).",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohan is not ___ clever ___ his sister, but he works harder.",
+   "options": [
+    "as, than",
+    "as, as",
+    "so, than",
+    "than, as"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Negative equality uses 'as ... as'; 'than' never follows 'as'.",
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

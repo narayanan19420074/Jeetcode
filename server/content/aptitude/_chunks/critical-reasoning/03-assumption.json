@@ -1,0 +1,456 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: A new expressway cuts the Chennai–Bengaluru driving time to two hours. Priya concludes that more people will now choose to go by car rather than by train. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Trains between the two cities are always full.",
+    "The expressway will have no tolls.",
+    "Travel time is an important factor in people's choice of how to travel.",
+    "People generally prefer cars to buses."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conclusion depends on shorter time influencing the choice. If time did not matter to travellers, the expressway would not shift anyone. The other options are not required.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Negation test: if the assumption were false, the reasoning would collapse."
+  },
+  {
+   "questionText": "Read the following: A company allows its employees to work from home, arguing that the time saved on commuting will make them more productive. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Every employee has a separate room at home for work.",
+    "Employees prefer working from home to working in office.",
+    "Employees will use at least part of the time saved on commuting for work or rest that improves their output.",
+    "The company will save on office rent."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Time saved raises productivity only if it is put to productive use. If it were all wasted, the conclusion would fail.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A school principal wants to ban mobile phones because Class 9 students who carry phones score lower than those who do not. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "All students will obey the ban.",
+    "Phones are used by students only for games.",
+    "The lower scores are caused, at least in part, by carrying phones and not wholly by other factors.",
+    "Teachers dislike students having phones."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A ban helps only if phones contribute to the low scores. If the low scores had entirely different causes, a ban would not help.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A tea-stall owner near a college says: 'Nobody visits my stall after 9 pm, so staying open beyond 9 pm will only add to my costs.' Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The college closes at 5 pm.",
+    "Other stalls close before 9 pm.",
+    "Staying open later would not bring in enough new customers to cover the extra costs.",
+    "The owner's costs will not change for any other reason."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The owner concludes 'only costs' on the premise that no new customers will come, or too few to pay for the extra hours.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Sunita has a higher rating than every other player in the trials. The selector says she will certainly be selected for the national chess team. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Sunita has played in the national team earlier.",
+    "The other players are all younger than Sunita.",
+    "Selection to the national team is based on rating in the trials.",
+    "The trials were held in Chennai."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Having the highest rating guarantees selection only if rating is what the selection depends on. If selection used other criteria, the conclusion would not follow.",
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: To increase sales, a soap manufacturer decides to print 'dermatologist tested' on its packs, because customers trust medical endorsements. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The soap is cheaper than other brands.",
+    "Most customers have skin problems.",
+    "Customers will notice the label and believe it.",
+    "Other soap makers do not print medical claims."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The premise says customers trust medical endorsements; the plan works only if they will notice this label and regard it as credible.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: India will not need to build new coal power plants, since solar capacity is growing rapidly. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Coal is more costly than solar power.",
+    "Solar panels are made in India.",
+    "The growth in solar capacity will be enough to meet the growth in electricity demand, including at night.",
+    "Coal power plants emit pollutants."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fast growth in solar capacity matters only if it covers the extra demand. If demand grows faster, new coal plants would be needed.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Radhika has completed all ten prerequisites listed for an MBA programme. Her friend says she will be admitted. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The programme is very popular.",
+    "Radhika has work experience.",
+    "Completing the prerequisites is enough for admission, without other conditions such as an entrance cut-off.",
+    "The programme has ten seats."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The friend treats prerequisites as sufficient. If admission needs something more, such as a cut-off score, the conclusion fails.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A new drug reduced fever in 90% of patients in a Delhi trial. A doctor says it will therefore work as well for patients in Chennai. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The drug is cheap.",
+    "The Delhi trial was conducted in a government hospital.",
+    "Chennai patients do not differ from the Delhi patients in a way that affects how they respond to the drug.",
+    "Fever is the most common illness."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Extending trial results to a new group assumes the two groups are alike in the relevant respects.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The flights from a metro city airport to a Tier-2 city are always full. A businessman argues that a new airport should be built in the Tier-2 city. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The metro airport is overcrowded.",
+    "The land for the airport is cheaply available.",
+    "A sufficient number of those passengers would choose to fly from the new airport.",
+    "Flight tickets are expensive."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Full flights justify a new airport only if enough of the same demand would use it. If passengers would still use the old airport, the new airport would remain empty.",
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A teacher says all Class 5 students should memorise multiplication tables up to 20 because it helps them calculate quickly. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Tables are taught in Class 3.",
+    "Calculators are not allowed in exams.",
+    "Class 5 students are able to memorise tables up to 20.",
+    "Parents want their children to learn tables."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A recommendation for all students requires that all can actually do what is recommended.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The panchayat will give free LPG connections to women in the village, saying this will end the cutting of trees for firewood. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "LPG cylinders are delivered to the village.",
+    "Trees are cut only for firewood.",
+    "Women who get the connections will use LPG instead of firewood.",
+    "The village has a forest."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If the connections are given but firewood continues to be used, the cutting does not stop.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Sridhar says he will reach Madurai before noon because his bus leaves at 6 am and the journey takes five hours. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Sridhar will carry a lot of luggage.",
+    "Madurai is a big city.",
+    "The bus will leave on time and run on schedule.",
+    "There are other buses to Madurai."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Departure at 6 and five hours of travel gives 11 am only if the bus leaves and travels as stated; otherwise the conclusion is unsafe.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A supermarket advertises: 'Fresh Mart is cheaper than your neighbourhood kirana, because our prices on 20 common items are lower than the kirana's.' Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Fresh Mart has more branches than kirana stores.",
+    "Fresh Mart's staff are better dressed.",
+    "The 20 items are representative of what customers buy in a full basket.",
+    "Customers prefer shopping in air-conditioned stores."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Cheaper' overall follows from 20 lower prices only if these 20 items represent the whole shopping basket.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Rainfall in Kerala this monsoon was 20% above normal, so the paddy harvest will be above normal. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Paddy is grown on most farmland in Kerala.",
+    "Farmers had sown more paddy than last year.",
+    "The additional rain will not damage the paddy crop, for example by flooding.",
+    "Rice prices will fall."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "More rain helps only if it is not so heavy as to destroy the crop. If the extra rain caused serious floods, the harvest would not be above normal.",
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A college makes attendance compulsory, saying that students will learn more as a result. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Students do not like compulsory rules.",
+    "Teachers will take attendance in the first ten minutes.",
+    "Students who attend classes learn more than those who do not.",
+    "Attendance is high in other colleges."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The policy increases attendance; it increases learning only if attending classes helps learning.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A shopkeeper put up signs saying 'You are being watched' and thefts fell the next month. He concludes that the signs deter thieves. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The signs are printed in red.",
+    "The shop has CCTV cameras.",
+    "The number of thefts would not have fallen by itself in that month even without the signs.",
+    "Thieves are often young men."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "He attributes the fall to the signs, so he must assume the fall was not going to happen anyway.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A health minister proposes a steep tax on cigarettes, saying it will reduce the number of smokers. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Most smokers are young.",
+    "The tax will bring revenue to the government.",
+    "Smokers' consumption responds to price, so at least some of them will quit or cut down when prices rise.",
+    "Cigarette makers will oppose the tax."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If smokers were totally insensitive to price, a price rise would not reduce smoking, so the proposal depends on this responsiveness.",
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Rohan's building lift is broken. He decides to climb the stairs to his sixth-floor flat because it will be faster than waiting for the lift to be repaired. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Rohan is fit and healthy.",
+    "The building has well-lit stairs.",
+    "The lift will not be repaired in less time than it takes to climb six floors.",
+    "Other residents are also using the stairs."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Climbing is faster than waiting only if the wait would be longer than the climbing time.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A state has many unemployed engineering graduates. An education expert says the state should cut the intake of engineering colleges to reduce engineering unemployment. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Engineering colleges are costly to run.",
+    "Unemployed engineers are unhappy.",
+    "The number of jobs available to engineers will not fall in proportion to the cut in graduates.",
+    "Other courses have good job prospects."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Reducing graduates reduces unemployment only if jobs do not shrink with them; otherwise the unemployment rate would not improve.",
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A zoo extends its visiting hours to 8 pm, expecting 30% more visitors. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The zoo has electric lighting.",
+    "Tickets are cheaper in the evening.",
+    "Many potential visitors find the present visiting hours inconvenient.",
+    "The zoo is located in the city centre."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "More visitors will come in due to longer hours only if the existing hours are keeping some people away.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Aravind has 10 years of experience, so he is the best person for the job in the firm's Hyderabad office. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Aravind is above 35 years of age.",
+    "Other applicants have less than 10 years of experience.",
+    "Experience is relevant to performing this job well.",
+    "The job is at a senior level."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using years of experience to judge the best candidate requires that experience contribute to doing this job well.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: An advertisement says that Brand X toothpaste contains charcoal and therefore cleans teeth better than other brands. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Charcoal is black in colour.",
+    "Brand X is costlier than other brands.",
+    "Charcoal improves the cleaning ability of toothpaste.",
+    "Many people like the taste of the paste."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conclusion about better cleaning depends on charcoal actually helping cleaning.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Doctors recommend that a school start an hour later, saying that teenagers need more sleep and will benefit from the later start. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "The school has a large playground.",
+    "Teachers will agree to the new timings.",
+    "Students will use the extra hour to sleep rather than staying up later at night.",
+    "Buses will run later in the morning."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The benefit depends on the extra morning hour turning into more sleep. If students simply sleep an hour later at night, they would get no more sleep and the argument would fail.",
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A district official wants speed breakers installed on a highway stretch, saying this will cut the accidents there. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    "Highways in the district are in poor condition.",
+    "Speed breakers are cheap to build.",
+    "Speed breakers will make drivers slow down, and lower speeds mean fewer accidents on that stretch.",
+    "The accidents occur mostly at night."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The plan works only if the breakers actually reduce speeds and lower speeds reduce accidents there.",
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

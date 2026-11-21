@@ -1,0 +1,617 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of lions\"",
+   "options": [
+    "pride",
+    "herd",
+    "pack",
+    "flock"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"pride\": the collective noun for lions. Do not confuse it with \"herd\": a group of cattle, elephants or deer.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of wolves or hunting dogs\"",
+   "options": [
+    "pride",
+    "pack",
+    "flock",
+    "shoal"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"pack\": the collective noun for wolves or hounds. Do not confuse it with \"pride\": a group of lions.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of sheep\"",
+   "options": [
+    "pride",
+    "shoal",
+    "flock",
+    "litter"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"flock\": the collective noun for sheep, and also for birds. Do not confuse it with \"pride\": a group of lions.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of cattle or elephants\"",
+   "options": [
+    "flock",
+    "pack",
+    "troop",
+    "herd"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"herd\": the collective noun for cattle and elephants. Do not confuse it with \"flock\": a group of sheep or birds.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of fish swimming together\"",
+   "options": [
+    "shoal",
+    "swarm",
+    "flock",
+    "litter"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"shoal\": the collective noun for fish. Do not confuse it with \"swarm\": a large group of flying insects such as bees.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of bees flying together\"",
+   "options": [
+    "shoal",
+    "swarm",
+    "pride",
+    "herd"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"swarm\": the collective noun for bees and other flying insects. Do not confuse it with \"shoal\": a group of fish.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of ships sailing together under one command\"",
+   "options": [
+    "squad",
+    "flock",
+    "fleet",
+    "litter"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"fleet\": a number of ships under one command. Do not confuse it with \"squad\": a small group of soldiers or workers.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of singers performing together\"",
+   "options": [
+    "orchestra",
+    "troupe",
+    "crew",
+    "choir"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"choir\": an organised group of singers. Do not confuse it with \"orchestra\": a group of instrumentalists.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of musicians playing different instruments together\"",
+   "options": [
+    "orchestra",
+    "choir",
+    "troupe",
+    "crew"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"orchestra\": a large group of instrumentalists. Do not confuse it with \"choir\": a group of singers.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of newborn puppies or kittens born at one time\"",
+   "options": [
+    "brood",
+    "litter",
+    "clutch",
+    "pack"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"litter\": the young born to an animal at one birth. Do not confuse it with \"brood\": the young birds hatched together.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of eggs laid or hatched at one time\"",
+   "options": [
+    "litter",
+    "flock",
+    "clutch",
+    "bunch"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"clutch\": a set of eggs laid by a bird in one nest. Do not confuse it with \"litter\": the young born to a mammal at one birth.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of young birds hatched together and cared for by the mother\"",
+   "options": [
+    "litter",
+    "herd",
+    "swarm",
+    "brood"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"brood\": the young birds hatched at one time. Do not confuse it with \"litter\": the young of mammals born at one birth.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of stars forming a recognised pattern in the sky\"",
+   "options": [
+    "constellation",
+    "galaxy",
+    "cluster",
+    "orbit"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"constellation\": a named pattern of stars. Do not confuse it with \"galaxy\": a vast system of millions of stars.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of steps between two floors\"",
+   "options": [
+    "fleet",
+    "flight",
+    "row",
+    "bunch"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"flight\": a series of stairs between landings. Do not confuse it with \"fleet\": a group of ships.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A number of grapes growing together\"",
+   "options": [
+    "flock",
+    "batch",
+    "bunch",
+    "pack"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"bunch\": a cluster of fruit such as grapes or bananas on one stem. Do not confuse it with \"flock\": a group of animals, especially sheep.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of actors performing together on stage\"",
+   "options": [
+    "troop",
+    "crew",
+    "gang",
+    "troupe"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"troupe\": a company of actors or performers. Do not confuse it with \"troop\": a group of soldiers or scouts.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of soldiers, especially on the march\"",
+   "options": [
+    "troop",
+    "troupe",
+    "crew",
+    "squad"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"troop\": a body of soldiers or scouts. Do not confuse it with \"troupe\": a company of actors or acrobats.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"The people who work together on a ship or aircraft\"",
+   "options": [
+    "staff",
+    "crew",
+    "team",
+    "troupe"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"crew\": the people operating a ship, aircraft or train. Do not confuse it with \"staff\": the permanent employees of an organisation.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of people gathered to hear a speaker or performance\"",
+   "options": [
+    "mob",
+    "choir",
+    "audience",
+    "staff"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"audience\": the people attending a performance or speech to listen. Do not confuse it with \"mob\": a large disorderly crowd.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of worshippers gathered in a place of worship\"",
+   "options": [
+    "audience",
+    "mob",
+    "committee",
+    "congregation"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"congregation\": a group assembled for religious worship. Do not confuse it with \"audience\": people gathered to listen to or watch a performance.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of cards used in a game\"",
+   "options": [
+    "pack",
+    "bunch",
+    "set",
+    "flock"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"pack\": a complete set of playing cards. Do not confuse it with \"bunch\": things growing together on a stem.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of geese flying in a V-formation\"",
+   "options": [
+    "gaggle",
+    "skein",
+    "flock",
+    "swarm"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"skein\": a flight of geese or wild fowl in the air. Do not confuse it with \"gaggle\": geese on the ground, a noisy group.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of geese on the ground\"",
+   "options": [
+    "skein",
+    "herd",
+    "gaggle",
+    "pack"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"gaggle\": a collective noun for geese when they are not flying. Do not confuse it with \"skein\": geese flying in formation.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of owls\"",
+   "options": [
+    "senate",
+    "council",
+    "committee",
+    "parliament"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"parliament\": the traditional collective noun for owls. Do not confuse it with \"senate\": a ruling body, not a group of birds.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of crows\"",
+   "options": [
+    "murder",
+    "flock",
+    "pride",
+    "gaggle"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"murder\": the traditional collective noun for crows. Do not confuse it with \"flock\": the collective noun for lions.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of officers chosen to conduct some business on behalf of a larger body\"",
+   "options": [
+    "audience",
+    "committee",
+    "crew",
+    "mob"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"committee\": a group appointed to carry out a specific task. Do not confuse it with \"audience\": people gathered to listen or watch.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of mountains forming a connected chain\"",
+   "options": [
+    "cluster",
+    "bunch",
+    "range",
+    "fleet"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"range\": a line of connected mountains. Do not confuse it with \"cluster\": a number of similar things close together.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"A group of islands\"",
+   "options": [
+    "peninsula",
+    "isthmus",
+    "delta",
+    "archipelago"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"archipelago\": a chain or cluster of islands. Do not confuse it with \"peninsula\": a piece of land almost surrounded by water.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A group of travellers or merchants journeying together across a desert\"",
+   "options": [
+    "caravan",
+    "fleet",
+    "troupe",
+    "crew"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"caravan\": a company travelling together through desert or hazardous country. Do not confuse it with \"fleet\": a number of ships under one command.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A large number of people gathered together in a disorderly manner\"",
+   "options": [
+    "audience",
+    "mob",
+    "choir",
+    "committee"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"mob\": a large disorderly crowd. Do not confuse it with \"audience\": people gathered to hear a performance.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pick the one word that stands for: \"A group of criminals or hooligans acting together\"",
+   "options": [
+    "pack",
+    "troupe",
+    "gang",
+    "staff"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The word is \"gang\": a group of people, often criminals, acting together. Do not confuse it with \"pack\": a group of wolves or hunting dogs.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which one word can be used in place of the phrase: \"The employees who work in an office, school or hospital\"",
+   "options": [
+    "crew",
+    "troop",
+    "squad",
+    "staff"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The word is \"staff\": the people employed by an organisation. Do not confuse it with \"crew\": the people operating a ship or aircraft.",
+   "subPattern": "collective-nouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the one word that can replace the phrase: \"A number of cattle or sheep driven together\"",
+   "options": [
+    "drove",
+    "troupe",
+    "crew",
+    "choir"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The word is \"drove\": a number of cattle or sheep driven in a body. Do not confuse it with \"troupe\": a company of actors.",
+   "subPattern": "collective-nouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Select the single word that best substitutes for: \"A group of players forming one side in a game\"",
+   "options": [
+    "gang",
+    "team",
+    "staff",
+    "troupe"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The word is \"team\": a group of players forming one side in a sport. Do not confuse it with \"gang\": a group of criminals acting together.",
+   "subPattern": "collective-nouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,1537 @@
+{
+ "sets": [
+  {
+   "id": "di-bar-graphs-s034",
+   "type": "bar",
+   "title": "Rice production of states (Rice production (lakh tonnes)); bar graph by year, for year-on-year change",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Rice production (lakh tonnes)",
+    "series": [
+     {
+      "name": "Rice production",
+      "data": [
+       {
+        "label": "2018",
+        "value": 105
+       },
+       {
+        "label": "2019",
+        "value": 130
+       },
+       {
+        "label": "2020",
+        "value": 35
+       },
+       {
+        "label": "2021",
+        "value": 45
+       },
+       {
+        "label": "2022",
+        "value": 80
+       },
+       {
+        "label": "2023",
+        "value": 55
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s035",
+   "type": "bar",
+   "title": "Wheat production of states in 2021 and 2022 (Production (lakh tonnes)); grouped bars for change over the year",
+   "chart": {
+    "xLabel": "State",
+    "yLabel": "Production (lakh tonnes)",
+    "series": [
+     {
+      "name": "2021",
+      "data": [
+       {
+        "label": "Rajasthan",
+        "value": 50
+       },
+       {
+        "label": "Punjab",
+        "value": 110
+       },
+       {
+        "label": "Bihar",
+        "value": 30
+       },
+       {
+        "label": "Haryana",
+        "value": 130
+       },
+       {
+        "label": "Uttar Pradesh",
+        "value": 140
+       }
+      ]
+     },
+     {
+      "name": "2022",
+      "data": [
+       {
+        "label": "Rajasthan",
+        "value": 50
+       },
+       {
+        "label": "Punjab",
+        "value": 170
+       },
+       {
+        "label": "Bihar",
+        "value": 170
+       },
+       {
+        "label": "Haryana",
+        "value": 80
+       },
+       {
+        "label": "Uttar Pradesh",
+        "value": 80
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s036",
+   "type": "bar",
+   "title": "Applicants for a recruitment drive (Applicants (thousands)); bar graph by year, for year-on-year change",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Applicants (thousands)",
+    "series": [
+     {
+      "name": "Number of applicants",
+      "data": [
+       {
+        "label": "2018",
+        "value": 170
+       },
+       {
+        "label": "2019",
+        "value": 275
+       },
+       {
+        "label": "2020",
+        "value": 260
+       },
+       {
+        "label": "2021",
+        "value": 240
+       },
+       {
+        "label": "2022",
+        "value": 135
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s037",
+   "type": "bar",
+   "title": "Tea produced by estates in 2022 and 2023 (Production (tonnes)); grouped bars for change over the year",
+   "chart": {
+    "xLabel": "Estate",
+    "yLabel": "Production (tonnes)",
+    "series": [
+     {
+      "name": "2022",
+      "data": [
+       {
+        "label": "Munnar",
+        "value": 440
+       },
+       {
+        "label": "Coonoor",
+        "value": 350
+       },
+       {
+        "label": "Darjeeling",
+        "value": 120
+       },
+       {
+        "label": "Assam Valley",
+        "value": 140
+       },
+       {
+        "label": "Nilgiri North",
+        "value": 160
+       }
+      ]
+     },
+     {
+      "name": "2023",
+      "data": [
+       {
+        "label": "Munnar",
+        "value": 50
+       },
+       {
+        "label": "Coonoor",
+        "value": 440
+       },
+       {
+        "label": "Darjeeling",
+        "value": 230
+       },
+       {
+        "label": "Assam Valley",
+        "value": 90
+       },
+       {
+        "label": "Nilgiri North",
+        "value": 220
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s038",
+   "type": "bar",
+   "title": "Electricity consumed in a town (Consumption (thousand units)); bar graph by month, for year-on-year change",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Consumption (thousand units)",
+    "series": [
+     {
+      "name": "Electricity consumption",
+      "data": [
+       {
+        "label": "February",
+        "value": 145
+       },
+       {
+        "label": "March",
+        "value": 145
+       },
+       {
+        "label": "April",
+        "value": 115
+       },
+       {
+        "label": "May",
+        "value": 195
+       },
+       {
+        "label": "June",
+        "value": 160
+       },
+       {
+        "label": "July",
+        "value": 40
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s039",
+   "type": "bar",
+   "title": "Students placed from engineering colleges in 2022 and 2023 (Students placed); grouped bars for change over the year",
+   "chart": {
+    "xLabel": "College",
+    "yLabel": "Students placed",
+    "series": [
+     {
+      "name": "2022",
+      "data": [
+       {
+        "label": "SRM",
+        "value": 320
+       },
+       {
+        "label": "Thiagarajar",
+        "value": 500
+       },
+       {
+        "label": "PSG",
+        "value": 140
+       },
+       {
+        "label": "Kumaraguru",
+        "value": 340
+       },
+       {
+        "label": "CIT",
+        "value": 220
+       }
+      ]
+     },
+     {
+      "name": "2023",
+      "data": [
+       {
+        "label": "SRM",
+        "value": 140
+       },
+       {
+        "label": "Thiagarajar",
+        "value": 200
+       },
+       {
+        "label": "PSG",
+        "value": 440
+       },
+       {
+        "label": "Kumaraguru",
+        "value": 290
+       },
+       {
+        "label": "CIT",
+        "value": 390
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s040",
+   "type": "bar",
+   "title": "Net profit of companies (Net profit (₹ crore)); bar graph by year, for year-on-year change",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Net profit (₹ crore)",
+    "series": [
+     {
+      "name": "Net profit",
+      "data": [
+       {
+        "label": "2018",
+        "value": 60
+       },
+       {
+        "label": "2019",
+        "value": 70
+       },
+       {
+        "label": "2020",
+        "value": 80
+       },
+       {
+        "label": "2021",
+        "value": 190
+       },
+       {
+        "label": "2022",
+        "value": 25
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s041",
+   "type": "bar",
+   "title": "Retail sales of a chain in Tamil Nadu cities in 2022 and 2023 (Sales (₹ lakh)); grouped bars for change over the year",
+   "chart": {
+    "xLabel": "City",
+    "yLabel": "Sales (₹ lakh)",
+    "series": [
+     {
+      "name": "2022",
+      "data": [
+       {
+        "label": "Madurai",
+        "value": 80
+       },
+       {
+        "label": "Coimbatore",
+        "value": 125
+       },
+       {
+        "label": "Vellore",
+        "value": 55
+       },
+       {
+        "label": "Tirupur",
+        "value": 75
+       },
+       {
+        "label": "Salem",
+        "value": 145
+       }
+      ]
+     },
+     {
+      "name": "2023",
+      "data": [
+       {
+        "label": "Madurai",
+        "value": 70
+       },
+       {
+        "label": "Coimbatore",
+        "value": 50
+       },
+       {
+        "label": "Vellore",
+        "value": 105
+       },
+       {
+        "label": "Tirupur",
+        "value": 55
+       },
+       {
+        "label": "Salem",
+        "value": 35
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s042",
+   "type": "bar",
+   "title": "Cars sold by a dealer (Cars sold (hundreds)); bar graph by month, for year-on-year change",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Cars sold (hundreds)",
+    "series": [
+     {
+      "name": "Cars sold",
+      "data": [
+       {
+        "label": "April",
+        "value": 84
+       },
+       {
+        "label": "May",
+        "value": 36
+       },
+       {
+        "label": "June",
+        "value": 44
+       },
+       {
+        "label": "July",
+        "value": 116
+       },
+       {
+        "label": "August",
+        "value": 40
+       },
+       {
+        "label": "September",
+        "value": 72
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s043",
+   "type": "bar",
+   "title": "Students enrolled in a university by stream in 2022 and 2023 (Students enrolled); grouped bars for change over the year",
+   "chart": {
+    "xLabel": "Stream",
+    "yLabel": "Students enrolled",
+    "series": [
+     {
+      "name": "2022",
+      "data": [
+       {
+        "label": "Management",
+        "value": 60
+       },
+       {
+        "label": "Commerce",
+        "value": 420
+       },
+       {
+        "label": "Law",
+        "value": 430
+       },
+       {
+        "label": "Science",
+        "value": 90
+       },
+       {
+        "label": "Engineering",
+        "value": 240
+       }
+      ]
+     },
+     {
+      "name": "2023",
+      "data": [
+       {
+        "label": "Management",
+        "value": 160
+       },
+       {
+        "label": "Commerce",
+        "value": 470
+       },
+       {
+        "label": "Law",
+        "value": 200
+       },
+       {
+        "label": "Science",
+        "value": 540
+       },
+       {
+        "label": "Engineering",
+        "value": 420
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s044",
+   "type": "bar",
+   "title": "Books issued by a city library (Books issued); bar graph by month, for year-on-year change",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Books issued",
+    "series": [
+     {
+      "name": "Books issued",
+      "data": [
+       {
+        "label": "January",
+        "value": 160
+       },
+       {
+        "label": "February",
+        "value": 160
+       },
+       {
+        "label": "March",
+        "value": 120
+       },
+       {
+        "label": "April",
+        "value": 800
+       },
+       {
+        "label": "May",
+        "value": 1000
+       },
+       {
+        "label": "June",
+        "value": 800
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the percentage increase in rice production from 2018 to 2019 (correct to one decimal place)?",
+   "options": [
+    "23.8%",
+    "19.2%",
+    "123.8%",
+    "28.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Increase = 130 - 105 = 25. Percentage = 25/105 × 100 = 23.81 ≈ 23.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Percentage change is always over the earlier value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s034"
+  },
+  {
+   "questionText": "Between which two consecutive years was the absolute rise in rice production the greatest?",
+   "options": [
+    "2021 to 2022",
+    "2018 to 2019",
+    "2019 to 2020",
+    "2020 to 2021"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: 2018-2019: +25, 2019-2020: -95, 2020-2021: +10, 2021-2022: +35, 2022-2023: -25.",
+   "shortcut": "Subtract neighbouring bars; ignore percentages here.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s034"
+  },
+  {
+   "questionText": "What was the percentage increase in rice production from 2021 to 2023 (correct to one decimal place)?",
+   "options": [
+    "22.2%",
+    "18.2%",
+    "27.2%",
+    "122.2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "45 → 55: change 10; over 45 gives 22.22 ≈ 22.2%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Earlier year is the base.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s034"
+  },
+  {
+   "questionText": "In which year was the percentage growth over the previous year the highest?",
+   "options": [
+    "2022",
+    "2019",
+    "2020",
+    "2021"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth: 2019 23.8%, 2020 -73.1%, 2021 28.6%, 2022 77.8%, 2023 -31.3%. Highest: 2022.",
+   "shortcut": "Percent growth needs the previous bar as base; a big absolute rise on a big base may not win.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s034"
+  },
+  {
+   "questionText": "If the rice production of 2023 first rises by 25% and the new figure then falls by 25%, what is the final figure (correct to one decimal place)?",
+   "options": [
+    "51.6 lakh tonnes",
+    "55 lakh tonnes",
+    "68.8 lakh tonnes",
+    "41.3 lakh tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "55 × 1.25 × 0.75 = 51.56. Net change is -6.25%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Up p% then down p% leaves p²/100 % less.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s034"
+  },
+  {
+   "questionText": "What is the percentage growth in wheat production for Punjab from 2021 to 2022 (correct to one decimal place)?",
+   "options": [
+    "54.5%",
+    "35.3%",
+    "154.5%",
+    "59.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2021: 110, 2022: 170. Growth = 60; 60/110 × 100 = 54.55 ≈ 54.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the earlier year.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s035"
+  },
+  {
+   "questionText": "What is the percentage increase in the total wheat production of all states from 2021 to 2022 (correct to one decimal place)?",
+   "options": [
+    "19.6%",
+    "16.4%",
+    "23.6%",
+    "119.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: 460 → 550. Change 90; over 460 gives 19.57 ≈ 19.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the columns first, then take one percentage.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s035"
+  },
+  {
+   "questionText": "Which state recorded the highest percentage growth from 2021 to 2022?",
+   "options": [
+    "Bihar",
+    "Rajasthan",
+    "Punjab",
+    "Haryana"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth %: Rajasthan 0, Punjab 54.5, Bihar 466.7, Haryana -38.5, Uttar Pradesh -42.9.",
+   "shortcut": "Compare B/A across categories, not B - A.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s035"
+  },
+  {
+   "questionText": "What is the percentage decline in wheat production for Uttar Pradesh from 2021 to 2022 (correct to one decimal place)?",
+   "options": [
+    "42.9%",
+    "75%",
+    "57.1%",
+    "46.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 140 - 80 = 60; 60/140 × 100 = 42.86 ≈ 42.9%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decline is over the earlier figure.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s035"
+  },
+  {
+   "questionText": "By how many percentage points does the highest percentage growth exceed the second highest across the states from 2021 to 2022 (correct to one decimal place)?",
+   "options": [
+    "412.1 percentage points",
+    "855.6 percentage points",
+    "416.1 percentage points",
+    "420.1 percentage points"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest: Bihar 466.67%; next: Punjab 54.55%. Gap = 412.12 ≈ 412.1 points.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s035"
+  },
+  {
+   "questionText": "What is the percentage increase in number of applicants from 2018 to 2019 (correct to one decimal place)?",
+   "options": [
+    "61.8%",
+    "38.2%",
+    "161.8%",
+    "66.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Increase = 275 - 170 = 105. Percentage = 105/170 × 100 = 61.76 ≈ 61.8%.",
+   "shortcut": "Percentage change is always over the earlier value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s036"
+  },
+  {
+   "questionText": "By how much did the number of applicants change (absolute, ignoring direction) from 2018 to 2019?",
+   "options": [
+    "105 thousand",
+    "445 thousand",
+    "110 thousand",
+    "115 thousand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "|275 - 170| = 105. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s036"
+  },
+  {
+   "questionText": "What was the percentage decrease in number of applicants from 2019 to 2020 (correct to one decimal place)?",
+   "options": [
+    "5.5%",
+    "5.8%",
+    "10.5%",
+    "1.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "275 → 260: change 15; over 275 gives 5.45 ≈ 5.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Earlier year is the base.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s036"
+  },
+  {
+   "questionText": "The highest number of applicants is what percentage more than the lowest (correct to one decimal place)?",
+   "options": [
+    "103.7%",
+    "50.9%",
+    "203.7%",
+    "110.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(275 - 135)/135 × 100 = 103.7 ≈ 103.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s036"
+  },
+  {
+   "questionText": "What is the average of the year-on-year percentage changes (4 successive changes) in number of applicants (correct to one decimal place)?",
+   "options": [
+    "1.2%",
+    "4.2%",
+    "1.5%",
+    "2%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: 61.76, -5.45, -7.69, -43.75. Sum = 4.87; average over 4 = 1.22 ≈ 1.2%.",
+   "shortcut": "Do each % separately on its own base, then average.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s036"
+  },
+  {
+   "questionText": "For how many estates did the tea production fall from 2022 to 2023?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Count estates where the 2023 bar is shorter than the 2022 bar: 2. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s037"
+  },
+  {
+   "questionText": "Taken together, Coonoor and Munnar show what percentage decrease in tea production from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "38%",
+    "31.5%",
+    "43%",
+    "35%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2022 combined = 790; 2023 combined = 490. Change 300/790 × 100 = 37.97 ≈ 38%.",
+   "shortcut": "Combine first, then one percentage - never average two percentages of different bases.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s037"
+  },
+  {
+   "questionText": "What is the percentage decline in tea production for Assam Valley from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "35.7%",
+    "55.6%",
+    "64.3%",
+    "39.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 140 - 90 = 50; 50/140 × 100 = 35.71 ≈ 35.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decline is over the earlier figure.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s037"
+  },
+  {
+   "questionText": "For Darjeeling, the larger of the two years' figures is what percentage of the smaller (correct to one decimal place)?",
+   "options": [
+    "191.7%",
+    "52.2%",
+    "91.7%",
+    "198.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "230/120 × 100 = 191.67 ≈ 191.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s037"
+  },
+  {
+   "questionText": "If the tea production of Munnar grows next year by the same percentage as the overall total grew from 2022 to 2023, what will its figure be (correct to one decimal place)?",
+   "options": [
+    "42.6 tonnes",
+    "58.7 tonnes",
+    "52.6 tonnes",
+    "46.9 tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Overall factor = 1030/1210 = 0.851. 50 × 0.851 = 42.56. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Multiply by the overall growth factor.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s037"
+  },
+  {
+   "questionText": "In how many months (after the first) was the electricity consumption lower than in the preceding month?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare each bar with the previous one: March: up, April: down, May: up, June: down, July: down. Declines = 3.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s038"
+  },
+  {
+   "questionText": "Between which two consecutive months was the absolute rise in electricity consumption the greatest?",
+   "options": [
+    "April to May",
+    "February to March",
+    "March to April",
+    "May to June"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: February-March: +0, March-April: -30, April-May: +80, May-June: -35, June-July: -120.",
+   "shortcut": "Subtract neighbouring bars; ignore percentages here.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s038"
+  },
+  {
+   "questionText": "In which month was the percentage growth over the previous month the highest?",
+   "options": [
+    "May",
+    "March",
+    "April",
+    "June"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth: March 0%, April -20.7%, May 69.6%, June -17.9%, July -75%. Highest: May.",
+   "shortcut": "Percent growth needs the previous bar as base; a big absolute rise on a big base may not win.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s038"
+  },
+  {
+   "questionText": "What is the overall percentage decrease in electricity consumption from February to July (correct to one decimal place)?",
+   "options": [
+    "72.4%",
+    "362.5%",
+    "78.4%",
+    "67.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "February: 145, July: 40. Change = 105; 105/145 × 100 = 72.41 ≈ 72.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base = first year.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s038"
+  },
+  {
+   "questionText": "Between which two consecutive months was the percentage change (rise or fall) largest in magnitude?",
+   "options": [
+    "June to July",
+    "February to March",
+    "March to April",
+    "April to May"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: February-March 0%, March-April -20.7%, April-May 69.6%, May-June -17.9%, June-July -75%.",
+   "shortcut": "Compute each % on its own base, then compare sizes.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s038"
+  },
+  {
+   "questionText": "Which college shows the largest absolute increase in placements from 2022 to 2023?",
+   "options": [
+    "PSG",
+    "SRM",
+    "Thiagarajar",
+    "Kumaraguru"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: SRM -180, Thiagarajar -300, PSG +300, Kumaraguru -50, CIT +170.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s039"
+  },
+  {
+   "questionText": "What is the percentage decline in placements for SRM from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "56.3%",
+    "128.6%",
+    "43.8%",
+    "60.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 320 - 140 = 180; 180/320 × 100 = 56.25 ≈ 56.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decline is over the earlier figure.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s039"
+  },
+  {
+   "questionText": "What is the percentage decrease in the total placements of all colleges from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "3.9%",
+    "7.9%",
+    "0.9%",
+    "104.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: 1520 → 1460. Change 60; over 1520 gives 3.95 ≈ 3.9%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the columns first, then take one percentage.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s039"
+  },
+  {
+   "questionText": "For CIT, the larger of the two years' figures is what percentage of the smaller (correct to one decimal place)?",
+   "options": [
+    "177.3%",
+    "56.4%",
+    "77.3%",
+    "184.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "390/220 × 100 = 177.27 ≈ 177.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s039"
+  },
+  {
+   "questionText": "Find the difference between the highest and the lowest percentage change (growth or decline, taking growth as positive) in placements across the colleges from 2022 to 2023 (correct to one decimal place; give the answer in percentage points).",
+   "options": [
+    "274.3 percentage points",
+    "154.3 percentage points",
+    "137 percentage points",
+    "279.3 percentage points"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "% changes: SRM -56.25, Thiagarajar -60, PSG 214.29, Kumaraguru -14.71, CIT 77.27. Highest 214.29, lowest -60; difference 274.29 ≈ 274.3.",
+   "shortcut": "Signed values: subtracting a negative adds.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s039"
+  },
+  {
+   "questionText": "Between which two consecutive years was the absolute rise in net profit the greatest?",
+   "options": [
+    "2020 to 2021",
+    "2018 to 2019",
+    "2019 to 2020",
+    "2021 to 2022"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: 2018-2019: +10, 2019-2020: +10, 2020-2021: +110, 2021-2022: -165.",
+   "shortcut": "Subtract neighbouring bars; ignore percentages here.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s040"
+  },
+  {
+   "questionText": "What is the percentage increase in net profit from 2020 to 2021 (correct to one decimal place)?",
+   "options": [
+    "137.5%",
+    "57.9%",
+    "237.5%",
+    "142.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Increase = 190 - 80 = 110. Percentage = 110/80 × 100 = 137.5 ≈ 137.5%.",
+   "shortcut": "Percentage change is always over the earlier value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s040"
+  },
+  {
+   "questionText": "What is the overall percentage decrease in net profit from 2018 to 2022 (correct to one decimal place)?",
+   "options": [
+    "58.3%",
+    "240%",
+    "64.3%",
+    "53.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2018: 60, 2022: 25. Change = 35; 35/60 × 100 = 58.33 ≈ 58.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base = first year.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s040"
+  },
+  {
+   "questionText": "What was the percentage decrease in net profit from 2018 to 2022 (correct to one decimal place)?",
+   "options": [
+    "58.3%",
+    "140%",
+    "63.3%",
+    "54.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "60 → 25: change 35; over 60 gives 58.33 ≈ 58.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Earlier year is the base.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s040"
+  },
+  {
+   "questionText": "By what percentage must the net profit of 2022 rise to equal the highest value shown (correct to one decimal place)?",
+   "options": [
+    "660%",
+    "86.8%",
+    "760%",
+    "666%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Needed rise = 190 - 25 = 165; over 25: 660 ≈ 660%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the current (last) value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s040"
+  },
+  {
+   "questionText": "What is the percentage growth in retail sales for Vellore from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "90.9%",
+    "47.6%",
+    "190.9%",
+    "95.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2022: 55, 2023: 105. Growth = 50; 50/55 × 100 = 90.91 ≈ 90.9%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the earlier year.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s041"
+  },
+  {
+   "questionText": "What is the percentage decline in retail sales for Coimbatore from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "60%",
+    "150%",
+    "40%",
+    "64%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 125 - 50 = 75; 75/125 × 100 = 60 ≈ 60%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decline is over the earlier figure.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s041"
+  },
+  {
+   "questionText": "For Tirupur, the larger of the two years' figures is what percentage of the smaller (correct to one decimal place)?",
+   "options": [
+    "136.4%",
+    "73.3%",
+    "36.4%",
+    "143.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "75/55 × 100 = 136.36 ≈ 136.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s041"
+  },
+  {
+   "questionText": "What is the percentage decrease in the total retail sales of all citys from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "34.4%",
+    "52.4%",
+    "38.4%",
+    "31.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: 480 → 315. Change 165; over 480 gives 34.38 ≈ 34.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the columns first, then take one percentage.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s041"
+  },
+  {
+   "questionText": "If the retail sales of Madurai grows next year by the same percentage as the overall total grew from 2022 to 2023, what will its figure be (correct to one decimal place)?",
+   "options": [
+    "₹ 45.9 lakh",
+    "₹ 106.7 lakh",
+    "₹ 50.9 lakh",
+    "₹ 50.5 lakh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Overall factor = 315/480 = 0.656. 70 × 0.656 = 45.94. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Multiply by the overall growth factor.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s041"
+  },
+  {
+   "questionText": "In how many months (after the first) was the cars sold lower than in the preceding month?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare each bar with the previous one: May: down, June: up, July: up, August: down, September: up. Declines = 2.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s042"
+  },
+  {
+   "questionText": "What is the percentage increase in cars sold from June to July (correct to one decimal place)?",
+   "options": [
+    "163.6%",
+    "62.1%",
+    "263.6%",
+    "168.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Increase = 116 - 44 = 72. Percentage = 72/44 × 100 = 163.64 ≈ 163.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Percentage change is always over the earlier value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s042"
+  },
+  {
+   "questionText": "What was the percentage decrease in cars sold from April to June (correct to one decimal place)?",
+   "options": [
+    "47.6%",
+    "90.9%",
+    "52.6%",
+    "43.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "84 → 44: change 40; over 84 gives 47.62 ≈ 47.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Earlier year is the base.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s042"
+  },
+  {
+   "questionText": "What is the percentage decrease in cars sold from April to May (correct to one decimal place)?",
+   "options": [
+    "57.1%",
+    "133.3%",
+    "42.9%",
+    "61.1%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 84 - 36 = 48. Percentage = 48/84 × 100 = 57.14 ≈ 57.1%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decrease is measured on the earlier (larger) value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s042"
+  },
+  {
+   "questionText": "If the cars sold of September first rises by 10% and the new figure then falls by 10%, what is the final figure (correct to one decimal place)?",
+   "options": [
+    "71.3 hundred cars",
+    "72 hundred cars",
+    "79.2 hundred cars",
+    "64.8 hundred cars"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "72 × 1.1 × 0.9 = 71.28. Net change is -1%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Up p% then down p% leaves p²/100 % less.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s042"
+  },
+  {
+   "questionText": "Which stream shows the largest absolute increase in student enrolment from 2022 to 2023?",
+   "options": [
+    "Science",
+    "Management",
+    "Commerce",
+    "Law"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: Management +100, Commerce +50, Law -230, Science +450, Engineering +180.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s043"
+  },
+  {
+   "questionText": "What is the absolute change in student enrolment for Management between 2022 and 2023?",
+   "options": [
+    "100 students",
+    "220 students",
+    "110 students",
+    "120 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "|160 - 60| = 100. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s043"
+  },
+  {
+   "questionText": "What is the percentage increase in the total student enrolment of all streams from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "44.4%",
+    "30.7%",
+    "48.4%",
+    "41.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Totals: 1240 → 1790. Change 550; over 1240 gives 44.35 ≈ 44.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the columns first, then take one percentage.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s043"
+  },
+  {
+   "questionText": "What is the percentage decline in student enrolment for Law from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "53.5%",
+    "115%",
+    "46.5%",
+    "57.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 430 - 200 = 230; 230/430 × 100 = 53.49 ≈ 53.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decline is over the earlier figure.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s043"
+  },
+  {
+   "questionText": "By how many percentage points does the highest percentage growth exceed the second highest across the streams from 2022 to 2023 (correct to one decimal place)?",
+   "options": [
+    "333.3 percentage points",
+    "300 percentage points",
+    "337.3 percentage points",
+    "341.3 percentage points"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest: Science 500%; next: Management 166.67%. Gap = 333.33 ≈ 333.3 points.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s043"
+  },
+  {
+   "questionText": "Between which two consecutive months was the absolute rise in books issued the greatest?",
+   "options": [
+    "March to April",
+    "January to February",
+    "February to March",
+    "April to May"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: January-February: +0, February-March: -40, March-April: +680, April-May: +200, May-June: -200.",
+   "shortcut": "Subtract neighbouring bars; ignore percentages here.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s044"
+  },
+  {
+   "questionText": "By how much did the books issued change (absolute, ignoring direction) from May to June?",
+   "options": [
+    "200 books",
+    "1800 books",
+    "220 books",
+    "240 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "|800 - 1000| = 200. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s044"
+  },
+  {
+   "questionText": "What is the percentage decrease in books issued from February to March (correct to one decimal place)?",
+   "options": [
+    "25%",
+    "33.3%",
+    "75%",
+    "29%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fall = 160 - 120 = 40. Percentage = 40/160 × 100 = 25 ≈ 25%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Decrease is measured on the earlier (larger) value.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s044"
+  },
+  {
+   "questionText": "The highest books issued is what percentage more than the lowest (correct to one decimal place)?",
+   "options": [
+    "733.3%",
+    "88%",
+    "833.3%",
+    "740.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(1000 - 120)/120 × 100 = 733.33 ≈ 733.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s044"
+  },
+  {
+   "questionText": "What is the average of the year-on-year percentage changes (5 successive changes) in books issued (correct to one decimal place)?",
+   "options": [
+    "109.3%",
+    "80%",
+    "400%",
+    "112.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Changes: 0, -25, 566.67, 25, -20. Sum = 546.67; average over 5 = 109.33 ≈ 109.3%.",
+   "shortcut": "Do each % separately on its own base, then average.",
+   "subPattern": "percentage-change-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s044"
+  }
+ ]
+}

@@ -1,0 +1,148 @@
+{
+  "sets": [],
+  "questions": [
+    {
+      "questionText": "Which of the following statements is an opinion rather than a verifiable fact?",
+      "options": [
+        "The headline national figure tells a smallholder very little about when to sow.",
+        "The India Meteorological Department issues a seasonal outlook in April.",
+        "Text-message alerts in local languages now reach millions of farmers.",
+        "Rainfall in a week can differ between two villages ten kilometres apart."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The first statement is a judgement made by critics. The others can be checked against records or measurements.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s001"
+    },
+    {
+      "questionText": "Which of the following is a verifiable fact rather than an opinion?",
+      "options": [
+        "Accepting a UPI payment does not require a card machine.",
+        "UPI is the most important financial reform of the decade.",
+        "Technology is a smaller challenge than reaching excluded people.",
+        "Fear of fraud among the elderly is unjustified."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Only the first statement can be checked as true or false. The others are judgements.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": "reading-comprehension-s002"
+    },
+    {
+      "questionText": "Which of the following is a verifiable fact according to the passage?",
+      "options": [
+        "Matches have been shortened and some rules adjusted.",
+        "The changes have damaged the spirit of the game.",
+        "Old village referees would have disliked the music.",
+        "Kabaddi has a brighter future than any other rural sport."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Only the first can be checked. The second is a purist's view, the third is speculation and the fourth is not in the passage.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": "reading-comprehension-s003"
+    },
+    {
+      "questionText": "Which of the following is a judgement rather than a verifiable fact?",
+      "options": [
+        "Moving away from millets was a costly mistake.",
+        "Millets can grow on land where rice would fail.",
+        "Several state agricultural departments buy millets for school meals.",
+        "Ragi, jowar and bajra are millets."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Costly mistake' is an evaluation. The other statements can be checked by agricultural data or records.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s004"
+    },
+    {
+      "questionText": "Which of the following is an opinion rather than a fact?",
+      "options": [
+        "The best outcome would be a blend of online and board play.",
+        "State governments reward medal winners with jobs and prize money.",
+        "Viswanathan Anand won a world title.",
+        "Online platforms let a child play many games every week."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "'Best outcome' is a judgement. The other three are reported facts that can be verified.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "hard",
+      "examStyles": [
+        "cat-style"
+      ],
+      "setId": "reading-comprehension-s006"
+    },
+    {
+      "questionText": "Which of the following is a speculation rather than a verifiable fact?",
+      "options": [
+        "The cloth may survive better than the craft that produces it.",
+        "Power looms can copy an ikat design in a few hours.",
+        "The government reserves certain designs for handloom producers.",
+        "Ikat threads are tied and dyed before weaving begins."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The first statement predicts the future ('may survive'). The others describe present, checkable matters.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "campus-it"
+      ],
+      "setId": "reading-comprehension-s007"
+    },
+    {
+      "questionText": "Which of the following is an opinion or prediction rather than a reported fact?",
+      "options": [
+        "A good idea like telemedicine will succeed if given modest investment.",
+        "Doctors report that telemedicine works well for follow-up visits.",
+        "A doctor in Chandigarh can consult a villager by video call.",
+        "Many state governments have built telemedicine into their health plans."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "The first is a prediction about success. The rest are reported or observable facts.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "campus-it",
+        "general"
+      ],
+      "setId": "reading-comprehension-s008"
+    },
+    {
+      "questionText": "In the passage on coaching institutes, which of the following is a verifiable fact rather than an opinion?",
+      "options": [
+        "Some institutes now hold weekly fun events for students.",
+        "Coaching fees are a safe investment.",
+        "The wellbeing measures merely treat symptoms.",
+        "A single rank decides a whole life."
+      ],
+      "correctOptionIndex": 0,
+      "explanation": "Only the first can be verified by checking institutes. The others are views or exaggerations.",
+      "subPattern": "fact-vs-opinion",
+      "difficulty": "medium",
+      "examStyles": [
+        "banking",
+        "ssc"
+      ],
+      "setId": "reading-comprehension-s009"
+    }
+  ]
+}

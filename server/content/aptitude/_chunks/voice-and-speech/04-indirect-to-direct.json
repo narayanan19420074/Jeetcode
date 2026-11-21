@@ -1,0 +1,634 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the correct direct speech of: He said that he was busy.",
+   "options": [
+    "He said, “I am busy.”",
+    "He said, “He was busy.”",
+    "He said, “I was busy.”",
+    "He said, “You are busy.”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: to restore direct speech, shift the tense forward (was becomes am) and 'he' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She said that she liked mangoes.",
+   "options": [
+    "She said, “She likes mangoes.”",
+    "She said, “I like mangoes.”",
+    "She said, “I liked mangoes.”",
+    "She said, “I will like mangoes.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: past in the reported clause returns to simple present; 'she' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Mother said that she had cooked dinner.",
+   "options": [
+    "Mother said, “She has cooked dinner.”",
+    "Mother said, “I will cook dinner.”",
+    "Mother said, “I have cooked dinner.”",
+    "Mother said, “I am cooking dinner.”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: past perfect returns to present perfect (had cooked becomes have cooked); 'she' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Ravi told me that he would help me.",
+   "options": [
+    "Ravi said to me, “He will help you.”",
+    "Ravi said to me, “I would help you.”",
+    "Ravi said to me, “You will help me.”",
+    "Ravi said to me, “I will help you.”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: would becomes will; 'he' becomes 'I' (speaker) and 'me' becomes 'you' (listener).",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher said that the earth moves round the sun.",
+   "options": [
+    "The teacher said, “The earth moves round the sun.”",
+    "The teacher said, “The earth moved round the sun.”",
+    "The teacher said, “The earth will move round the sun.”",
+    "The teacher said, “The earth is moving round the sun.”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: a universal truth is unchanged in tense, so direct speech keeps the simple present.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he could swim.",
+   "options": [
+    "He said, “He can swim.”",
+    "He said, “I can swim.”",
+    "He said, “I could swim.”",
+    "He said, “I will swim.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: could becomes can; 'he' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: They said that they were playing cricket.",
+   "options": [
+    "They said, “They are playing cricket.”",
+    "They said, “We were playing cricket.”",
+    "They said, “We are playing cricket.”",
+    "They said, “We play cricket.”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: past continuous returns to present continuous; 'they' becomes 'we'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Anita said that she might go to Madurai.",
+   "options": [
+    "Anita said, “She may go to Madurai.”",
+    "Anita said, “I might go to Madurai.”",
+    "Anita said, “I will go to Madurai.”",
+    "Anita said, “I may go to Madurai.”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: might becomes may; 'she' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She told him that he was late.",
+   "options": [
+    "She said to him, “You are late.”",
+    "She said to him, “He is late.”",
+    "She said to him, “You were late.”",
+    "She said to him, “I am late.”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'told' becomes 'said to'; 'he' (the listener) becomes 'you'; was becomes are.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he would come the next day.",
+   "options": [
+    "He said, “I would come tomorrow.”",
+    "He said, “I will come tomorrow.”",
+    "He said, “I will come yesterday.”",
+    "He said, “He will come tomorrow.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: would becomes will; 'the next day' becomes 'tomorrow'; 'he' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He asked me where I lived.",
+   "options": [
+    "He said to me, “Where did you live?”",
+    "He said to me, “Where I live?”",
+    "He said to me, “Where do you live?”",
+    "He said to me, “Where does he live?”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: restore question order with auxiliary 'do'; past returns to present; 'I' (the listener) becomes 'you'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She asked him if he was coming.",
+   "options": [
+    "She said to him, “Is he coming?”",
+    "She said to him, “Were you coming?”",
+    "She said to him, “Am I coming?”",
+    "She said to him, “Are you coming?”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'if' clause becomes a yes/no question with inverted order; was becomes are; 'he' becomes 'you'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher ordered the students to open their books.",
+   "options": [
+    "The teacher said to the students, “Open your books.”",
+    "The teacher said to the students, “Opens your books.”",
+    "The teacher said to the students, “Open their books.”",
+    "The teacher said to the students, “You open your books?”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'ordered ... to + V1' becomes an imperative; 'their' becomes 'your'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The doctor advised the patient not to eat oily food.",
+   "options": [
+    "The doctor said to the patient, “You did not eat oily food.”",
+    "The doctor said to the patient, “Do not eat oily food.”",
+    "The doctor said to the patient, “Not to eat oily food.”",
+    "The doctor said to the patient, “Does not eat oily food.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'advised ... not to + V1' becomes a negative imperative 'Do not + V1'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Ravi exclaimed with joy that they had won the match.",
+   "options": [
+    "Ravi said, “Hurrah! They have won the match.”",
+    "Ravi said, “Alas! We have won the match.”",
+    "Ravi said, “Hurrah! We have won the match.”",
+    "Ravi said, “Hurrah! We will win the match.”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'exclaimed with joy' becomes an interjection (Hurrah); past perfect returns to present perfect; 'they' becomes 'we'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Arun asked Babu if he would lend him his pen.",
+   "options": [
+    "Arun said to Babu, “Would he lend him his pen?”",
+    "Arun said to Babu, “Will he lend me his pen?”",
+    "Arun said to Babu, “You will lend me your pen.”",
+    "Arun said to Babu, “Will you lend me your pen?”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'if' clause becomes a direct question; would becomes will; 'he' becomes 'you', 'him' becomes 'me', 'his' becomes 'your'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he had met her the previous day.",
+   "options": [
+    "He said, “I met her yesterday.”",
+    "He said, “I will meet her tomorrow.”",
+    "He said, “I meet her yesterday.”",
+    "He said, “He met her yesterday.”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'the previous day' becomes 'yesterday'; the reported past perfect is restored to the simple past; 'he' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She said that she would leave that evening.",
+   "options": [
+    "She said, “I would leave that evening.”",
+    "She said, “I will leave this evening.”",
+    "She said, “She will leave this evening.”",
+    "She said, “I left this evening.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: would becomes will; 'that evening' becomes 'this evening'; 'she' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Meera said that she had seen him there the previous night.",
+   "options": [
+    "Meera said, “I had seen him there last night.”",
+    "Meera said, “She saw him here last night.”",
+    "Meera said, “I saw him here last night.”",
+    "Meera said, “I will see him here tonight.”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'there' becomes 'here'; 'the previous night' becomes 'last night'; past perfect returns to simple past; 'she' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Rohit asked Mani why he was crying.",
+   "options": [
+    "Rohit said to Mani, “Why was he crying?”",
+    "Rohit said to Mani, “Why you are crying?”",
+    "Rohit said to Mani, “Why am I crying?”",
+    "Rohit said to Mani, “Why are you crying?”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: restore question word order; was crying becomes are crying; 'he' (the listener) becomes 'you'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The manager requested the clerk to send the file.",
+   "options": [
+    "The manager said to the clerk, “Please send the file.”",
+    "The manager said to the clerk, “He sends the file.”",
+    "The manager said to the clerk, “Please sent the file.”",
+    "The manager said to the clerk, “Will he send the file?”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'requested ... to + V1' becomes an imperative with 'Please'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher forbade the boys to make noise.",
+   "options": [
+    "The teacher said to the boys, “Make noise.”",
+    "The teacher said to the boys, “Do not make noise.”",
+    "The teacher said to the boys, “Did not make noise.”",
+    "The teacher said to the boys, “You do not made noise.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'forbade ... to + V1' becomes a negative imperative 'Do not + V1'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She exclaimed that it was a very beautiful garden.",
+   "options": [
+    "She said, “How beautiful the garden was!”",
+    "She said, “It is a very beautiful garden?”",
+    "She said, “What a beautiful garden this is!”",
+    "She said, “What a beautiful garden that was!”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'exclaimed that ... very' becomes an exclamation 'What a + adjective + noun + subject + verb!'; was becomes is; 'it' becomes 'this'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that his sister was learning music then.",
+   "options": [
+    "He said, “His sister is learning music now.”",
+    "He said, “My sister was learning music now.”",
+    "He said, “My sister is learning music then.”",
+    "He said, “My sister is learning music now.”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'then' becomes 'now'; past continuous returns to present continuous; 'his' becomes 'my'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Sunita said that she had been working there for ten years.",
+   "options": [
+    "Sunita said, “I have been working here for ten years.”",
+    "Sunita said, “She has been working here for ten years.”",
+    "Sunita said, “I have been working there for ten years.”",
+    "Sunita said, “I will be working here for ten years.”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: past perfect continuous returns to present perfect continuous; 'there' becomes 'here'; 'she' becomes 'I'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He told me that he would not forgive me.",
+   "options": [
+    "He said to me, “I would not forgive you.”",
+    "He said to me, “I will not forgive you.”",
+    "He said to me, “You will not forgive me.”",
+    "He said to me, “He will not forgive you.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: would becomes will; 'he' becomes 'I' and 'me' becomes 'you'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Father asked me whether I had finished my homework.",
+   "options": [
+    "Father said to me, “Had I finished my homework?”",
+    "Father said to me, “Did you finished your homework?”",
+    "Father said to me, “Have you finished your homework?”",
+    "Father said to me, “Have I finished my homework?”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'whether' clause becomes an inverted question; past perfect returns to present perfect; 'I' (the listener) becomes 'you' and 'my' becomes 'your'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She asked the guard what time the train left.",
+   "options": [
+    "She said to the guard, “What time did the train leave?”",
+    "She said to the guard, “What time the train leaves?”",
+    "She said to the guard, “What time will the train leave?”",
+    "She said to the guard, “What time does the train leave?”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: restore auxiliary 'does' before the subject; the past 'left' returns to present 'leave'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The judge asked the accused why he had stolen the money.",
+   "options": [
+    "The judge said to the accused, “Why did you steal the money?”",
+    "The judge said to the accused, “Why do you steal the money?”",
+    "The judge said to the accused, “Why did he steal the money?”",
+    "The judge said to the accused, “Why will you steal the money?”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: restore question order with 'did'; past perfect returns to simple past; 'he' becomes 'you'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Gopal asked Sita how she had reached there so early.",
+   "options": [
+    "Gopal said to Sita, “How do you reach here so early?”",
+    "Gopal said to Sita, “How did you reach here so early?”",
+    "Gopal said to Sita, “How did she reach there so early?”",
+    "Gopal said to Sita, “How will you reach here so early?”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: restore 'did' + V1; 'there' becomes 'here'; 'she' becomes 'you'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: She said that her brother would be coming there the following week.",
+   "options": [
+    "She said, “Her brother will be coming here next week.”",
+    "She said, “My brother would be coming here next week.”",
+    "She said, “My brother will be coming here next week.”",
+    "She said, “My brother will be coming there last week.”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: would be coming becomes will be coming; 'there' becomes 'here'; 'the following week' becomes 'next week'; 'her' becomes 'my'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: He said that he had finished his work before she came.",
+   "options": [
+    "He said, “I have finished my work before she came.”",
+    "He said, “He had finished his work before she came.”",
+    "He said, “I will finish my work before she came.”",
+    "He said, “I had finished my work before she came.”"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: this past perfect is already in the 'earlier past' and stays as it is; only the pronouns change (he becomes I, his becomes my).",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct direct speech of: Raju told me that he would help me if I asked him.",
+   "options": [
+    "Raju said to me, “I shall help you if you ask me.”",
+    "Raju said to me, “I would help you if you asked me.”",
+    "Raju said to me, “He will help you if you ask him.”",
+    "Raju said to me, “I shall help you if I ask you.”"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: would becomes shall/will and the past 'asked' returns to 'ask'; 'he' becomes 'I', 'I' becomes 'you', 'him' becomes 'me'.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Reverse the backshift: was to am/is, would to will, had + V3 to V2/has + V3; swap pronouns back; that day/the next day/there become today/tomorrow/here."
+  },
+  {
+   "questionText": "Choose the correct direct speech of: The teacher said that honesty is the best policy.",
+   "options": [
+    "The teacher said, “Honesty was the best policy.”",
+    "The teacher said, “Honesty is the best policy.”",
+    "The teacher said, “Honesty will be the best policy.”",
+    "The teacher said, “Honesty is best policy.”"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: a proverb or general truth stays in the simple present in both forms.",
+   "subPattern": "indirect-to-direct",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

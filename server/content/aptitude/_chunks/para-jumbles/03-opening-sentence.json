@@ -1,0 +1,945 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Residents are still required to maintain it.\nQ. Jaipur is known as the Pink City of India.\nR. The colour symbolises hospitality in Rajput culture.\nS. Its buildings were painted pink in 1876 to welcome a royal guest.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q opens the paragraph. It introduces the city by name; 'Its' in S and 'The colour' in R depend on earlier mentions.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Studies of top performers, however, show that both play a role.\nQ. Some people say luck decides success.\nR. Others argue that hard work matters more.\nS. Preparation lets a person make the most of lucky chances.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q opens the paragraph. It raises the debate; 'Others' and 'however' need a previous view.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. This shift has reduced the use of cash.\nQ. Mobile payments have grown rapidly in India.\nR. Even roadside vendors now display QR codes.\nS. UPI lets people transfer money using just a phone number.",
+   "options": [
+    "P",
+    "S",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q opens the paragraph. The general statement comes first; 'UPI' details, vendors and 'This shift' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. He later became a missile scientist and the President of India.\nQ. Dr A. P. J. Abdul Kalam was born in Rameswaram.\nR. Young Kalam sold newspapers to support his studies.\nS. His father owned a small boat and led a simple life.",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q opens the paragraph. It names the person; 'His father', 'Young Kalam' and 'He' all refer back.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. The sun rises in the east.\nQ. The valleys remain in shadow for a while.\nR. Its first rays touch the hilltops.\nS. Gradually, light spreads across the plains.",
+   "options": [
+    "S",
+    "R",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P opens the paragraph. It states the event; 'Its' needs 'the sun' first.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Schools often have to close for several days.\nQ. Smog covers the city every winter.\nR. Rising pollution levels have alarmed Delhi's residents.\nS. The government therefore tests odd-even rules for vehicles.",
+   "options": [
+    "R",
+    "S",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R opens the paragraph. It states the issue; 'Smog', schools and 'therefore' follow from it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Kalidasa is regarded as the greatest Sanskrit poet.\nQ. His play Abhijnanashakuntalam is admired worldwide.\nR. Goethe praised it in glowing terms.\nS. It was translated into English in the eighteenth century.",
+   "options": [
+    "R",
+    "P",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P opens the paragraph. It names the poet; 'His play' and 'It' refer to earlier mentions.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. For some, it is the quiet of dawn.\nQ. Everyone has a favourite time of the day.\nR. I like the hush before sunrise the most.\nS. For others, it is the cool of the evening.",
+   "options": [
+    "P",
+    "S",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q opens the paragraph. It makes the general point; 'For some' and 'For others' elaborate it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. The format soon inspired similar leagues in other sports.\nQ. The Indian Premier League began in 2008.\nR. It combined cricket with big-budget entertainment.\nS. Franchises bought players through an auction.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence Q opens the paragraph. Names the subject; 'It' in R refers to it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Without water, survival is limited to a few days.\nQ. Conserving it should therefore be everyone's duty.\nR. A person can survive weeks without food.\nS. Water is vital for all living beings.",
+   "options": [
+    "Q",
+    "S",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S opens the paragraph. General truth first; 'Without water' and 'it' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Hindi is the most widely spoken among them.\nQ. This diversity is a source of national pride.\nR. Tamil, one of the oldest, has a literature spanning two thousand years.\nS. Several languages are spoken in India.",
+   "options": [
+    "P",
+    "S",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S opens the paragraph. General idea first; 'among them' and 'This diversity' look back.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Crowds gathered on the very first day.\nQ. Local shopkeepers, however, fear losing customers.\nR. It has a cinema, a food court and a play area.\nS. A new shopping mall opened in our town last week.",
+   "options": [
+    "R",
+    "Q",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S opens the paragraph. Event introduced with 'A new'; 'It' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Rahul Dravid was nicknamed 'The Wall'.\nQ. His defence was nearly impossible to break.\nR. Fans admired his calm temperament as much as his skill.\nS. Bowlers would tire after hours of trying to dismiss him.",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P opens the paragraph. Introduces the player with the nickname; 'His' needs it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Many Indians suffer from lifestyle diseases today.\nQ. Fast food adds excess calories to the diet.\nR. The result is a rise in diabetes and heart problems.\nS. Long hours at desks lead to little physical activity.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P opens the paragraph. General problem first; causes and 'The result' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. They run parallel to the coast for about 1,600 kilometres.\nQ. The Western Ghats are older than the Himalayas.\nR. Their forests shelter thousands of rare species.\nS. UNESCO listed them as a heritage site in 2012.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q opens the paragraph. Names the range with a comparison; 'They' and 'Their' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Ludo is its modern descendant.\nQ. It is played with cowrie shells and a cross-shaped board.\nR. One of the oldest games in the world is Pachisi.\nS. Mughal emperors played it with living pieces in courtyards.",
+   "options": [
+    "Q",
+    "S",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R opens the paragraph. Introduces the game; 'It' and 'its' refer back.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Such adaptations help them survive harsh conditions.\nQ. Desert plants store water in thick stems.\nR. Mountain plants grow low to resist cold winds.\nS. Plants adapt to their surroundings in remarkable ways.",
+   "options": [
+    "S",
+    "P",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S opens the paragraph. General claim first; examples and 'Such adaptations' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. She fed it a bowl of milk.\nQ. Her mother objected at first.\nR. A stray puppy followed Seema home from school.\nS. In the end, the puppy became a part of the family.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R opens the paragraph. It introduces puppy ('A stray puppy'); 'it' and 'the puppy' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Cricket and hockey are both loved in India.\nQ. Cricket, however, attracts far more sponsors.\nR. Many hockey players struggle to find support.\nS. This gap affects funding for other sports.",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P opens the paragraph. Establishes both; 'however' contrasts and 'This gap' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. The idea of a minimum support price protects farmers.\nQ. Critics, however, say it benefits only a few crops.\nR. Under it, the government promises to buy crops at a fixed rate.\nS. Farmers can then plan their sowing without fear of price crashes.",
+   "options": [
+    "S",
+    "P",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence P opens the paragraph. Introduces the idea; 'it' refers back.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Tourists come from all over the world to see them.\nQ. Pallava kings carved monolithic temples there.\nR. Mahabalipuram is a coastal town near Chennai.\nS. The Shore Temple stands against the sea breeze.",
+   "options": [
+    "Q",
+    "S",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R opens the paragraph. Introduces the town; 'there' needs it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. However, continuous exposure above 85 decibels can damage hearing.\nQ. Not every loud noise is harmful.\nR. Even headphones should be used at moderate volume.\nS. Factory workers are therefore given ear protection.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q opens the paragraph. Gives the starting claim; 'However' modifies it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Despite the dryness, it has colourful fairs and forts.\nQ. Rajasthan is the largest state of India by area.\nR. Much of its land is covered by the Thar desert.\nS. The cuisine too has adapted to scarce water.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence Q opens the paragraph. Introduces the state; 'its' and 'it' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Focusing on one job at a time is more efficient.\nQ. Many people think multitasking saves time.\nR. In fact, the brain switches rapidly between tasks.\nS. This switching makes mistakes more likely.",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q opens the paragraph. The common belief is stated first; 'In fact' corrects it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Mirabai Chanu won a silver medal in weightlifting at the Tokyo Olympics.\nQ. Her village in Manipur celebrated for days.\nR. She lifted a total of 202 kilograms.\nS. The medal ended India's long wait for a weightlifting podium.",
+   "options": [
+    "P",
+    "S",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence P opens the paragraph. Names the athlete and event; 'She' and 'Her' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. A shabby coat may hide a brilliant mind.\nQ. Wise people therefore wait before forming opinions.\nR. The same happens when we meet new people.\nS. We often judge books by their covers.",
+   "options": [
+    "S",
+    "Q",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence S opens the paragraph. The idiom is the starting point; 'The same' compares it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. The British later created a unified department.\nQ. Today, India Post has the largest network in the world.\nR. Postal services in India date back centuries.\nS. Sher Shah Suri improved the horse-post system.",
+   "options": [
+    "P",
+    "S",
+    "R",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence R opens the paragraph. A general statement of history; names and 'later' and 'Today' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. With every beat, it pumps blood to the whole body.\nQ. A healthy lifestyle keeps the heart strong.\nR. The human heart beats about seventy times a minute.\nS. This blood carries oxygen to each cell.",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence R opens the paragraph. Introduces the heart; 'it' and 'This blood' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. His writings show a deep concern for social justice.\nQ. Youth across India still draw inspiration from him.\nR. He was only twenty-three when he was hanged.\nS. Bhagat Singh remains a symbol of courage.",
+   "options": [
+    "P",
+    "S",
+    "Q",
+    "R"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence S opens the paragraph. Frames him; 'He' and 'His' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. A colourful pack catches the eye on a crowded shelf.\nQ. Clear labels build trust with the buyer.\nR. Packaging plays a crucial role in selling any product.\nS. Small brands like Happy Break depend on it to stand out.",
+   "options": [
+    "R",
+    "S",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R opens the paragraph. General claim; 'it' in the last sentence refers to packaging.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Many people grumbled when the rules came into force.\nQ. Accidents have nonetheless dropped sharply.\nR. Riding without a helmet attracts a heavy fine.\nS. The new traffic rules are very strict.",
+   "options": [
+    "Q",
+    "R",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S opens the paragraph. Introduces the rules; 'the rules' in P.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. One should list the next day's tasks before sleeping.\nQ. Such discipline reduces stress dramatically.\nR. A well-planned day begins the night before.\nS. In the morning, the most important job should be done first.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence R opens the paragraph. General claim; 'Such discipline' sums up.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. There are many types of clouds.\nQ. Cumulus clouds are fluffy and white.\nR. Cumulonimbus clouds bring thunderstorms.\nS. Cirrus clouds are thin and wispy.",
+   "options": [
+    "S",
+    "Q",
+    "P",
+    "R"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P opens the paragraph. The general statement introduces the types; each type follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Odisha disputes this claim.\nQ. The city's confectioners claim to have invented the rasgulla.\nR. Kolkata is famous for its sweets.\nS. Rasgulla and sandesh are the best known.",
+   "options": [
+    "Q",
+    "S",
+    "R",
+    "P"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence R opens the paragraph. Introduces the topic; 'this claim' refers to the previous mention.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. The captain, however, urged us to look ahead.\nQ. Yesterday, our team lost the final by two runs.\nR. Everyone felt miserable in the dressing room.\nS. We resolved to train harder.",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q opens the paragraph. 'Yesterday' sets up the event; 'however' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Digital literacy is no longer optional.\nQ. Training programmes in villages are therefore crucial.\nR. Banking, ticket booking and even school admissions have moved online.\nS. People unfamiliar with computers risk being left out.",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P opens the paragraph. Claim first; supporting reasons follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Such skills are rare in the animal world.\nQ. They communicate through clicks and whistles.\nR. They can recognise themselves in a mirror.\nS. Dolphins are among the most intelligent animals.",
+   "options": [
+    "P",
+    "R",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S opens the paragraph. Introduces dolphins; 'They' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. His film Awaara became a hit even in the Soviet Union.\nQ. Raj Kapoor was one of Hindi cinema's greatest showmen.\nR. The song 'Awaara Hoon' was sung there by ordinary people.\nS. It showed how music crosses borders.",
+   "options": [
+    "S",
+    "R",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence Q opens the paragraph. Names the subject; 'His film' and 'It' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Bamboo is often called green gold.\nQ. Farmers in the northeast earn good income from it.\nR. It grows faster than almost any other plant.\nS. Its strong fibres are used in furniture and houses.",
+   "options": [
+    "Q",
+    "R",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence P opens the paragraph. Introduces bamboo; 'It' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Fact-checking has therefore become important.\nQ. Citizens should verify before sharing.\nR. Misleading news can sway undecided people.\nS. An election is only as fair as its voters are informed.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S opens the paragraph. The core claim; 'therefore' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. The result is a flaky, buttery snack with tea.\nQ. It was introduced during British rule.\nR. Ooty varkey is a layered, crispy biscuit from the Nilgiris.\nS. Bakers fold dough repeatedly to create the layers.",
+   "options": [
+    "Q",
+    "R",
+    "P",
+    "S"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence R opens the paragraph. Introduces the snack; 'It' refers to it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Poverty, however, kept her from art school.\nQ. Lakshmi was a talented painter.\nR. Years later, her paintings were displayed in a major gallery.\nS. She then taught herself from library books.",
+   "options": [
+    "R",
+    "P",
+    "Q",
+    "S"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence Q opens the paragraph. Introduces her; 'however' and 'She' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Many watch videos for four hours a day.\nQ. Doctors link this habit to poor eyesight and sleep.\nR. Recent studies show that screen time is rising among children.\nS. Parents are therefore advised to set limits.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sentence R opens the paragraph. General finding; details follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. It offers a fast and reliable alternative to buses.\nQ. Cities such as Kochi and Lucknow have now built their own networks.\nR. Metro rail has changed urban travel in India.\nS. Commuters save hours each week.",
+   "options": [
+    "R",
+    "S",
+    "P",
+    "Q"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R opens the paragraph. General statement; 'It' follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Sundials marked the hours by the shadow of a stick.\nQ. Water clocks worked at night and on cloudy days.\nR. Mechanical clocks finally made timekeeping precise.\nS. Before the invention of clocks, people used the sun to tell time.",
+   "options": [
+    "P",
+    "Q",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence S opens the paragraph. Sets the 'before' stage; the sequence follows.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Experts therefore sometimes study it in forensic work.\nQ. Neat writing may reflect calm and care.\nR. A person's handwriting often reveals mood.\nS. Hurried writing may indicate impatience.",
+   "options": [
+    "R",
+    "Q",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence R opens the paragraph. Opens with the claim; 'it' refers to handwriting.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Famine struck Bengal in 1943.\nQ. The tragedy remains a dark chapter of colonial rule.\nR. Millions died of hunger.\nS. Food was exported even as people starved.",
+   "options": [
+    "S",
+    "R",
+    "Q",
+    "P"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sentence P opens the paragraph. The event introduced; consequences follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. In the south, the bride and groom exchange garlands.\nQ. Every Indian wedding has its own rituals.\nR. In the north, they walk around a holy fire.\nS. Despite these differences, the spirit of celebration is the same.",
+   "options": [
+    "Q",
+    "R",
+    "S",
+    "P"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q opens the paragraph. General claim; examples and 'these differences' follow.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. He remains unapologetic.\nQ. They say it makes them look late.\nR. Sanjay always arrives early to meetings.\nS. His colleagues find this habit annoying.",
+   "options": [
+    "P",
+    "R",
+    "S",
+    "Q"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sentence R opens the paragraph. Gives the subject habit; 'this habit' needs it.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence should come first to make a coherent paragraph?\nP. Offices cannot run without it.\nQ. Wi-Fi has become as essential as electricity.\nR. A single outage can halt an entire city's business.\nS. Students depend on it for classes.",
+   "options": [
+    "Q",
+    "P",
+    "R",
+    "S"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sentence Q opens the paragraph. Claim; 'it' repeated.",
+   "shortcut": "The opener introduces the topic without pronouns or connectors that look back.",
+   "subPattern": "opening-sentence",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

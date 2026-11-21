@@ -1,0 +1,462 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: Every time Mohan wears his blue shirt to a match, his team wins. Hence the blue shirt causes the team to win. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks Mohan's character instead of his claim.",
+    "It assumes that there are only two possible explanations.",
+    "It treats a coincidence of events as proof that one causes the other.",
+    "It defines a term in a circular way."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two things occurring together or in sequence does not show that one causes the other; the winning could be due to many other factors.",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Two autorickshaw drivers in Chennai overcharged me last week, so all autorickshaw drivers in Chennai are cheats. The reasoning above is flawed because it:",
+   "options": [
+    "It relies on the opinion of an unqualified authority.",
+    "It confuses a necessary condition with a sufficient one.",
+    "It generalises about a whole group from a very small number of cases.",
+    "It argues that something is true because it has not been proved false."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two cases cannot support a claim about thousands of drivers (hasty generalisation).",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for 'all' or 'every' based on two or three examples."
+  },
+  {
+   "questionText": "Read the following: Dr Rao's report on Hyderabad's air quality cannot be trusted, because he was once fined for a parking violation. The reasoning above is flawed because it:",
+   "options": [
+    "It generalises from too few cases.",
+    "It assumes the whole has the properties of its parts.",
+    "It rejects the report because of an irrelevant fact about its author rather than the report's content.",
+    "It treats a necessary condition as sufficient."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A parking fine has no bearing on the accuracy of air-quality data; the reasoning attacks the person (ad hominem).",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Either we ban all firecrackers on Diwali or we accept severe pollution. A total ban is impossible, so we must accept severe pollution. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks the person making the proposal.",
+    "It uses a term with two different meanings.",
+    "It presents only two options when other possibilities, such as partial restrictions, exist.",
+    "It assumes an effect precedes its cause."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A false dilemma ignores middle options such as time limits, green crackers or restricted areas.",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Rahul is the best captain in the league because no one leads a team better than he does. The reasoning above is flawed because it:",
+   "options": [
+    "It depends on an authority outside the field.",
+    "It generalises from a sample that is too small.",
+    "It merely restates its conclusion in different words and gives no independent reason.",
+    "It assumes that what is true of the whole is true of each part."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Best captain' and 'no one leads better' say the same thing, so the reasoning is circular.",
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Circular: the premise is the conclusion in other words."
+  },
+  {
+   "questionText": "Read the following: Crores of people watch a certain TV serial every night, so it must be of a high artistic standard. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks those who criticise the serial.",
+    "It offers only two options.",
+    "It takes popularity as proof of quality.",
+    "It assumes that because the serial follows another event it is caused by it."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Large viewership shows popularity, not artistic merit (appeal to the crowd).",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Each player in the Mumbai team is an excellent player, so the Mumbai team is an excellent team. The reasoning above is flawed because it:",
+   "options": [
+    "It assumes that what is true of the whole is true of each part.",
+    "It relies on a small sample.",
+    "It assumes that what is true of each part is true of the whole.",
+    "It attacks the other team."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A team's quality depends on coordination, balance and roles, not just the individual quality (fallacy of composition).",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Company X is among the most profitable in India, so every employee of Company X must be well off. The reasoning above is flawed because it:",
+   "options": [
+    "It assumes that what is true of each part is true of the whole.",
+    "It confuses cause with effect.",
+    "It assumes that what is true of the whole is true of each part.",
+    "It rejects a claim because of its source."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A company's profit says nothing about each employee's pay (fallacy of division).",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A company's rule says that a candidate must hold a degree to be selected. Ravi holds a degree, so he will be selected. The reasoning above is flawed because it:",
+   "options": [
+    "It assumes the whole has the properties of the parts.",
+    "It treats a coincidence as a cause.",
+    "It treats a necessary condition as if it were sufficient.",
+    "It attacks the person instead of the claim."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A degree is required but need not be enough; other requirements may remain.",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Necessary ('must have') is not the same as sufficient ('enough to get')."
+  },
+  {
+   "questionText": "Read the following: A survey at a gymnasium in Pune found that 90% of the members exercise daily. The survey concludes that 90% of Indians exercise daily. The reasoning above is flawed because it:",
+   "options": [
+    "It uses the same term with two different meanings.",
+    "It rejects a view because of who holds it.",
+    "It draws a conclusion about a whole population from an unrepresentative sample.",
+    "It assumes there are only two choices."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gym members are far more likely to exercise than the general population, so the sample is biased.",
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A country is just like a household. A household should not spend more than it earns, so the government should never run a deficit. The reasoning above is flawed because it:",
+   "options": [
+    "It takes a few cases as representing all.",
+    "It treats popularity as proof.",
+    "It assumes that two things are alike in all respects although they differ in the respects that matter.",
+    "It uses a circular definition."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A government can print currency, borrow in its own currency and tax, unlike a household, so the analogy is weak (false analogy).",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A famous cricketer endorses a brand of cement, so that cement must be the strongest available. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks a competitor.",
+    "It generalises from a small sample.",
+    "It relies on the opinion of a person who has no expertise in the area concerned.",
+    "It assumes the two events are linked because one followed the other."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A cricketer is not a qualified judge of cement strength (appeal to an improper authority).",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Ravi proposes a shorter lunch break so that the day ends earlier. Suman replies: 'Ravi wants employees to starve at work, so we must reject his proposal.' The reasoning above is flawed because it:",
+   "options": [
+    "It generalises from too few cases.",
+    "It assumes that the whole shares the traits of its parts.",
+    "It misrepresents the opponent's position and then attacks that distorted version.",
+    "It supports a claim because many people hold it."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ravi proposed a shorter break, not no food; attacking an exaggerated version is a straw man.",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: A teacher tells a student not to smoke. The student replies: 'You smoke yourself, so your advice is worthless.' The reasoning above is flawed because it:",
+   "options": [
+    "It confuses a necessary condition with a sufficient one.",
+    "It treats a coincidence as a cause.",
+    "It rejects advice because of the adviser's conduct instead of examining whether the advice is sound.",
+    "It reasons from an unrepresentative sample."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The soundness of advice does not depend on whether the adviser follows it (tu quoque).",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Nothing is better than good health. A cheap meal is better than nothing. Therefore, a cheap meal is better than good health. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks the person making the claim.",
+    "It assumes that the parts have the property of the whole.",
+    "It uses 'nothing' in two different senses.",
+    "It relies on an unrepresentative sample."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In the first sentence 'nothing' means 'no thing', in the second it means 'having nothing at all'. A shift in meaning is equivocation.",
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for a key word whose meaning changes between premises."
+  },
+  {
+   "questionText": "Read the following: If we allow students to use mobile phones for just one day, soon they will use them all day and stop studying altogether. So we must never allow them even once. The reasoning above is flawed because it:",
+   "options": [
+    "It assumes that only two choices exist.",
+    "It cites an unqualified authority.",
+    "It assumes without justification that one step must lead to an extreme chain of consequences.",
+    "It assumes the sequence of events shows causation."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No evidence is given that one allowed day leads to continuous use; the chain of outcomes is merely asserted (slippery slope).",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: No one has proved that the herbal syrup is harmful, so it must be completely safe. The reasoning above is flawed because it:",
+   "options": [
+    "It judges a claim by its source.",
+    "It uses an analogy between unlike things.",
+    "It takes the lack of proof of harm as proof of safety.",
+    "It assumes that what is true of a part is true of the whole."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Absence of evidence of harm is not evidence of safety, particularly if it has not been tested (argument from ignorance).",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: In summer, towns with higher ice-cream sales report more drowning incidents. Hence, eating ice cream causes drowning. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks the people who eat ice cream.",
+    "It argues in a circle.",
+    "It overlooks a third factor, hot weather, that may cause both.",
+    "It assumes that a small sample represents all towns."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Hot weather increases both ice-cream sales and swimming, so the two are correlated without one causing the other.",
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Look for a hidden common cause behind a correlation."
+  },
+  {
+   "questionText": "Read the following: A firm gave a bonus to its 10 lowest-performing salespeople in the first quarter. Their sales improved by 20% in the second quarter, so the firm concludes that bonuses improve performance. The reasoning above is flawed because it:",
+   "options": [
+    "It attacks the salespeople.",
+    "It relies on a famous authority.",
+    "It ignores that unusually low performers tend to improve anyway.",
+    "It argues in a circle."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Extreme performers tend to move back towards their usual level (regression to the mean), so the improvement may have occurred without any bonus.",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "Selected extremes tend to move toward the average on their own."
+  },
+  {
+   "questionText": "Read the following: Many old buildings in Jaipur's walled city have stood for centuries, so the old methods of construction were stronger than modern ones. The reasoning above is flawed because it:",
+   "options": [
+    "It makes an analogy between unlike things.",
+    "It treats popularity as proof.",
+    "It looks only at the buildings that survived and ignores the ones that collapsed.",
+    "It assumes that only two options exist."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Only strong buildings survive for centuries; the weaker ones have vanished and are not counted (survivorship bias).",
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Accidents in Sector 9 rose by 100% this year, while those in Sector 4 rose by 10%. The officer concludes that Sector 9 is more dangerous than Sector 4. The reasoning above is flawed because it:",
+   "options": [
+    "It reasons from a coincidence.",
+    "It attacks the officer's opponents.",
+    "It cites percentage increases without the base numbers, which may be very different.",
+    "It uses a word in two meanings."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If Sector 9 went from 1 accident to 2 and Sector 4 from 100 to 110, Sector 4 is far more dangerous. Percentage change hides the size of the base.",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null,
+   "shortcut": "A percentage change is meaningless without the base."
+  },
+  {
+   "questionText": "Read the following: Patients in the diabetes ward take more insulin than patients in other wards. Therefore insulin causes diabetes. The reasoning above is flawed because it:",
+   "options": [
+    "It overlooks a hidden third factor.",
+    "It makes a hasty generalisation from a small sample.",
+    "It reverses cause and effect: patients take insulin because they have diabetes.",
+    "It relies on an unqualified authority."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The direction of the cause is reversed: the disease leads to the treatment, not the treatment to the disease.",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: Our village has always chosen its crops by the old almanac, so it is the best way to choose crops. The reasoning above is flawed because it:",
+   "options": [
+    "It assumes the whole shares the traits of its parts.",
+    "It attacks those who disagree.",
+    "It treats long use of a practice as proof of its merit.",
+    "It ignores a possible third cause."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A practice's age does not show that it is best (appeal to tradition).",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The average salary in a company is ₹80,000 a month, so a typical employee in the company earns about ₹80,000. The reasoning above is flawed because it:",
+   "options": [
+    "It reverses cause and effect.",
+    "It attacks the company's critics.",
+    "It ignores that a few very high salaries can pull the average far above what most employees earn.",
+    "It treats a coincidence as a cause."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A mean is affected by extreme values; the typical (median) salary may be much lower.",
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the following: The idea of a four-day work week was first popularised by a foreign magazine, so it cannot suit Indian workplaces. The reasoning above is flawed because it:",
+   "options": [
+    "It reasons from a small sample.",
+    "It treats a necessary condition as sufficient.",
+    "It rejects an idea because of where it came from rather than on its merits.",
+    "It assumes the whole shares the traits of the parts."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The origin of an idea does not decide whether it works (genetic fallacy).",
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

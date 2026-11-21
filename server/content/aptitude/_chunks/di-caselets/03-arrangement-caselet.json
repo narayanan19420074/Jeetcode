@@ -1,0 +1,790 @@
+{
+ "sets": [
+  {
+   "id": "di-caselets-s061",
+   "type": "text",
+   "title": "Auditorium seating, Chennai",
+   "text": "Six friends, Ganesh, Hema, Imran, Jaya, Kiran and Latha, attend a concert at an auditorium in Chennai. They occupy six adjacent seats in one row, numbered 1 to 6 from left to right, one person per seat. There is exactly 1 person between Latha and Hema. Hema sits somewhere to the left of Latha. Ganesh sits somewhere to the left of Kiran. Jaya sits somewhere to the left of Imran. Kiran sits immediately to the left of Imran. There is exactly 1 person between Ganesh and Imran."
+  },
+  {
+   "id": "di-caselets-s062",
+   "type": "text",
+   "title": "Weekly lecture schedule, Kota",
+   "text": "A coaching institute in Kota schedules six different lectures, Physics, Chemistry, Maths, Biology, English and Computer Science, on six consecutive days from Monday to Saturday, one lecture per day. The Chemistry lecture is held on Friday. Physics is held on an earlier day than Biology. Physics and Computer Science are not held on consecutive days. Maths is held on an earlier day than Biology. There is exactly 1 lecture between Chemistry and Computer Science. Biology is held on an earlier day than English."
+  },
+  {
+   "id": "di-caselets-s063",
+   "type": "text",
+   "title": "Offices in a Mumbai tower",
+   "text": "Five firms owned by Aarav, Bhavna, Chetan, Deepa and Eshan each occupy exactly one floor of a five-storey commercial building in Mumbai. The floors are numbered 1 (lowest) to 5 (highest), and each firm is named after its owner. Eshan's firm is on floor 3. There is exactly 1 floor between Deepa and Chetan. Chetan is on a lower floor than Aarav. Chetan and Bhavna are not on adjacent floors."
+  },
+  {
+   "id": "di-caselets-s064",
+   "type": "text",
+   "title": "Interview slots, Hyderabad",
+   "text": "Five candidates, Kavya, Lokesh, Meena, Naveen and Pooja, are interviewed at a company in Hyderabad on the same day, one after another, in five hourly slots: 10 AM, 11 AM, 12 noon, 1 PM and 2 PM. There is exactly 1 candidate between Kavya and Meena. There are exactly 2 candidates between Pooja and Naveen. Naveen is interviewed earlier than Pooja. There is exactly 1 candidate between Naveen and Meena."
+  },
+  {
+   "id": "di-caselets-s065",
+   "type": "text",
+   "title": "Trains at a Coimbatore junction",
+   "text": "Six trains, the Nilgiri, Kovai, Cheran, Pandian, Vaigai and Pearl, stand on six parallel platforms of a junction station, numbered 1 to 6 in order, with exactly one train on each platform. The Vaigai stands on platform 2. There are exactly 2 trains between Vaigai and Kovai. Pandian and Kovai do not stand on adjacent platforms. There is exactly 1 train between Vaigai and Nilgiri. Pearl stands on the platform immediately before that of Vaigai."
+  },
+  {
+   "id": "di-caselets-s066",
+   "type": "text",
+   "title": "Marathon finishing order, Pune",
+   "text": "Six runners, Rohit, Sanjay, Tarun, Uday, Vikram and Wasim, finished a 10 km run in Pune. Their finishing positions were 1st to 6th, with no ties. Vikram and Rohit did not finish in consecutive positions. Wasim finished immediately ahead of Sanjay. Vikram finished ahead of Sanjay. Sanjay finished immediately ahead of Uday. There are exactly 2 runners between Uday and Tarun."
+  },
+  {
+   "id": "di-caselets-s067",
+   "type": "text",
+   "title": "Stalls at a Madurai fair",
+   "text": "At a temple fair in Madurai, five shopkeepers, Anbu, Bharath, Chitra, Dinesh and Elango, run five stalls in a straight line, numbered 1 to 5 starting from the entrance gate. Each shopkeeper runs exactly one stall. Anbu runs stall 2. Dinesh has a stall closer to the gate than Elango. Chitra and Anbu do not have adjacent stalls. Chitra has the stall immediately before that of Bharath."
+  },
+  {
+   "id": "di-caselets-s068",
+   "type": "text",
+   "title": "Houses in a Kochi lane",
+   "text": "Six families, Fathima, George, Hari, Indu, Joseph and Kamala, live in six houses along one side of a lane in Kochi. The houses are numbered 1 to 6 starting from the main road, and each family lives in exactly one house. Hari lives closer to the main road than Fathima. Hari lives in the house immediately before that of George. There is exactly 1 house between Joseph and Indu. Indu lives closer to the main road than Hari. There are exactly 2 houses between Indu and Hari."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Who sits in seat 1?",
+   "options": [
+    "Hema",
+    "Ganesh",
+    "Kiran",
+    "Jaya"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. So seat 1 is Hema.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s061",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "In which seat does Ganesh sit?",
+   "options": [
+    "seat 5",
+    "seat 4",
+    "seat 6",
+    "seat 1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. Ganesh is in seat 4.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "Who sits immediately to the left of Latha?",
+   "options": [
+    "Ganesh",
+    "Imran",
+    "Jaya",
+    "Hema"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. The one immediately before Latha is Jaya.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "How many persons are there between Imran and Jaya in the order?",
+   "options": [
+    "4",
+    "5",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. Imran is in seat 6 and Jaya in seat 2, so there are 4 − 1 = 3 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s061",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Kiran and Jaya exchange their positions, then who sits immediately to the right of Hema in the new order?",
+   "options": [
+    "Kiran",
+    "Hema",
+    "Imran",
+    "Latha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 192 → 96 → 48 → 24 → 4 → 1, leaving a single order. Order: seat 1: Hema, seat 2: Jaya, seat 3: Latha, seat 4: Ganesh, seat 5: Kiran, seat 6: Imran. After exchanging Kiran (seat 5) and Jaya (seat 2), the new order is Hema, Kiran, Latha, Ganesh, Jaya, Imran. The one right after Hema is Kiran.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s061"
+  },
+  {
+   "questionText": "Which lecture is held on Friday?",
+   "options": [
+    "Computer Science",
+    "Chemistry",
+    "Maths",
+    "Biology"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. So Friday is Chemistry.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s062",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "On which day is the English lecture held?",
+   "options": [
+    "Wednesday",
+    "Friday",
+    "Saturday",
+    "Monday"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. English is in Saturday.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "Which lecture is held on the day immediately before the Maths lecture?",
+   "options": [
+    "English",
+    "Biology",
+    "Chemistry",
+    "Physics"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. The one immediately before Maths is Physics.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "How many lectures are there between Physics and English in the order?",
+   "options": [
+    "4",
+    "5",
+    "6",
+    "3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. Physics is in Monday and English in Saturday, so there are 5 − 1 = 4 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s062",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Computer Science and Physics exchange their positions, then which lecture is held on the day immediately after the Maths lecture in the new order?",
+   "options": [
+    "Computer Science",
+    "Physics",
+    "Biology",
+    "Chemistry"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 60 → 36 → 24 → 3 → 1, leaving a single order. Order: Monday: Physics, Tuesday: Maths, Wednesday: Computer Science, Thursday: Biology, Friday: Chemistry, Saturday: English. After exchanging Computer Science (Wednesday) and Physics (Monday), the new order is Computer Science, Maths, Physics, Biology, Chemistry, English. The one right after Maths is Physics.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s062"
+  },
+  {
+   "questionText": "Whose firm is on floor 1?",
+   "options": [
+    "Chetan",
+    "Aarav",
+    "Bhavna",
+    "Eshan"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. So floor 1 is Bhavna.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s063",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "On which floor is Bhavna's firm?",
+   "options": [
+    "floor 2",
+    "floor 5",
+    "floor 3",
+    "floor 1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. Bhavna is in floor 1.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "Whose firm is on the floor immediately below that of Deepa?",
+   "options": [
+    "Bhavna",
+    "Chetan",
+    "Deepa",
+    "Aarav"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. The one immediately before Deepa is Bhavna.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "How many floors are there between Aarav and Deepa in the order?",
+   "options": [
+    "3",
+    "2",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. Aarav is in floor 5 and Deepa in floor 2, so there are 3 − 1 = 2 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s063",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Eshan and Chetan exchange their positions, then whose firm is on the floor immediately above that of Deepa in the new order?",
+   "options": [
+    "Eshan",
+    "Aarav",
+    "Chetan",
+    "Deepa"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 4 → 2 → 1, leaving a single order. Order: floor 1: Bhavna, floor 2: Deepa, floor 3: Eshan, floor 4: Chetan, floor 5: Aarav. After exchanging Eshan (floor 3) and Chetan (floor 4), the new order is Bhavna, Deepa, Chetan, Eshan, Aarav. The one right after Deepa is Chetan.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s063"
+  },
+  {
+   "questionText": "Who is interviewed in the 2 PM slot?",
+   "options": [
+    "Pooja",
+    "Naveen",
+    "Lokesh",
+    "Kavya"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. So 2 PM is Kavya.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s064",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "In which slot is Kavya interviewed?",
+   "options": [
+    "2 PM",
+    "10 AM",
+    "12 noon",
+    "1 PM"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. Kavya is in 2 PM.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "Who is interviewed in the slot immediately before Meena?",
+   "options": [
+    "Kavya",
+    "Lokesh",
+    "Pooja",
+    "Meena"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. The one immediately before Meena is Lokesh.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "How many candidates are there between Meena and Kavya in the order?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. Meena is in 12 noon and Kavya in 2 PM, so there are 2 − 1 = 1 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s064",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Pooja and Naveen exchange their positions, then who is interviewed in the slot immediately after Meena in the new order?",
+   "options": [
+    "Lokesh",
+    "Pooja",
+    "Kavya",
+    "Naveen"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 36 → 8 → 4 → 1, leaving a single order. Order: 10 AM: Naveen, 11 AM: Lokesh, 12 noon: Meena, 1 PM: Pooja, 2 PM: Kavya. After exchanging Pooja (1 PM) and Naveen (10 AM), the new order is Pooja, Lokesh, Meena, Naveen, Kavya. The one right after Meena is Naveen.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s064"
+  },
+  {
+   "questionText": "Which train stands on platform 2?",
+   "options": [
+    "Vaigai",
+    "Kovai",
+    "Cheran",
+    "Pearl"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. So platform 2 is Vaigai.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s065",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "On which platform does the Cheran stand?",
+   "options": [
+    "platform 4",
+    "platform 6",
+    "platform 3",
+    "platform 2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. Cheran is in platform 6.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "Which train stands on the platform immediately before that of the Pandian?",
+   "options": [
+    "Pandian",
+    "Kovai",
+    "Vaigai",
+    "Nilgiri"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. The one immediately before Pandian is Vaigai.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "How many trains are there between Pearl and Kovai in the order?",
+   "options": [
+    "4",
+    "5",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. Pearl is in platform 1 and Kovai in platform 5, so there are 4 − 1 = 3 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s065",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Cheran and Nilgiri exchange their positions, then which train stands on the platform immediately after that of the Kovai in the new order?",
+   "options": [
+    "Nilgiri",
+    "Pearl",
+    "Vaigai",
+    "Pandian"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 120 → 24 → 12 → 4 → 1, leaving a single order. Order: platform 1: Pearl, platform 2: Vaigai, platform 3: Pandian, platform 4: Nilgiri, platform 5: Kovai, platform 6: Cheran. After exchanging Cheran (platform 6) and Nilgiri (platform 4), the new order is Pearl, Vaigai, Pandian, Cheran, Kovai, Nilgiri. The one right after Kovai is Nilgiri.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s065"
+  },
+  {
+   "questionText": "Who finished in position 3?",
+   "options": [
+    "Vikram",
+    "Wasim",
+    "Rohit",
+    "Uday"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. So position 3 is Wasim.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s066",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "In which position did Uday finish?",
+   "options": [
+    "position 2",
+    "position 6",
+    "position 5",
+    "position 1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. Uday is in position 5.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "Who finished immediately ahead of Wasim?",
+   "options": [
+    "Wasim",
+    "Uday",
+    "Rohit",
+    "Tarun"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. The one immediately before Wasim is Tarun.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "How many runners are there between Wasim and Rohit in the order?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. Wasim is in position 3 and Rohit in position 6, so there are 3 − 1 = 2 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s066",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Rohit and Sanjay exchange their positions, then who finished immediately behind Uday in the new order?",
+   "options": [
+    "Vikram",
+    "Sanjay",
+    "Rohit",
+    "Wasim"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 480 → 72 → 36 → 6 → 1, leaving a single order. Order: position 1: Vikram, position 2: Tarun, position 3: Wasim, position 4: Sanjay, position 5: Uday, position 6: Rohit. After exchanging Rohit (position 6) and Sanjay (position 4), the new order is Vikram, Tarun, Wasim, Rohit, Uday, Sanjay. The one right after Uday is Sanjay.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s066"
+  },
+  {
+   "questionText": "Who runs stall 4?",
+   "options": [
+    "Elango",
+    "Anbu",
+    "Chitra",
+    "Dinesh"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. So stall 4 is Chitra.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s067",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "Which stall does Chitra run?",
+   "options": [
+    "stall 5",
+    "stall 1",
+    "stall 2",
+    "stall 4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. Chitra is in stall 4.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "Whose stall is immediately after that of Chitra, moving away from the gate?",
+   "options": [
+    "Bharath",
+    "Anbu",
+    "Dinesh",
+    "Chitra"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. The one immediately after Chitra is Bharath.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "How many stalls are there between Bharath and Elango in the order?",
+   "options": [
+    "2",
+    "1",
+    "3",
+    "0"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. Bharath is in stall 5 and Elango in stall 3, so there are 2 − 1 = 1 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s067",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Elango and Dinesh exchange their positions, then whose stall is immediately after that of Anbu, moving away from the gate in the new order?",
+   "options": [
+    "Elango",
+    "Bharath",
+    "Dinesh",
+    "Anbu"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 120 → 24 → 12 → 6 → 1, leaving a single order. Order: stall 1: Dinesh, stall 2: Anbu, stall 3: Elango, stall 4: Chitra, stall 5: Bharath. After exchanging Elango (stall 3) and Dinesh (stall 1), the new order is Elango, Anbu, Dinesh, Chitra, Bharath. The one right after Anbu is Dinesh.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s067"
+  },
+  {
+   "questionText": "Who lives in house 5?",
+   "options": [
+    "Indu",
+    "Kamala",
+    "Joseph",
+    "George"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. So house 5 is George.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s068",
+   "shortcut": "Draw a row of boxes and place the fixed-position clues first."
+  },
+  {
+   "questionText": "In which house does Hari live?",
+   "options": [
+    "house 4",
+    "house 5",
+    "house 1",
+    "house 6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. Hari is in house 4.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "Who lives in the house immediately after that of George, moving away from the main road?",
+   "options": [
+    "Joseph",
+    "Fathima",
+    "Kamala",
+    "George"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. The one immediately after George is Fathima.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s068"
+  },
+  {
+   "questionText": "How many houses are there between Joseph and Fathima in the order?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. Joseph is in house 3 and Fathima in house 6, so there are 3 − 1 = 2 in between.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s068",
+   "shortcut": "Between = difference of positions − 1."
+  },
+  {
+   "questionText": "If Hari and Joseph exchange their positions, then who lives in the house immediately after that of Kamala, moving away from the main road in the new order?",
+   "options": [
+    "Joseph",
+    "George",
+    "Indu",
+    "Hari"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Applying the clues one by one narrows the possible arrangements 720 → 360 → 60 → 12 → 2 → 1, leaving a single order. Order: house 1: Indu, house 2: Kamala, house 3: Joseph, house 4: Hari, house 5: George, house 6: Fathima. After exchanging Hari (house 4) and Joseph (house 3), the new order is Indu, Kamala, Hari, Joseph, George, Fathima. The one right after Kamala is Hari.",
+   "subPattern": "arrangement-caselet",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-caselets-s068"
+  }
+ ]
+}

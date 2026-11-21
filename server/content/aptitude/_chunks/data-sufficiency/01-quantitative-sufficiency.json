@@ -1,0 +1,2765 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Two drums contain water. Quantities are whole numbers of litres.\nWhat is the quantity in the first drum?\nStatement I: The quantity in the first drum and the quantity in the second drum add up to 48 litres.\nStatement II: The quantity in the second drum is 31 litres.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with first = 17, second = 31 the answer is 17 litres, but with first = 1, second = 47 it is 1 litres. Statement II is not enough: with first = 17, second = 31 the answer is 17 litres, but with first = 1, second = 31 it is 1 litres. Taking both together fixes the answer uniquely as 17 litres. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two drums contain water. Quantities are whole numbers of litres.\nWhat is the total of the quantity in the first drum and the quantity in the second drum?\nStatement I: The quantity in the first drum is 17 litres.\nStatement II: The quantity in the first drum and the quantity in the second drum add up to 48 litres.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with first = 17, second = 31 the answer is 48 litres, but with first = 17, second = 1 it is 18 litres. Statement II fixes the answer uniquely as 48 litres. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pooja and Farida played in the same cricket match. Runs are whole numbers.\nBy how much do Pooja's score and Farida's score differ?\nStatement I: Pooja's score and Farida's score add up to 43 runs.\nStatement II: Farida's score is more than 8 runs.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Pooja = 30, Farida = 13 the answer is 17 runs, but with Pooja = 21, Farida = 22 it is 1 runs. Statement II is not enough: with Pooja = 30, Farida = 13 the answer is 17 runs, but with Pooja = 9, Farida = 9 it is 0 runs. Taking both together is not enough: with Pooja = 30, Farida = 13 the answer is 17 runs, but with Pooja = 21, Farida = 22 it is 1 runs. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Pooja and Farida played in the same cricket match. Runs are whole numbers.\nWhat is Farida's score?\nStatement I: Farida's score is 13 runs.\nStatement II: Pooja's score is a multiple of 3.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 13 runs. Statement II is not enough: with Pooja = 30, Farida = 13 the answer is 13 runs, but with Pooja = 3, Farida = 1 it is 1 runs. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya and Imran are colleagues. Their ages are whole numbers of years.\nWhat is Divya's age?\nStatement I: Divya's age is less than 51 years. Also, The ratio of Divya's age to Imran's age is 47:46.\nStatement II: Divya's age is 1 years more than Imran's age. Also, Divya's age is 47 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 47 years. Statement II fixes the answer uniquely as 47 years. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya and Imran are colleagues. Their ages are whole numbers of years.\nWhat is Imran's age?\nStatement I: Divya's age is 47 years.\nStatement II: Divya's age is 1 years more than Imran's age.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Divya = 47, Imran = 46 the answer is 46 years, but with Divya = 47, Imran = 1 it is 1 years. Statement II is not enough: with Divya = 47, Imran = 46 the answer is 46 years, but with Divya = 2, Imran = 1 it is 1 years. Taking both together fixes the answer uniquely as 46 years. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shop sells a pen and a notebook. Their prices are whole numbers of rupees.\nWhat is the price of the notebook?\nStatement I: The price of the notebook is ₹29.\nStatement II: The price of the pen is ₹2 more than the price of the notebook.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹29. Statement II is not enough: with pen = 31, notebook = 29 the answer is ₹29, but with pen = 3, notebook = 1 it is ₹1. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shop sells a pen and a notebook. Their prices are whole numbers of rupees.\nWhat is the price of the pen?\nStatement I: The price of the pen and the price of the notebook add up to ₹60.\nStatement II: The price of the pen is ₹31.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with pen = 31, notebook = 29 the answer is ₹31, but with pen = 1, notebook = 59 it is ₹1. Statement II fixes the answer uniquely as ₹31. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x and y are positive integers.\nWhat is x?\nStatement I: X is less than 20.\nStatement II: X added to three times y makes 54. Also, X is more than y.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = 15, y = 13 the answer is 15, but with x = 1, y = 1 it is 1. Statement II is not enough: with x = 15, y = 13 the answer is 15, but with x = 18, y = 12 it is 18. Taking both together is not enough: with x = 15, y = 13 the answer is 15, but with x = 18, y = 12 it is 18. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x and y are positive integers.\nBy how much do x and y differ?\nStatement I: X is a multiple of 3. Also, X is 2 more than y.\nStatement II: X and y add up to 28. Also, x is 2 more than y.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 2. Statement II fixes the answer uniquely as 2. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Gopal and Karthik are colleagues. Their ages are whole numbers of years.\nWhat is the total of Gopal's age and Karthik's age?\nStatement I: Gopal's age and Karthik's age add up to 65 years.\nStatement II: Gopal's age is 20 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 65 years. Statement II is not enough: with Gopal = 20, Karthik = 45 the answer is 65 years, but with Gopal = 20, Karthik = 1 it is 21 years. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Gopal and Karthik are colleagues. Their ages are whole numbers of years.\nWhat is Gopal's age?\nStatement I: Gopal's age and Karthik's age add up to 65 years.\nStatement II: Karthik's age is 45 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Gopal = 20, Karthik = 45 the answer is 20 years, but with Gopal = 5, Karthik = 60 it is 5 years. Statement II is not enough: with Gopal = 20, Karthik = 45 the answer is 20 years, but with Gopal = 1, Karthik = 45 it is 1 years. Taking both together fixes the answer uniquely as 20 years. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Suresh and Kavya played in the same cricket match. Runs are whole numbers.\nWhat is Suresh's score?\nStatement I: Twice Suresh's score added to Kavya's score makes 104 runs.\nStatement II: Suresh's score and Kavya's score add up to 58 runs. Also, Suresh's score is 34 runs more than Kavya's score.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Suresh = 46, Kavya = 12 the answer is 46 runs, but with Suresh = 22, Kavya = 60 it is 22 runs. Statement II fixes the answer uniquely as 46 runs. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Suresh and Kavya played in the same cricket match. Runs are whole numbers.\nBy how much do Suresh's score and Kavya's score differ?\nStatement I: Suresh's score is more than Kavya's score.\nStatement II: The ratio of Suresh's score to Kavya's score is 23:6.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Suresh = 46, Kavya = 12 the answer is 34 runs, but with Suresh = 2, Kavya = 1 it is 1 runs. Statement II is not enough: with Suresh = 46, Kavya = 12 the answer is 34 runs, but with Suresh = 23, Kavya = 6 it is 17 runs. Taking both together is not enough: with Suresh = 46, Kavya = 12 the answer is 34 runs, but with Suresh = 23, Kavya = 6 it is 17 runs. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya wrote two papers, Maths and Physics. Marks are whole numbers.\nWhat is Kavya's marks in Physics?\nStatement I: The ratio of Kavya's marks in Maths to Kavya's marks in Physics is 49:38. Also, Kavya's marks in Maths and Kavya's marks in Physics add up to 87 marks.\nStatement II: Kavya's marks in Physics is 38 marks.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 38 marks. Statement II fixes the answer uniquely as 38 marks. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya wrote two papers, Maths and Physics. Marks are whole numbers.\nBy how much do Kavya's marks in Maths and Kavya's marks in Physics differ?\nStatement I: Kavya's marks in Maths is 11 marks more than Kavya's marks in Physics.\nStatement II: Kavya's marks in Physics is more than 35 marks.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 11 marks. Statement II is not enough: with Maths = 49, Physics = 38 the answer is 11 marks, but with Maths = 36, Physics = 36 it is 0 marks. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Deepa and Rahul played in the same cricket match. Runs are whole numbers.\nWhat is Deepa's score?\nStatement I: Deepa's score added to three times Rahul's score makes 102 runs.\nStatement II: Deepa's score is 36 runs.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with Deepa = 36, Rahul = 22 the answer is 36 runs, but with Deepa = 3, Rahul = 33 it is 3 runs. Statement II fixes the answer uniquely as 36 runs. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Deepa and Rahul played in the same cricket match. Runs are whole numbers.\nWhat is the total of Deepa's score and Rahul's score?\nStatement I: Rahul's score is more than 21 runs.\nStatement II: Twice Deepa's score added to Rahul's score makes 94 runs.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Deepa = 36, Rahul = 22 the answer is 58 runs, but with Deepa = 1, Rahul = 22 it is 23 runs. Statement II is not enough: with Deepa = 36, Rahul = 22 the answer is 58 runs, but with Deepa = 46, Rahul = 2 it is 48 runs. Taking both together is not enough: with Deepa = 36, Rahul = 22 the answer is 58 runs, but with Deepa = 35, Rahul = 24 it is 59 runs. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x and y are positive integers.\nWhat is y?\nStatement I: Y is 32. Also, X is less than 24.\nStatement II: The ratio of x to y is 19:32. Also, x and y add up to 51.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 32. Statement II fixes the answer uniquely as 32. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x and y are positive integers.\nBy how much do x and y differ?\nStatement I: Y is 32.\nStatement II: X is 19.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with x = 19, y = 32 the answer is 13, but with x = 32, y = 32 it is 0. Statement II is not enough: with x = 19, y = 32 the answer is 13, but with x = 19, y = 19 it is 0. Taking both together fixes the answer uniquely as 13. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 4x + 8 = 100.\nStatement II: x is less than 27.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 23. Statement II is not enough: with x = 23 the answer is 23, but with x = -50 it is -50. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is greater than 13.\nStatement II: x lies strictly between 14 and 20.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = 16 the answer is 16, but with x = 14 it is 14. Statement II is not enough: with x = 16 the answer is 16, but with x = 15 it is 15. Taking both together is not enough: with x = 16 the answer is 16, but with x = 15 it is 15. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 5x − 7 = -2.\nStatement II: 3x + 4 = 7.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 1. Statement II fixes the answer uniquely as 1. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x² = 1.\nStatement II: x satisfies x² + 8x − 9 = 0.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with x = 1 the answer is 1, but with x = -1 it is -1. Statement II is not enough: with x = 1 the answer is 1, but with x = -9 it is -9. Taking both together fixes the answer uniquely as 1. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is less than 18.\nStatement II: 3x + 3 = 42.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with x = 13 the answer is 13, but with x = -50 it is -50. Statement II fixes the answer uniquely as 13. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is negative.\nStatement II: x is odd. Also, x lies strictly between -12 and -10.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with x = -11 the answer is -11, but with x = -50 it is -50. Statement II fixes the answer uniquely as -11. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is odd.\nStatement II: x is positive.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = 23 the answer is 23, but with x = -49 it is -49. Statement II is not enough: with x = 23 the answer is 23, but with x = 1 it is 1. Taking both together is not enough: with x = 23 the answer is 23, but with x = 1 it is 1. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 6x − 4 = 176.\nStatement II: x is even.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 30. Statement II is not enough: with x = 30 the answer is 30, but with x = -50 it is -50. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 4x − 6 = 58.\nStatement II: 4x + 4 = 68.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 16. Statement II fixes the answer uniquely as 16. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x² = 121.\nStatement II: x satisfies x² − 20x + 99 = 0.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with x = 11 the answer is 11, but with x = -11 it is -11. Statement II is not enough: with x = 11 the answer is 11, but with x = 9 it is 9. Taking both together fixes the answer uniquely as 11. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is less than 13.\nStatement II: x² = 36.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = 6 the answer is 6, but with x = -50 it is -50. Statement II is not enough: with x = 6 the answer is 6, but with x = -6 it is -6. Taking both together is not enough: with x = 6 the answer is 6, but with x = -6 it is -6. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 4x − 7 = 85.\nStatement II: x is odd.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 23. Statement II is not enough: with x = 23 the answer is 23, but with x = -49 it is -49. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: The absolute value of (x − 2) is 15.\nStatement II: x lies strictly between -15 and -9.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with x = -13 the answer is -13, but with x = 17 it is 17. Statement II is not enough: with x = -13 the answer is -13, but with x = -14 it is -14. Taking both together fixes the answer uniquely as -13. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: The absolute value of (x − -9) is 17.\nStatement II: 4x + 7 = 39.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with x = 8 the answer is 8, but with x = -26 it is -26. Statement II fixes the answer uniquely as 8. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 5x + 4 = 94.\nStatement II: x² = 324 and x is positive.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 18. Statement II fixes the answer uniquely as 18. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 2x + 8 = 24.\nStatement II: x² = 64.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 8. Statement II is not enough: with x = 8 the answer is 8, but with x = -8 it is -8. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x lies strictly between -9 and -3. Also, x is odd.\nStatement II: x is a multiple of 5. Also, x is less than 1.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = -5 the answer is -5, but with x = -7 it is -7. Statement II is not enough: with x = -5 the answer is -5, but with x = -50 it is -50. Taking both together fixes the answer uniquely as -5. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is even.\nStatement II: x² = 144.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = -12 the answer is -12, but with x = -50 it is -50. Statement II is not enough: with x = -12 the answer is -12, but with x = 12 it is 12. Taking both together is not enough: with x = -12 the answer is -12, but with x = 12 it is 12. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: x is positive.\nStatement II: 3x − 12 = 66.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with x = 26 the answer is 26, but with x = 1 it is 1. Statement II fixes the answer uniquely as 26. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x is an integer.\nWhat is the value of x?\nStatement I: 2x + 4 = -6. Also, x satisfies x² + 11x + 30 = 0.\nStatement II: x² = 25 and x is negative.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as -5. Statement II fixes the answer uniquely as -5. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the cost price?\nStatement I: The cost price is less than ₹560.\nStatement II: The profit percentage is more than 47%. Also, The cost price is more than ₹480.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 530, profit % = 50 the answer is ₹530, but with cost price = 10, profit % = 1 it is ₹10. Statement II is not enough: with cost price = 530, profit % = 50 the answer is ₹530, but with cost price = 490, profit % = 48 it is ₹490. Taking both together is not enough: with cost price = 530, profit % = 50 the answer is ₹530, but with cost price = 490, profit % = 48 it is ₹490. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the selling price?\nStatement I: The cost price is more than ₹480.\nStatement II: The profit percentage is more than 47%. Also, The selling price is ₹795.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with cost price = 530, profit % = 50 the answer is ₹795, but with cost price = 490, profit % = 4 it is ₹2548/5. Statement II fixes the answer uniquely as ₹795. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The profit is 15% of the cost price. Also, the cost price is ₹200.\nStatement II: The cost price is more than ₹180.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹30. Statement II is not enough: with cost price = 200, profit % = 15 the answer is ₹30, but with cost price = 190, profit % = 1 it is ₹19/10. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the cost price?\nStatement I: The profit percentage is 15%.\nStatement II: The profit is ₹30.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 200, profit % = 15 the answer is ₹200, but with cost price = 10, profit % = 15 it is ₹10. Statement II is not enough: with cost price = 200, profit % = 15 the answer is ₹200, but with cost price = 60, profit % = 50 it is ₹60. Taking both together fixes the answer uniquely as ₹200. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the selling price?\nStatement I: The cost price is less than ₹690. Also, The selling price is ₹649.\nStatement II: The profit is 10% of the cost price. Also, the cost price is ₹590.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as ₹649. Statement II fixes the answer uniquely as ₹649. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the cost price?\nStatement I: The cost price is ₹590.\nStatement II: The selling price is ₹649.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹590. Statement II is not enough: with cost price = 590, profit % = 10 the answer is ₹590, but with cost price = 550, profit % = 18 it is ₹550. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a mobile cover at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the selling price?\nStatement I: The cost price is more than ₹320.\nStatement II: The profit percentage is 5%.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 340, profit % = 5 the answer is ₹357, but with cost price = 330, profit % = 2 it is ₹1683/5. Statement II is not enough: with cost price = 340, profit % = 5 the answer is ₹357, but with cost price = 10, profit % = 5 it is ₹21/2. Taking both together is not enough: with cost price = 340, profit % = 5 the answer is ₹357, but with cost price = 360, profit % = 5 it is ₹378. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a mobile cover at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The selling price is ₹357.\nStatement II: The cost price is ₹340.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with cost price = 340, profit % = 5 the answer is ₹17, but with cost price = 350, profit % = 2 it is ₹7. Statement II is not enough: with cost price = 340, profit % = 5 the answer is ₹17, but with cost price = 340, profit % = 1 it is ₹17/5. Taking both together fixes the answer uniquely as ₹17. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a table lamp at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The cost price is ₹180.\nStatement II: The profit is ₹36.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with cost price = 180, profit % = 20 the answer is ₹36, but with cost price = 180, profit % = 1 it is ₹9/5. Statement II fixes the answer uniquely as ₹36. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a table lamp at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the selling price?\nStatement I: The cost price is less than ₹210. Also, The selling price is ₹216.\nStatement II: The profit percentage is 20%. Also, The cost price is ₹180.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as ₹216. Statement II fixes the answer uniquely as ₹216. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a wall clock at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the selling price?\nStatement I: The selling price is ₹696.\nStatement II: The profit percentage is 20%.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹696. Statement II is not enough: with cost price = 580, profit % = 20 the answer is ₹696, but with cost price = 10, profit % = 20 it is ₹12. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a wall clock at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit percentage?\nStatement I: The profit percentage is less than 23%. Also, The cost price is ₹580.\nStatement II: The profit percentage is 20%. Also, The cost price is more than ₹510.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with cost price = 580, profit % = 20 the answer is 20%, but with cost price = 580, profit % = 1 it is 1%. Statement II fixes the answer uniquely as 20%. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a mobile cover at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the cost price?\nStatement I: The selling price is ₹299.\nStatement II: The profit percentage is 30%.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with cost price = 230, profit % = 30 the answer is ₹230, but with cost price = 260, profit % = 15 it is ₹260. Statement II is not enough: with cost price = 230, profit % = 30 the answer is ₹230, but with cost price = 10, profit % = 30 it is ₹10. Taking both together fixes the answer uniquely as ₹230. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a mobile cover at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The selling price is ₹299.\nStatement II: The cost price is more than ₹200.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 230, profit % = 30 the answer is ₹69, but with cost price = 260, profit % = 15 it is ₹39. Statement II is not enough: with cost price = 230, profit % = 30 the answer is ₹69, but with cost price = 210, profit % = 1 it is ₹21/10. Taking both together is not enough: with cost price = 230, profit % = 30 the answer is ₹69, but with cost price = 260, profit % = 15 it is ₹39. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a wall clock at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The profit is ₹64. Also, The profit percentage is 40%.\nStatement II: The profit is 40% of the cost price. Also, the cost price is ₹160.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as ₹64. Statement II fixes the answer uniquely as ₹64. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a wall clock at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the cost price?\nStatement I: The profit percentage is more than 38%.\nStatement II: The cost price is ₹160.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with cost price = 160, profit % = 40 the answer is ₹160, but with cost price = 10, profit % = 39 it is ₹10. Statement II fixes the answer uniquely as ₹160. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The profit is ₹76.\nStatement II: The cost price is ₹190.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹76. Statement II is not enough: with cost price = 190, profit % = 40 the answer is ₹76, but with cost price = 190, profit % = 1 it is ₹19/10. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit percentage?\nStatement I: The cost price is more than ₹140.\nStatement II: The profit percentage is more than 37%.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 190, profit % = 40 the answer is 40%, but with cost price = 150, profit % = 1 it is 1%. Statement II is not enough: with cost price = 190, profit % = 40 the answer is 40%, but with cost price = 10, profit % = 38 it is 38%. Taking both together is not enough: with cost price = 190, profit % = 40 the answer is 40%, but with cost price = 150, profit % = 38 it is 38%. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the profit in rupees?\nStatement I: The cost price is more than ₹230. Also, The profit is ₹150.\nStatement II: The profit percentage is 50%. Also, The profit is ₹150.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as ₹150. Statement II fixes the answer uniquely as ₹150. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a school bag at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nWhat is the selling price?\nStatement I: The profit percentage is 50%.\nStatement II: Had it been sold for ₹50 more, the profit would have been 200/3%.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with cost price = 300, profit % = 50 the answer is ₹450, but with cost price = 10, profit % = 50 it is ₹15. Statement II is not enough: with cost price = 300, profit % = 50 the answer is ₹450, but with cost price = 120, profit % = 25 it is ₹150. Taking both together fixes the answer uniquely as ₹450. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ganesh deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the sum deposited?\nStatement I: The rate of interest is 10% per annum.\nStatement II: The principal is more than ₹2400.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 2700, rate = 10, years = 3 the answer is ₹2700, but with principal = 100, rate = 10, years = 1 it is ₹100. Statement II is not enough: with principal = 2700, rate = 10, years = 3 the answer is ₹2700, but with principal = 2500, rate = 1, years = 1 it is ₹2500. Taking both together is not enough: with principal = 2700, rate = 10, years = 3 the answer is ₹2700, but with principal = 2500, rate = 10, years = 1 it is ₹2500. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ganesh deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The rate is less than 13% per annum.\nStatement II: The amount at the end is ₹3510.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with principal = 2700, rate = 10, years = 3 the answer is ₹3510, but with principal = 100, rate = 1, years = 1 it is ₹101. Statement II fixes the answer uniquely as ₹3510. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the sum deposited?\nStatement I: The principal is ₹2000. Also, The interest earned each year is ₹140.\nStatement II: The time is less than 5 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹2000. Statement II is not enough: with principal = 2000, rate = 7, years = 4 the answer is ₹2000, but with principal = 100, rate = 1, years = 1 it is ₹100. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the rate of interest per annum?\nStatement I: The interest earned each year is ₹140.\nStatement II: The principal is ₹2000.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with principal = 2000, rate = 7, years = 4 the answer is 7%, but with principal = 2800, rate = 5, years = 1 it is 5%. Statement II is not enough: with principal = 2000, rate = 7, years = 4 the answer is 7%, but with principal = 2000, rate = 1, years = 1 it is 1%. Taking both together fixes the answer uniquely as 7%. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Manoj deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the rate of interest per annum?\nStatement I: The rate of interest is 8% per annum.\nStatement II: The rate is 8% and the time is 4 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 8%. Statement II fixes the answer uniquely as 8%. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Manoj deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the simple interest earned?\nStatement I: The interest earned each year is ₹72.\nStatement II: The principal is more than ₹600.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 900, rate = 8, years = 4 the answer is ₹288, but with principal = 800, rate = 9, years = 1 it is ₹72. Statement II is not enough: with principal = 900, rate = 8, years = 4 the answer is ₹288, but with principal = 700, rate = 1, years = 1 it is ₹7. Taking both together is not enough: with principal = 900, rate = 8, years = 4 the answer is ₹288, but with principal = 800, rate = 9, years = 1 it is ₹72. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Suresh deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the sum deposited?\nStatement I: The principal is ₹800.\nStatement II: The time is 2 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹800. Statement II is not enough: with principal = 800, rate = 5, years = 2 the answer is ₹800, but with principal = 100, rate = 1, years = 2 it is ₹100. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Suresh deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The time is less than 5 years.\nStatement II: The amount at the end is ₹880.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with principal = 800, rate = 5, years = 2 the answer is ₹880, but with principal = 100, rate = 1, years = 1 it is ₹101. Statement II fixes the answer uniquely as ₹880. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Priya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the simple interest earned?\nStatement I: The product of the rate and the time is 6.\nStatement II: The principal is ₹1900.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 1900, rate = 3, years = 2 the answer is ₹114, but with principal = 100, rate = 2, years = 3 it is ₹6. Statement II is not enough: with principal = 1900, rate = 3, years = 2 the answer is ₹114, but with principal = 1900, rate = 1, years = 1 it is ₹19. Taking both together fixes the answer uniquely as ₹114. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Priya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The principal is ₹1900. Also, the interest earned is ₹114.\nStatement II: The amount at the end is ₹2014. Also, The rate of interest is 3% per annum.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as ₹2014. Statement II fixes the answer uniquely as ₹2014. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Priya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the rate of interest per annum?\nStatement I: The time is 4 years.\nStatement II: The principal is ₹1500.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 1500, rate = 5, years = 4 the answer is 5%, but with principal = 100, rate = 1, years = 4 it is 1%. Statement II is not enough: with principal = 1500, rate = 5, years = 4 the answer is 5%, but with principal = 1500, rate = 1, years = 1 it is 1%. Taking both together is not enough: with principal = 1500, rate = 5, years = 4 the answer is 5%, but with principal = 1500, rate = 1, years = 4 it is 1%. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Priya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the sum deposited?\nStatement I: The principal is ₹1500.\nStatement II: The time is 4 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as ₹1500. Statement II is not enough: with principal = 1500, rate = 5, years = 4 the answer is ₹1500, but with principal = 100, rate = 1, years = 4 it is ₹100. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Farida deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The time is 5 years.\nStatement II: The principal is ₹1900. Also, the interest earned is ₹475.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with principal = 1900, rate = 5, years = 5 the answer is ₹2375, but with principal = 100, rate = 1, years = 5 it is ₹105. Statement II fixes the answer uniquely as ₹2375. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Farida deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the sum deposited?\nStatement I: The amount at the end is ₹2375.\nStatement II: The principal is ₹1900.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as ₹1900. Statement II fixes the answer uniquely as ₹1900. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Meena deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the simple interest earned?\nStatement I: The rate of interest is 4% per annum. Also, The principal is ₹2000.\nStatement II: The product of the rate and the time is 20.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 2000, rate = 4, years = 5 the answer is ₹400, but with principal = 2000, rate = 4, years = 1 it is ₹80. Statement II is not enough: with principal = 2000, rate = 4, years = 5 the answer is ₹400, but with principal = 100, rate = 4, years = 5 it is ₹20. Taking both together fixes the answer uniquely as ₹400. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Meena deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The time is 5 years.\nStatement II: The rate of interest is 4% per annum.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 2000, rate = 4, years = 5 the answer is ₹2400, but with principal = 100, rate = 1, years = 5 it is ₹105. Statement II is not enough: with principal = 2000, rate = 4, years = 5 the answer is ₹2400, but with principal = 100, rate = 4, years = 1 it is ₹104. Taking both together is not enough: with principal = 2000, rate = 4, years = 5 the answer is ₹2400, but with principal = 100, rate = 4, years = 5 it is ₹120. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the simple interest earned?\nStatement I: The product of the rate and the time is 30.\nStatement II: The total simple interest earned is ₹720.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with principal = 2400, rate = 6, years = 5 the answer is ₹720, but with principal = 100, rate = 6, years = 5 it is ₹30. Statement II fixes the answer uniquely as ₹720. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The total simple interest earned is ₹720.\nStatement II: The product of the rate and the time is 30.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 2400, rate = 6, years = 5 the answer is ₹3120, but with principal = 1600, rate = 9, years = 5 it is ₹2320. Statement II is not enough: with principal = 2400, rate = 6, years = 5 the answer is ₹3120, but with principal = 100, rate = 6, years = 5 it is ₹130. Taking both together fixes the answer uniquely as ₹3120. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Deepa deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the rate of interest per annum?\nStatement I: The rate of interest is 10% per annum.\nStatement II: The time is 3 years.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 10%. Statement II is not enough: with principal = 1000, rate = 10, years = 3 the answer is 10%, but with principal = 100, rate = 1, years = 3 it is 1%. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Deepa deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nWhat is the amount at the end of the period?\nStatement I: The total simple interest earned is ₹300. Also, The product of the rate and the time is 30.\nStatement II: The amount at the end is ₹1300.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as ₹1300. Statement II fixes the answer uniquely as ₹1300. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit and Suresh can each complete a piece of work alone in a whole number of days.\nIn how many days can Rohit and Suresh, working together, finish the work?\nStatement I: Working together, they finish the work in 522/47 days.\nStatement II: Suresh alone takes more than 27 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 522/47 days. Statement II is not enough: with Rohit's days = 18, Suresh's days = 29 the answer is 522/47 days, but with Rohit's days = 2, Suresh's days = 28 it is 28/15 days. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit and Suresh can each complete a piece of work alone in a whole number of days.\nIn how many days can Rohit alone finish the work?\nStatement I: The days taken by Rohit alone and by Suresh alone add up to 47. Also, Working together, they finish the work in 522/47 days.\nStatement II: Suresh alone takes 11 days more than Rohit alone. Also, The times taken by Rohit and Suresh alone are in the ratio 18:29.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with Rohit's days = 18, Suresh's days = 29 the answer is 18 days, but with Rohit's days = 29, Suresh's days = 18 it is 29 days. Statement II fixes the answer uniquely as 18 days. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit and Gopal can each complete a piece of work alone in a whole number of days.\nIn how many days can Rohit alone finish the work?\nStatement I: Gopal alone takes more than 7 days.\nStatement II: In one day, Rohit and Gopal together complete 7/45 of the work.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Rohit's days = 18, Gopal's days = 10 the answer is 18 days, but with Rohit's days = 2, Gopal's days = 8 it is 2 days. Statement II is not enough: with Rohit's days = 18, Gopal's days = 10 the answer is 18 days, but with Rohit's days = 10, Gopal's days = 18 it is 10 days. Taking both together is not enough: with Rohit's days = 18, Gopal's days = 10 the answer is 18 days, but with Rohit's days = 10, Gopal's days = 18 it is 10 days. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit and Gopal can each complete a piece of work alone in a whole number of days.\nIn how many days can Rohit and Gopal, working together, finish the work?\nStatement I: Rohit alone takes 8 days more than Gopal alone.\nStatement II: The times taken by Rohit and Gopal alone are in the ratio 9:5.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Rohit's days = 18, Gopal's days = 10 the answer is 45/7 days, but with Rohit's days = 10, Gopal's days = 2 it is 5/3 days. Statement II is not enough: with Rohit's days = 18, Gopal's days = 10 the answer is 45/7 days, but with Rohit's days = 9, Gopal's days = 5 it is 45/14 days. Taking both together fixes the answer uniquely as 45/7 days. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Imran and Divya can each complete a piece of work alone in a whole number of days.\nIn how many days can Divya alone finish the work?\nStatement I: In one day, Imran and Divya together complete 17/60 of the work. Also, Divya alone takes 7 days more than Imran alone.\nStatement II: The times taken by Imran and Divya alone are in the ratio 5:12. Also, In one day, Imran and Divya together complete 17/60 of the work.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 12 days. Statement II fixes the answer uniquely as 12 days. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Imran and Divya can each complete a piece of work alone in a whole number of days.\nIn how many days can Imran and Divya, working together, finish the work?\nStatement I: Divya alone takes 7 days more than Imran alone.\nStatement II: In one day, Imran and Divya together complete 17/60 of the work.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Imran's days = 5, Divya's days = 12 the answer is 60/17 days, but with Imran's days = 2, Divya's days = 9 it is 18/11 days. Statement II fixes the answer uniquely as 60/17 days. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi and Gopal can each complete a piece of work alone in a whole number of days.\nIn how many days can Lakshmi alone finish the work?\nStatement I: Lakshmi alone can finish the work in 13 days.\nStatement II: The days taken by Lakshmi alone and by Gopal alone add up to 47.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 13 days. Statement II is not enough: with Lakshmi's days = 13, Gopal's days = 34 the answer is 13 days, but with Lakshmi's days = 2, Gopal's days = 45 it is 2 days. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi and Gopal can each complete a piece of work alone in a whole number of days.\nIn how many days can Gopal alone finish the work?\nStatement I: Lakshmi alone takes fewer than 18 days.\nStatement II: Gopal alone takes more than 31 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Lakshmi's days = 13, Gopal's days = 34 the answer is 34 days, but with Lakshmi's days = 2, Gopal's days = 2 it is 2 days. Statement II is not enough: with Lakshmi's days = 13, Gopal's days = 34 the answer is 34 days, but with Lakshmi's days = 2, Gopal's days = 32 it is 32 days. Taking both together is not enough: with Lakshmi's days = 13, Gopal's days = 34 the answer is 34 days, but with Lakshmi's days = 2, Gopal's days = 32 it is 32 days. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi and Suresh can each complete a piece of work alone in a whole number of days.\nIn how many days can Suresh alone finish the work?\nStatement I: Lakshmi alone can finish the work in 15 days.\nStatement II: The days taken by Lakshmi alone and by Suresh alone add up to 32.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Lakshmi's days = 15, Suresh's days = 17 the answer is 17 days, but with Lakshmi's days = 15, Suresh's days = 2 it is 2 days. Statement II is not enough: with Lakshmi's days = 15, Suresh's days = 17 the answer is 17 days, but with Lakshmi's days = 30, Suresh's days = 2 it is 2 days. Taking both together fixes the answer uniquely as 17 days. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi and Suresh can each complete a piece of work alone in a whole number of days.\nIn how many days can Lakshmi and Suresh, working together, finish the work?\nStatement I: In one day, Lakshmi and Suresh together complete 32/255 of the work.\nStatement II: Working together, they finish the work in 255/32 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 255/32 days. Statement II fixes the answer uniquely as 255/32 days. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya and Farida can each complete a piece of work alone in a whole number of days.\nIn how many days can Divya alone finish the work?\nStatement I: Farida alone takes more than 4 days.\nStatement II: In one day, Divya and Farida together complete 13/66 of the work.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Divya's days = 33, Farida's days = 6 the answer is 33 days, but with Divya's days = 2, Farida's days = 5 it is 2 days. Statement II is not enough: with Divya's days = 33, Farida's days = 6 the answer is 33 days, but with Divya's days = 6, Farida's days = 33 it is 6 days. Taking both together is not enough: with Divya's days = 33, Farida's days = 6 the answer is 33 days, but with Divya's days = 6, Farida's days = 33 it is 6 days. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya and Farida can each complete a piece of work alone in a whole number of days.\nIn how many days can Farida alone finish the work?\nStatement I: The days taken by Divya alone and by Farida alone add up to 39.\nStatement II: Divya alone takes 27 days more than Farida alone.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Divya's days = 33, Farida's days = 6 the answer is 6 days, but with Divya's days = 37, Farida's days = 2 it is 2 days. Statement II is not enough: with Divya's days = 33, Farida's days = 6 the answer is 6 days, but with Divya's days = 29, Farida's days = 2 it is 2 days. Taking both together fixes the answer uniquely as 6 days. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Sneha and Anita can each complete a piece of work alone in a whole number of days.\nIn how many days can Anita alone finish the work?\nStatement I: Anita alone can finish the work in 8 days.\nStatement II: Sneha alone can finish the work in 12 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 8 days. Statement II is not enough: with Sneha's days = 12, Anita's days = 8 the answer is 8 days, but with Sneha's days = 12, Anita's days = 2 it is 2 days. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Sneha and Anita can each complete a piece of work alone in a whole number of days.\nIn how many days can Sneha alone finish the work?\nStatement I: Anita alone can finish the work in 8 days.\nStatement II: Sneha alone can finish the work in 12 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Sneha's days = 12, Anita's days = 8 the answer is 12 days, but with Sneha's days = 2, Anita's days = 8 it is 2 days. Statement II fixes the answer uniquely as 12 days. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya and Rahul can each complete a piece of work alone in a whole number of days.\nIn how many days can Divya and Rahul, working together, finish the work?\nStatement I: In one day, Divya and Rahul together complete 31/108 of the work.\nStatement II: Working together, they finish the work in 108/31 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 108/31 days. Statement II fixes the answer uniquely as 108/31 days. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya and Rahul can each complete a piece of work alone in a whole number of days.\nIn how many days can Rahul alone finish the work?\nStatement I: Divya alone can finish the work in 4 days.\nStatement II: Rahul alone can finish the work in 27 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Divya's days = 4, Rahul's days = 27 the answer is 27 days, but with Divya's days = 4, Rahul's days = 2 it is 2 days. Statement II fixes the answer uniquely as 27 days. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit and Imran can each complete a piece of work alone in a whole number of days.\nIn how many days can Imran alone finish the work?\nStatement I: Rohit alone takes more days than Imran alone.\nStatement II: Imran alone takes more than 22 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Rohit's days = 27, Imran's days = 24 the answer is 24 days, but with Rohit's days = 3, Imran's days = 2 it is 2 days. Statement II is not enough: with Rohit's days = 27, Imran's days = 24 the answer is 24 days, but with Rohit's days = 2, Imran's days = 23 it is 23 days. Taking both together is not enough: with Rohit's days = 27, Imran's days = 24 the answer is 24 days, but with Rohit's days = 24, Imran's days = 23 it is 23 days. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit and Imran can each complete a piece of work alone in a whole number of days.\nIn how many days can Rohit alone finish the work?\nStatement I: Rohit alone takes 27 days. Also, the two together take 216/17 days.\nStatement II: In one day, Rohit and Imran together complete 17/216 of the work. Also, Rohit alone takes more days than Imran alone.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 27 days. Statement II fixes the answer uniquely as 27 days. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi and Sneha can each complete a piece of work alone in a whole number of days.\nIn how many days can Lakshmi alone finish the work?\nStatement I: Sneha alone can finish the work in 34 days.\nStatement II: Working together, they finish the work in 1122/67 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Lakshmi's days = 33, Sneha's days = 34 the answer is 33 days, but with Lakshmi's days = 2, Sneha's days = 34 it is 2 days. Statement II is not enough: with Lakshmi's days = 33, Sneha's days = 34 the answer is 33 days, but with Lakshmi's days = 34, Sneha's days = 33 it is 34 days. Taking both together fixes the answer uniquely as 33 days. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Lakshmi and Sneha can each complete a piece of work alone in a whole number of days.\nIn how many days can Lakshmi and Sneha, working together, finish the work?\nStatement I: Working together, they finish the work in 1122/67 days.\nStatement II: Lakshmi alone takes fewer than 38 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 1122/67 days. Statement II is not enough: with Lakshmi's days = 33, Sneha's days = 34 the answer is 1122/67 days, but with Lakshmi's days = 2, Sneha's days = 2 it is 1 days. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the speed of the car?\nStatement I: The distance is 560 km.\nStatement II: In 2 hours the car covers 50 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with distance = 560, speed = 25 the answer is 25 km/h, but with distance = 560, speed = 5 it is 5 km/h. Statement II fixes the answer uniquely as 25 km/h. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: The speed is 25 km/h.\nStatement II: The distance is 560 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with distance = 560, speed = 25 the answer is 112/5 hours, but with distance = 50, speed = 25 it is 2 hours. Statement II is not enough: with distance = 560, speed = 25 the answer is 112/5 hours, but with distance = 560, speed = 70 it is 8 hours. Taking both together fixes the answer uniquely as 112/5 hours. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The distance is 580 km.\nStatement II: The speed is 20 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 580 km. Statement II is not enough: with distance = 580, speed = 20 the answer is 580 km, but with distance = 10, speed = 20 it is 10 km. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: The distance is 580 km. Also, The speed is 20 km/h.\nStatement II: The speed is 20 km/h. Also, The journey takes 29 hours.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 29 hours. Statement II fixes the answer uniquely as 29 hours. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: The distance is 560 km.\nStatement II: The speed is more than 70 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with distance = 560, speed = 80 the answer is 7 hours, but with distance = 560, speed = 70 it is 8 hours. Statement II is not enough: with distance = 560, speed = 80 the answer is 7 hours, but with distance = 150, speed = 75 it is 2 hours. Taking both together is not enough: with distance = 560, speed = 80 the answer is 7 hours, but with distance = 560, speed = 84 it is 20/3 hours. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The speed is less than 95 km/h. Also, The journey takes 7 hours.\nStatement II: The journey takes 7 hours. Also, In 2 hours the car covers 160 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with distance = 560, speed = 80 the answer is 560 km, but with distance = 70, speed = 10 it is 70 km. Statement II fixes the answer uniquely as 560 km. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the speed of the car?\nStatement I: The distance is more than 40 km.\nStatement II: The speed is more than 55 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with distance = 70, speed = 60 the answer is 60 km/h, but with distance = 50, speed = 5 it is 5 km/h. Statement II is not enough: with distance = 70, speed = 60 the answer is 60 km/h, but with distance = 10, speed = 56 it is 56 km/h. Taking both together is not enough: with distance = 70, speed = 60 the answer is 60 km/h, but with distance = 50, speed = 56 it is 56 km/h. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The distance is 70 km.\nStatement II: The speed is less than 75 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 70 km. Statement II is not enough: with distance = 70, speed = 60 the answer is 70 km, but with distance = 10, speed = 5 it is 10 km. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A bus travels from Salem to Bengaluru at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: If the speed were 10 km/h more, the journey would take 52/99 hours less.\nStatement II: The journey takes 26/9 hours. Also, the speed is 45 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 26/9 hours. Statement II fixes the answer uniquely as 26/9 hours. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A bus travels from Salem to Bengaluru at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The distance in km is 26/9 times the speed in km/h. Also, The journey takes 26/9 hours.\nStatement II: In 2 hours the bus covers 90 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with distance = 130, speed = 45 the answer is 130 km, but with distance = 260, speed = 90 it is 260 km. Statement II is not enough: with distance = 130, speed = 45 the answer is 130 km, but with distance = 10, speed = 45 it is 10 km. Taking both together fixes the answer uniquely as 130 km. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The speed is less than 70 km/h. Also, The distance is 340 km.\nStatement II: The speed is 50 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 340 km. Statement II is not enough: with distance = 340, speed = 50 the answer is 340 km, but with distance = 10, speed = 50 it is 10 km. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: The distance in km is 34/5 times the speed in km/h. Also, The speed is 50 km/h.\nStatement II: The journey takes 34/5 hours.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 34/5 hours. Statement II fixes the answer uniquely as 34/5 hours. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: In 2 hours the train covers 80 km.\nStatement II: The speed is more than 30 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with distance = 440, speed = 40 the answer is 11 hours, but with distance = 80, speed = 40 it is 2 hours. Statement II is not enough: with distance = 440, speed = 40 the answer is 11 hours, but with distance = 70, speed = 35 it is 2 hours. Taking both together is not enough: with distance = 440, speed = 40 the answer is 11 hours, but with distance = 80, speed = 40 it is 2 hours. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the speed of the train?\nStatement I: The distance in km is 11 times the speed in km/h. Also, The distance is more than 410 km.\nStatement II: The distance in km is 11 times the speed in km/h. Also, The speed is less than 50 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with distance = 440, speed = 40 the answer is 40 km/h, but with distance = 550, speed = 50 it is 50 km/h. Statement II is not enough: with distance = 440, speed = 40 the answer is 40 km/h, but with distance = 110, speed = 10 it is 10 km/h. Taking both together fixes the answer uniquely as 40 km/h. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A motorbike travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the speed of the motorbike?\nStatement I: The speed is more than 75 km/h.\nStatement II: The speed is less than 100 km/h. Also, In 2 hours the motorbike covers 160 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with distance = 320, speed = 80 the answer is 80 km/h, but with distance = 10, speed = 76 it is 76 km/h. Statement II fixes the answer uniquely as 80 km/h. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A motorbike travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The journey takes 4 hours. Also, the speed is 80 km/h.\nStatement II: The distance is 320 km. Also, The distance is more than 290 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 320 km. Statement II fixes the answer uniquely as 320 km. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A motorbike travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nHow long does the journey take?\nStatement I: The distance is 220 km.\nStatement II: The speed is 60 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with distance = 220, speed = 60 the answer is 11/3 hours, but with distance = 220, speed = 55 it is 4 hours. Statement II is not enough: with distance = 220, speed = 60 the answer is 11/3 hours, but with distance = 120, speed = 60 it is 2 hours. Taking both together fixes the answer uniquely as 11/3 hours. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A motorbike travels from Delhi to Jaipur at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: The distance is 220 km.\nStatement II: The speed is more than 50 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 220 km. Statement II is not enough: with distance = 220, speed = 60 the answer is 220 km, but with distance = 10, speed = 51 it is 10 km. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A bus travels from Salem to Bengaluru at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the distance between the two cities?\nStatement I: In 2 hours the bus covers 60 km.\nStatement II: The distance is 140 km. Also, the journey takes 14/3 hours.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with distance = 140, speed = 30 the answer is 140 km, but with distance = 10, speed = 30 it is 10 km. Statement II fixes the answer uniquely as 140 km. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A bus travels from Salem to Bengaluru at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nWhat is the speed of the bus?\nStatement I: The speed is less than 45 km/h.\nStatement II: The distance in km is 14/3 times the speed in km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with distance = 140, speed = 30 the answer is 30 km/h, but with distance = 10, speed = 5 it is 5 km/h. Statement II is not enough: with distance = 140, speed = 30 the answer is 30 km/h, but with distance = 70, speed = 15 it is 15 km/h. Taking both together is not enough: with distance = 140, speed = 30 the answer is 30 km/h, but with distance = 70, speed = 15 it is 15 km/h. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 80 people, some like tea, some like coffee, some like both and some like neither.\nHow many people like coffee?\nStatement I: 37 people like tea.\nStatement II: 36 people like coffee.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with tea = 37, coffee = 36, both = 30 the answer is 36, but with tea = 37, coffee = 0, both = 0 it is 0. Statement II fixes the answer uniquely as 36. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 80 people, some like tea, some like coffee, some like both and some like neither.\nHow many people like tea only?\nStatement I: More than 29 people like both.\nStatement II: 6 people like coffee only.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with tea = 37, coffee = 36, both = 30 the answer is 7, but with tea = 30, coffee = 30, both = 30 it is 0. Statement II is not enough: with tea = 37, coffee = 36, both = 30 the answer is 7, but with tea = 0, coffee = 6, both = 0 it is 0. Taking both together is not enough: with tea = 37, coffee = 36, both = 30 the answer is 7, but with tea = 30, coffee = 36, both = 30 it is 0. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 50 people, some like tea, some like coffee, some like both and some like neither.\nHow many people like neither?\nStatement I: 7 people like neither.\nStatement II: 32 people like exactly one of the two.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 7. Statement II is not enough: with tea = 28, coffee = 26, both = 11 the answer is 7, but with tea = 0, coffee = 32, both = 0 it is 18. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 50 people, some like tea, some like coffee, some like both and some like neither.\nHow many people like tea only?\nStatement I: 15 people like coffee only.\nStatement II: tea is liked by 2 more people than coffee.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with tea = 28, coffee = 26, both = 11 the answer is 17, but with tea = 0, coffee = 15, both = 0 it is 0. Statement II is not enough: with tea = 28, coffee = 26, both = 11 the answer is 17, but with tea = 2, coffee = 0, both = 0 it is 2. Taking both together fixes the answer uniquely as 17. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like maths, some like science, some like both and some like neither.\nHow many people like science?\nStatement I: 30 people like science.\nStatement II: 17 people like maths only. Also, 13 people like neither.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 30. Statement II fixes the answer uniquely as 30. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like maths, some like science, some like both and some like neither.\nHow many people like both?\nStatement I: 30 people like science.\nStatement II: 23 people like maths.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with maths = 23, science = 30, both = 6 the answer is 6, but with maths = 0, science = 30, both = 0 it is 0. Statement II is not enough: with maths = 23, science = 30, both = 6 the answer is 6, but with maths = 23, science = 0, both = 0 it is 0. Taking both together is not enough: with maths = 23, science = 30, both = 6 the answer is 6, but with maths = 23, science = 30, both = 0 it is 0. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like dosa only?\nStatement I: 21 people like exactly one of the two. Also, dosa is liked by 5 fewer people than idli.\nStatement II: More than 12 people like both.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 8. Statement II is not enough: with dosa = 21, idli = 26, both = 13 the answer is 8, but with dosa = 13, idli = 13, both = 13 it is 0. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like idli?\nStatement I: 34 people like at least one of the two.\nStatement II: 26 people like idli.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with dosa = 21, idli = 26, both = 13 the answer is 26, but with dosa = 34, idli = 0, both = 0 it is 0. Statement II fixes the answer uniquely as 26. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like neither?\nStatement I: 28 people like dosa.\nStatement II: 15 people like idli only.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with dosa = 28, idli = 23, both = 8 the answer is 17, but with dosa = 28, idli = 0, both = 0 it is 32. Statement II is not enough: with dosa = 28, idli = 23, both = 8 the answer is 17, but with dosa = 0, idli = 15, both = 0 it is 45. Taking both together fixes the answer uniquely as 17. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like dosa only?\nStatement I: 28 people like dosa.\nStatement II: 23 people like idli.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with dosa = 28, idli = 23, both = 8 the answer is 20, but with dosa = 28, idli = 28, both = 28 it is 0. Statement II is not enough: with dosa = 28, idli = 23, both = 8 the answer is 20, but with dosa = 0, idli = 23, both = 0 it is 0. Taking both together is not enough: with dosa = 28, idli = 23, both = 8 the answer is 20, but with dosa = 28, idli = 23, both = 23 it is 5. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 40 people, some like cricket, some like football, some like both and some like neither.\nHow many people like neither?\nStatement I: 26 people like neither.\nStatement II: 14 people like at least one of the two.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 26. Statement II fixes the answer uniquely as 26. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 40 people, some like cricket, some like football, some like both and some like neither.\nHow many people like football?\nStatement I: 10 people like cricket.\nStatement II: 10 people like football.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with cricket = 10, football = 10, both = 6 the answer is 10, but with cricket = 10, football = 0, both = 0 it is 0. Statement II fixes the answer uniquely as 10. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 40 people, some like cricket, some like football, some like both and some like neither.\nHow many people like cricket only?\nStatement I: 14 people like football.\nStatement II: 25 people like neither.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cricket = 13, football = 14, both = 12 the answer is 1, but with cricket = 0, football = 14, both = 0 it is 0. Statement II is not enough: with cricket = 13, football = 14, both = 12 the answer is 1, but with cricket = 0, football = 15, both = 0 it is 0. Taking both together fixes the answer uniquely as 1. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 40 people, some like cricket, some like football, some like both and some like neither.\nHow many people like football?\nStatement I: 14 people like football.\nStatement II: 3 people like exactly one of the two.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 14. Statement II is not enough: with cricket = 13, football = 14, both = 12 the answer is 14, but with cricket = 3, football = 0, both = 0 it is 0. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like tea, some like coffee, some like both and some like neither.\nHow many people like tea only?\nStatement I: 4 people like tea only. Also, 20 people like coffee.\nStatement II: 24 people like at least one of the two. Also, 4 people like tea only.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 4. Statement II fixes the answer uniquely as 4. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like tea, some like coffee, some like both and some like neither.\nHow many people like coffee?\nStatement I: 18 people like tea.\nStatement II: 20 people like coffee.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with tea = 18, coffee = 20, both = 14 the answer is 20, but with tea = 18, coffee = 0, both = 0 it is 0. Statement II fixes the answer uniquely as 20. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like idli?\nStatement I: 21 people like dosa only.\nStatement II: Fewer than 4 people like both.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with dosa = 24, idli = 35, both = 3 the answer is 35, but with dosa = 21, idli = 0, both = 0 it is 0. Statement II is not enough: with dosa = 24, idli = 35, both = 3 the answer is 35, but with dosa = 0, idli = 0, both = 0 it is 0. Taking both together is not enough: with dosa = 24, idli = 35, both = 3 the answer is 35, but with dosa = 21, idli = 0, both = 0 it is 0. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like dosa only?\nStatement I: 21 people like dosa only.\nStatement II: 56 people like at least one of the two.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 21. Statement II is not enough: with dosa = 24, idli = 35, both = 3 the answer is 21, but with dosa = 0, idli = 56, both = 0 it is 0. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like neither?\nStatement I: 14 people like dosa only.\nStatement II: 18 people like idli.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with dosa = 26, idli = 18, both = 12 the answer is 28, but with dosa = 14, idli = 0, both = 0 it is 46. Statement II is not enough: with dosa = 26, idli = 18, both = 12 the answer is 28, but with dosa = 0, idli = 18, both = 0 it is 42. Taking both together fixes the answer uniquely as 28. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 60 people, some like dosa, some like idli, some like both and some like neither.\nHow many people like dosa only?\nStatement I: 20 people like exactly one of the two. Also, 14 people like dosa only.\nStatement II: 26 people like dosa. Also, 14 people like dosa only.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 14. Statement II fixes the answer uniquely as 14. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the average of P1, P2 and P3?\nStatement I: P3 is less than P2.\nStatement II: The lowest of the three is 13.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with P1 = 17, P2 = 19, P3 = 13 the answer is 49/3 kg, but with P1 = 1, P2 = 2, P3 = 1 it is 4/3 kg. Statement II is not enough: with P1 = 17, P2 = 19, P3 = 13 the answer is 49/3 kg, but with P1 = 13, P2 = 13, P3 = 13 it is 13 kg. Taking both together is not enough: with P1 = 17, P2 = 19, P3 = 13 the answer is 49/3 kg, but with P1 = 13, P2 = 14, P3 = 13 it is 40/3 kg. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the total of P1, P2 and P3?\nStatement I: The total of all three is 49.\nStatement II: The highest of the three is 19.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 49 kg. Statement II is not enough: with P1 = 17, P2 = 19, P3 = 13 the answer is 49 kg, but with P1 = 1, P2 = 1, P3 = 19 it is 21 kg. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Arjun scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the total of T1, T2 and T3?\nStatement I: T3 is less than T2.\nStatement II: T2 is 12. Also, The average of the three is 32/3.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with T1 = 16, T2 = 12, T3 = 4 the answer is 32 marks, but with T1 = 1, T2 = 2, T3 = 1 it is 4 marks. Statement II fixes the answer uniquely as 32 marks. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Arjun scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the highest of the three values?\nStatement I: The average of the three is 32/3.\nStatement II: T1 is 16.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with T1 = 16, T2 = 12, T3 = 4 the answer is 16 marks, but with T1 = 10, T2 = 11, T3 = 11 it is 11 marks. Statement II is not enough: with T1 = 16, T2 = 12, T3 = 4 the answer is 16 marks, but with T1 = 16, T2 = 1, T3 = 17 it is 17 marks. Taking both together fixes the answer uniquely as 16 marks. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the highest of the three values?\nStatement I: The highest of the three is 12.\nStatement II: P1 and P2 add up to 13. Also, P3 is 12.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 12 kg. Statement II fixes the answer uniquely as 12 kg. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the total of P1, P2 and P3?\nStatement I: P3 is more than P2.\nStatement II: P1 is 6.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with P1 = 6, P2 = 7, P3 = 12 the answer is 25 kg, but with P1 = 1, P2 = 1, P3 = 2 it is 4 kg. Statement II is not enough: with P1 = 6, P2 = 7, P3 = 12 the answer is 25 kg, but with P1 = 6, P2 = 1, P3 = 1 it is 8 kg. Taking both together is not enough: with P1 = 6, P2 = 7, P3 = 12 the answer is 25 kg, but with P1 = 6, P2 = 1, P3 = 2 it is 9 kg. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Meena scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the average of T1, T2 and T3?\nStatement I: T3 is 18.\nStatement II: T1 and T2 add up to 31.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with T1 = 18, T2 = 13, T3 = 18 the answer is 49/3 marks, but with T1 = 1, T2 = 1, T3 = 18 it is 20/3 marks. Statement II is not enough: with T1 = 18, T2 = 13, T3 = 18 the answer is 49/3 marks, but with T1 = 11, T2 = 20, T3 = 1 it is 32/3 marks. Taking both together fixes the answer uniquely as 49/3 marks. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Meena scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the highest of the three values?\nStatement I: The highest of the three is 18.\nStatement II: T1 + T3 − 2 × T2 = 10.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 18 marks. Statement II is not enough: with T1 = 18, T2 = 13, T3 = 18 the answer is 18 marks, but with T1 = 6, T2 = 1, T3 = 6 it is 6 marks. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the highest of the three values?\nStatement I: P1 and P3 add up to 27.\nStatement II: The highest of the three is 18.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with P1 = 12, P2 = 18, P3 = 15 the answer is 18 kg, but with P1 = 13, P2 = 1, P3 = 14 it is 14 kg. Statement II fixes the answer uniquely as 18 kg. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the total of P1, P2 and P3?\nStatement I: The total of all three is 45.\nStatement II: The average of the three is 15. Also, P3 is 15.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 45 kg. Statement II fixes the answer uniquely as 45 kg. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rahul scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the value of T2?\nStatement I: T1 and T3 add up to 33.\nStatement II: The total of all three is 47.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with T1 = 17, T2 = 14, T3 = 16 the answer is 14 marks, but with T1 = 13, T2 = 1, T3 = 20 it is 1 marks. Statement II is not enough: with T1 = 17, T2 = 14, T3 = 16 the answer is 14 marks, but with T1 = 20, T2 = 7, T3 = 20 it is 7 marks. Taking both together fixes the answer uniquely as 14 marks. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rahul scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the highest of the three values?\nStatement I: T2 and T3 add up to 30.\nStatement II: T1 and T2 add up to 31.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with T1 = 17, T2 = 14, T3 = 16 the answer is 17 marks, but with T1 = 1, T2 = 15, T3 = 15 it is 15 marks. Statement II is not enough: with T1 = 17, T2 = 14, T3 = 16 the answer is 17 marks, but with T1 = 15, T2 = 16, T3 = 1 it is 16 marks. Taking both together is not enough: with T1 = 17, T2 = 14, T3 = 16 the answer is 17 marks, but with T1 = 15, T2 = 16, T3 = 14 it is 16 marks. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the total of P1, P2 and P3?\nStatement I: The total of all three is 28.\nStatement II: The lowest of the three is 4.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 28 kg. Statement II is not enough: with P1 = 17, P2 = 4, P3 = 7 the answer is 28 kg, but with P1 = 4, P2 = 4, P3 = 4 it is 12 kg. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nWhat is the value of P2?\nStatement I: The total of all three is 28.\nStatement II: P2 is 4.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with P1 = 17, P2 = 4, P3 = 7 the answer is 4 kg, but with P1 = 7, P2 = 1, P3 = 20 it is 1 kg. Statement II fixes the answer uniquely as 4 kg. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PQR is a triangle whose sides PQ, QR and RP are whole numbers of centimetres.\nWhat is the length of the longest side?\nStatement I: QR is not equal to RP. Also, The longest side is 10 cm.\nStatement II: PQ = 7 cm. Also, The longest side is 10 cm.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I fixes the answer uniquely as 10 cm. Statement II fixes the answer uniquely as 10 cm. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PQR is a triangle whose sides PQ, QR and RP are whole numbers of centimetres.\nWhat is the perimeter of the triangle?\nStatement I: QR is not equal to RP.\nStatement II: QR = 8 cm.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with PQ = 7, QR = 8, RP = 10 the answer is 25 cm, but with PQ = 2, QR = 1, RP = 2 it is 5 cm. Statement II is not enough: with PQ = 7, QR = 8, RP = 10 the answer is 25 cm, but with PQ = 1, QR = 8, RP = 8 it is 17 cm. Taking both together is not enough: with PQ = 7, QR = 8, RP = 10 the answer is 25 cm, but with PQ = 2, QR = 8, RP = 7 it is 17 cm. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Swati scored whole-number runs in three innings: I1, I2 and I3.\nWhat is the average of I1, I2 and I3?\nStatement I: I2 and I3 add up to 27.\nStatement II: The total of all three is 44.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with I1 = 17, I2 = 20, I3 = 7 the answer is 44/3 runs, but with I1 = 1, I2 = 7, I3 = 20 it is 28/3 runs. Statement II fixes the answer uniquely as 44/3 runs. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Swati scored whole-number runs in three innings: I1, I2 and I3.\nWhat is the value of I2?\nStatement I: I1 and I2 add up to 37.\nStatement II: I1 is 17.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with I1 = 17, I2 = 20, I3 = 7 the answer is 20 runs, but with I1 = 20, I2 = 17, I3 = 1 it is 17 runs. Statement II is not enough: with I1 = 17, I2 = 20, I3 = 7 the answer is 20 runs, but with I1 = 17, I2 = 1, I3 = 1 it is 1 runs. Taking both together fixes the answer uniquely as 20 runs. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Farida scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the average of T1, T2 and T3?\nStatement I: The total of all three is 42.\nStatement II: T1 + T3 − 2 × T2 = -6.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I fixes the answer uniquely as 14 marks. Statement II is not enough: with T1 = 6, T2 = 16, T3 = 20 the answer is 14 marks, but with T1 = 1, T2 = 4, T3 = 1 it is 2 marks. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Farida scored whole-number marks in three tests: T1, T2 and T3.\nWhat is the value of T2?\nStatement I: T2 is 16.\nStatement II: T1 and T2 add up to 22. Also, T1 is 6.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I fixes the answer uniquely as 16 marks. Statement II fixes the answer uniquely as 16 marks. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "quantitative-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

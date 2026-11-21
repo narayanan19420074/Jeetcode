@@ -1,0 +1,414 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Which of the following is the most appropriate title for the passage? (Passage: “Lakes of Bengaluru”)",
+   "options": [
+    "A City That Forgot Its Water",
+    "Egrets of the Silicon City",
+    "Engineers versus Activists",
+    "Why Monsoons Fail in the South"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage is about the decline of the lake system and the cost of forgetting it. The other titles pick minor details or are not discussed.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s010"
+  },
+  {
+   "questionText": "The most suitable title for the passage is (Passage: “The Last Weavers of Pochampally”)",
+   "options": [
+    "Threads of Tradition: The Ikat Weavers' Struggle",
+    "The Economics of Power Looms",
+    "Fashion Designers of Hyderabad",
+    "A Day in the Life of a Call-Centre Worker"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title should capture the craft and its survival struggle. The others are peripheral.",
+   "subPattern": "title-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s011"
+  },
+  {
+   "questionText": "Which title best captures the passage?",
+   "options": [
+    "The Unsung Workers Behind the Anganwadi",
+    "Census Data and the Village",
+    "How Girls Learned to Read",
+    "A Guide to Mobile Applications"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage centres on the importance and burdens of the workers. The others are minor details.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s013"
+  },
+  {
+   "questionText": "The best title for the passage would be",
+   "options": [
+    "From Lanes to Academies: Where Indian Cricket Begins",
+    "The Law of Cricket Explained",
+    "Electric Wires and Their Dangers",
+    "Diet Plans for Young Batters"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage follows how street play feeds the organised system. The other options are marginal or absent.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s014"
+  },
+  {
+   "questionText": "Which of the following is the most suitable title for the passage? (Passage: “The Cost of a Free Ride”)",
+   "options": [
+    "Free Rides for Women: Weighing the Gains and the Costs",
+    "The Rise of the Bus Conductor",
+    "Crowded Markets and Hospitals",
+    "An Economist's Biography"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title should capture the scheme and its two-sided evaluation.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s015"
+  },
+  {
+   "questionText": "Which of the following is the best title for the passage? (Passage: “Silence in the Examination Hall”)",
+   "options": [
+    "Calm Is Not Silence: Rethinking Home During Board Exams",
+    "The History of School Boards",
+    "Mathematics Made Easy",
+    "Neighbours and Their Questions"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title echoes the passage's closing idea about homes during exams.",
+   "subPattern": "title-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s016"
+  },
+  {
+   "questionText": "The best title for this passage is",
+   "options": [
+    "The Bitter Harvest of the Rann",
+    "A Guide to Solar Energy",
+    "The Monsoon in Gujarat",
+    "Desert Birds of Kutch"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title should reflect the harsh toil and low reward of salt workers.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s017"
+  },
+  {
+   "questionText": "Which of the following titles best suits the passage?",
+   "options": [
+    "When the Classroom Became a Phone: Lessons from a Village",
+    "The Rise of the Smartphone Industry",
+    "Temple Festivals in Odisha",
+    "Fieldwork and Family Life"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title captures the shift to phone lessons and what the village experience taught.",
+   "subPattern": "title-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s019"
+  },
+  {
+   "questionText": "The most appropriate title for this passage is",
+   "options": [
+    "Twelve Hours Behind the Wheel: A Driver's Story",
+    "The Engineering of Auto-Rickshaws",
+    "Fuel Prices in India",
+    "A Chennai Garland Market"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title reflects the driver's long day and the story told.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s020"
+  },
+  {
+   "questionText": "A suitable title for the passage is",
+   "options": [
+    "The Cycle of Books: Reading Reaches the Doorstep",
+    "Television and its Dangers",
+    "A Panchayat Election in Kerala",
+    "The Malayalam Novel Today"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title reflects the mobile library on a bicycle bringing books to homes.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s021"
+  },
+  {
+   "questionText": "Which of the following is the best title for the passage? (Passage: “Cooking Gas and the Kitchen”)",
+   "options": [
+    "A Cleaner Flame, an Unfinished Promise",
+    "The Price of Tea in India",
+    "Smoke and Cigarettes",
+    "Health Workers on Strike"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage balances achievement and shortfall of the cooking-gas scheme.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s022"
+  },
+  {
+   "questionText": "The most suitable title for the passage is (Passage: “Moving Between Two Languages”)",
+   "options": [
+    "Many Tongues, One Child: The Gift of Multilingualism",
+    "Telugu Grammar for Beginners",
+    "The Decline of English",
+    "Speech Delay in Infants"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title conveys that multilingualism is a benefit and the topic of the passage.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s023"
+  },
+  {
+   "questionText": "Which of the following is the best title for the passage? (Passage: “A Turn at the Spinning Wheel”)",
+   "options": [
+    "More Than Cloth: The Meaning of Gandhi's Charkha",
+    "How to Build a Textile Mill",
+    "A Lawyer's Education",
+    "Farmers and Floods"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage is about the symbolic purposes of the spinning wheel.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s025"
+  },
+  {
+   "questionText": "The most suitable title for the passage is (Passage: “Cities and the Disappearing Sparrow”)",
+   "options": [
+    "Where Have the Sparrows Gone?",
+    "Mobile Phones and Modern Life",
+    "A Manual of Bird Photography",
+    "The Cost of Garden Plants"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title directly captures the topic: the decline and attempted revival of sparrows.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s026"
+  },
+  {
+   "questionText": "A suitable title for the passage is (Passage: “Haggling in the Bazaar”)",
+   "options": [
+    "The Price of a Conversation: Haggling in the Bazaar",
+    "Jaipur's Jewellery Trade",
+    "Why Malls Are Superior",
+    "A Visitor's Complaint"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title reflects the topic and the idea that bargaining is a social exchange.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s027"
+  },
+  {
+   "questionText": "Which of the following is the most appropriate title for the passage? (Passage: “Water Harvesting in Rajasthan”)",
+   "options": [
+    "Sharing the Rain: The Johads of Alwar",
+    "The Engineers of Rajasthan",
+    "The Ancient River Myth",
+    "The Failure of Government"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title captures the structure and the importance of sharing water.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s028"
+  },
+  {
+   "questionText": "Which of the following titles best fits the passage?",
+   "options": [
+    "In Praise of an Empty Afternoon",
+    "The Best Coaching Centres",
+    "Phones and Video Games",
+    "The Perils of Patience"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The passage argues for unstructured time; the title reflects that.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s029"
+  },
+  {
+   "questionText": "The best title for the passage is",
+   "options": [
+    "The Last Single-Screen: A Town's Shared Darkness",
+    "The Rise of the Multiplex",
+    "Popcorn and Profit",
+    "The History of the Projector"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It conveys the theatre and its social meaning.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s031"
+  },
+  {
+   "questionText": "Which of the following is the most suitable title?",
+   "options": [
+    "Drawing the Lanes: What Local Knowledge Adds to a Map",
+    "The Mosque with a Green Dome",
+    "Satellites over Delhi",
+    "The Rickshaw Fare Chart"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title reflects the central theme of the passage.",
+   "subPattern": "title-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s032"
+  },
+  {
+   "questionText": "Which of the following is the best title for the passage? (Passage: “Trains of the Himalaya”)",
+   "options": [
+    "The Slow Train and the Hill: Is Heritage Worth Its Cost?",
+    "How to Make Tea in Darjeeling",
+    "A Cyclist's Guide to the Himalaya",
+    "Modern Highways and Safety"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title reflects the railway and the debate about its value.",
+   "subPattern": "title-selection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "reading-comprehension-s033"
+  },
+  {
+   "questionText": "The most suitable title for the passage is (Passage: “Cash and the Kirana”)",
+   "options": [
+    "Round the Corner and Still Standing: The Kirana Store",
+    "A Researcher's Diary",
+    "How Banks Lend to Poor Families",
+    "Online Groceries in the Future"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It captures the topic of resilience of the neighbourhood store.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "reading-comprehension-s034"
+  },
+  {
+   "questionText": "The best title for the passage is (Passage: “A Doctor in the Hills”)",
+   "options": [
+    "Twelve Years Beyond Two: A Doctor in the Hills",
+    "Hospital Admissions in the City",
+    "Mountain Climbing Techniques",
+    "The Salary Gap in Medicine"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title captures the story of her service.",
+   "subPattern": "title-selection",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "reading-comprehension-s035"
+  },
+  {
+   "questionText": "Which title best suits the passage? (Passage: “Millets Return to the Plate”)",
+   "options": [
+    "From Necessity to Choice: The Comeback of Millets",
+    "The Green Revolution's Failure",
+    "Karnataka Cafes",
+    "A History of Wheat"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title captures the shift from compulsion to choice in millet cultivation.",
+   "subPattern": "title-selection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": "reading-comprehension-s037"
+  }
+ ]
+}

@@ -1,0 +1,422 @@
+{
+ "questions": [
+  {
+   "questionText": "What is the LCM of the co-prime numbers 11 and 34?",
+   "options": [
+    "374",
+    "375",
+    "45",
+    "187"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "11 and 34 are co-prime (HCF = 1), so LCM = 11 × 34 = 374.",
+   "shortcut": "Co-prime ⇒ LCM = product.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the HCF of 371 and 372?",
+   "options": [
+    "2",
+    "1",
+    "372",
+    "371"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Consecutive integers share no common factor other than 1, so HCF = 1.",
+   "shortcut": "Consecutive numbers are always co-prime.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the HCF of 15 and 16?",
+   "options": [
+    "1",
+    "15",
+    "16",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Consecutive integers share no common factor other than 1, so HCF = 1.",
+   "shortcut": "Consecutive numbers are always co-prime.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the HCF of 52 and 53?",
+   "options": [
+    "53",
+    "2",
+    "52",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Consecutive integers share no common factor other than 1, so HCF = 1.",
+   "shortcut": "Consecutive numbers are always co-prime.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the LCM of the co-prime numbers 15 and 13?",
+   "options": [
+    "196",
+    "28",
+    "210",
+    "195"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "15 and 13 are co-prime (HCF = 1), so LCM = 15 × 13 = 195.",
+   "shortcut": "Co-prime ⇒ LCM = product.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the HCF of 820 and 821?",
+   "options": [
+    "1",
+    "820",
+    "2",
+    "821"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Consecutive integers share no common factor other than 1, so HCF = 1.",
+   "shortcut": "Consecutive numbers are always co-prime.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the LCM of the co-prime numbers 29 and 10?",
+   "options": [
+    "145",
+    "291",
+    "39",
+    "290"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "29 and 10 are co-prime (HCF = 1), so LCM = 29 × 10 = 290.",
+   "shortcut": "Co-prime ⇒ LCM = product.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 252. Which of the following pairs of numbers is co-prime with LCM exactly 252?",
+   "options": [
+    "3 and 84",
+    "2 and 126",
+    "7 and 36",
+    "6 and 42"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A co-prime pair has LCM = product = 252 and HCF 1. 7 and 36 gives 7×36 = 252 with HCF 1. In the other pairs the HCF is greater than 1, so their LCM is smaller than the product.",
+   "shortcut": "Check product = LCM and HCF = 1.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are 20 and 36. Dividing each by their HCF gives two co-prime numbers. What is the sum of these co-prime numbers?",
+   "options": [
+    "14",
+    "45",
+    "56",
+    "18"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "HCF(20, 36) = 4. Quotients are 20/4 = 5 and 36/4 = 9, which are co-prime. Sum = 14.",
+   "shortcut": "Dividing by the HCF always leaves co-prime numbers.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are 35 and 77. Dividing each by their HCF gives two co-prime numbers. What is the sum of these co-prime numbers?",
+   "options": [
+    "112",
+    "23",
+    "55",
+    "16"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(35, 77) = 7. Quotients are 35/7 = 5 and 77/7 = 11, which are co-prime. Sum = 16.",
+   "shortcut": "Dividing by the HCF always leaves co-prime numbers.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 180. Which of the following pairs of numbers is co-prime with LCM exactly 180?",
+   "options": [
+    "12 and 15",
+    "3 and 60",
+    "9 and 20",
+    "2 and 90"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A co-prime pair has LCM = product = 180 and HCF 1. 9 and 20 gives 9×20 = 180 with HCF 1. In the other pairs the HCF is greater than 1, so their LCM is smaller than the product.",
+   "shortcut": "Check product = LCM and HCF = 1.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are 28 and 63. Dividing each by their HCF gives two co-prime numbers. What is the sum of these co-prime numbers?",
+   "options": [
+    "91",
+    "20",
+    "36",
+    "13"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(28, 63) = 7. Quotients are 28/7 = 4 and 63/7 = 9, which are co-prime. Sum = 13.",
+   "shortcut": "Dividing by the HCF always leaves co-prime numbers.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 720. Which of the following pairs of numbers is co-prime with LCM exactly 720?",
+   "options": [
+    "6 and 120",
+    "5 and 144",
+    "15 and 48",
+    "18 and 40"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A co-prime pair has LCM = product = 720 and HCF 1. 5 and 144 gives 5×144 = 720 with HCF 1. In the other pairs the HCF is greater than 1, so their LCM is smaller than the product.",
+   "shortcut": "Check product = LCM and HCF = 1.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are 24 and 42. Dividing each by their HCF gives two co-prime numbers. What is the sum of these co-prime numbers?",
+   "options": [
+    "17",
+    "66",
+    "11",
+    "28"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "HCF(24, 42) = 6. Quotients are 24/6 = 4 and 42/6 = 7, which are co-prime. Sum = 11.",
+   "shortcut": "Dividing by the HCF always leaves co-prime numbers.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two numbers are 35 and 63. Dividing each by their HCF gives two co-prime numbers. What is the sum of these co-prime numbers?",
+   "options": [
+    "45",
+    "98",
+    "21",
+    "14"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(35, 63) = 7. Quotients are 35/7 = 5 and 63/7 = 9, which are co-prime. Sum = 14.",
+   "shortcut": "Dividing by the HCF always leaves co-prime numbers.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two co-prime numbers have a product of 306 and their sum is 43. What is their LCM?",
+   "options": [
+    "306",
+    "43",
+    "13158",
+    "263"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The HCF of co-prime numbers is 1, so LCM = product = 306.",
+   "shortcut": "LCM of co-primes = product. Sum is a distractor.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two co-prime numbers have a product of 754 and their sum is 55. What is their LCM?",
+   "options": [
+    "55",
+    "699",
+    "754",
+    "41470"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The HCF of co-prime numbers is 1, so LCM = product = 754.",
+   "shortcut": "LCM of co-primes = product. Sum is a distractor.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The LCM of two numbers is 504. Which of the following pairs of numbers is co-prime with LCM exactly 504?",
+   "options": [
+    "14 and 36",
+    "3 and 168",
+    "4 and 126",
+    "9 and 56"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A co-prime pair has LCM = product = 504 and HCF 1. 9 and 56 gives 9×56 = 504 with HCF 1. In the other pairs the HCF is greater than 1, so their LCM is smaller than the product.",
+   "shortcut": "Check product = LCM and HCF = 1.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two co-prime numbers have LCM 693. What is the smallest possible value of their sum?",
+   "options": [
+    "106",
+    "694",
+    "74",
+    "86"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Co-prime ⇒ product = 693 with HCF 1. Co-prime factor pairs: (1, 693), (7, 99), (9, 77), (11, 63). Sums: 694, 106, 86, 74. Smallest = 74.",
+   "shortcut": "List co-prime factor pairs; the pair closest together gives the least sum.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three numbers 23, 14 and 19 are pairwise co-prime. What is the sum of their HCF and LCM?",
+   "options": [
+    "57",
+    "6117",
+    "6119",
+    "6118"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pairwise co-prime ⇒ HCF = 1 and LCM = 23×14×19 = 6118. Sum = 6119.",
+   "shortcut": "Pairwise co-prime: HCF 1, LCM = product.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three numbers 11, 30 and 23 are pairwise co-prime. What is the sum of their HCF and LCM?",
+   "options": [
+    "7590",
+    "7591",
+    "65",
+    "7589"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Pairwise co-prime ⇒ HCF = 1 and LCM = 11×30×23 = 7590. Sum = 7591.",
+   "shortcut": "Pairwise co-prime: HCF 1, LCM = product.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two co-prime numbers have LCM 252. What is the smallest possible value of their sum?",
+   "options": [
+    "43",
+    "37",
+    "253",
+    "67"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Co-prime ⇒ product = 252 with HCF 1. Co-prime factor pairs: (1, 252), (4, 63), (7, 36), (9, 28). Sums: 253, 67, 43, 37. Smallest = 37.",
+   "shortcut": "List co-prime factor pairs; the pair closest together gives the least sum.",
+   "subPattern": "co-prime-word-problems",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

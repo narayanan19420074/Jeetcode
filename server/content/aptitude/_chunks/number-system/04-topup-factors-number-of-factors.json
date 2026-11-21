@@ -1,0 +1,212 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "How many positive factors does 360 have?",
+   "options": [
+    "24",
+    "18",
+    "20",
+    "30"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "360 = 2³ × 3² × 5. Number of factors = (3+1)(2+1)(1+1) = 24.",
+   "shortcut": "Add 1 to each exponent and multiply.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of all positive factors of 120?",
+   "options": [
+    "240",
+    "360",
+    "359",
+    "390"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "120 = 2³ × 3 × 5. Sum = (1+2+4+8)(1+3)(1+5) = 15 × 4 × 6 = 360.",
+   "shortcut": "Sum = product of (p^(a+1) − 1)/(p − 1).",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many odd factors does 180 have?",
+   "options": [
+    "9",
+    "12",
+    "6",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "180 = 2² × 3² × 5. Odd factors come from 3² × 5 only: (2+1)(1+1) = 6.",
+   "shortcut": "Ignore the power of 2.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In how many ways can 720 be written as a product of two different natural numbers (order not important)?",
+   "options": [
+    "30",
+    "14",
+    "16",
+    "15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "720 = 2⁴ × 3² × 5 has 5 × 3 × 2 = 30 factors. These pair up into 30 ÷ 2 = 15 pairs; 720 is not a perfect square so no factor pairs with itself.",
+   "shortcut": "Number of factors ÷ 2 (for a non-square).",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The product of all the positive factors of 144 is equal to which of the following?",
+   "options": [
+    "12^15",
+    "12^16",
+    "144^15",
+    "12^14"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "144 has 15 factors (2⁴ × 3² gives 5 × 3). Product of all factors = 144^(15/2) = (12²)^(15/2) = 12^15.",
+   "shortcut": "Product of factors = N^(d/2).",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the smallest natural number that has exactly 15 positive factors?",
+   "options": [
+    "196",
+    "144",
+    "225",
+    "256"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "15 = 15 × 1 or 5 × 3. Options: 2¹⁴ = 16384 or 2⁴ × 3² = 144. The smaller is 144.",
+   "shortcut": "Write 15 as a product of (exponent + 1) terms; give larger exponents to smaller primes.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many factors of 2⁶ × 3⁴ × 5³ × 7 are perfect squares?",
+   "options": [
+    "48",
+    "12",
+    "24",
+    "25"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A square factor needs even exponents: 2: 0,2,4,6 (4 ways); 3: 0,2,4 (3 ways); 5: 0,2 (2 ways); 7: 0 (1 way). Total = 4 × 3 × 2 × 1 = 24.",
+   "shortcut": "Count even exponents for each prime.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many positive factors of 1800 are exact multiples of 10?",
+   "options": [
+    "24",
+    "20",
+    "19",
+    "18"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "1800 = 2³ × 3² × 5². A multiple of 10 has at least one 2 and one 5: 2 has 3 choices (1–3), 3 has 3 choices (0–2), 5 has 2 choices (1–2). Total = 3 × 3 × 2 = 18.",
+   "shortcut": "Fix one 2 and one 5, then count the rest.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many numbers from 1 to 100 have exactly three positive factors?",
+   "options": [
+    "4",
+    "3",
+    "5",
+    "10"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exactly three factors means the number is the square of a prime: 4, 9, 25, 49. So 4 numbers.",
+   "shortcut": "Three factors ⇒ p².",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many factors of 2⁵ × 3⁴ × 5³ are divisible by 6 but not divisible by 5?",
+   "options": [
+    "80",
+    "20",
+    "120",
+    "12"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Divisible by 6: power of 2 from 1 to 5 (5 choices), power of 3 from 1 to 4 (4 choices). Not divisible by 5: power of 5 is 0 (1 choice). Total = 5 × 4 × 1 = 20.",
+   "shortcut": "Fix the restrictions prime by prime.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What is the sum of all even factors of 360?",
+   "options": [
+    "1170",
+    "780",
+    "1092",
+    "1093"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "360 = 2³ × 3² × 5. Even factors: 2 × (2⁰+2¹+2²) × (1+3+9) × (1+5) = 2 × 7 × 13 × 6 = 1092.",
+   "shortcut": "Take out one factor of 2, then use the sum formula.",
+   "subPattern": "factors-number-of-factors",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

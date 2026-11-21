@@ -1,0 +1,4854 @@
+{
+ "pattern": {
+  "title": "Mathematical Operations",
+  "slug": "mathematical-operations",
+  "description": "Operator-substitution and fictitious operations.",
+  "order": 41,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "symbol-substitution",
+    "title": "Symbol substitution"
+   },
+   {
+    "slug": "operator-interchange",
+    "title": "Operator interchange"
+   },
+   {
+    "slug": "equation-based",
+    "title": "Equation based"
+   },
+   {
+    "slug": "fictitious-operations",
+    "title": "Fictitious operations"
+   },
+   {
+    "slug": "number-based-operations",
+    "title": "Number-based operations"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "If '+' means '−', '−' means '+', '×' means '÷' and '÷' means '×', then what is the value of 17 + 5 − 26 ?",
+   "options": [
+    {
+     "text": "76"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "-38"
+    },
+    {
+     "text": "-4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 17 − 5 + 26. Now apply BODMAS: 17 − 5 + 26 → 12 + 26 → 38. Answer = 38.",
+   "order": 1,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', then what is the value of 19 − 34 × 15 ?",
+   "options": [
+    {
+     "text": "-491"
+    },
+    {
+     "text": "76"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 19 + 34 − 15. Now apply BODMAS: 19 + 34 − 15 → 53 − 15 → 38. Answer = 38.",
+   "order": 2,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', then what is the value of 28 × 7 ÷ 17 ?",
+   "options": [
+    {
+     "text": "-91"
+    },
+    {
+     "text": "357"
+    },
+    {
+     "text": "-182"
+    },
+    {
+     "text": "-96"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 28 − 7 × 17. Now apply BODMAS: 28 − 7 × 17 → 28 − 119 → -91. Answer = -91.",
+   "order": 3,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of 4 − 20 × 2 ?",
+   "options": [
+    {
+     "text": "28"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "-14"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 4 + 20 ÷ 2. Now apply BODMAS: 4 + 20 ÷ 2 → 4 + 10 → 14. Answer = 14.",
+   "order": 4,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '÷', '×' means '+' and '÷' means '×', then what is the value of 30 + 36 − 18 ?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 30 − 36 ÷ 18. Now apply BODMAS: 30 − 36 ÷ 18 → 30 − 2 → 28. Answer = 28.",
+   "order": 5,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If © stands for +, % stands for −, $ stands for ÷ and # stands for ×, then what is the value of 38 © 16 % 14 ?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "-40"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 38 + 16 − 14. Now apply BODMAS: 38 + 16 − 14 → 54 − 14 → 40. Answer = 40.",
+   "order": 6,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If % stands for −, Δ stands for ÷, ★ stands for + and # stands for ×, then what is the value of 11 ★ 29 % 36 ?",
+   "options": [
+    {
+     "text": "-4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 11 + 29 − 36. Now apply BODMAS: 11 + 29 − 36 → 40 − 36 → 4. Answer = 4.",
+   "order": 7,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If Δ stands for ÷, © stands for +, % stands for × and @ stands for −, then what is the value of 26 Δ 26 % 3 ?",
+   "options": [
+    {
+     "text": "-3"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 26 ÷ 26 × 3. Now apply BODMAS: 26 ÷ 26 × 3 → 1 × 3 → 3. Answer = 3.",
+   "order": 8,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '×', '×' means '−' and '÷' means '+', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "9 − 6 − 3 = 0"
+    },
+    {
+     "text": "16 ÷ 24 ÷ 22 = 69"
+    },
+    {
+     "text": "20 × 12 × 6 = 2"
+    },
+    {
+     "text": "28 − 3 ÷ 29 = 109"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 20 × 12 × 6 becomes 20 − 12 − 6; by BODMAS 20 − 12 − 6 → 8 − 6 → 2 = 2. The other statements do not balance after the change.",
+   "order": 9,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '÷', '×' means '+' and '÷' means '×', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "6 + 20 × 16 = 2"
+    },
+    {
+     "text": "17 − 17 ÷ 3 = 13"
+    },
+    {
+     "text": "6 × 19 + 28 = 142"
+    },
+    {
+     "text": "21 × 18 − 3 = 375"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 6 + 20 × 16 becomes 6 − 20 + 16; by BODMAS 6 − 20 + 16 → -14 + 16 → 2 = 2. The other statements do not balance after the change.",
+   "order": 10,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '×', '×' means '+' and '÷' means '−', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "12 − 23 + 12 = 21"
+    },
+    {
+     "text": "15 × 2 × 20 = -37"
+    },
+    {
+     "text": "10 − 8 × 7 = -46"
+    },
+    {
+     "text": "11 ÷ 21 × 26 = 16"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 11 ÷ 21 × 26 becomes 11 − 21 + 26; by BODMAS 11 − 21 + 26 → -10 + 26 → 16 = 16. The other statements do not balance after the change.",
+   "order": 11,
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '−' and '÷' means '+', then what is the value of 24 ÷ 17 × 39 + 7 ?",
+   "options": [
+    {
+     "text": "-230"
+    },
+    {
+     "text": "-232"
+    },
+    {
+     "text": "-237"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 24 + 17 − 39 × 7. Now apply BODMAS: 24 + 17 − 39 × 7 → 24 + 17 − 273 → 41 − 273 → -232. Answer = -232.",
+   "order": 12,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', then what is the value of 20 ÷ 8 + 8 × 33 ?",
+   "options": [
+    {
+     "text": "-13"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "-26"
+    },
+    {
+     "text": "-14"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 20 × 8 ÷ 8 − 33. Now apply BODMAS: 20 × 8 ÷ 8 − 33 → 160 ÷ 8 − 33 → 20 − 33 → -13. Answer = -13.",
+   "order": 13,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of 16 + 21 − 4 ÷ 14 ?",
+   "options": [
+    {
+     "text": "316"
+    },
+    {
+     "text": "326"
+    },
+    {
+     "text": "325"
+    },
+    {
+     "text": "-326"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 16 × 21 + 4 − 14. Now apply BODMAS: 16 × 21 + 4 − 14 → 336 + 4 − 14 → 340 − 14 → 326. Answer = 326.",
+   "order": 14,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '−' and '÷' means '+', then what is the value of 32 − 16 + 31 ÷ 20 ?",
+   "options": [
+    {
+     "text": "164"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "82"
+    },
+    {
+     "text": "79"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 32 ÷ 16 × 31 + 20. Now apply BODMAS: 32 ÷ 16 × 31 + 20 → 2 × 31 + 20 → 62 + 20 → 82. Answer = 82.",
+   "order": 15,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '×', '×' means '+' and '÷' means '−', then what is the value of 36 − 11 × 39 ÷ 38 ?",
+   "options": [
+    {
+     "text": "-397"
+    },
+    {
+     "text": "392"
+    },
+    {
+     "text": "404"
+    },
+    {
+     "text": "397"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 36 × 11 + 39 − 38. Now apply BODMAS: 36 × 11 + 39 − 38 → 396 + 39 − 38 → 435 − 38 → 397. Answer = 397.",
+   "order": 16,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If @ stands for +, ★ stands for ×, % stands for − and Δ stands for ÷, then what is the value of 13 % 21 ★ 2 Δ 2 ?",
+   "options": [
+    {
+     "text": "-6"
+    },
+    {
+     "text": "-13"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "-8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 13 − 21 × 2 ÷ 2. Now apply BODMAS: 13 − 21 × 2 ÷ 2 → 13 − 42 ÷ 2 → 13 − 21 → -8. Answer = -8.",
+   "order": 17,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If ★ stands for +, @ stands for ÷, © stands for − and # stands for ×, then what is the value of 6 ★ 18 © 21 # 3 ?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "-42"
+    },
+    {
+     "text": "-39"
+    },
+    {
+     "text": "-78"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 6 + 18 − 21 × 3. Now apply BODMAS: 6 + 18 − 21 × 3 → 6 + 18 − 63 → 24 − 63 → -39. Answer = -39.",
+   "order": 18,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If Δ stands for ×, # stands for ÷, % stands for − and @ stands for +, then what is the value of 24 @ 23 # 23 Δ 10 ?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "-34"
+    },
+    {
+     "text": "68"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 24 + 23 ÷ 23 × 10. Now apply BODMAS: 24 + 23 ÷ 23 × 10 → 24 + 1 × 10 → 24 + 10 → 34. Answer = 34.",
+   "order": 19,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If ★ stands for −, & stands for ×, Δ stands for ÷ and © stands for +, then what is the value of 20 ★ 6 © 33 Δ 33 ?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "-15"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 20 − 6 + 33 ÷ 33. Now apply BODMAS: 20 − 6 + 33 ÷ 33 → 20 − 6 + 1 → 14 + 1 → 15. Answer = 15.",
+   "order": 20,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If # stands for ×, @ stands for −, & stands for ÷ and $ stands for +, then what is the value of 36 $ 16 & 4 @ 11 ?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "-29"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 36 + 16 ÷ 4 − 11. Now apply BODMAS: 36 + 16 ÷ 4 − 11 → 36 + 4 − 11 → 40 − 11 → 29. Answer = 29.",
+   "order": 21,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '+', '×' means '÷' and '÷' means '×', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "3 − 7 − 27 = -37"
+    },
+    {
+     "text": "8 ÷ 10 − 23 = 106"
+    },
+    {
+     "text": "7 − 6 − 19 = 32"
+    },
+    {
+     "text": "7 − 30 × 2 = 24"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 7 − 6 − 19 becomes 7 + 6 + 19; by BODMAS 7 + 6 + 19 → 13 + 19 → 32 = 32. The other statements do not balance after the change.",
+   "order": 22,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "20 ÷ 9 ÷ 21 = -9"
+    },
+    {
+     "text": "9 ÷ 12 + 24 = -278"
+    },
+    {
+     "text": "13 ÷ 18 + 7 = -112"
+    },
+    {
+     "text": "6 − 16 − 27 = 49"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 6 − 16 − 27 becomes 6 + 16 + 27; by BODMAS 6 + 16 + 27 → 22 + 27 → 49 = 49. The other statements do not balance after the change.",
+   "order": 23,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "11 ÷ 19 − 12 = 228"
+    },
+    {
+     "text": "17 ÷ 19 × 24 = 299"
+    },
+    {
+     "text": "24 − 29 × 17 = -36"
+    },
+    {
+     "text": "16 − 14 × 13 = 18"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 17 ÷ 19 × 24 becomes 17 × 19 − 24; by BODMAS 17 × 19 − 24 → 323 − 24 → 299 = 299. The other statements do not balance after the change.",
+   "order": 24,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '+' and '÷' means '−', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "12 + 14 − 12 = -14"
+    },
+    {
+     "text": "22 ÷ 26 × 19 = -15"
+    },
+    {
+     "text": "15 ÷ 27 ÷ 8 = 20"
+    },
+    {
+     "text": "19 × 27 × 11 = 57"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 19 × 27 × 11 becomes 19 + 27 + 11; by BODMAS 19 + 27 + 11 → 46 + 11 → 57 = 57. The other statements do not balance after the change.",
+   "order": 25,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '×', '×' means '÷' and '÷' means '+', which of the following equations is correct?",
+   "options": [
+    {
+     "text": "25 + 2 − 21 = 6"
+    },
+    {
+     "text": "26 ÷ 7 + 9 = 24"
+    },
+    {
+     "text": "11 ÷ 22 × 2 = 29"
+    },
+    {
+     "text": "21 + 30 ÷ 21 = 19"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 26 ÷ 7 + 9 becomes 26 + 7 − 9; by BODMAS 26 + 7 − 9 → 33 − 9 → 24 = 24. The other statements do not balance after the change.",
+   "order": 26,
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of 15 − 51 − 58 ÷ ( 59 × 59 ) ?",
+   "options": [
+    {
+     "text": "120"
+    },
+    {
+     "text": "125"
+    },
+    {
+     "text": "123"
+    },
+    {
+     "text": "130"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 15 + 51 + 58 − ( 59 ÷ 59 ). Now apply BODMAS: 15 + 51 + 58 − ( 59 ÷ 59 ) → 15 + 51 + 58 − ( 1 ) → 15 + 51 + 58 − 1 → 66 + 58 − 1 → 124 − 1 → 123. Answer = 123.",
+   "order": 27,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '−' and '÷' means '+', then what is the value of ( 49 × 50 ) + 19 ÷ 8 × 36 ?",
+   "options": [
+    {
+     "text": "-47"
+    },
+    {
+     "text": "-52"
+    },
+    {
+     "text": "-94"
+    },
+    {
+     "text": "47"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: ( 49 − 50 ) × 19 + 8 − 36. Now apply BODMAS: ( 49 − 50 ) × 19 + 8 − 36 → ( -1 ) × 19 + 8 − 36 → -1 × 19 + 8 − 36 → -19 + 8 − 36 → -11 − 36 → -47. Answer = -47.",
+   "order": 28,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '+' and '÷' means '−', then what is the value of 37 × 16 + 13 ÷ 15 ÷ 46 ?",
+   "options": [
+    {
+     "text": "181"
+    },
+    {
+     "text": "184"
+    },
+    {
+     "text": "183"
+    },
+    {
+     "text": "628"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 37 + 16 × 13 − 15 − 46. Now apply BODMAS: 37 + 16 × 13 − 15 − 46 → 37 + 208 − 15 − 46 → 245 − 15 − 46 → 230 − 46 → 184. Answer = 184.",
+   "order": 29,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of ( 7 ÷ 24 ) − 9 + 12 ÷ 19 ?",
+   "options": [
+    {
+     "text": "144"
+    },
+    {
+     "text": "-72"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "72"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: ( 7 − 24 ) + 9 × 12 − 19. Now apply BODMAS: ( 7 − 24 ) + 9 × 12 − 19 → ( -17 ) + 9 × 12 − 19 → -17 + 9 × 12 − 19 → -17 + 108 − 19 → 91 − 19 → 72. Answer = 72.",
+   "order": 30,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If # stands for ×, @ stands for +, % stands for ÷ and & stands for −, then what is the value of 8 @ 4 @ 54 % 9 # 29 ?",
+   "options": [
+    {
+     "text": "186"
+    },
+    {
+     "text": "183"
+    },
+    {
+     "text": "188"
+    },
+    {
+     "text": "-186"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 8 + 4 + 54 ÷ 9 × 29. Now apply BODMAS: 8 + 4 + 54 ÷ 9 × 29 → 8 + 4 + 6 × 29 → 8 + 4 + 174 → 12 + 174 → 186. Answer = 186.",
+   "order": 31,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If Δ stands for −, ★ stands for +, © stands for × and & stands for ÷, then what is the value of 28 Δ ( 52 & 26 ) ★ 6 © 7 ?",
+   "options": [
+    {
+     "text": "65"
+    },
+    {
+     "text": "136"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "69"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 28 − ( 52 ÷ 26 ) + 6 × 7. Now apply BODMAS: 28 − ( 52 ÷ 26 ) + 6 × 7 → 28 − ( 2 ) + 6 × 7 → 28 − 2 + 6 × 7 → 28 − 2 + 42 → 26 + 42 → 68. Answer = 68.",
+   "order": 32,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If & stands for +, © stands for ÷, ★ stands for − and Δ stands for ×, then what is the value of ( 21 ★ 21 ) Δ 11 © 25 ★ 19 ?",
+   "options": [
+    {
+     "text": "-29"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "-18"
+    },
+    {
+     "text": "-19"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: ( 21 − 21 ) × 11 ÷ 25 − 19. Now apply BODMAS: ( 21 − 21 ) × 11 ÷ 25 − 19 → ( 0 ) × 11 ÷ 25 − 19 → 0 × 11 ÷ 25 − 19 → 0 ÷ 25 − 19 → 0 − 19 → -19. Answer = -19.",
+   "order": 33,
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−)."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 7 × 20 ÷ 4 ?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 7 + 20 ÷ 4. Apply BODMAS: 7 + 20 ÷ 4 → 7 + 5 → 12. Answer = 12.",
+   "order": 34,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '−' and '÷' are interchanged, then what is the value of 3 ÷ 23 ÷ 31 ?",
+   "options": [
+    {
+     "text": "-51"
+    },
+    {
+     "text": "-61"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "-50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 3 − 23 − 31. Apply BODMAS: 3 − 23 − 31 → -20 − 31 → -51. Answer = -51.",
+   "order": 35,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 9 − 17 × 21 ?",
+   "options": [
+    {
+     "text": "-348"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 9 − 17 + 21. Apply BODMAS: 9 − 17 + 21 → -8 + 21 → 13. Answer = 13.",
+   "order": 36,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 7 + 13 × 31 ?",
+   "options": [
+    {
+     "text": "410"
+    },
+    {
+     "text": "-400"
+    },
+    {
+     "text": "-398"
+    },
+    {
+     "text": "-396"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 7 − 13 × 31. Apply BODMAS: 7 − 13 × 31 → 7 − 403 → -396. Answer = -396.",
+   "order": 37,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 5 + 15 + 4 ?",
+   "options": [
+    {
+     "text": "-14"
+    },
+    {
+     "text": "-18"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "-13"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 5 − 15 − 4. Apply BODMAS: 5 − 15 − 4 → -10 − 4 → -14. Answer = -14.",
+   "order": 38,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 6 − 3 + 14 ?",
+   "options": [
+    {
+     "text": "42"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "-36"
+    },
+    {
+     "text": "-35"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 6 − 3 × 14. Apply BODMAS: 6 − 3 × 14 → 6 − 42 → -36. Answer = -36.",
+   "order": 39,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 32 − 8 − 8 ?",
+   "options": [
+    {
+     "text": "42"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "-48"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 32 + 8 + 8. Apply BODMAS: 32 + 8 + 8 → 40 + 8 → 48. Answer = 48.",
+   "order": 40,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 32 + 22 + 35 ?",
+   "options": [
+    {
+     "text": "-25"
+    },
+    {
+     "text": "-24"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "-35"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 32 − 22 − 35. Apply BODMAS: 32 − 22 − 35 → 10 − 35 → -25. Answer = -25.",
+   "order": 41,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 18 + 8 × 20 ?",
+   "options": [
+    {
+     "text": "142"
+    },
+    {
+     "text": "200"
+    },
+    {
+     "text": "-152"
+    },
+    {
+     "text": "-142"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 18 − 8 × 20. Apply BODMAS: 18 − 8 × 20 → 18 − 160 → -142. Answer = -142.",
+   "order": 42,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 7 + 21 + 3 ?",
+   "options": [
+    {
+     "text": "-21"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "-17"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 7 − 21 − 3. Apply BODMAS: 7 − 21 − 3 → -14 − 3 → -17. Answer = -17.",
+   "order": 43,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '÷' are interchanged, then what is the value of 8 ÷ 11 ÷ 2 ?",
+   "options": [
+    {
+     "text": "-21"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 8 + 11 + 2. Apply BODMAS: 8 + 11 + 2 → 19 + 2 → 21. Answer = 21.",
+   "order": 44,
+   "subPattern": "operator-interchange",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '−' and '×' are interchanged, then what is the value of 8 − 26 ÷ 26 + 4 ?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 8 × 26 ÷ 26 + 4. Apply BODMAS: 8 × 26 ÷ 26 + 4 → 208 ÷ 26 + 4 → 8 + 4 → 12. Answer = 12.",
+   "order": 45,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 3 ÷ 6 ÷ 24 × 10 ?",
+   "options": [
+    {
+     "text": "-21"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "-17"
+    },
+    {
+     "text": "-16"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 3 − 6 − 24 + 10. Apply BODMAS: 3 − 6 − 24 + 10 → -3 − 24 + 10 → -27 + 10 → -17. Answer = -17.",
+   "order": 46,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '÷' and also '−' and '×' are interchanged, then what is the value of 35 ÷ 3 × 19 ÷ 36 ?",
+   "options": [
+    {
+     "text": "51"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "-55"
+    },
+    {
+     "text": "57"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 35 + 3 − 19 + 36. Apply BODMAS: 35 + 3 − 19 + 36 → 38 − 19 + 36 → 19 + 36 → 55. Answer = 55.",
+   "order": 47,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged and the numbers 15 and 11 are also interchanged, find the value of 15 + 32 ÷ 8 ÷ 15 .",
+   "options": [
+    {
+     "text": "331"
+    },
+    {
+     "text": "-333"
+    },
+    {
+     "text": "329"
+    },
+    {
+     "text": "333"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs and swap the numbers 15 ↔ 11 to get 11 × 32 − 8 − 11. Apply BODMAS: 11 × 32 − 8 − 11 → 352 − 8 − 11 → 344 − 11 → 333. Answer = 333.",
+   "order": 48,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged and the numbers 10 and 25 are also interchanged, find the value of 10 − 9 × 21 + 3 .",
+   "options": [
+    {
+     "text": "-176"
+    },
+    {
+     "text": "-211"
+    },
+    {
+     "text": "201"
+    },
+    {
+     "text": "211"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs and swap the numbers 10 ↔ 25 to get 25 + 9 × 21 − 3. Apply BODMAS: 25 + 9 × 21 − 3 → 25 + 189 − 3 → 214 − 3 → 211. Answer = 211.",
+   "order": 49,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '×' and '÷' are interchanged, then what is the value of ( 6 ÷ 28 ) + 25 − 23 ?",
+   "options": [
+    {
+     "text": "170"
+    },
+    {
+     "text": "-170"
+    },
+    {
+     "text": "164"
+    },
+    {
+     "text": "172"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get ( 6 × 28 ) + 25 − 23. Apply BODMAS: ( 6 × 28 ) + 25 − 23 → ( 168 ) + 25 − 23 → 168 + 25 − 23 → 193 − 23 → 170. Answer = 170.",
+   "order": 50,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '÷' and also '−' and '×' are interchanged, then what is the value of 36 × 28 − 2 × 6 ?",
+   "options": [
+    {
+     "text": "996"
+    },
+    {
+     "text": "-36"
+    },
+    {
+     "text": "-26"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 36 − 28 × 2 − 6. Apply BODMAS: 36 − 28 × 2 − 6 → 36 − 56 − 6 → -20 − 6 → -26. Answer = -26.",
+   "order": 51,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 12 + 15 − 7 − 16 ?",
+   "options": [
+    {
+     "text": "158"
+    },
+    {
+     "text": "157"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "147"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 12 × 15 − 7 − 16. Apply BODMAS: 12 × 15 − 7 − 16 → 180 − 7 − 16 → 173 − 16 → 157. Answer = 157.",
+   "order": 52,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, then what is the value of 26 − 28 − 19 ÷ 10 ?",
+   "options": [
+    {
+     "text": "-244"
+    },
+    {
+     "text": "244"
+    },
+    {
+     "text": "234"
+    },
+    {
+     "text": "246"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 26 + 28 + 19 × 10. Apply BODMAS: 26 + 28 + 19 × 10 → 26 + 28 + 190 → 54 + 190 → 244. Answer = 244.",
+   "order": 53,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged and the numbers 28 and 6 are also interchanged, find the value of 11 + 5 + 28 × 28 .",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "-1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs and swap the numbers 28 ↔ 6 to get 11 − 5 − 6 ÷ 6. Apply BODMAS: 11 − 5 − 6 ÷ 6 → 11 − 5 − 1 → 6 − 1 → 5. Answer = 5.",
+   "order": 54,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' are interchanged, then what is the value of 7 − 14 × 17 − 15 ?",
+   "options": [
+    {
+     "text": "-246"
+    },
+    {
+     "text": "372"
+    },
+    {
+     "text": "-260"
+    },
+    {
+     "text": "260"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 7 + 14 × 17 + 15. Apply BODMAS: 7 + 14 × 17 + 15 → 7 + 238 + 15 → 245 + 15 → 260. Answer = 260.",
+   "order": 55,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, then what is the value of 9 − 22 − 16 + 19 ?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "-10"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 9 + 22 + 16 − 19. Apply BODMAS: 9 + 22 + 16 − 19 → 31 + 16 − 19 → 47 − 19 → 28. Answer = 28.",
+   "order": 56,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '−' and '×' are interchanged and the numbers 28 and 11 are also interchanged, find the value of 10 × 16 × 32 − 28 .",
+   "options": [
+    {
+     "text": "-358"
+    },
+    {
+     "text": "5092"
+    },
+    {
+     "text": "-418"
+    },
+    {
+     "text": "-360"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs and swap the numbers 28 ↔ 11 to get 10 − 16 − 32 × 11. Apply BODMAS: 10 − 16 − 32 × 11 → 10 − 16 − 352 → -6 − 352 → -358. Answer = -358.",
+   "order": 57,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 8 + 9 × 34 ÷ 8 ?",
+   "options": [
+    {
+     "text": "-98"
+    },
+    {
+     "text": "94"
+    },
+    {
+     "text": "98"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 8 × 9 + 34 − 8. Apply BODMAS: 8 × 9 + 34 − 8 → 72 + 34 − 8 → 106 − 8 → 98. Answer = 98.",
+   "order": 58,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '÷' and also '−' and '×' are interchanged, then what is the value of 11 ÷ 23 ÷ ( 31 × 23 ) ?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "-42"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 11 + 23 + ( 31 − 23 ). Apply BODMAS: 11 + 23 + ( 31 − 23 ) → 11 + 23 + ( 8 ) → 11 + 23 + 8 → 34 + 8 → 42. Answer = 42.",
+   "order": 59,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 30 × 21 × 4 + 16 ?",
+   "options": [
+    {
+     "text": "-115"
+    },
+    {
+     "text": "115"
+    },
+    {
+     "text": "2536"
+    },
+    {
+     "text": "111"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs to get 30 + 21 + 4 × 16. Apply BODMAS: 30 + 21 + 4 × 16 → 30 + 21 + 64 → 51 + 64 → 115. Answer = 115.",
+   "order": 60,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, then what is the value of 25 − 25 + 11 × 2 ?",
+   "options": [
+    {
+     "text": "-248"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "-250"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 25 − 25 × 11 + 2. Apply BODMAS: 25 − 25 × 11 + 2 → 25 − 275 + 2 → -250 + 2 → -248. Answer = -248.",
+   "order": 61,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 25 × 14 ÷ 29 ÷ 18 ?",
+   "options": [
+    {
+     "text": "-12"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "-8"
+    },
+    {
+     "text": "-7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 25 + 14 − 29 − 18. Apply BODMAS: 25 + 14 − 29 − 18 → 39 − 29 − 18 → 10 − 18 → -8. Answer = -8.",
+   "order": 62,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, which of the following equations is correct?",
+   "options": [
+    {
+     "text": "19 × 5 × 15 = -39"
+    },
+    {
+     "text": "2 ÷ 25 + 7 = -173"
+    },
+    {
+     "text": "30 ÷ 4 ÷ 29 = 4"
+    },
+    {
+     "text": "16 ÷ 20 × 7 = 6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 2 ÷ 25 + 7 becomes 2 − 25 × 7; by BODMAS 2 − 25 × 7 → 2 − 175 → -173 = -173. The other statements do not balance after the change.",
+   "order": 63,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If the signs '+' and '×' are interchanged, which of the following equations is correct?",
+   "options": [
+    {
+     "text": "21 − 8 × 8 = -21"
+    },
+    {
+     "text": "6 + 9 ÷ 27 = 1"
+    },
+    {
+     "text": "4 × 2 + 6 = -16"
+    },
+    {
+     "text": "3 × 10 + 21 = 213"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 3 × 10 + 21 becomes 3 + 10 × 21; by BODMAS 3 + 10 × 21 → 3 + 210 → 213 = 213. The other statements do not balance after the change.",
+   "order": 64,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, which of the following equations is correct?",
+   "options": [
+    {
+     "text": "27 + 4 + 24 = 1"
+    },
+    {
+     "text": "15 − 18 − 10 = 43"
+    },
+    {
+     "text": "20 ÷ 11 + 16 = 200"
+    },
+    {
+     "text": "10 ÷ 28 + 5 = 282"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 15 − 18 − 10 becomes 15 + 18 + 10; by BODMAS 15 + 18 + 10 → 33 + 10 → 43 = 43. The other statements do not balance after the change.",
+   "order": 65,
+   "subPattern": "operator-interchange",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 2 × 23 × 32 × 15 + 21 ?",
+   "options": [
+    {
+     "text": "1512"
+    },
+    {
+     "text": "366"
+    },
+    {
+     "text": "22101"
+    },
+    {
+     "text": "372"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs to get 2 + 23 + 32 + 15 × 21. Apply BODMAS: 2 + 23 + 32 + 15 × 21 → 2 + 23 + 32 + 315 → 25 + 32 + 315 → 57 + 315 → 372. Answer = 372.",
+   "order": 66,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '−' and also '×' and '÷' are interchanged, then what is the value of 15 − 35 ÷ 5 + 19 − 9 ?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "240"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "176"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 15 + 35 × 5 − 19 + 9. Apply BODMAS: 15 + 35 × 5 − 19 + 9 → 15 + 175 − 19 + 9 → 190 − 19 + 9 → 171 + 9 → 180. Answer = 180.",
+   "order": 67,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 10 × 5 + 3 × ( 2 ÷ 24 ) ?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "-3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs to get 10 + 5 × 3 + ( 2 − 24 ). Apply BODMAS: 10 + 5 × 3 + ( 2 − 24 ) → 10 + 5 × 3 + ( -22 ) → 10 + 5 × 3 + -22 → 10 + 15 + -22 → 25 + -22 → 3. Answer = 3.",
+   "order": 68,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '×' and also '−' and '÷' are interchanged, then what is the value of 32 ÷ 18 × 33 ÷ 3 + 35 ?",
+   "options": [
+    {
+     "text": "-60"
+    },
+    {
+     "text": "1540"
+    },
+    {
+     "text": "-58"
+    },
+    {
+     "text": "-62"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Interchange the signs to get 32 − 18 + 33 − 3 × 35. Apply BODMAS: 32 − 18 + 33 − 3 × 35 → 32 − 18 + 33 − 105 → 14 + 33 − 105 → 47 − 105 → -58. Answer = -58.",
+   "order": 69,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '÷' are interchanged and the numbers 25 and 19 are also interchanged, find the value of 31 − ( 25 − 28 ) ÷ 22 ÷ 20 .",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "82"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Interchange the signs and swap the numbers 25 ↔ 19 to get 31 − ( 19 − 28 ) + 22 + 20. Apply BODMAS: 31 − ( 19 − 28 ) + 22 + 20 → 31 − ( -9 ) + 22 + 20 → 31 − -9 + 22 + 20 → 40 + 22 + 20 → 62 + 20 → 82. Answer = 82.",
+   "order": 70,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '+' and '÷' are interchanged and the numbers 17 and 10 are also interchanged, find the value of 26 − 17 × 12 ÷ 8 × 29 .",
+   "options": [
+    {
+     "text": "138"
+    },
+    {
+     "text": "128"
+    },
+    {
+     "text": "-138"
+    },
+    {
+     "text": "5800"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Interchange the signs and swap the numbers 17 ↔ 10 to get 26 − 10 × 12 + 8 × 29. Apply BODMAS: 26 − 10 × 12 + 8 × 29 → 26 − 120 + 8 × 29 → 26 − 120 + 232 → -94 + 232 → 138. Answer = 138.",
+   "order": 71,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "If the signs '×' and '÷' are interchanged and the numbers 27 and 35 are also interchanged, find the value of 4 − 16 − ( 7 ÷ 27 ) − 18 .",
+   "options": [
+    {
+     "text": "-683"
+    },
+    {
+     "text": "-275"
+    },
+    {
+     "text": "-279"
+    },
+    {
+     "text": "275"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Interchange the signs and swap the numbers 27 ↔ 35 to get 4 − 16 − ( 7 × 35 ) − 18. Apply BODMAS: 4 − 16 − ( 7 × 35 ) − 18 → 4 − 16 − ( 245 ) − 18 → 4 − 16 − 245 − 18 → -12 − 245 − 18 → -257 − 18 → -275. Answer = -275.",
+   "order": 72,
+   "subPattern": "operator-interchange",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the whole expression with the interchanged signs before computing anything."
+  },
+  {
+   "questionText": "In a certain operation, 12 ⊗ 11 = 120, 11 ⊗ 2 = 11, 8 ⊗ 6 = 40. Using the same rule, what is 11 ⊗ 6 ?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "55"
+    },
+    {
+     "text": "133"
+    },
+    {
+     "text": "77"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 12 ⊗ 11 = 120 fits a×b − a (a = 12, b = 11). The same rule also gives 11 and 40 for the other two. So a ⊗ b = a×b − a, and 11 ⊗ 6 = 55.",
+   "order": 73,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 8 × 2 = 22, 12 × 6 = 42, 6 × 5 = 27. Using the same rule, what is 11 × 5 ?",
+   "options": [
+    {
+     "text": "116"
+    },
+    {
+     "text": "146"
+    },
+    {
+     "text": "5516"
+    },
+    {
+     "text": "37"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 8 × 2 = 22 fits 2a + 3b (a = 8, b = 2). The same rule also gives 42 and 27 for the other two. So a × b = 2a + 3b, and 11 × 5 = 37.",
+   "order": 74,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 9 % 8 = 81, 12 % 2 = 36, 7 % 2 = 21. Using the same rule, what is 8 % 3 ?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "120"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 9 % 8 = 81 fits a×b + a (a = 9, b = 8). The same rule also gives 36 and 21 for the other two. So a % b = a×b + a, and 8 % 3 = 32.",
+   "order": 75,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 ★ 10 = 134, 12 ★ 4 = 140, 8 ★ 4 = 60. Using the same rule, what is 10 ★ 8 ?",
+   "options": [
+    {
+     "text": "92"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 12 ★ 10 = 134 fits a² − b (a = 12, b = 10). The same rule also gives 140 and 60 for the other two. So a ★ b = a² − b, and 10 ★ 8 = 92.",
+   "order": 76,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 10 − 9 = 92, 11 − 7 = 79, 11 − 2 = 24. Using the same rule, what is 11 − 8 ?",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "388"
+    },
+    {
+     "text": "113"
+    },
+    {
+     "text": "1988"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 10 − 9 = 92 fits a×b + 2 (a = 10, b = 9). The same rule also gives 79 and 24 for the other two. So a − b = a×b + 2, and 11 − 8 = 90.",
+   "order": 77,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 3 # 1 = 4, 8 # 2 = 12, 11 # 2 = 15. Using the same rule, what is 10 # 9 ?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "361"
+    },
+    {
+     "text": "109"
+    },
+    {
+     "text": "91"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 3 # 1 = 4 fits a + b² (a = 3, b = 1). The same rule also gives 12 and 15 for the other two. So a # b = a + b², and 10 # 9 = 91.",
+   "order": 78,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 % 9 = 87, 9 % 7 = 47, 6 % 4 = 14. Using the same rule, what is 7 % 3 ?",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "1021"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 12 % 9 = 87 fits a×b − (a + b) (a = 12, b = 9). The same rule also gives 47 and 14 for the other two. So a % b = a×b − (a + b), and 7 % 3 = 11.",
+   "order": 79,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 & 11 = 144, 12 & 8 = 108, 10 & 8 = 90. Using the same rule, what is 5 & 2 ?",
+   "options": [
+    {
+     "text": "49"
+    },
+    {
+     "text": "107"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "103"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 12 & 11 = 144 fits a×b + a (a = 12, b = 11). The same rule also gives 108 and 90 for the other two. So a & b = a×b + a, and 5 & 2 = 15.",
+   "order": 80,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 10 @ 9 = 11, 12 @ 5 = 19, 12 @ 11 = 13. Using the same rule, what is 10 @ 8 ?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "10064"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "116"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 10 @ 9 = 11 fits 2a − b (a = 10, b = 9). The same rule also gives 19 and 13 for the other two. So a @ b = 2a − b, and 10 @ 8 = 12.",
+   "order": 81,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 8 Δ 7 = 49, 8 Δ 2 = 14, 9 Δ 6 = 48. Using the same rule, what is 11 Δ 5 ?",
+   "options": [
+    {
+     "text": "71"
+    },
+    {
+     "text": "50"
+    },
+    {
+     "text": "1655"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 8 Δ 7 = 49 fits a×b − b (a = 8, b = 7). The same rule also gives 14 and 48 for the other two. So a Δ b = a×b − b, and 11 Δ 5 = 50.",
+   "order": 82,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 5 # 3 = 12, 9 # 7 = 56, 10 # 7 = 63. Using the same rule, what is 10 # 2 ?",
+   "options": [
+    {
+     "text": "26"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 5 # 3 = 12 fits a×b − b (a = 5, b = 3). The same rule also gives 56 and 63 for the other two. So a # b = a×b − b, and 10 # 2 = 18.",
+   "order": 83,
+   "subPattern": "equation-based",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 ⊗ 10 = 22120, 12 ⊗ 4 = 1648, 10 ⊗ 8 = 1880. Using the same rule, what is 4 ⊗ 3 ?",
+   "options": [
+    {
+     "text": "49"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "712"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 12 ⊗ 10 = 22120 fits (a + b) written next to (a × b) (a = 12, b = 10). The same rule also gives 1648 and 1880 for the other two. So a ⊗ b = (a + b) written next to (a × b), and 4 ⊗ 3 = 712.",
+   "order": 84,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 ⊕ 8 = 420, 7 ⊕ 1 = 68, 10 ⊕ 7 = 317. Using the same rule, what is 9 ⊕ 4 ?",
+   "options": [
+    {
+     "text": "158"
+    },
+    {
+     "text": "85"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "513"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 12 ⊕ 8 = 420 fits (a − b) written next to (a + b) (a = 12, b = 8). The same rule also gives 68 and 317 for the other two. So a ⊕ b = (a − b) written next to (a + b), and 9 ⊕ 4 = 513.",
+   "order": 85,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 # 8 = 204, 11 # 7 = 184, 8 # 4 = 124. Using the same rule, what is 10 # 7 ?",
+   "options": [
+    {
+     "text": "173"
+    },
+    {
+     "text": "72"
+    },
+    {
+     "text": "10049"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Test on the first example: 12 # 8 = 204 fits (a + b) written next to (a − b) (a = 12, b = 8). The same rule also gives 184 and 124 for the other two. So a # b = (a + b) written next to (a − b), and 10 # 7 = 173.",
+   "order": 86,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 10 ÷ 9 = 919, 12 ÷ 4 = 1712, 8 ÷ 4 = 496. Using the same rule, what is 6 ÷ 5 ?",
+   "options": [
+    {
+     "text": "111"
+    },
+    {
+     "text": "191"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Test on the first example: 10 ÷ 9 = 919 fits a³ − b² (a = 10, b = 9). The same rule also gives 1712 and 496 for the other two. So a ÷ b = a³ − b², and 6 ÷ 5 = 191.",
+   "order": 87,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 12 @ 11 = 231, 2 @ 1 = 31, 11 @ 5 = 166. Using the same rule, what is 8 @ 5 ?",
+   "options": [
+    {
+     "text": "313"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "133"
+    },
+    {
+     "text": "403"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Test on the first example: 12 @ 11 = 231 fits (a + b) written next to (a − b) (a = 12, b = 11). The same rule also gives 31 and 166 for the other two. So a @ b = (a + b) written next to (a − b), and 8 @ 5 = 133.",
+   "order": 88,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "In a certain operation, 6 $ 1 = 75, 11 $ 3 = 148, 6 $ 5 = 111. Using the same rule, what is 10 $ 8 ?",
+   "options": [
+    {
+     "text": "218"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "10064"
+    },
+    {
+     "text": "182"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Test on the first example: 6 $ 1 = 75 fits (a + b) written next to (a − b) (a = 6, b = 1). The same rule also gives 148 and 111 for the other two. So a $ b = (a + b) written next to (a − b), and 10 $ 8 = 182.",
+   "order": 89,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Try 'a×b' and 'a²' type combinations on the first pair, then confirm on the other pairs."
+  },
+  {
+   "questionText": "If 12 # 11 = 143, 7 # 5 = 40, 11 # 10 = 120, then find the value of x (a positive integer smaller than 9) in 9 # x = 40.",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First find the rule from the examples: a # b = a×b + b. Then 9 # x = 40 becomes 9×x + x = 40. Checking values of x, only x = 4 works.",
+   "order": 90,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 12 ÷ 7 = 158, 8 ÷ 5 = 74, 7 ÷ 2 = 53, then find the value of x (a positive integer smaller than 13) in 13 ÷ x = 173.",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First find the rule from the examples: a ÷ b = a² + 2b. Then 13 ÷ x = 173 becomes 13² + 2×x = 173. Checking values of x, only x = 2 works.",
+   "order": 91,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 12 ★ 5 = 65, 11 ★ 8 = 96, 12 ★ 11 = 143, then find the value of x (a positive integer smaller than 11) in 11 ★ x = 24.",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First find the rule from the examples: a ★ b = a×b + b. Then 11 ★ x = 24 becomes 11×x + x = 24. Checking values of x, only x = 2 works.",
+   "order": 92,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 10 ÷ 9 = 100, 10 ÷ 5 = 60, 9 ÷ 8 = 81, then find the value of x (a positive integer smaller than 9) in 9 ÷ x = 27.",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First find the rule from the examples: a ÷ b = a×b + a. Then 9 ÷ x = 27 becomes 9×x + 9 = 27. Checking values of x, only x = 2 works.",
+   "order": 93,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 12 & 10 = 1718, 11 & 7 = 1324, 12 & 3 = 1725, then find the value of x (a positive integer smaller than 14) in 14 & x = 2737.",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First find the rule from the examples: a & b = a³ − b. Then 14 & x = 2737 becomes 14³ − x = 2737. Checking values of x, only x = 7 works.",
+   "order": 94,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 12 % 10 = 130, 7 % 5 = 40, 9 % 7 = 70, then find the value of x (a positive integer smaller than 11) in 11 % x = 60.",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First find the rule from the examples: a % b = a×b + b. Then 11 % x = 60 becomes 11×x + x = 60. Checking values of x, only x = 5 works.",
+   "order": 95,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 11 × 7 = 324, 8 × 5 = 169, 7 × 2 = 81, then find the value of x (a positive integer smaller than 13) in 13 × x = 289.",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First find the rule from the examples: a × b = (a + b)². Then 13 × x = 289 becomes (13 + x)² = 289. Checking values of x, only x = 4 works.",
+   "order": 96,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 7 Δ 4 = 65, 9 Δ 8 = 145, 11 Δ 9 = 202, then find the value of x (a positive integer smaller than 6) in 6 Δ x = 45.",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First find the rule from the examples: a Δ b = a² + b². Then 6 Δ x = 45 becomes 6² + x² = 45. Checking values of x, only x = 3 works.",
+   "order": 97,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 11 ★ 9 = 101, 9 ★ 7 = 65, 10 ★ 6 = 62, then find the value of x (a positive integer smaller than 14) in 14 ★ x = 142.",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First find the rule from the examples: a ★ b = a×b + 2. Then 14 ★ x = 142 becomes 14×x + 2 = 142. Checking values of x, only x = 10 works.",
+   "order": 98,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 8 × 2 = 22, 11 × 8 = 46, 7 × 3 = 23, then find the value of x (a positive integer smaller than 6) in 6 × x = 21.",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First find the rule from the examples: a × b = 2a + 3b. Then 6 × x = 21 becomes 2×6 + 3×x = 21. Checking values of x, only x = 3 works.",
+   "order": 99,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Identify the rule first, then substitute and test small integer values of x."
+  },
+  {
+   "questionText": "If 12 + 11 = 58, 11 + 10 = 53, 11 + 5 = 43, then what is the value of (9 + 2) + 1 ?",
+   "options": [
+    {
+     "text": "95"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rule is a + b = 3a + 2b. Work inside the bracket first: 9 + 2 = 31. Then 31 + 1 = 95.",
+   "order": 100,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 11 + 1 = 122, 11 + 9 = 202, 9 + 8 = 145, then what is the value of (3 + 2) + 12 ?",
+   "options": [
+    {
+     "text": "310"
+    },
+    {
+     "text": "314"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "313"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The rule is a + b = a² + b². Work inside the bracket first: 3 + 2 = 13. Then 13 + 12 = 313.",
+   "order": 101,
+   "subPattern": "equation-based",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 10 × 9 = 9, 9 × 5 = 20, 12 × 1 = 11, then what is the value of (6 × 4) × 4 ?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The rule is a × b = (a − b) × b. Work inside the bracket first: 6 × 4 = 8. Then 8 × 4 = 16.",
+   "order": 102,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 10 % 5 = 150, 11 % 10 = 231, 11 % 5 = 176, then what is the value of (6 % 4) % 9 ?",
+   "options": [
+    {
+     "text": "69"
+    },
+    {
+     "text": "4140"
+    },
+    {
+     "text": "4145"
+    },
+    {
+     "text": "4141"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The rule is a % b = (a + b) × a. Work inside the bracket first: 6 % 4 = 60. Then 60 % 9 = 4140.",
+   "order": 103,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 4 ⊕ 1 = 3, 11 ⊕ 10 = 100, 8 ⊕ 6 = 42, then what is the value of (8 ⊕ 5) ⊕ 9 ?",
+   "options": [
+    {
+     "text": "306"
+    },
+    {
+     "text": "303"
+    },
+    {
+     "text": "307"
+    },
+    {
+     "text": "44"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rule is a ⊕ b = a×b − b. Work inside the bracket first: 8 ⊕ 5 = 35. Then 35 ⊕ 9 = 306.",
+   "order": 104,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 11 % 10 = 121, 3 % 2 = 9, 9 % 8 = 81, then what is the value of (7 % 5) % 1 ?",
+   "options": [
+    {
+     "text": "77"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "89"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The rule is a % b = a×b + a. Work inside the bracket first: 7 % 5 = 42. Then 42 % 1 = 84.",
+   "order": 105,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 8 @ 2 = 28, 12 @ 1 = 38, 12 @ 7 = 50, then what is the value of (9 @ 6) @ 9 ?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "135"
+    },
+    {
+     "text": "137"
+    },
+    {
+     "text": "136"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The rule is a @ b = 3a + 2b. Work inside the bracket first: 9 @ 6 = 39. Then 39 @ 9 = 135.",
+   "order": 106,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 10 Δ 9 = 190, 12 Δ 11 = 276, 7 Δ 5 = 84, then what is the value of (7 Δ 5) Δ 3 ?",
+   "options": [
+    {
+     "text": "7305"
+    },
+    {
+     "text": "329"
+    },
+    {
+     "text": "7308"
+    },
+    {
+     "text": "87"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The rule is a Δ b = (a + b) × a. Work inside the bracket first: 7 Δ 5 = 84. Then 84 Δ 3 = 7308.",
+   "order": 107,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If 12 # 4 = 50, 12 # 11 = 134, 12 # 1 = 14, then what is the value of (5 # 3) # 10 ?",
+   "options": [
+    {
+     "text": "172"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "173"
+    },
+    {
+     "text": "169"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rule is a # b = a×b + 2. Work inside the bracket first: 5 # 3 = 17. Then 17 # 10 = 172.",
+   "order": 108,
+   "subPattern": "equation-based",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Do the bracket with the rule first; the result then becomes the new 'a'."
+  },
+  {
+   "questionText": "If a ⊗ b is defined as 4a − b², then find the value of 7 ⊗ 7.",
+   "options": [
+    {
+     "text": "-21"
+    },
+    {
+     "text": "-19"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "-25"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Put a = 7, b = 7 in 4a − b²: 4×7 − 7² = -21.",
+   "order": 109,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a ∆ b is defined as (a + b)/2 + a, then find the value of 11 ∆ 9.",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 11, b = 9 in (a + b)/2 + a: (11 + 9)/2 + 11 = 21.",
+   "order": 110,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a ★ b is defined as (a − b)² + a, then find the value of 2 ★ 9.",
+   "options": [
+    {
+     "text": "49"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Put a = 2, b = 9 in (a − b)² + a: (2 − 9)² + 2 = 51.",
+   "order": 111,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a @ b is defined as a² − b, then find the value of 7 @ 10.",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "93"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Put a = 7, b = 10 in a² − b: 7² − 10 = 39.",
+   "order": 112,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a # b is defined as a² + b² − a×b, then find the value of 11 # 9.",
+   "options": [
+    {
+     "text": "99"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "103"
+    },
+    {
+     "text": "105"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 11, b = 9 in a² + b² − a×b: 11² + 9² − 11×9 = 103.",
+   "order": 113,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a ★ b is defined as a² − b, then find the value of 3 ★ 8.",
+   "options": [
+    {
+     "text": "-5"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "-1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Put a = 3, b = 8 in a² − b: 3² − 8 = 1.",
+   "order": 114,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a ∆ b is defined as 4a − b², then find the value of 2 ∆ 6.",
+   "options": [
+    {
+     "text": "-23"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "-6"
+    },
+    {
+     "text": "-28"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Put a = 2, b = 6 in 4a − b²: 4×2 − 6² = -28.",
+   "order": 115,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a % b is defined as a² − 2ab + b, then find the value of 3 % 9.",
+   "options": [
+    {
+     "text": "-36"
+    },
+    {
+     "text": "-6"
+    },
+    {
+     "text": "-40"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Put a = 3, b = 9 in a² − 2ab + b: 3² − 2×3×9 + 9 = -36.",
+   "order": 116,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a % b is defined as a×(b − 1) + b, then find the value of 5 % 7.",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Put a = 5, b = 7 in a×(b − 1) + b: 5×(7 − 1) + 7 = 37.",
+   "order": 117,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a % b is defined as 3a − 2b, then find the value of 12 % 7.",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "-3"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Put a = 12, b = 7 in 3a − 2b: 3×12 − 2×7 = 22.",
+   "order": 118,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a ⊕ b is defined as a² − 2ab + b, then find the value of 6 ⊕ 10.",
+   "options": [
+    {
+     "text": "-75"
+    },
+    {
+     "text": "-80"
+    },
+    {
+     "text": "-74"
+    },
+    {
+     "text": "-21"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 6, b = 10 in a² − 2ab + b: 6² − 2×6×10 + 10 = -74.",
+   "order": 119,
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order."
+  },
+  {
+   "questionText": "If a ¤ b = 5a − 3b + 1, find the value of (5 ¤ 2) ¤ 4.",
+   "options": [
+    {
+     "text": "93"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "-39"
+    },
+    {
+     "text": "89"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First bracket: 5 ¤ 2 = 5×5 − 3×2 + 1 = 20. Then 20 ¤ 4 = 89.",
+   "order": 120,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'."
+  },
+  {
+   "questionText": "If a ☆ b = a² + b² − a×b, find the value of (7 ☆ 2) ☆ 7.",
+   "options": [
+    {
+     "text": "1298"
+    },
+    {
+     "text": "1304"
+    },
+    {
+     "text": "1297"
+    },
+    {
+     "text": "46"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "First bracket: 7 ☆ 2 = 7² + 2² − 7×2 = 39. Then 39 ☆ 7 = 1297.",
+   "order": 121,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'."
+  },
+  {
+   "questionText": "If a ☆ b = a×(b − 1) + b, find the value of (6 ☆ 5) ☆ 5.",
+   "options": [
+    {
+     "text": "121"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "169"
+    },
+    {
+     "text": "125"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First bracket: 6 ☆ 5 = 6×(5 − 1) + 5 = 29. Then 29 ☆ 5 = 121.",
+   "order": 122,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'."
+  },
+  {
+   "questionText": "If a ⊗ b = a×b + a − b, find the value of (3 ⊗ 6) ⊗ 6.",
+   "options": [
+    {
+     "text": "75"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "99"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First bracket: 3 ⊗ 6 = 3×6 + 3 − 6 = 15. Then 15 ⊗ 6 = 99.",
+   "order": 123,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'."
+  },
+  {
+   "questionText": "If a ◆ b = a×b − (a + b), find the value of (5 ◆ 7) ◆ 6.",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "109"
+    },
+    {
+     "text": "111"
+    },
+    {
+     "text": "106"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First bracket: 5 ◆ 7 = 5×7 − (5 + 7) = 23. Then 23 ◆ 6 = 109.",
+   "order": 124,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'."
+  },
+  {
+   "questionText": "If a ¤ b = a² + b² − a×b, find the value of (3 ¤ 4) ¤ 3.",
+   "options": [
+    {
+     "text": "139"
+    },
+    {
+     "text": "140"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "136"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First bracket: 3 ¤ 4 = 3² + 4² − 3×4 = 13. Then 13 ¤ 3 = 139.",
+   "order": 125,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'."
+  },
+  {
+   "questionText": "If a ⊗ b = a×b + a, find the positive value of x for which x ⊗ 7 = 96.",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "89"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "x ⊗ 7 = x×7 + x = 96. Solving this gives x = 12.",
+   "order": 126,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Substitute b first, then solve the simple equation in x."
+  },
+  {
+   "questionText": "If a ⊗ b = a² + b, find the positive value of x for which x ⊗ 8 = 24.",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x ⊗ 8 = x² + 8 = 24. Solving this gives x = 4.",
+   "order": 127,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Substitute b first, then solve the simple equation in x."
+  },
+  {
+   "questionText": "If a ∆ b = a² + a×b, find the positive value of x for which x ∆ 6 = 315.",
+   "options": [
+    {
+     "text": "14"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x ∆ 6 = x² + x×6 = 315. Solving this gives x = 15.",
+   "order": 128,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Substitute b first, then solve the simple equation in x."
+  },
+  {
+   "questionText": "If a ⊗ b = a² + a×b, find the positive value of x for which x ⊗ 5 = 204.",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "199"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x ⊗ 5 = x² + x×5 = 204. Solving this gives x = 12.",
+   "order": 129,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Substitute b first, then solve the simple equation in x."
+  },
+  {
+   "questionText": "If a ¤ b = a² − b, find the positive value of x for which x ¤ 6 = -2.",
+   "options": [
+    {
+     "text": "-8"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x ¤ 6 = x² − 6 = -2. Solving this gives x = 2.",
+   "order": 130,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Substitute b first, then solve the simple equation in x."
+  },
+  {
+   "questionText": "If a # b = a² + b, find the positive value of x for which x # 6 = 31.",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x # 6 = x² + 6 = 31. Solving this gives x = 5.",
+   "order": 131,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Substitute b first, then solve the simple equation in x."
+  },
+  {
+   "questionText": "For two positive integers, a ∆ b is defined as a − b if a is greater than b, otherwise b − a plus 1. Find the value of (6 ∆ 3) ∆ 2.",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "6 ∆ 3: apply the condition to (6, 3) to get 3. Then 3 ∆ 2: apply the condition to (3, 2) to get 1.",
+   "order": 132,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch."
+  },
+  {
+   "questionText": "For two positive integers, a ★ b is defined as the sum of a and b if it is even, otherwise the product of a and b. Find the value of (12 ★ 9) ★ 7.",
+   "options": [
+    {
+     "text": "115"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "756"
+    },
+    {
+     "text": "108"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "12 ★ 9: apply the condition to (12, 9) to get 108. Then 108 ★ 7: apply the condition to (108, 7) to get 756.",
+   "order": 133,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch."
+  },
+  {
+   "questionText": "For two positive integers, a ☆ b is defined as the sum of a and b if it is even, otherwise the product of a and b. Find the value of (8 ☆ 10) ☆ 5.",
+   "options": [
+    {
+     "text": "90"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "58"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "8 ☆ 10: apply the condition to (8, 10) to get 18. Then 18 ☆ 5: apply the condition to (18, 5) to get 90.",
+   "order": 134,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch."
+  },
+  {
+   "questionText": "For two positive integers, a % b is defined as a + 2b if a is odd, otherwise 2a + b. Find the value of (15 % 7) % 7.",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "57"
+    },
+    {
+     "text": "65"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "15 % 7: apply the condition to (15, 7) to get 29. Then 29 % 7: apply the condition to (29, 7) to get 43.",
+   "order": 135,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch."
+  },
+  {
+   "questionText": "For two positive integers, a ☆ b is defined as the larger number squared minus the smaller number. Find the value of (11 ☆ 6) ☆ 14.",
+   "options": [
+    {
+     "text": "129"
+    },
+    {
+     "text": "36089"
+    },
+    {
+     "text": "115"
+    },
+    {
+     "text": "13211"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "11 ☆ 6: apply the condition to (11, 6) to get 115. Then 115 ☆ 14: apply the condition to (115, 14) to get 13211.",
+   "order": 136,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch."
+  },
+  {
+   "questionText": "For two positive integers, a ∇ b is defined as a − b if a is greater than b, otherwise b − a plus 1. Find the value of (3 ∇ 8) ∇ 11.",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "3 ∇ 8: apply the condition to (3, 8) to get 6. Then 6 ∇ 11: apply the condition to (6, 11) to get 6.",
+   "order": 137,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch."
+  },
+  {
+   "questionText": "If a $ b means LCM of a and b minus HCF of a and b, find 26 $ 45.",
+   "options": [
+    {
+     "text": "1171"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "1170"
+    },
+    {
+     "text": "1169"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "HCF(26, 45) = 1; LCM = 26×45/1 = 1170. Result = 1170 − 1 = 1169.",
+   "order": 138,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "A function is defined by f(n) = n² − 3. Find f(f(4)).",
+   "options": [
+    {
+     "text": "166"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "169"
+    },
+    {
+     "text": "253"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "f(4) = 16 − 3 = 13. f(13) = 13² − 3 = 166.",
+   "order": 139,
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Two operations are defined: a ¤ b = a + b + a×b and a @ b = (a + b)×2 − a. Find the value of (9 ¤ 6) @ 6.",
+   "options": [
+    {
+     "text": "76"
+    },
+    {
+     "text": "144"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "75"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inner bracket with ¤: 9 ¤ 6 = 9 + 6 + 9×6 = 69. Then 69 @ 6 = (69 + 6)×2 − 69 = 81.",
+   "order": 140,
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula."
+  },
+  {
+   "questionText": "Two operations are defined: a # b = a² − b and a % b = a² − b. Find the value of (3 # 6) % 6.",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner bracket with #: 3 # 6 = 3² − 6 = 3. Then 3 % 6 = 3² − 6 = 3.",
+   "order": 141,
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula."
+  },
+  {
+   "questionText": "Two operations are defined: a ¤ b = 3a − 2b and a ⊗ b = a² + b. Find the value of (6 ¤ 5) ⊗ 9.",
+   "options": [
+    {
+     "text": "105"
+    },
+    {
+     "text": "89"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "73"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Inner bracket with ¤: 6 ¤ 5 = 3×6 − 2×5 = 8. Then 8 ⊗ 9 = 8² + 9 = 73.",
+   "order": 142,
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula."
+  },
+  {
+   "questionText": "Two operations are defined: a ⊕ b = a² + b² − a×b and a ∆ b = (a + b)×2 − a. Find the value of (8 ⊕ 8) ∆ 7.",
+   "options": [
+    {
+     "text": "78"
+    },
+    {
+     "text": "457"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "135"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Inner bracket with ⊕: 8 ⊕ 8 = 8² + 8² − 8×8 = 64. Then 64 ∆ 7 = (64 + 7)×2 − 64 = 78.",
+   "order": 143,
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula."
+  },
+  {
+   "questionText": "If a ★ b = a + b − 4, then which number e satisfies a ★ e = a for every a?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "a ★ e = a + e − 4 = a gives e = 4.",
+   "order": 144,
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "If a ☆ b = a + b + 2ab, find the value of 2 ☆ (3 ☆ 1).",
+   "options": [
+    {
+     "text": "52"
+    },
+    {
+     "text": "54"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "3 ☆ 1 = 3 + 1 + 2×3 = 10. Then 2 ☆ 10 = 2 + 10 + 2×2×10 = 52.",
+   "order": 145,
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "In a puzzle, 4 means 8; 6 means 4; 2 means 9; 9 means 2 and 8 means 6. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 − 9 − 6 ?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "-1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "-13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each number by its meaning: 9 − 2 − 4. BODMAS: 9 − 2 − 4 → 7 − 4 → 3. Answer = 3.",
+   "order": 146,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 5 means 6; 8 means 9; 9 means 7; 6 means 5 and 7 means 8. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 6 + 5 − 9 ?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 5 + 6 − 7. BODMAS: 5 + 6 − 7 → 11 − 7 → 4. Answer = 4.",
+   "order": 147,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 1 means 7; 7 means 5; 8 means 4; 4 means 8 and 5 means 1. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 7 − 5 − 4 ?",
+   "options": [
+    {
+     "text": "-11"
+    },
+    {
+     "text": "-4"
+    },
+    {
+     "text": "-7"
+    },
+    {
+     "text": "-2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 5 − 1 − 8. BODMAS: 5 − 1 − 8 → 4 − 8 → -4. Answer = -4.",
+   "order": 148,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 2 means 5; 4 means 9; 5 means 2; 9 means 7 and 7 means 4. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 − 9 − 5 ?",
+   "options": [
+    {
+     "text": "-4"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "-11"
+    },
+    {
+     "text": "-12"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each number by its meaning: 5 − 7 − 2. BODMAS: 5 − 7 − 2 → -2 − 2 → -4. Answer = -4.",
+   "order": 149,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 6 means 2; 3 means 1; 1 means 4; 4 means 3 and 2 means 6. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 − 3 − 6 ?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "-7"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 6 − 1 − 2. BODMAS: 6 − 1 − 2 → 5 − 2 → 3. Answer = 3.",
+   "order": 150,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 5 means 6; 2 means 8; 8 means 5; 6 means 4 and 4 means 2. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 5 × 8 − 2 ?",
+   "options": [
+    {
+     "text": "38"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 6 × 5 − 8. BODMAS: 6 × 5 − 8 → 30 − 8 → 22. Answer = 22.",
+   "order": 151,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 4 means 2; 7 means 5; 2 means 9; 5 means 4 and 9 means 7. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 9 − 5 + 4 ?",
+   "options": [
+    {
+     "text": "1"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each number by its meaning: 7 − 4 + 2. BODMAS: 7 − 4 + 2 → 3 + 2 → 5. Answer = 5.",
+   "order": 152,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 6 means 8; 3 means 7; 8 means 9; 7 means 6 and 9 means 3. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 6 + 9 × 8 ?",
+   "options": [
+    {
+     "text": "99"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 8 + 3 × 9. BODMAS: 8 + 3 × 9 → 8 + 27 → 35. Answer = 35.",
+   "order": 153,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "Reverse the digits of 46 and add the result to 46. What is the sum?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "99"
+    },
+    {
+     "text": "92"
+    },
+    {
+     "text": "110"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Reverse of 46 is 64. 46 + 64 = 110.",
+   "order": 154,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Find the difference between 732 and the number obtained by reversing its digits.",
+   "options": [
+    {
+     "text": "504"
+    },
+    {
+     "text": "396"
+    },
+    {
+     "text": "495"
+    },
+    {
+     "text": "969"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Reverse of 732 is 237. 732 − 237 = 495.",
+   "order": 155,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Find (product of the digits) − (sum of the digits) of the number 9465.",
+   "options": [
+    {
+     "text": "1056"
+    },
+    {
+     "text": "1080"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "1104"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Digits of 9465: [9, 4, 6, 5]. Product = 1080, sum = 24. 1080 − 24 = 1056.",
+   "order": 156,
+   "subPattern": "number-based-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "In a puzzle, 5 means 9; 8 means 7; 3 means 8; 4 means 5; 9 means 4 and 7 means 3. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 5 × 4 − 7 × 3 ?",
+   "options": [
+    {
+     "text": "-1"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "336"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each number by its meaning: 9 × 5 − 3 × 8. BODMAS: 9 × 5 − 3 × 8 → 45 − 3 × 8 → 45 − 24 → 21. Answer = 21.",
+   "order": 157,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 2 means 9; 1 means 4; 7 means 1; 4 means 2; 5 means 7 and 9 means 5. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 2 + 9 − 7 + 1 ?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each number by its meaning: 9 + 5 − 1 + 4. BODMAS: 9 + 5 − 1 + 4 → 14 − 1 + 4 → 13 + 4 → 17. Answer = 17.",
+   "order": 158,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 9 means 3; 4 means 1; 2 means 9; 1 means 4; 3 means 6 and 6 means 2. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 9 × 6 + 2 − 4 ?",
+   "options": [
+    {
+     "text": "14"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "52"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each number by its meaning: 3 × 2 + 9 − 1. BODMAS: 3 × 2 + 9 − 1 → 6 + 9 − 1 → 15 − 1 → 14. Answer = 14.",
+   "order": 159,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In a puzzle, 1 means 6; 4 means 7; 7 means 5; 6 means 8; 8 means 1 and 5 means 4. Every number in an expression is read as its new meaning, and signs keep their usual meaning. What is the value of 8 − 4 + 5 × 7 ?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "-10"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each number by its meaning: 1 − 7 + 4 × 5. BODMAS: 1 − 7 + 4 × 5 → 1 − 7 + 20 → -6 + 20 → 14. Answer = 14.",
+   "order": 160,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Rewrite the numbers first (all at once), then calculate normally."
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 11, 10, 99; Row 2: 11, 2, 11; Row 3: 9, 8, 63; Row 4: 9, 4, ?  Find the missing number.",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "513"
+    },
+    {
+     "text": "713"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In Row 1, 11 and 10 give 99, which matches a×b − a. The rule holds for Rows 2 and 3 as well. For Row 4: a×b − a with a = 9, b = 4 gives 27.",
+   "order": 161,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row."
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 12, 6, 48; Row 2: 12, 5, 37; Row 3: 12, 11, 133; Row 4: 9, 7, ?  Find the missing number.",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "216"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In Row 1, 12 and 6 give 48, which matches a + b². The rule holds for Rows 2 and 3 as well. For Row 4: a + b² with a = 9, b = 7 gives 58.",
+   "order": 162,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row."
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 8, 7, 49; Row 2: 9, 8, 64; Row 3: 12, 7, 77; Row 4: 12, 8, ?  Find the missing number.",
+   "options": [
+    {
+     "text": "1720"
+    },
+    {
+     "text": "400"
+    },
+    {
+     "text": "2096"
+    },
+    {
+     "text": "88"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In Row 1, 8 and 7 give 49, which matches a×b − b. The rule holds for Rows 2 and 3 as well. For Row 4: a×b − b with a = 12, b = 8 gives 88.",
+   "order": 163,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row."
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 12, 7, 60; Row 2: 12, 11, 12; Row 3: 9, 1, 72; Row 4: 9, 7, ?  Find the missing number.",
+   "options": [
+    {
+     "text": "263"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "680"
+    },
+    {
+     "text": "70"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In Row 1, 12 and 7 give 60, which matches (a − b) × a. The rule holds for Rows 2 and 3 as well. For Row 4: (a − b) × a with a = 9, b = 7 gives 18.",
+   "order": 164,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row."
+  },
+  {
+   "questionText": "In each row below, the third number is obtained from the first two by the same rule. Row 1: 8, 7, 10; Row 2: 8, 4, 16; Row 3: 11, 10, 13; Row 4: 6, 5, ?  Find the missing number.",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "41"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In Row 1, 8 and 7 give 10, which matches 3a − 2b. The rule holds for Rows 2 and 3 as well. For Row 4: 3a − 2b with a = 6, b = 5 gives 8.",
+   "order": 165,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Test the first row against simple combinations (sum, product, squares) and confirm on the next row."
+  },
+  {
+   "questionText": "Using each digit of 3714 exactly once, form the largest and the smallest possible numbers. What is their difference?",
+   "options": [
+    {
+     "text": "6084"
+    },
+    {
+     "text": "3717"
+    },
+    {
+     "text": "4995"
+    },
+    {
+     "text": "2367"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Largest = 7431, smallest = 1347. Difference = 7431 − 1347 = 6084.",
+   "order": 166,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "What is the sum of the squares of the digits of 409, minus the sum of the digits of 409?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "96"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "84"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Squares: [16, 0, 81] sum to 97. Digit sum = 13. Difference = 84.",
+   "order": 167,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ]
+  },
+  {
+   "questionText": "A machine swaps the first two digits of a 3-digit number in one step, and swaps the last two digits in another. If both results are formed from 271 separately and added, what is the sum?",
+   "options": [
+    {
+     "text": "504"
+    },
+    {
+     "text": "938"
+    },
+    {
+     "text": "443"
+    },
+    {
+     "text": "542"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Swap first two digits: 721. Swap last two digits: 217. Sum = 721 + 217 = 938.",
+   "order": 168,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "If the sum of the digits of 7852 is subtracted from 7852, the result is divisible by 9. What is the result?",
+   "options": [
+    {
+     "text": "7874"
+    },
+    {
+     "text": "7808"
+    },
+    {
+     "text": "7821"
+    },
+    {
+     "text": "7830"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Digit sum = 22. 7852 − 22 = 7830, and 7830 ÷ 9 = 870, confirming divisibility.",
+   "order": 169,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "The two-digit number 70 is multiplied by the number formed by reversing its digits. What is the product?",
+   "options": [
+    {
+     "text": "483"
+    },
+    {
+     "text": "490"
+    },
+    {
+     "text": "4900"
+    },
+    {
+     "text": "560"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Reverse of 70 is 7. 70 × 7 = 490.",
+   "order": 170,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ]
+  },
+  {
+   "questionText": "From 927, subtract the product of its digits. What is left?",
+   "options": [
+    {
+     "text": "801"
+    },
+    {
+     "text": "810"
+    },
+    {
+     "text": "909"
+    },
+    {
+     "text": "1053"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Product of digits = 9×2×7 = 126. 927 − 126 = 801.",
+   "order": 171,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 28, 12, 20, 5 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "81"
+    },
+    {
+     "text": "77"
+    },
+    {
+     "text": "79"
+    },
+    {
+     "text": "130"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Results: 28 → 31 (not prime), 12 → 15 (not prime), 20 → 23 (not prime), 5 → 10 (prime). Sum = 79.",
+   "order": 172,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 29, 17, 18, 20 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "135"
+    },
+    {
+     "text": "136"
+    },
+    {
+     "text": "168"
+    },
+    {
+     "text": "96"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Results: 29 → 58 (prime), 17 → 34 (prime), 18 → 21 (not prime), 20 → 23 (not prime). Sum = 136.",
+   "order": 173,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 21, 20, 2, 26 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "78"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "138"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Results: 21 → 24 (not prime), 20 → 23 (not prime), 2 → 4 (prime), 26 → 29 (not prime). Sum = 80.",
+   "order": 174,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 7, 18, 13, 23 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "109"
+    },
+    {
+     "text": "73"
+    },
+    {
+     "text": "107"
+    },
+    {
+     "text": "122"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Results: 7 → 14 (prime), 18 → 21 (not prime), 13 → 26 (prime), 23 → 46 (prime). Sum = 107.",
+   "order": 175,
+   "subPattern": "number-based-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  },
+  {
+   "questionText": "A machine works on a number as follows: if the number is even, it divides it by 2; if odd, it multiplies by 3 and adds 1. It stops on reaching 1. Starting with 7, how many operations does it perform?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Path: 7 → 22 → 11 → 34 → 17 → 52 → 26 → 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1. That is 16 operations.",
+   "order": 176,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ]
+  },
+  {
+   "questionText": "A rule is applied to a number repeatedly: if the number is odd, multiply by 5 and add 6; if it is even, just add 6. Starting from 6, what is the number after 6 applications?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "36"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sequence: 6 → 12 → 18 → 24 → 30 → 36 → 42. After 6 applications: 42.",
+   "order": 177,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ]
+  },
+  {
+   "questionText": "Repeatedly replace a number by the sum of its digits until a single digit remains. Starting from 7492, what single-digit number is finally obtained?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Chain: 7492 → 22 → 4. Final digit = 4 (equal to 7492 mod 9, with 9 for multiples of 9).",
+   "order": 178,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ]
+  },
+  {
+   "questionText": "A calculator key 'F' turns any number y into 3y + 1. If you start with 4 and press F 4 times, what number is shown?",
+   "options": [
+    {
+     "text": "367"
+    },
+    {
+     "text": "363"
+    },
+    {
+     "text": "728"
+    },
+    {
+     "text": "364"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After each press: 4 → 13 → 40 → 121 → 364. After 4 presses: 364.",
+   "order": 179,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "A prime number is doubled and any other number is increased by 3. If this is done to each of 2, 23, 21, 20 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "97"
+    },
+    {
+     "text": "78"
+    },
+    {
+     "text": "132"
+    },
+    {
+     "text": "93"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Results: 2 → 4 (prime), 23 → 46 (prime), 21 → 24 (not prime), 20 → 23 (not prime). Sum = 97.",
+   "order": 180,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  },
+  {
+   "questionText": "A prime number is increased by 1 and any other number is halved if even, otherwise decreased by 1. If this is done to each of 23, 21, 17, 18 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "74"
+    },
+    {
+     "text": "71"
+    },
+    {
+     "text": "83"
+    },
+    {
+     "text": "67"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Results: 23 → 24 (prime), 21 → 20 (not prime), 17 → 18 (prime), 18 → 9 (not prime). Sum = 71.",
+   "order": 181,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  },
+  {
+   "questionText": "A prime number is squared and any other number is decreased by 2. If this is done to each of 2, 10, 21, 8 separately, what is the sum of the results?",
+   "options": [
+    {
+     "text": "609"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Results: 2 → 4 (prime), 10 → 8 (not prime), 21 → 19 (not prime), 8 → 6 (not prime). Sum = 37.",
+   "order": 182,
+   "subPattern": "number-based-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "shortcut": "Mark primes first - remember 1 is not prime and 2 is the only even prime."
+  }
+ ]
+}

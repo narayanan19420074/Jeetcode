@@ -1,0 +1,7203 @@
+{
+ "pattern": {
+  "title": "English Grammar",
+  "slug": "english-grammar",
+  "description": "Core grammar rules tested in placements.",
+  "order": 55,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "tenses",
+    "title": "Tenses"
+   },
+   {
+    "slug": "articles",
+    "title": "Articles"
+   },
+   {
+    "slug": "prepositions",
+    "title": "Prepositions"
+   },
+   {
+    "slug": "subject-verb-agreement",
+    "title": "Subject-verb agreement"
+   },
+   {
+    "slug": "pronouns",
+    "title": "Pronouns"
+   },
+   {
+    "slug": "conjunctions-connectors",
+    "title": "Conjunctions & connectors"
+   },
+   {
+    "slug": "adjectives-adverbs",
+    "title": "Adjectives & adverbs"
+   },
+   {
+    "slug": "modals-conditionals",
+    "title": "Modals & conditionals"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "She ____ in Coimbatore since 2019.",
+   "options": [
+    {
+     "text": "lived"
+    },
+    {
+     "text": "is living"
+    },
+    {
+     "text": "lives"
+    },
+    {
+     "text": "has lived"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Since + a point in time, for a state that began in the past and continues now, takes the present perfect: has lived.",
+   "order": 1,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "since/for + continuing state = present perfect."
+  },
+  {
+   "questionText": "The train ____ before we reached the platform.",
+   "options": [
+    {
+     "text": "was leaving"
+    },
+    {
+     "text": "leaves"
+    },
+    {
+     "text": "had left"
+    },
+    {
+     "text": "has left"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Of two past actions, the earlier one uses the past perfect. Leaving happened before reaching, so: had left.",
+   "order": 2,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Water ____ at 100 degrees Celsius.",
+   "options": [
+    {
+     "text": "boils"
+    },
+    {
+     "text": "is boiling"
+    },
+    {
+     "text": "boiled"
+    },
+    {
+     "text": "has boiled"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Scientific facts and universal truths use the simple present: boils.",
+   "order": 3,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I ____ my homework when the lights went out.",
+   "options": [
+    {
+     "text": "am doing"
+    },
+    {
+     "text": "was doing"
+    },
+    {
+     "text": "did"
+    },
+    {
+     "text": "have done"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A longer ongoing past action interrupted by a shorter one (went out, simple past) takes the past continuous: was doing.",
+   "order": 4,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "By next June, Ravi ____ his degree.",
+   "options": [
+    {
+     "text": "has completed"
+    },
+    {
+     "text": "completes"
+    },
+    {
+     "text": "completed"
+    },
+    {
+     "text": "will have completed"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'By + a future time' signals an action finished before that time: future perfect, will have completed.",
+   "order": 5,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Look! The children ____ in the rain.",
+   "options": [
+    {
+     "text": "are playing"
+    },
+    {
+     "text": "have played"
+    },
+    {
+     "text": "play"
+    },
+    {
+     "text": "played"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look!' points to an action happening right now: present continuous, are playing.",
+   "order": 6,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He ____ to Madurai last Sunday.",
+   "options": [
+    {
+     "text": "goes"
+    },
+    {
+     "text": "went"
+    },
+    {
+     "text": "had gone"
+    },
+    {
+     "text": "has gone"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A finished time marker (last Sunday) requires the simple past: went.",
+   "order": 7,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "My father ____ the newspaper every morning.",
+   "options": [
+    {
+     "text": "is reading"
+    },
+    {
+     "text": "will have read"
+    },
+    {
+     "text": "reads"
+    },
+    {
+     "text": "has read"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Every morning' shows a habit: simple present, reads.",
+   "order": 8,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "They ____ their lunch yet.",
+   "options": [
+    {
+     "text": "have not finished"
+    },
+    {
+     "text": "are not finishing"
+    },
+    {
+     "text": "do not finish"
+    },
+    {
+     "text": "did not finished"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Yet' in a negative sentence goes with the present perfect: have not finished. (Also 'did not finished' is wrong: after did not, the verb stays in base form.)",
+   "order": 9,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Neha ____ sushi in her life.",
+   "options": [
+    {
+     "text": "never eats"
+    },
+    {
+     "text": "never ate"
+    },
+    {
+     "text": "has never eaten"
+    },
+    {
+     "text": "was never eating"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'In her life' covers time up to now, so the present perfect is used: has never eaten.",
+   "order": 10,
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "No sooner had he entered the room than the phone ____.",
+   "options": [
+    {
+     "text": "was ringing"
+    },
+    {
+     "text": "rang"
+    },
+    {
+     "text": "has rung"
+    },
+    {
+     "text": "rings"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'No sooner had + V3 ... than' is followed by the simple past: rang.",
+   "order": 11,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "No sooner had ... than + simple past."
+  },
+  {
+   "questionText": "Hardly had the match begun when it ____ to rain.",
+   "options": [
+    {
+     "text": "starts"
+    },
+    {
+     "text": "had started"
+    },
+    {
+     "text": "has started"
+    },
+    {
+     "text": "started"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Hardly had + V3 ... when' is followed by the simple past: started.",
+   "order": 12,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "shortcut": "Hardly had ... when + simple past."
+  },
+  {
+   "questionText": "I ____ for two hours before the manager called me in for the interview.",
+   "options": [
+    {
+     "text": "had been waiting"
+    },
+    {
+     "text": "have been waiting"
+    },
+    {
+     "text": "am waiting"
+    },
+    {
+     "text": "will be waiting"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A continuous action lasting up to a past moment ('before the manager called') takes the past perfect continuous: had been waiting.",
+   "order": 13,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "Which sentence is grammatically correct?",
+   "options": [
+    {
+     "text": "I was knowing him since childhood."
+    },
+    {
+     "text": "I know him since childhood."
+    },
+    {
+     "text": "I am knowing him since childhood."
+    },
+    {
+     "text": "I have known him since childhood."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Know' is a stative verb and is not used in continuous tenses. Since + point in time needs the present perfect: have known.",
+   "order": 14,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "By the time we reached the cinema, the film ____.",
+   "options": [
+    {
+     "text": "has already started"
+    },
+    {
+     "text": "is already starting"
+    },
+    {
+     "text": "had already started"
+    },
+    {
+     "text": "already started"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The film started before we arrived (a past moment), so the earlier action uses the past perfect.",
+   "order": 15,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I will call you as soon as I ____ home.",
+   "options": [
+    {
+     "text": "will reach"
+    },
+    {
+     "text": "reach"
+    },
+    {
+     "text": "would reach"
+    },
+    {
+     "text": "am reaching"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In time clauses (as soon as, when, after, before, until) the future is expressed by the simple present, not will: reach.",
+   "order": 16,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "No 'will' after when/as soon as/until."
+  },
+  {
+   "questionText": "Ravi ____ in Chennai for ten years before he moved to Pune.",
+   "options": [
+    {
+     "text": "lives"
+    },
+    {
+     "text": "has lived"
+    },
+    {
+     "text": "had lived"
+    },
+    {
+     "text": "is living"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Before he moved' fixes a past reference point; a state lasting up to it takes the past perfect: had lived.",
+   "order": 17,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Tomorrow at this time, we ____ in the exam hall.",
+   "options": [
+    {
+     "text": "have sat"
+    },
+    {
+     "text": "will be sitting"
+    },
+    {
+     "text": "sat"
+    },
+    {
+     "text": "are sitting"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An action in progress at a specific future moment takes the future continuous: will be sitting.",
+   "order": 18,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The manager ____ the report since morning but has not finished it.",
+   "options": [
+    {
+     "text": "has been preparing"
+    },
+    {
+     "text": "is prepared"
+    },
+    {
+     "text": "prepared"
+    },
+    {
+     "text": "had prepared"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since morning' plus an action still unfinished takes the present perfect continuous: has been preparing.",
+   "order": 19,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "While the teacher ____ the lesson, two students were chatting.",
+   "options": [
+    {
+     "text": "explained"
+    },
+    {
+     "text": "explains"
+    },
+    {
+     "text": "has explained"
+    },
+    {
+     "text": "was explaining"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two simultaneous past actions in progress take the past continuous in both clauses: was explaining / were chatting.",
+   "order": 20,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I ____ you last week, but you were out.",
+   "options": [
+    {
+     "text": "called"
+    },
+    {
+     "text": "am calling"
+    },
+    {
+     "text": "have called"
+    },
+    {
+     "text": "call"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Last week' is a finished time, so the simple past is required: called.",
+   "order": 21,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The earthquake occurred while the villagers ____.",
+   "options": [
+    {
+     "text": "have slept"
+    },
+    {
+     "text": "were sleeping"
+    },
+    {
+     "text": "sleep"
+    },
+    {
+     "text": "had slept"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'While' with a past action in progress takes the past continuous: were sleeping.",
+   "order": 22,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "I will phone you after the meeting ____.",
+   "options": [
+    {
+     "text": "is ending"
+    },
+    {
+     "text": "will end"
+    },
+    {
+     "text": "would end"
+    },
+    {
+     "text": "ends"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In an 'after' time clause the future is shown by the simple present: ends.",
+   "order": 23,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "It is high time you ____ preparing for the exam.",
+   "options": [
+    {
+     "text": "are starting"
+    },
+    {
+     "text": "will start"
+    },
+    {
+     "text": "started"
+    },
+    {
+     "text": "start"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'It is (high) time + subject' is followed by the simple past (unreal present urgency): started.",
+   "order": 24,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Ravi is not at home; he ____ to the market.",
+   "options": [
+    {
+     "text": "has gone"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "had been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Has gone' means he is still there; 'has been' means he went and came back. He is not at home, so: has gone.",
+   "order": 25,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ]
+  },
+  {
+   "questionText": "My cousin ____ in Dubai for five years now.",
+   "options": [
+    {
+     "text": "was working"
+    },
+    {
+     "text": "worked"
+    },
+    {
+     "text": "will work"
+    },
+    {
+     "text": "has been working"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'For five years now' shows an activity continuing up to the present: present perfect continuous, has been working.",
+   "order": 26,
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Which sentence is correct?",
+   "options": [
+    {
+     "text": "I have seen him yesterday."
+    },
+    {
+     "text": "I saw him yesterday."
+    },
+    {
+     "text": "I had seen him yesterday."
+    },
+    {
+     "text": "I have been seeing him yesterday."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A definite finished time (yesterday) cannot be used with the present perfect; use the simple past: saw.",
+   "order": 27,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "By the time you read this letter, I ____ for Mumbai.",
+   "options": [
+    {
+     "text": "will leave"
+    },
+    {
+     "text": "would leave"
+    },
+    {
+     "text": "will have left"
+    },
+    {
+     "text": "have left"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'By the time' + a future moment shows completion before it: future perfect, will have left.",
+   "order": 28,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "This is the first time I ____ a motorbike.",
+   "options": [
+    {
+     "text": "am riding"
+    },
+    {
+     "text": "rode"
+    },
+    {
+     "text": "have ridden"
+    },
+    {
+     "text": "had ridden"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'This is the first time' takes the present perfect: have ridden.",
+   "order": 29,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "This is the first time + present perfect."
+  },
+  {
+   "questionText": "He ____ the exam three times before he finally passed it.",
+   "options": [
+    {
+     "text": "will fail"
+    },
+    {
+     "text": "had failed"
+    },
+    {
+     "text": "has failed"
+    },
+    {
+     "text": "fails"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The failures happened before the later past event (passed), so the past perfect is used: had failed.",
+   "order": 30,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "By next April, Mrs Iyer ____ in this school for twenty years.",
+   "options": [
+    {
+     "text": "will be teaching"
+    },
+    {
+     "text": "has taught"
+    },
+    {
+     "text": "had been teaching"
+    },
+    {
+     "text": "will have been teaching"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'By + future time' with duration ('for twenty years') takes the future perfect continuous: will have been teaching.",
+   "order": 31,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Since the project began, the team ____ three major problems.",
+   "options": [
+    {
+     "text": "has faced"
+    },
+    {
+     "text": "faced"
+    },
+    {
+     "text": "is facing"
+    },
+    {
+     "text": "faces"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since + past event' with an unfinished period up to now takes the present perfect: has faced.",
+   "order": 32,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "She ____ the piano for years, so she plays very well.",
+   "options": [
+    {
+     "text": "plays"
+    },
+    {
+     "text": "is playing"
+    },
+    {
+     "text": "has been playing"
+    },
+    {
+     "text": "will play"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A long activity continuing up to now, with 'for years', takes the present perfect continuous: has been playing.",
+   "order": 33,
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "She is ____ honest girl.",
+   "options": [
+    {
+     "text": "an"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Honest begins with a vowel SOUND (silent h), so 'an' is used.",
+   "order": 34,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Go by sound, not spelling."
+  },
+  {
+   "questionText": "He bought ____ umbrella yesterday.",
+   "options": [
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Umbrella begins with a vowel sound, so the indefinite article is 'an'.",
+   "order": 35,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Vowel sound = an."
+  },
+  {
+   "questionText": "She is studying at ____ university in Pune.",
+   "options": [
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "University begins with the consonant sound /j/, so 'a' is used.",
+   "order": 36,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Sound /ju/ takes 'a'."
+  },
+  {
+   "questionText": "____ sun rises in the east.",
+   "options": [
+    {
+     "text": "A"
+    },
+    {
+     "text": "No article"
+    },
+    {
+     "text": "The"
+    },
+    {
+     "text": "An"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Unique objects such as the sun, moon and earth take the definite article.",
+   "order": 37,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Unique thing = the."
+  },
+  {
+   "questionText": "____ Ganga is considered a holy river in India.",
+   "options": [
+    {
+     "text": "An"
+    },
+    {
+     "text": "No article"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "The"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Names of rivers take 'the'.",
+   "order": 38,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Rivers, seas, oceans take the."
+  },
+  {
+   "questionText": "Mount Everest is ____ highest peak in the world.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A superlative adjective takes 'the': the highest.",
+   "order": 39,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Superlative = the."
+  },
+  {
+   "questionText": "He plays ____ guitar very well.",
+   "options": [
+    {
+     "text": "one"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With musical instruments, 'play' takes 'the': play the guitar.",
+   "order": 40,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "play + the + instrument."
+  },
+  {
+   "questionText": "____ gold is a precious metal.",
+   "options": [
+    {
+     "text": "No article"
+    },
+    {
+     "text": "An"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "The"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Material nouns used in a general sense take no article.",
+   "order": 41,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "General material noun = no article."
+  },
+  {
+   "questionText": "She wears ____ expensive watch.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Expensive starts with a vowel sound, and the watch is introduced for the first time, so 'an'.",
+   "order": 42,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "First mention = a/an."
+  },
+  {
+   "questionText": "I saw a film yesterday. ____ film was very entertaining.",
+   "options": [
+    {
+     "text": "An"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "The"
+    },
+    {
+     "text": "No article"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A noun already mentioned takes 'the' on second mention.",
+   "order": 43,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Second mention = the."
+  },
+  {
+   "questionText": "It took me ____ hour to reach the station.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hour has a silent h and starts with a vowel sound, so 'an'.",
+   "order": 44,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Silent h = an."
+  },
+  {
+   "questionText": "____ Mahatma Gandhi was born in Porbandar.",
+   "options": [
+    {
+     "text": "No article"
+    },
+    {
+     "text": "The"
+    },
+    {
+     "text": "An"
+    },
+    {
+     "text": "A"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of persons take no article.",
+   "order": 45,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Proper name of a person = no article."
+  },
+  {
+   "questionText": "He is ____ best player in the team.",
+   "options": [
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "the"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The superlative 'best' needs the definite article.",
+   "order": 46,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Superlative = the."
+  },
+  {
+   "questionText": "Tamil is ____ ancient language.",
+   "options": [
+    {
+     "text": "no article"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ancient begins with a vowel sound, and Tamil is described by a general adjective phrase, so 'an'.",
+   "order": 47,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Vowel sound = an."
+  },
+  {
+   "questionText": "She reads ____ Times of India every morning.",
+   "options": [
+    {
+     "text": "no article"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Names of newspapers take 'the'.",
+   "order": 48,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Newspaper names take the."
+  },
+  {
+   "questionText": "Mr Sharma is ____ engineer.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "no article"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Engineer begins with a vowel sound, and a profession is described with an indefinite article.",
+   "order": 49,
+   "subPattern": "articles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Profession = a/an."
+  },
+  {
+   "questionText": "My brother is ____ M.B.A. from IIM Ahmedabad.",
+   "options": [
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "the"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "M is pronounced 'em', a vowel sound, so 'an' is used.",
+   "order": 50,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Letters like F, H, L, M, N, R, S, X start with a vowel sound."
+  },
+  {
+   "questionText": "Rahul is ____ one-eyed man.",
+   "options": [
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'One' begins with the consonant sound /w/, so 'a' is used.",
+   "order": 51,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Sound /w/ takes 'a'."
+  },
+  {
+   "questionText": "She goes to ____ school at 8 a.m.",
+   "options": [
+    {
+     "text": "an"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "When school is visited for its primary purpose (studying), no article is used.",
+   "order": 52,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Institution used for its purpose = no article."
+  },
+  {
+   "questionText": "The mother went to ____ school to meet the principal.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "no article"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Here the school is visited as a building for a different purpose, so 'the' is used.",
+   "order": 53,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Building visit, not purpose = the."
+  },
+  {
+   "questionText": "She travels to office by ____ bus.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Means of transport after 'by' takes no article: by bus, by train.",
+   "order": 54,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "by + vehicle = no article."
+  },
+  {
+   "questionText": "He is ____ European by birth.",
+   "options": [
+    {
+     "text": "an"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "European begins with the consonant sound /j/, so 'a' is used.",
+   "order": 55,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Eu- sounds like 'you', takes a."
+  },
+  {
+   "questionText": "____ Himalayas are the highest mountain range in the world.",
+   "options": [
+    {
+     "text": "No article"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "The"
+    },
+    {
+     "text": "An"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of mountain ranges take 'the'.",
+   "order": 56,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Ranges and plural island groups take the."
+  },
+  {
+   "questionText": "She had ____ breakfast at 7 a.m.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of meals used in general take no article.",
+   "order": 57,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Meals take no article."
+  },
+  {
+   "questionText": "He is ____ MLA from Tamil Nadu.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "MLA is pronounced 'em-el-ay', beginning with a vowel sound, so 'an'.",
+   "order": 58,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Initialisms: go by the first letter's sound."
+  },
+  {
+   "questionText": "____ poor are often neglected by society.",
+   "options": [
+    {
+     "text": "No article"
+    },
+    {
+     "text": "The"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "An"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'The' with an adjective denotes a whole class of people: the poor.",
+   "order": 59,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "the + adjective = a class."
+  },
+  {
+   "questionText": "They travelled to ____ Maldives last summer.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Names of island groups take 'the': the Maldives.",
+   "order": 60,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Plural island groups take the."
+  },
+  {
+   "questionText": "She has ____ MBBS degree but wants to do an MD.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "MBBS begins with 'em', a vowel sound, so 'an'.",
+   "order": 61,
+   "subPattern": "articles",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Initialism sound rule."
+  },
+  {
+   "questionText": "We had ____ wonderful breakfast at the hotel.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "no article"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "When an adjective qualifies a meal and it is a particular instance, 'a' is used.",
+   "order": 62,
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Adjective + meal = a."
+  },
+  {
+   "questionText": "Both of ____ boys passed the test.",
+   "options": [
+    {
+     "text": "an"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "no article"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'both of', a definite plural noun requires 'the'.",
+   "order": 63,
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "both of + the."
+  },
+  {
+   "questionText": "He is ____ more intelligent of the two brothers.",
+   "options": [
+    {
+     "text": "no article"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "the"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In a comparison between two, the comparative takes 'the': the more intelligent of the two.",
+   "order": 64,
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "the + comparative + of the two."
+  },
+  {
+   "questionText": "He is a man of ____ word.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In the idiom 'a man of his word' the possessive his is required.",
+   "order": 65,
+   "subPattern": "articles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Idiom: man of his word."
+  },
+  {
+   "questionText": "The meeting is scheduled ____ 10 a.m.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'At' is used with exact clock times.",
+   "order": 66,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Clock time = at."
+  },
+  {
+   "questionText": "She was born ____ 12 March 1999.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'On' is used with specific dates and days.",
+   "order": 67,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Date/day = on."
+  },
+  {
+   "questionText": "We usually go to Ooty ____ summer.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'In' is used with months, seasons and years.",
+   "order": 68,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Month/season/year = in."
+  },
+  {
+   "questionText": "He has been working here ____ 2018.",
+   "options": [
+    {
+     "text": "since"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "during"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since' is used with a point in time at which a continuing action began.",
+   "order": 69,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "since + point; for + period."
+  },
+  {
+   "questionText": "She has been waiting ____ two hours.",
+   "options": [
+    {
+     "text": "since"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'For' is used with a period of time.",
+   "order": 70,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "for + period."
+  },
+  {
+   "questionText": "The book is ____ the table.",
+   "options": [
+    {
+     "text": "at"
+    },
+    {
+     "text": "in"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'On' shows a surface contact position.",
+   "order": 71,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Surface = on."
+  },
+  {
+   "questionText": "She is jealous ____ her colleague's success.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The adjective 'jealous' is followed by 'of': jealous of her colleague's success.",
+   "order": 72,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "jealous of."
+  },
+  {
+   "questionText": "He is addicted ____ online games.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Addicted' is followed by 'to'.",
+   "order": 73,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "addicted to."
+  },
+  {
+   "questionText": "She is afraid ____ spiders.",
+   "options": [
+    {
+     "text": "of"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "to"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The adjective 'afraid' is always followed by 'of': afraid of spiders.",
+   "order": 74,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "afraid of."
+  },
+  {
+   "questionText": "This road leads ____ the railway station.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "to"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Lead' takes 'to' for a destination.",
+   "order": 75,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "lead to."
+  },
+  {
+   "questionText": "The boy is fond ____ chocolates.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "to"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The adjective 'fond' is always followed by 'of': fond of chocolates.",
+   "order": 76,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "fond of."
+  },
+  {
+   "questionText": "She is married ____ a doctor.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The adjective 'married' is followed by 'to' before the spouse: married to a doctor.",
+   "order": 77,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "married to."
+  },
+  {
+   "questionText": "The shop remains closed ____ Sundays.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "in"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'On' is used with days of the week.",
+   "order": 78,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "day = on."
+  },
+  {
+   "questionText": "I prefer tea ____ coffee.",
+   "options": [
+    {
+     "text": "than"
+    },
+    {
+     "text": "over"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "from"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The verb 'prefer' takes 'to', not 'than', for comparison: prefer tea to coffee.",
+   "order": 79,
+   "subPattern": "prepositions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "prefer X to Y."
+  },
+  {
+   "questionText": "The thief jumped ____ the wall and ran away.",
+   "options": [
+    {
+     "text": "upon"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "above"
+    },
+    {
+     "text": "over"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Over' shows movement across and beyond an obstacle.",
+   "order": 80,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Movement across = over."
+  },
+  {
+   "questionText": "I have no objection ____ your plan.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The noun 'objection' is followed by the preposition 'to': objection to your plan.",
+   "order": 81,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "objection to."
+  },
+  {
+   "questionText": "The teacher congratulated him ____ his success.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Congratulate' takes 'on' with the achievement.",
+   "order": 82,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "congratulate on."
+  },
+  {
+   "questionText": "He has been suffering ____ fever since Monday.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Suffer' takes 'from' with an illness.",
+   "order": 83,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "suffer from."
+  },
+  {
+   "questionText": "The accused was charged ____ murder.",
+   "options": [
+    {
+     "text": "of"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Charge' takes 'with' for the offence alleged.",
+   "order": 84,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "charged with."
+  },
+  {
+   "questionText": "He insisted ____ paying the bill.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb 'insist' is followed by 'on' and then a gerund: insist on paying.",
+   "order": 85,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "insist on."
+  },
+  {
+   "questionText": "I am looking forward ____ meeting you.",
+   "options": [
+    {
+     "text": "at"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Look forward' takes 'to'; 'to' is a preposition so a gerund follows.",
+   "order": 86,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "look forward to + -ing."
+  },
+  {
+   "questionText": "The project must be completed ____ Friday, not later.",
+   "options": [
+    {
+     "text": "since"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "until"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'By' means not later than a deadline.",
+   "order": 87,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "by = deadline."
+  },
+  {
+   "questionText": "He stayed in the library ____ 8 p.m. and then left.",
+   "options": [
+    {
+     "text": "by"
+    },
+    {
+     "text": "until"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "since"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Until' shows continuing action up to a time.",
+   "order": 88,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "until = continuing till."
+  },
+  {
+   "questionText": "The Taj Mahal is ____ the banks of the Yamuna.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "in"
+    },
+    {
+     "text": "over"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'On' is used with banks of a river.",
+   "order": 89,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "on the bank(s)."
+  },
+  {
+   "questionText": "He sat ____ his two friends on the bench.",
+   "options": [
+    {
+     "text": "within"
+    },
+    {
+     "text": "amid"
+    },
+    {
+     "text": "among"
+    },
+    {
+     "text": "between"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Between' is used for two persons or things, here sitting with one at each side.",
+   "order": 90,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Two = between; many = among."
+  },
+  {
+   "questionText": "The sweets were distributed ____ the children.",
+   "options": [
+    {
+     "text": "between"
+    },
+    {
+     "text": "amid"
+    },
+    {
+     "text": "among"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Among' is used for more than two persons.",
+   "order": 91,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Many = among."
+  },
+  {
+   "questionText": "She is senior ____ me by two years.",
+   "options": [
+    {
+     "text": "than"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Senior' takes 'to', not 'than'.",
+   "order": 92,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "senior/junior/superior/prefer + to."
+  },
+  {
+   "questionText": "The committee is composed ____ ten members.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The participle 'composed' is followed by 'of': composed of ten members.",
+   "order": 93,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "composed of."
+  },
+  {
+   "questionText": "This soap differs ____ the one I used earlier in its fragrance.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "than"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "to"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb 'differ' is followed by 'from': differs from the one used earlier.",
+   "order": 94,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "differ from."
+  },
+  {
+   "questionText": "The new rule is applicable ____ all employees.",
+   "options": [
+    {
+     "text": "at"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The adjective 'applicable' is followed by 'to': applicable to all employees.",
+   "order": 95,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "applicable to."
+  },
+  {
+   "questionText": "He apologised ____ the delay to the customer.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Apologise' takes 'for' with the fault.",
+   "order": 96,
+   "subPattern": "prepositions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "apologise for."
+  },
+  {
+   "questionText": "The passengers got ____ the bus at Salem.",
+   "options": [
+    {
+     "text": "out"
+    },
+    {
+     "text": "off"
+    },
+    {
+     "text": "away"
+    },
+    {
+     "text": "under"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Get off' is used with buses, trains and planes.",
+   "order": 97,
+   "subPattern": "prepositions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "bus/train: get on/off; car: get in/out."
+  },
+  {
+   "questionText": "She was angry ____ me for being late.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "to"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Angry' takes 'with' before a person.",
+   "order": 98,
+   "subPattern": "prepositions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "angry with + person."
+  },
+  {
+   "questionText": "He is angry ____ the delay in delivery.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Angry' takes 'at' before a thing or situation.",
+   "order": 99,
+   "subPattern": "prepositions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "angry at + thing."
+  },
+  {
+   "questionText": "The box of mangoes ____ on the table.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is the singular 'box'; 'of mangoes' does not change it. Singular subject takes 'is'.",
+   "order": 100,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Ignore the phrase between subject and verb."
+  },
+  {
+   "questionText": "Each of the students ____ a separate locker.",
+   "options": [
+    {
+     "text": "has"
+    },
+    {
+     "text": "were having"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "are having"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Each' is singular and takes a singular verb: has.",
+   "order": 101,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Each/every/either/neither = singular."
+  },
+  {
+   "questionText": "Neither of the two answers ____ correct.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Neither' used with 'of' is treated as singular: is.",
+   "order": 102,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Neither of = singular."
+  },
+  {
+   "questionText": "Ravi and Karthik ____ going to the match tomorrow.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two subjects joined by 'and' take a plural verb: are.",
+   "order": 103,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "A and B = plural."
+  },
+  {
+   "questionText": "Mathematics ____ my favourite subject.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Names of subjects ending in -s, such as mathematics, are singular.",
+   "order": 104,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Mathematics, physics, economics = singular."
+  },
+  {
+   "questionText": "The news about the strike ____ shocking.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'News' is uncountable and singular: was.",
+   "order": 105,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "News = singular."
+  },
+  {
+   "questionText": "One of my cousins ____ in Dubai.",
+   "options": [
+    {
+     "text": "lives"
+    },
+    {
+     "text": "have lived"
+    },
+    {
+     "text": "are living"
+    },
+    {
+     "text": "live"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The subject is 'one', singular, so 'lives'.",
+   "order": 106,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "One of + plural noun = singular verb."
+  },
+  {
+   "questionText": "Where ____ my glasses?",
+   "options": [
+    {
+     "text": "has"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Glasses' (spectacles) is a plural noun: are.",
+   "order": 107,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Scissors, trousers, glasses = plural."
+  },
+  {
+   "questionText": "Everyone in the room ____ clapping.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Everyone' is singular: was.",
+   "order": 108,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Everyone/everybody = singular."
+  },
+  {
+   "questionText": "The poet and the painter ____ great friends.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two subjects joined by 'and' take a plural verb: are.",
+   "order": 109,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A and B = plural."
+  },
+  {
+   "questionText": "There ____ many reasons for his failure.",
+   "options": [
+    {
+     "text": "has"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In a 'there' sentence the verb agrees with the real subject 'reasons' (plural): are.",
+   "order": 110,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "There is/are: check the noun after it."
+  },
+  {
+   "questionText": "Bread and butter ____ my usual breakfast.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two nouns forming one idea are treated as a single unit: Bread and butter is.",
+   "order": 111,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "One idea joined by and = singular."
+  },
+  {
+   "questionText": "Either the manager or his assistants ____ responsible for the error.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With either...or, the verb agrees with the nearer subject, 'assistants' (plural): are.",
+   "order": 112,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Either...or / neither...nor: nearer subject."
+  },
+  {
+   "questionText": "Neither the players nor the coach ____ happy with the result.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With neither...nor, the verb agrees with the nearer subject 'coach' (singular); the past context gives was.",
+   "order": 113,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Nearer subject rule."
+  },
+  {
+   "questionText": "The police ____ arrested the suspect last night.",
+   "options": [
+    {
+     "text": "have"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "has"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Police' is a plural collective noun and takes a plural verb: have.",
+   "order": 114,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Police, cattle, people = plural."
+  },
+  {
+   "questionText": "Fifty rupees ____ too much for this pen.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A sum of money treated as a single amount takes a singular verb: is.",
+   "order": 115,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Sum/distance/time as a whole = singular."
+  },
+  {
+   "questionText": "The number of vacancies ____ increasing every year.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "have"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'The number of' takes a singular verb: is.",
+   "order": 116,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The number of = singular."
+  },
+  {
+   "questionText": "A number of candidates ____ absent today.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "has been"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'A number of' means 'many' and takes a plural verb: are.",
+   "order": 117,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A number of = plural."
+  },
+  {
+   "questionText": "The Lok Sabha ____ adjourned till Monday.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The name of a single body such as the Lok Sabha is treated as singular, so the past singular 'was' is used.",
+   "order": 118,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Name of one institution = singular."
+  },
+  {
+   "questionText": "The teacher, along with her students, ____ visiting the museum.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Along with' does not make the subject plural; the subject 'teacher' is singular: is.",
+   "order": 119,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "along with / as well as / with = ignore."
+  },
+  {
+   "questionText": "Not only the principal but also the teachers ____ present.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With not only...but also, the verb agrees with the nearer subject 'teachers': were.",
+   "order": 120,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Nearer subject."
+  },
+  {
+   "questionText": "Two-thirds of the land ____ under cultivation.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With fractions, agreement follows the noun after 'of'; 'land' is singular: is.",
+   "order": 121,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Fraction of singular = singular."
+  },
+  {
+   "questionText": "Two-thirds of the apples ____ rotten.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With fractions, agreement follows the noun after 'of'; 'apples' is plural: are.",
+   "order": 122,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Fraction of plural = plural."
+  },
+  {
+   "questionText": "Who ____ the author of this novel?",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Who' asking about one person takes a singular verb: is.",
+   "order": 123,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Who + is for one person."
+  },
+  {
+   "questionText": "The scholar and the poet ____ both attended the function.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "has"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Both' together with two subjects joined by 'and' shows plural: have.",
+   "order": 124,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Both = plural."
+  },
+  {
+   "questionText": "Ten kilometres ____ a long distance to walk in an hour.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A distance considered as one unit takes a singular verb: is.",
+   "order": 125,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Distance as a whole = singular."
+  },
+  {
+   "questionText": "The Arabian Nights ____ a collection of stories.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The title of a single work is singular: is.",
+   "order": 126,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Title of a work = singular."
+  },
+  {
+   "questionText": "The jury ____ divided in their opinions.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "has been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When the members act individually, a collective noun takes a plural verb: were.",
+   "order": 127,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Collective noun as individuals = plural."
+  },
+  {
+   "questionText": "A pair of scissors ____ on the table.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The subject is 'pair', which is singular: is.",
+   "order": 128,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "A pair of = singular."
+  },
+  {
+   "questionText": "My friend as well as my brothers ____ invited to the wedding.",
+   "options": [
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The verb agrees with the first subject 'friend' (singular) when 'as well as' is used: was.",
+   "order": 129,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "A as well as B: agree with A."
+  },
+  {
+   "questionText": "The secretary and treasurer ____ resigned.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "With one article before both nouns, both titles refer to one person, so the verb is singular: has.",
+   "order": 130,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "One article = one person."
+  },
+  {
+   "questionText": "There ____ two books and a pen on the desk.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In a 'there' sentence the verb agrees with the first noun that follows, 'two books' (plural): are.",
+   "order": 131,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "There + first noun."
+  },
+  {
+   "questionText": "It is I who ____ responsible for this decision.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "be"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "am"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In a relative clause the verb agrees with the antecedent 'I': am.",
+   "order": 132,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "who takes the person of its antecedent."
+  },
+  {
+   "questionText": "Many a student ____ failed in this paper.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "have"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Many a' is followed by a singular noun and singular verb: has.",
+   "order": 133,
+   "subPattern": "subject-verb-agreement",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Many a + singular."
+  },
+  {
+   "questionText": "The prize was shared between Anita and ____.",
+   "options": [
+    {
+     "text": "me"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "I"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After a preposition (between), the object form 'me' is used.",
+   "order": 134,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Preposition + object pronoun."
+  },
+  {
+   "questionText": "Rahul and ____ went to the market.",
+   "options": [
+    {
+     "text": "me"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "I"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "As part of the subject, the subject form 'I' is needed.",
+   "order": 135,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Subject position = I."
+  },
+  {
+   "questionText": "She blamed ____ for the accident.",
+   "options": [
+    {
+     "text": "hers"
+    },
+    {
+     "text": "herself"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "she"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The subject and object are the same person, so a reflexive pronoun is needed: herself.",
+   "order": 136,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Same person doing and receiving = reflexive."
+  },
+  {
+   "questionText": "The book is not mine; it is ____.",
+   "options": [
+    {
+     "text": "she"
+    },
+    {
+     "text": "herself"
+    },
+    {
+     "text": "hers"
+    },
+    {
+     "text": "her"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A possessive pronoun standing alone completes the sentence: hers.",
+   "order": 137,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Possessive pronoun has no noun after it."
+  },
+  {
+   "questionText": "This is ____ umbrella, not yours.",
+   "options": [
+    {
+     "text": "me"
+    },
+    {
+     "text": "my"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "myself"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A possessive adjective is followed by a noun: my umbrella.",
+   "order": 138,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Adjective + noun: my. Standalone: mine."
+  },
+  {
+   "questionText": "The old man lost ____ way in the forest.",
+   "options": [
+    {
+     "text": "its"
+    },
+    {
+     "text": "their"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "his"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The pronoun must match the singular male subject 'old man': his.",
+   "order": 139,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Pronoun agrees with its noun."
+  },
+  {
+   "questionText": "Kavya and Divya completed ____ projects before the deadline.",
+   "options": [
+    {
+     "text": "their"
+    },
+    {
+     "text": "its"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "his"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The plural subject takes the plural possessive: their.",
+   "order": 140,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Plural noun = their."
+  },
+  {
+   "questionText": "This is the girl ____ won the first prize.",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Who' is the subject of 'won'. Persons take who.",
+   "order": 141,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Person + subject = who."
+  },
+  {
+   "questionText": "The watch ____ I bought yesterday has stopped.",
+   "options": [
+    {
+     "text": "which"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The antecedent is a thing, so the relative pronoun 'which' is used; who/whom are for persons.",
+   "order": 142,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Thing = which."
+  },
+  {
+   "questionText": "They enjoyed ____ at the festival.",
+   "options": [
+    {
+     "text": "their"
+    },
+    {
+     "text": "themselves"
+    },
+    {
+     "text": "them"
+    },
+    {
+     "text": "theirs"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The subject and object are the same, so the reflexive 'themselves' is used.",
+   "order": 143,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "enjoy + reflexive."
+  },
+  {
+   "questionText": "We should respect ____ elders.",
+   "options": [
+    {
+     "text": "us"
+    },
+    {
+     "text": "ourselves"
+    },
+    {
+     "text": "ours"
+    },
+    {
+     "text": "our"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A possessive adjective is needed before the noun 'elders': our.",
+   "order": 144,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Adjective before noun."
+  },
+  {
+   "questionText": "Seema and Reena are friends; ____ love each other.",
+   "options": [
+    {
+     "text": "it"
+    },
+    {
+     "text": "she"
+    },
+    {
+     "text": "they"
+    },
+    {
+     "text": "we"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A plural subject needed for two girls: they.",
+   "order": 145,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Plural noun = they."
+  },
+  {
+   "questionText": "Which of these two bags is ____?",
+   "options": [
+    {
+     "text": "you"
+    },
+    {
+     "text": "yours"
+    },
+    {
+     "text": "yourself"
+    },
+    {
+     "text": "your"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A standalone possessive pronoun is needed here: yours.",
+   "order": 146,
+   "subPattern": "pronouns",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Possessive pronoun alone."
+  },
+  {
+   "questionText": "It was ____ who called you yesterday.",
+   "options": [
+    {
+     "text": "he"
+    },
+    {
+     "text": "him"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "himself"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'it was' the subject form is used with a following relative clause: he.",
+   "order": 147,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "It is + subject pronoun + who/that."
+  },
+  {
+   "questionText": "Each of the boys has finished ____ homework.",
+   "options": [
+    {
+     "text": "our"
+    },
+    {
+     "text": "its"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "his"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Each of the boys' is singular and refers to male persons: his.",
+   "order": 148,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Each = singular pronoun."
+  },
+  {
+   "questionText": "The company has changed ____ policy on refunds.",
+   "options": [
+    {
+     "text": "his"
+    },
+    {
+     "text": "its"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "her"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A company as one unit is referred to with 'its'.",
+   "order": 149,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Company = its."
+  },
+  {
+   "questionText": "He did all the work by ____ without any help.",
+   "options": [
+    {
+     "text": "he"
+    },
+    {
+     "text": "his"
+    },
+    {
+     "text": "himself"
+    },
+    {
+     "text": "him"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'By himself' means alone; the reflexive follows the preposition when it refers back to the subject.",
+   "order": 150,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "by + reflexive = alone."
+  },
+  {
+   "questionText": "Between you and ____, the plan will not work.",
+   "options": [
+    {
+     "text": "me"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "I"
+    },
+    {
+     "text": "myself"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Between' is a preposition and takes the object form: me.",
+   "order": 151,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Between you and me."
+  },
+  {
+   "questionText": "She is not as intelligent as ____ am.",
+   "options": [
+    {
+     "text": "myself"
+    },
+    {
+     "text": "me"
+    },
+    {
+     "text": "my"
+    },
+    {
+     "text": "I"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb 'am' needs a subject, so the subject form I is used.",
+   "order": 152,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "as...as + subject + verb."
+  },
+  {
+   "questionText": "Do you know ____ is waiting outside?",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Who' is the subject of 'is waiting', so the subject form is used.",
+   "order": 153,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Who = subject, whom = object."
+  },
+  {
+   "questionText": "To ____ did you give the keys?",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the preposition 'to', the object form 'whom' is used.",
+   "order": 154,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Preposition + whom."
+  },
+  {
+   "questionText": "The man ____ car was stolen reported to the police.",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The relative pronoun shows possession of the car, so 'whose'.",
+   "order": 155,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Possession = whose."
+  },
+  {
+   "questionText": "He is the man to ____ I gave the money.",
+   "options": [
+    {
+     "text": "which"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the preposition 'to', the object form 'whom' is used.",
+   "order": 156,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Preposition + whom."
+  },
+  {
+   "questionText": "She prepared the dinner ____.",
+   "options": [
+    {
+     "text": "hers"
+    },
+    {
+     "text": "herself"
+    },
+    {
+     "text": "her"
+    },
+    {
+     "text": "she"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Used for emphasis, the reflexive 'herself' follows the noun or the verb phrase.",
+   "order": 157,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Emphatic reflexive."
+  },
+  {
+   "questionText": "The lion hurt ____ while trying to escape the cage.",
+   "options": [
+    {
+     "text": "him"
+    },
+    {
+     "text": "themselves"
+    },
+    {
+     "text": "itself"
+    },
+    {
+     "text": "its"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A lion as an animal is referred to as 'it', and since the subject and object are the same, 'itself' is required.",
+   "order": 158,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Same entity = reflexive."
+  },
+  {
+   "questionText": "The teacher told Meena and ____ to stay back.",
+   "options": [
+    {
+     "text": "me"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "I"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Told' takes an object, so the object form 'me' is needed.",
+   "order": 159,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Verb + object pronoun."
+  },
+  {
+   "questionText": "Let you and ____ finish the work first.",
+   "options": [
+    {
+     "text": "mine"
+    },
+    {
+     "text": "I"
+    },
+    {
+     "text": "myself"
+    },
+    {
+     "text": "me"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Let' takes an object form: let you and me.",
+   "order": 160,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Let + object."
+  },
+  {
+   "questionText": "Only the two of ____ know the password.",
+   "options": [
+    {
+     "text": "us"
+    },
+    {
+     "text": "we"
+    },
+    {
+     "text": "ourselves"
+    },
+    {
+     "text": "ours"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the preposition 'of', the object form is used: us.",
+   "order": 161,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Preposition + object."
+  },
+  {
+   "questionText": "The students ____ passed the test were awarded certificates.",
+   "options": [
+    {
+     "text": "whose"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "which"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The relative pronoun refers to persons and is the subject of 'passed': who.",
+   "order": 162,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Person subject = who."
+  },
+  {
+   "questionText": "The old woman ____ I met yesterday is my neighbour.",
+   "options": [
+    {
+     "text": "which"
+    },
+    {
+     "text": "what"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "whose"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The relative pronoun is the object of 'met' and refers to a person: whom.",
+   "order": 163,
+   "subPattern": "pronouns",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Person object = whom."
+  },
+  {
+   "questionText": "The climate of Ooty is cooler than ____ of Chennai.",
+   "options": [
+    {
+     "text": "those"
+    },
+    {
+     "text": "them"
+    },
+    {
+     "text": "it"
+    },
+    {
+     "text": "that"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'That' stands for the singular noun 'climate' to avoid repetition.",
+   "order": 164,
+   "subPattern": "pronouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "that = singular, those = plural."
+  },
+  {
+   "questionText": "Hari as well as ____ was selected for the camp.",
+   "options": [
+    {
+     "text": "me"
+    },
+    {
+     "text": "I"
+    },
+    {
+     "text": "mine"
+    },
+    {
+     "text": "myself"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The pronoun is part of the subject of 'was selected', so the subject form: I.",
+   "order": 165,
+   "subPattern": "pronouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Subject form in subject position."
+  },
+  {
+   "questionText": "The leaves of this plant are bigger than ____ of that plant.",
+   "options": [
+    {
+     "text": "that"
+    },
+    {
+     "text": "it"
+    },
+    {
+     "text": "them"
+    },
+    {
+     "text": "those"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Those' stands for the plural noun 'leaves' to avoid repetition.",
+   "order": 166,
+   "subPattern": "pronouns",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "those = plural."
+  },
+  {
+   "questionText": "He worked hard, ____ he failed the exam.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "and"
+    },
+    {
+     "text": "yet"
+    },
+    {
+     "text": "because"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Yet' shows contrast between effort and failure.",
+   "order": 167,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Contrast = but/yet."
+  },
+  {
+   "questionText": "It was raining heavily, ____ we stayed indoors.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "but"
+    },
+    {
+     "text": "although"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'So' shows result: rain caused them to stay in.",
+   "order": 168,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Result = so."
+  },
+  {
+   "questionText": "He stayed at home ____ he was unwell.",
+   "options": [
+    {
+     "text": "unless"
+    },
+    {
+     "text": "although"
+    },
+    {
+     "text": "because"
+    },
+    {
+     "text": "but"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Because' gives the reason for staying at home.",
+   "order": 169,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Reason = because."
+  },
+  {
+   "questionText": "____ he was tired, he finished the report.",
+   "options": [
+    {
+     "text": "Unless"
+    },
+    {
+     "text": "Because"
+    },
+    {
+     "text": "Since"
+    },
+    {
+     "text": "Although"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Although' shows concession: tired, yet finished.",
+   "order": 170,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Concession = although."
+  },
+  {
+   "questionText": "Hurry up, ____ you will miss the train.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "or"
+    },
+    {
+     "text": "but"
+    },
+    {
+     "text": "and"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Or' gives the consequence of not hurrying.",
+   "order": 171,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Command + or + consequence."
+  },
+  {
+   "questionText": "Study hard, ____ you will pass.",
+   "options": [
+    {
+     "text": "and"
+    },
+    {
+     "text": "but"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "or"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'And' joins a command with a favourable result.",
+   "order": 172,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Command + and + result."
+  },
+  {
+   "questionText": "Neither the manager ____ the clerk was present.",
+   "options": [
+    {
+     "text": "and"
+    },
+    {
+     "text": "but"
+    },
+    {
+     "text": "nor"
+    },
+    {
+     "text": "or"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Neither' pairs with 'nor'.",
+   "order": 173,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "neither ... nor."
+  },
+  {
+   "questionText": "Either you apologise ____ you leave the room.",
+   "options": [
+    {
+     "text": "or"
+    },
+    {
+     "text": "and"
+    },
+    {
+     "text": "but"
+    },
+    {
+     "text": "nor"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Either' pairs with 'or'.",
+   "order": 174,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "either ... or."
+  },
+  {
+   "questionText": "I will wait here ____ you return.",
+   "options": [
+    {
+     "text": "although"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "because"
+    },
+    {
+     "text": "until"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Until' shows the time up to which waiting continues.",
+   "order": 175,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "until = up to the time."
+  },
+  {
+   "questionText": "She is poor ____ honest.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "but"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "because"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'But' joins two contrasting qualities.",
+   "order": 176,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Contrast = but."
+  },
+  {
+   "questionText": "____ it was cold, he went out without a sweater.",
+   "options": [
+    {
+     "text": "Because"
+    },
+    {
+     "text": "If"
+    },
+    {
+     "text": "Though"
+    },
+    {
+     "text": "Unless"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Though' expresses concession.",
+   "order": 177,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Though = although."
+  },
+  {
+   "questionText": "Whether he comes ____ not, we will start the meeting.",
+   "options": [
+    {
+     "text": "and"
+    },
+    {
+     "text": "or"
+    },
+    {
+     "text": "nor"
+    },
+    {
+     "text": "but"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Whether' pairs with 'or'.",
+   "order": 178,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "whether ... or."
+  },
+  {
+   "questionText": "Please call me ____ you reach home.",
+   "options": [
+    {
+     "text": "than"
+    },
+    {
+     "text": "although"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "as soon as"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As soon as' marks the time immediately after an event.",
+   "order": 179,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "as soon as = immediately when."
+  },
+  {
+   "questionText": "You will not pass ____ you study regularly.",
+   "options": [
+    {
+     "text": "unless"
+    },
+    {
+     "text": "although"
+    },
+    {
+     "text": "if"
+    },
+    {
+     "text": "because"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Unless' means 'if not'; a negative main clause with 'unless' is correct.",
+   "order": 180,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "unless = if not."
+  },
+  {
+   "questionText": "Not only did she sing well, ____ she also danced beautifully.",
+   "options": [
+    {
+     "text": "but"
+    },
+    {
+     "text": "and"
+    },
+    {
+     "text": "yet"
+    },
+    {
+     "text": "so"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Not only ... but also' is a correlative pair.",
+   "order": 181,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "not only ... but also."
+  },
+  {
+   "questionText": "Hardly had he reached the station ____ the train left.",
+   "options": [
+    {
+     "text": "as"
+    },
+    {
+     "text": "that"
+    },
+    {
+     "text": "when"
+    },
+    {
+     "text": "than"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Hardly' pairs with 'when'.",
+   "order": 182,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "hardly ... when; no sooner ... than."
+  },
+  {
+   "questionText": "No sooner did the bell ring ____ the students rushed out.",
+   "options": [
+    {
+     "text": "that"
+    },
+    {
+     "text": "then"
+    },
+    {
+     "text": "when"
+    },
+    {
+     "text": "than"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'No sooner' pairs with 'than'.",
+   "order": 183,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "no sooner ... than."
+  },
+  {
+   "questionText": "Scarcely had she sat down ____ the phone rang.",
+   "options": [
+    {
+     "text": "as"
+    },
+    {
+     "text": "when"
+    },
+    {
+     "text": "then"
+    },
+    {
+     "text": "than"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Scarcely' pairs with 'when'.",
+   "order": 184,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "scarcely ... when."
+  },
+  {
+   "questionText": "He speaks ____ he were the manager.",
+   "options": [
+    {
+     "text": "lest"
+    },
+    {
+     "text": "because"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "as if"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As if' compares the behaviour with an imagined situation.",
+   "order": 185,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "as if/as though + past subjunctive."
+  },
+  {
+   "questionText": "He ran fast ____ he could catch the bus.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "as if"
+    },
+    {
+     "text": "so that"
+    },
+    {
+     "text": "unless"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'So that' expresses purpose.",
+   "order": 186,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "so that = purpose."
+  },
+  {
+   "questionText": "He was ____ tired that he could not walk.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "very"
+    },
+    {
+     "text": "such"
+    },
+    {
+     "text": "too"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'So ... that' expresses result with an adjective.",
+   "order": 187,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "so + adjective + that."
+  },
+  {
+   "questionText": "It was ____ a hot day that nobody went out.",
+   "options": [
+    {
+     "text": "so"
+    },
+    {
+     "text": "such"
+    },
+    {
+     "text": "too"
+    },
+    {
+     "text": "very"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Such a + adjective + noun ... that' expresses result.",
+   "order": 188,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "such + a + adj + noun + that."
+  },
+  {
+   "questionText": "The shop was closed; ____, we returned home.",
+   "options": [
+    {
+     "text": "although"
+    },
+    {
+     "text": "therefore"
+    },
+    {
+     "text": "because"
+    },
+    {
+     "text": "however"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Therefore' introduces a result of the previous statement.",
+   "order": 189,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "therefore = as a result."
+  },
+  {
+   "questionText": "He is rich; ____, he is not happy.",
+   "options": [
+    {
+     "text": "therefore"
+    },
+    {
+     "text": "moreover"
+    },
+    {
+     "text": "however"
+    },
+    {
+     "text": "because"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'However' marks contrast with the previous clause.",
+   "order": 190,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "however = contrast."
+  },
+  {
+   "questionText": "She is intelligent; ____, she is hardworking.",
+   "options": [
+    {
+     "text": "however"
+    },
+    {
+     "text": "otherwise"
+    },
+    {
+     "text": "although"
+    },
+    {
+     "text": "moreover"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Moreover' adds a further point to the same idea.",
+   "order": 191,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "moreover = in addition."
+  },
+  {
+   "questionText": "Take an umbrella; ____, you may get wet.",
+   "options": [
+    {
+     "text": "otherwise"
+    },
+    {
+     "text": "besides"
+    },
+    {
+     "text": "therefore"
+    },
+    {
+     "text": "moreover"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Otherwise' shows the consequence of not doing the action.",
+   "order": 192,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "otherwise = or else."
+  },
+  {
+   "questionText": "The doctor insisted ____ he should take rest.",
+   "options": [
+    {
+     "text": "what"
+    },
+    {
+     "text": "whom"
+    },
+    {
+     "text": "that"
+    },
+    {
+     "text": "which"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'That' introduces the noun clause that follows 'insisted'.",
+   "order": 193,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "that = noun clause."
+  },
+  {
+   "questionText": "I do not know ____ he has left.",
+   "options": [
+    {
+     "text": "whether"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "although"
+    },
+    {
+     "text": "nor"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Whether' introduces an indirect question.",
+   "order": 194,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "whether = indirect yes/no question."
+  },
+  {
+   "questionText": "He left early ____ he could attend the interview.",
+   "options": [
+    {
+     "text": "but"
+    },
+    {
+     "text": "so that"
+    },
+    {
+     "text": "unless"
+    },
+    {
+     "text": "because of"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'So that' expresses purpose.",
+   "order": 195,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "so that = in order that."
+  },
+  {
+   "questionText": "He asked me ____ I had completed the work.",
+   "options": [
+    {
+     "text": "unless"
+    },
+    {
+     "text": "though"
+    },
+    {
+     "text": "so"
+    },
+    {
+     "text": "if"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'If' introduces an indirect yes/no question.",
+   "order": 196,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "if/whether = reported question."
+  },
+  {
+   "questionText": "He will come ____ it rains.",
+   "options": [
+    {
+     "text": "even if"
+    },
+    {
+     "text": "so"
+    },
+    {
+     "text": "nor"
+    },
+    {
+     "text": "but"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Even if' means regardless of the condition.",
+   "order": 197,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "even if = no matter whether."
+  },
+  {
+   "questionText": "The more you practise, ____ you will perform.",
+   "options": [
+    {
+     "text": "better"
+    },
+    {
+     "text": "best"
+    },
+    {
+     "text": "the better"
+    },
+    {
+     "text": "more better"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'The more ... the better' is the comparative correlative.",
+   "order": 198,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "the + comparative ... the + comparative."
+  },
+  {
+   "questionText": "____ the weather was bad, the match was held as planned.",
+   "options": [
+    {
+     "text": "Despite"
+    },
+    {
+     "text": "Despite the fact that"
+    },
+    {
+     "text": "In spite"
+    },
+    {
+     "text": "Because of"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Despite the fact that' can be followed by a clause; 'despite' alone needs a noun.",
+   "order": 199,
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "despite + noun; despite the fact that + clause."
+  },
+  {
+   "questionText": "She sings ____.",
+   "options": [
+    {
+     "text": "beautify"
+    },
+    {
+     "text": "beautiful"
+    },
+    {
+     "text": "beauty"
+    },
+    {
+     "text": "beautifully"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A verb is modified by an adverb: beautifully.",
+   "order": 200,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Verb -> adverb (-ly)."
+  },
+  {
+   "questionText": "He is a ____ driver.",
+   "options": [
+    {
+     "text": "carefully"
+    },
+    {
+     "text": "careful"
+    },
+    {
+     "text": "care"
+    },
+    {
+     "text": "carefulness"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A noun is modified by an adjective: careful driver.",
+   "order": 201,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Noun -> adjective."
+  },
+  {
+   "questionText": "He is the ____ of the three brothers.",
+   "options": [
+    {
+     "text": "more tall"
+    },
+    {
+     "text": "most tall"
+    },
+    {
+     "text": "taller"
+    },
+    {
+     "text": "tallest"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "For more than two, the superlative 'tallest' is used.",
+   "order": 202,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "3+ = superlative."
+  },
+  {
+   "questionText": "This book is ____ than that one.",
+   "options": [
+    {
+     "text": "good"
+    },
+    {
+     "text": "best"
+    },
+    {
+     "text": "better"
+    },
+    {
+     "text": "more good"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Good' has the irregular comparative 'better'.",
+   "order": 203,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "good-better-best."
+  },
+  {
+   "questionText": "He is ____ intelligent than his brother.",
+   "options": [
+    {
+     "text": "more"
+    },
+    {
+     "text": "much"
+    },
+    {
+     "text": "very"
+    },
+    {
+     "text": "most"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The comparative of a long adjective uses 'more'.",
+   "order": 204,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "long adjective -> more."
+  },
+  {
+   "questionText": "She is the ____ girl in the class.",
+   "options": [
+    {
+     "text": "more beautiful"
+    },
+    {
+     "text": "beautifuller"
+    },
+    {
+     "text": "most beautiful"
+    },
+    {
+     "text": "beautifullest"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "For a long adjective, the superlative is formed with 'most'.",
+   "order": 205,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "most + long adjective."
+  },
+  {
+   "questionText": "She is as ____ as her mother.",
+   "options": [
+    {
+     "text": "more tall"
+    },
+    {
+     "text": "tall"
+    },
+    {
+     "text": "tallest"
+    },
+    {
+     "text": "taller"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In 'as ... as', the adjective is in the positive form: tall.",
+   "order": 206,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "as + positive + as."
+  },
+  {
+   "questionText": "The Ganga is the ____ river in India.",
+   "options": [
+    {
+     "text": "longest"
+    },
+    {
+     "text": "most long"
+    },
+    {
+     "text": "longer"
+    },
+    {
+     "text": "more long"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Among many rivers, the superlative 'longest' is used.",
+   "order": 207,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Superlative for many."
+  },
+  {
+   "questionText": "Mohan is ____ boy in the class.",
+   "options": [
+    {
+     "text": "taller"
+    },
+    {
+     "text": "tallest"
+    },
+    {
+     "text": "more tall"
+    },
+    {
+     "text": "the tallest"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A superlative with 'in the class' is formed with 'the'.",
+   "order": 208,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "the + superlative + in."
+  },
+  {
+   "questionText": "She speaks English very ____.",
+   "options": [
+    {
+     "text": "fluently"
+    },
+    {
+     "text": "fluency"
+    },
+    {
+     "text": "fluent"
+    },
+    {
+     "text": "fluence"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Speaks' needs an adverb: fluently.",
+   "order": 209,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Verb -> adverb."
+  },
+  {
+   "questionText": "There is ____ milk in the fridge.",
+   "options": [
+    {
+     "text": "a few"
+    },
+    {
+     "text": "many"
+    },
+    {
+     "text": "some"
+    },
+    {
+     "text": "several"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Milk' is uncountable, so 'some' is used.",
+   "order": 210,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "some + uncountable."
+  },
+  {
+   "questionText": "Which of the two routes is ____?",
+   "options": [
+    {
+     "text": "more short"
+    },
+    {
+     "text": "shortest"
+    },
+    {
+     "text": "most short"
+    },
+    {
+     "text": "shorter"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two items compared: use the comparative.",
+   "order": 211,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Two = -er."
+  },
+  {
+   "questionText": "The soup tastes ____.",
+   "options": [
+    {
+     "text": "deliciousy"
+    },
+    {
+     "text": "delicious"
+    },
+    {
+     "text": "deliciousness"
+    },
+    {
+     "text": "deliciously"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After a linking verb such as 'taste', an adjective is used.",
+   "order": 212,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Linking verb (taste, feel, seem) + adjective."
+  },
+  {
+   "questionText": "She looked ____ at the stranger.",
+   "options": [
+    {
+     "text": "suspicion"
+    },
+    {
+     "text": "suspicious"
+    },
+    {
+     "text": "suspect"
+    },
+    {
+     "text": "suspiciously"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Looked at' describes an action, so an adverb is needed.",
+   "order": 213,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Action verb -> adverb."
+  },
+  {
+   "questionText": "She felt ____ after the long journey.",
+   "options": [
+    {
+     "text": "tiring"
+    },
+    {
+     "text": "tired"
+    },
+    {
+     "text": "tiredly"
+    },
+    {
+     "text": "tire"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the linking verb 'felt', an adjective describing the subject is used.",
+   "order": 214,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "feel + adjective."
+  },
+  {
+   "questionText": "Of the two sisters, Meena is the ____.",
+   "options": [
+    {
+     "text": "elder"
+    },
+    {
+     "text": "most old"
+    },
+    {
+     "text": "eldest"
+    },
+    {
+     "text": "oldest"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Between two persons of a family the comparative 'elder' is used; the superlative forms are for three or more.",
+   "order": 215,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Two = comparative."
+  },
+  {
+   "questionText": "He has ____ money left in his wallet.",
+   "options": [
+    {
+     "text": "a few"
+    },
+    {
+     "text": "few"
+    },
+    {
+     "text": "little"
+    },
+    {
+     "text": "many"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Money' is uncountable, so 'little' (hardly any) fits the negative sense.",
+   "order": 216,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Uncountable + little; countable + few."
+  },
+  {
+   "questionText": "I have ____ friends in this city, so I feel lonely.",
+   "options": [
+    {
+     "text": "a few"
+    },
+    {
+     "text": "much"
+    },
+    {
+     "text": "little"
+    },
+    {
+     "text": "few"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Few' has a negative sense (hardly any) and fits with 'lonely'.",
+   "order": 217,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "few = almost none; a few = some."
+  },
+  {
+   "questionText": "She has ____ friends in Chennai who will help her.",
+   "options": [
+    {
+     "text": "a few"
+    },
+    {
+     "text": "much"
+    },
+    {
+     "text": "little"
+    },
+    {
+     "text": "few"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'A few' has a positive sense (some) and fits with 'help her'.",
+   "order": 218,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "a few = some."
+  },
+  {
+   "questionText": "He worked ____ than anyone else in the office.",
+   "options": [
+    {
+     "text": "hard"
+    },
+    {
+     "text": "more hardly"
+    },
+    {
+     "text": "harder"
+    },
+    {
+     "text": "hardest"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Hard' is both adjective and adverb; its comparative is 'harder'.",
+   "order": 219,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "hard-harder-hardest."
+  },
+  {
+   "questionText": "He ran ____ to catch the bus.",
+   "options": [
+    {
+     "text": "fastly"
+    },
+    {
+     "text": "fast"
+    },
+    {
+     "text": "fasten"
+    },
+    {
+     "text": "fastness"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Fast' is an adverb without -ly.",
+   "order": 220,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "fast/hard/late: same form as adjective."
+  },
+  {
+   "questionText": "She arrived ____ for the interview and was rejected.",
+   "options": [
+    {
+     "text": "latter"
+    },
+    {
+     "text": "lately"
+    },
+    {
+     "text": "last"
+    },
+    {
+     "text": "late"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Late' (adverb) means after the expected time; 'lately' means recently.",
+   "order": 221,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "late = not on time; lately = recently."
+  },
+  {
+   "questionText": "The ____ of the two proposals was accepted.",
+   "options": [
+    {
+     "text": "later"
+    },
+    {
+     "text": "last"
+    },
+    {
+     "text": "latter"
+    },
+    {
+     "text": "latest"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Latter' refers to the second of two; 'last' is final of many.",
+   "order": 222,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "latter = second of two."
+  },
+  {
+   "questionText": "The ____ news about the accident shocked everyone.",
+   "options": [
+    {
+     "text": "latest"
+    },
+    {
+     "text": "last"
+    },
+    {
+     "text": "latter"
+    },
+    {
+     "text": "later"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Latest' means most recent.",
+   "order": 223,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "latest = newest."
+  },
+  {
+   "questionText": "He shows ____ interest in cricket than in football.",
+   "options": [
+    {
+     "text": "few"
+    },
+    {
+     "text": "less"
+    },
+    {
+     "text": "many"
+    },
+    {
+     "text": "fewer"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Interest' is uncountable, so the comparative 'less' is used.",
+   "order": 224,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "less + uncountable."
+  },
+  {
+   "questionText": "This is ____ interesting book that I have ever read.",
+   "options": [
+    {
+     "text": "more"
+    },
+    {
+     "text": "the most"
+    },
+    {
+     "text": "most"
+    },
+    {
+     "text": "much"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A superlative takes 'the' before 'most'.",
+   "order": 225,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "the most + adjective."
+  },
+  {
+   "questionText": "We could see ____ people at the stadium than the previous year.",
+   "options": [
+    {
+     "text": "fewer"
+    },
+    {
+     "text": "lesser"
+    },
+    {
+     "text": "little"
+    },
+    {
+     "text": "less"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'People' is countable, so 'fewer' is used.",
+   "order": 226,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "fewer + countable; less + uncountable."
+  },
+  {
+   "questionText": "She spends ____ time on social media than before.",
+   "options": [
+    {
+     "text": "many"
+    },
+    {
+     "text": "few"
+    },
+    {
+     "text": "less"
+    },
+    {
+     "text": "fewer"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Time' is uncountable, so 'less' is used.",
+   "order": 227,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "less + uncountable."
+  },
+  {
+   "questionText": "This is the ____ of the two plans.",
+   "options": [
+    {
+     "text": "most good"
+    },
+    {
+     "text": "good"
+    },
+    {
+     "text": "best"
+    },
+    {
+     "text": "better"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With two options, the comparative 'better' is used.",
+   "order": 228,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Two = comparative."
+  },
+  {
+   "questionText": "She ____ ever misses a class.",
+   "options": [
+    {
+     "text": "hardly"
+    },
+    {
+     "text": "harder"
+    },
+    {
+     "text": "hardy"
+    },
+    {
+     "text": "hard"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly ever' means almost never; the adverb 'hardly' is used.",
+   "order": 229,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "hardly = almost not."
+  },
+  {
+   "questionText": "He gave me ____ information about the course.",
+   "options": [
+    {
+     "text": "far"
+    },
+    {
+     "text": "further"
+    },
+    {
+     "text": "farther"
+    },
+    {
+     "text": "furthest"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Further' means additional; 'farther' refers to physical distance.",
+   "order": 230,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "further = additional."
+  },
+  {
+   "questionText": "He is a ____ boy.",
+   "options": [
+    {
+     "text": "well-behave"
+    },
+    {
+     "text": "behaved well"
+    },
+    {
+     "text": "well behavedly"
+    },
+    {
+     "text": "well-behaved"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A compound adjective before a noun is hyphenated: well-behaved.",
+   "order": 231,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "adverb + participle = compound adjective."
+  },
+  {
+   "questionText": "Your answer is ____ correct.",
+   "options": [
+    {
+     "text": "most absolutely"
+    },
+    {
+     "text": "more absolutely"
+    },
+    {
+     "text": "absolutely"
+    },
+    {
+     "text": "absolute"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Absolute' is already complete and takes no degrees; the adverb 'absolutely' fits.",
+   "order": 232,
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "absolute adjectives do not compare."
+  },
+  {
+   "questionText": "You ____ wear a helmet while riding a two-wheeler.",
+   "options": [
+    {
+     "text": "might"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "used to"
+    },
+    {
+     "text": "may"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Must' expresses a legal or strong obligation.",
+   "order": 233,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "must = obligation."
+  },
+  {
+   "questionText": "____ I come in, madam?",
+   "options": [
+    {
+     "text": "Must"
+    },
+    {
+     "text": "Ought"
+    },
+    {
+     "text": "May"
+    },
+    {
+     "text": "Shall"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'May' is used to ask for polite permission.",
+   "order": 234,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "May I = permission."
+  },
+  {
+   "questionText": "She ____ swim when she was five years old.",
+   "options": [
+    {
+     "text": "can"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "may"
+    },
+    {
+     "text": "could"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Could' is the past of 'can' for an ability in the past.",
+   "order": 235,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "could = past ability."
+  },
+  {
+   "questionText": "If it rains tomorrow, we ____ the picnic.",
+   "options": [
+    {
+     "text": "will cancel"
+    },
+    {
+     "text": "cancelled"
+    },
+    {
+     "text": "had cancelled"
+    },
+    {
+     "text": "would cancel"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First conditional: if + present simple, will + base verb.",
+   "order": 236,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "If + present, will + verb."
+  },
+  {
+   "questionText": "If I were you, I ____ accept the offer.",
+   "options": [
+    {
+     "text": "can"
+    },
+    {
+     "text": "will"
+    },
+    {
+     "text": "would"
+    },
+    {
+     "text": "shall"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Second conditional: if + past, would + base verb.",
+   "order": 237,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "If + past, would."
+  },
+  {
+   "questionText": "If water is heated to 100 degrees, it ____.",
+   "options": [
+    {
+     "text": "boils"
+    },
+    {
+     "text": "would boil"
+    },
+    {
+     "text": "boiled"
+    },
+    {
+     "text": "has boiling"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Zero conditional for general truths: if + present, present.",
+   "order": 238,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Truth = present, present."
+  },
+  {
+   "questionText": "You ____ not smoke in a hospital.",
+   "options": [
+    {
+     "text": "need"
+    },
+    {
+     "text": "can"
+    },
+    {
+     "text": "would"
+    },
+    {
+     "text": "must"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Must not' expresses prohibition.",
+   "order": 239,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "must not = forbidden."
+  },
+  {
+   "questionText": "It ____ rain this evening; the sky is cloudy.",
+   "options": [
+    {
+     "text": "shall"
+    },
+    {
+     "text": "may"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "need"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'May' expresses a possibility.",
+   "order": 240,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "may = possibility."
+  },
+  {
+   "questionText": "____ you please pass the salt?",
+   "options": [
+    {
+     "text": "Should"
+    },
+    {
+     "text": "Could"
+    },
+    {
+     "text": "Must"
+    },
+    {
+     "text": "Would not"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Could' is a polite request.",
+   "order": 241,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Could you = polite request."
+  },
+  {
+   "questionText": "He ____ not come yesterday because he was ill.",
+   "options": [
+    {
+     "text": "can"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "could"
+    },
+    {
+     "text": "may"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Could not' is the past of 'cannot' for inability.",
+   "order": 242,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "could not = past inability."
+  },
+  {
+   "questionText": "The students ____ submit the form by Friday.",
+   "options": [
+    {
+     "text": "must"
+    },
+    {
+     "text": "could"
+    },
+    {
+     "text": "may"
+    },
+    {
+     "text": "might"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An official obligation uses 'must'.",
+   "order": 243,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "must = obligation."
+  },
+  {
+   "questionText": "If you heat ice, it ____.",
+   "options": [
+    {
+     "text": "would melt"
+    },
+    {
+     "text": "will melting"
+    },
+    {
+     "text": "melted"
+    },
+    {
+     "text": "melts"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A general truth takes the present simple in both clauses.",
+   "order": 244,
+   "subPattern": "modals-conditionals",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Zero conditional."
+  },
+  {
+   "questionText": "If he had studied, he ____ the exam.",
+   "options": [
+    {
+     "text": "had passed"
+    },
+    {
+     "text": "would pass"
+    },
+    {
+     "text": "would have passed"
+    },
+    {
+     "text": "will pass"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Third conditional: if + past perfect, would have + past participle.",
+   "order": 245,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "If + had pp, would have pp."
+  },
+  {
+   "questionText": "It is not necessary to carry cash, so you ____ not carry it.",
+   "options": [
+    {
+     "text": "need"
+    },
+    {
+     "text": "shall"
+    },
+    {
+     "text": "would"
+    },
+    {
+     "text": "must"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Need not' expresses absence of necessity, matching the stem.",
+   "order": 246,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "need not = no necessity."
+  },
+  {
+   "questionText": "He ____ be at home; his car is outside.",
+   "options": [
+    {
+     "text": "shall"
+    },
+    {
+     "text": "can"
+    },
+    {
+     "text": "need"
+    },
+    {
+     "text": "must"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Must' expresses a strong logical deduction.",
+   "order": 247,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "must = strong certainty."
+  },
+  {
+   "questionText": "You ____ to respect your teachers.",
+   "options": [
+    {
+     "text": "will"
+    },
+    {
+     "text": "ought"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "can"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Ought' is always followed by 'to' and expresses moral duty.",
+   "order": 248,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "ought + to."
+  },
+  {
+   "questionText": "I wish I ____ a bigger house.",
+   "options": [
+    {
+     "text": "have"
+    },
+    {
+     "text": "had"
+    },
+    {
+     "text": "will have"
+    },
+    {
+     "text": "would have"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After 'wish' for an unreal present, the past tense is used.",
+   "order": 249,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "wish + past = present regret."
+  },
+  {
+   "questionText": "If I ____ rich, I would help the poor.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "am"
+    },
+    {
+     "text": "will be"
+    },
+    {
+     "text": "would be"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In unreal conditions the subjunctive 'were' is used for all subjects.",
+   "order": 250,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "If I were."
+  },
+  {
+   "questionText": "Unless you ____ hard, you will not succeed.",
+   "options": [
+    {
+     "text": "will work"
+    },
+    {
+     "text": "worked"
+    },
+    {
+     "text": "work"
+    },
+    {
+     "text": "are working"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After 'unless' the present simple is used for a future condition.",
+   "order": 251,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "unless + present."
+  },
+  {
+   "questionText": "You ____ have told me earlier; now it is too late.",
+   "options": [
+    {
+     "text": "would"
+    },
+    {
+     "text": "may"
+    },
+    {
+     "text": "can"
+    },
+    {
+     "text": "should"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Should have + pp' expresses criticism of something not done.",
+   "order": 252,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "should have = regret/advice in the past."
+  },
+  {
+   "questionText": "She ____ have left already; the lights are off.",
+   "options": [
+    {
+     "text": "would"
+    },
+    {
+     "text": "should"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "need"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Must have + pp' expresses a strong deduction about the past.",
+   "order": 253,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "must have = deduction."
+  },
+  {
+   "questionText": "I ____ get up early when I was in school.",
+   "options": [
+    {
+     "text": "use to"
+    },
+    {
+     "text": "would be"
+    },
+    {
+     "text": "am used to"
+    },
+    {
+     "text": "used to"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Used to' denotes a past habit that no longer exists.",
+   "order": 254,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "used to = past habit."
+  },
+  {
+   "questionText": "If you ____ me, I would have helped you.",
+   "options": [
+    {
+     "text": "had asked"
+    },
+    {
+     "text": "asked"
+    },
+    {
+     "text": "would ask"
+    },
+    {
+     "text": "ask"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The result clause 'would have helped' needs the past perfect in the if-clause.",
+   "order": 255,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Third conditional."
+  },
+  {
+   "questionText": "I would rather ____ at home than go out.",
+   "options": [
+    {
+     "text": "stayed"
+    },
+    {
+     "text": "stay"
+    },
+    {
+     "text": "to stay"
+    },
+    {
+     "text": "staying"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Would rather' is followed by the bare infinitive.",
+   "order": 256,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "would rather + base verb."
+  },
+  {
+   "questionText": "____ I help you with the luggage?",
+   "options": [
+    {
+     "text": "Shall"
+    },
+    {
+     "text": "Will"
+    },
+    {
+     "text": "Might"
+    },
+    {
+     "text": "Would"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Shall I' is used for offers with the first person.",
+   "order": 257,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Shall I = offer."
+  },
+  {
+   "questionText": "If she ____ earlier, she would have caught the train.",
+   "options": [
+    {
+     "text": "leaves"
+    },
+    {
+     "text": "would leave"
+    },
+    {
+     "text": "left"
+    },
+    {
+     "text": "had left"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The result 'would have caught' requires the past perfect.",
+   "order": 258,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "If + had pp."
+  },
+  {
+   "questionText": "He asked whether he ____ use my phone.",
+   "options": [
+    {
+     "text": "must"
+    },
+    {
+     "text": "could"
+    },
+    {
+     "text": "shall"
+    },
+    {
+     "text": "can"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In reported speech 'can' changes to 'could'.",
+   "order": 259,
+   "subPattern": "modals-conditionals",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "can -> could."
+  },
+  {
+   "questionText": "I wish I ____ the exam last year.",
+   "options": [
+    {
+     "text": "passed"
+    },
+    {
+     "text": "have passed"
+    },
+    {
+     "text": "had passed"
+    },
+    {
+     "text": "would pass"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Wish' for an unreal past takes the past perfect.",
+   "order": 260,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "wish + had pp = past regret."
+  },
+  {
+   "questionText": "He suggested that she ____ a doctor.",
+   "options": [
+    {
+     "text": "consulted"
+    },
+    {
+     "text": "would consult"
+    },
+    {
+     "text": "consults"
+    },
+    {
+     "text": "consult"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After 'suggest that', the base form (subjunctive) is used.",
+   "order": 261,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "suggest that + base verb."
+  },
+  {
+   "questionText": "He ____ be sixty; he looks very young.",
+   "options": [
+    {
+     "text": "would"
+    },
+    {
+     "text": "cannot"
+    },
+    {
+     "text": "must"
+    },
+    {
+     "text": "should"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Cannot' expresses a strong impossibility.",
+   "order": 262,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "cannot = impossible."
+  },
+  {
+   "questionText": "I am used to ____ up early.",
+   "options": [
+    {
+     "text": "get"
+    },
+    {
+     "text": "got"
+    },
+    {
+     "text": "getting"
+    },
+    {
+     "text": "have got"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Be used to' (accustomed) is followed by a gerund.",
+   "order": 263,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "be used to + -ing."
+  },
+  {
+   "questionText": "It is time we ____ for the airport.",
+   "options": [
+    {
+     "text": "left"
+    },
+    {
+     "text": "will leave"
+    },
+    {
+     "text": "leave"
+    },
+    {
+     "text": "had leave"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'It is time + subject' takes the past form of the verb.",
+   "order": 264,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "it is time + past."
+  },
+  {
+   "questionText": "You ____ better see a doctor about that cough.",
+   "options": [
+    {
+     "text": "had"
+    },
+    {
+     "text": "did"
+    },
+    {
+     "text": "would"
+    },
+    {
+     "text": "should"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Had better' gives strong advice and takes the base verb.",
+   "order": 265,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "had better + base verb."
+  },
+  {
+   "questionText": "Were I the Prime Minister, I ____ reduce taxes.",
+   "options": [
+    {
+     "text": "had"
+    },
+    {
+     "text": "will"
+    },
+    {
+     "text": "can"
+    },
+    {
+     "text": "would"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Inverted second conditional 'Were I' is followed by 'would'.",
+   "order": 266,
+   "subPattern": "modals-conditionals",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Were I = If I were."
+  }
+ ]
+}

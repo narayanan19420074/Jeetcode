@@ -1,0 +1,1647 @@
+{
+ "sets": [
+  {
+   "id": "di-tables-s045",
+   "type": "table",
+   "title": "Deposits collected by 6 bank branches (₹ crore)",
+   "table": {
+    "columns": [
+     "Year",
+     "Tambaram",
+     "Anna Nagar",
+     "Porur",
+     "Adyar",
+     "Velachery",
+     "T. Nagar"
+    ],
+    "rows": [
+     [
+      "2020",
+      365,
+      575,
+      1065,
+      260,
+      975,
+      640
+     ],
+     [
+      "2021",
+      565,
+      645,
+      880,
+      320,
+      1035,
+      615
+     ],
+     [
+      "2022",
+      345,
+      540,
+      1050,
+      425,
+      1085,
+      520
+     ],
+     [
+      "2023",
+      430,
+      660,
+      980,
+      450,
+      1085,
+      540
+     ],
+     [
+      "2024",
+      575,
+      595,
+      835,
+      325,
+      960,
+      500
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s046",
+   "type": "table",
+   "title": "Outpatients treated in 6 hospitals (in hundreds)",
+   "table": {
+    "columns": [
+     "Hospital",
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr"
+    ],
+    "rows": [
+     [
+      "Dhanvantari",
+      120,
+      134,
+      94,
+      144
+     ],
+     [
+      "Sanjeevani",
+      228,
+      156,
+      144,
+      170
+     ],
+     [
+      "Medicity",
+      252,
+      326,
+      262,
+      372
+     ],
+     [
+      "Lifeline",
+      346,
+      366,
+      294,
+      356
+     ],
+     [
+      "Apollo Care",
+      46,
+      56,
+      34,
+      36
+     ],
+     [
+      "Shanti",
+      70,
+      62,
+      80,
+      58
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s047",
+   "type": "table",
+   "title": "Annual car production of 4 companies (in thousand units)",
+   "table": {
+    "columns": [
+     "Year",
+     "Mahindra",
+     "Tata Motors",
+     "Toyota Kirloskar",
+     "Maruti Suzuki"
+    ],
+    "rows": [
+     [
+      "2018",
+      130,
+      185,
+      645,
+      160
+     ],
+     [
+      "2019",
+      85,
+      115,
+      565,
+      145
+     ],
+     [
+      "2020",
+      110,
+      205,
+      600,
+      140
+     ],
+     [
+      "2021",
+      130,
+      180,
+      685,
+      190
+     ],
+     [
+      "2022",
+      130,
+      185,
+      450,
+      130
+     ],
+     [
+      "2023",
+      110,
+      170,
+      390,
+      145
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s048",
+   "type": "table",
+   "title": "Monthly rainfall recorded in 4 cities (in mm)",
+   "table": {
+    "columns": [
+     "Month",
+     "Kochi",
+     "Bengaluru",
+     "Mumbai",
+     "Lucknow"
+    ],
+    "rows": [
+     [
+      "June",
+      225,
+      450,
+      95,
+      135
+     ],
+     [
+      "July",
+      285,
+      310,
+      55,
+      120
+     ],
+     [
+      "August",
+      360,
+      440,
+      55,
+      170
+     ],
+     [
+      "September",
+      355,
+      430,
+      75,
+      105
+     ],
+     [
+      "October",
+      235,
+      400,
+      55,
+      155
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s049",
+   "type": "table",
+   "title": "Wheat production of 4 states (in lakh tonnes)",
+   "table": {
+    "columns": [
+     "Year",
+     "Gujarat",
+     "Madhya Pradesh",
+     "Haryana",
+     "Bihar"
+    ],
+    "rows": [
+     [
+      "2019",
+      160,
+      110,
+      75,
+      105
+     ],
+     [
+      "2020",
+      150,
+      155,
+      90,
+      110
+     ],
+     [
+      "2021",
+      100,
+      145,
+      110,
+      135
+     ],
+     [
+      "2022",
+      150,
+      110,
+      75,
+      170
+     ],
+     [
+      "2023",
+      105,
+      125,
+      85,
+      165
+     ],
+     [
+      "2024",
+      135,
+      145,
+      85,
+      175
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s050",
+   "type": "table",
+   "title": "Annual revenue of 5 companies (₹ crore)",
+   "table": {
+    "columns": [
+     "Financial year",
+     "Sundaram Textiles",
+     "Himalaya Herbals",
+     "Nilgiri Tea Co.",
+     "Vindhya Steel",
+     "Ganga Papers"
+    ],
+    "rows": [
+     [
+      "2019-20",
+      2210,
+      3330,
+      2430,
+      2180,
+      1530
+     ],
+     [
+      "2020-21",
+      2250,
+      3220,
+      3330,
+      2260,
+      1440
+     ],
+     [
+      "2021-22",
+      1810,
+      2510,
+      3710,
+      2760,
+      1150
+     ],
+     [
+      "2022-23",
+      2000,
+      2820,
+      3200,
+      3190,
+      980
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s051",
+   "type": "table",
+   "title": "Student enrolment in 4 departments of an engineering college",
+   "table": {
+    "columns": [
+     "Year",
+     "Civil",
+     "IT",
+     "Mechanical",
+     "CSE"
+    ],
+    "rows": [
+     [
+      "2019",
+      230,
+      185,
+      135,
+      185
+     ],
+     [
+      "2020",
+      245,
+      205,
+      170,
+      215
+     ],
+     [
+      "2021",
+      210,
+      165,
+      145,
+      220
+     ],
+     [
+      "2022",
+      210,
+      120,
+      140,
+      180
+     ],
+     [
+      "2023",
+      240,
+      195,
+      160,
+      160
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s052",
+   "type": "table",
+   "title": "Electricity consumption of 5 cities (in million units)",
+   "table": {
+    "columns": [
+     "City",
+     "May",
+     "June",
+     "July",
+     "August"
+    ],
+    "rows": [
+     [
+      "Surat",
+      230,
+      330,
+      370,
+      360
+     ],
+     [
+      "Indore",
+      300,
+      210,
+      300,
+      250
+     ],
+     [
+      "Madurai",
+      190,
+      300,
+      300,
+      230
+     ],
+     [
+      "Coimbatore",
+      610,
+      910,
+      830,
+      810
+     ],
+     [
+      "Nagpur",
+      250,
+      360,
+      250,
+      380
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s053",
+   "type": "table",
+   "title": "Export value of 5 items from India (₹ crore)",
+   "table": {
+    "columns": [
+     "Year",
+     "Handicrafts",
+     "Leather goods",
+     "Gems and jewellery",
+     "Textiles",
+     "Tea"
+    ],
+    "rows": [
+     [
+      "2018",
+      1730,
+      3420,
+      2880,
+      990,
+      750
+     ],
+     [
+      "2019",
+      2470,
+      2330,
+      2920,
+      880,
+      770
+     ],
+     [
+      "2020",
+      2390,
+      1880,
+      2040,
+      1170,
+      640
+     ],
+     [
+      "2021",
+      1590,
+      2770,
+      2520,
+      910,
+      650
+     ],
+     [
+      "2022",
+      2480,
+      2420,
+      1810,
+      1190,
+      580
+     ],
+     [
+      "2023",
+      2370,
+      2670,
+      2060,
+      1410,
+      710
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s054",
+   "type": "table",
+   "title": "Runs scored by 6 Ranji Trophy teams in a season",
+   "table": {
+    "columns": [
+     "Team",
+     "2017-18",
+     "2018-19",
+     "2019-20",
+     "2020-21",
+     "2021-22"
+    ],
+    "rows": [
+     [
+      "Tamil Nadu",
+      5080,
+      3540,
+      4460,
+      2770,
+      4840
+     ],
+     [
+      "Mumbai",
+      3720,
+      2720,
+      3700,
+      3080,
+      4570
+     ],
+     [
+      "Saurashtra",
+      3830,
+      3050,
+      4170,
+      4090,
+      3800
+     ],
+     [
+      "Delhi",
+      3130,
+      2660,
+      2500,
+      3180,
+      3020
+     ],
+     [
+      "Vidarbha",
+      1620,
+      1190,
+      1760,
+      1190,
+      1540
+     ],
+     [
+      "Karnataka",
+      2050,
+      3560,
+      3320,
+      2690,
+      2200
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-tables-s055",
+   "type": "table",
+   "title": "Monthly two-wheeler sales of 5 brands (in thousand units)",
+   "table": {
+    "columns": [
+     "Brand",
+     "June",
+     "July",
+     "August",
+     "September"
+    ],
+    "rows": [
+     [
+      "Garuda",
+      74,
+      92,
+      100,
+      66
+     ],
+     [
+      "Chakra",
+      110,
+      160,
+      158,
+      100
+     ],
+     [
+      "Veera",
+      92,
+      118,
+      112,
+      122
+     ],
+     [
+      "Vayu",
+      86,
+      66,
+      94,
+      100
+     ],
+     [
+      "Suraj",
+      106,
+      92,
+      90,
+      94
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "For how many branches was the deposits in 2024 higher than in 2020?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: Tambaram, Anna Nagar, Adyar. Count = 3.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s045"
+  },
+  {
+   "questionText": "Which branch had the highest total deposits over all the years shown?",
+   "options": [
+    "Velachery",
+    "Porur",
+    "Adyar",
+    "Tambaram"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Row totals: Tambaram 2,280, Anna Nagar 3,015, Porur 4,810, Adyar 1,780, Velachery 5,140, T. Nagar 2,815. Highest: Velachery.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s045"
+  },
+  {
+   "questionText": "In how many years was the deposits for Adyar higher than the average deposits of all the branches in that year?",
+   "options": [
+    "5",
+    "1",
+    "0",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Column averages are total/6. Comparison: 2020: 260 vs avg 646.7, 2021: 320 vs avg 676.7, 2022: 425 vs avg 660.8, 2023: 450 vs avg 690.8, 2024: 325 vs avg 631.7. Adyar is above average in 0 years.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s045"
+  },
+  {
+   "questionText": "Which branch recorded the lowest deposits in 2024?",
+   "options": [
+    "T. Nagar",
+    "Velachery",
+    "Adyar",
+    "Tambaram"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Values in 2024: Tambaram 575, Anna Nagar 595, Porur 835, Adyar 325, Velachery 960, T. Nagar 500. Lowest is 325 (Adyar).",
+   "shortcut": "Look down one column only and track the minimum.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s045"
+  },
+  {
+   "questionText": "In which year did Porur account for the largest share of the combined deposits of all the branches?",
+   "options": [
+    "2022",
+    "2021",
+    "2023",
+    "2020"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Share = value / column total: 2020 27.4%; 2021 21.7%; 2022 26.5%; 2023 23.6%; 2024 22.0%. Highest share: 2020.",
+   "shortcut": "The period of highest value is not automatically the period of highest share; compare ratios.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s045"
+  },
+  {
+   "questionText": "In how many months was the outpatient count for Medicity greater than that for Dhanvantari?",
+   "options": [
+    "0",
+    "4",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare Medicity against Dhanvantari period by period: Jan: 252 vs 120, Feb: 326 vs 134, Mar: 262 vs 94, Apr: 372 vs 144. Medicity is higher in 4 of them.",
+   "shortcut": "Compare the two rows column by column and tally only the periods in which the first is larger.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s046"
+  },
+  {
+   "questionText": "Which hospital had the lowest total outpatient count over all the months shown?",
+   "options": [
+    "Shanti",
+    "Apollo Care",
+    "Lifeline",
+    "Dhanvantari"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Dhanvantari 492, Sanjeevani 698, Medicity 1,212, Lifeline 1,362, Apollo Care 172, Shanti 270. Lowest: Apollo Care.",
+   "shortcut": "Add each row; compare totals, not individual cells.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s046"
+  },
+  {
+   "questionText": "The mean of all the 24 values in the table is calculated. How many values in the table are above this mean?",
+   "options": [
+    "15",
+    "10",
+    "11",
+    "9"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Mean = 4,206 / 24 = 175.2. Counting the entries larger than 175.2 gives 9.",
+   "shortcut": "Compute the overall mean once, then count entries above it row by row.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s046"
+  },
+  {
+   "questionText": "In how many months was the outpatient count for Sanjeevani higher than the average outpatient count of all the hospitals in that month?",
+   "options": [
+    "3",
+    "1",
+    "2",
+    "0"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Column averages are total/6. Comparison: Jan: 228 vs avg 177.0, Feb: 156 vs avg 183.3, Mar: 144 vs avg 151.3, Apr: 170 vs avg 189.3. Sanjeevani is above average in 1 months.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s046"
+  },
+  {
+   "questionText": "In which month was the gap between the outpatient count for Dhanvantari and that for Shanti the greatest?",
+   "options": [
+    "Feb",
+    "Mar",
+    "Apr",
+    "Jan"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Absolute gaps: Jan 50, Feb 72, Mar 14, Apr 86. Largest gap is in Apr.",
+   "shortcut": "Take the difference of the two cells in each column and ignore the sign.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s046"
+  },
+  {
+   "questionText": "Which company had the lowest total production over all the years shown?",
+   "options": [
+    "Maruti Suzuki",
+    "Toyota Kirloskar",
+    "Mahindra",
+    "Tata Motors"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Row totals: Mahindra 695, Tata Motors 1,040, Toyota Kirloskar 3,335, Maruti Suzuki 910. Lowest: Mahindra.",
+   "shortcut": "Add each row; compare totals, not individual cells.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s047"
+  },
+  {
+   "questionText": "In how many years was the production for Toyota Kirloskar higher than the average production of all the companies in that year?",
+   "options": [
+    "0",
+    "5",
+    "10",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Column averages are total/4. Comparison: 2018: 645 vs avg 280.0, 2019: 565 vs avg 227.5, 2020: 600 vs avg 263.8, 2021: 685 vs avg 296.2, 2022: 450 vs avg 223.8, 2023: 390 vs avg 203.8. Toyota Kirloskar is above average in 6 years.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s047"
+  },
+  {
+   "questionText": "In how many years was the production for Toyota Kirloskar greater than that for Mahindra?",
+   "options": [
+    "0",
+    "5",
+    "4",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Compare Toyota Kirloskar against Mahindra period by period: 2018: 645 vs 130, 2019: 565 vs 85, 2020: 600 vs 110, 2021: 685 vs 130, 2022: 450 vs 130, 2023: 390 vs 110. Toyota Kirloskar is higher in 6 of them.",
+   "shortcut": "Compare the two rows column by column and tally only the periods in which the first is larger.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s047"
+  },
+  {
+   "questionText": "For how many companies did the production rise in every successive year (each year higher than the one before)?",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check each row for an unbroken increasing run. Rows that qualify: none. Count = 0.",
+   "shortcut": "One dip is enough to disqualify a row; stop checking it at the first fall.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s047"
+  },
+  {
+   "questionText": "For how many companies was the production in 2023 higher than in 2018?",
+   "options": [
+    "4",
+    "1",
+    "0",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: none. Count = 0.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s047"
+  },
+  {
+   "questionText": "For how many cities was the rainfall in October higher than in June?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: Kochi, Lucknow. Count = 2.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s048"
+  },
+  {
+   "questionText": "In how many months was the rainfall for Bengaluru greater than that for Lucknow?",
+   "options": [
+    "0",
+    "4",
+    "5",
+    "9"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compare Bengaluru against Lucknow period by period: June: 450 vs 135, July: 310 vs 120, August: 440 vs 170, September: 430 vs 105, October: 400 vs 155. Bengaluru is higher in 5 of them.",
+   "shortcut": "Compare the two rows column by column and tally only the periods in which the first is larger.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s048"
+  },
+  {
+   "questionText": "Which city had the highest total rainfall over all the months shown?",
+   "options": [
+    "Kochi",
+    "Mumbai",
+    "Bengaluru",
+    "Lucknow"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Row totals: Kochi 1,460, Bengaluru 2,030, Mumbai 335, Lucknow 685. Highest: Bengaluru.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s048"
+  },
+  {
+   "questionText": "Which city recorded the lowest rainfall in July?",
+   "options": [
+    "Lucknow",
+    "Bengaluru",
+    "Mumbai",
+    "Kochi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Values in July: Kochi 285, Bengaluru 310, Mumbai 55, Lucknow 120. Lowest is 55 (Mumbai).",
+   "shortcut": "Look down one column only and track the minimum.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s048"
+  },
+  {
+   "questionText": "For how many cities did the rainfall rise in every successive month (each month higher than the one before)?",
+   "options": [
+    "1",
+    "2",
+    "4",
+    "0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check each row for an unbroken increasing run. Rows that qualify: none. Count = 0.",
+   "shortcut": "One dip is enough to disqualify a row; stop checking it at the first fall.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-tables-s048"
+  },
+  {
+   "questionText": "Which state had the highest total wheat production over all the years shown?",
+   "options": [
+    "Gujarat",
+    "Bihar",
+    "Haryana",
+    "Madhya Pradesh"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Gujarat 800, Madhya Pradesh 790, Haryana 520, Bihar 860. Highest: Bihar.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s049"
+  },
+  {
+   "questionText": "In how many years was the wheat production for Madhya Pradesh higher than the average wheat production of all the states in that year?",
+   "options": [
+    "2",
+    "4",
+    "5",
+    "3"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Column averages are total/4. Comparison: 2019: 110 vs avg 112.5, 2020: 155 vs avg 126.2, 2021: 145 vs avg 122.5, 2022: 110 vs avg 126.2, 2023: 125 vs avg 120.0, 2024: 145 vs avg 135.0. Madhya Pradesh is above average in 4 years.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s049"
+  },
+  {
+   "questionText": "Which state had the second highest total wheat production over all the years?",
+   "options": [
+    "Bihar",
+    "Gujarat",
+    "Madhya Pradesh",
+    "Haryana"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Gujarat 800, Madhya Pradesh 790, Haryana 520, Bihar 860. Order high to low: Bihar, Gujarat, Madhya Pradesh, Haryana; second is Gujarat.",
+   "shortcut": "Rank the totals; do not stop at the maximum.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s049"
+  },
+  {
+   "questionText": "In how many years was the wheat production for Gujarat greater than that for Bihar?",
+   "options": [
+    "4",
+    "3",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Compare Gujarat against Bihar period by period: 2019: 160 vs 105, 2020: 150 vs 110, 2021: 100 vs 135, 2022: 150 vs 170, 2023: 105 vs 165, 2024: 135 vs 175. Gujarat is higher in 2 of them.",
+   "shortcut": "Compare the two rows column by column and tally only the periods in which the first is larger.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s049"
+  },
+  {
+   "questionText": "For how many states was the wheat production in 2024 higher than in 2019?",
+   "options": [
+    "1",
+    "4",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: Madhya Pradesh, Haryana, Bihar. Count = 3.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s049"
+  },
+  {
+   "questionText": "For how many companies was the revenue in 2022-23 higher than in 2019-20?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: Nilgiri Tea Co., Vindhya Steel. Count = 2.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s050"
+  },
+  {
+   "questionText": "Which company had the highest total revenue over all the financial years shown?",
+   "options": [
+    "Himalaya Herbals",
+    "Nilgiri Tea Co.",
+    "Ganga Papers",
+    "Vindhya Steel"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Sundaram Textiles 8,270, Himalaya Herbals 11,880, Nilgiri Tea Co. 12,670, Vindhya Steel 10,390, Ganga Papers 5,100. Highest: Nilgiri Tea Co..",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s050"
+  },
+  {
+   "questionText": "The mean of all the 20 values in the table is calculated. How many values in the table are above this mean?",
+   "options": [
+    "11",
+    "9",
+    "10",
+    "12"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Mean = 48,310 / 20 = 2415.5. Counting the entries larger than 2415.5 gives 10.",
+   "shortcut": "Compute the overall mean once, then count entries above it row by row.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": "di-tables-s050"
+  },
+  {
+   "questionText": "In how many financial years was the revenue for Ganga Papers higher than the average revenue of all the companies in that financial year?",
+   "options": [
+    "4",
+    "0",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Column averages are total/5. Comparison: 2019-20: 1530 vs avg 2336.0, 2020-21: 1440 vs avg 2500.0, 2021-22: 1150 vs avg 2388.0, 2022-23: 980 vs avg 2438.0. Ganga Papers is above average in 0 financial years.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s050"
+  },
+  {
+   "questionText": "In which financial year was the gap between the revenue for Ganga Papers and that for Himalaya Herbals the greatest?",
+   "options": [
+    "2019-20",
+    "2020-21",
+    "2021-22",
+    "2022-23"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Absolute gaps: 2019-20 1800, 2020-21 1780, 2021-22 1360, 2022-23 1840. Largest gap is in 2022-23.",
+   "shortcut": "Take the difference of the two cells in each column and ignore the sign.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s050"
+  },
+  {
+   "questionText": "In which year was the gap between the enrolment for CSE and that for Mechanical the greatest?",
+   "options": [
+    "2019",
+    "2023",
+    "2021",
+    "2020"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Absolute gaps: 2019 50, 2020 45, 2021 75, 2022 40, 2023 0. Largest gap is in 2021.",
+   "shortcut": "Take the difference of the two cells in each column and ignore the sign.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s051"
+  },
+  {
+   "questionText": "Which department had the highest total enrolment over all the years shown?",
+   "options": [
+    "CSE",
+    "Civil",
+    "Mechanical",
+    "IT"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Civil 1,135, IT 870, Mechanical 750, CSE 960. Highest: Civil.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s051"
+  },
+  {
+   "questionText": "Which department had the widest range (highest minus lowest enrolment across the years)?",
+   "options": [
+    "CSE",
+    "IT",
+    "Civil",
+    "Mechanical"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ranges: Civil 35, IT 85, Mechanical 35, CSE 60. Widest: IT.",
+   "shortcut": "For every row note only its maximum and minimum, then subtract.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s051"
+  },
+  {
+   "questionText": "For how many departments was the enrolment in 2023 higher than in 2019?",
+   "options": [
+    "1",
+    "4",
+    "3",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: Civil, IT, Mechanical. Count = 3.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s051"
+  },
+  {
+   "questionText": "Which department had the lowest total enrolment over all the years shown?",
+   "options": [
+    "IT",
+    "Civil",
+    "Mechanical",
+    "CSE"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Row totals: Civil 1,135, IT 870, Mechanical 750, CSE 960. Lowest: Mechanical.",
+   "shortcut": "Add each row; compare totals, not individual cells.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s051"
+  },
+  {
+   "questionText": "Which city showed the largest absolute increase in electricity consumption from May to August?",
+   "options": [
+    "Surat",
+    "Nagpur",
+    "Indore",
+    "Coimbatore"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Change (last - first): Surat +130, Indore -50, Madurai +40, Coimbatore +200, Nagpur +130. Largest rise: Coimbatore.",
+   "shortcut": "Only the first and last columns matter here; ignore the middle periods.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s052"
+  },
+  {
+   "questionText": "Which city had the second highest total electricity consumption over all the months?",
+   "options": [
+    "Coimbatore",
+    "Surat",
+    "Nagpur",
+    "Madurai"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Surat 1,290, Indore 1,060, Madurai 1,020, Coimbatore 3,160, Nagpur 1,240. Order high to low: Coimbatore, Surat, Nagpur, Indore, Madurai; second is Surat.",
+   "shortcut": "Rank the totals; do not stop at the maximum.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s052"
+  },
+  {
+   "questionText": "In how many months was the electricity consumption for Coimbatore higher than the average electricity consumption of all the cities in that month?",
+   "options": [
+    "0",
+    "3",
+    "4",
+    "7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Column averages are total/5. Comparison: May: 610 vs avg 316.0, June: 910 vs avg 422.0, July: 830 vs avg 410.0, August: 810 vs avg 406.0. Coimbatore is above average in 4 months.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s052"
+  },
+  {
+   "questionText": "In how many months was the electricity consumption for Surat greater than that for Coimbatore?",
+   "options": [
+    "4",
+    "0",
+    "1",
+    "2"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare Surat against Coimbatore period by period: May: 230 vs 610, June: 330 vs 910, July: 370 vs 830, August: 360 vs 810. Surat is higher in 0 of them.",
+   "shortcut": "Compare the two rows column by column and tally only the periods in which the first is larger.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s052"
+  },
+  {
+   "questionText": "Which city had the lowest total electricity consumption over all the months shown?",
+   "options": [
+    "Indore",
+    "Madurai",
+    "Surat",
+    "Nagpur"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Surat 1,290, Indore 1,060, Madurai 1,020, Coimbatore 3,160, Nagpur 1,240. Lowest: Madurai.",
+   "shortcut": "Add each row; compare totals, not individual cells.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-tables-s052"
+  },
+  {
+   "questionText": "In which year was the gap between the export value for Textiles and that for Leather goods the greatest?",
+   "options": [
+    "2021",
+    "2023",
+    "2018",
+    "2019"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Absolute gaps: 2018 2430, 2019 1450, 2020 710, 2021 1860, 2022 1230, 2023 1260. Largest gap is in 2018.",
+   "shortcut": "Take the difference of the two cells in each column and ignore the sign.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-tables-s053"
+  },
+  {
+   "questionText": "For how many items did the export value rise in every successive year (each year higher than the one before)?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Check each row for an unbroken increasing run. Rows that qualify: none. Count = 0.",
+   "shortcut": "One dip is enough to disqualify a row; stop checking it at the first fall.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s053"
+  },
+  {
+   "questionText": "Which item had the highest total export value over all the years shown?",
+   "options": [
+    "Leather goods",
+    "Gems and jewellery",
+    "Tea",
+    "Handicrafts"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Row totals: Handicrafts 13,030, Leather goods 15,490, Gems and jewellery 14,230, Textiles 6,550, Tea 4,100. Highest: Leather goods.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": "di-tables-s053"
+  },
+  {
+   "questionText": "In how many years was the export value for Gems and jewellery higher than the average export value of all the items in that year?",
+   "options": [
+    "0",
+    "5",
+    "6",
+    "10"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Column averages are total/5. Comparison: 2018: 2880 vs avg 1954.0, 2019: 2920 vs avg 1874.0, 2020: 2040 vs avg 1624.0, 2021: 2520 vs avg 1688.0, 2022: 1810 vs avg 1696.0, 2023: 2060 vs avg 1844.0. Gems and jewellery is above average in 6 years.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-tables-s053"
+  },
+  {
+   "questionText": "Which item had the lowest total export value over all the years shown?",
+   "options": [
+    "Textiles",
+    "Tea",
+    "Leather goods",
+    "Gems and jewellery"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Handicrafts 13,030, Leather goods 15,490, Gems and jewellery 14,230, Textiles 6,550, Tea 4,100. Lowest: Tea.",
+   "shortcut": "Add each row; compare totals, not individual cells.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s053"
+  },
+  {
+   "questionText": "Which team had the second highest total runs scored over all the seasons?",
+   "options": [
+    "Tamil Nadu",
+    "Saurashtra",
+    "Mumbai",
+    "Vidarbha"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Tamil Nadu 20,690, Mumbai 17,790, Saurashtra 18,940, Delhi 14,490, Vidarbha 7,300, Karnataka 13,820. Order high to low: Tamil Nadu, Saurashtra, Mumbai, Delhi, Karnataka, Vidarbha; second is Saurashtra.",
+   "shortcut": "Rank the totals; do not stop at the maximum.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s054"
+  },
+  {
+   "questionText": "In how many seasons was the runs scored for Delhi higher than the average runs scored of all the teams in that season?",
+   "options": [
+    "4",
+    "2",
+    "3",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Column averages are total/6. Comparison: 2017-18: 3130 vs avg 3238.3, 2018-19: 2660 vs avg 2786.7, 2019-20: 2500 vs avg 3318.3, 2020-21: 3180 vs avg 2833.3, 2021-22: 3020 vs avg 3328.3. Delhi is above average in 1 seasons.",
+   "shortcut": "Instead of dividing each total, compare value × number of entities with the column total.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s054"
+  },
+  {
+   "questionText": "Which team showed the largest absolute increase in runs scored from 2017-18 to 2021-22?",
+   "options": [
+    "Karnataka",
+    "Tamil Nadu",
+    "Vidarbha",
+    "Mumbai"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Change (last - first): Tamil Nadu -240, Mumbai +850, Saurashtra -30, Delhi -110, Vidarbha -80, Karnataka +150. Largest rise: Mumbai.",
+   "shortcut": "Only the first and last columns matter here; ignore the middle periods.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-tables-s054"
+  },
+  {
+   "questionText": "Which team had the highest total runs scored over all the seasons shown?",
+   "options": [
+    "Saurashtra",
+    "Tamil Nadu",
+    "Vidarbha",
+    "Mumbai"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Row totals: Tamil Nadu 20,690, Mumbai 17,790, Saurashtra 18,940, Delhi 14,490, Vidarbha 7,300, Karnataka 13,820. Highest: Tamil Nadu.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s054"
+  },
+  {
+   "questionText": "In which season was the gap between the runs scored for Mumbai and that for Karnataka the greatest?",
+   "options": [
+    "2017-18",
+    "2021-22",
+    "2020-21",
+    "2018-19"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Absolute gaps: 2017-18 1670, 2018-19 840, 2019-20 380, 2020-21 390, 2021-22 2370. Largest gap is in 2021-22.",
+   "shortcut": "Take the difference of the two cells in each column and ignore the sign.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s054"
+  },
+  {
+   "questionText": "For how many brands was the sales in September higher than in June?",
+   "options": [
+    "3",
+    "1",
+    "6",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Compare the first and last values of each row. Higher in the last period: Veera, Vayu. Count = 2.",
+   "shortcut": "Mark each row up or down by comparing its two end cells.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s055"
+  },
+  {
+   "questionText": "Which brand had the highest total sales over all the months shown?",
+   "options": [
+    "Veera",
+    "Garuda",
+    "Suraj",
+    "Chakra"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Row totals: Garuda 332, Chakra 528, Veera 444, Vayu 346, Suraj 382. Highest: Chakra.",
+   "shortcut": "Add each row; the winner is usually obvious after rounding to the nearest ten.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": "di-tables-s055"
+  },
+  {
+   "questionText": "Which brand showed the largest absolute increase in sales from June to September?",
+   "options": [
+    "Veera",
+    "Vayu",
+    "Suraj",
+    "Chakra"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Change (last - first): Garuda -8, Chakra -10, Veera +30, Vayu +14, Suraj -12. Largest rise: Veera.",
+   "shortcut": "Only the first and last columns matter here; ignore the middle periods.",
+   "difficulty": "medium",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-tables-s055"
+  },
+  {
+   "questionText": "Which brand recorded the lowest sales in June?",
+   "options": [
+    "Garuda",
+    "Vayu",
+    "Chakra",
+    "Veera"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values in June: Garuda 74, Chakra 110, Veera 92, Vayu 86, Suraj 106. Lowest is 74 (Garuda).",
+   "shortcut": "Look down one column only and track the minimum.",
+   "difficulty": "easy",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-tables-s055"
+  },
+  {
+   "questionText": "For how many brands did the sales rise in every successive month (each month higher than the one before)?",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Check each row for an unbroken increasing run. Rows that qualify: none. Count = 0.",
+   "shortcut": "One dip is enough to disqualify a row; stop checking it at the first fall.",
+   "difficulty": "hard",
+   "subPattern": "comparison-across-rows",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-tables-s055"
+  }
+ ]
+}

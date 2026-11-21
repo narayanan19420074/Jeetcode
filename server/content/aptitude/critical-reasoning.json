@@ -1,0 +1,3992 @@
+{
+ "pattern": {
+  "title": "Critical Reasoning",
+  "slug": "critical-reasoning",
+  "description": "Argument analysis for placement and CAT-style rounds.",
+  "order": 44,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "strengthen-the-argument",
+    "title": "Strengthen the argument"
+   },
+   {
+    "slug": "weaken-the-argument",
+    "title": "Weaken the argument"
+   },
+   {
+    "slug": "assumption",
+    "title": "Assumption"
+   },
+   {
+    "slug": "inference",
+    "title": "Inference"
+   },
+   {
+    "slug": "flaw-detection",
+    "title": "Flaw detection"
+   },
+   {
+    "slug": "paradox-resolve",
+    "title": "Paradox / resolve"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the following: A government school in Erode started a free breakfast scheme. Over the next year its attendance rose from 82% to 91%. The principal concludes that the breakfast scheme caused the improvement. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Over the same year, attendance stayed at about 82% in comparable Erode schools that had no breakfast scheme."
+    },
+    {
+     "text": "Breakfast under the scheme costs the school about ₹6 per child per day."
+    },
+    {
+     "text": "The school's enrolment is larger than the district average."
+    },
+    {
+     "text": "Some students skipped breakfast on days when exams were held."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A comparison group that did not receive the scheme and showed no change rules out district-wide causes, so it strengthens the causal claim. The other options do not link breakfast to attendance.",
+   "order": 1,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Look for a control group or a stated mechanism that links cause to effect."
+  },
+  {
+   "questionText": "Read the following: Coimbatore plans to build a metro line along Avinashi Road. A planner argues that it will noticeably reduce road traffic on that corridor. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Coimbatore's population has grown steadily over two decades."
+    },
+    {
+     "text": "In other cities of similar size and road layout, opening a metro line was followed by a measurable fall in traffic on the parallel roads."
+    },
+    {
+     "text": "The metro line will take at least five years to build."
+    },
+    {
+     "text": "Avinashi Road already has several flyovers."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Evidence from relevantly similar cases where the same step produced the same result strengthens a prediction by analogy. The other options are neutral about the effect on traffic.",
+   "order": 2,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In a Chennai clinic, diabetic patients who eat ragi porridge daily have lower blood sugar than those who do not. A dietitian concludes that ragi lowers blood sugar. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Ragi contains more calcium than rice."
+    },
+    {
+     "text": "Ragi is widely grown in Karnataka."
+    },
+    {
+     "text": "The two groups of patients are similar in age, body weight and medication."
+    },
+    {
+     "text": "Most patients in the clinic live in urban areas."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Matching the groups on other factors removes the alternative explanations that could produce the same difference. The other options are neutral.",
+   "order": 3,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A firm claims that its aptitude test should be used for hiring, because employees who scored above 70 on it received better first-year reviews. The test had been taken by existing employees. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "The test takes 60 minutes to complete."
+    },
+    {
+     "text": "Other firms in the same city use similar tests."
+    },
+    {
+     "text": "The test papers are checked by software."
+    },
+    {
+     "text": "The reviewed employees had been hired without reference to their test scores and covered a wide range of scores."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If the employees were not selected on scores and span a wide range, the link between score and review is not an artefact of selection, so the predictive claim is stronger.",
+   "order": 4,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A municipal corporation plans to replace old water pipes, expecting to cut water losses by 25%. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Water is supplied on alternate days in most wards."
+    },
+    {
+     "text": "An audit shows that most of the city's leakage occurs in joints and in pipes older than 40 years, which the plan covers."
+    },
+    {
+     "text": "Residents often complain about low pressure."
+    },
+    {
+     "text": "New pipes cost ₹2,000 per metre."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A plan works if it targets the main source of the problem; the audit shows the plan covers that source.",
+   "order": 5,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A food-delivery app cut its delivery fee from ₹30 to ₹10 in Hyderabad as a trial and orders rose by 55%. The app decides to roll out the lower fee in all its cities, expecting similar growth. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Hyderabad is representative of the app's other cities in income levels and ordering habits."
+    },
+    {
+     "text": "Hyderabad is famous for biryani."
+    },
+    {
+     "text": "The app has over two crore users."
+    },
+    {
+     "text": "The delivery partners were paid the same amount during the trial."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Generalising from a trial to a rollout needs the trial city to be typical of the other cities; this option provides that.",
+   "order": 6,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In Odisha, free iron tablets in schools reduced anaemia among students from 40% to 28%. The health department wants to extend the scheme to Jharkhand schools. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Odisha is larger than Jharkhand in area."
+    },
+    {
+     "text": "The tablets are produced in Hyderabad."
+    },
+    {
+     "text": "In both states, anaemia among schoolchildren is mainly caused by a shortage of iron in the diet."
+    },
+    {
+     "text": "Many Jharkhand schools have hostels."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Showing the same underlying cause in both places supports expecting the same remedy to work.",
+   "order": 7,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A Madurai sweet shop started online ordering and its sales grew 30%. The owner says online ordering brought new customers rather than just shifting existing ones, and plans to extend it to his Salem branch. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Online orders are packed in eco-friendly boxes."
+    },
+    {
+     "text": "The Salem branch is smaller than the Madurai shop."
+    },
+    {
+     "text": "The Madurai shop is over fifty years old."
+    },
+    {
+     "text": "Most online orders came from customers who had never bought from the shop before."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If most online buyers are new, the channel added customers instead of moving existing customers, which supports the owner's claim.",
+   "order": 8,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A snack maker in Trichy changed from opaque packs to transparent pouches, and monthly sales rose by 20%. The owner concludes that the transparent pouch is what drove the rise. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Pouches cost slightly more than the old packs."
+    },
+    {
+     "text": "The new pouch is available in three sizes."
+    },
+    {
+     "text": "The snack maker also plans to open a second production unit."
+    },
+    {
+     "text": "A survey found that most new buyers said they chose the pack because they could see the chips inside."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Direct evidence from buyers about why they chose the pack supports the proposed mechanism. Size range, expansion plans and cost say nothing about why sales rose.",
+   "order": 9,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A cricket team won 8 of its next 10 matches after appointing a new fielding coach. A commentator says the coach is the reason for the improved results. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "The coach's fielding drills last 90 minutes each day."
+    },
+    {
+     "text": "The team's next series is in a different country."
+    },
+    {
+     "text": "Over the same matches, the team's catching and run-saving statistics improved sharply while its batting and bowling figures stayed the same."
+    },
+    {
+     "text": "The new coach played Test cricket for India."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Showing that the specific area the coach works on improved, while other areas did not, supports the causal claim. The coach's playing record or drill length is irrelevant to causation.",
+   "order": 10,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A village in Gujarat received solar-powered irrigation pumps and farmers' incomes rose. An official argues that giving solar pumps to a village in Bihar will similarly raise incomes there. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Gujarat's capital is Gandhinagar."
+    },
+    {
+     "text": "The Bihar village has similar crops, a similar shortage of irrigation water and similar sunshine as the Gujarat village."
+    },
+    {
+     "text": "Solar panels typically last about twenty years."
+    },
+    {
+     "text": "The pumps in Gujarat were installed by a private firm."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An argument by analogy is stronger when the two cases share the features that matter to the outcome (crops, water shortage, sunshine).",
+   "order": 11,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "In analogy arguments, look for the option that makes the two cases alike in the relevant respects."
+  },
+  {
+   "questionText": "Read the following: After a Kerala town banned plastic carry bags, complaints about clogged drains fell by 40%. The municipality says the ban caused the fall. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Waste audits showed that plastic bags were the main item blocking the town's drains before the ban."
+    },
+    {
+     "text": "Cloth bags cost more than plastic bags."
+    },
+    {
+     "text": "Complaints are recorded by the municipal office."
+    },
+    {
+     "text": "The ban was announced through a newspaper campaign."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Establishing that the banned item was the main cause of the problem links the ban to the outcome.",
+   "order": 12,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A Pune library finds that students who use its reading room regularly score higher in exams. The librarian says that using the library raises marks. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "The library holds 50,000 books."
+    },
+    {
+     "text": "The library is open until 8 pm."
+    },
+    {
+     "text": "Students who began using the library in Class 9 improved their marks compared with their own earlier marks."
+    },
+    {
+     "text": "Toppers usually write more notes."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Showing improvement in the same students after they started using the library addresses the rival explanation that good students simply choose to go to libraries.",
+   "order": 13,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Farmers who sell through the e-NAM online mandi portal receive higher prices than those who do not. A policy analyst argues that joining e-NAM raises a farmer's price. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Some farmers use mobile phones to check prices."
+    },
+    {
+     "text": "The portal operates in over a thousand mandis."
+    },
+    {
+     "text": "The portal is available in several languages."
+    },
+    {
+     "text": "Farmers were chosen to join the portal by a random draw from the list of applicants."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Random assignment ensures that farmers on and off the portal are alike on average, so any price difference can be attributed to the portal. This removes the self-selection explanation.",
+   "order": 14,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Random assignment is the strongest evidence for cause."
+  },
+  {
+   "questionText": "Read the following: Anita has topped every internal test in her school for three years. Her teacher predicts she will top the Board examination. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "The internal tests are held every two months."
+    },
+    {
+     "text": "In the last ten years, the topper of the school's internal tests has also topped the Board examination in nine of those years."
+    },
+    {
+     "text": "The Board examination is held in March."
+    },
+    {
+     "text": "Anita is the youngest student in her class."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A strong historical record that internal-test toppers go on to top the Board exam directly supports the prediction.",
+   "order": 15,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The forest department says that doubling anti-poaching patrols raised the tiger count in a reserve from 40 to 55. It argues that the patrols were responsible. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Evidence of snares and poachers' camps fell sharply after the patrols were doubled, while the animals tigers prey on remained unchanged."
+    },
+    {
+     "text": "Tigers breed more often in winter."
+    },
+    {
+     "text": "The reserve is open to tourists from October to June."
+    },
+    {
+     "text": "Patrol staff were given new vehicles."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fewer snares and camps show that poaching fell because of the patrols, and an unchanged prey base rules out a food-supply explanation.",
+   "order": 16,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A survey of 500 people at Ernakulam railway station found that 80% support a new coastal highway. A newspaper concludes that most people in Kerala support the highway. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "The surveyors were paid per completed response."
+    },
+    {
+     "text": "The 500 respondents had been chosen at random from electoral rolls covering all the districts of Kerala."
+    },
+    {
+     "text": "Ernakulam is one of the busiest stations in Kerala."
+    },
+    {
+     "text": "The survey was conducted in Malayalam."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A conclusion about a population is stronger if the sample is random and representative of it.",
+   "order": 17,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Representative sample strengthens a generalisation."
+  },
+  {
+   "questionText": "Read the following: After petrol prices rose sharply, an analyst predicts that more Delhi residents will buy electric two-wheelers. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Delhi has the largest number of vehicles in India."
+    },
+    {
+     "text": "Petrol is imported from abroad."
+    },
+    {
+     "text": "Electric two-wheelers are available in several colours."
+    },
+    {
+     "text": "On earlier occasions when petrol prices rose, Delhi saw more registrations of vehicles that are cheaper to run, such as CNG cars."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Past behaviour of the same population in the same situation supports the prediction.",
+   "order": 18,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Researchers found that people who eat amla daily catch fewer colds. They conclude that eating amla helps prevent colds. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Amla trees grow in many northern states."
+    },
+    {
+     "text": "Some people dislike the sour taste of amla."
+    },
+    {
+     "text": "Laboratory tests show that amla extract raises the level of immune cells that fight cold viruses."
+    },
+    {
+     "text": "Amla is cheaper than most other fruits in India."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A plausible biological mechanism linking the cause to the effect supports the causal claim.",
+   "order": 19,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A bank says that its mobile app has reduced branch visits, because branch footfall fell by 15% after the app was launched. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Branch footfall fell most among customers who use the app actively and fell little among customers who do not use it."
+    },
+    {
+     "text": "The app can be downloaded free of charge."
+    },
+    {
+     "text": "The bank has branches in 18 states."
+    },
+    {
+     "text": "Branch timings are 10 am to 4 pm."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A dose-response pattern (more app use, bigger fall in visits) supports a causal link and counters the idea that visits fell for general reasons.",
+   "order": 20,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Look for a pattern in which more of the cause gives more of the effect."
+  },
+  {
+   "questionText": "Read the following: Researchers found that Bengaluru software employees who commute for more than two hours sleep fewer hours than others. They argue that long commutes are the reason for reduced sleep. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Many employees in the sample work in rotating shifts."
+    },
+    {
+     "text": "Among employees of the same companies working the same hours, those living close to office sleep longer than those with long commutes."
+    },
+    {
+     "text": "Employees who sleep fewer hours report lower job satisfaction."
+    },
+    {
+     "text": "Bengaluru has some of the worst traffic in India."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Comparing people who differ only in commute (same employer, same hours) removes the main rival explanation (work hours), so the commute becomes the likely cause.",
+   "order": 21,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Researchers noticed that children who play cricket in the evening score better on concentration tests than children who do not. They conclude that playing evening cricket improves concentration. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Most of the children in the study were boys."
+    },
+    {
+     "text": "Cricket is the most popular sport in the city."
+    },
+    {
+     "text": "Children who took up cricket during the study improved on their own earlier scores, while those who did not take it up showed no change."
+    },
+    {
+     "text": "The concentration test lasts 20 minutes."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A before-and-after comparison of the same children, with a non-playing comparison group, rules out the possibility that good concentrators simply choose cricket.",
+   "order": 22,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: An IT firm tried afternoon nap rooms on one floor but not on a comparable floor, and the nap-room floor closed more tasks. The manager argues that naps raise productivity. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Employees on the two floors do the same type of work, and the number of tasks closed had been similar on both floors before the trial."
+    },
+    {
+     "text": "The nap rooms have reclining chairs."
+    },
+    {
+     "text": "The firm's canteen serves lunch at 1 pm."
+    },
+    {
+     "text": "Naps last 20 minutes on average."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Equal prior performance on both floors shows the difference after the trial is not due to the floors being different to begin with.",
+   "order": 23,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A call centre in Pune moved to fixed shifts and its attrition fell. HR says irregular shifts were the main reason people had been quitting. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "The centre provides cab services to employees."
+    },
+    {
+     "text": "The call centre has two hundred seats."
+    },
+    {
+     "text": "Fixed shifts were introduced in April."
+    },
+    {
+     "text": "Exit interviews of most of those who had left earlier gave rotating shifts as their primary reason."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Direct testimony from those who quit about their reason supports the claimed mechanism.",
+   "order": 24,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A study in Bhopal found that primary school children who take up chess score better in mathematics a year later than their own earlier scores. The researchers conclude that chess improves mathematics. Which of the following, if true, most strengthens this conclusion?",
+   "options": [
+    {
+     "text": "Chess was invented in India."
+    },
+    {
+     "text": "Chess clubs meet on Saturdays."
+    },
+    {
+     "text": "Children who did not take up chess, but were otherwise similar, showed no change in their mathematics scores over the same year."
+    },
+    {
+     "text": "The children's mathematics tests were set by the state board."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A similar comparison group with no change shows the improvement is not simply due to growing older or a general trend.",
+   "order": 25,
+   "subPattern": "strengthen-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: After a new flyover opened at Koyambedu, the bus travel time on a Chennai route fell from 50 to 35 minutes. Officials say the flyover is responsible. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "In the same period the bus company removed 30% of the stops on that route."
+    },
+    {
+     "text": "The flyover was built by a Chennai-based firm."
+    },
+    {
+     "text": "The flyover has four lanes."
+    },
+    {
+     "text": "Some commuters still prefer autorickshaws on that route."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A different change in the same period (fewer stops) could by itself shorten the journey, so it offers an alternative cause and weakens the claim.",
+   "order": 26,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Look for another factor that could produce the same effect."
+  },
+  {
+   "questionText": "Read the following: A mobile phone company released an advertisement featuring a famous cricketer, and its sales rose 25% that quarter. The company's marketing head says the advertisement caused the rise. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The company's phones come in three colours."
+    },
+    {
+     "text": "The cricket World Cup began in that quarter, and sales of all phone brands rose by about 25%."
+    },
+    {
+     "text": "The cricketer has endorsed other products too."
+    },
+    {
+     "text": "The advertisement was shown on four TV channels."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "If every brand's sales rose by the same amount, the common cause (the tournament period) explains the rise and the advertisement is not needed.",
+   "order": 27,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: To reduce power cuts, Uttarakhand plans to build several small hydroelectric plants, assuming they will generate steady power through the year. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The state has many tourists in summer."
+    },
+    {
+     "text": "The plants will be built over three years."
+    },
+    {
+     "text": "Hydropower does not release carbon dioxide."
+    },
+    {
+     "text": "Most of the rivers where the plants are proposed run almost dry for five months of the year."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The plan depends on year-round water; if the rivers run dry for five months, steady output is undermined.",
+   "order": 28,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In a pilot village, drip irrigation cut water use by 40%. The cooperative concludes it will cut water use by about 40% in all its villages. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The pilot lasted one season."
+    },
+    {
+     "text": "The cooperative has 12 villages."
+    },
+    {
+     "text": "The pilot village was chosen because its water losses under flood irrigation were unusually high compared with other villages."
+    },
+    {
+     "text": "Drip systems are made of plastic tubing."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An atypical pilot site cannot be taken to represent other villages, so the expected saving elsewhere is likely lower.",
+   "order": 29,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Vimal argues that switching to an electric bike will save him ₹4,000 a month, as he now spends ₹5,000 monthly on petrol and charging would cost only ₹1,000. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Petrol prices change every day."
+    },
+    {
+     "text": "The electric bike requires a monthly battery lease of ₹3,500."
+    },
+    {
+     "text": "Electric bikes are quieter than petrol bikes."
+    },
+    {
+     "text": "Charging takes about four hours."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The lease cost cuts the actual saving to ₹500, so the conclusion is badly weakened.",
+   "order": 30,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Since automatic doors were installed on some Mumbai local trains, deaths from falling off trains have fallen. A railway official says the doors save lives. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Mumbai local trains carry millions of passengers daily."
+    },
+    {
+     "text": "The doors close in about ten seconds."
+    },
+    {
+     "text": "Automatic doors cost several lakh rupees per coach."
+    },
+    {
+     "text": "The trains with automatic doors run only on air-conditioned services, where almost nobody travelled on footboards even earlier."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If the risk was already negligible on those trains, the fall in deaths cannot be attributed to the doors.",
+   "order": 31,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A tea company says that since its Assam tea has just won an international award, its exports will rise next year. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "A 30% import duty on tea will take effect next month in its largest importing country."
+    },
+    {
+     "text": "The award was announced in London."
+    },
+    {
+     "text": "Tea is picked mostly by hand."
+    },
+    {
+     "text": "The company was founded in 1950."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A new heavy duty works directly against export growth and outweighs any boost from the award.",
+   "order": 32,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A school principal says smart boards raised the Class 8 mathematics average by 10 marks. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The school has classes from 1 to 12."
+    },
+    {
+     "text": "Class 8 was also the only class to receive a new, highly experienced mathematics teacher that year."
+    },
+    {
+     "text": "The smart boards have 75-inch screens."
+    },
+    {
+     "text": "Smart boards were installed in June."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An additional change for the same class (a new experienced teacher) offers another explanation for the gain.",
+   "order": 33,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In a Jaipur school, students who bring home-cooked tiffin score higher than those who eat in the canteen. The principal says home food improves scores. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The school has 1,200 students."
+    },
+    {
+     "text": "Tiffin boxes are checked by the class teacher."
+    },
+    {
+     "text": "Students who bring tiffin mostly come from families that can afford private tuition."
+    },
+    {
+     "text": "Canteen food is cheaper than home-cooked food."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Private tuition is a rival explanation for the higher scores, so the link to home food is weakened.",
+   "order": 34,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: At a Hyderabad hospital, heart-surgery patients who attend yoga classes recover faster. The hospital argues that yoga speeds up recovery. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Only patients who are already recovering well are physically able to attend the classes."
+    },
+    {
+     "text": "Yoga is taught by a certified instructor."
+    },
+    {
+     "text": "The yoga classes are held in the morning."
+    },
+    {
+     "text": "The hospital performs about 300 heart surgeries a year."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "This reverses the cause and effect: good recovery allows attendance, not the other way round.",
+   "order": 35,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Check whether the effect might actually be the cause."
+  },
+  {
+   "questionText": "Read the following: An online coaching app says that 90% of its subscribers cleared the exam, which it says proves its quality. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The app charges a monthly fee."
+    },
+    {
+     "text": "Its lectures are recorded in Hindi and English."
+    },
+    {
+     "text": "The app has been downloaded by lakhs of students."
+    },
+    {
+     "text": "The 90% figure counts only subscribers who completed the entire course, and about 70% of subscribers drop out before the end."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Counting only those who completed the course ignores most subscribers, so the success rate is inflated by selection.",
+   "order": 36,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A Kolkata sweet-shop owner says his rasgulla sales dropped because a rival shop opened nearby. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The owner's shop opens at 8 am."
+    },
+    {
+     "text": "The rival shop sells many kinds of sweets."
+    },
+    {
+     "text": "The rival shop is on the same road."
+    },
+    {
+     "text": "His rasgulla sales had been falling steadily for two years before the rival shop opened."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If the decline began long before the rival came, the rival cannot be its cause.",
+   "order": 37,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The government claims that cashless payment at ration shops reduced corruption, since complaints about ration shops fell by 30%. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The complaint helpline which recorded these complaints was discontinued for part of the period."
+    },
+    {
+     "text": "Cashless payment is done through a card."
+    },
+    {
+     "text": "Ration shops open at 9 am."
+    },
+    {
+     "text": "The scheme was launched by the state food department."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If the means of recording complaints was shut, fewer complaints may reflect fewer records rather than less corruption.",
+   "order": 38,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A college hostel warden argues that exam stress causes students' hair fall, because hair fall complaints peak in exam months. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The hostel has a gym."
+    },
+    {
+     "text": "Hair fall among students in this college peaks every year in the monsoon months, which also happen to be the exam months."
+    },
+    {
+     "text": "Students sleep less during exams."
+    },
+    {
+     "text": "Complaints are made to the warden."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A seasonal factor (monsoon) offers an alternative explanation for the same pattern.",
+   "order": 39,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Kerala's literacy programme succeeded through a network of community libraries and volunteers. A minister says the same programme will succeed in Rajasthan. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Rajasthan has many tourists."
+    },
+    {
+     "text": "The programme in Kerala began in 1989."
+    },
+    {
+     "text": "Rajasthan has almost no community libraries and few volunteer organisations."
+    },
+    {
+     "text": "Rajasthan is larger than Kerala."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An analogy fails if the two cases differ in a feature on which the programme's success depended.",
+   "order": 40,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Autorickshaw fares in a city have been raised by 20%. An owners' association says that its members' earnings will rise by 20%. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Autorickshaws run on CNG in the city."
+    },
+    {
+     "text": "The fare increase was announced in January."
+    },
+    {
+     "text": "Meters are checked every year."
+    },
+    {
+     "text": "Higher fares will push many customers to app-based cabs, so the number of autorickshaw rides will drop."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Earnings depend on both fare and number of rides; if rides fall, earnings need not rise by 20%.",
+   "order": 41,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A cement company says its new brand is the strongest because eight out of ten engineers it surveyed preferred it. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Cement is sold in 50 kg bags."
+    },
+    {
+     "text": "All ten engineers surveyed were employees of the company."
+    },
+    {
+     "text": "The survey was done by telephone."
+    },
+    {
+     "text": "The brand was launched last year."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Employees of the company are not independent judges, so the survey gives biased support.",
+   "order": 42,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A school says that chess-club members have high mathematics scores, and concludes that playing chess improves mathematics. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Children are admitted to the chess club only after they clear a school-wide mathematics aptitude test."
+    },
+    {
+     "text": "Chess tournaments are held twice a year."
+    },
+    {
+     "text": "The chess club has 40 members."
+    },
+    {
+     "text": "Mathematics classes are held in the morning."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If selection into the club depends on mathematical ability, the high scores come first and are not caused by chess.",
+   "order": 43,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The metro rail corporation says that its off-peak discount raised off-peak ridership by 18%, and therefore reduced peak-hour crowding. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The discount is 10% on the normal fare."
+    },
+    {
+     "text": "Off-peak hours are 11 am to 4 pm."
+    },
+    {
+     "text": "Most of the extra off-peak riders earlier travelled by bus at off-peak times, and peak-hour ridership did not change."
+    },
+    {
+     "text": "The metro has smart-card readers at all stations."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Peak crowding falls only if peak riders shift; if the new off-peak riders were never peak riders, peak crowding stays unchanged.",
+   "order": 44,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A biscuit maker claims its sugar-free biscuits are healthier than its regular ones. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Some customers prefer sweet biscuits."
+    },
+    {
+     "text": "To compensate for the sugar, the sugar-free biscuits contain more refined flour and fat and have more calories than regular ones."
+    },
+    {
+     "text": "Regular biscuits have been sold for 40 years."
+    },
+    {
+     "text": "Sugar-free biscuits are sold in green packs."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Removing sugar does not make a product healthier if it is replaced by other less healthy ingredients; the extra calories weaken the claim.",
+   "order": 45,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Researchers found that Indian cities with more tree cover have lower summer temperatures. They conclude that planting more trees in a city will lower its summer temperature. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Trees give shade."
+    },
+    {
+     "text": "Tree planting drives are held in July."
+    },
+    {
+     "text": "The temperatures were recorded by weather stations."
+    },
+    {
+     "text": "Cities with more tree cover are mostly located on the coast or in hills, where summers are cooler regardless of trees."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Geography is a common cause of both tree cover and cooler weather, so the correlation does not show that planting trees would cool a city.",
+   "order": 46,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Enrolment in Bihar's government schools rose by 12% over three years. The state claims that its mid-day meal scheme was responsible for the rise. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The number of school-age children in Bihar rose by 14% over the same three years."
+    },
+    {
+     "text": "Some private schools also offer meals."
+    },
+    {
+     "text": "The meal scheme serves rice and dal."
+    },
+    {
+     "text": "The scheme is funded jointly by the Centre and the state."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If the school-age population grew faster than enrolment, the rise in enrolment is explained by demographics and does not need the scheme.",
+   "order": 47,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A Delhi airline says that its on-time record of 92% shows how much it values passengers' time. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The airline operates 150 flights a day."
+    },
+    {
+     "text": "Some of its aircraft are leased."
+    },
+    {
+     "text": "The airline adds 30 minutes to the scheduled duration of every flight, so flights arrive 'on time' even if they are slow."
+    },
+    {
+     "text": "Its on-time record is published monthly."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Padding the schedule makes punctuality easy to achieve without saving passengers any time, so it undermines the inference.",
+   "order": 48,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Researchers found that Indian districts with more mobile phones have higher female literacy. They conclude that mobile phones raise literacy. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "Mobile towers were installed first in districts that already had high literacy and better roads."
+    },
+    {
+     "text": "Some districts have very few towers."
+    },
+    {
+     "text": "Literacy is measured by census surveys."
+    },
+    {
+     "text": "Mobile phone ownership has grown rapidly in India."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If phones arrived where literacy was already high, the cause could be the reverse or a common factor, so the claimed effect is undermined.",
+   "order": 49,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A poll of 1,000 people found that 60% favour an odd-even vehicle rule in Delhi. A newspaper says that most Delhi residents favour the rule. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The poll was commissioned by a newspaper."
+    },
+    {
+     "text": "All the respondents were recruited at Metro stations."
+    },
+    {
+     "text": "Respondents were interviewed in person."
+    },
+    {
+     "text": "The poll was conducted in September."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Metro users do not drive much, so they are likely to favour the restriction; the sample is biased and does not represent the residents.",
+   "order": 50,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Look for a biased sample behind a generalisation."
+  },
+  {
+   "questionText": "Read the following: After a highway link to a temple town was built, the average household income in the town rose by 20%. A planner says the tourism the highway brought raised incomes. Which of the following, if true, most weakens this conclusion?",
+   "options": [
+    {
+     "text": "The highway is 80 km long."
+    },
+    {
+     "text": "Temples are open from 5 am to 9 pm."
+    },
+    {
+     "text": "The town's population is about 40,000."
+    },
+    {
+     "text": "The whole rise came from a large factory opened in the town in the same year, whose employees are all residents."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If the income gain is fully explained by the factory, tourism is not needed to explain it.",
+   "order": 51,
+   "subPattern": "weaken-the-argument",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A new expressway cuts the Chennai–Bengaluru driving time to two hours. Priya concludes that more people will now choose to go by car rather than by train. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "People generally prefer cars to buses."
+    },
+    {
+     "text": "The expressway will have no tolls."
+    },
+    {
+     "text": "Travel time is an important factor in people's choice of how to travel."
+    },
+    {
+     "text": "Trains between the two cities are always full."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The conclusion depends on shorter time influencing the choice. If time did not matter to travellers, the expressway would not shift anyone. The other options are not required.",
+   "order": 52,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Negation test: if the assumption were false, the reasoning would collapse."
+  },
+  {
+   "questionText": "Read the following: A school principal wants to ban mobile phones because Class 9 students who carry phones score lower than those who do not. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The lower scores are caused, at least in part, by carrying phones and not wholly by other factors."
+    },
+    {
+     "text": "All students will obey the ban."
+    },
+    {
+     "text": "Teachers dislike students having phones."
+    },
+    {
+     "text": "Phones are used by students only for games."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A ban helps only if phones contribute to the low scores. If the low scores had entirely different causes, a ban would not help.",
+   "order": 53,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: To increase sales, a soap manufacturer decides to print 'dermatologist tested' on its packs, because customers trust medical endorsements. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Most customers have skin problems."
+    },
+    {
+     "text": "Customers will notice the label and believe it."
+    },
+    {
+     "text": "The soap is cheaper than other brands."
+    },
+    {
+     "text": "Other soap makers do not print medical claims."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The premise says customers trust medical endorsements; the plan works only if they will notice this label and regard it as credible.",
+   "order": 54,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Radhika has completed all ten prerequisites listed for an MBA programme. Her friend says she will be admitted. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The programme has ten seats."
+    },
+    {
+     "text": "Radhika has work experience."
+    },
+    {
+     "text": "Completing the prerequisites is enough for admission, without other conditions such as an entrance cut-off."
+    },
+    {
+     "text": "The programme is very popular."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The friend treats prerequisites as sufficient. If admission needs something more, such as a cut-off score, the conclusion fails.",
+   "order": 55,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A teacher says all Class 5 students should memorise multiplication tables up to 20 because it helps them calculate quickly. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Tables are taught in Class 3."
+    },
+    {
+     "text": "Calculators are not allowed in exams."
+    },
+    {
+     "text": "Parents want their children to learn tables."
+    },
+    {
+     "text": "Class 5 students are able to memorise tables up to 20."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A recommendation for all students requires that all can actually do what is recommended.",
+   "order": 56,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Sridhar says he will reach Madurai before noon because his bus leaves at 6 am and the journey takes five hours. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "There are other buses to Madurai."
+    },
+    {
+     "text": "Madurai is a big city."
+    },
+    {
+     "text": "Sridhar will carry a lot of luggage."
+    },
+    {
+     "text": "The bus will leave on time and run on schedule."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Departure at 6 and five hours of travel gives 11 am only if the bus leaves and travels as stated; otherwise the conclusion is unsafe.",
+   "order": 57,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A college makes attendance compulsory, saying that students will learn more as a result. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Students who attend classes learn more than those who do not."
+    },
+    {
+     "text": "Teachers will take attendance in the first ten minutes."
+    },
+    {
+     "text": "Attendance is high in other colleges."
+    },
+    {
+     "text": "Students do not like compulsory rules."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The policy increases attendance; it increases learning only if attending classes helps learning.",
+   "order": 58,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A health minister proposes a steep tax on cigarettes, saying it will reduce the number of smokers. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The tax will bring revenue to the government."
+    },
+    {
+     "text": "Smokers' consumption responds to price, so at least some of them will quit or cut down when prices rise."
+    },
+    {
+     "text": "Cigarette makers will oppose the tax."
+    },
+    {
+     "text": "Most smokers are young."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "If smokers were totally insensitive to price, a price rise would not reduce smoking, so the proposal depends on this responsiveness.",
+   "order": 59,
+   "subPattern": "assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A company allows its employees to work from home, arguing that the time saved on commuting will make them more productive. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Every employee has a separate room at home for work."
+    },
+    {
+     "text": "Employees prefer working from home to working in office."
+    },
+    {
+     "text": "Employees will use at least part of the time saved on commuting for work or rest that improves their output."
+    },
+    {
+     "text": "The company will save on office rent."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Time saved raises productivity only if it is put to productive use. If it were all wasted, the conclusion would fail.",
+   "order": 60,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A tea-stall owner near a college says: 'Nobody visits my stall after 9 pm, so staying open beyond 9 pm will only add to my costs.' Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The college closes at 5 pm."
+    },
+    {
+     "text": "Other stalls close before 9 pm."
+    },
+    {
+     "text": "Staying open later would not bring in enough new customers to cover the extra costs."
+    },
+    {
+     "text": "The owner's costs will not change for any other reason."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The owner concludes 'only costs' on the premise that no new customers will come, or too few to pay for the extra hours.",
+   "order": 61,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: India will not need to build new coal power plants, since solar capacity is growing rapidly. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Coal is more costly than solar power."
+    },
+    {
+     "text": "Coal power plants emit pollutants."
+    },
+    {
+     "text": "Solar panels are made in India."
+    },
+    {
+     "text": "The growth in solar capacity will be enough to meet the growth in electricity demand, including at night."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Fast growth in solar capacity matters only if it covers the extra demand. If demand grows faster, new coal plants would be needed.",
+   "order": 62,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A new drug reduced fever in 90% of patients in a Delhi trial. A doctor says it will therefore work as well for patients in Chennai. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The Delhi trial was conducted in a government hospital."
+    },
+    {
+     "text": "Chennai patients do not differ from the Delhi patients in a way that affects how they respond to the drug."
+    },
+    {
+     "text": "The drug is cheap."
+    },
+    {
+     "text": "Fever is the most common illness."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Extending trial results to a new group assumes the two groups are alike in the relevant respects.",
+   "order": 63,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The panchayat will give free LPG connections to women in the village, saying this will end the cutting of trees for firewood. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Women who get the connections will use LPG instead of firewood."
+    },
+    {
+     "text": "LPG cylinders are delivered to the village."
+    },
+    {
+     "text": "Trees are cut only for firewood."
+    },
+    {
+     "text": "The village has a forest."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If the connections are given but firewood continues to be used, the cutting does not stop.",
+   "order": 64,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A supermarket advertises: 'Fresh Mart is cheaper than your neighbourhood kirana, because our prices on 20 common items are lower than the kirana's.' Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Fresh Mart's staff are better dressed."
+    },
+    {
+     "text": "Customers prefer shopping in air-conditioned stores."
+    },
+    {
+     "text": "Fresh Mart has more branches than kirana stores."
+    },
+    {
+     "text": "The 20 items are representative of what customers buy in a full basket."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Cheaper' overall follows from 20 lower prices only if these 20 items represent the whole shopping basket.",
+   "order": 65,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A shopkeeper put up signs saying 'You are being watched' and thefts fell the next month. He concludes that the signs deter thieves. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The number of thefts would not have fallen by itself in that month even without the signs."
+    },
+    {
+     "text": "The shop has CCTV cameras."
+    },
+    {
+     "text": "The signs are printed in red."
+    },
+    {
+     "text": "Thieves are often young men."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He attributes the fall to the signs, so he must assume the fall was not going to happen anyway.",
+   "order": 66,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Rohan's building lift is broken. He decides to climb the stairs to his sixth-floor flat because it will be faster than waiting for the lift to be repaired. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The building has well-lit stairs."
+    },
+    {
+     "text": "Rohan is fit and healthy."
+    },
+    {
+     "text": "The lift will not be repaired in less time than it takes to climb six floors."
+    },
+    {
+     "text": "Other residents are also using the stairs."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Climbing is faster than waiting only if the wait would be longer than the climbing time.",
+   "order": 67,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A zoo extends its visiting hours to 8 pm, expecting 30% more visitors. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Tickets are cheaper in the evening."
+    },
+    {
+     "text": "Many potential visitors find the present visiting hours inconvenient."
+    },
+    {
+     "text": "The zoo is located in the city centre."
+    },
+    {
+     "text": "The zoo has electric lighting."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "More visitors will come in due to longer hours only if the existing hours are keeping some people away.",
+   "order": 68,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Aravind has 10 years of experience, so he is the best person for the job in the firm's Hyderabad office. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Aravind is above 35 years of age."
+    },
+    {
+     "text": "Other applicants have less than 10 years of experience."
+    },
+    {
+     "text": "Experience is relevant to performing this job well."
+    },
+    {
+     "text": "The job is at a senior level."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using years of experience to judge the best candidate requires that experience contribute to doing this job well.",
+   "order": 69,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: An advertisement says that Brand X toothpaste contains charcoal and therefore cleans teeth better than other brands. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Charcoal is black in colour."
+    },
+    {
+     "text": "Brand X is costlier than other brands."
+    },
+    {
+     "text": "Many people like the taste of the paste."
+    },
+    {
+     "text": "Charcoal improves the cleaning ability of toothpaste."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The conclusion about better cleaning depends on charcoal actually helping cleaning.",
+   "order": 70,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Doctors recommend that a school start an hour later, saying that teenagers need more sleep and will benefit from the later start. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Students will use the extra hour to sleep rather than staying up later at night."
+    },
+    {
+     "text": "Buses will run later in the morning."
+    },
+    {
+     "text": "Teachers will agree to the new timings."
+    },
+    {
+     "text": "The school has a large playground."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The benefit depends on the extra morning hour turning into more sleep. If students simply sleep an hour later at night, they would get no more sleep and the argument would fail.",
+   "order": 71,
+   "subPattern": "assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Sunita has a higher rating than every other player in the trials. The selector says she will certainly be selected for the national chess team. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The other players are all younger than Sunita."
+    },
+    {
+     "text": "Selection to the national team is based on rating in the trials."
+    },
+    {
+     "text": "The trials were held in Chennai."
+    },
+    {
+     "text": "Sunita has played in the national team earlier."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Having the highest rating guarantees selection only if rating is what the selection depends on. If selection used other criteria, the conclusion would not follow.",
+   "order": 72,
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The flights from a metro city airport to a Tier-2 city are always full. A businessman argues that a new airport should be built in the Tier-2 city. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The land for the airport is cheaply available."
+    },
+    {
+     "text": "The metro airport is overcrowded."
+    },
+    {
+     "text": "A sufficient number of those passengers would choose to fly from the new airport."
+    },
+    {
+     "text": "Flight tickets are expensive."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Full flights justify a new airport only if enough of the same demand would use it. If passengers would still use the old airport, the new airport would remain empty.",
+   "order": 73,
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Rainfall in Kerala this monsoon was 20% above normal, so the paddy harvest will be above normal. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The additional rain will not damage the paddy crop, for example by flooding."
+    },
+    {
+     "text": "Paddy is grown on most farmland in Kerala."
+    },
+    {
+     "text": "Farmers had sown more paddy than last year."
+    },
+    {
+     "text": "Rice prices will fall."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "More rain helps only if it is not so heavy as to destroy the crop. If the extra rain caused serious floods, the harvest would not be above normal.",
+   "order": 74,
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A state has many unemployed engineering graduates. An education expert says the state should cut the intake of engineering colleges to reduce engineering unemployment. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "Other courses have good job prospects."
+    },
+    {
+     "text": "Engineering colleges are costly to run."
+    },
+    {
+     "text": "Unemployed engineers are unhappy."
+    },
+    {
+     "text": "The number of jobs available to engineers will not fall in proportion to the cut in graduates."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Reducing graduates reduces unemployment only if jobs do not shrink with them; otherwise the unemployment rate would not improve.",
+   "order": 75,
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A district official wants speed breakers installed on a highway stretch, saying this will cut the accidents there. Which of the following is an assumption on which this reasoning depends?",
+   "options": [
+    {
+     "text": "The accidents occur mostly at night."
+    },
+    {
+     "text": "Speed breakers will make drivers slow down, and lower speeds mean fewer accidents on that stretch."
+    },
+    {
+     "text": "Speed breakers are cheap to build."
+    },
+    {
+     "text": "Highways in the district are in poor condition."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The plan works only if the breakers actually reduce speeds and lower speeds reduce accidents there.",
+   "order": 76,
+   "subPattern": "assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: All 60 students of a class registered for the quiz, the debate or both. 35 registered for the quiz and 40 for the debate. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Nobody registered for both."
+    },
+    {
+     "text": "More than 20 students registered only for the quiz."
+    },
+    {
+     "text": "Exactly 15 students registered for both."
+    },
+    {
+     "text": "30 students registered only for the debate."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Both = 35 + 40 − 60 = 15. Only quiz = 35 − 15 = 20 and only debate = 40 − 15 = 25, so the other options are false.",
+   "order": 77,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Both = A + B − Total when everyone is in at least one group."
+  },
+  {
+   "questionText": "Read the following: Rainfall in Wayanad district this July was 20% higher than last July. Last July the district received 800 mm of rain. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "This July's rainfall was 640 mm."
+    },
+    {
+     "text": "This July's rainfall was 960 mm."
+    },
+    {
+     "text": "This July's rainfall was 1,000 mm."
+    },
+    {
+     "text": "This July's rainfall was 820 mm."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rainfall this July = 800 + 20% of 800 = 800 + 160 = 960 mm, so the other values do not match the data.",
+   "order": 78,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Increase by x% means multiply by (100 + x)/100."
+  },
+  {
+   "questionText": "Read the following: In a survey of Bengaluru commuters, each person named one main mode of travel. 70% named public transport and 25% named two-wheelers; the rest named other modes. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "10% of the commuters named other modes."
+    },
+    {
+     "text": "Two-wheeler users outnumber public transport users."
+    },
+    {
+     "text": "Two-wheeler users are fewer than those using other modes."
+    },
+    {
+     "text": "5% of the commuters named other modes."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Other = 100 − 70 − 25 = 5%. Since 25% is more than 5%, two-wheeler users are not fewer than the other group, and 70% is more than 25%.",
+   "order": 79,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Add the given shares and subtract from 100."
+  },
+  {
+   "questionText": "Read the following: A shop gives a free gift on any purchase above ₹2,000. Kavya did not get a free gift. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Kavya's purchase was ₹2,000 or less."
+    },
+    {
+     "text": "Kavya's purchase was less than ₹1,000."
+    },
+    {
+     "text": "Kavya did not make a purchase."
+    },
+    {
+     "text": "The shop ran out of gifts."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No gift implies the condition 'above ₹2,000' was not met, so the purchase was at most ₹2,000. Nothing narrower can be inferred.",
+   "order": 80,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The village well runs dry in summer whenever the previous monsoon's rainfall is below 600 mm. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "If the previous monsoon brought 500 mm, the well will run dry in the summer."
+    },
+    {
+     "text": "The well runs dry only in summer."
+    },
+    {
+     "text": "If the well ran dry, the previous monsoon brought less than 600 mm."
+    },
+    {
+     "text": "If the previous monsoon brought 700 mm, the well will not run dry."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The statement gives a sufficient condition: rain below 600 mm leads to a dry well. It does not say that this is the only cause, so only the first option follows.",
+   "order": 81,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A cricket team has won every match in which Kohli scored a fifty. The team lost its match against Australia. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The team loses whenever Kohli fails."
+    },
+    {
+     "text": "Kohli scored a fifty and the team still lost."
+    },
+    {
+     "text": "Kohli did not play against Australia."
+    },
+    {
+     "text": "Kohli did not score a fifty in the match against Australia."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "If a fifty by Kohli always means a win, then a loss means he did not score a fifty. Whether he played or what happens in other matches is not stated.",
+   "order": 82,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A bus leaves Madurai at 6:00 am and reaches Chennai at 1:30 pm, with a 30-minute halt on the way. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The bus halted for more than one hour."
+    },
+    {
+     "text": "The bus was running for 7 hours."
+    },
+    {
+     "text": "The bus was running for 7.5 hours."
+    },
+    {
+     "text": "The bus was running for 8 hours."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total time = 7.5 hours. Subtract the 30-minute halt: running time = 7 hours.",
+   "order": 83,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A town's population grew from 2.5 lakh in 2020 to 3 lakh in 2025. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The population grew by 5% every year."
+    },
+    {
+     "text": "The population grew by 0.5 lakh every year."
+    },
+    {
+     "text": "The population grew by 20% in five years."
+    },
+    {
+     "text": "The population grew by 25% in five years."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth = 0.5/2.5 = 20% over the five years. Year-wise growth is not given.",
+   "order": 84,
+   "subPattern": "inference",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Only candidates holding a valid ID card are allowed into the examination hall. Ramesh was allowed into the examination hall. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Ramesh holds a valid ID card."
+    },
+    {
+     "text": "Ramesh passed the examination."
+    },
+    {
+     "text": "Every holder of a valid ID card was allowed in."
+    },
+    {
+     "text": "Ramesh arrived before others."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Entry requires a valid ID, so anyone who entered has one. The reverse (everyone with an ID entered) is not stated.",
+   "order": 85,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Every train on a certain railway route halts at Erode. Train 12674 does not halt at Erode. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Train 12674 runs late."
+    },
+    {
+     "text": "Train 12674 is a slow train."
+    },
+    {
+     "text": "Train 12674 does not run on that route."
+    },
+    {
+     "text": "Every train that halts at Erode runs on that route."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If all route trains halt at Erode, a train that does not halt there cannot belong to the route (contrapositive). The last option is a reversal that is not given.",
+   "order": 86,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Anil is older than Bala. Bala is older than Chitra. Dev is younger than Chitra. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Bala is younger than Dev."
+    },
+    {
+     "text": "Anil is older than Dev."
+    },
+    {
+     "text": "Chitra is the oldest."
+    },
+    {
+     "text": "Dev is older than Bala."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Order of ages: Anil > Bala > Chitra > Dev. So Anil is older than Dev.",
+   "order": 87,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The pass percentage in a district's Class 10 results was 78% in 2024 with 5,000 candidates and 84% in 2025 with 4,000 candidates. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "More students passed in 2025 than in 2024."
+    },
+    {
+     "text": "The number of passes cannot be compared from this data."
+    },
+    {
+     "text": "The same number of students passed in both years."
+    },
+    {
+     "text": "More students passed in 2024 than in 2025."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2024: 0.78 × 5,000 = 3,900. 2025: 0.84 × 4,000 = 3,360. A higher percentage can still mean fewer passes.",
+   "order": 88,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Five employees have an average salary of ₹40,000. When one of them, who earned ₹50,000, leaves, the average of the remaining four becomes ₹37,500. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The remaining four together earn ₹1,60,000."
+    },
+    {
+     "text": "The remaining four employees together earn ₹1,50,000."
+    },
+    {
+     "text": "The leaving employee had the highest salary."
+    },
+    {
+     "text": "The total salary of the five was ₹2,40,000."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total of five = 5 × 40,000 = 2,00,000. Remove 50,000 to get 1,50,000 = 4 × 37,500. Nothing says the leaver was the highest paid.",
+   "order": 89,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Textbooks must reach schools by 1 June. Printing takes 3 weeks, binding takes 1 week and distribution takes 1 week, and each step begins only after the previous one has ended. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Binding must begin 5 weeks before 1 June."
+    },
+    {
+     "text": "Distribution can begin before binding ends."
+    },
+    {
+     "text": "Printing must begin at least 3 weeks before 1 June."
+    },
+    {
+     "text": "Printing must begin at least 5 weeks before 1 June."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The steps run one after another: 3 + 1 + 1 = 5 weeks. So printing must start at least 5 weeks before 1 June.",
+   "order": 90,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Some hostel students are cricketers. No cricketer in the hostel is a vegetarian. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "No hostel student is a vegetarian."
+    },
+    {
+     "text": "Some vegetarians are cricketers."
+    },
+    {
+     "text": "Some hostel students are not vegetarians."
+    },
+    {
+     "text": "All hostel students are cricketers."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The hostel students who are cricketers are not vegetarians, so at least some hostel students are non-vegetarian.",
+   "order": 91,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Most of the participants in a marathon were from outside Kerala. Most of the participants were above 30 years of age. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "At least some participants from outside Kerala were above 30."
+    },
+    {
+     "text": "All participants above 30 were from outside Kerala."
+    },
+    {
+     "text": "No participant from Kerala was above 30."
+    },
+    {
+     "text": "Most participants from outside Kerala were above 30."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If more than half are in each group, the two groups must overlap, so some participants are in both. Stronger statements do not follow.",
+   "order": 92,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Two groups each over 50% must overlap."
+  },
+  {
+   "questionText": "Read the following: 3 kg of rice and 2 kg of dal cost ₹290. 3 kg of rice and 4 kg of dal cost ₹450. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Dal costs ₹70 per kg."
+    },
+    {
+     "text": "Dal costs ₹80 per kg."
+    },
+    {
+     "text": "Rice costs ₹50 per kg."
+    },
+    {
+     "text": "Dal costs ₹90 per kg."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Subtracting: 2 kg dal = ₹160, so dal = ₹80/kg. Then 3 kg rice = ₹130, about ₹43.33/kg.",
+   "order": 93,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: No student who copies gets a certificate. Some students who got certificates are from Class 10. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Some Class 10 students did not copy."
+    },
+    {
+     "text": "All Class 10 students copied."
+    },
+    {
+     "text": "No Class 10 student got a certificate."
+    },
+    {
+     "text": "Some Class 10 students who did not get a certificate copied."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The Class 10 students who got certificates did not copy, so some Class 10 students did not copy.",
+   "order": 94,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A cricket team played 8 matches without a draw or a tie, and won more matches than it lost. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The team won exactly 5 matches."
+    },
+    {
+     "text": "The team lost at least 3 matches."
+    },
+    {
+     "text": "The team won at least 5 matches."
+    },
+    {
+     "text": "The team won 6 matches."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Wins + losses = 8 and wins > losses, so wins ≥ 5. Losses can be at most 3, so 'at least 3' is not guaranteed.",
+   "order": 95,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In a class, the average mark of the boys is 60 and the average mark of the girls is 70. The class average is 66. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The class has more boys than girls."
+    },
+    {
+     "text": "The number of boys equals the number of girls."
+    },
+    {
+     "text": "The ratio of boys to girls is 3 : 2."
+    },
+    {
+     "text": "The ratio of boys to girls is 2 : 3."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "By alligation: boys : girls = (70 − 66) : (66 − 60) = 4 : 6 = 2 : 3.",
+   "order": 96,
+   "subPattern": "inference",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Alligation: the ratio of quantities is inverse to the distances from the mean."
+  },
+  {
+   "questionText": "Read the following: A company has 130 employees in three offices. Pune has twice as many employees as Chennai, and Chennai has 10 more than Delhi. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Pune has 70 employees."
+    },
+    {
+     "text": "Pune has 65 employees."
+    },
+    {
+     "text": "Delhi has 30 employees."
+    },
+    {
+     "text": "Chennai has 40 employees."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Let Delhi = x, Chennai = x + 10, Pune = 2x + 20. Total 4x + 30 = 130, so x = 25. Delhi 25, Chennai 35, Pune 70.",
+   "order": 97,
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Some poets are painters. All painters are travellers. No traveller is a landlord. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "No poet is a painter."
+    },
+    {
+     "text": "Some landlords are poets."
+    },
+    {
+     "text": "All poets are travellers."
+    },
+    {
+     "text": "Some poets are not landlords."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Those poets who are painters are travellers, and no traveller is a landlord, so those poets are not landlords. The other statements are not supported or contradict the first statement.",
+   "order": 98,
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Of 200 candidates, 120 passed the aptitude round, 90 passed the interview and 50 passed both. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "30 candidates passed only the interview."
+    },
+    {
+     "text": "50 candidates failed in both."
+    },
+    {
+     "text": "40 candidates failed in both."
+    },
+    {
+     "text": "60 candidates passed only the aptitude round."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Passed at least one = 120 + 90 − 50 = 160, so 200 − 160 = 40 failed in both. Only aptitude = 70, only interview = 40.",
+   "order": 99,
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Neha is twice as old as Ria. In 6 years, Neha will be one and a half times as old as Ria. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "Neha is 16 years old now."
+    },
+    {
+     "text": "Ria is 6 years old now."
+    },
+    {
+     "text": "Ria is 8 years old now."
+    },
+    {
+     "text": "Ria is 12 years old now."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ria = x, Neha = 2x. 2x + 6 = 1.5(x + 6), so 0.5x = 3, x = 6.",
+   "order": 100,
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A shopkeeper gives a 20% discount on the marked price and still makes a 12% profit. Which of the following can be inferred with certainty from the above statements?",
+   "options": [
+    {
+     "text": "The marked price is 35% above the cost price."
+    },
+    {
+     "text": "The marked price is 40% above the cost price."
+    },
+    {
+     "text": "The marked price is 32% above the cost price."
+    },
+    {
+     "text": "The marked price is 20% above the cost price."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Selling price = 0.8M = 1.12C, so M = 1.4C, i.e. 40% above cost.",
+   "order": 101,
+   "subPattern": "inference",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Every time Mohan wears his blue shirt to a match, his team wins. Hence the blue shirt causes the team to win. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It treats a coincidence of events as proof that one causes the other."
+    },
+    {
+     "text": "It attacks Mohan's character instead of his claim."
+    },
+    {
+     "text": "It assumes that there are only two possible explanations."
+    },
+    {
+     "text": "It defines a term in a circular way."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two things occurring together or in sequence does not show that one causes the other; the winning could be due to many other factors.",
+   "order": 102,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Dr Rao's report on Hyderabad's air quality cannot be trusted, because he was once fined for a parking violation. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It assumes the whole has the properties of its parts."
+    },
+    {
+     "text": "It treats a necessary condition as sufficient."
+    },
+    {
+     "text": "It rejects the report because of an irrelevant fact about its author rather than the report's content."
+    },
+    {
+     "text": "It generalises from too few cases."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A parking fine has no bearing on the accuracy of air-quality data; the reasoning attacks the person (ad hominem).",
+   "order": 103,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Crores of people watch a certain TV serial every night, so it must be of a high artistic standard. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It attacks those who criticise the serial."
+    },
+    {
+     "text": "It assumes that because the serial follows another event it is caused by it."
+    },
+    {
+     "text": "It offers only two options."
+    },
+    {
+     "text": "It takes popularity as proof of quality."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Large viewership shows popularity, not artistic merit (appeal to the crowd).",
+   "order": 104,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Company X is among the most profitable in India, so every employee of Company X must be well off. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It assumes that what is true of the whole is true of each part."
+    },
+    {
+     "text": "It confuses cause with effect."
+    },
+    {
+     "text": "It rejects a claim because of its source."
+    },
+    {
+     "text": "It assumes that what is true of each part is true of the whole."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A company's profit says nothing about each employee's pay (fallacy of division).",
+   "order": 105,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A country is just like a household. A household should not spend more than it earns, so the government should never run a deficit. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It takes a few cases as representing all."
+    },
+    {
+     "text": "It uses a circular definition."
+    },
+    {
+     "text": "It treats popularity as proof."
+    },
+    {
+     "text": "It assumes that two things are alike in all respects although they differ in the respects that matter."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A government can print currency, borrow in its own currency and tax, unlike a household, so the analogy is weak (false analogy).",
+   "order": 106,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Ravi proposes a shorter lunch break so that the day ends earlier. Suman replies: 'Ravi wants employees to starve at work, so we must reject his proposal.' The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It supports a claim because many people hold it."
+    },
+    {
+     "text": "It misrepresents the opponent's position and then attacks that distorted version."
+    },
+    {
+     "text": "It assumes that the whole shares the traits of its parts."
+    },
+    {
+     "text": "It generalises from too few cases."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ravi proposed a shorter break, not no food; attacking an exaggerated version is a straw man.",
+   "order": 107,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: If we allow students to use mobile phones for just one day, soon they will use them all day and stop studying altogether. So we must never allow them even once. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It assumes the sequence of events shows causation."
+    },
+    {
+     "text": "It cites an unqualified authority."
+    },
+    {
+     "text": "It assumes without justification that one step must lead to an extreme chain of consequences."
+    },
+    {
+     "text": "It assumes that only two choices exist."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No evidence is given that one allowed day leads to continuous use; the chain of outcomes is merely asserted (slippery slope).",
+   "order": 108,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In summer, towns with higher ice-cream sales report more drowning incidents. Hence, eating ice cream causes drowning. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It attacks the people who eat ice cream."
+    },
+    {
+     "text": "It overlooks a third factor, hot weather, that may cause both."
+    },
+    {
+     "text": "It argues in a circle."
+    },
+    {
+     "text": "It assumes that a small sample represents all towns."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hot weather increases both ice-cream sales and swimming, so the two are correlated without one causing the other.",
+   "order": 109,
+   "subPattern": "flaw-detection",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Look for a hidden common cause behind a correlation."
+  },
+  {
+   "questionText": "Read the following: Two autorickshaw drivers in Chennai overcharged me last week, so all autorickshaw drivers in Chennai are cheats. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It generalises about a whole group from a very small number of cases."
+    },
+    {
+     "text": "It argues that something is true because it has not been proved false."
+    },
+    {
+     "text": "It confuses a necessary condition with a sufficient one."
+    },
+    {
+     "text": "It relies on the opinion of an unqualified authority."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Two cases cannot support a claim about thousands of drivers (hasty generalisation).",
+   "order": 110,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Look for 'all' or 'every' based on two or three examples."
+  },
+  {
+   "questionText": "Read the following: Either we ban all firecrackers on Diwali or we accept severe pollution. A total ban is impossible, so we must accept severe pollution. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It attacks the person making the proposal."
+    },
+    {
+     "text": "It uses a term with two different meanings."
+    },
+    {
+     "text": "It presents only two options when other possibilities, such as partial restrictions, exist."
+    },
+    {
+     "text": "It assumes an effect precedes its cause."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A false dilemma ignores middle options such as time limits, green crackers or restricted areas.",
+   "order": 111,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Each player in the Mumbai team is an excellent player, so the Mumbai team is an excellent team. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It relies on a small sample."
+    },
+    {
+     "text": "It assumes that what is true of the whole is true of each part."
+    },
+    {
+     "text": "It attacks the other team."
+    },
+    {
+     "text": "It assumes that what is true of each part is true of the whole."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A team's quality depends on coordination, balance and roles, not just the individual quality (fallacy of composition).",
+   "order": 112,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A company's rule says that a candidate must hold a degree to be selected. Ravi holds a degree, so he will be selected. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It treats a necessary condition as if it were sufficient."
+    },
+    {
+     "text": "It attacks the person instead of the claim."
+    },
+    {
+     "text": "It treats a coincidence as a cause."
+    },
+    {
+     "text": "It assumes the whole has the properties of the parts."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A degree is required but need not be enough; other requirements may remain.",
+   "order": 113,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Necessary ('must have') is not the same as sufficient ('enough to get')."
+  },
+  {
+   "questionText": "Read the following: A famous cricketer endorses a brand of cement, so that cement must be the strongest available. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It generalises from a small sample."
+    },
+    {
+     "text": "It attacks a competitor."
+    },
+    {
+     "text": "It assumes the two events are linked because one followed the other."
+    },
+    {
+     "text": "It relies on the opinion of a person who has no expertise in the area concerned."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A cricketer is not a qualified judge of cement strength (appeal to an improper authority).",
+   "order": 114,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A teacher tells a student not to smoke. The student replies: 'You smoke yourself, so your advice is worthless.' The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It treats a coincidence as a cause."
+    },
+    {
+     "text": "It reasons from an unrepresentative sample."
+    },
+    {
+     "text": "It rejects advice because of the adviser's conduct instead of examining whether the advice is sound."
+    },
+    {
+     "text": "It confuses a necessary condition with a sufficient one."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The soundness of advice does not depend on whether the adviser follows it (tu quoque).",
+   "order": 115,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: No one has proved that the herbal syrup is harmful, so it must be completely safe. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It judges a claim by its source."
+    },
+    {
+     "text": "It takes the lack of proof of harm as proof of safety."
+    },
+    {
+     "text": "It uses an analogy between unlike things."
+    },
+    {
+     "text": "It assumes that what is true of a part is true of the whole."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Absence of evidence of harm is not evidence of safety, particularly if it has not been tested (argument from ignorance).",
+   "order": 116,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A firm gave a bonus to its 10 lowest-performing salespeople in the first quarter. Their sales improved by 20% in the second quarter, so the firm concludes that bonuses improve performance. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It attacks the salespeople."
+    },
+    {
+     "text": "It argues in a circle."
+    },
+    {
+     "text": "It relies on a famous authority."
+    },
+    {
+     "text": "It ignores that unusually low performers tend to improve anyway."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Extreme performers tend to move back towards their usual level (regression to the mean), so the improvement may have occurred without any bonus.",
+   "order": 117,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Selected extremes tend to move toward the average on their own."
+  },
+  {
+   "questionText": "Read the following: Accidents in Sector 9 rose by 100% this year, while those in Sector 4 rose by 10%. The officer concludes that Sector 9 is more dangerous than Sector 4. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It cites percentage increases without the base numbers, which may be very different."
+    },
+    {
+     "text": "It reasons from a coincidence."
+    },
+    {
+     "text": "It attacks the officer's opponents."
+    },
+    {
+     "text": "It uses a word in two meanings."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Sector 9 went from 1 accident to 2 and Sector 4 from 100 to 110, Sector 4 is far more dangerous. Percentage change hides the size of the base.",
+   "order": 118,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "A percentage change is meaningless without the base."
+  },
+  {
+   "questionText": "Read the following: Patients in the diabetes ward take more insulin than patients in other wards. Therefore insulin causes diabetes. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It makes a hasty generalisation from a small sample."
+    },
+    {
+     "text": "It reverses cause and effect: patients take insulin because they have diabetes."
+    },
+    {
+     "text": "It relies on an unqualified authority."
+    },
+    {
+     "text": "It overlooks a hidden third factor."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The direction of the cause is reversed: the disease leads to the treatment, not the treatment to the disease.",
+   "order": 119,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Our village has always chosen its crops by the old almanac, so it is the best way to choose crops. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It assumes the whole shares the traits of its parts."
+    },
+    {
+     "text": "It attacks those who disagree."
+    },
+    {
+     "text": "It treats long use of a practice as proof of its merit."
+    },
+    {
+     "text": "It ignores a possible third cause."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A practice's age does not show that it is best (appeal to tradition).",
+   "order": 120,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The average salary in a company is ₹80,000 a month, so a typical employee in the company earns about ₹80,000. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It treats a coincidence as a cause."
+    },
+    {
+     "text": "It ignores that a few very high salaries can pull the average far above what most employees earn."
+    },
+    {
+     "text": "It reverses cause and effect."
+    },
+    {
+     "text": "It attacks the company's critics."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A mean is affected by extreme values; the typical (median) salary may be much lower.",
+   "order": 121,
+   "subPattern": "flaw-detection",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Rahul is the best captain in the league because no one leads a team better than he does. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It generalises from a sample that is too small."
+    },
+    {
+     "text": "It depends on an authority outside the field."
+    },
+    {
+     "text": "It assumes that what is true of the whole is true of each part."
+    },
+    {
+     "text": "It merely restates its conclusion in different words and gives no independent reason."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Best captain' and 'no one leads better' say the same thing, so the reasoning is circular.",
+   "order": 122,
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Circular: the premise is the conclusion in other words."
+  },
+  {
+   "questionText": "Read the following: A survey at a gymnasium in Pune found that 90% of the members exercise daily. The survey concludes that 90% of Indians exercise daily. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It draws a conclusion about a whole population from an unrepresentative sample."
+    },
+    {
+     "text": "It assumes there are only two choices."
+    },
+    {
+     "text": "It uses the same term with two different meanings."
+    },
+    {
+     "text": "It rejects a view because of who holds it."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gym members are far more likely to exercise than the general population, so the sample is biased.",
+   "order": 123,
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Nothing is better than good health. A cheap meal is better than nothing. Therefore, a cheap meal is better than good health. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It attacks the person making the claim."
+    },
+    {
+     "text": "It assumes that the parts have the property of the whole."
+    },
+    {
+     "text": "It uses 'nothing' in two different senses."
+    },
+    {
+     "text": "It relies on an unrepresentative sample."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In the first sentence 'nothing' means 'no thing', in the second it means 'having nothing at all'. A shift in meaning is equivocation.",
+   "order": 124,
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Look for a key word whose meaning changes between premises."
+  },
+  {
+   "questionText": "Read the following: Many old buildings in Jaipur's walled city have stood for centuries, so the old methods of construction were stronger than modern ones. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It makes an analogy between unlike things."
+    },
+    {
+     "text": "It assumes that only two options exist."
+    },
+    {
+     "text": "It treats popularity as proof."
+    },
+    {
+     "text": "It looks only at the buildings that survived and ignores the ones that collapsed."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Only strong buildings survive for centuries; the weaker ones have vanished and are not counted (survivorship bias).",
+   "order": 125,
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The idea of a four-day work week was first popularised by a foreign magazine, so it cannot suit Indian workplaces. The reasoning above is flawed because it:",
+   "options": [
+    {
+     "text": "It assumes the whole shares the traits of the parts."
+    },
+    {
+     "text": "It treats a necessary condition as sufficient."
+    },
+    {
+     "text": "It rejects an idea because of where it came from rather than on its merits."
+    },
+    {
+     "text": "It reasons from a small sample."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The origin of an idea does not decide whether it works (genetic fallacy).",
+   "order": 126,
+   "subPattern": "flaw-detection",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Last month the price of onions in the Lasalgaon market rose by 50%, yet the quantity of onions sold went up. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Onions are used in most Indian kitchens."
+    },
+    {
+     "text": "Rumours of a coming shortage made traders and households buy extra stock before prices could rise further."
+    },
+    {
+     "text": "Farmers sell onions at lower prices in villages."
+    },
+    {
+     "text": "Potato prices also rose last month."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A reason why buyers purchased more despite higher prices (fear of future scarcity) resolves the puzzle. The others do not explain why quantity rose.",
+   "order": 127,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "The resolution must explain both sides of the apparent contradiction."
+  },
+  {
+   "questionText": "Read the following: A bank cut its interest rate on savings deposits, yet its total deposits grew that quarter. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "A fall in the stock market that quarter led investors to move money into bank deposits."
+    },
+    {
+     "text": "Savings accounts are opened with a minimum balance."
+    },
+    {
+     "text": "The bank has a large number of branches."
+    },
+    {
+     "text": "Many customers do not know the interest rate."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A separate reason for people to deposit more (a safe place after a stock-market fall) explains growth despite the lower rate.",
+   "order": 128,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The number of people who read books in a small town rose over five years, yet its only bookshop closed. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Readers like to read novels."
+    },
+    {
+     "text": "The town has a library."
+    },
+    {
+     "text": "The bookshop was founded in 1980."
+    },
+    {
+     "text": "Most readers began buying books online or reading e-books instead of in the shop."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Readers can increase while sales at the physical shop fall if they buy elsewhere.",
+   "order": 129,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Vegetable prices in Nashik fell this month, although the supply of vegetables was lower than last month. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The supply was affected by rain."
+    },
+    {
+     "text": "Some vegetables are exported."
+    },
+    {
+     "text": "A religious fast reduced the demand for vegetables far more than the supply fell."
+    },
+    {
+     "text": "Vegetables are grown in Nashik."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Prices depend on demand and supply; if demand dropped by more than supply, prices fall.",
+   "order": 130,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Petrol consumption in Mumbai fell even though the registrations of new cars rose. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Mumbai roads are crowded."
+    },
+    {
+     "text": "A large share of the new cars are CNG or electric vehicles."
+    },
+    {
+     "text": "Cars are bought by families."
+    },
+    {
+     "text": "Petrol is sold in petrol pumps."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New cars that do not use petrol raise registrations without raising petrol consumption.",
+   "order": 131,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Bookings with a Kerala backwaters tour company fell during Onam week, even though it had reduced its prices. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Floods had cut off road access to the backwaters that week."
+    },
+    {
+     "text": "Onam is a festival of Kerala."
+    },
+    {
+     "text": "The company has houseboats."
+    },
+    {
+     "text": "Tourists enjoy the backwaters."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An external obstacle to travel can outweigh the effect of a price cut.",
+   "order": 132,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Most employees of a firm say they are satisfied with their pay, yet the firm has high attrition. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The firm has offices in many cities."
+    },
+    {
+     "text": "The firm's pay is above the industry average."
+    },
+    {
+     "text": "Most of those who left were fresh graduates who quit to pursue higher studies."
+    },
+    {
+     "text": "Employees receive a bonus in October."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Departures for reasons unrelated to pay explain high attrition despite satisfaction with pay.",
+   "order": 133,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: After night buses were banned on a highway, the number of night-time accidents on it rose. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The ban was announced in April."
+    },
+    {
+     "text": "Night buses were used by many passengers."
+    },
+    {
+     "text": "The highway is in a hill region."
+    },
+    {
+     "text": "Night truck traffic and private cars on the highway rose sharply after the ban."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "More vehicles of other kinds on the road can raise accidents even though one category is removed.",
+   "order": 134,
+   "subPattern": "paradox-resolve",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: After a Madurai hospital appointed five additional doctors, the average waiting time for patients increased. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "News of the better staffing drew twice as many patients as before."
+    },
+    {
+     "text": "The hospital has a new car park."
+    },
+    {
+     "text": "The new doctors are young."
+    },
+    {
+     "text": "Waiting rooms are air-conditioned."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If patient numbers grew faster than the capacity added, waiting times can rise even with more doctors.",
+   "order": 135,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A school shortened every class by 10 minutes, yet the teachers reported better syllabus coverage. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Examinations are held in March."
+    },
+    {
+     "text": "Teachers used to spend the first ten minutes of each class taking attendance, which is now done through an app."
+    },
+    {
+     "text": "Students enjoy shorter classes."
+    },
+    {
+     "text": "The school has more teachers than before."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "If a non-teaching task that took the same time was removed, effective teaching time did not fall and coverage can improve.",
+   "order": 136,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: A farmer's yield of tomatoes per acre doubled this year, yet his income from tomatoes fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The farmer used a new variety of seeds."
+    },
+    {
+     "text": "A glut of tomatoes in the market caused prices to fall by more than half."
+    },
+    {
+     "text": "Tomato farming needs a lot of water."
+    },
+    {
+     "text": "Tomatoes are used in many dishes."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Income = yield × price. If price falls by more than half while yield doubles, income falls.",
+   "order": 137,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: In a state, the share of infected patients who were vaccinated rose from 5% to 40%, although the vaccine's effectiveness did not change. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Vaccines are free in government hospitals."
+    },
+    {
+     "text": "Infection numbers were lower this year."
+    },
+    {
+     "text": "Vaccination coverage in the population rose from 5% to 60% during the same period."
+    },
+    {
+     "text": "The virus mutates frequently."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "When most of the population is vaccinated, even with the same effectiveness, many of the infected will be vaccinated people. The share of infected who are vaccinated rises as coverage rises (base-rate effect).",
+   "order": 138,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ],
+   "shortcut": "Compare shares within a group to the group's share in the population."
+  },
+  {
+   "questionText": "Read the following: A sweet shop's profit during Diwali was higher than last Diwali, even though it sold fewer boxes of sweets. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The shop was open on all days."
+    },
+    {
+     "text": "Sweets are made of sugar and milk."
+    },
+    {
+     "text": "Diwali sweets are in great demand."
+    },
+    {
+     "text": "This year the shop sold mostly premium boxes that earn a much higher profit per box."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Profit depends on number of boxes and profit per box; a richer mix can raise profit even with fewer boxes.",
+   "order": 139,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Wholesale rice prices in a city rose by 15%, but retail rice prices in the city fell during the same period. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The government started selling subsidised rice in the city's ration shops, forcing retailers to cut their prices."
+    },
+    {
+     "text": "Rice is a staple food."
+    },
+    {
+     "text": "Wholesalers buy in bulk."
+    },
+    {
+     "text": "Rice is transported by truck."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A competitor selling at a subsidy can force retailers to cut prices even when their costs rise.",
+   "order": 140,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Sales of cough syrup in Delhi rose sharply in November, although there was no increase in the number of cough cases. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Many households bought extra bottles because the price was about to rise."
+    },
+    {
+     "text": "Winter begins in November."
+    },
+    {
+     "text": "Cough syrup is sold at pharmacies."
+    },
+    {
+     "text": "Doctors recommend rest."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Stockpiling ahead of a price rise increases sales without any rise in cases.",
+   "order": 141,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The per capita income of a district rose over five years, yet the proportion of people living in poverty also rose. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The district's population grew."
+    },
+    {
+     "text": "The income gains were concentrated among the richest few, while the incomes of the poor fell."
+    },
+    {
+     "text": "Prices of essentials are published weekly."
+    },
+    {
+     "text": "Many people there are farmers."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An average can rise because of gains at the top while the poor become poorer.",
+   "order": 142,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Averages can hide how income is distributed."
+  },
+  {
+   "questionText": "Read the following: Gym memberships in a Pune locality doubled in two years, yet the gym owners' total revenue fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Gym equipment is imported."
+    },
+    {
+     "text": "Gyms are open early in the morning."
+    },
+    {
+     "text": "Most new members joined through heavily discounted corporate plans that cost a fraction of the regular fee."
+    },
+    {
+     "text": "Some members use the swimming pool."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revenue = members × average fee; a large drop in the fee can offset the rise in members.",
+   "order": 143,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Marriages in a Kerala town increased over a decade, but the number of births fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Marriages are held in temples and churches."
+    },
+    {
+     "text": "Weddings are costly."
+    },
+    {
+     "text": "The town has a maternity hospital."
+    },
+    {
+     "text": "Couples now marry later and wait longer before having their first child."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A delay in childbearing after marriage can lower births even when marriages rise.",
+   "order": 144,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Over ten years the number of ATMs in a state doubled, yet the total value of ATM cash withdrawals fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "ATMs are located in many places."
+    },
+    {
+     "text": "Use of UPI and digital payments grew rapidly, so people withdrew less cash."
+    },
+    {
+     "text": "ATMs dispense currency notes."
+    },
+    {
+     "text": "Banks charge for extra withdrawals."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A substitute that reduces the need for cash explains lower withdrawals despite more ATMs.",
+   "order": 145,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Look for a factor that changes demand, not supply."
+  },
+  {
+   "questionText": "Read the following: A factory reduced working hours by 10%, yet its output rose by 5%. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Some workers took leave in December."
+    },
+    {
+     "text": "Workers were happy with shorter hours."
+    },
+    {
+     "text": "The factory makes plastic goods."
+    },
+    {
+     "text": "During the same period it automated a machine that had been the bottleneck on its production line."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Removing a production bottleneck can raise output even with fewer hours.",
+   "order": 146,
+   "subPattern": "paradox-resolve",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The number of cars on Bengaluru's roads fell by 10% after a metro line opened, yet the average travel time on those roads increased. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "The metro runs from 6 am to 11 pm."
+    },
+    {
+     "text": "Metro tickets are cheaper than taxis."
+    },
+    {
+     "text": "Metro construction work reduced the usable road width, cutting road capacity by much more than 10%."
+    },
+    {
+     "text": "Bengaluru has many software companies."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "If capacity fell by more than the traffic did, congestion and travel times can rise even with fewer cars.",
+   "order": 147,
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: At an IIT, the number of students who received offers above ₹30 lakh increased this year, yet the average package of the batch fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Many more students than before were placed, mostly in jobs with moderate pay."
+    },
+    {
+     "text": "The IIT is located in a big city."
+    },
+    {
+     "text": "Some students chose higher studies."
+    },
+    {
+     "text": "The placement season lasted a month."
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The average can fall if the batch has many more lower-paying placements even when the top offers increased.",
+   "order": 148,
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The capacity of Nitin's new phone battery is 20% larger than that of his old phone, but it runs for fewer hours between charges. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Batteries are made of lithium."
+    },
+    {
+     "text": "The new phone is available in black."
+    },
+    {
+     "text": "Nitin's old phone is two years old."
+    },
+    {
+     "text": "The new phone consumes more than 20% more power than the old one."
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Running time = capacity ÷ power use. If power use rises by more than 20%, the run time falls despite a larger battery.",
+   "order": 149,
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: Rajasthan received its highest rainfall in a decade this monsoon, yet crop output was among the lowest. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Rain is measured in millimetres."
+    },
+    {
+     "text": "Crops need water."
+    },
+    {
+     "text": "Most of the rain fell in three days of flash floods that destroyed standing crops."
+    },
+    {
+     "text": "Rajasthan is largely a desert."
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A great quantity of rain concentrated in a damaging burst can destroy crops, so heavy rain and poor output can coexist.",
+   "order": 150,
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ]
+  },
+  {
+   "questionText": "Read the following: The number of fires reported in a city rose over five years, yet the number of deaths from fires fell. Which of the following, if true, best resolves the apparent discrepancy?",
+   "options": [
+    {
+     "text": "Many fires start from cooking gas."
+    },
+    {
+     "text": "Most buildings were fitted with smoke alarms and sprinklers, so fires were detected and put out early."
+    },
+    {
+     "text": "The fire brigade has a control room."
+    },
+    {
+     "text": "Fires are more frequent in summer."
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Better detection and suppression can keep deaths down even when more fires occur.",
+   "order": 151,
+   "subPattern": "paradox-resolve",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ]
+  }
+ ]
+}

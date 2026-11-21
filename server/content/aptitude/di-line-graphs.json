@@ -1,0 +1,5982 @@
+{
+ "pattern": {
+  "title": "DI: Line Graphs",
+  "slug": "di-line-graphs",
+  "description": "Line-graph based DI.",
+  "order": 59,
+  "passPercentage": 70,
+  "timeLimitMinutes": 20,
+  "category": "Data Interpretation",
+  "testQuestionCount": 15,
+  "subPatterns": [
+   {
+    "slug": "single-line-graph",
+    "title": "Single line graph"
+   },
+   {
+    "slug": "multi-line-comparison",
+    "title": "Multi-line comparison"
+   },
+   {
+    "slug": "growth-rate-trend",
+    "title": "Growth rate & trend"
+   },
+   {
+    "slug": "intersection-crossover",
+    "title": "Intersection / crossover"
+   },
+   {
+    "slug": "average-from-lines",
+    "title": "Average from lines"
+   }
+  ]
+ },
+ "sets": [
+  {
+   "id": "di-line-graphs-s001",
+   "type": "line",
+   "title": "Rice production of a state (in lakh tonnes)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Rice production (lakh tonnes)",
+    "series": [
+     {
+      "name": "Rice production",
+      "data": [
+       {
+        "label": "2017",
+        "value": 42
+       },
+       {
+        "label": "2018",
+        "value": 48
+       },
+       {
+        "label": "2019",
+        "value": 45
+       },
+       {
+        "label": "2020",
+        "value": 56
+       },
+       {
+        "label": "2021",
+        "value": 61
+       },
+       {
+        "label": "2022",
+        "value": 58
+       },
+       {
+        "label": "2023",
+        "value": 67
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s002",
+   "type": "line",
+   "title": "Monthly footfall at a Coimbatore showroom (in thousands)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Footfall (thousand customers)",
+    "series": [
+     {
+      "name": "Footfall",
+      "data": [
+       {
+        "label": "Apr",
+        "value": 120
+       },
+       {
+        "label": "May",
+        "value": 135
+       },
+       {
+        "label": "Jun",
+        "value": 128
+       },
+       {
+        "label": "Jul",
+        "value": 150
+       },
+       {
+        "label": "Aug",
+        "value": 172
+       },
+       {
+        "label": "Sep",
+        "value": 160
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s003",
+   "type": "line",
+   "title": "Annual turnover of a Tiruppur textile mill (in ₹ crore)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Turnover (₹ crore)",
+    "series": [
+     {
+      "name": "Turnover",
+      "data": [
+       {
+        "label": "2016",
+        "value": 80
+       },
+       {
+        "label": "2017",
+        "value": 92
+       },
+       {
+        "label": "2018",
+        "value": 88
+       },
+       {
+        "label": "2019",
+        "value": 105
+       },
+       {
+        "label": "2020",
+        "value": 96
+       },
+       {
+        "label": "2021",
+        "value": 120
+       },
+       {
+        "label": "2022",
+        "value": 135
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s004",
+   "type": "line",
+   "title": "Runs scored by a batter in each IPL season (in runs)",
+   "chart": {
+    "xLabel": "Season",
+    "yLabel": "Run tally (runs)",
+    "series": [
+     {
+      "name": "Runs",
+      "data": [
+       {
+        "label": "2015",
+        "value": 380
+       },
+       {
+        "label": "2016",
+        "value": 450
+       },
+       {
+        "label": "2017",
+        "value": 410
+       },
+       {
+        "label": "2018",
+        "value": 520
+       },
+       {
+        "label": "2019",
+        "value": 490
+       },
+       {
+        "label": "2020",
+        "value": 600
+       },
+       {
+        "label": "2021",
+        "value": 555
+       },
+       {
+        "label": "2022",
+        "value": 640
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s005",
+   "type": "line",
+   "title": "Monthly rainfall at a hill station (in mm)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Rainfall (mm)",
+    "series": [
+     {
+      "name": "Rainfall",
+      "data": [
+       {
+        "label": "Jun",
+        "value": 55
+       },
+       {
+        "label": "Jul",
+        "value": 80
+       },
+       {
+        "label": "Aug",
+        "value": 110
+       },
+       {
+        "label": "Sep",
+        "value": 95
+       },
+       {
+        "label": "Oct",
+        "value": 180
+       },
+       {
+        "label": "Nov",
+        "value": 240
+       },
+       {
+        "label": "Dec",
+        "value": 130
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s006",
+   "type": "line",
+   "title": "Students placed through campus drives (in number of students)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Number of students placed (students)",
+    "series": [
+     {
+      "name": "Students placed",
+      "data": [
+       {
+        "label": "2018",
+        "value": 320
+       },
+       {
+        "label": "2019",
+        "value": 360
+       },
+       {
+        "label": "2020",
+        "value": 300
+       },
+       {
+        "label": "2021",
+        "value": 410
+       },
+       {
+        "label": "2022",
+        "value": 450
+       },
+       {
+        "label": "2023",
+        "value": 520
+       },
+       {
+        "label": "2024",
+        "value": 480
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s007",
+   "type": "line",
+   "title": "Annual sales of two scooter makers P and Q (in thousand units)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Sales figure (thousand units)",
+    "series": [
+     {
+      "name": "Maker P",
+      "data": [
+       {
+        "label": "2018",
+        "value": 50
+       },
+       {
+        "label": "2019",
+        "value": 62
+       },
+       {
+        "label": "2020",
+        "value": 58
+       },
+       {
+        "label": "2021",
+        "value": 75
+       },
+       {
+        "label": "2022",
+        "value": 80
+       },
+       {
+        "label": "2023",
+        "value": 92
+       }
+      ]
+     },
+     {
+      "name": "Maker Q",
+      "data": [
+       {
+        "label": "2018",
+        "value": 45
+       },
+       {
+        "label": "2019",
+        "value": 70
+       },
+       {
+        "label": "2020",
+        "value": 64
+       },
+       {
+        "label": "2021",
+        "value": 68
+       },
+       {
+        "label": "2022",
+        "value": 95
+       },
+       {
+        "label": "2023",
+        "value": 88
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s008",
+   "type": "line",
+   "title": "Peak electricity demand in three Tamil Nadu cities (in MW)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Peak demand (MW)",
+    "series": [
+     {
+      "name": "Coimbatore",
+      "data": [
+       {
+        "label": "2019",
+        "value": 320
+       },
+       {
+        "label": "2020",
+        "value": 350
+       },
+       {
+        "label": "2021",
+        "value": 390
+       },
+       {
+        "label": "2022",
+        "value": 420
+       },
+       {
+        "label": "2023",
+        "value": 470
+       }
+      ]
+     },
+     {
+      "name": "Madurai",
+      "data": [
+       {
+        "label": "2019",
+        "value": 280
+       },
+       {
+        "label": "2020",
+        "value": 300
+       },
+       {
+        "label": "2021",
+        "value": 360
+       },
+       {
+        "label": "2022",
+        "value": 340
+       },
+       {
+        "label": "2023",
+        "value": 400
+       }
+      ]
+     },
+     {
+      "name": "Trichy",
+      "data": [
+       {
+        "label": "2019",
+        "value": 250
+       },
+       {
+        "label": "2020",
+        "value": 310
+       },
+       {
+        "label": "2021",
+        "value": 330
+       },
+       {
+        "label": "2022",
+        "value": 380
+       },
+       {
+        "label": "2023",
+        "value": 390
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s009",
+   "type": "line",
+   "title": "Enrolment of boys and girls in a polytechnic group (in hundreds)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Enrolment (hundreds)",
+    "series": [
+     {
+      "name": "Boys",
+      "data": [
+       {
+        "label": "2017",
+        "value": 120
+       },
+       {
+        "label": "2018",
+        "value": 125
+       },
+       {
+        "label": "2019",
+        "value": 130
+       },
+       {
+        "label": "2020",
+        "value": 128
+       },
+       {
+        "label": "2021",
+        "value": 135
+       },
+       {
+        "label": "2022",
+        "value": 140
+       }
+      ]
+     },
+     {
+      "name": "Girls",
+      "data": [
+       {
+        "label": "2017",
+        "value": 100
+       },
+       {
+        "label": "2018",
+        "value": 112
+       },
+       {
+        "label": "2019",
+        "value": 125
+       },
+       {
+        "label": "2020",
+        "value": 130
+       },
+       {
+        "label": "2021",
+        "value": 140
+       },
+       {
+        "label": "2022",
+        "value": 152
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s010",
+   "type": "line",
+   "title": "Exports and imports of a trading firm (in ₹ crore)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Trade value (₹ crore)",
+    "series": [
+     {
+      "name": "Exports",
+      "data": [
+       {
+        "label": "2018",
+        "value": 210
+       },
+       {
+        "label": "2019",
+        "value": 240
+       },
+       {
+        "label": "2020",
+        "value": 225
+       },
+       {
+        "label": "2021",
+        "value": 280
+       },
+       {
+        "label": "2022",
+        "value": 310
+       },
+       {
+        "label": "2023",
+        "value": 335
+       }
+      ]
+     },
+     {
+      "name": "Imports",
+      "data": [
+       {
+        "label": "2018",
+        "value": 190
+       },
+       {
+        "label": "2019",
+        "value": 205
+       },
+       {
+        "label": "2020",
+        "value": 250
+       },
+       {
+        "label": "2021",
+        "value": 240
+       },
+       {
+        "label": "2022",
+        "value": 270
+       },
+       {
+        "label": "2023",
+        "value": 300
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s011",
+   "type": "line",
+   "title": "Passengers on two bus routes through the week (in hundreds)",
+   "chart": {
+    "xLabel": "Day",
+    "yLabel": "Passenger count (hundreds)",
+    "series": [
+     {
+      "name": "Route 12",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 42
+       },
+       {
+        "label": "Tue",
+        "value": 38
+       },
+       {
+        "label": "Wed",
+        "value": 40
+       },
+       {
+        "label": "Thu",
+        "value": 45
+       },
+       {
+        "label": "Fri",
+        "value": 60
+       },
+       {
+        "label": "Sat",
+        "value": 72
+       }
+      ]
+     },
+     {
+      "name": "Route 27",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 30
+       },
+       {
+        "label": "Tue",
+        "value": 34
+       },
+       {
+        "label": "Wed",
+        "value": 41
+       },
+       {
+        "label": "Thu",
+        "value": 39
+       },
+       {
+        "label": "Fri",
+        "value": 52
+       },
+       {
+        "label": "Sat",
+        "value": 66
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s012",
+   "type": "line",
+   "title": "Monthly sales of three bakeries (in ₹ lakh)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Sales figure (₹ lakh)",
+    "series": [
+     {
+      "name": "Anand Bakery",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 18
+       },
+       {
+        "label": "Feb",
+        "value": 20
+       },
+       {
+        "label": "Mar",
+        "value": 22
+       },
+       {
+        "label": "Apr",
+        "value": 21
+       },
+       {
+        "label": "May",
+        "value": 26
+       }
+      ]
+     },
+     {
+      "name": "Bharat Bakery",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 15
+       },
+       {
+        "label": "Feb",
+        "value": 19
+       },
+       {
+        "label": "Mar",
+        "value": 24
+       },
+       {
+        "label": "Apr",
+        "value": 27
+       },
+       {
+        "label": "May",
+        "value": 25
+       }
+      ]
+     },
+     {
+      "name": "Chola Bakery",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 22
+       },
+       {
+        "label": "Feb",
+        "value": 21
+       },
+       {
+        "label": "Mar",
+        "value": 20
+       },
+       {
+        "label": "Apr",
+        "value": 23
+       },
+       {
+        "label": "May",
+        "value": 24
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s013",
+   "type": "line",
+   "title": "Population of a town (in thousands)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Population (thousand)",
+    "series": [
+     {
+      "name": "Population",
+      "data": [
+       {
+        "label": "2015",
+        "value": 200
+       },
+       {
+        "label": "2016",
+        "value": 220
+       },
+       {
+        "label": "2017",
+        "value": 242
+       },
+       {
+        "label": "2018",
+        "value": 254
+       },
+       {
+        "label": "2019",
+        "value": 279
+       },
+       {
+        "label": "2020",
+        "value": 307
+       },
+       {
+        "label": "2021",
+        "value": 322
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s014",
+   "type": "line",
+   "title": "Internet users in a district (in lakh)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Number of internet users (lakh)",
+    "series": [
+     {
+      "name": "Internet users",
+      "data": [
+       {
+        "label": "2018",
+        "value": 40
+       },
+       {
+        "label": "2019",
+        "value": 50
+       },
+       {
+        "label": "2020",
+        "value": 70
+       },
+       {
+        "label": "2021",
+        "value": 84
+       },
+       {
+        "label": "2022",
+        "value": 105
+       },
+       {
+        "label": "2023",
+        "value": 136
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s015",
+   "type": "line",
+   "title": "Production of two products A and B at a plant (in thousand units)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Production (thousand units)",
+    "series": [
+     {
+      "name": "Product A",
+      "data": [
+       {
+        "label": "2018",
+        "value": 80
+       },
+       {
+        "label": "2019",
+        "value": 92
+       },
+       {
+        "label": "2020",
+        "value": 100
+       },
+       {
+        "label": "2021",
+        "value": 120
+       },
+       {
+        "label": "2022",
+        "value": 126
+       },
+       {
+        "label": "2023",
+        "value": 153
+       }
+      ]
+     },
+     {
+      "name": "Product B",
+      "data": [
+       {
+        "label": "2018",
+        "value": 60
+       },
+       {
+        "label": "2019",
+        "value": 66
+       },
+       {
+        "label": "2020",
+        "value": 90
+       },
+       {
+        "label": "2021",
+        "value": 81
+       },
+       {
+        "label": "2022",
+        "value": 108
+       },
+       {
+        "label": "2023",
+        "value": 117
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s016",
+   "type": "line",
+   "title": "Closing price of a share on month-end (in ₹)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Share price (₹)",
+    "series": [
+     {
+      "name": "Share price",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 250
+       },
+       {
+        "label": "Feb",
+        "value": 300
+       },
+       {
+        "label": "Mar",
+        "value": 285
+       },
+       {
+        "label": "Apr",
+        "value": 342
+       },
+       {
+        "label": "May",
+        "value": 376
+       },
+       {
+        "label": "Jun",
+        "value": 451
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s017",
+   "type": "line",
+   "title": "Solar capacity installed by a district (in MW)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Installed solar capacity (MW)",
+    "series": [
+     {
+      "name": "Capacity",
+      "data": [
+       {
+        "label": "2017",
+        "value": 12
+       },
+       {
+        "label": "2018",
+        "value": 15
+       },
+       {
+        "label": "2019",
+        "value": 24
+       },
+       {
+        "label": "2020",
+        "value": 30
+       },
+       {
+        "label": "2021",
+        "value": 36
+       },
+       {
+        "label": "2022",
+        "value": 54
+       },
+       {
+        "label": "2023",
+        "value": 72
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s018",
+   "type": "line",
+   "title": "Monthly savings of Ravi in a recurring plan (in ₹ thousand)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Amount saved (₹ thousand)",
+    "series": [
+     {
+      "name": "Savings",
+      "data": [
+       {
+        "label": "Jul",
+        "value": 40
+       },
+       {
+        "label": "Aug",
+        "value": 48
+       },
+       {
+        "label": "Sep",
+        "value": 45
+       },
+       {
+        "label": "Oct",
+        "value": 60
+       },
+       {
+        "label": "Nov",
+        "value": 66
+       },
+       {
+        "label": "Dec",
+        "value": 90
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s019",
+   "type": "line",
+   "title": "Sales of two-wheelers and cars by a dealer (in hundreds)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Sales figure (hundreds)",
+    "series": [
+     {
+      "name": "Two-wheelers",
+      "data": [
+       {
+        "label": "2016",
+        "value": 90
+       },
+       {
+        "label": "2017",
+        "value": 96
+       },
+       {
+        "label": "2018",
+        "value": 100
+       },
+       {
+        "label": "2019",
+        "value": 104
+       },
+       {
+        "label": "2020",
+        "value": 108
+       },
+       {
+        "label": "2021",
+        "value": 110
+       },
+       {
+        "label": "2022",
+        "value": 112
+       },
+       {
+        "label": "2023",
+        "value": 114
+       }
+      ]
+     },
+     {
+      "name": "Cars",
+      "data": [
+       {
+        "label": "2016",
+        "value": 60
+       },
+       {
+        "label": "2017",
+        "value": 72
+       },
+       {
+        "label": "2018",
+        "value": 86
+       },
+       {
+        "label": "2019",
+        "value": 100
+       },
+       {
+        "label": "2020",
+        "value": 118
+       },
+       {
+        "label": "2021",
+        "value": 132
+       },
+       {
+        "label": "2022",
+        "value": 144
+       },
+       {
+        "label": "2023",
+        "value": 150
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s020",
+   "type": "line",
+   "title": "Runs scored by two batters in eight matches (in runs)",
+   "chart": {
+    "xLabel": "Match",
+    "yLabel": "Run tally (runs)",
+    "series": [
+     {
+      "name": "Kohli",
+      "data": [
+       {
+        "label": "M1",
+        "value": 45
+       },
+       {
+        "label": "M2",
+        "value": 72
+       },
+       {
+        "label": "M3",
+        "value": 30
+       },
+       {
+        "label": "M4",
+        "value": 88
+       },
+       {
+        "label": "M5",
+        "value": 64
+       },
+       {
+        "label": "M6",
+        "value": 20
+       },
+       {
+        "label": "M7",
+        "value": 95
+       },
+       {
+        "label": "M8",
+        "value": 50
+       }
+      ]
+     },
+     {
+      "name": "Rohit",
+      "data": [
+       {
+        "label": "M1",
+        "value": 60
+       },
+       {
+        "label": "M2",
+        "value": 40
+       },
+       {
+        "label": "M3",
+        "value": 55
+       },
+       {
+        "label": "M4",
+        "value": 70
+       },
+       {
+        "label": "M5",
+        "value": 85
+       },
+       {
+        "label": "M6",
+        "value": 48
+       },
+       {
+        "label": "M7",
+        "value": 52
+       },
+       {
+        "label": "M8",
+        "value": 66
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s021",
+   "type": "line",
+   "title": "Retail price of rice and wheat per kg (in ₹)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Price (₹ per kg)",
+    "series": [
+     {
+      "name": "Rice",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 44
+       },
+       {
+        "label": "Feb",
+        "value": 46
+       },
+       {
+        "label": "Mar",
+        "value": 48
+       },
+       {
+        "label": "Apr",
+        "value": 53
+       },
+       {
+        "label": "May",
+        "value": 50
+       },
+       {
+        "label": "Jun",
+        "value": 47
+       },
+       {
+        "label": "Jul",
+        "value": 45
+       }
+      ]
+     },
+     {
+      "name": "Wheat",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 38
+       },
+       {
+        "label": "Feb",
+        "value": 41
+       },
+       {
+        "label": "Mar",
+        "value": 44
+       },
+       {
+        "label": "Apr",
+        "value": 52
+       },
+       {
+        "label": "May",
+        "value": 55
+       },
+       {
+        "label": "Jun",
+        "value": 58
+       },
+       {
+        "label": "Jul",
+        "value": 57
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s022",
+   "type": "line",
+   "title": "Online and showroom sales of a mobile brand (in thousand units)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Sales figure (thousand units)",
+    "series": [
+     {
+      "name": "Online",
+      "data": [
+       {
+        "label": "2017",
+        "value": 30
+       },
+       {
+        "label": "2018",
+        "value": 38
+       },
+       {
+        "label": "2019",
+        "value": 46
+       },
+       {
+        "label": "2020",
+        "value": 62
+       },
+       {
+        "label": "2021",
+        "value": 80
+       },
+       {
+        "label": "2022",
+        "value": 98
+       },
+       {
+        "label": "2023",
+        "value": 115
+       }
+      ]
+     },
+     {
+      "name": "Showroom",
+      "data": [
+       {
+        "label": "2017",
+        "value": 80
+       },
+       {
+        "label": "2018",
+        "value": 84
+       },
+       {
+        "label": "2019",
+        "value": 82
+       },
+       {
+        "label": "2020",
+        "value": 76
+       },
+       {
+        "label": "2021",
+        "value": 70
+       },
+       {
+        "label": "2022",
+        "value": 66
+       },
+       {
+        "label": "2023",
+        "value": 60
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s023",
+   "type": "line",
+   "title": "Population of two towns (in thousands)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Population (thousand)",
+    "series": [
+     {
+      "name": "Town X",
+      "data": [
+       {
+        "label": "2000",
+        "value": 90
+       },
+       {
+        "label": "2005",
+        "value": 98
+       },
+       {
+        "label": "2010",
+        "value": 105
+       },
+       {
+        "label": "2015",
+        "value": 110
+       },
+       {
+        "label": "2020",
+        "value": 114
+       },
+       {
+        "label": "2025",
+        "value": 117
+       },
+       {
+        "label": "2030",
+        "value": 119
+       },
+       {
+        "label": "2035",
+        "value": 120
+       }
+      ]
+     },
+     {
+      "name": "Town Y",
+      "data": [
+       {
+        "label": "2000",
+        "value": 40
+       },
+       {
+        "label": "2005",
+        "value": 55
+       },
+       {
+        "label": "2010",
+        "value": 72
+       },
+       {
+        "label": "2015",
+        "value": 90
+       },
+       {
+        "label": "2020",
+        "value": 108
+       },
+       {
+        "label": "2025",
+        "value": 126
+       },
+       {
+        "label": "2030",
+        "value": 144
+       },
+       {
+        "label": "2035",
+        "value": 160
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s024",
+   "type": "line",
+   "title": "Wickets taken by two bowlers per series (in number)",
+   "chart": {
+    "xLabel": "Series",
+    "yLabel": "Wicket tally (wickets)",
+    "series": [
+     {
+      "name": "Bumrah",
+      "data": [
+       {
+        "label": "S1",
+        "value": 12
+       },
+       {
+        "label": "S2",
+        "value": 18
+       },
+       {
+        "label": "S3",
+        "value": 15
+       },
+       {
+        "label": "S4",
+        "value": 22
+       },
+       {
+        "label": "S5",
+        "value": 17
+       },
+       {
+        "label": "S6",
+        "value": 25
+       },
+       {
+        "label": "S7",
+        "value": 20
+       }
+      ]
+     },
+     {
+      "name": "Ashwin",
+      "data": [
+       {
+        "label": "S1",
+        "value": 16
+       },
+       {
+        "label": "S2",
+        "value": 14
+       },
+       {
+        "label": "S3",
+        "value": 19
+       },
+       {
+        "label": "S4",
+        "value": 18
+       },
+       {
+        "label": "S5",
+        "value": 24
+       },
+       {
+        "label": "S6",
+        "value": 21
+       },
+       {
+        "label": "S7",
+        "value": 23
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s025",
+   "type": "line",
+   "title": "Daily sales of a tea stall for two weeks-days (in cups)",
+   "chart": {
+    "xLabel": "Day",
+    "yLabel": "Number of cups sold (cups)",
+    "series": [
+     {
+      "name": "Week 1",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 200
+       },
+       {
+        "label": "Tue",
+        "value": 220
+       },
+       {
+        "label": "Wed",
+        "value": 180
+       },
+       {
+        "label": "Thu",
+        "value": 240
+       },
+       {
+        "label": "Fri",
+        "value": 260
+       },
+       {
+        "label": "Sat",
+        "value": 300
+       }
+      ]
+     },
+     {
+      "name": "Week 2",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 190
+       },
+       {
+        "label": "Tue",
+        "value": 230
+       },
+       {
+        "label": "Wed",
+        "value": 210
+       },
+       {
+        "label": "Thu",
+        "value": 250
+       },
+       {
+        "label": "Fri",
+        "value": 280
+       },
+       {
+        "label": "Sat",
+        "value": 320
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s026",
+   "type": "line",
+   "title": "Monthly production at three units of a factory (in tonnes)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Production (tonnes)",
+    "series": [
+     {
+      "name": "Unit 1",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 120
+       },
+       {
+        "label": "Feb",
+        "value": 135
+       },
+       {
+        "label": "Mar",
+        "value": 150
+       },
+       {
+        "label": "Apr",
+        "value": 141
+       }
+      ]
+     },
+     {
+      "name": "Unit 2",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 100
+       },
+       {
+        "label": "Feb",
+        "value": 110
+       },
+       {
+        "label": "Mar",
+        "value": 95
+       },
+       {
+        "label": "Apr",
+        "value": 115
+       }
+      ]
+     },
+     {
+      "name": "Unit 3",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 140
+       },
+       {
+        "label": "Feb",
+        "value": 130
+       },
+       {
+        "label": "Mar",
+        "value": 160
+       },
+       {
+        "label": "Apr",
+        "value": 150
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s027",
+   "type": "line",
+   "title": "Marks of a student in six unit tests (out of 100)",
+   "chart": {
+    "xLabel": "Test",
+    "yLabel": "Score (marks)",
+    "series": [
+     {
+      "name": "Maths",
+      "data": [
+       {
+        "label": "T1",
+        "value": 62
+       },
+       {
+        "label": "T2",
+        "value": 70
+       },
+       {
+        "label": "T3",
+        "value": 58
+       },
+       {
+        "label": "T4",
+        "value": 81
+       },
+       {
+        "label": "T5",
+        "value": 76
+       },
+       {
+        "label": "T6",
+        "value": 90
+       }
+      ]
+     },
+     {
+      "name": "Science",
+      "data": [
+       {
+        "label": "T1",
+        "value": 55
+       },
+       {
+        "label": "T2",
+        "value": 64
+       },
+       {
+        "label": "T3",
+        "value": 72
+       },
+       {
+        "label": "T4",
+        "value": 68
+       },
+       {
+        "label": "T5",
+        "value": 80
+       },
+       {
+        "label": "T6",
+        "value": 85
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s028",
+   "type": "line",
+   "title": "Fuel sold at a petrol bunk (in thousand litres)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Fuel sold (thousand litres)",
+    "series": [
+     {
+      "name": "Petrol",
+      "data": [
+       {
+        "label": "2018",
+        "value": 420
+       },
+       {
+        "label": "2019",
+        "value": 450
+       },
+       {
+        "label": "2020",
+        "value": 380
+       },
+       {
+        "label": "2021",
+        "value": 470
+       },
+       {
+        "label": "2022",
+        "value": 520
+       },
+       {
+        "label": "2023",
+        "value": 560
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s029",
+   "type": "line",
+   "title": "Rainfall in two districts across monsoon months (in mm)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Rainfall (mm)",
+    "series": [
+     {
+      "name": "Nilgiris",
+      "data": [
+       {
+        "label": "Jun",
+        "value": 140
+       },
+       {
+        "label": "Jul",
+        "value": 210
+       },
+       {
+        "label": "Aug",
+        "value": 260
+       },
+       {
+        "label": "Sep",
+        "value": 180
+       },
+       {
+        "label": "Oct",
+        "value": 120
+       }
+      ]
+     },
+     {
+      "name": "Erode",
+      "data": [
+       {
+        "label": "Jun",
+        "value": 60
+       },
+       {
+        "label": "Jul",
+        "value": 90
+       },
+       {
+        "label": "Aug",
+        "value": 110
+       },
+       {
+        "label": "Sep",
+        "value": 150
+       },
+       {
+        "label": "Oct",
+        "value": 200
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s030",
+   "type": "line",
+   "title": "Profit of a company and its subsidiary (in ₹ crore)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Profit (₹ crore)",
+    "series": [
+     {
+      "name": "Parent",
+      "data": [
+       {
+        "label": "2019",
+        "value": 48
+       },
+       {
+        "label": "2020",
+        "value": 56
+       },
+       {
+        "label": "2021",
+        "value": 40
+       },
+       {
+        "label": "2022",
+        "value": 64
+       },
+       {
+        "label": "2023",
+        "value": 72
+       },
+       {
+        "label": "2024",
+        "value": 80
+       }
+      ]
+     },
+     {
+      "name": "Subsidiary",
+      "data": [
+       {
+        "label": "2019",
+        "value": 30
+       },
+       {
+        "label": "2020",
+        "value": 36
+       },
+       {
+        "label": "2021",
+        "value": 44
+       },
+       {
+        "label": "2022",
+        "value": 38
+       },
+       {
+        "label": "2023",
+        "value": 52
+       },
+       {
+        "label": "2024",
+        "value": 50
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "According to the graph, what was the rice production in 2021 (in lakh tonnes)?",
+   "options": [
+    {
+     "text": "61"
+    },
+    {
+     "text": "58"
+    },
+    {
+     "text": "56"
+    },
+    {
+     "text": "65"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at 2021: the value is 61 lakh tonnes.",
+   "order": 1,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "What is the difference between the rice production in 2017 and in 2021 (in lakh tonnes)?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "103"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values: 2017 = 42, 2021 = 61. Difference = 61 - 42 = 19.",
+   "order": 2,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "In which month was the footfall the highest according to the graph?",
+   "options": [
+    {
+     "text": "Jul"
+    },
+    {
+     "text": "May"
+    },
+    {
+     "text": "Aug"
+    },
+    {
+     "text": "Jun"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Scan all points: the highest value is 172 thousand customers, at Aug.",
+   "order": 3,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "What is the total footfall in Jul and Sep together (in thousand customers)?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "320"
+    },
+    {
+     "text": "332"
+    },
+    {
+     "text": "310"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Jul: 150; Sep: 160. Total = 150 + 160 = 310.",
+   "order": 4,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "According to the graph, what was the turnover in 2017 (in ₹ crore)?",
+   "options": [
+    {
+     "text": "92"
+    },
+    {
+     "text": "98"
+    },
+    {
+     "text": "88"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at 2017: the value is 92 ₹ crore.",
+   "order": 5,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "What is the difference between the turnover in 2016 and in 2020 (in ₹ crore)?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "176"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Values: 2016 = 80, 2020 = 96. Difference = 96 - 80 = 16.",
+   "order": 6,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "In which season was the run tally the highest according to the graph?",
+   "options": [
+    {
+     "text": "2015"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2018"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Scan all points: the highest value is 640 runs, at 2022.",
+   "order": 7,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "According to the graph, what was the rainfall in Aug (in mm)?",
+   "options": [
+    {
+     "text": "118"
+    },
+    {
+     "text": "95"
+    },
+    {
+     "text": "110"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the point of the line at Aug: the value is 110 mm.",
+   "order": 8,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Locate the month on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "In which year was the number of students placed the lowest according to the graph?",
+   "options": [
+    {
+     "text": "2022"
+    },
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2023"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Scan all points: the lowest value is 300 students, at 2020.",
+   "order": 9,
+   "subPattern": "single-line-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "In which year was the increase in rice production over the previous year the largest?",
+   "options": [
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2018"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Year-on-year changes: 2018: +6, 2019: -3, 2020: +11, 2021: +5, 2022: -3, 2023: +9. Largest rise is 11 in 2020.",
+   "order": 10,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "The rice production in 2021 was what percent of that in 2022? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "95.1%"
+    },
+    {
+     "text": "105.2%"
+    },
+    {
+     "text": "112.6%"
+    },
+    {
+     "text": "5.2%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Required % = 61/58 x 100 = 105.2%.",
+   "order": 11,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Part over whole: the base is the value after the word 'of'.",
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "What is the average footfall from May to Jul (both included) (in thousand customers)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "131.5"
+    },
+    {
+     "text": "147.3"
+    },
+    {
+     "text": "144.2"
+    },
+    {
+     "text": "137.7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 135, 128, 150. Sum = 413; average = 413/3 = 137.7.",
+   "order": 12,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "By what percent did the footfall increase from May to Sep? (Give the answer correct to one decimal place.)",
+   "options": [
+    {
+     "text": "15.6%"
+    },
+    {
+     "text": "18.5%"
+    },
+    {
+     "text": "25.0%"
+    },
+    {
+     "text": "19.8%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Increase = 160 - 135 = 25. Percentage increase = 25/135 x 100 = 18.5%.",
+   "order": 13,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Always divide the change by the earlier (base) value.",
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "What is the average turnover over the 7 years shown (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "135.0"
+    },
+    {
+     "text": "96.8"
+    },
+    {
+     "text": "102.3"
+    },
+    {
+     "text": "106.0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of all values = 716. Average = 716/7 = 102.3.",
+   "order": 14,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "In which year was the increase in turnover over the previous year the largest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2022"
+    },
+    {
+     "text": "2017"
+    },
+    {
+     "text": "2020"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Year-on-year changes: 2017: +12, 2018: -4, 2019: +17, 2020: -9, 2021: +24, 2022: +15. Largest rise is 24 in 2021.",
+   "order": 15,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "The run tally in 2019 was what percent of that in 2020? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "122.4%"
+    },
+    {
+     "text": "87.4%"
+    },
+    {
+     "text": "18.3%"
+    },
+    {
+     "text": "81.7%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required % = 490/600 x 100 = 81.7%.",
+   "order": 16,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Part over whole: the base is the value after the word 'of'.",
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "What is the average run tally from 2017 to 2019 (both included) (in runs)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "505.6"
+    },
+    {
+     "text": "506.4"
+    },
+    {
+     "text": "473.3"
+    },
+    {
+     "text": "465.0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Values: 410, 520, 490. Sum = 1420; average = 1420/3 = 473.3.",
+   "order": 17,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "By what percent did the run tally increase from 2015 to 2022? (Give the answer correct to one decimal place.)",
+   "options": [
+    {
+     "text": "73.2%"
+    },
+    {
+     "text": "68.4%"
+    },
+    {
+     "text": "40.6%"
+    },
+    {
+     "text": "260.0%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Increase = 640 - 380 = 260. Percentage increase = 260/380 x 100 = 68.4%.",
+   "order": 18,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Always divide the change by the earlier (base) value.",
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "What is the average rainfall from Jun to Aug (both included) (in mm)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "81.7"
+    },
+    {
+     "text": "127.1"
+    },
+    {
+     "text": "87.4"
+    },
+    {
+     "text": "67.5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Values: 55, 80, 110. Sum = 245; average = 245/3 = 81.7.",
+   "order": 19,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "By what percent did the rainfall increase from Sep to Nov? (Give the answer correct to one decimal place.)",
+   "options": [
+    {
+     "text": "163.3%"
+    },
+    {
+     "text": "60.4%"
+    },
+    {
+     "text": "145.0%"
+    },
+    {
+     "text": "152.6%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Increase = 240 - 95 = 145. Percentage increase = 145/95 x 100 = 152.6%.",
+   "order": 20,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Always divide the change by the earlier (base) value.",
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "What is the average rainfall over the 7 months shown (in mm)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "127.1"
+    },
+    {
+     "text": "240.0"
+    },
+    {
+     "text": "139.2"
+    },
+    {
+     "text": "126.7"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum of all values = 890. Average = 890/7 = 127.1.",
+   "order": 21,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "What is the average number of students placed over the 7 years shown (in students)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "520.0"
+    },
+    {
+     "text": "420.0"
+    },
+    {
+     "text": "405.7"
+    },
+    {
+     "text": "393.3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum of all values = 2840. Average = 2840/7 = 405.7.",
+   "order": 22,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "In which year was the increase in number of students placed over the previous year the largest?",
+   "options": [
+    {
+     "text": "2024"
+    },
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2023"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Year-on-year changes: 2019: +40, 2020: -60, 2021: +110, 2022: +40, 2023: +70, 2024: -40. Largest rise is 110 in 2021.",
+   "order": 23,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "The number of students placed in 2022 was what percent of that in 2023? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "115.6%"
+    },
+    {
+     "text": "92.6%"
+    },
+    {
+     "text": "13.5%"
+    },
+    {
+     "text": "86.5%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required % = 450/520 x 100 = 86.5%.",
+   "order": 24,
+   "subPattern": "single-line-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Part over whole: the base is the value after the word 'of'.",
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "By what percent is the highest rice production shown greater than the lowest? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "37.3%"
+    },
+    {
+     "text": "63.7%"
+    },
+    {
+     "text": "159.5%"
+    },
+    {
+     "text": "59.5%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Highest = 67, lowest = 42. Excess = 25 over base 42: 25/42 x 100 = 59.5%.",
+   "order": 25,
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Base is the lowest value, since the question compares 'greater than the lowest'.",
+   "setId": "di-line-graphs-s001"
+  },
+  {
+   "questionText": "Find the average of those values of footfall that are above the overall average of all 6 months. (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "171.9"
+    },
+    {
+     "text": "160.7"
+    },
+    {
+     "text": "127.7"
+    },
+    {
+     "text": "144.2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Overall average = 144.17. Values above it: 150, 172, 160; their sum = 482, so average = 482/3 = 160.7.",
+   "order": 26,
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s002"
+  },
+  {
+   "questionText": "The turnover in 2019 is what percent of the total turnover over all 7 years shown? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "102.7%"
+    },
+    {
+     "text": "77.8%"
+    },
+    {
+     "text": "14.7%"
+    },
+    {
+     "text": "15.7%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 716. Share = 105/716 x 100 = 14.7%.",
+   "order": 27,
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s003"
+  },
+  {
+   "questionText": "In how many seasons was the run tally above the average of all 8 seasons shown?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 4045/8 = 505.62. Values above it: 520, 600, 555, 640, so the count is 4.",
+   "order": 28,
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s004"
+  },
+  {
+   "questionText": "If the rainfall in Jun had been 10% higher than shown, what would the average over all 7 months be? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "127.9"
+    },
+    {
+     "text": "128.7"
+    },
+    {
+     "text": "136.9"
+    },
+    {
+     "text": "127.1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Extra = 10% of 55 = 5.50. New sum = 890 + 5.50 = 895.50. New average = 895.50/7 = 127.9.",
+   "order": 29,
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s005"
+  },
+  {
+   "questionText": "By what percent is the highest number of students placed shown greater than the lowest? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "78.4%"
+    },
+    {
+     "text": "42.3%"
+    },
+    {
+     "text": "73.3%"
+    },
+    {
+     "text": "173.3%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Highest = 520, lowest = 300. Excess = 220 over base 300: 220/300 x 100 = 73.3%.",
+   "order": 30,
+   "subPattern": "single-line-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "Base is the lowest value, since the question compares 'greater than the lowest'.",
+   "setId": "di-line-graphs-s006"
+  },
+  {
+   "questionText": "What was the sales figure of Maker P in 2021 (in thousand units)?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "70"
+    },
+    {
+     "text": "75"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the Maker P line at 2021: 75 thousand units.",
+   "order": 31,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What is the difference between the sales figure of Maker P and Maker Q in 2023 (in thousand units)?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "180"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In 2023: Maker P = 92, Maker Q = 88. Difference = 4.",
+   "order": 32,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What was the combined peak demand of Trichy and Coimbatore in 2023 (in MW)?",
+   "options": [
+    {
+     "text": "920"
+    },
+    {
+     "text": "860"
+    },
+    {
+     "text": "870"
+    },
+    {
+     "text": "80"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Trichy = 390, Coimbatore = 470; combined = 860.",
+   "order": 33,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "What is the total peak demand of Madurai in 2019 and 2021 taken together (in MW)?",
+   "options": [
+    {
+     "text": "80"
+    },
+    {
+     "text": "645"
+    },
+    {
+     "text": "685"
+    },
+    {
+     "text": "640"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2019: 280; 2021: 360; total = 640.",
+   "order": 34,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "What was the enrolment of Boys in 2022 (in hundreds)?",
+   "options": [
+    {
+     "text": "152"
+    },
+    {
+     "text": "130"
+    },
+    {
+     "text": "140"
+    },
+    {
+     "text": "150"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the Boys line at 2022: 140 hundreds.",
+   "order": 35,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "What is the difference between the enrolment of Boys and Girls in 2020 (in hundreds)?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "258"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In 2020: Boys = 128, Girls = 130. Difference = 2.",
+   "order": 36,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "What was the combined trade value of Imports and Exports in 2023 (in ₹ crore)?",
+   "options": [
+    {
+     "text": "635"
+    },
+    {
+     "text": "645"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "679"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Imports = 300, Exports = 335; combined = 635.",
+   "order": 37,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "What was the passenger count of Route 12 in Tue (in hundreds)?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the Route 12 line at Tue: 38 hundreds.",
+   "order": 38,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "What was the combined sales figure of Chola Bakery and Bharat Bakery in May (in ₹ lakh)?",
+   "options": [
+    {
+     "text": "59"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "52"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chola Bakery = 24, Bharat Bakery = 25; combined = 49.",
+   "order": 39,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "In 2023, by what percent was the sales figure of Maker P higher than that of Maker Q? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "4.0%"
+    },
+    {
+     "text": "4.3%"
+    },
+    {
+     "text": "4.5%"
+    },
+    {
+     "text": "4.8%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Maker P = 92, Maker Q = 88. Excess = 4. Percent = 4/88 x 100 = 4.5%.",
+   "order": 40,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide by the one you are comparing against (here the smaller value).",
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What is the total sales figure of Maker Q over all 6 years shown (in thousand units)?",
+   "options": [
+    {
+     "text": "385"
+    },
+    {
+     "text": "430"
+    },
+    {
+     "text": "518"
+    },
+    {
+     "text": "460"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Add all values: 45 + 70 + 64 + 68 + 95 + 88 = 430.",
+   "order": 41,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What was the average peak demand of Coimbatore, Madurai and Trichy in 2021 (in MW)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "390.0"
+    },
+    {
+     "text": "385.2"
+    },
+    {
+     "text": "330.0"
+    },
+    {
+     "text": "360.0"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = 390 + 360 + 330 = 1080; average = 1080/3 = 360.0.",
+   "order": 42,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "By what percent did the peak demand of Trichy increase from 2019 to 2023? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "56.0%"
+    },
+    {
+     "text": "35.9%"
+    },
+    {
+     "text": "140.0%"
+    },
+    {
+     "text": "59.9%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Trichy: 250 to 390. Increase = 140; percent = 140/250 x 100 = 56.0%.",
+   "order": 43,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "In which year was the gap between the enrolment of Girls and Boys the widest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2017"
+    },
+    {
+     "text": "2018"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gaps: 2017: 20, 2018: 13, 2019: 5, 2020: 2, 2021: 5, 2022: 12. Widest is 20 in 2017.",
+   "order": 44,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "In 2017, the enrolment of Boys was what percent of that of Girls? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "128.4%"
+    },
+    {
+     "text": "83.3%"
+    },
+    {
+     "text": "120.0%"
+    },
+    {
+     "text": "20.0%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Boys = 120, Girls = 100. Required % = 120/100 x 100 = 120.0%.",
+   "order": 45,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "In 2021, the trade value of Exports was what percent of that of Imports? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "116.7%"
+    },
+    {
+     "text": "85.7%"
+    },
+    {
+     "text": "124.9%"
+    },
+    {
+     "text": "16.7%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exports = 280, Imports = 240. Required % = 280/240 x 100 = 116.7%.",
+   "order": 46,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "In 2018, by what percent was the trade value of Exports higher than that of Imports? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "20.0%"
+    },
+    {
+     "text": "10.5%"
+    },
+    {
+     "text": "9.5%"
+    },
+    {
+     "text": "11.2%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exports = 210, Imports = 190. Excess = 20. Percent = 20/190 x 100 = 10.5%.",
+   "order": 47,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Divide by the one you are comparing against (here the smaller value).",
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "What is the total trade value of Exports over all 6 years shown (in ₹ crore)?",
+   "options": [
+    {
+     "text": "1712"
+    },
+    {
+     "text": "1390"
+    },
+    {
+     "text": "1935"
+    },
+    {
+     "text": "1600"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Add all values: 210 + 240 + 225 + 280 + 310 + 335 = 1600.",
+   "order": 48,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "What is the total passenger count of Route 27 over all 6 days shown (in hundreds)?",
+   "options": [
+    {
+     "text": "232"
+    },
+    {
+     "text": "328"
+    },
+    {
+     "text": "262"
+    },
+    {
+     "text": "280"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Add all values: 30 + 34 + 41 + 39 + 52 + 66 = 262.",
+   "order": 49,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "What was the average passenger count of Route 12 and Route 27 in Mon (in hundreds)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "30.0"
+    },
+    {
+     "text": "38.5"
+    },
+    {
+     "text": "42.0"
+    },
+    {
+     "text": "36.0"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = 42 + 30 = 72; average = 72/2 = 36.0.",
+   "order": 50,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "By what percent did the passenger count of Route 12 increase from Mon to Sat? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "71.4%"
+    },
+    {
+     "text": "41.7%"
+    },
+    {
+     "text": "30.0%"
+    },
+    {
+     "text": "76.4%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Route 12: 42 to 72. Increase = 30; percent = 30/42 x 100 = 71.4%.",
+   "order": 51,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "By what percent did the sales figure of Anand Bakery increase from Feb to Mar? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "10.7%"
+    },
+    {
+     "text": "10.0%"
+    },
+    {
+     "text": "9.1%"
+    },
+    {
+     "text": "2.0%"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Anand Bakery: 20 to 22. Increase = 2; percent = 2/20 x 100 = 10.0%.",
+   "order": 52,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "In which month was the gap between the sales figure of Bharat Bakery and Anand Bakery the widest?",
+   "options": [
+    {
+     "text": "Jan"
+    },
+    {
+     "text": "Apr"
+    },
+    {
+     "text": "Feb"
+    },
+    {
+     "text": "May"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps: Jan: 3, Feb: 1, Mar: 2, Apr: 6, May: 1. Widest is 6 in Apr.",
+   "order": 53,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "In Mar, the sales figure of Chola Bakery was what percent of that of Bharat Bakery? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "16.7%"
+    },
+    {
+     "text": "89.1%"
+    },
+    {
+     "text": "83.3%"
+    },
+    {
+     "text": "120.0%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Chola Bakery = 20, Bharat Bakery = 24. Required % = 20/24 x 100 = 83.3%.",
+   "order": 54,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "What percent of the total sales figure of both series over all 6 years is contributed by Maker P? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "49.2%"
+    },
+    {
+     "text": "97.0%"
+    },
+    {
+     "text": "52.6%"
+    },
+    {
+     "text": "50.0%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Maker P total = 417; grand total = 847. Share = 417/847 x 100 = 49.2%.",
+   "order": 55,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "By what percent did the combined peak demand of Coimbatore, Madurai and Trichy change from 2019 to 2023? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "51.6%"
+    },
+    {
+     "text": "32.5%"
+    },
+    {
+     "text": "410.0%"
+    },
+    {
+     "text": "48.2%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combined 2019 = 850; combined 2023 = 1260. Change = 410; percent = 410/850 x 100 = 48.2%.",
+   "order": 56,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "What is the difference between the average enrolment of Boys and that of Girls over all 6 years shown (in hundreds)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "3.2"
+    },
+    {
+     "text": "6.3"
+    },
+    {
+     "text": "19.0"
+    },
+    {
+     "text": "3.4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Boys: 778/6 = 129.67; Girls: 759/6 = 126.50. Difference = 3.2.",
+   "order": 57,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Difference of totals divided by the number of periods.",
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "In which year was the combined trade value of both series the highest?",
+   "options": [
+    {
+     "text": "2022"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2021"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combined totals: 2018: 400, 2019: 445, 2020: 475, 2021: 520, 2022: 580, 2023: 635. Highest is 635 in 2023.",
+   "order": 58,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "In how many days was the passenger count of Route 12 higher than that of Route 27?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Compare year by year: Route 12 is higher in Mon, Tue, Thu, Fri, Sat only, so the count is 5.",
+   "order": 59,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "What percent of the total sales figure of all 3 series over all 5 months is contributed by Bharat Bakery? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "33.3%"
+    },
+    {
+     "text": "36.0%"
+    },
+    {
+     "text": "50.7%"
+    },
+    {
+     "text": "33.6%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bharat Bakery total = 110; grand total = 327. Share = 110/327 x 100 = 33.6%.",
+   "order": 60,
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "According to the graph, what was the population in 2016 (in thousand)?",
+   "options": [
+    {
+     "text": "220"
+    },
+    {
+     "text": "242"
+    },
+    {
+     "text": "235"
+    },
+    {
+     "text": "200"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at 2016: the value is 220 thousand.",
+   "order": 61,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "By how much did the population rise from 2016 to 2017 (in thousand)?",
+   "options": [
+    {
+     "text": "220"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "242"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2016: 220; 2017: 242. Change = 22.",
+   "order": 62,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "According to the graph, what was the number of internet users in 2022 (in lakh)?",
+   "options": [
+    {
+     "text": "136"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "105"
+    },
+    {
+     "text": "112"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the point of the line at 2022: the value is 105 lakh.",
+   "order": 63,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "By how much did the number of internet users rise from 2021 to 2022 (in lakh)?",
+   "options": [
+    {
+     "text": "105"
+    },
+    {
+     "text": "84"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2021: 84; 2022: 105. Change = 21.",
+   "order": 64,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "By how much did the production of Product B rise from 2021 to 2022 (in thousand units)?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "81"
+    },
+    {
+     "text": "108"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2021: 81; 2022: 108. Change = 27.",
+   "order": 65,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "In how many years did the production of Product B fall compared with the previous year?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Compare consecutive points: a fall happens 1 time(s).",
+   "order": 66,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "According to the graph, what was the share price in Feb (in ₹)?",
+   "options": [
+    {
+     "text": "250"
+    },
+    {
+     "text": "285"
+    },
+    {
+     "text": "300"
+    },
+    {
+     "text": "321"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the point of the line at Feb: the value is 300 ₹.",
+   "order": 67,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "shortcut": "Locate the month on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "According to the graph, what was the installed solar capacity in 2020 (in MW)?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the point of the line at 2020: the value is 30 MW.",
+   "order": 68,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Locate the year on the x-axis and read straight up to the line.",
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "By how much did the amount saved rise from Oct to Nov (in ₹ thousand)?",
+   "options": [
+    {
+     "text": "66"
+    },
+    {
+     "text": "60"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Oct: 60; Nov: 66. Change = 6.",
+   "order": 69,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "What was the average increase per year in the population from 2015 to 2021 (in thousand)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "17.4"
+    },
+    {
+     "text": "20.3"
+    },
+    {
+     "text": "61.0"
+    },
+    {
+     "text": "21.7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total rise = 322 - 200 = 122 over 6 intervals. Average = 20.3.",
+   "order": 70,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "What was the overall percentage growth in the population from 2015 to 2021? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "37.9%"
+    },
+    {
+     "text": "49.7%"
+    },
+    {
+     "text": "61.0%"
+    },
+    {
+     "text": "65.3%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rise = 322 - 200 = 122. Percent = 122/200 x 100 = 61.0%.",
+   "order": 71,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "In which year was the percentage growth in number of internet users over the previous year the lowest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth rates: 2019: 25.0%, 2020: 40.0%, 2021: 20.0%, 2022: 25.0%, 2023: 29.5%. Lowest is in 2021.",
+   "order": 72,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "In which year did the number of internet users first exceed twice its 2018 level?",
+   "options": [
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Twice the 2018 level = 80. First value above this is 84 in 2021.",
+   "order": 73,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "What was the percentage growth in the production of Product B in 2022 over 2021? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "25.0%"
+    },
+    {
+     "text": "27.0%"
+    },
+    {
+     "text": "35.6%"
+    },
+    {
+     "text": "33.3%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Growth = 108 - 81 = 27. Percent = 27/81 x 100 = 33.3%.",
+   "order": 74,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Growth % uses the earlier year as base.",
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "In which year was the percentage growth in production of Product A over the previous year the highest?",
+   "options": [
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth rates: 2019: 15.0%, 2020: 8.7%, 2021: 20.0%, 2022: 5.0%, 2023: 21.4%. Highest is in 2023.",
+   "order": 75,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "The biggest absolute rise need not give the biggest percentage rise - check against the base.",
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "What was the average increase per month in the share price from Jan to Jun (in ₹)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "80.4"
+    },
+    {
+     "text": "40.2"
+    },
+    {
+     "text": "33.5"
+    },
+    {
+     "text": "43.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total rise = 451 - 250 = 201 over 5 intervals. Average = 40.2.",
+   "order": 76,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What was the overall percentage growth in the share price from Jan to Jun? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "86.0%"
+    },
+    {
+     "text": "44.6%"
+    },
+    {
+     "text": "80.4%"
+    },
+    {
+     "text": "64.9%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rise = 451 - 250 = 201. Percent = 201/250 x 100 = 80.4%.",
+   "order": 77,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What was the percentage growth in the share price in Apr over Mar? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "20.0%"
+    },
+    {
+     "text": "21.4%"
+    },
+    {
+     "text": "57.0%"
+    },
+    {
+     "text": "16.7%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth = 342 - 285 = 57. Percent = 57/285 x 100 = 20.0%.",
+   "order": 78,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Growth % uses the earlier year as base.",
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "What was the overall percentage growth in the installed solar capacity from 2017 to 2023? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "213.3%"
+    },
+    {
+     "text": "83.3%"
+    },
+    {
+     "text": "535.0%"
+    },
+    {
+     "text": "500.0%"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rise = 72 - 12 = 60. Percent = 60/12 x 100 = 500.0%.",
+   "order": 79,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "In which year was the percentage growth in installed solar capacity over the previous year the lowest?",
+   "options": [
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2020"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Growth rates: 2018: 25.0%, 2019: 60.0%, 2020: 25.0%, 2021: 20.0%, 2022: 50.0%, 2023: 33.3%. Lowest is in 2021.",
+   "order": 80,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "In which year did the installed solar capacity first exceed twice its 2017 level?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2022"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2018"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Twice the 2017 level = 24. First value above this is 30 in 2020.",
+   "order": 81,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "In which month did the amount saved first exceed twice its Jul level?",
+   "options": [
+    {
+     "text": "Oct"
+    },
+    {
+     "text": "Dec"
+    },
+    {
+     "text": "Sep"
+    },
+    {
+     "text": "Aug"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Twice the Jul level = 80. First value above this is 90 in Dec.",
+   "order": 82,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "What was the percentage growth in the amount saved in Dec over Nov? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "36.4%"
+    },
+    {
+     "text": "24.0%"
+    },
+    {
+     "text": "38.9%"
+    },
+    {
+     "text": "26.7%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Growth = 90 - 66 = 24. Percent = 24/66 x 100 = 36.4%.",
+   "order": 83,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Growth % uses the earlier year as base.",
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "In which month was the percentage growth in amount saved over the previous month the highest?",
+   "options": [
+    {
+     "text": "Nov"
+    },
+    {
+     "text": "Aug"
+    },
+    {
+     "text": "Sep"
+    },
+    {
+     "text": "Dec"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Growth rates: Aug: 20.0%, Sep: -6.2%, Oct: 33.3%, Nov: 10.0%, Dec: 36.4%. Highest is in Dec.",
+   "order": 84,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "The biggest absolute rise need not give the biggest percentage rise - check against the base.",
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "If the population grows in the next year by the same percentage as it did in the last year shown (2021 over 2020), what will it be? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "337.7"
+    },
+    {
+     "text": "361.3"
+    },
+    {
+     "text": "337.0"
+    },
+    {
+     "text": "353.5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Last growth factor = 322/307 = 1.0489. Next value = 322 x 1.0489 = 337.7.",
+   "order": 85,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Same percentage growth means multiply by the same factor, not add the same amount.",
+   "setId": "di-line-graphs-s013"
+  },
+  {
+   "questionText": "What is the difference, in percentage points, between the highest and the lowest year-to-year percentage growth rates of the number of internet users in the period shown? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "40.0"
+    },
+    {
+     "text": "20.0"
+    },
+    {
+     "text": "96.0"
+    },
+    {
+     "text": "21.4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Growth rates: 25.00%, 40.00%, 20.00%, 25.00%, 29.52%. Highest 40.00%, lowest 20.00%; difference = 20.0 points.",
+   "order": 86,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s014"
+  },
+  {
+   "questionText": "If the production of Product A grows in the next year by the same percentage as it did in the last year shown (2023 over 2022), what will it be? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "218.6"
+    },
+    {
+     "text": "180.0"
+    },
+    {
+     "text": "198.8"
+    },
+    {
+     "text": "185.8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Last growth factor = 153/126 = 1.2143. Next value = 153 x 1.2143 = 185.8.",
+   "order": 87,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Same percentage growth means multiply by the same factor, not add the same amount.",
+   "setId": "di-line-graphs-s015"
+  },
+  {
+   "questionText": "What is the difference, in percentage points, between the highest and the lowest month-to-month percentage growth rates of the share price in the period shown? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "201.0"
+    },
+    {
+     "text": "20.0"
+    },
+    {
+     "text": "25.0"
+    },
+    {
+     "text": "26.8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth rates: 20.00%, -5.00%, 20.00%, 9.94%, 19.95%. Highest 20.00%, lowest -5.00%; difference = 25.0 points.",
+   "order": 88,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s016"
+  },
+  {
+   "questionText": "If the installed solar capacity grows in the next year by the same percentage as it did in the last year shown (2023 over 2022), what will it be? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "90.0"
+    },
+    {
+     "text": "96.0"
+    },
+    {
+     "text": "120.0"
+    },
+    {
+     "text": "102.7"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Last growth factor = 72/54 = 1.3333. Next value = 72 x 1.3333 = 96.0.",
+   "order": 89,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Same percentage growth means multiply by the same factor, not add the same amount.",
+   "setId": "di-line-graphs-s017"
+  },
+  {
+   "questionText": "What is the difference, in percentage points, between the highest and the lowest month-to-month percentage growth rates of the amount saved in the period shown? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "50.0"
+    },
+    {
+     "text": "36.4"
+    },
+    {
+     "text": "42.6"
+    },
+    {
+     "text": "45.6"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Growth rates: 20.00%, -6.25%, 33.33%, 10.00%, 36.36%. Highest 36.36%, lowest -6.25%; difference = 42.6 points.",
+   "order": 90,
+   "subPattern": "growth-rate-trend",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s018"
+  },
+  {
+   "questionText": "By how much does the sales figure of Two-wheelers differ from that of Cars in 2021 (in hundreds)?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "242"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "2021: Two-wheelers = 110, Cars = 132. Difference = 22.",
+   "order": 91,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "What was the sales figure of Two-wheelers in 2023 (in hundreds)?",
+   "options": [
+    {
+     "text": "150"
+    },
+    {
+     "text": "106"
+    },
+    {
+     "text": "122"
+    },
+    {
+     "text": "114"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the Two-wheelers line at 2023: 114 hundreds.",
+   "order": 92,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "In which match did the run tally of Kohli first exceed that of Rohit?",
+   "options": [
+    {
+     "text": "M3"
+    },
+    {
+     "text": "M5"
+    },
+    {
+     "text": "M2"
+    },
+    {
+     "text": "M4"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kohli starts below Rohit. Comparing point by point, it first goes above in M2 (72 vs 40).",
+   "order": 93,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "By how much does the run tally of Kohli differ from that of Rohit in M2 (in runs)?",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "112"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "M2: Kohli = 72, Rohit = 40. Difference = 32.",
+   "order": 94,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "By how much does the price of Rice differ from that of Wheat in May (in ₹ per kg)?",
+   "options": [
+    {
+     "text": "105"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "May: Rice = 50, Wheat = 55. Difference = 5.",
+   "order": 95,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "What was the price of Wheat in Feb (in ₹ per kg)?",
+   "options": [
+    {
+     "text": "41"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "46"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the Wheat line at Feb: 41 ₹ per kg.",
+   "order": 96,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "In which year did the sales figure of Online first exceed that of Showroom?",
+   "options": [
+    {
+     "text": "2023"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Online starts below Showroom. Comparing point by point, it first goes above in 2021 (80 vs 70).",
+   "order": 97,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "By how much does the population of Town X differ from that of Town Y in 2010 (in thousand)?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "177"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "2010: Town X = 105, Town Y = 72. Difference = 33.",
+   "order": 98,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "In which series did the wicket tally of Bumrah first exceed that of Ashwin?",
+   "options": [
+    {
+     "text": "S2"
+    },
+    {
+     "text": "S7"
+    },
+    {
+     "text": "S5"
+    },
+    {
+     "text": "S3"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bumrah starts below Ashwin. Comparing point by point, it first goes above in S2 (18 vs 14).",
+   "order": 99,
+   "subPattern": "intersection-crossover",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "In which year was the gap between the sales figure of Two-wheelers and Cars the smallest?",
+   "options": [
+    {
+     "text": "2016"
+    },
+    {
+     "text": "2019"
+    },
+    {
+     "text": "2018"
+    },
+    {
+     "text": "2022"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps: 2016: 30, 2017: 24, 2018: 14, 2019: 4, 2020: 10, 2021: 22, 2022: 32, 2023: 36. Smallest is 4 in 2019.",
+   "order": 100,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "For how many years was the sales figure of Two-wheelers greater than that of Cars?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two-wheelers > Cars in 4 of the 8 years.",
+   "order": 101,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "The line of Kohli and the line of Rohit intersect for the first time between which two consecutive matches?",
+   "options": [
+    {
+     "text": "Between M1 and M2"
+    },
+    {
+     "text": "Between M4 and M5"
+    },
+    {
+     "text": "Between M5 and M6"
+    },
+    {
+     "text": "Between M7 and M8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gap (Kohli - Rohit) changes sign from -15 in M1 to 32 in M2, so the lines cross in between.",
+   "order": 102,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "A crossover happens where the sign of the difference between the two values flips.",
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "How many times do the lines of Kohli and Rohit cross each other over the period shown?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gap (Kohli - Rohit) by match: -15, 32, -25, 18, -21, -28, 43, -16. The sign changes 6 time(s).",
+   "order": 103,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Count the number of sign changes in the difference.",
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "How many times do the lines of Rice and Wheat cross each other over the period shown?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gap (Rice - Wheat) by month: 6, 5, 4, 1, -5, -11, -12. The sign changes 1 time(s).",
+   "order": 104,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Count the number of sign changes in the difference.",
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "In which month was the gap between the price of Rice and Wheat the smallest?",
+   "options": [
+    {
+     "text": "Jan"
+    },
+    {
+     "text": "Jun"
+    },
+    {
+     "text": "Mar"
+    },
+    {
+     "text": "Apr"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: Jan: 6, Feb: 5, Mar: 4, Apr: 1, May: 5, Jun: 11, Jul: 12. Smallest is 1 in Apr.",
+   "order": 105,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "In which year was the gap between the sales figure of Online and Showroom the smallest?",
+   "options": [
+    {
+     "text": "2021"
+    },
+    {
+     "text": "2020"
+    },
+    {
+     "text": "2018"
+    },
+    {
+     "text": "2017"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gaps: 2017: 50, 2018: 46, 2019: 36, 2020: 14, 2021: 10, 2022: 32, 2023: 55. Smallest is 10 in 2021.",
+   "order": 106,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "For how many years was the sales figure of Online greater than that of Showroom?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Online > Showroom in 3 of the 7 years.",
+   "order": 107,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "The line of Online and the line of Showroom intersect for the first time between which two consecutive years?",
+   "options": [
+    {
+     "text": "Between 2022 and 2023"
+    },
+    {
+     "text": "Between 2018 and 2019"
+    },
+    {
+     "text": "Between 2020 and 2021"
+    },
+    {
+     "text": "Between 2019 and 2020"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gap (Online - Showroom) changes sign from -14 in 2020 to 10 in 2021, so the lines cross in between.",
+   "order": 108,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "A crossover happens where the sign of the difference between the two values flips.",
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "In which year did the population of Town Y first exceed that of Town X?",
+   "options": [
+    {
+     "text": "2010"
+    },
+    {
+     "text": "2005"
+    },
+    {
+     "text": "2015"
+    },
+    {
+     "text": "2025"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Town Y starts below Town X. Comparing point by point, it first goes above in 2025 (126 vs 117).",
+   "order": 109,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "The line of Town X and the line of Town Y intersect for the first time between which two consecutive years?",
+   "options": [
+    {
+     "text": "Between 2020 and 2025"
+    },
+    {
+     "text": "Between 2000 and 2005"
+    },
+    {
+     "text": "Between 2010 and 2015"
+    },
+    {
+     "text": "Between 2015 and 2020"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gap (Town X - Town Y) changes sign from 6 in 2020 to -9 in 2025, so the lines cross in between.",
+   "order": 110,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "A crossover happens where the sign of the difference between the two values flips.",
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "How many times do the lines of Town X and Town Y cross each other over the period shown?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gap (Town X - Town Y) by year: 50, 43, 33, 20, 6, -9, -25, -40. The sign changes 1 time(s).",
+   "order": 111,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "shortcut": "Count the number of sign changes in the difference.",
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "How many times do the lines of Bumrah and Ashwin cross each other over the period shown?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gap (Bumrah - Ashwin) by series: -4, 4, -4, 4, -7, 4, -3. The sign changes 6 time(s).",
+   "order": 112,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Count the number of sign changes in the difference.",
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "In which series was the gap between the wicket tally of Bumrah and Ashwin the smallest?",
+   "options": [
+    {
+     "text": "S1"
+    },
+    {
+     "text": "S5"
+    },
+    {
+     "text": "S6"
+    },
+    {
+     "text": "S7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: S1: 4, S2: 4, S3: 4, S4: 4, S5: 7, S6: 4, S7: 3. Smallest is 3 in S7.",
+   "order": 113,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "For how many series was the wicket tally of Bumrah greater than that of Ashwin?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bumrah > Ashwin in 3 of the 7 series.",
+   "order": 114,
+   "subPattern": "intersection-crossover",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "In the year in which the two lines are closest to each other, what is the combined sales figure of Two-wheelers and Cars (in hundreds)?",
+   "options": [
+    {
+     "text": "218"
+    },
+    {
+     "text": "204"
+    },
+    {
+     "text": "264"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps: 30, 24, 14, 4, 10, 22, 32, 36. Closest is 2019 (gap 4). Combined = 104 + 100 = 204.",
+   "order": 115,
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s019"
+  },
+  {
+   "questionText": "In the match in which the gap between the two lines is the largest, by what percent is the higher value above the lower? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "43.0%"
+    },
+    {
+     "text": "45.3%"
+    },
+    {
+     "text": "82.7%"
+    },
+    {
+     "text": "88.5%"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Widest gap is 43 in M7 (95 vs 52). Percent = 43/52 x 100 = 82.7%.",
+   "order": 116,
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s020"
+  },
+  {
+   "questionText": "Considering only the months in which Rice was above Wheat, what is the average gap (Rice minus Wheat) (in ₹ per kg)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "16.0"
+    },
+    {
+     "text": "4.3"
+    },
+    {
+     "text": "4.0"
+    },
+    {
+     "text": "6.3"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gaps in those months: 6, 5, 4, 1. Average = 16/4 = 4.0.",
+   "order": 117,
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s021"
+  },
+  {
+   "questionText": "Taking only the years in which Online was above Showroom, what is the total of the gaps (Online minus Showroom) (in thousand units)?",
+   "options": [
+    {
+     "text": "97"
+    },
+    {
+     "text": "243"
+    },
+    {
+     "text": "104"
+    },
+    {
+     "text": "90"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gaps where Online is higher: 10, 32, 55. Total = 97.",
+   "order": 118,
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s022"
+  },
+  {
+   "questionText": "What is the average of the combined population of Town X and Town Y over only those years in which Town X exceeded Town Y (in thousand)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "208.5"
+    },
+    {
+     "text": "103.4"
+    },
+    {
+     "text": "188.7"
+    },
+    {
+     "text": "176.4"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Qualifying years: 2000, 2005, 2010, 2015, 2020. Combined values: 130, 153, 177, 200, 222. Average = 176.4.",
+   "order": 119,
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s023"
+  },
+  {
+   "questionText": "In the series in which the two lines are closest to each other, what is the combined wicket tally of Bumrah and Ashwin (in wickets)?",
+   "options": [
+    {
+     "text": "46"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "49"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Gaps: 4, 4, 4, 4, 7, 4, 3. Closest is S7 (gap 3). Combined = 20 + 23 = 43.",
+   "order": 120,
+   "subPattern": "intersection-crossover",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s024"
+  },
+  {
+   "questionText": "What is the average number of cups sold of Week 2 from Wed to Fri (both included) (in cups)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "230.0"
+    },
+    {
+     "text": "264.0"
+    },
+    {
+     "text": "229.4"
+    },
+    {
+     "text": "246.7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 210, 250, 280. Sum = 740; average = 740/3 = 246.7.",
+   "order": 121,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What was the average number of cups sold of Week 1 and Week 2 in Fri (in cups)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "270.0"
+    },
+    {
+     "text": "288.9"
+    },
+    {
+     "text": "260.0"
+    },
+    {
+     "text": "280.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 260 + 280 = 540; average = 540/2 = 270.0.",
+   "order": 122,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What is the average production of Unit 2 over the 4 months shown (in tonnes)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "20.0"
+    },
+    {
+     "text": "112.4"
+    },
+    {
+     "text": "105.0"
+    },
+    {
+     "text": "106.7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = 420; average = 420/4 = 105.0.",
+   "order": 123,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "What is the average of the production of Unit 2 in Jan and Apr (in tonnes)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "105.0"
+    },
+    {
+     "text": "107.5"
+    },
+    {
+     "text": "115.0"
+    },
+    {
+     "text": "7.5"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Add the two values: 100 + 115 = 215. Divide by 2: 215/2 = 107.5.",
+   "order": 124,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "What is the average score of Science from T1 to T3 (both included) (in marks)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "59.5"
+    },
+    {
+     "text": "68.2"
+    },
+    {
+     "text": "70.7"
+    },
+    {
+     "text": "63.7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Values: 55, 64, 72. Sum = 191; average = 191/3 = 63.7.",
+   "order": 125,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What was the average score of Maths and Science in T4 (in marks)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "74.5"
+    },
+    {
+     "text": "79.7"
+    },
+    {
+     "text": "81.0"
+    },
+    {
+     "text": "68.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 81 + 68 = 149; average = 149/2 = 74.5.",
+   "order": 126,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What is the average fuel sold over the 6 years shown (in thousand litres)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "499.4"
+    },
+    {
+     "text": "466.7"
+    },
+    {
+     "text": "476.0"
+    },
+    {
+     "text": "180.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum = 2800; average = 2800/6 = 466.7.",
+   "order": 127,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "What is the average rainfall of Nilgiris from Jul to Sep (both included) (in mm)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "182.0"
+    },
+    {
+     "text": "235.0"
+    },
+    {
+     "text": "216.7"
+    },
+    {
+     "text": "231.9"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Values: 210, 260, 180. Sum = 650; average = 650/3 = 216.7.",
+   "order": 128,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "What is the average profit of Parent over the 6 years shown (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "62.4"
+    },
+    {
+     "text": "40.0"
+    },
+    {
+     "text": "60.0"
+    },
+    {
+     "text": "64.2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sum = 360; average = 360/6 = 60.0.",
+   "order": 129,
+   "subPattern": "average-from-lines",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What was the average increase per day in the number of cups sold of Week 2 from Mon to Sat (in cups)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "26.0"
+    },
+    {
+     "text": "68.4"
+    },
+    {
+     "text": "27.8"
+    },
+    {
+     "text": "21.7"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total rise = 320 - 190 = 130 over 5 intervals. Average = 26.0.",
+   "order": 130,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "What is the average number of cups sold of Week 2 over the 6 days shown (in cups)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "130.0"
+    },
+    {
+     "text": "264.0"
+    },
+    {
+     "text": "258.0"
+    },
+    {
+     "text": "246.7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = 1480; average = 1480/6 = 246.7.",
+   "order": 131,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "In how many months was the production of Unit 3 above the average of all 4 months shown?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Average = 580/4 = 145.00. Values above it: 160, 150, so the count is 2.",
+   "order": 132,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "By how much is the average production of Unit 2 over the last three months greater than its average over the first three months (in tonnes)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "5.4"
+    },
+    {
+     "text": "5.0"
+    },
+    {
+     "text": "10.0"
+    },
+    {
+     "text": "15.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First three: 305/3 = 101.67. Last three: 320/3 = 106.67. Difference = 5.0.",
+   "order": 133,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "What is the average of the combined score of Maths and Science across all 6 tests (in marks)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "153.5"
+    },
+    {
+     "text": "153.2"
+    },
+    {
+     "text": "133.5"
+    },
+    {
+     "text": "143.5"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combined each period: 117, 134, 130, 149, 156, 175. Sum = 861; average = 861/6 = 143.5.",
+   "order": 134,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What is the average of the gaps (larger minus smaller) between Maths and Science across the 6 tests shown (in marks)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "8.8"
+    },
+    {
+     "text": "2.2"
+    },
+    {
+     "text": "8.2"
+    },
+    {
+     "text": "9.8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gaps: 7, 6, 14, 13, 4, 5; sum = 49; average = 49/6 = 8.2.",
+   "order": 135,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "What was the average increase per year in the fuel sold from 2018 to 2023 (in thousand litres)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "28.0"
+    },
+    {
+     "text": "23.3"
+    },
+    {
+     "text": "33.3"
+    },
+    {
+     "text": "30.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total rise = 560 - 420 = 140 over 5 intervals. Average = 28.0.",
+   "order": 136,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "shortcut": "Divide by the number of intervals, not the number of points.",
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "In how many years was the fuel sold above the average of all 6 years shown?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Average = 2800/6 = 466.67. Values above it: 470, 520, 560, so the count is 3.",
+   "order": 137,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "By how much is the average fuel sold over the last three years greater than its average over the first three years (in thousand litres)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "107.0"
+    },
+    {
+     "text": "100.0"
+    },
+    {
+     "text": "300.0"
+    },
+    {
+     "text": "200.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First three: 1250/3 = 416.67. Last three: 1550/3 = 516.67. Difference = 100.0.",
+   "order": 138,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "What is the average rainfall of Nilgiris over the 5 months shown (in mm)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "182.0"
+    },
+    {
+     "text": "194.7"
+    },
+    {
+     "text": "192.5"
+    },
+    {
+     "text": "140.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 910; average = 910/5 = 182.0.",
+   "order": 139,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "In how many months was the rainfall of Erode above the average of all 5 months shown?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Average = 610/5 = 122.00. Values above it: 150, 200, so the count is 2.",
+   "order": 140,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "By how much is the average rainfall of Erode over the last three months greater than its average over the first three months (in mm)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "200.0"
+    },
+    {
+     "text": "71.4"
+    },
+    {
+     "text": "133.3"
+    },
+    {
+     "text": "66.7"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First three: 260/3 = 86.67. Last three: 460/3 = 153.33. Difference = 66.7.",
+   "order": 141,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "By how much is the average profit of Subsidiary over the last three years greater than its average over the first three years (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "20.0"
+    },
+    {
+     "text": "10.0"
+    },
+    {
+     "text": "10.7"
+    },
+    {
+     "text": "30.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First three: 110/3 = 36.67. Last three: 140/3 = 46.67. Difference = 10.0.",
+   "order": 142,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What is the average of the combined profit of Parent and Subsidiary across all 6 years (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "101.7"
+    },
+    {
+     "text": "108.8"
+    },
+    {
+     "text": "110.3"
+    },
+    {
+     "text": "50.8"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combined each period: 78, 92, 84, 102, 124, 130. Sum = 610; average = 610/6 = 101.7.",
+   "order": 143,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What is the average of the gaps (larger minus smaller) between Parent and Subsidiary across the 6 years shown (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "23.6"
+    },
+    {
+     "text": "18.3"
+    },
+    {
+     "text": "19.7"
+    },
+    {
+     "text": "21.1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Gaps: 18, 20, 4, 26, 20, 30; sum = 118; average = 118/6 = 19.7.",
+   "order": 144,
+   "subPattern": "average-from-lines",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s030"
+  },
+  {
+   "questionText": "What is the average of the gaps (larger minus smaller) between Week 1 and Week 2 across the 6 days shown (in cups)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "16.7"
+    },
+    {
+     "text": "17.9"
+    },
+    {
+     "text": "13.3"
+    },
+    {
+     "text": "20.0"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gaps: 10, 10, 30, 10, 20, 20; sum = 100; average = 100/6 = 16.7.",
+   "order": 145,
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s025"
+  },
+  {
+   "questionText": "The average production of Unit 1 over all 4 months is to be exactly 146 tonnes, keeping the first 3 values as shown. What must the Apr value be?",
+   "options": [
+    {
+     "text": "146"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "192"
+    },
+    {
+     "text": "179"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Required total = 146 x 4 = 584. Sum of first 3 values = 405. Needed value = 179.",
+   "order": 146,
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s026"
+  },
+  {
+   "questionText": "By how much is the average score of Science over the last three tests greater than its average over the first three tests (in marks)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "15.0"
+    },
+    {
+     "text": "14.0"
+    },
+    {
+     "text": "42.0"
+    },
+    {
+     "text": "28.0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First three: 191/3 = 63.67. Last three: 233/3 = 77.67. Difference = 14.0.",
+   "order": 147,
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s027"
+  },
+  {
+   "questionText": "The average fuel sold over all 6 years is to be exactly 472 thousand litres, keeping the first 5 values as shown. What must the 2023 value be?",
+   "options": [
+    {
+     "text": "472"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "592"
+    },
+    {
+     "text": "633"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Required total = 472 x 6 = 2832. Sum of first 5 values = 2240. Needed value = 592.",
+   "order": 148,
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s028"
+  },
+  {
+   "questionText": "By what percent is the average rainfall of Nilgiris (over all 5 months) higher than that of Erode? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "49.2%"
+    },
+    {
+     "text": "33.0%"
+    },
+    {
+     "text": "52.6%"
+    },
+    {
+     "text": "60.0%"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Averages: Nilgiris = 182.00, Erode = 122.00. Percent = (182.00-122.00)/122.00 x 100 = 49.2%.",
+   "order": 149,
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s029"
+  },
+  {
+   "questionText": "What is the average profit of Parent over only those years in which it was higher than Subsidiary (in ₹ crore)? (Correct to one decimal place.)",
+   "options": [
+    {
+     "text": "41.2"
+    },
+    {
+     "text": "68.5"
+    },
+    {
+     "text": "64.0"
+    },
+    {
+     "text": "60.0"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Parent is higher in 2019, 2020, 2022, 2023, 2024: values 48, 56, 64, 72, 80. Average = 320/5 = 64.0.",
+   "order": 150,
+   "subPattern": "average-from-lines",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s030"
+  }
+ ]
+}

@@ -5,6 +5,7 @@ import GridViewRoundedIcon from '@mui/icons-material/GridViewRounded';
 import { mockApi } from '../../api/mockApi';
 import { extractErrorMessage } from '../../api/apiClient';
 import { OPTION_LABELS, PALETTE, formatClock } from '../aptitude/components/aptitudeUi';
+import QuestionStimulus from '../aptitude/components/QuestionStimulus';
 import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX, RADII, MEDIA_QUERIES } from '../../app/design/designTokens';
 
 // Full mock paper. Sections run on their own SERVER clocks (sectionEndsAt),
@@ -72,6 +73,7 @@ export default function MockExamPage() {
 
   const questions = paper?.questions ?? [];
   const current = questions[cur];
+  const stimulus = current?.setId ? paper?.sets?.[`${current.pattern}:${current.setId}`] : null;
 
   const load = useCallback(async () => {
     try {
@@ -246,6 +248,7 @@ export default function MockExamPage() {
           <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
             Question {cur + 1} of {questions.length}
           </Typography>
+          <Box sx={{ mt: 1.5 }}><QuestionStimulus set={stimulus} /></Box>
           <Typography sx={{ fontSize: { xs: FONT_SIZES.title, md: FONT_SIZES.subheading }, lineHeight: 1.7, fontWeight: FONT_WEIGHTS.medium, my: 1.5, whiteSpace: 'pre-line' }}>{current.questionText}</Typography>
           <Box sx={{ display: 'grid', gap: 1 }}>
             {current.options.map((o, i) => {

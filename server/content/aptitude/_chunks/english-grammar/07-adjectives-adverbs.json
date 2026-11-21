@@ -1,0 +1,632 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "She sings ____.",
+   "options": [
+    "beautiful",
+    "beauty",
+    "beautifully",
+    "beautify"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A verb is modified by an adverb: beautifully.",
+   "shortcut": "Verb -> adverb (-ly).",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is a ____ driver.",
+   "options": [
+    "carefully",
+    "care",
+    "carefulness",
+    "careful"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A noun is modified by an adjective: careful driver.",
+   "shortcut": "Noun -> adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The soup tastes ____.",
+   "options": [
+    "delicious",
+    "deliciously",
+    "deliciousness",
+    "deliciousy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After a linking verb such as 'taste', an adjective is used.",
+   "shortcut": "Linking verb (taste, feel, seem) + adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She looked ____ at the stranger.",
+   "options": [
+    "suspicious",
+    "suspiciously",
+    "suspicion",
+    "suspect"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Looked at' describes an action, so an adverb is needed.",
+   "shortcut": "Action verb -> adverb.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She felt ____ after the long journey.",
+   "options": [
+    "tiredly",
+    "tire",
+    "tired",
+    "tiring"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After the linking verb 'felt', an adjective describing the subject is used.",
+   "shortcut": "feel + adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is the ____ of the three brothers.",
+   "options": [
+    "taller",
+    "most tall",
+    "more tall",
+    "tallest"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "For more than two, the superlative 'tallest' is used.",
+   "shortcut": "3+ = superlative.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of the two sisters, Meena is the ____.",
+   "options": [
+    "elder",
+    "eldest",
+    "oldest",
+    "most old"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Between two persons of a family the comparative 'elder' is used; the superlative forms are for three or more.",
+   "shortcut": "Two = comparative.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This book is ____ than that one.",
+   "options": [
+    "best",
+    "better",
+    "good",
+    "more good"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Good' has the irregular comparative 'better'.",
+   "shortcut": "good-better-best.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He has ____ money left in his wallet.",
+   "options": [
+    "a few",
+    "few",
+    "little",
+    "many"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Money' is uncountable, so 'little' (hardly any) fits the negative sense.",
+   "shortcut": "Uncountable + little; countable + few.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I have ____ friends in this city, so I feel lonely.",
+   "options": [
+    "a few",
+    "little",
+    "much",
+    "few"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Few' has a negative sense (hardly any) and fits with 'lonely'.",
+   "shortcut": "few = almost none; a few = some.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has ____ friends in Chennai who will help her.",
+   "options": [
+    "a few",
+    "few",
+    "little",
+    "much"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'A few' has a positive sense (some) and fits with 'help her'.",
+   "shortcut": "a few = some.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is ____ intelligent than his brother.",
+   "options": [
+    "most",
+    "more",
+    "much",
+    "very"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The comparative of a long adjective uses 'more'.",
+   "shortcut": "long adjective -> more.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is the ____ girl in the class.",
+   "options": [
+    "more beautiful",
+    "beautifullest",
+    "most beautiful",
+    "beautifuller"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "For a long adjective, the superlative is formed with 'most'.",
+   "shortcut": "most + long adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He worked ____ than anyone else in the office.",
+   "options": [
+    "hardest",
+    "hard",
+    "more hardly",
+    "harder"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Hard' is both adjective and adverb; its comparative is 'harder'.",
+   "shortcut": "hard-harder-hardest.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ran ____ to catch the bus.",
+   "options": [
+    "fast",
+    "fastly",
+    "fasten",
+    "fastness"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Fast' is an adverb without -ly.",
+   "shortcut": "fast/hard/late: same form as adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She arrived ____ for the interview and was rejected.",
+   "options": [
+    "lately",
+    "late",
+    "latter",
+    "last"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Late' (adverb) means after the expected time; 'lately' means recently.",
+   "shortcut": "late = not on time; lately = recently.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ____ ever misses a class.",
+   "options": [
+    "hard",
+    "hardy",
+    "hardly",
+    "harder"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Hardly ever' means almost never; the adverb 'hardly' is used.",
+   "shortcut": "hardly = almost not.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The ____ of the two proposals was accepted.",
+   "options": [
+    "last",
+    "later",
+    "latest",
+    "latter"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Latter' refers to the second of two; 'last' is final of many.",
+   "shortcut": "latter = second of two.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The ____ news about the accident shocked everyone.",
+   "options": [
+    "latest",
+    "later",
+    "latter",
+    "last"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Latest' means most recent.",
+   "shortcut": "latest = newest.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He gave me ____ information about the course.",
+   "options": [
+    "farther",
+    "further",
+    "far",
+    "furthest"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Further' means additional; 'farther' refers to physical distance.",
+   "shortcut": "further = additional.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He shows ____ interest in cricket than in football.",
+   "options": [
+    "fewer",
+    "few",
+    "less",
+    "many"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Interest' is uncountable, so the comparative 'less' is used.",
+   "shortcut": "less + uncountable.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is as ____ as her mother.",
+   "options": [
+    "taller",
+    "tallest",
+    "more tall",
+    "tall"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In 'as ... as', the adjective is in the positive form: tall.",
+   "shortcut": "as + positive + as.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This is ____ interesting book that I have ever read.",
+   "options": [
+    "the most",
+    "more",
+    "most",
+    "much"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A superlative takes 'the' before 'most'.",
+   "shortcut": "the most + adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Ganga is the ____ river in India.",
+   "options": [
+    "longer",
+    "longest",
+    "more long",
+    "most long"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Among many rivers, the superlative 'longest' is used.",
+   "shortcut": "Superlative for many.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Mohan is ____ boy in the class.",
+   "options": [
+    "taller",
+    "tallest",
+    "the tallest",
+    "more tall"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A superlative with 'in the class' is formed with 'the'.",
+   "shortcut": "the + superlative + in.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She speaks English very ____.",
+   "options": [
+    "fluent",
+    "fluency",
+    "fluence",
+    "fluently"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Speaks' needs an adverb: fluently.",
+   "shortcut": "Verb -> adverb.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is a ____ boy.",
+   "options": [
+    "well-behaved",
+    "well-behave",
+    "behaved well",
+    "well behavedly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A compound adjective before a noun is hyphenated: well-behaved.",
+   "shortcut": "adverb + participle = compound adjective.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "There is ____ milk in the fridge.",
+   "options": [
+    "a few",
+    "some",
+    "many",
+    "several"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Milk' is uncountable, so 'some' is used.",
+   "shortcut": "some + uncountable.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "We could see ____ people at the stadium than the previous year.",
+   "options": [
+    "less",
+    "lesser",
+    "fewer",
+    "little"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'People' is countable, so 'fewer' is used.",
+   "shortcut": "fewer + countable; less + uncountable.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She spends ____ time on social media than before.",
+   "options": [
+    "fewer",
+    "few",
+    "many",
+    "less"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Time' is uncountable, so 'less' is used.",
+   "shortcut": "less + uncountable.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Your answer is ____ correct.",
+   "options": [
+    "absolutely",
+    "more absolutely",
+    "absolute",
+    "most absolutely"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Absolute' is already complete and takes no degrees; the adverb 'absolutely' fits.",
+   "shortcut": "absolute adjectives do not compare.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which of the two routes is ____?",
+   "options": [
+    "shortest",
+    "shorter",
+    "more short",
+    "most short"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two items compared: use the comparative.",
+   "shortcut": "Two = -er.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This is the ____ of the two plans.",
+   "options": [
+    "best",
+    "good",
+    "better",
+    "most good"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "With two options, the comparative 'better' is used.",
+   "shortcut": "Two = comparative.",
+   "subPattern": "adjectives-adverbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,1677 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "A class has boys and girls only.\nIs the number of boys more than 6?\nStatement I: The number of boys and the number of girls add up to 53.\nStatement II: The number of girls is 31 more than the number of boys.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with boys = 11, girls = 42 the answer is Yes, but with boys = 1, girls = 52 it is No. Statement II is not enough: with boys = 11, girls = 42 the answer is Yes, but with boys = 1, girls = 32 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A class has boys and girls only.\nIs the total of the number of boys and the number of girls more than 48?\nStatement I: The number of boys is 11.\nStatement II: The number of boys and the number of girls add up to 53.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with boys = 11, girls = 42 the answer is Yes, but with boys = 11, girls = 1 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya and Ganesh played in the same cricket match. Runs are whole numbers.\nIs the total of Kavya's score and Ganesh's score more than 57 runs?\nStatement I: The ratio of Kavya's score to Ganesh's score is 9:22.\nStatement II: Ganesh's score is more than Kavya's score.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Kavya = 18, Ganesh = 44 the answer is Yes, but with Kavya = 9, Ganesh = 22 it is No. Statement II is not enough: with Kavya = 18, Ganesh = 44 the answer is Yes, but with Kavya = 1, Ganesh = 2 it is No. Taking both together is not enough: with Kavya = 18, Ganesh = 44 the answer is Yes, but with Kavya = 9, Ganesh = 22 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Kavya and Ganesh played in the same cricket match. Runs are whole numbers.\nIs Kavya's score more than 13 runs?\nStatement I: Kavya's score is 18 runs.\nStatement II: Ganesh's score is 44 runs.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with Kavya = 18, Ganesh = 44 the answer is Yes, but with Kavya = 1, Ganesh = 44 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x and y are positive integers.\nIs x at least twice y?\nStatement I: The ratio of x to y is 5:16.\nStatement II: Y is more than x.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "x and y are positive integers.\nIs x more than y?\nStatement I: Twice x added to y makes 78.\nStatement II: X is a multiple of 3.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with x = 15, y = 48 the answer is No, but with x = 27, y = 24 it is Yes. Statement II is not enough: with x = 15, y = 48 the answer is No, but with x = 3, y = 1 it is Yes. Taking both together is not enough: with x = 15, y = 48 the answer is No, but with x = 27, y = 24 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A class has boys and girls only.\nIs the number of boys more than the number of girls?\nStatement I: The ratio of the number of boys to the number of girls is 29:20.\nStatement II: The number of boys and the number of girls add up to 49.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with boys = 29, girls = 20 the answer is Yes, but with boys = 1, girls = 48 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A class has boys and girls only.\nIs the total of the number of boys and the number of girls more than 46?\nStatement I: The number of boys is more than 24.\nStatement II: The number of boys added to three times the number of girls makes 89.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with boys = 29, girls = 20 the answer is Yes, but with boys = 25, girls = 1 it is No. Statement II is not enough: with boys = 29, girls = 20 the answer is Yes, but with boys = 2, girls = 29 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n a multiple of 8?\nStatement I: n is a two-digit number.\nStatement II: n + 8 is odd.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with n = 75 the answer is No, but with n = 16 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n divisible by both 3 and 5?\nStatement I: n leaves remainder 1 when divided by 2.\nStatement II: n is a multiple of 5.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with n = 75 the answer is Yes, but with n = 1 it is No. Statement II is not enough: with n = 75 the answer is Yes, but with n = 5 it is No. Taking both together is not enough: with n = 75 the answer is Yes, but with n = 5 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n a prime number?\nStatement I: n leaves remainder 2 when divided by 8.\nStatement II: n is greater than 79.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with n = 82 the answer is No, but with n = 2 it is Yes. Statement II is not enough: with n = 82 the answer is No, but with n = 83 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n divisible by both 4 and 6?\nStatement I: n leaves remainder 1 when divided by 3.\nStatement II: n leaves remainder 10 when divided by 12.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n a perfect square?\nStatement I: n leaves remainder 2 when divided by 4.\nStatement II: n leaves remainder 1 when divided by 9.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with n = 46 the answer is No, but with n = 1 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n a multiple of 6?\nStatement I: n is a two-digit number.\nStatement II: n leaves remainder 1 when divided by 9. Also, n is even.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with n = 46 the answer is No, but with n = 12 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n a prime number?\nStatement I: n is a two-digit number.\nStatement II: n is less than 90.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with n = 85 the answer is No, but with n = 11 it is Yes. Statement II is not enough: with n = 85 the answer is No, but with n = 2 it is Yes. Taking both together is not enough: with n = 85 the answer is No, but with n = 11 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "n is a positive integer.\nIs n a multiple of 6?\nStatement I: n + 4 is odd.\nStatement II: n is odd.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a pair of sandals at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the profit more than ₹30?\nStatement I: The profit percentage is 25%.\nStatement II: The selling price is ₹200.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with cost price = 160, profit % = 25 the answer is Yes, but with cost price = 10, profit % = 25 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a pair of sandals at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the selling price more than ₹300?\nStatement I: The profit percentage is more than 22%.\nStatement II: The profit percentage is 25%.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 160, profit % = 25 the answer is No, but with cost price = 210, profit % = 43 it is Yes. Statement II is not enough: with cost price = 160, profit % = 25 the answer is No, but with cost price = 250, profit % = 25 it is Yes. Taking both together is not enough: with cost price = 160, profit % = 25 the answer is No, but with cost price = 250, profit % = 25 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a pair of sandals at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the profit more than ₹50?\nStatement I: The profit is ₹250.\nStatement II: The selling price is ₹750.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a pair of sandals at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the selling price more than ₹500?\nStatement I: The selling price is ₹750.\nStatement II: The profit percentage is more than 10%.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with cost price = 500, profit % = 50 the answer is Yes, but with cost price = 10, profit % = 11 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a table lamp at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the profit percentage more than 10%?\nStatement I: The profit is ₹84/5.\nStatement II: The cost price is ₹140.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with cost price = 140, profit % = 12 the answer is Yes, but with cost price = 210, profit % = 8 it is No. Statement II is not enough: with cost price = 140, profit % = 12 the answer is Yes, but with cost price = 140, profit % = 1 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a table lamp at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the selling price more than ₹600?\nStatement I: The cost price is ₹140.\nStatement II: The profit percentage is 12%.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with cost price = 140, profit % = 12 the answer is No, but with cost price = 540, profit % = 12 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a table lamp at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the profit more than ₹30?\nStatement I: The profit percentage is less than 18%.\nStatement II: The cost price is more than ₹510.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with cost price = 530, profit % = 15 the answer is Yes, but with cost price = 10, profit % = 1 it is No. Statement II is not enough: with cost price = 530, profit % = 15 the answer is Yes, but with cost price = 520, profit % = 1 it is No. Taking both together is not enough: with cost price = 530, profit % = 15 the answer is Yes, but with cost price = 520, profit % = 1 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A shopkeeper bought a table lamp at a cost price that is a multiple of ₹10 and sold it at a profit of a whole-number percentage.\nIs the selling price more than ₹300?\nStatement I: The profit percentage is more than 11%.\nStatement II: The cost price is ₹530.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with cost price = 530, profit % = 15 the answer is Yes, but with cost price = 10, profit % = 12 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the rate of interest more than 10% per annum?\nStatement I: The rate is less than 11% per annum.\nStatement II: The rate of interest is 8% per annum.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Divya deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the simple interest earned more than ₹1500?\nStatement I: The amount at the end is ₹1392.\nStatement II: The interest earned each year is ₹96.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ganesh deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the simple interest earned more than ₹800?\nStatement I: The rate is less than 13% per annum.\nStatement II: The interest earned each year is ₹190.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with principal = 1900, rate = 10, years = 5 the answer is Yes, but with principal = 100, rate = 1, years = 1 it is No. Statement II is not enough: with principal = 1900, rate = 10, years = 5 the answer is Yes, but with principal = 1900, rate = 10, years = 1 it is No. Taking both together is not enough: with principal = 1900, rate = 10, years = 5 the answer is Yes, but with principal = 1900, rate = 10, years = 1 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ganesh deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the rate of interest more than 12% per annum?\nStatement I: The rate of interest is 10% per annum.\nStatement II: The rate is less than 13% per annum.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the simple interest earned more than ₹500?\nStatement I: The rate is less than 8% per annum. Also, The amount at the end is ₹2950.\nStatement II: The interest earned each year is ₹150.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with principal = 2500, rate = 6, years = 3 the answer is No, but with principal = 1500, rate = 10, years = 4 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rohit deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the rate of interest more than 5% per annum?\nStatement I: The interest earned each year is ₹150.\nStatement II: The principal is ₹2500.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with principal = 2500, rate = 6, years = 3 the answer is Yes, but with principal = 3000, rate = 5, years = 1 it is No. Statement II is not enough: with principal = 2500, rate = 6, years = 3 the answer is Yes, but with principal = 2500, rate = 1, years = 1 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Naveen deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the rate of interest more than 4% per annum?\nStatement I: The principal is ₹2600.\nStatement II: The rate of interest is 3% per annum.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with principal = 2600, rate = 3, years = 3 the answer is No, but with principal = 2600, rate = 5, years = 1 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Naveen deposited a sum (a multiple of ₹100) for a whole number of years at a whole-number rate of simple interest per annum.\nIs the simple interest earned more than ₹1000?\nStatement I: The interest earned each year is ₹78.\nStatement II: The principal is ₹2600.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with principal = 2600, rate = 3, years = 3 the answer is No, but with principal = 2600, rate = 8, years = 5 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Karthik and Harish can each complete a piece of work alone in a whole number of days.\nCan Karthik and Harish together finish the work in less than 12 days?\nStatement I: Harish alone takes 33 days more than Karthik alone.\nStatement II: The days taken by Karthik alone and by Harish alone add up to 41.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Karthik's days = 4, Harish's days = 37 the answer is Yes, but with Karthik's days = 16, Harish's days = 49 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Karthik and Harish can each complete a piece of work alone in a whole number of days.\nDoes Karthik alone take more than 25 days?\nStatement I: Working together, they finish the work in 148/41 days.\nStatement II: Harish alone can finish the work in 37 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Karthik's days = 4, Harish's days = 37 the answer is No, but with Karthik's days = 37, Harish's days = 4 it is Yes. Statement II is not enough: with Karthik's days = 4, Harish's days = 37 the answer is No, but with Karthik's days = 26, Harish's days = 37 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Deepa and Pooja can each complete a piece of work alone in a whole number of days.\nCan Deepa and Pooja together finish the work in less than 12 days?\nStatement I: Working together, they finish the work in 575/48 days.\nStatement II: Deepa alone takes fewer than 33 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with Deepa's days = 25, Pooja's days = 23 the answer is Yes, but with Deepa's days = 15, Pooja's days = 60 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Deepa and Pooja can each complete a piece of work alone in a whole number of days.\nDoes Deepa alone take more than 15 days?\nStatement I: Deepa alone takes fewer than 33 days.\nStatement II: Deepa alone takes more days than Pooja alone.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Deepa's days = 25, Pooja's days = 23 the answer is Yes, but with Deepa's days = 2, Pooja's days = 2 it is No. Statement II is not enough: with Deepa's days = 25, Pooja's days = 23 the answer is Yes, but with Deepa's days = 3, Pooja's days = 2 it is No. Taking both together is not enough: with Deepa's days = 25, Pooja's days = 23 the answer is Yes, but with Deepa's days = 3, Pooja's days = 2 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Sneha and Arjun can each complete a piece of work alone in a whole number of days.\nCan Sneha and Arjun together finish the work in less than 8 days?\nStatement I: In one day, Sneha and Arjun together complete 2/15 of the work.\nStatement II: Working together, they finish the work in 15/2 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Sneha and Arjun can each complete a piece of work alone in a whole number of days.\nDoes Sneha alone take more than 20 days?\nStatement I: Arjun alone takes more than 17 days.\nStatement II: In one day, Sneha and Arjun together complete 2/15 of the work.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Sneha's days = 12, Arjun's days = 20 the answer is No, but with Sneha's days = 21, Arjun's days = 18 it is Yes. Statement II is not enough: with Sneha's days = 12, Arjun's days = 20 the answer is No, but with Sneha's days = 30, Arjun's days = 10 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Harish and Farida can each complete a piece of work alone in a whole number of days.\nCan Harish and Farida together finish the work in less than 8 days?\nStatement I: Harish alone takes fewer than 39 days.\nStatement II: Working together, they finish the work in 518/51 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Harish's days = 37, Farida's days = 14 the answer is No, but with Harish's days = 2, Farida's days = 2 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Harish and Farida can each complete a piece of work alone in a whole number of days.\nDoes Harish alone take more than 10 days?\nStatement I: Harish alone can finish the work in 37 days.\nStatement II: Farida alone can finish the work in 14 days.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with Harish's days = 37, Farida's days = 14 the answer is Yes, but with Harish's days = 2, Farida's days = 14 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nDoes the journey take more than 6 hours?\nStatement I: The distance is 510 km.\nStatement II: The speed is 75 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with distance = 510, speed = 75 the answer is Yes, but with distance = 510, speed = 85 it is No. Statement II is not enough: with distance = 510, speed = 75 the answer is Yes, but with distance = 10, speed = 75 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nIs the speed more than 60 km/h?\nStatement I: The distance is 510 km.\nStatement II: The speed is 75 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with distance = 510, speed = 75 the answer is Yes, but with distance = 510, speed = 5 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A bus travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nDoes the journey take more than 3 hours?\nStatement I: The distance in km is 13/6 times the speed in km/h.\nStatement II: The journey takes 13/6 hours.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A bus travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nIs the speed more than 40 km/h?\nStatement I: The speed is less than 75 km/h. Also, The journey takes 13/6 hours.\nStatement II: If the speed were 5 km/h more, the journey would take 1/6 hours less.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with distance = 130, speed = 60 the answer is Yes, but with distance = 10, speed = 15 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nIs the speed more than 50 km/h?\nStatement I: The distance in km is 4/3 times the speed in km/h.\nStatement II: The speed is more than 40 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with distance = 60, speed = 45 the answer is No, but with distance = 80, speed = 60 it is Yes. Statement II is not enough: with distance = 60, speed = 45 the answer is No, but with distance = 10, speed = 51 it is Yes. Taking both together is not enough: with distance = 60, speed = 45 the answer is No, but with distance = 80, speed = 60 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A car travels from Chennai to Madurai at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nDoes the journey take more than 6 hours?\nStatement I: The speed is 45 km/h.\nStatement II: The distance is 60 km.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with distance = 60, speed = 45 the answer is No, but with distance = 280, speed = 45 it is Yes. Statement II is not enough: with distance = 60, speed = 45 the answer is No, but with distance = 60, speed = 5 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nIs the speed more than 50 km/h?\nStatement I: The distance is 60 km.\nStatement II: The speed is 40 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with distance = 60, speed = 40 the answer is No, but with distance = 60, speed = 51 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A train travels from Coimbatore to Trichy at a uniform speed (a whole number of km/h). The distance is a multiple of 10 km.\nDoes the journey take more than 3 hours?\nStatement I: The speed is more than 30 km/h.\nStatement II: The speed is less than 50 km/h.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with distance = 60, speed = 40 the answer is No, but with distance = 100, speed = 31 it is Yes. Statement II is not enough: with distance = 60, speed = 40 the answer is No, but with distance = 20, speed = 5 it is Yes. Taking both together is not enough: with distance = 60, speed = 40 the answer is No, but with distance = 100, speed = 31 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 80 people, some like dosa, some like idli, some like both and some like neither.\nIs there at least one person who likes neither?\nStatement I: 32 people like idli.\nStatement II: 45 people like dosa.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with dosa = 45, idli = 32, both = 19 the answer is Yes, but with dosa = 48, idli = 32, both = 0 it is No. Statement II is not enough: with dosa = 45, idli = 32, both = 19 the answer is Yes, but with dosa = 45, idli = 35, both = 0 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 80 people, some like dosa, some like idli, some like both and some like neither.\nDo more people like dosa than idli?\nStatement I: 26 people like dosa only.\nStatement II: dosa is liked by 13 more people than idli.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with dosa = 45, idli = 32, both = 19 the answer is Yes, but with dosa = 26, idli = 26, both = 0 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 80 people, some like tea, some like coffee, some like both and some like neither.\nDo more people like tea than coffee?\nStatement I: 25 people like coffee only.\nStatement II: 48 people like coffee.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with tea = 33, coffee = 48, both = 23 the answer is No, but with tea = 26, coffee = 25, both = 0 it is Yes. Statement II is not enough: with tea = 33, coffee = 48, both = 23 the answer is No, but with tea = 49, coffee = 48, both = 17 it is Yes. Taking both together is not enough: with tea = 33, coffee = 48, both = 23 the answer is No, but with tea = 49, coffee = 48, both = 23 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 80 people, some like tea, some like coffee, some like both and some like neither.\nIs there at least one person who likes neither?\nStatement I: 22 people like neither.\nStatement II: 58 people like at least one of the two.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 50 people, some like maths, some like science, some like both and some like neither.\nDo more people like maths than science?\nStatement I: 16 people like maths only. Also, maths is liked by 14 more people than science.\nStatement II: 16 people like science.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with maths = 30, science = 16, both = 14 the answer is Yes, but with maths = 0, science = 16, both = 0 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 50 people, some like maths, some like science, some like both and some like neither.\nIs there at least one person who likes neither?\nStatement I: Fewer than 15 people like both.\nStatement II: 30 people like maths.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with maths = 30, science = 16, both = 14 the answer is Yes, but with maths = 0, science = 50, both = 0 it is No. Statement II is not enough: with maths = 30, science = 16, both = 14 the answer is Yes, but with maths = 30, science = 20, both = 0 it is No. Taking both together is not enough: with maths = 30, science = 16, both = 14 the answer is Yes, but with maths = 30, science = 20, both = 0 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 50 people, some like Tamil, some like Hindi, some like both and some like neither.\nDo more people like Tamil than Hindi?\nStatement I: 34 people like neither. Also, More than 9 people like both.\nStatement II: 16 people like at least one of the two. Also, Tamil is liked by 2 fewer people than Hindi.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Tamil = 13, Hindi = 15, both = 12 the answer is No, but with Tamil = 14, Hindi = 12, both = 10 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a group of exactly 50 people, some like Tamil, some like Hindi, some like both and some like neither.\nDo more than half of the 50 people like Tamil?\nStatement I: 13 people like Tamil.\nStatement II: 15 people like Hindi.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with Tamil = 13, Hindi = 15, both = 12 the answer is No, but with Tamil = 26, Hindi = 15, both = 0 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Anita scored whole-number marks in three tests: T1, T2 and T3.\nIs T1 more than T3?\nStatement I: The average of the three is 49/3.\nStatement II: T2 and T3 add up to 33.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with T1 = 16, T2 = 15, T3 = 18 the answer is No, but with T1 = 15, T2 = 20, T3 = 14 it is Yes. Statement II is not enough: with T1 = 16, T2 = 15, T3 = 18 the answer is No, but with T1 = 14, T2 = 20, T3 = 13 it is Yes. Taking both together is not enough: with T1 = 16, T2 = 15, T3 = 18 the answer is No, but with T1 = 16, T2 = 18, T3 = 15 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Anita scored whole-number marks in three tests: T1, T2 and T3.\nIs T3 the highest of the three?\nStatement I: The lowest of the three is 15. Also, T1 is 16.\nStatement II: T3 is 18.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with T1 = 16, T2 = 15, T3 = 18 the answer is Yes, but with T1 = 16, T2 = 15, T3 = 15 it is No. Statement II is not enough: with T1 = 16, T2 = 15, T3 = 18 the answer is Yes, but with T1 = 1, T2 = 18, T3 = 18 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PQR is a triangle whose sides PQ, QR and RP are whole numbers of centimetres.\nIs the triangle isosceles (at least two equal sides)?\nStatement I: The longest side is 11 cm.\nStatement II: RP equals PQ.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with PQ = 8, QR = 11, RP = 8 the answer is Yes, but with PQ = 2, QR = 10, RP = 11 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PQR is a triangle whose sides PQ, QR and RP are whole numbers of centimetres.\nIs the triangle equilateral?\nStatement I: PQ² + QR² = 185.\nStatement II: QR is not equal to RP.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nIs the average of the three more than 10?\nStatement I: The average of the three is 10.\nStatement II: P1 + P3 − 2 × P2 = -9.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with P1 = 12, P2 = 13, P3 = 5 the answer is No, but with P1 = 1, P2 = 14, P3 = 18 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three parcels P1, P2 and P3 have weights that are whole numbers of kg.\nIs P1 more than P3?\nStatement I: P1 and P3 add up to 17.\nStatement II: The average of the three is more than 8.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with P1 = 12, P2 = 13, P3 = 5 the answer is Yes, but with P1 = 1, P2 = 1, P3 = 16 it is No. Statement II is not enough: with P1 = 12, P2 = 13, P3 = 5 the answer is Yes, but with P1 = 1, P2 = 4, P3 = 20 it is No. Taking both together is not enough: with P1 = 12, P2 = 13, P3 = 5 the answer is Yes, but with P1 = 1, P2 = 8, P3 = 16 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PQR is a triangle whose sides PQ, QR and RP are whole numbers of centimetres.\nIs the triangle equilateral?\nStatement I: QR is not equal to RP.\nStatement II: QR = 4 cm.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with PQ = 3, QR = 4, RP = 5 the answer is No, but with PQ = 4, QR = 4, RP = 4 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "PQR is a triangle whose sides PQ, QR and RP are whole numbers of centimetres.\nIs the triangle right-angled?\nStatement I: QR + RP = 9 cm.\nStatement II: PQ = 3 cm.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with PQ = 3, QR = 4, RP = 5 the answer is Yes, but with PQ = 2, QR = 4, RP = 5 it is No. Statement II is not enough: with PQ = 3, QR = 4, RP = 5 the answer is Yes, but with PQ = 3, QR = 1, RP = 3 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 runners in a race are Imran, Farida, Lakshmi, Manoj, Rahul and Priya. There were no ties.\nIs Rahul the last finisher?\nStatement I: Manoj is the winner.\nStatement II: Rahul finished ahead of Lakshmi.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Imran = 3, Farida = 4, Lakshmi = 2, Manoj = 0, Rahul = 1, Priya = 5 the answer is No, but with Imran = 1, Farida = 2, Lakshmi = 3, Manoj = 0, Rahul = 5, Priya = 4 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 runners in a race are Imran, Farida, Lakshmi, Manoj, Rahul and Priya. There were no ties.\nIs it true that Manoj finished ahead of Farida?\nStatement I: Exactly 2 of the others rank above Lakshmi.\nStatement II: No one ranks between Lakshmi and Rahul. Also, Lakshmi ranks between Rahul and Priya.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Imran = 3, Farida = 4, Lakshmi = 2, Manoj = 0, Rahul = 1, Priya = 5 the answer is Yes, but with Imran = 0, Farida = 1, Lakshmi = 2, Manoj = 3, Rahul = 4, Priya = 5 it is No. Statement II is not enough: with Imran = 3, Farida = 4, Lakshmi = 2, Manoj = 0, Rahul = 1, Priya = 5 the answer is Yes, but with Imran = 0, Farida = 1, Lakshmi = 3, Manoj = 4, Rahul = 2, Priya = 5 it is No. Taking both together is not enough: with Imran = 3, Farida = 4, Lakshmi = 2, Manoj = 0, Rahul = 1, Priya = 5 the answer is Yes, but with Imran = 0, Farida = 3, Lakshmi = 2, Manoj = 4, Rahul = 1, Priya = 5 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 employees are Gopal, Meena, Rohit, Vikram and Deepa. No two of them earn the same amount.\nIs Meena the lowest earner?\nStatement I: Meena ranks between Rohit and Vikram.\nStatement II: Exactly one person ranks between Meena and Gopal.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with Gopal = 0, Meena = 2, Rohit = 1, Vikram = 3, Deepa = 4 the answer is No, but with Gopal = 2, Meena = 4, Rohit = 0, Vikram = 1, Deepa = 3 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "5 employees are Gopal, Meena, Rohit, Vikram and Deepa. No two of them earn the same amount.\nIs Vikram the highest earner?\nStatement I: No one ranks between Vikram and Deepa.\nStatement II: Meena earns more than Deepa.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Gopal = 0, Meena = 2, Rohit = 1, Vikram = 3, Deepa = 4 the answer is No, but with Gopal = 2, Meena = 3, Rohit = 4, Vikram = 0, Deepa = 1 it is Yes. Statement II is not enough: with Gopal = 0, Meena = 2, Rohit = 1, Vikram = 3, Deepa = 4 the answer is No, but with Gopal = 1, Meena = 2, Rohit = 3, Vikram = 0, Deepa = 4 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 students in an exam are Meena, Suresh, Deepa, Harish, Karthik and Pooja. No two of them scored the same marks.\nIs Pooja the lowest scorer?\nStatement I: Pooja scored more marks than Karthik.\nStatement II: Exactly 5 of the others rank above Karthik.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 students in an exam are Meena, Suresh, Deepa, Harish, Karthik and Pooja. No two of them scored the same marks.\nIs it true that Meena scored more marks than Pooja?\nStatement I: Deepa ranks between Harish and Pooja.\nStatement II: Harish scored more marks than Deepa.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Meena = 0, Suresh = 3, Deepa = 2, Harish = 1, Karthik = 5, Pooja = 4 the answer is Yes, but with Meena = 1, Suresh = 2, Deepa = 3, Harish = 4, Karthik = 5, Pooja = 0 it is No. Statement II is not enough: with Meena = 0, Suresh = 3, Deepa = 2, Harish = 1, Karthik = 5, Pooja = 4 the answer is Yes, but with Meena = 1, Suresh = 2, Deepa = 4, Harish = 3, Karthik = 5, Pooja = 0 it is No. Taking both together is not enough: with Meena = 0, Suresh = 3, Deepa = 2, Harish = 1, Karthik = 5, Pooja = 4 the answer is Yes, but with Meena = 3, Suresh = 4, Deepa = 1, Harish = 0, Karthik = 5, Pooja = 2 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 employees are Rahul, Kavya, Rohit, Divya, Lakshmi and Swati. No two of them earn the same amount.\nIs Kavya the highest earner?\nStatement I: Rohit earns more than Kavya.\nStatement II: No one ranks between Divya and Rohit.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with Rahul = 3, Kavya = 5, Rohit = 0, Divya = 1, Lakshmi = 2, Swati = 4 the answer is No, but with Rahul = 1, Kavya = 0, Rohit = 2, Divya = 3, Lakshmi = 4, Swati = 5 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "6 employees are Rahul, Kavya, Rohit, Divya, Lakshmi and Swati. No two of them earn the same amount.\nIs Lakshmi the lowest earner?\nStatement I: Rohit earns more than Rahul.\nStatement II: Lakshmi earns more than Swati.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Rahul = 3, Kavya = 5, Rohit = 0, Divya = 1, Lakshmi = 2, Swati = 4 the answer is No, but with Rahul = 1, Kavya = 2, Rohit = 0, Divya = 3, Lakshmi = 5, Swati = 4 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Gopal, Farida, Kavya, Arjun and Pooja, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Gopal sit to the left of Arjun?\nStatement I: Exactly 0 persons sit between Farida and Kavya.\nStatement II: Exactly 0 persons sit between Kavya and Farida. Also, Exactly 1 person sit between Kavya and Pooja.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Gopal = 3, Farida = 1, Kavya = 2, Arjun = 0, Pooja = 4 the answer is No, but with Gopal = 0, Farida = 1, Kavya = 2, Arjun = 3, Pooja = 4 it is Yes. Statement II is not enough: with Gopal = 3, Farida = 1, Kavya = 2, Arjun = 0, Pooja = 4 the answer is No, but with Gopal = 0, Farida = 1, Kavya = 2, Arjun = 3, Pooja = 4 it is Yes. Taking both together is not enough: with Gopal = 3, Farida = 1, Kavya = 2, Arjun = 0, Pooja = 4 the answer is No, but with Gopal = 0, Farida = 1, Kavya = 2, Arjun = 3, Pooja = 4 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Gopal, Farida, Kavya, Arjun and Pooja, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDo Gopal and Arjun sit next to each other?\nStatement I: Exactly 2 persons sit between Gopal and Arjun.\nStatement II: Kavya sits somewhere between Gopal and Farida.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with Gopal = 3, Farida = 1, Kavya = 2, Arjun = 0, Pooja = 4 the answer is No, but with Gopal = 0, Farida = 3, Kavya = 2, Arjun = 1, Pooja = 4 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Meena, Rahul, Pooja, Karthik and Naveen, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Pooja sit to the left of Naveen?\nStatement I: Karthik sits at an odd-numbered position.\nStatement II: Naveen sits somewhere to the left of Pooja.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with Meena = 3, Rahul = 1, Pooja = 4, Karthik = 0, Naveen = 2 the answer is No, but with Meena = 0, Rahul = 1, Pooja = 2, Karthik = 4, Naveen = 3 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Meena, Rahul, Pooja, Karthik and Naveen, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Pooja sit at one of the two ends?\nStatement I: Exactly 2 persons sit between Meena and Karthik.\nStatement II: Exactly 0 persons sit between Naveen and Rahul.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Meena = 3, Rahul = 1, Pooja = 4, Karthik = 0, Naveen = 2 the answer is Yes, but with Meena = 0, Rahul = 1, Pooja = 2, Karthik = 3, Naveen = 4 it is No. Statement II is not enough: with Meena = 3, Rahul = 1, Pooja = 4, Karthik = 0, Naveen = 2 the answer is Yes, but with Meena = 0, Rahul = 1, Pooja = 3, Karthik = 4, Naveen = 2 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Harish, Deepa, Vikram, Lakshmi and Swati, sit on a sofa row at a cinema in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDo Lakshmi and Deepa sit next to each other?\nStatement I: Exactly 0 persons sit between Lakshmi and Deepa.\nStatement II: Lakshmi and Deepa sit next to each other.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Harish, Deepa, Vikram, Lakshmi and Swati, sit on a sofa row at a cinema in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Lakshmi sit to the left of Deepa?\nStatement I: Lakshmi and Deepa sit next to each other.\nStatement II: Deepa sits somewhere between Vikram and Swati. Also, Harish sits somewhere to the left of Deepa.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with Harish = 1, Deepa = 3, Vikram = 0, Lakshmi = 2, Swati = 4 the answer is Yes, but with Harish = 0, Deepa = 1, Vikram = 3, Lakshmi = 2, Swati = 4 it is No. Statement II is not enough: with Harish = 1, Deepa = 3, Vikram = 0, Lakshmi = 2, Swati = 4 the answer is Yes, but with Harish = 0, Deepa = 2, Vikram = 1, Lakshmi = 3, Swati = 4 it is No. Taking both together is not enough: with Harish = 1, Deepa = 3, Vikram = 0, Lakshmi = 2, Swati = 4 the answer is Yes, but with Harish = 0, Deepa = 2, Vikram = 1, Lakshmi = 3, Swati = 4 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Rohit, Sneha, Gopal, Nisha and Manoj, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Rohit sit at one of the two ends?\nStatement I: Exactly 3 persons sit between Sneha and Rohit.\nStatement II: Exactly 0 persons sit between Nisha and Manoj.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite Yes. Statement II is not enough: with Rohit = 4, Sneha = 0, Gopal = 1, Nisha = 3, Manoj = 2 the answer is Yes, but with Rohit = 1, Sneha = 0, Gopal = 2, Nisha = 3, Manoj = 4 it is No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Five friends, Rohit, Sneha, Gopal, Nisha and Manoj, sit on a bench in a straight line facing the same direction. Positions are numbered 1 to 5 from the left. Each sits in a different position.\nDoes Rohit sit to the left of Gopal?\nStatement I: Gopal sits in position 2.\nStatement II: Manoj sits somewhere to the left of Rohit.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with Rohit = 4, Sneha = 0, Gopal = 1, Nisha = 3, Manoj = 2 the answer is No, but with Rohit = 0, Sneha = 2, Gopal = 1, Nisha = 3, Manoj = 4 it is Yes. Statement II is not enough: with Rohit = 4, Sneha = 0, Gopal = 1, Nisha = 3, Manoj = 2 the answer is No, but with Rohit = 1, Sneha = 2, Gopal = 3, Nisha = 4, Manoj = 0 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Manoj's birthday falls in one of the twelve months of a calendar year.\nIs the birthday in the first half of the year (January to June)?\nStatement I: The month after it is December.\nStatement II: The month name ends with the letter 'r'.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I gives a definite No. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Manoj's birthday falls in one of the twelve months of a calendar year.\nDoes the name of the birthday month have more than 5 letters?\nStatement I: The month is in the second half of the year (July to December).\nStatement II: The previous month is October.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with month = 10 the answer is Yes, but with month = 6 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The blood donation camp is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on a day whose name has more than 6 letters?\nStatement I: It is not on Wednesday, Tuesday or Thursday.\nStatement II: It is neither on Wednesday nor on Tuesday.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with day = 4 the answer is No, but with day = 5 it is Yes. Statement II is not enough: with day = 4 the answer is No, but with day = 3 it is Yes. Taking both together is not enough: with day = 4 the answer is No, but with day = 5 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The blood donation camp is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on or before Wednesday?\nStatement I: It is held on Friday.\nStatement II: It is neither on Wednesday nor on Tuesday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with day = 4 the answer is No, but with day = 0 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The quality audit is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on or before Wednesday?\nStatement I: It is later in the week than Wednesday.\nStatement II: It is neither on Sunday nor on Saturday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with day = 4 the answer is No, but with day = 0 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The quality audit is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on a weekday (Monday to Friday)?\nStatement I: The name of the day has 6 letters.\nStatement II: It is earlier in the week than Sunday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with day = 4 the answer is Yes, but with day = 6 it is No. Statement II is not enough: with day = 4 the answer is Yes, but with day = 5 it is No. Taking both together gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The blood donation camp is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on or before Wednesday?\nStatement I: It is neither on Thursday nor on Friday.\nStatement II: It is held on a weekday (Monday to Friday).\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with day = 2 the answer is Yes, but with day = 4 it is No. Statement II is not enough: with day = 2 the answer is Yes, but with day = 3 it is No. Taking both together is not enough: with day = 2 the answer is Yes, but with day = 4 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The blood donation camp is scheduled on one day of a particular week (Monday to Sunday).\nIs it held on a weekday (Monday to Friday)?\nStatement I: The name of the day starts with the letter W.\nStatement II: The name of the day has 9 letters. Also, The day after it is Thursday.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places B, F and D lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs D to the east of B (that is, further east)?\nStatement I: D is 10 km from B.\nStatement II: D is due east of F.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with D east of B = 10, D north of B = 0, F east of B = 5, F north of B = 0 the answer is Yes, but with D east of B = -10, D north of B = 0, F east of B = -10, F north of B = -10 it is No. Statement II is not enough: with D east of B = 10, D north of B = 0, F east of B = 5, F north of B = 0 the answer is Yes, but with D east of B = -9, D north of B = -10, F east of B = -10, F north of B = -10 it is No. Taking both together is not enough: with D east of B = 10, D north of B = 0, F east of B = 5, F north of B = 0 the answer is Yes, but with D east of B = -8, D north of B = -6, F east of B = -10, F north of B = -6 it is No. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places B, F and D lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs D to the north of B (that is, further north)?\nStatement I: F is 5 km from B. Also, D is 10 km from B.\nStatement II: D is 5 km due east of F. Also, F is 5 km from B.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with D east of B = 10, D north of B = 0, F east of B = 5, F north of B = 0 the answer is No, but with D east of B = -8, D north of B = 6, F east of B = -5, F north of B = 0 it is Yes. Statement II is not enough: with D east of B = 10, D north of B = 0, F east of B = 5, F north of B = 0 the answer is No, but with D east of B = 1, D north of B = 3, F east of B = -4, F north of B = 3 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places T, Q and E lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs E more than 5 km from T?\nStatement I: E is 3 km from T.\nStatement II: Q is 6 km due north of T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I gives a definite No. Statement II is not enough: with E east of T = 0, E north of T = 3, Q east of T = 0, Q north of T = 6 the answer is No, but with E east of T = -10, E north of T = -10, Q east of T = 0, Q north of T = 6 it is Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement I alone is sufficient, but statement II alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places T, Q and E lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs E to the east of T (that is, further east)?\nStatement I: T is 6 km due south of Q.\nStatement II: Q is 6 km due north of T. Also, E is due south of Q.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Statement I is not enough: with E east of T = 0, E north of T = 3, Q east of T = 0, Q north of T = 6 the answer is No, but with E east of T = 1, E north of T = -10, Q east of T = 0, Q north of T = 6 it is Yes. Statement II gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places T, R and D lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs D more than 5 km from T?\nStatement I: D is 10 km from T. Also, R is due east of T.\nStatement II: D is due north of R. Also, R is 6 km due east of T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I gives a definite Yes. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: either statement I alone or statement II alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places T, R and D lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs D to the north of T (that is, further north)?\nStatement I: D is 10 km from T. Also, R is due east of T.\nStatement II: D is 8 km due north of R. Also, R is due east of T.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Statement I is not enough: with D east of T = 6, D north of T = 8, R east of T = 6, R north of T = 0 the answer is Yes, but with D east of T = -10, D north of T = 0, R east of T = 1, R north of T = 0 it is No. Statement II gives a definite Yes. In a Yes/No question a definite No is as good as a definite Yes. Hence: statement II alone is sufficient, but statement I alone is not sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places E, A and F lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs F to the east of E (that is, further east)?\nStatement I: E is 3 km due south of A.\nStatement II: F is due south of A.\nWhich of the following is correct?",
+   "options": [
+    "Statement I alone is sufficient, but statement II alone is not sufficient",
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Statement I is not enough: with F east of E = 0, F north of E = -1, A east of E = 0, A north of E = 3 the answer is No, but with F east of E = 1, F north of E = -10, A east of E = 0, A north of E = 3 it is Yes. Statement II is not enough: with F east of E = 0, F north of E = -1, A east of E = 0, A north of E = 3 the answer is No, but with F east of E = 1, F north of E = -10, A east of E = 1, A north of E = -9 it is Yes. Taking both together gives a definite No. In a Yes/No question a definite No is as good as a definite Yes. Hence: both statements together are sufficient, but neither statement alone is sufficient.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Three places E, A and F lie on level ground. All distances are measured in a straight line in km, and 'due' means exactly in that compass direction.\nIs F to the north of E (that is, further north)?\nStatement I: A is due north of E.\nStatement II: E is 3 km due south of A.\nWhich of the following is correct?",
+   "options": [
+    "Statement II alone is sufficient, but statement I alone is not sufficient",
+    "Either statement I alone or statement II alone is sufficient",
+    "Both statements together are sufficient, but neither statement alone is sufficient",
+    "Neither statement is sufficient, even when both are taken together"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Statement I is not enough: with F east of E = 0, F north of E = -1, A east of E = 0, A north of E = 3 the answer is No, but with F east of E = -10, F north of E = 1, A east of E = 0, A north of E = 1 it is Yes. Statement II is not enough: with F east of E = 0, F north of E = -1, A east of E = 0, A north of E = 3 the answer is No, but with F east of E = -10, F north of E = 1, A east of E = 0, A north of E = 3 it is Yes. Taking both together is not enough: with F east of E = 0, F north of E = -1, A east of E = 0, A north of E = 3 the answer is No, but with F east of E = -10, F north of E = 1, A east of E = 0, A north of E = 3 it is Yes. Hence: neither statement is sufficient, even when both are taken together.",
+   "subPattern": "yes-no-sufficiency",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": null
+  }
+ ]
+}

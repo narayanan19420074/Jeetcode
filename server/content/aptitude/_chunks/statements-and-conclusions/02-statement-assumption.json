@@ -1,0 +1,945 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statement: A school notice reads: 'Students must carry their ID cards every day.'\nAssumptions:\nI. The students have been issued ID cards.\nII. Students dislike carrying ID cards.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The order can be followed only if ID cards exist, so I is implicit. Students' dislike is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: An advertisement says: 'Buy Sparkle toothpaste for strong teeth.'\nAssumptions:\nI. People want to have strong teeth.\nII. People will buy only Sparkle toothpaste.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The appeal works only if people want strong teeth. 'Only Sparkle' is too strong and is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The teacher told the class, 'Submit your assignments by Friday.'\nAssumptions:\nI. Students will submit their assignments on time without any reminder.\nII. The assignments have already been given to the students.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The instruction presupposes that assignments exist, so II is implicit. I predicts behaviour and is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Rohit switched on the geyser 15 minutes before taking his bath.\nAssumptions:\nI. The geyser needs some time to heat the water.\nII. Rohit wants to bathe in warm water.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. He would switch it on early only if heating takes time, and only if he wants warm water. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The government has launched a mobile app to deliver ration-card services.\nAssumptions:\nI. All ration-card holders own smartphones.\nII. People will no longer visit ration shops.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. 'All holders own smartphones' is too strong, and the end of shop visits is a prediction. Neither is needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A tea-stall owner raised the price of tea from ₹10 to ₹12.\nAssumptions:\nI. All his customers will accept the new price.\nII. Some customers will continue to buy tea at the new price.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. He would not raise the price unless some customers would still buy, so II is implicit. 'All' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The municipal corporation has asked residents to separate wet and dry waste to make recycling easier.\nAssumptions:\nI. Separated waste is easier to recycle.\nII. Residents will not separate waste unless they are fined.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The request makes sense only if separation helps recycling. II is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A shop has put up a board: 'Sale – 30% off, only till Sunday.'\nAssumptions:\nI. Customers are attracted by discounts.\nII. A last date encourages people to buy sooner.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both ideas support the purpose of the notice, so both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Rajesh decided not to buy shares of a company because its profit has fallen for three years in a row.\nAssumptions:\nI. A fall in past profit may indicate poor future returns.\nII. Shares of a company with falling profits can never gain in value.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. His decision relies on the link between past profit and future return. 'Never' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The coach selected Harish as the opening batsman because he scored two centuries last season.\nAssumptions:\nI. Harish will score a century in every match.\nII. Harish is the only player who scored centuries last season.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Neither is needed. Selection on past form needs only a belief that form is a guide, which neither option states.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The bank has advised customers not to share their OTP with anyone.\nAssumptions:\nI. Sharing an OTP can lead to fraud.\nII. Customers are able to follow this advice.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The advice is given because misuse is possible and is useful only if customers can follow it. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The manager told the clerk, 'Send the report by email tonight.'\nAssumptions:\nI. The clerk has finished all his other work.\nII. The clerk has access to email.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The instruction can be carried out only if the clerk has email access. His other work is not relevant.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A newspaper carried an advertisement for a new tuition centre in Erode.\nAssumptions:\nI. All students of Erode will join the centre.\nII. The centre is a government institution.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both ideas are unrelated to why a centre advertises. Neither is implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Traffic police have installed cameras at signals to catch those who jump red lights.\nAssumptions:\nI. The cameras can record violations.\nII. Offenders can be identified and penalised using the recordings.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The step makes sense only if cameras record violations and if the footage can be used to penalise offenders.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The bank manager advised Ramesh to take a home loan before interest rates go up.\nAssumptions:\nI. Interest rates may go up in the near future.\nII. A lower rate of interest benefits the borrower.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The advice presupposes a possible rise and that a lower rate is better. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The company has recalled a batch of biscuits after customer complaints.\nAssumptions:\nI. All other biscuits made by the company are defective.\nII. Some customers complained about the batch.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The complaints are stated as the reason, so II is a restatement and implicit. I is too strong and is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Sunita carried an umbrella to office because the sky was cloudy.\nAssumptions:\nI. A cloudy sky may mean rain.\nII. It will rain heavily during the day.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. She carried the umbrella because clouds suggest possible rain. 'Heavily' is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A mobile company has launched a phone with a big battery and says, 'No more charging worries.'\nAssumptions:\nI. A bigger battery lasts longer.\nII. Customers worry about charging their phones.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The slogan works only if a bigger battery lasts longer and customers have charging worries. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The railway will levy a surcharge on tickets booked through agents to reduce touting.\nAssumptions:\nI. Booking through agents contributes to touting.\nII. A surcharge will discourage passengers from booking through agents.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The measure is meant to cut touting and works only if it discourages booking through agents. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Suresh switched from a petrol car to a CNG car to save on fuel cost.\nAssumptions:\nI. CNG cars are more reliable than petrol cars.\nII. CNG costs less per kilometre than petrol.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The saving is possible only if CNG is cheaper per kilometre. Reliability is not mentioned.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A notice in a lecture hall reads: 'Please keep your mobile phones switched off.'\nAssumptions:\nI. Mobile phones can disturb the lecture.\nII. No student owns a mobile phone.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The request is meant to avoid disturbance. II contradicts the need for the notice.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Meera set her alarm for 4 am because her flight leaves at 7 am.\nAssumptions:\nI. The alarm will wake her up in time.\nII. She needs about three hours to get ready and reach the airport.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both are implicit: she relies on the alarm, and the time chosen reflects her need.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The organisers announced that the Chennai marathon will be held on Sunday.\nAssumptions:\nI. All registered runners will complete the race.\nII. It is the first marathon held in Chennai.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Neither is needed to hold the event. 'All will complete' is too strong and 'first' is unrelated.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Punjab farmers were advised to sow the early-ripening variety of paddy so that fields are cleared before the wheat season.\nAssumptions:\nI. Early-ripening paddy is harvested sooner than other varieties.\nII. Late clearing of paddy fields delays wheat sowing.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The advice works only if the variety ripens early and if delay in clearing would hurt wheat sowing.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The government has made Aadhaar linking mandatory for PAN cards to prevent duplicate PANs.\nAssumptions:\nI. Every citizen in the country has an Aadhaar number.\nII. An Aadhaar number is unique to each individual.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Duplicates can be detected through Aadhaar only if the number is unique. 'Every citizen' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The petrol price was cut by ₹3 per litre; transport costs are expected to fall.\nAssumptions:\nI. Transport costs depend on fuel prices.\nII. Prices of vegetables will fall immediately.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The expectation links transport costs to fuel prices. Vegetable prices are not mentioned.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: India won the Test series 3-1 against the visiting team.\nAssumptions:\nI. The visiting team was weaker than India in all four matches.\nII. Cricket is the most popular sport in India.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. A 3-1 result does not show India was better in all matches, and the popularity of cricket is unrelated.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A famous actor has been appointed brand ambassador of a new energy drink.\nAssumptions:\nI. All fans of the actor will buy the drink.\nII. The actor's popularity can influence people's buying decisions.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Companies appoint ambassadors on this belief. 'All fans' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The doctor advised Mr Rao to walk for 30 minutes daily to keep his blood sugar under control.\nAssumptions:\nI. Every diabetic patient must walk exactly 30 minutes daily.\nII. Mr Rao has never walked before.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Neither is needed. The advice is for Mr Rao and does not depend on his past or on a rule for all patients.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: An e-commerce site offers free delivery on orders above ₹499 to increase the average order value.\nAssumptions:\nI. Customers value free delivery.\nII. Some customers will add items to cross the ₹499 limit.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The offer works only if customers value free delivery and some will increase their order to get it. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A notice at a substation reads: 'High voltage – do not touch.'\nAssumptions:\nI. Everyone entering the area knows how to repair wires.\nII. Touching high voltage can be dangerous.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The warning is meant to avoid danger. Repair skill is irrelevant.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Neha wears sunglasses while riding to avoid glare from the sun.\nAssumptions:\nI. Sunlight glare troubles the eyes.\nII. Sunglasses reduce glare.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both ideas must hold for her action to make sense.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The school has asked parents to attend the meeting on Saturday at 10 am.\nAssumptions:\nI. Parents can be reached through the school's notice.\nII. All parents will be free on Saturday.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The request works only if the notice reaches parents. 'All will be free' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The government has introduced a free bus pass for senior citizens.\nAssumptions:\nI. All senior citizens will use the pass.\nII. Bus fares will be reduced for everyone.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both are too strong or unrelated to the scheme. Neither is implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Ravi took a loan to start a mobile repair shop.\nAssumptions:\nI. He will certainly earn a profit.\nII. There is a demand for mobile repair.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. He would not start the shop without a demand. 'Certainly' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: To reduce power cuts, the state has asked households to use LED bulbs.\nAssumptions:\nI. LED bulbs consume less electricity.\nII. Lower consumption can reduce the load on the power supply.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The appeal works only if LEDs use less power and if lower use reduces load. Both are implicit.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The college has made 75% attendance compulsory to ensure regular learning.\nAssumptions:\nI. Attendance helps students learn.\nII. A student with 75% attendance will score 75% marks.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The rule presumes that attendance aids learning. II confuses attendance with marks.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A large number of people in Pune have started buying electric scooters.\nAssumptions:\nI. All people in Pune have shifted to electric scooters.\nII. Electric scooters are cheaper than petrol scooters.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. 'All people' is too strong and the cost comparison is not needed for the statement.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The trainer said, 'Practise typing for 30 minutes daily and your speed will improve within a month.'\nAssumptions:\nI. Everybody's typing speed will double in a month.\nII. Regular practice improves typing skill.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The claim rests on practice improving skill. 'Double' is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: An airline has decided to charge extra for choosing seats in advance.\nAssumptions:\nI. Some passengers value choosing their seats and will pay for it.\nII. All passengers will pay the extra charge.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The charge makes sense only if some passengers will pay for it. 'All' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A weather report says there will be heavy rain, so Kiran will carry an umbrella.\nAssumptions:\nI. The weather forecast is always correct.\nII. An umbrella protects against rain.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Carrying it presumes it protects against rain. 'Always correct' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The teacher said, 'Revise chapter 5 tonight for tomorrow's test.'\nAssumptions:\nI. All students will score full marks.\nII. Students have no other test tomorrow.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Neither is needed. The instruction only needs the test to be on chapter 5.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The doctor advised Raju to avoid cold drinks because he has a sore throat.\nAssumptions:\nI. Cold drinks can worsen a sore throat.\nII. Raju has never had a sore throat before.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The advice makes sense only if cold drinks can worsen the throat. His history is irrelevant.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Rajesh took a taxi instead of a bus to reach the station on time.\nAssumptions:\nI. A taxi is faster than a bus for this trip.\nII. He might have missed the train if he had taken the bus.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both are implicit in his choice.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A village has set up a solar plant to meet its power needs.\nAssumptions:\nI. The village will never use grid electricity again.\nII. Solar plants are cheaper than all other power sources.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both are too strong. The plan needs only that solar power can meet the needs.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The government has asked banks to open branches in rural areas to promote savings.\nAssumptions:\nI. All rural people will save in banks.\nII. Nearby bank branches encourage people to save.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The step makes sense only if nearby branches promote saving. 'All' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: Ananya joined a typing institute to improve her speed.\nAssumptions:\nI. Institute training can improve typing speed.\nII. Ananya cannot type at all.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Joining makes sense only if training helps. She may already type slowly, so II is not needed.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: A cricket association has decided to hold nets only in the morning to avoid the afternoon heat.\nAssumptions:\nI. Heat affects practice.\nII. Mornings are cooler than afternoons.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both are implicit in the decision.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The doctor advises reducing screen time before bed to improve sleep quality.\nAssumptions:\nI. Screen time before bed affects sleep quality.\nII. Everyone who sleeps badly uses screens at night.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. The advice relies on a link between screens and sleep. 'Everyone' is too strong.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statement: The railway has introduced dynamic fares that rise as a train fills up, to maximise earnings.\nAssumptions:\nI. Some passengers will still buy tickets at the higher fares.\nII. Demand for seats increases as the train fills up.\nWhich of the following is implicit in the statement?",
+   "options": [
+    "Only I follows",
+    "Only II follows",
+    "Both I and II follow",
+    "Neither I nor II follows"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An assumption is an unstated idea that must be true for the statement to make sense. Ideas that are too strong (all, always, definitely), predictive or unrelated are not assumptions. Both are implicit: higher fares earn more only if some still buy, and the design is based on rising demand.",
+   "shortcut": "Ask whether the statement would make no sense if the assumption were false. Reject extreme words and future predictions.",
+   "subPattern": "statement-assumption",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

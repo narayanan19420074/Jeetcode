@@ -1,0 +1,604 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "She ____ in Coimbatore since 2019.",
+   "options": [
+    "lives",
+    "has lived",
+    "is living",
+    "lived"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Since + a point in time, for a state that began in the past and continues now, takes the present perfect: has lived.",
+   "shortcut": "since/for + continuing state = present perfect.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The train ____ before we reached the platform.",
+   "options": [
+    "had left",
+    "has left",
+    "leaves",
+    "was leaving"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Of two past actions, the earlier one uses the past perfect. Leaving happened before reaching, so: had left.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Water ____ at 100 degrees Celsius.",
+   "options": [
+    "is boiling",
+    "boiled",
+    "has boiled",
+    "boils"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Scientific facts and universal truths use the simple present: boils.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I ____ my homework when the lights went out.",
+   "options": [
+    "did",
+    "have done",
+    "was doing",
+    "am doing"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A longer ongoing past action interrupted by a shorter one (went out, simple past) takes the past continuous: was doing.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "By next June, Ravi ____ his degree.",
+   "options": [
+    "completes",
+    "will have completed",
+    "has completed",
+    "completed"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'By + a future time' signals an action finished before that time: future perfect, will have completed.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Look! The children ____ in the rain.",
+   "options": [
+    "are playing",
+    "play",
+    "played",
+    "have played"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Look!' points to an action happening right now: present continuous, are playing.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ____ to Madurai last Sunday.",
+   "options": [
+    "has gone",
+    "goes",
+    "had gone",
+    "went"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A finished time marker (last Sunday) requires the simple past: went.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "My father ____ the newspaper every morning.",
+   "options": [
+    "is reading",
+    "has read",
+    "reads",
+    "will have read"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Every morning' shows a habit: simple present, reads.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "They ____ their lunch yet.",
+   "options": [
+    "did not finished",
+    "have not finished",
+    "do not finish",
+    "are not finishing"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Yet' in a negative sentence goes with the present perfect: have not finished. (Also 'did not finished' is wrong: after did not, the verb stays in base form.)",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Neha ____ sushi in her life.",
+   "options": [
+    "has never eaten",
+    "never ate",
+    "never eats",
+    "was never eating"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'In her life' covers time up to now, so the present perfect is used: has never eaten.",
+   "subPattern": "tenses",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "No sooner had he entered the room than the phone ____.",
+   "options": [
+    "has rung",
+    "was ringing",
+    "rings",
+    "rang"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'No sooner had + V3 ... than' is followed by the simple past: rang.",
+   "shortcut": "No sooner had ... than + simple past.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hardly had the match begun when it ____ to rain.",
+   "options": [
+    "had started",
+    "has started",
+    "started",
+    "starts"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Hardly had + V3 ... when' is followed by the simple past: started.",
+   "shortcut": "Hardly had ... when + simple past.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I ____ for two hours before the manager called me in for the interview.",
+   "options": [
+    "have been waiting",
+    "had been waiting",
+    "am waiting",
+    "will be waiting"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A continuous action lasting up to a past moment ('before the manager called') takes the past perfect continuous: had been waiting.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence is grammatically correct?",
+   "options": [
+    "I have known him since childhood.",
+    "I am knowing him since childhood.",
+    "I know him since childhood.",
+    "I was knowing him since childhood."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Know' is a stative verb and is not used in continuous tenses. Since + point in time needs the present perfect: have known.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "By the time we reached the cinema, the film ____.",
+   "options": [
+    "already started",
+    "has already started",
+    "is already starting",
+    "had already started"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The film started before we arrived (a past moment), so the earlier action uses the past perfect.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I will call you as soon as I ____ home.",
+   "options": [
+    "will reach",
+    "would reach",
+    "reach",
+    "am reaching"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In time clauses (as soon as, when, after, before, until) the future is expressed by the simple present, not will: reach.",
+   "shortcut": "No 'will' after when/as soon as/until.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ravi ____ in Chennai for ten years before he moved to Pune.",
+   "options": [
+    "has lived",
+    "had lived",
+    "lives",
+    "is living"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Before he moved' fixes a past reference point; a state lasting up to it takes the past perfect: had lived.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Tomorrow at this time, we ____ in the exam hall.",
+   "options": [
+    "will be sitting",
+    "are sitting",
+    "sat",
+    "have sat"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An action in progress at a specific future moment takes the future continuous: will be sitting.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The manager ____ the report since morning but has not finished it.",
+   "options": [
+    "prepared",
+    "is prepared",
+    "had prepared",
+    "has been preparing"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Since morning' plus an action still unfinished takes the present perfect continuous: has been preparing.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "While the teacher ____ the lesson, two students were chatting.",
+   "options": [
+    "explained",
+    "has explained",
+    "was explaining",
+    "explains"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two simultaneous past actions in progress take the past continuous in both clauses: was explaining / were chatting.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I ____ you last week, but you were out.",
+   "options": [
+    "have called",
+    "called",
+    "am calling",
+    "call"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Last week' is a finished time, so the simple past is required: called.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The earthquake occurred while the villagers ____.",
+   "options": [
+    "were sleeping",
+    "had slept",
+    "have slept",
+    "sleep"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'While' with a past action in progress takes the past continuous: were sleeping.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I will phone you after the meeting ____.",
+   "options": [
+    "will end",
+    "would end",
+    "is ending",
+    "ends"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In an 'after' time clause the future is shown by the simple present: ends.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It is high time you ____ preparing for the exam.",
+   "options": [
+    "start",
+    "will start",
+    "started",
+    "are starting"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'It is (high) time + subject' is followed by the simple past (unreal present urgency): started.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ravi is not at home; he ____ to the market.",
+   "options": [
+    "has been",
+    "has gone",
+    "had been",
+    "was"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Has gone' means he is still there; 'has been' means he went and came back. He is not at home, so: has gone.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "My cousin ____ in Dubai for five years now.",
+   "options": [
+    "has been working",
+    "was working",
+    "will work",
+    "worked"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'For five years now' shows an activity continuing up to the present: present perfect continuous, has been working.",
+   "subPattern": "tenses",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which sentence is correct?",
+   "options": [
+    "I have seen him yesterday.",
+    "I have been seeing him yesterday.",
+    "I had seen him yesterday.",
+    "I saw him yesterday."
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A definite finished time (yesterday) cannot be used with the present perfect; use the simple past: saw.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "By the time you read this letter, I ____ for Mumbai.",
+   "options": [
+    "will leave",
+    "have left",
+    "will have left",
+    "would leave"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'By the time' + a future moment shows completion before it: future perfect, will have left.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "This is the first time I ____ a motorbike.",
+   "options": [
+    "rode",
+    "have ridden",
+    "am riding",
+    "had ridden"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'This is the first time' takes the present perfect: have ridden.",
+   "shortcut": "This is the first time + present perfect.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ____ the exam three times before he finally passed it.",
+   "options": [
+    "had failed",
+    "has failed",
+    "fails",
+    "will fail"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The failures happened before the later past event (passed), so the past perfect is used: had failed.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "By next April, Mrs Iyer ____ in this school for twenty years.",
+   "options": [
+    "will be teaching",
+    "has taught",
+    "had been teaching",
+    "will have been teaching"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'By + future time' with duration ('for twenty years') takes the future perfect continuous: will have been teaching.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Since the project began, the team ____ three major problems.",
+   "options": [
+    "faced",
+    "is facing",
+    "has faced",
+    "faces"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Since + past event' with an unfinished period up to now takes the present perfect: has faced.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She ____ the piano for years, so she plays very well.",
+   "options": [
+    "is playing",
+    "has been playing",
+    "plays",
+    "will play"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A long activity continuing up to now, with 'for years', takes the present perfect continuous: has been playing.",
+   "subPattern": "tenses",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

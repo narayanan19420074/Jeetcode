@@ -1,0 +1,1115 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Statements: Some engines are stones. Some engines are soaps. No spoons are soaps.\nConclusions:\nI. No soaps are spoons.\nII. Some engines are not spoons.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No soaps are spoons follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some engines are not spoons follows: Some engines are soaps + No soaps are spoons => Some engines are not spoons.\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All bridges are kites. Some mats are bridges. Some parks are not mats.\nConclusions:\nI. All kites are parks.\nII. Some kites are bridges.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All kites are parks does not follow: in a diagram where only these regions are occupied: an item that belongs to kites and bridges and mats, not to parks; an item that belongs to parks only, not to kites or bridges or mats, the statements hold but this fails.\nII. Some kites are bridges follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some forks are combs. All pens are teachers. Some combs are not pens.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some pens are forks",
+    "Some combs are forks",
+    "Some teachers are combs",
+    "No forks are teachers"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Some combs are forks follows: it holds in every diagram that fits the statements (checked region by region).\nSome pens are forks fails: in a diagram where only this region is occupied: an item that belongs to forks and combs, not to pens or teachers, the statements hold but this is false.\nSome teachers are combs fails: in a diagram where only this region is occupied: an item that belongs to forks and combs, not to pens or teachers, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some banks are ponds. All ponds are laptops. No bricks are laptops.\nConclusions:\nI. Some ponds are laptops.\nII. Some ponds are not bricks.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some ponds are laptops follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some ponds are not bricks follows: it holds in every diagram that fits the statements (checked region by region).\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some canals are buses. Some canals are not seats. Some buses are brushes.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some buses are not seats",
+    "All brushes are seats",
+    "No seats are canals",
+    "Some buses are canals"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some buses are canals follows: it holds in every diagram that fits the statements (checked region by region).\nSome buses are not seats fails: in a diagram where only these regions are occupied: an item that belongs to canals only, not to brushes or buses or seats; an item that belongs to brushes and buses and canals and seats, the statements hold but this is false.\nAll brushes are seats fails: in a diagram where only this region is occupied: an item that belongs to brushes and buses and canals, not to seats, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No locks are ponds. Some rings are not ponds. No rings are leaves.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "No ponds are locks",
+    "All rings are ponds",
+    "All leaves are rings",
+    "All leaves are ponds"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No ponds are locks follows: it holds in every diagram that fits the statements (checked region by region).\nAll rings are ponds fails: in a diagram where only this region is occupied: an item that belongs to rings only, not to locks or ponds or leaves, the statements hold but this is false.\nAll leaves are rings fails: in a diagram where only these regions are occupied: an item that belongs to rings only, not to locks or ponds or leaves; an item that belongs to leaves only, not to locks or ponds or rings, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No blankets are clocks. Some clocks are rivers. Some mangoes are blankets.\nConclusions:\nI. Some clocks are mangoes.\nII. Some rivers are not blankets.\nIII. No clocks are blankets.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. Some clocks are mangoes does not follow: in a diagram where only these regions are occupied: an item that belongs to rivers and clocks, not to blankets or mangoes; an item that belongs to blankets and mangoes, not to rivers or clocks, the statements hold but this fails.\nII. Some rivers are not blankets follows: Some rivers are clocks + No clocks are blankets => Some rivers are not blankets.\nIII. No clocks are blankets follows: it holds in every diagram that fits the statements (checked region by region).\nCount of conclusions that follow: 2. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No chains are trains. Some ponds are potatoes. Some ponds are not chains.\nConclusions:\nI. Some potatoes are ponds.\nII. Some chains are ponds.\nIII. Some trains are chains.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. Some potatoes are ponds follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some chains are ponds does not follow: in a diagram where only this region is occupied: an item that belongs to potatoes and ponds, not to chains or trains, the statements hold but this fails.\nIII. Some trains are chains does not follow: in a diagram where only this region is occupied: an item that belongs to potatoes and ponds, not to chains or trains, the statements hold but this fails.\nCount of conclusions that follow: 1. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some locks are teachers. No sarees are teachers. Some tunnels are sarees.\nConclusions:\nI. All tunnels are sarees.\nII. Some tunnels are not teachers.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tunnels are sarees does not follow: in a diagram where only these regions are occupied: an item that belongs to tunnels and sarees, not to teachers or locks; an item that belongs to tunnels and teachers and locks, not to sarees, the statements hold but this fails.\nII. Some tunnels are not teachers follows: Some tunnels are sarees + No sarees are teachers => Some tunnels are not teachers.\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some tractors are not laptops. Some laptops are not chains. Some chains are onions.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some chains are not laptops",
+    "Some tractors are not onions",
+    "All chains are laptops",
+    "Some onions are chains"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some onions are chains follows: it holds in every diagram that fits the statements (checked region by region).\nSome chains are not laptops fails: in a diagram where only these regions are occupied: an item that belongs to tractors only, not to laptops or chains or onions; an item that belongs to laptops only, not to tractors or chains or onions; an item that belongs to laptops and chains and onions, not to tractors, the statements hold but this is false.\nSome tractors are not onions fails: in a diagram where only these regions are occupied: an item that belongs to laptops only, not to tractors or chains or onions; an item that belongs to tractors and chains and onions, not to laptops, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No hills are bricks. No mirrors are hills. All cups are mirrors.\nConclusions:\nI. No cups are hills.\nII. No hills are cups.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No cups are hills follows: All cups are mirrors + No mirrors are hills => No cups are hills.\nII. No hills are cups follows: it holds in every diagram that fits the statements (checked region by region).\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "All + No gives No (A in B, B outside C, so A outside C).",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No bats are apples. No clouds are bats. No apples are schools.\nConclusions:\nI. No schools are apples.\nII. All apples are bats.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No schools are apples follows: it holds in every diagram that fits the statements (checked region by region).\nII. All apples are bats does not follow: in a diagram where only this region is occupied: an item that belongs to apples only, not to clouds or bats or schools, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No trucks are temples. Some sweets are not trucks. Some temples are markets.\nConclusions:\nI. Some trucks are not sweets.\nII. No trucks are markets.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some trucks are not sweets does not follow: in a diagram where only this region is occupied: an item that belongs to sweets and temples and markets, not to trucks, the statements hold but this fails.\nII. No trucks are markets does not follow: in a diagram where only these regions are occupied: an item that belongs to trucks and markets, not to sweets or temples; an item that belongs to sweets and temples and markets, not to trucks, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All trees are fans. Some fans are rivers. Some signals are trees.\nConclusions:\nI. Some fans are not trees.\nII. No trees are rivers.\nIII. Some trees are fans.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. Some fans are not trees does not follow: in a diagram where only this region is occupied: an item that belongs to rivers and fans and trees and signals, the statements hold but this fails.\nII. No trees are rivers does not follow: in a diagram where only this region is occupied: an item that belongs to rivers and fans and trees and signals, the statements hold but this fails.\nIII. Some trees are fans follows: it holds in every diagram that fits the statements (checked region by region).\nCount of conclusions that follow: 1. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No flowers are bridges. Some ships are not flowers. Some temples are bridges.\nConclusions:\nI. All ships are bridges.\nII. No bridges are flowers.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All ships are bridges does not follow: in a diagram where only these regions are occupied: an item that belongs to ships only, not to flowers or bridges or temples; an item that belongs to bridges and temples, not to ships or flowers, the statements hold but this fails.\nII. No bridges are flowers follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No potatoes are erasers. No signals are erasers. Some letters are not signals.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "All signals are letters",
+    "All signals are potatoes",
+    "Some potatoes are not erasers",
+    "No erasers are signals"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "No erasers are signals follows: it holds in every diagram that fits the statements (checked region by region).\nAll signals are letters fails: in a diagram where only these regions are occupied: an item that belongs to signals only, not to potatoes or erasers or letters; an item that belongs to letters only, not to potatoes or erasers or signals, the statements hold but this is false.\nAll signals are potatoes fails: in a diagram where only these regions are occupied: an item that belongs to signals only, not to potatoes or erasers or letters; an item that belongs to letters only, not to potatoes or erasers or signals, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some keys are not horns. Some seats are blankets. No seats are horns.\nConclusions:\nI. Some seats are not horns.\nII. Some horns are keys.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some seats are not horns follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some horns are keys does not follow: in a diagram where only this region is occupied: an item that belongs to keys and seats and blankets, not to horns, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All knives are roofs. Some letters are carrots. Some roofs are not carrots.\nConclusions:\nI. All roofs are letters.\nII. No knives are roofs.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All roofs are letters does not follow: in a diagram where only these regions are occupied: an item that belongs to letters and carrots, not to roofs or knives; an item that belongs to roofs only, not to letters or carrots or knives, the statements hold but this fails.\nII. No knives are roofs does not follow: in a diagram where only these regions are occupied: an item that belongs to letters and carrots, not to roofs or knives; an item that belongs to roofs and knives, not to letters or carrots, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some cycles are windows. All sweets are canals. All cycles are sweets.\nConclusions:\nI. Some cycles are canals.\nII. Some cycles are sweets.\nIII. Some canals are windows.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Some cycles are canals follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some cycles are sweets follows: it holds in every diagram that fits the statements (checked region by region).\nIII. Some canals are windows follows: it holds in every diagram that fits the statements (checked region by region).\nCount of conclusions that follow: 3. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some apples are parks. Some apples are wheels. No cycles are wheels.\nConclusions:\nI. No wheels are parks.\nII. Some apples are not cycles.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No wheels are parks does not follow: in a diagram where only this region is occupied: an item that belongs to wheels and apples and parks, not to cycles, the statements hold but this fails.\nII. Some apples are not cycles follows: Some apples are wheels + No wheels are cycles => Some apples are not cycles.\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All planets are signals. All folders are hills. Some folders are planets.\nConclusions:\nI. Some hills are folders.\nII. No folders are signals.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some hills are folders follows: it holds in every diagram that fits the statements (checked region by region).\nII. No folders are signals does not follow: in a diagram where only this region is occupied: an item that belongs to signals and planets and folders and hills, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some buses are not files. Some files are kites. No nuts are buses.\nConclusions:\nI. All nuts are buses.\nII. All files are buses.\nIII. Some kites are nuts.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All nuts are buses does not follow: in a diagram where only these regions are occupied: an item that belongs to buses only, not to nuts or files or kites; an item that belongs to nuts and files and kites, not to buses, the statements hold but this fails.\nII. All files are buses does not follow: in a diagram where only these regions are occupied: an item that belongs to buses only, not to nuts or files or kites; an item that belongs to files and kites, not to nuts or buses, the statements hold but this fails.\nIII. Some kites are nuts does not follow: in a diagram where only these regions are occupied: an item that belongs to buses only, not to nuts or files or kites; an item that belongs to files and kites, not to nuts or buses, the statements hold but this fails.\nCount of conclusions that follow: 0. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All blankets are carrots. Some tents are blankets. No tents are fans.\nConclusions:\nI. Some blankets are tents.\nII. Some tents are carrots.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some blankets are tents follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some tents are carrots follows: Some tents are blankets + All blankets are carrots => Some tents are carrots.\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No watches are flowers. No carrots are flowers. Some carrots are mirrors.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some flowers are mirrors",
+    "Some mirrors are watches",
+    "All flowers are watches",
+    "Some mirrors are not flowers"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Some mirrors are not flowers follows: Some mirrors are carrots + No carrots are flowers => Some mirrors are not flowers.\nSome flowers are mirrors fails: in a diagram where only this region is occupied: an item that belongs to carrots and mirrors, not to watches or flowers, the statements hold but this is false.\nSome mirrors are watches fails: in a diagram where only this region is occupied: an item that belongs to carrots and mirrors, not to watches or flowers, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No bricks are cycles. Some rivers are bricks. No chairs are rivers.\nConclusions:\nI. All rivers are bricks.\nII. Some bricks are rivers.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All rivers are bricks does not follow: in a diagram where only these regions are occupied: an item that belongs to rivers only, not to chairs or bricks or cycles; an item that belongs to rivers and bricks, not to chairs or cycles, the statements hold but this fails.\nII. Some bricks are rivers follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All shoes are chains. No locks are shoes. No locks are coins.\nConclusions:\nI. All locks are chains.\nII. Some coins are locks.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All locks are chains does not follow: in a diagram where only this region is occupied: an item that belongs to locks only, not to coins or shoes or chains, the statements hold but this fails.\nII. Some coins are locks does not follow: in a diagram where only this region is occupied: an item that belongs to coins only, not to locks or shoes or chains, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All cards are chairs. All cards are phones. Some phones are not pencils.\nConclusions:\nI. All chairs are cards.\nII. All phones are pencils.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All chairs are cards does not follow: in a diagram where only this region is occupied: an item that belongs to chairs and phones, not to cards or pencils, the statements hold but this fails.\nII. All phones are pencils does not follow: in a diagram where only this region is occupied: an item that belongs to phones only, not to chairs or cards or pencils, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No jugs are files. No jugs are tunnels. Some tunnels are not wheels.\nConclusions:\nI. No jugs are wheels.\nII. Some wheels are not jugs.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No jugs are wheels does not follow: in a diagram where only these regions are occupied: an item that belongs to tunnels only, not to files or jugs or wheels; an item that belongs to jugs and wheels, not to files or tunnels, the statements hold but this fails.\nII. Some wheels are not jugs does not follow: in a diagram where only this region is occupied: an item that belongs to tunnels only, not to files or jugs or wheels, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All balls are chairs. Some canals are not chairs. No canals are bricks.\nConclusions:\nI. Some canals are not bricks.\nII. No bricks are canals.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some canals are not bricks follows: it holds in every diagram that fits the statements (checked region by region).\nII. No bricks are canals follows: it holds in every diagram that fits the statements (checked region by region).\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some carrots are cards. Some carrots are not grapes. Some parks are grapes.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some cards are carrots",
+    "Some cards are parks",
+    "All cards are parks",
+    "All parks are carrots"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some cards are carrots follows: it holds in every diagram that fits the statements (checked region by region).\nSome cards are parks fails: in a diagram where only these regions are occupied: an item that belongs to cards and carrots, not to grapes or parks; an item that belongs to grapes and parks, not to cards or carrots, the statements hold but this is false.\nAll cards are parks fails: in a diagram where only these regions are occupied: an item that belongs to cards and carrots, not to grapes or parks; an item that belongs to grapes and parks, not to cards or carrots, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some pans are blankets. Some wheels are blankets. No wheels are watches.\nConclusions:\nI. Some blankets are wheels.\nII. All wheels are pans.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some blankets are wheels follows: it holds in every diagram that fits the statements (checked region by region).\nII. All wheels are pans does not follow: in a diagram where only these regions are occupied: an item that belongs to pans and blankets, not to wheels or watches; an item that belongs to blankets and wheels, not to pans or watches, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No signals are diaries. Some wheels are diaries. All bags are signals.\nConclusions:\nI. No wheels are signals.\nII. All bags are wheels.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No wheels are signals does not follow: in a diagram where only these regions are occupied: an item that belongs to signals and wheels, not to bags or diaries; an item that belongs to diaries and wheels, not to bags or signals, the statements hold but this fails.\nII. All bags are wheels does not follow: in a diagram where only these regions are occupied: an item that belongs to bags and signals, not to diaries or wheels; an item that belongs to diaries and wheels, not to bags or signals, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some shoes are teachers. No stamps are shoes. Some stamps are mats.\nConclusions:\nI. All teachers are shoes.\nII. Some teachers are not stamps.\nIII. Some stamps are not shoes.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. All teachers are shoes does not follow: in a diagram where only these regions are occupied: an item that belongs to teachers and shoes, not to stamps or mats; an item that belongs to teachers and stamps and mats, not to shoes, the statements hold but this fails.\nII. Some teachers are not stamps follows: Some teachers are shoes + No shoes are stamps => Some teachers are not stamps.\nIII. Some stamps are not shoes follows: it holds in every diagram that fits the statements (checked region by region).\nCount of conclusions that follow: 2. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some watches are tables. No engines are watches. Some tables are mirrors.\nConclusions:\nI. All tables are mirrors.\nII. Some watches are not engines.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All tables are mirrors does not follow: in a diagram where only these regions are occupied: an item that belongs to watches and tables, not to engines or mirrors; an item that belongs to tables and mirrors, not to engines or watches, the statements hold but this fails.\nII. Some watches are not engines follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some bridges are tables. No lamps are mangoes. No bridges are lamps.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "No bridges are mangoes",
+    "Some mangoes are bridges",
+    "Some tables are bridges",
+    "Some mangoes are not tables"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some tables are bridges follows: it holds in every diagram that fits the statements (checked region by region).\nNo bridges are mangoes fails: in a diagram where only this region is occupied: an item that belongs to mangoes and bridges and tables, not to lamps, the statements hold but this is false.\nSome mangoes are bridges fails: in a diagram where only this region is occupied: an item that belongs to bridges and tables, not to mangoes or lamps, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some banks are clocks. All banks are lamps. No lamps are spoons.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "No spoons are banks",
+    "No clocks are spoons",
+    "No clocks are lamps",
+    "All clocks are spoons"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "No spoons are banks follows: it holds in every diagram that fits the statements (checked region by region).\nNo clocks are spoons fails: in a diagram where only these regions are occupied: an item that belongs to clocks and banks and lamps, not to spoons; an item that belongs to clocks and spoons, not to banks or lamps, the statements hold but this is false.\nNo clocks are lamps fails: in a diagram where only this region is occupied: an item that belongs to clocks and banks and lamps, not to spoons, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some stars are not roads. All stars are blankets. Some blankets are ponds.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "All roads are stars",
+    "Some stars are ponds",
+    "Some blankets are stars",
+    "Some stars are roads"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Some blankets are stars follows: it holds in every diagram that fits the statements (checked region by region).\nAll roads are stars fails: in a diagram where only these regions are occupied: an item that belongs to stars and blankets, not to roads or ponds; an item that belongs to roads and blankets and ponds, not to stars, the statements hold but this is false.\nSome stars are ponds fails: in a diagram where only these regions are occupied: an item that belongs to stars and blankets, not to roads or ponds; an item that belongs to blankets and ponds, not to roads or stars, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All ladders are bats. No boxes are wells. Some ladders are boxes.\nConclusions:\nI. Some wells are not ladders.\nII. No boxes are ladders.\nIII. All wells are ladders.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some wells are not ladders does not follow: in a diagram where only this region is occupied: an item that belongs to bats and ladders and boxes, not to wells, the statements hold but this fails.\nII. No boxes are ladders does not follow: in a diagram where only this region is occupied: an item that belongs to bats and ladders and boxes, not to wells, the statements hold but this fails.\nIII. All wells are ladders does not follow: in a diagram where only these regions are occupied: an item that belongs to bats and ladders and boxes, not to wells; an item that belongs to wells only, not to bats or ladders or boxes, the statements hold but this fails.\nCount of conclusions that follow: 0. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some banks are diaries. Some diaries are watches. Some ladders are watches.\nConclusions:\nI. Some watches are ladders.\nII. No watches are banks.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some watches are ladders follows: it holds in every diagram that fits the statements (checked region by region).\nII. No watches are banks does not follow: in a diagram where only this region is occupied: an item that belongs to ladders and watches and diaries and banks, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some flowers are not leaves. Some cards are not tyres. All flowers are tyres.\nConclusions:\nI. All cards are leaves.\nII. Some tyres are flowers.\nIII. Some flowers are leaves.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. All cards are leaves does not follow: in a diagram where only these regions are occupied: an item that belongs to flowers and tyres, not to leaves or cards; an item that belongs to cards only, not to leaves or flowers or tyres, the statements hold but this fails.\nII. Some tyres are flowers follows: it holds in every diagram that fits the statements (checked region by region).\nIII. Some flowers are leaves does not follow: in a diagram where only these regions are occupied: an item that belongs to flowers and tyres, not to leaves or cards; an item that belongs to cards only, not to leaves or flowers or tyres, the statements hold but this fails.\nCount of conclusions that follow: 1. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No wells are mangoes. No rockets are wells. Some boxes are rockets.\nConclusions:\nI. Some wells are not rockets.\nII. Some rockets are boxes.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some wells are not rockets does not follow: in a diagram where only this region is occupied: an item that belongs to rockets and boxes, not to mangoes or wells, the statements hold but this fails.\nII. Some rockets are boxes follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All belts are keys. Some seeds are mirrors. All seeds are keys.\nConclusions:\nI. Some mirrors are seeds.\nII. Some keys are seeds.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some mirrors are seeds follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some keys are seeds follows: it holds in every diagram that fits the statements (checked region by region).\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some laptops are carrots. All carrots are belts. All belts are banks.\nConclusions:\nI. Some laptops are banks.\nII. Some laptops are belts.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some laptops are banks follows: All carrots are belts + All belts are banks => All carrots are banks; Some laptops are carrots + All carrots are banks => Some laptops are banks.\nII. Some laptops are belts follows: Some laptops are carrots + All carrots are belts => Some laptops are belts.\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some pens are tyres. No pens are mats. All folders are mats.\nConclusions:\nI. Some pens are not folders.\nII. No mats are pens.\nIII. Some tyres are not folders.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "I. Some pens are not folders follows: it holds in every diagram that fits the statements (checked region by region).\nII. No mats are pens follows: it holds in every diagram that fits the statements (checked region by region).\nIII. Some tyres are not folders follows: Some tyres are pens + No pens are folders => Some tyres are not folders.\nCount of conclusions that follow: 3. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All tables are birds. All pillows are tables. Some onions are pillows.\nConclusions:\nI. Some pillows are onions.\nII. Some tables are pillows.\nIII. Some birds are not onions.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. Some pillows are onions follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some tables are pillows follows: it holds in every diagram that fits the statements (checked region by region).\nIII. Some birds are not onions does not follow: in a diagram where only this region is occupied: an item that belongs to onions and pillows and tables and birds, the statements hold but this fails.\nCount of conclusions that follow: 2. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some trains are not bags. All trains are wells. Some wells are banks.\nConclusions:\nI. Some wells are not bags.\nII. Some trains are wells.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some wells are not bags follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some trains are wells follows: it holds in every diagram that fits the statements (checked region by region).\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All walls are bricks. All shops are bricks. All seeds are shops.\nConclusions:\nI. No seeds are walls.\nII. Some bricks are not seeds.\nWhich of the following is correct?",
+   "options": [
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No seeds are walls does not follow: in a diagram where only this region is occupied: an item that belongs to walls and bricks and shops and seeds, the statements hold but this fails.\nII. Some bricks are not seeds does not follow: in a diagram where only this region is occupied: an item that belongs to bricks and shops and seeds, not to walls, the statements hold but this fails.\nSo neither conclusion holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some chairs are not gardens. All chairs are mirrors. Some mirrors are sarees.\nConclusions:\nI. Some sarees are mirrors.\nII. No chairs are gardens.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some sarees are mirrors follows: it holds in every diagram that fits the statements (checked region by region).\nII. No chairs are gardens does not follow: in a diagram where only these regions are occupied: an item that belongs to gardens and chairs and mirrors, not to sarees; an item that belongs to chairs and mirrors and sarees, not to gardens, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some signals are books. All books are erasers. All erasers are wheels.\nConclusions:\nI. Some books are wheels.\nII. Some signals are erasers.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion I follows",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some books are wheels follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some signals are erasers follows: Some signals are books + All books are erasers => Some signals are erasers.\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + All gives Some.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some potatoes are plates. No tractors are plates. Some tractors are not ladders.\nConclusions:\nI. Some plates are not tractors.\nII. All plates are tractors.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some plates are not tractors follows: it holds in every diagram that fits the statements (checked region by region).\nII. All plates are tractors does not follow: in a diagram where only these regions are occupied: an item that belongs to potatoes and plates, not to tractors or ladders; an item that belongs to tractors only, not to potatoes or plates or ladders, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some phones are locks. No rockets are drums. No rockets are locks.\nConclusions:\nI. Some locks are not rockets.\nII. No drums are rockets.\nWhich of the following is correct?",
+   "options": [
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows",
+    "Only conclusion II follows",
+    "Only conclusion I follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some locks are not rockets follows: it holds in every diagram that fits the statements (checked region by region).\nII. No drums are rockets follows: it holds in every diagram that fits the statements (checked region by region).\nSo both conclusions hold.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some clouds are walls. Some jugs are engines. No engines are walls.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some engines are walls",
+    "All walls are engines",
+    "No walls are engines",
+    "Some clouds are not walls"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "No walls are engines follows: it holds in every diagram that fits the statements (checked region by region).\nSome engines are walls fails: in a diagram where only these regions are occupied: an item that belongs to clouds and walls, not to engines or jugs; an item that belongs to engines and jugs, not to clouds or walls, the statements hold but this is false.\nAll walls are engines fails: in a diagram where only these regions are occupied: an item that belongs to clouds and walls, not to engines or jugs; an item that belongs to engines and jugs, not to clouds or walls, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some ponds are not gardens. Some bulbs are sweets. No ponds are sweets.\nConclusions:\nI. Some gardens are sweets.\nII. No sweets are ponds.\nIII. Some sweets are not ponds.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "I. Some gardens are sweets does not follow: in a diagram where only these regions are occupied: an item that belongs to bulbs and sweets, not to ponds or gardens; an item that belongs to ponds only, not to bulbs or sweets or gardens, the statements hold but this fails.\nII. No sweets are ponds follows: it holds in every diagram that fits the statements (checked region by region).\nIII. Some sweets are not ponds follows: it holds in every diagram that fits the statements (checked region by region).\nCount of conclusions that follow: 2. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All biscuits are roads. Some peas are not roads. All boxes are peas.\nConclusions:\nI. Some biscuits are peas.\nII. Some boxes are biscuits.\nIII. Some peas are not biscuits.\nHow many of the conclusions definitely follow?",
+   "options": [
+    "None of them",
+    "Only one",
+    "Only two",
+    "All three"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "I. Some biscuits are peas does not follow: in a diagram where only this region is occupied: an item that belongs to peas only, not to biscuits or roads or boxes, the statements hold but this fails.\nII. Some boxes are biscuits does not follow: in a diagram where only this region is occupied: an item that belongs to peas only, not to biscuits or roads or boxes, the statements hold but this fails.\nIII. Some peas are not biscuits follows: Some peas are not roads + All biscuits are roads => Some peas are not biscuits.\nCount of conclusions that follow: 1. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No fans are carpets. Some carpets are trains. Some towels are trains.\nConclusions:\nI. Some trains are carpets.\nII. All fans are carpets.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some trains are carpets follows: it holds in every diagram that fits the statements (checked region by region).\nII. All fans are carpets does not follow: in a diagram where only these regions are occupied: an item that belongs to carpets and trains, not to fans or towels; an item that belongs to fans and trains and towels, not to carpets, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No ladders are markets. No ladders are horns. Some tractors are horns.\nConclusions:\nI. All horns are markets.\nII. Some horns are tractors.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Only conclusion I follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. All horns are markets does not follow: in a diagram where only this region is occupied: an item that belongs to horns and tractors, not to markets or ladders, the statements hold but this fails.\nII. Some horns are tractors follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: No curtains are clocks. Some sarees are clocks. Some sarees are not roofs.\nWhich of the following conclusions definitely follows from the given statements?",
+   "options": [
+    "Some clocks are sarees",
+    "All roofs are sarees",
+    "Some curtains are not roofs",
+    "No roofs are curtains"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Some clocks are sarees follows: it holds in every diagram that fits the statements (checked region by region).\nAll roofs are sarees fails: in a diagram where only these regions are occupied: an item that belongs to roofs only, not to sarees or clocks or curtains; an item that belongs to sarees and clocks, not to roofs or curtains, the statements hold but this is false.\nSome curtains are not roofs fails: in a diagram where only this region is occupied: an item that belongs to sarees and clocks, not to roofs or curtains, the statements hold but this is false.\nThe remaining option fails in a similar way. Convention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All biscuits are markets. Some plates are markets. No plates are phones.\nConclusions:\nI. Some markets are not phones.\nII. Some phones are not markets.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some markets are not phones follows: Some markets are plates + No plates are phones => Some markets are not phones.\nII. Some phones are not markets does not follow: in a diagram where only this region is occupied: an item that belongs to markets and plates, not to biscuits or phones, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Some + No gives Some-not.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: Some poles are seats. All poles are trees. No coins are trees.\nConclusions:\nI. No poles are seats.\nII. Some trees are seats.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. No poles are seats does not follow: in a diagram where only this region is occupied: an item that belongs to seats and poles and trees, not to coins, the statements hold but this fails.\nII. Some trees are seats follows: it holds in every diagram that fits the statements (checked region by region).\nSo only conclusion II holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Statements: All towels are parks. All soaps are parks. Some soaps are not magnets.\nConclusions:\nI. Some parks are not magnets.\nII. Some parks are not towels.\nWhich of the following is correct?",
+   "options": [
+    "Only conclusion I follows",
+    "Neither conclusion I nor II follows",
+    "Both conclusions I and II follow",
+    "Only conclusion II follows"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "I. Some parks are not magnets follows: it holds in every diagram that fits the statements (checked region by region).\nII. Some parks are not towels does not follow: in a diagram where only this region is occupied: an item that belongs to towels and parks and soaps, not to magnets, the statements hold but this fails.\nSo only conclusion I holds.\nConvention used: a conclusion 'definitely follows' only if it is true in every Venn diagram that fits the statements; 'Some' means at least one; a statement without 'Some' does not by itself guarantee that a group has any member.",
+   "shortcut": "Quick rules: All+All=All; All+No=No; Some+All=Some; Some+No=Some-not; Some+Some and No+No give nothing; All+Some gives nothing.",
+   "subPattern": "three-statement-syllogisms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

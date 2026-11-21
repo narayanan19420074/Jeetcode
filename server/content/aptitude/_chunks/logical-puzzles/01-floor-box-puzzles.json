@@ -1,0 +1,786 @@
+{
+ "sets": [
+  {
+   "id": "logical-puzzles-s001",
+   "type": "text",
+   "title": "Puzzle 1: 4 friends in a 4-storey building",
+   "text": "4 friends (Rajesh, Naveen, Tarun, Ishita) live in a 4-storey building, one person on each floor. Floors are numbered 1 (lowest) to 4 (top). Conditions:\n1. Tarun lives on a higher floor than Rajesh.\n2. Ishita lives on the floor immediately above Naveen.\n3. Naveen lives on the floor immediately above Rajesh."
+  },
+  {
+   "id": "logical-puzzles-s002",
+   "type": "text",
+   "title": "Puzzle 2: 4 friends in a 4-storey building",
+   "text": "4 friends (Kavya, Ishita, Charan, Nisha) live in a 4-storey building, one person on each floor. Floors are numbered 1 (lowest) to 4 (top). Conditions:\n1. Charan lives on floor 2.\n2. Nisha lives on the floor immediately above Ishita."
+  },
+  {
+   "id": "logical-puzzles-s003",
+   "type": "text",
+   "title": "Puzzle 3: Stack of 4 coloured boxes",
+   "text": "4 boxes of different colours (Red, Blue, White, Yellow) are stacked one above the other. Positions are counted from the bottom (position 1 is the lowest). Conditions:\n1. The Blue box is placed somewhere above the Yellow box.\n2. The White box is at position 3 from the bottom.\n3. The White box is placed directly on top of the Blue box."
+  },
+  {
+   "id": "logical-puzzles-s004",
+   "type": "text",
+   "title": "Puzzle 4: Stack of 5 coloured boxes",
+   "text": "5 boxes of different colours (Pink, Black, Yellow, Green, White) are stacked one above the other. Positions are counted from the bottom (position 1 is the lowest). Conditions:\n1. The Yellow box and the Black box are placed next to each other in the stack.\n2. The White box and the Green box are placed next to each other in the stack.\n3. The Black box and the Green box are placed next to each other in the stack.\n4. The Pink box is not at the bottom of the stack.\n5. The Yellow box is placed somewhere above the White box."
+  },
+  {
+   "id": "logical-puzzles-s005",
+   "type": "text",
+   "title": "Puzzle 5: 5 friends in a 5-storey building",
+   "text": "5 friends (Hema, Jagan, Suresh, Kavya, Karthik) live in a 5-storey building, one person on each floor. Floors are numbered 1 (lowest) to 5 (top). Conditions:\n1. Kavya lives on the floor immediately above Hema.\n2. Suresh lives on floor 4 or floor 1.\n3. Karthik does not live on floor 3.\n4. Karthik lives on the floor immediately above Jagan."
+  },
+  {
+   "id": "logical-puzzles-s006",
+   "type": "text",
+   "title": "Puzzle 6: 5 friends in a 5-storey building",
+   "text": "5 friends (Venkat, Zoya, Kavya, Lakshmi, Bharat) live in a 5-storey building, one person on each floor. Floors are numbered 1 (lowest) to 5 (top). Conditions:\n1. Exactly 3 floors separate the floors of Zoya and Bharat.\n2. Bharat and Kavya live on adjacent floors.\n3. Bharat does not live on floor 1.\n4. Venkat does not live on floor 3."
+  },
+  {
+   "id": "logical-puzzles-s007",
+   "type": "text",
+   "title": "Puzzle 7: 5 friends in a 5-storey building",
+   "text": "5 friends (Meera, Yamini, Chitra, Lakshmi, Prakash) live in a 5-storey building, one person on each floor. Floors are numbered 1 (lowest) to 5 (top). Conditions:\n1. Lakshmi lives on floor 4.\n2. Yamini lives on a higher floor than Meera.\n3. Prakash and Yamini live on adjacent floors.\n4. Prakash and Lakshmi live on adjacent floors."
+  },
+  {
+   "id": "logical-puzzles-s008",
+   "type": "text",
+   "title": "Puzzle 8: 5 friends in a 5-storey building",
+   "text": "5 friends (Jagan, Mohan, Manoj, Priya, Bharat) live in a 5-storey building, one person on each floor. Floors are numbered 1 (lowest) to 5 (top). Conditions:\n1. Manoj and Jagan live on adjacent floors.\n2. Mohan does not live on the top floor.\n3. Bharat lives on an even-numbered floor.\n4. Exactly 3 floors separate the floors of Mohan and Manoj."
+  },
+  {
+   "id": "logical-puzzles-s009",
+   "type": "text",
+   "title": "Puzzle 9: 6 friends in a 6-storey building",
+   "text": "6 friends (Manoj, Sunita, Bharat, Naveen, Karthik, Anitha) live in a 6-storey building, one person on each floor. Floors are numbered 1 (lowest) to 6 (top). Conditions:\n1. Naveen lives on floor 2.\n2. Sunita lives on the floor immediately above Anitha.\n3. Anitha lives on the floor immediately above Naveen.\n4. Manoj and Sunita live on adjacent floors.\n5. Bharat lives on a higher floor than Karthik."
+  },
+  {
+   "id": "logical-puzzles-s010",
+   "type": "text",
+   "title": "Puzzle 10: 6 friends in a 6-storey building",
+   "text": "6 friends (Karthik, Charan, Ishita, Chitra, Gayathri, Venkat) live in a 6-storey building, one person on each floor. Floors are numbered 1 (lowest) to 6 (top). Conditions:\n1. Gayathri lives on the floor immediately above Chitra.\n2. Chitra lives on floor 1.\n3. Charan does not live on the top floor.\n4. Karthik lives on a higher floor than Venkat.\n5. Charan lives on an even-numbered floor.\n6. Charan lives on the floor immediately above Ishita."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Who lives on the topmost floor?",
+   "options": [
+    "Naveen",
+    "Rajesh",
+    "Tarun",
+    "Ishita"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Rajesh; floor 2: Naveen; floor 3: Ishita; floor 4: Tarun. The top is Tarun.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s001"
+  },
+  {
+   "questionText": "Who lives on the lowest floor (floor 1)?",
+   "options": [
+    "Ishita",
+    "Rajesh",
+    "Naveen",
+    "Tarun"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Rajesh; floor 2: Naveen; floor 3: Ishita; floor 4: Tarun. The bottom is Rajesh.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s001"
+  },
+  {
+   "questionText": "On which floor does Naveen live?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Rajesh; floor 2: Naveen; floor 3: Ishita; floor 4: Tarun. Naveen is at floor 2.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s001"
+  },
+  {
+   "questionText": "Who lives on floor 1?",
+   "options": [
+    "Rajesh",
+    "Ishita",
+    "Tarun",
+    "Naveen"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Rajesh; floor 2: Naveen; floor 3: Ishita; floor 4: Tarun. So position 1 is held by Rajesh.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s001"
+  },
+  {
+   "questionText": "Who lives on floor 4?",
+   "options": [
+    "Ishita",
+    "Kavya",
+    "Nisha",
+    "Charan"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Kavya; floor 2: Charan; floor 3: Ishita; floor 4: Nisha. So position 4 is held by Nisha.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s002"
+  },
+  {
+   "questionText": "Who lives on floor 3?",
+   "options": [
+    "Nisha",
+    "Charan",
+    "Kavya",
+    "Ishita"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Kavya; floor 2: Charan; floor 3: Ishita; floor 4: Nisha. So position 3 is held by Ishita.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s002"
+  },
+  {
+   "questionText": "On which floor does Nisha live?",
+   "options": [
+    "3",
+    "1",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Kavya; floor 2: Charan; floor 3: Ishita; floor 4: Nisha. Nisha is at floor 4.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s002"
+  },
+  {
+   "questionText": "In Puzzle 2: Who lives on the lowest floor (floor 1)?",
+   "options": [
+    "Ishita",
+    "Nisha",
+    "Charan",
+    "Kavya"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Kavya; floor 2: Charan; floor 3: Ishita; floor 4: Nisha. The bottom is Kavya.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s002"
+  },
+  {
+   "questionText": "At which position from the bottom is the White box?",
+   "options": [
+    "3",
+    "2",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: Yellow; position 2: Blue; position 3: White; position 4: Red. The White box is at position 3.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s003"
+  },
+  {
+   "questionText": "Which box is at the top of the stack?",
+   "options": [
+    "Red",
+    "White",
+    "Yellow",
+    "Blue"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: Yellow; position 2: Blue; position 3: White; position 4: Red. The top is Red.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s003"
+  },
+  {
+   "questionText": "Which box is at position 1 from the bottom?",
+   "options": [
+    "Yellow",
+    "Blue",
+    "Red",
+    "White"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: Yellow; position 2: Blue; position 3: White; position 4: Red. So position 1 is held by Yellow.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s003"
+  },
+  {
+   "questionText": "Which box is at the bottom of the stack?",
+   "options": [
+    "Blue",
+    "Yellow",
+    "Red",
+    "White"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: Yellow; position 2: Blue; position 3: White; position 4: Red. The bottom is Yellow.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s003"
+  },
+  {
+   "questionText": "Which box is at position 5 from the bottom?",
+   "options": [
+    "Green",
+    "Pink",
+    "Black",
+    "White"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: White; position 2: Green; position 3: Black; position 4: Yellow; position 5: Pink. So position 5 is held by Pink.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s004"
+  },
+  {
+   "questionText": "Which box is directly above the Yellow box?",
+   "options": [
+    "Green",
+    "Black",
+    "White",
+    "Pink"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: White; position 2: Green; position 3: Black; position 4: Yellow; position 5: Pink. Directly above Yellow is Pink.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s004"
+  },
+  {
+   "questionText": "How many boxes are there between the White box and the Black box?",
+   "options": [
+    "3",
+    "0",
+    "4",
+    "1"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: White; position 2: Green; position 3: Black; position 4: Yellow; position 5: Pink. White is at 1 and Black at 3, so 1 lie between them.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s004"
+  },
+  {
+   "questionText": "How many boxes are above the Black box?",
+   "options": [
+    "2",
+    "0",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): position 1: White; position 2: Green; position 3: Black; position 4: Yellow; position 5: Pink. Black is at 3 out of 5, so 2 are above.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s004"
+  },
+  {
+   "questionText": "How many friends live above Jagan?",
+   "options": [
+    "1",
+    "0",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Suresh; floor 2: Hema; floor 3: Kavya; floor 4: Jagan; floor 5: Karthik. Jagan is at 4 out of 5, so 1 are above.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s005"
+  },
+  {
+   "questionText": "On which floor does Suresh live?",
+   "options": [
+    "1",
+    "3",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Suresh; floor 2: Hema; floor 3: Kavya; floor 4: Jagan; floor 5: Karthik. Suresh is at floor 1.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s005"
+  },
+  {
+   "questionText": "Who lives on floor 2?",
+   "options": [
+    "Karthik",
+    "Hema",
+    "Jagan",
+    "Suresh"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Suresh; floor 2: Hema; floor 3: Kavya; floor 4: Jagan; floor 5: Karthik. So position 2 is held by Hema.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s005"
+  },
+  {
+   "questionText": "Who lives on floor 5?",
+   "options": [
+    "Hema",
+    "Jagan",
+    "Kavya",
+    "Karthik"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Suresh; floor 2: Hema; floor 3: Kavya; floor 4: Jagan; floor 5: Karthik. So position 5 is held by Karthik.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s005"
+  },
+  {
+   "questionText": "How many floors lie between the floors of Kavya and Bharat?",
+   "options": [
+    "3",
+    "4",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Zoya; floor 2: Venkat; floor 3: Lakshmi; floor 4: Kavya; floor 5: Bharat. Kavya is at 4 and Bharat at 5, so 0 lie between them.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s006"
+  },
+  {
+   "questionText": "In Puzzle 6: Who lives on floor 4?",
+   "options": [
+    "Venkat",
+    "Kavya",
+    "Lakshmi",
+    "Zoya"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Zoya; floor 2: Venkat; floor 3: Lakshmi; floor 4: Kavya; floor 5: Bharat. So position 4 is held by Kavya.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s006"
+  },
+  {
+   "questionText": "How many friends live above Zoya?",
+   "options": [
+    "1",
+    "0",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Zoya; floor 2: Venkat; floor 3: Lakshmi; floor 4: Kavya; floor 5: Bharat. Zoya is at 1 out of 5, so 4 are above.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s006"
+  },
+  {
+   "questionText": "On which floor does Kavya live?",
+   "options": [
+    "3",
+    "5",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Zoya; floor 2: Venkat; floor 3: Lakshmi; floor 4: Kavya; floor 5: Bharat. Kavya is at floor 4.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s006"
+  },
+  {
+   "questionText": "In Puzzle 7: Who lives on floor 3?",
+   "options": [
+    "Prakash",
+    "Chitra",
+    "Lakshmi",
+    "Yamini"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Meera; floor 2: Yamini; floor 3: Prakash; floor 4: Lakshmi; floor 5: Chitra. So position 3 is held by Prakash.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s007"
+  },
+  {
+   "questionText": "On which floor does Chitra live?",
+   "options": [
+    "2",
+    "4",
+    "3",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Meera; floor 2: Yamini; floor 3: Prakash; floor 4: Lakshmi; floor 5: Chitra. Chitra is at floor 5.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s007"
+  },
+  {
+   "questionText": "Who lives on the floor immediately below Chitra?",
+   "options": [
+    "Lakshmi",
+    "Meera",
+    "Prakash",
+    "Yamini"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Meera; floor 2: Yamini; floor 3: Prakash; floor 4: Lakshmi; floor 5: Chitra. Directly below Chitra is Lakshmi.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s007"
+  },
+  {
+   "questionText": "Who lives on the floor immediately above Yamini?",
+   "options": [
+    "Meera",
+    "Lakshmi",
+    "Chitra",
+    "Prakash"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Meera; floor 2: Yamini; floor 3: Prakash; floor 4: Lakshmi; floor 5: Chitra. Directly above Yamini is Prakash.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s007"
+  },
+  {
+   "questionText": "How many friends live above Priya?",
+   "options": [
+    "2",
+    "0",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Mohan; floor 2: Bharat; floor 3: Priya; floor 4: Jagan; floor 5: Manoj. Priya is at 3 out of 5, so 2 are above.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s008"
+  },
+  {
+   "questionText": "On which floor does Bharat live?",
+   "options": [
+    "3",
+    "5",
+    "4",
+    "2"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Mohan; floor 2: Bharat; floor 3: Priya; floor 4: Jagan; floor 5: Manoj. Bharat is at floor 2.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s008"
+  },
+  {
+   "questionText": "In Puzzle 8: Who lives on floor 3?",
+   "options": [
+    "Mohan",
+    "Manoj",
+    "Bharat",
+    "Priya"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Mohan; floor 2: Bharat; floor 3: Priya; floor 4: Jagan; floor 5: Manoj. So position 3 is held by Priya.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s008"
+  },
+  {
+   "questionText": "How many floors lie between the floors of Mohan and Bharat?",
+   "options": [
+    "3",
+    "1",
+    "0",
+    "2"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Mohan; floor 2: Bharat; floor 3: Priya; floor 4: Jagan; floor 5: Manoj. Mohan is at 1 and Bharat at 2, so 0 lie between them.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s008"
+  },
+  {
+   "questionText": "How many floors lie between the floors of Sunita and Naveen?",
+   "options": [
+    "0",
+    "4",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Karthik; floor 2: Naveen; floor 3: Anitha; floor 4: Sunita; floor 5: Manoj; floor 6: Bharat. Sunita is at 4 and Naveen at 2, so 1 lie between them.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s009"
+  },
+  {
+   "questionText": "Who lives on the floor immediately above Manoj?",
+   "options": [
+    "Naveen",
+    "Karthik",
+    "Bharat",
+    "Sunita"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Karthik; floor 2: Naveen; floor 3: Anitha; floor 4: Sunita; floor 5: Manoj; floor 6: Bharat. Directly above Manoj is Bharat.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s009"
+  },
+  {
+   "questionText": "In Puzzle 9: Who lives on floor 5?",
+   "options": [
+    "Anitha",
+    "Manoj",
+    "Karthik",
+    "Bharat"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Karthik; floor 2: Naveen; floor 3: Anitha; floor 4: Sunita; floor 5: Manoj; floor 6: Bharat. So position 5 is held by Manoj.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s009"
+  },
+  {
+   "questionText": "In Puzzle 9: Who lives on floor 1?",
+   "options": [
+    "Manoj",
+    "Sunita",
+    "Anitha",
+    "Karthik"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Karthik; floor 2: Naveen; floor 3: Anitha; floor 4: Sunita; floor 5: Manoj; floor 6: Bharat. So position 1 is held by Karthik.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s009"
+  },
+  {
+   "questionText": "Who lives on the floor immediately above Venkat?",
+   "options": [
+    "Karthik",
+    "Gayathri",
+    "Chitra",
+    "Ishita"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Chitra; floor 2: Gayathri; floor 3: Ishita; floor 4: Charan; floor 5: Venkat; floor 6: Karthik. Directly above Venkat is Karthik.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s010"
+  },
+  {
+   "questionText": "On which floor does Charan live?",
+   "options": [
+    "3",
+    "6",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Chitra; floor 2: Gayathri; floor 3: Ishita; floor 4: Charan; floor 5: Venkat; floor 6: Karthik. Charan is at floor 4.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s010"
+  },
+  {
+   "questionText": "How many friends live above Charan?",
+   "options": [
+    "4",
+    "0",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Chitra; floor 2: Gayathri; floor 3: Ishita; floor 4: Charan; floor 5: Venkat; floor 6: Karthik. Charan is at 4 out of 6, so 2 are above.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s010"
+  },
+  {
+   "questionText": "Who lives on the floor immediately below Karthik?",
+   "options": [
+    "Ishita",
+    "Gayathri",
+    "Chitra",
+    "Venkat"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combining all the conditions gives a single arrangement (lowest to highest): floor 1: Chitra; floor 2: Gayathri; floor 3: Ishita; floor 4: Charan; floor 5: Venkat; floor 6: Karthik. Directly below Karthik is Venkat.",
+   "subPattern": "floor-box-puzzles",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "logical-puzzles-s010"
+  }
+ ]
+}

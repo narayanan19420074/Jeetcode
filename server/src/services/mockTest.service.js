@@ -1,5 +1,6 @@
 import { AptitudePattern } from '../models/AptitudePattern.js';
 import { AptitudeQuestion } from '../models/AptitudeQuestion.js';
+import { AptitudeSet } from '../models/AptitudeSet.js';
 import { MockAttempt } from '../models/MockAttempt.js';
 import { ApiError } from '../utils/ApiError.js';
 import {
@@ -25,12 +26,18 @@ const shuffled = (arr) => {
 
 const round1 = (n) => Math.round(n * 10) / 10;
 
+// A section can also pull WHOLE shared-stimulus sets (passage, seating
+// conditions, DI table) via `sets: { slugs, questions }`. Those questions count
+// toward `questions`; the rest are stand-alone questions from `slugs`.
+const setQuota = (section) => Math.min(section.sets?.questions ?? 0, section.questions);
+const sectionSlugs = (section) => [...section.slugs, ...(section.sets?.slugs ?? [])];
+
 // ---------------------------------------------------------------------------
 // Hub
 // ---------------------------------------------------------------------------
 
 export async function listMocks(userId, hasProAccess) {
-  const allSlugs = [...new Set(MOCK_PAPERS.flatMap((p) => p.sections.flatMap((s) => s.slugs)))];
+  const allSlugs = [...new Set(MOCK_PAPERS.flatMap((p) => p.sections.flatMap(sectionSlugs)))];
   const patterns = await AptitudePattern.find({ slug: { $in: allSlugs }, isPublished: true }).select('slug totalQuestions').lean();
   const totalBySlug = new Map(patterns.map((p) => [p.slug, p.totalQuestions || 0]));
 
@@ -43,8 +50,9 @@ export async function listMocks(userId, hasProAccess) {
     const mine = attempts.filter((a) => a.paperId === p.id);
     const done = mine.filter((a) => a.status !== 'in-progress');
     const open = mine.find((a) => a.status === 'in-progress');
+    const total = (slugs) => slugs.reduce((sum, slug) => sum + (totalBySlug.get(slug) || 0), 0);
     const available = p.sections.every(
-      (s) => s.slugs.reduce((sum, slug) => sum + (totalBySlug.get(slug) || 0), 0) >= s.questions
+      (s) => total(s.slugs) >= s.questions - setQuota(s) && total(s.sets?.slugs ?? []) >= setQuota(s)
     );
     return {
       id: p.id,
@@ -85,7 +93,7 @@ export async function listMocks(userId, hasProAccess) {
 // Picking questions
 // ---------------------------------------------------------------------------
 
-async function pickSection(section, patternIdBySlug, seen) {
+async function pickStandalone(section, patternIdBySlug, seen) {
   const ids = section.slugs.map((s) => patternIdBySlug.get(s)).filter(Boolean);
   if (ids.length === 0) return [];
 
@@ -146,6 +154,62 @@ async function pickSection(section, patternIdBySlug, seen) {
   return shuffled(picked);
 }
 
+async function pickSets(cfg, quota, patternIdBySlug, seen) {
+  const ids = cfg.slugs.map((s) => patternIdBySlug.get(s)).filter(Boolean);
+  if (ids.length === 0 || quota <= 0) return [];
+
+  const pool = await AptitudeQuestion.find({ pattern: { $in: ids }, isPublished: true, setId: { $ne: null } })
+    .select('_id pattern difficulty setId')
+    .lean();
+
+  const groups = new Map();
+  for (const q of pool) {
+    const key = `${q.pattern}:${q.setId}`;
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(q);
+  }
+
+  // pattern -> queue of whole sets (unseen first) so topics stay balanced
+  const queues = new Map();
+  for (const g of shuffled([...groups.values()])) {
+    const k = String(g[0].pattern);
+    if (!queues.has(k)) queues.set(k, []);
+    queues.get(k).push(g);
+  }
+  for (const [k, arr] of queues) {
+    const isSeen = (g) => g.some((q) => seen.has(String(q._id)));
+    queues.set(k, [...arr.filter((g) => !isSeen(g)), ...arr.filter(isSeen)]);
+  }
+
+  const order = shuffled([...queues.keys()]);
+  const blocks = [];
+  let left = quota;
+  let progressed = true;
+  while (left > 0 && progressed) {
+    progressed = false;
+    for (const k of order) {
+      if (left <= 0) break;
+      const queue = queues.get(k);
+      const at = queue.findIndex((g) => g.length <= left); // a set is never split
+      if (at === -1) continue;
+      const [g] = queue.splice(at, 1);
+      blocks.push(g);
+      left -= g.length;
+      progressed = true;
+    }
+  }
+  return blocks;
+}
+
+// Stand-alone questions are shuffled; every set stays together, in order.
+async function pickSection(section, patternIdBySlug, seen) {
+  const nSets = setQuota(section);
+  const blocks = nSets > 0 ? await pickSets(section.sets, nSets, patternIdBySlug, seen) : [];
+  const nSingle = section.questions - blocks.reduce((sum, b) => sum + b.length, 0);
+  const singles = nSingle > 0 ? await pickStandalone({ ...section, questions: nSingle }, patternIdBySlug, seen) : [];
+  return shuffled([...singles.map((q) => [q]), ...blocks]).flat();
+}
+
 // ---------------------------------------------------------------------------
 // Start / resume
 // ---------------------------------------------------------------------------
@@ -168,7 +232,7 @@ export async function startMock({ userId, paperId, hasProAccess }) {
     }
   }
 
-  const allSlugs = [...new Set(paper.sections.flatMap((s) => s.slugs))];
+  const allSlugs = [...new Set(paper.sections.flatMap(sectionSlugs))];
   const patterns = await AptitudePattern.find({ slug: { $in: allSlugs }, isPublished: true }).select('_id slug').lean();
   const patternIdBySlug = new Map(patterns.map((p) => [p.slug, p._id]));
 
@@ -229,6 +293,19 @@ export async function syncClock(attempt) {
 // Paper for the exam screen (current section only, answer key stripped)
 // ---------------------------------------------------------------------------
 
+// Shared stimuli for the given questions, keyed "<patternId>:<setId>".
+async function loadSets(questions) {
+  const withSet = questions.filter((q) => q.setId);
+  if (withSet.length === 0) return {};
+  const docs = await AptitudeSet.find({
+    pattern: { $in: [...new Set(withSet.map((q) => String(q.pattern)))] },
+    setId: { $in: [...new Set(withSet.map((q) => q.setId))] },
+  }).select('-__v -createdAt -updatedAt').lean();
+  const out = {};
+  for (const d of docs) out[`${d.pattern}:${d.setId}`] = d;
+  return out;
+}
+
 export async function getPaper(attempt) {
   const cur = attempt.currentSection;
   const entries = attempt.answers.filter((a) => a.section === cur);
@@ -236,6 +313,7 @@ export async function getPaper(attempt) {
   const docs = await AptitudeQuestion.find({ _id: { $in: ids } }, AptitudeQuestion.publicProjection()).lean();
   const byId = new Map(docs.map((d) => [String(d._id), d]));
   const questions = ids.map((id) => byId.get(String(id))).filter(Boolean);
+  const sets = await loadSets(questions);
 
   const state = {};
   for (const a of entries) {
@@ -255,6 +333,7 @@ export async function getPaper(attempt) {
     expiresAt: attempt.expiresAt,
     serverNow: new Date().toISOString(),
     questions,
+    sets,
     state,
   };
 }
@@ -359,7 +438,7 @@ export async function buildResult(attempt) {
   const ids = attempt.answers.map((a) => a.question);
   const patternIds = [...new Set(attempt.answers.map((a) => String(a.pattern)))];
   const [qs, patterns] = await Promise.all([
-    AptitudeQuestion.find({ _id: { $in: ids } }).select('questionText options correctOptionIndex explanation shortcut').lean(),
+    AptitudeQuestion.find({ _id: { $in: ids } }).select('questionText options correctOptionIndex explanation shortcut setId pattern').lean(),
     AptitudePattern.find({ _id: { $in: patternIds } }).select('title slug').lean(),
   ]);
   const qById = new Map(qs.map((q) => [String(q._id), q]));
@@ -387,8 +466,10 @@ export async function buildResult(attempt) {
       difficulty: a.difficulty,
       timeSpentSec: a.timeSpentSec || 0,
       topic: p?.title || '',
+      setKey: q?.setId ? `${q.pattern}:${q.setId}` : null,
     };
   });
+  const sets = await loadSets([...qById.values()]);
 
   const topics = [...topicMap.values()]
     .map((t) => ({ ...t, accuracy: Math.round((t.correct / t.total) * 100), avgTimeSec: Math.round(t.timeSec / t.total) }))
@@ -437,6 +518,7 @@ export async function buildResult(attempt) {
     sections,
     topics,
     byDifficulty,
+    sets,
     review,
   };
 }

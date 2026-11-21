@@ -1,0 +1,499 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Find the odd one out among the words. Tiger ; Lion ; Leopard ; Wolf",
+   "options": [
+    "Tiger",
+    "Wolf",
+    "Lion",
+    "Leopard"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tiger, lion and leopard all belong to the cat family (big cats); the wolf is a member of the dog family. Wolf is the odd one out.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Mango ; Banana ; Guava ; Potato",
+   "options": [
+    "Potato",
+    "Mango",
+    "Banana",
+    "Guava"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mango, banana and guava are fruits; potato is an underground tuber used as a vegetable.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Ganga ; Yamuna ; Godavari ; Thar",
+   "options": [
+    "Ganga",
+    "Yamuna",
+    "Godavari",
+    "Thar"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ganga, Yamuna and Godavari are rivers; the Thar is a desert in Rajasthan.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Kathak ; Bharatanatyam ; Odissi ; Ghazal",
+   "options": [
+    "Kathak",
+    "Bharatanatyam",
+    "Ghazal",
+    "Odissi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kathak, Bharatanatyam and Odissi are classical dance forms; a ghazal is a poetic and musical form.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Sitar ; Veena ; Sarod ; Tabla",
+   "options": [
+    "Sitar",
+    "Tabla",
+    "Veena",
+    "Sarod"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sitar, veena and sarod are stringed instruments; the tabla is a percussion (drum) instrument.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Mumbai ; Chennai ; Kochi ; Jaipur",
+   "options": [
+    "Jaipur",
+    "Mumbai",
+    "Chennai",
+    "Kochi"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mumbai, Chennai and Kochi are coastal port cities; Jaipur is an inland city in Rajasthan.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Copper ; Iron ; Zinc ; Brass",
+   "options": [
+    "Copper",
+    "Iron",
+    "Zinc",
+    "Brass"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Copper, iron and zinc are pure metals (elements); brass is an alloy of copper and zinc.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Tamil ; Telugu ; Kannada ; Hindi",
+   "options": [
+    "Tamil",
+    "Telugu",
+    "Hindi",
+    "Kannada"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Tamil, Telugu and Kannada belong to the Dravidian language family; Hindi is an Indo-Aryan language.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Cricket ; Hockey ; Kabaddi ; Chess",
+   "options": [
+    "Cricket",
+    "Chess",
+    "Hockey",
+    "Kabaddi"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Cricket, hockey and kabaddi are physical team sports played on a field or court; chess is a board game of the mind.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Rice ; Wheat ; Maize ; Mustard",
+   "options": [
+    "Mustard",
+    "Rice",
+    "Wheat",
+    "Maize"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rice, wheat and maize are cereal crops; mustard is an oilseed crop.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Hammer ; Chisel ; Saw ; Nail",
+   "options": [
+    "Hammer",
+    "Chisel",
+    "Saw",
+    "Nail"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hammer, chisel and saw are tools used by a carpenter; a nail is a fastener that is used up in the work, not a tool.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Kidney ; Liver ; Lungs ; Femur",
+   "options": [
+    "Kidney",
+    "Liver",
+    "Femur",
+    "Lungs"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kidney, liver and lungs are internal organs; the femur is a bone of the skeleton.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Python ; Cobra ; Viper ; Gecko",
+   "options": [
+    "Python",
+    "Gecko",
+    "Cobra",
+    "Viper"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Python, cobra and viper are snakes; a gecko is a lizard.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Sparrow ; Crow ; Parrot ; Bat",
+   "options": [
+    "Bat",
+    "Sparrow",
+    "Crow",
+    "Parrot"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sparrow, crow and parrot are birds; the bat is a flying mammal.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Triangle ; Square ; Circle ; Cube",
+   "options": [
+    "Triangle",
+    "Square",
+    "Circle",
+    "Cube"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Triangle, square and circle are two-dimensional plane figures; a cube is a three-dimensional solid.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Rupee ; Yen ; Euro ; Metre",
+   "options": [
+    "Rupee",
+    "Yen",
+    "Metre",
+    "Euro"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rupee, yen and euro are units of currency; the metre is a unit of length.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Teak ; Sal ; Neem ; Bamboo",
+   "options": [
+    "Teak",
+    "Bamboo",
+    "Sal",
+    "Neem"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Teak, sal and neem are woody trees; bamboo is botanically a giant grass.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Punjab ; Haryana ; Gujarat ; Ladakh",
+   "options": [
+    "Ladakh",
+    "Punjab",
+    "Haryana",
+    "Gujarat"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Punjab, Haryana and Gujarat are states of India; Ladakh is a Union Territory.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Whale ; Dolphin ; Seal ; Shark",
+   "options": [
+    "Whale",
+    "Dolphin",
+    "Seal",
+    "Shark"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Whales, dolphins and seals are mammals that breathe air through lungs; the shark is a fish that breathes through gills.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Sugar ; Jaggery ; Honey ; Salt",
+   "options": [
+    "Sugar",
+    "Jaggery",
+    "Salt",
+    "Honey"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Sugar, jaggery and honey are sweeteners; salt gives a savoury taste and is a mineral.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Bus ; Train ; Metro ; Ship",
+   "options": [
+    "Bus",
+    "Ship",
+    "Train",
+    "Metro"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Bus, train and metro travel over land; a ship travels over water.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Oxygen ; Nitrogen ; Hydrogen ; Water",
+   "options": [
+    "Water",
+    "Oxygen",
+    "Nitrogen",
+    "Hydrogen"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Oxygen, nitrogen and hydrogen are elements; water (H₂O) is a compound.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Mercury ; Venus ; Mars ; Moon",
+   "options": [
+    "Mercury",
+    "Venus",
+    "Mars",
+    "Moon"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Mercury, Venus and Mars are planets that orbit the Sun; the Moon is a natural satellite of the Earth.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Doctor ; Engineer ; Pilot ; Hospital",
+   "options": [
+    "Doctor",
+    "Engineer",
+    "Hospital",
+    "Pilot"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Doctor, engineer and pilot are professions (persons); a hospital is a place.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Chapati ; Naan ; Paratha ; Idli",
+   "options": [
+    "Chapati",
+    "Idli",
+    "Naan",
+    "Paratha"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chapati, naan and paratha are flatbreads cooked on a tawa or in a tandoor; idli is a steamed rice-and-lentil cake.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Find the odd one out among the words. Violin ; Sitar ; Veena ; Shehnai",
+   "options": [
+    "Shehnai",
+    "Violin",
+    "Sitar",
+    "Veena"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Violin, sitar and veena produce sound from vibrating strings; the shehnai is a wind instrument blown with a reed.",
+   "shortcut": "Find the common category of three words (type, group, function); the one that breaks it is the answer.",
+   "subPattern": "odd-one-out-words",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

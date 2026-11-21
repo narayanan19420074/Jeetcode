@@ -1,0 +1,820 @@
+{
+ "sets": [
+  {
+   "id": "di-mixed-charts-s013",
+   "type": "table",
+   "title": "Pie chart data: share of the total sales of ₹4,000 crore among six companies, and Bar chart data: number of employees (in hundreds)",
+   "table": {
+    "columns": [
+     "Company",
+     "Pie: share of sales (%)",
+     "Bar: employees (hundreds of employees)"
+    ],
+    "rows": [
+     [
+      "Aarav Foods",
+      25,
+      50
+     ],
+     [
+      "Bharat Motors",
+      20,
+      80
+     ],
+     [
+      "Chola Textiles",
+      15,
+      30
+     ],
+     [
+      "Deccan Steel",
+      10,
+      40
+     ],
+     [
+      "Eastern Pharma",
+      20,
+      25
+     ],
+     [
+      "Falcon Paper",
+      10,
+      16
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s014",
+   "type": "table",
+   "title": "Pie chart data: share of total rice production of 2,400 lakh tonnes among five states, and Bar chart data: area under cultivation (lakh hectares)",
+   "table": {
+    "columns": [
+     "State",
+     "Pie: share of rice production (%)",
+     "Bar: area under cultivation (lakh hectares)"
+    ],
+    "rows": [
+     [
+      "Punjab",
+      25,
+      60
+     ],
+     [
+      "West Bengal",
+      30,
+      100
+     ],
+     [
+      "Uttar Pradesh",
+      20,
+      80
+     ],
+     [
+      "Tamil Nadu",
+      10,
+      20
+     ],
+     [
+      "Andhra Pradesh",
+      15,
+      40
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s015",
+   "type": "table",
+   "title": "Pie chart data: share of 1,500 lakh passengers carried in a year by five railway zones, and Bar chart data: number of trains run (in hundreds)",
+   "table": {
+    "columns": [
+     "Zone",
+     "Pie: share of passengers carried (%)",
+     "Bar: trains run (hundreds of trains)"
+    ],
+    "rows": [
+     [
+      "Southern",
+      30,
+      50
+     ],
+     [
+      "Western",
+      25,
+      100
+     ],
+     [
+      "Northern",
+      20,
+      40
+     ],
+     [
+      "Eastern",
+      15,
+      50
+     ],
+     [
+      "Central",
+      10,
+      25
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s016",
+   "type": "table",
+   "title": "Pie chart data: share of 3,000 runs scored by a team in a season among six batters, and Bar chart data: innings batted",
+   "table": {
+    "columns": [
+     "Batter",
+     "Pie: share of runs scored (%)",
+     "Bar: innings batted (innings)"
+    ],
+    "rows": [
+     [
+      "Rohan",
+      25,
+      24
+     ],
+     [
+      "Siddharth",
+      20,
+      16
+     ],
+     [
+      "Tilak",
+      15,
+      10
+     ],
+     [
+      "Umesh",
+      10,
+      12
+     ],
+     [
+      "Vikram",
+      20,
+      25
+     ],
+     [
+      "Yash",
+      10,
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s017",
+   "type": "table",
+   "title": "Pie chart data: share of 2,000 units of electricity consumed (in million units) among five cities, and Bar chart data: population (in lakh)",
+   "table": {
+    "columns": [
+     "City",
+     "Pie: share of electricity consumed (%)",
+     "Bar: population (lakh)"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      20,
+      16
+     ],
+     [
+      "Madurai",
+      15,
+      15
+     ],
+     [
+      "Trichy",
+      25,
+      10
+     ],
+     [
+      "Salem",
+      30,
+      40
+     ],
+     [
+      "Tiruppur",
+      10,
+      8
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s018",
+   "type": "table",
+   "title": "Pie chart data: share of 1,200 crore units of FMCG packs sold, among five regional brands, and Bar chart data: number of distributors (in hundreds)",
+   "table": {
+    "columns": [
+     "Brand",
+     "Pie: share of packs sold (%)",
+     "Bar: distributors (hundreds of distributors)"
+    ],
+    "rows": [
+     [
+      "Kongu Snacks",
+      20,
+      16
+     ],
+     [
+      "Pongal Foods",
+      35,
+      28
+     ],
+     [
+      "Ooty Biscuits",
+      15,
+      12
+     ],
+     [
+      "Malabar Mix",
+      10,
+      5
+     ],
+     [
+      "Cauvery Chips",
+      20,
+      32
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the central angle of the sector for Chola Textiles in the pie chart?",
+   "options": [
+    "54°",
+    "72°",
+    "36°",
+    "45°"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Angle = 15% of 360° = 15 × 3.6 = 54°.",
+   "shortcut": "1% of the pie = 3.6°.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "What is the sales of Bharat Motors? (in ₹ crore)",
+   "options": [
+    "20",
+    "200",
+    "6400",
+    "800"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "20% of 4000 = 4000 × 20 ÷ 100 = 800.",
+   "shortcut": "Total × share ÷ 100.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "What is the average sales of the companies whose pie share is below 20%? (in ₹ crore)",
+   "options": [
+    "600.0",
+    "666.7",
+    "466.7",
+    "1400.0"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Entities below 20%: Chola Textiles (15%), Deccan Steel (10%), Falcon Paper (10%). Their total = 35% of 4000 = 1400; average = 1400 ÷ 3 = 466.7.",
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "Which company has the highest sales per unit of employees?",
+   "options": [
+    "Falcon Paper",
+    "Eastern Pharma",
+    "Aarav Foods",
+    "Chola Textiles"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Per unit: Aarav Foods 20.00, Bharat Motors 10.00, Chola Textiles 20.00, Deccan Steel 10.00, Eastern Pharma 32.00, Falcon Paper 25.00. Highest is Eastern Pharma.",
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "Find the ratio of the sales per unit of employees of Eastern Pharma to that of Deccan Steel. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    "3.20",
+    "0.31",
+    "2.00",
+    "1.25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Eastern Pharma: 800 ÷ 25 = 32.000. Deccan Steel: 400 ÷ 40 = 10.000. Ratio = 3.20.",
+   "shortcut": "Ratio = (pie%₁ ÷ bar₁) ÷ (pie%₂ ÷ bar₂); the total cancels.",
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s013"
+  },
+  {
+   "questionText": "By how much does the rice production of West Bengal exceed that of Tamil Nadu? (in lakh tonnes)",
+   "options": [
+    "960",
+    "20",
+    "240",
+    "480"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Difference in share = 30% − 10% = 20% of 2400 = 480.",
+   "shortcut": "Subtract the percentages first, then take that % of the total.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Tamil Nadu in the pie chart?",
+   "options": [
+    "54°",
+    "18°",
+    "36°",
+    "30°"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Angle = 10% of 360° = 10 × 3.6 = 36°.",
+   "shortcut": "1% of the pie = 3.6°.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "Find the rice production per unit of area under cultivation for Punjab, in lakh tonnes per lakh hectare. (Correct to one decimal place.)",
+   "options": [
+    "0.4",
+    "10.0",
+    "24.0",
+    "0.1"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rice production = 25% of 2400 = 600. Per unit = 600 ÷ 60 = 10.0.",
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "What is the average rice production of the states whose pie share is below 20%? (in lakh tonnes)",
+   "options": [
+    "300",
+    "360",
+    "480",
+    "600"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Entities below 20%: Tamil Nadu (10%), Andhra Pradesh (15%). Their total = 25% of 2400 = 600; average = 600 ÷ 2 = 300.",
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "Suppose the rice production of Punjab rises by 50% while that of every other state stays the same. What percentage of the new total will Punjab then account for? (Correct to one decimal place.)",
+   "options": [
+    "37.5%",
+    "75.0%",
+    "36.7%",
+    "33.3%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Old value = 600; new value = 900.0. New total = 2400 + 300.0 = 2700.0. Share = 900.0 ÷ 2700.0 × 100 = 33.3%.",
+   "shortcut": "The total changes too; do not divide by the old total.",
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s014"
+  },
+  {
+   "questionText": "What is the passengers carried of Southern? (in lakh)",
+   "options": [
+    "30",
+    "50",
+    "450",
+    "2250"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "30% of 1500 = 1500 × 30 ÷ 100 = 450.",
+   "shortcut": "Total × share ÷ 100.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Northern in the pie chart?",
+   "options": [
+    "90°",
+    "72°",
+    "54°",
+    "60°"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle = 20% of 360° = 20 × 3.6 = 72°.",
+   "shortcut": "1% of the pie = 3.6°.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "Which zone has the highest passengers carried per unit of trains run?",
+   "options": [
+    "Southern",
+    "Northern",
+    "Central",
+    "Eastern"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Per unit: Southern 9.00, Western 3.75, Northern 7.50, Eastern 4.50, Central 6.00. Highest is Southern.",
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "Find the passengers carried per unit of trains run for Central, in lakh passengers per hundred trains. (Correct to one decimal place.)",
+   "options": [
+    "0.4",
+    "15.0",
+    "0.2",
+    "6.0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Passengers carried = 10% of 1500 = 150. Per unit = 150 ÷ 25 = 6.0.",
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "Find the ratio of the passengers carried per unit of trains run of Southern to that of Western. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    "0.42",
+    "1.20",
+    "2.40",
+    "0.60"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Southern: 450 ÷ 50 = 9.000. Western: 375 ÷ 100 = 3.750. Ratio = 2.40.",
+   "shortcut": "Ratio = (pie%₁ ÷ bar₁) ÷ (pie%₂ ÷ bar₂); the total cancels.",
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s015"
+  },
+  {
+   "questionText": "What is the central angle of the sector for Rohan in the pie chart?",
+   "options": [
+    "108°",
+    "90°",
+    "72°",
+    "75°"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Angle = 25% of 360° = 25 × 3.6 = 90°.",
+   "shortcut": "1% of the pie = 3.6°.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "Which batter has the highest runs scored per unit of innings batted?",
+   "options": [
+    "Tilak",
+    "Siddharth",
+    "Yash",
+    "Rohan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Per unit: Rohan 31.25, Siddharth 37.50, Tilak 45.00, Umesh 25.00, Vikram 24.00, Yash 37.50. Highest is Tilak.",
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "Find the runs scored per unit of innings batted for Vikram, in runs per innings. (Correct to one decimal place.)",
+   "options": [
+    "0.8",
+    "30.0",
+    "0.0",
+    "24.0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Runs scored = 20% of 3000 = 600. Per unit = 600 ÷ 25 = 24.0.",
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "What is the average runs scored of the batters whose pie share is below 20%? (in runs)",
+   "options": [
+    "450",
+    "500",
+    "350",
+    "1050"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Entities below 20%: Tilak (15%), Umesh (10%), Yash (10%). Their total = 35% of 3000 = 1050; average = 1050 ÷ 3 = 350.",
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "Suppose the runs scored of Siddharth rises by 20% while that of every other batter stays the same. What percentage of the new total will Siddharth then account for? (Correct to one decimal place.)",
+   "options": [
+    "24.0%",
+    "23.1%",
+    "40.0%",
+    "25.4%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Old value = 600; new value = 720.0. New total = 3000 + 120.0 = 3120.0. Share = 720.0 ÷ 3120.0 × 100 = 23.1%.",
+   "shortcut": "The total changes too; do not divide by the old total.",
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s016"
+  },
+  {
+   "questionText": "By how much does the electricity consumed of Salem exceed that of Tiruppur? (in million units)",
+   "options": [
+    "400",
+    "800",
+    "20",
+    "200"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Difference in share = 30% − 10% = 20% of 2000 = 400.",
+   "shortcut": "Subtract the percentages first, then take that % of the total.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "What is the combined electricity consumed of all cities that have more than 15 lakh of population? (in million units)",
+   "options": [
+    "1300",
+    "700",
+    "1100",
+    "1000"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Entities with more than 15: Coimbatore (20%), Salem (30%). Total share = 50% of 2000 = 1000.",
+   "shortcut": "Add the qualifying pie percentages first, then convert once.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "Which city has the highest electricity consumed per unit of population?",
+   "options": [
+    "Coimbatore",
+    "Tiruppur",
+    "Trichy",
+    "Madurai"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Per unit: Coimbatore 25.00, Madurai 20.00, Trichy 50.00, Salem 15.00, Tiruppur 25.00. Highest is Trichy.",
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "Find the electricity consumed per unit of population for Coimbatore, in million units per lakh people. (Correct to one decimal place.)",
+   "options": [
+    "1.2",
+    "25.0",
+    "20.0",
+    "0.0"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Electricity consumed = 20% of 2000 = 400. Per unit = 400 ÷ 16 = 25.0.",
+   "shortcut": "First convert the pie share into a value, then divide by the bar value.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "Find the ratio of the electricity consumed per unit of population of Trichy to that of Salem. (Give as a decimal correct to two decimal places.)",
+   "options": [
+    "3.33",
+    "0.30",
+    "0.83",
+    "0.21"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Trichy: 500 ÷ 10 = 50.000. Salem: 600 ÷ 40 = 15.000. Ratio = 3.33.",
+   "shortcut": "Ratio = (pie%₁ ÷ bar₁) ÷ (pie%₂ ÷ bar₂); the total cancels.",
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s017"
+  },
+  {
+   "questionText": "What is the packs sold of Malabar Mix? (in crore packs)",
+   "options": [
+    "10",
+    "60",
+    "132",
+    "120"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "10% of 1200 = 1200 × 10 ÷ 100 = 120.",
+   "shortcut": "Total × share ÷ 100.",
+   "subPattern": "bar-pie",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "What is the average packs sold of the brands whose pie share is below 20%? (in crore packs)",
+   "options": [
+    "195",
+    "240",
+    "150",
+    "300"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Entities below 20%: Ooty Biscuits (15%), Malabar Mix (10%). Their total = 25% of 1200 = 300; average = 300 ÷ 2 = 150.",
+   "shortcut": "Strictly below 20% excludes entities at exactly 20%.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "What is the combined packs sold of all brands that have more than 16 hundreds of distributors of distributors? (in crore packs)",
+   "options": [
+    "900",
+    "660",
+    "300",
+    "540"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Entities with more than 16: Pongal Foods (35%), Cauvery Chips (20%). Total share = 55% of 1200 = 660.",
+   "shortcut": "Add the qualifying pie percentages first, then convert once.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "Which brand has the highest packs sold per unit of distributors?",
+   "options": [
+    "Malabar Mix",
+    "Kongu Snacks",
+    "Pongal Foods",
+    "Ooty Biscuits"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Per unit: Kongu Snacks 15.00, Pongal Foods 15.00, Ooty Biscuits 15.00, Malabar Mix 24.00, Cauvery Chips 7.50. Highest is Malabar Mix.",
+   "shortcut": "Compare pie % ÷ bar value; the total is a common multiplier and can be ignored.",
+   "subPattern": "bar-pie",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-mixed-charts-s018"
+  },
+  {
+   "questionText": "Suppose the packs sold of Malabar Mix rises by 20% while that of every other brand stays the same. What percentage of the new total will Malabar Mix then account for? (Correct to one decimal place.)",
+   "options": [
+    "12.0%",
+    "30.0%",
+    "12.9%",
+    "11.8%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Old value = 120; new value = 144.0. New total = 1200 + 24.0 = 1224.0. Share = 144.0 ÷ 1224.0 × 100 = 11.8%.",
+   "shortcut": "The total changes too; do not divide by the old total.",
+   "subPattern": "bar-pie",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-mixed-charts-s018"
+  }
+ ]
+}

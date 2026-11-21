@@ -1,0 +1,529 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Pen : Write :: Knife : ?",
+   "options": [
+    "Cut",
+    "Sharp",
+    "Kitchen",
+    "Steel"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Tool : the function it performs. A pen is used to write; a knife is used to cut. So the answer is Cut.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Doctor : Hospital :: Farmer : ?",
+   "options": [
+    "Field",
+    "Tractor",
+    "Crop",
+    "Market"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Worker : place where he works. A doctor works in a hospital; a farmer works in a field. So the answer is Field.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Kolkata : West Bengal :: Chennai : ?",
+   "options": [
+    "Tamil Nadu",
+    "Kerala",
+    "Karnataka",
+    "Andhra Pradesh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: City : the state of which it is the capital. Kolkata is the capital of West Bengal; Chennai of Tamil Nadu. So the answer is Tamil Nadu.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Bees : Swarm :: Cattle : ?",
+   "options": [
+    "Herd",
+    "Flock",
+    "Pack",
+    "Pride"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Animal : its collective noun. Bees form a swarm; cattle form a herd. So the answer is Herd.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Expand : Contract :: Ascent : ?",
+   "options": [
+    "Descent",
+    "Climb",
+    "Slope",
+    "Height"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Antonyms. Expand is the opposite of contract; ascent is the opposite of descent. So the answer is Descent.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Cow : Calf :: Horse : ?",
+   "options": [
+    "Foal",
+    "Cub",
+    "Kid",
+    "Lamb"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Adult animal : its young one. A cow's young is a calf; a horse's young is a foal. So the answer is Foal.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Eye : See :: Ear : ?",
+   "options": [
+    "Hear",
+    "Speak",
+    "Smell",
+    "Touch"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Sense organ : the sense it performs. The eye is for seeing; the ear is for hearing. So the answer is Hear.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Rupee : India :: Yen : ?",
+   "options": [
+    "Japan",
+    "China",
+    "Korea",
+    "Thailand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Currency : country. The rupee is the currency of India; the yen of Japan. So the answer is Japan.",
+   "subPattern": "word-analogy",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Book : Author :: Statue : ?",
+   "options": [
+    "Sculptor",
+    "Stone",
+    "Museum",
+    "Pedestal"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Creation : its creator. A book is created by an author; a statue by a sculptor. So the answer is Sculptor.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Thermometer : Temperature :: Odometer : ?",
+   "options": [
+    "Distance",
+    "Speed",
+    "Fuel",
+    "Time"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Instrument : the quantity it measures. A thermometer measures temperature; an odometer measures distance travelled (a speedometer measures speed). So the answer is Distance.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Tadpole : Frog :: Sapling : ?",
+   "options": [
+    "Tree",
+    "Seed",
+    "Forest",
+    "Branch"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Young stage : the mature form it grows into. A tadpole becomes a frog; a sapling becomes a tree. So the answer is Tree.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Potter : Pot :: Weaver : ?",
+   "options": [
+    "Cloth",
+    "Loom",
+    "Thread",
+    "Wool"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Craftsperson : the product he makes. A potter makes pots; a weaver makes cloth. So the answer is Cloth.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Chapter : Book :: Scene : ?",
+   "options": [
+    "Play",
+    "Actor",
+    "Stage",
+    "Audience"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Part : whole. A chapter is a part of a book; a scene is a part of a play. So the answer is Play.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Lock : Key :: Disease : ?",
+   "options": [
+    "Medicine",
+    "Doctor",
+    "Patient",
+    "Hospital"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Problem : what overcomes it. A key opens a lock; medicine overcomes a disease. So the answer is Medicine.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Sabarmati : Ahmedabad :: Gomti : ?",
+   "options": [
+    "Lucknow",
+    "Jaipur",
+    "Patna",
+    "Bhopal"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: River : the city on its bank. The Sabarmati flows through Ahmedabad; the Gomti through Lucknow. So the answer is Lucknow.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Boxing : Ring :: Swimming : ?",
+   "options": [
+    "Pool",
+    "Water",
+    "Track",
+    "Court"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Sport : the arena where it is played. Boxing takes place in a ring; swimming in a pool. So the answer is Pool.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Ink : Pen :: Petrol : ?",
+   "options": [
+    "Scooter",
+    "Driver",
+    "Road",
+    "Helmet"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Fuel/filling : the device it powers. Ink is used in a pen; petrol is used in a scooter. So the answer is Scooter.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Sparrow : Bird :: Cobra : ?",
+   "options": [
+    "Snake",
+    "Venom",
+    "Forest",
+    "Hood"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Member : the class it belongs to. A sparrow is a kind of bird; a cobra is a kind of snake. So the answer is Snake.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Quintal : Kilogram :: Century : ?",
+   "options": [
+    "Year",
+    "Decade",
+    "Month",
+    "Millennium"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Larger unit : the smaller unit it is made of. A quintal is 100 kilograms; a century is 100 years. So the answer is Year.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Judge : Court :: Surgeon : ?",
+   "options": [
+    "Operation Theatre",
+    "Scalpel",
+    "Patient",
+    "Nurse"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Professional : place of work. A judge works in a court; a surgeon in an operation theatre. So the answer is Operation Theatre.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Surgeon : Scalpel :: Soldier : ?",
+   "options": [
+    "Rifle",
+    "Uniform",
+    "Barracks",
+    "Battle"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Professional : the main tool used. A surgeon uses a scalpel; a soldier uses a rifle. So the answer is Rifle.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Hygrometer : Humidity :: Anemometer : ?",
+   "options": [
+    "Wind speed",
+    "Rainfall",
+    "Pressure",
+    "Temperature"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Instrument : what it measures. A hygrometer measures humidity; an anemometer measures wind speed. So the answer is Wind speed.",
+   "subPattern": "word-analogy",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Praise : Censure :: Reward : ?",
+   "options": [
+    "Punishment",
+    "Prize",
+    "Honour",
+    "Bonus"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Antonyms. Praise is the opposite of censure; reward is the opposite of punishment. So the answer is Punishment.",
+   "subPattern": "word-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Verdict : Judge :: Diagnosis : ?",
+   "options": [
+    "Physician",
+    "Disease",
+    "Patient",
+    "Prescription"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Final conclusion : the person who delivers it. A judge delivers a verdict; a physician delivers a diagnosis. So the answer is Physician.",
+   "subPattern": "word-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Haemoglobin : Oxygen transport :: Chlorophyll : ?",
+   "options": [
+    "Photosynthesis",
+    "Digestion",
+    "Excretion",
+    "Respiration"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Pigment : the function it serves. Haemoglobin carries oxygen in blood; chlorophyll captures light for photosynthesis. So the answer is Photosynthesis.",
+   "subPattern": "word-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Cell : Tissue :: Tissue : ?",
+   "options": [
+    "Organ",
+    "Organism",
+    "Molecule",
+    "Atom"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Each is the next higher level of organisation. Cells form tissue, and tissues form an organ. So the answer is Organ.",
+   "subPattern": "word-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Kalidasa : Shakuntalam :: Tulsidas : ?",
+   "options": [
+    "Ramcharitmanas",
+    "Gitanjali",
+    "Panchatantra",
+    "Godan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Author : his famous work. Kalidasa wrote Shakuntalam; Tulsidas wrote Ramcharitmanas. So the answer is Ramcharitmanas.",
+   "subPattern": "word-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  },
+  {
+   "questionText": "Baird : Television :: Gutenberg : ?",
+   "options": [
+    "Printing press",
+    "Typewriter",
+    "Paper",
+    "Newspaper"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Relation: Inventor : his invention. John Logie Baird invented the television; Johannes Gutenberg the movable-type printing press. So the answer is Printing press.",
+   "subPattern": "word-analogy",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Name the relation in one phrase from the first pair, then test each option with the same phrase."
+  }
+ ]
+}

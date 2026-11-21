@@ -1,0 +1,7352 @@
+{
+ "pattern": {
+  "title": "Fill in the Blanks",
+  "slug": "fill-in-the-blanks",
+  "description": "Choose the word that fits.",
+  "order": 48,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Verbal Ability",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "grammar-based-blanks",
+    "title": "Grammar-based blanks"
+   },
+   {
+    "slug": "vocabulary-based-blanks",
+    "title": "Vocabulary-based blanks"
+   },
+   {
+    "slug": "double-blanks",
+    "title": "Double blanks"
+   },
+   {
+    "slug": "prepositions-in-blanks",
+    "title": "Prepositions in blanks"
+   },
+   {
+    "slug": "phrasal-verbs",
+    "title": "Phrasal verbs"
+   },
+   {
+    "slug": "collocations",
+    "title": "Collocations"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Neither of the two candidates ___ selected for the interview.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Neither' is a singular pronoun, so it takes a singular verb: was.",
+   "order": 1,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Neither / Each / Either / One of + plural noun takes a singular verb."
+  },
+  {
+   "questionText": "She has been working in this company ___ 2019.",
+   "options": [
+    {
+     "text": "since"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "from"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Since' is used with a fixed point in time (2019) with the present perfect continuous; 'for' is used with a period.",
+   "order": 2,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Point of time -> since; length of time -> for."
+  },
+  {
+   "questionText": "Each of the students ___ given a certificate of merit.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Each' is singular, so the verb is singular: was given.",
+   "order": 3,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I am looking forward to ___ you at the wedding.",
+   "options": [
+    {
+     "text": "see"
+    },
+    {
+     "text": "have seen"
+    },
+    {
+     "text": "seeing"
+    },
+    {
+     "text": "saw"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In 'look forward to', 'to' is a preposition, so the verb that follows takes the -ing form.",
+   "order": 4,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Preposition 'to' + verb-ing."
+  },
+  {
+   "questionText": "Of the two brothers, Ramesh is the ___.",
+   "options": [
+    {
+     "text": "tallest"
+    },
+    {
+     "text": "taller"
+    },
+    {
+     "text": "more tall"
+    },
+    {
+     "text": "most tall"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "When two persons are compared, the comparative degree (taller) is used, not the superlative.",
+   "order": 5,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Two things -> comparative; three or more -> superlative."
+  },
+  {
+   "questionText": "Hardly had he reached the platform ___ the train started moving.",
+   "options": [
+    {
+     "text": "when"
+    },
+    {
+     "text": "then"
+    },
+    {
+     "text": "that"
+    },
+    {
+     "text": "than"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly' (and 'scarcely') is followed by 'when'; 'than' goes with 'no sooner'.",
+   "order": 6,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Hardly/Scarcely ... when; No sooner ... than."
+  },
+  {
+   "questionText": "Unless you ___ hard, you will not pass the examination.",
+   "options": [
+    {
+     "text": "worked"
+    },
+    {
+     "text": "will work"
+    },
+    {
+     "text": "work"
+    },
+    {
+     "text": "don't work"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Unless' already carries a negative meaning, so the verb that follows is affirmative, in the present tense for a future condition.",
+   "order": 7,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Unless + affirmative verb (never 'unless ... not')."
+  },
+  {
+   "questionText": "The number of students in our college ___ increasing every year.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'The number of' takes a singular verb, because the subject is 'number'.",
+   "order": 8,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The number of -> singular; A number of -> plural."
+  },
+  {
+   "questionText": "A number of students ___ absent from the class today.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'A number of' means 'several' and takes a plural verb.",
+   "order": 9,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The books ___ I bought yesterday are very expensive.",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "what"
+    },
+    {
+     "text": "which"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The relative pronoun for things is 'which'. 'What' cannot follow a noun, 'whom' is for persons and 'whose' shows possession.",
+   "order": 10,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The man ___ car was stolen has lodged a complaint.",
+   "options": [
+    {
+     "text": "which"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "who"
+    },
+    {
+     "text": "whom"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The car belongs to the man, so the possessive relative pronoun 'whose' is required.",
+   "order": 11,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The girl ___ I met at the airport is my cousin.",
+   "options": [
+    {
+     "text": "whom"
+    },
+    {
+     "text": "whose"
+    },
+    {
+     "text": "which"
+    },
+    {
+     "text": "what"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Whom' is the object form for a person (I met her); 'whose', 'which' and 'what' do not fit.",
+   "order": 12,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Of the two plans, this one is ___.",
+   "options": [
+    {
+     "text": "the better"
+    },
+    {
+     "text": "most better"
+    },
+    {
+     "text": "more better"
+    },
+    {
+     "text": "the best"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Comparison of two items uses the comparative with 'the': the better.",
+   "order": 13,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Gulliver's Travels ___ written by Jonathan Swift.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A title of a book is treated as singular, and the sentence is about a past writing: was.",
+   "order": 14,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Book / film titles take singular verbs."
+  },
+  {
+   "questionText": "Ten kilometres ___ a long distance to walk every day.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A distance treated as a single unit takes a singular verb.",
+   "order": 15,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "If I ___ you, I would accept the offer immediately.",
+   "options": [
+    {
+     "text": "be"
+    },
+    {
+     "text": "am"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "For an unreal (imaginary) condition in the present, the subjunctive 'were' is used for all persons in standard grammar.",
+   "order": 16,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Unreal 'if' clause -> were (not was)."
+  },
+  {
+   "questionText": "The news of the victory ___ received with great joy.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "have"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'News' is an uncountable noun and takes a singular verb.",
+   "order": 17,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "News, furniture, information, advice: always singular."
+  },
+  {
+   "questionText": "By the time we reached the station, the train ___.",
+   "options": [
+    {
+     "text": "has left"
+    },
+    {
+     "text": "will leave"
+    },
+    {
+     "text": "leaves"
+    },
+    {
+     "text": "had left"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two past actions: the earlier one (the train leaving) is in the past perfect, the later (our reaching) in the simple past.",
+   "order": 18,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "'By the time' + simple past -> past perfect in main clause."
+  },
+  {
+   "questionText": "One of my friends ___ a pilot in the Indian Air Force.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'One of + plural noun' takes a singular verb because the subject is 'One'.",
+   "order": 19,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The teacher, along with her students, ___ going on a trip to Mysuru.",
+   "options": [
+    {
+     "text": "have been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Along with' does not make the subject plural; the verb agrees with 'The teacher', so it is singular.",
+   "order": 20,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Along with / together with / as well as: ignore the added noun."
+  },
+  {
+   "questionText": "No sooner did he enter the hall ___ the lights went out.",
+   "options": [
+    {
+     "text": "that"
+    },
+    {
+     "text": "than"
+    },
+    {
+     "text": "when"
+    },
+    {
+     "text": "then"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'No sooner' is correctly followed by 'than'.",
+   "order": 21,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Mathematics ___ my favourite subject since childhood.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Names of subjects ending in -s (mathematics, physics, economics) are singular; 'since' needs the present perfect: has been.",
+   "order": 22,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The scissors on the table ___ very sharp.",
+   "options": [
+    {
+     "text": "has"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Scissors' is a plural-only noun, so the verb is plural: are.",
+   "order": 23,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Scissors, trousers, spectacles: plural verb."
+  },
+  {
+   "questionText": "I wish I ___ taller so that I could join the police force.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "will be"
+    },
+    {
+     "text": "am"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After 'wish' referring to an unreal present situation, the subjunctive 'were' is used.",
+   "order": 24,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "wish + past / were."
+  },
+  {
+   "questionText": "Let us start the work now, ___?",
+   "options": [
+    {
+     "text": "will we"
+    },
+    {
+     "text": "do we"
+    },
+    {
+     "text": "shall we"
+    },
+    {
+     "text": "don't we"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The question tag for 'Let us ...' is 'shall we'.",
+   "order": 25,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Let's -> shall we?"
+  },
+  {
+   "questionText": "He speaks as if he ___ the owner of the company.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "will be"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As if' expressing an unreal comparison takes the subjunctive 'were'.",
+   "order": 26,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "as if / as though (unreal) -> were."
+  },
+  {
+   "questionText": "The more you practise, ___ you become.",
+   "options": [
+    {
+     "text": "the best"
+    },
+    {
+     "text": "the better"
+    },
+    {
+     "text": "better"
+    },
+    {
+     "text": "best"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The structure 'the + comparative ..., the + comparative' needs 'the better'.",
+   "order": 27,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "The more ..., the better ..."
+  },
+  {
+   "questionText": "Many a student ___ failed in this examination.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "has"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Many a' is followed by a singular noun and a singular verb: has failed.",
+   "order": 28,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Many a + singular noun + singular verb."
+  },
+  {
+   "questionText": "Either Meena or her cousins ___ coming to the party tonight.",
+   "options": [
+    {
+     "text": "has been"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "With 'either ... or', the verb agrees with the nearer subject, 'cousins' (plural): are.",
+   "order": 29,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Either/Neither ... or/nor: verb agrees with the nearest noun."
+  },
+  {
+   "questionText": "Neither the manager nor his assistants ___ present at the meeting.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "was"
+    },
+    {
+     "text": "is"
+    },
+    {
+     "text": "has been"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "With 'neither ... nor', the verb agrees with the nearer subject, 'assistants', so it is plural: were.",
+   "order": 30,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I have never seen ___ elephant as tall as that one.",
+   "options": [
+    {
+     "text": "a"
+    },
+    {
+     "text": "the"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "some"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Elephant' begins with a vowel sound, so the article 'an' is used.",
+   "order": 31,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He bought ___ one-rupee coin from the shop.",
+   "options": [
+    {
+     "text": "the"
+    },
+    {
+     "text": "a"
+    },
+    {
+     "text": "an"
+    },
+    {
+     "text": "some"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'One' begins with the consonant sound /w/, so the article is 'a', not 'an'.",
+   "order": 32,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Article depends on sound, not spelling: a one-rupee, a university, an hour."
+  },
+  {
+   "questionText": "If it rains tomorrow, we ___ the picnic.",
+   "options": [
+    {
+     "text": "would cancel"
+    },
+    {
+     "text": "cancelled"
+    },
+    {
+     "text": "had cancelled"
+    },
+    {
+     "text": "will cancel"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A real future condition (present tense in the if-clause) takes 'will' + base verb in the main clause.",
+   "order": 33,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "If + present, ... will + verb."
+  },
+  {
+   "questionText": "If she had studied harder, she ___ the examination.",
+   "options": [
+    {
+     "text": "would have passed"
+    },
+    {
+     "text": "had passed"
+    },
+    {
+     "text": "will pass"
+    },
+    {
+     "text": "would pass"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "An unreal past condition (had studied) takes 'would have + past participle' in the main clause.",
+   "order": 34,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "If + had + V3, ... would have + V3."
+  },
+  {
+   "questionText": "She said that she ___ the film the previous day.",
+   "options": [
+    {
+     "text": "has seen"
+    },
+    {
+     "text": "will see"
+    },
+    {
+     "text": "had seen"
+    },
+    {
+     "text": "sees"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In reported speech, a past action that came before the reporting verb is expressed in the past perfect: had seen.",
+   "order": 35,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Reported speech: simple past -> past perfect."
+  },
+  {
+   "questionText": "The furniture in the old house ___ been sold.",
+   "options": [
+    {
+     "text": "were"
+    },
+    {
+     "text": "has"
+    },
+    {
+     "text": "have"
+    },
+    {
+     "text": "are"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Furniture' is uncountable and singular, so 'has been' is correct.",
+   "order": 36,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Ravi, as well as his friends, ___ invited to the function.",
+   "options": [
+    {
+     "text": "are"
+    },
+    {
+     "text": "were"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As well as' does not change the number of the subject; 'Ravi' is singular, so the verb is singular.",
+   "order": 37,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The patient ___ before the doctor arrived at the hospital.",
+   "options": [
+    {
+     "text": "dies"
+    },
+    {
+     "text": "had died"
+    },
+    {
+     "text": "has died"
+    },
+    {
+     "text": "was dying"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Two past events: the death happened before the doctor's arrival, so the earlier one takes the past perfect.",
+   "order": 38,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The Principal, as well as the teachers, ___ attending the seminar tomorrow.",
+   "options": [
+    {
+     "text": "is"
+    },
+    {
+     "text": "are"
+    },
+    {
+     "text": "have been"
+    },
+    {
+     "text": "were"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As well as' does not make the subject plural; the subject is 'The Principal' (singular).",
+   "order": 39,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He suggested that she ___ a doctor immediately.",
+   "options": [
+    {
+     "text": "will see"
+    },
+    {
+     "text": "saw"
+    },
+    {
+     "text": "see"
+    },
+    {
+     "text": "sees"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After verbs like suggest, insist, recommend and demand, a 'that' clause takes the base form of the verb (subjunctive): see.",
+   "order": 40,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "suggest/insist/demand that + subject + base verb."
+  },
+  {
+   "questionText": "It is high time we ___ the problem seriously.",
+   "options": [
+    {
+     "text": "considered"
+    },
+    {
+     "text": "have considered"
+    },
+    {
+     "text": "will consider"
+    },
+    {
+     "text": "consider"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'It is high time' is followed by the simple past (past subjunctive) to show that action is overdue.",
+   "order": 41,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "It is (high) time + past tense."
+  },
+  {
+   "questionText": "He cannot swim across the river, ___?",
+   "options": [
+    {
+     "text": "is he"
+    },
+    {
+     "text": "does he"
+    },
+    {
+     "text": "can he"
+    },
+    {
+     "text": "can't he"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A negative statement takes a positive tag with the same auxiliary: cannot -> can he.",
+   "order": 42,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Negative statement -> positive tag."
+  },
+  {
+   "questionText": "She ___ her homework when the teacher entered the room.",
+   "options": [
+    {
+     "text": "has done"
+    },
+    {
+     "text": "was doing"
+    },
+    {
+     "text": "does"
+    },
+    {
+     "text": "is doing"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A past continuous action is interrupted by a simple past action (entered): was doing.",
+   "order": 43,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Interrupted background action -> past continuous."
+  },
+  {
+   "questionText": "The doctor suggested ___ to the hills for a few weeks.",
+   "options": [
+    {
+     "text": "gone"
+    },
+    {
+     "text": "to go"
+    },
+    {
+     "text": "go"
+    },
+    {
+     "text": "going"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb 'suggest' is followed by a gerund (-ing form), not by an infinitive.",
+   "order": 44,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "suggest + verb-ing."
+  },
+  {
+   "questionText": "He is used to ___ up early in the morning.",
+   "options": [
+    {
+     "text": "gets"
+    },
+    {
+     "text": "getting"
+    },
+    {
+     "text": "got"
+    },
+    {
+     "text": "get"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In 'be used to', 'to' is a preposition, so the -ing form follows.",
+   "order": 45,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "be used to + verb-ing."
+  },
+  {
+   "questionText": "I ___ in this city since I was a child.",
+   "options": [
+    {
+     "text": "live"
+    },
+    {
+     "text": "lived"
+    },
+    {
+     "text": "am living"
+    },
+    {
+     "text": "have lived"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Since' with a point in the past and an action continuing to now needs the present perfect: have lived.",
+   "order": 46,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Water ___ at 100 degrees Celsius at sea level.",
+   "options": [
+    {
+     "text": "boil"
+    },
+    {
+     "text": "boiled"
+    },
+    {
+     "text": "boils"
+    },
+    {
+     "text": "is boiling"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A scientific fact is expressed in the simple present; 'water' is singular, so boils.",
+   "order": 47,
+   "subPattern": "grammar-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The doctor advised him to ___ from oily food for a few weeks.",
+   "options": [
+    {
+     "text": "abstain"
+    },
+    {
+     "text": "insist"
+    },
+    {
+     "text": "derive"
+    },
+    {
+     "text": "persist"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Abstain from' means to keep away from something; the other verbs do not take 'from' in this sense.",
+   "order": 48,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Heavy rain ___ the match, so it was postponed to Sunday.",
+   "options": [
+    {
+     "text": "assisted"
+    },
+    {
+     "text": "disrupted"
+    },
+    {
+     "text": "celebrated"
+    },
+    {
+     "text": "advertised"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The match was postponed, so the rain interrupted it: 'disrupted' fits.",
+   "order": 49,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Ravi is very ___; he never tells a lie.",
+   "options": [
+    {
+     "text": "honest"
+    },
+    {
+     "text": "greedy"
+    },
+    {
+     "text": "jealous"
+    },
+    {
+     "text": "clumsy"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Never telling a lie describes an honest person.",
+   "order": 50,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The old man is so ___ that he donates half his pension to charity.",
+   "options": [
+    {
+     "text": "timid"
+    },
+    {
+     "text": "stingy"
+    },
+    {
+     "text": "generous"
+    },
+    {
+     "text": "rude"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Giving away money freely shows generosity; 'stingy' is the opposite.",
+   "order": 51,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The sun was so ___ at noon that we could not walk barefoot on the road.",
+   "options": [
+    {
+     "text": "dim"
+    },
+    {
+     "text": "freezing"
+    },
+    {
+     "text": "pleasant"
+    },
+    {
+     "text": "scorching"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Hot road surface needs an intensely hot sun: 'scorching'.",
+   "order": 52,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The teacher praised Anita for her ___ in solving the toughest problem.",
+   "options": [
+    {
+     "text": "ingenuity"
+    },
+    {
+     "text": "clumsiness"
+    },
+    {
+     "text": "laziness"
+    },
+    {
+     "text": "ignorance"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Praise goes with a positive quality; 'ingenuity' means cleverness.",
+   "order": 53,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The thief ___ the policeman by hiding behind a pillar.",
+   "options": [
+    {
+     "text": "invited"
+    },
+    {
+     "text": "eluded"
+    },
+    {
+     "text": "praised"
+    },
+    {
+     "text": "assisted"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Elude' means to escape or avoid someone cleverly.",
+   "order": 54,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He was so ___ after the long trek that he fell asleep immediately.",
+   "options": [
+    {
+     "text": "generous"
+    },
+    {
+     "text": "energetic"
+    },
+    {
+     "text": "exhausted"
+    },
+    {
+     "text": "furious"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Falling asleep at once follows extreme tiredness: 'exhausted'.",
+   "order": 55,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Wearing a seat belt is ___ for the driver, as the law requires it.",
+   "options": [
+    {
+     "text": "ordinary"
+    },
+    {
+     "text": "optional"
+    },
+    {
+     "text": "forbidden"
+    },
+    {
+     "text": "mandatory"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As the law requires it' means compulsory: 'mandatory'.",
+   "order": 56,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The judge ___ the accused of all charges due to lack of evidence.",
+   "options": [
+    {
+     "text": "convicted"
+    },
+    {
+     "text": "sentenced"
+    },
+    {
+     "text": "accused"
+    },
+    {
+     "text": "acquitted"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lack of evidence leads to being cleared of charges: 'acquitted'.",
+   "order": 57,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The magician's trick left the audience ___; nobody could explain it.",
+   "options": [
+    {
+     "text": "careless"
+    },
+    {
+     "text": "baffled"
+    },
+    {
+     "text": "jealous"
+    },
+    {
+     "text": "sleepy"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Being unable to explain something leaves people puzzled: 'baffled'.",
+   "order": 58,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Rahul's ___ for cricket began when he received his first bat at the age of six.",
+   "options": [
+    {
+     "text": "tolerance"
+    },
+    {
+     "text": "aversion"
+    },
+    {
+     "text": "passion"
+    },
+    {
+     "text": "suspicion"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A gift that starts an interest in cricket creates a passion, not an aversion.",
+   "order": 59,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The ___ of the old fort is a major tourist attraction in Rajasthan.",
+   "options": [
+    {
+     "text": "grandeur"
+    },
+    {
+     "text": "grudge"
+    },
+    {
+     "text": "grammar"
+    },
+    {
+     "text": "gravity"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only 'grandeur' (magnificence) can attract tourists to a fort.",
+   "order": 60,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The minister's speech was full of ___ promises that no one believed, as they were never kept.",
+   "options": [
+    {
+     "text": "genuine"
+    },
+    {
+     "text": "solid"
+    },
+    {
+     "text": "fulfilled"
+    },
+    {
+     "text": "empty"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Promises never kept are 'empty' promises.",
+   "order": 61,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Always arriving late and missing deadlines, he showed a ___ attitude towards his job.",
+   "options": [
+    {
+     "text": "diligent"
+    },
+    {
+     "text": "negligent"
+    },
+    {
+     "text": "ambitious"
+    },
+    {
+     "text": "enthusiastic"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lateness and missed deadlines show carelessness: 'negligent'.",
+   "order": 62,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The scientist's theory was ___ by experiments conducted by two independent labs, confirming it.",
+   "options": [
+    {
+     "text": "contradicted"
+    },
+    {
+     "text": "ignored"
+    },
+    {
+     "text": "corroborated"
+    },
+    {
+     "text": "ridiculed"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Confirming it' signals support: 'corroborated' means confirmed.",
+   "order": 63,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The company's profits ___ sharply during the recession, forcing it to cut jobs.",
+   "options": [
+    {
+     "text": "plummeted"
+    },
+    {
+     "text": "soared"
+    },
+    {
+     "text": "multiplied"
+    },
+    {
+     "text": "flourished"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Job cuts follow a steep fall, so 'plummeted' fits.",
+   "order": 64,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Being a ___ person, he never spends a rupee without thinking twice.",
+   "options": [
+    {
+     "text": "lavish"
+    },
+    {
+     "text": "reckless"
+    },
+    {
+     "text": "extravagant"
+    },
+    {
+     "text": "frugal"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Thinking twice before spending describes a thrifty (frugal) person.",
+   "order": 65,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The two neighbours finally ___ their long-standing quarrel and became friends.",
+   "options": [
+    {
+     "text": "prolonged"
+    },
+    {
+     "text": "resolved"
+    },
+    {
+     "text": "provoked"
+    },
+    {
+     "text": "aggravated"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Becoming friends means the quarrel was settled: 'resolved'.",
+   "order": 66,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The lawyer gave a ___ argument that left no room for doubt.",
+   "options": [
+    {
+     "text": "hesitant"
+    },
+    {
+     "text": "vague"
+    },
+    {
+     "text": "cogent"
+    },
+    {
+     "text": "feeble"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "An argument leaving no doubt is convincing: 'cogent'.",
+   "order": 67,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The crowd became ___ when the match was stopped unfairly and began throwing bottles.",
+   "options": [
+    {
+     "text": "unruly"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "obedient"
+    },
+    {
+     "text": "silent"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Throwing bottles shows disorderly behaviour: 'unruly'.",
+   "order": 68,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Her ___ in the kitchen was evident from the perfect meal she cooked.",
+   "options": [
+    {
+     "text": "reluctance"
+    },
+    {
+     "text": "ignorance"
+    },
+    {
+     "text": "disinterest"
+    },
+    {
+     "text": "proficiency"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A perfect meal shows skill: 'proficiency'.",
+   "order": 69,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The patient's condition is ___; the doctors say he may not survive the night.",
+   "options": [
+    {
+     "text": "stable"
+    },
+    {
+     "text": "critical"
+    },
+    {
+     "text": "trivial"
+    },
+    {
+     "text": "improving"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Possible death overnight means a grave condition: 'critical'.",
+   "order": 70,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The old professor was known for his ___ of speech; he could say a lot in a few words.",
+   "options": [
+    {
+     "text": "verbosity"
+    },
+    {
+     "text": "clumsiness"
+    },
+    {
+     "text": "brevity"
+    },
+    {
+     "text": "hesitation"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Saying much in few words is 'brevity'; 'verbosity' is the opposite.",
+   "order": 71,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The shopkeeper's ___ reply upset the customer, who had asked politely.",
+   "options": [
+    {
+     "text": "curt"
+    },
+    {
+     "text": "courteous"
+    },
+    {
+     "text": "gentle"
+    },
+    {
+     "text": "warm"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A rude, abrupt reply to a polite question upsets: 'curt'.",
+   "order": 72,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "A good leader must be ___ and take quick decisions in a crisis.",
+   "options": [
+    {
+     "text": "timid"
+    },
+    {
+     "text": "indecisive"
+    },
+    {
+     "text": "hesitant"
+    },
+    {
+     "text": "decisive"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Quick decisions require being 'decisive'.",
+   "order": 73,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The fire was ___ before it could spread to the neighbouring houses.",
+   "options": [
+    {
+     "text": "ignited"
+    },
+    {
+     "text": "extinguished"
+    },
+    {
+     "text": "fuelled"
+    },
+    {
+     "text": "spread"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Stopping it from spreading means it was put out: 'extinguished'.",
+   "order": 74,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The students were ___ by the teacher for talking during the exam.",
+   "options": [
+    {
+     "text": "reprimanded"
+    },
+    {
+     "text": "promoted"
+    },
+    {
+     "text": "rewarded"
+    },
+    {
+     "text": "congratulated"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Talking during an exam draws a scolding: 'reprimanded'.",
+   "order": 75,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The explorers faced ___ weather on the peak, with blizzards and freezing winds.",
+   "options": [
+    {
+     "text": "mild"
+    },
+    {
+     "text": "balmy"
+    },
+    {
+     "text": "hostile"
+    },
+    {
+     "text": "pleasant"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Blizzards and freezing winds are harsh: 'hostile'.",
+   "order": 76,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Though wealthy, she led a ___ life, avoiding show and luxury.",
+   "options": [
+    {
+     "text": "ostentatious"
+    },
+    {
+     "text": "lavish"
+    },
+    {
+     "text": "flamboyant"
+    },
+    {
+     "text": "modest"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Avoiding show and luxury' describes a modest life.",
+   "order": 77,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The two parties could not reach a ___ and the talks collapsed.",
+   "options": [
+    {
+     "text": "compromise"
+    },
+    {
+     "text": "conflict"
+    },
+    {
+     "text": "defeat"
+    },
+    {
+     "text": "quarrel"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "One 'reaches a compromise' in negotiations; the other nouns do not collocate with 'reach' here.",
+   "order": 78,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The new software is ___ with all the older versions, so files open without trouble.",
+   "options": [
+    {
+     "text": "comparable"
+    },
+    {
+     "text": "compatible"
+    },
+    {
+     "text": "complete"
+    },
+    {
+     "text": "competent"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Compatible with' means able to work together.",
+   "order": 79,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The CEO's sudden ___ shocked the board, as he had held the post for only a month.",
+   "options": [
+    {
+     "text": "recreation"
+    },
+    {
+     "text": "reservation"
+    },
+    {
+     "text": "resignation"
+    },
+    {
+     "text": "resolution"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Leaving a post after a month is a resignation.",
+   "order": 80,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The soldiers showed great ___ in the face of enemy fire.",
+   "options": [
+    {
+     "text": "vulgarity"
+    },
+    {
+     "text": "valour"
+    },
+    {
+     "text": "vanity"
+    },
+    {
+     "text": "vigour"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Courage under fire is 'valour'.",
+   "order": 81,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The politician's ___ remarks about the minority community sparked widespread protests.",
+   "options": [
+    {
+     "text": "neutral"
+    },
+    {
+     "text": "laudatory"
+    },
+    {
+     "text": "derogatory"
+    },
+    {
+     "text": "benign"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Protests follow insulting remarks: 'derogatory' means disparaging.",
+   "order": 82,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The report was so ___ that it covered every minor detail of the project.",
+   "options": [
+    {
+     "text": "cursory"
+    },
+    {
+     "text": "superficial"
+    },
+    {
+     "text": "sketchy"
+    },
+    {
+     "text": "exhaustive"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Covering every minor detail means thorough: 'exhaustive'.",
+   "order": 83,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Hari's ___ nature made him adjust easily to any new city he was posted to.",
+   "options": [
+    {
+     "text": "adaptable"
+    },
+    {
+     "text": "rigid"
+    },
+    {
+     "text": "haughty"
+    },
+    {
+     "text": "obstinate"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Adjusting easily shows adaptability.",
+   "order": 84,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The judge's verdict was ___, favouring neither side.",
+   "options": [
+    {
+     "text": "hasty"
+    },
+    {
+     "text": "impartial"
+    },
+    {
+     "text": "partial"
+    },
+    {
+     "text": "biased"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Favouring neither side' = impartial; 'partial' means biased.",
+   "order": 85,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Despite repeated warnings, he continued his ___ driving and finally met with an accident.",
+   "options": [
+    {
+     "text": "reckless"
+    },
+    {
+     "text": "prudent"
+    },
+    {
+     "text": "cautious"
+    },
+    {
+     "text": "careful"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ignoring warnings and crashing shows reckless driving.",
+   "order": 86,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The minister's ___ response to the question avoided giving a direct answer.",
+   "options": [
+    {
+     "text": "candid"
+    },
+    {
+     "text": "forthright"
+    },
+    {
+     "text": "evasive"
+    },
+    {
+     "text": "explicit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Avoiding a direct answer is 'evasive'.",
+   "order": 87,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The doctor's ___ treatment of a minor ailment was criticised as an overreaction.",
+   "options": [
+    {
+     "text": "lenient"
+    },
+    {
+     "text": "mild"
+    },
+    {
+     "text": "negligible"
+    },
+    {
+     "text": "drastic"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Overreaction implies extreme measures: 'drastic'.",
+   "order": 88,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Her speech was so ___ that half the audience began to yawn.",
+   "options": [
+    {
+     "text": "lively"
+    },
+    {
+     "text": "stirring"
+    },
+    {
+     "text": "thrilling"
+    },
+    {
+     "text": "monotonous"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Yawning shows boredom caused by a dull, unvarying speech: 'monotonous'.",
+   "order": 89,
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The soup was so ___ that the child refused to ___ it.",
+   "options": [
+    {
+     "text": "tasty, drink"
+    },
+    {
+     "text": "sweet, swallow"
+    },
+    {
+     "text": "bitter, swallow"
+    },
+    {
+     "text": "bland, relish"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A child refuses food that tastes bitter; 'swallow' completes the idea.",
+   "order": 90,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The students were ___ when the teacher announced that the test was ___.",
+   "options": [
+    {
+     "text": "delighted, cancelled"
+    },
+    {
+     "text": "upset, postponed"
+    },
+    {
+     "text": "delighted, mandatory"
+    },
+    {
+     "text": "upset, cancelled"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Cancellation of a test pleases students; the other pairs are illogical.",
+   "order": 91,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "___ it was raining heavily, the match ___ on time.",
+   "options": [
+    {
+     "text": "Unless, started"
+    },
+    {
+     "text": "Although, started"
+    },
+    {
+     "text": "Because, started"
+    },
+    {
+     "text": "Since, started"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Contrast between rain and starting on time needs 'Although'.",
+   "order": 92,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The more you practise, the ___ you become and the ___ mistakes you make.",
+   "options": [
+    {
+     "text": "best, fewer"
+    },
+    {
+     "text": "good, few"
+    },
+    {
+     "text": "better, less"
+    },
+    {
+     "text": "better, fewer"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Comparative 'better'; 'fewer' with countable 'mistakes'.",
+   "order": 93,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Countable -> fewer; uncountable -> less."
+  },
+  {
+   "questionText": "She topped the class because she is ___ intelligent ___ hardworking.",
+   "options": [
+    {
+     "text": "both, and"
+    },
+    {
+     "text": "either, or"
+    },
+    {
+     "text": "neither, nor"
+    },
+    {
+     "text": "both, or"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Topping the class needs positive qualities joined by 'both ... and'.",
+   "order": 94,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "___ Ravi ___ his brother has passed the exam; both failed.",
+   "options": [
+    {
+     "text": "Either, or"
+    },
+    {
+     "text": "Neither, nor"
+    },
+    {
+     "text": "Both, and"
+    },
+    {
+     "text": "Not only, but"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Both failed' means neither passed: 'Neither ... nor'.",
+   "order": 95,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "By the time I ___ home, the match ___ already begun.",
+   "options": [
+    {
+     "text": "reached, have"
+    },
+    {
+     "text": "reached, had"
+    },
+    {
+     "text": "reached, has"
+    },
+    {
+     "text": "reach, had"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Past event with an earlier past action takes simple past + past perfect (had begun).",
+   "order": 96,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "If he ___ harder, he ___ the exam.",
+   "options": [
+    {
+     "text": "had worked, would have passed"
+    },
+    {
+     "text": "would have worked, had passed"
+    },
+    {
+     "text": "had worked, will pass"
+    },
+    {
+     "text": "worked, would have passed"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Third conditional: if + past perfect, would have + past participle.",
+   "order": 97,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The ___ of the hotel's food was so ___ that guests kept returning.",
+   "options": [
+    {
+     "text": "quality, poor"
+    },
+    {
+     "text": "quantity, poor"
+    },
+    {
+     "text": "quality, excellent"
+    },
+    {
+     "text": "speed, slow"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Guests return when food quality is excellent.",
+   "order": 98,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She is taller ___ her sister but not as fair ___ her.",
+   "options": [
+    {
+     "text": "than, than"
+    },
+    {
+     "text": "as, as"
+    },
+    {
+     "text": "as, than"
+    },
+    {
+     "text": "than, as"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Comparative 'taller' takes 'than'; 'not as fair' takes 'as'.",
+   "order": 99,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Please ___ me your pen; I will ___ it back tomorrow.",
+   "options": [
+    {
+     "text": "borrow, return"
+    },
+    {
+     "text": "lend, return"
+    },
+    {
+     "text": "lend, borrow"
+    },
+    {
+     "text": "borrow, lend"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "You lend something to someone; the borrower returns it.",
+   "order": 100,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The ___ of the movie was so ___ that people left halfway.",
+   "options": [
+    {
+     "text": "plot, dull"
+    },
+    {
+     "text": "plot, thrilling"
+    },
+    {
+     "text": "ending, gripping"
+    },
+    {
+     "text": "acting, superb"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People leave a movie when the plot is dull.",
+   "order": 101,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The patient was ___ to hospital after he ___ unconscious.",
+   "options": [
+    {
+     "text": "rushing, fell"
+    },
+    {
+     "text": "rush, fell"
+    },
+    {
+     "text": "rushed, fell"
+    },
+    {
+     "text": "rushed, falls"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Past passive 'was rushed' and past 'fell' (sequence of past events).",
+   "order": 102,
+   "subPattern": "double-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Not only ___ he win the race, ___ he broke the record.",
+   "options": [
+    {
+     "text": "did, but"
+    },
+    {
+     "text": "had, but"
+    },
+    {
+     "text": "did, and"
+    },
+    {
+     "text": "does, but"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Not only did he ..., but ...' is the correct inversion pattern.",
+   "order": 103,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Unless you ___ hard, you will ___ the exam.",
+   "options": [
+    {
+     "text": "worked, pass"
+    },
+    {
+     "text": "do not work, fail"
+    },
+    {
+     "text": "work, pass"
+    },
+    {
+     "text": "work, fail"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Unless' already carries a negative; the result of not working is failing.",
+   "order": 104,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The accused was ___ because the evidence was too ___ to convict him.",
+   "options": [
+    {
+     "text": "acquitted, strong"
+    },
+    {
+     "text": "acquitted, weak"
+    },
+    {
+     "text": "convicted, weak"
+    },
+    {
+     "text": "convicted, strong"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Weak evidence cannot convict, so he was acquitted.",
+   "order": 105,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Of the two candidates Arun is the ___ qualified, but among all the staff Meera is the ___ qualified.",
+   "options": [
+    {
+     "text": "more, more"
+    },
+    {
+     "text": "most, more"
+    },
+    {
+     "text": "more, most"
+    },
+    {
+     "text": "most, most"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Two items: comparative 'more'; many items: superlative 'most'.",
+   "order": 106,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He ___ to the doctor, but the doctor ___ already left.",
+   "options": [
+    {
+     "text": "went, has"
+    },
+    {
+     "text": "had gone, has"
+    },
+    {
+     "text": "went, had"
+    },
+    {
+     "text": "goes, had"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Earlier past action (left) takes past perfect 'had'.",
+   "order": 107,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Because the road was ___, the bus ___ slowly.",
+   "options": [
+    {
+     "text": "slippery, will move"
+    },
+    {
+     "text": "slippery, moved"
+    },
+    {
+     "text": "slipperily, moved"
+    },
+    {
+     "text": "slippery, moving"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Adjective 'slippery' describes the road; past tense 'moved'.",
+   "order": 108,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The harder she studies, the ___ marks she ___.",
+   "options": [
+    {
+     "text": "more, scores"
+    },
+    {
+     "text": "more, score"
+    },
+    {
+     "text": "most, scored"
+    },
+    {
+     "text": "many, scores"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'The + comparative' pattern; singular subject takes 'scores'.",
+   "order": 109,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "My uncle, ___ lives in Pune, ___ a retired engineer.",
+   "options": [
+    {
+     "text": "whom, is"
+    },
+    {
+     "text": "which, is"
+    },
+    {
+     "text": "who, are"
+    },
+    {
+     "text": "who, is"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Who' is the subject for a person; singular subject takes 'is'.",
+   "order": 110,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The book ___ I bought yesterday ___ very interesting.",
+   "options": [
+    {
+     "text": "whom, are"
+    },
+    {
+     "text": "who, is"
+    },
+    {
+     "text": "which, is"
+    },
+    {
+     "text": "which, are"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Which' for things; 'book' is singular so 'is'.",
+   "order": 111,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He ___ for the bus for an hour when it finally ___.",
+   "options": [
+    {
+     "text": "had been waiting, arrived"
+    },
+    {
+     "text": "waits, arrived"
+    },
+    {
+     "text": "has been waiting, arrived"
+    },
+    {
+     "text": "had been waiting, arrives"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Past perfect continuous for the earlier ongoing action; simple past for the later event.",
+   "order": 112,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The river ___ its banks and ___ the villages.",
+   "options": [
+    {
+     "text": "overflew, flooded"
+    },
+    {
+     "text": "overflown, flooded"
+    },
+    {
+     "text": "overflowed, flowed"
+    },
+    {
+     "text": "overflowed, flooded"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Past of overflow is 'overflowed'; the water 'flooded' the villages.",
+   "order": 113,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Neither the captain ___ the players ___ ready for the final.",
+   "options": [
+    {
+     "text": "nor, was"
+    },
+    {
+     "text": "nor, were"
+    },
+    {
+     "text": "and, was"
+    },
+    {
+     "text": "or, were"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Neither' pairs with 'nor'; the verb agrees with the nearer subject, 'players' (were).",
+   "order": 114,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "A number of students ___ absent, but the number of absentees ___ small.",
+   "options": [
+    {
+     "text": "was, were"
+    },
+    {
+     "text": "was, was"
+    },
+    {
+     "text": "were, was"
+    },
+    {
+     "text": "were, were"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'A number of' takes plural; 'the number of' takes singular.",
+   "order": 115,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I would have called you if I ___ your number, but I ___ it.",
+   "options": [
+    {
+     "text": "had known, will not know"
+    },
+    {
+     "text": "had known, did not know"
+    },
+    {
+     "text": "would know, did not know"
+    },
+    {
+     "text": "knew, did not know"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Third conditional needs 'had known'; the real fact is past: 'did not know'.",
+   "order": 116,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He is ___ MBA and his brother is ___ engineer.",
+   "options": [
+    {
+     "text": "an, an"
+    },
+    {
+     "text": "an, a"
+    },
+    {
+     "text": "a, an"
+    },
+    {
+     "text": "a, a"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Article depends on sound: 'MBA' begins with the vowel sound 'em', and 'engineer' with a vowel.",
+   "order": 117,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She is senior ___ me ___ three years.",
+   "options": [
+    {
+     "text": "than, by"
+    },
+    {
+     "text": "than, for"
+    },
+    {
+     "text": "to, for"
+    },
+    {
+     "text": "to, by"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Senior' takes 'to'; the difference is shown with 'by'.",
+   "order": 118,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He prefers tea ___ coffee, ___ his sister prefers coffee to tea.",
+   "options": [
+    {
+     "text": "than, so"
+    },
+    {
+     "text": "than, but"
+    },
+    {
+     "text": "to, but"
+    },
+    {
+     "text": "to, because"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Prefer' takes 'to'; the two preferences contrast, so 'but'.",
+   "order": 119,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She has ___ been to Goa, so she is ___ excited about the trip.",
+   "options": [
+    {
+     "text": "never, much"
+    },
+    {
+     "text": "never, very"
+    },
+    {
+     "text": "ever, very"
+    },
+    {
+     "text": "ever, much"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Never' fits the 'so' clause of excitement; 'ever' is not used in a positive statement; 'very' goes with adjectives.",
+   "order": 120,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Hardly ___ he sat down ___ the phone rang.",
+   "options": [
+    {
+     "text": "had, when"
+    },
+    {
+     "text": "has, when"
+    },
+    {
+     "text": "had, than"
+    },
+    {
+     "text": "did, when"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Hardly had ... when' is the fixed pattern ('than' goes with 'no sooner').",
+   "order": 121,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Hardly -> when; No sooner -> than."
+  },
+  {
+   "questionText": "She ___ me yesterday that she ___ come the next day.",
+   "options": [
+    {
+     "text": "said, would"
+    },
+    {
+     "text": "said, will"
+    },
+    {
+     "text": "told, will"
+    },
+    {
+     "text": "told, would"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Told' takes an object; the reported past needs 'would'.",
+   "order": 122,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The principal, as well as the teachers, ___ pleased, and the students ___ also happy.",
+   "options": [
+    {
+     "text": "was, were"
+    },
+    {
+     "text": "was, was"
+    },
+    {
+     "text": "were, was"
+    },
+    {
+     "text": "were, were"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As well as' does not change the subject (principal: was); 'students' takes 'were'.",
+   "order": 123,
+   "subPattern": "double-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Had I ___ about the strike, I ___ left home earlier.",
+   "options": [
+    {
+     "text": "known, would"
+    },
+    {
+     "text": "knew, would have"
+    },
+    {
+     "text": "known, would have"
+    },
+    {
+     "text": "known, will have"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Inverted third conditional: 'Had + past participle ..., would have + past participle'.",
+   "order": 124,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Of the two proposals, the second is the ___ and it is also ___ practical.",
+   "options": [
+    {
+     "text": "best, most"
+    },
+    {
+     "text": "best, more"
+    },
+    {
+     "text": "better, most"
+    },
+    {
+     "text": "better, more"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Two items need comparatives: better, more.",
+   "order": 125,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She speaks as if she ___ the manager, though she ___ only a clerk.",
+   "options": [
+    {
+     "text": "were, are"
+    },
+    {
+     "text": "were, is"
+    },
+    {
+     "text": "is, is"
+    },
+    {
+     "text": "was, is"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'As if' for an unreal comparison takes 'were'; the fact is stated in present 'is'.",
+   "order": 126,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The scheme, ___ aims at rural employment, ___ launched in 2006.",
+   "options": [
+    {
+     "text": "which, were"
+    },
+    {
+     "text": "who, was"
+    },
+    {
+     "text": "whose, was"
+    },
+    {
+     "text": "which, was"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Which' refers to the scheme (thing); singular 'was'.",
+   "order": 127,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The flowers ___ I received were so ___ that the entire room smelt wonderful.",
+   "options": [
+    {
+     "text": "which, fragrance"
+    },
+    {
+     "text": "which, fragrant"
+    },
+    {
+     "text": "which, fragile"
+    },
+    {
+     "text": "who, fragrant"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Which' for things; smelling wonderful requires the adjective 'fragrant'.",
+   "order": 128,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Seldom ___ he lose his temper, and rarely ___ he complain.",
+   "options": [
+    {
+     "text": "does, does"
+    },
+    {
+     "text": "do, do"
+    },
+    {
+     "text": "does, do"
+    },
+    {
+     "text": "did, do"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Negative adverbs at the start take auxiliary inversion; singular 'he' takes 'does'.",
+   "order": 129,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Each of the boys ___ his own bag, and all of them ___ ready to leave.",
+   "options": [
+    {
+     "text": "have, is"
+    },
+    {
+     "text": "have, are"
+    },
+    {
+     "text": "has, are"
+    },
+    {
+     "text": "has, is"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Each' is singular (has); 'all of them' is plural (are).",
+   "order": 130,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Rohan is not ___ clever ___ his sister, but he works harder.",
+   "options": [
+    {
+     "text": "than, as"
+    },
+    {
+     "text": "so, than"
+    },
+    {
+     "text": "as, than"
+    },
+    {
+     "text": "as, as"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Negative equality uses 'as ... as'; 'than' never follows 'as'.",
+   "order": 131,
+   "subPattern": "double-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The train arrives ___ platform number 4.",
+   "options": [
+    {
+     "text": "to"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "in"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A specific point or location such as a platform takes 'at'.",
+   "order": 132,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Point/location -> at."
+  },
+  {
+   "questionText": "She was born ___ 12 March 1998.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "in"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dates and days take 'on'.",
+   "order": 133,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Date/day -> on; month/year -> in; clock time -> at."
+  },
+  {
+   "questionText": "The meeting will begin ___ 10 a.m. sharp.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exact clock times take 'at'.",
+   "order": 134,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Clock time -> at."
+  },
+  {
+   "questionText": "My brother is very good ___ mathematics.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "in"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The adjective 'good' takes 'at' when it refers to a skill.",
+   "order": 135,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "good/bad/clever at + skill."
+  },
+  {
+   "questionText": "The shopkeeper divided the sweets ___ the four children equally.",
+   "options": [
+    {
+     "text": "within"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "among"
+    },
+    {
+     "text": "between"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Among' is used for more than two persons or things.",
+   "order": 136,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Two -> between; three or more -> among."
+  },
+  {
+   "questionText": "There is a strong friendship ___ Ravi and Karthik.",
+   "options": [
+    {
+     "text": "between"
+    },
+    {
+     "text": "among"
+    },
+    {
+     "text": "within"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Between' is used for two persons.",
+   "order": 137,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Two -> between."
+  },
+  {
+   "questionText": "He has been absent ___ Monday.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "since"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "from"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Since' marks a starting point in time.",
+   "order": 138,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Point -> since; period -> for."
+  },
+  {
+   "questionText": "The students have been preparing ___ three months.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "since"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'For' is used with a period of time.",
+   "order": 139,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Period -> for."
+  },
+  {
+   "questionText": "The cat jumped ___ the wall and ran away.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "over"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Passing above and across an obstacle is expressed by 'over'.",
+   "order": 140,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Jump over an obstacle."
+  },
+  {
+   "questionText": "He is married ___ a doctor from Madurai.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The verb 'married' (state) is followed by 'to'.",
+   "order": 141,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "married to."
+  },
+  {
+   "questionText": "I am fond ___ filter coffee.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The adjective 'fond' takes 'of'.",
+   "order": 142,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "fond of."
+  },
+  {
+   "questionText": "She is afraid ___ lizards.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The adjective 'afraid' is always followed by 'of' (afraid of lizards). 'From', 'at' and 'by' do not collocate with it.",
+   "order": 143,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "afraid of."
+  },
+  {
+   "questionText": "The farmers were happy ___ the heavy rain.",
+   "options": [
+    {
+     "text": "about"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Happy about' a situation or news is the standard usage here.",
+   "order": 144,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "happy about/with something."
+  },
+  {
+   "questionText": "He is accused ___ stealing the bicycle.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "about"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Accuse' is followed by 'of'.",
+   "order": 145,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "accuse somebody of."
+  },
+  {
+   "questionText": "The minister congratulated the team ___ their victory.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Congratulate' takes 'on'.",
+   "order": 146,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "congratulate on."
+  },
+  {
+   "questionText": "She insisted ___ paying the bill herself.",
+   "options": [
+    {
+     "text": "at"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb 'insist' takes the preposition 'on' before a gerund: insist on paying. Other prepositions are not used with it.",
+   "order": 147,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "insist on."
+  },
+  {
+   "questionText": "The old man is suffering ___ high blood pressure.",
+   "options": [
+    {
+     "text": "by"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Suffer' takes 'from' for an ailment.",
+   "order": 148,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "suffer from."
+  },
+  {
+   "questionText": "He prefers tea ___ coffee.",
+   "options": [
+    {
+     "text": "over than"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "than"
+    },
+    {
+     "text": "from"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Prefer' is followed by 'to', not 'than'.",
+   "order": 149,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "prefer X to Y."
+  },
+  {
+   "questionText": "The bridge is ___ construction and will open next year.",
+   "options": [
+    {
+     "text": "under"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "in"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Under construction' is the fixed phrase.",
+   "order": 150,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "under construction."
+  },
+  {
+   "questionText": "She is senior ___ me by two years.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "than"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "over"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Adjectives like senior, junior, superior, inferior take 'to'.",
+   "order": 151,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "senior/junior/superior to."
+  },
+  {
+   "questionText": "The Principal was angry ___ the students for their misbehaviour.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Anger toward a person takes 'with' (at is used for a thing).",
+   "order": 152,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "angry with a person; angry at a thing."
+  },
+  {
+   "questionText": "The thief was caught ___ the act of breaking the lock.",
+   "options": [
+    {
+     "text": "during"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "in"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The idiom is 'caught in the act'.",
+   "order": 153,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "in the act."
+  },
+  {
+   "questionText": "He is tired ___ waiting for the bus.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Tired of' means fed up with doing something.",
+   "order": 154,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "tired of = bored/fed up."
+  },
+  {
+   "questionText": "The new law is applicable ___ all citizens.",
+   "options": [
+    {
+     "text": "to"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Applicable' is followed by 'to' (applicable to all citizens), never 'for' or 'on'.",
+   "order": 155,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "applicable to."
+  },
+  {
+   "questionText": "The company has been in business ___ 1985.",
+   "options": [
+    {
+     "text": "by"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "since"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A fixed starting year with the present perfect takes 'since'.",
+   "order": 156,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "since + point of time."
+  },
+  {
+   "questionText": "I will finish this work ___ Friday at the latest.",
+   "options": [
+    {
+     "text": "at"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "till"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'By' means not later than a deadline; 'till' would show continuous activity up to Friday.",
+   "order": 157,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "by = deadline; till = duration."
+  },
+  {
+   "questionText": "The shop remains open ___ 9 p.m. every day.",
+   "options": [
+    {
+     "text": "by"
+    },
+    {
+     "text": "till"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Till' shows a situation continuing up to a time.",
+   "order": 158,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "till = continuing up to."
+  },
+  {
+   "questionText": "The Himalayas lie ___ the north of India.",
+   "options": [
+    {
+     "text": "to"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "in"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A neighbouring region outside the boundary is described with 'to the north of'.",
+   "order": 159,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "outside the area -> to the north of."
+  },
+  {
+   "questionText": "Karnataka lies ___ the south of Maharashtra and is not part of it, so we say it lies ___ the south.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Outside neighbours use 'to the south of'.",
+   "order": 160,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "outside the area -> to."
+  },
+  {
+   "questionText": "She has no objection ___ your joining the team.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "against"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The noun 'objection' takes 'to' (objection to your joining), even when a gerund follows. 'Against' is not used here.",
+   "order": 161,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "objection to."
+  },
+  {
+   "questionText": "The teacher was pleased ___ the progress of her students.",
+   "options": [
+    {
+     "text": "by"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Pleased with' for a result or thing is standard; 'with' is used with progress.",
+   "order": 162,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "pleased with."
+  },
+  {
+   "questionText": "He died ___ cancer last year.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "of"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Die of' is used with a disease (illness as cause).",
+   "order": 163,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "die of disease; die from injury/overwork."
+  },
+  {
+   "questionText": "The pilot was blamed ___ the accident.",
+   "options": [
+    {
+     "text": "of"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "on"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Blame somebody for something'.",
+   "order": 164,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "blame for."
+  },
+  {
+   "questionText": "The Chief Guest was received ___ a bouquet.",
+   "options": [
+    {
+     "text": "through"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "in"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The instrument or manner of receiving is introduced by 'with'.",
+   "order": 165,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "with = instrument."
+  },
+  {
+   "questionText": "She has a great aversion ___ crowded places.",
+   "options": [
+    {
+     "text": "to"
+    },
+    {
+     "text": "from"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The noun 'aversion' is followed by 'to'.",
+   "order": 166,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "aversion to."
+  },
+  {
+   "questionText": "The jury differed ___ the verdict, so a retrial was ordered.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Differ on' a matter (disagree about) is used here; 'differ from' compares things.",
+   "order": 167,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "differ from = unlike; differ on/about = disagree."
+  },
+  {
+   "questionText": "Her accent is quite different ___ her sister's.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "than"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "from"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In standard Indian-English usage 'different' takes 'from'.",
+   "order": 168,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "different from."
+  },
+  {
+   "questionText": "The minister is the author ___ several bills on education.",
+   "options": [
+    {
+     "text": "of"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "by"
+    },
+    {
+     "text": "for"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Author of' links a writer to the work: the author of several bills. 'By' would reverse the relationship.",
+   "order": 169,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "author of."
+  },
+  {
+   "questionText": "He was deprived ___ his inheritance by the court order.",
+   "options": [
+    {
+     "text": "from"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "of"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Deprive' is always followed by 'of': deprived of his inheritance. Similar patterns: robbed of, relieved of.",
+   "order": 170,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "deprive of."
+  },
+  {
+   "questionText": "The officer was entrusted ___ the responsibility of conducting the audit.",
+   "options": [
+    {
+     "text": "on"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Entrust somebody with something (or entrust something to somebody).",
+   "order": 171,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "entrust sb with sth."
+  },
+  {
+   "questionText": "The trustees are accountable ___ the shareholders for every rupee spent.",
+   "options": [
+    {
+     "text": "for"
+    },
+    {
+     "text": "with"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Accountable to a person, for an action.",
+   "order": 172,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "accountable to person, for action."
+  },
+  {
+   "questionText": "The rebels were unwilling to comply ___ the ceasefire terms.",
+   "options": [
+    {
+     "text": "with"
+    },
+    {
+     "text": "to"
+    },
+    {
+     "text": "for"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Comply' takes 'with': comply with the terms. 'To' is used with 'conform' or 'adhere', not 'comply'.",
+   "order": 173,
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "shortcut": "comply with."
+  },
+  {
+   "questionText": "He decided to ___ up smoking for good.",
+   "options": [
+    {
+     "text": "pull"
+    },
+    {
+     "text": "give"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "bring"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Give up' means to stop a habit. 'Bring up', 'hold up' and 'pull up' do not mean quitting.",
+   "order": 174,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Give up = quit."
+  },
+  {
+   "questionText": "The flight will ___ off at 6 a.m.",
+   "options": [
+    {
+     "text": "come"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "bring"
+    },
+    {
+     "text": "make"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Take off' is the phrasal verb for an aircraft leaving the ground.",
+   "order": 175,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Plane leaves ground = take off."
+  },
+  {
+   "questionText": "Please ___ on the lights; it is getting dark.",
+   "options": [
+    {
+     "text": "hold"
+    },
+    {
+     "text": "call"
+    },
+    {
+     "text": "run"
+    },
+    {
+     "text": "turn"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Turn on' means to switch on an appliance or light.",
+   "order": 176,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I will ___ you up at the station at 5 p.m.",
+   "options": [
+    {
+     "text": "pick"
+    },
+    {
+     "text": "fetch"
+    },
+    {
+     "text": "drop"
+    },
+    {
+     "text": "hold"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Pick up' means to collect someone by vehicle. 'Fetch up' and 'drop up' are not used this way.",
+   "order": 177,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Pick up = collect."
+  },
+  {
+   "questionText": "Please jot ___ the new phone number in your diary.",
+   "options": [
+    {
+     "text": "out"
+    },
+    {
+     "text": "away"
+    },
+    {
+     "text": "down"
+    },
+    {
+     "text": "off"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Jot down' means to write something briefly. The particle is 'down'.",
+   "order": 178,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The thief tried to ___ away but was caught.",
+   "options": [
+    {
+     "text": "hold"
+    },
+    {
+     "text": "look"
+    },
+    {
+     "text": "run"
+    },
+    {
+     "text": "bring"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Run away' means to flee. The other verbs do not combine with 'away' to give this meaning.",
+   "order": 179,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "If you do not know the meaning of a word, ___ it up in a dictionary.",
+   "options": [
+    {
+     "text": "glance"
+    },
+    {
+     "text": "watch"
+    },
+    {
+     "text": "see"
+    },
+    {
+     "text": "look"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Look up' means to search for information in a reference book.",
+   "order": 180,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Look up = consult a book."
+  },
+  {
+   "questionText": "Our car ___ down on the highway, so we reached late.",
+   "options": [
+    {
+     "text": "set"
+    },
+    {
+     "text": "broke"
+    },
+    {
+     "text": "took"
+    },
+    {
+     "text": "put"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Break down' means a machine stops working. 'Put down', 'set down' and 'take down' do not.",
+   "order": 181,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Please ___ out the application form in capital letters.",
+   "options": [
+    {
+     "text": "fill"
+    },
+    {
+     "text": "bring"
+    },
+    {
+     "text": "turn"
+    },
+    {
+     "text": "hold"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Fill out' means to complete a form by writing in the details.",
+   "order": 182,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The machine will shut ___ automatically if it overheats.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "down"
+    },
+    {
+     "text": "up"
+    },
+    {
+     "text": "by"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Shut down' means to stop operating; 'shut up', 'shut in' and 'shut by' have other meanings or are wrong here.",
+   "order": 183,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He ___ up at 5 a.m. every day to go for a walk.",
+   "options": [
+    {
+     "text": "gets"
+    },
+    {
+     "text": "takes"
+    },
+    {
+     "text": "puts"
+    },
+    {
+     "text": "goes"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Get up' means to rise from bed. 'Put up', 'go up' and 'take up' have different meanings.",
+   "order": 184,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "We have ___ out of sugar; please buy some on your way.",
+   "options": [
+    {
+     "text": "turned"
+    },
+    {
+     "text": "come"
+    },
+    {
+     "text": "run"
+    },
+    {
+     "text": "gone"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Run out of' means to have no more of something left.",
+   "order": 185,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Run out of = finished the stock."
+  },
+  {
+   "questionText": "The sisters ___ along very well and never quarrel.",
+   "options": [
+    {
+     "text": "hold"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "get"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Get along' means to have a friendly relationship with someone.",
+   "order": 186,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Get along = be friendly."
+  },
+  {
+   "questionText": "The police have promised to ___ into the robbery.",
+   "options": [
+    {
+     "text": "turn"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "look"
+    },
+    {
+     "text": "call"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Look into' means to investigate. The other verbs do not form a phrasal verb with 'into' in this sense.",
+   "order": 187,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Look into = investigate."
+  },
+  {
+   "questionText": "Don't ___ off the task till tomorrow; finish it today.",
+   "options": [
+    {
+     "text": "call"
+    },
+    {
+     "text": "set"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "put"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Put off' means to postpone, which matches the idea of leaving it till tomorrow.",
+   "order": 188,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Put off = postpone."
+  },
+  {
+   "questionText": "He ___ across an old friend while shopping in Chennai.",
+   "options": [
+    {
+     "text": "came"
+    },
+    {
+     "text": "got"
+    },
+    {
+     "text": "went"
+    },
+    {
+     "text": "held"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Come across' means to meet or find by chance.",
+   "order": 189,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Come across = meet by chance."
+  },
+  {
+   "questionText": "The firemen quickly ___ out the fire.",
+   "options": [
+    {
+     "text": "took"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "set"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Put out' means to extinguish a fire.",
+   "order": 190,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Put out = extinguish."
+  },
+  {
+   "questionText": "The scheme fell ___ because of lack of funds.",
+   "options": [
+    {
+     "text": "behind"
+    },
+    {
+     "text": "off"
+    },
+    {
+     "text": "away"
+    },
+    {
+     "text": "through"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Fall through' means a plan fails to happen. 'Fell off', 'fell away' and 'fell behind' do not carry this sense.",
+   "order": 191,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She takes ___ her mother in looks.",
+   "options": [
+    {
+     "text": "up"
+    },
+    {
+     "text": "over"
+    },
+    {
+     "text": "after"
+    },
+    {
+     "text": "off"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Take after' means to resemble a parent or elder relative.",
+   "order": 192,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Take after = resemble."
+  },
+  {
+   "questionText": "The CEO will ___ down next March after twenty years.",
+   "options": [
+    {
+     "text": "step"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "run"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Step down' means to resign from a post.",
+   "order": 193,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I cannot ___ up with his constant noise any longer.",
+   "options": [
+    {
+     "text": "hold"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "run"
+    },
+    {
+     "text": "take"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Put up with' means to tolerate, which suits 'cannot ... any longer'.",
+   "order": 194,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Put up with = tolerate."
+  },
+  {
+   "questionText": "The mechanic managed to ___ out what was wrong with the engine.",
+   "options": [
+    {
+     "text": "hold"
+    },
+    {
+     "text": "turn"
+    },
+    {
+     "text": "find"
+    },
+    {
+     "text": "bring"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Find out' means to discover a fact or reason.",
+   "order": 195,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The manager asked him to ___ up the report by Friday.",
+   "options": [
+    {
+     "text": "take"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "run"
+    },
+    {
+     "text": "draw"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Draw up' means to prepare a formal document.",
+   "order": 196,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Draw up = prepare a document."
+  },
+  {
+   "questionText": "He ___ up his mind to join the army.",
+   "options": [
+    {
+     "text": "put"
+    },
+    {
+     "text": "made"
+    },
+    {
+     "text": "set"
+    },
+    {
+     "text": "took"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The fixed phrase is 'make up one's mind', meaning to decide.",
+   "order": 197,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Make up one's mind = decide."
+  },
+  {
+   "questionText": "The teacher told the boys to ___ on with their work quietly.",
+   "options": [
+    {
+     "text": "get"
+    },
+    {
+     "text": "come"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "bring"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Get on with' means to continue doing something.",
+   "order": 198,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The organisers had to ___ off the concert as the singer fell ill.",
+   "options": [
+    {
+     "text": "set"
+    },
+    {
+     "text": "call"
+    },
+    {
+     "text": "bring"
+    },
+    {
+     "text": "turn"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Call off' means to cancel an event.",
+   "order": 199,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Call off = cancel."
+  },
+  {
+   "questionText": "After the war, the economy took years to ___ back.",
+   "options": [
+    {
+     "text": "bounce"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "break"
+    },
+    {
+     "text": "fall"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Bounce back' means to recover quickly after a setback.",
+   "order": 200,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The students were asked to ___ in their assignments by Monday.",
+   "options": [
+    {
+     "text": "make"
+    },
+    {
+     "text": "run"
+    },
+    {
+     "text": "hand"
+    },
+    {
+     "text": "hold"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Hand in' means to submit work.",
+   "order": 201,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Hand in = submit."
+  },
+  {
+   "questionText": "The old building was ___ down to build a mall.",
+   "options": [
+    {
+     "text": "set"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "pulled"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Pull down' means to demolish a building.",
+   "order": 202,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He ___ out of the race due to an injury.",
+   "options": [
+    {
+     "text": "set"
+    },
+    {
+     "text": "dropped"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "held"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Drop out' means to withdraw from a contest or course.",
+   "order": 203,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Drop out = withdraw."
+  },
+  {
+   "questionText": "She ___ up three children single-handedly.",
+   "options": [
+    {
+     "text": "brought"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "took"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Bring up' means to raise a child.",
+   "order": 204,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Bring up = raise a child."
+  },
+  {
+   "questionText": "The bomb ___ off with a loud noise.",
+   "options": [
+    {
+     "text": "put"
+    },
+    {
+     "text": "ran"
+    },
+    {
+     "text": "came"
+    },
+    {
+     "text": "went"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Go off' means to explode. 'Come off', 'run off' and 'put off' do not.",
+   "order": 205,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Go off = explode."
+  },
+  {
+   "questionText": "The negotiators ___ out a compromise after hours of talks.",
+   "options": [
+    {
+     "text": "held"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "worked"
+    },
+    {
+     "text": "ran"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Work out' means to find a solution through effort.",
+   "order": 206,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The meeting ___ on till midnight, leaving everyone exhausted.",
+   "options": [
+    {
+     "text": "brought"
+    },
+    {
+     "text": "pulled"
+    },
+    {
+     "text": "dragged"
+    },
+    {
+     "text": "took"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Drag on' means to continue for too long.",
+   "order": 207,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Drag on = go on tediously."
+  },
+  {
+   "questionText": "The new manager has ___ up with a plan to cut costs.",
+   "options": [
+    {
+     "text": "come"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "caught"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Come up with' means to think of an idea or plan.",
+   "order": 208,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Come up with = devise."
+  },
+  {
+   "questionText": "His speech ___ the audience up and they cheered for minutes.",
+   "options": [
+    {
+     "text": "held"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "ran"
+    },
+    {
+     "text": "fired"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Fire up' means to fill with enthusiasm.",
+   "order": 209,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She was ___ out by the tiring journey and slept at once.",
+   "options": [
+    {
+     "text": "turned"
+    },
+    {
+     "text": "worn"
+    },
+    {
+     "text": "brought"
+    },
+    {
+     "text": "held"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Worn out' means extremely tired.",
+   "order": 210,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Worn out = exhausted."
+  },
+  {
+   "questionText": "The doctor asked me to cut ___ on sweets.",
+   "options": [
+    {
+     "text": "off"
+    },
+    {
+     "text": "over"
+    },
+    {
+     "text": "back"
+    },
+    {
+     "text": "away"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Cut back on' means to reduce consumption; 'cut off' would mean stop completely or sever, and is not followed by 'on'.",
+   "order": 211,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The coach decided to ___ the new bowler out in the nets.",
+   "options": [
+    {
+     "text": "bring"
+    },
+    {
+     "text": "pull"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "try"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Try out' means to test someone or something to judge ability.",
+   "order": 212,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The old rivals finally ___ up and shook hands.",
+   "options": [
+    {
+     "text": "took"
+    },
+    {
+     "text": "made"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "put"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Make up' means to become friends again after a quarrel.",
+   "order": 213,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Make up = reconcile."
+  },
+  {
+   "questionText": "Nobody expected the plan to ___ out so well.",
+   "options": [
+    {
+     "text": "turn"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "set"
+    },
+    {
+     "text": "hold"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Turn out' means to end up in a particular way.",
+   "order": 214,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Turn out = end up."
+  },
+  {
+   "questionText": "She has to ___ in for her sick colleague this week.",
+   "options": [
+    {
+     "text": "take"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "fill"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Fill in for' means to substitute for someone temporarily.",
+   "order": 215,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Fill in for = substitute."
+  },
+  {
+   "questionText": "Rahul tried to ___ the crowd down but they kept shouting.",
+   "options": [
+    {
+     "text": "set"
+    },
+    {
+     "text": "call"
+    },
+    {
+     "text": "calm"
+    },
+    {
+     "text": "break"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Calm down' means to make or become less agitated.",
+   "order": 216,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The teacher ___ over the lesson again before the exam.",
+   "options": [
+    {
+     "text": "came"
+    },
+    {
+     "text": "went"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "set"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Go over' means to review or revise.",
+   "order": 217,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Go over = revise."
+  },
+  {
+   "questionText": "The detective ___ the clues together and solved the case.",
+   "options": [
+    {
+     "text": "pieced"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "set"
+    },
+    {
+     "text": "ran"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Piece together' means to assemble information bit by bit.",
+   "order": 218,
+   "subPattern": "phrasal-verbs",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "I think I ___ a mistake in the third answer.",
+   "options": [
+    {
+     "text": "did"
+    },
+    {
+     "text": "made"
+    },
+    {
+     "text": "took"
+    },
+    {
+     "text": "gave"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Make a mistake' is the fixed collocation; 'do a mistake' is wrong.",
+   "order": 219,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Mistake, effort, noise -> make."
+  },
+  {
+   "questionText": "Have you ___ your homework?",
+   "options": [
+    {
+     "text": "taken"
+    },
+    {
+     "text": "kept"
+    },
+    {
+     "text": "done"
+    },
+    {
+     "text": "made"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Do homework' is the collocation; 'make homework' is incorrect.",
+   "order": 220,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Homework, work, duty -> do."
+  },
+  {
+   "questionText": "Please ___ attention to the instructions.",
+   "options": [
+    {
+     "text": "pay"
+    },
+    {
+     "text": "do"
+    },
+    {
+     "text": "make"
+    },
+    {
+     "text": "take"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The collocation is 'pay attention'.",
+   "order": 221,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She ___ her promise and returned the money on time.",
+   "options": [
+    {
+     "text": "did"
+    },
+    {
+     "text": "took"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "kept"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Keep a promise' is the fixed collocation.",
+   "order": 222,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "We ___ a lot of fun at the picnic.",
+   "options": [
+    {
+     "text": "did"
+    },
+    {
+     "text": "took"
+    },
+    {
+     "text": "had"
+    },
+    {
+     "text": "made"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Have fun' is the standard collocation.",
+   "order": 223,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Can you ___ a photo of us?",
+   "options": [
+    {
+     "text": "take"
+    },
+    {
+     "text": "do"
+    },
+    {
+     "text": "keep"
+    },
+    {
+     "text": "make"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Take a photo' is the standard collocation.",
+   "order": 224,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "There was ___ rain last night, and the streets flooded.",
+   "options": [
+    {
+     "text": "strong"
+    },
+    {
+     "text": "heavy"
+    },
+    {
+     "text": "big"
+    },
+    {
+     "text": "high"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rain is described as 'heavy', not 'strong' or 'big'.",
+   "order": 225,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Heavy rain, strong wind."
+  },
+  {
+   "questionText": "He ___ a lie to avoid punishment.",
+   "options": [
+    {
+     "text": "made"
+    },
+    {
+     "text": "spoke"
+    },
+    {
+     "text": "said"
+    },
+    {
+     "text": "told"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Tell a lie' is the fixed collocation.",
+   "order": 226,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Tell a lie / a story; say a word."
+  },
+  {
+   "questionText": "You must ___ care of your health during the exams.",
+   "options": [
+    {
+     "text": "take"
+    },
+    {
+     "text": "do"
+    },
+    {
+     "text": "keep"
+    },
+    {
+     "text": "make"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Take care of' is the fixed expression.",
+   "order": 227,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Shall I ___ some tea for you?",
+   "options": [
+    {
+     "text": "cook"
+    },
+    {
+     "text": "make"
+    },
+    {
+     "text": "build"
+    },
+    {
+     "text": "do"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Make tea' is the collocation; 'cook tea' is not used.",
+   "order": 228,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Take a taxi to ___ time.",
+   "options": [
+    {
+     "text": "hold"
+    },
+    {
+     "text": "stop"
+    },
+    {
+     "text": "save"
+    },
+    {
+     "text": "keep"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Save time' is the fixed collocation.",
+   "order": 229,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Can you ___ a secret?",
+   "options": [
+    {
+     "text": "get"
+    },
+    {
+     "text": "make"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "keep"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Keep a secret' is the collocation.",
+   "order": 230,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The baby was ___ asleep within minutes.",
+   "options": [
+    {
+     "text": "soon"
+    },
+    {
+     "text": "rapid"
+    },
+    {
+     "text": "fast"
+    },
+    {
+     "text": "quick"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Fast asleep' is a fixed collocation meaning deeply asleep.",
+   "order": 231,
+   "subPattern": "collocations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Fast asleep, wide awake."
+  },
+  {
+   "questionText": "We must ___ an effort to reduce waste.",
+   "options": [
+    {
+     "text": "make"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "hold"
+    },
+    {
+     "text": "do"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Make an effort' is the fixed collocation.",
+   "order": 232,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The government ___ a ban on plastic bags.",
+   "options": [
+    {
+     "text": "planted"
+    },
+    {
+     "text": "imposed"
+    },
+    {
+     "text": "fitted"
+    },
+    {
+     "text": "ordered"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Impose a ban' is the standard collocation.",
+   "order": 233,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She drives a hard ___ with every supplier.",
+   "options": [
+    {
+     "text": "trade"
+    },
+    {
+     "text": "deal"
+    },
+    {
+     "text": "price"
+    },
+    {
+     "text": "bargain"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Drive a hard bargain' is an idiom meaning to negotiate firmly.",
+   "order": 234,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The minister ___ his resignation to the Prime Minister.",
+   "options": [
+    {
+     "text": "rested"
+    },
+    {
+     "text": "fixed"
+    },
+    {
+     "text": "tendered"
+    },
+    {
+     "text": "dealt"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Tender one's resignation' is the formal collocation.",
+   "order": 235,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "We should ___ a close watch on the situation.",
+   "options": [
+    {
+     "text": "make"
+    },
+    {
+     "text": "keep"
+    },
+    {
+     "text": "give"
+    },
+    {
+     "text": "take"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Keep a close watch' is the fixed collocation.",
+   "order": 236,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Keep a watch / an eye."
+  },
+  {
+   "questionText": "The firm ___ heavy losses last year.",
+   "options": [
+    {
+     "text": "won"
+    },
+    {
+     "text": "gained"
+    },
+    {
+     "text": "achieved"
+    },
+    {
+     "text": "incurred"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Losses are 'incurred'; achieved, gained and won go with positive things.",
+   "order": 237,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Incur losses/expenses."
+  },
+  {
+   "questionText": "They ___ a warm welcome to the chief guest.",
+   "options": [
+    {
+     "text": "extended"
+    },
+    {
+     "text": "lifted"
+    },
+    {
+     "text": "carried"
+    },
+    {
+     "text": "moved"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Extend a welcome' is the formal collocation.",
+   "order": 238,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "It is time we ___ an end to this dispute.",
+   "options": [
+    {
+     "text": "gave"
+    },
+    {
+     "text": "put"
+    },
+    {
+     "text": "did"
+    },
+    {
+     "text": "made"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Put an end to' is the fixed expression.",
+   "order": 239,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Put an end to."
+  },
+  {
+   "questionText": "She ___ a deep sigh of relief.",
+   "options": [
+    {
+     "text": "threw"
+    },
+    {
+     "text": "poured"
+    },
+    {
+     "text": "heaved"
+    },
+    {
+     "text": "pushed"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Heave a sigh' is the standard collocation.",
+   "order": 240,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The detective ___ a blank when asked about the motive.",
+   "options": [
+    {
+     "text": "kept"
+    },
+    {
+     "text": "made"
+    },
+    {
+     "text": "took"
+    },
+    {
+     "text": "drew"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Draw a blank' means to fail to find or recall anything.",
+   "order": 241,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He was deep ___ debt after the business failed.",
+   "options": [
+    {
+     "text": "in"
+    },
+    {
+     "text": "on"
+    },
+    {
+     "text": "at"
+    },
+    {
+     "text": "with"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Deep in debt' is the fixed collocation with 'in'.",
+   "order": 242,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The passengers had a narrow ___ when the bus skidded.",
+   "options": [
+    {
+     "text": "run"
+    },
+    {
+     "text": "flight"
+    },
+    {
+     "text": "rescue"
+    },
+    {
+     "text": "escape"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Narrow escape' is the fixed collocation.",
+   "order": 243,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "It is an open ___ that he plans to retire.",
+   "options": [
+    {
+     "text": "rumour"
+    },
+    {
+     "text": "secret"
+    },
+    {
+     "text": "truth"
+    },
+    {
+     "text": "fact"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Open secret' means something known to everyone though officially secret.",
+   "order": 244,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Open secret."
+  },
+  {
+   "questionText": "The patient is in ___ condition after the accident.",
+   "options": [
+    {
+     "text": "sharp"
+    },
+    {
+     "text": "rough"
+    },
+    {
+     "text": "critical"
+    },
+    {
+     "text": "hard"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A seriously ill patient is in 'critical condition'.",
+   "order": 245,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He ___ his best to reach on time.",
+   "options": [
+    {
+     "text": "did"
+    },
+    {
+     "text": "took"
+    },
+    {
+     "text": "made"
+    },
+    {
+     "text": "kept"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Do one's best' is the fixed collocation.",
+   "order": 246,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The thief was caught ___-handed.",
+   "options": [
+    {
+     "text": "blue"
+    },
+    {
+     "text": "green"
+    },
+    {
+     "text": "red"
+    },
+    {
+     "text": "black"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Caught red-handed' is the idiom.",
+   "order": 247,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She ___ a complaint with the police.",
+   "options": [
+    {
+     "text": "stuck"
+    },
+    {
+     "text": "lodged"
+    },
+    {
+     "text": "pitched"
+    },
+    {
+     "text": "fixed"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Lodge a complaint' is the standard collocation.",
+   "order": 248,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The company ___ bankrupt after the scam.",
+   "options": [
+    {
+     "text": "walked"
+    },
+    {
+     "text": "rolled"
+    },
+    {
+     "text": "ran"
+    },
+    {
+     "text": "went"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Go bankrupt' is the fixed collocation.",
+   "order": 249,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The jury ___ the wrong conclusion from the evidence.",
+   "options": [
+    {
+     "text": "drew"
+    },
+    {
+     "text": "held"
+    },
+    {
+     "text": "found"
+    },
+    {
+     "text": "took"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Draw a conclusion' is the standard collocation.",
+   "order": 250,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Draw a conclusion."
+  },
+  {
+   "questionText": "The rule is hard and ___; no exceptions are allowed.",
+   "options": [
+    {
+     "text": "rough"
+    },
+    {
+     "text": "solid"
+    },
+    {
+     "text": "fast"
+    },
+    {
+     "text": "strong"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Hard and fast rules' is a fixed phrase.",
+   "order": 251,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She was ___ with grief after her father's death.",
+   "options": [
+    {
+     "text": "overthrown"
+    },
+    {
+     "text": "overdone"
+    },
+    {
+     "text": "overlooked"
+    },
+    {
+     "text": "overcome"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Overcome with grief' is the standard collocation.",
+   "order": 252,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The accused was granted ___ on a bond of ₹50,000.",
+   "options": [
+    {
+     "text": "pardon"
+    },
+    {
+     "text": "bail"
+    },
+    {
+     "text": "remand"
+    },
+    {
+     "text": "parole"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Release pending trial against a bond is 'bail'.",
+   "order": 253,
+   "subPattern": "collocations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The chief minister laid the ___ stone of the hospital.",
+   "options": [
+    {
+     "text": "foundation"
+    },
+    {
+     "text": "base"
+    },
+    {
+     "text": "ground"
+    },
+    {
+     "text": "root"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Lay the foundation stone' is the fixed expression.",
+   "order": 254,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The villagers turned a ___ ear to the officer's appeal.",
+   "options": [
+    {
+     "text": "deaf"
+    },
+    {
+     "text": "blind"
+    },
+    {
+     "text": "closed"
+    },
+    {
+     "text": "dumb"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Turn a deaf ear' means to refuse to listen.",
+   "order": 255,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The candidate ___ his election promise within a year of winning.",
+   "options": [
+    {
+     "text": "tore"
+    },
+    {
+     "text": "split"
+    },
+    {
+     "text": "broke"
+    },
+    {
+     "text": "cracked"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Break a promise' is the collocation.",
+   "order": 256,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The neighbours finally buried the ___ and became friends.",
+   "options": [
+    {
+     "text": "knife"
+    },
+    {
+     "text": "axe"
+    },
+    {
+     "text": "sword"
+    },
+    {
+     "text": "hatchet"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Bury the hatchet' is the idiom for ending a quarrel.",
+   "order": 257,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Lack of sleep can ___ havoc with your health.",
+   "options": [
+    {
+     "text": "make"
+    },
+    {
+     "text": "play"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "hold"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Play havoc with' is the fixed expression.",
+   "order": 258,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "She has a sweet ___ and cannot resist desserts.",
+   "options": [
+    {
+     "text": "tongue"
+    },
+    {
+     "text": "mouth"
+    },
+    {
+     "text": "lip"
+    },
+    {
+     "text": "tooth"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Sweet tooth' means a liking for sweet food.",
+   "order": 259,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The speaker was given a standing ___ at the end.",
+   "options": [
+    {
+     "text": "ovation"
+    },
+    {
+     "text": "cheer"
+    },
+    {
+     "text": "clap"
+    },
+    {
+     "text": "praise"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Standing ovation' is the fixed collocation.",
+   "order": 260,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The minister ___ the blame on the previous government.",
+   "options": [
+    {
+     "text": "kept"
+    },
+    {
+     "text": "laid"
+    },
+    {
+     "text": "ran"
+    },
+    {
+     "text": "flew"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Lay the blame on' is the standard expression.",
+   "order": 261,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "The company ___ a profit of ₹5 crore this quarter.",
+   "options": [
+    {
+     "text": "kept"
+    },
+    {
+     "text": "did"
+    },
+    {
+     "text": "made"
+    },
+    {
+     "text": "held"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Make a profit' is the standard collocation.",
+   "order": 262,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Make a profit/loss."
+  },
+  {
+   "questionText": "Do not take the matter ___; it is only a joke.",
+   "options": [
+    {
+     "text": "weakly"
+    },
+    {
+     "text": "slightly"
+    },
+    {
+     "text": "softly"
+    },
+    {
+     "text": "lightly"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Take lightly' is the standard collocation.",
+   "order": 263,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "He is a ___ sleeper and wakes at the slightest noise.",
+   "options": [
+    {
+     "text": "soft"
+    },
+    {
+     "text": "small"
+    },
+    {
+     "text": "light"
+    },
+    {
+     "text": "thin"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Light sleeper' is the fixed collocation.",
+   "order": 264,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Virat ___ the record for most centuries in the tournament.",
+   "options": [
+    {
+     "text": "split"
+    },
+    {
+     "text": "broke"
+    },
+    {
+     "text": "tore"
+    },
+    {
+     "text": "cracked"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Break a record' is the collocation.",
+   "order": 265,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Many small firms ___ business in this lane.",
+   "options": [
+    {
+     "text": "do"
+    },
+    {
+     "text": "take"
+    },
+    {
+     "text": "give"
+    },
+    {
+     "text": "make"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Do business' is the collocation.",
+   "order": 266,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  },
+  {
+   "questionText": "Don't ___ your time on gossip.",
+   "options": [
+    {
+     "text": "waste"
+    },
+    {
+     "text": "throw"
+    },
+    {
+     "text": "drop"
+    },
+    {
+     "text": "pass"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Waste time' is the collocation; 'pass time' means to occupy time and does not fit the warning.",
+   "order": 267,
+   "subPattern": "collocations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,617 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "What does the idiom 'A blessing in disguise' mean?",
+   "options": [
+    "A person pretending to be kind",
+    "A hidden curse",
+    "An apparent misfortune that turns out to be good",
+    "A secret gift"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The phrase describes something that looks bad at first but later proves beneficial.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'Bite the bullet' most nearly means:",
+   "options": [
+    "Eat hurriedly",
+    "Speak rudely",
+    "Escape from danger",
+    "Face a painful situation with courage"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "To bite the bullet is to accept something unpleasant and get on with it bravely.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Break the ice'.",
+   "options": [
+    "Break a rule",
+    "Begin a conversation in an awkward social setting",
+    "End a friendship",
+    "Cool a drink"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means to ease initial tension between strangers so that talk can begin.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Beat around the bush' – select the option closest in meaning.",
+   "options": [
+    "Work very hard",
+    "Attack someone",
+    "Avoid coming to the main point",
+    "Search a forest"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "A person who beats around the bush talks indirectly instead of stating the point.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'Hit the nail on the head' mean?",
+   "options": [
+    "Fail in a task",
+    "Say or do exactly the right thing",
+    "Cause an injury",
+    "Work with tools"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The idiom means to state precisely what is correct or relevant.",
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'Burn the midnight oil' most nearly means:",
+   "options": [
+    "Start a fire",
+    "Sleep very early",
+    "Work or study late into the night",
+    "Waste fuel"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The idiom comes from oil lamps used for late-night work or study.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Cost an arm and a leg'.",
+   "options": [
+    "Cause a serious injury",
+    "Be given free",
+    "Be of no value",
+    "Be extremely expensive"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It is used for something that costs a very high price.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Once in a blue moon' – select the option closest in meaning.",
+   "options": [
+    "Without warning",
+    "Very rarely",
+    "At night",
+    "Every month"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A blue moon is a rare event, so the idiom means extremely seldom.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'Spill the beans' mean?",
+   "options": [
+    "Waste food",
+    "Cook a meal",
+    "Reveal a secret",
+    "Make a mess"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "To spill the beans is to disclose confidential information.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'Let the cat out of the bag' most nearly means:",
+   "options": [
+    "Rescue an animal",
+    "Start a quarrel",
+    "Create confusion",
+    "Disclose a secret by accident"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It means to reveal something hidden, usually carelessly.",
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Under the weather'.",
+   "options": [
+    "Extremely poor",
+    "Slightly unwell",
+    "Caught in the rain",
+    "Very cheerful"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The idiom is used for a person who feels a little ill.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'A piece of cake' – select the option closest in meaning.",
+   "options": [
+    "A difficult puzzle",
+    "A small share",
+    "A sweet reward",
+    "Something very easy"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It describes a task that can be done without effort.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'Call it a day' mean?",
+   "options": [
+    "Postpone a meeting",
+    "Start a new job",
+    "Stop working for the day",
+    "Name a date"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The idiom means to decide to stop an activity for now.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'Cry over spilt milk' most nearly means:",
+   "options": [
+    "Waste dairy products",
+    "Complain about prices",
+    "Lament something that cannot be undone",
+    "Behave like a child"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "It means to be upset about a loss that cannot be reversed.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Kill two birds with one stone'.",
+   "options": [
+    "Hunt skilfully",
+    "Waste effort on two tasks",
+    "Act cruelly",
+    "Achieve two aims with a single action"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The idiom means solving two problems with one effort.",
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Face the music' – select the option closest in meaning.",
+   "options": [
+    "Accept the consequences of one's actions",
+    "Perform on stage",
+    "Enjoy a concert",
+    "Avoid criticism"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To face the music is to meet punishment or criticism that one deserves.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'Add fuel to the fire' mean?",
+   "options": [
+    "Make a bad situation worse",
+    "Calm an argument",
+    "Cook food quickly",
+    "Provide warmth"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It means to aggravate an already tense situation.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'At the eleventh hour' most nearly means:",
+   "options": [
+    "Without any delay",
+    "At the last possible moment",
+    "Very early",
+    "At exactly eleven"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The phrase means just in time, when almost too late.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Barking up the wrong tree'.",
+   "options": [
+    "Making a loud noise",
+    "Pursuing a mistaken course of action",
+    "Hunting animals",
+    "Scolding a child"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means to chase the wrong person or approach for a goal.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Cut corners' – select the option closest in meaning.",
+   "options": [
+    "Trim a paper",
+    "Draw straight lines",
+    "Save time by walking fast",
+    "Do something in the cheapest or easiest way, skipping proper steps"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Cutting corners means sacrificing quality or procedure to save effort or money.",
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'A dark horse' mean?",
+   "options": [
+    "A little-known person who unexpectedly wins",
+    "A dishonest person",
+    "A black animal",
+    "A favourite candidate"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The term is used for an unexpected winner whose abilities were unknown.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'Throw in the towel' most nearly means:",
+   "options": [
+    "Clean up quickly",
+    "Admit defeat and give up",
+    "Win easily",
+    "Start a fight"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The idiom comes from boxing, where a towel signals surrender.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'A white elephant'.",
+   "options": [
+    "A sign of good luck",
+    "A rare animal",
+    "A holy object",
+    "A costly possession that is useless"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It refers to something expensive to maintain and of little benefit.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Achilles' heel' – select the option closest in meaning.",
+   "options": [
+    "A heavy injury",
+    "A person's weak point",
+    "A secret talent",
+    "A strong point"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The expression refers to a vulnerable spot in an otherwise strong person.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'Pull someone's leg' mean?",
+   "options": [
+    "Help someone walk",
+    "Tease or joke with someone",
+    "Cause an injury",
+    "Deceive for money"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means to play a harmless joke on a person.",
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'Read between the lines' most nearly means:",
+   "options": [
+    "Correct a text",
+    "Read very slowly",
+    "Skip a paragraph",
+    "Understand a hidden meaning"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It means to infer what is not directly stated.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'Take something with a pinch of salt'.",
+   "options": [
+    "Not believe it completely",
+    "Add seasoning",
+    "Reject it angrily",
+    "Accept it eagerly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It advises treating a statement with some doubt.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Turn a blind eye' – select the option closest in meaning.",
+   "options": [
+    "Deliberately ignore something wrong",
+    "Lose one's sight",
+    "Look away from light",
+    "Notice carefully"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "It means to pretend not to see something.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'A red-letter day' mean?",
+   "options": [
+    "A holiday for banks",
+    "A day of mourning",
+    "A day of examinations",
+    "A memorable and happy day"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The phrase refers to a special day marked in red on calendars.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'A bolt from the blue' most nearly means:",
+   "options": [
+    "A clear sky",
+    "A completely unexpected event",
+    "A planned surprise",
+    "A lightning rod"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "It means a sudden shock that comes without warning.",
+   "subPattern": "common-idioms",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct meaning of the expression 'A storm in a teacup'.",
+   "options": [
+    "A serious crisis",
+    "A heavy rainfall",
+    "A tea party",
+    "Great fuss over a trivial matter"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "It describes an unnecessary uproar about something small.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "'Split hairs' – select the option closest in meaning.",
+   "options": [
+    "Make petty distinctions",
+    "Divide equally",
+    "Visit a barber",
+    "Argue loudly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To split hairs is to quibble over very fine, unimportant differences.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "What does the idiom 'Sit on the fence' mean?",
+   "options": [
+    "Support one side strongly",
+    "Rest after work",
+    "Avoid taking sides",
+    "Guard a boundary"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The idiom means to remain neutral and undecided.",
+   "subPattern": "common-idioms",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The idiom 'The lion's share' most nearly means:",
+   "options": [
+    "A royal gift",
+    "An equal share",
+    "The largest part",
+    "The smallest portion"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "It means the biggest portion of something shared.",
+   "subPattern": "common-idioms",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

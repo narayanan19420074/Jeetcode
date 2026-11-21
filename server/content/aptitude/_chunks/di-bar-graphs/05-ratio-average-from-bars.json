@@ -1,0 +1,1680 @@
+{
+ "sets": [
+  {
+   "id": "di-bar-graphs-s045",
+   "type": "bar",
+   "title": "Exports and imports of a firm (Value (₹ crore)); Exports vs Imports bars for ratios and averages",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Value (₹ crore)",
+    "series": [
+     {
+      "name": "Exports",
+      "data": [
+       {
+        "label": "2018",
+        "value": 250
+       },
+       {
+        "label": "2019",
+        "value": 110
+       },
+       {
+        "label": "2020",
+        "value": 170
+       },
+       {
+        "label": "2021",
+        "value": 250
+       }
+      ]
+     },
+     {
+      "name": "Imports",
+      "data": [
+       {
+        "label": "2018",
+        "value": 110
+       },
+       {
+        "label": "2019",
+        "value": 280
+       },
+       {
+        "label": "2020",
+        "value": 480
+       },
+       {
+        "label": "2021",
+        "value": 360
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s046",
+   "type": "bar",
+   "title": "Employees of a manufacturing company by department (Employees); Permanent vs Contract bars for ratios and averages",
+   "chart": {
+    "xLabel": "Department",
+    "yLabel": "Employees",
+    "series": [
+     {
+      "name": "Permanent",
+      "data": [
+       {
+        "label": "HR",
+        "value": 300
+       },
+       {
+        "label": "Finance",
+        "value": 150
+       },
+       {
+        "label": "IT",
+        "value": 170
+       },
+       {
+        "label": "Sales",
+        "value": 160
+       },
+       {
+        "label": "Production",
+        "value": 290
+       },
+       {
+        "label": "Quality",
+        "value": 130
+       }
+      ]
+     },
+     {
+      "name": "Contract",
+      "data": [
+       {
+        "label": "HR",
+        "value": 220
+       },
+       {
+        "label": "Finance",
+        "value": 240
+       },
+       {
+        "label": "IT",
+        "value": 30
+       },
+       {
+        "label": "Sales",
+        "value": 90
+       },
+       {
+        "label": "Production",
+        "value": 290
+       },
+       {
+        "label": "Quality",
+        "value": 220
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s047",
+   "type": "bar",
+   "title": "Runs scored by batters in a season (Runs scored); Test matches vs ODI matches bars for ratios and averages",
+   "chart": {
+    "xLabel": "Batter",
+    "yLabel": "Runs scored",
+    "series": [
+     {
+      "name": "Test matches",
+      "data": [
+       {
+        "label": "Arjun",
+        "value": 580
+       },
+       {
+        "label": "Karthik",
+        "value": 660
+       },
+       {
+        "label": "Vikram",
+        "value": 800
+       },
+       {
+        "label": "Suresh",
+        "value": 180
+       },
+       {
+        "label": "Rahul",
+        "value": 560
+       },
+       {
+        "label": "Dinesh",
+        "value": 160
+       }
+      ]
+     },
+     {
+      "name": "ODI matches",
+      "data": [
+       {
+        "label": "Arjun",
+        "value": 380
+       },
+       {
+        "label": "Karthik",
+        "value": 120
+       },
+       {
+        "label": "Vikram",
+        "value": 380
+       },
+       {
+        "label": "Suresh",
+        "value": 440
+       },
+       {
+        "label": "Rahul",
+        "value": 460
+       },
+       {
+        "label": "Dinesh",
+        "value": 400
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s048",
+   "type": "bar",
+   "title": "Patients treated in a hospital in a month (Patients treated); Male vs Female bars for ratios and averages",
+   "chart": {
+    "xLabel": "Department",
+    "yLabel": "Patients treated",
+    "series": [
+     {
+      "name": "Male",
+      "data": [
+       {
+        "label": "Cardiology",
+        "value": 320
+       },
+       {
+        "label": "Orthopaedics",
+        "value": 350
+       },
+       {
+        "label": "Paediatrics",
+        "value": 420
+       },
+       {
+        "label": "Neurology",
+        "value": 160
+       },
+       {
+        "label": "ENT",
+        "value": 450
+       },
+       {
+        "label": "Dermatology",
+        "value": 220
+       }
+      ]
+     },
+     {
+      "name": "Female",
+      "data": [
+       {
+        "label": "Cardiology",
+        "value": 80
+       },
+       {
+        "label": "Orthopaedics",
+        "value": 200
+       },
+       {
+        "label": "Paediatrics",
+        "value": 450
+       },
+       {
+        "label": "Neurology",
+        "value": 270
+       },
+       {
+        "label": "ENT",
+        "value": 310
+       },
+       {
+        "label": "Dermatology",
+        "value": 250
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s049",
+   "type": "bar",
+   "title": "Tickets sold at railway stations in a month (Tickets sold (thousands)); Reserved vs Unreserved bars for ratios and averages",
+   "chart": {
+    "xLabel": "Station",
+    "yLabel": "Tickets sold (thousands)",
+    "series": [
+     {
+      "name": "Reserved",
+      "data": [
+       {
+        "label": "Erode",
+        "value": 75
+       },
+       {
+        "label": "Trichy",
+        "value": 190
+       },
+       {
+        "label": "Coimbatore",
+        "value": 85
+       },
+       {
+        "label": "Madurai",
+        "value": 130
+       },
+       {
+        "label": "Chennai Central",
+        "value": 160
+       }
+      ]
+     },
+     {
+      "name": "Unreserved",
+      "data": [
+       {
+        "label": "Erode",
+        "value": 175
+       },
+       {
+        "label": "Trichy",
+        "value": 20
+       },
+       {
+        "label": "Coimbatore",
+        "value": 35
+       },
+       {
+        "label": "Madurai",
+        "value": 195
+       },
+       {
+        "label": "Chennai Central",
+        "value": 50
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s050",
+   "type": "bar",
+   "title": "Books issued by a city library (Books issued); Fiction vs Non-fiction bars for ratios and averages",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Books issued",
+    "series": [
+     {
+      "name": "Fiction",
+      "data": [
+       {
+        "label": "March",
+        "value": 380
+       },
+       {
+        "label": "April",
+        "value": 700
+       },
+       {
+        "label": "May",
+        "value": 820
+       },
+       {
+        "label": "June",
+        "value": 700
+       },
+       {
+        "label": "July",
+        "value": 880
+       },
+       {
+        "label": "August",
+        "value": 360
+       }
+      ]
+     },
+     {
+      "name": "Non-fiction",
+      "data": [
+       {
+        "label": "March",
+        "value": 640
+       },
+       {
+        "label": "April",
+        "value": 120
+       },
+       {
+        "label": "May",
+        "value": 560
+       },
+       {
+        "label": "June",
+        "value": 660
+       },
+       {
+        "label": "July",
+        "value": 440
+       },
+       {
+        "label": "August",
+        "value": 200
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s051",
+   "type": "bar",
+   "title": "Applicants for a recruitment drive (Applicants (thousands)); Engineering vs Medical bars for ratios and averages",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Applicants (thousands)",
+    "series": [
+     {
+      "name": "Engineering",
+      "data": [
+       {
+        "label": "2018",
+        "value": 40
+       },
+       {
+        "label": "2019",
+        "value": 295
+       },
+       {
+        "label": "2020",
+        "value": 230
+       },
+       {
+        "label": "2021",
+        "value": 225
+       },
+       {
+        "label": "2022",
+        "value": 200
+       },
+       {
+        "label": "2023",
+        "value": 45
+       }
+      ]
+     },
+     {
+      "name": "Medical",
+      "data": [
+       {
+        "label": "2018",
+        "value": 155
+       },
+       {
+        "label": "2019",
+        "value": 195
+       },
+       {
+        "label": "2020",
+        "value": 260
+       },
+       {
+        "label": "2021",
+        "value": 100
+       },
+       {
+        "label": "2022",
+        "value": 255
+       },
+       {
+        "label": "2023",
+        "value": 30
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s052",
+   "type": "bar",
+   "title": "Milk supplied by dairy cooperatives in a day (Milk supplied (thousand litres)); Morning vs Evening bars for ratios and averages",
+   "chart": {
+    "xLabel": "Dairy",
+    "yLabel": "Milk supplied (thousand litres)",
+    "series": [
+     {
+      "name": "Morning",
+      "data": [
+       {
+        "label": "Amul",
+        "value": 185
+       },
+       {
+        "label": "Heritage",
+        "value": 180
+       },
+       {
+        "label": "Nandini",
+        "value": 105
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 190
+       }
+      ]
+     },
+     {
+      "name": "Evening",
+      "data": [
+       {
+        "label": "Amul",
+        "value": 40
+       },
+       {
+        "label": "Heritage",
+        "value": 145
+       },
+       {
+        "label": "Nandini",
+        "value": 170
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 195
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s053",
+   "type": "bar",
+   "title": "Deposits collected by branches of a bank (Deposits (₹ crore)); Savings vs Current bars for ratios and averages",
+   "chart": {
+    "xLabel": "Branch city",
+    "yLabel": "Deposits (₹ crore)",
+    "series": [
+     {
+      "name": "Savings",
+      "data": [
+       {
+        "label": "Delhi",
+        "value": 80
+       },
+       {
+        "label": "Chennai",
+        "value": 70
+       },
+       {
+        "label": "Pune",
+        "value": 80
+       },
+       {
+        "label": "Mumbai",
+        "value": 400
+       },
+       {
+        "label": "Kochi",
+        "value": 400
+       }
+      ]
+     },
+     {
+      "name": "Current",
+      "data": [
+       {
+        "label": "Delhi",
+        "value": 100
+       },
+       {
+        "label": "Chennai",
+        "value": 340
+       },
+       {
+        "label": "Pune",
+        "value": 230
+       },
+       {
+        "label": "Mumbai",
+        "value": 220
+       },
+       {
+        "label": "Kochi",
+        "value": 170
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s054",
+   "type": "bar",
+   "title": "Monthly rainfall recorded (Rainfall (mm)); Kochi vs Mumbai bars for ratios and averages",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Rainfall (mm)",
+    "series": [
+     {
+      "name": "Kochi",
+      "data": [
+       {
+        "label": "June",
+        "value": 250
+       },
+       {
+        "label": "July",
+        "value": 100
+       },
+       {
+        "label": "August",
+        "value": 70
+       },
+       {
+        "label": "September",
+        "value": 240
+       },
+       {
+        "label": "October",
+        "value": 330
+       },
+       {
+        "label": "November",
+        "value": 230
+       }
+      ]
+     },
+     {
+      "name": "Mumbai",
+      "data": [
+       {
+        "label": "June",
+        "value": 210
+       },
+       {
+        "label": "July",
+        "value": 200
+       },
+       {
+        "label": "August",
+        "value": 340
+       },
+       {
+        "label": "September",
+        "value": 100
+       },
+       {
+        "label": "October",
+        "value": 260
+       },
+       {
+        "label": "November",
+        "value": 180
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s055",
+   "type": "bar",
+   "title": "Quarterly sales of a snack company (Sales (₹ lakh)); 2023 vs 2024 bars for ratios and averages",
+   "chart": {
+    "xLabel": "Quarter",
+    "yLabel": "Sales (₹ lakh)",
+    "series": [
+     {
+      "name": "2023",
+      "data": [
+       {
+        "label": "Q1",
+        "value": 100
+       },
+       {
+        "label": "Q2",
+        "value": 45
+       },
+       {
+        "label": "Q3",
+        "value": 90
+       },
+       {
+        "label": "Q4",
+        "value": 25
+       }
+      ]
+     },
+     {
+      "name": "2024",
+      "data": [
+       {
+        "label": "Q1",
+        "value": 35
+       },
+       {
+        "label": "Q2",
+        "value": 135
+       },
+       {
+        "label": "Q3",
+        "value": 20
+       },
+       {
+        "label": "Q4",
+        "value": 150
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "In how many years is the Exports figure larger than the Imports figure?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare pairs: Exports is larger in 1 of 4. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s045"
+  },
+  {
+   "questionText": "What is the sum of the Exports and Imports figures in 2021?",
+   "options": [
+    "₹ 610 crore",
+    "₹ 110 crore",
+    "₹ 620 crore",
+    "₹ 600 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "250 + 360 = 610. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s045"
+  },
+  {
+   "questionText": "What is the average Exports figure of 2021 and 2020 (correct to one decimal place)?",
+   "options": [
+    "₹ 210 crore",
+    "₹ 420 crore",
+    "₹ 40 crore",
+    "₹ 195 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(250 + 170)/2 = 210. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s045"
+  },
+  {
+   "questionText": "The total Exports figure is what percentage of the total Imports figure over all years (correct to one decimal place)?",
+   "options": [
+    "63.4%",
+    "157.7%",
+    "38.8%",
+    "36.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "780/1230 × 100 = 63.41 ≈ 63.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series divided by total of the 'of' series.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s045"
+  },
+  {
+   "questionText": "What is the ratio of the combined Exports figure of 2021 and 2018 to the combined Imports figure of 2018 and 2019?",
+   "options": [
+    "50 : 39",
+    "39 : 50",
+    "51 : 39",
+    "50 : 40"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Exports: 250 + 250 = 500. Imports: 110 + 280 = 390. Ratio 500 : 390 = 50 : 39.",
+   "shortcut": "Form each sum separately, then reduce.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s045"
+  },
+  {
+   "questionText": "What is the average of the Permanent and Contract figures in IT (correct to one decimal place)?",
+   "options": [
+    "100 employees",
+    "200 employees",
+    "70 employees",
+    "105 employees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(170 + 30)/2 = 100. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s046"
+  },
+  {
+   "questionText": "What is the average of the differences (Permanent minus Contract) over all departments (negative if Contract is larger overall; correct to one decimal place)?",
+   "options": [
+    "18.3",
+    "78.3",
+    "200",
+    "28.3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Differences: 80, -90, 140, 70, 0, -90. Sum 110; average 110/6 = 18.33 ≈ 18.3.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s046"
+  },
+  {
+   "questionText": "What is the average Contract figure over those departments where Permanent exceeds Contract (correct to one decimal place)?",
+   "options": [
+    "113.3 employees",
+    "181.7 employees",
+    "85 employees",
+    "210 employees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying Contract values: [220, 30, 90]; sum 340; ÷ 3 = 113.33. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s046"
+  },
+  {
+   "questionText": "What is the ratio of the combined Permanent + Contract figure of Production to that of Finance?",
+   "options": [
+    "58 : 39",
+    "39 : 58",
+    "59 : 39",
+    "58 : 40"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Production: 580; Finance: 390. Ratio 580 : 390 = 58 : 39. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the two bars first, then compare.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s046"
+  },
+  {
+   "questionText": "For the departments where the ratio of Permanent to Contract is more than 1, what is the average Permanent figure (correct to one decimal place)?",
+   "options": [
+    "210 employees",
+    "200 employees",
+    "157.5 employees",
+    "140 employees"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratio > 1 means Permanent > Contract: values [300, 170, 160]; sum 630; ÷ 3 = 210.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s046"
+  },
+  {
+   "questionText": "What is the average runs scored of Test matches over all 6 batters (correct to one decimal place)?",
+   "options": [
+    "490 runs",
+    "588 runs",
+    "420 runs",
+    "500 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 2940; divided by 6 gives 490 ≈ 490. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s047"
+  },
+  {
+   "questionText": "What is the sum of the Test matches and ODI matches figures in Suresh?",
+   "options": [
+    "620 runs",
+    "260 runs",
+    "640 runs",
+    "600 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "180 + 440 = 620. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s047"
+  },
+  {
+   "questionText": "What is the average ODI matches figure over those batters where Test matches exceeds ODI matches (correct to one decimal place)?",
+   "options": [
+    "335 runs",
+    "363.3 runs",
+    "268 runs",
+    "650 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying ODI matches values: [380, 120, 380, 460]; sum 1340; ÷ 4 = 335.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s047"
+  },
+  {
+   "questionText": "What is the ratio of the combined Test matches + ODI matches figure of Rahul to that of Vikram?",
+   "options": [
+    "51 : 59",
+    "59 : 51",
+    "52 : 59",
+    "51 : 60"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rahul: 1020; Vikram: 1180. Ratio 1020 : 1180 = 51 : 59. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the two bars first, then compare.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s047"
+  },
+  {
+   "questionText": "What is the mean of the 6 ratios (Test matches ÷ ODI matches, one for each batter) correct to two decimal places?",
+   "options": [
+    "1.86",
+    "1.35",
+    "0.74",
+    "1.96"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: 1.526, 5.5, 2.105, 0.409, 1.217, 0.4. Sum 11.158; ÷ 6 = 1.86 ≈ 1.86.",
+   "shortcut": "This differs from total ratio: average of ratios is not ratio of totals.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s047"
+  },
+  {
+   "questionText": "What is the average of the Male and Female figures in ENT (correct to one decimal place)?",
+   "options": [
+    "380 patients",
+    "760 patients",
+    "70 patients",
+    "385 patients"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(450 + 310)/2 = 380. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s048"
+  },
+  {
+   "questionText": "In which department is the ratio of Male to Female the highest?",
+   "options": [
+    "Cardiology",
+    "Orthopaedics",
+    "Paediatrics",
+    "Neurology"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: Cardiology 4, Orthopaedics 1.75, Paediatrics 0.93, Neurology 0.59, ENT 1.45, Dermatology 0.88. Highest: Cardiology.",
+   "shortcut": "Divide A by B for each pair; do not use A - B.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s048"
+  },
+  {
+   "questionText": "What is the ratio of the combined Male + Female figure of Dermatology to that of Orthopaedics?",
+   "options": [
+    "47 : 55",
+    "55 : 47",
+    "48 : 55",
+    "47 : 56"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Dermatology: 470; Orthopaedics: 550. Ratio 470 : 550 = 47 : 55. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the two bars first, then compare.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s048"
+  },
+  {
+   "questionText": "What is the average Female figure over those departments where Male exceeds Female (correct to one decimal place)?",
+   "options": [
+    "196.7 patients",
+    "260 patients",
+    "147.5 patients",
+    "373.3 patients"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying Female values: [80, 200, 310]; sum 590; ÷ 3 = 196.67. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s048"
+  },
+  {
+   "questionText": "What is the mean of the 6 ratios (Male ÷ Female, one for each department) correct to two decimal places?",
+   "options": [
+    "1.6",
+    "1.23",
+    "0.81",
+    "1.7"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: 4, 1.75, 0.933, 0.593, 1.452, 0.88. Sum 9.608; ÷ 6 = 1.601 ≈ 1.6.",
+   "shortcut": "This differs from total ratio: average of ratios is not ratio of totals.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s048"
+  },
+  {
+   "questionText": "In how many stations is the Reserved figure larger than the Unreserved figure?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare pairs: Reserved is larger in 3 of 5. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s049"
+  },
+  {
+   "questionText": "What is the average of the Reserved and Unreserved figures in Trichy (correct to one decimal place)?",
+   "options": [
+    "105 thousand tickets",
+    "210 thousand tickets",
+    "85 thousand tickets",
+    "107.5 thousand tickets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(190 + 20)/2 = 105. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s049"
+  },
+  {
+   "questionText": "What is the average of the differences (Reserved minus Unreserved) over all stations (negative if Unreserved is larger overall; correct to one decimal place)?",
+   "options": [
+    "33",
+    "99",
+    "128",
+    "38"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Differences: -100, 170, 50, -65, 110. Sum 165; average 165/5 = 33 ≈ 33.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s049"
+  },
+  {
+   "questionText": "What is the average Unreserved figure of Madurai and Erode (correct to one decimal place)?",
+   "options": [
+    "185 thousand tickets",
+    "370 thousand tickets",
+    "10 thousand tickets",
+    "95 thousand tickets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(195 + 175)/2 = 185. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s049"
+  },
+  {
+   "questionText": "What is the mean of the 5 ratios (Reserved ÷ Unreserved, one for each station) correct to two decimal places?",
+   "options": [
+    "3.24",
+    "1.35",
+    "0.74",
+    "3.34"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: 0.429, 9.5, 2.429, 0.667, 3.2. Sum 16.224; ÷ 5 = 3.245 ≈ 3.24.",
+   "shortcut": "This differs from total ratio: average of ratios is not ratio of totals.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s049"
+  },
+  {
+   "questionText": "What is the sum of the Fiction and Non-fiction figures in May?",
+   "options": [
+    "1380 books",
+    "260 books",
+    "1400 books",
+    "1360 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "820 + 560 = 1380. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s050"
+  },
+  {
+   "questionText": "The total Fiction figure is what percentage of the total Non-fiction figure over all months (correct to one decimal place)?",
+   "options": [
+    "146.6%",
+    "68.2%",
+    "59.4%",
+    "46.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "3840/2620 × 100 = 146.56 ≈ 146.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series divided by total of the 'of' series.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s050"
+  },
+  {
+   "questionText": "What is the ratio of the combined Fiction + Non-fiction figure of March to that of August?",
+   "options": [
+    "51 : 28",
+    "28 : 51",
+    "52 : 28",
+    "51 : 29"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "March: 1020; August: 560. Ratio 1020 : 560 = 51 : 28. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the two bars first, then compare.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s050"
+  },
+  {
+   "questionText": "What is the average Non-fiction figure over those months where Fiction exceeds Non-fiction (correct to one decimal place)?",
+   "options": [
+    "396 books",
+    "436.7 books",
+    "330 books",
+    "692 books"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying Non-fiction values: [120, 560, 660, 440, 200]; sum 1980; ÷ 5 = 396.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s050"
+  },
+  {
+   "questionText": "What is the ratio of the combined Fiction figure of March and July to the combined Non-fiction figure of August and March?",
+   "options": [
+    "3 : 2",
+    "2 : 3",
+    "4 : 2",
+    "3 : 3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fiction: 380 + 880 = 1260. Non-fiction: 200 + 640 = 840. Ratio 1260 : 840 = 3 : 2.",
+   "shortcut": "Form each sum separately, then reduce.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s050"
+  },
+  {
+   "questionText": "In how many years is the Engineering figure larger than the Medical figure?",
+   "options": [
+    "3",
+    "4",
+    "2",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare pairs: Engineering is larger in 3 of 6. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s051"
+  },
+  {
+   "questionText": "What is the ratio of Engineering to Medical in 2018 (number of applicants)?",
+   "options": [
+    "8 : 31",
+    "31 : 8",
+    "9 : 31",
+    "8 : 32"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "40 : 155; divide both by HCF 5 to get 8 : 31. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel common factors; keep the asked order.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s051"
+  },
+  {
+   "questionText": "What is the average Medical figure over those years where Engineering exceeds Medical (correct to one decimal place)?",
+   "options": [
+    "108.3 thousand",
+    "165.8 thousand",
+    "81.3 thousand",
+    "188.3 thousand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying Medical values: [195, 100, 30]; sum 325; ÷ 3 = 108.33. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s051"
+  },
+  {
+   "questionText": "In which year is the ratio of Engineering to Medical the highest?",
+   "options": [
+    "2021",
+    "2018",
+    "2019",
+    "2020"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: 2018 0.26, 2019 1.51, 2020 0.88, 2021 2.25, 2022 0.78, 2023 1.5. Highest: 2021.",
+   "shortcut": "Divide A by B for each pair; do not use A - B.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s051"
+  },
+  {
+   "questionText": "The combined Engineering + Medical figure of 2023 exceeds the average combined figure of all 6 years by how much (negative if it is below; correct to one decimal place)?",
+   "options": [
+    "-263.3",
+    "263.3",
+    "-258.3",
+    "-97.5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combined totals sum to 2030; average 338.33. 2023 = 75; difference = -263.33 ≈ -263.3.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s051"
+  },
+  {
+   "questionText": "What is the ratio of Morning to Evening in Nandini (milk supplied)?",
+   "options": [
+    "21 : 34",
+    "34 : 21",
+    "22 : 34",
+    "21 : 35"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "105 : 170; divide both by HCF 5 to get 21 : 34. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel common factors; keep the asked order.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s052"
+  },
+  {
+   "questionText": "The total Morning figure is what percentage of the total Evening figure over all dairys (correct to one decimal place)?",
+   "options": [
+    "120%",
+    "83.3%",
+    "54.5%",
+    "20%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "660/550 × 100 = 120 ≈ 120%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series divided by total of the 'of' series.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s052"
+  },
+  {
+   "questionText": "In which dairy is the ratio of Morning to Evening the highest?",
+   "options": [
+    "Amul",
+    "Heritage",
+    "Nandini",
+    "Mother Dairy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: Amul 4.63, Heritage 1.24, Nandini 0.62, Mother Dairy 0.97. Highest: Amul.",
+   "shortcut": "Divide A by B for each pair; do not use A - B.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s052"
+  },
+  {
+   "questionText": "What is the average Morning figure of Nandini and Amul (correct to one decimal place)?",
+   "options": [
+    "145 thousand litres",
+    "290 thousand litres",
+    "40 thousand litres",
+    "165 thousand litres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(105 + 185)/2 = 145. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s052"
+  },
+  {
+   "questionText": "What is the ratio of the combined Morning figure of Amul and Nandini to the combined Evening figure of Mother Dairy and Amul?",
+   "options": [
+    "58 : 47",
+    "47 : 58",
+    "59 : 47",
+    "58 : 48"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Morning: 185 + 105 = 290. Evening: 195 + 40 = 235. Ratio 290 : 235 = 58 : 47.",
+   "shortcut": "Form each sum separately, then reduce.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s052"
+  },
+  {
+   "questionText": "In how many branchs is the Savings figure larger than the Current figure?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare pairs: Savings is larger in 2 of 5. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s053"
+  },
+  {
+   "questionText": "What is the ratio of Savings to Current in Chennai (deposits)?",
+   "options": [
+    "7 : 34",
+    "34 : 7",
+    "8 : 34",
+    "7 : 35"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "70 : 340; divide both by HCF 10 to get 7 : 34. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel common factors; keep the asked order.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s053"
+  },
+  {
+   "questionText": "What is the ratio of the combined Savings + Current figure of Mumbai to that of Pune?",
+   "options": [
+    "2 : 1",
+    "1 : 2",
+    "3 : 1",
+    "2 : 2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mumbai: 620; Pune: 310. Ratio 620 : 310 = 2 : 1. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Add the two bars first, then compare.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s053"
+  },
+  {
+   "questionText": "In which branch is the ratio of Savings to Current the highest?",
+   "options": [
+    "Kochi",
+    "Delhi",
+    "Chennai",
+    "Pune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: Delhi 0.8, Chennai 0.21, Pune 0.35, Mumbai 1.82, Kochi 2.35. Highest: Kochi.",
+   "shortcut": "Divide A by B for each pair; do not use A - B.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s053"
+  },
+  {
+   "questionText": "What is the mean of the 5 ratios (Savings ÷ Current, one for each branch) correct to two decimal places?",
+   "options": [
+    "1.1",
+    "0.97",
+    "1.03",
+    "1.2"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: 0.8, 0.206, 0.348, 1.818, 2.353. Sum 5.525; ÷ 5 = 1.105 ≈ 1.1.",
+   "shortcut": "This differs from total ratio: average of ratios is not ratio of totals.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s053"
+  },
+  {
+   "questionText": "What is the ratio of Kochi to Mumbai in November (rainfall)?",
+   "options": [
+    "23 : 18",
+    "18 : 23",
+    "24 : 18",
+    "23 : 19"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "230 : 180; divide both by HCF 10 to get 23 : 18. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel common factors; keep the asked order.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s054"
+  },
+  {
+   "questionText": "What is the average rainfall of Mumbai over all 6 months (correct to one decimal place)?",
+   "options": [
+    "215 mm",
+    "258 mm",
+    "184.3 mm",
+    "220 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sum = 1290; divided by 6 gives 215 ≈ 215. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s054"
+  },
+  {
+   "questionText": "What is the average Mumbai figure over those months where Kochi exceeds Mumbai (correct to one decimal place)?",
+   "options": [
+    "187.5 mm",
+    "215 mm",
+    "150 mm",
+    "262.5 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Qualifying Mumbai values: [210, 100, 260, 180]; sum 750; ÷ 4 = 187.5. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s054"
+  },
+  {
+   "questionText": "The total Kochi figure is what percentage of the total Mumbai figure over all months (correct to one decimal place)?",
+   "options": [
+    "94.6%",
+    "105.7%",
+    "48.6%",
+    "5.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "1220/1290 × 100 = 94.57 ≈ 94.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series divided by total of the 'of' series.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s054"
+  },
+  {
+   "questionText": "For the months where the ratio of Kochi to Mumbai is more than 1, what is the average Kochi figure (correct to one decimal place)?",
+   "options": [
+    "262.5 mm",
+    "203.3 mm",
+    "210 mm",
+    "85 mm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratio > 1 means Kochi > Mumbai: values [250, 240, 330, 230]; sum 1050; ÷ 4 = 262.5.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s054"
+  },
+  {
+   "questionText": "In how many quarters is the 2023 figure larger than the 2024 figure?",
+   "options": [
+    "2",
+    "3",
+    "1",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare pairs: 2023 is larger in 2 of 4. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s055"
+  },
+  {
+   "questionText": "What is the sum of the 2023 and 2024 figures in Q1?",
+   "options": [
+    "₹ 135 lakh",
+    "₹ 65 lakh",
+    "₹ 140 lakh",
+    "₹ 130 lakh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "100 + 35 = 135. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s055"
+  },
+  {
+   "questionText": "What is the average of the differences (2023 minus 2024) over all quarters (negative if 2024 is larger overall; correct to one decimal place)?",
+   "options": [
+    "-20",
+    "87.5",
+    "20",
+    "65"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Differences: 65, -90, 70, -125. Sum -80; average -80/4 = -20 ≈ -20. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s055"
+  },
+  {
+   "questionText": "The total 2023 figure is what percentage of the total 2024 figure over all quarters (correct to one decimal place)?",
+   "options": [
+    "76.5%",
+    "130.8%",
+    "43.3%",
+    "23.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "260/340 × 100 = 76.47 ≈ 76.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Total of the named series divided by total of the 'of' series.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s055"
+  },
+  {
+   "questionText": "What is the mean of the 4 ratios (2023 ÷ 2024, one for each quarter) correct to two decimal places?",
+   "options": [
+    "1.96",
+    "0.76",
+    "1.31",
+    "2.06"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ratios: 2.857, 0.333, 4.5, 0.167. Sum 7.857; ÷ 4 = 1.964 ≈ 1.96. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "This differs from total ratio: average of ratios is not ratio of totals.",
+   "subPattern": "ratio-average-from-bars",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s055"
+  }
+ ]
+}

@@ -1,0 +1,1430 @@
+{
+ "sets": [
+  {
+   "id": "di-bar-graphs-s001",
+   "type": "bar",
+   "title": "Rice production of states (Rice production (lakh tonnes)); single bar graph",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Rice production (lakh tonnes)",
+    "series": [
+     {
+      "name": "Rice production",
+      "data": [
+       {
+        "label": "2016",
+        "value": 100
+       },
+       {
+        "label": "2017",
+        "value": 95
+       },
+       {
+        "label": "2018",
+        "value": 120
+       },
+       {
+        "label": "2019",
+        "value": 115
+       },
+       {
+        "label": "2020",
+        "value": 45
+       },
+       {
+        "label": "2021",
+        "value": 35
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s002",
+   "type": "bar",
+   "title": "Retail sales of a chain in Tamil Nadu cities (Sales (₹ lakh)); single bar graph",
+   "chart": {
+    "xLabel": "City",
+    "yLabel": "Sales (₹ lakh)",
+    "series": [
+     {
+      "name": "Retail sales",
+      "data": [
+       {
+        "label": "Erode",
+        "value": 20
+       },
+       {
+        "label": "Coimbatore",
+        "value": 45
+       },
+       {
+        "label": "Vellore",
+        "value": 50
+       },
+       {
+        "label": "Tirupur",
+        "value": 110
+       },
+       {
+        "label": "Salem",
+        "value": 15
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s003",
+   "type": "bar",
+   "title": "Students enrolled in a university by stream (Students enrolled); single bar graph",
+   "chart": {
+    "xLabel": "Stream",
+    "yLabel": "Students enrolled",
+    "series": [
+     {
+      "name": "Student enrolment",
+      "data": [
+       {
+        "label": "Management",
+        "value": 70
+       },
+       {
+        "label": "Commerce",
+        "value": 100
+       },
+       {
+        "label": "Law",
+        "value": 420
+       },
+       {
+        "label": "Arts",
+        "value": 550
+       },
+       {
+        "label": "Science",
+        "value": 120
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s004",
+   "type": "bar",
+   "title": "Electricity consumed in a town (Consumption (thousand units)); single bar graph",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Consumption (thousand units)",
+    "series": [
+     {
+      "name": "Electricity consumption",
+      "data": [
+       {
+        "label": "January",
+        "value": 150
+       },
+       {
+        "label": "February",
+        "value": 55
+       },
+       {
+        "label": "March",
+        "value": 60
+       },
+       {
+        "label": "April",
+        "value": 95
+       },
+       {
+        "label": "May",
+        "value": 50
+       },
+       {
+        "label": "June",
+        "value": 20
+       },
+       {
+        "label": "July",
+        "value": 35
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s005",
+   "type": "bar",
+   "title": "Runs scored by batters in a season (Runs scored); single bar graph",
+   "chart": {
+    "xLabel": "Batter",
+    "yLabel": "Runs scored",
+    "series": [
+     {
+      "name": "Runs scored",
+      "data": [
+       {
+        "label": "Arjun",
+        "value": 440
+       },
+       {
+        "label": "Karthik",
+        "value": 80
+       },
+       {
+        "label": "Vikram",
+        "value": 320
+       },
+       {
+        "label": "Suresh",
+        "value": 280
+       },
+       {
+        "label": "Rahul",
+        "value": 560
+       },
+       {
+        "label": "Dinesh",
+        "value": 780
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s006",
+   "type": "bar",
+   "title": "Deposits collected by branches of a bank (Deposits (₹ crore)); single bar graph",
+   "chart": {
+    "xLabel": "Branch city",
+    "yLabel": "Deposits (₹ crore)",
+    "series": [
+     {
+      "name": "Deposits",
+      "data": [
+       {
+        "label": "Kochi",
+        "value": 270
+       },
+       {
+        "label": "Mumbai",
+        "value": 330
+       },
+       {
+        "label": "Chennai",
+        "value": 120
+       },
+       {
+        "label": "Pune",
+        "value": 340
+       },
+       {
+        "label": "Jaipur",
+        "value": 400
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s007",
+   "type": "bar",
+   "title": "Tyres produced at five plants (Production (thousand units)); single bar graph",
+   "chart": {
+    "xLabel": "Plant",
+    "yLabel": "Production (thousand units)",
+    "series": [
+     {
+      "name": "Tyre production",
+      "data": [
+       {
+        "label": "Hosur",
+        "value": 80
+       },
+       {
+        "label": "Pune",
+        "value": 140
+       },
+       {
+        "label": "Chakan",
+        "value": 170
+       },
+       {
+        "label": "Sanand",
+        "value": 45
+       },
+       {
+        "label": "Gurugram",
+        "value": 150
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s008",
+   "type": "bar",
+   "title": "Tickets sold at railway stations in a month (Tickets sold (thousands)); single bar graph",
+   "chart": {
+    "xLabel": "Station",
+    "yLabel": "Tickets sold (thousands)",
+    "series": [
+     {
+      "name": "Tickets sold",
+      "data": [
+       {
+        "label": "Erode",
+        "value": 160
+       },
+       {
+        "label": "Chennai Central",
+        "value": 95
+       },
+       {
+        "label": "Salem",
+        "value": 35
+       },
+       {
+        "label": "Coimbatore",
+        "value": 30
+       },
+       {
+        "label": "Madurai",
+        "value": 75
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s009",
+   "type": "bar",
+   "title": "Tourists visiting hill stations in a year (Visitors (thousands)); single bar graph",
+   "chart": {
+    "xLabel": "Hill station",
+    "yLabel": "Visitors (thousands)",
+    "series": [
+     {
+      "name": "Tourist arrivals",
+      "data": [
+       {
+        "label": "Ooty",
+        "value": 40
+       },
+       {
+        "label": "Kodaikanal",
+        "value": 30
+       },
+       {
+        "label": "Munnar",
+        "value": 220
+       },
+       {
+        "label": "Coorg",
+        "value": 230
+       },
+       {
+        "label": "Yercaud",
+        "value": 50
+       },
+       {
+        "label": "Wayanad",
+        "value": 180
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s010",
+   "type": "bar",
+   "title": "Milk supplied by dairy cooperatives in a day (Milk supplied (thousand litres)); single bar graph",
+   "chart": {
+    "xLabel": "Dairy",
+    "yLabel": "Milk supplied (thousand litres)",
+    "series": [
+     {
+      "name": "Milk supplied",
+      "data": [
+       {
+        "label": "Aavin",
+        "value": 170
+       },
+       {
+        "label": "Amul",
+        "value": 40
+       },
+       {
+        "label": "Nandini",
+        "value": 150
+       },
+       {
+        "label": "Mother Dairy",
+        "value": 25
+       },
+       {
+        "label": "Heritage",
+        "value": 175
+       },
+       {
+        "label": "Milma",
+        "value": 200
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-bar-graphs-s011",
+   "type": "bar",
+   "title": "Cement output of plants (Output (thousand tonnes)); single bar graph",
+   "chart": {
+    "xLabel": "Plant",
+    "yLabel": "Output (thousand tonnes)",
+    "series": [
+     {
+      "name": "Cement output",
+      "data": [
+       {
+        "label": "Ariyalur",
+        "value": 160
+       },
+       {
+        "label": "Coimbatore",
+        "value": 370
+       },
+       {
+        "label": "Nagpur",
+        "value": 140
+       },
+       {
+        "label": "Satna",
+        "value": 250
+       },
+       {
+        "label": "Rajpura",
+        "value": 320
+       },
+       {
+        "label": "Tandur",
+        "value": 350
+       },
+       {
+        "label": "Kurnool",
+        "value": 190
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What is the difference between the highest and the lowest rice production shown in the graph?",
+   "options": [
+    "85 lakh tonnes",
+    "155 lakh tonnes",
+    "90 lakh tonnes",
+    "80 lakh tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest = 120, lowest = 35; difference = 120 - 35 = 85. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s001"
+  },
+  {
+   "questionText": "In which year was the rice production the lowest?",
+   "options": [
+    "2021",
+    "2016",
+    "2017",
+    "2018"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest value is 35 lakh tonnes at 2021. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Look for the shortest bar.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s001"
+  },
+  {
+   "questionText": "What is the total rice production of those years whose bar is above the average of all bars?",
+   "options": [
+    "430 lakh tonnes",
+    "510 lakh tonnes",
+    "80 lakh tonnes",
+    "435 lakh tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 85. Bars above it add to 430. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s001"
+  },
+  {
+   "questionText": "The highest rice production exceeds the lowest by what percentage (correct to one decimal place)?",
+   "options": [
+    "242.9%",
+    "70.8%",
+    "342.9%",
+    "250.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(120 - 35)/35 × 100 = 242.86 ≈ 242.9%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the lowest value.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s001"
+  },
+  {
+   "questionText": "If the bars of 2019 and 2020 are left out, what is the average rice production of the remaining 4 bars (correct to one decimal place)?",
+   "options": [
+    "87.5 lakh tonnes",
+    "85 lakh tonnes",
+    "79 lakh tonnes",
+    "70 lakh tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Remaining total = 510 - 115 - 45 = 350; divide by 4 to get 87.5. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Subtract first, then divide by the reduced count.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s001"
+  },
+  {
+   "questionText": "What is the difference between the highest and the lowest retail sales shown in the graph?",
+   "options": [
+    "₹ 95 lakh",
+    "₹ 125 lakh",
+    "₹ 100 lakh",
+    "₹ 90 lakh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest = 110, lowest = 15; difference = 110 - 15 = 95. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s002"
+  },
+  {
+   "questionText": "What is the ratio of the retail sales of Salem to that of Coimbatore?",
+   "options": [
+    "1 : 3",
+    "3 : 1",
+    "2 : 3",
+    "1 : 4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "15 : 45 reduces by the HCF 15 to 1 : 3. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel the common factor; keep the order asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s002"
+  },
+  {
+   "questionText": "The retail sales of Tirupur is what percentage more than that of Vellore (correct to one decimal place)?",
+   "options": [
+    "120%",
+    "54.5%",
+    "220%",
+    "125%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess = 110 - 50 = 60. Percentage more = 60/50 × 100 ≈ 120%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'More than Y' means Y is the base.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s002"
+  },
+  {
+   "questionText": "The highest retail sales exceeds the lowest by what percentage (correct to one decimal place)?",
+   "options": [
+    "633.3%",
+    "86.4%",
+    "733.3%",
+    "641.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(110 - 15)/15 × 100 = 633.33 ≈ 633.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the lowest value.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s002"
+  },
+  {
+   "questionText": "If the bars of Vellore and Tirupur are left out, what is the average retail sales of the remaining 3 bars (correct to one decimal place)?",
+   "options": [
+    "₹ 26.7 lakh",
+    "₹ 48 lakh",
+    "₹ 47.5 lakh",
+    "₹ 20 lakh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Remaining total = 240 - 50 - 110 = 80; divide by 3 to get 26.67. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Subtract first, then divide by the reduced count.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s002"
+  },
+  {
+   "questionText": "What is the difference between the highest and the lowest student enrolment shown in the graph?",
+   "options": [
+    "480 students",
+    "620 students",
+    "490 students",
+    "470 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest = 550, lowest = 70; difference = 550 - 70 = 480. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s003"
+  },
+  {
+   "questionText": "What is the combined student enrolment of Arts and Management?",
+   "options": [
+    "620 students",
+    "630 students",
+    "610 students",
+    "480 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "550 + 70 = 620. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s003"
+  },
+  {
+   "questionText": "The highest student enrolment exceeds the lowest by what percentage (correct to one decimal place)?",
+   "options": [
+    "685.7%",
+    "87.3%",
+    "785.7%",
+    "693.7%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(550 - 70)/70 × 100 = 685.71 ≈ 685.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the lowest value.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s003"
+  },
+  {
+   "questionText": "The student enrolment of Commerce is what percentage more than that of Management (correct to one decimal place)?",
+   "options": [
+    "42.9%",
+    "30%",
+    "142.9%",
+    "47.9%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess = 100 - 70 = 30. Percentage more = 30/70 × 100 ≈ 42.9%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'More than Y' means Y is the base.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s003"
+  },
+  {
+   "questionText": "If the bars of Arts and Science are left out, what is the average student enrolment of the remaining 3 bars (correct to one decimal place)?",
+   "options": [
+    "196.7 students",
+    "252 students",
+    "177.5 students",
+    "147.5 students"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Remaining total = 1260 - 550 - 120 = 590; divide by 3 to get 196.67. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Subtract first, then divide by the reduced count.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s003"
+  },
+  {
+   "questionText": "What is the difference between the highest and the lowest electricity consumption shown in the graph?",
+   "options": [
+    "130 thousand units",
+    "170 thousand units",
+    "135 thousand units",
+    "125 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Highest = 150, lowest = 20; difference = 150 - 20 = 130. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s004"
+  },
+  {
+   "questionText": "The electricity consumption of May is what percentage more than that of June (correct to one decimal place)?",
+   "options": [
+    "150%",
+    "60%",
+    "250%",
+    "155%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess = 50 - 20 = 30. Percentage more = 30/20 × 100 ≈ 150%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'More than Y' means Y is the base.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s004"
+  },
+  {
+   "questionText": "What is the ratio of the electricity consumption of May to that of February?",
+   "options": [
+    "10 : 11",
+    "11 : 10",
+    "11 : 11",
+    "10 : 12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "50 : 55 reduces by the HCF 5 to 10 : 11. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel the common factor; keep the order asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s004"
+  },
+  {
+   "questionText": "The highest electricity consumption exceeds the lowest by what percentage (correct to one decimal place)?",
+   "options": [
+    "650%",
+    "86.7%",
+    "750%",
+    "658%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(150 - 20)/20 × 100 = 650 ≈ 650%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the lowest value.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s004"
+  },
+  {
+   "questionText": "If the electricity consumption of April rises by 20% and that of July falls by 10%, with all other bars unchanged, what is the new total of all 7 bars (correct to one decimal place)?",
+   "options": [
+    "480.5 thousand units",
+    "487.5 thousand units",
+    "480.2 thousand units",
+    "465 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Change = +20% of 95 = +19 and -10% of 35 = -3.5. Old total 465 → 480.5.",
+   "shortcut": "Only the net change matters: new total = old total + increase - decrease.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s004"
+  },
+  {
+   "questionText": "Which batter recorded the highest runs scored in the graph?",
+   "options": [
+    "Dinesh",
+    "Arjun",
+    "Karthik",
+    "Vikram"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare all bars: the tallest is Dinesh with 780 runs. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Scan the table once and note the maximum.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s005"
+  },
+  {
+   "questionText": "In which batter was the runs scored the lowest?",
+   "options": [
+    "Karthik",
+    "Arjun",
+    "Vikram",
+    "Suresh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest value is 80 runs at Karthik. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Look for the shortest bar.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s005"
+  },
+  {
+   "questionText": "What is the ratio of the runs scored of Vikram to that of Arjun?",
+   "options": [
+    "8 : 11",
+    "11 : 8",
+    "9 : 11",
+    "8 : 12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "320 : 440 reduces by the HCF 40 to 8 : 11. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel the common factor; keep the order asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s005"
+  },
+  {
+   "questionText": "What is the average runs scored of the three highest bars (correct to one decimal place)?",
+   "options": [
+    "593.3 runs",
+    "226.7 runs",
+    "410 runs",
+    "500 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three highest: [440, 560, 780]. Sum = 1780; average = 1780/3 ≈ 593.3. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s005"
+  },
+  {
+   "questionText": "If the bars of Arjun and Dinesh are left out, what is the average runs scored of the remaining 4 bars (correct to one decimal place)?",
+   "options": [
+    "310 runs",
+    "410 runs",
+    "404 runs",
+    "248 runs"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Remaining total = 2460 - 440 - 780 = 1240; divide by 4 to get 310. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Subtract first, then divide by the reduced count.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s005"
+  },
+  {
+   "questionText": "In which branch was the deposits the lowest?",
+   "options": [
+    "Chennai",
+    "Kochi",
+    "Mumbai",
+    "Pune"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest value is ₹ 120 crore at Chennai. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Look for the shortest bar.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s006"
+  },
+  {
+   "questionText": "The deposits of Mumbai is what percentage more than that of Chennai (correct to one decimal place)?",
+   "options": [
+    "175%",
+    "63.6%",
+    "275%",
+    "180%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess = 330 - 120 = 210. Percentage more = 210/120 × 100 ≈ 175%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'More than Y' means Y is the base.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s006"
+  },
+  {
+   "questionText": "What is the total deposits of those branchs whose bar is above the average of all bars?",
+   "options": [
+    "₹ 1070 crore",
+    "₹ 1460 crore",
+    "₹ 390 crore",
+    "₹ 1080 crore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 292. Bars above it add to 1070. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s006"
+  },
+  {
+   "questionText": "The highest deposits exceeds the lowest by what percentage (correct to one decimal place)?",
+   "options": [
+    "233.3%",
+    "70%",
+    "333.3%",
+    "241.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "(400 - 120)/120 × 100 = 233.33 ≈ 233.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Base is the lowest value.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s006"
+  },
+  {
+   "questionText": "The three highest bars together make what percentage of the total deposits (correct to one decimal place)?",
+   "options": [
+    "73.3%",
+    "49.3%",
+    "26.7%",
+    "274.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Top three = 1070, total = 1460; 1070/1460 × 100 ≈ 73.3%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s006"
+  },
+  {
+   "questionText": "Which plant recorded the highest tyre production in the graph?",
+   "options": [
+    "Chakan",
+    "Hosur",
+    "Pune",
+    "Sanand"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare all bars: the tallest is Chakan with 170 thousand units. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Scan the table once and note the maximum.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s007"
+  },
+  {
+   "questionText": "How many plants have a tyre production above the average of all 5 bars?",
+   "options": [
+    "3",
+    "2",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 585/5 = 117. Bars above it: 3. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s007"
+  },
+  {
+   "questionText": "The tyre production of Chakan is what percentage more than that of Sanand (correct to one decimal place)?",
+   "options": [
+    "277.8%",
+    "73.5%",
+    "377.8%",
+    "282.8%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess = 170 - 45 = 125. Percentage more = 125/45 × 100 ≈ 277.8%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'More than Y' means Y is the base.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s007"
+  },
+  {
+   "questionText": "What is the total tyre production of those plants whose bar is above the average of all bars?",
+   "options": [
+    "460 thousand units",
+    "585 thousand units",
+    "125 thousand units",
+    "465 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 117. Bars above it add to 460. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s007"
+  },
+  {
+   "questionText": "How much extra tyre production (in total) is needed to raise every bar that is below the average of all bars up to that average (correct to one decimal place)?",
+   "options": [
+    "109 thousand units",
+    "130.8 thousand units",
+    "114 thousand units",
+    "72 thousand units"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 117. Shortfalls of the bars below it add to 109. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Equivalently, the total excess of above-average bars equals this shortfall.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s007"
+  },
+  {
+   "questionText": "What is the combined tickets sold of Salem and Chennai Central?",
+   "options": [
+    "130 thousand tickets",
+    "135 thousand tickets",
+    "125 thousand tickets",
+    "60 thousand tickets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "35 + 95 = 130. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s008"
+  },
+  {
+   "questionText": "What is the average tickets sold of the three highest bars (correct to one decimal place)?",
+   "options": [
+    "110 thousand tickets",
+    "46.7 thousand tickets",
+    "79 thousand tickets",
+    "85 thousand tickets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three highest: [75, 95, 160]. Sum = 330; average = 330/3 ≈ 110. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s008"
+  },
+  {
+   "questionText": "What is the ratio of the tickets sold of Salem to that of Chennai Central?",
+   "options": [
+    "7 : 19",
+    "19 : 7",
+    "8 : 19",
+    "7 : 20"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "35 : 95 reduces by the HCF 5 to 7 : 19. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel the common factor; keep the order asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s008"
+  },
+  {
+   "questionText": "Erode accounts for what percentage of the total tickets sold of all 5 bars (correct to one decimal place)?",
+   "options": [
+    "40.5%",
+    "68.1%",
+    "100%",
+    "59.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 395. Share = 160/395 × 100 = 40.51 ≈ 40.5%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide the bar by the sum of all bars, not by the largest one.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s008"
+  },
+  {
+   "questionText": "How much extra tickets sold (in total) is needed to raise every bar that is below the average of all bars up to that average (correct to one decimal place)?",
+   "options": [
+    "97 thousand tickets",
+    "116.4 thousand tickets",
+    "102 thousand tickets",
+    "49 thousand tickets"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Average = 79. Shortfalls of the bars below it add to 97. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Equivalently, the total excess of above-average bars equals this shortfall.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s008"
+  },
+  {
+   "questionText": "Which hill station recorded the highest tourist arrivals in the graph?",
+   "options": [
+    "Coorg",
+    "Ooty",
+    "Kodaikanal",
+    "Munnar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare all bars: the tallest is Coorg with 230 thousand visitors. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Scan the table once and note the maximum.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s009"
+  },
+  {
+   "questionText": "What is the combined tourist arrivals of Munnar and Kodaikanal?",
+   "options": [
+    "250 thousand visitors",
+    "260 thousand visitors",
+    "240 thousand visitors",
+    "190 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "220 + 30 = 250. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s009"
+  },
+  {
+   "questionText": "Coorg accounts for what percentage of the total tourist arrivals of all 6 bars (correct to one decimal place)?",
+   "options": [
+    "30.7%",
+    "44.2%",
+    "100%",
+    "69.3%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 750. Share = 230/750 × 100 = 30.67 ≈ 30.7%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide the bar by the sum of all bars, not by the largest one.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s009"
+  },
+  {
+   "questionText": "What is the average tourist arrivals of the three highest bars (correct to one decimal place)?",
+   "options": [
+    "210 thousand visitors",
+    "40 thousand visitors",
+    "125 thousand visitors",
+    "200 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Three highest: [180, 220, 230]. Sum = 630; average = 630/3 ≈ 210. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s009"
+  },
+  {
+   "questionText": "If the tourist arrivals of Wayanad rises by 25% and that of Kodaikanal falls by 25%, with all other bars unchanged, what is the new total of all 6 bars (correct to one decimal place)?",
+   "options": [
+    "787.5 thousand visitors",
+    "802.5 thousand visitors",
+    "786.8 thousand visitors",
+    "750 thousand visitors"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Change = +25% of 180 = +45 and -25% of 30 = -7.5. Old total 750 → 787.5.",
+   "shortcut": "Only the net change matters: new total = old total + increase - decrease.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s009"
+  },
+  {
+   "questionText": "Which dairy recorded the highest milk supplied in the graph?",
+   "options": [
+    "Milma",
+    "Aavin",
+    "Amul",
+    "Nandini"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare all bars: the tallest is Milma with 200 thousand litres. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Scan the table once and note the maximum.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s010"
+  },
+  {
+   "questionText": "Which dairy has the second highest milk supplied?",
+   "options": [
+    "Heritage",
+    "Aavin",
+    "Amul",
+    "Nandini"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Order the bars: highest is Milma (200), next is Heritage (175). Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Rank from the top; do not stop at the first maximum.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s010"
+  },
+  {
+   "questionText": "What is the ratio of the milk supplied of Heritage to that of Aavin?",
+   "options": [
+    "35 : 34",
+    "34 : 35",
+    "36 : 34",
+    "35 : 35"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "175 : 170 reduces by the HCF 5 to 35 : 34. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel the common factor; keep the order asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": "di-bar-graphs-s010"
+  },
+  {
+   "questionText": "Aavin accounts for what percentage of the total milk supplied of all 6 bars (correct to one decimal place)?",
+   "options": [
+    "22.4%",
+    "28.8%",
+    "85%",
+    "77.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 760. Share = 170/760 × 100 = 22.37 ≈ 22.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Divide the bar by the sum of all bars, not by the largest one.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s010"
+  },
+  {
+   "questionText": "If the milk supplied of Nandini rises by 25% and that of Mother Dairy falls by 40%, with all other bars unchanged, what is the new total of all 6 bars (correct to one decimal place)?",
+   "options": [
+    "787.5 thousand litres",
+    "807.5 thousand litres",
+    "786.5 thousand litres",
+    "760 thousand litres"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Change = +25% of 150 = +37.5 and -40% of 25 = -10. Old total 760 → 787.5.",
+   "shortcut": "Only the net change matters: new total = old total + increase - decrease.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s010"
+  },
+  {
+   "questionText": "What is the combined cement output of Satna and Tandur?",
+   "options": [
+    "600 thousand tonnes",
+    "610 thousand tonnes",
+    "590 thousand tonnes",
+    "100 thousand tonnes"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "250 + 350 = 600. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": "di-bar-graphs-s011"
+  },
+  {
+   "questionText": "In which plant was the cement output the lowest?",
+   "options": [
+    "Nagpur",
+    "Ariyalur",
+    "Coimbatore",
+    "Satna"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The smallest value is 140 thousand tonnes at Nagpur. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Look for the shortest bar.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": "di-bar-graphs-s011"
+  },
+  {
+   "questionText": "What is the ratio of the cement output of Kurnool to that of Coimbatore?",
+   "options": [
+    "19 : 37",
+    "37 : 19",
+    "20 : 37",
+    "19 : 38"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "190 : 370 reduces by the HCF 10 to 19 : 37. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "Cancel the common factor; keep the order asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s011"
+  },
+  {
+   "questionText": "The cement output of Rajpura is what percentage more than that of Nagpur (correct to one decimal place)?",
+   "options": [
+    "128.6%",
+    "56.3%",
+    "228.6%",
+    "133.6%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Excess = 320 - 140 = 180. Percentage more = 180/140 × 100 ≈ 128.6%. Read the needed values straight from the graph data and apply the operation asked.",
+   "shortcut": "'More than Y' means Y is the base.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s011"
+  },
+  {
+   "questionText": "The three highest bars together make what percentage of the total cement output (correct to one decimal place)?",
+   "options": [
+    "58.4%",
+    "27.5%",
+    "41.6%",
+    "140.5%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Top three = 1040, total = 1780; 1040/1780 × 100 ≈ 58.4%. Read the needed values straight from the graph data and apply the operation asked.",
+   "subPattern": "single-bar-graph",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": "di-bar-graphs-s011"
+  }
+ ]
+}

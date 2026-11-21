@@ -1,0 +1,997 @@
+{
+ "sets": [
+  {
+   "id": "di-line-graphs-s007",
+   "type": "line",
+   "title": "Annual sales of two scooter makers P and Q (in thousand units)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Sales figure (thousand units)",
+    "series": [
+     {
+      "name": "Maker P",
+      "data": [
+       {
+        "label": "2018",
+        "value": 50
+       },
+       {
+        "label": "2019",
+        "value": 62
+       },
+       {
+        "label": "2020",
+        "value": 58
+       },
+       {
+        "label": "2021",
+        "value": 75
+       },
+       {
+        "label": "2022",
+        "value": 80
+       },
+       {
+        "label": "2023",
+        "value": 92
+       }
+      ]
+     },
+     {
+      "name": "Maker Q",
+      "data": [
+       {
+        "label": "2018",
+        "value": 45
+       },
+       {
+        "label": "2019",
+        "value": 70
+       },
+       {
+        "label": "2020",
+        "value": 64
+       },
+       {
+        "label": "2021",
+        "value": 68
+       },
+       {
+        "label": "2022",
+        "value": 95
+       },
+       {
+        "label": "2023",
+        "value": 88
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s008",
+   "type": "line",
+   "title": "Peak electricity demand in three Tamil Nadu cities (in MW)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Peak demand (MW)",
+    "series": [
+     {
+      "name": "Coimbatore",
+      "data": [
+       {
+        "label": "2019",
+        "value": 320
+       },
+       {
+        "label": "2020",
+        "value": 350
+       },
+       {
+        "label": "2021",
+        "value": 390
+       },
+       {
+        "label": "2022",
+        "value": 420
+       },
+       {
+        "label": "2023",
+        "value": 470
+       }
+      ]
+     },
+     {
+      "name": "Madurai",
+      "data": [
+       {
+        "label": "2019",
+        "value": 280
+       },
+       {
+        "label": "2020",
+        "value": 300
+       },
+       {
+        "label": "2021",
+        "value": 360
+       },
+       {
+        "label": "2022",
+        "value": 340
+       },
+       {
+        "label": "2023",
+        "value": 400
+       }
+      ]
+     },
+     {
+      "name": "Trichy",
+      "data": [
+       {
+        "label": "2019",
+        "value": 250
+       },
+       {
+        "label": "2020",
+        "value": 310
+       },
+       {
+        "label": "2021",
+        "value": 330
+       },
+       {
+        "label": "2022",
+        "value": 380
+       },
+       {
+        "label": "2023",
+        "value": 390
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s009",
+   "type": "line",
+   "title": "Enrolment of boys and girls in a polytechnic group (in hundreds)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Enrolment (hundreds)",
+    "series": [
+     {
+      "name": "Boys",
+      "data": [
+       {
+        "label": "2017",
+        "value": 120
+       },
+       {
+        "label": "2018",
+        "value": 125
+       },
+       {
+        "label": "2019",
+        "value": 130
+       },
+       {
+        "label": "2020",
+        "value": 128
+       },
+       {
+        "label": "2021",
+        "value": 135
+       },
+       {
+        "label": "2022",
+        "value": 140
+       }
+      ]
+     },
+     {
+      "name": "Girls",
+      "data": [
+       {
+        "label": "2017",
+        "value": 100
+       },
+       {
+        "label": "2018",
+        "value": 112
+       },
+       {
+        "label": "2019",
+        "value": 125
+       },
+       {
+        "label": "2020",
+        "value": 130
+       },
+       {
+        "label": "2021",
+        "value": 140
+       },
+       {
+        "label": "2022",
+        "value": 152
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s010",
+   "type": "line",
+   "title": "Exports and imports of a trading firm (in ₹ crore)",
+   "chart": {
+    "xLabel": "Year",
+    "yLabel": "Trade value (₹ crore)",
+    "series": [
+     {
+      "name": "Exports",
+      "data": [
+       {
+        "label": "2018",
+        "value": 210
+       },
+       {
+        "label": "2019",
+        "value": 240
+       },
+       {
+        "label": "2020",
+        "value": 225
+       },
+       {
+        "label": "2021",
+        "value": 280
+       },
+       {
+        "label": "2022",
+        "value": 310
+       },
+       {
+        "label": "2023",
+        "value": 335
+       }
+      ]
+     },
+     {
+      "name": "Imports",
+      "data": [
+       {
+        "label": "2018",
+        "value": 190
+       },
+       {
+        "label": "2019",
+        "value": 205
+       },
+       {
+        "label": "2020",
+        "value": 250
+       },
+       {
+        "label": "2021",
+        "value": 240
+       },
+       {
+        "label": "2022",
+        "value": 270
+       },
+       {
+        "label": "2023",
+        "value": 300
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s011",
+   "type": "line",
+   "title": "Passengers on two bus routes through the week (in hundreds)",
+   "chart": {
+    "xLabel": "Day",
+    "yLabel": "Passenger count (hundreds)",
+    "series": [
+     {
+      "name": "Route 12",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 42
+       },
+       {
+        "label": "Tue",
+        "value": 38
+       },
+       {
+        "label": "Wed",
+        "value": 40
+       },
+       {
+        "label": "Thu",
+        "value": 45
+       },
+       {
+        "label": "Fri",
+        "value": 60
+       },
+       {
+        "label": "Sat",
+        "value": 72
+       }
+      ]
+     },
+     {
+      "name": "Route 27",
+      "data": [
+       {
+        "label": "Mon",
+        "value": 30
+       },
+       {
+        "label": "Tue",
+        "value": 34
+       },
+       {
+        "label": "Wed",
+        "value": 41
+       },
+       {
+        "label": "Thu",
+        "value": 39
+       },
+       {
+        "label": "Fri",
+        "value": 52
+       },
+       {
+        "label": "Sat",
+        "value": 66
+       }
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "di-line-graphs-s012",
+   "type": "line",
+   "title": "Monthly sales of three bakeries (in ₹ lakh)",
+   "chart": {
+    "xLabel": "Month",
+    "yLabel": "Sales figure (₹ lakh)",
+    "series": [
+     {
+      "name": "Anand Bakery",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 18
+       },
+       {
+        "label": "Feb",
+        "value": 20
+       },
+       {
+        "label": "Mar",
+        "value": 22
+       },
+       {
+        "label": "Apr",
+        "value": 21
+       },
+       {
+        "label": "May",
+        "value": 26
+       }
+      ]
+     },
+     {
+      "name": "Bharat Bakery",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 15
+       },
+       {
+        "label": "Feb",
+        "value": 19
+       },
+       {
+        "label": "Mar",
+        "value": 24
+       },
+       {
+        "label": "Apr",
+        "value": 27
+       },
+       {
+        "label": "May",
+        "value": 25
+       }
+      ]
+     },
+     {
+      "name": "Chola Bakery",
+      "data": [
+       {
+        "label": "Jan",
+        "value": 22
+       },
+       {
+        "label": "Feb",
+        "value": 21
+       },
+       {
+        "label": "Mar",
+        "value": 20
+       },
+       {
+        "label": "Apr",
+        "value": 23
+       },
+       {
+        "label": "May",
+        "value": 24
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What was the sales figure of Maker P in 2021 (in thousand units)?",
+   "options": [
+    "68",
+    "80",
+    "70",
+    "75"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the Maker P line at 2021: 75 thousand units.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What is the difference between the sales figure of Maker P and Maker Q in 2023 (in thousand units)?",
+   "options": [
+    "180",
+    "9",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In 2023: Maker P = 92, Maker Q = 88. Difference = 4.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "In 2023, by what percent was the sales figure of Maker P higher than that of Maker Q? (Correct to one decimal place.)",
+   "options": [
+    "4.3%",
+    "4.0%",
+    "4.8%",
+    "4.5%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Maker P = 92, Maker Q = 88. Excess = 4. Percent = 4/88 x 100 = 4.5%.",
+   "shortcut": "Divide by the one you are comparing against (here the smaller value).",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What is the total sales figure of Maker Q over all 6 years shown (in thousand units)?",
+   "options": [
+    "430",
+    "385",
+    "518",
+    "460"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add all values: 45 + 70 + 64 + 68 + 95 + 88 = 430.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What percent of the total sales figure of both series over all 6 years is contributed by Maker P? (Correct to one decimal place.)",
+   "options": [
+    "97.0%",
+    "50.0%",
+    "49.2%",
+    "52.6%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Maker P total = 417; grand total = 847. Share = 417/847 x 100 = 49.2%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s007"
+  },
+  {
+   "questionText": "What was the combined peak demand of Trichy and Coimbatore in 2023 (in MW)?",
+   "options": [
+    "80",
+    "870",
+    "860",
+    "920"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Trichy = 390, Coimbatore = 470; combined = 860.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "What is the total peak demand of Madurai in 2019 and 2021 taken together (in MW)?",
+   "options": [
+    "80",
+    "640",
+    "645",
+    "685"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "2019: 280; 2021: 360; total = 640.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "What was the average peak demand of Coimbatore, Madurai and Trichy in 2021 (in MW)? (Correct to one decimal place.)",
+   "options": [
+    "390.0",
+    "330.0",
+    "385.2",
+    "360.0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sum = 390 + 360 + 330 = 1080; average = 1080/3 = 360.0.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "By what percent did the peak demand of Trichy increase from 2019 to 2023? (Correct to one decimal place.)",
+   "options": [
+    "35.9%",
+    "140.0%",
+    "56.0%",
+    "59.9%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Trichy: 250 to 390. Increase = 140; percent = 140/250 x 100 = 56.0%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "By what percent did the combined peak demand of Coimbatore, Madurai and Trichy change from 2019 to 2023? (Correct to one decimal place.)",
+   "options": [
+    "32.5%",
+    "410.0%",
+    "51.6%",
+    "48.2%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combined 2019 = 850; combined 2023 = 1260. Change = 410; percent = 410/850 x 100 = 48.2%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s008"
+  },
+  {
+   "questionText": "What was the enrolment of Boys in 2022 (in hundreds)?",
+   "options": [
+    "152",
+    "150",
+    "140",
+    "130"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the Boys line at 2022: 140 hundreds.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "What is the difference between the enrolment of Boys and Girls in 2020 (in hundreds)?",
+   "options": [
+    "258",
+    "7",
+    "2",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In 2020: Boys = 128, Girls = 130. Difference = 2.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "In which year was the gap between the enrolment of Girls and Boys the widest?",
+   "options": [
+    "2018",
+    "2021",
+    "2020",
+    "2017"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Gaps: 2017: 20, 2018: 13, 2019: 5, 2020: 2, 2021: 5, 2022: 12. Widest is 20 in 2017.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "In 2017, the enrolment of Boys was what percent of that of Girls? (Correct to one decimal place.)",
+   "options": [
+    "120.0%",
+    "83.3%",
+    "20.0%",
+    "128.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Boys = 120, Girls = 100. Required % = 120/100 x 100 = 120.0%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "What is the difference between the average enrolment of Boys and that of Girls over all 6 years shown (in hundreds)? (Correct to one decimal place.)",
+   "options": [
+    "19.0",
+    "3.2",
+    "6.3",
+    "3.4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Boys: 778/6 = 129.67; Girls: 759/6 = 126.50. Difference = 3.2.",
+   "shortcut": "Difference of totals divided by the number of periods.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s009"
+  },
+  {
+   "questionText": "What was the combined trade value of Imports and Exports in 2023 (in ₹ crore)?",
+   "options": [
+    "635",
+    "35",
+    "645",
+    "679"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Imports = 300, Exports = 335; combined = 635.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "In 2021, the trade value of Exports was what percent of that of Imports? (Correct to one decimal place.)",
+   "options": [
+    "85.7%",
+    "16.7%",
+    "116.7%",
+    "124.9%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exports = 280, Imports = 240. Required % = 280/240 x 100 = 116.7%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "In 2018, by what percent was the trade value of Exports higher than that of Imports? (Correct to one decimal place.)",
+   "options": [
+    "9.5%",
+    "10.5%",
+    "20.0%",
+    "11.2%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Exports = 210, Imports = 190. Excess = 20. Percent = 20/190 x 100 = 10.5%.",
+   "shortcut": "Divide by the one you are comparing against (here the smaller value).",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "What is the total trade value of Exports over all 6 years shown (in ₹ crore)?",
+   "options": [
+    "1600",
+    "1390",
+    "1935",
+    "1712"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Add all values: 210 + 240 + 225 + 280 + 310 + 335 = 1600.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "In which year was the combined trade value of both series the highest?",
+   "options": [
+    "2021",
+    "2020",
+    "2023",
+    "2022"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combined totals: 2018: 400, 2019: 445, 2020: 475, 2021: 520, 2022: 580, 2023: 635. Highest is 635 in 2023.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s010"
+  },
+  {
+   "questionText": "What was the passenger count of Route 12 in Tue (in hundreds)?",
+   "options": [
+    "34",
+    "38",
+    "41",
+    "35"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the Route 12 line at Tue: 38 hundreds.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "What is the total passenger count of Route 27 over all 6 days shown (in hundreds)?",
+   "options": [
+    "232",
+    "328",
+    "262",
+    "280"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Add all values: 30 + 34 + 41 + 39 + 52 + 66 = 262.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "What was the average passenger count of Route 12 and Route 27 in Mon (in hundreds)? (Correct to one decimal place.)",
+   "options": [
+    "42.0",
+    "36.0",
+    "30.0",
+    "38.5"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sum = 42 + 30 = 72; average = 72/2 = 36.0.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "By what percent did the passenger count of Route 12 increase from Mon to Sat? (Correct to one decimal place.)",
+   "options": [
+    "71.4%",
+    "41.7%",
+    "30.0%",
+    "76.4%"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Route 12: 42 to 72. Increase = 30; percent = 30/42 x 100 = 71.4%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "In how many days was the passenger count of Route 12 higher than that of Route 27?",
+   "options": [
+    "5",
+    "1",
+    "6",
+    "4"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Compare year by year: Route 12 is higher in Mon, Tue, Thu, Fri, Sat only, so the count is 5.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "di-line-graphs-s011"
+  },
+  {
+   "questionText": "What was the combined sales figure of Chola Bakery and Bharat Bakery in May (in ₹ lakh)?",
+   "options": [
+    "49",
+    "1",
+    "59",
+    "52"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Chola Bakery = 24, Bharat Bakery = 25; combined = 49.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "By what percent did the sales figure of Anand Bakery increase from Feb to Mar? (Correct to one decimal place.)",
+   "options": [
+    "9.1%",
+    "2.0%",
+    "10.0%",
+    "10.7%"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Anand Bakery: 20 to 22. Increase = 2; percent = 2/20 x 100 = 10.0%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "In which month was the gap between the sales figure of Bharat Bakery and Anand Bakery the widest?",
+   "options": [
+    "Apr",
+    "Feb",
+    "May",
+    "Jan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Gaps: Jan: 3, Feb: 1, Mar: 2, Apr: 6, May: 1. Widest is 6 in Apr.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "In Mar, the sales figure of Chola Bakery was what percent of that of Bharat Bakery? (Correct to one decimal place.)",
+   "options": [
+    "120.0%",
+    "83.3%",
+    "16.7%",
+    "89.1%"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Chola Bakery = 20, Bharat Bakery = 24. Required % = 20/24 x 100 = 83.3%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "campus-it"
+   ],
+   "setId": "di-line-graphs-s012"
+  },
+  {
+   "questionText": "What percent of the total sales figure of all 3 series over all 5 months is contributed by Bharat Bakery? (Correct to one decimal place.)",
+   "options": [
+    "50.7%",
+    "33.3%",
+    "36.0%",
+    "33.6%"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bharat Bakery total = 110; grand total = 327. Share = 110/327 x 100 = 33.6%.",
+   "subPattern": "multi-line-comparison",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-line-graphs-s012"
+  }
+ ]
+}

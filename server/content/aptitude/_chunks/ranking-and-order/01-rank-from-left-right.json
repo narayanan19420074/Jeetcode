@@ -1,0 +1,645 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Imran ranks 15th from the top in a class of 66 students. What is Imran's rank from the bottom?",
+   "options": [
+    "51",
+    "53",
+    "52",
+    "81"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 66 − 15 + 1 = 52.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "Kiran ranks 46th from the top in a class of 60 students. What is Kiran's rank from the bottom?",
+   "options": [
+    "14",
+    "15",
+    "16",
+    "106"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 60 − 46 + 1 = 15.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "Tara ranks 62nd from the top in a class of 71 students. What is Tara's rank from the bottom?",
+   "options": [
+    "9",
+    "11",
+    "10",
+    "133"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 71 − 62 + 1 = 10.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "Rohit ranks 66th from the top in a class of 73 students. What is Rohit's rank from the bottom?",
+   "options": [
+    "8",
+    "7",
+    "9",
+    "139"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 73 − 66 + 1 = 8.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "In a line of students of 46 students, Jaya is 23rd from the left. What is Jaya's position from the right?",
+   "options": [
+    "24",
+    "23",
+    "25",
+    "69"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Position from the right = 46 − 23 + 1 = 24.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Right rank = Total + 1 − Left rank."
+  },
+  {
+   "questionText": "In a row of soldiers of 58 soldiers, Harleen is 51st from the left. What is Harleen's position from the right?",
+   "options": [
+    "7",
+    "9",
+    "8",
+    "109"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Position from the right = 58 − 51 + 1 = 8.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Right rank = Total + 1 − Left rank."
+  },
+  {
+   "questionText": "In a line of students of 55 students, Divya is 47th from the left. What is Divya's position from the right?",
+   "options": [
+    "9",
+    "8",
+    "10",
+    "102"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Position from the right = 55 − 47 + 1 = 9.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Right rank = Total + 1 − Left rank."
+  },
+  {
+   "questionText": "Sneha is 16th from the left and 15th from the right in a row. How many persons are there in the row?",
+   "options": [
+    "31",
+    "29",
+    "30",
+    "1"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 16 + 15 − 1 = 30; Sneha is counted in both ranks, so subtract 1.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Padma is 9th from the front and 16th from the back in a queue. How many persons are there in the queue?",
+   "options": [
+    "25",
+    "23",
+    "24",
+    "7"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 9 + 16 − 1 = 24; Padma is counted in both ranks, so subtract 1.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Prakash is 16th from the left and 6th from the right in a shelf of books. How many books are there in the shelf of books?",
+   "options": [
+    "22",
+    "20",
+    "21",
+    "10"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 16 + 6 − 1 = 21; Prakash is counted in both ranks, so subtract 1.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "In a row of 47 persons, Kavya is 17th from the left end and Harleen is 17th from the right end. How many persons are standing between Kavya and Harleen?",
+   "options": [
+    "13",
+    "14",
+    "12",
+    "15"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Persons not between them = 17 (up to and including Kavya) + 17 (from Harleen to the right end) = 34. Between = 47 − 34 = 13.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 41 persons, Anita is 8th from the left end and Lakshmi is 7th from the right end. How many persons are standing between Anita and Lakshmi?",
+   "options": [
+    "27",
+    "25",
+    "26",
+    "28"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Persons not between them = 8 (up to and including Anita) + 7 (from Lakshmi to the right end) = 15. Between = 41 − 15 = 26.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 30 persons, Pooja is 6th from the left end and Prakash is 18th from the right end. How many persons are standing between Pooja and Prakash?",
+   "options": [
+    "7",
+    "6",
+    "5",
+    "8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Persons not between them = 6 (up to and including Pooja) + 18 (from Prakash to the right end) = 24. Between = 30 − 24 = 6.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 51 persons, Ashok is 17th from the left end and Dinesh is 19th from the right end. How many persons are standing between Ashok and Dinesh?",
+   "options": [
+    "16",
+    "14",
+    "17",
+    "15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons not between them = 17 (up to and including Ashok) + 19 (from Dinesh to the right end) = 36. Between = 51 − 36 = 15.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 55 persons, Suresh is 14th from the left end and Arjun is 20th from the right end. How many persons are standing between Suresh and Arjun?",
+   "options": [
+    "22",
+    "20",
+    "23",
+    "21"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons not between them = 14 (up to and including Suresh) + 20 (from Arjun to the right end) = 34. Between = 55 − 34 = 21.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 42 persons, Gurpreet is 16th from the left. If Gurpreet moves 3 places towards the right, what will be Gurpreet's position from the right end?",
+   "options": [
+    "24",
+    "27",
+    "23",
+    "25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New left position = 16 + 3 = 19. Right position = 42 − 19 + 1 = 24.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 59 persons, Manoj is 19th from the left. If Manoj moves 8 places towards the right, what will be Manoj's position from the right end?",
+   "options": [
+    "41",
+    "33",
+    "32",
+    "34"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New left position = 19 + 8 = 27. Right position = 59 − 27 + 1 = 33.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 59 persons, Tara is 20th from the left. If Tara moves 8 places towards the right, what will be Tara's position from the right end?",
+   "options": [
+    "32",
+    "40",
+    "31",
+    "33"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New left position = 20 + 8 = 28. Right position = 59 − 28 + 1 = 32.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 52 persons, Sanjay is 7th from the left. If Sanjay moves 7 places towards the right, what will be Sanjay's position from the right end?",
+   "options": [
+    "46",
+    "38",
+    "40",
+    "39"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New left position = 7 + 7 = 14. Right position = 52 − 14 + 1 = 39.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 38 persons, Anil is 18th from the left. If Anil moves 7 places towards the right, what will be Anil's position from the right end?",
+   "options": [
+    "21",
+    "13",
+    "15",
+    "14"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New left position = 18 + 7 = 25. Right position = 38 − 25 + 1 = 14.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "Sathish stands exactly in the middle of a row of 69 persons. Priya stands 9 places to the right of Sathish. What is Priya's position from the right end?",
+   "options": [
+    "35",
+    "44",
+    "26",
+    "27"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Middle position = (69+1)/2 = 35 from either end. Priya is 9 places nearer the right end, so rank from right = 35 − 9 = 26.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "Ravi stands exactly in the middle of a row of 51 persons. Kavya stands 4 places to the right of Ravi. What is Kavya's position from the right end?",
+   "options": [
+    "26",
+    "30",
+    "22",
+    "23"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Middle position = (51+1)/2 = 26 from either end. Kavya is 4 places nearer the right end, so rank from right = 26 − 4 = 22.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "Tara stands exactly in the middle of a row of 69 persons. Kavya stands 6 places to the right of Tara. What is Kavya's position from the right end?",
+   "options": [
+    "35",
+    "41",
+    "29",
+    "30"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Middle position = (69+1)/2 = 35 from either end. Kavya is 6 places nearer the right end, so rank from right = 35 − 6 = 29.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "Ishita stands exactly in the middle of a row of 57 persons. Swathi stands 8 places to the right of Ishita. What is Swathi's position from the right end?",
+   "options": [
+    "29",
+    "37",
+    "21",
+    "22"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Middle position = (57+1)/2 = 29 from either end. Swathi is 8 places nearer the right end, so rank from right = 29 − 8 = 21.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "In a class, 18 students are ranked above Sangeeta and 19 students are ranked below Sangeeta. What is Sangeeta's rank from the top?",
+   "options": [
+    "19",
+    "18",
+    "20",
+    "37"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rank from top = students above + 1 = 18 + 1 = 19.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rank = (number above) + 1."
+  },
+  {
+   "questionText": "In a class, 19 students are ranked above Imran and 17 students are ranked below Imran. What is Imran's rank from the top?",
+   "options": [
+    "20",
+    "19",
+    "21",
+    "36"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rank from top = students above + 1 = 19 + 1 = 20.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rank = (number above) + 1."
+  },
+  {
+   "questionText": "In a class, 9 students are ranked above Lakshmi and 13 students are ranked below Lakshmi. What is Lakshmi's rank from the top?",
+   "options": [
+    "10",
+    "9",
+    "11",
+    "22"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rank from top = students above + 1 = 9 + 1 = 10.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Rank = (number above) + 1."
+  },
+  {
+   "questionText": "Rahul is 17th from the left and 9th from the right in a row. Then 4 more persons join at the right end and 9 more join at the left end. What is Rahul's new position from the right end?",
+   "options": [
+    "13",
+    "18",
+    "38",
+    "9"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Persons joining the right end each add 1 to the right rank; those joining the left end do not change it. New right rank = 9 + 4 = 13.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Only joiners on the side you are counting from change that rank."
+  },
+  {
+   "questionText": "Balaji is 9th from the left and 18th from the right in a row. Then 9 more persons join at the right end and 3 more join at the left end. What is Balaji's new position from the right end?",
+   "options": [
+    "21",
+    "38",
+    "27",
+    "18"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Persons joining the right end each add 1 to the right rank; those joining the left end do not change it. New right rank = 18 + 9 = 27.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Only joiners on the side you are counting from change that rank."
+  },
+  {
+   "questionText": "Lakshmi is 8th from the left and 10th from the right in a row. Then 6 more persons join at the right end and 3 more join at the left end. What is Lakshmi's new position from the right end?",
+   "options": [
+    "13",
+    "26",
+    "10",
+    "16"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons joining the right end each add 1 to the right rank; those joining the left end do not change it. New right rank = 10 + 6 = 16.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Only joiners on the side you are counting from change that rank."
+  },
+  {
+   "questionText": "In a class of 41 students, Padma is 6th from the top. Sneha is ranked 17 places below Padma. What is Sneha's rank from the bottom?",
+   "options": [
+    "18",
+    "19",
+    "52",
+    "20"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sneha's rank from top = 6 + 17 = 23. Rank from bottom = 41 − 23 + 1 = 19.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Top rank of the lower student = 6 + gap; then flip with Total + 1."
+  },
+  {
+   "questionText": "In a class of 61 students, Nisha is 7th from the top. Lakshmi is ranked 13 places below Nisha. What is Lakshmi's rank from the bottom?",
+   "options": [
+    "41",
+    "67",
+    "43",
+    "42"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lakshmi's rank from top = 7 + 13 = 20. Rank from bottom = 61 − 20 + 1 = 42.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Top rank of the lower student = 7 + gap; then flip with Total + 1."
+  },
+  {
+   "questionText": "In a row of 49 persons, Jaya is 18th from the left and Mohan is 18th from the right (Jaya is to the left of Mohan). Sanjay stands exactly in the middle of the persons standing between Jaya and Mohan. What is Sanjay's position from the right end?",
+   "options": [
+    "25",
+    "26",
+    "24",
+    "32"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Persons between Jaya and Mohan = 49 − (18+18) = 13. The middle one of these is the 7th after Jaya, at position 18 + 7 = 25 from the left. From the right: 49 − 25 + 1 = 25.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Middle of an odd group of b people is the (b+1)/2-th one."
+  },
+  {
+   "questionText": "In a row of 43 persons, Mohan is 24th from the left and Ishita is 12th from the right (Mohan is to the left of Ishita). Dinesh stands exactly in the middle of the persons standing between Mohan and Ishita. What is Dinesh's position from the right end?",
+   "options": [
+    "17",
+    "15",
+    "28",
+    "16"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons between Mohan and Ishita = 43 − (24+12) = 7. The middle one of these is the 4th after Mohan, at position 24 + 4 = 28 from the left. From the right: 43 − 28 + 1 = 16.",
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Middle of an odd group of b people is the (b+1)/2-th one."
+  }
+ ]
+}

@@ -1,0 +1,803 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The doctor advised him to ___ from oily food for a few weeks.",
+   "options": [
+    "abstain",
+    "insist",
+    "derive",
+    "persist"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Abstain from' means to keep away from something; the other verbs do not take 'from' in this sense.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Heavy rain ___ the match, so it was postponed to Sunday.",
+   "options": [
+    "assisted",
+    "disrupted",
+    "celebrated",
+    "advertised"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The match was postponed, so the rain interrupted it: 'disrupted' fits.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Ravi is very ___; he never tells a lie.",
+   "options": [
+    "greedy",
+    "clumsy",
+    "honest",
+    "jealous"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Never telling a lie describes an honest person.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The old man is so ___ that he donates half his pension to charity.",
+   "options": [
+    "stingy",
+    "timid",
+    "rude",
+    "generous"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Giving away money freely shows generosity; 'stingy' is the opposite.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The sun was so ___ at noon that we could not walk barefoot on the road.",
+   "options": [
+    "scorching",
+    "freezing",
+    "pleasant",
+    "dim"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hot road surface needs an intensely hot sun: 'scorching'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The teacher praised Anita for her ___ in solving the toughest problem.",
+   "options": [
+    "ignorance",
+    "ingenuity",
+    "clumsiness",
+    "laziness"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Praise goes with a positive quality; 'ingenuity' means cleverness.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The thief ___ the policeman by hiding behind a pillar.",
+   "options": [
+    "praised",
+    "invited",
+    "eluded",
+    "assisted"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Elude' means to escape or avoid someone cleverly.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He was so ___ after the long trek that he fell asleep immediately.",
+   "options": [
+    "energetic",
+    "furious",
+    "generous",
+    "exhausted"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Falling asleep at once follows extreme tiredness: 'exhausted'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Wearing a seat belt is ___ for the driver, as the law requires it.",
+   "options": [
+    "mandatory",
+    "optional",
+    "forbidden",
+    "ordinary"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'As the law requires it' means compulsory: 'mandatory'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The judge ___ the accused of all charges due to lack of evidence.",
+   "options": [
+    "convicted",
+    "acquitted",
+    "accused",
+    "sentenced"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lack of evidence leads to being cleared of charges: 'acquitted'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The magician's trick left the audience ___; nobody could explain it.",
+   "options": [
+    "careless",
+    "jealous",
+    "baffled",
+    "sleepy"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Being unable to explain something leaves people puzzled: 'baffled'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Rahul's ___ for cricket began when he received his first bat at the age of six.",
+   "options": [
+    "aversion",
+    "suspicion",
+    "tolerance",
+    "passion"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A gift that starts an interest in cricket creates a passion, not an aversion.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The ___ of the old fort is a major tourist attraction in Rajasthan.",
+   "options": [
+    "grandeur",
+    "grudge",
+    "grammar",
+    "gravity"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Only 'grandeur' (magnificence) can attract tourists to a fort.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The minister's speech was full of ___ promises that no one believed, as they were never kept.",
+   "options": [
+    "solid",
+    "empty",
+    "genuine",
+    "fulfilled"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Promises never kept are 'empty' promises.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Always arriving late and missing deadlines, he showed a ___ attitude towards his job.",
+   "options": [
+    "diligent",
+    "ambitious",
+    "negligent",
+    "enthusiastic"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lateness and missed deadlines show carelessness: 'negligent'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The scientist's theory was ___ by experiments conducted by two independent labs, confirming it.",
+   "options": [
+    "contradicted",
+    "ignored",
+    "ridiculed",
+    "corroborated"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Confirming it' signals support: 'corroborated' means confirmed.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The company's profits ___ sharply during the recession, forcing it to cut jobs.",
+   "options": [
+    "plummeted",
+    "soared",
+    "flourished",
+    "multiplied"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Job cuts follow a steep fall, so 'plummeted' fits.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Being a ___ person, he never spends a rupee without thinking twice.",
+   "options": [
+    "lavish",
+    "frugal",
+    "reckless",
+    "extravagant"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Thinking twice before spending describes a thrifty (frugal) person.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The two neighbours finally ___ their long-standing quarrel and became friends.",
+   "options": [
+    "prolonged",
+    "provoked",
+    "resolved",
+    "aggravated"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Becoming friends means the quarrel was settled: 'resolved'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The lawyer gave a ___ argument that left no room for doubt.",
+   "options": [
+    "feeble",
+    "vague",
+    "hesitant",
+    "cogent"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "An argument leaving no doubt is convincing: 'cogent'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The crowd became ___ when the match was stopped unfairly and began throwing bottles.",
+   "options": [
+    "unruly",
+    "calm",
+    "obedient",
+    "silent"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Throwing bottles shows disorderly behaviour: 'unruly'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Her ___ in the kitchen was evident from the perfect meal she cooked.",
+   "options": [
+    "ignorance",
+    "proficiency",
+    "reluctance",
+    "disinterest"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "A perfect meal shows skill: 'proficiency'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The patient's condition is ___; the doctors say he may not survive the night.",
+   "options": [
+    "trivial",
+    "stable",
+    "critical",
+    "improving"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Possible death overnight means a grave condition: 'critical'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The old professor was known for his ___ of speech; he could say a lot in a few words.",
+   "options": [
+    "verbosity",
+    "hesitation",
+    "clumsiness",
+    "brevity"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Saying much in few words is 'brevity'; 'verbosity' is the opposite.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The shopkeeper's ___ reply upset the customer, who had asked politely.",
+   "options": [
+    "curt",
+    "courteous",
+    "gentle",
+    "warm"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A rude, abrupt reply to a polite question upsets: 'curt'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A good leader must be ___ and take quick decisions in a crisis.",
+   "options": [
+    "hesitant",
+    "decisive",
+    "indecisive",
+    "timid"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Quick decisions require being 'decisive'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The fire was ___ before it could spread to the neighbouring houses.",
+   "options": [
+    "ignited",
+    "fuelled",
+    "extinguished",
+    "spread"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Stopping it from spreading means it was put out: 'extinguished'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The students were ___ by the teacher for talking during the exam.",
+   "options": [
+    "rewarded",
+    "promoted",
+    "congratulated",
+    "reprimanded"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Talking during an exam draws a scolding: 'reprimanded'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The explorers faced ___ weather on the peak, with blizzards and freezing winds.",
+   "options": [
+    "hostile",
+    "pleasant",
+    "mild",
+    "balmy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Blizzards and freezing winds are harsh: 'hostile'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Though wealthy, she led a ___ life, avoiding show and luxury.",
+   "options": [
+    "ostentatious",
+    "modest",
+    "lavish",
+    "flamboyant"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Avoiding show and luxury' describes a modest life.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The two parties could not reach a ___ and the talks collapsed.",
+   "options": [
+    "conflict",
+    "quarrel",
+    "compromise",
+    "defeat"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "One 'reaches a compromise' in negotiations; the other nouns do not collocate with 'reach' here.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The new software is ___ with all the older versions, so files open without trouble.",
+   "options": [
+    "comparable",
+    "competent",
+    "complete",
+    "compatible"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Compatible with' means able to work together.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The CEO's sudden ___ shocked the board, as he had held the post for only a month.",
+   "options": [
+    "resignation",
+    "recreation",
+    "resolution",
+    "reservation"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Leaving a post after a month is a resignation.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The soldiers showed great ___ in the face of enemy fire.",
+   "options": [
+    "vanity",
+    "valour",
+    "vulgarity",
+    "vigour"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Courage under fire is 'valour'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The politician's ___ remarks about the minority community sparked widespread protests.",
+   "options": [
+    "laudatory",
+    "benign",
+    "derogatory",
+    "neutral"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Protests follow insulting remarks: 'derogatory' means disparaging.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The report was so ___ that it covered every minor detail of the project.",
+   "options": [
+    "cursory",
+    "superficial",
+    "sketchy",
+    "exhaustive"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Covering every minor detail means thorough: 'exhaustive'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hari's ___ nature made him adjust easily to any new city he was posted to.",
+   "options": [
+    "adaptable",
+    "obstinate",
+    "rigid",
+    "haughty"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Adjusting easily shows adaptability.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The judge's verdict was ___, favouring neither side.",
+   "options": [
+    "biased",
+    "impartial",
+    "partial",
+    "hasty"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Favouring neither side' = impartial; 'partial' means biased.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Despite repeated warnings, he continued his ___ driving and finally met with an accident.",
+   "options": [
+    "cautious",
+    "prudent",
+    "reckless",
+    "careful"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ignoring warnings and crashing shows reckless driving.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The minister's ___ response to the question avoided giving a direct answer.",
+   "options": [
+    "candid",
+    "forthright",
+    "explicit",
+    "evasive"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Avoiding a direct answer is 'evasive'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The doctor's ___ treatment of a minor ailment was criticised as an overreaction.",
+   "options": [
+    "drastic",
+    "mild",
+    "lenient",
+    "negligible"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Overreaction implies extreme measures: 'drastic'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Her speech was so ___ that half the audience began to yawn.",
+   "options": [
+    "thrilling",
+    "monotonous",
+    "stirring",
+    "lively"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Yawning shows boredom caused by a dull, unvarying speech: 'monotonous'.",
+   "subPattern": "vocabulary-based-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  }
+ ]
+}

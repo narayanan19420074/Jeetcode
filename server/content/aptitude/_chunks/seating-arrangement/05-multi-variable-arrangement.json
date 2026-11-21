@@ -1,0 +1,1218 @@
+{
+ "sets": [
+  {
+   "id": "seating-arrangement-s049",
+   "type": "text",
+   "title": "Seating with attributes: row of 6 - Diwali dinner in Surat",
+   "text": "6 friends - Bhavna, Esha, Farhan, Imran, Lakshmi, Manoj - sit in a row facing north (left means towards the west end). Each has a favourite colour (all different). Colours: Yellow, Pink, Blue, Red, Black, Green.\n\nConditions:\n1. The person who likes Red sits somewhere to the left of Esha.\n2. The person who likes Pink sits second to the left of Farhan.\n3. Bhavna likes Blue.\n4. The person who likes Yellow sits to the immediate left of Lakshmi.\n5. Farhan likes Green.\n6. The person who likes Red sits second to the left of Manoj.\n7. The person who likes Blue and Lakshmi are immediate neighbours.\n8. Esha sits to the immediate left of the person who likes Green."
+  },
+  {
+   "id": "seating-arrangement-s050",
+   "type": "text",
+   "title": "Seating with attributes: circular - Holi gathering in Lucknow",
+   "text": "6 friends - Bhavna, Deepa, Harini, Imran, Kiran, Zoya - sit around a circular table facing the centre (left means the next clockwise seat). Each has a profession (all different). Professions: pilot, teacher, lawyer, doctor, engineer, banker.\n\nConditions:\n1. Imran sits to the immediate left of the doctor.\n2. The lawyer sits opposite Bhavna.\n3. The pilot sits second to the left of Harini.\n4. Deepa sits second to the left of the teacher.\n5. The banker sits second to the left of Bhavna.\n6. The engineer sits to the immediate left of Zoya.\n7. Zoya is a lawyer."
+  },
+  {
+   "id": "seating-arrangement-s051",
+   "type": "text",
+   "title": "Seating with attributes: row of 5 - cricket club meet in Vizag",
+   "text": "5 friends - Arjun, Farhan, Karthik, Rohan, Uma - sit in a row facing north (left means towards the west end). Each has a favourite colour and a home city (all different). Colours: Blue, Green, Red, Yellow, Black; Cities: Jaipur, Mysuru, Kochi, Indore, Pune.\n\nConditions:\n1. The person who likes Yellow sits at one of the two extreme ends of the row.\n2. The person who likes Red sits between Arjun and the person from Jaipur (immediately next to both).\n3. The person from Jaipur sits between Farhan and the person who likes Black (immediately next to both).\n4. The person from Mysuru sits between Karthik and the person who likes Green (immediately next to both).\n5. Rohan sits at the extreme right end of the row.\n6. The person from Jaipur sits second to the left of Karthik.\n7. The person who likes Black sits to the immediate left of the person from Kochi.\n8. Uma sits second to the left of the person from Mysuru.\n9. Uma sits somewhere to the left of the person who likes Black.\n10. Farhan sits somewhere to the left of the person from Pune.\n11. The person from Indore sits to the immediate left of the person who likes Blue."
+  },
+  {
+   "id": "seating-arrangement-s052",
+   "type": "text",
+   "title": "Seating with attributes: row of 6 - wedding reception in Bhopal",
+   "text": "6 friends - Imran, Jaya, Karthik, Naveen, Rohan, Vikram - sit in a row facing north (left means towards the west end). Each has a favourite colour (all different). Colours: Black, Red, Yellow, Blue, Pink, Green.\n\nConditions:\n1. The person who likes Green and Karthik are immediate neighbours.\n2. Rohan sits second to the left of the person who likes Yellow.\n3. Imran sits second to the left of the person who likes Red.\n4. Rohan likes Blue.\n5. The person who likes Yellow sits at one of the two extreme ends of the row.\n6. The person who likes Pink sits second to the left of Naveen.\n7. The person who likes Blue sits second to the left of Jaya.\n8. Karthik sits second to the left of the person who likes Pink."
+  },
+  {
+   "id": "seating-arrangement-s053",
+   "type": "text",
+   "title": "Seating with attributes: circular - college reunion in Pune",
+   "text": "6 friends - Deepa, Esha, Gopal, Manoj, Meera, Vikram - sit around a circular table facing the centre (left means the next clockwise seat). Each has a profession (all different). Professions: engineer, pilot, teacher, banker, lawyer, doctor.\n\nConditions:\n1. The teacher sits second to the left of Meera.\n2. Manoj sits opposite the banker.\n3. Vikram is an engineer.\n4. Gopal sits opposite the lawyer.\n5. The doctor sits to the immediate left of Gopal.\n6. Esha sits to the immediate left of the doctor.\n7. The teacher and Manoj are immediate neighbours."
+  },
+  {
+   "id": "seating-arrangement-s054",
+   "type": "text",
+   "title": "Seating with attributes: row of 5 - training workshop in Madurai",
+   "text": "5 friends - Arjun, Bhavna, Esha, Manoj, Uma - sit in a row facing north (left means towards the west end). Each has a favourite colour and a profession (all different). Colours: Pink, Black, Blue, Red, Yellow; Professions: banker, doctor, teacher, lawyer, engineer.\n\nConditions:\n1. Manoj sits at one of the two extreme ends of the row.\n2. The person who likes Black sits second to the left of the banker.\n3. The teacher sits second to the left of Uma.\n4. The person who likes Black sits between Esha and the doctor (immediately next to both).\n5. Bhavna sits to the immediate left of the person who likes Black.\n6. The person who likes Red sits at the extreme left end of the row.\n7. The person who likes Blue sits between Arjun and the engineer (immediately next to both).\n8. The person who likes Blue sits somewhere to the left of the doctor.\n9. Arjun sits to the immediate left of the person who likes Yellow."
+  },
+  {
+   "id": "seating-arrangement-s055",
+   "type": "text",
+   "title": "Seating with attributes: row of 6 - Onam sadhya in Kochi",
+   "text": "6 friends - Chirag, Jaya, Karthik, Lakshmi, Omkar, Swati - sit in a row facing north (left means towards the west end). Each has a favourite colour (all different). Colours: Yellow, Green, Blue, Red, Black, Pink.\n\nConditions:\n1. Omkar sits at one of the two extreme ends of the row.\n2. The person who likes Green sits second to the left of Jaya.\n3. Omkar and the person who likes Red are immediate neighbours.\n4. Jaya sits to the immediate left of the person who likes Blue.\n5. The person who likes Red sits second to the left of Lakshmi.\n6. Swati sits somewhere to the left of the person who likes Green.\n7. The person who likes Pink sits to the immediate left of Jaya.\n8. Jaya likes Black.\n9. The person who likes Black sits to the immediate left of Karthik."
+  },
+  {
+   "id": "seating-arrangement-s056",
+   "type": "text",
+   "title": "Seating with attributes: circular - Pongal lunch in Ranchi",
+   "text": "6 friends - Karthik, Meera, Suresh, Swati, Tarun, Uma - sit around a circular table facing the centre (left means the next clockwise seat). Each has a profession (all different). Professions: banker, engineer, pilot, teacher, doctor, lawyer.\n\nConditions:\n1. Suresh sits opposite the doctor.\n2. Uma sits to the immediate left of the engineer.\n3. The pilot sits to the immediate left of Tarun.\n4. The doctor sits second to the left of Uma.\n5. Tarun and the lawyer are immediate neighbours.\n6. The banker and Meera are immediate neighbours.\n7. Swati and the pilot are immediate neighbours.\n8. Swati is a banker."
+  },
+  {
+   "id": "seating-arrangement-s057",
+   "type": "text",
+   "title": "Seating with attributes: row of 5 - quiz night in Coimbatore",
+   "text": "5 friends - Bhavna, Lakshmi, Rahul, Uma, Zoya - sit in a row facing north (left means towards the west end). Each has a favourite colour and a profession (all different). Colours: Yellow, Red, Blue, Pink, Black; Professions: teacher, lawyer, banker, engineer, pilot.\n\nConditions:\n1. Uma and the person who likes Yellow are immediate neighbours.\n2. The person who likes Pink sits second to the left of the lawyer.\n3. The person who likes Blue sits between Uma and the lawyer (immediately next to both).\n4. Uma sits second to the left of the engineer.\n5. The teacher and the person who likes Blue are immediate neighbours.\n6. The person who likes Black sits to the immediate left of Rahul.\n7. The lawyer sits second to the left of Bhavna.\n8. The pilot sits somewhere to the left of Rahul.\n9. Zoya sits somewhere to the left of the pilot."
+  },
+  {
+   "id": "seating-arrangement-s058",
+   "type": "text",
+   "title": "Seating with attributes: row of 6 - book-club evening in Indore",
+   "text": "6 friends - Anand, Farhan, Harini, Kiran, Omkar, Tarun - sit in a row facing north (left means towards the west end). Each has a favourite colour (all different). Colours: Yellow, Red, Pink, Green, Blue, Black.\n\nConditions:\n1. Harini sits to the immediate left of the person who likes Blue.\n2. The person who likes Blue sits to the immediate left of Omkar.\n3. Anand sits to the immediate left of the person who likes Pink.\n4. The person who likes Black sits to the immediate left of Anand.\n5. The person who likes Blue sits second to the left of Farhan.\n6. Omkar and the person who likes Green are immediate neighbours.\n7. Kiran sits at the extreme right end of the row.\n8. The person who likes Yellow sits to the immediate left of Harini."
+  },
+  {
+   "id": "seating-arrangement-s059",
+   "type": "text",
+   "title": "Seating with attributes: circular - Navratri garba break in Nagpur",
+   "text": "6 friends - Lakshmi, Meera, Nisha, Swati, Yamini, Zoya - sit around a circular table facing the centre (left means the next clockwise seat). Each has a profession (all different). Professions: doctor, engineer, pilot, banker, lawyer, teacher.\n\nConditions:\n1. The teacher sits to the immediate left of Swati.\n2. The lawyer sits second to the left of Meera.\n3. The engineer sits opposite Nisha.\n4. Meera sits to the immediate left of the pilot.\n5. Yamini sits second to the left of the banker.\n6. Yamini sits opposite the doctor.\n7. Lakshmi sits opposite the lawyer."
+  },
+  {
+   "id": "seating-arrangement-s060",
+   "type": "text",
+   "title": "Seating with attributes: row of 5 - office farewell in Jaipur",
+   "text": "5 friends - Arjun, Esha, Farhan, Meera, Rahul - sit in a row facing north (left means towards the west end). Each has a favourite colour and a home city (all different). Colours: Black, Blue, Yellow, Pink, Red; Cities: Kochi, Pune, Jaipur, Patna, Indore.\n\nConditions:\n1. The person from Pune sits between Farhan and the person who likes Yellow (immediately next to both).\n2. Rahul sits between the person who likes Red and the person from Indore (immediately next to both).\n3. The person from Patna sits second to the left of Farhan.\n4. The person from Patna sits between Meera and the person who likes Red (immediately next to both).\n5. The person who likes Blue sits between Esha and the person from Indore (immediately next to both).\n6. The person who likes Black sits somewhere to the left of Arjun.\n7. The person from Jaipur sits to the immediate left of the person who likes Blue.\n8. Farhan sits between the person who likes Black and the person from Indore (immediately next to both).\n9. The person from Kochi sits between Meera and the person who likes Pink (immediately next to both)."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Regarding the Diwali dinner in Surat seating: Who sits at the extreme right end of the row?",
+   "options": [
+    "Esha",
+    "Bhavna",
+    "Farhan",
+    "Imran"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Imran / Yellow; Lakshmi / Red; Bhavna / Blue; Manoj / Pink; Esha / Black; Farhan / Green. Therefore the person at the extreme right end is Farhan.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s049"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Surat seating: Which colour does Farhan like?",
+   "options": [
+    "Blue",
+    "Black",
+    "Yellow",
+    "Green"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Imran / Yellow; Lakshmi / Red; Bhavna / Blue; Manoj / Pink; Esha / Black; Farhan / Green. Therefore farhan is matched with Green.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s049"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Surat seating: Who sits to the immediate right of the person who likes Blue?",
+   "options": [
+    "Manoj",
+    "Farhan",
+    "Imran",
+    "Lakshmi"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Imran / Yellow; Lakshmi / Red; Bhavna / Blue; Manoj / Pink; Esha / Black; Farhan / Green. Therefore the person who likes Blue is Bhavna, and the next person on the right is Manoj.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s049"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Surat seating: Which colour does the person at the extreme right end like?",
+   "options": [
+    "Blue",
+    "Green",
+    "Yellow",
+    "Pink"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Imran / Yellow; Lakshmi / Red; Bhavna / Blue; Manoj / Pink; Esha / Black; Farhan / Green. Therefore the right-end person is matched with Green.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s049"
+  },
+  {
+   "questionText": "Regarding the Diwali dinner in Surat seating: Who sits second to the right of the person who likes Red?",
+   "options": [
+    "Bhavna",
+    "Manoj",
+    "Esha",
+    "Imran"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Imran / Yellow; Lakshmi / Red; Bhavna / Blue; Manoj / Pink; Esha / Black; Farhan / Green. Therefore the person who likes Red is Lakshmi; two seats to the right is Manoj.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s049"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Lucknow seating: What is Zoya's profession?",
+   "options": [
+    "pilot",
+    "lawyer",
+    "banker",
+    "engineer"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Harini (engineer), Kiran (teacher), Bhavna (pilot), Deepa (doctor), Imran (banker), Zoya (lawyer). Therefore zoya is matched with lawyer.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s050"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Lucknow seating: What is the profession of the person who sits to the immediate left of Imran?",
+   "options": [
+    "doctor",
+    "teacher",
+    "lawyer",
+    "pilot"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Harini (engineer), Kiran (teacher), Bhavna (pilot), Deepa (doctor), Imran (banker), Zoya (lawyer). Therefore the immediate left neighbour of Imran is matched with lawyer.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s050"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Lucknow seating: Who sits opposite the lawyer?",
+   "options": [
+    "Harini",
+    "Zoya",
+    "Bhavna",
+    "Deepa"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Harini (engineer), Kiran (teacher), Bhavna (pilot), Deepa (doctor), Imran (banker), Zoya (lawyer). Therefore the lawyer is Zoya; the person opposite is Bhavna.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s050"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Lucknow seating: What is the position of Deepa with respect to the banker?",
+   "options": [
+    "Immediate right",
+    "Immediate left",
+    "Second to the right",
+    "Second to the left"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Harini (engineer), Kiran (teacher), Bhavna (pilot), Deepa (doctor), Imran (banker), Zoya (lawyer). Therefore measured from the banker, Deepa is at 'Immediate right'.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s050"
+  },
+  {
+   "questionText": "Regarding the Holi gathering in Lucknow seating: Who sits second to the left of the person who sits opposite Zoya?",
+   "options": [
+    "Bhavna",
+    "Kiran",
+    "Deepa",
+    "Imran"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Harini (engineer), Kiran (teacher), Bhavna (pilot), Deepa (doctor), Imran (banker), Zoya (lawyer). Therefore the person opposite Zoya is Bhavna; second to the left of that person is Imran.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s050"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Vizag seating: Which colour does Rohan like?",
+   "options": [
+    "Yellow",
+    "Blue",
+    "Green",
+    "Red"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Uma / Red / Indore; Arjun / Blue / Jaipur; Farhan / Black / Mysuru; Karthik / Green / Kochi; Rohan / Yellow / Pune. Therefore rohan is matched with Yellow.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s051"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Vizag seating: Who sits at the extreme right end of the row?",
+   "options": [
+    "Uma",
+    "Karthik",
+    "Rohan",
+    "Arjun"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Uma / Red / Indore; Arjun / Blue / Jaipur; Farhan / Black / Mysuru; Karthik / Green / Kochi; Rohan / Yellow / Pune. Therefore the person at the extreme right end is Rohan.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s051"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Vizag seating: Which colour does the person at the extreme right end like?",
+   "options": [
+    "Yellow",
+    "Black",
+    "Green",
+    "Blue"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Uma / Red / Indore; Arjun / Blue / Jaipur; Farhan / Black / Mysuru; Karthik / Green / Kochi; Rohan / Yellow / Pune. Therefore the right-end person is matched with Yellow.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s051"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Vizag seating: Which colour does the person at the extreme left end like?",
+   "options": [
+    "Yellow",
+    "Red",
+    "Blue",
+    "Black"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Uma / Red / Indore; Arjun / Blue / Jaipur; Farhan / Black / Mysuru; Karthik / Green / Kochi; Rohan / Yellow / Pune. Therefore the left-end person is matched with Red.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s051"
+  },
+  {
+   "questionText": "Regarding the cricket club meet in Vizag seating: Which colour is liked by the person immediately to the left of Rohan?",
+   "options": [
+    "Blue",
+    "Black",
+    "Yellow",
+    "Green"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Uma / Red / Indore; Arjun / Blue / Jaipur; Farhan / Black / Mysuru; Karthik / Green / Kochi; Rohan / Yellow / Pune. Therefore the person left of Rohan is Karthik, matched with Green.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s051"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Bhopal seating: Which colour does Imran like?",
+   "options": [
+    "Black",
+    "Red",
+    "Pink",
+    "Green"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Karthik / Black; Vikram / Green; Imran / Pink; Rohan / Blue; Naveen / Red; Jaya / Yellow. Therefore imran is matched with Pink.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s052"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Bhopal seating: Which colour does the person at the extreme right end like?",
+   "options": [
+    "Yellow",
+    "Black",
+    "Blue",
+    "Green"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Karthik / Black; Vikram / Green; Imran / Pink; Rohan / Blue; Naveen / Red; Jaya / Yellow. Therefore the right-end person is matched with Yellow.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s052"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Bhopal seating: Who sits to the immediate right of the person who likes Green?",
+   "options": [
+    "Karthik",
+    "Imran",
+    "Jaya",
+    "Naveen"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Karthik / Black; Vikram / Green; Imran / Pink; Rohan / Blue; Naveen / Red; Jaya / Yellow. Therefore the person who likes Green is Vikram, and the next person on the right is Imran.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s052"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Bhopal seating: Which colour does the person at the extreme left end like?",
+   "options": [
+    "Black",
+    "Green",
+    "Yellow",
+    "Red"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Karthik / Black; Vikram / Green; Imran / Pink; Rohan / Blue; Naveen / Red; Jaya / Yellow. Therefore the left-end person is matched with Black.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s052"
+  },
+  {
+   "questionText": "Regarding the wedding reception in Bhopal seating: Who sits second to the right of the person who likes Black?",
+   "options": [
+    "Vikram",
+    "Rohan",
+    "Karthik",
+    "Imran"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Karthik / Black; Vikram / Green; Imran / Pink; Rohan / Blue; Naveen / Red; Jaya / Yellow. Therefore the person who likes Black is Karthik; two seats to the right is Imran.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s052"
+  },
+  {
+   "questionText": "Regarding the college reunion in Pune seating: What is Meera's profession?",
+   "options": [
+    "banker",
+    "pilot",
+    "doctor",
+    "teacher"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Deepa (lawyer), Meera (banker), Vikram (engineer), Gopal (teacher), Manoj (doctor), Esha (pilot). Therefore meera is matched with banker.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s053"
+  },
+  {
+   "questionText": "Regarding the college reunion in Pune seating: Who is the banker?",
+   "options": [
+    "Esha",
+    "Meera",
+    "Gopal",
+    "Manoj"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Deepa (lawyer), Meera (banker), Vikram (engineer), Gopal (teacher), Manoj (doctor), Esha (pilot). Therefore meera is the person matched with banker.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s053"
+  },
+  {
+   "questionText": "Regarding the college reunion in Pune seating: What is the position of Gopal with respect to the banker?",
+   "options": [
+    "Second to the right",
+    "Second to the left",
+    "Opposite",
+    "Immediate right"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Deepa (lawyer), Meera (banker), Vikram (engineer), Gopal (teacher), Manoj (doctor), Esha (pilot). Therefore measured from the banker, Gopal is at 'Second to the left'.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s053"
+  },
+  {
+   "questionText": "Regarding the college reunion in Pune seating: Who sits opposite the teacher?",
+   "options": [
+    "Manoj",
+    "Esha",
+    "Gopal",
+    "Deepa"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Deepa (lawyer), Meera (banker), Vikram (engineer), Gopal (teacher), Manoj (doctor), Esha (pilot). Therefore the teacher is Gopal; the person opposite is Deepa.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s053"
+  },
+  {
+   "questionText": "Regarding the college reunion in Pune seating: Who sits second to the left of the person who sits opposite Manoj?",
+   "options": [
+    "Meera",
+    "Esha",
+    "Gopal",
+    "Deepa"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Deepa (lawyer), Meera (banker), Vikram (engineer), Gopal (teacher), Manoj (doctor), Esha (pilot). Therefore the person opposite Manoj is Meera; second to the left of that person is Gopal.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s053"
+  },
+  {
+   "questionText": "Regarding the training workshop in Madurai seating: Which colour does Esha like?",
+   "options": [
+    "Yellow",
+    "Pink",
+    "Red",
+    "Black"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Manoj / Red / engineer; Bhavna / Blue / lawyer; Arjun / Black / teacher; Esha / Yellow / doctor; Uma / Pink / banker. Therefore esha is matched with Yellow.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s054"
+  },
+  {
+   "questionText": "Regarding the training workshop in Madurai seating: How many persons sit between Arjun and the person who likes Blue?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "0"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Manoj / Red / engineer; Bhavna / Blue / lawyer; Arjun / Black / teacher; Esha / Yellow / doctor; Uma / Pink / banker. Therefore arjun and the person who likes Blue are separated by 0 persons.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s054"
+  },
+  {
+   "questionText": "Regarding the training workshop in Madurai seating: Which colour does the person at the extreme left end like?",
+   "options": [
+    "Blue",
+    "Red",
+    "Pink",
+    "Black"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Manoj / Red / engineer; Bhavna / Blue / lawyer; Arjun / Black / teacher; Esha / Yellow / doctor; Uma / Pink / banker. Therefore the left-end person is matched with Red.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s054"
+  },
+  {
+   "questionText": "Regarding the training workshop in Madurai seating: Which colour does the person at the extreme right end like?",
+   "options": [
+    "Red",
+    "Black",
+    "Pink",
+    "Blue"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Manoj / Red / engineer; Bhavna / Blue / lawyer; Arjun / Black / teacher; Esha / Yellow / doctor; Uma / Pink / banker. Therefore the right-end person is matched with Pink.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s054"
+  },
+  {
+   "questionText": "Regarding the training workshop in Madurai seating: What is the profession of the person immediately to the right of Arjun?",
+   "options": [
+    "doctor",
+    "lawyer",
+    "engineer",
+    "teacher"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Manoj / Red / engineer; Bhavna / Blue / lawyer; Arjun / Black / teacher; Esha / Yellow / doctor; Uma / Pink / banker. Therefore the person right of Arjun is Esha, matched with doctor.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s054"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Kochi seating: Who likes Pink?",
+   "options": [
+    "Lakshmi",
+    "Swati",
+    "Omkar",
+    "Chirag"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Omkar / Yellow; Swati / Red; Chirag / Green; Lakshmi / Pink; Jaya / Black; Karthik / Blue. Therefore lakshmi is the person matched with Pink.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s055"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Kochi seating: Who sits at the extreme left end of the row?",
+   "options": [
+    "Omkar",
+    "Lakshmi",
+    "Jaya",
+    "Karthik"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Omkar / Yellow; Swati / Red; Chirag / Green; Lakshmi / Pink; Jaya / Black; Karthik / Blue. Therefore the person at the extreme left end is Omkar.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s055"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Kochi seating: Which colour does the person at the extreme left end like?",
+   "options": [
+    "Yellow",
+    "Blue",
+    "Black",
+    "Green"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Omkar / Yellow; Swati / Red; Chirag / Green; Lakshmi / Pink; Jaya / Black; Karthik / Blue. Therefore the left-end person is matched with Yellow.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s055"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Kochi seating: How many persons sit between Karthik and the person who likes Black?",
+   "options": [
+    "1",
+    "2",
+    "0",
+    "4"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Omkar / Yellow; Swati / Red; Chirag / Green; Lakshmi / Pink; Jaya / Black; Karthik / Blue. Therefore karthik and the person who likes Black are separated by 0 persons.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s055"
+  },
+  {
+   "questionText": "Regarding the Onam sadhya in Kochi seating: Which colour is liked by the person immediately to the right of Lakshmi?",
+   "options": [
+    "Black",
+    "Pink",
+    "Yellow",
+    "Blue"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Omkar / Yellow; Swati / Red; Chirag / Green; Lakshmi / Pink; Jaya / Black; Karthik / Blue. Therefore the person right of Lakshmi is Jaya, matched with Black.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s055"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Ranchi seating: What is Meera's profession?",
+   "options": [
+    "engineer",
+    "pilot",
+    "doctor",
+    "teacher"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Suresh (engineer), Uma (teacher), Karthik (lawyer), Tarun (doctor), Meera (pilot), Swati (banker). Therefore meera is matched with pilot.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s056"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Ranchi seating: Who sits opposite the engineer?",
+   "options": [
+    "Karthik",
+    "Swati",
+    "Uma",
+    "Tarun"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Suresh (engineer), Uma (teacher), Karthik (lawyer), Tarun (doctor), Meera (pilot), Swati (banker). Therefore the engineer is Suresh; the person opposite is Tarun.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s056"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Ranchi seating: Who sits opposite the doctor?",
+   "options": [
+    "Tarun",
+    "Uma",
+    "Karthik",
+    "Suresh"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Suresh (engineer), Uma (teacher), Karthik (lawyer), Tarun (doctor), Meera (pilot), Swati (banker). Therefore the doctor is Tarun; the person opposite is Suresh.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s056"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Ranchi seating: What is the profession of the person who sits opposite Uma?",
+   "options": [
+    "pilot",
+    "doctor",
+    "teacher",
+    "lawyer"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Suresh (engineer), Uma (teacher), Karthik (lawyer), Tarun (doctor), Meera (pilot), Swati (banker). Therefore the person opposite Uma is matched with pilot.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s056"
+  },
+  {
+   "questionText": "Regarding the Pongal lunch in Ranchi seating: What is the profession of the person who sits second to the right of the banker?",
+   "options": [
+    "engineer",
+    "teacher",
+    "lawyer",
+    "doctor"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Suresh (engineer), Uma (teacher), Karthik (lawyer), Tarun (doctor), Meera (pilot), Swati (banker). Therefore two seats to the right of the banker is matched with doctor.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s056"
+  },
+  {
+   "questionText": "Regarding the quiz night in Coimbatore seating: Who is the teacher?",
+   "options": [
+    "Zoya",
+    "Rahul",
+    "Lakshmi",
+    "Bhavna"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Zoya / Pink / teacher; Lakshmi / Blue / pilot; Uma / Black / lawyer; Rahul / Yellow / banker; Bhavna / Red / engineer. Therefore zoya is the person matched with teacher.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s057"
+  },
+  {
+   "questionText": "Regarding the quiz night in Coimbatore seating: Which colour does Zoya like?",
+   "options": [
+    "Red",
+    "Pink",
+    "Blue",
+    "Black"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Zoya / Pink / teacher; Lakshmi / Blue / pilot; Uma / Black / lawyer; Rahul / Yellow / banker; Bhavna / Red / engineer. Therefore zoya is matched with Pink.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s057"
+  },
+  {
+   "questionText": "Regarding the quiz night in Coimbatore seating: What is the profession of the person at the extreme left end?",
+   "options": [
+    "pilot",
+    "engineer",
+    "banker",
+    "teacher"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Zoya / Pink / teacher; Lakshmi / Blue / pilot; Uma / Black / lawyer; Rahul / Yellow / banker; Bhavna / Red / engineer. Therefore the left-end person is matched with teacher.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s057"
+  },
+  {
+   "questionText": "Regarding the quiz night in Coimbatore seating: Which profession goes with the person at the extreme right end?",
+   "options": [
+    "banker",
+    "teacher",
+    "lawyer",
+    "engineer"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Zoya / Pink / teacher; Lakshmi / Blue / pilot; Uma / Black / lawyer; Rahul / Yellow / banker; Bhavna / Red / engineer. Therefore the right-end person is matched with engineer.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s057"
+  },
+  {
+   "questionText": "Regarding the quiz night in Coimbatore seating: Which colour is liked by the person immediately to the right of Lakshmi?",
+   "options": [
+    "Black",
+    "Blue",
+    "Yellow",
+    "Red"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Zoya / Pink / teacher; Lakshmi / Blue / pilot; Uma / Black / lawyer; Rahul / Yellow / banker; Bhavna / Red / engineer. Therefore the person right of Lakshmi is Uma, matched with Black.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s057"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Indore seating: Who sits at the extreme right end of the row?",
+   "options": [
+    "Omkar",
+    "Kiran",
+    "Tarun",
+    "Harini"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Tarun / Yellow; Harini / Black; Anand / Blue; Omkar / Pink; Farhan / Green; Kiran / Red. Therefore the person at the extreme right end is Kiran.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s058"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Indore seating: How many persons sit between Kiran and the person who likes Blue?",
+   "options": [
+    "2",
+    "3",
+    "0",
+    "1"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Tarun / Yellow; Harini / Black; Anand / Blue; Omkar / Pink; Farhan / Green; Kiran / Red. Therefore kiran and the person who likes Blue are separated by 2 persons.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s058"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Indore seating: Which colour does the person at the extreme left end like?",
+   "options": [
+    "Red",
+    "Black",
+    "Pink",
+    "Yellow"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Tarun / Yellow; Harini / Black; Anand / Blue; Omkar / Pink; Farhan / Green; Kiran / Red. Therefore the left-end person is matched with Yellow.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s058"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Indore seating: Who sits to the immediate right of the person who likes Black?",
+   "options": [
+    "Anand",
+    "Omkar",
+    "Harini",
+    "Farhan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Tarun / Yellow; Harini / Black; Anand / Blue; Omkar / Pink; Farhan / Green; Kiran / Red. Therefore the person who likes Black is Harini, and the next person on the right is Anand.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s058"
+  },
+  {
+   "questionText": "Regarding the book-club evening in Indore seating: Which colour is liked by the person immediately to the right of Harini?",
+   "options": [
+    "Blue",
+    "Green",
+    "Pink",
+    "Red"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Tarun / Yellow; Harini / Black; Anand / Blue; Omkar / Pink; Farhan / Green; Kiran / Red. Therefore the person right of Harini is Anand, matched with Blue.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s058"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Nagpur seating: Who is the engineer?",
+   "options": [
+    "Nisha",
+    "Swati",
+    "Zoya",
+    "Yamini"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Yamini (teacher), Zoya (engineer), Lakshmi (pilot), Meera (doctor), Nisha (banker), Swati (lawyer). Therefore zoya is the person matched with engineer.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s059"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Nagpur seating: What is Zoya's profession?",
+   "options": [
+    "engineer",
+    "banker",
+    "lawyer",
+    "doctor"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Yamini (teacher), Zoya (engineer), Lakshmi (pilot), Meera (doctor), Nisha (banker), Swati (lawyer). Therefore zoya is matched with engineer.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s059"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Nagpur seating: What is the profession of the person who sits to the immediate left of Yamini?",
+   "options": [
+    "engineer",
+    "banker",
+    "pilot",
+    "lawyer"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Yamini (teacher), Zoya (engineer), Lakshmi (pilot), Meera (doctor), Nisha (banker), Swati (lawyer). Therefore the immediate left neighbour of Yamini is matched with engineer.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s059"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Nagpur seating: Who sits opposite the doctor?",
+   "options": [
+    "Meera",
+    "Nisha",
+    "Yamini",
+    "Lakshmi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Yamini (teacher), Zoya (engineer), Lakshmi (pilot), Meera (doctor), Nisha (banker), Swati (lawyer). Therefore the doctor is Meera; the person opposite is Yamini.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s059"
+  },
+  {
+   "questionText": "Regarding the Navratri garba break in Nagpur seating: Who sits second to the left of the person who sits opposite Swati?",
+   "options": [
+    "Meera",
+    "Zoya",
+    "Nisha",
+    "Lakshmi"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Going clockwise (each person faces the centre): Yamini (teacher), Zoya (engineer), Lakshmi (pilot), Meera (doctor), Nisha (banker), Swati (lawyer). Therefore the person opposite Swati is Lakshmi; second to the left of that person is Nisha.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s059"
+  },
+  {
+   "questionText": "Regarding the office farewell in Jaipur seating: Who is from Patna?",
+   "options": [
+    "Arjun",
+    "Esha",
+    "Farhan",
+    "Rahul"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Esha / Red / Jaipur; Rahul / Blue / Patna; Meera / Black / Indore; Farhan / Yellow / Kochi; Arjun / Pink / Pune. Therefore rahul is the person matched with Patna.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s060"
+  },
+  {
+   "questionText": "Regarding the office farewell in Jaipur seating: Which city is the person at the extreme left end from?",
+   "options": [
+    "Jaipur",
+    "Patna",
+    "Kochi",
+    "Indore"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Esha / Red / Jaipur; Rahul / Blue / Patna; Meera / Black / Indore; Farhan / Yellow / Kochi; Arjun / Pink / Pune. Therefore the left-end person is matched with Jaipur.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s060"
+  },
+  {
+   "questionText": "Regarding the office farewell in Jaipur seating: Who sits to the immediate right of the person from Jaipur?",
+   "options": [
+    "Arjun",
+    "Rahul",
+    "Meera",
+    "Esha"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Esha / Red / Jaipur; Rahul / Blue / Patna; Meera / Black / Indore; Farhan / Yellow / Kochi; Arjun / Pink / Pune. Therefore the person from Jaipur is Esha, and the next person on the right is Rahul.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s060"
+  },
+  {
+   "questionText": "Regarding the office farewell in Jaipur seating: Which city goes with the person at the extreme right end?",
+   "options": [
+    "Patna",
+    "Indore",
+    "Pune",
+    "Jaipur"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Esha / Red / Jaipur; Rahul / Blue / Patna; Meera / Black / Indore; Farhan / Yellow / Kochi; Arjun / Pink / Pune. Therefore the right-end person is matched with Pune.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "seating-arrangement-s060"
+  },
+  {
+   "questionText": "Regarding the office farewell in Jaipur seating: Who sits second to the right of the person from Indore?",
+   "options": [
+    "Meera",
+    "Arjun",
+    "Farhan",
+    "Rahul"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Using all the conditions together, the arrangement is unique. Left to right (all facing north): Esha / Red / Jaipur; Rahul / Blue / Patna; Meera / Black / Indore; Farhan / Yellow / Kochi; Arjun / Pink / Pune. Therefore the person from Indore is Meera; two seats to the right is Arjun.",
+   "shortcut": "Build the table of seat versus attribute, tie every attribute statement to a seat, and fill the fixed seats first.",
+   "subPattern": "multi-variable-arrangement",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": "seating-arrangement-s060"
+  }
+ ]
+}

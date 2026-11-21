@@ -1,0 +1,622 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "If '+' means '−', '−' means '+', '×' means '÷' and '÷' means '×', then what is the value of 17 + 5 − 26 ?",
+   "options": [
+    "38",
+    "-4",
+    "-38",
+    "76"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 17 − 5 + 26. Now apply BODMAS: 17 − 5 + 26 → 12 + 26 → 38. Answer = 38.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', then what is the value of 19 − 34 × 15 ?",
+   "options": [
+    "76",
+    "33",
+    "-491",
+    "38"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 19 + 34 − 15. Now apply BODMAS: 19 + 34 − 15 → 53 − 15 → 38. Answer = 38.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', then what is the value of 28 × 7 ÷ 17 ?",
+   "options": [
+    "-91",
+    "357",
+    "-96",
+    "-182"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 28 − 7 × 17. Now apply BODMAS: 28 − 7 × 17 → 28 − 119 → -91. Answer = -91.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of 4 − 20 × 2 ?",
+   "options": [
+    "-14",
+    "28",
+    "14",
+    "12"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 4 + 20 ÷ 2. Now apply BODMAS: 4 + 20 ÷ 2 → 4 + 10 → 14. Answer = 14.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '÷', '×' means '+' and '÷' means '×', then what is the value of 30 + 36 − 18 ?",
+   "options": [
+    "23",
+    "48",
+    "56",
+    "28"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 30 − 36 ÷ 18. Now apply BODMAS: 30 − 36 ÷ 18 → 30 − 2 → 28. Answer = 28.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If © stands for +, % stands for −, $ stands for ÷ and # stands for ×, then what is the value of 38 © 16 % 14 ?",
+   "options": [
+    "-40",
+    "40",
+    "39",
+    "37"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 38 + 16 − 14. Now apply BODMAS: 38 + 16 − 14 → 54 − 14 → 40. Answer = 40.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If % stands for −, Δ stands for ÷, ★ stands for + and # stands for ×, then what is the value of 11 ★ 29 % 36 ?",
+   "options": [
+    "1",
+    "4",
+    "3",
+    "-4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 11 + 29 − 36. Now apply BODMAS: 11 + 29 − 36 → 40 − 36 → 4. Answer = 4.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If Δ stands for ÷, © stands for +, % stands for × and @ stands for −, then what is the value of 26 Δ 26 % 3 ?",
+   "options": [
+    "3",
+    "0",
+    "4",
+    "-3"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 26 ÷ 26 × 3. Now apply BODMAS: 26 ÷ 26 × 3 → 1 × 3 → 3. Answer = 3.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '×', '×' means '−' and '÷' means '+', which of the following equations is correct?",
+   "options": [
+    "20 × 12 × 6 = 2",
+    "28 − 3 ÷ 29 = 109",
+    "16 ÷ 24 ÷ 22 = 69",
+    "9 − 6 − 3 = 0"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 20 × 12 × 6 becomes 20 − 12 − 6; by BODMAS 20 − 12 − 6 → 8 − 6 → 2 = 2. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '÷', '×' means '+' and '÷' means '×', which of the following equations is correct?",
+   "options": [
+    "17 − 17 ÷ 3 = 13",
+    "6 + 20 × 16 = 2",
+    "21 × 18 − 3 = 375",
+    "6 × 19 + 28 = 142"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 6 + 20 × 16 becomes 6 − 20 + 16; by BODMAS 6 − 20 + 16 → -14 + 16 → 2 = 2. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '×', '×' means '+' and '÷' means '−', which of the following equations is correct?",
+   "options": [
+    "11 ÷ 21 × 26 = 16",
+    "10 − 8 × 7 = -46",
+    "15 × 2 × 20 = -37",
+    "12 − 23 + 12 = 21"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 11 ÷ 21 × 26 becomes 11 − 21 + 26; by BODMAS 11 − 21 + 26 → -10 + 26 → 16 = 16. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '−' and '÷' means '+', then what is the value of 24 ÷ 17 × 39 + 7 ?",
+   "options": [
+    "-230",
+    "-237",
+    "14",
+    "-232"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 24 + 17 − 39 × 7. Now apply BODMAS: 24 + 17 − 39 × 7 → 24 + 17 − 273 → 41 − 273 → -232. Answer = -232.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', then what is the value of 20 ÷ 8 + 8 × 33 ?",
+   "options": [
+    "-14",
+    "-26",
+    "13",
+    "-13"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 20 × 8 ÷ 8 − 33. Now apply BODMAS: 20 × 8 ÷ 8 − 33 → 160 ÷ 8 − 33 → 20 − 33 → -13. Answer = -13.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of 16 + 21 − 4 ÷ 14 ?",
+   "options": [
+    "325",
+    "316",
+    "-326",
+    "326"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 16 × 21 + 4 − 14. Now apply BODMAS: 16 × 21 + 4 − 14 → 336 + 4 − 14 → 340 − 14 → 326. Answer = 326.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '−' and '÷' means '+', then what is the value of 32 − 16 + 31 ÷ 20 ?",
+   "options": [
+    "81",
+    "79",
+    "82",
+    "164"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 32 ÷ 16 × 31 + 20. Now apply BODMAS: 32 ÷ 16 × 31 + 20 → 2 × 31 + 20 → 62 + 20 → 82. Answer = 82.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '×', '×' means '+' and '÷' means '−', then what is the value of 36 − 11 × 39 ÷ 38 ?",
+   "options": [
+    "-397",
+    "404",
+    "397",
+    "392"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 36 × 11 + 39 − 38. Now apply BODMAS: 36 × 11 + 39 − 38 → 396 + 39 − 38 → 435 − 38 → 397. Answer = 397.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If @ stands for +, ★ stands for ×, % stands for − and Δ stands for ÷, then what is the value of 13 % 21 ★ 2 Δ 2 ?",
+   "options": [
+    "8",
+    "-6",
+    "-8",
+    "-13"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 13 − 21 × 2 ÷ 2. Now apply BODMAS: 13 − 21 × 2 ÷ 2 → 13 − 42 ÷ 2 → 13 − 21 → -8. Answer = -8.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If ★ stands for +, @ stands for ÷, © stands for − and # stands for ×, then what is the value of 6 ★ 18 © 21 # 3 ?",
+   "options": [
+    "9",
+    "-39",
+    "-78",
+    "-42"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 6 + 18 − 21 × 3. Now apply BODMAS: 6 + 18 − 21 × 3 → 6 + 18 − 63 → 24 − 63 → -39. Answer = -39.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If Δ stands for ×, # stands for ÷, % stands for − and @ stands for +, then what is the value of 24 @ 23 # 23 Δ 10 ?",
+   "options": [
+    "-34",
+    "33",
+    "68",
+    "34"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Replace each symbol by its real operation: 24 + 23 ÷ 23 × 10. Now apply BODMAS: 24 + 23 ÷ 23 × 10 → 24 + 1 × 10 → 24 + 10 → 34. Answer = 34.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If ★ stands for −, & stands for ×, Δ stands for ÷ and © stands for +, then what is the value of 20 ★ 6 © 33 Δ 33 ?",
+   "options": [
+    "30",
+    "-15",
+    "15",
+    "17"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 20 − 6 + 33 ÷ 33. Now apply BODMAS: 20 − 6 + 33 ÷ 33 → 20 − 6 + 1 → 14 + 1 → 15. Answer = 15.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If # stands for ×, @ stands for −, & stands for ÷ and $ stands for +, then what is the value of 36 $ 16 & 4 @ 11 ?",
+   "options": [
+    "-29",
+    "2",
+    "29",
+    "24"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 36 + 16 ÷ 4 − 11. Now apply BODMAS: 36 + 16 ÷ 4 − 11 → 36 + 4 − 11 → 40 − 11 → 29. Answer = 29.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '+', '×' means '÷' and '÷' means '×', which of the following equations is correct?",
+   "options": [
+    "3 − 7 − 27 = -37",
+    "7 − 6 − 19 = 32",
+    "7 − 30 × 2 = 24",
+    "8 ÷ 10 − 23 = 106"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 7 − 6 − 19 becomes 7 + 6 + 19; by BODMAS 7 + 6 + 19 → 13 + 19 → 32 = 32. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', which of the following equations is correct?",
+   "options": [
+    "13 ÷ 18 + 7 = -112",
+    "6 − 16 − 27 = 49",
+    "20 ÷ 9 ÷ 21 = -9",
+    "9 ÷ 12 + 24 = -278"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 6 − 16 − 27 becomes 6 + 16 + 27; by BODMAS 6 + 16 + 27 → 22 + 27 → 49 = 49. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '÷', '−' means '+', '×' means '−' and '÷' means '×', which of the following equations is correct?",
+   "options": [
+    "17 ÷ 19 × 24 = 299",
+    "16 − 14 × 13 = 18",
+    "11 ÷ 19 − 12 = 228",
+    "24 − 29 × 17 = -36"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 17 ÷ 19 × 24 becomes 17 × 19 − 24; by BODMAS 17 × 19 − 24 → 323 − 24 → 299 = 299. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '+' and '÷' means '−', which of the following equations is correct?",
+   "options": [
+    "22 ÷ 26 × 19 = -15",
+    "15 ÷ 27 ÷ 8 = 20",
+    "12 + 14 − 12 = -14",
+    "19 × 27 × 11 = 57"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 19 × 27 × 11 becomes 19 + 27 + 11; by BODMAS 19 + 27 + 11 → 46 + 11 → 57 = 57. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '−', '−' means '×', '×' means '÷' and '÷' means '+', which of the following equations is correct?",
+   "options": [
+    "26 ÷ 7 + 9 = 24",
+    "21 + 30 ÷ 21 = 19",
+    "11 ÷ 22 × 2 = 29",
+    "25 + 2 − 21 = 6"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Convert each statement using the new meanings of the signs. For the correct one: 26 ÷ 7 + 9 becomes 26 + 7 − 9; by BODMAS 26 + 7 − 9 → 33 − 9 → 24 = 24. The other statements do not balance after the change.",
+   "shortcut": "Test the statements one at a time after converting the signs; stop at the first one that balances.",
+   "subPattern": "symbol-substitution",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of 15 − 51 − 58 ÷ ( 59 × 59 ) ?",
+   "options": [
+    "120",
+    "125",
+    "123",
+    "130"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 15 + 51 + 58 − ( 59 ÷ 59 ). Now apply BODMAS: 15 + 51 + 58 − ( 59 ÷ 59 ) → 15 + 51 + 58 − ( 1 ) → 15 + 51 + 58 − 1 → 66 + 58 − 1 → 124 − 1 → 123. Answer = 123.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '−' and '÷' means '+', then what is the value of ( 49 × 50 ) + 19 ÷ 8 × 36 ?",
+   "options": [
+    "-47",
+    "-94",
+    "-52",
+    "47"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: ( 49 − 50 ) × 19 + 8 − 36. Now apply BODMAS: ( 49 − 50 ) × 19 + 8 − 36 → ( -1 ) × 19 + 8 − 36 → -1 × 19 + 8 − 36 → -19 + 8 − 36 → -11 − 36 → -47. Answer = -47.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '÷', '×' means '+' and '÷' means '−', then what is the value of 37 × 16 + 13 ÷ 15 ÷ 46 ?",
+   "options": [
+    "184",
+    "181",
+    "183",
+    "628"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: 37 + 16 × 13 − 15 − 46. Now apply BODMAS: 37 + 16 × 13 − 15 − 46 → 37 + 208 − 15 − 46 → 245 − 15 − 46 → 230 − 46 → 184. Answer = 184.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If '+' means '×', '−' means '+', '×' means '÷' and '÷' means '−', then what is the value of ( 7 ÷ 24 ) − 9 + 12 ÷ 19 ?",
+   "options": [
+    "-72",
+    "72",
+    "144",
+    "71"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: ( 7 − 24 ) + 9 × 12 − 19. Now apply BODMAS: ( 7 − 24 ) + 9 × 12 − 19 → ( -17 ) + 9 × 12 − 19 → -17 + 9 × 12 − 19 → -17 + 108 − 19 → 91 − 19 → 72. Answer = 72.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If # stands for ×, @ stands for +, % stands for ÷ and & stands for −, then what is the value of 8 @ 4 @ 54 % 9 # 29 ?",
+   "options": [
+    "-186",
+    "186",
+    "183",
+    "188"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Replace each symbol by its real operation: 8 + 4 + 54 ÷ 9 × 29. Now apply BODMAS: 8 + 4 + 54 ÷ 9 × 29 → 8 + 4 + 6 × 29 → 8 + 4 + 174 → 12 + 174 → 186. Answer = 186.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If Δ stands for −, ★ stands for +, © stands for × and & stands for ÷, then what is the value of 28 Δ ( 52 & 26 ) ★ 6 © 7 ?",
+   "options": [
+    "136",
+    "69",
+    "68",
+    "65"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Replace each symbol by its real operation: 28 − ( 52 ÷ 26 ) + 6 × 7. Now apply BODMAS: 28 − ( 52 ÷ 26 ) + 6 × 7 → 28 − ( 2 ) + 6 × 7 → 28 − 2 + 6 × 7 → 28 − 2 + 42 → 26 + 42 → 68. Answer = 68.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If & stands for +, © stands for ÷, ★ stands for − and Δ stands for ×, then what is the value of ( 21 ★ 21 ) Δ 11 © 25 ★ 19 ?",
+   "options": [
+    "-19",
+    "-29",
+    "19",
+    "-18"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Replace each symbol by its real operation: ( 21 − 21 ) × 11 ÷ 25 − 19. Now apply BODMAS: ( 21 − 21 ) × 11 ÷ 25 − 19 → ( 0 ) × 11 ÷ 25 − 19 → 0 × 11 ÷ 25 − 19 → 0 ÷ 25 − 19 → 0 − 19 → -19. Answer = -19.",
+   "shortcut": "Rewrite the expression with the real signs first, then apply BODMAS (brackets, ÷/× left to right, then +/−).",
+   "subPattern": "symbol-substitution",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

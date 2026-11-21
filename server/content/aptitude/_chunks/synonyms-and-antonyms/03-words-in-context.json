@@ -1,0 +1,905 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Read the sentence: \"The teacher was PLEASED with the class's performance.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "delighted",
+    "annoyed",
+    "puzzled",
+    "tired"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, pleased means satisfied and happy; delighted is the closest. So \"delighted\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"Ravi made a SWIFT decision about the job offer.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "late",
+    "quick",
+    "weak",
+    "careless"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, swift means fast or prompt. So \"quick\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The old bridge is in a DANGEROUS condition.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "steady",
+    "ancient",
+    "risky",
+    "narrow"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, dangerous means likely to cause harm; risky is the closest. So \"risky\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"Meena gave a BRIEF speech at the function.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "boring",
+    "lengthy",
+    "loud",
+    "short"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, brief means lasting a short time. So \"short\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The shop was CROWDED during Diwali.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "deserted",
+    "busy",
+    "noisy",
+    "bright"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, crowded means full of people; deserted means empty of people. So \"deserted\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The river was SHALLOW near the bank.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "narrow",
+    "deep",
+    "calm",
+    "clear"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, shallow means not deep; the opposite is deep. So \"deep\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"He is HONEST in all his dealings.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "truthful",
+    "polite",
+    "deceitful",
+    "careful"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, honest means truthful and fair; deceitful is the reverse. So \"deceitful\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The monsoon brought HEAVY rain to Chennai.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "mild",
+    "scattered",
+    "brief",
+    "intense"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, heavy rain is rain falling in large amounts, i.e. intense. So \"intense\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The children were EAGER to watch the match.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "keen",
+    "unwilling",
+    "afraid",
+    "tired"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, eager means very keen and enthusiastic. So \"keen\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The exam paper was EASY for most students.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "short",
+    "difficult",
+    "fair",
+    "simple"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, easy means needing little effort; the opposite is difficult. So \"difficult\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"Kavya's room was always TIDY.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "small",
+    "bright",
+    "neat",
+    "dusty"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, tidy means arranged in good order, i.e. neat. So \"neat\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The patient looked WEAK after the surgery.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "pale",
+    "ill",
+    "tired",
+    "strong"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, weak means lacking strength; the opposite is strong. So \"strong\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The dog is LOYAL to its master.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "faithful",
+    "fierce",
+    "hungry",
+    "lazy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, loyal means steadily devoted, i.e. faithful. So \"faithful\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The train was PUNCTUAL today.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "fast",
+    "late",
+    "empty",
+    "crowded"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, punctual means arriving on time; the opposite is late. So \"late\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The soup was TASTY.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "bland",
+    "hot",
+    "delicious",
+    "salty"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, tasty means having a pleasant flavour, i.e. delicious. So \"delicious\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The minister's remarks were AMBIGUOUS and open to many readings.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "rude",
+    "firm",
+    "brief",
+    "unclear"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, ambiguous means having more than one possible meaning, i.e. unclear. So \"unclear\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The company decided to CURTAIL its expenses this year.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "reduce",
+    "increase",
+    "record",
+    "hide"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, curtail means to cut short or reduce. So \"reduce\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The witness gave a CONSISTENT account of the accident.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "truthful",
+    "contradictory",
+    "brief",
+    "detailed"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, consistent means free of contradictions; the opposite is contradictory. So \"contradictory\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The scientist's findings were CORROBORATED by later experiments.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "denied",
+    "delayed",
+    "confirmed",
+    "published"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, corroborate means to support with further evidence, i.e. confirm. So \"confirmed\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The speaker's tone was CONCILIATORY toward the protesters.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "gentle",
+    "formal",
+    "loud",
+    "hostile"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, conciliatory means aimed at winning over; hostile is the reverse. So \"hostile\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"Farmers were ELATED when the rains finally arrived.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "overjoyed",
+    "worried",
+    "puzzled",
+    "indifferent"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, elated means extremely happy, i.e. overjoyed. So \"overjoyed\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The council gave a SWIFT reply to the complaint.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "prompt",
+    "slow",
+    "clear",
+    "polite"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, swift means fast; the opposite is slow. So \"slow\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"Her ABRUPT departure surprised everyone.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "gradual",
+    "polite",
+    "sudden",
+    "peaceful"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, abrupt means sudden and unexpected. So \"sudden\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The festival turned a quiet town into a LIVELY place.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "busy",
+    "bright",
+    "small",
+    "dull"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, lively means full of energy; the opposite is dull. So \"dull\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The old professor was RENOWNED for his research.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "famous",
+    "unknown",
+    "retired",
+    "strict"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, renowned means widely known and respected, i.e. famous. So \"famous\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The new policy will ENHANCE the quality of schools.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "improve",
+    "diminish",
+    "strengthen",
+    "regulate"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, enhance means to raise or improve; diminish is to lessen. So \"diminish\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The villagers were APPREHENSIVE about the coming cyclone.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "confident",
+    "curious",
+    "anxious",
+    "careless"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, apprehensive means worried that something bad will happen. So \"anxious\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The captain's decision was HASTY.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "quick",
+    "rash",
+    "sudden",
+    "considered"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, hasty means done too quickly without thought; considered means thought through. So \"considered\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The judge was LENIENT with the first-time offender.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "merciful",
+    "harsh",
+    "strict",
+    "angry"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, lenient means not severe in punishing, i.e. merciful. So \"merciful\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The lecture was TEDIOUS for the audience.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "long",
+    "interesting",
+    "formal",
+    "quiet"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, tedious means boring and tiresome; the opposite is interesting. So \"interesting\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The comedian's wit was UNPARALLELED.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "ordinary",
+    "shallow",
+    "matchless",
+    "boastful"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, unparalleled means having no equal, i.e. matchless. So \"matchless\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The monk led a SECLUDED life in the Himalayas.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "busy",
+    "public",
+    "comfortable",
+    "isolated"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, secluded means kept away from others, i.e. isolated. So \"isolated\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The CANDID remarks of the chairman surprised the board.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "evasive",
+    "honest",
+    "blunt",
+    "public"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, candid means frank; evasive means avoiding a direct answer. So \"evasive\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The audience was CAPTIVATED by her singing.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "bored",
+    "enthralled",
+    "annoyed",
+    "confused"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, captivated means held spellbound, i.e. enthralled. So \"enthralled\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The athlete showed REMARKABLE stamina.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "great",
+    "rare",
+    "ordinary",
+    "sudden"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, remarkable means worthy of notice; ordinary is the reverse. So \"ordinary\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The clerk was REPRIMANDED for coming late.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "promoted",
+    "praised",
+    "ignored",
+    "rebuked"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, reprimand means to scold formally, i.e. rebuke. So \"rebuked\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The author's argument was COHERENT.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "disjointed",
+    "logical",
+    "clear",
+    "lengthy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, coherent means logically connected; disjointed is not connected. So \"disjointed\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The two cousins have a CORDIAL relationship.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "strained",
+    "friendly",
+    "formal",
+    "distant"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, cordial means warm and friendly. So \"friendly\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The speaker's mood was SOMBRE.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "serious",
+    "tired",
+    "cheerful",
+    "quiet"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, sombre means dark and gloomy; cheerful is the reverse. So \"cheerful\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The company's profits DWINDLED over the year.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "soared",
+    "stabilised",
+    "doubled",
+    "declined"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, dwindle means to diminish gradually, i.e. decline. So \"declined\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The bank will FORFEIT the deposit if the terms are violated.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "lose",
+    "return",
+    "increase",
+    "invest"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, forfeit means to lose a right or property as a penalty. So \"lose\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The professor's lecture was ABSTRUSE, and few students followed it.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "lengthy",
+    "obscure",
+    "boring",
+    "trivial"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, abstruse means hard to understand, i.e. obscure in meaning. So \"obscure\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The witness's testimony was EVASIVE.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "hesitant",
+    "vague",
+    "straightforward",
+    "cautious"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, evasive means avoiding directness; straightforward is direct. So \"straightforward\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The committee decided to EXPEDITE the approval process.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "cancel",
+    "review",
+    "delay",
+    "hasten"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, expedite means to speed up a process. So \"hasten\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The CHAOTIC traffic of Mumbai calmed after midnight.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "orderly",
+    "busy",
+    "noisy",
+    "congested"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, chaotic means completely disordered; orderly is the opposite. So \"orderly\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"His speech was full of PLATITUDES that everyone had heard before.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "humour",
+    "clichés",
+    "statistics",
+    "insults"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, platitude means a remark made stale by overuse, i.e. cliché. So \"clichés\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The sudden rise in prices was TRANSIENT.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "brief",
+    "minor",
+    "permanent",
+    "steep"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In this sentence, transient means short-lived; permanent is lasting. So \"permanent\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"She is known for her PERSPICACITY; she spots problems early.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "stubbornness",
+    "generosity",
+    "humility",
+    "insight"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "In this sentence, perspicacity means keen mental perception, i.e. insight. So \"insight\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The monarch's rule was BENEVOLENT.\" Choose the antonym (word opposite in meaning) of the word in capitals as used here.",
+   "options": [
+    "cruel",
+    "wise",
+    "long",
+    "stable"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In this sentence, benevolent means kindly and well-meaning; cruel is the reverse. So \"cruel\" is the antonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Read the sentence: \"The CURSORY inspection missed several defects.\" Choose the synonym (word closest in meaning) of the word in capitals as used here.",
+   "options": [
+    "thorough",
+    "superficial",
+    "detailed",
+    "annual"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "In this sentence, cursory means hasty and not thorough, i.e. superficial. So \"superficial\" is the synonym.",
+   "subPattern": "words-in-context",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

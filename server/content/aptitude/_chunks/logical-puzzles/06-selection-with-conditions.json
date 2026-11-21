@@ -1,0 +1,713 @@
+{
+ "sets": [
+  {
+   "id": "logical-puzzles-s041",
+   "type": "text",
+   "title": "Puzzle 1: choose 4 of 7 with conditions",
+   "text": "A firm picks a team for a client project from these employees: Arun, Bhavna, Charan, Deepa, Eshwar, Farida, Gokul. Exactly 4 of them are to be selected. Conditions:\n1. If Eshwar is selected, Charan must also be selected.\n2. Farida and Arun are either both selected or both left out.\n3. Eshwar and Gokul are either both selected or both left out.\n4. Exactly one of Eshwar, Arun and Farida is selected.\n5. At least one of Arun and Bhavna is selected."
+  },
+  {
+   "id": "logical-puzzles-s042",
+   "type": "text",
+   "title": "Puzzle 2: choose 4 of 7 with conditions",
+   "text": "A school chooses a quiz team from these students: Hari, Indira, Jayant, Kavya, Lokesh, Meena, Naveen. Exactly 4 of them are to be selected. Conditions:\n1. Hari is selected only if neither Indira nor Kavya is selected.\n2. Lokesh is selected only if neither Meena nor Naveen is selected.\n3. If Kavya is not selected, then Meena cannot be selected either.\n4. Jayant and Naveen are either both selected or both left out.\n5. If Meena is not selected, then Jayant cannot be selected either."
+  },
+  {
+   "id": "logical-puzzles-s043",
+   "type": "text",
+   "title": "Puzzle 3: choose 4 of 7 with conditions",
+   "text": "A panel of experts is formed from these candidates: Omkar, Padma, Qadir, Rekha, Suresh, Tara, Uday. Exactly 4 of them are to be selected. Conditions:\n1. Qadir is selected only if neither Rekha nor Omkar is selected.\n2. Qadir and Omkar are either both selected or both left out.\n3. Exactly one of Uday, Qadir and Padma is selected.\n4. If Suresh is selected, Uday must also be selected."
+  },
+  {
+   "id": "logical-puzzles-s044",
+   "type": "text",
+   "title": "Puzzle 4: choose 3 of 7 with conditions",
+   "text": "A cricket academy selects players for a tour from these trainees: Vikram, Waheeda, Yash, Zoya, Anjali, Balaji, Chitra. Exactly 3 of them are to be selected. Conditions:\n1. Exactly one of Balaji, Chitra and Anjali is selected.\n2. At least one of Zoya and Chitra is selected.\n3. Yash and Anjali cannot both be selected.\n4. Exactly one of Yash and Chitra is selected.\n5. Vikram and Balaji are either both selected or both left out."
+  },
+  {
+   "id": "logical-puzzles-s045",
+   "type": "text",
+   "title": "Puzzle 5: choose 4 of 7 with conditions",
+   "text": "A company sends delegates to a conference from these managers: Dinesh, Esther, Firoz, Geeta, Harsh, Isha, Jagan. Exactly 4 of them are to be selected. Conditions:\n1. Isha is selected only if neither Jagan nor Firoz is selected.\n2. If Firoz is not selected, then Geeta cannot be selected either.\n3. Exactly one of Harsh and Firoz is selected.\n4. Exactly one of Esther, Isha and Firoz is selected.\n5. If Firoz is selected, Harsh must also be selected."
+  },
+  {
+   "id": "logical-puzzles-s046",
+   "type": "text",
+   "title": "Puzzle 6: choose 4 of 7 with conditions",
+   "text": "A hospital forms an audit committee from these doctors: Karthik, Lata, Mohan, Nisha, Pranav, Revathi, Sanjay. Exactly 4 of them are to be selected. Conditions:\n1. Exactly one of Sanjay, Lata and Revathi is selected.\n2. At least one of Sanjay and Karthik is selected.\n3. If Mohan is selected, then at least one of Sanjay and Pranav is selected."
+  },
+  {
+   "id": "logical-puzzles-s047",
+   "type": "text",
+   "title": "Puzzle 7: choose 4 of 7 with conditions",
+   "text": "A village council picks volunteers for a festival from these residents: Tejas, Usha, Varun, Yamini, Zubin, Aditi, Bharat. Exactly 4 of them are to be selected. Conditions:\n1. Exactly one of Aditi and Varun is selected.\n2. If Yamini is not selected, then Varun cannot be selected either.\n3. Exactly one of Tejas, Usha and Bharat is selected."
+  },
+  {
+   "id": "logical-puzzles-s048",
+   "type": "text",
+   "title": "Puzzle 8: choose 3 of 7 with conditions",
+   "text": "A bank shortlists officers for a training programme from these officers: Chetan, Dhanya, Elango, Fatima, Girish, Heena, Imran. Exactly 3 of them are to be selected. Conditions:\n1. Imran and Girish are either both selected or both left out.\n2. Girish and Chetan are either both selected or both left out.\n3. At least one of Heena and Fatima is selected."
+  },
+  {
+   "id": "logical-puzzles-s049",
+   "type": "text",
+   "title": "Puzzle 9: choose 4 of 7 with conditions",
+   "text": "A college forms a cultural committee from these students: Jeeva, Kalpana, Lalit, Mythili, Nikhil, Oviya, Prakash. Exactly 4 of them are to be selected. Conditions:\n1. Exactly one of Mythili, Oviya and Lalit is selected.\n2. If Mythili is selected, Prakash must also be selected.\n3. At least one of Prakash and Kalpana is selected.\n4. If Jeeva is selected, then at least one of Nikhil and Lalit is selected."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "In the team chosen from Arun to Gokul: which of the following is the team that satisfies all the conditions?",
+   "options": [
+    "Bhavna, Charan, Eshwar, Gokul",
+    "Arun, Bhavna, Eshwar, Gokul",
+    "Bhavna, Charan, Deepa, Gokul",
+    "Arun, Bhavna, Charan, Gokul"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 25 possible team(s). After condition 2: 11 possible team(s). After condition 3: 5 possible team(s). After condition 4: 2 possible team(s); always in: Charan, Eshwar, Gokul; always out: Arun, Farida. After condition 5: 1 possible team(s); always in: Bhavna, Charan, Eshwar, Gokul; always out: Arun, Deepa, Farida. Only Bhavna, Charan, Eshwar, Gokul satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s041",
+   "shortcut": "Test each condition against the combinations; eliminate by the strongest 'only/exactly' conditions first."
+  },
+  {
+   "questionText": "In the team chosen from Arun to Gokul: which of the following people is selected?",
+   "options": [
+    "Charan",
+    "Arun",
+    "Farida",
+    "Deepa"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 25 possible team(s). After condition 2: 11 possible team(s). After condition 3: 5 possible team(s). After condition 4: 2 possible team(s); always in: Charan, Eshwar, Gokul; always out: Arun, Farida. After condition 5: 1 possible team(s); always in: Bhavna, Charan, Eshwar, Gokul; always out: Arun, Deepa, Farida. Only Bhavna, Charan, Eshwar, Gokul satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s041"
+  },
+  {
+   "questionText": "In the team chosen from Arun to Gokul: which of the following people is NOT selected?",
+   "options": [
+    "Deepa",
+    "Charan",
+    "Bhavna",
+    "Eshwar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 25 possible team(s). After condition 2: 11 possible team(s). After condition 3: 5 possible team(s). After condition 4: 2 possible team(s); always in: Charan, Eshwar, Gokul; always out: Arun, Farida. After condition 5: 1 possible team(s); always in: Bhavna, Charan, Eshwar, Gokul; always out: Arun, Deepa, Farida. Only Bhavna, Charan, Eshwar, Gokul satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s041"
+  },
+  {
+   "questionText": "In the team chosen from Arun to Gokul: which of the following pairs are both selected?",
+   "options": [
+    "Bhavna, Gokul",
+    "Arun, Bhavna",
+    "Charan, Farida",
+    "Arun, Eshwar"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 25 possible team(s). After condition 2: 11 possible team(s). After condition 3: 5 possible team(s). After condition 4: 2 possible team(s); always in: Charan, Eshwar, Gokul; always out: Arun, Farida. After condition 5: 1 possible team(s); always in: Bhavna, Charan, Eshwar, Gokul; always out: Arun, Deepa, Farida. Only Bhavna, Charan, Eshwar, Gokul satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s041"
+  },
+  {
+   "questionText": "In the team chosen from Hari to Naveen: which of the following is the team that satisfies all the conditions?",
+   "options": [
+    "Jayant, Kavya, Meena, Naveen",
+    "Hari, Jayant, Kavya, Naveen",
+    "Hari, Jayant, Kavya, Meena",
+    "Hari, Jayant, Meena, Naveen"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 7 possible team(s). After condition 3: 5 possible team(s); always in: Kavya; always out: Hari. After condition 4: 2 possible team(s); always in: Jayant, Kavya, Naveen; always out: Hari, Lokesh. After condition 5: 1 possible team(s); always in: Jayant, Kavya, Meena, Naveen; always out: Hari, Indira, Lokesh. Only Jayant, Kavya, Meena, Naveen satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s042",
+   "shortcut": "Test each condition against the combinations; eliminate by the strongest 'only/exactly' conditions first."
+  },
+  {
+   "questionText": "In the team chosen from Hari to Naveen: which of the following people is selected?",
+   "options": [
+    "Meena",
+    "Lokesh",
+    "Indira",
+    "Hari"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 7 possible team(s). After condition 3: 5 possible team(s); always in: Kavya; always out: Hari. After condition 4: 2 possible team(s); always in: Jayant, Kavya, Naveen; always out: Hari, Lokesh. After condition 5: 1 possible team(s); always in: Jayant, Kavya, Meena, Naveen; always out: Hari, Indira, Lokesh. Only Jayant, Kavya, Meena, Naveen satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s042"
+  },
+  {
+   "questionText": "In the team chosen from Hari to Naveen: which of the following people is NOT selected?",
+   "options": [
+    "Lokesh",
+    "Kavya",
+    "Meena",
+    "Naveen"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 7 possible team(s). After condition 3: 5 possible team(s); always in: Kavya; always out: Hari. After condition 4: 2 possible team(s); always in: Jayant, Kavya, Naveen; always out: Hari, Lokesh. After condition 5: 1 possible team(s); always in: Jayant, Kavya, Meena, Naveen; always out: Hari, Indira, Lokesh. Only Jayant, Kavya, Meena, Naveen satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s042"
+  },
+  {
+   "questionText": "In the team chosen from Hari to Naveen: which of the following pairs are both selected?",
+   "options": [
+    "Meena, Naveen",
+    "Hari, Naveen",
+    "Indira, Naveen",
+    "Indira, Meena"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 7 possible team(s). After condition 3: 5 possible team(s); always in: Kavya; always out: Hari. After condition 4: 2 possible team(s); always in: Jayant, Kavya, Naveen; always out: Hari, Lokesh. After condition 5: 1 possible team(s); always in: Jayant, Kavya, Meena, Naveen; always out: Hari, Indira, Lokesh. Only Jayant, Kavya, Meena, Naveen satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s042"
+  },
+  {
+   "questionText": "In the panel chosen from Omkar to Uday: which of the following is the panel that satisfies all the conditions?",
+   "options": [
+    "Rekha, Suresh, Tara, Uday",
+    "Omkar, Rekha, Suresh, Uday",
+    "Omkar, Suresh, Tara, Uday",
+    "Omkar, Rekha, Tara, Uday"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 5 possible team(s); always out: Omkar, Qadir. After condition 3: 2 possible team(s); always in: Rekha, Suresh, Tara; always out: Omkar, Qadir. After condition 4: 1 possible team(s); always in: Rekha, Suresh, Tara, Uday; always out: Omkar, Padma, Qadir. Only Rekha, Suresh, Tara, Uday satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s043",
+   "shortcut": "Test each condition against the combinations; eliminate by the strongest 'only/exactly' conditions first."
+  },
+  {
+   "questionText": "In the panel chosen from Omkar to Uday: which of the following people is selected?",
+   "options": [
+    "Suresh",
+    "Omkar",
+    "Qadir",
+    "Padma"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 5 possible team(s); always out: Omkar, Qadir. After condition 3: 2 possible team(s); always in: Rekha, Suresh, Tara; always out: Omkar, Qadir. After condition 4: 1 possible team(s); always in: Rekha, Suresh, Tara, Uday; always out: Omkar, Padma, Qadir. Only Rekha, Suresh, Tara, Uday satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s043"
+  },
+  {
+   "questionText": "In the panel chosen from Omkar to Uday: which of the following people is NOT selected?",
+   "options": [
+    "Omkar",
+    "Rekha",
+    "Suresh",
+    "Uday"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 5 possible team(s); always out: Omkar, Qadir. After condition 3: 2 possible team(s); always in: Rekha, Suresh, Tara; always out: Omkar, Qadir. After condition 4: 1 possible team(s); always in: Rekha, Suresh, Tara, Uday; always out: Omkar, Padma, Qadir. Only Rekha, Suresh, Tara, Uday satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s043"
+  },
+  {
+   "questionText": "In the panel chosen from Omkar to Uday: which of the following pairs are both selected?",
+   "options": [
+    "Rekha, Tara",
+    "Omkar, Suresh",
+    "Padma, Uday",
+    "Padma, Rekha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 5 possible team(s); always out: Omkar, Qadir. After condition 3: 2 possible team(s); always in: Rekha, Suresh, Tara; always out: Omkar, Qadir. After condition 4: 1 possible team(s); always in: Rekha, Suresh, Tara, Uday; always out: Omkar, Padma, Qadir. Only Rekha, Suresh, Tara, Uday satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s043"
+  },
+  {
+   "questionText": "In the squad chosen from Vikram to Chitra: which of the following is the squad that satisfies all the conditions?",
+   "options": [
+    "Waheeda, Zoya, Chitra",
+    "Vikram, Zoya, Chitra",
+    "Waheeda, Yash, Zoya",
+    "Waheeda, Yash, Chitra"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 18 possible team(s). After condition 2: 12 possible team(s). After condition 3: 11 possible team(s). After condition 4: 4 possible team(s); always out: Anjali. After condition 5: 1 possible team(s); always in: Waheeda, Zoya, Chitra; always out: Vikram, Yash, Anjali, Balaji. Only Waheeda, Zoya, Chitra satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s044",
+   "shortcut": "Test each condition against the combinations; eliminate by the strongest 'only/exactly' conditions first."
+  },
+  {
+   "questionText": "In the squad chosen from Vikram to Chitra: which of the following people is selected?",
+   "options": [
+    "Zoya",
+    "Anjali",
+    "Balaji",
+    "Yash"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 18 possible team(s). After condition 2: 12 possible team(s). After condition 3: 11 possible team(s). After condition 4: 4 possible team(s); always out: Anjali. After condition 5: 1 possible team(s); always in: Waheeda, Zoya, Chitra; always out: Vikram, Yash, Anjali, Balaji. Only Waheeda, Zoya, Chitra satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s044"
+  },
+  {
+   "questionText": "In the squad chosen from Vikram to Chitra: which of the following people is NOT selected?",
+   "options": [
+    "Anjali",
+    "Waheeda",
+    "Zoya",
+    "Chitra"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 18 possible team(s). After condition 2: 12 possible team(s). After condition 3: 11 possible team(s). After condition 4: 4 possible team(s); always out: Anjali. After condition 5: 1 possible team(s); always in: Waheeda, Zoya, Chitra; always out: Vikram, Yash, Anjali, Balaji. Only Waheeda, Zoya, Chitra satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s044"
+  },
+  {
+   "questionText": "In the squad chosen from Vikram to Chitra: which of the following pairs are both selected?",
+   "options": [
+    "Zoya, Chitra",
+    "Vikram, Waheeda",
+    "Yash, Zoya",
+    "Waheeda, Yash"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 18 possible team(s). After condition 2: 12 possible team(s). After condition 3: 11 possible team(s). After condition 4: 4 possible team(s); always out: Anjali. After condition 5: 1 possible team(s); always in: Waheeda, Zoya, Chitra; always out: Vikram, Yash, Anjali, Balaji. Only Waheeda, Zoya, Chitra satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s044"
+  },
+  {
+   "questionText": "In the delegation chosen from Dinesh to Jagan: which of the following is the delegation that satisfies all the conditions?",
+   "options": [
+    "Dinesh, Esther, Harsh, Jagan",
+    "Dinesh, Esther, Harsh, Isha",
+    "Dinesh, Esther, Geeta, Jagan",
+    "Dinesh, Esther, Geeta, Harsh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 12 possible team(s). After condition 3: 6 possible team(s). After condition 4: 2 possible team(s); always in: Dinesh, Jagan; always out: Isha. After condition 5: 1 possible team(s); always in: Dinesh, Esther, Harsh, Jagan; always out: Firoz, Geeta, Isha. Only Dinesh, Esther, Harsh, Jagan satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s045",
+   "shortcut": "Test each condition against the combinations; eliminate by the strongest 'only/exactly' conditions first."
+  },
+  {
+   "questionText": "In the delegation chosen from Dinesh to Jagan: which of the following people is selected?",
+   "options": [
+    "Jagan",
+    "Geeta",
+    "Firoz",
+    "Isha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 12 possible team(s). After condition 3: 6 possible team(s). After condition 4: 2 possible team(s); always in: Dinesh, Jagan; always out: Isha. After condition 5: 1 possible team(s); always in: Dinesh, Esther, Harsh, Jagan; always out: Firoz, Geeta, Isha. Only Dinesh, Esther, Harsh, Jagan satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s045"
+  },
+  {
+   "questionText": "In the delegation chosen from Dinesh to Jagan: which of the following people is NOT selected?",
+   "options": [
+    "Firoz",
+    "Jagan",
+    "Harsh",
+    "Dinesh"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 12 possible team(s). After condition 3: 6 possible team(s). After condition 4: 2 possible team(s); always in: Dinesh, Jagan; always out: Isha. After condition 5: 1 possible team(s); always in: Dinesh, Esther, Harsh, Jagan; always out: Firoz, Geeta, Isha. Only Dinesh, Esther, Harsh, Jagan satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s045"
+  },
+  {
+   "questionText": "In the delegation chosen from Dinesh to Jagan: which of the following pairs are both selected?",
+   "options": [
+    "Dinesh, Jagan",
+    "Esther, Geeta",
+    "Esther, Isha",
+    "Esther, Firoz"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 19 possible team(s). After condition 2: 12 possible team(s). After condition 3: 6 possible team(s). After condition 4: 2 possible team(s); always in: Dinesh, Jagan; always out: Isha. After condition 5: 1 possible team(s); always in: Dinesh, Esther, Harsh, Jagan; always out: Firoz, Geeta, Isha. Only Dinesh, Esther, Harsh, Jagan satisfies all conditions.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s045"
+  },
+  {
+   "questionText": "In the committee chosen from Karthik to Sanjay: which of the following could be the selected team?",
+   "options": [
+    "Karthik, Mohan, Nisha, Sanjay",
+    "Karthik, Mohan, Nisha, Pranav",
+    "Karthik, Lata, Nisha, Sanjay",
+    "Karthik, Lata, Mohan, Sanjay"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 12 possible team(s). After condition 2: 10 possible team(s). After condition 3: 8 possible team(s). A valid team must pass every condition; the others each break at least one.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s046"
+  },
+  {
+   "questionText": "In the committee chosen from Karthik to Sanjay, if Lata is selected, which of the following can NOT be selected?",
+   "options": [
+    "Revathi",
+    "Nisha",
+    "Pranav",
+    "Mohan"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Lata is selected, the possible teams are {Karthik, Lata, Mohan, Pranav}, {Karthik, Lata, Nisha, Pranav}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s046"
+  },
+  {
+   "questionText": "In the committee chosen from Karthik to Sanjay, if Lata is selected, which of the following must also be selected?",
+   "options": [
+    "Karthik",
+    "Mohan",
+    "Nisha",
+    "Revathi"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Lata is selected, the possible teams are {Karthik, Lata, Mohan, Pranav}, {Karthik, Lata, Nisha, Pranav}. The person present in every one of these teams is the answer.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s046"
+  },
+  {
+   "questionText": "In the committee chosen from Karthik to Sanjay, if Revathi is selected, which of the following can NOT be selected?",
+   "options": [
+    "Sanjay",
+    "Pranav",
+    "Nisha",
+    "Karthik"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Revathi is selected, the possible teams are {Karthik, Mohan, Pranav, Revathi}, {Karthik, Nisha, Pranav, Revathi}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s046"
+  },
+  {
+   "questionText": "In the group chosen from Tejas to Bharat: which of the following could be the selected team?",
+   "options": [
+    "Usha, Yamini, Zubin, Aditi",
+    "Tejas, Varun, Zubin, Aditi",
+    "Tejas, Usha, Varun, Yamini",
+    "Tejas, Usha, Varun, Zubin"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 20 possible team(s). After condition 2: 16 possible team(s). After condition 3: 6 possible team(s); always in: Yamini, Zubin. A valid team must pass every condition; the others each break at least one.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s047"
+  },
+  {
+   "questionText": "In the group chosen from Tejas to Bharat, if Zubin is selected, which of the following must also be selected?",
+   "options": [
+    "Yamini",
+    "Bharat",
+    "Tejas",
+    "Varun"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Zubin is selected, the possible teams are {Tejas, Varun, Yamini, Zubin}, {Tejas, Yamini, Zubin, Aditi}, {Usha, Varun, Yamini, Zubin}, {Usha, Yamini, Zubin, Aditi}, {Varun, Yamini, Zubin, Bharat}, {Yamini, Zubin, Aditi, Bharat}. The person present in every one of these teams is the answer.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s047"
+  },
+  {
+   "questionText": "In the group chosen from Tejas to Bharat, if Aditi is selected, which of the following must also be selected?",
+   "options": [
+    "Yamini",
+    "Varun",
+    "Bharat",
+    "Usha"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Aditi is selected, the possible teams are {Tejas, Yamini, Zubin, Aditi}, {Usha, Yamini, Zubin, Aditi}, {Yamini, Zubin, Aditi, Bharat}. The person present in every one of these teams is the answer.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s047"
+  },
+  {
+   "questionText": "In the group chosen from Tejas to Bharat, if Bharat is selected, which of the following can NOT be selected?",
+   "options": [
+    "Tejas",
+    "Yamini",
+    "Aditi",
+    "Zubin"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Bharat is selected, the possible teams are {Varun, Yamini, Zubin, Bharat}, {Yamini, Zubin, Aditi, Bharat}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s047"
+  },
+  {
+   "questionText": "In the batch chosen from Chetan to Imran: which of the following could be the selected team?",
+   "options": [
+    "Dhanya, Fatima, Heena",
+    "Chetan, Dhanya, Elango",
+    "Chetan, Elango, Fatima",
+    "Dhanya, Elango, Imran"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 15 possible team(s). After condition 2: 5 possible team(s). After condition 3: 4 possible team(s); always out: Chetan, Girish, Imran. A valid team must pass every condition; the others each break at least one.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s048"
+  },
+  {
+   "questionText": "In the batch chosen from Chetan to Imran, if Fatima is not selected, which of the following can NOT be selected?",
+   "options": [
+    "Chetan",
+    "Heena",
+    "Dhanya",
+    "Elango"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Fatima is not selected, the possible teams are {Dhanya, Elango, Heena}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s048"
+  },
+  {
+   "questionText": "In the batch chosen from Chetan to Imran, if Fatima is not selected, which of the following must also be selected?",
+   "options": [
+    "Dhanya",
+    "Girish",
+    "Chetan",
+    "Imran"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Fatima is not selected, the possible teams are {Dhanya, Elango, Heena}. The person present in every one of these teams is the answer.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s048"
+  },
+  {
+   "questionText": "In the batch chosen from Chetan to Imran, if Dhanya is not selected, which of the following can NOT be selected?",
+   "options": [
+    "Girish",
+    "Heena",
+    "Fatima",
+    "Elango"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Dhanya is not selected, the possible teams are {Elango, Fatima, Heena}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": "logical-puzzles-s048"
+  },
+  {
+   "questionText": "In the committee chosen from Jeeva to Prakash: which of the following could be the selected team?",
+   "options": [
+    "Jeeva, Lalit, Nikhil, Prakash",
+    "Jeeva, Kalpana, Lalit, Oviya",
+    "Jeeva, Kalpana, Mythili, Nikhil",
+    "Jeeva, Lalit, Mythili, Nikhil"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After condition 1: 12 possible team(s). After condition 2: 11 possible team(s). After condition 3: 11 possible team(s). After condition 4: 9 possible team(s). A valid team must pass every condition; the others each break at least one.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s049"
+  },
+  {
+   "questionText": "In the committee chosen from Jeeva to Prakash, if Prakash is not selected, which of the following can NOT be selected?",
+   "options": [
+    "Mythili",
+    "Oviya",
+    "Nikhil",
+    "Kalpana"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Prakash is not selected, the possible teams are {Jeeva, Kalpana, Lalit, Nikhil}, {Jeeva, Kalpana, Nikhil, Oviya}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s049"
+  },
+  {
+   "questionText": "In the committee chosen from Jeeva to Prakash, if Nikhil is not selected, which of the following can NOT be selected?",
+   "options": [
+    "Oviya",
+    "Kalpana",
+    "Lalit",
+    "Jeeva"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Nikhil is not selected, the possible teams are {Jeeva, Kalpana, Lalit, Prakash}. The person absent from every one of these teams cannot be selected.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s049"
+  },
+  {
+   "questionText": "In the committee chosen from Jeeva to Prakash, if Oviya is selected, which of the following must also be selected?",
+   "options": [
+    "Nikhil",
+    "Lalit",
+    "Prakash",
+    "Jeeva"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "If Oviya is selected, the possible teams are {Jeeva, Kalpana, Nikhil, Oviya}, {Jeeva, Nikhil, Oviya, Prakash}, {Kalpana, Nikhil, Oviya, Prakash}. The person present in every one of these teams is the answer.",
+   "subPattern": "selection-with-conditions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": "logical-puzzles-s049"
+  }
+ ]
+}

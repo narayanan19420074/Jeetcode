@@ -1,0 +1,747 @@
+{
+ "sets": [
+  {
+   "id": "di-mixed-charts-s025",
+   "type": "table",
+   "title": "Table: Monthly output of three plants (thousand units), April to June. The nine monthly figures add up to 400; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Plant",
+     "April",
+     "May",
+     "June"
+    ],
+    "rows": [
+     [
+      "Coimbatore",
+      40,
+      "?",
+      50
+     ],
+     [
+      "Hosur",
+      "?",
+      45,
+      55
+     ],
+     [
+      "Pune",
+      60,
+      70,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s026",
+   "type": "table",
+   "title": "Table: Sales at a snack outlet in Trichy. Revenue = packs sold x price per pack, and the total revenue of the three items is Rs 24,500. Cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Item",
+     "Packs sold",
+     "Price per pack (Rs)",
+     "Revenue (Rs)"
+    ],
+    "rows": [
+     [
+      "Banana chips",
+      200,
+      40,
+      8000
+     ],
+     [
+      "Varkey",
+      "?",
+      60,
+      "?"
+     ],
+     [
+      "Murukku",
+      150,
+      "?",
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s027",
+   "type": "table",
+   "title": "Table: Runs scored by three batters in three matches of a Coimbatore club league. The mean of all nine scores is 50; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Batter",
+     "Match 1",
+     "Match 2",
+     "Match 3"
+    ],
+    "rows": [
+     [
+      "Arjun",
+      52,
+      "?",
+      70
+     ],
+     [
+      "Bala",
+      35,
+      48,
+      "?"
+     ],
+     [
+      "Charan",
+      "?",
+      60,
+      44
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s028",
+   "type": "table",
+   "title": "Table: Marks (out of 50) of three students in three class tests. The mean of all nine marks is 38; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Student",
+     "Test 1",
+     "Test 2",
+     "Test 3"
+    ],
+    "rows": [
+     [
+      "Kavya",
+      40,
+      "?",
+      35
+     ],
+     [
+      "Meena",
+      "?",
+      38,
+      42
+     ],
+     [
+      "Nikhil",
+      30,
+      44,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s029",
+   "type": "table",
+   "title": "Table: Arrivals (quintals) of three vegetables at three Tamil Nadu mandis in one week. The nine figures add up to 740; cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Mandi",
+     "Tomato",
+     "Onion",
+     "Potato"
+    ],
+    "rows": [
+     [
+      "Koyambedu",
+      120,
+      "?",
+      90
+     ],
+     [
+      "Madurai",
+      "?",
+      80,
+      60
+     ],
+     [
+      "Trichy",
+      70,
+      50,
+      "?"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "di-mixed-charts-s030",
+   "type": "table",
+   "title": "Table: A 600 km bus journey in three legs. Leg 1 is fully given; the distances of Legs 2 and 3 add up to the rest of the journey, and the speed of Leg 3 is not given. Cells marked ? are not given.",
+   "table": {
+    "columns": [
+     "Leg",
+     "Distance (km)",
+     "Speed (km/h)",
+     "Time (h)"
+    ],
+    "rows": [
+     [
+      "Leg 1",
+      150,
+      50,
+      3
+     ],
+     [
+      "Leg 2",
+      "?",
+      60,
+      "?"
+     ],
+     [
+      "Leg 3",
+      "?",
+      "?",
+      "?"
+     ]
+    ]
+   }
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "What was Pune's output in June?\nStatement I: Coimbatore's May output and Hosur's April output together were 60 thousand units.\nStatement II: Hosur's April-to-June total was 130 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Even both statements together are not sufficient",
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 20. Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 20. So: Statement I alone is sufficient; Statement II alone is not.",
+   "shortcut": "With a fixed total, knowing the sum of two missing cells fixes the third.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was Hosur's output in April?\nStatement I: Coimbatore's April-to-June total was 130 thousand units.\nStatement II: Pune's April-to-June total was 150 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Even both statements together are not sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 20. So: Both statements together are sufficient; neither alone is.",
+   "shortcut": "Three unknowns with one sum: you need two more independent facts.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was Pune's April-to-June total output?\nStatement I: Coimbatore's May output and Hosur's April output together were 70 thousand units.\nStatement II: Coimbatore's and Hosur's April-to-June totals were both 130 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Each statement alone is sufficient",
+    "Both statements together are sufficient; neither alone is"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 140. Using Statement II with the table, the possible answers are: 140. Using both together: 140. So: Each statement alone is sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was Hosur's output in April?\nStatement I: Coimbatore's May output was more than Pune's June output.\nStatement II: Hosur's April output was below 50 thousand units.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Even both statements together are not sufficient",
+    "Each statement alone is sufficient",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 1, 2, 3, 4 .... So: Even both statements together are not sufficient.",
+   "shortcut": "Inequalities rarely pin down an exact value.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "What was Coimbatore's output in May?\nStatement I: Coimbatore's May output was twice Hosur's April output.\nStatement II: Pune's June output was 20 thousand units more than Hosur's April output.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Each statement alone is sufficient",
+    "Both statements together are sufficient; neither alone is"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Known figures add to 320, so the three missing figures (Coimbatore May = x, Hosur April = y, Pune June = z) satisfy x + y + z = 80. Using Statement I with the table, the possible answers are: 2, 4, 6, 8 .... Using Statement II with the table, the possible answers are: 2, 4, 6, 8 .... Using both together: 30. So: Both statements together are sufficient; neither alone is.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s025"
+  },
+  {
+   "questionText": "How many packs of Varkey were sold?\nStatement I: Murukku was sold at Rs 50 per pack.\nStatement II: Varkey revenue exceeded Murukku revenue by Rs 1,500.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Even both statements together are not sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 150. Using Statement II with the table, the possible answers are: 150. Using both together: 150. So: Each statement alone is sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "What was the revenue from Murukku?\nStatement I: Varkey revenue was Rs 9,000.\nStatement II: The number of Varkey packs sold was a multiple of 50.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Even both statements together are not sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 7500. Using Statement II with the table, the possible answers are: 1500, 4500, 7500, 10500 .... Using both together: 7500. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "What was the price of a Murukku pack?\nStatement I: The number of Varkey packs sold was a multiple of 100.\nStatement II: The price of a Murukku pack was at least Rs 50.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Even both statements together are not sufficient",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 30, 70. Using Statement II with the table, the possible answers are: 50, 52, 54, 56 .... Using both together: 70. So: Both statements together are sufficient; neither alone is.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "What was the total number of packs sold of the three items?\nStatement I: Varkey revenue was more than Murukku revenue.\nStatement II: Fewer than 200 packs of Varkey were sold.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Even both statements together are not sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: 490, 495, 500, 505 .... Using Statement II with the table, the possible answers are: 355, 360, 365, 370 .... Using both together: 490, 495, 500, 505 .... So: Even both statements together are not sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "Was the revenue from Varkey greater than the revenue from Murukku?\nStatement I: More than 150 packs of Varkey were sold.\nStatement II: The price of a Murukku pack was a multiple of Rs 10.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Even both statements together are not sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Banana chips bring Rs 8,000, so 60x + 150y = 16,500, i.e. 2x + 5y = 550, where x = Varkey packs and y = Murukku price per pack (Rs). Using Statement I with the table, the possible answers are: Yes. Using Statement II with the table, the possible answers are: No, Yes. Using both together: Yes. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s026"
+  },
+  {
+   "questionText": "How many runs did Arjun score in Match 2?\nStatement I: Bala's Match 3 score and Charan's Match 1 score together were 81.\nStatement II: Charan scored 30 in Match 1.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 60. Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 60. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "How many runs did Bala score in Match 3?\nStatement I: Arjun's total over the three matches was 150.\nStatement II: Bala's average over the three matches was 55.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Each statement alone is sufficient",
+    "Even both statements together are not sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 82. Using both together: 82. So: Statement II alone is sufficient; Statement I alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "How many runs did Charan score in Match 1?\nStatement I: Arjun's Match 2 score and Bala's Match 3 score together were 100.\nStatement II: Charan's total over the three matches was 145.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 41. Using Statement II with the table, the possible answers are: 41. Using both together: 41. So: Each statement alone is sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "What was Charan's total over the three matches?\nStatement I: Arjun scored 50 in Match 2.\nStatement II: Bala scored 60 in Match 3.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Even both statements together are not sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 105, 106, 107, 108 .... Using Statement II with the table, the possible answers are: 105, 106, 107, 108 .... Using both together: 135. So: Both statements together are sufficient; neither alone is.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "How many runs did Bala score in Match 3?\nStatement I: Arjun's Match 2 score was 10 more than Charan's Match 1 score.\nStatement II: Arjun's Match 2 score was more than 40.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Even both statements together are not sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nine scores total 450 and the known six add to 309, so x + y + z = 141 (x = Arjun's Match 2, y = Bala's Match 3, z = Charan's Match 1). Using Statement I with the table, the possible answers are: 1, 3, 5, 7 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 1, 3, 5, 7 .... So: Even both statements together are not sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s027"
+  },
+  {
+   "questionText": "What did Kavya score in Test 2?\nStatement I: Meena's Test 1 mark and Nikhil's Test 3 mark together were 70.\nStatement II: Nikhil scored 36 in Test 3.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Even both statements together are not sufficient",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 43. Using Statement II with the table, the possible answers are: 27, 28, 29, 30 .... Using both together: 43. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "What did Meena score in Test 1?\nStatement I: Kavya scored full marks (50) in Test 2.\nStatement II: Nikhil scored full marks (50) in Test 3.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Even both statements together are not sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 13, 14, 15, 16 .... Using Statement II with the table, the possible answers are: 13, 14, 15, 16 .... Using both together: 13. So: Both statements together are sufficient; neither alone is.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "What did Nikhil score in Test 3?\nStatement I: Kavya and Meena both scored full marks (50) in the tests where their marks are missing.\nStatement II: Nikhil's total over the three tests was below 100.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Each statement alone is sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 13. Using Statement II with the table, the possible answers are: 13, 14, 15, 16 .... Using both together: 13. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "Did Kavya score more in Test 2 than Meena did in Test 1?\nStatement I: Nikhil scored 50 in Test 3.\nStatement II: Kavya's total over the three tests was higher than Meena's total.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: No, Yes. Using Statement II with the table, the possible answers are: Yes. Using both together: Yes. So: Statement II alone is sufficient; Statement I alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "What did Meena score in Test 1?\nStatement I: Kavya's Test 2 mark and Nikhil's Test 3 mark together were 100.\nStatement II: Meena's total over the three tests was 93.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Statement I alone is sufficient; Statement II alone is not"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nine marks total 342 and the known six add to 229, so x + y + z = 113 with each between 0 and 50 (x = Kavya's Test 2, y = Meena's Test 1, z = Nikhil's Test 3). Using Statement I with the table, the possible answers are: 13. Using Statement II with the table, the possible answers are: 13. Using both together: 13. So: Each statement alone is sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s028"
+  },
+  {
+   "questionText": "How many quintals of onion arrived at Koyambedu?\nStatement I: Madurai's tomato arrivals and Trichy's potato arrivals together were 150 quintals.\nStatement II: Madurai's tomato arrivals were 100 quintals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Both statements together are sufficient; neither alone is",
+    "Each statement alone is sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 120. Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 120. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "What were the total tomato arrivals at the three mandis?\nStatement I: Koyambedu's total arrivals of the three vegetables were 300 quintals.\nStatement II: Trichy's total arrivals of the three vegetables were 200 quintals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Even both statements together are not sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 191, 192, 193, 194 .... Using Statement II with the table, the possible answers are: 191, 192, 193, 194 .... Using both together: 290. So: Both statements together are sufficient; neither alone is.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "Were the total arrivals at Madurai higher than the total arrivals at Trichy?\nStatement I: Koyambedu's onion arrivals were below 100 quintals.\nStatement II: Madurai's tomato arrivals were higher than Trichy's potato arrivals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Even both statements together are not sufficient",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: No, Yes. Using Statement II with the table, the possible answers are: Yes. Using both together: Yes. So: Statement II alone is sufficient; Statement I alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "How many quintals of potato arrived at Trichy?\nStatement I: Madurai's tomato arrivals were higher than Trichy's potato arrivals.\nStatement II: Koyambedu's onion arrivals were below 120 quintals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Even both statements together are not sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 1, 2, 3, 4 .... Using Statement II with the table, the possible answers are: 1, 2, 3, 4 .... Using both together: 1, 2, 3, 4 .... So: Even both statements together are not sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "How many quintals of tomato arrived at Madurai?\nStatement I: Koyambedu's onion arrivals and Trichy's potato arrivals together were 135 quintals.\nStatement II: Madurai's tomato arrivals equalled the sum of Koyambedu's onion arrivals and Trichy's potato arrivals.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Both statements together are sufficient; neither alone is"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Known figures add to 470, so x + y + z = 270 (x = Koyambedu onion, y = Madurai tomato, z = Trichy potato). Using Statement I with the table, the possible answers are: 135. Using Statement II with the table, the possible answers are: 135. Using both together: 135. So: Each statement alone is sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s029"
+  },
+  {
+   "questionText": "What was the distance of Leg 3?\nStatement I: Leg 2 took 3 hours.\nStatement II: The speed of Leg 3 was 90 km/h.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Even both statements together are not sufficient",
+    "Each statement alone is sufficient",
+    "Both statements together are sufficient; neither alone is",
+    "Statement I alone is sufficient; Statement II alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 270. Using Statement II with the table, the possible answers are: 10, 20, 30, 40 .... Using both together: 270. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "What was the total time taken for the whole journey?\nStatement I: The speed of Leg 3 was 90 km/h.\nStatement II: Legs 2 and 3 each took exactly 3 hours.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Even both statements together are not sufficient",
+    "Each statement alone is sufficient",
+    "Statement II alone is sufficient; Statement I alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 145/18, 73/9, 49/6, 74/9 .... Using Statement II with the table, the possible answers are: 9. Using both together: 9. So: Statement II alone is sufficient; Statement I alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "Was the distance of Leg 3 greater than the distance of Leg 2?\nStatement I: Leg 2 took less than 3.5 hours.\nStatement II: The speed of Leg 3 was more than 60 km/h.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Even both statements together are not sufficient",
+    "Both statements together are sufficient; neither alone is",
+    "Statement I alone is sufficient; Statement II alone is not"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: Yes. Using Statement II with the table, the possible answers are: No, Yes. Using both together: Yes. So: Statement I alone is sufficient; Statement II alone is not.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "How long did Leg 2 take?\nStatement I: The distance of Leg 3 was 270 km.\nStatement II: The distance of Leg 3 was 90 km more than the distance of Leg 2.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Each statement alone is sufficient",
+    "Even both statements together are not sufficient",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Both statements together are sufficient; neither alone is"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 3. Using Statement II with the table, the possible answers are: 3. Using both together: 3. So: Each statement alone is sufficient.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  },
+  {
+   "questionText": "What was the average speed for the whole journey of 600 km?\nStatement I: Legs 2 and 3 took the same time.\nStatement II: The speed of Leg 3 was 90 km/h.\nDecide whether the statements, together with the data in the table, are enough to answer the question.",
+   "options": [
+    "Statement I alone is sufficient; Statement II alone is not",
+    "Statement II alone is sufficient; Statement I alone is not",
+    "Both statements together are sufficient; neither alone is",
+    "Even both statements together are not sufficient"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Legs 2 and 3 cover 450 km, so Leg 3 distance = 450 - x, where x = Leg 2 distance; Leg 2 time = x/60 and Leg 3 time = (450 - x)/z, with z = Leg 3 speed. Using Statement I with the table, the possible answers are: 600/13, 50, 200/3, 75. Using Statement II with the table, the possible answers are: 2700/47, 10800/187, 1800/31, 2160/37 .... Using both together: 200/3. So: Both statements together are sufficient; neither alone is.",
+   "subPattern": "data-sufficiency-style-di",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": "di-mixed-charts-s030"
+  }
+ ]
+}

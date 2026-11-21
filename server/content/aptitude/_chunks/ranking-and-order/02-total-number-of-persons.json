@@ -1,0 +1,646 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Imran ranks 19th from the top and 15th from the bottom in a class. How many students are in the class?",
+   "options": [
+    "33",
+    "34",
+    "32",
+    "35"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 19 + 15 − 1 = 33, because the person is counted in both ranks.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Lakshmi is 5th from the left end and 5th from the right end of a row. How many persons are in the row?",
+   "options": [
+    "10",
+    "9",
+    "8",
+    "11"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = 5 + 5 − 1 = 9, because the person is counted in both ranks.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Naveen is 16th from the left end and 28th from the right end of a row. How many persons are in the row?",
+   "options": [
+    "43",
+    "44",
+    "42",
+    "45"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 16 + 28 − 1 = 43, because the person is counted in both ranks.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "In a queue at a Chennai railway counter, Ashok is 20th from the front and 19th from the back. How many people are in the queue?",
+   "options": [
+    "39",
+    "37",
+    "38",
+    "40"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 20 + 19 − 1 = 38, because the person is counted in both ranks.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Harish is 28th from the left end and 13th from the right end of a row. How many persons are in the row?",
+   "options": [
+    "41",
+    "40",
+    "39",
+    "42"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = 28 + 13 − 1 = 40, because the person is counted in both ranks.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "In a line, 18 persons stand in front of Prakash and 6 persons stand behind Prakash. How many persons are in the line?",
+   "options": [
+    "24",
+    "25",
+    "23",
+    "26"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = persons ahead + persons behind + the person = 18 + 6 + 1 = 25.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a line, 26 persons stand in front of Swathi and 18 persons stand behind Swathi. How many persons are in the line?",
+   "options": [
+    "45",
+    "44",
+    "43",
+    "46"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = persons ahead + persons behind + the person = 26 + 18 + 1 = 45.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a line, 33 persons stand in front of Harleen and 13 persons stand behind Harleen. How many persons are in the line?",
+   "options": [
+    "46",
+    "47",
+    "45",
+    "48"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = persons ahead + persons behind + the person = 33 + 13 + 1 = 47.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a line, 31 persons stand in front of Sathish and 35 persons stand behind Sathish. How many persons are in the line?",
+   "options": [
+    "66",
+    "65",
+    "68",
+    "67"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = persons ahead + persons behind + the person = 31 + 35 + 1 = 67.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "12 students scored more than Rahul and 30 students scored less than Rahul in a test (no ties). How many students took the test?",
+   "options": [
+    "42",
+    "41",
+    "43",
+    "44"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = persons ahead + persons behind + the person = 12 + 30 + 1 = 43.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a row, Imran is 14th from the left and Geeta is 17th from the right. There are 7 persons between them and Imran is to the left of Geeta. How many persons are in the row?",
+   "options": [
+    "39",
+    "37",
+    "31",
+    "38"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Geeta's position from left = 14 + 7 + 1 = 22. Total = 22 + 17 − 1 = 38.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Ravi is 19th from the left and Nisha is 19th from the right. There are 9 persons between them and Ravi is to the left of Nisha. How many persons are in the row?",
+   "options": [
+    "48",
+    "47",
+    "46",
+    "38"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Nisha's position from left = 19 + 9 + 1 = 29. Total = 29 + 19 − 1 = 47.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Ravi is 13th from the left and Vikram is 11th from the right. There are 3 persons between them and Ravi is to the left of Vikram. How many persons are in the row?",
+   "options": [
+    "28",
+    "26",
+    "24",
+    "27"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Vikram's position from left = 13 + 3 + 1 = 17. Total = 17 + 11 − 1 = 27.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Zoya is 15th from the left and Geeta is 20th from the right. There are 5 persons between them and Zoya is to the left of Geeta. How many persons are in the row?",
+   "options": [
+    "41",
+    "40",
+    "39",
+    "35"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Geeta's position from left = 15 + 5 + 1 = 21. Total = 21 + 20 − 1 = 40.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Anil is 8th from the left and Anita is 9th from the right. There are 11 persons between them and Anil is to the left of Anita. How many persons are in the row?",
+   "options": [
+    "28",
+    "29",
+    "27",
+    "17"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Anita's position from left = 8 + 11 + 1 = 20. Total = 20 + 9 − 1 = 28.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Jaya is 17th from the left and Rohit is 8th from the right. There are 12 persons between them and Jaya is to the left of Rohit. How many persons are in the row?",
+   "options": [
+    "37",
+    "38",
+    "36",
+    "25"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rohit's position from left = 17 + 12 + 1 = 30. Total = 30 + 8 − 1 = 37.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Rohit is 23rd from the left end and Uma is 13th from the right end. Uma stands to the left of Rohit and there are 8 persons between them. How many persons are in the row?",
+   "options": [
+    "35",
+    "44",
+    "26",
+    "28"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Uma's position from the left = 23 − 8 − 1 = 14. Total = 14 + 13 − 1 = 26.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a row, Geeta is 16th from the left end and Ganesh is 20th from the right end. Ganesh stands to the left of Geeta and there are 6 persons between them. How many persons are in the row?",
+   "options": [
+    "35",
+    "42",
+    "30",
+    "28"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ganesh's position from the left = 16 − 6 − 1 = 9. Total = 9 + 20 − 1 = 28.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a row, Naveen is 24th from the left end and Arjun is 15th from the right end. Arjun stands to the left of Naveen and there are 5 persons between them. How many persons are in the row?",
+   "options": [
+    "38",
+    "32",
+    "44",
+    "34"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Arjun's position from the left = 24 − 5 − 1 = 18. Total = 18 + 15 − 1 = 32.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a row, Arjun is 21st from the left end and Revathi is 16th from the right end. Revathi stands to the left of Arjun and there are 8 persons between them. How many persons are in the row?",
+   "options": [
+    "36",
+    "27",
+    "45",
+    "29"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revathi's position from the left = 21 − 8 − 1 = 12. Total = 12 + 16 − 1 = 27.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a class there are 19 girls and 22 boys. Karthik, a girl, is 16th from the top among the girls. How many students are there in the class?",
+   "options": [
+    "42",
+    "40",
+    "41",
+    "19"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total students = girls + boys = 19 + 22 = 41. The girl's own rank is not needed.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "Spot the irrelevant data first."
+  },
+  {
+   "questionText": "In a class there are 29 girls and 21 boys. Nandini, a girl, is 19th from the top among the girls. How many students are there in the class?",
+   "options": [
+    "51",
+    "49",
+    "50",
+    "29"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total students = girls + boys = 29 + 21 = 50. The girl's own rank is not needed.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Spot the irrelevant data first."
+  },
+  {
+   "questionText": "In a class there are 13 girls and 14 boys. Priya, a girl, is 9th from the top among the girls. How many students are there in the class?",
+   "options": [
+    "28",
+    "27",
+    "26",
+    "13"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total students = girls + boys = 13 + 14 = 27. The girl's own rank is not needed.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Spot the irrelevant data first."
+  },
+  {
+   "questionText": "There are 13 persons to the left of Yash and 9 persons to the right of Farhan in a row. Farhan is to the right of Yash and exactly 7 persons stand between them. How many persons are in the row?",
+   "options": [
+    "30",
+    "32",
+    "31",
+    "29"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Count everyone: 13 (left of Yash) + Yash + 7 (between) + Farhan + 9 (right of Farhan) = 13+1+7+1+9 = 31.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "There are 15 persons to the left of Priya and 9 persons to the right of Ganesh in a row. Ganesh is to the right of Priya and exactly 4 persons stand between them. How many persons are in the row?",
+   "options": [
+    "29",
+    "30",
+    "31",
+    "28"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Count everyone: 15 (left of Priya) + Priya + 4 (between) + Ganesh + 9 (right of Ganesh) = 15+1+4+1+9 = 30.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "There are 13 persons to the left of Faisal and 8 persons to the right of Maria in a row. Maria is to the right of Faisal and exactly 2 persons stand between them. How many persons are in the row?",
+   "options": [
+    "25",
+    "24",
+    "26",
+    "23"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Count everyone: 13 (left of Faisal) + Faisal + 2 (between) + Maria + 8 (right of Maria) = 13+1+2+1+8 = 25.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "There are 11 persons to the left of Manoj and 13 persons to the right of Ravi in a row. Ravi is to the right of Manoj and exactly 4 persons stand between them. How many persons are in the row?",
+   "options": [
+    "29",
+    "31",
+    "30",
+    "28"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Count everyone: 11 (left of Manoj) + Manoj + 4 (between) + Ravi + 13 (right of Ravi) = 11+1+4+1+13 = 30.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "In a row, Meena is 10th from the left. Ashok is 6 places to the right of Meena. Arjun is as far to the right of Ashok as Ashok is from Meena. If Arjun is 11th from the right end, how many persons are in the row?",
+   "options": [
+    "33",
+    "31",
+    "27",
+    "32"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ashok is at 10+6 = 16; Arjun is at 16+6 = 22 from the left. Total = 22 + 11 − 1 = 32.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "In a row, Revathi is 7th from the left. Lakshmi is 6 places to the right of Revathi. Manoj is as far to the right of Lakshmi as Lakshmi is from Revathi. If Manoj is 15th from the right end, how many persons are in the row?",
+   "options": [
+    "34",
+    "32",
+    "33",
+    "28"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Lakshmi is at 7+6 = 13; Manoj is at 13+6 = 19 from the left. Total = 19 + 15 − 1 = 33.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "In a row, Maria is 8th from the left. Revathi is 7 places to the right of Maria. Mohan is as far to the right of Revathi as Revathi is from Maria. If Mohan is 10th from the right end, how many persons are in the row?",
+   "options": [
+    "32",
+    "31",
+    "30",
+    "25"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Revathi is at 8+7 = 15; Mohan is at 15+7 = 22 from the left. Total = 22 + 10 − 1 = 31.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "In a row, Revathi is 13th from the left. Venkat is 6 places to the right of Revathi. Ganesh is as far to the right of Venkat as Venkat is from Revathi. If Ganesh is 13th from the right end, how many persons are in the row?",
+   "options": [
+    "38",
+    "36",
+    "37",
+    "32"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Venkat is at 13+6 = 19; Ganesh is at 19+6 = 25 from the left. Total = 25 + 13 − 1 = 37.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "If Sangeeta were 5 places lower in rank, Sangeeta would be 20th from the top. Sangeeta is currently 20th from the bottom. How many students are in the class?",
+   "options": [
+    "39",
+    "29",
+    "35",
+    "34"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Currently Sangeeta's rank from top = 20 − 5 = 15. Total = 15 + 20 − 1 = 34.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null,
+   "shortcut": "Undo the change first, then Total = Top + Bottom − 1."
+  },
+  {
+   "questionText": "If Uma were 4 places lower in rank, Uma would be 29th from the top. Uma is currently 19th from the bottom. How many students are in the class?",
+   "options": [
+    "47",
+    "43",
+    "39",
+    "44"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Currently Uma's rank from top = 29 − 4 = 25. Total = 25 + 19 − 1 = 43.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Undo the change first, then Total = Top + Bottom − 1."
+  },
+  {
+   "questionText": "If Imran were 4 places lower in rank, Imran would be 32nd from the top. Imran is currently 20th from the bottom. How many students are in the class?",
+   "options": [
+    "51",
+    "47",
+    "43",
+    "48"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Currently Imran's rank from top = 32 − 4 = 28. Total = 28 + 20 − 1 = 47.",
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "Undo the change first, then Total = Top + Bottom − 1."
+  }
+ ]
+}

@@ -1,0 +1,552 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the correct opposite of 'legal' using a prefix.",
+   "options": [
+    "illegal",
+    "unlegal",
+    "inlegal",
+    "dislegal"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before a word beginning with 'l', the negative prefix in- becomes il-: illegal.",
+   "shortcut": "in- before l becomes il-.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct opposite of 'regular' using a prefix.",
+   "options": [
+    "inregular",
+    "irregular",
+    "unregular",
+    "disregular"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Before a word beginning with 'r', in- becomes ir-: irregular.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct opposite of 'possible' using a prefix.",
+   "options": [
+    "inpossible",
+    "unpossible",
+    "impossible",
+    "dispossible"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Before words beginning with p (and b, m), in- becomes im-: impossible.",
+   "shortcut": "in- becomes im- before p, b, m.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct opposite of 'mortal' using a prefix.",
+   "options": [
+    "inmortal",
+    "unmortal",
+    "dismortal",
+    "immortal"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Before m, in- becomes im-: immortal.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct opposite of 'responsible' using a prefix.",
+   "options": [
+    "irresponsible",
+    "inresponsible",
+    "unresponsible",
+    "disresponsible"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Before r, in- becomes ir-, giving irresponsible.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct opposite of 'happy' using a prefix.",
+   "options": [
+    "inhappy",
+    "unhappy",
+    "dishappy",
+    "nonhappy"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The prefix un- is used with the native word 'happy'.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun form of the verb 'decide'.",
+   "options": [
+    "decideion",
+    "decidation",
+    "decision",
+    "decisement"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Verbs ending in -de often change to -sion in the noun: decide becomes decision.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun form of the verb 'succeed'.",
+   "options": [
+    "succeedance",
+    "succession",
+    "succeedment",
+    "success"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The noun meaning achievement is 'success'; 'succession' means a following in order.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'beauty'.",
+   "options": [
+    "beautiful",
+    "beautyful",
+    "beautious",
+    "beautical"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The suffix -ful replaces y with i after a consonant: beauty becomes beautiful.",
+   "shortcut": "Consonant + y changes to i before -ful.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'danger'.",
+   "options": [
+    "dangerful",
+    "dangerous",
+    "dangery",
+    "dangerish"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The suffix -ous forms the adjective: dangerous.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Add a suffix to 'hope' to mean 'without hope'.",
+   "options": [
+    "hopeness",
+    "hopeful",
+    "hopeless",
+    "hopeles"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The suffix -less means without; the silent e of 'hope' is kept before the consonant l.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct word meaning 'to understand wrongly'.",
+   "options": [
+    "disunderstand",
+    "ununderstand",
+    "dysunderstand",
+    "misunderstand"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The prefix mis- means wrongly: misunderstand.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which prefix means 'against'?",
+   "options": [
+    "anti-",
+    "semi-",
+    "pre-",
+    "sub-"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Anti- means against (anti-corruption); semi- is half, pre- is before, sub- is under.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which prefix means 'half'?",
+   "options": [
+    "anti-",
+    "semi-",
+    "tri-",
+    "ultra-"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Semi- means half, as in semicircle.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which prefix means 'across' or 'beyond' as in 'transport'?",
+   "options": [
+    "inter-",
+    "sub-",
+    "trans-",
+    "extra-"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Trans- means across, as in transport and transfer.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Which prefix means 'between' as in 'international'?",
+   "options": [
+    "intra-",
+    "trans-",
+    "super-",
+    "inter-"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Inter- means between or among; intra- means within.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun form of 'long'.",
+   "options": [
+    "length",
+    "longth",
+    "longness",
+    "lengthy"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The noun for how long something is, is 'length'; 'lengthy' is an adjective.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun form of 'strong'.",
+   "options": [
+    "strongth",
+    "strength",
+    "strongness",
+    "strengthy"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The noun form of the adjective 'strong' is 'strength' (with the g and th).",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct verb formed from the adjective 'large' with the prefix en-.",
+   "options": [
+    "unlarge",
+    "inlarge",
+    "enlarge",
+    "dislarge"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The prefix en- means 'to make'; enlarge means to make larger.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun formed from the adjective 'free'.",
+   "options": [
+    "freeness",
+    "freeship",
+    "freedomness",
+    "freedom"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The suffix -dom forms a noun meaning state or condition: freedom.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct adverb formed from 'true'.",
+   "options": [
+    "truly",
+    "truely",
+    "trueley",
+    "truley"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The final e of 'true' is dropped before -ly: truly.",
+   "shortcut": "true + ly = truly (drops e).",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'courage'.",
+   "options": [
+    "couragious",
+    "courageous",
+    "courageful",
+    "couragous"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The e of courage is kept before -ous so that g stays soft: courageous.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun formed from the adjective 'absent'.",
+   "options": [
+    "absentness",
+    "absentance",
+    "absence",
+    "absency"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Adjectives ending in -ent usually form nouns in -ence: absence.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct opposite of 'appear' using a prefix.",
+   "options": [
+    "unappear",
+    "misappear",
+    "inappear",
+    "disappear"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The prefix dis- reverses the verb: disappear.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun formed from the verb 'prove'.",
+   "options": [
+    "proof",
+    "prove-ment",
+    "provision",
+    "provance"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The noun of 'prove' is 'proof'; the v changes to f.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun formed from 'friend' meaning 'the state of being friends'.",
+   "options": [
+    "friendhood",
+    "friendship",
+    "friendment",
+    "friendity"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The suffix -ship forms nouns of state or relation: friendship.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct adjective formed from the noun 'envy'.",
+   "options": [
+    "envyous",
+    "envyful",
+    "envious",
+    "enviable"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Noun ending in y changes y to i before -ous: envious. 'Enviable' means worth envying.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct noun formed from the verb 'maintain'.",
+   "options": [
+    "maintainance",
+    "maintainment",
+    "maintention",
+    "maintenance"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The standard noun is 'maintenance'.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the prefix which means 'bad' or 'badly' as in 'malfunction'.",
+   "options": [
+    "mal-",
+    "pro-",
+    "neo-",
+    "hyper-"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Mal- means bad; malnutrition is bad nutrition.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "How many affixes (prefixes plus suffixes) does the word 'unforgettable' have?",
+   "options": [
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "un- (prefix) + forget + -able (suffix), with the t doubled in spelling; so there are two affixes.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the opposite of 'visible' using a prefix.",
+   "options": [
+    "unvisible",
+    "disvisible",
+    "invisible",
+    "imvisible"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Visible takes in-, giving invisible; im- is used only before b, m, p.",
+   "subPattern": "word-formation-prefix-suffix",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

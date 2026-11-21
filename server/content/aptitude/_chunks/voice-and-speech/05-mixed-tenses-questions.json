@@ -1,0 +1,634 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Choose the correct transformation of: Who broke the glass?",
+   "options": [
+    "By whom was the glass broken?",
+    "By whom is the glass broken?",
+    "By whom has the glass been broken?",
+    "Who was the glass broken by whom?"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Who + V2 + O' becomes 'By whom + was + O + V3'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to me, “What is your name?”",
+   "options": [
+    "He asked me what is my name.",
+    "He asked me what my name was.",
+    "He asked me what was my name.",
+    "He asked me what his name was."
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: wh-question gets statement order; is becomes was; 'your' becomes 'my'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Does he play chess?",
+   "options": [
+    "Was chess played by him?",
+    "Are chess played by him?",
+    "Is chess played by him?",
+    "Does chess played by him?"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Does + S + V1 + O' becomes 'Is/Are + O + V3 + by S'; 'chess' is singular so 'Is'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Did she help you?",
+   "options": [
+    "Are you helped by her?",
+    "Was you helped by her?",
+    "Have you been helped by her?",
+    "Were you helped by her?"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Did + S + V1 + O' becomes 'Was/Were + O + V3 + by S'; 'you' takes 'were'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: The teacher said to Ravi, “Are you ill?”",
+   "options": [
+    "The teacher asked Ravi if he was ill.",
+    "The teacher asked Ravi if you were ill.",
+    "The teacher asked Ravi if he is ill.",
+    "The teacher asked Ravi that he was ill."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: yes/no question uses 'if'; are becomes was; 'you' becomes 'he'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Is Ravi writing a letter?",
+   "options": [
+    "Was a letter being written by Ravi?",
+    "Is a letter being written by Ravi?",
+    "Is a letter written by Ravi?",
+    "Has a letter been written by Ravi?"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'Is + S + V-ing + O' becomes 'Is + O + being + V3 + by S'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Will you help the poor?",
+   "options": [
+    "Would the poor be helped by you?",
+    "Will the poor helped by you?",
+    "Will the poor be helped by you?",
+    "Will the poor have been helped by you?"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Will + S + V1 + O' becomes 'Will + O + be + V3 + by S'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to her, “Where did you go?”",
+   "options": [
+    "He asked her where did she go.",
+    "He asked her where she went.",
+    "He asked her where he had gone.",
+    "He asked her where she had gone."
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: wh-question uses statement order; simple past becomes past perfect; 'you' becomes 'she'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Have they finished the work?",
+   "options": [
+    "Has the work been finished by them?",
+    "Have the work been finished by them?",
+    "Had the work been finished by them?",
+    "Was the work finished by them?"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Have + S + V3 + O' becomes 'Has/Have + O + been + V3 + by S'; 'work' is singular so 'Has'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: She said to me, “Do you know him?”",
+   "options": [
+    "She asked me if she knew him.",
+    "She asked me if I knew him.",
+    "She asked me do I know him.",
+    "She asked me if I know him."
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: yes/no question uses 'if'; present becomes past; 'you' becomes 'I'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Can you solve this sum?",
+   "options": [
+    "Could this sum be solved by you?",
+    "Can this sum solved by you?",
+    "Can this sum be solved by you?",
+    "Is this sum solved by you?"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Modal + S + V1 + O' becomes 'Modal + O + be + V3 + by S', keeping 'can'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: “Why are you laughing?” Rani said to Mohan.",
+   "options": [
+    "Rani asked Mohan why was he laughing.",
+    "Rani asked Mohan why you were laughing.",
+    "Rani asked Mohan why he had laughed.",
+    "Rani asked Mohan why he was laughing."
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: wh-question uses statement order; present continuous becomes past continuous; 'you' becomes 'he'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Why do they sell tickets so early?",
+   "options": [
+    "Why are tickets sold so early?",
+    "Why were tickets sold so early?",
+    "Why are tickets selling so early?",
+    "Why do tickets sold so early?"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Why do + S + V1 + O' becomes 'Why are + O + V3'; the vague agent 'they' is dropped.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: What did the teacher give you?",
+   "options": [
+    "What are you given by the teacher?",
+    "What were you given by the teacher?",
+    "What was you given by the teacher?",
+    "What had you been given by the teacher?"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: with two objects, 'you' becomes the subject; 'did give' becomes 'were given'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Whom did you invite?",
+   "options": [
+    "Who is invited by you?",
+    "Whom was invited by you?",
+    "Who was invited by you?",
+    "Who were invited by you?"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'Whom + did + S + V1' becomes 'Who + was + V3 + by S' because the questioned word is now the subject.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Whose pen did he take?",
+   "options": [
+    "Whose pen is taken by him?",
+    "Whose pen did he taken?",
+    "Whose pen has been taken by him?",
+    "Whose pen was taken by him?"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'Whose + noun' acts as the object phrase and becomes the subject: 'was taken by him'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to me, “How are you?”",
+   "options": [
+    "He asked me how I was.",
+    "He asked me how was I.",
+    "He asked me how he was.",
+    "He asked me how am I."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: wh-question uses statement order; are becomes was; 'you' becomes 'I'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Mother said to Seetha, “Why have you not eaten?”",
+   "options": [
+    "Mother asked Seetha why she has not eaten.",
+    "Mother asked Seetha why she had not eaten.",
+    "Mother asked Seetha why had she not eaten.",
+    "Mother asked Seetha why you had not eaten."
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: present perfect becomes past perfect; statement order; 'you' becomes 'she'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: The manager said to him, “Where will you stay in Chennai?”",
+   "options": [
+    "The manager asked him where he will stay in Chennai.",
+    "The manager asked him where would he stay in Chennai.",
+    "The manager asked him where he would stay in Chennai.",
+    "The manager asked him where you would stay in Chennai."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: will becomes would; statement order; 'you' becomes 'he'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: How did he solve the puzzle?",
+   "options": [
+    "How is the puzzle solved by him?",
+    "How did the puzzle solved by him?",
+    "How has the puzzle been solved by him?",
+    "How was the puzzle solved by him?"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'did + V1' becomes 'was + V3'; the question word stays first.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: “Shall we go for a walk?” said Vimal to Karthik.",
+   "options": [
+    "Vimal suggested to Karthik that they should go for a walk.",
+    "Vimal asked Karthik if they shall go for a walk.",
+    "Vimal suggested to Karthik that we should go for a walk.",
+    "Vimal asked Karthik whether he went for a walk."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'Shall we' (a suggestion) becomes 'suggested that ... should'; 'we' becomes 'they'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Do it at once.",
+   "options": [
+    "It is done at once.",
+    "Let it be done at once.",
+    "Let it done at once.",
+    "Let it was done at once."
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: an imperative becomes 'Let + O + be + V3'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: The coach said to the players, “Don't lose heart.”",
+   "options": [
+    "The coach advised the players that they not lose heart.",
+    "The coach asked the players if they lost heart.",
+    "The coach advised the players not to lose heart.",
+    "The coach advised the players to not lost heart."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: a negative imperative becomes 'advised/told ... not to + V1'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Who has opened the box?",
+   "options": [
+    "By whom was the box opened?",
+    "By whom had the box been opened?",
+    "By whom has the box opened?",
+    "By whom has the box been opened?"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: present perfect passive is 'has + been + V3'; 'Who' becomes 'By whom'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Where did they keep the keys?",
+   "options": [
+    "Where were the keys kept?",
+    "Where are the keys kept?",
+    "Where was the keys kept?",
+    "Where have the keys been kept?"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'did + V1' becomes 'were + V3' for the plural 'keys'; the vague agent 'they' is dropped.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Who teaches you science?",
+   "options": [
+    "By whom were you taught science?",
+    "By whom are you taught science?",
+    "By whom are you being taught science?",
+    "By whom is science taught you?"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: simple present gives 'are + V3' (no 'being'); 'Who' becomes 'By whom'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: He asked me whether I would join the club.",
+   "options": [
+    "He said to me, “Would you join the club?”",
+    "He said to me, “Will he join the club?”",
+    "He said to me, “Will you join the club?”",
+    "He said to me, “Do you join the club?”"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: 'whether' clause becomes an inverted direct question; would becomes will; 'I' becomes 'you'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: By whom was the letter posted?",
+   "options": [
+    "Who posts the letter?",
+    "Whom posted the letter?",
+    "Who has posted the letter?",
+    "Who posted the letter?"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: 'By whom + was + O + V3' becomes 'Who + V2 + O'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: People say that honesty pays.",
+   "options": [
+    "It is said that honesty pays.",
+    "It was said that honesty pays.",
+    "It is said that honesty paid.",
+    "Honesty is said that pays."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'People say that ...' becomes 'It is said that ...'; the present tense is retained.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: Everyone expected that he would win.",
+   "options": [
+    "It is expected that he would win.",
+    "It was expected that he would win.",
+    "It was expected that he will win.",
+    "He was expected that would win."
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: 'S + V2 + that-clause' becomes 'It was + V3 + that-clause'; the that-clause is unchanged.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: He said to her, “Please do not leave me.”",
+   "options": [
+    "He requested her not to leave me.",
+    "He ordered her do not leave him.",
+    "He requested her not to leave him.",
+    "He requested her that she did not leave him."
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rule: a polite negative command becomes 'requested ... not to + V1'; 'me' becomes 'him'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "banking"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: She said, “How I wish I were a bird!”",
+   "options": [
+    "She wished that I were a bird.",
+    "She wished that she is a bird.",
+    "She asked how she wished to be a bird.",
+    "She wished that she were a bird."
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rule: an exclamation of wish becomes 'wished that'; 'I' becomes 'she'; the subjunctive 'were' is retained.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Choose the correct transformation of: Someone must have left the gate open.",
+   "options": [
+    "The gate must have been left open.",
+    "The gate must be left open.",
+    "The gate must have left open.",
+    "The gate had been left open."
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rule: 'modal + have + V3' becomes 'modal + have been + V3'; the indefinite agent 'someone' is dropped.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "ssc"
+   ],
+   "setId": null,
+   "shortcut": "First spot the tense and sentence type, then apply its rule: questions need statement order in reported speech, inverted order in direct speech."
+  },
+  {
+   "questionText": "Choose the correct transformation of: The doctor said to the patient, “If you take rest, you will recover soon.”",
+   "options": [
+    "The doctor told the patient that if he takes rest, he will recover soon.",
+    "The doctor told the patient that if he took rest, he would recover soon.",
+    "The doctor told the patient that if I took rest, I would recover soon.",
+    "The doctor told the patient that if he took rest, he had recovered soon."
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rule: in a conditional, the present tense becomes past and will becomes would; 'you' becomes 'he'.",
+   "subPattern": "mixed-tenses-questions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

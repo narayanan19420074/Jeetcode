@@ -1,0 +1,774 @@
+{
+ "sets": [
+  {
+   "id": "cloze-test-s025",
+   "type": "text",
+   "title": "The Repeat Attempt",
+   "text": "Ravi studied for six hours every day; (1), he failed to clear the exam. He was disappointed, (2) he did not give up. (3) his friends advised him to take a break, he chose to revise the weak topics. He appeared for the exam again (4) he had learnt from his mistakes. (5) his hard work, he secured a rank in the top hundred."
+  },
+  {
+   "id": "cloze-test-s026",
+   "type": "text",
+   "title": "A Delayed Match",
+   "text": "The match began late (1) of the morning rain. (2) the ground staff worked hard, the pitch was ready by noon. India chose to bat first, (3) the captain feared dew in the evening. (4) the opening pair put on a century, the middle order collapsed. (5), India finished with a respectable total."
+  },
+  {
+   "id": "cloze-test-s027",
+   "type": "text",
+   "title": "Plastic and the Environment",
+   "text": "Plastic bags are cheap and convenient; (1), they harm the environment badly. They take hundreds of years to decay, (2) animals often swallow them by mistake. Several states have banned them, (3) the problem has not disappeared. Shopkeepers say they will switch to cloth bags (4) customers are ready to pay a little more. (5) everyone cooperates, the ban will remain only on paper."
+  },
+  {
+   "id": "cloze-test-s028",
+   "type": "text",
+   "title": "A Day at the Station",
+   "text": "The train to Madurai was late by two hours, (1) the passengers waited patiently on the platform. (2) a few of them grew restless, most read newspapers or chatted. A vendor sold tea at higher prices (3) the demand was high. (4) the announcement came at last, everyone rushed towards platform four. (5) the train was crowded, we managed to find seats near the window."
+  },
+  {
+   "id": "cloze-test-s029",
+   "type": "text",
+   "title": "Learning Yoga",
+   "text": "Anitha started yoga (1) she wanted to reduce stress. She attended classes regularly; (2), her back pain also disappeared. She does not skip practice (3) she is very busy. Her trainer advises her to eat lightly, (4) heavy food makes the poses uncomfortable. (5) she practises daily, she will soon be able to hold the difficult poses."
+  },
+  {
+   "id": "cloze-test-s030",
+   "type": "text",
+   "title": "The Drought Year",
+   "text": "The monsoon failed this year; (1), farmers in Anantapur faced a severe water shortage. Many dug deeper borewells, (2) the water table fell further. (3) the government released funds for tanker supply, the relief reached only a few villages. Farmers also planted millet (4) paddy, since millet needs much less water. (5), they hope the next monsoon will be generous."
+  },
+  {
+   "id": "cloze-test-s031",
+   "type": "text",
+   "title": "Shopping Online",
+   "text": "Online shopping saves time; (1), it can also tempt people to spend more than they plan. Rakesh ordered a phone (2) it was on a festival sale. The phone arrived damaged, (3) he returned it the same day. The company refunded the money quickly, (4) he was relieved. (5) he has become more careful, he still prefers online shopping."
+  },
+  {
+   "id": "cloze-test-s032",
+   "type": "text",
+   "title": "A School Fair",
+   "text": "Our school fair was a great success; (1), the principal thanked every student. The stalls opened at ten, (2) visitors had started arriving at nine. (3) the food stalls were popular, the book stall did the best business. We could not hold the fair outside (4) it rained heavily. (5), we shifted everything to the hall at the last minute."
+  }
+ ],
+ "questions": [
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The Repeat Attempt\".",
+   "options": [
+    "however",
+    "therefore",
+    "moreover",
+    "similarly"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "His failure contrasts with his hard work, so the contrast adverb 'however' is needed.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s025"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The Repeat Attempt\".",
+   "options": [
+    "but",
+    "because",
+    "so",
+    "unless"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Disappointment and not giving up are contrasting ideas joined by 'but'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s025"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The Repeat Attempt\".",
+   "options": [
+    "Although",
+    "Because",
+    "Unless",
+    "Since"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ignoring friends' advice is a contrast, so the concessive 'Although' is used.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s025"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The Repeat Attempt\".",
+   "options": [
+    "after",
+    "unless",
+    "until",
+    "whereas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He re-appeared once he had learnt from his mistakes: 'after'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s025"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The Repeat Attempt\".",
+   "options": [
+    "Because of",
+    "Despite",
+    "Instead of",
+    "Regardless of"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "His hard work caused the rank, so 'Because of' fits; 'Despite' would show a contrast.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s025"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A Delayed Match\".",
+   "options": [
+    "because",
+    "due",
+    "owing",
+    "besides"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Because of' is the correct phrase; 'due of' and 'owing of' are wrong.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s026"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A Delayed Match\".",
+   "options": [
+    "Because",
+    "Unless",
+    "Although",
+    "Whereas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Hard work is the reason the pitch was ready: 'Because'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s026"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A Delayed Match\".",
+   "options": [
+    "although",
+    "because",
+    "so that",
+    "since"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Fearing dew normally means bowling first, so batting first is a contrast: 'although'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s026"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A Delayed Match\".",
+   "options": [
+    "Although",
+    "Because",
+    "Unless",
+    "Until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A century stand and a middle-order collapse contrast with each other: 'Although'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s026"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A Delayed Match\".",
+   "options": [
+    "Nevertheless",
+    "Therefore",
+    "Moreover",
+    "Likewise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Despite the collapse a good total was reached; 'Nevertheless' shows this contrast.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s026"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Plastic and the Environment\".",
+   "options": [
+    "however",
+    "therefore",
+    "similarly",
+    "for example"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The harm contrasts with the convenience: 'however'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s027"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Plastic and the Environment\".",
+   "options": [
+    "and",
+    "but",
+    "unless",
+    "though"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Slow decay and animals swallowing bags are added problems, joined by 'and'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s027"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Plastic and the Environment\".",
+   "options": [
+    "yet",
+    "so",
+    "because",
+    "hence"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A ban was imposed but the problem persists, a contrast: 'yet'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s027"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Plastic and the Environment\".",
+   "options": [
+    "if",
+    "unless",
+    "though",
+    "until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Switching depends on a condition: 'if customers are ready to pay more'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s027"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Plastic and the Environment\".",
+   "options": [
+    "Unless",
+    "If",
+    "Because",
+    "Whereas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Unless everyone cooperates' means 'if everyone does not cooperate', which leads to a failed ban.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s027"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A Day at the Station\".",
+   "options": [
+    "but",
+    "because",
+    "unless",
+    "so that"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The delay and the patience are contrasting ideas, joined by 'but'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s028"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A Day at the Station\".",
+   "options": [
+    "While",
+    "Because",
+    "Unless",
+    "Until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'While' contrasts a few restless people with most who stayed calm.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s028"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A Day at the Station\".",
+   "options": [
+    "because",
+    "although",
+    "unless",
+    "whereas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "High demand is the reason for higher prices: 'because'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s028"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A Day at the Station\".",
+   "options": [
+    "When",
+    "Unless",
+    "Although",
+    "Because"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rush happened at the time the announcement came: 'When'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s028"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A Day at the Station\".",
+   "options": [
+    "Though",
+    "Because",
+    "Since",
+    "Unless"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Finding seats despite the crowd is a contrast: 'Though'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s028"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Learning Yoga\".",
+   "options": [
+    "because",
+    "unless",
+    "although",
+    "until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Wanting to reduce stress was her reason: 'because'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s029"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Learning Yoga\".",
+   "options": [
+    "moreover",
+    "however",
+    "otherwise",
+    "instead"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Disappearing back pain is an added benefit: 'moreover'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s029"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Learning Yoga\".",
+   "options": [
+    "even when",
+    "whereas",
+    "because",
+    "so that"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Even when she is very busy' shows she practises despite being busy.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s029"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Learning Yoga\".",
+   "options": [
+    "because",
+    "unless",
+    "although",
+    "until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Heavy food causing discomfort is the reason for eating lightly: 'because'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s029"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Learning Yoga\".",
+   "options": [
+    "If",
+    "Unless",
+    "Although",
+    "Whereas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A condition leading to a result: 'If she practises daily, she will be able to ...'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s029"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"The Drought Year\".",
+   "options": [
+    "consequently",
+    "nevertheless",
+    "meanwhile",
+    "for instance"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The failed monsoon caused the shortage, a result: 'consequently'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s030"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"The Drought Year\".",
+   "options": [
+    "but",
+    "so",
+    "because",
+    "if"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Deeper borewells did not help because the table fell: contrast 'but'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s030"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"The Drought Year\".",
+   "options": [
+    "Although",
+    "Because",
+    "Unless",
+    "Since"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Funds were released but relief was limited: 'Although'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s030"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"The Drought Year\".",
+   "options": [
+    "instead of",
+    "because of",
+    "as well as",
+    "owing to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Millet was planted in place of paddy: 'instead of'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s030"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"The Drought Year\".",
+   "options": [
+    "Nevertheless",
+    "Therefore",
+    "Otherwise",
+    "Hence"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After all the hardship they still hope for rain, a contrast: 'Nevertheless'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s030"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"Shopping Online\".",
+   "options": [
+    "however",
+    "therefore",
+    "for instance",
+    "likewise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The risk of overspending contrasts with the benefit of time saved: 'however'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s031"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"Shopping Online\".",
+   "options": [
+    "because",
+    "although",
+    "unless",
+    "until"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The sale was his reason for ordering: 'because'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s031"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"Shopping Online\".",
+   "options": [
+    "so",
+    "because",
+    "unless",
+    "although"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The damage caused the return, a result: 'so'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s031"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"Shopping Online\".",
+   "options": [
+    "so",
+    "but",
+    "unless",
+    "although"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The quick refund caused his relief: 'so'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s031"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"Shopping Online\".",
+   "options": [
+    "Although",
+    "Because",
+    "Unless",
+    "Hence"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "He has become careful, yet still prefers online shopping, a concession: 'Although'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s031"
+  },
+  {
+   "questionText": "Choose the word that fits blank (1) in the passage \"A School Fair\".",
+   "options": [
+    "therefore",
+    "however",
+    "nevertheless",
+    "otherwise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Success led to the principal's thanks: 'therefore'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s032"
+  },
+  {
+   "questionText": "Choose the word that fits blank (2) in the passage \"A School Fair\".",
+   "options": [
+    "although",
+    "because",
+    "so",
+    "unless"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Visitors arriving before opening is a contrast: 'although'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s032"
+  },
+  {
+   "questionText": "Choose the word that fits blank (3) in the passage \"A School Fair\".",
+   "options": [
+    "Though",
+    "Because",
+    "Unless",
+    "So"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Food stalls popular yet the book stall earned most: contrast 'Though'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s032"
+  },
+  {
+   "questionText": "Choose the word that fits blank (4) in the passage \"A School Fair\".",
+   "options": [
+    "because",
+    "although",
+    "unless",
+    "whereas"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rain heavily was the reason: 'because'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s032"
+  },
+  {
+   "questionText": "Choose the word that fits blank (5) in the passage \"A School Fair\".",
+   "options": [
+    "Hence",
+    "However",
+    "Although",
+    "Otherwise"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The rain forced the shift, a consequence: 'Hence'.",
+   "subPattern": "connector-cloze",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "campus-it"
+   ],
+   "setId": "cloze-test-s032"
+  }
+ ]
+}

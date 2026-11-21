@@ -1,0 +1,4599 @@
+{
+ "pattern": {
+  "title": "Ranking and Order",
+  "slug": "ranking-and-order",
+  "description": "Position and ranking logic.",
+  "order": 33,
+  "passPercentage": 70,
+  "timeLimitMinutes": 25,
+  "category": "Logical Reasoning",
+  "testQuestionCount": 25,
+  "subPatterns": [
+   {
+    "slug": "rank-from-left-right",
+    "title": "Rank from left/right"
+   },
+   {
+    "slug": "total-number-of-persons",
+    "title": "Total number of persons"
+   },
+   {
+    "slug": "interchange-of-positions",
+    "title": "Interchange of positions"
+   },
+   {
+    "slug": "height-weight-ordering",
+    "title": "Height/weight ordering"
+   },
+   {
+    "slug": "alphabetical-numerical-ordering",
+    "title": "Alphabetical & numerical ordering"
+   }
+  ]
+ },
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "Imran ranks 15th from the top in a class of 66 students. What is Imran's rank from the bottom?",
+   "options": [
+    {
+     "text": "81"
+    },
+    {
+     "text": "53"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "52"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 66 − 15 + 1 = 52.",
+   "order": 1,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "Kiran ranks 46th from the top in a class of 60 students. What is Kiran's rank from the bottom?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "106"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 60 − 46 + 1 = 15.",
+   "order": 2,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "Tara ranks 62nd from the top in a class of 71 students. What is Tara's rank from the bottom?",
+   "options": [
+    {
+     "text": "133"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 71 − 62 + 1 = 10.",
+   "order": 3,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "Rohit ranks 66th from the top in a class of 73 students. What is Rohit's rank from the bottom?",
+   "options": [
+    {
+     "text": "139"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "7"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rank from bottom = total − rank from top + 1 = 73 − 66 + 1 = 8.",
+   "order": 4,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Rank from other end = Total + 1 − given rank."
+  },
+  {
+   "questionText": "In a line of students of 46 students, Jaya is 23rd from the left. What is Jaya's position from the right?",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "69"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Position from the right = 46 − 23 + 1 = 24.",
+   "order": 5,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Right rank = Total + 1 − Left rank."
+  },
+  {
+   "questionText": "In a row of soldiers of 58 soldiers, Harleen is 51st from the left. What is Harleen's position from the right?",
+   "options": [
+    {
+     "text": "7"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "109"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Position from the right = 58 − 51 + 1 = 8.",
+   "order": 6,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Right rank = Total + 1 − Left rank."
+  },
+  {
+   "questionText": "In a line of students of 55 students, Divya is 47th from the left. What is Divya's position from the right?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "102"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Position from the right = 55 − 47 + 1 = 9.",
+   "order": 7,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Right rank = Total + 1 − Left rank."
+  },
+  {
+   "questionText": "Sneha is 16th from the left and 15th from the right in a row. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 16 + 15 − 1 = 30; Sneha is counted in both ranks, so subtract 1.",
+   "order": 8,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Padma is 9th from the front and 16th from the back in a queue. How many persons are there in the queue?",
+   "options": [
+    {
+     "text": "25"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 9 + 16 − 1 = 24; Padma is counted in both ranks, so subtract 1.",
+   "order": 9,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Prakash is 16th from the left and 6th from the right in a shelf of books. How many books are there in the shelf of books?",
+   "options": [
+    {
+     "text": "21"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 16 + 6 − 1 = 21; Prakash is counted in both ranks, so subtract 1.",
+   "order": 10,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "In a row of 47 persons, Kavya is 17th from the left end and Harleen is 17th from the right end. How many persons are standing between Kavya and Harleen?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "12"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Persons not between them = 17 (up to and including Kavya) + 17 (from Harleen to the right end) = 34. Between = 47 − 34 = 13.",
+   "order": 11,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 41 persons, Anita is 8th from the left end and Lakshmi is 7th from the right end. How many persons are standing between Anita and Lakshmi?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons not between them = 8 (up to and including Anita) + 7 (from Lakshmi to the right end) = 15. Between = 41 − 15 = 26.",
+   "order": 12,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 30 persons, Pooja is 6th from the left end and Prakash is 18th from the right end. How many persons are standing between Pooja and Prakash?",
+   "options": [
+    {
+     "text": "8"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "6"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons not between them = 6 (up to and including Pooja) + 18 (from Prakash to the right end) = 24. Between = 30 − 24 = 6.",
+   "order": 13,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 51 persons, Ashok is 17th from the left end and Dinesh is 19th from the right end. How many persons are standing between Ashok and Dinesh?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Persons not between them = 17 (up to and including Ashok) + 19 (from Dinesh to the right end) = 36. Between = 51 − 36 = 15.",
+   "order": 14,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 55 persons, Suresh is 14th from the left end and Arjun is 20th from the right end. How many persons are standing between Suresh and Arjun?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "23"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Persons not between them = 14 (up to and including Suresh) + 20 (from Arjun to the right end) = 34. Between = 55 − 34 = 21.",
+   "order": 15,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Between = Total − (Left rank + Right rank)."
+  },
+  {
+   "questionText": "In a row of 42 persons, Gurpreet is 16th from the left. If Gurpreet moves 3 places towards the right, what will be Gurpreet's position from the right end?",
+   "options": [
+    {
+     "text": "23"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New left position = 16 + 3 = 19. Right position = 42 − 19 + 1 = 24.",
+   "order": 16,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 59 persons, Manoj is 19th from the left. If Manoj moves 8 places towards the right, what will be Manoj's position from the right end?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "New left position = 19 + 8 = 27. Right position = 59 − 27 + 1 = 33.",
+   "order": 17,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 59 persons, Tara is 20th from the left. If Tara moves 8 places towards the right, what will be Tara's position from the right end?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "New left position = 20 + 8 = 28. Right position = 59 − 28 + 1 = 32.",
+   "order": 18,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 52 persons, Sanjay is 7th from the left. If Sanjay moves 7 places towards the right, what will be Sanjay's position from the right end?",
+   "options": [
+    {
+     "text": "46"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "New left position = 7 + 7 = 14. Right position = 52 − 14 + 1 = 39.",
+   "order": 19,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "In a row of 38 persons, Anil is 18th from the left. If Anil moves 7 places towards the right, what will be Anil's position from the right end?",
+   "options": [
+    {
+     "text": "21"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "New left position = 18 + 7 = 25. Right position = 38 − 25 + 1 = 14.",
+   "order": 20,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "New right rank = Old right rank − shift."
+  },
+  {
+   "questionText": "Sathish stands exactly in the middle of a row of 69 persons. Priya stands 9 places to the right of Sathish. What is Priya's position from the right end?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Middle position = (69+1)/2 = 35 from either end. Priya is 9 places nearer the right end, so rank from right = 35 − 9 = 26.",
+   "order": 21,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "Ravi stands exactly in the middle of a row of 51 persons. Kavya stands 4 places to the right of Ravi. What is Kavya's position from the right end?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Middle position = (51+1)/2 = 26 from either end. Kavya is 4 places nearer the right end, so rank from right = 26 − 4 = 22.",
+   "order": 22,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "Tara stands exactly in the middle of a row of 69 persons. Kavya stands 6 places to the right of Tara. What is Kavya's position from the right end?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "41"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Middle position = (69+1)/2 = 35 from either end. Kavya is 6 places nearer the right end, so rank from right = 35 − 6 = 29.",
+   "order": 23,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "Ishita stands exactly in the middle of a row of 57 persons. Swathi stands 8 places to the right of Ishita. What is Swathi's position from the right end?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "37"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Middle position = (57+1)/2 = 29 from either end. Swathi is 8 places nearer the right end, so rank from right = 29 − 8 = 21.",
+   "order": 24,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Middle of odd N is (N+1)/2; moving right reduces right rank."
+  },
+  {
+   "questionText": "In a class, 18 students are ranked above Sangeeta and 19 students are ranked below Sangeeta. What is Sangeeta's rank from the top?",
+   "options": [
+    {
+     "text": "20"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Rank from top = students above + 1 = 18 + 1 = 19.",
+   "order": 25,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Rank = (number above) + 1."
+  },
+  {
+   "questionText": "In a class, 19 students are ranked above Imran and 17 students are ranked below Imran. What is Imran's rank from the top?",
+   "options": [
+    {
+     "text": "21"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "19"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rank from top = students above + 1 = 19 + 1 = 20.",
+   "order": 26,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Rank = (number above) + 1."
+  },
+  {
+   "questionText": "In a class, 9 students are ranked above Lakshmi and 13 students are ranked below Lakshmi. What is Lakshmi's rank from the top?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Rank from top = students above + 1 = 9 + 1 = 10.",
+   "order": 27,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Rank = (number above) + 1."
+  },
+  {
+   "questionText": "Rahul is 17th from the left and 9th from the right in a row. Then 4 more persons join at the right end and 9 more join at the left end. What is Rahul's new position from the right end?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "38"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "18"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Persons joining the right end each add 1 to the right rank; those joining the left end do not change it. New right rank = 9 + 4 = 13.",
+   "order": 28,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Only joiners on the side you are counting from change that rank."
+  },
+  {
+   "questionText": "Balaji is 9th from the left and 18th from the right in a row. Then 9 more persons join at the right end and 3 more join at the left end. What is Balaji's new position from the right end?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Persons joining the right end each add 1 to the right rank; those joining the left end do not change it. New right rank = 18 + 9 = 27.",
+   "order": 29,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Only joiners on the side you are counting from change that rank."
+  },
+  {
+   "questionText": "Lakshmi is 8th from the left and 10th from the right in a row. Then 6 more persons join at the right end and 3 more join at the left end. What is Lakshmi's new position from the right end?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Persons joining the right end each add 1 to the right rank; those joining the left end do not change it. New right rank = 10 + 6 = 16.",
+   "order": 30,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Only joiners on the side you are counting from change that rank."
+  },
+  {
+   "questionText": "In a class of 41 students, Padma is 6th from the top. Sneha is ranked 17 places below Padma. What is Sneha's rank from the bottom?",
+   "options": [
+    {
+     "text": "52"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "18"
+    },
+    {
+     "text": "20"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sneha's rank from top = 6 + 17 = 23. Rank from bottom = 41 − 23 + 1 = 19.",
+   "order": 31,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Top rank of the lower student = 6 + gap; then flip with Total + 1."
+  },
+  {
+   "questionText": "In a class of 61 students, Nisha is 7th from the top. Lakshmi is ranked 13 places below Nisha. What is Lakshmi's rank from the bottom?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "67"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Lakshmi's rank from top = 7 + 13 = 20. Rank from bottom = 61 − 20 + 1 = 42.",
+   "order": 32,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Top rank of the lower student = 7 + gap; then flip with Total + 1."
+  },
+  {
+   "questionText": "In a row of 49 persons, Jaya is 18th from the left and Mohan is 18th from the right (Jaya is to the left of Mohan). Sanjay stands exactly in the middle of the persons standing between Jaya and Mohan. What is Sanjay's position from the right end?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Persons between Jaya and Mohan = 49 − (18+18) = 13. The middle one of these is the 7th after Jaya, at position 18 + 7 = 25 from the left. From the right: 49 − 25 + 1 = 25.",
+   "order": 33,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Middle of an odd group of b people is the (b+1)/2-th one."
+  },
+  {
+   "questionText": "In a row of 43 persons, Mohan is 24th from the left and Ishita is 12th from the right (Mohan is to the left of Ishita). Dinesh stands exactly in the middle of the persons standing between Mohan and Ishita. What is Dinesh's position from the right end?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Persons between Mohan and Ishita = 43 − (24+12) = 7. The middle one of these is the 4th after Mohan, at position 24 + 4 = 28 from the left. From the right: 43 − 28 + 1 = 16.",
+   "order": 34,
+   "subPattern": "rank-from-left-right",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Middle of an odd group of b people is the (b+1)/2-th one."
+  },
+  {
+   "questionText": "Imran ranks 19th from the top and 15th from the bottom in a class. How many students are in the class?",
+   "options": [
+    {
+     "text": "33"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "34"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 19 + 15 − 1 = 33, because the person is counted in both ranks.",
+   "order": 35,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Lakshmi is 5th from the left end and 5th from the right end of a row. How many persons are in the row?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "8"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "10"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 5 + 5 − 1 = 9, because the person is counted in both ranks.",
+   "order": 36,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Naveen is 16th from the left end and 28th from the right end of a row. How many persons are in the row?",
+   "options": [
+    {
+     "text": "42"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "44"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = 16 + 28 − 1 = 43, because the person is counted in both ranks.",
+   "order": 37,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "In a queue at a Chennai railway counter, Ashok is 20th from the front and 19th from the back. How many people are in the queue?",
+   "options": [
+    {
+     "text": "38"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = 20 + 19 − 1 = 38, because the person is counted in both ranks.",
+   "order": 38,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "Harish is 28th from the left end and 13th from the right end of a row. How many persons are in the row?",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "42"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "40"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = 28 + 13 − 1 = 40, because the person is counted in both ranks.",
+   "order": 39,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Total = Left + Right − 1."
+  },
+  {
+   "questionText": "In a line, 18 persons stand in front of Prakash and 6 persons stand behind Prakash. How many persons are in the line?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = persons ahead + persons behind + the person = 18 + 6 + 1 = 25.",
+   "order": 40,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a line, 26 persons stand in front of Swathi and 18 persons stand behind Swathi. How many persons are in the line?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "46"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Total = persons ahead + persons behind + the person = 26 + 18 + 1 = 45.",
+   "order": 41,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a line, 33 persons stand in front of Harleen and 13 persons stand behind Harleen. How many persons are in the line?",
+   "options": [
+    {
+     "text": "47"
+    },
+    {
+     "text": "46"
+    },
+    {
+     "text": "45"
+    },
+    {
+     "text": "48"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total = persons ahead + persons behind + the person = 33 + 13 + 1 = 47.",
+   "order": 42,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a line, 31 persons stand in front of Sathish and 35 persons stand behind Sathish. How many persons are in the line?",
+   "options": [
+    {
+     "text": "66"
+    },
+    {
+     "text": "68"
+    },
+    {
+     "text": "65"
+    },
+    {
+     "text": "67"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total = persons ahead + persons behind + the person = 31 + 35 + 1 = 67.",
+   "order": 43,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "12 students scored more than Rahul and 30 students scored less than Rahul in a test (no ties). How many students took the test?",
+   "options": [
+    {
+     "text": "42"
+    },
+    {
+     "text": "43"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "41"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total = persons ahead + persons behind + the person = 12 + 30 + 1 = 43.",
+   "order": 44,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Add both sides, then add 1 for the person himself."
+  },
+  {
+   "questionText": "In a row, Imran is 14th from the left and Geeta is 17th from the right. There are 7 persons between them and Imran is to the left of Geeta. How many persons are in the row?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Geeta's position from left = 14 + 7 + 1 = 22. Total = 22 + 17 − 1 = 38.",
+   "order": 45,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Ravi is 19th from the left and Nisha is 19th from the right. There are 9 persons between them and Ravi is to the left of Nisha. How many persons are in the row?",
+   "options": [
+    {
+     "text": "38"
+    },
+    {
+     "text": "48"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "46"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Nisha's position from left = 19 + 9 + 1 = 29. Total = 29 + 19 − 1 = 47.",
+   "order": 46,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Ravi is 13th from the left and Vikram is 11th from the right. There are 3 persons between them and Ravi is to the left of Vikram. How many persons are in the row?",
+   "options": [
+    {
+     "text": "24"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "26"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Vikram's position from left = 13 + 3 + 1 = 17. Total = 17 + 11 − 1 = 27.",
+   "order": 47,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Zoya is 15th from the left and Geeta is 20th from the right. There are 5 persons between them and Zoya is to the left of Geeta. How many persons are in the row?",
+   "options": [
+    {
+     "text": "40"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "39"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Geeta's position from left = 15 + 5 + 1 = 21. Total = 21 + 20 − 1 = 40.",
+   "order": 48,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Anil is 8th from the left and Anita is 9th from the right. There are 11 persons between them and Anil is to the left of Anita. How many persons are in the row?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Anita's position from left = 8 + 11 + 1 = 20. Total = 20 + 9 − 1 = 28.",
+   "order": 49,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Jaya is 17th from the left and Rohit is 8th from the right. There are 12 persons between them and Jaya is to the left of Rohit. How many persons are in the row?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Rohit's position from left = 17 + 12 + 1 = 30. Total = 30 + 8 − 1 = 37.",
+   "order": 50,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Total = Left rank + persons between + Right rank."
+  },
+  {
+   "questionText": "In a row, Rohit is 23rd from the left end and Uma is 13th from the right end. Uma stands to the left of Rohit and there are 8 persons between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Uma's position from the left = 23 − 8 − 1 = 14. Total = 14 + 13 − 1 = 26.",
+   "order": 51,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a row, Geeta is 16th from the left end and Ganesh is 20th from the right end. Ganesh stands to the left of Geeta and there are 6 persons between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Ganesh's position from the left = 16 − 6 − 1 = 9. Total = 9 + 20 − 1 = 28.",
+   "order": 52,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a row, Naveen is 24th from the left end and Arjun is 15th from the right end. Arjun stands to the left of Naveen and there are 5 persons between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "44"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arjun's position from the left = 24 − 5 − 1 = 18. Total = 18 + 15 − 1 = 32.",
+   "order": 53,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a row, Arjun is 21st from the left end and Revathi is 16th from the right end. Revathi stands to the left of Arjun and there are 8 persons between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "45"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Revathi's position from the left = 21 − 8 − 1 = 12. Total = 12 + 16 − 1 = 27.",
+   "order": 54,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the same person's left and right ranks first, then add and subtract 1."
+  },
+  {
+   "questionText": "In a class there are 19 girls and 22 boys. Karthik, a girl, is 16th from the top among the girls. How many students are there in the class?",
+   "options": [
+    {
+     "text": "19"
+    },
+    {
+     "text": "41"
+    },
+    {
+     "text": "40"
+    },
+    {
+     "text": "42"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Total students = girls + boys = 19 + 22 = 41. The girl's own rank is not needed.",
+   "order": 55,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Spot the irrelevant data first."
+  },
+  {
+   "questionText": "In a class there are 29 girls and 21 boys. Nandini, a girl, is 19th from the top among the girls. How many students are there in the class?",
+   "options": [
+    {
+     "text": "29"
+    },
+    {
+     "text": "49"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "50"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Total students = girls + boys = 29 + 21 = 50. The girl's own rank is not needed.",
+   "order": 56,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Spot the irrelevant data first."
+  },
+  {
+   "questionText": "In a class there are 13 girls and 14 boys. Priya, a girl, is 9th from the top among the girls. How many students are there in the class?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "13"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Total students = girls + boys = 13 + 14 = 27. The girl's own rank is not needed.",
+   "order": 57,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Spot the irrelevant data first."
+  },
+  {
+   "questionText": "There are 13 persons to the left of Yash and 9 persons to the right of Farhan in a row. Farhan is to the right of Yash and exactly 7 persons stand between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Count everyone: 13 (left of Yash) + Yash + 7 (between) + Farhan + 9 (right of Farhan) = 13+1+7+1+9 = 31.",
+   "order": 58,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "There are 15 persons to the left of Priya and 9 persons to the right of Ganesh in a row. Ganesh is to the right of Priya and exactly 4 persons stand between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "29"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Count everyone: 15 (left of Priya) + Priya + 4 (between) + Ganesh + 9 (right of Ganesh) = 15+1+4+1+9 = 30.",
+   "order": 59,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "There are 13 persons to the left of Faisal and 8 persons to the right of Maria in a row. Maria is to the right of Faisal and exactly 2 persons stand between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "26"
+    },
+    {
+     "text": "23"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Count everyone: 13 (left of Faisal) + Faisal + 2 (between) + Maria + 8 (right of Maria) = 13+1+2+1+8 = 25.",
+   "order": 60,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "There are 11 persons to the left of Manoj and 13 persons to the right of Ravi in a row. Ravi is to the right of Manoj and exactly 4 persons stand between them. How many persons are in the row?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "28"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Count everyone: 11 (left of Manoj) + Manoj + 4 (between) + Ravi + 13 (right of Ravi) = 11+1+4+1+13 = 30.",
+   "order": 61,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Draw the row: left group, A, between group, B, right group."
+  },
+  {
+   "questionText": "In a row, Meena is 10th from the left. Ashok is 6 places to the right of Meena. Arjun is as far to the right of Ashok as Ashok is from Meena. If Arjun is 11th from the right end, how many persons are in the row?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ashok is at 10+6 = 16; Arjun is at 16+6 = 22 from the left. Total = 22 + 11 − 1 = 32.",
+   "order": 62,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "In a row, Revathi is 7th from the left. Lakshmi is 6 places to the right of Revathi. Manoj is as far to the right of Lakshmi as Lakshmi is from Revathi. If Manoj is 15th from the right end, how many persons are in the row?",
+   "options": [
+    {
+     "text": "28"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "34"
+    },
+    {
+     "text": "32"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Lakshmi is at 7+6 = 13; Manoj is at 13+6 = 19 from the left. Total = 19 + 15 − 1 = 33.",
+   "order": 63,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "In a row, Maria is 8th from the left. Revathi is 7 places to the right of Maria. Mohan is as far to the right of Revathi as Revathi is from Maria. If Mohan is 10th from the right end, how many persons are in the row?",
+   "options": [
+    {
+     "text": "25"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "31"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Revathi is at 8+7 = 15; Mohan is at 15+7 = 22 from the left. Total = 22 + 10 − 1 = 31.",
+   "order": 64,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "In a row, Revathi is 13th from the left. Venkat is 6 places to the right of Revathi. Ganesh is as far to the right of Venkat as Venkat is from Revathi. If Ganesh is 13th from the right end, how many persons are in the row?",
+   "options": [
+    {
+     "text": "36"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Venkat is at 13+6 = 19; Ganesh is at 19+6 = 25 from the left. Total = 25 + 13 − 1 = 37.",
+   "order": 65,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Convert everything to left positions, then use Left + Right − 1."
+  },
+  {
+   "questionText": "If Sangeeta were 5 places lower in rank, Sangeeta would be 20th from the top. Sangeeta is currently 20th from the bottom. How many students are in the class?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "39"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "35"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Currently Sangeeta's rank from top = 20 − 5 = 15. Total = 15 + 20 − 1 = 34.",
+   "order": 66,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Undo the change first, then Total = Top + Bottom − 1."
+  },
+  {
+   "questionText": "If Uma were 4 places lower in rank, Uma would be 29th from the top. Uma is currently 19th from the bottom. How many students are in the class?",
+   "options": [
+    {
+     "text": "39"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Currently Uma's rank from top = 29 − 4 = 25. Total = 25 + 19 − 1 = 43.",
+   "order": 67,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Undo the change first, then Total = Top + Bottom − 1."
+  },
+  {
+   "questionText": "If Imran were 4 places lower in rank, Imran would be 32nd from the top. Imran is currently 20th from the bottom. How many students are in the class?",
+   "options": [
+    {
+     "text": "48"
+    },
+    {
+     "text": "51"
+    },
+    {
+     "text": "47"
+    },
+    {
+     "text": "43"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Currently Imran's rank from top = 32 − 4 = 28. Total = 28 + 20 − 1 = 47.",
+   "order": 68,
+   "subPattern": "total-number-of-persons",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Undo the change first, then Total = Top + Bottom − 1."
+  },
+  {
+   "questionText": "In a row of 37 persons, Harleen is 12th from the left and Imran is 16th from the right. After Harleen and Imran interchange their places, what is Harleen's position from the right end?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "22"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Harleen takes Imran's old place, which is 16th from the right. So Harleen's new right position = 16.",
+   "order": 69,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "In a row of 24 persons, Swathi is 7th from the left and Mala is 12th from the right. After Swathi and Mala interchange their places, what is Swathi's position from the right end?",
+   "options": [
+    {
+     "text": "18"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Swathi takes Mala's old place, which is 12th from the right. So Swathi's new right position = 12.",
+   "order": 70,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "In a row of 43 persons, Venkat is 14th from the left and Sanjay is 11th from the right. After Venkat and Sanjay interchange their places, what is Venkat's position from the right end?",
+   "options": [
+    {
+     "text": "30"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Venkat takes Sanjay's old place, which is 11th from the right. So Venkat's new right position = 11.",
+   "order": 71,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "In a row of 32 persons, Deepa is 6th from the left and Mala is 21st from the right. After Deepa and Mala interchange their places, what is Deepa's position from the right end?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "21"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Deepa takes Mala's old place, which is 21st from the right. So Deepa's new right position = 21.",
+   "order": 72,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Swapped person simply takes the other's old rank on the same side."
+  },
+  {
+   "questionText": "Kiran and Imran exchange their places in a row. After the exchange, Kiran is 24th from the left. Imran was originally 7th from the right. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Kiran's new place is Imran's old place, so Imran was 24th from the left and 7th from the right. Total = 24 + 7 − 1 = 30.",
+   "order": 73,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Priya and Rekha exchange their places in a row. After the exchange, Priya is 38th from the left. Rekha was originally 7th from the right. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "43"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "44"
+    },
+    {
+     "text": "45"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Priya's new place is Rekha's old place, so Rekha was 38th from the left and 7th from the right. Total = 38 + 7 − 1 = 44.",
+   "order": 74,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Nisha and Priya exchange their places in a row. After the exchange, Nisha is 27th from the left. Priya was originally 11th from the right. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "38"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Nisha's new place is Priya's old place, so Priya was 27th from the left and 11th from the right. Total = 27 + 11 − 1 = 37.",
+   "order": 75,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Uma and Sanjay exchange their places in a row. After the exchange, Uma is 16th from the left. Sanjay was originally 16th from the right. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "32"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Uma's new place is Sanjay's old place, so Sanjay was 16th from the left and 16th from the right. Total = 16 + 16 − 1 = 31.",
+   "order": 76,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Jaya and Venkat exchange their places in a row. After the exchange, Jaya is 24th from the left. Venkat was originally 13th from the right. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "35"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "28"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Jaya's new place is Venkat's old place, so Venkat was 24th from the left and 13th from the right. Total = 24 + 13 − 1 = 36.",
+   "order": 77,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Sneha and Deepa exchange their places in a row. After the exchange, Sneha is 21st from the left. Deepa was originally 11th from the right. How many persons are there in the row?",
+   "options": [
+    {
+     "text": "31"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "30"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sneha's new place is Deepa's old place, so Deepa was 21st from the left and 11th from the right. Total = 21 + 11 − 1 = 31.",
+   "order": 78,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "The swapped person's new rank is the other's old rank."
+  },
+  {
+   "questionText": "Sneha is 6th from the left and Harish is 20th from the right in a row. They interchange positions, and now Sneha is 13th from the left. What is Harish's new position from the right end?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "20"
+    },
+    {
+     "text": "19"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sneha now stands where Harish was, so Harish's original left position = 13. Total = 13 + 20 − 1 = 32. Harish now stands at Sneha's old place (6 from left), so from the right = 32 − 6 + 1 = 27.",
+   "order": 79,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Joseph is 21st from the left and Sangeeta is 17th from the right in a row. They interchange positions, and now Joseph is 26th from the left. What is Sangeeta's new position from the right end?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "22"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Joseph now stands where Sangeeta was, so Sangeeta's original left position = 26. Total = 26 + 17 − 1 = 42. Sangeeta now stands at Joseph's old place (21 from left), so from the right = 42 − 21 + 1 = 22.",
+   "order": 80,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Vijay is 11th from the left and Arjun is 10th from the right in a row. They interchange positions, and now Vijay is 31st from the left. What is Arjun's new position from the right end?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "30"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Vijay now stands where Arjun was, so Arjun's original left position = 31. Total = 31 + 10 − 1 = 40. Arjun now stands at Vijay's old place (11 from left), so from the right = 40 − 11 + 1 = 30.",
+   "order": 81,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Pooja is 8th from the left and Rahul is 7th from the right in a row. They interchange positions, and now Pooja is 33rd from the left. What is Rahul's new position from the right end?",
+   "options": [
+    {
+     "text": "6"
+    },
+    {
+     "text": "7"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Pooja now stands where Rahul was, so Rahul's original left position = 33. Total = 33 + 7 − 1 = 39. Rahul now stands at Pooja's old place (8 from left), so from the right = 39 − 8 + 1 = 32.",
+   "order": 82,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Mohan is 11th from the left and Tarun is 11th from the right in a row. They interchange positions, and now Mohan is 21st from the left. What is Tarun's new position from the right end?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "21"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "11"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Mohan now stands where Tarun was, so Tarun's original left position = 21. Total = 21 + 11 − 1 = 31. Tarun now stands at Mohan's old place (11 from left), so from the right = 31 − 11 + 1 = 21.",
+   "order": 83,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "Geeta is 9th from the left and Mala is 33rd from the right in a row. They interchange positions, and now Geeta is 13th from the left. What is Mala's new position from the right end?",
+   "options": [
+    {
+     "text": "37"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "32"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Geeta now stands where Mala was, so Mala's original left position = 13. Total = 13 + 33 − 1 = 45. Mala now stands at Geeta's old place (9 from left), so from the right = 45 − 9 + 1 = 37.",
+   "order": 84,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Find the total from the swapped person, then convert the other end."
+  },
+  {
+   "questionText": "In a row of 32 persons, Prakash is 9th from the left and Harish is 8th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Harish's left position = 32 − 8 + 1 = 25. Between them = 25 − 9 − 1 = 15. Swapping does not change the persons between them.",
+   "order": 85,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 40 persons, Vikram is 14th from the left and Ravi is 11th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    {
+     "text": "16"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ravi's left position = 40 − 11 + 1 = 30. Between them = 30 − 14 − 1 = 15. Swapping does not change the persons between them.",
+   "order": 86,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 41 persons, Sanjay is 12th from the left and Jaya is 26th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Jaya's left position = 41 − 26 + 1 = 16. Between them = 16 − 12 − 1 = 3. Swapping does not change the persons between them.",
+   "order": 87,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 37 persons, Bhavani is 16th from the left and Pooja is 11th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    {
+     "text": "10"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "9"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pooja's left position = 37 − 11 + 1 = 27. Between them = 27 − 16 − 1 = 10. Swapping does not change the persons between them.",
+   "order": 88,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 30 persons, Ashok is 10th from the left and Padma is 5th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    {
+     "text": "15"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Padma's left position = 30 − 5 + 1 = 26. Between them = 26 − 10 − 1 = 15. Swapping does not change the persons between them.",
+   "order": 89,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 36 persons, Nisha is 6th from the left and Yash is 5th from the right. If they interchange positions, how many persons will be between them?",
+   "options": [
+    {
+     "text": "27"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "25"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Yash's left position = 36 − 5 + 1 = 32. Between them = 32 − 6 − 1 = 25. Swapping does not change the persons between them.",
+   "order": 90,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Interchange never changes the number of persons between the two."
+  },
+  {
+   "questionText": "In a row of 47 persons, Tara is 23rd, Revathi is 26th and Deepa is 22nd from the left. First Tara and Revathi interchange places; then Revathi and Deepa interchange places. What is Revathi's final position from the right end?",
+   "options": [
+    {
+     "text": "22"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "25"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the first swap Revathi is at 23. In the second swap Revathi moves to Deepa's place, 22 from the left. From the right = 47 − 22 + 1 = 26.",
+   "order": 91,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 41 persons, Venkat is 25th, Farhan is 15th and Revathi is 13th from the left. First Venkat and Farhan interchange places; then Farhan and Revathi interchange places. What is Farhan's final position from the right end?",
+   "options": [
+    {
+     "text": "13"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "27"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "After the first swap Farhan is at 25. In the second swap Farhan moves to Revathi's place, 13 from the left. From the right = 41 − 13 + 1 = 29.",
+   "order": 92,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 42 persons, Harleen is 34th, Jaya is 16th and Lakshmi is 35th from the left. First Harleen and Jaya interchange places; then Jaya and Lakshmi interchange places. What is Jaya's final position from the right end?",
+   "options": [
+    {
+     "text": "35"
+    },
+    {
+     "text": "27"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "8"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After the first swap Jaya is at 34. In the second swap Jaya moves to Lakshmi's place, 35 from the left. From the right = 42 − 35 + 1 = 8.",
+   "order": 93,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 50 persons, Yash is 35th, Pooja is 37th and Gurpreet is 34th from the left. First Yash and Pooja interchange places; then Pooja and Gurpreet interchange places. What is Pooja's final position from the right end?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "17"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "16"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the first swap Pooja is at 35. In the second swap Pooja moves to Gurpreet's place, 34 from the left. From the right = 50 − 34 + 1 = 17.",
+   "order": 94,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 35 persons, Bhavani is 3rd, Tara is 27th and Kavya is 24th from the left. First Bhavani and Tara interchange places; then Tara and Kavya interchange places. What is Tara's final position from the right end?",
+   "options": [
+    {
+     "text": "12"
+    },
+    {
+     "text": "9"
+    },
+    {
+     "text": "24"
+    },
+    {
+     "text": "33"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "After the first swap Tara is at 3. In the second swap Tara moves to Kavya's place, 24 from the left. From the right = 35 − 24 + 1 = 12.",
+   "order": 95,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "Arjun is 5th from the left and Rohit is 12th from the right in a row of 41. They exchange places. How many persons stand to the right of Rohit after the exchange?",
+   "options": [
+    {
+     "text": "11"
+    },
+    {
+     "text": "37"
+    },
+    {
+     "text": "36"
+    },
+    {
+     "text": "35"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Rohit was at 30 from the left (41 − 12 + 1). Rohit now stands at position 5; persons to the right = 41 − 5 = 36.",
+   "order": 96,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "Padma is 11th from the left and Kavya is 6th from the right in a row of 41. They exchange places. How many persons stand to the left of Kavya after the exchange?",
+   "options": [
+    {
+     "text": "9"
+    },
+    {
+     "text": "11"
+    },
+    {
+     "text": "10"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Kavya was at 36 from the left (41 − 6 + 1). Kavya now stands at 11 from the left, so 10 persons are to the left.",
+   "order": 97,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "Venkat is 14th from the left and Uma is 13th from the right in a row of 30. They exchange places. How many persons stand to the left of Uma after the exchange?",
+   "options": [
+    {
+     "text": "17"
+    },
+    {
+     "text": "12"
+    },
+    {
+     "text": "14"
+    },
+    {
+     "text": "13"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Uma was at 18 from the left (30 − 13 + 1). Uma now stands at 14 from the left, so 13 persons are to the left.",
+   "order": 98,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "Prakash is 9th from the left and Maria is 5th from the right in a row of 34. They exchange places. How many persons stand to the right of Maria after the exchange?",
+   "options": [
+    {
+     "text": "25"
+    },
+    {
+     "text": "26"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "24"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Maria was at 30 from the left (34 − 5 + 1). Maria now stands at position 9; persons to the right = 34 − 9 = 25.",
+   "order": 99,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "After a swap, each person takes the other's position."
+  },
+  {
+   "questionText": "In a row of 35 persons, Naveen is 5th, Maria is 33rd and Padma is 3rd from the left. First Naveen and Maria interchange places; then Maria and Padma interchange places. What is Maria's final position from the right end?",
+   "options": [
+    {
+     "text": "34"
+    },
+    {
+     "text": "33"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "After the first swap Maria is at 5. In the second swap Maria moves to Padma's place, 3 from the left. From the right = 35 − 3 + 1 = 33.",
+   "order": 100,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "In a row of 32 persons, Sneha is 17th, Tarun is 4th and Sangeeta is 2nd from the left. First Sneha and Tarun interchange places; then Tarun and Sangeeta interchange places. What is Tarun's final position from the right end?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "29"
+    },
+    {
+     "text": "16"
+    },
+    {
+     "text": "31"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "After the first swap Tarun is at 17. In the second swap Tarun moves to Sangeeta's place, 2 from the left. From the right = 32 − 2 + 1 = 31.",
+   "order": 101,
+   "subPattern": "interchange-of-positions",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Track only the person asked about, swap by swap."
+  },
+  {
+   "questionText": "Shalini, Nisha, Sangeeta and Sathish are 4 persons of different ages. Sathish is older than Nisha. Sangeeta is older than Shalini. Nisha is older than Sangeeta. Who is the 2nd oldest?",
+   "options": [
+    {
+     "text": "Nisha"
+    },
+    {
+     "text": "Sangeeta"
+    },
+    {
+     "text": "Shalini"
+    },
+    {
+     "text": "Sathish"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Sathish > Nisha > Sangeeta > Shalini. So the answer is Nisha.",
+   "order": 102,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Padma, Gurpreet, Tara and Balaji are 4 persons of different heights. Balaji is taller than Tara. Gurpreet is taller than Padma. Tara is taller than Gurpreet. Who is the second shortest?",
+   "options": [
+    {
+     "text": "Tara"
+    },
+    {
+     "text": "Gurpreet"
+    },
+    {
+     "text": "Padma"
+    },
+    {
+     "text": "Balaji"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Balaji > Tara > Gurpreet > Padma. So the answer is Gurpreet.",
+   "order": 103,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Ganesh, Vijay, Revathi and Harleen are 4 persons of different ages. Revathi is older than Vijay. Ganesh is older than Revathi. Vijay is older than Harleen. Who is the youngest?",
+   "options": [
+    {
+     "text": "Revathi"
+    },
+    {
+     "text": "Vijay"
+    },
+    {
+     "text": "Harleen"
+    },
+    {
+     "text": "Ganesh"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Ganesh > Revathi > Vijay > Harleen. So the answer is Harleen.",
+   "order": 104,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Ishita, Ashok, Kiran and Prakash are 4 persons of different ages. Prakash is older than Kiran. Kiran is older than Ashok. Ishita is older than Prakash. Who is the oldest?",
+   "options": [
+    {
+     "text": "Prakash"
+    },
+    {
+     "text": "Ashok"
+    },
+    {
+     "text": "Kiran"
+    },
+    {
+     "text": "Ishita"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Ishita > Prakash > Kiran > Ashok. So the answer is Ishita.",
+   "order": 105,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Maria, Ishita, Sneha and Gurpreet are 4 persons of different speeds. Sneha is faster than Gurpreet. Maria is faster than Ishita. Ishita is faster than Sneha. Who is the second slowest?",
+   "options": [
+    {
+     "text": "Sneha"
+    },
+    {
+     "text": "Gurpreet"
+    },
+    {
+     "text": "Maria"
+    },
+    {
+     "text": "Ishita"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Maria > Ishita > Sneha > Gurpreet. So the answer is Sneha.",
+   "order": 106,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Priya, Rahul, Prakash and Bhavani are 4 persons of different heights. Rahul is taller than Priya. Bhavani is taller than Rahul. Priya is taller than Prakash. Who is the shortest?",
+   "options": [
+    {
+     "text": "Rahul"
+    },
+    {
+     "text": "Prakash"
+    },
+    {
+     "text": "Bhavani"
+    },
+    {
+     "text": "Priya"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Bhavani > Rahul > Priya > Prakash. So the answer is Prakash.",
+   "order": 107,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Swathi, Revathi, Sangeeta and Harleen are 4 persons of different weights. Swathi is heavier than Revathi. Revathi is heavier than Harleen. Sangeeta is heavier than Swathi. Who is the heaviest?",
+   "options": [
+    {
+     "text": "Revathi"
+    },
+    {
+     "text": "Harleen"
+    },
+    {
+     "text": "Sangeeta"
+    },
+    {
+     "text": "Swathi"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Sangeeta > Swathi > Revathi > Harleen. So the answer is Sangeeta.",
+   "order": 108,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "The weights of 6 friends are: Bhavani 57 kg, Tara 65 kg, Balaji 38 kg, Priya 67 kg, Vijay 74 kg, Sangeeta 42 kg. Who is 3rd when arranged from heaviest to lightest?",
+   "options": [
+    {
+     "text": "Bhavani"
+    },
+    {
+     "text": "Tara"
+    },
+    {
+     "text": "Priya"
+    },
+    {
+     "text": "Sangeeta"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Arranged in descending order: Vijay (74), Priya (67), Tara (65), Bhavani (57), Sangeeta (42), Balaji (38). The 3rd is Tara.",
+   "order": 109,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "The weights of 5 friends are: Vijay 58 kg, Jaya 51 kg, Sangeeta 50 kg, Mala 84 kg, Nisha 57 kg. Who is 4th when arranged from heaviest to lightest?",
+   "options": [
+    {
+     "text": "Mala"
+    },
+    {
+     "text": "Sangeeta"
+    },
+    {
+     "text": "Jaya"
+    },
+    {
+     "text": "Vijay"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Arranged in descending order: Mala (84), Vijay (58), Nisha (57), Jaya (51), Sangeeta (50). The 4th is Jaya.",
+   "order": 110,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "The heights of 6 friends are: Harleen 168 cm, Harish 170 cm, Suresh 175 cm, Geeta 157 cm, Pooja 189 cm, Vijay 164 cm. Who is 3rd when arranged from tallest to shortest?",
+   "options": [
+    {
+     "text": "Harish"
+    },
+    {
+     "text": "Vijay"
+    },
+    {
+     "text": "Geeta"
+    },
+    {
+     "text": "Pooja"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Arranged in descending order: Pooja (189), Suresh (175), Harish (170), Harleen (168), Vijay (164), Geeta (157). The 3rd is Harish.",
+   "order": 111,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "The heights of 6 friends are: Joseph 177 cm, Manoj 176 cm, Venkat 157 cm, Prakash 164 cm, Jaya 169 cm, Bhavani 158 cm. Who is 2nd when arranged from tallest to shortest?",
+   "options": [
+    {
+     "text": "Bhavani"
+    },
+    {
+     "text": "Prakash"
+    },
+    {
+     "text": "Venkat"
+    },
+    {
+     "text": "Manoj"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Arranged in descending order: Joseph (177), Manoj (176), Jaya (169), Prakash (164), Bhavani (158), Venkat (157). The 2nd is Manoj.",
+   "order": 112,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Sort the values first."
+  },
+  {
+   "questionText": "Yash, Balaji, Vikram, Ashok and Naveen are 5 persons of different heights. Ashok is taller than Yash but shorter than Vikram. Naveen is taller than Balaji but shorter than Ashok. Balaji is taller than Yash but shorter than Ashok. How many persons are taller than Ashok?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Vikram > Ashok > Naveen > Balaji > Yash. Reading from this order, the answer is 1.",
+   "order": 113,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Yash, Lakshmi, Ravi, Sathish and Rahul are 5 persons of different ages. Lakshmi is older than Yash but younger than Rahul. Sathish is older than Yash but younger than Lakshmi. Ravi is older than Yash but younger than Lakshmi. Sathish is older than Ravi. Who is the 4th oldest?",
+   "options": [
+    {
+     "text": "Lakshmi"
+    },
+    {
+     "text": "Rahul"
+    },
+    {
+     "text": "Ravi"
+    },
+    {
+     "text": "Yash"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Rahul > Lakshmi > Sathish > Ravi > Yash. So the answer is Ravi.",
+   "order": 114,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Deepa, Naveen, Uma, Venkat and Jaya are 5 persons of different weights. Jaya is heavier than Deepa but lighter than Venkat. Uma is heavier than Deepa but lighter than Naveen. Uma is heavier than Venkat. How many persons are heavier than Uma?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Naveen > Uma > Venkat > Jaya > Deepa. Reading from this order, the answer is 1.",
+   "order": 115,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Imran, Tarun, Kiran, Venkat and Tara are 5 persons of different weights. Tarun is heavier than Tara but lighter than Imran. Tarun is heavier than Kiran but lighter than Venkat. Tara is heavier than Kiran. Venkat is heavier than Tara but lighter than Imran. Who is the heaviest?",
+   "options": [
+    {
+     "text": "Imran"
+    },
+    {
+     "text": "Venkat"
+    },
+    {
+     "text": "Tara"
+    },
+    {
+     "text": "Kiran"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Imran > Venkat > Tarun > Tara > Kiran. So the answer is Imran.",
+   "order": 116,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Mohan, Priya, Jaya, Anita and Ravi are 5 persons of different heights. Anita is taller than Priya but shorter than Mohan. Ravi is taller than Priya but shorter than Mohan. Jaya is taller than Ravi but shorter than Anita. How many persons are taller than Jaya?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Mohan > Anita > Jaya > Ravi > Priya. Reading from this order, the answer is 2.",
+   "order": 117,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Manoj, Imran, Zoya, Balaji and Gurpreet are 5 persons of different ages. Zoya is older than Imran but younger than Gurpreet. Imran is older than Manoj. Manoj is older than Balaji. How many persons are younger than Manoj?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Gurpreet > Zoya > Imran > Manoj > Balaji. Reading from this order, the answer is 1.",
+   "order": 118,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Sangeeta, Sathish, Ishita, Shalini and Tarun are 5 persons of different heights. Sangeeta is taller than Tarun but shorter than Sathish. Shalini is taller than Ishita but shorter than Sathish. Ishita is taller than Sangeeta but shorter than Shalini. Who is the 2nd tallest?",
+   "options": [
+    {
+     "text": "Shalini"
+    },
+    {
+     "text": "Ishita"
+    },
+    {
+     "text": "Sathish"
+    },
+    {
+     "text": "Sangeeta"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Sathish > Shalini > Ishita > Sangeeta > Tarun. So the answer is Shalini.",
+   "order": 119,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Imran, Arjun, Swathi, Venkat and Anita are 5 persons of different speeds. Imran is faster than Arjun but slower than Swathi. Venkat is faster than Imran. Anita is faster than Venkat but slower than Swathi. Who is the 3rd fastest?",
+   "options": [
+    {
+     "text": "Imran"
+    },
+    {
+     "text": "Arjun"
+    },
+    {
+     "text": "Venkat"
+    },
+    {
+     "text": "Anita"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Swathi > Anita > Venkat > Imran > Arjun. So the answer is Venkat.",
+   "order": 120,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Deepa, Uma, Padma, Sangeeta and Nandini are 5 persons of different ages. Uma is older than Nandini but younger than Padma. Nandini is older than Sangeeta. Deepa is older than Padma. Who is the youngest?",
+   "options": [
+    {
+     "text": "Sangeeta"
+    },
+    {
+     "text": "Nandini"
+    },
+    {
+     "text": "Deepa"
+    },
+    {
+     "text": "Uma"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Deepa > Padma > Uma > Nandini > Sangeeta. So the answer is Sangeeta.",
+   "order": 121,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Meena, Anita, Pooja, Sathish and Dinesh are 5 persons of different speeds. Dinesh is faster than Pooja. Anita is faster than Meena but slower than Dinesh. Sathish is faster than Anita but slower than Pooja. Who is in the middle when all are arranged by speed?",
+   "options": [
+    {
+     "text": "Dinesh"
+    },
+    {
+     "text": "Sathish"
+    },
+    {
+     "text": "Pooja"
+    },
+    {
+     "text": "Anita"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Dinesh > Pooja > Sathish > Anita > Meena. So the answer is Sathish.",
+   "order": 122,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Mohan, Revathi, Zoya, Vijay and Bhavani are 5 persons of different heights. Revathi is taller than Vijay but shorter than Bhavani. Bhavani is taller than Vijay but shorter than Zoya. Zoya is taller than Vijay but shorter than Mohan. Who is the shortest?",
+   "options": [
+    {
+     "text": "Mohan"
+    },
+    {
+     "text": "Revathi"
+    },
+    {
+     "text": "Zoya"
+    },
+    {
+     "text": "Vijay"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Mohan > Zoya > Bhavani > Revathi > Vijay. So the answer is Vijay.",
+   "order": 123,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Swathi, Sathish, Ganesh, Rohit and Kiran are 5 persons of different weights. Swathi is heavier than Kiran but lighter than Rohit. Rohit is heavier than Kiran but lighter than Sathish. Sathish is heavier than Swathi but lighter than Ganesh. Who is the lightest?",
+   "options": [
+    {
+     "text": "Swathi"
+    },
+    {
+     "text": "Sathish"
+    },
+    {
+     "text": "Kiran"
+    },
+    {
+     "text": "Rohit"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Ganesh > Sathish > Rohit > Swathi > Kiran. So the answer is Kiran.",
+   "order": 124,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Kiran, Tara, Imran, Bhavani and Zoya are 5 persons of different ages. Tara is older than Bhavani but younger than Zoya. Imran is older than Bhavani but younger than Tara. Kiran is older than Bhavani but younger than Imran. How many persons are older than Kiran?",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (oldest to youngest): Zoya > Tara > Imran > Kiran > Bhavani. Reading from this order, the answer is 3.",
+   "order": 125,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Vikram, Zoya, Gurpreet, Bhavani and Anil are 5 persons of different weights. Bhavani is heavier than Vikram but lighter than Gurpreet. Zoya is heavier than Vikram but lighter than Anil. Anil is heavier than Vikram but lighter than Bhavani. Who is the 2nd heaviest?",
+   "options": [
+    {
+     "text": "Bhavani"
+    },
+    {
+     "text": "Vikram"
+    },
+    {
+     "text": "Anil"
+    },
+    {
+     "text": "Gurpreet"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Gurpreet > Bhavani > Anil > Zoya > Vikram. So the answer is Bhavani.",
+   "order": 126,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Karthik, Mohan, Kiran, Naveen and Arjun are 5 persons of different speeds. Karthik is faster than Kiran. Arjun is faster than Naveen but slower than Mohan. Karthik is the 4th fastest. Who is the 3rd fastest?",
+   "options": [
+    {
+     "text": "Kiran"
+    },
+    {
+     "text": "Karthik"
+    },
+    {
+     "text": "Naveen"
+    },
+    {
+     "text": "Mohan"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Mohan > Arjun > Naveen > Karthik > Kiran. So the answer is Naveen.",
+   "order": 127,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Padma, Karthik, Sanjay, Imran and Vijay are 5 persons of different weights. Padma is heavier than Imran but lighter than Karthik. Imran is heavier than Sanjay but lighter than Karthik. Vijay is heavier than Padma but lighter than Karthik. Who is in the middle when all are arranged by weight?",
+   "options": [
+    {
+     "text": "Imran"
+    },
+    {
+     "text": "Padma"
+    },
+    {
+     "text": "Vijay"
+    },
+    {
+     "text": "Sanjay"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Karthik > Vijay > Padma > Imran > Sanjay. So the answer is Padma.",
+   "order": 128,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Maria, Ganesh, Anita, Swathi and Priya are 5 persons of different speeds. Priya is faster than Ganesh. Anita is faster than Swathi but slower than Priya. Ganesh is faster than Anita but slower than Maria. Priya is faster than Anita but slower than Maria. Who is in the middle when all are arranged by speed?",
+   "options": [
+    {
+     "text": "Anita"
+    },
+    {
+     "text": "Ganesh"
+    },
+    {
+     "text": "Swathi"
+    },
+    {
+     "text": "Maria"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Maria > Priya > Ganesh > Anita > Swathi. So the answer is Ganesh.",
+   "order": 129,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Tara, Arjun, Mala, Mohan, Pooja and Sangeeta are 6 persons of different heights. Exactly 3 persons are between Tara and Mala in height order. Exactly 2 persons are between Sangeeta and Mohan in height order. Sangeeta is taller than Mala but shorter than Tara. Arjun is taller than Mohan but shorter than Pooja. How many persons are taller than Mala?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Tara > Pooja > Sangeeta > Arjun > Mala > Mohan. Reading from this order, the answer is 4.",
+   "order": 130,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Gurpreet, Prakash, Imran, Venkat, Faisal and Suresh are 6 persons of different heights. Prakash is taller than Suresh but shorter than Gurpreet. Exactly 3 persons are between Faisal and Suresh in height order. Suresh is the 5th tallest. Venkat is the 3rd tallest. How many persons are shorter than Venkat?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Faisal > Gurpreet > Venkat > Prakash > Suresh > Imran. Reading from this order, the answer is 3.",
+   "order": 131,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Tarun, Vijay, Ganesh, Sathish, Shalini and Nandini are 6 persons of different speeds. Shalini is faster than Ganesh. Nandini is faster than Shalini. Tarun is faster than Nandini. Vijay is faster than Sathish but slower than Shalini. Ganesh is faster than Vijay. How many persons are slower than Shalini?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Tarun > Nandini > Shalini > Ganesh > Vijay > Sathish. Reading from this order, the answer is 3.",
+   "order": 132,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Sneha, Harish, Shalini, Suresh, Karthik and Rahul are 6 persons of different weights. Harish is heavier than Shalini. Exactly 2 persons are between Rahul and Harish in weight order. Sneha is heavier than Harish but lighter than Suresh. Suresh is heavier than Sneha but lighter than Karthik. Who is the 3rd heaviest?",
+   "options": [
+    {
+     "text": "Karthik"
+    },
+    {
+     "text": "Suresh"
+    },
+    {
+     "text": "Shalini"
+    },
+    {
+     "text": "Rahul"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Karthik > Rahul > Suresh > Sneha > Harish > Shalini. So the answer is Suresh.",
+   "order": 133,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Rohit, Divya, Meena, Imran, Faisal and Zoya are 6 persons of different weights. Zoya is heavier than Meena but lighter than Imran. Meena is heavier than Divya but lighter than Rohit. Exactly 3 persons are between Rohit and Meena in weight order. Exactly 1 person is between Faisal and Meena in weight order. How many persons are lighter than Imran?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "6"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Combine the statements to get the full order (heaviest to lightest): Rohit > Imran > Faisal > Zoya > Meena > Divya. Reading from this order, the answer is 4.",
+   "order": 134,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Ganesh, Jaya, Kavya, Prakash, Joseph and Nandini are 6 persons of different speeds. Joseph is faster than Ganesh but slower than Prakash. Exactly 2 persons are between Jaya and Kavya in speed order. Exactly 3 persons are between Jaya and Joseph in speed order. Nandini is faster than Prakash. Who is the 2nd fastest?",
+   "options": [
+    {
+     "text": "Ganesh"
+    },
+    {
+     "text": "Prakash"
+    },
+    {
+     "text": "Nandini"
+    },
+    {
+     "text": "Jaya"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Combine the statements to get the full order (fastest to slowest): Jaya > Nandini > Prakash > Kavya > Joseph > Ganesh. So the answer is Nandini.",
+   "order": 135,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Naveen, Lakshmi, Nandini, Sneha, Yash and Uma are 6 persons of different heights. Uma is taller than Sneha but shorter than Naveen. Yash is taller than Lakshmi. Exactly 3 persons are between Naveen and Yash in height order. Exactly 2 persons are between Uma and Lakshmi in height order. How many persons are there between Uma and Yash in height order?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Combine the statements to get the full order (tallest to shortest): Naveen > Nandini > Uma > Sneha > Yash > Lakshmi. Reading from this order, the answer is 1.",
+   "order": 136,
+   "subPattern": "height-weight-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the names in a line, place each statement on it, and read off the order."
+  },
+  {
+   "questionText": "Which letter is the 3rd to the right of the 4th letter from the left in the English alphabet?",
+   "options": [
+    {
+     "text": "G"
+    },
+    {
+     "text": "H"
+    },
+    {
+     "text": "F"
+    },
+    {
+     "text": "D"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Position = 4 + 3 = 7, and the 7th letter is G.",
+   "order": 137,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which letter is the 9th to the right of the 3rd letter from the left in the English alphabet?",
+   "options": [
+    {
+     "text": "I"
+    },
+    {
+     "text": "L"
+    },
+    {
+     "text": "M"
+    },
+    {
+     "text": "J"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Position = 3 + 9 = 12, and the 12th letter is L.",
+   "order": 138,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which letter is the 4th to the right of the 12th letter from the left in the English alphabet?",
+   "options": [
+    {
+     "text": "R"
+    },
+    {
+     "text": "S"
+    },
+    {
+     "text": "Q"
+    },
+    {
+     "text": "P"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Position = 12 + 4 = 16, and the 16th letter is P.",
+   "order": 139,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which letter is the 3rd to the right of the 12th letter from the left in the English alphabet?",
+   "options": [
+    {
+     "text": "P"
+    },
+    {
+     "text": "N"
+    },
+    {
+     "text": "O"
+    },
+    {
+     "text": "Q"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Position = 12 + 3 = 15, and the 15th letter is O.",
+   "order": 140,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Add the two numbers, then count in A–Z."
+  },
+  {
+   "questionText": "Which is the 10th letter from the right end of the English alphabet?",
+   "options": [
+    {
+     "text": "P"
+    },
+    {
+     "text": "S"
+    },
+    {
+     "text": "R"
+    },
+    {
+     "text": "Q"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Position from left = 27 − 10 = 17, which is Q.",
+   "order": 141,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Left position = 27 − right position."
+  },
+  {
+   "questionText": "Which is the 9th letter from the right end of the English alphabet?",
+   "options": [
+    {
+     "text": "U"
+    },
+    {
+     "text": "S"
+    },
+    {
+     "text": "R"
+    },
+    {
+     "text": "O"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Position from left = 27 − 9 = 18, which is R.",
+   "order": 142,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Left position = 27 − right position."
+  },
+  {
+   "questionText": "Which is the 8th letter from the right end of the English alphabet?",
+   "options": [
+    {
+     "text": "U"
+    },
+    {
+     "text": "S"
+    },
+    {
+     "text": "R"
+    },
+    {
+     "text": "P"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Position from left = 27 − 8 = 19, which is S.",
+   "order": 143,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Left position = 27 − right position."
+  },
+  {
+   "questionText": "Arrange the numbers 1190, 1118, 2410, 6557, 2620 in descending order. Which number is 3rd from the left?",
+   "options": [
+    {
+     "text": "2410"
+    },
+    {
+     "text": "1190"
+    },
+    {
+     "text": "6557"
+    },
+    {
+     "text": "1118"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Order: 6557, 2620, 2410, 1190, 1118. The 3rd is 2410.",
+   "order": 144,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Compare thousands digit first, then hundreds."
+  },
+  {
+   "questionText": "Arrange the numbers 9031, 5556, 6651, 4210, 1791 in ascending order. Which number is 3rd from the left?",
+   "options": [
+    {
+     "text": "6651"
+    },
+    {
+     "text": "5556"
+    },
+    {
+     "text": "4210"
+    },
+    {
+     "text": "9031"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Order: 1791, 4210, 5556, 6651, 9031. The 3rd is 5556.",
+   "order": 145,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Compare thousands digit first, then hundreds."
+  },
+  {
+   "questionText": "Arrange the numbers 2126, 4091, 7550, 6523, 7197 in descending order. Which number is 2nd from the left?",
+   "options": [
+    {
+     "text": "7197"
+    },
+    {
+     "text": "2126"
+    },
+    {
+     "text": "4091"
+    },
+    {
+     "text": "7550"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Order: 7550, 7197, 6523, 4091, 2126. The 2nd is 7197.",
+   "order": 146,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Compare thousands digit first, then hundreds."
+  },
+  {
+   "questionText": "If the letters of the word CANDLE are arranged in alphabetical order, which letter will be 3rd from the right?",
+   "options": [
+    {
+     "text": "C"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "E"
+    },
+    {
+     "text": "D"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alphabetical order: A C D E L N. The 3rd from the right is E.",
+   "order": 147,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "If the letters of the word POCKET are arranged in alphabetical order, which letter will be 2nd from the left?",
+   "options": [
+    {
+     "text": "C"
+    },
+    {
+     "text": "T"
+    },
+    {
+     "text": "K"
+    },
+    {
+     "text": "E"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alphabetical order: C E K O P T. The 2nd from the left is E.",
+   "order": 148,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "If the letters of the word BLACKSMITH are arranged in alphabetical order, which letter will be 4th from the left?",
+   "options": [
+    {
+     "text": "A"
+    },
+    {
+     "text": "T"
+    },
+    {
+     "text": "H"
+    },
+    {
+     "text": "M"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Alphabetical order: A B C H I K L M S T. The 4th from the left is H.",
+   "order": 149,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "If the letters of the word CRAYON are arranged in alphabetical order, which letter will be 2nd from the left?",
+   "options": [
+    {
+     "text": "R"
+    },
+    {
+     "text": "A"
+    },
+    {
+     "text": "N"
+    },
+    {
+     "text": "C"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Alphabetical order: A C N O R Y. The 2nd from the left is C.",
+   "order": 150,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the sorted letters once and count."
+  },
+  {
+   "questionText": "How many letters in the word JOURNEY will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sorted word: EJNORUY. Comparing JOURNEY with EJNORUY position by position, 1 letter(s) match.",
+   "order": 151,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "How many letters in the word TRAVEL will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sorted word: AELRTV. Comparing TRAVEL with AELRTV position by position, 0 letter(s) match.",
+   "order": 152,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "How many letters in the word BASKET will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Sorted word: ABEKST. Comparing BASKET with ABEKST position by position, 2 letter(s) match.",
+   "order": 153,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "How many letters in the word GARDEN will remain at the same position when the letters are arranged in alphabetical order (left to right)?",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Sorted word: ADEGNR. Comparing GARDEN with ADEGNR position by position, 0 letter(s) match.",
+   "order": 154,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the sorted word beneath and compare place by place."
+  },
+  {
+   "questionText": "Arrange the words PAINT, STORM, SOLVED, FRUIT, BASKET in dictionary (alphabetical) order. Which word comes 2nd?",
+   "options": [
+    {
+     "text": "STORM"
+    },
+    {
+     "text": "BASKET"
+    },
+    {
+     "text": "FRUIT"
+    },
+    {
+     "text": "PAINT"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dictionary order: BASKET, FRUIT, PAINT, SOLVED, STORM. The 2nd word is FRUIT.",
+   "order": 155,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words SOLVED, CRAYON, HUNTER, MONKEY, MANGO in dictionary (alphabetical) order. Which word comes 2nd?",
+   "options": [
+    {
+     "text": "CRAYON"
+    },
+    {
+     "text": "HUNTER"
+    },
+    {
+     "text": "SOLVED"
+    },
+    {
+     "text": "MONKEY"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dictionary order: CRAYON, HUNTER, MANGO, MONKEY, SOLVED. The 2nd word is HUNTER.",
+   "order": 156,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words BRIDGE, BASKET, PLANET, TICKET, ORANGE in dictionary (alphabetical) order. Which word comes 3rd?",
+   "options": [
+    {
+     "text": "PLANET"
+    },
+    {
+     "text": "BRIDGE"
+    },
+    {
+     "text": "BASKET"
+    },
+    {
+     "text": "ORANGE"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Dictionary order: BASKET, BRIDGE, ORANGE, PLANET, TICKET. The 3rd word is ORANGE.",
+   "order": 157,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words BRIDGE, SILVER, PLANET, NIGHT, MONKEY in dictionary (alphabetical) order. Which word comes 4th?",
+   "options": [
+    {
+     "text": "SILVER"
+    },
+    {
+     "text": "PLANET"
+    },
+    {
+     "text": "BRIDGE"
+    },
+    {
+     "text": "NIGHT"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dictionary order: BRIDGE, MONKEY, NIGHT, PLANET, SILVER. The 4th word is PLANET.",
+   "order": 158,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "Arrange the words TRAVEL, RIVER, STORM, SOLVED, FINGER in dictionary (alphabetical) order. Which word comes 3rd?",
+   "options": [
+    {
+     "text": "TRAVEL"
+    },
+    {
+     "text": "FINGER"
+    },
+    {
+     "text": "SOLVED"
+    },
+    {
+     "text": "RIVER"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Dictionary order: FINGER, RIVER, SOLVED, STORM, TRAVEL. The 3rd word is SOLVED.",
+   "order": 159,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Compare first letters; use the second letter to break ties."
+  },
+  {
+   "questionText": "How many digits of the number 8641235 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ascending arrangement: 1234568. Comparing with 8641235 place by place gives 0 match(es).",
+   "order": 160,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "How many digits of the number 4962157 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Ascending arrangement: 1245679. Comparing with 4962157 place by place gives 0 match(es).",
+   "order": 161,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "How many digits of the number 4918263 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Ascending arrangement: 1234689. Comparing with 4918263 place by place gives 0 match(es).",
+   "order": 162,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "How many digits of the number 172648 will remain at the same place if the digits are arranged in ascending order within the number?",
+   "options": [
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Ascending arrangement: 124678. Comparing with 172648 place by place gives 3 match(es).",
+   "order": 163,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Write the sorted number under the original and compare."
+  },
+  {
+   "questionText": "In the word JOURNEY, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    {
+     "text": "5"
+    },
+    {
+     "text": "3"
+    },
+    {
+     "text": "4"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: JN, JE, UY. Count = 3.",
+   "order": 164,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "In the word WORKINGS, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    {
+     "text": "2"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "3"
+    }
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: IG. Count = 1.",
+   "order": 165,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "In the word DANGEROUS, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "0"
+    },
+    {
+     "text": "1"
+    },
+    {
+     "text": "2"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: DG. Count = 1.",
+   "order": 166,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "In the word BLACKSMITH, how many pairs of letters have as many letters between them in the word as there are between them in the English alphabet? (Count the pair in either order.)",
+   "options": [
+    {
+     "text": "3"
+    },
+    {
+     "text": "5"
+    },
+    {
+     "text": "2"
+    },
+    {
+     "text": "4"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Check each pair: gap in the word = difference of positions, gap in alphabet = difference of letter values. Matching pairs: BI, AH, KM. Count = 3.",
+   "order": 167,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "shortcut": "Test only pairs whose letters are near each other in the alphabet."
+  },
+  {
+   "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is the 4th to the left of the 20th letter from the right end?",
+   "options": [
+    {
+     "text": "Y"
+    },
+    {
+     "text": "U"
+    },
+    {
+     "text": "T"
+    },
+    {
+     "text": "X"
+    }
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The 20th letter from the right is at position 7 from the left; 4 places to the left gives position 3, which in Z..A is X.",
+   "order": 168,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "shortcut": "Reverse the alphabet mentally: Z=1, Y=2, X=3 ... ; then count."
+  },
+  {
+   "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is the 8th to the right of the 7th letter from the left?",
+   "options": [
+    {
+     "text": "I"
+    },
+    {
+     "text": "N"
+    },
+    {
+     "text": "L"
+    },
+    {
+     "text": "M"
+    }
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "In the reversed series the 15th letter from the left is the 7th+8. Position 15 in Z..A is L.",
+   "order": 169,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "general"
+   ],
+   "shortcut": "Reverse the alphabet mentally: Z=1, Y=2, X=3 ... ; then count."
+  },
+  {
+   "questionText": "If the English alphabet is written in reverse order (Z to A), which letter is the 3rd to the left of the 15th letter from the right end?",
+   "options": [
+    {
+     "text": "R"
+    },
+    {
+     "text": "V"
+    },
+    {
+     "text": "T"
+    },
+    {
+     "text": "U"
+    }
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The 15th letter from the right is at position 12 from the left; 3 places to the left gives position 9, which in Z..A is R.",
+   "order": 170,
+   "subPattern": "alphabetical-numerical-ordering",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "shortcut": "Reverse the alphabet mentally: Z=1, Y=2, X=3 ... ; then count."
+  }
+ ]
+}

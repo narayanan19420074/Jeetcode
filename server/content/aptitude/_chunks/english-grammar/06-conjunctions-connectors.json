@@ -1,0 +1,632 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "He worked hard, ____ he failed the exam.",
+   "options": [
+    "so",
+    "yet",
+    "because",
+    "and"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Yet' shows contrast between effort and failure.",
+   "shortcut": "Contrast = but/yet.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It was raining heavily, ____ we stayed indoors.",
+   "options": [
+    "but",
+    "although",
+    "so",
+    "unless"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'So' shows result: rain caused them to stay in.",
+   "shortcut": "Result = so.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He stayed at home ____ he was unwell.",
+   "options": [
+    "although",
+    "unless",
+    "but",
+    "because"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Because' gives the reason for staying at home.",
+   "shortcut": "Reason = because.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ he was tired, he finished the report.",
+   "options": [
+    "Although",
+    "Because",
+    "Unless",
+    "Since"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Although' shows concession: tired, yet finished.",
+   "shortcut": "Concession = although.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "You will not pass ____ you study regularly.",
+   "options": [
+    "if",
+    "unless",
+    "because",
+    "although"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Unless' means 'if not'; a negative main clause with 'unless' is correct.",
+   "shortcut": "unless = if not.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hurry up, ____ you will miss the train.",
+   "options": [
+    "and",
+    "but",
+    "or",
+    "so"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Or' gives the consequence of not hurrying.",
+   "shortcut": "Command + or + consequence.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Study hard, ____ you will pass.",
+   "options": [
+    "or",
+    "but",
+    "unless",
+    "and"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'And' joins a command with a favourable result.",
+   "shortcut": "Command + and + result.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Not only did she sing well, ____ she also danced beautifully.",
+   "options": [
+    "but",
+    "and",
+    "so",
+    "yet"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Not only ... but also' is a correlative pair.",
+   "shortcut": "not only ... but also.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Neither the manager ____ the clerk was present.",
+   "options": [
+    "or",
+    "nor",
+    "but",
+    "and"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Neither' pairs with 'nor'.",
+   "shortcut": "neither ... nor.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Either you apologise ____ you leave the room.",
+   "options": [
+    "nor",
+    "but",
+    "or",
+    "and"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Either' pairs with 'or'.",
+   "shortcut": "either ... or.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Hardly had he reached the station ____ the train left.",
+   "options": [
+    "than",
+    "as",
+    "that",
+    "when"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Hardly' pairs with 'when'.",
+   "shortcut": "hardly ... when; no sooner ... than.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "No sooner did the bell ring ____ the students rushed out.",
+   "options": [
+    "than",
+    "when",
+    "then",
+    "that"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'No sooner' pairs with 'than'.",
+   "shortcut": "no sooner ... than.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Scarcely had she sat down ____ the phone rang.",
+   "options": [
+    "than",
+    "when",
+    "then",
+    "as"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Scarcely' pairs with 'when'.",
+   "shortcut": "scarcely ... when.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I will wait here ____ you return.",
+   "options": [
+    "unless",
+    "although",
+    "until",
+    "because"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Until' shows the time up to which waiting continues.",
+   "shortcut": "until = up to the time.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He speaks ____ he were the manager.",
+   "options": [
+    "lest",
+    "unless",
+    "because",
+    "as if"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'As if' compares the behaviour with an imagined situation.",
+   "shortcut": "as if/as though + past subjunctive.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is poor ____ honest.",
+   "options": [
+    "but",
+    "so",
+    "because",
+    "unless"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'But' joins two contrasting qualities.",
+   "shortcut": "Contrast = but.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ it was cold, he went out without a sweater.",
+   "options": [
+    "Because",
+    "Though",
+    "If",
+    "Unless"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Though' expresses concession.",
+   "shortcut": "Though = although.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He ran fast ____ he could catch the bus.",
+   "options": [
+    "so",
+    "as if",
+    "so that",
+    "unless"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'So that' expresses purpose.",
+   "shortcut": "so that = purpose.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He was ____ tired that he could not walk.",
+   "options": [
+    "such",
+    "too",
+    "very",
+    "so"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'So ... that' expresses result with an adjective.",
+   "shortcut": "so + adjective + that.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "It was ____ a hot day that nobody went out.",
+   "options": [
+    "such",
+    "so",
+    "too",
+    "very"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Such a + adjective + noun ... that' expresses result.",
+   "shortcut": "such + a + adj + noun + that.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Whether he comes ____ not, we will start the meeting.",
+   "options": [
+    "nor",
+    "or",
+    "but",
+    "and"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Whether' pairs with 'or'.",
+   "shortcut": "whether ... or.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The shop was closed; ____, we returned home.",
+   "options": [
+    "however",
+    "although",
+    "therefore",
+    "because"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Therefore' introduces a result of the previous statement.",
+   "shortcut": "therefore = as a result.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is rich; ____, he is not happy.",
+   "options": [
+    "therefore",
+    "because",
+    "moreover",
+    "however"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'However' marks contrast with the previous clause.",
+   "shortcut": "however = contrast.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is intelligent; ____, she is hardworking.",
+   "options": [
+    "moreover",
+    "however",
+    "otherwise",
+    "although"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Moreover' adds a further point to the same idea.",
+   "shortcut": "moreover = in addition.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Take an umbrella; ____, you may get wet.",
+   "options": [
+    "therefore",
+    "otherwise",
+    "moreover",
+    "besides"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Otherwise' shows the consequence of not doing the action.",
+   "shortcut": "otherwise = or else.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He will come ____ it rains.",
+   "options": [
+    "but",
+    "so",
+    "even if",
+    "nor"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Even if' means regardless of the condition.",
+   "shortcut": "even if = no matter whether.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The doctor insisted ____ he should take rest.",
+   "options": [
+    "which",
+    "what",
+    "whom",
+    "that"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'That' introduces the noun clause that follows 'insisted'.",
+   "shortcut": "that = noun clause.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I do not know ____ he has left.",
+   "options": [
+    "whether",
+    "unless",
+    "although",
+    "nor"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Whether' introduces an indirect question.",
+   "shortcut": "whether = indirect yes/no question.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He left early ____ he could attend the interview.",
+   "options": [
+    "because of",
+    "so that",
+    "unless",
+    "but"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'So that' expresses purpose.",
+   "shortcut": "so that = in order that.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Please call me ____ you reach home.",
+   "options": [
+    "unless",
+    "although",
+    "as soon as",
+    "than"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'As soon as' marks the time immediately after an event.",
+   "shortcut": "as soon as = immediately when.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The more you practise, ____ you will perform.",
+   "options": [
+    "better",
+    "best",
+    "more better",
+    "the better"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'The more ... the better' is the comparative correlative.",
+   "shortcut": "the + comparative ... the + comparative.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He asked me ____ I had completed the work.",
+   "options": [
+    "if",
+    "unless",
+    "though",
+    "so"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'If' introduces an indirect yes/no question.",
+   "shortcut": "if/whether = reported question.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "____ the weather was bad, the match was held as planned.",
+   "options": [
+    "Despite",
+    "Despite the fact that",
+    "In spite",
+    "Because of"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Despite the fact that' can be followed by a clause; 'despite' alone needs a noun.",
+   "shortcut": "despite + noun; despite the fact that + clause.",
+   "subPattern": "conjunctions-connectors",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,905 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In the sentence \"The soldiers could [BEAR] the biting cold of Siachen without complaint.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "endure",
+    "carry",
+    "produce",
+    "deliver"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Here bear means to put up with something unpleasant, i.e. endure. Carry, produce and deliver are other senses of bear that do not fit.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The sun will [SET] by six in the evening.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "harden",
+    "go down",
+    "arrange",
+    "fix"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Set used of the sun means to sink below the horizon, i.e. go down. The other options are different senses of set.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [FAIR] umpire gave every decision without favour.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "pale",
+    "average",
+    "impartial",
+    "cheerful"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Fair for an umpire means treating both sides equally, i.e. impartial. Pale and average are other senses of fair.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [MATCH] between Chennai and Mumbai went to the last ball.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "partner",
+    "equal",
+    "spark",
+    "contest"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Match here is a sporting contest. Partner and equal are other senses; spark is not a sense of match here.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The captain will [ADDRESS] the team before the final.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "speak to",
+    "locate",
+    "send to",
+    "look for"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Address used with an audience means to speak to them. The other options are different senses.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The driver paid a [FINE] for jumping the signal.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "delicate",
+    "penalty",
+    "excellent",
+    "thin"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Fine as a noun here is a sum of money charged as punishment, i.e. a penalty.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [TRUNK] of the old banyan tree was very thick.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "luggage box",
+    "elephant's nose",
+    "stalk",
+    "car boot"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Trunk of a tree is its main woody stem or stalk. The other options are other senses of trunk.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The shopkeeper will [CLOSE] the shop at nine.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "near",
+    "miserly",
+    "intimate",
+    "shut"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Close used as a verb with a shop means to shut it. Near, miserly and intimate are adjective senses.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [SPRING] in the village never dries up.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "natural water source",
+    "coiled metal part",
+    "rainy season",
+    "sudden jump"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Spring here is a place where water flows from the ground, i.e. a natural water source.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [LIGHT] bag was easy to carry.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "dark",
+    "heavy",
+    "serious",
+    "solid"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Light in the sense of little weight has the opposite heavy. Dark is the opposite only of light as brightness.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"Meera gave the [RIGHT] answer to the question.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "left",
+    "bent",
+    "wrong",
+    "lazy"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Right meaning correct has the opposite wrong. Left is the opposite only for direction.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"She is a [KIND] teacher who never raises her voice.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "rare",
+    "shy",
+    "humble",
+    "cruel"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Kind meaning gentle and considerate has the opposite cruel.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The batter swung the [BAT] and hit a six.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "wooden club",
+    "flying mammal",
+    "small ball",
+    "wicket"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bat in cricket is the wooden club used to hit the ball.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"Please [WATCH] the baby while I cook.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "scold",
+    "look after",
+    "teach",
+    "wait for"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Watch a child here means to keep an eye on and care for, i.e. look after.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The children sat on the [BANK] of the river and fished.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "money lender",
+    "storehouse",
+    "shore",
+    "heap"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Bank of a river is the land alongside it, i.e. the shore.",
+   "subPattern": "contextual-choice",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The judge asked the witness to [PRODUCE] the document in court.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "manufacture",
+    "create",
+    "yield",
+    "present"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Produce in this legal context means to bring out and show, i.e. present.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The company will [FLOAT] its new shares next month.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "launch",
+    "drift",
+    "swim",
+    "hover"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "To float shares means to put them on sale for the first time, i.e. launch them.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The doctor was [FIRM] about the patient's diet.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "solid",
+    "resolute",
+    "stiff",
+    "commercial"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Firm here describes a person who does not yield, i.e. resolute.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The goalkeeper managed to [SAVE] the penalty with his left hand.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "store",
+    "economise",
+    "block",
+    "rescue"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Save in football means to stop a shot from scoring, i.e. block it.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"Rohit decided to [PITCH] his idea to the investors.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "throw",
+    "slope",
+    "camp",
+    "propose"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Pitch an idea means to present it persuasively, i.e. propose it.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The new rules will [BEAR] upon every employee of the firm.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "apply to",
+    "carry",
+    "tolerate",
+    "give birth to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Bear upon means to be relevant to or affect, i.e. apply to.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The students were asked to [DRAW] a conclusion from the passage.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "sketch",
+    "derive",
+    "attract",
+    "pull"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Draw a conclusion means to derive it from the evidence.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The minister will [FIELD] questions from reporters after the meeting.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "plough",
+    "cultivate",
+    "answer",
+    "stop a ball"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Field a question means to handle and answer it.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The old tree could not [STAND] the force of the storm.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "rise",
+    "halt",
+    "climb",
+    "withstand"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Stand the force of something means to withstand it.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The singer's [PITCH] was perfect throughout the concert.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "tone level",
+    "throw",
+    "tent",
+    "slope"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Pitch in music is the highness or lowness of a note, i.e. its tone level.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The new manager has a [SOUND] knowledge of accounts.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "noise",
+    "thorough",
+    "loud",
+    "healthy"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Sound here means reliable and well founded, i.e. thorough.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The old man's [PLAIN] speaking won him respect.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "level",
+    "ugly",
+    "frank",
+    "empty"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Plain speaking is honest and direct speech, i.e. frank.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The captain's century helped [BOLSTER] the team's confidence.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "shake",
+    "measure",
+    "hide",
+    "strengthen"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Bolster means to support and strengthen.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The manager's [PRAISE] pleased the whole team.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "criticism",
+    "reward",
+    "applause",
+    "speech"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Praise is approval; its opposite is criticism.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"Strict laws will [CURB] illegal mining in the district.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "encourage",
+    "restrain",
+    "map",
+    "legalise"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Curb means to hold back or keep in check, i.e. restrain.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The shopkeeper offered a [GENEROUS] discount during Diwali.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "large",
+    "kind",
+    "meagre",
+    "fair"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Generous here means large in amount; its opposite is meagre, i.e. small and inadequate.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The minister gave an [EVASIVE] reply to the question.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "frank",
+    "long",
+    "angry",
+    "indirect"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Evasive means avoiding a direct answer, i.e. indirect.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The sea was [TURBULENT] on the day of the storm.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "calm",
+    "rough",
+    "dark",
+    "deep"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Turbulent means violently disturbed; its opposite is calm.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"Ravi's [TENACIOUS] pursuit of the goal finally paid off.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "casual",
+    "persistent",
+    "brief",
+    "angry"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Tenacious means holding firmly to a purpose, i.e. persistent.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"Her [CONCISE] summary saved everybody's time.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "short",
+    "neat",
+    "wordy",
+    "clear"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Concise means brief but complete; its opposite is wordy.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The two companies decided to [MERGE] last year.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "split",
+    "compete",
+    "close",
+    "combine"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Merge means to join together into one, i.e. combine.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The company's profit [SURGED] in the third quarter.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "plunged",
+    "soared",
+    "jumped",
+    "stabilised"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Surge means to rise sharply; its opposite is to plunge, i.e. fall sharply.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The trainer will [HONE] his skills before the finals.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "blunt",
+    "sharpen",
+    "hide",
+    "display"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Hone means to refine and sharpen, in this case skills.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"He was [RELUCTANT] to sign the form without reading it.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "unwilling",
+    "careful",
+    "eager",
+    "afraid"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Reluctant means unwilling; its opposite is eager, i.e. willing.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The chief's speech [PLACATED] the angry shareholders.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "provoked",
+    "bored",
+    "informed",
+    "pacified"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Placate means to calm someone who is angry, i.e. pacify.",
+   "subPattern": "contextual-choice",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"His [CAUSTIC] remarks hurt the new employee.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "biting",
+    "gentle",
+    "mild",
+    "hesitant"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Caustic remarks are sharply sarcastic or bitter, i.e. biting.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [OPAQUE] policy puzzled the citizens.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "complex",
+    "transparent",
+    "hidden",
+    "rigid"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Opaque here means not open or clear; its opposite is transparent.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The negotiators tried to [MOLLIFY] the angry union.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "provoke",
+    "defeat",
+    "soothe",
+    "ignore"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Mollify means to appease someone's anger, i.e. soothe.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [LAUDABLE] effort deserved a reward.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "tiring",
+    "hasty",
+    "excessive",
+    "blameworthy"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Laudable means deserving praise; its opposite is blameworthy, i.e. deserving blame.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The new technology will [OBVIATE] the need for fresh loans.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "eliminate",
+    "create",
+    "justify",
+    "predict"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Obviate means to remove a difficulty or need, i.e. eliminate.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The [AUSPICIOUS] start of the campaign pleased the party.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "grand",
+    "ominous",
+    "slow",
+    "minor"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Auspicious means promising success; its opposite is ominous, i.e. promising trouble.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The speaker's [VERBOSE] style bored the listeners.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "loud",
+    "witty",
+    "wordy",
+    "formal"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Verbose means using more words than needed, i.e. wordy.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The jury's [UNANIMOUS] verdict ended the trial.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "final",
+    "clear",
+    "quick",
+    "divided"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Unanimous means with everyone agreeing; its opposite is divided.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The critic [LAMBASTED] the film in his Sunday column.\" the bracketed word is used in a particular sense. Choose the synonym (same meaning) of the bracketed word that fits this context.",
+   "options": [
+    "condemned",
+    "praised",
+    "summarised",
+    "ignored"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Lambast means to criticise harshly, i.e. condemn.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In the sentence \"The two leaders had an [AMICABLE] meeting in Delhi.\" the bracketed word is used in a particular sense. Choose the antonym (opposite meaning) of the bracketed word that fits this context.",
+   "options": [
+    "formal",
+    "hostile",
+    "brief",
+    "private"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Amicable means friendly; its opposite is hostile.",
+   "subPattern": "contextual-choice",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  }
+ ]
+}

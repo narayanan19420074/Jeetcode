@@ -1,0 +1,837 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "The train arrives ___ platform number 4.",
+   "options": [
+    "at",
+    "in",
+    "on",
+    "to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A specific point or location such as a platform takes 'at'.",
+   "shortcut": "Point/location -> at.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She was born ___ 12 March 1998.",
+   "options": [
+    "in",
+    "on",
+    "at",
+    "by"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Dates and days take 'on'.",
+   "shortcut": "Date/day -> on; month/year -> in; clock time -> at.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The meeting will begin ___ 10 a.m. sharp.",
+   "options": [
+    "on",
+    "in",
+    "at",
+    "by"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Exact clock times take 'at'.",
+   "shortcut": "Clock time -> at.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "My brother is very good ___ mathematics.",
+   "options": [
+    "in",
+    "on",
+    "with",
+    "at"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The adjective 'good' takes 'at' when it refers to a skill.",
+   "shortcut": "good/bad/clever at + skill.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The shopkeeper divided the sweets ___ the four children equally.",
+   "options": [
+    "among",
+    "between",
+    "within",
+    "to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Among' is used for more than two persons or things.",
+   "shortcut": "Two -> between; three or more -> among.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "There is a strong friendship ___ Ravi and Karthik.",
+   "options": [
+    "among",
+    "between",
+    "within",
+    "with"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Between' is used for two persons.",
+   "shortcut": "Two -> between.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He has been absent ___ Monday.",
+   "options": [
+    "for",
+    "from",
+    "since",
+    "by"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Since' marks a starting point in time.",
+   "shortcut": "Point -> since; period -> for.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The students have been preparing ___ three months.",
+   "options": [
+    "since",
+    "from",
+    "by",
+    "for"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'For' is used with a period of time.",
+   "shortcut": "Period -> for.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The cat jumped ___ the wall and ran away.",
+   "options": [
+    "over",
+    "on",
+    "at",
+    "with"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Passing above and across an obstacle is expressed by 'over'.",
+   "shortcut": "Jump over an obstacle.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is married ___ a doctor from Madurai.",
+   "options": [
+    "with",
+    "to",
+    "by",
+    "from"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The verb 'married' (state) is followed by 'to'.",
+   "shortcut": "married to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I am fond ___ filter coffee.",
+   "options": [
+    "for",
+    "with",
+    "of",
+    "at"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The adjective 'fond' takes 'of'.",
+   "shortcut": "fond of.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is afraid ___ lizards.",
+   "options": [
+    "from",
+    "at",
+    "by",
+    "of"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The adjective 'afraid' is always followed by 'of' (afraid of lizards). 'From', 'at' and 'by' do not collocate with it.",
+   "shortcut": "afraid of.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The farmers were happy ___ the heavy rain.",
+   "options": [
+    "about",
+    "for",
+    "by",
+    "from"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Happy about' a situation or news is the standard usage here.",
+   "shortcut": "happy about/with something.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is accused ___ stealing the bicycle.",
+   "options": [
+    "for",
+    "of",
+    "with",
+    "about"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Accuse' is followed by 'of'.",
+   "shortcut": "accuse somebody of.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The minister congratulated the team ___ their victory.",
+   "options": [
+    "for",
+    "at",
+    "on",
+    "with"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Congratulate' takes 'on'.",
+   "shortcut": "congratulate on.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She insisted ___ paying the bill herself.",
+   "options": [
+    "at",
+    "to",
+    "for",
+    "on"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The verb 'insist' takes the preposition 'on' before a gerund: insist on paying. Other prepositions are not used with it.",
+   "shortcut": "insist on.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The old man is suffering ___ high blood pressure.",
+   "options": [
+    "from",
+    "of",
+    "with",
+    "by"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Suffer' takes 'from' for an ailment.",
+   "shortcut": "suffer from.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He prefers tea ___ coffee.",
+   "options": [
+    "than",
+    "to",
+    "over than",
+    "from"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Prefer' is followed by 'to', not 'than'.",
+   "shortcut": "prefer X to Y.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The bridge is ___ construction and will open next year.",
+   "options": [
+    "in",
+    "on",
+    "under",
+    "at"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Under construction' is the fixed phrase.",
+   "shortcut": "under construction.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She is senior ___ me by two years.",
+   "options": [
+    "than",
+    "from",
+    "over",
+    "to"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Adjectives like senior, junior, superior, inferior take 'to'.",
+   "shortcut": "senior/junior/superior to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Principal was angry ___ the students for their misbehaviour.",
+   "options": [
+    "with",
+    "on",
+    "at",
+    "to"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Anger toward a person takes 'with' (at is used for a thing).",
+   "shortcut": "angry with a person; angry at a thing.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The thief was caught ___ the act of breaking the lock.",
+   "options": [
+    "at",
+    "in",
+    "on",
+    "during"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The idiom is 'caught in the act'.",
+   "shortcut": "in the act.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He is tired ___ waiting for the bus.",
+   "options": [
+    "from",
+    "by",
+    "of",
+    "with"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Tired of' means fed up with doing something.",
+   "shortcut": "tired of = bored/fed up.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The new law is applicable ___ all citizens.",
+   "options": [
+    "for",
+    "on",
+    "at",
+    "to"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Applicable' is followed by 'to' (applicable to all citizens), never 'for' or 'on'.",
+   "shortcut": "applicable to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The company has been in business ___ 1985.",
+   "options": [
+    "since",
+    "from",
+    "for",
+    "by"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "A fixed starting year with the present perfect takes 'since'.",
+   "shortcut": "since + point of time.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "I will finish this work ___ Friday at the latest.",
+   "options": [
+    "till",
+    "by",
+    "on",
+    "at"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'By' means not later than a deadline; 'till' would show continuous activity up to Friday.",
+   "shortcut": "by = deadline; till = duration.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The shop remains open ___ 9 p.m. every day.",
+   "options": [
+    "by",
+    "at",
+    "till",
+    "on"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Till' shows a situation continuing up to a time.",
+   "shortcut": "till = continuing up to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Himalayas lie ___ the north of India.",
+   "options": [
+    "in",
+    "at",
+    "on",
+    "to"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "A neighbouring region outside the boundary is described with 'to the north of'.",
+   "shortcut": "outside the area -> to the north of.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Karnataka lies ___ the south of Maharashtra and is not part of it, so we say it lies ___ the south.",
+   "options": [
+    "to",
+    "in",
+    "on",
+    "at"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Outside neighbours use 'to the south of'.",
+   "shortcut": "outside the area -> to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has no objection ___ your joining the team.",
+   "options": [
+    "with",
+    "to",
+    "for",
+    "against"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The noun 'objection' takes 'to' (objection to your joining), even when a gerund follows. 'Against' is not used here.",
+   "shortcut": "objection to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The teacher was pleased ___ the progress of her students.",
+   "options": [
+    "at",
+    "by",
+    "with",
+    "on"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Pleased with' for a result or thing is standard; 'with' is used with progress.",
+   "shortcut": "pleased with.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He died ___ cancer last year.",
+   "options": [
+    "from",
+    "by",
+    "with",
+    "of"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Die of' is used with a disease (illness as cause).",
+   "shortcut": "die of disease; die from injury/overwork.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The pilot was blamed ___ the accident.",
+   "options": [
+    "for",
+    "of",
+    "on",
+    "with"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "'Blame somebody for something'.",
+   "shortcut": "blame for.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The Chief Guest was received ___ a bouquet.",
+   "options": [
+    "by",
+    "with",
+    "in",
+    "through"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The instrument or manner of receiving is introduced by 'with'.",
+   "shortcut": "with = instrument.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "banking",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "She has a great aversion ___ crowded places.",
+   "options": [
+    "for",
+    "of",
+    "to",
+    "from"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "The noun 'aversion' is followed by 'to'.",
+   "shortcut": "aversion to.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The jury differed ___ the verdict, so a retrial was ordered.",
+   "options": [
+    "to",
+    "for",
+    "from",
+    "on"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "'Differ on' a matter (disagree about) is used here; 'differ from' compares things.",
+   "shortcut": "differ from = unlike; differ on/about = disagree.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Her accent is quite different ___ her sister's.",
+   "options": [
+    "from",
+    "than",
+    "to",
+    "with"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "In standard Indian-English usage 'different' takes 'from'.",
+   "shortcut": "different from.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The minister is the author ___ several bills on education.",
+   "options": [
+    "for",
+    "of",
+    "by",
+    "on"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Author of' links a writer to the work: the author of several bills. 'By' would reverse the relationship.",
+   "shortcut": "author of.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "He was deprived ___ his inheritance by the court order.",
+   "options": [
+    "from",
+    "for",
+    "of",
+    "with"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "'Deprive' is always followed by 'of': deprived of his inheritance. Similar patterns: robbed of, relieved of.",
+   "shortcut": "deprive of.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The officer was entrusted ___ the responsibility of conducting the audit.",
+   "options": [
+    "to",
+    "for",
+    "on",
+    "with"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Entrust somebody with something (or entrust something to somebody).",
+   "shortcut": "entrust sb with sth.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The trustees are accountable ___ the shareholders for every rupee spent.",
+   "options": [
+    "to",
+    "for",
+    "with",
+    "by"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Accountable to a person, for an action.",
+   "shortcut": "accountable to person, for action.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "The rebels were unwilling to comply ___ the ceasefire terms.",
+   "options": [
+    "to",
+    "with",
+    "for",
+    "by"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "'Comply' takes 'with': comply with the terms. 'To' is used with 'conform' or 'adhere', not 'comply'.",
+   "shortcut": "comply with.",
+   "subPattern": "prepositions-in-blanks",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking",
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}

@@ -1,0 +1,689 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "If a ⊗ b is defined as 4a − b², then find the value of 7 ⊗ 7.",
+   "options": [
+    "-19",
+    "-25",
+    "-21",
+    "3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 7, b = 7 in 4a − b²: 4×7 − 7² = -21.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ∆ b is defined as (a + b)/2 + a, then find the value of 11 ∆ 9.",
+   "options": [
+    "21",
+    "26",
+    "15",
+    "30"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Put a = 11, b = 9 in (a + b)/2 + a: (11 + 9)/2 + 11 = 21.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ★ b is defined as (a − b)² + a, then find the value of 2 ★ 9.",
+   "options": [
+    "51",
+    "49",
+    "58",
+    "36"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Put a = 2, b = 9 in (a − b)² + a: (2 − 9)² + 2 = 51.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a @ b is defined as a² − b, then find the value of 7 @ 10.",
+   "options": [
+    "41",
+    "36",
+    "39",
+    "93"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 7, b = 10 in a² − b: 7² − 10 = 39.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a # b is defined as a² + b² − a×b, then find the value of 11 # 9.",
+   "options": [
+    "71",
+    "105",
+    "103",
+    "99"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 11, b = 9 in a² + b² − a×b: 11² + 9² − 11×9 = 103.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ★ b is defined as a² − b, then find the value of 3 ★ 8.",
+   "options": [
+    "1",
+    "-1",
+    "11",
+    "-5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Put a = 3, b = 8 in a² − b: 3² − 8 = 1.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ∆ b is defined as 4a − b², then find the value of 2 ∆ 6.",
+   "options": [
+    "-6",
+    "-23",
+    "-28",
+    "20"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 2, b = 6 in 4a − b²: 4×2 − 6² = -28.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a % b is defined as a² − 2ab + b, then find the value of 3 % 9.",
+   "options": [
+    "-40",
+    "-6",
+    "-36",
+    "30"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 3, b = 9 in a² − 2ab + b: 3² − 2×3×9 + 9 = -36.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a % b is defined as a×(b − 1) + b, then find the value of 5 % 7.",
+   "options": [
+    "30",
+    "37",
+    "33",
+    "39"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Put a = 5, b = 7 in a×(b − 1) + b: 5×(7 − 1) + 7 = 37.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a % b is defined as 3a − 2b, then find the value of 12 % 7.",
+   "options": [
+    "30",
+    "18",
+    "22",
+    "-3"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Put a = 12, b = 7 in 3a − 2b: 3×12 − 2×7 = 22.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ⊕ b is defined as a² − 2ab + b, then find the value of 6 ⊕ 10.",
+   "options": [
+    "-80",
+    "-21",
+    "-75",
+    "-74"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Put a = 6, b = 10 in a² − 2ab + b: 6² − 2×6×10 + 10 = -74.",
+   "shortcut": "Substitute carefully - the operation is usually not commutative, so keep a and b in order.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "easy",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ¤ b = 5a − 3b + 1, find the value of (5 ¤ 2) ¤ 4.",
+   "options": [
+    "29",
+    "89",
+    "-39",
+    "93"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First bracket: 5 ¤ 2 = 5×5 − 3×2 + 1 = 20. Then 20 ¤ 4 = 89.",
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ☆ b = a² + b² − a×b, find the value of (7 ☆ 2) ☆ 7.",
+   "options": [
+    "46",
+    "1297",
+    "1298",
+    "1304"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First bracket: 7 ☆ 2 = 7² + 2² − 7×2 = 39. Then 39 ☆ 7 = 1297.",
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ☆ b = a×(b − 1) + b, find the value of (6 ☆ 5) ☆ 5.",
+   "options": [
+    "125",
+    "34",
+    "169",
+    "121"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First bracket: 6 ☆ 5 = 6×(5 − 1) + 5 = 29. Then 29 ☆ 5 = 121.",
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ⊗ b = a×b + a − b, find the value of (3 ⊗ 6) ⊗ 6.",
+   "options": [
+    "75",
+    "99",
+    "21",
+    "96"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "First bracket: 3 ⊗ 6 = 3×6 + 3 − 6 = 15. Then 15 ⊗ 6 = 99.",
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ◆ b = a×b − (a + b), find the value of (5 ◆ 7) ◆ 6.",
+   "options": [
+    "109",
+    "111",
+    "106",
+    "29"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "First bracket: 5 ◆ 7 = 5×7 − (5 + 7) = 23. Then 23 ◆ 6 = 109.",
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ¤ b = a² + b² − a×b, find the value of (3 ¤ 4) ¤ 3.",
+   "options": [
+    "16",
+    "140",
+    "136",
+    "139"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "First bracket: 3 ¤ 4 = 3² + 4² − 3×4 = 13. Then 13 ¤ 3 = 139.",
+   "shortcut": "Evaluate the bracket first, then use its result as the new 'a'.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ⊗ b = a×b + a, find the positive value of x for which x ⊗ 7 = 96.",
+   "options": [
+    "89",
+    "11",
+    "24",
+    "12"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "x ⊗ 7 = x×7 + x = 96. Solving this gives x = 12.",
+   "shortcut": "Substitute b first, then solve the simple equation in x.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ⊗ b = a² + b, find the positive value of x for which x ⊗ 8 = 24.",
+   "options": [
+    "4",
+    "16",
+    "3",
+    "5"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "x ⊗ 8 = x² + 8 = 24. Solving this gives x = 4.",
+   "shortcut": "Substitute b first, then solve the simple equation in x.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ∆ b = a² + a×b, find the positive value of x for which x ∆ 6 = 315.",
+   "options": [
+    "17",
+    "14",
+    "16",
+    "15"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "x ∆ 6 = x² + x×6 = 315. Solving this gives x = 15.",
+   "shortcut": "Substitute b first, then solve the simple equation in x.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ⊗ b = a² + a×b, find the positive value of x for which x ⊗ 5 = 204.",
+   "options": [
+    "199",
+    "24",
+    "12",
+    "11"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "x ⊗ 5 = x² + x×5 = 204. Solving this gives x = 12.",
+   "shortcut": "Substitute b first, then solve the simple equation in x.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ¤ b = a² − b, find the positive value of x for which x ¤ 6 = -2.",
+   "options": [
+    "4",
+    "2",
+    "1",
+    "-8"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "x ¤ 6 = x² − 6 = -2. Solving this gives x = 2.",
+   "shortcut": "Substitute b first, then solve the simple equation in x.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a # b = a² + b, find the positive value of x for which x # 6 = 31.",
+   "options": [
+    "7",
+    "25",
+    "4",
+    "5"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "x # 6 = x² + 6 = 31. Solving this gives x = 5.",
+   "shortcut": "Substitute b first, then solve the simple equation in x.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For two positive integers, a ∆ b is defined as a − b if a is greater than b, otherwise b − a plus 1. Find the value of (6 ∆ 3) ∆ 2.",
+   "options": [
+    "2",
+    "4",
+    "1",
+    "5"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "6 ∆ 3: apply the condition to (6, 3) to get 3. Then 3 ∆ 2: apply the condition to (3, 2) to get 1.",
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For two positive integers, a ★ b is defined as the sum of a and b if it is even, otherwise the product of a and b. Find the value of (12 ★ 9) ★ 7.",
+   "options": [
+    "108",
+    "28",
+    "115",
+    "756"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "12 ★ 9: apply the condition to (12, 9) to get 108. Then 108 ★ 7: apply the condition to (108, 7) to get 756.",
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "campus-it"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For two positive integers, a ☆ b is defined as the sum of a and b if it is even, otherwise the product of a and b. Find the value of (8 ☆ 10) ☆ 5.",
+   "options": [
+    "90",
+    "23",
+    "58",
+    "18"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "8 ☆ 10: apply the condition to (8, 10) to get 18. Then 18 ☆ 5: apply the condition to (18, 5) to get 90.",
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For two positive integers, a % b is defined as a + 2b if a is odd, otherwise 2a + b. Find the value of (15 % 7) % 7.",
+   "options": [
+    "37",
+    "57",
+    "65",
+    "43"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "15 % 7: apply the condition to (15, 7) to get 29. Then 29 % 7: apply the condition to (29, 7) to get 43.",
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For two positive integers, a ☆ b is defined as the larger number squared minus the smaller number. Find the value of (11 ☆ 6) ☆ 14.",
+   "options": [
+    "115",
+    "36089",
+    "129",
+    "13211"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "11 ☆ 6: apply the condition to (11, 6) to get 115. Then 115 ☆ 14: apply the condition to (115, 14) to get 13211.",
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "For two positive integers, a ∇ b is defined as a − b if a is greater than b, otherwise b − a plus 1. Find the value of (3 ∇ 8) ∇ 11.",
+   "options": [
+    "17",
+    "2",
+    "11",
+    "6"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "3 ∇ 8: apply the condition to (3, 8) to get 6. Then 6 ∇ 11: apply the condition to (6, 11) to get 6.",
+   "shortcut": "Check the condition separately at each of the two steps - it can switch branch.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "banking",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two operations are defined: a ¤ b = a + b + a×b and a @ b = (a + b)×2 − a. Find the value of (9 ¤ 6) @ 6.",
+   "options": [
+    "75",
+    "81",
+    "76",
+    "144"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner bracket with ¤: 9 ¤ 6 = 9 + 6 + 9×6 = 69. Then 69 @ 6 = (69 + 6)×2 − 69 = 81.",
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two operations are defined: a # b = a² − b and a % b = a² − b. Find the value of (3 # 6) % 6.",
+   "options": [
+    "9",
+    "3",
+    "4",
+    "33"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner bracket with #: 3 # 6 = 3² − 6 = 3. Then 3 % 6 = 3² − 6 = 3.",
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "campus-it",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two operations are defined: a ¤ b = 3a − 2b and a ⊗ b = a² + b. Find the value of (6 ¤ 5) ⊗ 9.",
+   "options": [
+    "105",
+    "73",
+    "17",
+    "89"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner bracket with ¤: 6 ¤ 5 = 3×6 − 2×5 = 8. Then 8 ⊗ 9 = 8² + 9 = 73.",
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Two operations are defined: a ⊕ b = a² + b² − a×b and a ∆ b = (a + b)×2 − a. Find the value of (8 ⊕ 8) ∆ 7.",
+   "options": [
+    "71",
+    "78",
+    "457",
+    "135"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Inner bracket with ⊕: 8 ⊕ 8 = 8² + 8² − 8×8 = 64. Then 64 ∆ 7 = (64 + 7)×2 − 64 = 78.",
+   "shortcut": "Two different definitions - keep track of which symbol uses which formula.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ★ b = a + b − 4, then which number e satisfies a ★ e = a for every a?",
+   "options": [
+    "4",
+    "5",
+    "0",
+    "8"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "a ★ e = a + e − 4 = a gives e = 4.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a ☆ b = a + b + 2ab, find the value of 2 ☆ (3 ☆ 1).",
+   "options": [
+    "52",
+    "54",
+    "18",
+    "50"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "3 ☆ 1 = 3 + 1 + 2×3 = 10. Then 2 ☆ 10 = 2 + 10 + 2×2×10 = 52.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "hard",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "If a $ b means LCM of a and b minus HCF of a and b, find 26 $ 45.",
+   "options": [
+    "1170",
+    "1169",
+    "70",
+    "1171"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "HCF(26, 45) = 1; LCM = 26×45/1 = 1170. Result = 1170 − 1 = 1169.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A function is defined by f(n) = n² − 3. Find f(f(4)).",
+   "options": [
+    "253",
+    "23",
+    "166",
+    "169"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "f(4) = 16 − 3 = 13. f(13) = 13² − 3 = 166.",
+   "subPattern": "fictitious-operations",
+   "difficulty": "medium",
+   "examStyles": [
+    "ssc",
+    "general"
+   ],
+   "setId": null
+  }
+ ]
+}

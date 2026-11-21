@@ -1,0 +1,818 @@
+{
+ "sets": [],
+ "questions": [
+  {
+   "questionText": "In a Venn diagram, Surgeons are inside Doctors, and Doctors are inside Humans (three nested circles). Which of the following conclusions definitely follows?",
+   "options": [
+    "Some Doctors are not Humans",
+    "No Doctors are Humans",
+    "All Surgeons are Doctors",
+    "No Surgeons are Humans"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Surgeons are inside Doctors, and Doctors are inside Humans (three nested circles). Only 'All Surgeons are Doctors' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Mangoes are inside Fruits, and Fruits are inside Edible things (three nested circles). Which of the following conclusions definitely follows?",
+   "options": [
+    "Some Mangoes are not Fruits",
+    "Some Fruits are Mangoes",
+    "No Mangoes are Edible things",
+    "Some Fruits are not Edible things"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Mangoes are inside Fruits, and Fruits are inside Edible things (three nested circles). Only 'Some Fruits are Mangoes' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Dogs, Tables and Rivers are three completely separate circles. Which statement must be true?",
+   "options": [
+    "All Dogs are Rivers",
+    "No Dogs are Tables",
+    "Some Tables are Rivers",
+    "Some Dogs are Rivers"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Dogs, Tables and Rivers are three completely separate circles. Only 'No Dogs are Tables' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Pens, Trains and Mangoes are three completely separate circles. Which of the following conclusions definitely follows?",
+   "options": [
+    "All Trains are Pens",
+    "No Pens are Trains",
+    "Some Pens are Mangoes",
+    "Some Pens are Trains"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Pens, Trains and Mangoes are three completely separate circles. Only 'No Pens are Trains' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Roses lie completely inside Flowers, and Cars is a separate circle outside Flowers. Which of the following conclusions definitely follows?",
+   "options": [
+    "Some Flowers are Cars",
+    "Some Flowers are Roses",
+    "Some Roses are Cars",
+    "All Cars are Flowers"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Roses lie completely inside Flowers, and Cars is a separate circle outside Flowers. Only 'Some Flowers are Roses' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Sparrows lie completely inside Birds, and Tables is a separate circle outside Birds. Which statement must be true?",
+   "options": [
+    "No Birds are Tables",
+    "Some Birds are Tables",
+    "Some Sparrows are not Birds",
+    "Some Sparrows are Tables"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Sparrows lie completely inside Birds, and Tables is a separate circle outside Birds. Only 'No Birds are Tables' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Cats and Dogs are two separate circles, both lying completely inside the circle of Animals. Which statement must be true?",
+   "options": [
+    "Some Dogs are not Animals",
+    "All Dogs are Animals",
+    "Some Cats are not Animals",
+    "No Cats are Animals"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Cats and Dogs are two separate circles, both lying completely inside the circle of Animals. Only 'All Dogs are Animals' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Tigers and Elephants are two separate circles, both lying completely inside the circle of Wild animals. Which of the following conclusions definitely follows?",
+   "options": [
+    "No Elephants are Wild animals",
+    "Some Tigers are Elephants",
+    "All Elephants are Wild animals",
+    "Some Elephants are not Wild animals"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Tigers and Elephants are two separate circles, both lying completely inside the circle of Wild animals. Only 'All Elephants are Wild animals' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Teachers and Women are two partly overlapping circles, and the circle of Mountains lies completely apart from both. Which statement must be true?",
+   "options": [
+    "Some Women are Mountains",
+    "Some Teachers are Mountains",
+    "All Mountains are Teachers",
+    "Some Teachers are Women"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Teachers and Women are two partly overlapping circles, and the circle of Mountains lies completely apart from both. Only 'Some Teachers are Women' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Doctors and Singers are two partly overlapping circles, and the circle of Rivers lies completely apart from both. Which statement must be true?",
+   "options": [
+    "Some Singers are Rivers",
+    "Some Doctors are Rivers",
+    "All Doctors are Singers",
+    "Some Doctors are Singers"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Doctors and Singers are two partly overlapping circles, and the circle of Rivers lies completely apart from both. Only 'Some Doctors are Singers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Doctors and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Which of the following conclusions definitely follows?",
+   "options": [
+    "No Women are Humans",
+    "No Doctors are Women",
+    "Some Women are not Humans",
+    "All Doctors are Humans"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Doctors and Women are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Only 'All Doctors are Humans' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Teachers and Singers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Which statement must be true?",
+   "options": [
+    "All Teachers are Singers",
+    "All Teachers are Humans",
+    "No Singers are Humans",
+    "Some Singers are not Humans"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Teachers and Singers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Humans. Only 'All Teachers are Humans' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Boys and Girls are two separate circles, and the circle of Cricketers cuts across both of them partly. Which statement must be true?",
+   "options": [
+    "All Girls are Cricketers",
+    "Some Boys are Girls",
+    "No Boys are Cricketers",
+    "Some Boys are not Cricketers"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Boys and Girls are two separate circles, and the circle of Cricketers cuts across both of them partly. Only 'Some Boys are not Cricketers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Men and Women are two separate circles, and the circle of Teachers cuts across both of them partly. Which statement must be true?",
+   "options": [
+    "No Men are Women",
+    "No Women are Teachers",
+    "No Men are Teachers",
+    "All Men are Teachers"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Men and Women are two separate circles, and the circle of Teachers cuts across both of them partly. Only 'No Men are Women' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Chennai are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles). Which of the following conclusions definitely follows?",
+   "options": [
+    "All Tamil Nadu are India",
+    "Some Chennai are not India",
+    "No Chennai are India",
+    "No Tamil Nadu are India"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Chennai are inside Tamil Nadu, and Tamil Nadu are inside India (three nested circles). Only 'All Tamil Nadu are India' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Tigers, Books and Oceans are three completely separate circles. Which statement must be true?",
+   "options": [
+    "No Tigers are Oceans",
+    "All Tigers are Oceans",
+    "Some Books are Oceans",
+    "Some Tigers are Oceans"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Read the diagram: Tigers, Books and Oceans are three completely separate circles. Only 'No Tigers are Oceans' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Lions lie completely inside Animals, and Rivers is a separate circle outside Animals. Which statement must be true?",
+   "options": [
+    "Some Lions are not Animals",
+    "No Lions are Rivers",
+    "Some Animals are Rivers",
+    "Some Lions are Rivers"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Read the diagram: Lions lie completely inside Animals, and Rivers is a separate circle outside Animals. Only 'No Lions are Rivers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Apples and Bananas are two separate circles, both lying completely inside the circle of Fruits. Which statement must be true?",
+   "options": [
+    "Some Apples are Bananas",
+    "Some Bananas are not Fruits",
+    "Some Fruits are Apples",
+    "No Bananas are Fruits"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Read the diagram: Apples and Bananas are two separate circles, both lying completely inside the circle of Fruits. Only 'Some Fruits are Apples' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "A Venn diagram is drawn so that Engineers and Cricketers are two partly overlapping circles, and the circle of Planets lies completely apart from both. Which statement must be true?",
+   "options": [
+    "Some Engineers are Planets",
+    "All Engineers are Cricketers",
+    "All Planets are Engineers",
+    "No Engineers are Planets"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Engineers and Cricketers are two partly overlapping circles, and the circle of Planets lies completely apart from both. Only 'No Engineers are Planets' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons. Which of the following conclusions definitely follows?",
+   "options": [
+    "All Engineers are Cricketers",
+    "No Cricketers are Persons",
+    "No Engineers are Cricketers",
+    "Some Cricketers are not Engineers"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Engineers and Cricketers are two partly overlapping circles (neither is inside the other), both lying completely inside the circle of Persons. Only 'Some Cricketers are not Engineers' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "In a Venn diagram, Males and Females are two separate circles, and the circle of Doctors cuts across both of them partly. Which of the following conclusions definitely follows?",
+   "options": [
+    "All Males are Doctors",
+    "All Females are Doctors",
+    "Some Males are Females",
+    "Some Males are Doctors"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Read the diagram: Males and Females are two separate circles, and the circle of Doctors cuts across both of them partly. Only 'Some Males are Doctors' is true in every such drawing; each of the other statements contradicts the picture.",
+   "shortcut": "Check each statement against the circles: inside → 'All', separate → 'No', overlap → 'Some'.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 120 employees of a Pune IT firm, 79 know Java and 91 know C++. Some may know neither. What is the minimum possible number who know both?",
+   "options": [
+    "50",
+    "170",
+    "79",
+    "12"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (120): both ≥ 79 + 91 − 120 = 50.",
+   "shortcut": "Min both = A + B − Total (if positive).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 50 residents of a Hyderabad apartment complex, 32 speak Hindi and 34 speak Telugu. Some may speak neither. What is the minimum possible number who speak both?",
+   "options": [
+    "32",
+    "2",
+    "16",
+    "66"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (50): both ≥ 32 + 34 − 50 = 16.",
+   "shortcut": "Min both = A + B − Total (if positive).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 120 students in a Chennai college, 89 play hockey and 82 play kabaddi. Some may play neither. What is the minimum possible number who play both?",
+   "options": [
+    "171",
+    "7",
+    "82",
+    "51"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (120): both ≥ 89 + 82 − 120 = 51.",
+   "shortcut": "Min both = A + B − Total (if positive).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 50 visitors to a Mysuru restaurant, 38 order dosa and 38 order idli. Some may order neither. What is the minimum possible number who order both?",
+   "options": [
+    "26",
+    "0",
+    "38",
+    "76"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Minimum overlap occurs when the union is as large as possible (50): both ≥ 38 + 38 − 50 = 26.",
+   "shortcut": "Min both = A + B − Total (if positive).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 60 customers at a Mumbai mall, 36 pay using Google Pay and 37 pay using PhonePe. What is the maximum possible number who pay using both?",
+   "options": [
+    "36",
+    "37",
+    "73",
+    "13"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "The overlap cannot exceed the smaller set. Maximum both = min(36, 37) = 36.",
+   "shortcut": "Max both = the smaller of the two sets.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 100 employees of a Pune IT firm, 22 know SQL and 35 know C++. What is the maximum possible number who know both?",
+   "options": [
+    "35",
+    "22",
+    "57",
+    "13"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "The overlap cannot exceed the smaller set. Maximum both = min(22, 35) = 22.",
+   "shortcut": "Max both = the smaller of the two sets.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 100 families in a Madurai colony, 47 watch ISL and 68 watch Hockey India League. What is the maximum possible number who watch both?",
+   "options": [
+    "68",
+    "115",
+    "15",
+    "47"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "The overlap cannot exceed the smaller set. Maximum both = min(47, 68) = 47.",
+   "shortcut": "Max both = the smaller of the two sets.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "ssc"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 200 visitors to a Mysuru restaurant, 20 order pongal and 37 order idli. What is the minimum possible number who order neither?",
+   "options": [
+    "163",
+    "57",
+    "143",
+    "180"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Neither is smallest when the two sets do not overlap at all (union = 57). Minimum neither = 200 − 57 = 143.",
+   "shortcut": "Min neither: make A and B disjoint → Total − A − B.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 200 families in a Madurai colony, 26 watch ISL and 87 watch IPL. What is the minimum possible number who watch neither?",
+   "options": [
+    "174",
+    "113",
+    "89",
+    "87"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Neither is smallest when the two sets do not overlap at all (union = 113). Minimum neither = 200 − 113 = 87.",
+   "shortcut": "Min neither: make A and B disjoint → Total − A − B.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 200 Class X students in Jaipur, 80 take Maths and 66 take Sanskrit. What is the minimum possible number who take neither?",
+   "options": [
+    "134",
+    "146",
+    "54",
+    "120"
+   ],
+   "correctOptionIndex": 2,
+   "explanation": "Neither is smallest when the two sets do not overlap at all (union = 146). Minimum neither = 200 − 146 = 54.",
+   "shortcut": "Min neither: make A and B disjoint → Total − A − B.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "easy",
+   "examStyles": [
+    "general",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 200 families in a Madurai colony, 64 watch Pro Kabaddi and 72 watch IPL. What is the maximum possible number who watch neither?",
+   "options": [
+    "133",
+    "64",
+    "136",
+    "128"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Neither is largest when the smaller set sits entirely inside the larger (union = 72). Maximum neither = 200 − 72 = 128.",
+   "shortcut": "Max neither: nest the smaller set in the larger → Total − larger set.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 200 visitors to a Mysuru restaurant, 115 order idli and 109 order pongal. What is the maximum possible number who order neither?",
+   "options": [
+    "85",
+    "90",
+    "80",
+    "91"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Neither is largest when the smaller set sits entirely inside the larger (union = 115). Maximum neither = 200 − 115 = 85.",
+   "shortcut": "Max neither: nest the smaller set in the larger → Total − larger set.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 150 customers at a Mumbai mall, 30 pay using PhonePe and 55 pay using Google Pay. What is the maximum possible number who pay using neither?",
+   "options": [
+    "120",
+    "95",
+    "100",
+    "65"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Neither is largest when the smaller set sits entirely inside the larger (union = 55). Maximum neither = 150 − 55 = 95.",
+   "shortcut": "Max neither: nest the smaller set in the larger → Total − larger set.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "general"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 120 Class X students in Jaipur, 92 take Sanskrit and 81 take Maths. Which of the following CANNOT be the number who take both?",
+   "options": [
+    "59",
+    "70",
+    "75",
+    "85"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both ranges from 53 (= 92 + 81 − 120) to 81 (= the smaller set). So every value from 53 to 81 is possible, and 85 lies outside that range.",
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 120 residents of a Hyderabad apartment complex, 89 speak Telugu and 79 speak English. Which of the following CANNOT be the number who speak both?",
+   "options": [
+    "82",
+    "56",
+    "65",
+    "68"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Both ranges from 48 (= 89 + 79 − 120) to 79 (= the smaller set). So every value from 48 to 79 is possible, and 82 lies outside that range.",
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 120 students in a Chennai college, 90 play cricket and 81 play kabaddi. Which of the following CANNOT be the number who play both?",
+   "options": [
+    "47",
+    "69",
+    "76",
+    "56"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "Both ranges from 51 (= 90 + 81 − 120) to 81 (= the smaller set). So every value from 51 to 81 is possible, and 47 lies outside that range.",
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "medium",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 60 people at a Kolkata book fair, 41 read The Hindu and 37 read Anandabazar Patrika. Which of the following CANNOT be the number who read both?",
+   "options": [
+    "33",
+    "17",
+    "35",
+    "19"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "Both ranges from 18 (= 41 + 37 − 60) to 37 (= the smaller set). So every value from 18 to 37 is possible, and 17 lies outside that range.",
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Of 80 students in a Chennai college, 47 play football and 52 play kabaddi. Which of the following CANNOT be the number who play both?",
+   "options": [
+    "43",
+    "39",
+    "38",
+    "50"
+   ],
+   "correctOptionIndex": 3,
+   "explanation": "Both ranges from 19 (= 47 + 52 − 80) to 47 (= the smaller set). So every value from 19 to 47 is possible, and 50 lies outside that range.",
+   "shortcut": "Valid overlap lies between (A + B − Total) and min(A, B).",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style",
+    "banking"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 100 commuters in Bengaluru, 60 use the bus, 83 use a bike taxi and 76 use an auto-rickshaw. What is the minimum possible number who use all three?",
+   "options": [
+    "43",
+    "19",
+    "119",
+    "29"
+   ],
+   "correctOptionIndex": 1,
+   "explanation": "People outside each set: 40, 17, 24 at most. Those missing at least one set ≤ 81. So all-three ≥ 100 − 81 = 19.",
+   "shortcut": "Min all-three = A + B + C − 2N.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 150 visitors to a Mysuru restaurant, 99 order idli, 119 order vada and 108 order dosa. What is the minimum possible number who order all three?",
+   "options": [
+    "26",
+    "36",
+    "176",
+    "68"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People outside each set: 51, 31, 42 at most. Those missing at least one set ≤ 124. So all-three ≥ 150 − 124 = 26.",
+   "shortcut": "Min all-three = A + B + C − 2N.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 150 employees of a Pune IT firm, 93 know Java, 100 know SQL and 108 know C++. What is the minimum possible number who know all three?",
+   "options": [
+    "1",
+    "151",
+    "43",
+    "11"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People outside each set: 57, 50, 42 at most. Those missing at least one set ≤ 149. So all-three ≥ 150 − 149 = 1.",
+   "shortcut": "Min all-three = A + B + C − 2N.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  },
+  {
+   "questionText": "Among 100 residents of a Hyderabad apartment complex, 67 speak Telugu, 82 speak English and 66 speak Urdu. What is the minimum possible number who speak all three?",
+   "options": [
+    "15",
+    "25",
+    "49",
+    "115"
+   ],
+   "correctOptionIndex": 0,
+   "explanation": "People outside each set: 33, 18, 34 at most. Those missing at least one set ≤ 85. So all-three ≥ 100 − 85 = 15.",
+   "shortcut": "Min all-three = A + B + C − 2N.",
+   "subPattern": "venn-based-reasoning",
+   "difficulty": "hard",
+   "examStyles": [
+    "cat-style"
+   ],
+   "setId": null
+  }
+ ]
+}
