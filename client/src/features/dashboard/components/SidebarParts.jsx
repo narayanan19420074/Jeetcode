@@ -1,20 +1,7 @@
-import { useSelector } from 'react-redux';
 import { Box, ButtonBase, IconButton, Tooltip, Typography } from '@mui/material';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from './libraryStyle';
 import { COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
-
-// Red pill with the number of friend requests and unread chat messages waiting for me (both live).
-export function RequestBadge({ requests }) {
-  const unread = useSelector((s) => Object.values(s.friends.unread).reduce((a, c) => a + c, 0));
-  const n = (requests || 0) + unread;
-  if (!n) return null;
-  return (
-    <Box component="span" aria-label={`${n} friend notifications`} sx={{ minWidth: 20, height: 20, px: 0.5, borderRadius: RADII_PX.pill, bgcolor: 'error.main', color: 'error.contrastText', fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold, display: 'grid', placeItems: 'center' }}>
-      {n}
-    </Box>
-  );
-}
 
 // Pill button like the phone chips: cream when idle, accent when selected.
 const navButtonSx = (pal, active, dense) => ({

@@ -7,13 +7,15 @@ import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
-import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
+import InsightsRoundedIcon from '@mui/icons-material/InsightsRounded';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import ListAltRoundedIcon from '@mui/icons-material/ListAltRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
 import { NameDialog } from './ListDialogs';
-import { ListsHeader, NavButton, RequestBadge } from './SidebarParts';
+import { ListsHeader, NavButton } from './SidebarParts';
+import { OWN_JOB_PROFILE_PATH } from '../../jobProfile/common/jobProfilePaths';
 import { COLOR_PALETTE, FONT_SIZES } from '../../../app/design/designTokens';
 
 export const NAV_ITEMS = [
@@ -23,24 +25,26 @@ export const NAV_ITEMS = [
   { view: 'explore', label: 'Explore', icon: ExploreRoundedIcon },
   { view: 'plans', label: 'Study Plan', icon: SchoolRoundedIcon },
   { view: 'leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon },
-  { view: 'friends', label: 'Friends', icon: PeopleAltRoundedIcon },
 ];
 
 // Pages (not dashboard views) that live in the same rail.
-const PAGE_ITEMS = [{ to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon }];
+// My stats comes first and the Profile (the Job profile) sits right under it. Friends are reached from Messages in Community.
+const PAGE_ITEMS = [
+  { to: '/you', label: 'My stats', icon: InsightsRoundedIcon },
+  { to: OWN_JOB_PROFILE_PATH, label: 'Profile', icon: PersonRoundedIcon },
+  { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
+];
 
 // Same blue star as the Favorites card on the phone home.
 const FAVORITE_STAR = COLOR_PALETTE.custom.blue3F8CE8;
 
-function ViewButtons({ view, onView, friendCounts }) {
+function ViewButtons({ view, onView }) {
   return NAV_ITEMS.map(({ view: v, label, icon }) => (
     <NavButton
       key={v}
       active={view === v}
       icon={icon}
       label={label}
-      count={v === 'friends' ? friendCounts?.friends : undefined}
-      trailing={v === 'friends' ? <RequestBadge requests={friendCounts?.incoming} /> : null}
       onClick={() => onView(v)}
     />
   ));
@@ -76,7 +80,7 @@ export function ListButtons({ lists, view, activeListId, onSelectList }) {
 }
 
 // Desktop: vertical rail. Phones reach the same sections from the navigation menu.
-export default function DashboardSidebar({ view, activeListId, lists, onView, onSelectList, onCreateList, maxLists, friendCounts }) {
+export default function DashboardSidebar({ view, activeListId, lists, onView, onSelectList, onCreateList, maxLists }) {
   const [creating, setCreating] = useState(false);
 
   const createList = (name) => {
@@ -89,7 +93,7 @@ export default function DashboardSidebar({ view, activeListId, lists, onView, on
   return (
     <>
       <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0 }}>
-        <ViewButtons view={view} onView={onView} friendCounts={friendCounts} />
+        <ViewButtons view={view} onView={onView} />
         <PageButtons />
         <ListsHeader atLimit={lists.length >= maxLists} onCreate={() => setCreating(true)} />
         <ListButtons lists={lists} view={view} activeListId={activeListId} onSelectList={onSelectList} />

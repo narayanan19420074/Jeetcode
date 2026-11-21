@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '../../features/auth/authSlice';
+import { OWN_JOB_PROFILE_PATH } from '../../features/jobProfile/common/jobProfilePaths';
 
 // State and handlers shared by the top bar, the phone menu and the account dropdown.
 // Every navigation closes the phone menu first so it never stays open over the next page.
@@ -33,8 +34,9 @@ export default function useNavbarActions() {
     licenseModalOpen,
     closeLicenseModal: () => setLicenseModalOpen(false),
     openLicenseModal,
-    goToProfile: goTo('/you'),
-    goToJobProfile: goTo('/job-profile'),
+    // The Job profile is the main profile; the activity numbers live on My stats.
+    goToProfile: goTo(OWN_JOB_PROFILE_PATH),
+    goToStats: goTo('/you'),
     goToSettings: goTo('/settings'),
     goToHelp: goTo('/help'),
     logout,

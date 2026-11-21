@@ -7,6 +7,7 @@ import { PostAvatar } from '../common/PostAuthor';
 import { BANNER_GRADIENT } from '../../dashboard/bannerGradients';
 import { FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 import RailCard from './RailCard';
+import { OWN_JOB_PROFILE_PATH } from '../../jobProfile/common/jobProfilePaths';
 
 const BIO_LINES = 2;
 const clampSx = { display: '-webkit-box', WebkitLineClamp: BIO_LINES, WebkitBoxOrient: 'vertical', overflow: 'hidden' };
@@ -52,7 +53,7 @@ export default function ProfileSummaryCard() {
           <PostAvatar author={user} size={SIZES.avatar.lg} />
         </Box>
         <Stack direction="row" spacing={0.5} sx={{ alignItems: 'center', mt: 1 }}>
-          <Link component={RouterLink} to="/you" underline="hover" color="text.primary" sx={{ fontWeight: FONT_WEIGHTS.bold, wordBreak: 'break-word' }}>
+          <Link component={RouterLink} to={OWN_JOB_PROFILE_PATH} underline="hover" color="text.primary" sx={{ fontWeight: FONT_WEIGHTS.bold, wordBreak: 'break-word' }}>
             {user.name}
           </Link>
           <VerifiedUserOutlinedIcon aria-label="Verified" fontSize="small" color="action" />

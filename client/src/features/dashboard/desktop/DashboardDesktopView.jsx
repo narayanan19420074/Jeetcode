@@ -4,8 +4,7 @@ import DesktopContentColumn from './DesktopContentColumn';
 import DesktopFrame from './DesktopFrame';
 
 function DashboardSidebarColumn({ dashboard }) {
-  const { currentView, activeList, listsApi, goView, selectList, friends, isAuthenticated } = dashboard;
-  const friendCounts = isAuthenticated ? { friends: friends.friends.length, incoming: friends.incoming.length } : null;
+  const { currentView, activeList, listsApi, goView, selectList } = dashboard;
   return (
     <DashboardSidebar
       view={currentView}
@@ -15,7 +14,6 @@ function DashboardSidebarColumn({ dashboard }) {
       onView={goView}
       onSelectList={selectList}
       onCreateList={listsApi.createList}
-      friendCounts={friendCounts}
     />
   );
 }
