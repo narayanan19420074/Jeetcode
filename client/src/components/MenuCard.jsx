@@ -18,7 +18,7 @@ export function MenuCard({ title, children }) {
       aria-label={title}
       sx={(theme) => ({ p: 1.5, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderRadius: RADII_PX.dialog, bgcolor: pal.chip, border: `1px solid ${pal.border}`, maxHeight: `calc(100vh - ${SIZES.desktopFrame.stickyTop}px - ${theme.spacing(10)})` })}
     >
-      <Typography component="h2" sx={{ textAlign: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: pal.text, pt: 0.5, pb: 1.5, mb: 0.5, borderBottom: `1px solid ${pal.divider}` }}>{title}</Typography>
+      <Typography component="h2" noWrap title={title} sx={{ textAlign: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: pal.text, pt: 0.5, pb: 1.5, mb: 0.5, borderBottom: `1px solid ${pal.divider}` }}>{title}</Typography>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5, ...hoverScrollbarSx(pal.text) }}>{children}</Box>
     </Box>
   );
@@ -31,19 +31,20 @@ export function MenuRow({ selected, onClick, children }) {
     <ButtonBase
       onClick={onClick}
       aria-current={selected ? 'page' : undefined}
-      sx={{ display: 'grid', gridTemplateColumns: '1fr', justifyItems: 'stretch', gap: 0.75, width: SIZES.fill, px: 1.5, py: 1.25, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', letterSpacing: LIB_TRACKING, color: selected ? pal.text : pal.muted, bgcolor: selected ? menuRowFill(pal) : 'transparent', '&:hover': { bgcolor: menuRowFill(pal) } }}
+      sx={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr)', justifyItems: 'stretch', gap: 0.75, width: SIZES.fill, px: 1.5, py: 1.25, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', letterSpacing: LIB_TRACKING, color: selected ? pal.text : pal.muted, bgcolor: selected ? menuRowFill(pal) : 'transparent', '&:hover': { bgcolor: menuRowFill(pal) } }}
     >
       {children}
     </ButtonBase>
   );
 }
 
-// Name on the left and an optional count on the right, the usual content of a row.
+// Name on the left and an optional count on the right, the usual content of a row. A long name is cut with three dots
+// (the full name shows on hover) so a row never grows taller.
 export function MenuRowLabel({ label, count, selected }) {
   const pal = useLibraryPalette();
   return (
     <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
-      <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: selected ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.medium, color: 'inherit' }}>{label}</Typography>
+      <Typography noWrap title={label} sx={{ minWidth: SIZES.flexShrinkMinWidth, fontSize: FONT_SIZES.body, fontWeight: selected ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.medium, color: 'inherit' }}>{label}</Typography>
       {count !== undefined && count !== '' && <Typography variant="caption" sx={{ flexShrink: 0, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>{count}</Typography>}
     </Box>
   );
