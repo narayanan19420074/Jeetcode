@@ -21,3 +21,12 @@ export const buildStudyLines = (data, learn, remainingSec) => ({
   practice: `${data.practice.totals.solved}/${data.practice.totals.total} solved`,
   test: testLine(data, remainingSec),
 });
+
+// Status lines of one topic's Practice and Test rows. A topic test length comes from the server's per-topic plan.
+export const buildTopicLines = (topic, testPlan) => {
+  const plan = testPlan.bySubPattern?.[topic.slug];
+  return {
+    practice: `${topic.solved}/${topic.total} solved`,
+    test: plan ? `${plan.questionCount} Qs · ${plan.timeLimitMinutes} min` : 'No questions yet',
+  };
+};
