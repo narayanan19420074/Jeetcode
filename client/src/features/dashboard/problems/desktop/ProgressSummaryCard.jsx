@@ -8,6 +8,7 @@ import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import ShuffleRoundedIcon from '@mui/icons-material/ShuffleRounded';
 import { NameDialog } from '../../components/ListDialogs';
 import { useLibraryPalette } from '../../components/libraryStyle';
+import { useLibraryCardSx } from '../../components/libraryCardStyles';
 import { DIFF_COLOR } from '../../dashboardUtils';
 import { DIFFICULTIES } from '../common/problemsConstants';
 import DifficultyGauge from './DifficultyGauge';
@@ -81,9 +82,9 @@ function Actions({ lib, listsApi }) {
 
 // Left card of the Problems page: solved ring, the counts per difficulty, your lists and the quick actions.
 export default function ProgressSummaryCard({ lib, progress, listsApi }) {
-  const pal = useLibraryPalette();
+  const cardSx = useLibraryCardSx();
   return (
-    <Box component="section" aria-label="Your progress" sx={{ display: 'grid', gap: 2, p: 2, borderRadius: RADII_PX.dialog, bgcolor: pal.chip, border: `1px solid ${pal.border}` }}>
+    <Box component="section" aria-label="Your progress" sx={cardSx}>
       <DifficultyGauge solved={progress?.solved} totals={progress?.total} />
       <DifficultyRows progress={progress} />
       <ListPicker listsApi={listsApi} />

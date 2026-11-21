@@ -8,7 +8,7 @@ import TrackPicker from './TrackPicker';
 
 function LeftColumn({ page }) {
   return (
-    <Box sx={{ display: 'grid', gap: 3, justifyItems: 'stretch' }}>
+    <Box sx={{ display: 'grid', gap: 2, justifyItems: 'stretch' }}>
       <Box><BackToDashboard /></Box>
       <AptitudeSummary track={page.track} trackPatterns={page.trackPatterns} cleared={page.cleared} currentIndex={page.currentIndex} loading={page.loading} />
       <TrackPicker tracks={page.tracks} track={page.track} onPick={page.pickTrack} />
