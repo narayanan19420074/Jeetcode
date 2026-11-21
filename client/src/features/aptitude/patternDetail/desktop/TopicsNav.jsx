@@ -20,12 +20,12 @@ function TopicRow({ topic, selected, onPick }) {
   );
 }
 
-// Left column of the desktop topic page: the back icon and a white card listing the topics of this pattern.
+// Left column of the desktop topic and practice pages: the back icon (it goes to the Aptitude home unless `backTo` says otherwise) and a white card listing the topics of this pattern.
 // Picking a topic opens its learn content in the middle.
-export default function TopicsNav({ topics, activeSlug, onPick }) {
+export default function TopicsNav({ topics, activeSlug, onPick, backTo = '/aptitude', backLabel = 'Back to Aptitude' }) {
   return (
     <Box sx={{ display: 'grid', gap: 2 }}>
-      <Box><BackIconButton to="/aptitude" label="Back to Aptitude" /></Box>
+      <Box><BackIconButton to={backTo} label={backLabel} /></Box>
       <Box
         component="nav"
         aria-label="Topics"
