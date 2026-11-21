@@ -6,7 +6,7 @@ import { BORDER_WIDTHS, FONTS, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../
 
 const mono = { fontFamily: FONTS.mono };
 
-function Eyebrow({ children, color = 'primary.main', icon: Icon }) {
+export function Eyebrow({ children, color = 'primary.main', icon: Icon }) {
   return (
     <Stack direction="row" spacing={0.75} sx={{ alignItems: 'center', mb: 1 }}>
       <Icon sx={{ fontSize: FONT_SIZES.title, color }} />

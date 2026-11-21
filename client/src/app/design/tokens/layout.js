@@ -183,3 +183,6 @@ export const SIZES = {
 // The photo of a feed post is always shown in this frame (square 1:1, the standard LinkedIn feed shape), so
 // every post keeps the same layout. `outputWidth` is the pixel width of an image cropped to this frame before upload.
 export const FEED_IMAGE_FRAME = { aspectRatio: '1 / 1', widthPerHeight: 1, outputWidth: 1080 };
+
+// Embedded video players (lesson videos) keep the standard widescreen shape at every width.
+export const VIDEO_ASPECT_RATIO = '16 / 9';

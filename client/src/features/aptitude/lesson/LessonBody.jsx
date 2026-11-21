@@ -3,6 +3,7 @@ import MicroCheck from '../../learn/components/MicroCheck';
 import { LESSON_WIDGETS } from '../components/LessonWidgets';
 import { FONT_WEIGHTS } from '../../../app/design/designTokens';
 import { CommonTraps, ExamShortcuts, Formulas, KeyIdea, LessonTable } from './LessonSections';
+import LessonVideo from './LessonVideo';
 import WorkedExample from './WorkedExample';
 
 function LessonHeading({ lesson, index }) {
@@ -24,6 +25,7 @@ export default function LessonBody({ lesson, index, onCorrect }) {
     <>
       <LessonHeading lesson={lesson} index={index} />
       <Stack spacing={3}>
+        {lesson.video && <LessonVideo video={lesson.video} />}
         <KeyIdea paragraphs={lesson.keyIdea} />
         <Formulas formulas={lesson.formulas} />
         {lesson.table && <LessonTable table={lesson.table} />}
