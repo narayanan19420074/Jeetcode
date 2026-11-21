@@ -100,9 +100,8 @@ export const SIZES = {
   // Toolbar at the top of the desktop Community page: the widest the search field grows, the tallest its results
   // list gets before it scrolls.
   communityToolbar: { searchMaxWidth: 520, resultsMaxHeight: 440 },
-  // Desktop Aptitude practice list: grid columns (status, number, question, topic, acceptance, level), the narrowest
-  // status filter, the widest search field and the height of a loading row.
-  practiceList: { columns: '44px 56px 1fr 190px 96px 84px', statusSelectMinWidth: 170, searchMaxWidth: 320, skeletonRowHeight: 52 },
+  // Desktop Aptitude practice list: grid columns (status, star, question, level, solution) and the height of a loading row.
+  practiceList: { columns: '72px 64px 1fr 120px 104px', skeletonRowHeight: 52 },
   chipHeight: 28,
   chipHeightSmall: 24,
   // The "You" tag next to the author name on community posts and comments.

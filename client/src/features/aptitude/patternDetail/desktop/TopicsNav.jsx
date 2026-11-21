@@ -1,4 +1,4 @@
-import { Box, ButtonBase, Typography } from '@mui/material';
+import { Box, ButtonBase, LinearProgress, Typography } from '@mui/material';
 import BackIconButton from '../../../../components/BackIconButton';
 import { LIB_TRACKING, useLibraryPalette } from '../../../dashboard/components/libraryStyle';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES, withAlpha } from '../../../../app/design/designTokens';
@@ -8,15 +8,26 @@ const SELECTED_ROW_ALPHA = 0.05;
 // Topics with no questions yet show no count; the learner can still open them to read.
 const topicCount = (topic) => (topic.total === 0 ? '' : `${topic.solved}/${topic.total}`);
 
+const TRACK_ALPHA = 0.1;
+
+// How far the learner is in a topic, as a thin bar under its name (shown only when the topic has questions).
+function TopicProgress({ topic, pal }) {
+  if (topic.total === 0) return null;
+  return <LinearProgress variant="determinate" color="success" value={(topic.solved / topic.total) * 100} aria-label={`${topic.solved} of ${topic.total} solved`} sx={{ height: SIZES.progressBarHeight, borderRadius: RADII_PX.pill, bgcolor: withAlpha(pal.text, TRACK_ALPHA) }} />;
+}
+
 function TopicRow({ topic, selected, onPick, pal }) {
   return (
     <ButtonBase
       onClick={() => onPick(topic.slug)}
       aria-current={selected ? 'page' : undefined}
-      sx={{ display: 'flex', justifyContent: 'space-between', gap: 1, width: SIZES.fill, px: 1.5, py: 1.25, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', letterSpacing: LIB_TRACKING, color: selected ? pal.text : pal.muted, bgcolor: selected ? withAlpha(pal.text, SELECTED_ROW_ALPHA) : 'transparent', '&:hover': { bgcolor: withAlpha(pal.text, SELECTED_ROW_ALPHA) } }}
+      sx={{ display: 'grid', gridTemplateColumns: '1fr', justifyItems: 'stretch', gap: 0.75, width: SIZES.fill, px: 1.5, py: 1.25, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', letterSpacing: LIB_TRACKING, color: selected ? pal.text : pal.muted, bgcolor: selected ? withAlpha(pal.text, SELECTED_ROW_ALPHA) : 'transparent', '&:hover': { bgcolor: withAlpha(pal.text, SELECTED_ROW_ALPHA) } }}
     >
-      <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: selected ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.medium, color: 'inherit' }}>{topic.title}</Typography>
-      <Typography variant="caption" sx={{ flexShrink: 0, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>{topicCount(topic)}</Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 1 }}>
+        <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: selected ? FONT_WEIGHTS.semibold : FONT_WEIGHTS.medium, color: 'inherit' }}>{topic.title}</Typography>
+        <Typography variant="caption" sx={{ flexShrink: 0, fontVariantNumeric: 'tabular-nums', color: pal.muted }}>{topicCount(topic)}</Typography>
+      </Box>
+      <TopicProgress topic={topic} pal={pal} />
     </ButtonBase>
   );
 }

@@ -50,7 +50,24 @@ function useQuestionList(slug, filters, setError) {
       .catch((err) => !cancelled && setError(extractErrorMessage(err)));
     return () => { cancelled = true; };
   }, [slug, subPattern, difficulty, status, search, page, setError]);
-  return list;
+  return [list, setList];
+}
+
+// The star of a row: it flips at once and flips back if the server refuses.
+function useBookmarkToggle(slug, setList, setError) {
+  const setBookmarked = useCallback((questionId, bookmarked) => {
+    setList((prev) => (prev ? { ...prev, items: prev.items.map((item) => (item._id === questionId ? { ...item, bookmarked } : item)) } : prev));
+  }, [setList]);
+  return async (question) => {
+    const next = !question.bookmarked;
+    setBookmarked(question._id, next);
+    try {
+      await aptitudeApi.bookmarkQuestion(slug, question._id, next);
+    } catch (err) {
+      setBookmarked(question._id, !next);
+      setError(extractErrorMessage(err));
+    }
+  };
 }
 
 // Typing in the search box updates the URL only after a short pause, so every key press does not reload the list.
@@ -91,14 +108,15 @@ export default function usePracticeList(slug) {
   const [error, setError] = useState(null);
   const { filters, update, clear } = usePracticeFilters();
   const hub = usePatternHub(slug, setError);
-  const list = useQuestionList(slug, filters, setError);
+  const [list, setList] = useQuestionList(slug, filters, setError);
+  const toggleBookmark = useBookmarkToggle(slug, setList, setError);
   const { searchDraft, setSearchDraft } = useSearchDraft(filters.search, update);
   const { picking, pickRandom } = usePickRandom(slug, filters, setError);
   const subTitles = useMemo(() => Object.fromEntries((hub?.practice.bySubPattern ?? []).map((topic) => [topic.slug, topic.title])), [hub]);
   const { subPattern, difficulty, status, search } = filters;
   const clearFilters = () => { setSearchDraft(''); clear(); };
   return {
-    slug, hub, list, error, filters, update, subTitles, searchDraft, setSearchDraft, picking, pickRandom, clearFilters,
+    slug, hub, list, error, filters, update, subTitles, toggleBookmark, searchDraft, setSearchDraft, picking, pickRandom, clearFilters,
     dismissError: () => setError(null),
     filtersActive: Boolean(subPattern || difficulty || status || search),
     pageCount: list ? Math.max(1, Math.ceil(list.total / PRACTICE_PAGE_SIZE)) : 1,
