@@ -95,6 +95,11 @@ export const SIZES = {
   progressBarHeight: 6,
   // Profile picture of a member on the progress bar of a study plan card.
   progressAvatar: 28,
+  // Profile picture in a Friends / Messages chat-list row (also the size of the profile button laid over it).
+  chatListAvatar: 44,
+  // Toolbar at the top of the desktop Community page: the widest the search field grows, the tallest its results
+  // list gets before it scrolls.
+  communityToolbar: { searchMaxWidth: 520, resultsMaxHeight: 440 },
   chipHeight: 28,
   chipHeightSmall: 24,
   // The "You" tag next to the author name on community posts and comments.
