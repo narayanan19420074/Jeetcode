@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
   Alert,
@@ -59,6 +59,8 @@ export default function AptitudeTestInstructionsPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const user = useSelector((s) => s.auth.user);
+  // ?topic= turns this into the test of one topic; without it the screen is the pattern test.
+  const topic = useSearchParams()[0].get('topic');
 
   const [hub, setHub] = useState(null);
   const [error, setError] = useState(null);
@@ -80,7 +82,7 @@ export default function AptitudeTestInstructionsPage() {
     setStarting(true);
     setError(null);
     try {
-      const { data } = await aptitudeApi.startAttempt(slug, 'test');
+      const { data } = await aptitudeApi.startAttempt(slug, 'test', topic || undefined);
       navigate(`/aptitude/${slug}/test/${data.data.attemptId}`, { replace: true });
     } catch (err) {
       setError(extractErrorMessage(err));
@@ -103,9 +105,15 @@ export default function AptitudeTestInstructionsPage() {
     );
   }
 
-  const { pattern, testPlan, activeTest } = hub;
+  const { pattern, testPlan } = hub;
+  const topicPlan = topic ? testPlan.bySubPattern?.[topic] : null;
+  const questionCount = topicPlan?.questionCount ?? testPlan.questionCount;
+  const timeLimitMinutes = topicPlan?.timeLimitMinutes ?? pattern.timeLimitMinutes;
+  const topicTitle = topic ? pattern.subPatterns?.find((item) => item.slug === topic)?.title : null;
+  // A paper of another kind may be open; it is only offered on the pattern test screen.
+  const activeTest = topic ? null : hub.activeTest;
   const rules = [
-    `The test has ${testPlan.questionCount} multiple-choice questions and must be finished in ${pattern.timeLimitMinutes} minutes. The countdown timer is shown at the top right and cannot be paused.`,
+    `The test has ${questionCount} multiple-choice questions and must be finished in ${timeLimitMinutes} minutes. The countdown timer is shown at the top right and cannot be paused.`,
     'When the timer reaches zero the test is submitted automatically with the answers you have saved.',
     `Each question carries 1 mark. There is no negative marking. You pass with ${pattern.passPercentage}% or more.`,
     'Click an option to select your answer. To change it, choose another option; to remove it, press Clear Response.',
@@ -121,16 +129,16 @@ export default function AptitudeTestInstructionsPage() {
           <Stack direction="row" useFlexGap spacing={1} sx={{ alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' }}>
             <Box>
               <Typography variant="overline" sx={{ opacity: 0.75, letterSpacing: '0.12em', fontWeight: FONT_WEIGHTS.bold }}>
-                Aptitude Test · {pattern.category || 'Quantitative Aptitude'}
+                {topicTitle ? 'Topic Test' : 'Aptitude Test'} · {pattern.category || 'Quantitative Aptitude'}
               </Typography>
               <Typography variant="h5" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
-                {pattern.title}
+                {topicTitle ? `${pattern.title} · ${topicTitle}` : pattern.title}
               </Typography>
             </Box>
             <Stack direction="row" spacing={3}>
               {[
-                ['Questions', testPlan.questionCount],
-                ['Duration', formatClock(pattern.timeLimitMinutes * 60)],
+                ['Questions', questionCount],
+                ['Duration', formatClock(timeLimitMinutes * 60)],
                 ['Pass mark', `${pattern.passPercentage}%`],
               ].map(([k, v]) => (
                 <Box key={k} sx={{ textAlign: 'center' }}>
@@ -205,7 +213,7 @@ export default function AptitudeTestInstructionsPage() {
             <Button fullWidth variant="contained" size="large" disableElevation disabled={!agreed || starting} onClick={begin} sx={{ mt: 2, py: 1.5, bgcolor: COLOR_PALETTE.custom.sky1F3A5F, '&:hover': { bgcolor: COLOR_PALETTE.sky[950] } }}>
               {starting ? <CircularProgress size={22} color="inherit" /> : activeTest ? 'Resume test' : 'I am ready to begin'}
             </Button>
-            <Button fullWidth sx={{ mt: 1 }} onClick={() => navigate(`/aptitude/${slug}`)}>
+            <Button fullWidth sx={{ mt: 1 }} onClick={() => navigate(`/aptitude/${slug}${topic ? `?topic=${topic}` : ''}`)}>
               Not yet — go back
             </Button>
           </Paper>

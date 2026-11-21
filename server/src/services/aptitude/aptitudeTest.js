@@ -5,6 +5,7 @@ import { AptitudeProgress } from '../../models/AptitudeProgress.js';
 import { AptitudeSet } from '../../models/AptitudeSet.js';
 import { ApiError } from '../../utils/ApiError.js';
 import { COMPLETE_GRACE_SEC, SUBMIT_GRACE_SEC, TEST_MIX, getQuestionMeta, shuffled } from './aptitudeShared.js';
+import { buildTopicTestPlan } from './aptitudeTopicTest.js';
 
 // ---------------------------------------------------------------------------
 // Attempts (Test mode + legacy practice sessions)
@@ -91,20 +92,26 @@ export async function finalizeIfExpired(attempt) {
   return attempt;
 }
 
-export async function startAttempt({ userId, pattern, mode }) {
+// A topic test is shorter than the pattern test, so its clock is scaled to its question count.
+const testMinutes = (pattern, topic, topicTotal, patternTotal) =>
+  topic ? buildTopicTestPlan(pattern, topicTotal, patternTotal).timeLimitMinutes : pattern.timeLimitMinutes;
+
+export async function startAttempt({ userId, pattern, mode, subPattern = null }) {
+  const topic = mode === 'test' ? subPattern : null;
   if (mode === 'test') {
-    // Resume instead of silently creating a second paper. Expired leftovers
-    // are graded + closed first so they still count in history / best score.
-    const open = await AptitudeAttempt.find({ user: userId, pattern: pattern._id, mode: 'test', status: 'in-progress' });
+    // Resume instead of silently creating a second paper (one per pattern test and one per topic). Expired
+    // leftovers are graded + closed first so they still count in history / best score.
+    const open = await AptitudeAttempt.find({ user: userId, pattern: pattern._id, mode: 'test', subPattern: topic, status: 'in-progress' });
     for (const a of open) {
       const done = await finalizeIfExpired(a);
       if (done.status === 'in-progress') return { attempt: done, resumed: true };
     }
   }
 
-  const meta = await getQuestionMeta(pattern._id);
+  const patternMeta = await getQuestionMeta(pattern._id);
+  const meta = topic ? patternMeta.filter((q) => q.subPattern === topic) : patternMeta;
   if (meta.length === 0) {
-    throw ApiError.conflict('This pattern has no questions yet');
+    throw ApiError.conflict(topic ? 'This topic has no questions yet' : 'This pattern has no questions yet');
   }
 
   const chosen = mode === 'test' ? await pickTestQuestions(userId, pattern, meta) : meta;
@@ -114,8 +121,9 @@ export async function startAttempt({ userId, pattern, mode }) {
     user: userId,
     pattern: pattern._id,
     mode,
+    subPattern: topic,
     startedAt: now,
-    expiresAt: mode === 'test' ? new Date(now + pattern.timeLimitMinutes * 60 * 1000) : null,
+    expiresAt: mode === 'test' ? new Date(now + testMinutes(pattern, topic, meta.length, patternMeta.length) * 60 * 1000) : null,
     answers: chosen.map((q) => ({ question: q._id, selectedOption: null, isCorrect: null })),
     totalCount: chosen.length,
   });
@@ -248,7 +256,8 @@ export async function gradeAttempt(attempt) {
   attempt.timeTakenSec = Math.max(0, Math.round((submittedAtMs - attempt.startedAt.getTime()) / 1000));
   await attempt.save();
 
-  if (attempt.mode === 'test') {
+  // Only the full pattern test counts towards the best score and unlocking the next pattern; a topic test is practice.
+  if (attempt.mode === 'test' && !attempt.subPattern) {
     const pattern = await AptitudePattern.findById(attempt.pattern);
     const progress = await AptitudeProgress.findOneAndUpdate(
       { user: attempt.user, pattern: attempt.pattern },

@@ -10,7 +10,7 @@ export default function RightColumn({ detail }) {
   return (
     <Stack spacing={2}>
       <ActionCard icon={<CodeRoundedIcon />} accent={COLOR_PALETTE.emerald[500]} name="Practice" meta={lines.practice} onClick={() => goPractice()} />
-      <ActionCard icon={<TimerRoundedIcon />} accent={COLOR_PALETTE.amber[500]} name="Test" meta={lines.test} onClick={goTest} />
+      <ActionCard icon={<TimerRoundedIcon />} accent={COLOR_PALETTE.amber[500]} name="Test" meta={lines.test} onClick={() => goTest()} />
     </Stack>
   );
 }

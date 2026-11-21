@@ -55,7 +55,9 @@ function usePatternActions(slug, data, lessons) {
     navigate(`/aptitude/${slug}/practice${topic ? `?subPattern=${topic}` : ''}`);
   };
   const goLearn = () => navigate(lessons ? `/aptitude/${slug}/learn` : `/learn/${slug}`);
-  const goTest = () => navigate(data.activeTest ? `/aptitude/${slug}/test/${data.activeTest.attemptId}` : `/aptitude/${slug}/test`);
+  const patternTestPath = () => (data.activeTest ? `/aptitude/${slug}/test/${data.activeTest.attemptId}` : `/aptitude/${slug}/test`);
+  // With a topic slug the test covers that topic only; without one it is the pattern test (resumed when one is open).
+  const goTest = (topic) => navigate(typeof topic === 'string' ? `/aptitude/${slug}/test?topic=${topic}` : patternTestPath());
   return { goPractice, goLearn, goTest, openAttempt: (id) => navigate(`/aptitude/${slug}/results/${id}`), openBookmarks: () => navigate(`/aptitude/${slug}/practice?status=bookmarked`) };
 }
 

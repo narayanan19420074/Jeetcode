@@ -26,11 +26,11 @@ export const getPatternBySlug = asyncHandler(async (req, res) => {
 
   const [progressDoc, recentAttempts, openTest, practice] = await Promise.all([
     AptitudeProgress.findOne({ user: req.user.id, pattern: pattern._id }).lean(),
-    AptitudeAttempt.find({ user: req.user.id, pattern: pattern._id, mode: 'test', status: { $in: ['completed', 'expired'] } })
+    AptitudeAttempt.find({ user: req.user.id, pattern: pattern._id, mode: 'test', subPattern: null, status: { $in: ['completed', 'expired'] } })
       .sort({ createdAt: -1 })
       .limit(5)
       .select('score status correctCount totalCount createdAt timeTakenSec'),
-    AptitudeAttempt.findOne({ user: req.user.id, pattern: pattern._id, mode: 'test', status: 'in-progress' }),
+    AptitudeAttempt.findOne({ user: req.user.id, pattern: pattern._id, mode: 'test', subPattern: null, status: 'in-progress' }),
     aptitudeService.getPracticeStats(req.user.id, pattern),
   ]);
 
@@ -49,8 +49,9 @@ export const getPatternBySlug = asyncHandler(async (req, res) => {
     }
   }
 
+  const questionMeta = await aptitudeService.getQuestionMeta(pattern._id);
   new ApiResponse(200, {
-    pattern: { ...pattern, subPatterns: aptitudeService.resolveSubPatterns(pattern, await aptitudeService.getQuestionMeta(pattern._id)) },
+    pattern: { ...pattern, subPatterns: aptitudeService.resolveSubPatterns(pattern, questionMeta) },
     progress: {
       bestScore: progressDoc?.bestScore ?? 0,
       attemptsCount: progressDoc?.attemptsCount ?? 0,
@@ -63,6 +64,7 @@ export const getPatternBySlug = asyncHandler(async (req, res) => {
     testPlan: {
       questionCount: Math.min(pattern.testQuestionCount || 25, practice.totals.total),
       requireLearn: aptitudeService.REQUIRE_LEARN_BEFORE_TEST,
+      bySubPattern: aptitudeService.buildTopicTestPlans(pattern, questionMeta),
     },
   }).send(res);
 });
@@ -152,9 +154,9 @@ export const bookmarkPracticeQuestion = asyncHandler(async (req, res) => {
 
 // POST /api/aptitude/patterns/:slug/start — mode: 'test' | 'practice'.
 // Test mode is idempotent: an unexpired in-progress paper is resumed rather
-// than replaced.
+// than replaced. An optional `subPattern` makes it a test of that topic only.
 export const startAttempt = asyncHandler(async (req, res) => {
-  const { mode } = req.body;
+  const { mode, subPattern } = req.body;
   if (!['test', 'practice'].includes(mode)) throw ApiError.badRequest("mode must be 'test' or 'practice'");
 
   const pattern = await AptitudePattern.findOne({ slug: req.params.slug, isPublished: true });
@@ -162,8 +164,9 @@ export const startAttempt = asyncHandler(async (req, res) => {
 
   await aptitudeService.assertPatternUnlocked(req.user.id, pattern);
   if (mode === 'test') await aptitudeService.assertLearnCompleted(req.user.id, pattern);
+  if (subPattern !== undefined) await aptitudeService.assertKnownTopic(pattern, subPattern);
 
-  const { attempt, resumed } = await aptitudeService.startAttempt({ userId: req.user.id, pattern, mode });
+  const { attempt, resumed } = await aptitudeService.startAttempt({ userId: req.user.id, pattern, mode, subPattern });
   new ApiResponse(
     resumed ? 200 : 201,
     {

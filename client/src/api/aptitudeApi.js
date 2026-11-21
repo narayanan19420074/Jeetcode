@@ -28,8 +28,8 @@ export const aptitudeApi = {
   bookmarkQuestion: (slug, questionId, bookmarked) =>
     apiClient.post(`/aptitude/patterns/${slug}/practice/questions/${questionId}/bookmark`, { bookmarked }),
 
-  // Test — exam-style test. startAttempt is idempotent for tests (resumes).
-  startAttempt: (slug, mode = 'test') => apiClient.post(`/aptitude/patterns/${slug}/start`, { mode }),
+  // Test — exam-style test. startAttempt is idempotent for tests (resumes). `subPattern` limits the test to one topic.
+  startAttempt: (slug, mode = 'test', subPattern) => apiClient.post(`/aptitude/patterns/${slug}/start`, subPattern ? { mode, subPattern } : { mode }),
   getAttemptQuestions: (attemptId) => apiClient.get(`/aptitude/attempts/${attemptId}/questions`),
   saveAttempt: (attemptId, updates) => apiClient.post(`/aptitude/attempts/${attemptId}/save`, { updates }),
   submitAttempt: (attemptId, updates = []) =>

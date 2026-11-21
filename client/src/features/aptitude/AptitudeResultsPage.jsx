@@ -240,7 +240,10 @@ export default function AptitudeResultsPage() {
     );
   }
 
-  const { pattern, nextPattern } = data;
+  const { pattern } = data;
+  // A topic test never unlocks the next pattern, and retaking it retakes the same topic.
+  const nextPattern = result.subPattern ? null : data.nextPattern;
+  const retakePath = `/aptitude/${slug}/test${result.subPattern ? `?topic=${result.subPattern}` : ''}`;
   const passed = result.passed;
   const weakest = result.bySubPattern.find((s) => s.correct / s.total < 0.75 && s.key !== 'other');
   const slowest = [...answers].filter((a) => a.question).sort((a, b) => b.timeSpentSec - a.timeSpentSec)[0];
@@ -310,7 +313,7 @@ export default function AptitudeResultsPage() {
         </Stack>
 
         <Stack direction="row" spacing={1.25} useFlexGap sx={{ flexWrap: 'wrap', mt: 3 }}>
-          <Button variant="contained" disableElevation onClick={() => navigate(`/aptitude/${slug}/test`)}>
+          <Button variant="contained" disableElevation onClick={() => navigate(retakePath)}>
             Retake test
           </Button>
           <Button variant="outlined" onClick={() => navigate(`/aptitude/${slug}/practice${weakest ? `?subPattern=${weakest.key}` : ''}`)}>

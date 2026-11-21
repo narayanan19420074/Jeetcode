@@ -56,12 +56,14 @@ export async function buildAttemptResult(attempt, pattern) {
 
   // "Better than X% of test takers" — only meaningful with a real crowd.
   let percentile = null;
-  if (attempt.status !== 'in-progress' && typeof attempt.score === 'number') {
+  // Topic tests are shorter papers, so they are not ranked against pattern tests.
+  if (attempt.status !== 'in-progress' && typeof attempt.score === 'number' && !attempt.subPattern) {
     const [all, below] = await Promise.all([
-      AptitudeAttempt.countDocuments({ pattern: attempt.pattern, mode: 'test', status: { $in: ['completed', 'expired'] } }),
+      AptitudeAttempt.countDocuments({ pattern: attempt.pattern, mode: 'test', subPattern: null, status: { $in: ['completed', 'expired'] } }),
       AptitudeAttempt.countDocuments({
         pattern: attempt.pattern,
         mode: 'test',
+        subPattern: null,
         status: { $in: ['completed', 'expired'] },
         score: { $lt: attempt.score },
       }),
@@ -74,6 +76,7 @@ export async function buildAttemptResult(attempt, pattern) {
   return {
     attemptId: attempt._id,
     mode: attempt.mode,
+    subPattern: attempt.subPattern ?? null,
     status: attempt.status,
     score: attempt.score,
     correctCount: attempt.correctCount,

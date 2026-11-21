@@ -93,6 +93,8 @@ export const SIZES = {
   phoneSearchHeight: 32,
   // Thin progress bar in the cards of the Exams page.
   progressBarHeight: 6,
+  // Thin scrollbar of a side card whose rows scroll (visible only while the pointer is over it).
+  hoverScrollbar: 8,
   // Profile picture of a member on the progress bar of a study plan card.
   progressAvatar: 28,
   // Profile picture in a Friends / Messages chat-list row (also the size of the profile button laid over it).

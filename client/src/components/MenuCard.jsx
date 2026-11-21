@@ -1,5 +1,6 @@
 import { Box, ButtonBase, Typography } from '@mui/material';
 import { LIB_TRACKING, useLibraryPalette } from '../features/dashboard/components/libraryStyle';
+import { hoverScrollbarSx } from './hoverScrollbar';
 import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES, withAlpha } from '../app/design/designTokens';
 
 const SELECTED_ROW_ALPHA = 0.05;
@@ -8,17 +9,17 @@ const SELECTED_ROW_ALPHA = 0.05;
 const menuRowFill = (pal) => withAlpha(pal.text, SELECTED_ROW_ALPHA);
 
 // A soft grey menu card with a centred title and a hairline under it. The sidebars of the Aptitude and Problems pages
-// share it. The rows scroll inside the card when the window is short.
+// share it. The title stays in place; only the rows scroll when the window is short, and their scrollbar shows on hover.
 export function MenuCard({ title, children }) {
   const pal = useLibraryPalette();
   return (
     <Box
       component="nav"
       aria-label={title}
-      sx={(theme) => ({ p: 1.5, display: 'flex', flexDirection: 'column', gap: 0.5, overflowY: 'auto', borderRadius: RADII_PX.dialog, bgcolor: pal.chip, border: `1px solid ${pal.border}`, maxHeight: `calc(100vh - ${SIZES.desktopFrame.stickyTop}px - ${theme.spacing(10)})` })}
+      sx={(theme) => ({ p: 1.5, display: 'flex', flexDirection: 'column', overflow: 'hidden', borderRadius: RADII_PX.dialog, bgcolor: pal.chip, border: `1px solid ${pal.border}`, maxHeight: `calc(100vh - ${SIZES.desktopFrame.stickyTop}px - ${theme.spacing(10)})` })}
     >
       <Typography component="h2" sx={{ textAlign: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.bold, color: pal.text, pt: 0.5, pb: 1.5, mb: 0.5, borderBottom: `1px solid ${pal.divider}` }}>{title}</Typography>
-      {children}
+      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5, ...hoverScrollbarSx(pal.text) }}>{children}</Box>
     </Box>
   );
 }

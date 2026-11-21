@@ -19,6 +19,8 @@ const aptitudeAttemptSchema = new mongoose.Schema(
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true },
     pattern: { type: mongoose.Schema.Types.ObjectId, ref: 'AptitudePattern', required: true, index: true },
     mode: { type: String, enum: ['test', 'practice'], required: true },
+    // Set for a test of one topic only. Such a test never feeds the pattern's best score or unlock chain.
+    subPattern: { type: String, default: null },
     status: { type: String, enum: ['in-progress', 'completed', 'expired'], default: 'in-progress', index: true },
 
     // Test-mode timer is enforced HERE, server-side. startAttempt() sets
