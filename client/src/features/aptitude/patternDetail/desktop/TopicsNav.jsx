@@ -1,45 +1,38 @@
-import { Box } from '@mui/material';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import HourglassEmptyRoundedIcon from '@mui/icons-material/HourglassEmptyRounded';
-import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUncheckedRounded';
+import { Box, ButtonBase, Typography } from '@mui/material';
 import BackIconButton from '../../../../components/BackIconButton';
-import { NavButton } from '../../../dashboard/components/SidebarParts';
-import { COLOR_PALETTE, SIZES } from '../../../../app/design/designTokens';
+import { LIGHT_CARD_MUTED_OPACITY, LIGHT_CARD_SELECTED_BG, lightCardSx } from '../../../dashboard/components/rail/lightCardStyles';
+import { LIB_TRACKING, libSectionTitleSx } from '../../../dashboard/components/libraryStyle';
+import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../../app/design/designTokens';
 
-const isEmpty = (topic) => topic.total === 0;
-const isMastered = (topic) => topic.total > 0 && topic.solved === topic.total;
+// Topics with no questions yet show no count; the learner can still open them to read.
+const topicCount = (topic) => (topic.total === 0 ? '' : `${topic.solved}/${topic.total}`);
 
-const topicIcon = (topic) => {
-  if (isEmpty(topic)) return HourglassEmptyRoundedIcon;
-  return isMastered(topic) ? CheckCircleRoundedIcon : RadioButtonUncheckedRoundedIcon;
-};
+function TopicRow({ topic, selected, onPick }) {
+  return (
+    <ButtonBase
+      onClick={() => onPick(topic.slug)}
+      aria-current={selected ? 'page' : undefined}
+      sx={{ display: 'flex', justifyContent: 'space-between', gap: 1, width: SIZES.fill, px: 1.5, py: 1, borderRadius: RADII_PX.card, textAlign: 'left', fontFamily: 'inherit', letterSpacing: LIB_TRACKING, bgcolor: selected ? LIGHT_CARD_SELECTED_BG : 'transparent', opacity: selected ? 1 : LIGHT_CARD_MUTED_OPACITY }}
+    >
+      <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: selected ? FONT_WEIGHTS.bold : FONT_WEIGHTS.medium }}>{topic.title}</Typography>
+      <Typography variant="caption" sx={{ flexShrink: 0, fontVariantNumeric: 'tabular-nums' }}>{topicCount(topic)}</Typography>
+    </ButtonBase>
+  );
+}
 
-// Topics with no questions yet stay visible but cannot be opened.
-const topicCount = (topic) => (isEmpty(topic) ? 'Soon' : `${topic.solved}/${topic.total}`);
-
-// Left column of the desktop topic page: the back icon, then every topic of the pattern in the Dashboard sidebar style.
-export default function TopicsNav({ topics, onPickTopic }) {
+// Left column of the desktop topic page: the back icon and a white card listing the topics of this pattern.
+// Picking a topic opens its learn content in the middle.
+export default function TopicsNav({ topics, activeSlug, onPick }) {
   return (
     <Box sx={{ display: 'grid', gap: 2 }}>
-      <Box>
-        <BackIconButton to="/aptitude" label="Back to Aptitude" />
-      </Box>
+      <Box><BackIconButton to="/aptitude" label="Back to Aptitude" /></Box>
       <Box
         component="nav"
         aria-label="Topics"
-        sx={(theme) => ({ display: 'flex', flexDirection: 'column', overflowY: 'auto', maxHeight: `calc(100vh - ${SIZES.desktopFrame.stickyTop}px - ${theme.spacing(10)})`, scrollbarWidth: 'none', '&::-webkit-scrollbar': { display: 'none' } })}
+        sx={[...lightCardSx, (theme) => ({ p: 1, display: 'flex', flexDirection: 'column', gap: 0.5, overflowY: 'auto', maxHeight: `calc(100vh - ${SIZES.desktopFrame.stickyTop}px - ${theme.spacing(10)})` })]}
       >
-        {topics.map((topic) => (
-          <NavButton
-            key={topic.slug}
-            icon={topicIcon(topic)}
-            accent={isMastered(topic) ? COLOR_PALETTE.emerald[500] : undefined}
-            label={topic.title}
-            count={topicCount(topic)}
-            disabled={isEmpty(topic)}
-            onClick={() => onPickTopic(topic.slug)}
-          />
-        ))}
+        <Typography component="h2" sx={[libSectionTitleSx, { px: 1.5, pt: 1, pb: 0.5 }]}>Topics</Typography>
+        {topics.map((topic) => <TopicRow key={topic.slug} topic={topic} selected={topic.slug === activeSlug} onPick={onPick} />)}
       </Box>
     </Box>
   );

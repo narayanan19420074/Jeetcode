@@ -1,10 +1,12 @@
-import { Alert, Box, Skeleton } from '@mui/material';
+import { Alert, Skeleton } from '@mui/material';
 import BackIconButton from '../../../../components/BackIconButton';
 import DesktopPageFrame from '../../../../components/DesktopPageFrame';
 import { LibraryFont } from '../../../dashboard/components/libraryStyle';
 import { RADII_PX } from '../../../../app/design/designTokens';
-import LearnCard from './LearnCard';
+import useLessonCompletion from '../../lesson/useLessonCompletion';
+import useRouteSelection from '../../lesson/useRouteSelection';
 import RightColumn from './RightColumn';
+import TopicStudy from './TopicStudy';
 import TopicsNav from './TopicsNav';
 
 function PatternLoadingState({ error }) {
@@ -15,18 +17,24 @@ function PatternLoadingState({ error }) {
   );
 }
 
-// Desktop topic page in the shared page frame (same margins, column widths and hairlines as the Dashboard):
-// topics and the back icon on the left, Learn in the middle, Practice, Test and the alien on the right.
+function PatternStudyPage({ detail }) {
+  const { slug, data, learn, goPractice } = detail;
+  const topics = data.practice.bySubPattern;
+  const { completed, markDone } = useLessonCompletion(slug, data.progress.completedSubsections, learn.learnTotal);
+  const { activeId, activeIndex, select } = useRouteSelection({ ids: topics.map((topic) => topic.slug), paramName: 'topic', completed });
+  return (
+    <DesktopPageFrame left={<TopicsNav topics={topics} activeSlug={activeId} onPick={select} />} right={<RightColumn detail={detail} />}>
+      <TopicStudy topics={topics} activeIndex={activeIndex} lessons={learn.lessons} onSelect={select} onCorrect={markDone} onPractice={goPractice} />
+    </DesktopPageFrame>
+  );
+}
+
+// Desktop topic page in the shared page frame: topics on the left, the learn content of the picked topic in the middle,
+// Practice and Test on the right.
 export default function PatternDesktopView({ detail }) {
-  const { data, error, learn, lines, goLearn, goPractice } = detail;
-  if (!data) return <LibraryFont><PatternLoadingState error={error} /></LibraryFont>;
   return (
     <LibraryFont>
-      <DesktopPageFrame left={<TopicsNav topics={data.practice.bySubPattern} onPickTopic={goPractice} />} right={<RightColumn detail={detail} />}>
-        <Box>
-          <LearnCard title={data.pattern.title} meta={lines.learn} learn={learn} onLearn={goLearn} />
-        </Box>
-      </DesktopPageFrame>
+      {detail.data ? <PatternStudyPage detail={detail} /> : <PatternLoadingState error={detail.error} />}
     </LibraryFont>
   );
 }

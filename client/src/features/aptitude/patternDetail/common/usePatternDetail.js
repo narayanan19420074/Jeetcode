@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { aptitudeApi } from '../../../../api/aptitudeApi';
 import { extractErrorMessage } from '../../../../api/apiClient';
 import { getLessonsForPattern, getTopicBySlug } from '../../../learn/content';
-import { moduleXp, rankForXp } from '../../components/gamification';
 import { buildStudyLines } from './patternLines';
 
 function usePatternData(slug) {
@@ -44,12 +43,6 @@ function useLearnProgress(slug, data) {
   return { lessons, hasLegacyLearn, hasLearn: Boolean(lessons) || hasLegacyLearn, learnTotal: lessons?.length ?? 0, learnDone: completedLessonIds.size, completedLessonIds };
 }
 
-// The alien the learner has earned in this topic grows with the topic's XP.
-const deriveRank = (data, learnDone) => {
-  const xp = moduleXp({ practice: data.practice, progress: data.progress, learnDone, pattern: data.pattern });
-  return { xp, rank: rankForXp(xp) };
-};
-
 function usePatternActions(slug, data, lessons) {
   const navigate = useNavigate();
   // Without an explicit topic, practice resumes at the recommended one once the learner has started practising.
@@ -72,6 +65,6 @@ export default function usePatternDetail(slug) {
   const learn = useLearnProgress(slug, data);
   const remainingSec = useRemainingSeconds(data?.activeTest);
   const actions = usePatternActions(slug, data, learn.lessons);
-  const ready = data ? { lines: buildStudyLines(data, learn, remainingSec), ...deriveRank(data, learn.learnDone) } : {};
+  const ready = data ? { lines: buildStudyLines(data, learn, remainingSec) } : {};
   return { slug, data, error, learn, ...ready, ...actions };
 }
