@@ -15,7 +15,7 @@ function ComingSoon({ title }) {
 }
 
 // Middle of the desktop topic page: the learn content of the topic picked on the left, or a note while it is being written.
-// Previous and Next move between topics; Practice and Test of the topic are in the card on the right.
+// The lesson keeps its reading width; Previous and Next sit at the two edges of the whole middle column and move between topics; Practice and Test of the topic are in the card on the right.
 // Lessons are matched to topics by id (a lesson id is the topic's slug).
 export default function TopicStudy({ topics, activeIndex, lessons, onSelect, onCorrect }) {
   const topic = topics[activeIndex];
@@ -23,8 +23,10 @@ export default function TopicStudy({ topics, activeIndex, lessons, onSelect, onC
   const lesson = lessons?.find((item) => item.id === topic.slug);
   const isLast = activeIndex === topics.length - 1;
   return (
-    <Box key={topic.slug} sx={{ maxWidth: CONTENT_MAX }}>
-      {lesson ? <LessonBody lesson={lesson} index={lessons.indexOf(lesson)} onCorrect={() => onCorrect(lesson.id)} /> : <ComingSoon title={topic.title} />}
+    <Box key={topic.slug}>
+      <Box sx={{ maxWidth: CONTENT_MAX }}>
+        {lesson ? <LessonBody lesson={lesson} index={lessons.indexOf(lesson)} onCorrect={() => onCorrect(lesson.id)} /> : <ComingSoon title={topic.title} />}
+      </Box>
       <TopicFooter
         hasPrevious={activeIndex > 0}
         hasNext={!isLast}
