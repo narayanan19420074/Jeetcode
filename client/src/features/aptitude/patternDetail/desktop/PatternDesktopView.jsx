@@ -18,19 +18,19 @@ function PatternLoadingState({ error }) {
 }
 
 function PatternStudyPage({ detail }) {
-  const { slug, data, learn, goPractice, goTest } = detail;
+  const { slug, data, learn } = detail;
   const topics = data.practice.bySubPattern;
   const { completed, markDone } = useLessonCompletion(slug, data.progress.completedSubsections, learn.learnTotal);
   const { activeId, activeIndex, select } = useRouteSelection({ ids: topics.map((topic) => topic.slug), paramName: 'topic', completed });
   return (
     <DesktopPageFrame left={<TopicsNav topics={topics} activeSlug={activeId} onPick={select} />} right={<RightColumn detail={detail} topic={topics[activeIndex]} />}>
-      <TopicStudy topics={topics} activeIndex={activeIndex} lessons={learn.lessons} onSelect={select} onCorrect={markDone} onPractice={goPractice} onTest={goTest} />
+      <TopicStudy topics={topics} activeIndex={activeIndex} lessons={learn.lessons} onSelect={select} onCorrect={markDone} />
     </DesktopPageFrame>
   );
 }
 
 // Desktop topic page in the shared page frame: topics on the left, the learn content of the picked topic in the middle
-// (with Practice, Test and Next under it) and one card on the right with Practice and Test of that same topic.
+// (with Previous and Next under it) and one card on the right with Practice and Test of that same topic.
 export default function PatternDesktopView({ detail }) {
   return (
     <LibraryFont>

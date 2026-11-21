@@ -15,9 +15,9 @@ function ComingSoon({ title }) {
 }
 
 // Middle of the desktop topic page: the learn content of the topic picked on the left, or a note while it is being written.
-// Practice and Test under it cover this topic only.
+// Previous and Next move between topics; Practice and Test of the topic are in the card on the right.
 // Lessons are matched to topics by id (a lesson id is the topic's slug).
-export default function TopicStudy({ topics, activeIndex, lessons, onSelect, onCorrect, onPractice, onTest }) {
+export default function TopicStudy({ topics, activeIndex, lessons, onSelect, onCorrect }) {
   const topic = topics[activeIndex];
   if (!topic) return <ComingSoon title="Topics are coming soon" />;
   const lesson = lessons?.find((item) => item.id === topic.slug);
@@ -28,10 +28,7 @@ export default function TopicStudy({ topics, activeIndex, lessons, onSelect, onC
       <TopicFooter
         hasPrevious={activeIndex > 0}
         hasNext={!isLast}
-        hasQuestions={topic.total > 0}
         onPrevious={() => onSelect(topics[activeIndex - 1].slug)}
-        onPractice={() => onPractice(topic.slug)}
-        onTest={() => onTest(topic.slug)}
         onNext={() => onSelect(topics[activeIndex + 1].slug)}
       />
     </Box>
