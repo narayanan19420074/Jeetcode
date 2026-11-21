@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { ThemeProvider, alpha, createTheme, useTheme } from '@mui/material/styles';
 import { LIBRARY_PALETTE, LIB_FONT } from '../components/libraryStyle';
+import { COLOR_PALETTE } from '../../../app/design/designTokens';
 
 // The desktop dashboard borrows the phone Library look: the cream surfaces and the Library type settings.
 // It is applied as a nested theme, so every component under it (navbar, sidebar, cards, dialogs) picks up the
@@ -18,6 +19,11 @@ export const usesDesktopLook = (pathname) => {
   const path = pathname.replace(/\/+$/, '');
   return DESKTOP_LOOK_PATHS.includes(path) || DESKTOP_LOOK_PREFIXES.some((prefix) => path.startsWith(prefix));
 };
+
+// My stats and Plans sit on a pure white page. Cards keep the cream surface, so they stand out from the page.
+const WHITE_PAGE_VIEWS = ['stats', 'billing'];
+const WHITE_PAGE_PALETTE = { ...LIBRARY_PALETTE.light, bg: COLOR_PALETTE.white };
+export const usesWhitePage = (pathname, search) => isDashboardPath(pathname) && WHITE_PAGE_VIEWS.includes(new URLSearchParams(search).get('view'));
 
 // Components that need the marker (for example the problem library) read it with this hook.
 export const useLibraryLook = () => Boolean(useTheme().libraryLook);
@@ -48,9 +54,9 @@ const creamAppBar = (pal) => ({
   },
 });
 
-const withDesktopLook = (outer) => {
+const withDesktopLook = (outer, whitePage) => {
   const isLight = outer.palette.mode === 'light';
-  const pal = LIBRARY_PALETTE[isLight ? 'light' : 'dark'];
+  const pal = isLight && whitePage ? WHITE_PAGE_PALETTE : LIBRARY_PALETTE[isLight ? 'light' : 'dark'];
   return createTheme(outer, {
     libraryLook: true,
     typography: libraryTypography(outer),
@@ -64,7 +70,7 @@ const keepOuterTheme = (outer) => outer;
 
 // `enabled` flips with the route and screen width. The provider stays mounted either way,
 // so the navbar and page below it are never remounted when the look switches on or off.
-export function DesktopLookProvider({ enabled, children }) {
-  const theme = useMemo(() => (enabled ? withDesktopLook : keepOuterTheme), [enabled]);
+export function DesktopLookProvider({ enabled, whitePage = false, children }) {
+  const theme = useMemo(() => (enabled ? (outer) => withDesktopLook(outer, whitePage) : keepOuterTheme), [enabled, whitePage]);
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 }

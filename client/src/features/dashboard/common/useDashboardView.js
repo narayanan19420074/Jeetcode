@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-const VIEWS = ['library', 'contest', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list'];
+// `stats` (My stats) and `billing` (Plans) open in the main area like the other sidebar entries.
+const VIEWS = ['library', 'contest', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list', 'stats', 'billing'];
 // These views need the full width, so the streak rail slides away.
-const VIEWS_WITHOUT_RAIL = ['plans', 'leaderboard', 'friends', 'explore', 'contest', 'quests'];
+const VIEWS_WITHOUT_RAIL = ['plans', 'leaderboard', 'friends', 'explore', 'contest', 'quests', 'stats', 'billing'];
 // These views scroll their own list, so the middle column itself must not scroll.
 const VIEWS_WITH_OWN_SCROLL = ['leaderboard', 'quests'];
 

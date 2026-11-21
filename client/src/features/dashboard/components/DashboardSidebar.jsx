@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Box, Tooltip } from '@mui/material';
 import LibraryBooksRoundedIcon from '@mui/icons-material/LibraryBooksRounded';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
@@ -23,13 +22,9 @@ export const NAV_ITEMS = [
   { view: 'explore', label: 'Explore', icon: ExploreRoundedIcon },
   { view: 'plans', label: 'Study Plan', icon: SchoolRoundedIcon },
   { view: 'leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon },
-];
-
-// Pages (not dashboard views) that live in the same rail.
-// My stats comes first. The Profile is reached from the account menu in the navbar; friends from Messages in Community.
-const PAGE_ITEMS = [
-  { to: '/you', label: 'My stats', icon: InsightsRoundedIcon },
-  { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
+  // The Profile is reached from the account menu in the navbar; friends from Messages in Community.
+  { view: 'stats', label: 'My stats', icon: InsightsRoundedIcon },
+  { view: 'billing', label: 'Plans', icon: WorkspacePremiumRoundedIcon },
 ];
 
 // Same blue star as the Favorites card on the phone home.
@@ -45,11 +40,6 @@ function ViewButtons({ view, onView }) {
       onClick={() => onView(v)}
     />
   ));
-}
-
-function PageButtons() {
-  const navigate = useNavigate();
-  return PAGE_ITEMS.map(({ to, label, icon }) => <NavButton key={to} active={false} icon={icon} label={label} onClick={() => navigate(to)} />);
 }
 
 export function ListButtons({ lists, view, activeListId, onSelectList }) {
@@ -76,7 +66,7 @@ export function ListButtons({ lists, view, activeListId, onSelectList }) {
   });
 }
 
-// Desktop: vertical rail. Phones reach the same sections from the navigation menu.
+// Desktop: vertical rail. Every entry opens in the main area. Phones reach the same sections from the navigation menu.
 export default function DashboardSidebar({ view, activeListId, lists, onView, onSelectList, onCreateList, maxLists }) {
   const [creating, setCreating] = useState(false);
 
@@ -91,7 +81,6 @@ export default function DashboardSidebar({ view, activeListId, lists, onView, on
     <>
       <Box component="nav" aria-label="Dashboard sections" sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', gap: 0 }}>
         <ViewButtons view={view} onView={onView} />
-        <PageButtons />
         <ListsHeader atLimit={lists.length >= maxLists} onCreate={() => setCreating(true)} />
         <ListButtons lists={lists} view={view} activeListId={activeListId} onSelectList={onSelectList} />
       </Box>

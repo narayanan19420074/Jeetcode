@@ -8,6 +8,7 @@ import LoginPage from './features/auth/LoginPage';
 import SignupPage from './features/auth/SignupPage';
 import DashboardPage from './features/dashboard/DashboardPage';
 import ProblemsPage from './features/dashboard/ProblemsPage';
+import DesktopViewRedirect from './features/dashboard/common/DesktopViewRedirect';
 import HomePage from './features/home/HomePage';
 import GithubCallbackPage from './features/auth/GithubCallbackPage';
 import LinkedinCallbackPage from './features/auth/LinkedinCallbackPage';
@@ -213,7 +214,7 @@ export default function App() {
         <Route path="/companies" element={<Navigate to="/prep" replace />} />
         <Route path="/job-profile" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><JobProfilePage /></Suspense></ProtectedRoute>} />
         <Route path="/job-profile/:userId" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><MemberJobProfilePage /></Suspense></ProtectedRoute>} />
-        <Route path="/you" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><YouPage /></Suspense></ProtectedRoute>} />
+        <Route path="/you" element={<ProtectedRoute><DesktopViewRedirect view="stats"><Suspense fallback={<PageLoader />}><YouPage /></Suspense></DesktopViewRedirect></ProtectedRoute>} />
         <Route path="/prep" element={<Suspense fallback={<PageLoader />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/community" element={<Suspense fallback={<PageLoader />}><CommunityPage /></Suspense>} />
         <Route path="/community/:postId" element={<Suspense fallback={<PageLoader />}><PostDetailPage /></Suspense>} />
@@ -235,7 +236,7 @@ export default function App() {
         <Route path="/aptitude/:slug/results" element={<Navigate to=".." relative="path" replace />} />
         {/* Contest now lives inside the dashboard so the sidebar stays visible. */}
         <Route path="/contest" element={<Navigate to="/dashboard?view=contest" replace />} />
-        <Route path="/plans" element={<Suspense fallback={<PageLoader />}><PlansPage /></Suspense>} />
+        <Route path="/plans" element={<DesktopViewRedirect view="billing"><Suspense fallback={<PageLoader />}><PlansPage /></Suspense></DesktopViewRedirect>} />
         {/* Old pricing URL: still linked from several places, so keep it working. */}
         <Route path="/pricing" element={<Navigate to="/plans" replace />} />
         <Route path="/settings/*" element={<ProtectedRoute><Suspense fallback={<PageLoader />}><SettingsPage /></Suspense></ProtectedRoute>} />

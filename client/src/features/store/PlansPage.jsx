@@ -1,309 +1,76 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Alert, Box, Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Stack, Typography } from '@mui/material';
+import { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { Alert, Box, IconButton } from '@mui/material';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
-import { billingApi } from '../../api/billingApi';
-import { loadRazorpayScript } from '../../api/loadRazorpayScript';
-import { extractErrorMessage } from '../../api/apiClient';
 import ActivateLicenseModal from '../../components/ActivateLicenseModal';
-import { tint } from '../dashboard/dashboardUtils';
-import {
-  LIB_ACCENT,
-  LIB_TRACKING,
-  LibraryFont,
-  PageHeader,
-  libBackBtnSx,
-  libPanelSx,
-  libSolidBtnSx,
-  libTintBtnSx,
-  useLibraryPalette,
-} from '../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX } from '../../app/design/designTokens';
+import { LibraryFont, PageHeader, libBackBtnSx } from '../dashboard/components/libraryStyle';
+import { SIZES } from '../../app/design/designTokens';
+import CancelSubscriptionDialog from './plans/CancelSubscriptionDialog';
+import CurrentPlanCard from './plans/CurrentPlanCard';
+import { FreePlanPanel, ProPlanPanel } from './plans/PlanPanels';
+import { LicensePrompt, PlansLegalNote } from './plans/PlansFooter';
+import { BILLED_PLANS, describeCurrentPlan } from './plans/planCatalog';
+import usePlansBilling from './plans/usePlansBilling';
 
-// Plans page: Free, Pro Monthly and Pro Yearly in the Library look (cream panels, 16px gutter, Roboto, pill buttons).
-// Prices are the same as on the home page. Keep them in sync.
-const PRICE = { monthly: 149, yearly: 1199 };
-const PERIOD = { monthly: 'month', yearly: 'year' };
-const SAVING_PERCENT = Math.round((1 - PRICE.yearly / (PRICE.monthly * 12)) * 100);
-const PLAN_LABEL = { monthly: 'Monthly', yearly: 'Yearly', 'license-key': 'License key', 'quest-reward': 'Reward' };
-const CHECK_GREEN = COLOR_PALETTE.custom.emerald22A06B; // same green as the cleared level cards on the dashboard
+const pageSx = {
+  px: { xs: 2, md: 0 },
+  pt: 'calc(8px + env(safe-area-inset-top))',
+  pb: 3,
+  maxWidth: { xs: SIZES.centeredPageMaxWidth.phone, md: SIZES.centeredPageMaxWidth.desktop },
+  mx: 'auto',
+};
 
-const FREE_FEATURES = [
-  'Coding problems without company tags',
-  'Aptitude patterns with lessons',
-  'Dashboard, streaks and the leaderboard',
-  'Pair rooms and the algorithm visualizer',
-];
-const PRO_FEATURES = [
-  'Every company-tagged coding problem',
-  'Unlimited AI hints',
-  'The full aptitude test suite',
-  'Unlimited mock test attempts',
-];
+const planGridSx = { mt: 3, display: 'grid', gridTemplateColumns: { xs: '1fr', lg: 'repeat(3, 1fr)' }, gap: 1.5, alignItems: 'stretch' };
 
-const formatDate = (iso) => new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-
-function FeatureList({ items }) {
+function PlansPageHeader({ isAuthenticated }) {
   return (
-    <Stack component="ul" spacing={1.25} sx={{ listStyle: 'none', m: 0, p: 0 }}>
-      {items.map((text) => (
-        <Stack component="li" key={text} direction="row" spacing={1.25} sx={{ alignItems: 'flex-start' }}>
-          <CheckRoundedIcon aria-hidden sx={{ fontSize: FONT_SIZES.display, mt: 0, color: CHECK_GREEN, flexShrink: 0 }} />
-          <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>{text}</Typography>
-        </Stack>
-      ))}
-    </Stack>
+    <>
+      <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ ...libBackBtnSx, display: { md: 'none' } }}>
+        <ArrowBackRoundedIcon />
+      </IconButton>
+      <Box sx={{ mt: { xs: 0, md: 2 } }}>
+        <PageHeader icon={WorkspacePremiumRoundedIcon} title="Plans" subtitle="Choose the plan that fits your preparation" />
+      </Box>
+    </>
   );
 }
 
-function PlanPanel({ highlighted = false, children }) {
+function PlanGrid({ billing }) {
+  const { isAuthenticated, isPro, status } = billing;
   return (
-    <Box
-      sx={{
-        ...libPanelSx,
-        p: 2.5,
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 2,
-        ...(highlighted ? { border: `1.5px solid ${LIB_ACCENT}` } : {}),
-      }}
-    >
-      {children}
+    <Box sx={planGridSx}>
+      <FreePlanPanel isAuthenticated={isAuthenticated} isPro={isPro} />
+      {BILLED_PLANS.map((plan) => (
+        <ProPlanPanel key={plan} plan={plan} isPro={isPro} currentPlan={status?.proPlan} loadingPlan={billing.loadingPlan} onSubscribe={billing.subscribe} />
+      ))}
     </Box>
   );
 }
 
+// Plans: the current subscription first, then Free, Pro Monthly and Pro Yearly. On wide screens it opens inside the
+// dashboard main area (see DashboardViewContent); phones open it as a full screen with a back button.
 export default function PlansPage() {
-  const navigate = useNavigate();
-  const pal = useLibraryPalette();
-  const { isAuthenticated, user } = useSelector((s) => s.auth);
-
-  const [status, setStatus] = useState(null);
-  const [loadingPlan, setLoadingPlan] = useState(null);
-  const [error, setError] = useState(null);
-  const [cancelOpen, setCancelOpen] = useState(false);
-  const [cancelling, setCancelling] = useState(false);
+  const billing = usePlansBilling();
   const [licenseOpen, setLicenseOpen] = useState(false);
-
-  useEffect(() => {
-    if (!isAuthenticated) return;
-    billingApi.status().then(({ data }) => setStatus(data.data)).catch(() => {});
-  }, [isAuthenticated]);
-
-  const isPro = Boolean(status?.isPro ?? user?.isPro);
-  const subscription = status?.proPlan === 'monthly' || status?.proPlan === 'yearly';
-
-  const handleSubscribe = async (plan) => {
-    if (!isAuthenticated) {
-      navigate('/login', { state: { from: '/plans' } });
-      return;
-    }
-    setError(null);
-    setLoadingPlan(plan);
-    try {
-      const scriptReady = await loadRazorpayScript();
-      if (!scriptReady) throw new Error('Could not load the payment window. Check your connection and try again.');
-
-      const { data } = await billingApi.checkout(plan);
-      const { subscriptionId, keyId } = data.data;
-
-      const checkout = new window.Razorpay({
-        key: keyId,
-        subscription_id: subscriptionId,
-        name: 'JeetCode Pro',
-        description: `${PLAN_LABEL[plan]} subscription`,
-        theme: { color: LIB_ACCENT },
-        prefill: { name: user?.name, email: user?.email },
-        handler: async (response) => {
-          try {
-            await billingApi.verify({
-              razorpay_payment_id: response.razorpay_payment_id,
-              razorpay_subscription_id: response.razorpay_subscription_id,
-              razorpay_signature: response.razorpay_signature,
-            });
-            navigate('/dashboard');
-          } catch (err) {
-            setError(extractErrorMessage(err));
-          }
-        },
-        modal: { ondismiss: () => setLoadingPlan(null) },
-      });
-
-      checkout.open();
-    } catch (err) {
-      setError(err.message || extractErrorMessage(err));
-    } finally {
-      setLoadingPlan(null);
-    }
-  };
-
-  const handleCancel = async () => {
-    setCancelling(true);
-    setError(null);
-    try {
-      await billingApi.cancel();
-      const { data } = await billingApi.status();
-      setStatus(data.data);
-      setCancelOpen(false);
-    } catch (err) {
-      setError(extractErrorMessage(err));
-      setCancelOpen(false);
-    } finally {
-      setCancelling(false);
-    }
-  };
-
-  const planSummary = () => {
-    const name = PLAN_LABEL[status?.proPlan] || 'Pro';
-    if (!status?.proExpiresAt) return `${name} · No expiry`;
-    return `${name} · ${subscription ? 'Current period ends' : 'Active until'} ${formatDate(status.proExpiresAt)}`;
-  };
-
-  const linkSx = { color: LIB_ACCENT, fontWeight: FONT_WEIGHTS.medium, textDecoration: 'none', '&:hover': { textDecoration: 'underline' } };
+  const { isAuthenticated, isPro, status, isRecurring } = billing;
+  const currentPlan = describeCurrentPlan({ isPro, status, isRecurring });
 
   return (
     <LibraryFont>
-      <Box sx={{ px: 2, pt: 'calc(8px + env(safe-area-inset-top))', pb: 3, maxWidth: { xs: 640, md: 1040 }, mx: 'auto' }}>
-        <IconButton component={RouterLink} to={isAuthenticated ? '/dashboard' : '/'} aria-label="Back to dashboard" sx={{ ...libBackBtnSx, display: { md: 'none' } }}>
-          <ArrowBackRoundedIcon />
-        </IconButton>
-
-        <Box sx={{ mt: { xs: 0, md: 2 } }}>
-          <PageHeader icon={WorkspacePremiumRoundedIcon} title="Plans" subtitle="Choose the plan that fits your preparation" />
-        </Box>
-
-        {error && (
-          <Alert severity="error" onClose={() => setError(null)} sx={{ mt: 2.5 }}>
-            {error}
+      <Box sx={pageSx}>
+        <PlansPageHeader isAuthenticated={isAuthenticated} />
+        {billing.error && (
+          <Alert severity="error" onClose={billing.clearError} sx={{ mt: 2.5 }}>
+            {billing.error}
           </Alert>
         )}
-
-        {isPro && status && (
-          <Box sx={{ ...libPanelSx, mt: 3, p: 2, display: 'flex', alignItems: 'center', gap: 1.5, flexWrap: 'wrap' }}>
-            <Box aria-hidden sx={{ width: 44, height: 44, borderRadius: RADII_PX.card, display: 'grid', placeItems: 'center', flexShrink: 0, bgcolor: tint(COLOR_PALETTE.custom.amberF09A2E, 16), color: COLOR_PALETTE.custom.amberF09A2E }}>
-              <WorkspacePremiumRoundedIcon />
-            </Box>
-            <Box sx={{ flex: 1, minWidth: 200 }}>
-              <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING }}>Your plan: Pro</Typography>
-              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{planSummary()}</Typography>
-            </Box>
-            {subscription && (
-              <Button disableElevation onClick={() => setCancelOpen(true)} sx={{ ...libTintBtnSx, height: 36, px: 2, fontSize: FONT_SIZES.bodyLg }}>
-                Cancel subscription
-              </Button>
-            )}
-          </Box>
-        )}
-
-        <Box sx={{ mt: 3, display: 'grid', gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, gap: 1.5, alignItems: 'stretch' }}>
-          {/* Free */}
-          <PlanPanel>
-            <Box>
-              <Typography component="h2" sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>Free</Typography>
-              <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.hero, lineHeight: '40px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>
-                ₹0
-              </Typography>
-              <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything you need to begin</Typography>
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <FeatureList items={FREE_FEATURES} />
-            </Box>
-            {!isAuthenticated ? (
-              <Button component={RouterLink} to="/signup" disableElevation fullWidth sx={libTintBtnSx}>
-                Sign up
-              </Button>
-            ) : !isPro ? (
-              <Button disabled fullWidth sx={{ ...libTintBtnSx, '&.Mui-disabled': { color: pal.text, opacity: 0.6 } }}>
-                Current plan
-              </Button>
-            ) : null}
-          </PlanPanel>
-
-          {/* Pro: one card per billing period, so both plans are always visible */}
-          {['monthly', 'yearly'].map((plan) => (
-            <PlanPanel key={plan} highlighted={plan === 'yearly'}>
-              <Box>
-                <Stack direction="row" sx={{ alignItems: 'center', justifyContent: 'space-between', gap: 1 }}>
-                  <Typography component="h2" sx={{ fontSize: FONT_SIZES.heading, lineHeight: '28px', fontWeight: FONT_WEIGHTS.bold }}>Pro {PLAN_LABEL[plan]}</Typography>
-                  {plan === 'yearly' && (
-                    <Box component="span" sx={{ height: 24, px: 1.5, borderRadius: RADII_PX.pill, display: 'inline-flex', alignItems: 'center', fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium, letterSpacing: LIB_TRACKING, color: COLOR_PALETTE.white, bgcolor: LIB_ACCENT }}>
-                      Best value
-                    </Box>
-                  )}
-                </Stack>
-                <Typography sx={{ mt: 0.5, fontSize: FONT_SIZES.hero, lineHeight: '40px', fontWeight: FONT_WEIGHTS.bold, fontVariantNumeric: 'tabular-nums' }}>
-                  ₹{PRICE[plan].toLocaleString('en-IN')}
-                  <Box component="span" sx={{ ml: 1, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.regular, letterSpacing: LIB_TRACKING, color: pal.muted }}>
-                    per {PERIOD[plan]}
-                  </Box>
-                </Typography>
-                <Typography sx={{ fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
-                  {plan === 'yearly' ? `Billed yearly. Save ${SAVING_PERCENT}% compared with monthly.` : 'Billed monthly. Cancel anytime.'}
-                </Typography>
-              </Box>
-              <Box sx={{ flex: 1 }}>
-                <Typography sx={{ mb: 1.5, fontSize: FONT_SIZES.body, lineHeight: '20px', letterSpacing: LIB_TRACKING, color: pal.muted }}>Everything in Free, plus:</Typography>
-                <FeatureList items={PRO_FEATURES} />
-              </Box>
-              <Button
-                disableElevation
-                fullWidth
-                disabled={Boolean(loadingPlan) || isPro}
-                onClick={() => handleSubscribe(plan)}
-                sx={{
-                  ...(plan === 'yearly' ? libSolidBtnSx : libTintBtnSx),
-                  '&.Mui-disabled': plan === 'yearly' ? { bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, opacity: 0.5 } : { color: pal.text, opacity: 0.6 },
-                }}
-              >
-                {loadingPlan === plan ? <CircularProgress size={22} sx={{ color: plan === 'yearly' ? COLOR_PALETTE.white : pal.text }} aria-label="Starting checkout" /> : isPro ? (status?.proPlan === plan ? 'Current plan' : 'Subscribe') : 'Subscribe'}
-              </Button>
-            </PlanPanel>
-          ))}
-        </Box>
-
-        {isAuthenticated && !isPro && (
-          <Typography sx={{ mt: 2.5, textAlign: 'center', fontSize: FONT_SIZES.bodyLg, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
-            Have a license key?{' '}
-            <Box component="button" type="button" onClick={() => setLicenseOpen(true)} sx={{ ...linkSx, p: 0, border: 0, bgcolor: 'transparent', font: 'inherit', cursor: 'pointer' }}>
-              Activate license
-            </Box>
-          </Typography>
-        )}
-
-        <Typography sx={{ mt: 2.5, textAlign: 'center', fontSize: FONT_SIZES.body, lineHeight: '22px', letterSpacing: LIB_TRACKING, color: pal.muted }}>
-          Subscriptions renew automatically until cancelled. See the{' '}
-          <Box component={RouterLink} to="/refund" sx={linkSx}>Refund &amp; Cancellation Policy</Box>,{' '}
-          <Box component={RouterLink} to="/terms" sx={linkSx}>Terms</Box> and{' '}
-          <Box component={RouterLink} to="/privacy" sx={linkSx}>Privacy Policy</Box>.
-        </Typography>
+        {isAuthenticated && <CurrentPlanCard plan={currentPlan} canCancel={isPro && isRecurring} onCancel={billing.cancel.open} />}
+        <PlanGrid billing={billing} />
+        {isAuthenticated && !isPro && <LicensePrompt onActivate={() => setLicenseOpen(true)} />}
+        <PlansLegalNote />
       </Box>
-
-      <Dialog
-        open={cancelOpen}
-        onClose={() => !cancelling && setCancelOpen(false)}
-        fullWidth
-        maxWidth="xs"
-        slotProps={{ paper: { sx: { borderRadius: RADII_PX.card, bgcolor: pal.bg, backgroundImage: 'none', color: pal.text } } }}
-      >
-        <DialogTitle sx={{ fontSize: FONT_SIZES.heading, fontWeight: FONT_WEIGHTS.bold }}>Cancel subscription?</DialogTitle>
-        <DialogContent>
-          <Typography sx={{ fontSize: FONT_SIZES.title, lineHeight: '24px', letterSpacing: LIB_TRACKING }}>
-            You keep Pro until the end of the period you have already paid for. After that your account moves to the Free plan.
-          </Typography>
-        </DialogContent>
-        <DialogActions sx={{ px: 3, pb: 2.5, gap: 1 }}>
-          <Button disableElevation disabled={cancelling} onClick={() => setCancelOpen(false)} sx={{ ...libTintBtnSx, height: 40, px: 2.5, fontSize: FONT_SIZES.title }}>
-            Keep plan
-          </Button>
-          <Button disableElevation disabled={cancelling} onClick={handleCancel} color="error" variant="contained" sx={{ height: 40, px: 2.5, borderRadius: RADII_PX.pill, fontSize: FONT_SIZES.title, fontWeight: FONT_WEIGHTS.medium, textTransform: 'none' }}>
-            {cancelling ? 'Cancelling…' : 'Cancel subscription'}
-          </Button>
-        </DialogActions>
-      </Dialog>
-
+      <CancelSubscriptionDialog cancel={billing.cancel} />
       <ActivateLicenseModal open={licenseOpen} onClose={() => setLicenseOpen(false)} />
     </LibraryFont>
   );

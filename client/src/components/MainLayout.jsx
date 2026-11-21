@@ -9,11 +9,12 @@ import EmailVerifyBanner from './EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 import { LIBRARY_PAGE_PATHS, LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
-import { DesktopLookProvider, isDashboardPath, usesDesktopLook } from '../features/dashboard/desktop/desktopLook';
+import { DesktopLookProvider, isDashboardPath, usesDesktopLook, usesWhitePage } from '../features/dashboard/desktop/desktopLook';
+import { COLOR_PALETTE } from '../app/design/designTokens';
 
 // Pages with their own phone header hide the top bar on phones. The bar stays mounted so the coin polling keeps running.
 const PHONE_HEADER_PATHS = LIBRARY_PAGE_PATHS;
-const PHONE_HEADER_DASHBOARD_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'];
+const PHONE_HEADER_DASHBOARD_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests', 'stats', 'billing'];
 const APTITUDE_LEVEL_PATH = /^\/aptitude\/[^/]+(\/practice(\/[^/]+)?)?\/?$/;
 
 const hasPhoneHeaderOnDashboard = (pathname, search) =>
@@ -49,10 +50,10 @@ const isFlatDesktopPath = (pathname) => pathname === '/community' || pathname.st
 
 // Phone home (light mode) is a flat warm page. The desktop dashboard, Problems page and Store use the same cream page.
 // Every other page keeps the soft wash.
-function pageBackgroundSx(t, { libraryLook, desktopLook, flatDesktop }) {
+function pageBackgroundSx(t, { libraryLook, desktopLook, flatDesktop, whitePage }) {
   const isLight = t.palette.mode === 'light';
   const wash = `linear-gradient(180deg, ${alpha(t.palette.primary.main, isLight ? 0.07 : 0.08)} 0, transparent 280px)`;
-  const cream = LIBRARY_PALETTE.light.bg;
+  const cream = whitePage ? COLOR_PALETTE.white : LIBRARY_PALETTE.light.bg;
   if (!isLight) return { bgcolor: 'background.default', backgroundImage: wash, backgroundRepeat: 'no-repeat' };
   return {
     bgcolor: { xs: libraryLook ? cream : 'background.default', md: desktopLook ? cream : 'background.default' },
@@ -76,11 +77,11 @@ export default function MainLayout() {
   useScrollToTopOnNavigate(pathname, hash);
 
   const bottomNav = showMobileBottomNav(pathname);
-  const pageLook = { libraryLook: isLibraryRoute(pathname, search), desktopLook: usesDesktopLook(pathname), flatDesktop: isFlatDesktopPath(pathname) };
+  const pageLook = { libraryLook: isLibraryRoute(pathname, search), desktopLook: usesDesktopLook(pathname), flatDesktop: isFlatDesktopPath(pathname), whitePage: usesWhitePage(pathname, search) };
 
   return (
     <Box sx={(t) => ({ minHeight: '100vh', ...pageBackgroundSx(t, pageLook) })}>
-      <DesktopLookProvider enabled={pageLook.desktopLook && isDesktop}>
+      <DesktopLookProvider enabled={pageLook.desktopLook && isDesktop} whitePage={pageLook.whitePage}>
         <FreeAccessBanner />
         <EmailVerifyBanner />
         <FriendsRealtime />

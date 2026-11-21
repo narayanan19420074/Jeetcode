@@ -123,6 +123,14 @@ export const SIZES = {
   // Left column of a phone problem row: the difficulty tag above the solved marker.
   problemDifficultyColumn: 43,
   readingMaxWidth: 720,
+  // Centred Plans page: widest it grows on phones and on wide screens.
+  centeredPageMaxWidth: { phone: 640, desktop: 1040 },
+  // Plans page: icon tile of the current plan card.
+  planIconTile: 44,
+  // My stats page: profile photo, list icon tile and the widest a submission status label grows.
+  profileAvatar: 84,
+  listTile: 52,
+  statusLabelMaxWidth: 96,
   // One desktop page frame for every page with side columns (Dashboard, Problems, Aptitude, Community): the page
   // width is `dashboardMaxWidth`, the left column is `sidebar` (md / lg), the right column is `rail`, and the
   // columns stick `stickyTop` below the top of the window.
