@@ -295,24 +295,11 @@
   "features/help/SupportChat.jsx": {
     "fixedSizePx": 3
   },
-  "features/leaderboard/EmpireCard.jsx": {
-    "motionDuration": 4,
-    "shadowPx": 1,
-    "fixedSizePx": 54
-  },
   "features/leaderboard/LeaderboardView.jsx": {
-    "motionDuration": 1,
-    "fixedSizePx": 12
+    "fixedSizePx": 6
   },
   "features/leaderboard/MobileLeaderboard.jsx": {
     "fixedSizePx": 4
-  },
-  "features/leaderboard/lbPanel.jsx": {
-    "shadowPx": 2,
-    "fixedSizePx": 32
-  },
-  "features/leaderboard/lbShared.jsx": {
-    "fixedSizePx": 1
   },
   "features/leaderboard/mobileLeaderboard/LeaderboardFilters.jsx": {
     "fixedSizePx": 3

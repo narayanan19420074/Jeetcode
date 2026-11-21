@@ -1,59 +1,38 @@
 import { useEffect, useState } from 'react';
 import { animate, useReducedMotion } from 'framer-motion';
-import { Avatar, Box } from '@mui/material';
-import { keyframes } from '@mui/material/styles';
+import { Box } from '@mui/material';
 import { DIFF_COLOR, todayKey } from '../dashboard/dashboardUtils';
 import { PLAN_AMBER } from '../studyplan/planUtils';
-import { COLOR_PALETTE, withAlpha, FONTS, FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../app/design/designTokens';
+import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, SIZES } from '../../app/design/designTokens';
 
-// Bits shared by the leaderboard card (EmpireCard) and the side panel (LeaderboardView).
+// Bits shared by the desktop board, the side panel and the phone leaderboard.
 
-export const MEDAL = {
-  1: { a: COLOR_PALETTE.amber[200], b: COLOR_PALETTE.amber[500], text: COLOR_PALETTE.amber[950], glow: withAlpha(COLOR_PALETTE.amber[500], 0.55) },
-  2: { a: COLOR_PALETTE.slate[100], b: COLOR_PALETTE.slate[400], text: COLOR_PALETTE.slate[900], glow: withAlpha(COLOR_PALETTE.slate[400], 0.5) },
-  3: { a: COLOR_PALETTE.orange[300], b: COLOR_PALETTE.orange[700], text: COLOR_PALETTE.orange[950], glow: withAlpha(COLOR_PALETTE.orange[700], 0.5) },
-};
-export const grad = (m) => `linear-gradient(135deg, ${m.a}, ${m.b})`;
 export const APT_COLOR = COLOR_PALETTE.violet[500];
 export const PT = { easy: 10, medium: 20, hard: 40, aptitude: 5 };
-export const mono = { fontFamily: FONTS.mono, fontVariantNumeric: 'tabular-nums' };
 
-// ---- motion (all CSS, switched off for people who asked for less motion) ----
-export const sweep = keyframes`0%{transform:translateX(-160%) skewX(-20deg)}60%,100%{transform:translateX(380%) skewX(-20deg)}`;
-export const bob = keyframes`0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}`;
-export const twinkle = keyframes`0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.15)}`;
-export const glow = keyframes`0%,100%{opacity:.45}50%{opacity:1}`;
-export const spin = keyframes`to{transform:rotate(360deg)}`;
-export const calm = { '@media (prefers-reduced-motion: reduce)': { animation: 'none' } };
+const COUNT_UP_SECONDS = 1.1;
 
 // Counts up to the score the first time it shows.
 export function CountUp({ value }) {
   const reduce = useReducedMotion();
-  const [n, setN] = useState(reduce ? value : 0);
+  const [shown, setShown] = useState(reduce ? value : 0);
   useEffect(() => {
-    if (reduce) { setN(value); return undefined; }
-    const c = animate(0, value, { duration: 1.1, ease: 'easeOut', onUpdate: (v) => setN(Math.round(v)) });
-    return () => c.stop();
+    if (reduce) { setShown(value); return undefined; }
+    const controls = animate(0, value, { duration: COUNT_UP_SECONDS, ease: 'easeOut', onUpdate: (v) => setShown(Math.round(v)) });
+    return () => controls.stop();
   }, [value, reduce]);
-  return n.toLocaleString();
+  return shown.toLocaleString();
 }
 
-const indiaDay = (d = new Date()) => todayKey(d);
+const MS_PER_DAY = 86400000;
+
+// Streaks and the "active today" rule use India days, the same as the server.
 export function activeLabel(lastActive) {
   if (!lastActive) return { text: 'Not started', color: 'text.disabled', live: false };
-  const days = Math.round((Date.parse(indiaDay()) - Date.parse(lastActive)) / 86400000);
+  const days = Math.round((Date.parse(todayKey()) - Date.parse(lastActive)) / MS_PER_DAY);
   if (days <= 0) return { text: 'Active today', color: 'success.main', live: true };
   if (days === 1) return { text: 'Active yesterday', color: 'warning.main', live: false };
   return { text: `${days}d ago`, color: 'text.disabled', live: false };
-}
-
-// Profile picture with a glowing gradient ring.
-export function AvatarRing({ src, name, size = 34, a, b, ring = 2.5, inner = 'background.paper' }) {
-  return (
-    <Box sx={{ p: `${ring}px`, borderRadius: '50%', background: `linear-gradient(135deg, ${a}, ${b})`, display: 'inline-flex', flexShrink: 0 }}>
-      <Avatar src={src || undefined} sx={{ width: size, height: size, fontSize: size * 0.4, fontWeight: FONT_WEIGHTS.bold, border: '2px solid', borderColor: inner }}>{name?.[0]?.toUpperCase()}</Avatar>
-    </Box>
-  );
 }
 
 // How a player's points split across Easy / Medium / Hard / Aptitude.
@@ -63,10 +42,10 @@ export function Mix({ row, onDark = false, sx }) {
     [row.medium * PT.medium, DIFF_COLOR.Medium],
     [row.hard * PT.hard, DIFF_COLOR.Hard],
     [row.aptitude * PT.aptitude, APT_COLOR],
-  ].filter(([v]) => v > 0);
+  ].filter(([points]) => points > 0);
   return (
-    <Box aria-hidden sx={[{ display: 'flex', gap: 0.5, height: 6, borderRadius: RADII_PX.pill, overflow: 'hidden', bgcolor: onDark ? withAlpha(COLOR_PALETTE.white, 0.2) : 'divider' }, sx]}>
-      {parts.map(([v, c], i) => <Box key={i} sx={{ flex: v, bgcolor: c }} />)}
+    <Box aria-hidden sx={[{ display: 'flex', gap: 0.5, height: SIZES.progressBarHeight, borderRadius: RADII_PX.pill, overflow: 'hidden', bgcolor: onDark ? withAlpha(COLOR_PALETTE.white, 0.2) : 'divider' }, sx]}>
+      {parts.map(([points, color]) => <Box key={color} sx={{ flex: points, bgcolor: color }} />)}
     </Box>
   );
 }

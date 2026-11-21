@@ -95,8 +95,6 @@ export const SIZES = {
   progressBarHeight: 6,
   // Profile picture of a member on the progress bar of a study plan card.
   progressAvatar: 28,
-  // Profile picture in a Friends / Messages chat-list row (also the size of the profile button laid over it).
-  chatListAvatar: 44,
   chipHeight: 28,
   chipHeightSmall: 24,
   // The "You" tag next to the author name on community posts and comments.
@@ -123,9 +121,6 @@ export const SIZES = {
   // Desktop "Create post" dialog and the docked messaging panel at the bottom right of the Community page.
   composeDialog: { width: 744, minHeight: 520 },
   messagingDock: { width: 320, height: 480 },
-  // Toolbar at the top of the desktop Community page: the widest the search field grows, the tallest its results
-  // list gets before it scrolls.
-  communityToolbar: { searchMaxWidth: 520, resultsMaxHeight: 440 },
   // Widest a card (pair room invitation) grows inside a phone chat message.
   chatCardMaxWidth: 320,
   // One suggested member card in the horizontal strip between feed posts on phones.
@@ -140,6 +135,28 @@ export const SIZES = {
   sheetHandleHeight: 4,
   // Page scrollbars: regular on desktop, slim on phones, thin for auto-hide panels.
   scrollbar: { regular: 10, slim: 4, thin: 6 },
+  // Desktop Leaderboard (Dashboard, Leaderboard view). Filter pills match the Library pills; the table columns
+  // (`statsCoding` shows Easy, Medium and Hard, `statsSingle` shows one count) are shared by the header and the rows.
+  leaderboard: {
+    pillHeight: 34,
+    controlSize: 40,
+    searchWidth: 240,
+    headerIcon: 44,
+    rankTile: 32,
+    rowAvatar: 36,
+    topAvatar: 64,
+    panelAvatar: 56,
+    tierIcon: 36,
+    tierDot: 20,
+    statsCoding: 108,
+    statsSingle: 56,
+    recentColumn: 48,
+    pointsColumn: 72,
+    accentBar: 3,
+    progress: 8,
+    loadMoreDistance: 240,
+    scrollSentinel: 1,
+  },
 };
 
 // The photo of a feed post is always shown in this frame (square 1:1, the standard LinkedIn feed shape), so

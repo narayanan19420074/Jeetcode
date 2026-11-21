@@ -1,18 +1,15 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useReducedMotion } from 'framer-motion';
-import { Box, Popover, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { alpha } from '@mui/material/styles';
-import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRounded';
+import { Box, Popover, useMediaQuery, useTheme } from '@mui/material';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { DIFF_COLOR } from '../dashboard/dashboardUtils';
-import { tierFor } from './tiers';
-import { APT_COLOR, AvatarRing, PT, calm, mono, sweep } from './lbShared';
-import EmpireCard from './EmpireCard';
-import LeaderboardPanel from './lbPanel';
+import { PT } from './lbShared';
+import LeaderboardBoard from './desktop/LeaderboardBoard';
+import LeaderboardSidePanel from './desktop/LeaderboardSidePanel';
+import RowDetail from './desktop/RowDetail';
 import MobileLeaderboard from './MobileLeaderboard';
-import { COLOR_PALETTE, withAlpha, FONT_WEIGHTS, FONT_SIZES, RADII_PX, MOTION } from '../../app/design/designTokens';
+import { RADII_PX } from '../../app/design/designTokens';
 
 const LIMIT = 30;
 
@@ -45,54 +42,6 @@ function useElSize(el, initial = { w: 0, h: 0 }) {
     return () => ro.disconnect();
   }, [el]);
   return size;
-}
-
-// What this player has solved, and how far the next level is. Opens in a popover when there is no side panel.
-function RowDetail({ row }) {
-  const { tier, next, progress, toNext } = tierFor(row.score);
-  const tiles = [
-    ['Easy', row.easy, PT.easy, DIFF_COLOR.Easy],
-    ['Medium', row.medium, PT.medium, DIFF_COLOR.Medium],
-    ['Hard', row.hard, PT.hard, DIFF_COLOR.Hard],
-    ['Aptitude', row.aptitude, PT.aptitude, APT_COLOR],
-  ];
-  return (
-    <Box sx={(t) => ({ px: 2, py: 1.5, bgcolor: alpha(t.palette.text.primary, 0.035), display: 'grid', gap: 1.5 })}>
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, minWidth: 0 }}>
-        <AvatarRing src={row.avatarUrl} name={row.name} size={38} a={tier.color} b={`color-mix(in srgb, ${tier.color} 40%, ${COLOR_PALETTE.white})`} />
-        <Box sx={{ minWidth: 0 }}>
-          <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>{row.name}</Typography>
-          <Typography noWrap variant="caption" color="text.secondary">@{row.handle}{row.company ? `, ${row.company}` : ''}</Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0,1fr))', gap: 1 }}>
-        {tiles.map(([label, n, pts, color]) => (
-          <Box key={label} sx={{ p: 1, textAlign: 'center', minWidth: 0, borderRadius: RADII_PX.card, border: `1px solid color-mix(in srgb, ${color} 35%, transparent)`, background: `linear-gradient(160deg, color-mix(in srgb, ${color} 20%, transparent), transparent 80%)` }}>
-            <Typography sx={[{ fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.heading, lineHeight: 1.2, color }, mono]}>{n}</Typography>
-            <Typography variant="caption" color="text.secondary" noWrap sx={{ display: 'block', fontWeight: FONT_WEIGHTS.bold }}>{label}</Typography>
-            <Typography variant="caption" color="text.disabled" sx={[{ fontSize: FONT_SIZES.micro }, mono]}>{n * pts} pts</Typography>
-          </Box>
-        ))}
-      </Box>
-
-      <Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
-          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 0.5, color: tier.color, fontWeight: FONT_WEIGHTS.bold, fontSize: FONT_SIZES.body }}>
-            <WorkspacePremiumRoundedIcon sx={{ fontSize: FONT_SIZES.subheading }} />{tier.name}
-          </Box>
-          <Typography variant="caption" color="text.secondary" sx={{ fontWeight: FONT_WEIGHTS.bold }}>
-            {next ? `${toNext.toLocaleString()} pts to ${next.name}` : 'Top level reached'}
-          </Typography>
-        </Box>
-        <Box sx={{ height: 9, borderRadius: RADII_PX.pill, bgcolor: 'divider', overflow: 'hidden' }}>
-          <Box sx={{ position: 'relative', overflow: 'hidden', height: '100%', width: `${Math.max(progress, 4)}%`, borderRadius: RADII_PX.pill, background: `linear-gradient(90deg, ${tier.color}, color-mix(in srgb, ${tier.color} 45%, ${COLOR_PALETTE.white}))`, transition: `width ${MOTION.progress}ms ease`, '&::after': { content: '""', position: 'absolute', top: 0, bottom: 0, width: '35%', background: `linear-gradient(90deg, transparent, ${withAlpha(COLOR_PALETTE.white, 0.55)}, transparent)`, animation: `${sweep} 2.6s ease-in-out infinite`, ...calm } }} />
-        </Box>
-        <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 1, fontWeight: FONT_WEIGHTS.semibold }}>
-          {row.recent} solved in the last 7 days
-        </Typography>
-      </Box>
-    </Box>
-  );
 }
 
 // ---------- the page ----------
@@ -227,7 +176,7 @@ export default function LeaderboardView({ isAuthenticated }) {
     <Box ref={setWrapEl} sx={{ height: isLg ? (fitH ? `${fitH}px` : '100%') : 'calc(100dvh - 150px)', minHeight: isLg ? 0 : 420 }}>
       <Box sx={{ height: '100%', minHeight: 0, display: 'grid', gridTemplateRows: 'minmax(0, 1fr)', gridTemplateColumns: showPanel ? `minmax(0,1fr) ${PANEL_W}px` : 'minmax(0,1fr)', columnGap: `${GAP}px` }}>
         <Box ref={setBoardEl} sx={{ minWidth: 0, minHeight: 0, height: '100%' }}>
-          <EmpireCard
+          <LeaderboardBoard
             track={track} period={period} scope={scope} onTrack={onTrack} onPeriod={onPeriod} onScope={onScope}
             isAuthenticated={isAuthenticated} meta={meta} rows={rows} champion={champion} listRows={listRows}
             loading={loading} firstLoad={firstLoad} error={error} q={q} search={search} setSearch={setSearch}
@@ -238,7 +187,7 @@ export default function LeaderboardView({ isAuthenticated }) {
         </Box>
 
         {showPanel && (
-          <LeaderboardPanel
+          <LeaderboardSidePanel
             row={selectedRow} me={me} isAuthenticated={isAuthenticated} meta={meta} period={period} track={track} onTrack={onTrack} points={points}
             learners={stats?.learners || 0} topPercent={stats?.topPercent} loading={firstLoad} short={shortPanel}
           />
