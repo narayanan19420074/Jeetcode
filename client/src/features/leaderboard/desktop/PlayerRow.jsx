@@ -1,7 +1,7 @@
 import { Box, ButtonBase, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { LIB_ACCENT, LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { FONT_SIZES, FONT_WEIGHTS, MOTION, SIZES } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, MOTION, RADII_PX, SIZES } from '../../../app/design/designTokens';
 import { tierFor } from '../tiers';
 import { CountUp, YouChip, activeLabel } from '../lbShared';
 import { MEDAL_INK, FOCUS_RING, TABULAR } from './lbLook';
@@ -40,10 +40,10 @@ function PointsCell({ row, animated }) {
 const rowButtonSx = { width: SIZES.fill, display: 'flex', alignItems: 'center', gap: 1.5, px: 2, py: 1, textAlign: 'left', fontFamily: 'inherit', color: 'inherit', '&.Mui-focusVisible': FOCUS_RING };
 
 // One player: rank, picture and name, solved counts, last 7 days and points. The same row is pinned under the list for the signed-in player.
-function PlayerRowButton({ row, isMe, track, wide, animated, onPick, selected }) {
+function PlayerRowButton({ row, isMe, track, wide, animated, onPick }) {
   const { tier } = tierFor(row.score);
   return (
-    <ButtonBase onClick={(event) => onPick(event, row)} aria-current={selected ? 'true' : undefined} sx={rowButtonSx}>
+    <ButtonBase onClick={(event) => onPick(event, row)} sx={rowButtonSx}>
       <RankTile rank={row.rank} />
       <PlayerAvatar row={row} live={activeLabel(row.lastActive).live} />
       <PlayerIdentity row={row} isMe={isMe} tier={tier} />
@@ -54,25 +54,26 @@ function PlayerRowButton({ row, isMe, track, wide, animated, onPick, selected })
   );
 }
 
-const tableRowSx = (pal, isMe, selected) => ({
+// The top player is a normal row; only its border is highlighted.
+const tableRowSx = (pal, isMe, top) => ({
   position: 'relative',
   borderBottom: `1px solid ${pal.divider}`,
   '&:last-of-type': { borderBottom: 'none' },
-  bgcolor: selected ? alpha(LIB_ACCENT, 0.12) : isMe ? alpha(LIB_ACCENT, 0.06) : 'transparent',
+  bgcolor: isMe ? alpha(LIB_ACCENT, 0.06) : 'transparent',
   transition: `background-color ${MOTION.fast}ms`,
-  '&:hover': { bgcolor: alpha(LIB_ACCENT, selected ? 0.12 : 0.06) },
-  '&::before': selected ? { content: '""', position: 'absolute', left: 0, top: 0, bottom: 0, width: SIZES.leaderboard.accentBar, bgcolor: LIB_ACCENT } : undefined,
+  '&:hover': { bgcolor: alpha(LIB_ACCENT, 0.06) },
+  ...(top && { m: 0.5, border: `1px solid ${MEDAL_INK[1]}`, borderRadius: RADII_PX.control }),
 });
 
-export function PlayerRow({ row, isMe, selected, ...rest }) {
+export function PlayerRow({ row, isMe, top = false, ...rest }) {
   const pal = useLibraryPalette();
   return (
-    <Box id={isMe ? 'lb-me' : undefined} sx={tableRowSx(pal, isMe, selected)}>
-      <PlayerRowButton row={row} isMe={isMe} selected={selected} animated={false} {...rest} />
+    <Box id={isMe ? 'lb-me' : undefined} sx={tableRowSx(pal, isMe, top)}>
+      <PlayerRowButton row={row} isMe={isMe} animated={false} {...rest} />
     </Box>
   );
 }
 
 export function PinnedPlayerRow(props) {
-  return <PlayerRowButton {...props} isMe selected={false} animated />;
+  return <PlayerRowButton {...props} isMe animated />;
 }

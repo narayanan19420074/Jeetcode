@@ -4,20 +4,12 @@ import { useReducedMotion } from 'framer-motion';
 import { Box, Popover, useMediaQuery, useTheme } from '@mui/material';
 import { leaderboardApi } from '../../api/studyPlanApi';
 import { extractErrorMessage } from '../../api/apiClient';
-import { PT } from './lbShared';
 import LeaderboardBoard from './desktop/LeaderboardBoard';
-import LeaderboardSidePanel from './desktop/LeaderboardSidePanel';
 import RowDetail from './desktop/RowDetail';
 import MobileLeaderboard from './MobileLeaderboard';
 import { RADII_PX } from '../../app/design/designTokens';
 
 const LIMIT = 30;
-
-// The layout is chosen from the width this view actually gets (not the window), because the
-// dashboard sidebar eats a different amount at each breakpoint.
-const PANEL_MIN = 900; // side panel (player card) fits from here
-const PANEL_W = 316;
-const GAP = 16;
 
 function useDebounced(value, ms = 350) {
   const [v, setV] = useState(value);
@@ -59,8 +51,7 @@ export default function LeaderboardView({ isAuthenticated }) {
   const [meta, setMeta] = useState(null); // latest response: { me, total, totalUsers, points, ... }
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(true);
-  const [selectedId, setSelectedId] = useState(null); // wide: which player the side panel shows
-  const [detail, setDetail] = useState(null); // no side panel: a tapped row opens in a popover
+  const [detail, setDetail] = useState(null); // a clicked row opens the player's details in a popover
   const [reloadKey, setReloadKey] = useState(0);
   const [wrapEl, setWrapEl] = useState(null);
   const [boardEl, setBoardEl] = useState(null);
@@ -80,10 +71,7 @@ export default function LeaderboardView({ isAuthenticated }) {
     const t2 = setTimeout(measure, 1500); // after the offer banner (if any) loads
     return () => { window.removeEventListener('resize', measure); clearTimeout(t1); clearTimeout(t2); };
   }, [isLg, wrapEl]);
-  const size = useElSize(wrapEl, { w: typeof window !== 'undefined' && window.innerWidth >= 1200 ? 1000 : 400, h: 700 });
   const board = useElSize(boardEl, { w: 400, h: 700 });
-  const showPanel = size.w >= PANEL_MIN;
-  const shortPanel = size.h < 760; // short window: drop the tier strip
   const q = useDebounced(search);
   const scroller = useRef(null);
   const sentinel = useRef(null);
@@ -148,19 +136,11 @@ export default function LeaderboardView({ isAuthenticated }) {
   const showEveryone = () => { setScope('global'); reset(); };
   const me = isAuthenticated ? meta?.me : null;
 
-  // The leader gets its own card (only a player who scored, and not while searching).
-  const champion = !q && rows[0] && rows[0].score > 0 ? rows[0] : null;
-  const listRows = rows.slice(champion ? 1 : 0);
-  const meInList = Boolean(me && listRows.some((r) => r.userId === me.userId));
-  const selectedRow = (selectedId && (rows.find((r) => r.userId === selectedId) || (me?.userId === selectedId ? me : null))) || me || champion || rows[0] || null;
-  const points = meta?.points || PT;
-  const stats = meta?.stats;
+  // The leader stays a normal row; only its border is highlighted (and only for a player who scored, not while searching).
+  const topPlayerId = !q && rows[0] && rows[0].score > 0 ? rows[0].userId : null;
+  const meInList = Boolean(me && rows.some((r) => r.userId === me.userId));
 
-  // Wide: tap a player to show them in the side panel. Narrow: tap opens a small detail popover.
-  const onPick = (e, row) => {
-    if (showPanel) setSelectedId((cur) => (cur === row.userId ? null : row.userId));
-    else setDetail({ el: e.currentTarget, row });
-  };
+  const onPick = (e, row) => setDetail({ el: e.currentTarget, row });
 
   if (isPhone) {
     return (
@@ -174,24 +154,15 @@ export default function LeaderboardView({ isAuthenticated }) {
 
   return (
     <Box ref={setWrapEl} sx={{ height: isLg ? (fitH ? `${fitH}px` : '100%') : 'calc(100dvh - 150px)', minHeight: isLg ? 0 : 420 }}>
-      <Box sx={{ height: '100%', minHeight: 0, display: 'grid', gridTemplateRows: 'minmax(0, 1fr)', gridTemplateColumns: showPanel ? `minmax(0,1fr) ${PANEL_W}px` : 'minmax(0,1fr)', columnGap: `${GAP}px` }}>
-        <Box ref={setBoardEl} sx={{ minWidth: 0, minHeight: 0, height: '100%' }}>
-          <LeaderboardBoard
-            track={track} period={period} scope={scope} onTrack={onTrack} onPeriod={onPeriod} onScope={onScope}
-            isAuthenticated={isAuthenticated} meta={meta} rows={rows} champion={champion} listRows={listRows}
-            loading={loading} firstLoad={firstLoad} error={error} q={q} search={search} setSearch={setSearch}
-            reload={reload} me={me} meInList={meInList} selectedId={selectedId} onPick={onPick}
-            scroller={scroller} sentinel={sentinel} hasMore={hasMore} askMore={askMore} scrollToMe={scrollToMe}
-            showEveryone={showEveryone} boardW={board.w} boardH={board.h}
-          />
-        </Box>
-
-        {showPanel && (
-          <LeaderboardSidePanel
-            row={selectedRow} me={me} isAuthenticated={isAuthenticated} meta={meta} period={period} track={track} onTrack={onTrack} points={points}
-            learners={stats?.learners || 0} topPercent={stats?.topPercent} loading={firstLoad} short={shortPanel}
-          />
-        )}
+      <Box ref={setBoardEl} sx={{ minWidth: 0, minHeight: 0, height: '100%' }}>
+        <LeaderboardBoard
+          track={track} period={period} scope={scope} onTrack={onTrack} onPeriod={onPeriod} onScope={onScope}
+          isAuthenticated={isAuthenticated} meta={meta} rows={rows} topPlayerId={topPlayerId} listRows={rows}
+          loading={loading} firstLoad={firstLoad} error={error} q={q} search={search} setSearch={setSearch}
+          reload={reload} me={me} meInList={meInList} onPick={onPick}
+          scroller={scroller} sentinel={sentinel} hasMore={hasMore} askMore={askMore} scrollToMe={scrollToMe}
+          showEveryone={showEveryone} boardW={board.w} boardH={board.h}
+        />
       </Box>
 
       <Popover

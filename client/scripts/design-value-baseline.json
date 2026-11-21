@@ -55,9 +55,6 @@
     "fixedSizePx": 5
   },
   "features/aptitude/AptitudeLearnPage.jsx": {
-    "fixedSizePx": 13
-  },
-  "features/aptitude/AptitudePracticePage.jsx": {
     "fixedSizePx": 2
   },
   "features/aptitude/AptitudePracticeQuestionPage.jsx": {
@@ -182,7 +179,7 @@
     "fixedSizePx": 5
   },
   "features/dashboard/components/SidebarParts.jsx": {
-    "fixedSizePx": 5
+    "fixedSizePx": 3
   },
   "features/dashboard/components/library/CategoryPills.jsx": {
     "fixedSizePx": 7
@@ -296,7 +293,7 @@
     "fixedSizePx": 3
   },
   "features/leaderboard/LeaderboardView.jsx": {
-    "fixedSizePx": 6
+    "fixedSizePx": 4
   },
   "features/leaderboard/MobileLeaderboard.jsx": {
     "fixedSizePx": 4

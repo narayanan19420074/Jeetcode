@@ -3,15 +3,14 @@ import { useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { RADII_PX, SIZES } from '../../../app/design/designTokens';
 import { cardSx } from './lbLook';
 import { PlayerRow } from './PlayerRow';
-import TopPlayerCard from './TopPlayerCard';
-import { EmptyList, EmptyTopPlayer, SkeletonRow, TableHead } from './TableParts';
+import { EmptyList, SkeletonRow, TableHead } from './TableParts';
 
 const SKELETON_ROWS = 7;
 const SKELETON_MORE_ROWS = 2;
 
 function Rows({ board, rowProps }) {
-  const { listRows, me, selectedId } = board;
-  return listRows.map((row) => <PlayerRow key={row.userId} row={row} isMe={me?.userId === row.userId} selected={selectedId === row.userId} {...rowProps} />);
+  const { listRows, me, topPlayerId } = board;
+  return listRows.map((row) => <PlayerRow key={row.userId} row={row} isMe={me?.userId === row.userId} top={topPlayerId === row.userId} {...rowProps} />);
 }
 
 function TableBody({ board, rowProps }) {
@@ -28,13 +27,7 @@ function TableBody({ board, rowProps }) {
   );
 }
 
-function TopPlayerSlot({ board }) {
-  const { champion, me, selectedId, onPick, firstLoad, q, rows } = board;
-  if (champion) return <TopPlayerCard row={champion} isMe={me?.userId === champion.userId} selected={selectedId === champion.userId} onPick={onPick} />;
-  return !firstLoad && !q && rows.length > 0 ? <EmptyTopPlayer /> : null;
-}
-
-// The only part of the board that scrolls: the top player, then the table. More players load as the bottom comes into view.
+// The only part of the board that scrolls: the table. More players load as the bottom comes into view.
 export default function BoardList({ board, layout }) {
   const pal = useLibraryPalette();
   const rowProps = { track: board.track, wide: layout.wide, onPick: board.onPick };
@@ -46,7 +39,6 @@ export default function BoardList({ board, layout }) {
     <Box ref={board.scroller} className="autohide-scroll" onScroll={onScroll} sx={{ flex: 1, minHeight: SIZES.flexShrinkMinHeight, overflowY: board.firstLoad ? 'hidden' : 'auto', overflowX: 'hidden', overscrollBehavior: 'contain' }}>
       <Box sx={{ display: 'grid', gap: 1.5 }}>
         {board.error && <Alert severity="error" action={<Button color="inherit" size="small" onClick={board.reload}>Retry</Button>}>{board.error}</Alert>}
-        <TopPlayerSlot board={board} />
         <Box sx={[cardSx(pal), { overflow: 'clip', borderRadius: RADII_PX.card }]}>
           <TableHead track={board.track} wide={layout.wide} />
           <TableBody board={board} rowProps={rowProps} />

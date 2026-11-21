@@ -1,7 +1,7 @@
 import { Box, Button, Skeleton, Typography } from '@mui/material';
 import EmojiEventsRoundedIcon from '@mui/icons-material/EmojiEventsRounded';
 import { LIB_TRACKING, useLibraryPalette } from '../../dashboard/components/libraryStyle';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES, Z_INDEX } from '../../../app/design/designTokens';
+import { FONT_SIZES, FONT_WEIGHTS, SIZES, Z_INDEX } from '../../../app/design/designTokens';
 import { STATS_LABEL, statsColumnWidth } from './columns';
 
 // Column titles of the table. Sticky, so they stay visible while the rows scroll under them.
@@ -28,17 +28,6 @@ export function SkeletonRow({ index }) {
         <Skeleton variant="text" width="25%" />
       </Box>
       <Skeleton variant="text" width={SIZES.leaderboard.pointsColumn} />
-    </Box>
-  );
-}
-
-export function EmptyTopPlayer() {
-  const pal = useLibraryPalette();
-  return (
-    <Box sx={{ py: 3, px: 2, textAlign: 'center', borderRadius: RADII_PX.card, bgcolor: pal.chip, border: `1px solid ${pal.border}` }}>
-      <EmojiEventsRoundedIcon sx={{ fontSize: FONT_SIZES.heroLg, color: COLOR_PALETTE.amber[500] }} />
-      <Typography sx={{ fontWeight: FONT_WEIGHTS.bold }}>No top player yet</Typography>
-      <Typography sx={{ fontSize: FONT_SIZES.body, color: pal.muted }}>Solve a question to take the first place.</Typography>
     </Box>
   );
 }

@@ -4,45 +4,44 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import RefreshRoundedIcon from '@mui/icons-material/RefreshRounded';
 import { LIB_ACCENT, useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { FONT_SIZES, RADII_PX, SIZES } from '../../../app/design/designTokens';
-import { iconButtonSx, pillSx } from './lbLook';
+import { filterTabSx, iconButtonSx } from './lbLook';
 import { PERIODS, SCOPES, TRACKS } from './boardOptions';
 
-// A pill shows its name when it is selected or when there is room; otherwise only its icon.
-function FilterPill({ option, active, iconOnly, onSelect, disabled = false }) {
+// A filter is only its name; the selected one changes colour.
+function FilterTab({ option, active, onSelect, disabled = false }) {
   const pal = useLibraryPalette();
-  const { value, label, title, Icon } = option;
+  const { value, label, title } = option;
   return (
     <Tooltip title={disabled ? 'Sign in to use this' : title}>
       <Box component="span" sx={{ display: 'flex' }}>
-        <ButtonBase disabled={disabled} onClick={() => onSelect(value)} aria-pressed={active} aria-label={title} sx={pillSx(pal, active)}>
-          <Icon sx={{ fontSize: FONT_SIZES.subheading }} />
-          {(!iconOnly || active) && label}
+        <ButtonBase disabled={disabled} onClick={() => onSelect(value)} aria-pressed={active} aria-label={title} sx={filterTabSx(pal, active)}>
+          {label}
         </ButtonBase>
       </Box>
     </Tooltip>
   );
 }
 
-function PillGroup({ label, options, value, onChange, iconOnly, isDisabled }) {
+function FilterGroup({ label, options, value, onChange, isDisabled }) {
   return (
     <Box role="group" aria-label={label} sx={{ display: 'flex', gap: 1, flexShrink: 0 }}>
       {options.map((option) => (
-        <FilterPill key={option.value} option={option} active={value === option.value} iconOnly={iconOnly} onSelect={onChange} disabled={isDisabled?.(option)} />
+        <FilterTab key={option.value} option={option} active={value === option.value} onSelect={onChange} disabled={isDisabled?.(option)} />
       ))}
     </Box>
   );
 }
 
 export const ScopeSwitch = ({ value, onChange, friendsOk }) => (
-  <PillGroup label="Show" options={SCOPES} value={value} onChange={onChange} isDisabled={(option) => option.value === 'friends' && !friendsOk} />
+  <FilterGroup label="Show" options={SCOPES} value={value} onChange={onChange} isDisabled={(option) => option.value === 'friends' && !friendsOk} />
 );
 
-export const PeriodSwitch = ({ value, onChange, iconOnly }) => (
-  <PillGroup label="Period" options={PERIODS} value={value} onChange={onChange} iconOnly={iconOnly} />
+export const PeriodSwitch = ({ value, onChange }) => (
+  <FilterGroup label="Period" options={PERIODS} value={value} onChange={onChange} />
 );
 
-export const TrackTabs = ({ value, onChange, iconOnly }) => (
-  <PillGroup label="Leaderboard track" options={TRACKS} value={value} onChange={onChange} iconOnly={iconOnly} />
+export const TrackTabs = ({ value, onChange }) => (
+  <FilterGroup label="Leaderboard track" options={TRACKS} value={value} onChange={onChange} />
 );
 
 const searchSx = (pal, width) => ({

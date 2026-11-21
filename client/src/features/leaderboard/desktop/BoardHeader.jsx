@@ -38,19 +38,19 @@ function TitleRow({ roomy, search, setSearch, searchOpen, toggleSearch, isAuthen
   );
 }
 
-// Title, search and "Everyone / Friends" on the first row; track and period pills on the second.
+// Title, search and "Everyone / Friends" on the first row; track and period names on the second.
 export default function BoardHeader({ layout, search, setSearch, onTrack, onPeriod, reload, ...props }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const toggleSearch = () => { if (searchOpen) setSearch(''); setSearchOpen((open) => !open); };
-  const { roomy, iconOnly } = layout;
+  const { roomy } = layout;
   return (
     <Box sx={{ display: 'grid', gap: 1.5 }}>
       <TitleRow roomy={roomy} search={search} setSearch={setSearch} searchOpen={searchOpen} toggleSearch={toggleSearch} reload={reload} {...props} />
       {!roomy && <Collapse in={searchOpen}><SearchBox value={search} onChange={setSearch} /></Collapse>}
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 1.5 }}>
-        <TrackTabs value={props.track} onChange={onTrack} iconOnly={iconOnly} />
+        <TrackTabs value={props.track} onChange={onTrack} />
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-          <PeriodSwitch value={props.period} onChange={onPeriod} iconOnly={iconOnly} />
+          <PeriodSwitch value={props.period} onChange={onPeriod} />
           {!roomy && <RefreshButton onClick={reload} />}
         </Box>
       </Box>
