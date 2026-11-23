@@ -13,13 +13,13 @@ function ProgramOutput({ result, palette }) {
   );
 }
 
-// A Python example in a monospace panel, with the output of the program under it when there is one. The code panel can
+// A code example in a monospace panel, with the output of the program under it when there is one. The code panel can
 // be focused so keyboard users can scroll long lines sideways.
 export default function CodeBlock({ value, result = null }) {
   const palette = useLibraryPalette();
   return (
     <Box sx={{ my: 2, overflow: 'hidden', borderRadius: RADII_PX.control, bgcolor: palette.chip, border: `${BORDER_WIDTHS.thin}px solid ${palette.border}` }}>
-      <Box component="pre" tabIndex={0} aria-label="Python code example" sx={{ ...monoTextSx, p: 2, overflowX: 'auto' }}>{value}</Box>
+      <Box component="pre" tabIndex={0} aria-label="Code example" sx={{ ...monoTextSx, p: 2, overflowX: 'auto' }}>{value}</Box>
       {result !== null && <ProgramOutput result={result} palette={palette} />}
     </Box>
   );

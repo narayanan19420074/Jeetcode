@@ -1,10 +1,14 @@
+import { DESIGN_SYSTEM_COURSE } from '../content/designSystem/designSystemCourse';
 import { PYTHON_COURSE } from '../content/python/pythonCourse';
 import { readDoneKeys } from './courseProgressStorage';
 
-const BUILT_IN_COURSES = [PYTHON_COURSE];
+const BUILT_IN_COURSES = [PYTHON_COURSE, DESIGN_SYSTEM_COURSE];
 
 // Courses that ship with the app (lesson text and exercises live in the client) are listed under their own section.
-export const PROGRAMMING_SECTION = { id: 'programming', label: 'Programming Languages', blurb: 'Learn a language from the first line of code, with lessons and exercises side by side.' };
+export const BUILT_IN_SECTIONS = [
+  { id: 'programming', label: 'Programming Languages', blurb: 'Learn a language from the first line of code, with lessons and exercises side by side.' },
+  { id: 'design', label: 'Design', blurb: 'Build interfaces that look consistent and work for everyone.' },
+];
 
 export const findBuiltInCourse = (slug) => BUILT_IN_COURSES.find((course) => course.slug === slug) ?? null;
 

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import useStoreData from '../../store/common/useStoreData';
 import { useCheckoutFlow } from '../../store/common/useStoreInteraction';
-import { PROGRAMMING_SECTION, findBuiltInCourse, listBuiltInCourses } from './builtInCourses';
+import { BUILT_IN_SECTIONS, findBuiltInCourse, listBuiltInCourses } from './builtInCourses';
 import { flattenLessons, groupBySection, withProgress } from './courseSelectors';
 
 const TABS = ['courses', 'lessons'];
@@ -32,7 +32,7 @@ export default function useCoursesPage() {
   const openCourse = useOpenCourse(checkout.setCourseSlug);
   const builtInCourses = useMemo(listBuiltInCourses, []);
   const courseList = useMemo(() => [...withProgress(store.data?.items, store.courses), ...builtInCourses], [store.data, store.courses, builtInCourses]);
-  const sections = useMemo(() => groupBySection(courseList, [...(store.data?.courseSections ?? []), PROGRAMMING_SECTION]), [courseList, store.data]);
+  const sections = useMemo(() => groupBySection(courseList, [...(store.data?.courseSections ?? []), ...BUILT_IN_SECTIONS]), [courseList, store.data]);
   const lessons = useMemo(() => flattenLessons(courseList), [courseList]);
   return { ...store, ...checkout, tab, setTab, courseList, sections, lessons, openCourse };
 }
