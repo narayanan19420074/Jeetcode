@@ -28,6 +28,7 @@ const hidesNavbarOnPhone = (pathname, search) =>
   pathname.startsWith('/settings/') ||
   pathname.startsWith('/job-profile/') ||
   pathname.startsWith('/workspace/') ||
+  pathname.startsWith('/courses/') ||
   pathname === '/store' ||
   pathname === '/community' ||
   pathname.startsWith('/community/') ||

@@ -14,8 +14,12 @@ function LevelBadge({ level, palette }) {
   return <Typography component="span" sx={{ px: 1, py: 0.25, borderRadius: RADII_PX.badge, bgcolor: tint(LIB_ACCENT, BADGE_TINT_PERCENT), color: palette.text, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.medium }}>{level}</Typography>;
 }
 
-// Learners who own the course see their progress; everyone else sees the price in coins.
-const CourseFooter = ({ course }) => (course.owned && course.progress ? <CourseProgress progress={course.progress} name={course.name} /> : <Coins value={course.price} size={20} />);
+// Learners who own or have started the course see their progress; free courses say so; the rest show the price in coins.
+function CourseFooter({ course }) {
+  if (course.owned && course.progress) return <CourseProgress progress={course.progress} name={course.name} />;
+  if (course.price === 0) return <Typography sx={{ fontSize: FONT_SIZES.body, fontWeight: FONT_WEIGHTS.medium }}>Free</Typography>;
+  return <Coins value={course.price} size={20} />;
+}
 
 // One course in the Courses list: cover, title, one-line summary, length and level, then progress or price.
 export default function CourseCard({ course, onOpen }) {

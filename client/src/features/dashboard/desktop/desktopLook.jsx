@@ -12,9 +12,10 @@ const FONT_VARIANTS_TO_KEEP = ['monospace']; // code and numbers stay in the mon
 export const isDashboardPath = (pathname) => pathname.replace(/\/+$/, '') === '/dashboard';
 
 // Pages that wear the Library look on desktop: the dashboard, Problems, Store, Companies (/prep), Aptitude, Settings
-// and the code workspace. Settings and the workspace have a sub-path (/settings/profile, /workspace/two-sum).
+// the code workspace and course lessons. Settings, the workspace and course lessons have a sub-path (/settings/profile,
+// /workspace/two-sum, /courses/python).
 const DESKTOP_LOOK_PATHS = ['/dashboard', '/problems', '/store', '/courses', '/prep', '/aptitude', '/exams', '/settings'];
-const DESKTOP_LOOK_PREFIXES = ['/settings/', '/workspace/'];
+const DESKTOP_LOOK_PREFIXES = ['/settings/', '/workspace/', '/courses/'];
 export const usesDesktopLook = (pathname) => {
   const path = pathname.replace(/\/+$/, '');
   return DESKTOP_LOOK_PATHS.includes(path) || DESKTOP_LOOK_PREFIXES.some((prefix) => path.startsWith(prefix));

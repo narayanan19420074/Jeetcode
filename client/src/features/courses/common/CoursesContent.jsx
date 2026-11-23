@@ -62,7 +62,7 @@ function EmptyState({ tab }) {
 
 // The list of the open tab, identical on phone and desktop. Cards open the course panel of the Store.
 export default function CoursesContent({ page }) {
-  const { tab, sections, lessons, loading, error, data, setCourseSlug } = page;
+  const { tab, sections, lessons, loading, error, data, openCourse } = page;
   const items = tab === 'lessons' ? lessons : sections;
   const isLoading = loading && !data;
   return (
@@ -71,8 +71,8 @@ export default function CoursesContent({ page }) {
       {error && <Alert severity="error" sx={{ mt: 2 }}>{error}</Alert>}
       {isLoading && <Box sx={{ mt: 4 }}><LoadingGrid /></Box>}
       {!isLoading && items.length === 0 && !error && <EmptyState tab={tab} />}
-      {tab === 'lessons' && lessons.length > 0 && <LessonList lessons={lessons} onOpen={setCourseSlug} />}
-      {tab === 'courses' && <CourseSections sections={sections} onOpen={setCourseSlug} />}
+      {tab === 'lessons' && lessons.length > 0 && <LessonList lessons={lessons} onOpen={openCourse} />}
+      {tab === 'courses' && <CourseSections sections={sections} onOpen={openCourse} />}
     </Box>
   );
 }

@@ -87,6 +87,8 @@ export const SIZES = {
   // Code visualizer (workspace dialog): dialog size, the code pane height on phones, the line-number column and
   // the smallest box a value is drawn in.
   codeVisualizer: { dialogMaxWidth: 1240, dialogHeight: '90dvh', phoneCodeHeight: '32dvh', lineNumberColumn: 44, valueBox: 28, speedSelect: 96, outputMaxHeight: '40%' },
+  // Course lesson page: the topics and exercises columns scroll on their own inside the window, below the sticky top.
+  courseWorkspace: { paneMaxHeight: 'calc(100dvh - 108px)' },
   filterPillHeight: 40,
   // Category tabs of the community feed and the search field of the phone top bars (same height as the LinkedIn app).
   compactPillHeight: 32,
