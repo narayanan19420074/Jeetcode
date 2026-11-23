@@ -93,6 +93,9 @@ export const SIZES = {
   phoneSearchHeight: 32,
   // Thin progress bar in the cards of the Exams page.
   progressBarHeight: 6,
+  // Progress track under the centred title of a phone Library page (topic and lesson pages).
+  phoneProgressTrackWidth: 162,
+  phonePageMaxWidth: 640,
   // Thin scrollbar of a side card whose rows scroll (visible only while the pointer is over it).
   hoverScrollbar: 8,
   // Profile picture of a member on the progress bar of a study plan card.
