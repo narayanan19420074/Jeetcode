@@ -3,7 +3,8 @@ import { useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import StoreItemCard from './StoreItemCard';
 import { FONT_WEIGHTS, FONT_SIZES, RADII_PX } from '../../../app/design/designTokens';
 
-const COLUMNS = { xs: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', lg: 'repeat(4, minmax(0, 1fr))' };
+// The middle column sits between the sidebar and the filters, so it is narrow on large screens.
+const COLUMNS = { xs: 'repeat(2, minmax(0, 1fr))', md: 'repeat(3, minmax(0, 1fr))', lg: 'repeat(2, minmax(0, 1fr))', xl: 'repeat(3, minmax(0, 1fr))' };
 const SKELETON_COUNT = 8;
 
 function EmptyShelf({ palette }) {

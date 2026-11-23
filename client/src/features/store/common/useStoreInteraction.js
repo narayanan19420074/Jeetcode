@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
-import { purchaseMessage } from './storeSelectors';
+import { DEFAULT_SHELF_FILTERS, hasActiveShelfFilters, purchaseMessage, shelfItems } from './storeSelectors';
 
 const TABS = ['shop', 'orders', 'coins'];
 
@@ -14,16 +14,23 @@ export function useStoreTab(isAuthenticated) {
   return { tab, setTab };
 }
 
-// Featured first: popular items, then the catalog order.
-export function useStoreShelf(catalog) {
-  const [cat, setCat] = useState('all');
+// The shelf: category, search text, price limit and sort order. Phones only use the category.
+export function useStoreShelf(catalog, balance) {
+  const [filters, setFilters] = useState(DEFAULT_SHELF_FILTERS);
+  const patch = (changes) => setFilters((previous) => ({ ...previous, ...changes }));
   const categories = useMemo(() => [{ id: 'all', label: 'All' }, ...(catalog?.categories || [])], [catalog]);
-  const items = useMemo(() => {
-    const all = catalog?.items || [];
-    const inCategory = cat === 'all' ? all : all.filter((item) => item.category === cat);
-    return [...inCategory].sort((a, b) => Number(b.popular) - Number(a.popular));
-  }, [catalog, cat]);
-  return { cat, setCat, categories, items };
+  const items = useMemo(() => shelfItems([...(catalog?.items || [])], filters, balance), [catalog, filters, balance]);
+  return {
+    ...filters,
+    categories,
+    items,
+    setCat: (cat) => patch({ cat }),
+    setSearch: (search) => patch({ search }),
+    setSort: (sort) => patch({ sort }),
+    setBudget: (budget) => patch({ budget }),
+    resetFilters: () => setFilters(DEFAULT_SHELF_FILTERS),
+    hasActiveFilters: hasActiveShelfFilters(filters),
+  };
 }
 
 // Which item is being checked out, which course panel is open, and what happens after a purchase.
