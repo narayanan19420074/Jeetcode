@@ -1,12 +1,14 @@
+import { BIG_O_COURSE } from '../content/bigO/bigOCourse';
 import { DESIGN_SYSTEM_COURSE } from '../content/designSystem/designSystemCourse';
 import { PYTHON_COURSE } from '../content/python/pythonCourse';
 import { readDoneKeys } from './courseProgressStorage';
 
-const BUILT_IN_COURSES = [PYTHON_COURSE, DESIGN_SYSTEM_COURSE];
+const BUILT_IN_COURSES = [PYTHON_COURSE, BIG_O_COURSE, DESIGN_SYSTEM_COURSE];
 
 // Courses that ship with the app (lesson text and exercises live in the client) are listed under their own section.
 export const BUILT_IN_SECTIONS = [
   { id: 'programming', label: 'Programming Languages', blurb: 'Learn a language from the first line of code, with lessons and exercises side by side.' },
+  { id: 'computer-science', label: 'Computer Science', blurb: 'Understand how efficient algorithms and data structures are built and compared.' },
   { id: 'design', label: 'Design', blurb: 'Build interfaces that look consistent and work for everyone.' },
 ];
 
