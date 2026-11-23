@@ -3,6 +3,7 @@ import { tint } from '../../../dashboard/dashboardUtils';
 import { useLibraryPalette } from '../../../dashboard/components/libraryStyle';
 import { BORDER_WIDTHS, FONT_SIZES, FONT_WEIGHTS, LINE_HEIGHTS, RADII_PX } from '../../../../app/design/designTokens';
 import CodeBlock from './CodeBlock';
+import VideoBlock from './VideoBlock';
 
 const NOTE_TONES = { tip: { label: 'Tip', color: 'success.main' }, warning: { label: 'Watch out', color: 'warning.main' } };
 const NOTE_TINT_PERCENT = 10;
@@ -32,9 +33,9 @@ function NoteBlock({ block }) {
   );
 }
 
-const BLOCK_RENDERERS = { text: TextBlock, heading: HeadingBlock, bullets: BulletsBlock, code: CodeBlockItem, note: NoteBlock };
+const BLOCK_RENDERERS = { text: TextBlock, heading: HeadingBlock, bullets: BulletsBlock, code: CodeBlockItem, note: NoteBlock, video: VideoBlock };
 
-// Reading content of a lesson: paragraphs, headings, lists, code examples and notes, in the order they were written.
+// Reading content of a lesson: paragraphs, headings, lists, code examples, notes and videos, in the order they were written.
 export default function LessonBlocks({ blocks }) {
   return blocks.map((block, index) => {
     const Renderer = BLOCK_RENDERERS[block.type];

@@ -8,6 +8,9 @@ export const bullets = (...items) => ({ type: 'bullets', items });
 // `result` is the output the learner sees when the snippet runs.
 export const code = (value, result = null) => ({ type: 'code', value: value.trim(), result: result === null ? null : result.trim() });
 
+// A short lesson video. `description` is the text version of the video (shown below the player for accessibility).
+export const video = (src, title, poster, description) => ({ type: 'video', src, title, poster, description });
+
 // tone: 'tip' for good practice, 'warning' for a common mistake.
 export const note = (value, tone = 'tip') => ({ type: 'note', tone, value });
 

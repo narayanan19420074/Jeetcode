@@ -1,6 +1,10 @@
-import { bullets, code, courseModule, heading, lesson, note, predict, task, text } from '../contentBlocks';
+import { bullets, code, courseModule, heading, lesson, note, predict, task, text, video } from '../contentBlocks';
+
+const VIDEO_FOLDER = '/videos/big-o';
+const WHAT_IS_BIG_O_VIDEO_TEXT = 'The same code takes 0.2 seconds on a fast laptop and 0.9 seconds on an older phone, so seconds cannot compare algorithms fairly. Instead, count the steps. The function find_first checks the items one by one: with 10 items, the worst case is 10 steps. With 100 items it is 100 steps and with 1,000 items it is 1,000 steps. Ten times more items means ten times more steps, and this growth is called O(n). Plotted as curves, O(1), O(log n), O(n) and O(n²) have different shapes, and Big O describes that shape. Remember: Big O shows how work grows with input size, it counts steps so the machine does not matter, and find_first is O(n).';
 
 const whatIsBigO = lesson('l1', 'What is Big O notation?', 15, [
+  video(`${VIDEO_FOLDER}/what-is-big-o.mp4`, 'What is Big O notation?', `${VIDEO_FOLDER}/what-is-big-o.jpg`, WHAT_IS_BIG_O_VIDEO_TEXT),
   text('Big O notation describes how the work an algorithm does grows as its input grows. It does not measure seconds. It answers one question: if the input becomes ten times bigger, how much slower does the code get?'),
   heading('Why seconds are not enough'),
   text('The running time of a program depends on the computer, the language and what else is running. A fast machine can hide a slow algorithm on a small input. Big O removes those details and compares the algorithms themselves.'),
