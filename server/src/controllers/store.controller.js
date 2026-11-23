@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import { User } from '../models/User.js';
 import { StoreOrder } from '../models/StoreOrder.js';
-import { EARN_WAYS, CATEGORIES, INDIAN_STATES, PHYSICAL_MIN_SOLVED, SHIP_COUNTRY } from '../config/store.js';
+import { EARN_WAYS, CATEGORIES, COURSE_SECTIONS, INDIAN_STATES, PHYSICAL_MIN_SOLVED, SHIP_COUNTRY } from '../config/store.js';
 import { ApiError } from '../utils/ApiError.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
@@ -25,6 +25,7 @@ export const getItems = asyncHandler(async (req, res) => {
   new ApiResponse(200, {
     items,
     categories: CATEGORIES,
+    courseSections: COURSE_SECTIONS,
     states: INDIAN_STATES,
     shipsTo: SHIP_COUNTRY,
     minSolvedForMerch: PHYSICAL_MIN_SOLVED,

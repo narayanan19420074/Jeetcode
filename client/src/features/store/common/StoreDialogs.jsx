@@ -3,7 +3,7 @@ import CheckoutDialog from '../CheckoutDialog';
 import CoursePanel from '../CoursePanel';
 import { CoinsTab, OrdersTab } from '../AccountTabs';
 
-function PurchaseDialogs({ store }) {
+export function PurchaseDialogs({ store }) {
   const { selected, setSelected, balance, data, done, courseSlug, setCourseSlug, isAuthenticated, loadAccount, buy } = store;
   const buyCourse = (course) => {
     setCourseSlug(null);

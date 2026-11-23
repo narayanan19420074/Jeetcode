@@ -26,6 +26,7 @@ export const PRIMARY_LINKS = [
 export const EXPLORE_LINKS = [
   { to: '/prep', label: 'Companies', icon: BusinessRoundedIcon },
   { to: '/exams', label: 'Exams', icon: AssignmentRoundedIcon },
+  { to: '/courses', label: 'Courses', icon: SchoolRoundedIcon },
   { to: '/store', label: 'Store', icon: StorefrontRoundedIcon },
   { to: '/visualizer', label: 'Visualizer', icon: BarChartRoundedIcon },
 ];

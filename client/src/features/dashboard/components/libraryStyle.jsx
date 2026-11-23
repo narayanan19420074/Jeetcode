@@ -24,9 +24,9 @@ const TYPOGRAPHY = { fontFamily: LIB_FONT, ...Object.fromEntries(VARIANTS.map((v
 const LIBRARY_VIEWS = ['contest', 'explore', 'friends', 'leaderboard', 'plans', 'quests'];
 
 // Pages with their own phone header: they use the Library look and hide the top bar on phones.
-export const LIBRARY_PAGE_PATHS = ['/aptitude', '/prep', '/you', '/job-profile', '/settings', '/plans'];
+export const LIBRARY_PAGE_PATHS = ['/aptitude', '/courses', '/prep', '/you', '/job-profile', '/settings', '/plans'];
 
-// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude (list and topic pages), Companies, You, Settings, Store, Plans and the Contest, Explore, Friends, Leaderboard, Study Plan and Quests views.
+// Pages that use the Library look on phones: dashboard home (no ?view= open), Problems, Aptitude (list and topic pages), Companies, You, Settings, Store, Courses, Plans and the Contest, Explore, Friends, Leaderboard, Study Plan and Quests views.
 export const isLibraryRoute = (pathname, search) => {
   const path = pathname.replace(/\/+$/, '');
   if (path === '/dashboard') {

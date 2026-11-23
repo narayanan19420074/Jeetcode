@@ -36,6 +36,7 @@ const AdminAuditLogPage = lazy(() => import('./features/admin/pages/AdminAuditLo
 const AdminFeedbackPage = lazy(() => import('./features/admin/pages/AdminFeedbackPage'));
 const AdminSupportChatPage = lazy(() => import('./features/admin/pages/AdminSupportChatPage'));
 
+const CoursesPage = lazy(() => import('./features/courses/CoursesPage'));
 const AptitudePatternsPage = lazy(() => import('./features/aptitude/AptitudePatternsPage'));
 const AptitudePatternDetailPage = lazy(() => import('./features/aptitude/AptitudePatternDetailPage'));
 // Test = exam style: an instructions screen inside the normal layout, then the
@@ -218,6 +219,7 @@ export default function App() {
         <Route path="/prep" element={<Suspense fallback={<PageLoader />}><PrepCompaniesPage /></Suspense>} />
         <Route path="/community" element={<Suspense fallback={<PageLoader />}><CommunityPage /></Suspense>} />
         <Route path="/community/:postId" element={<Suspense fallback={<PageLoader />}><PostDetailPage /></Suspense>} />
+        <Route path="/courses" element={<Suspense fallback={<PageLoader />}><CoursesPage /></Suspense>} />
         <Route path="/store" element={<Suspense fallback={<PageLoader />}><StorePage /></Suspense>} />
         {/* Store is ONE page (Shop / Orders / Coins tabs); old deep links just redirect into it. */}
         <Route path="/store/wallet" element={<Navigate to="/store?tab=coins" replace />} />

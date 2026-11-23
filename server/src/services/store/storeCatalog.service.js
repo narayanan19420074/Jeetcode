@@ -1,5 +1,5 @@
 import { StoreItem } from '../../models/StoreItem.js';
-import { CATALOG, LOW_STOCK_AT, PHYSICAL_MIN_SOLVED, SHIP_COUNTRY, courseLessonKeys } from '../../config/store.js';
+import { CATALOG, LOW_STOCK_AT, PHYSICAL_MIN_SOLVED, SHIP_COUNTRY, courseLessonKeys, lessonKey } from '../../config/store.js';
 
 // ---------------------------------------------------------------- catalog
 
@@ -52,6 +52,15 @@ function courseStats(item) {
   return { moduleCount: (item.modules || []).length, lessonCount: keys.length, minutes };
 }
 
+// Lesson titles without links: the syllabus is public (it sells the course), links and progress are for owners only.
+function courseOutline(item) {
+  return (item.modules || []).map((module) => ({
+    id: module.id,
+    title: module.title,
+    lessons: module.lessons.map((lesson) => ({ key: lessonKey(module.id, lesson.id), title: lesson.title, minutes: lesson.minutes, kind: lesson.kind })),
+  }));
+}
+
 // What the client sees for one item. `ctx` carries the viewer's own state.
 export function publicItem(item, ctx = {}) {
   const limited = item.stock !== null && item.stock !== undefined;
@@ -84,6 +93,8 @@ export function publicItem(item, ctx = {}) {
   }
   if (item.kind === 'course') {
     base.level = item.level;
+    base.section = item.section;
+    base.modules = courseOutline(item);
     Object.assign(base, courseStats(item));
     base.owned = Boolean(ctx.owned?.has(item.slug));
   }

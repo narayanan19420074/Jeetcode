@@ -38,6 +38,12 @@ export const CATEGORIES = [
   { id: 'merch', label: 'Merch' },
 ];
 
+// Sections of the Courses page. Each course names one in `section`; `blurb` is the line under the section title.
+export const COURSE_SECTIONS = [
+  { id: 'dsa', label: 'Data Structures & Algorithms', blurb: 'Follow a structured path through the core patterns used in coding interviews.' },
+  { id: 'placement', label: 'Placement Preparation', blurb: 'Aptitude, reasoning and campus test preparation, topic by topic.' },
+];
+
 const SIZES = ['S', 'M', 'L', 'XL', 'XXL'];
 
 // kind: 'pro' | 'course' | 'physical'
@@ -49,7 +55,7 @@ export const CATALOG = [
 
   // ---- Courses (curated guided paths; progress is tracked per lesson) ----
   {
-    slug: 'dsa-interview-sprint', name: 'DSA Interview Sprint', category: 'courses', kind: 'course', price: 1500, stock: null, art: 'course', accent: '#6366F1',
+    slug: 'dsa-interview-sprint', name: 'DSA Interview Sprint', category: 'courses', kind: 'course', section: 'dsa', price: 1500, stock: null, art: 'course', accent: '#6366F1',
     level: 'Beginner → Intermediate', blurb: '8 modules of must-know patterns, in order.',
     desc: 'A guided path through the patterns interviewers ask most: arrays and hashing, two pointers, sliding window, stacks, binary search, greedy, graphs and dynamic programming. Every lesson drops you straight into the matching practice set, and your progress is tracked.',
     modules: [
@@ -92,7 +98,7 @@ export const CATALOG = [
     ],
   },
   {
-    slug: 'aptitude-mastery', name: 'Aptitude Mastery', category: 'courses', kind: 'course', price: 1200, stock: null, art: 'course', accent: '#10B981',
+    slug: 'aptitude-mastery', name: 'Aptitude Mastery', category: 'courses', kind: 'course', section: 'placement', price: 1200, stock: null, art: 'course', accent: '#10B981',
     level: 'All levels', blurb: 'Quant fundamentals, topic by topic.',
     desc: 'Work through the quant topics placement tests repeat every year. Each lesson opens the topic hub, so you can learn, practise and take a timed test, and tick it off here when you are comfortable.',
     modules: [
@@ -127,7 +133,7 @@ export const CATALOG = [
     ],
   },
   {
-    slug: 'logical-reasoning-pack', name: 'Logical Reasoning Pack', category: 'courses', kind: 'course', price: 900, stock: null, art: 'course', accent: '#EC4899',
+    slug: 'logical-reasoning-pack', name: 'Logical Reasoning Pack', category: 'courses', kind: 'course', section: 'placement', price: 900, stock: null, art: 'course', accent: '#EC4899',
     level: 'All levels', blurb: 'Series, coding-decoding, directions & more.',
     desc: 'The reasoning topics that show up in every campus test: series, coding-decoding, blood relations, direction sense and calendar/clock. Short topics, quick wins.',
     modules: [
@@ -147,7 +153,7 @@ export const CATALOG = [
     ],
   },
   {
-    slug: 'campus-placement-roadmap', name: 'Campus Placement Roadmap', category: 'courses', kind: 'course', price: 1000, stock: null, art: 'course', accent: '#0EA5E9',
+    slug: 'campus-placement-roadmap', name: 'Campus Placement Roadmap', category: 'courses', kind: 'course', section: 'placement', price: 1000, stock: null, art: 'course', accent: '#0EA5E9',
     level: 'Beginner', blurb: 'From zero to your first company test.',
     desc: 'A start-to-finish plan for campus drives: pick target companies, build your aptitude base, get your coding fundamentals in place and rehearse with a timed paper.',
     modules: [
