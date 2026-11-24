@@ -20,3 +20,9 @@ export const RepostOutlineIcon = createSvgIcon(
 );
 
 export const SendOutlineIcon = createSvgIcon(<path d="M21 3 3 10.5l7 2.5 2.5 7L21 3zM10 13l11-10" {...outline} />, 'SendOutline');
+
+// Messages icon of the phone top bar: a speech bubble with two lines of text, so it reads differently from the comment bubble.
+export const MessageOutlineIcon = createSvgIcon(
+  <path d="M5 4.5h14a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5h-7.5l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V6A1.5 1.5 0 0 1 5 4.5zM8 9h8M8 12.5h5" {...outline} />,
+  'MessageOutline'
+);

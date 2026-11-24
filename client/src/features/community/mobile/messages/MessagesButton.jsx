@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { IconButton } from '@mui/material';
-import ChatBubbleRoundedIcon from '@mui/icons-material/ChatBubbleRounded';
+import { MessageOutlineIcon } from '../../common/feedActionIcons';
 import MessagesScreen from './MessagesScreen';
 import useChatLink from './useChatLink';
 
@@ -17,7 +17,7 @@ export default function MessagesButton() {
   return (
     <>
       <IconButton aria-label="Messages" onClick={() => setOpen(true)} sx={{ color: 'var(--lib-text)' }}>
-        <ChatBubbleRoundedIcon />
+        <MessageOutlineIcon />
       </IconButton>
       <MessagesScreen open={open} onClose={() => setOpen(false)} initialChat={linkedPerson} />
     </>

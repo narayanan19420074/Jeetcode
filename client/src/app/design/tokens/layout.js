@@ -92,7 +92,7 @@ export const SIZES = {
   filterPillHeight: 40,
   // Category tabs of the community feed and the search field of the phone top bars (same height as the LinkedIn app).
   compactPillHeight: 32,
-  phoneSearchHeight: 32,
+  phoneSearchHeight: 40,
   // Thin progress bar in the cards of the Exams page.
   progressBarHeight: 6,
   // Progress track under the centred title of a phone Library page (topic and lesson pages).
@@ -120,6 +120,8 @@ export const SIZES = {
   profileBannerHeight: 120,
   // Round reaction icon in the overlapping stack at the end of the row under a phone feed post.
   reactionBadge: 14,
+  // Round unread count at the end of an inbox row.
+  unreadBadge: 22,
   // Green online dot on the avatar of a conversation in the phone messages list.
   presenceDot: 14,
   contentMaxWidth: 1200,
