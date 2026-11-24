@@ -9,7 +9,7 @@ import { FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES, Z_INDEX } from '../app/desig
 
 // The mode follows the page: opening the admin console means admin mode, opening the normal app means user mode.
 // The saved mode only decides where an admin lands after signing in.
-function useRememberMode(mode) {
+export function useRememberMode(mode) {
   const dispatch = useDispatch();
   const saved = useSelector((state) => state.ui.viewMode);
   useEffect(() => {

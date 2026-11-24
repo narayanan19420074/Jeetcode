@@ -10,14 +10,29 @@ import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 
 // One entry per admin section. `end` matches only the exact index route
 // so /admin doesn't keep the Overview link highlighted while on /admin/users.
+// `tab` marks the four sections that get a slot in the phone tab bar; the others open from its "More" sheet.
 export const ADMIN_NAV_ITEMS = [
-  { to: '/admin', label: 'Overview', icon: <DashboardRoundedIcon fontSize="small" />, end: true },
-  { to: '/admin/users', label: 'Users', icon: <GroupRoundedIcon fontSize="small" /> },
-  { to: '/admin/licenses', label: 'License Keys', icon: <VpnKeyRoundedIcon fontSize="small" /> },
-  { to: '/admin/store', label: 'Store', icon: <StorefrontRoundedIcon fontSize="small" /> },
-  { to: '/admin/problems', label: 'Problems', icon: <DescriptionRoundedIcon fontSize="small" /> },
-  { to: '/admin/aptitude', label: 'Aptitude', icon: <PsychologyRoundedIcon fontSize="small" /> },
-  { to: '/admin/support-chat', label: 'Live Chat', icon: <ChatRoundedIcon fontSize="small" />, badgeKey: 'chat' },
-  { to: '/admin/feedback', label: 'Support Inbox', icon: <FeedbackRoundedIcon fontSize="small" /> },
-  { to: '/admin/audit-log', label: 'Audit Log', icon: <HistoryRoundedIcon fontSize="small" /> },
+  { to: '/admin', label: 'Overview', icon: DashboardRoundedIcon, end: true, tab: true },
+  { to: '/admin/users', label: 'Users', icon: GroupRoundedIcon, tab: true },
+  { to: '/admin/licenses', label: 'License Keys', icon: VpnKeyRoundedIcon },
+  { to: '/admin/store', label: 'Store', icon: StorefrontRoundedIcon },
+  { to: '/admin/problems', label: 'Problems', icon: DescriptionRoundedIcon, tab: true },
+  { to: '/admin/aptitude', label: 'Aptitude', icon: PsychologyRoundedIcon },
+  { to: '/admin/support-chat', label: 'Live Chat', icon: ChatRoundedIcon, badgeKey: 'chat', tab: true },
+  { to: '/admin/feedback', label: 'Support Inbox', icon: FeedbackRoundedIcon },
+  { to: '/admin/audit-log', label: 'Audit Log', icon: HistoryRoundedIcon },
 ];
+
+export const ADMIN_TAB_ITEMS = ADMIN_NAV_ITEMS.filter((item) => item.tab);
+export const ADMIN_MORE_ITEMS = ADMIN_NAV_ITEMS.filter((item) => !item.tab);
+
+// Only the Live Chat section carries a badge: admins must notice waiting customers without opening it.
+export const unreadBadgeFor = (item, unreadChats) => (item.badgeKey === 'chat' ? unreadChats : 0);
+
+const withoutTrailingSlash = (pathname) => pathname.replace(/\/+$/, '') || '/';
+
+// Same rule as NavLink's `end`, for the phone tab bar and sheet that highlight sections themselves.
+export function isAdminItemActive(pathname, { to, end }) {
+  const path = withoutTrailingSlash(pathname);
+  return end ? path === to : path === to || path.startsWith(`${to}/`);
+}

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { Box, Typography } from '@mui/material';
+import { Badge, Box, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
@@ -24,7 +24,7 @@ export const showMobileBottomNav = (pathname) => !pathname.startsWith('/workspac
 const isActive = (pathname, to) => pathname === to || pathname.startsWith(`${to}/`);
 
 // Solid page surface (pure white in light mode) with a hairline on top, so the bar never looks like a separate colour block.
-const barSx = (library) => (t) => ({
+export const bottomNavBarSx = (library) => (t) => ({
   display: { xs: 'flex', md: 'none' },
   position: 'fixed',
   left: 0,
@@ -52,12 +52,19 @@ const tabIconSx = (active) => (t) => ({
   transition: `background-color ${MOTION.standard}ms`,
 });
 
-function NavTab({ to, label, icon: Icon, active }) {
-  const tabSx = { flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0.5, textDecoration: 'none', color: active ? 'text.primary' : 'text.secondary' };
+// Strips the default button look so a tab without a link (the admin "More" tab opens a sheet) matches the link tabs.
+const buttonTabResetSx = { border: 0, p: 0, bgcolor: 'transparent', cursor: 'pointer', fontFamily: 'inherit' };
+
+// One tab of a phone tab bar: a link when it has `to`, otherwise a button. `badge` shows an unread count on the icon.
+export function NavTab({ to, label, icon: Icon, active, onClick, badge = 0 }) {
+  const tabProps = to ? { component: RouterLink, to } : { component: 'button', type: 'button', onClick };
+  const tabSx = { ...buttonTabResetSx, flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0.5, textDecoration: 'none', color: active ? 'text.primary' : 'text.secondary' };
   return (
-    <Box component={RouterLink} to={to} aria-current={active ? 'page' : undefined} sx={tabSx}>
+    <Box {...tabProps} aria-current={active ? 'page' : undefined} sx={tabSx}>
       <Box sx={tabIconSx(active)}>
-        <Icon sx={{ fontSize: SIZES.iconSize.medium }} />
+        <Badge color="error" badgeContent={badge} invisible={!badge}>
+          <Icon sx={{ fontSize: SIZES.iconSize.medium }} />
+        </Badge>
       </Box>
       <Typography variant="micro" sx={{ fontWeight: active ? 'fontWeightBold' : 'fontWeightSemibold', lineHeight: 1.1, fontFamily: 'inherit' }}>{label}</Typography>
     </Box>
@@ -71,7 +78,7 @@ export default function MobileBottomNav() {
   if (!isAuthenticated) return null;
 
   return (
-    <Box component="nav" aria-label="Primary" sx={barSx(isLibraryRoute(pathname, search))}>
+    <Box component="nav" aria-label="Primary" sx={bottomNavBarSx(isLibraryRoute(pathname, search))}>
       {ITEMS.map((item) => (
         <NavTab key={item.to} {...item} active={isActive(pathname, item.to)} />
       ))}
