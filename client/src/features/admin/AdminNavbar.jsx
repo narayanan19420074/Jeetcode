@@ -6,6 +6,7 @@ import CodeRoundedIcon from '@mui/icons-material/CodeRounded';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { toggleThemeMode } from '../../app/uiSlice';
 import AdminAccountMenu from './common/AdminAccountMenu';
+import { AdminModeToggle } from '../../components/AdminModeSwitch';
 import { FONT_WEIGHTS } from '../../app/design/designTokens';
 
 function AdminBrand() {
@@ -52,6 +53,7 @@ export default function AdminNavbar({ showMenuButton, unreadChats, onMenuClick }
         {showMenuButton && <MenuButton unreadChats={unreadChats} onClick={onMenuClick} />}
         <AdminBrand />
         <Box sx={{ flexGrow: 1 }} />
+        <AdminModeToggle />
         <ThemeModeButton />
         <AdminAccountMenu />
       </Toolbar>

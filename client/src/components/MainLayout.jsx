@@ -5,6 +5,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import MobileBottomNav, { showMobileBottomNav } from './MobileBottomNav';
 import FreeAccessBanner from './FreeAccessBanner';
+import { AdminModePill } from './AdminModeSwitch';
 import EmailVerifyBanner from './EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
@@ -92,6 +93,7 @@ export default function MainLayout() {
           <Outlet />
         </Box>
         {bottomNav && <MobileBottomNav />}
+        <AdminModePill />
       </DesktopLookProvider>
     </Box>
   );

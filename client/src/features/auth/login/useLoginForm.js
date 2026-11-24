@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { loginUser } from '../authSlice';
 
-// After sign in, return to the page the visitor tried to open; admins land in the admin area.
+// After sign in, return to the page the visitor tried to open; admins land on the side (admin console or app) they used last.
 export function useRedirectAfterSignIn() {
   const navigate = useNavigate();
   const location = useLocation();
+  const viewMode = useSelector((state) => state.ui.viewMode);
   return (user) => {
-    const destination = location.state?.from?.pathname || (user.role === 'admin' ? '/admin' : '/dashboard');
+    const adminHome = viewMode === 'user' ? '/dashboard' : '/admin';
+    const destination = location.state?.from?.pathname || (user.role === 'admin' ? adminHome : '/dashboard');
     navigate(destination, { replace: true });
   };
 }

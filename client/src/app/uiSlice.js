@@ -8,6 +8,15 @@ import { EDITOR_DEFAULTS } from './design/designTokens';
 
 const LS_KEY = 'jeetcode-ui-prefs';
 const LEGACY_MODE_KEY = 'jeetcode-theme-mode';
+// Admins only: which side they were last on. 'admin' = admin console with all data, 'user' = the app as a normal learner sees it.
+const VIEW_MODE_KEY = 'jeetcode-view-mode';
+const loadViewMode = () => {
+  try {
+    return localStorage.getItem(VIEW_MODE_KEY) === 'user' ? 'user' : 'admin';
+  } catch {
+    return 'admin';
+  }
+};
 // The brand moved from Google blue to indigo (stored under the key 'violet').
 // Until a user picks an accent after this change, a saved 'blue' follows the new brand.
 const PALETTE_V2_KEY = 'jc-palette-v2';
@@ -86,6 +95,7 @@ const initialState = {
   systemDark,
   mode: resolveMode(base.themePref, systemDark), // always 'light' | 'dark' — what the rest of the app reads
   sidebarOpen: true,
+  viewMode: typeof window !== 'undefined' ? loadViewMode() : 'admin',
 };
 
 const merge = (state, patch) => {
@@ -135,11 +145,20 @@ const uiSlice = createSlice({
       if (p.editor) patch.editor = p.editor;
       merge(state, patch);
     },
+    // Admin accounts only. Set by the page the admin is on (admin console or normal app) and used to pick where sign in lands.
+    setViewMode: (state, action) => {
+      state.viewMode = action.payload === 'user' ? 'user' : 'admin';
+      try {
+        localStorage.setItem(VIEW_MODE_KEY, state.viewMode);
+      } catch {
+        // storage unavailable: the mode still applies for this session
+      }
+    },
     setSidebarOpen: (state, action) => {
       state.sidebarOpen = action.payload;
     },
   },
 });
 
-export const { toggleThemeMode, setUiPrefs, setSystemDark, hydrateFromAccount, setSidebarOpen } = uiSlice.actions;
+export const { toggleThemeMode, setUiPrefs, setSystemDark, hydrateFromAccount, setSidebarOpen, setViewMode } = uiSlice.actions;
 export default uiSlice.reducer;
