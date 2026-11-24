@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, IconButton, Typography } from '@mui/material';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { Box, Typography } from '@mui/material';
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import HistoryRoundedIcon from '@mui/icons-material/HistoryRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
-import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII, RADII_PX, SIZES } from '../../../app/design/designTokens';
+import { BRAND, FONTS, LIBRARY_PALETTE, COLOR_PALETTE, withAlpha, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../app/design/designTokens';
 
 // Shared look of the phone Library (Problems) pages: the product font and a warm cream surface in light mode.
 // Dark mode keeps the app's normal dark surfaces.
@@ -185,31 +184,6 @@ export function PageHeader({ icon: Icon, title, subtitle }) {
         {title}
       </Typography>
       {subtitle && <Typography sx={{ fontSize: FONT_SIZES.subheading, lineHeight: '24px', letterSpacing: LIB_TRACKING, color: pal.muted }}>{subtitle}</Typography>}
-    </Box>
-  );
-}
-
-// Bottom sheet paper of the phone Library pages (calendar sheet, admin "More" sheet): rounded top corners on the page
-// surface, kept clear of the device's home indicator.
-export const librarySheetPaperSx = (pal) => ({
-  borderRadius: `${RADII.card}px ${RADII.card}px 0 0`,
-  maxHeight: `calc(${SIZES.viewportHeight} * 0.9)`,
-  pb: 'env(safe-area-inset-bottom)',
-  bgcolor: pal.bg,
-  backgroundImage: 'none',
-  color: pal.text,
-});
-
-// Title row of a bottom sheet with its close button.
-export function LibrarySheetHeader({ title, onClose }) {
-  return (
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.5 }}>
-      <Typography component="h2" sx={libSectionTitleSx}>
-        {title}
-      </Typography>
-      <IconButton onClick={onClose} aria-label={`Close ${title.toLowerCase()}`} sx={[libIconBtnSx, { mr: -0.5 }]}>
-        <CloseRoundedIcon />
-      </IconButton>
     </Box>
   );
 }

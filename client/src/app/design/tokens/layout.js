@@ -138,11 +138,6 @@ export const SIZES = {
   profileAvatar: 84,
   listTile: 52,
   statusLabelMaxWidth: 96,
-  // Phone Library look (learner pages and the admin console on phones): height of a chip or tab pill, of a text or select
-  // field and of a small button. A regular button uses controlHeight.
-  libraryControl: { chip: 34, field: 44, buttonSmall: 36 },
-  // Row of the admin "More" sheet on phones (icon tile, label and chevron).
-  adminMoreRow: 56,
   // One desktop page frame for every page with side columns (Dashboard, Problems, Aptitude, Community): the page
   // width is `dashboardMaxWidth`, the left column is `sidebar` (md / lg), the right column is `rail`, and the
   // columns stick `stickyTop` below the top of the window.
