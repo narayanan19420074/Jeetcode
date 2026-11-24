@@ -8,7 +8,7 @@ const rowSx = { alignItems: 'center', mt: -1, mb: 1, borderBottom: '1px solid', 
 const linkSx = { display: 'flex', alignItems: 'center', gap: 1, flex: 1, minWidth: SIZES.flexShrinkMinWidth };
 
 // "Priya G likes this": the viewer's friend who liked the post, above the author row. It takes over the "..."
-// menu and the dismiss button, which sit in the author row when no friend liked the post.
+// menu, which sits in the author row when no friend liked the post.
 export default function FriendLikeRow({ post, onRemoved }) {
   const friend = post.likedByFriend;
   return (

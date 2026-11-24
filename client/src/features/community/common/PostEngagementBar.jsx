@@ -27,7 +27,7 @@ export default function PostEngagementBar({ post, trailing }) {
   const comments = useCommentsSheet(post);
   return (
     <Box>
-      <Stack direction="row" sx={{ alignItems: 'center' }}>
+      <Stack direction="row" sx={{ alignItems: 'center', ml: -1 }}>
         <EngagementButton icon={vote.state.myVote === 1 ? LikeFilledIcon : LikeOutlineIcon} label="Like" count={vote.state.score} active={vote.state.myVote === 1} onClick={() => vote.cast(1)} />
         <EngagementButton icon={CommentOutlineIcon} label="Comments" count={comments.count} onClick={comments.show} />
         <EngagementButton icon={RepostOutlineIcon} label="Repost" count={repost.count} active={repost.on} onClick={repost.toggle} disabled={repost.busy} />

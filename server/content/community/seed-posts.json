@@ -1,0 +1,178 @@
+[
+ {
+  "category": "interview",
+  "title": "How I structure the first five minutes of a coding interview",
+  "body": "Most of my early mistakes were not about algorithms. I started typing before I understood the problem.\n\nWhat works for me now:\n\n1. **Restate** the problem in one sentence.\n2. **Ask** about input size, duplicates, negative values and empty input.\n3. **Walk through** one small example by hand.\n4. **Say the brute force** out loud, with its complexity, before improving it.\n5. **Agree on the plan** with the interviewer, then code.\n\nIt feels slow, but interviewers consistently react better to a clear plan than to fast typing.",
+  "isAnonymous": false,
+  "score": 34,
+  "viewCount": 420,
+  "image": "interview-first-five-minutes.png",
+  "imageAlt": "Five step flow for the start of a coding interview"
+ },
+ {
+  "category": "interview",
+  "title": "Two pointers vs sliding window: how do you decide?",
+  "body": "I keep mixing these up. My current rule of thumb:\n\n- **Two pointers** when the array is sorted (or can be sorted) and you compare values at both ends.\n- **Sliding window** when you need a contiguous range that satisfies a condition and the window can grow or shrink.\n\n```python\nleft = 0\nfor right in range(len(a)):\n    add(a[right])\n    while not valid():\n        remove(a[left]); left += 1\n    best = max(best, right - left + 1)\n```\n\nDo you have a different mental model? Curious how others tell them apart.",
+  "isAnonymous": false,
+  "score": 27,
+  "viewCount": 310,
+  "image": "sliding-window.png",
+  "imageAlt": "Sliding window over an array"
+ },
+ {
+  "category": "general",
+  "title": "Study plan for 8 weeks: what actually worked for me",
+  "body": "I had 8 weeks before placement season and about 2 hours a day.\n\n**Weeks 1-2:** arrays, strings, hashing.\n**Weeks 3-4:** two pointers, binary search, stacks.\n**Weeks 5-6:** recursion, trees, basic DP.\n**Week 7:** mixed timed sets, 3 problems in 60 minutes.\n**Week 8:** revision of my own wrong submissions only.\n\nThe biggest gain came from re-solving problems I had failed, not from solving new ones.",
+  "isAnonymous": false,
+  "score": 41,
+  "viewCount": 610,
+  "image": "eight-week-plan.png",
+  "imageAlt": "Eight week study plan"
+ },
+ {
+  "category": "contest",
+  "title": "First weekly contest: what I learned",
+  "body": "I finished only 1 of 4 problems in my first contest. Notes for other beginners:\n\n- Read all problems first and start with the easiest, not the first.\n- If a problem takes more than 20 minutes with no progress, move on.\n- Test your own edge cases before submitting. Wrong attempts cost time.\n\nI will try again this weekend and aim for two.",
+  "isAnonymous": false,
+  "score": 15,
+  "viewCount": 180
+ },
+ {
+  "category": "career",
+  "title": "Switching from a non-CS branch to software: is it realistic?",
+  "body": "I am in my final year of a mechanical engineering degree and want to move into software.\n\nSo far I have finished a Python course, around 120 practice problems and one small web project. Is it realistic to target service-company roles first and move to product companies later?\n\nAny advice on which projects to show would help.",
+  "isAnonymous": true,
+  "score": 22,
+  "viewCount": 540
+ },
+ {
+  "category": "interview",
+  "title": "Explaining your approach out loud: tips that helped me",
+  "body": "Silence in an interview is stressful for both sides. A few habits:\n\n- Narrate what you are *considering*, not every keystroke.\n- Name the data structure and why you chose it.\n- When stuck, say what you tried and why it failed. That is useful signal for the interviewer.\n\nPractice by recording yourself solving one problem a day. It is awkward at first, then very helpful.",
+  "isAnonymous": false,
+  "score": 29,
+  "viewCount": 390
+ },
+ {
+  "category": "general",
+  "title": "Dynamic programming: a checklist that made it click",
+  "body": "When a problem asks for a count, a minimum, a maximum or a yes/no over choices, I run this checklist:\n\n1. What is the **state**? (index, remaining capacity, last choice)\n2. What are the **transitions**?\n3. What is the **base case**?\n4. Can I write the recursion first, then add memoization?\n5. Can the table be shrunk to one row?\n\nWriting the recursion first removed most of my fear of DP.",
+  "isAnonymous": false,
+  "score": 38,
+  "viewCount": 700,
+  "image": "dp-checklist.png",
+  "imageAlt": "Dynamic programming checklist"
+ },
+ {
+  "category": "career",
+  "title": "How do you balance college work and daily practice?",
+  "body": "My semester is heavy and I keep skipping practice. I tried a fixed two-hour block, but it breaks whenever there is a lab or an assignment.\n\nWhat is working for people here: a small daily minimum (one problem), or longer sessions on weekends?",
+  "isAnonymous": false,
+  "score": 18,
+  "viewCount": 260
+ },
+ {
+  "category": "compensation",
+  "title": "How to think about an offer beyond the headline number",
+  "body": "Some questions worth asking before comparing offers:\n\n- How much is **fixed** and how much is variable or stock?\n- Is there a **joining bonus** and is it paid back if you leave early?\n- What is the **notice period** and the bond, if any?\n- What does the **growth path** look like in the first two years?\n\nThe number matters, but these details can change the real value a lot.",
+  "isAnonymous": false,
+  "score": 31,
+  "viewCount": 480
+ },
+ {
+  "category": "interview",
+  "title": "Common mistakes with binary search",
+  "body": "Mistakes I have made (and seen):\n\n- Using `(lo + hi) / 2` in languages with fixed-size integers. Use `lo + (hi - lo) / 2`.\n- Mixing `lo <= hi` and `lo < hi` loops with the wrong update rule.\n- Forgetting that binary search also works on the **answer**, not only on arrays.\n\n```cpp\nint lo = 0, hi = n - 1, ans = -1;\nwhile (lo <= hi) {\n    int mid = lo + (hi - lo) / 2;\n    if (ok(mid)) { ans = mid; hi = mid - 1; }\n    else lo = mid + 1;\n}\n```",
+  "isAnonymous": false,
+  "score": 36,
+  "viewCount": 520,
+  "image": "binary-search.png",
+  "imageAlt": "Binary search on a sorted array"
+ },
+ {
+  "category": "general",
+  "title": "Which language should I use for interviews?",
+  "body": "I know a bit of C++, Java and Python. For timed coding rounds I am leaning towards Python for speed of writing, but I worry about time limits on heavy problems.\n\nWhat do you use, and have you ever been rejected for the language choice?",
+  "isAnonymous": false,
+  "score": 20,
+  "viewCount": 330
+ },
+ {
+  "category": "contest",
+  "title": "Time management in a 90-minute contest",
+  "body": "What I try now:\n\n- 0-5 min: skim every problem.\n- 5-30 min: solve the easy one, double check, submit.\n- 30-70 min: attempt the medium problem.\n- Last 20 min: partial progress on the hard one, or re-check earlier answers.\n\nHow do you split your time?",
+  "isAnonymous": false,
+  "score": 17,
+  "viewCount": 205,
+  "image": "contest-time-plan.png",
+  "imageAlt": "Ninety minute contest time plan"
+ },
+ {
+  "category": "career",
+  "title": "Resume tips for freshers with no internship",
+  "body": "What recruiters at campus drives seem to look for:\n\n- One page, clean layout, no photo.\n- 2 or 3 projects with a **one-line outcome** each (what it does, what stack, any numbers).\n- Coding profile links that open correctly.\n- Skills section limited to what you can discuss for 10 minutes.\n\nRemove anything you cannot explain in an interview.",
+  "isAnonymous": false,
+  "score": 44,
+  "viewCount": 760
+ },
+ {
+  "category": "interview",
+  "title": "How I prepare for the HR round",
+  "body": "Technical rounds get most of the attention, but the HR round eliminates people too.\n\nPrepare short, honest answers for:\n- Tell me about yourself (60 seconds, ends with why this role)\n- A project you are proud of and your exact part in it\n- A time you disagreed with a teammate\n- Why this company\n\nWrite them down, then say them aloud. Do not memorize word for word.",
+  "isAnonymous": true,
+  "score": 26,
+  "viewCount": 430
+ },
+ {
+  "category": "general",
+  "title": "Do you read editorial solutions before or after struggling?",
+  "body": "My rule is 30 minutes of honest attempt, then read only the **hint** or the first idea of the editorial, then close it and code on my own.\n\nReading the full solution immediately feels productive but I forget it within a week. What is your rule?",
+  "isAnonymous": false,
+  "score": 24,
+  "viewCount": 350
+ },
+ {
+  "category": "compensation",
+  "title": "Understanding in-hand salary versus CTC",
+  "body": "A quick breakdown for freshers:\n\n- **CTC** includes employer contributions, insurance and variable pay.\n- **In-hand** is what reaches your account after PF, tax and deductions.\n- Variable pay is usually not guaranteed every month.\n\nAsk HR for the monthly in-hand estimate and the variable pay policy in writing before you decide.",
+  "isAnonymous": false,
+  "score": 28,
+  "viewCount": 510,
+  "image": "ctc-vs-in-hand.png",
+  "imageAlt": "CTC versus in-hand salary split"
+ },
+ {
+  "category": "interview",
+  "title": "Graphs: a short pattern list",
+  "body": "Most graph interview questions reduce to a few patterns:\n\n- **BFS** for shortest path in an unweighted graph or grid.\n- **DFS** for connected components, cycle checks, flood fill.\n- **Union-Find** for dynamic connectivity.\n- **Topological sort** for ordering with dependencies.\n- **Dijkstra** for non-negative weighted shortest path.\n\nLearn to spot which one the statement is hiding.",
+  "isAnonymous": false,
+  "score": 33,
+  "viewCount": 590,
+  "image": "graph-patterns.png",
+  "imageAlt": "Common graph patterns"
+ },
+ {
+  "category": "career",
+  "title": "Is it worth doing a second language for backend roles?",
+  "body": "I work mostly in Node.js. Several backend postings ask for Java or Go.\n\nWould you invest time in learning a second stack, or go deeper into system design and databases first?",
+  "isAnonymous": true,
+  "score": 16,
+  "viewCount": 240
+ },
+ {
+  "category": "general",
+  "title": "Small wins thread: share what you solved this week",
+  "body": "Let's keep this encouraging. Share one thing you solved or understood this week, however small.\n\nMine: I finally understood why a monotonic stack gives the next greater element in linear time. Each element is pushed and popped at most once.",
+  "isAnonymous": false,
+  "score": 30,
+  "viewCount": 370
+ },
+ {
+  "category": "interview",
+  "title": "Mock interviews with a friend: a simple format",
+  "body": "We run a 45-minute mock once a week and swap roles.\n\n- 5 min: introductions and the problem statement\n- 30 min: solve and discuss\n- 10 min: written feedback on communication, correctness and edge cases\n\nThe feedback step is the valuable part. Be specific: *\"you never checked an empty array\"* is better than *\"be more careful\"*.",
+  "isAnonymous": false,
+  "score": 25,
+  "viewCount": 340
+ }
+]
