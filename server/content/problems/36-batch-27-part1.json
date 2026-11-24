@@ -1,0 +1,11450 @@
+[
+ {
+  "title": "Dotted Version Comparison",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Facebook",
+   "Flipkart"
+  ],
+  "description": "A version is written as numbers separated by dots, such as `1.2.10`. Compare two versions part by part from the left, as whole numbers; a missing part counts as `0`. Return `1` if `a` is newer than `b`, `-1` if it is older, and `0` if they are equal.",
+  "examples": [
+   {
+    "input": "a = \"1.2\", b = \"1.10\"",
+    "output": "-1",
+    "explanation": "Comparing the versions gives -1."
+   },
+   {
+    "input": "a = \"1.0\", b = \"1\"",
+    "output": "0",
+    "explanation": "Comparing the versions gives 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 20",
+   "each version has 1 to 4 parts and every part is between 0 and 999"
+  ],
+  "functionName": "compareVersions",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "1.2",
+     "1.10"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.0",
+     "1"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "2.0.1",
+     "2.0.0"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0.1",
+     "1.1"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1.0.0.0",
+     "1"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3.4.5",
+     "3.4.5"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "10.0",
+     "9.99"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Newest Version Index",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Array"
+  ],
+  "companies": [
+   "Salesforce",
+   "Bloomberg",
+   "Amazon"
+  ],
+  "description": "`s` holds several versions written as three whole numbers separated by dots (for example `1.4.2`), separated from each other by single spaces. Versions are compared part by part from the left. Return the 0-based index of the newest version; if the newest version appears more than once, return the first such index.",
+  "examples": [
+   {
+    "input": "s = \"1.0.0 1.2.0 1.1.9\"",
+    "output": "1",
+    "explanation": "The newest version is at index 1."
+   },
+   {
+    "input": "s = \"5.5.5\"",
+    "output": "0",
+    "explanation": "The newest version is at index 0."
+   }
+  ],
+  "constraints": [
+   "1 <= number of versions <= 20",
+   "every version has exactly 3 parts, each between 0 and 999"
+  ],
+  "functionName": "newestVersionIndex",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "1.0.0 1.2.0 1.1.9"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "5.5.5"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.0.0 1.0.0"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0.9.9 1.0.0 0.10.0"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "2.0.0 10.0.0 9.9.9"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1.2.3 1.2.4 1.2.4"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3.0.1 3.0.10 3.0.9"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Compatible Release Check",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Amazon"
+  ],
+  "description": "A package has a base version `b` and an installed version `v`, both written as `major.minor.patch`. The installed version is compatible if it has the same major number as `b` and is not older than `b` (compare major, then minor, then patch as whole numbers). Return `true` if `v` is compatible with `b`.",
+  "examples": [
+   {
+    "input": "v = \"1.2.3\", b = \"1.2.3\"",
+    "output": "true",
+    "explanation": "The installed version is compatible: True."
+   },
+   {
+    "input": "v = \"1.3.0\", b = \"1.2.9\"",
+    "output": "true",
+    "explanation": "The installed version is compatible: True."
+   }
+  ],
+  "constraints": [
+   "both versions have exactly 3 parts",
+   "every part is between 0 and 999"
+  ],
+  "functionName": "isCompatibleRelease",
+  "params": [
+   {
+    "name": "v",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "1.2.3",
+     "1.2.3"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.3.0",
+     "1.2.9"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "2.0.0",
+     "1.9.9"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1.2.2",
+     "1.2.3"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1.10.0",
+     "1.9.0"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0.5.1",
+     "0.5.0"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3.0.0",
+     "3.0.1"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Next Patch Version",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Oracle",
+   "Walmart",
+   "Amazon"
+  ],
+  "description": "A version is written `major.minor.patch`. Releasing a patch adds `1` to the patch number; if the patch would become `10` it resets to `0` and the minor number grows by `1`, and if the minor would become `10` it resets to `0` and the major number grows by `1`. Return the next version as a string in the same format.",
+  "examples": [
+   {
+    "input": "v = \"1.2.3\"",
+    "output": "\"1.2.4\"",
+    "explanation": "The next version is 1.2.4."
+   },
+   {
+    "input": "v = \"1.2.9\"",
+    "output": "\"1.3.0\"",
+    "explanation": "The next version is 1.3.0."
+   }
+  ],
+  "constraints": [
+   "v has exactly 3 parts",
+   "major is between 0 and 98, minor and patch are between 0 and 9"
+  ],
+  "functionName": "nextPatchVersion",
+  "params": [
+   {
+    "name": "v",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "1.2.3"
+    ],
+    "expected": "1.2.4",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.2.9"
+    ],
+    "expected": "1.3.0",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.9.9"
+    ],
+    "expected": "2.0.0",
+    "isSample": false
+   },
+   {
+    "args": [
+     "0.0.0"
+    ],
+    "expected": "0.0.1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "9.9.9"
+    ],
+    "expected": "10.0.0",
+    "isSample": false
+   },
+   {
+    "args": [
+     "98.9.9"
+    ],
+    "expected": "99.0.0",
+    "isSample": false
+   },
+   {
+    "args": [
+     "4.0.9"
+    ],
+    "expected": "4.1.0",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Column Title To Number",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "TCS",
+   "Amazon",
+   "Oracle"
+  ],
+  "description": "Spreadsheet columns are named `A`, `B`, ..., `Z`, then `AA`, `AB`, ..., `AZ`, `BA`, ... and so on (`A = 1`, `Z = 26`, `AA = 27`). Return the column number of the title `s`.",
+  "examples": [
+   {
+    "input": "s = \"A\"",
+    "output": "1",
+    "explanation": "The column number is 1."
+   },
+   {
+    "input": "s = \"Z\"",
+    "output": "26",
+    "explanation": "The column number is 26."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 3",
+   "s consists of uppercase letters"
+  ],
+  "functionName": "columnTitleToNumber",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "A"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "Z"
+    ],
+    "expected": 26,
+    "isSample": true
+   },
+   {
+    "args": [
+     "AA"
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AZ"
+    ],
+    "expected": 52,
+    "isSample": false
+   },
+   {
+    "args": [
+     "BA"
+    ],
+    "expected": 53,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ZZ"
+    ],
+    "expected": 702,
+    "isSample": false
+   },
+   {
+    "args": [
+     "XFD"
+    ],
+    "expected": 16384,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Column Number To Title",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Flipkart",
+   "Google",
+   "Oracle"
+  ],
+  "description": "Spreadsheet columns are named `A`, `B`, ..., `Z`, then `AA`, `AB`, ..., `AZ`, `BA`, ... and so on (`A = 1`, `Z = 26`, `AA = 27`). Return the title of column number `n`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "\"A\"",
+    "explanation": "Column A is the title of that number."
+   },
+   {
+    "input": "n = 26",
+    "output": "\"Z\"",
+    "explanation": "Column Z is the title of that number."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 18278",
+   "Titles use only uppercase letters"
+  ],
+  "functionName": "columnNumberToTitle",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": "A",
+    "isSample": true
+   },
+   {
+    "args": [
+     26
+    ],
+    "expected": "Z",
+    "isSample": true
+   },
+   {
+    "args": [
+     27
+    ],
+    "expected": "AA",
+    "isSample": false
+   },
+   {
+    "args": [
+     52
+    ],
+    "expected": "AZ",
+    "isSample": false
+   },
+   {
+    "args": [
+     702
+    ],
+    "expected": "ZZ",
+    "isSample": false
+   },
+   {
+    "args": [
+     703
+    ],
+    "expected": "AAA",
+    "isSample": false
+   },
+   {
+    "args": [
+     16384
+    ],
+    "expected": "XFD",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Column Distance",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Facebook",
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "Spreadsheet columns are named `A`, `B`, ..., `Z`, then `AA`, `AB`, ... (`A = 1`, `Z = 26`, `AA = 27`). Return how many columns apart the titles `a` and `b` are, that is the absolute difference of their column numbers.",
+  "examples": [
+   {
+    "input": "a = \"A\", b = \"C\"",
+    "output": "2",
+    "explanation": "The columns are 2 apart."
+   },
+   {
+    "input": "a = \"Z\", b = \"AA\"",
+    "output": "1",
+    "explanation": "The columns are 1 apart."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 3",
+   "both titles consist of uppercase letters"
+  ],
+  "functionName": "columnDistance",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "A",
+     "C"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "Z",
+     "AA"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "AA",
+     "A"
+    ],
+    "expected": 26,
+    "isSample": false
+   },
+   {
+    "args": [
+     "B",
+     "B"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ZZ",
+     "A"
+    ],
+    "expected": 701,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AB",
+     "BA"
+    ],
+    "expected": 25,
+    "isSample": false
+   },
+   {
+    "args": [
+     "XFD",
+     "A"
+    ],
+    "expected": 16383,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rule 90 Generations",
+  "difficulty": "Easy",
+  "tags": [
+   "Simulation",
+   "String",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Infosys",
+   "Paytm",
+   "Salesforce"
+  ],
+  "description": "A row of cells is a binary string. In one generation every cell becomes the XOR of its left and right neighbours (the old values); cells beyond either end count as `0`. The row keeps its length. Return the row after `t` generations.",
+  "examples": [
+   {
+    "input": "s = \"00100\", t = 1",
+    "output": "\"01010\"",
+    "explanation": "After the generations the row is 01010."
+   },
+   {
+    "input": "s = \"00100\", t = 2",
+    "output": "\"10001\"",
+    "explanation": "After the generations the row is 10001."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 40",
+   "0 <= t <= 20 and s consists of 0 and 1"
+  ],
+  "functionName": "rule90Generations",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "00100",
+     1
+    ],
+    "expected": "01010",
+    "isSample": true
+   },
+   {
+    "args": [
+     "00100",
+     2
+    ],
+    "expected": "10001",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1",
+     3
+    ],
+    "expected": "0",
+    "isSample": false
+   },
+   {
+    "args": [
+     "101",
+     0
+    ],
+    "expected": "101",
+    "isSample": false
+   },
+   {
+    "args": [
+     "11111",
+     1
+    ],
+    "expected": "10001",
+    "isSample": false
+   },
+   {
+    "args": [
+     "0110",
+     4
+    ],
+    "expected": "1111",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1000001",
+     3
+    ],
+    "expected": "0000000",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rule 110 One Step",
+  "difficulty": "Easy",
+  "tags": [
+   "Simulation",
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Atlassian",
+   "Bloomberg"
+  ],
+  "description": "A row of cells is a binary string, with `0` assumed beyond both ends. In one step each cell looks at its (left, itself, right) triple and becomes: `111 -> 0`, `110 -> 1`, `101 -> 1`, `100 -> 0`, `011 -> 1`, `010 -> 1`, `001 -> 1`, `000 -> 0`. The row keeps its length. Return the row after one step.",
+  "examples": [
+   {
+    "input": "s = \"1\"",
+    "output": "\"1\"",
+    "explanation": "After one step the row is 1."
+   },
+   {
+    "input": "s = \"0\"",
+    "output": "\"0\"",
+    "explanation": "After one step the row is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 40",
+   "s consists of 0 and 1"
+  ],
+  "functionName": "rule110Step",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "1"
+    ],
+    "expected": "1",
+    "isSample": true
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": "0",
+    "isSample": true
+   },
+   {
+    "args": [
+     "0001"
+    ],
+    "expected": "0011",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": "1001",
+    "isSample": false
+   },
+   {
+    "args": [
+     "0101"
+    ],
+    "expected": "1111",
+    "isSample": false
+   },
+   {
+    "args": [
+     "100000"
+    ],
+    "expected": "100000",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1011011"
+    ],
+    "expected": "1111111",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Life Survivors",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Simulation"
+  ],
+  "companies": [
+   "Amazon",
+   "TCS",
+   "Walmart"
+  ],
+  "description": "A grid of cells is stored row by row in `g` with `cols` cells per row (`1` alive, `0` dead). In the Game of Life a live cell stays alive if exactly 2 or 3 of its 8 surrounding cells are alive (cells outside the grid count as dead). Return how many cells that are alive now will stay alive in the next generation.",
+  "examples": [
+   {
+    "input": "g = [1,1,1,1], cols = 2",
+    "output": "4",
+    "explanation": "4 live cells survive."
+   },
+   {
+    "input": "g = [0,0,0,0], cols = 2",
+    "output": "0",
+    "explanation": "0 live cells survive."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 20 and 1 <= g.length <= 400",
+   "g.length is a multiple of cols and every g[i] is 0 or 1"
+  ],
+  "functionName": "lifeSurvivors",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Still Life Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Simulation"
+  ],
+  "companies": [
+   "Adobe",
+   "Oracle"
+  ],
+  "description": "A grid of cells is stored row by row in `g` with `cols` cells per row (`1` alive, `0` dead). In one Game of Life generation a live cell with 2 or 3 live neighbours stays alive, a dead cell with exactly 3 live neighbours becomes alive, and every other cell is dead afterwards; neighbours are the 8 surrounding cells and cells outside the grid are dead. Return `true` if the grid is unchanged by one generation.",
+  "examples": [
+   {
+    "input": "g = [1,1,1,1], cols = 2",
+    "output": "true",
+    "explanation": "The grid stays the same: True."
+   },
+   {
+    "input": "g = [0,0,0,0], cols = 2",
+    "output": "true",
+    "explanation": "The grid stays the same: True."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 20 and 1 <= g.length <= 400",
+   "g.length is a multiple of cols and every g[i] is 0 or 1"
+  ],
+  "functionName": "isStillLife",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+     ],
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0
+     ],
+     4
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     4
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Turtle Manhattan Distance",
+  "difficulty": "Easy",
+  "tags": [
+   "Simulation",
+   "String",
+   "Geometry"
+  ],
+  "companies": [
+   "Salesforce",
+   "Walmart"
+  ],
+  "description": "A turtle starts at `(0, 0)` facing north. The string `s` is a list of commands: `F` moves one unit forward, `L` turns 90 degrees left in place, `R` turns 90 degrees right in place. Return the Manhattan distance `|x| + |y|` of the turtle from the start after all commands.",
+  "examples": [
+   {
+    "input": "s = \"FFRFF\"",
+    "output": "4",
+    "explanation": "The turtle ends 4 away from the start."
+   },
+   {
+    "input": "s = \"FRFRFRFR\"",
+    "output": "0",
+    "explanation": "The turtle ends 0 away from the start."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of F, L and R"
+  ],
+  "functionName": "turtleManhattan",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "FFRFF"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "FRFRFRFR"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "LLFF"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RRRR"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFFLFFF"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "F"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FLFLFLFLF"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Turtle Origin Visits",
+  "difficulty": "Easy",
+  "tags": [
+   "Simulation",
+   "String",
+   "Geometry"
+  ],
+  "companies": [
+   "Netflix",
+   "Microsoft"
+  ],
+  "description": "A turtle starts at `(0, 0)` facing north. The string `s` is a list of commands: `F` moves one unit forward, `L` turns 90 degrees left in place, `R` turns 90 degrees right in place. After every command (turns included) check whether the turtle is at `(0, 0)`. Return how many commands end with the turtle at `(0, 0)`.",
+  "examples": [
+   {
+    "input": "s = \"FFRFF\"",
+    "output": "0",
+    "explanation": "0 commands end at the origin."
+   },
+   {
+    "input": "s = \"FRFRFRFR\"",
+    "output": "2",
+    "explanation": "2 commands end at the origin."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of F, L and R"
+  ],
+  "functionName": "turtleOriginVisits",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "FFRFF"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "FRFRFRFR"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "LLFF"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RRRR"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFFLFFF"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "F"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FLFLFLFLF"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Turtle Final Facing",
+  "difficulty": "Easy",
+  "tags": [
+   "Simulation",
+   "String"
+  ],
+  "companies": [
+   "Paytm",
+   "Facebook"
+  ],
+  "description": "A turtle faces north. The string `s` is a list of commands where `L` turns it 90 degrees left, `R` turns it 90 degrees right, and `F` moves it forward without changing direction. Return the direction it faces at the end as one of `N`, `E`, `S`, `W`.",
+  "examples": [
+   {
+    "input": "s = \"FFRFF\"",
+    "output": "\"E\"",
+    "explanation": "The turtle ends facing E."
+   },
+   {
+    "input": "s = \"FRFRFRFR\"",
+    "output": "\"N\"",
+    "explanation": "The turtle ends facing N."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of F, L and R"
+  ],
+  "functionName": "turtleFinalFacing",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "FFRFF"
+    ],
+    "expected": "E",
+    "isSample": true
+   },
+   {
+    "args": [
+     "FRFRFRFR"
+    ],
+    "expected": "N",
+    "isSample": true
+   },
+   {
+    "args": [
+     "LLFF"
+    ],
+    "expected": "S",
+    "isSample": false
+   },
+   {
+    "args": [
+     "RRRR"
+    ],
+    "expected": "N",
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFFLFFF"
+    ],
+    "expected": "W",
+    "isSample": false
+   },
+   {
+    "args": [
+     "F"
+    ],
+    "expected": "N",
+    "isSample": false
+   },
+   {
+    "args": [
+     "FLFLFLFLF"
+    ],
+    "expected": "N",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Turtle Farthest Point",
+  "difficulty": "Easy",
+  "tags": [
+   "Simulation",
+   "String",
+   "Geometry"
+  ],
+  "companies": [
+   "Salesforce",
+   "Paytm",
+   "Infosys"
+  ],
+  "description": "A turtle starts at `(0, 0)` facing north. The string `s` is a list of commands: `F` moves one unit forward, `L` turns 90 degrees left in place, `R` turns 90 degrees right in place. Return the largest Manhattan distance `|x| + |y|` from the start that the turtle reaches at any moment.",
+  "examples": [
+   {
+    "input": "s = \"FFRFF\"",
+    "output": "4",
+    "explanation": "The farthest the turtle gets is 4."
+   },
+   {
+    "input": "s = \"FRFRFRFR\"",
+    "output": "2",
+    "explanation": "The farthest the turtle gets is 2."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of F, L and R"
+  ],
+  "functionName": "turtleFarthestPoint",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "FFRFF"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "FRFRFRFR"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "LLFF"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RRRR"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFFLFFF"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "F"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FLFLFLFLF"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Plurality Winner",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Counting"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Amazon"
+  ],
+  "description": "`votes[i]` is the candidate (numbered from `0`) chosen by voter `i`. The winner is the candidate with the most votes. Return the winner; if several candidates tie for the most votes, return the smallest candidate number.",
+  "examples": [
+   {
+    "input": "votes = [1,2,2,1]",
+    "output": "1",
+    "explanation": "The winner is candidate 1."
+   },
+   {
+    "input": "votes = [0]",
+    "output": "0",
+    "explanation": "The winner is candidate 0."
+   }
+  ],
+  "constraints": [
+   "1 <= votes.length <= 1000",
+   "0 <= votes[i] <= 100"
+  ],
+  "functionName": "pluralityWinner",
+  "params": [
+   {
+    "name": "votes",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      5,
+      4,
+      3
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      7
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Plurality Margin",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Counting"
+  ],
+  "companies": [
+   "Salesforce",
+   "Microsoft"
+  ],
+  "description": "`votes[i]` is the candidate (numbered from `0`) chosen by voter `i`. Return how many more votes the candidate in first place has than the candidate in second place. If only one candidate received votes, return the number of votes that candidate received.",
+  "examples": [
+   {
+    "input": "votes = [1,2,2,1,2]",
+    "output": "1",
+    "explanation": "The leader's margin is 1."
+   },
+   {
+    "input": "votes = [0]",
+    "output": "1",
+    "explanation": "The leader's margin is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= votes.length <= 1000",
+   "0 <= votes[i] <= 100"
+  ],
+  "functionName": "pluralityMargin",
+  "params": [
+   {
+    "name": "votes",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      5,
+      4,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      7
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Borda Count Winner",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Simulation"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Oracle"
+  ],
+  "description": "There are `n` candidates numbered `0..n-1`. Each voter submits a full ranking, best first, and `ballots` lists all rankings one after another (each is a permutation of `0..n-1` of length `n`). A candidate in position `p` (starting at `0`) of a ranking receives `n - 1 - p` points. Return the candidate with the most total points; ties go to the smaller number.",
+  "examples": [
+   {
+    "input": "ballots = [0,1,2], n = 3",
+    "output": "0",
+    "explanation": "The Borda winner is candidate 0."
+   },
+   {
+    "input": "ballots = [0,1,1,0], n = 2",
+    "output": "0",
+    "explanation": "The Borda winner is candidate 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10 and 1 <= number of ballots <= 50",
+   "ballots.length is a multiple of n and each ballot is a permutation"
+  ],
+  "functionName": "bordaWinner",
+  "params": [
+   {
+    "name": "ballots",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      0,
+      0,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1,
+      0,
+      0,
+      1,
+      2,
+      3,
+      1,
+      0,
+      3,
+      2
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Team League Points",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Zoho",
+   "Microsoft",
+   "Uber"
+  ],
+  "description": "A team's results are given as a string of `W` (win), `D` (draw) and `L` (loss). A win earns 3 points, a draw 1 point and a loss 0 points. Return the total points.",
+  "examples": [
+   {
+    "input": "s = \"WWDL\"",
+    "output": "7",
+    "explanation": "The team earned 7 points."
+   },
+   {
+    "input": "s = \"L\"",
+    "output": "0",
+    "explanation": "The team earned 0 points."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of W, D and L"
+  ],
+  "functionName": "leaguePoints",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "WWDL"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "L"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "W"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "DDDD"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "WLWLWL"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LLLLD"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "WDLWDLWDL"
+    ],
+    "expected": 12,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Winless Run",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg",
+   "Apple"
+  ],
+  "description": "A team's results are given as a string of `W` (win), `D` (draw) and `L` (loss) in match order. Return the length of the longest run of consecutive matches without a win (`0` if every match was won).",
+  "examples": [
+   {
+    "input": "s = \"WWLDW\"",
+    "output": "2",
+    "explanation": "The longest winless run is 2 matches."
+   },
+   {
+    "input": "s = \"L\"",
+    "output": "1",
+    "explanation": "The longest winless run is 1 matches."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of W, D and L"
+  ],
+  "functionName": "longestWinlessRun",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "WWLDW"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "L"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "WWW"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LLWDL"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "DWDLWDWDW"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LWL"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "WDWDWDL"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Extra Wins Needed",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Flipkart",
+   "Oracle",
+   "Paytm"
+  ],
+  "description": "A team has the results `s` (`W` = 3 points, `D` = 1 point, `L` = 0 points). It wants at least `target` points in total. Return the smallest number of additional wins (3 points each) it needs; return `0` if it already has enough.",
+  "examples": [
+   {
+    "input": "s = \"WWDL\", target = 10",
+    "output": "1",
+    "explanation": "The team needs 1 more wins."
+   },
+   {
+    "input": "s = \"W\", target = 3",
+    "output": "0",
+    "explanation": "The team needs 0 more wins."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "0 <= target <= 1000 and s consists of W, D and L"
+  ],
+  "functionName": "extraWinsNeeded",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "WWDL",
+     10
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "W",
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "DDD",
+     9
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "L",
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "WWW",
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LLL",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "WDWDL",
+     20
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Best Goal Difference Match",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "Adobe",
+   "Netflix",
+   "Atlassian"
+  ],
+  "description": "`gf[i]` and `ga[i]` are the goals a team scored and conceded in match `i`. Return the index of the match with the largest goal difference `gf[i] - ga[i]`; if several matches tie, return the smallest index.",
+  "examples": [
+   {
+    "input": "gf = [2,0,3], ga = [1,0,1]",
+    "output": "2",
+    "explanation": "The best match is at index 2."
+   },
+   {
+    "input": "gf = [0], ga = [5]",
+    "output": "0",
+    "explanation": "The best match is at index 0."
+   }
+  ],
+  "constraints": [
+   "1 <= gf.length = ga.length <= 100",
+   "0 <= gf[i], ga[i] <= 20"
+  ],
+  "functionName": "bestGoalDifferenceMatch",
+  "params": [
+   {
+    "name": "gf",
+    "type": "int[]"
+   },
+   {
+    "name": "ga",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      0,
+      3
+     ],
+     [
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      4,
+      5
+     ],
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      1,
+      5
+     ],
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      1,
+      4
+     ],
+     [
+      2,
+      1,
+      0,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Morse Signal Duration",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Uber",
+   "Microsoft"
+  ],
+  "description": "A Morse message is written with `.` (dot) and `-` (dash). Letters are separated by a single space and words are separated by ` / ` (space, slash, space). A dot lasts 1 time unit and a dash 3 units. Within a letter, consecutive symbols are separated by a gap of 1 unit; between letters inside a word the gap is 3 units; between words the gap is 7 units. Return the total duration of the message.",
+  "examples": [
+   {
+    "input": "s = \".\"",
+    "output": "1",
+    "explanation": "The message lasts 1 units."
+   },
+   {
+    "input": "s = \"-\"",
+    "output": "3",
+    "explanation": "The message lasts 3 units."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s is well formed: groups of dots and dashes, separated by single spaces or by ' / '"
+  ],
+  "functionName": "morseDuration",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "."
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "-"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     ".-"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     ".- -..."
+    ],
+    "expected": 17,
+    "isSample": false
+   },
+   {
+    "args": [
+     ". / ."
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "... --- ..."
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     ".-. / -.-. -.."
+    ],
+    "expected": 35,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Multi-Tap Key Presses",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Google",
+   "Zoho"
+  ],
+  "description": "On an old phone keypad letters are typed by repeated presses of a key: key 2 holds `abc`, key 3 `def`, key 4 `ghi`, key 5 `jkl`, key 6 `mno`, key 7 `pqrs`, key 8 `tuv`, key 9 `wxyz`. The first letter on a key takes 1 press, the second 2 presses, and so on. A space takes 1 press. Return the total number of key presses needed to type `s` (ignore waiting between letters on the same key).",
+  "examples": [
+   {
+    "input": "s = \"abc\"",
+    "output": "6",
+    "explanation": "Typing it takes 6 presses."
+   },
+   {
+    "input": "s = \"a b\"",
+    "output": "4",
+    "explanation": "Typing it takes 4 presses."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of lowercase letters and spaces"
+  ],
+  "functionName": "multiTapPresses",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 13,
+    "isSample": false
+   },
+   {
+    "args": [
+     "pqrs"
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzz"
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     "the quick"
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     "s"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fraction Compare",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Apple",
+   "Salesforce"
+  ],
+  "description": "Compare the fractions `a/b` and `c/d` (all denominators positive). Return `1` if `a/b` is larger, `-1` if it is smaller and `0` if they are equal.",
+  "examples": [
+   {
+    "input": "a = 1, b = 2, c = 2, d = 4",
+    "output": "0",
+    "explanation": "The comparison gives 0."
+   },
+   {
+    "input": "a = 1, b = 3, c = 1, d = 2",
+    "output": "-1",
+    "explanation": "The comparison gives -1."
+   }
+  ],
+  "constraints": [
+   "-1000000 <= a, c <= 1000000",
+   "1 <= b, d <= 1000000"
+  ],
+  "functionName": "compareFractions",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   },
+   {
+    "name": "d",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     2,
+     2,
+     4
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     3,
+     1,
+     2
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     -1,
+     2,
+     -1,
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     1,
+     9,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     7,
+     0,
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999,
+     1000000,
+     999998,
+     999999
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     -3,
+     4,
+     -6,
+     8
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fraction Sum Denominator",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Paytm",
+   "Flipkart"
+  ],
+  "description": "Add the fractions `a/b` and `c/d` (positive denominators) and write the sum in lowest terms with a positive denominator. Return that denominator.",
+  "examples": [
+   {
+    "input": "a = 1, b = 2, c = 1, d = 2",
+    "output": "1",
+    "explanation": "The reduced denominator is 1."
+   },
+   {
+    "input": "a = 1, b = 3, c = 1, d = 6",
+    "output": "2",
+    "explanation": "The reduced denominator is 2."
+   }
+  ],
+  "constraints": [
+   "0 <= a, c <= 1000",
+   "1 <= b, d <= 1000"
+  ],
+  "functionName": "fractionSumDenominator",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   },
+   {
+    "name": "d",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     2,
+     1,
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     3,
+     1,
+     6
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     4,
+     1,
+     6
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     5,
+     0,
+     7
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     3,
+     1,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     7,
+     1,
+     5
+    ],
+    "expected": 35,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     6,
+     7,
+     10
+    ],
+    "expected": 15,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Terminating Decimal Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Facebook",
+   "LinkedIn",
+   "Atlassian"
+  ],
+  "description": "The fraction `n/d` is written in decimal. Return `true` if its decimal expansion ends after finitely many digits (for example `1/8 = 0.125`), and `false` if it repeats forever (for example `1/3 = 0.333...`).",
+  "examples": [
+   {
+    "input": "n = 1, d = 8",
+    "output": "true",
+    "explanation": "The decimal terminates: True."
+   },
+   {
+    "input": "n = 1, d = 3",
+    "output": "false",
+    "explanation": "The decimal terminates: False."
+   }
+  ],
+  "constraints": [
+   "1 <= n, d <= 1000000000",
+   "n/d need not be in lowest terms"
+  ],
+  "functionName": "isTerminatingDecimal",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "d",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     1,
+     8
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     3
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     6
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     20
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     7
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     9,
+     12
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     999999999
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Continued Fraction Length",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Euclid"
+  ],
+  "companies": [
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "Every positive fraction `n/d` can be written as a continued fraction `[a0; a1, a2, ...]` with `n/d = a0 + 1/(a1 + 1/(a2 + ...))`, where each term is the quotient of one Euclidean division step. Return the number of terms (for example `415/93 = [4; 2, 6, 7]` has 4 terms).",
+  "examples": [
+   {
+    "input": "n = 415, d = 93",
+    "output": "4",
+    "explanation": "The continued fraction has 4 terms."
+   },
+   {
+    "input": "n = 3, d = 1",
+    "output": "1",
+    "explanation": "The continued fraction has 1 terms."
+   }
+  ],
+  "constraints": [
+   "1 <= n, d <= 1000000000",
+   "The expansion ends when the remainder is 0"
+  ],
+  "functionName": "continuedFractionLength",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "d",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     415,
+     93
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     7
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     89,
+     55
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     22,
+     7
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Two Dice Ways",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Counting"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Flipkart"
+  ],
+  "description": "Two fair dice each have faces numbered `1..n`. Return how many ordered outcomes (first die, second die) have a total of exactly `s`.",
+  "examples": [
+   {
+    "input": "n = 6, s = 7",
+    "output": "6",
+    "explanation": "6 outcomes give that total."
+   },
+   {
+    "input": "n = 6, s = 2",
+    "output": "1",
+    "explanation": "1 outcomes give that total."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "0 <= s <= 2000000"
+  ],
+  "functionName": "twoDiceWays",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "s",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     6,
+     7
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     6,
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     6,
+     12
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     13
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     11
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     1000001
+    ],
+    "expected": 1000000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Likely Two Dice Total",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Uber",
+   "Flipkart"
+  ],
+  "description": "A die with `a` faces (numbered `1..a`) and a die with `b` faces (numbered `1..b`) are rolled together. Return the total that can happen in the most ways; if several totals share the maximum, return the smallest one.",
+  "examples": [
+   {
+    "input": "a = 6, b = 6",
+    "output": "7",
+    "explanation": "The most likely total is 7."
+   },
+   {
+    "input": "a = 4, b = 6",
+    "output": "5",
+    "explanation": "The most likely total is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= a, b <= 200",
+   "Faces of each die are equally likely"
+  ],
+  "functionName": "mostLikelyTwoDiceTotal",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     6,
+     6
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     6
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     8
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     4
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Wrapped Line Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation",
+   "Greedy"
+  ],
+  "companies": [
+   "Paytm",
+   "LinkedIn",
+   "TCS"
+  ],
+  "description": "Text `s` is a list of words separated by single spaces. It is wrapped greedily into lines of at most `w` characters: each word is put on the current line (after a single space) if it still fits, otherwise it starts a new line. Return the number of lines.",
+  "examples": [
+   {
+    "input": "s = \"the quick brown fox\", w = 10",
+    "output": "2",
+    "explanation": "The text takes 2 lines."
+   },
+   {
+    "input": "s = \"a\", w = 1",
+    "output": "1",
+    "explanation": "The text takes 1 lines."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200 and 1 <= w <= 50",
+   "words are lowercase letters and no word is longer than w"
+  ],
+  "functionName": "wrappedLineCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "w",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "the quick brown fox",
+     10
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa bb cc",
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd ef gh",
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world",
+     11
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c d e",
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "word word word",
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Wrapped Line",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation",
+   "Greedy"
+  ],
+  "companies": [
+   "Zoho",
+   "Google",
+   "Infosys"
+  ],
+  "description": "Text `s` is a list of words separated by single spaces. It is wrapped greedily into lines of at most `w` characters: each word is put on the current line (after a single space) if it still fits, otherwise it starts a new line. Return the length of the longest resulting line.",
+  "examples": [
+   {
+    "input": "s = \"the quick brown fox\", w = 10",
+    "output": "9",
+    "explanation": "The longest line has 9 characters."
+   },
+   {
+    "input": "s = \"a\", w = 1",
+    "output": "1",
+    "explanation": "The longest line has 1 characters."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200 and 1 <= w <= 50",
+   "words are lowercase letters and no word is longer than w"
+  ],
+  "functionName": "longestWrappedLine",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "w",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "the quick brown fox",
+     10
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa bb cc",
+     5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd ef gh",
+     5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world",
+     11
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c d e",
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "word word word",
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Ordinal Number Text",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Uber",
+   "TCS",
+   "Atlassian"
+  ],
+  "description": "Write the positive integer `n` as an English ordinal using digits and a suffix: numbers ending in 1, 2, 3 get `st`, `nd`, `rd`, except that numbers whose last two digits are 11, 12 or 13 get `th`, and all other numbers get `th`. Examples: `1st`, `22nd`, `113th`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "\"1st\"",
+    "explanation": "The ordinal is 1st."
+   },
+   {
+    "input": "n = 2",
+    "output": "\"2nd\"",
+    "explanation": "The ordinal is 2nd."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "The suffix depends on the last two digits"
+  ],
+  "functionName": "ordinalText",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": "1st",
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": "2nd",
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": "3rd",
+    "isSample": false
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": "4th",
+    "isSample": false
+   },
+   {
+    "args": [
+     11
+    ],
+    "expected": "11th",
+    "isSample": false
+   },
+   {
+    "args": [
+     112
+    ],
+    "expected": "112th",
+    "isSample": false
+   },
+   {
+    "args": [
+     1021
+    ],
+    "expected": "1021st",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Number Below Hundred In Words",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Paytm",
+   "Salesforce"
+  ],
+  "description": "Write the integer `n` (from 0 to 99) in English lowercase words. Numbers from 21 to 99 that are not multiples of ten are written with a hyphen between the tens word and the ones word, such as `forty-two`. Examples: `zero`, `fifteen`, `ninety`.",
+  "examples": [
+   {
+    "input": "n = 0",
+    "output": "\"zero\"",
+    "explanation": "The number in words is zero."
+   },
+   {
+    "input": "n = 7",
+    "output": "\"seven\"",
+    "explanation": "The number in words is seven."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 99",
+   "Use the words twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety for the tens"
+  ],
+  "functionName": "numberInWords",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     0
+    ],
+    "expected": "zero",
+    "isSample": true
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": "seven",
+    "isSample": true
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": "thirteen",
+    "isSample": false
+   },
+   {
+    "args": [
+     20
+    ],
+    "expected": "twenty",
+    "isSample": false
+   },
+   {
+    "args": [
+     21
+    ],
+    "expected": "twenty-one",
+    "isSample": false
+   },
+   {
+    "args": [
+     99
+    ],
+    "expected": "ninety-nine",
+    "isSample": false
+   },
+   {
+    "args": [
+     80
+    ],
+    "expected": "eighty",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Celsius To Fahrenheit Rounded",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Microsoft",
+   "Goldman Sachs"
+  ],
+  "description": "Convert a whole-number temperature `c` in degrees Celsius to Fahrenheit with `c * 9 / 5 + 32` and round the result to the nearest whole number, rounding exact halves upward (toward positive infinity). Return the rounded value.",
+  "examples": [
+   {
+    "input": "c = 0",
+    "output": "32",
+    "explanation": "The temperature is 32 degrees Fahrenheit."
+   },
+   {
+    "input": "c = 100",
+    "output": "212",
+    "explanation": "The temperature is 212 degrees Fahrenheit."
+   }
+  ],
+  "constraints": [
+   "-100 <= c <= 100",
+   "Exact halves round toward positive infinity"
+  ],
+  "functionName": "celsiusToFahrenheit",
+  "params": [
+   {
+    "name": "c",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     0
+    ],
+    "expected": 32,
+    "isSample": true
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 212,
+    "isSample": true
+   },
+   {
+    "args": [
+     -40
+    ],
+    "expected": -40,
+    "isSample": false
+   },
+   {
+    "args": [
+     37
+    ],
+    "expected": 99,
+    "isSample": false
+   },
+   {
+    "args": [
+     -17
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 34,
+    "isSample": false
+   },
+   {
+    "args": [
+     -3
+    ],
+    "expected": 27,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Ring Automaton Return Time",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Bit Manipulation",
+   "Math"
+  ],
+  "companies": [
+   "Amazon",
+   "Walmart"
+  ],
+  "description": "A ring of `n` cells is a binary string `s` (the last cell is next to the first). In each generation every cell becomes the XOR of its two neighbours' old values (for `n = 1` or `n = 2` the neighbours are the cells that wrap around, so a single cell is its own left and right neighbour). Return the smallest number `t >= 1` of generations after which the ring equals the initial string again, or `-1` if that never happens.",
+  "examples": [
+   {
+    "input": "s = \"0\"",
+    "output": "1",
+    "explanation": "The ring first returns to its start after 1 generations (-1 means never)."
+   },
+   {
+    "input": "s = \"1\"",
+    "output": "-1",
+    "explanation": "The ring first returns to its start after -1 generations (-1 means never)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 16",
+   "s consists of 0 and 1"
+  ],
+  "functionName": "ringAutomatonReturnTime",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "0"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "11"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "101"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0110"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00000001"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1010101"
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Life Generations Until Repeat",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Matrix",
+   "Hashing"
+  ],
+  "companies": [
+   "Salesforce",
+   "Flipkart"
+  ],
+  "description": "A bounded Game of Life grid is stored row by row in `g` with `cols` cells per row (`1` alive). One generation applies the usual rules: a live cell with 2 or 3 live neighbours stays alive, a dead cell with exactly 3 live neighbours becomes alive, everything else is dead; the 8 surrounding cells are neighbours and cells outside the grid are always dead. The initial grid is generation `0`. Return the smallest `t >= 1` such that generation `t` equals some earlier generation.",
+  "examples": [
+   {
+    "input": "g = [0,0,0,0], cols = 2",
+    "output": "1",
+    "explanation": "The first repeated grid appears at generation 1."
+   },
+   {
+    "input": "g = [1,1,1,1], cols = 2",
+    "output": "1",
+    "explanation": "The first repeated grid appears at generation 1."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 5 and 1 <= g.length <= 25",
+   "g.length is a multiple of cols and every g[i] is 0 or 1"
+  ],
+  "functionName": "lifeGenerationsUntilRepeat",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     5
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Spreadsheet Total Value",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Topological Sort",
+   "Simulation"
+  ],
+  "companies": [
+   "Uber",
+   "Goldman Sachs"
+  ],
+  "description": "A one-column spreadsheet has `n` cells numbered from `0`; `cells` lists them as flat triples `(t, a, b)`. If `t = 0` the cell holds the constant `a` (and `b` is ignored). If `t = 1` the cell holds the sum of cell `a` and cell `b` (these may be any cells, in any order, and may even be the same cell). No cell depends on itself directly or indirectly. Return the sum of the values of all cells, modulo `1000000007`, as a value in `[0, 1000000006]`.",
+  "examples": [
+   {
+    "input": "cells = [0,5,0]",
+    "output": "5",
+    "explanation": "The sum of all cell values is 5 modulo 1000000007."
+   },
+   {
+    "input": "cells = [0,2,0,0,3,0,1,0,1]",
+    "output": "10",
+    "explanation": "The sum of all cell values is 10 modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000 where cells.length = 3 * n",
+   "t is 0 or 1; constants are between -1000000000 and 1000000000; the references are acyclic"
+  ],
+  "functionName": "spreadsheetTotal",
+  "params": [
+   {
+    "name": "cells",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      5,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      0,
+      0,
+      3,
+      0,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      0,
+      4,
+      0
+     ]
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      3,
+      3
+     ]
+    ],
+    "expected": 31,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      -3,
+      0,
+      1,
+      0,
+      0
+     ]
+    ],
+    "expected": 999999998,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      1,
+      3,
+      3,
+      1,
+      4,
+      4,
+      1,
+      5,
+      5,
+      1,
+      6,
+      6,
+      1,
+      7,
+      7,
+      1,
+      8,
+      8,
+      1,
+      9,
+      9,
+      1,
+      10,
+      10,
+      1,
+      11,
+      11,
+      1,
+      12,
+      12,
+      1,
+      13,
+      13,
+      1,
+      14,
+      14,
+      1,
+      15,
+      15,
+      1,
+      16,
+      16,
+      1,
+      17,
+      17,
+      1,
+      18,
+      18,
+      1,
+      19,
+      19,
+      1,
+      20,
+      20,
+      1,
+      21,
+      21,
+      1,
+      22,
+      22,
+      1,
+      23,
+      23,
+      1,
+      24,
+      24,
+      1,
+      25,
+      25,
+      1,
+      26,
+      26,
+      1,
+      27,
+      27,
+      1,
+      28,
+      28,
+      1,
+      29,
+      29,
+      1,
+      30,
+      30,
+      1,
+      31,
+      31,
+      1,
+      32,
+      32,
+      1,
+      33,
+      33,
+      1,
+      34,
+      34
+     ]
+    ],
+    "expected": 719476259,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      7,
+      0,
+      0,
+      8,
+      0,
+      1,
+      0,
+      1,
+      1,
+      2,
+      0
+     ]
+    ],
+    "expected": 52,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Turtle Revisited Points",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Hashing",
+   "Geometry"
+  ],
+  "companies": [
+   "Amazon",
+   "Uber"
+  ],
+  "description": "A turtle starts at `(0, 0)` facing north (`+y`). The string `s` is a list of commands: `F` moves one unit forward, `L` turns 90 degrees left in place, `R` turns 90 degrees right in place. The starting point counts as visited once at the beginning, and every `F` visits the point it arrives at. Return how many different points were visited at least twice.",
+  "examples": [
+   {
+    "input": "s = \"FFRFFRFFRFFR\"",
+    "output": "1",
+    "explanation": "1 points are visited more than once."
+   },
+   {
+    "input": "s = \"F\"",
+    "output": "0",
+    "explanation": "0 points are visited more than once."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of F, L and R"
+  ],
+  "functionName": "turtleRevisitedPoints",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "FFRFFRFFRFFR"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "F"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "FRFRFRFR"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFFRRFFF"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FLFLFLFLFLFL"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFLLFFLLFF"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FRFLFRFLF"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Turtle Command Repeat Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Simulation",
+   "Geometry"
+  ],
+  "companies": [
+   "Salesforce",
+   "Netflix",
+   "Infosys"
+  ],
+  "description": "A turtle starts at `(0, 0)` facing north. The command string `s` (`F` forward one unit, `L` turn left 90 degrees, `R` turn right 90 degrees) is performed over and over without pause. Return the smallest number of complete repetitions of `s` after which the turtle is back at `(0, 0)` facing north, or `-1` if that never happens.",
+  "examples": [
+   {
+    "input": "s = \"FFRFFRFFRFFR\"",
+    "output": "1",
+    "explanation": "The turtle is back after 1 repetitions (-1 means never)."
+   },
+   {
+    "input": "s = \"F\"",
+    "output": "-1",
+    "explanation": "The turtle is back after -1 repetitions (-1 means never)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s consists of F, L and R"
+  ],
+  "functionName": "turtleRepeatCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "FFRFFRFFRFFR"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "F"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "L"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFLRFF"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FR"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "FFRR"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LRLR"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Instant Runoff Winner",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Hashing",
+   "Greedy"
+  ],
+  "companies": [
+   "Adobe",
+   "Netflix"
+  ],
+  "description": "There are `n` candidates numbered `0..n-1`. `ballots` lists complete rankings one after another (each is a permutation of `0..n-1` of length `n`, best first). In each round every ballot counts for its highest-ranked candidate that is still in the race. If a candidate holds more than half of all ballots, that candidate wins. Otherwise the candidate with the fewest ballots is eliminated (if several tie, the one with the largest number is eliminated) and the next round starts. Return the winner.",
+  "examples": [
+   {
+    "input": "ballots = [0], n = 1",
+    "output": "0",
+    "explanation": "The instant-runoff winner is candidate 0."
+   },
+   {
+    "input": "ballots = [0,1,1,0], n = 2",
+    "output": "0",
+    "explanation": "The instant-runoff winner is candidate 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10 and 1 <= number of ballots <= 100",
+   "ballots.length is a multiple of n and each ballot is a permutation of 0..n-1"
+  ],
+  "functionName": "instantRunoffWinner",
+  "params": [
+   {
+    "name": "ballots",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      0,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2,
+      1,
+      0,
+      2,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3,
+      3,
+      2,
+      1,
+      0,
+      1,
+      0,
+      2,
+      3,
+      2,
+      3,
+      0,
+      1
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      2,
+      0,
+      1,
+      0,
+      2,
+      1,
+      0,
+      1,
+      2,
+      2,
+      1,
+      0
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Condorcet Winner",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Counting",
+   "Array"
+  ],
+  "companies": [
+   "Flipkart",
+   "Uber",
+   "Netflix"
+  ],
+  "description": "There are `n` candidates numbered `0..n-1`. `ballots` lists complete rankings one after another (each is a permutation of `0..n-1` of length `n`, best first). A candidate is a Condorcet winner if, against every other candidate, strictly more than half of the ballots rank that candidate higher. Return the Condorcet winner, or `-1` if there is none.",
+  "examples": [
+   {
+    "input": "ballots = [0], n = 1",
+    "output": "0",
+    "explanation": "The Condorcet winner is 0 (-1 means none)."
+   },
+   {
+    "input": "ballots = [0,1,1,0], n = 2",
+    "output": "-1",
+    "explanation": "The Condorcet winner is -1 (-1 means none)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10 and 1 <= number of ballots <= 100",
+   "ballots.length is a multiple of n and each ballot is a permutation of 0..n-1"
+  ],
+  "functionName": "condorcetWinner",
+  "params": [
+   {
+    "name": "ballots",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      0,
+      2,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      0,
+      2,
+      1,
+      1,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      0,
+      2,
+      1,
+      0,
+      1,
+      2,
+      0
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3,
+      0,
+      1,
+      3,
+      2,
+      1,
+      0,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Seeded Bracket Opponent",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Math",
+   "Tournament"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix",
+   "Amazon"
+  ],
+  "description": "A knockout tournament has `2^k` seeded players numbered `1..2^k` (1 is the best seed). In every round the remaining players are sorted by seed and the best remaining seed plays the worst, the second best plays the second worst, and so on. The better seed (smaller number) always wins. Rounds are numbered from `1`. Return the seed that player `s` faces in round `r`, or `-1` if player `s` has already been knocked out before round `r`.",
+  "examples": [
+   {
+    "input": "k = 1, s = 1, r = 1",
+    "output": "2",
+    "explanation": "The opponent in that round is 2 (-1 means already out)."
+   },
+   {
+    "input": "k = 2, s = 1, r = 1",
+    "output": "4",
+    "explanation": "The opponent in that round is 4 (-1 means already out)."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= 20, 1 <= s <= 2^k and 1 <= r <= k",
+   "The better seed always wins"
+  ],
+  "functionName": "seededBracketOpponent",
+  "params": [
+   {
+    "name": "k",
+    "type": "int"
+   },
+   {
+    "name": "s",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     1,
+     1
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     3,
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     2,
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     5,
+     1
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     4,
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     20,
+     1000000,
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Morse Decoding Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "TCS",
+   "Infosys",
+   "LinkedIn"
+  ],
+  "description": "A telegraph operator forgot the pauses between letters, so a message is just a string `s` of dots and dashes. The Morse code of the letters is: A `.-`, B `-...`, C `-.-.`, D `-..`, E `.`, F `..-.`, G `--.`, H `....`, I `..`, J `.---`, K `-.-`, L `.-..`, M `--`, N `-.`, O `---`, P `.--.`, Q `--.-`, R `.-.`, S `...`, T `-`, U `..-`, V `...-`, W `.--`, X `-..-`, Y `-.--`, Z `--..`. Return the number of ways to cut `s` into consecutive letter codes (different cuts count separately even if they spell the same text), modulo `1000000007`. If no way exists, return `0`.",
+  "examples": [
+   {
+    "input": "s = \".\"",
+    "output": "1",
+    "explanation": "The message can be cut in 1 ways."
+   },
+   {
+    "input": "s = \"-\"",
+    "output": "1",
+    "explanation": "The message can be cut in 1 ways."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s consists of '.' and '-'"
+  ],
+  "functionName": "morseDecodingCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "."
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "-"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     ".."
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     ".-"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "..."
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "-.-.-."
+    ],
+    "expected": 28,
+    "isSample": false
+   },
+   {
+    "args": [
+     "--..-.-"
+    ],
+    "expected": 52,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Versions Within Constraints",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Parsing",
+   "Simulation"
+  ],
+  "companies": [
+   "Flipkart",
+   "Microsoft"
+  ],
+  "description": "`versions` is a list of versions written as `major.minor.patch`, separated by single spaces. `rules` is a comma-separated list of constraints, each an operator (`>=`, `<=`, `==`, `>`, `<`) immediately followed by a version, such as `>=1.2.0,<2.0.0`. Versions are compared by major, then minor, then patch as whole numbers. Return how many entries of `versions` satisfy every rule (equal entries count separately).",
+  "examples": [
+   {
+    "input": "versions = \"1.0.0 1.5.0 2.0.0\", rules = \">=1.0.0,<2.0.0\"",
+    "output": "2",
+    "explanation": "2 versions satisfy all the rules."
+   },
+   {
+    "input": "versions = \"1.0.0\", rules = \">1.0.0\"",
+    "output": "0",
+    "explanation": "0 versions satisfy all the rules."
+   }
+  ],
+  "constraints": [
+   "1 <= number of versions <= 50 and 1 <= number of rules <= 5",
+   "all parts are between 0 and 999"
+  ],
+  "functionName": "countVersionsWithin",
+  "params": [
+   {
+    "name": "versions",
+    "type": "string"
+   },
+   {
+    "name": "rules",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "1.0.0 1.5.0 2.0.0",
+     ">=1.0.0,<2.0.0"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.0.0",
+     ">1.0.0"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1.2.3 1.2.3 1.2.4",
+     "==1.2.3"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0.9.9 1.0.0 1.0.1",
+     ">=1.0.0"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3.0.0 4.0.0",
+     "<=3.0.0,>=3.0.0"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1.10.0 1.9.0 1.2.0",
+     ">1.2.0,<1.10.0"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "5.5.5 6.6.6",
+     ">9.9.9"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Spiral Matrix Cell Value",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Matrix",
+   "Simulation"
+  ],
+  "companies": [
+   "Salesforce",
+   "Bloomberg"
+  ],
+  "description": "The numbers `1, 2, ..., n*n` are written into an `n x n` grid in a clockwise spiral: start at the top-left corner, go right along the top row, then down the right column, then left along the bottom row, then up the left column, and keep spiralling inward. Rows and columns are numbered from `0`. Return the number written in row `r`, column `c`.",
+  "examples": [
+   {
+    "input": "n = 1, r = 0, c = 0",
+    "output": "1",
+    "explanation": "The cell holds the number 1."
+   },
+   {
+    "input": "n = 3, r = 0, c = 2",
+    "output": "3",
+    "explanation": "The cell holds the number 3."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 40000",
+   "0 <= r, c < n"
+  ],
+  "functionName": "spiralCellValue",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     0,
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     1,
+     1
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     3,
+     0
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     2,
+     2
+    ],
+    "expected": 25,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     2,
+     1
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     40000,
+     20000,
+     19999
+    ],
+    "expected": 1600000000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Zigzag Reading Position",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Amazon",
+   "Walmart"
+  ],
+  "description": "A text of `n` characters (indexed from `0`) is written in a zigzag over `rows` rows: the first character goes in row `0`, the next ones go down one row at a time to row `rows - 1`, then up one row at a time back to row `0`, and so on (with a single row everything stays in that row). The grid is then read row by row, left to right inside a row. Return the 0-based position, in that reading order, of the character that was at index `i` of the original text.",
+  "examples": [
+   {
+    "input": "n = 1, rows = 1, i = 0",
+    "output": "0",
+    "explanation": "In the reading order that character comes at position 0."
+   },
+   {
+    "input": "n = 5, rows = 1, i = 3",
+    "output": "3",
+    "explanation": "In the reading order that character comes at position 3."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100000 and 1 <= rows <= n",
+   "0 <= i < n"
+  ],
+  "functionName": "zigzagReadingPosition",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "rows",
+    "type": "int"
+   },
+   {
+    "name": "i",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1,
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     1,
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     14,
+     3,
+     5
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     14,
+     3,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     14,
+     4,
+     13
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     2,
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     10,
+     7
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Justified Widest Gap Total",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Simulation",
+   "Math"
+  ],
+  "companies": [
+   "Netflix",
+   "Google",
+   "Paytm"
+  ],
+  "description": "Text `s` is a list of lowercase words separated by single spaces. It is split greedily into lines of at most `w` characters (a word joins the current line, after one space, if it still fits). Every line except the last is then fully justified to exactly `w` characters: the spaces are spread over the gaps between its words as evenly as possible, extra spaces going to the leftmost gaps. A line with a single word is padded on the right and has no gaps. The last line is left alone. Return the sum, over all fully justified lines that have at least two words, of the number of spaces in the widest gap of the line.",
+  "examples": [
+   {
+    "input": "s = \"this is an example of text justification\", w = 16",
+    "output": "6",
+    "explanation": "The widest gaps add up to 6."
+   },
+   {
+    "input": "s = \"a\", w = 1",
+    "output": "0",
+    "explanation": "The widest gaps add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000 and 1 <= w <= 100",
+   "words are lowercase letters and no word is longer than w"
+  ],
+  "functionName": "justifiedWidestGapTotal",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "w",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "this is an example of text justification",
+     16
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa bb cc",
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd ef gh ij",
+     7
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world",
+     11
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c d e f",
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc de f ghij kl",
+     6
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Odometer After Steps",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Simulation",
+   "Number Theory"
+  ],
+  "companies": [
+   "Google",
+   "Paytm",
+   "Goldman Sachs"
+  ],
+  "description": "An odometer has `L` wheels. Wheel `i` shows a digit from `0` to `radices[i] - 1`; wheel `0` turns fastest. One step increases wheel `0` by one, and whenever a wheel passes its largest digit it returns to `0` and increases the next wheel by one (the last wheel simply wraps to `0` with nothing further to carry). The wheels start at `start` (`start[i] < radices[i]`). Return the digit shown by wheel `j` after `k` steps.",
+  "examples": [
+   {
+    "input": "radices = [10], start = [0], k = 5, j = 0",
+    "output": "5",
+    "explanation": "Wheel j shows 5."
+   },
+   {
+    "input": "radices = [10,10], start = [9,9], k = 1, j = 1",
+    "output": "0",
+    "explanation": "Wheel j shows 0."
+   }
+  ],
+  "constraints": [
+   "1 <= radices.length = start.length <= 10",
+   "2 <= radices[i] <= 1000, 0 <= k <= 1000000000, 0 <= j < radices.length"
+  ],
+  "functionName": "odometerDigit",
+  "params": [
+   {
+    "name": "radices",
+    "type": "int[]"
+   },
+   {
+    "name": "start",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   },
+   {
+    "name": "j",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      10
+     ],
+     [
+      0
+     ],
+     5,
+     0
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      10,
+      10
+     ],
+     [
+      9,
+      9
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      4
+     ],
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      4
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     23,
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      4
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     24,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      60,
+      60,
+      24
+     ],
+     [
+      59,
+      59,
+      23
+     ],
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      10,
+      10
+     ],
+     [
+      0,
+      0,
+      0
+     ],
+     1000000000,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Factorial Base Digit Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Simulation"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Flipkart",
+   "Apple"
+  ],
+  "description": "In the factorial number system a non-negative integer `n` is written as `n = d1 * 1! + d2 * 2! + d3 * 3! + ...` where `0 <= dk <= k` for every `k`. This representation is unique. Return the sum of the digits `d1 + d2 + d3 + ...` of `n`.",
+  "examples": [
+   {
+    "input": "n = 0",
+    "output": "0",
+    "explanation": "The digits add up to 0."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The digits add up to 1."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 2000000000",
+   "Digit dk may be at most k"
+  ],
+  "functionName": "factorialBaseDigitSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     23
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     719
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     2000000000
+    ],
+    "expected": 24,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Two Jug Fewest Steps",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "BFS",
+   "Simulation"
+  ],
+  "companies": [
+   "Bloomberg",
+   "LinkedIn",
+   "Google"
+  ],
+  "description": "You have two jugs with capacities `a` and `b` liters, both empty, and an unlimited water supply. One step is one of: fill a jug completely, empty a jug completely, or pour from one jug into the other until the source is empty or the target is full. Return the fewest steps after which one of the jugs holds exactly `t` liters, or `-1` if that is impossible (`t = 0` needs `0` steps).",
+  "examples": [
+   {
+    "input": "a = 3, b = 5, t = 4",
+    "output": "6",
+    "explanation": "The fewest steps is 6 (-1 means impossible)."
+   },
+   {
+    "input": "a = 2, b = 6, t = 5",
+    "output": "-1",
+    "explanation": "The fewest steps is -1 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= a, b <= 1000",
+   "0 <= t <= 1000"
+  ],
+  "functionName": "twoJugFewestSteps",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   },
+   {
+    "name": "t",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     5,
+     4
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     6,
+     5
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     5,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     5,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     6,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     1000,
+     999
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     13,
+     10
+    ],
+    "expected": 18,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Tank Fill Or Drain Minute",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Simulation",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Goldman Sachs"
+  ],
+  "description": "A tank holds `level` units of water and overflows when it reaches `cap` units. Each minute the level changes by an amount taken from the repeating list `cycle`: minute 1 uses `cycle[0]`, minute 2 uses `cycle[1]`, and after the last entry the list starts again. Return the first minute after which the level is at least `cap` or at most `0`, or `-1` if that never happens. The starting level satisfies `0 < level < cap`.",
+  "examples": [
+   {
+    "input": "cycle = [1], level = 1, cap = 5",
+    "output": "4",
+    "explanation": "The first event happens at minute 4 (-1 means never)."
+   },
+   {
+    "input": "cycle = [-1], level = 3, cap = 10",
+    "output": "3",
+    "explanation": "The first event happens at minute 3 (-1 means never)."
+   }
+  ],
+  "constraints": [
+   "1 <= cycle.length <= 10 and -20 <= cycle[i] <= 20",
+   "1 <= level < cap <= 1000000000"
+  ],
+  "functionName": "tankFirstEventMinute",
+  "params": [
+   {
+    "name": "cycle",
+    "type": "int[]"
+   },
+   {
+    "name": "level",
+    "type": "int"
+   },
+   {
+    "name": "cap",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1
+     ],
+     1,
+     5
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -1
+     ],
+     3,
+     10
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      -2
+     ],
+     5,
+     10
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      -1,
+      -1
+     ],
+     2,
+     100
+    ],
+    "expected": 286,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      -3,
+      -3
+     ],
+     1000,
+     10000
+    ],
+    "expected": 3000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     3,
+     5
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      4
+     ],
+     20,
+     40
+    ],
+    "expected": 31,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Strong Password Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Combinatorics",
+   "Inclusion Exclusion"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Paytm",
+   "Uber"
+  ],
+  "description": "A password has exactly `n` characters. The allowed characters are `lo` different lowercase letters, `up` different uppercase letters and `dg` different digits. A password is strong if it contains at least one lowercase letter, at least one uppercase letter and at least one digit. Return the number of strong passwords modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "lo = 26, up = 26, dg = 10, n = 3",
+    "output": "40560",
+    "explanation": "There are 40560 strong passwords modulo 1000000007."
+   },
+   {
+    "input": "lo = 26, up = 26, dg = 10, n = 2",
+    "output": "0",
+    "explanation": "There are 0 strong passwords modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= lo, up, dg <= 100",
+   "1 <= n <= 1000000000"
+  ],
+  "functionName": "strongPasswordCount",
+  "params": [
+   {
+    "name": "lo",
+    "type": "int"
+   },
+   {
+    "name": "up",
+    "type": "int"
+   },
+   {
+    "name": "dg",
+    "type": "int"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     26,
+     26,
+     10,
+     3
+    ],
+    "expected": 40560,
+    "isSample": true
+   },
+   {
+    "args": [
+     26,
+     26,
+     10,
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     1,
+     3
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     2,
+     2,
+     4
+    ],
+    "expected": 576,
+    "isSample": false
+   },
+   {
+    "args": [
+     26,
+     26,
+     10,
+     8
+    ],
+    "expected": 910250095,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     3,
+     2,
+     1000000000
+    ],
+    "expected": 335492580,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     2,
+     3,
+     5
+    ],
+    "expected": 3660,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Undo Redo Text Length",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "Simulation",
+   "Design"
+  ],
+  "companies": [
+   "Microsoft",
+   "Atlassian"
+  ],
+  "description": "A text editor starts empty. `ops` is a flat list of pairs `(t, k)`. If `t = 0`, the user types `k` characters at once as one action; this also discards everything that could have been redone. If `t = 1`, the most recent typing action that is still in effect is undone (its characters disappear); nothing happens if there is none. If `t = 2`, the most recently undone typing action is redone (its characters come back); nothing happens if there is none. Return the final number of characters in the text.",
+  "examples": [
+   {
+    "input": "ops = [0,5]",
+    "output": "5",
+    "explanation": "The final text has 5 characters."
+   },
+   {
+    "input": "ops = [0,5,1,0]",
+    "output": "0",
+    "explanation": "The final text has 0 characters."
+   }
+  ],
+  "constraints": [
+   "1 <= number of operations <= 100000",
+   "t is 0, 1 or 2; for typing 1 <= k <= 1000 (k is ignored when t is 1 or 2)"
+  ],
+  "functionName": "undoRedoTextLength",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      1,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      0,
+      3,
+      1,
+      0,
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      4,
+      1,
+      0,
+      0,
+      2,
+      2,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      0,
+      1,
+      0,
+      2,
+      0,
+      2,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Autocomplete Keystrokes",
+  "difficulty": "Medium",
+  "tags": [
+   "Trie",
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Salesforce",
+   "Netflix"
+  ],
+  "description": "A keyboard knows a dictionary of distinct words, given in `s` separated by single spaces; no word is a prefix of another word. To enter a word you type its letters; as soon as the typed prefix matches only that one dictionary word, pressing Tab (one keystroke) completes it. You never type more letters than needed: typing the whole word without Tab is also allowed. For each word, the cost is the smaller of its length and the length of the shortest prefix that matches only that word plus one. Return the total cost of entering every word once.",
+  "examples": [
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "Entering all words takes 1 keystrokes."
+   },
+   {
+    "input": "s = \"apple banana\"",
+    "output": "4",
+    "explanation": "Entering all words takes 4 keystrokes."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 1000, each word has 1 to 20 lowercase letters",
+   "words are distinct and no word is a prefix of another"
+  ],
+  "functionName": "autocompleteKeystrokes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "apple banana"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "car cat"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc abd ace"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x yy zzz"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "tea ten ted to"
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa aaab aaba abaa baaa"
+    ],
+    "expected": 17,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Primes In A Segment",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "Uber",
+   "Facebook"
+  ],
+  "description": "Return how many prime numbers lie in the inclusive range `[L, R]`. The range can sit far from zero, but it is short.",
+  "examples": [
+   {
+    "input": "L = 1, R = 10",
+    "output": "4",
+    "explanation": "There are 4 primes in the range."
+   },
+   {
+    "input": "L = 1, R = 1",
+    "output": "0",
+    "explanation": "There are 0 primes in the range."
+   }
+  ],
+  "constraints": [
+   "1 <= L <= R <= 2000000000",
+   "R - L <= 1000000"
+  ],
+  "functionName": "primesInSegment",
+  "params": [
+   {
+    "name": "L",
+    "type": "int"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     10
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     90,
+     100
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     1000000100
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     1999999000,
+     2000000000
+    ],
+    "expected": 43,
+    "isSample": false
+   },
+   {
+    "args": [
+     14,
+     16
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Prime Factor Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "Adobe",
+   "Flipkart"
+  ],
+  "description": "For every integer `k` from `2` to `n`, let `f(k)` be the smallest prime that divides `k`. Return the sum of all `f(k)` modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The total is 0 modulo 1000000007."
+   },
+   {
+    "input": "n = 2",
+    "output": "2",
+    "explanation": "The total is 2 modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "The empty sum is 0"
+  ],
+  "functionName": "smallestPrimeFactorTotal",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 28,
+    "isSample": false
+   },
+   {
+    "args": [
+     30
+    ],
+    "expected": 174,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 1257,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 79189,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 568404730,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Semiprime Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "TCS",
+   "Microsoft",
+   "Uber"
+  ],
+  "description": "A semiprime is a number that is the product of exactly two primes, which may be equal (`4 = 2*2`, `6 = 2*3`, `9 = 3*3`). Return how many semiprimes are at most `n`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "There are 0 semiprimes up to n."
+   },
+   {
+    "input": "n = 4",
+    "output": "1",
+    "explanation": "There are 1 semiprimes up to n."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "Primes in the product may repeat"
+  ],
+  "functionName": "semiprimeCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     30
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 34,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 299,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 210035,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Amicable Number Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Sieve"
+  ],
+  "companies": [
+   "Zoho",
+   "Facebook",
+   "Paytm"
+  ],
+  "description": "Let `s(x)` be the sum of the proper divisors of `x` (all divisors of `x` smaller than `x`). A number `a` is amicable if `s(a) = b`, `s(b) = a` and `a != b`. Return the sum of all amicable numbers smaller than `n` (both members of a pair count if they are below `n`).",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The amicable numbers below n add up to 0."
+   },
+   {
+    "input": "n = 220",
+    "output": "0",
+    "explanation": "The amicable numbers below n add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100000",
+   "a and b must be different numbers"
+  ],
+  "functionName": "amicableNumberSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     220
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     221
+    ],
+    "expected": 220,
+    "isSample": false
+   },
+   {
+    "args": [
+     285
+    ],
+    "expected": 504,
+    "isSample": false
+   },
+   {
+    "args": [
+     1200
+    ],
+    "expected": 1688,
+    "isSample": false
+   },
+   {
+    "args": [
+     3000
+    ],
+    "expected": 8442,
+    "isSample": false
+   },
+   {
+    "args": [
+     10000
+    ],
+    "expected": 31626,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Radical Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "Atlassian",
+   "Zoho",
+   "TCS"
+  ],
+  "description": "The radical of a positive integer is the product of its distinct prime factors (`rad(1) = 1`, `rad(12) = 6`, `rad(8) = 2`). Return `rad(1) + rad(2) + ... + rad(n)` modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The radicals add up to 1 modulo 1000000007."
+   },
+   {
+    "input": "n = 2",
+    "output": "3",
+    "explanation": "The radicals add up to 3 modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "rad(1) = 1"
+  ],
+  "functionName": "radicalSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     8
+    ],
+    "expected": 28,
+    "isSample": false
+   },
+   {
+    "args": [
+     12
+    ],
+    "expected": 58,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 3512,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 351964,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 218410038,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Prime Gap",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "Zoho",
+   "Goldman Sachs"
+  ],
+  "description": "Look at all primes not larger than `n`, in increasing order. Return the largest difference between two consecutive primes in that list, or `0` if there are fewer than two primes.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The largest gap is 0."
+   },
+   {
+    "input": "n = 2",
+    "output": "0",
+    "explanation": "The largest gap is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 5000000",
+   "Only primes up to n are considered"
+  ],
+  "functionName": "largestPrimeGap",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     5000000
+    ],
+    "expected": 154,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Primes With Prime Digit Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "Google",
+   "Atlassian",
+   "Salesforce"
+  ],
+  "description": "Return how many prime numbers not larger than `n` have a digit sum that is also prime (for example `23` is prime and `2 + 3 = 5` is prime).",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "0 primes qualify."
+   },
+   {
+    "input": "n = 2",
+    "output": "1",
+    "explanation": "1 primes qualify."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 5000000",
+   "A prime has exactly two divisors"
+  ],
+  "functionName": "primesWithPrimeDigitSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     22
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     23
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 89,
+    "isSample": false
+   },
+   {
+    "args": [
+     5000000
+    ],
+    "expected": 131078,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Prime Power Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Sieve",
+   "Number Theory"
+  ],
+  "companies": [
+   "Netflix",
+   "Goldman Sachs"
+  ],
+  "description": "A prime power is a number of the form `p^e` where `p` is prime and `e >= 1` (`2, 3, 4, 5, 7, 8, 9, ...`). Return how many prime powers are at most `n`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "There are 0 prime powers up to n."
+   },
+   {
+    "input": "n = 2",
+    "output": "1",
+    "explanation": "There are 1 prime powers up to n."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 5000000",
+   "The number 1 is not a prime power"
+  ],
+  "functionName": "primePowerCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     16
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 35,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 193,
+    "isSample": false
+   },
+   {
+    "args": [
+     5000000
+    ],
+    "expected": 348940,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Window Mode Changes",
+  "difficulty": "Medium",
+  "tags": [
+   "Sliding Window",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Zoho",
+   "Bloomberg"
+  ],
+  "description": "The mode of a window is its most frequent value; if several values share the highest frequency, the smallest of them is the mode. Slide a window of length `k` over `a` from left to right. Return how many times the mode of a window differs from the mode of the previous window.",
+  "examples": [
+   {
+    "input": "a = [1,2,2,3,3,3], k = 3",
+    "output": "1",
+    "explanation": "The mode changes 1 times."
+   },
+   {
+    "input": "a = [5], k = 1",
+    "output": "0",
+    "explanation": "The mode changes 0 times."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= a.length <= 1000",
+   "0 <= a[i] <= 1000"
+  ],
+  "functionName": "windowModeChanges",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3,
+      3
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      5,
+      6,
+      4,
+      5,
+      6
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3,
+      1
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Chebyshev Meeting Radius",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Geometry",
+   "Coordinates"
+  ],
+  "companies": [
+   "Atlassian",
+   "Microsoft",
+   "Salesforce"
+  ],
+  "description": "Friends stand at the integer points `(xs[i], ys[i])` of an infinite grid. The Chebyshev distance between two points is `max(|dx|, |dy|)` (a king's move count). Choose an integer meeting point so that the largest Chebyshev distance from any friend to it is as small as possible, and return that smallest value.",
+  "examples": [
+   {
+    "input": "xs = [0], ys = [0]",
+    "output": "0",
+    "explanation": "The smallest possible largest distance is 0."
+   },
+   {
+    "input": "xs = [0,4], ys = [0,0]",
+    "output": "2",
+    "explanation": "The smallest possible largest distance is 2."
+   }
+  ],
+  "constraints": [
+   "1 <= xs.length = ys.length <= 100000",
+   "-1000000000 <= xs[i], ys[i] <= 1000000000"
+  ],
+  "functionName": "chebyshevMeetingRadius",
+  "params": [
+   {
+    "name": "xs",
+    "type": "int[]"
+   },
+   {
+    "name": "ys",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ],
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      4
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5
+     ],
+     [
+      0,
+      7,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      3
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1000000000,
+      1000000000
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 1000000000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Robot Vacuum Cleaned Cells",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Matrix",
+   "Hashing"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Flipkart"
+  ],
+  "description": "A grid is stored row by row in `g` with `cols` cells per row; `0` is a free cell and `1` is an obstacle. A robot vacuum starts on the free cell `start` (an index into `g`) facing east (towards larger column numbers). In each step, if the cell directly ahead exists and is free, the robot moves onto it; otherwise it turns 90 degrees clockwise in place (this uses up the step as well). Every cell the robot stands on counts as cleaned, including the start cell. Return the number of different cells cleaned after `T` steps.",
+  "examples": [
+   {
+    "input": "g = [0,0,0,0], cols = 2, start = 0, T = 0",
+    "output": "1",
+    "explanation": "The robot cleans 1 different cells."
+   },
+   {
+    "input": "g = [0,0,0,0], cols = 2, start = 0, T = 3",
+    "output": "3",
+    "explanation": "The robot cleans 3 different cells."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 100 and 1 <= g.length <= 10000, g.length is a multiple of cols",
+   "g[start] = 0, every g[i] is 0 or 1, 0 <= T <= 100000"
+  ],
+  "functionName": "vacuumCleanedCells",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   },
+   {
+    "name": "start",
+    "type": "int"
+   },
+   {
+    "name": "T",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     0,
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     3,
+     0,
+     20
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0
+     ],
+     2,
+     0,
+     10
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     4,
+     0,
+     30
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1
+     ],
+     3,
+     1,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     3,
+     0,
+     100000
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Dial Range Rotations",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Greedy",
+   "Difference Array"
+  ],
+  "companies": [
+   "TCS",
+   "Walmart"
+  ],
+  "description": "A lock has `n` dials in a row, each showing a digit from `0` to `base - 1`; `cur` and `target` are digit strings of length `n`. One operation picks a contiguous range of dials and turns every dial in it one step up (`d -> (d + 1) mod base`) or one step down (`d -> (d - 1) mod base`). Return the fewest operations that turn `cur` into `target`.",
+  "examples": [
+   {
+    "input": "cur = \"0\", target = \"1\", base = 10",
+    "output": "1",
+    "explanation": "The fewest operations is 1."
+   },
+   {
+    "input": "cur = \"00\", target = \"11\", base = 10",
+    "output": "1",
+    "explanation": "The fewest operations is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= cur.length = target.length <= 100000 and 2 <= base <= 10",
+   "every character of cur and target is a digit smaller than base"
+  ],
+  "functionName": "dialRangeRotations",
+  "params": [
+   {
+    "name": "cur",
+    "type": "string"
+   },
+   {
+    "name": "target",
+    "type": "string"
+   },
+   {
+    "name": "base",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "0",
+     "1",
+     10
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "00",
+     "11",
+     10
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "05",
+     "50",
+     10
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "123",
+     "321",
+     10
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "000",
+     "222",
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0101",
+     "1010",
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9",
+     "0",
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Alarm Union Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Inclusion Exclusion",
+   "Number Theory"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "Several alarms ring on minutes that are multiples of their period: alarm `i` rings at minutes `p[i], 2*p[i], 3*p[i], ...`. Return the number of minutes among `1..T` at which at least one alarm rings (a minute at which several alarms ring together counts once).",
+  "examples": [
+   {
+    "input": "p = [2], T = 10",
+    "output": "5",
+    "explanation": "At least one alarm rings in 5 minutes."
+   },
+   {
+    "input": "p = [2,3], T = 10",
+    "output": "7",
+    "explanation": "At least one alarm rings in 7 minutes."
+   }
+  ],
+  "constraints": [
+   "1 <= p.length <= 12 and 1 <= p[i] <= 1000000",
+   "1 <= T <= 1000000000"
+  ],
+  "functionName": "alarmUnionCount",
+  "params": [
+   {
+    "name": "p",
+    "type": "int[]"
+   },
+   {
+    "name": "T",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2
+     ],
+     10
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      3
+     ],
+     10
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      5
+     ],
+     30
+    ],
+    "expected": 22,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      6
+     ],
+     12
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      7
+     ],
+     20
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      10,
+      15
+     ],
+     1000000000
+    ],
+    "expected": 266666666,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Blinker Lights First All On",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Simulation",
+   "Number Theory"
+  ],
+  "companies": [
+   "Salesforce",
+   "Adobe"
+  ],
+  "description": "Several lights blink with a fixed pattern given as flat triples `(period, offset, on)`. At time `t` (a whole number, starting at `0`) a light is on if `(t - offset) mod period < on`, where the remainder is taken in the range `0..period-1`, and off otherwise. Return the smallest time `t >= 0` at which all lights are on together, or `-1` if that never happens.",
+  "examples": [
+   {
+    "input": "ls = [5,0,1]",
+    "output": "0",
+    "explanation": "All lights are first on at time 0 (-1 means never)."
+   },
+   {
+    "input": "ls = [2,0,1,2,1,1]",
+    "output": "-1",
+    "explanation": "All lights are first on at time -1 (-1 means never)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of lights <= 4, ls.length is a multiple of 3",
+   "1 <= period <= 12, 0 <= offset < period, 1 <= on <= period"
+  ],
+  "functionName": "blinkersFirstAllOn",
+  "params": [
+   {
+    "name": "ls",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      0,
+      1,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      0,
+      2,
+      4,
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      2,
+      3,
+      4,
+      0,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      0,
+      1,
+      6,
+      3,
+      1
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      12,
+      5,
+      4,
+      10,
+      1,
+      3,
+      9,
+      0,
+      5
+     ]
+    ],
+    "expected": 31,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      1,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Grid Operations Cell Tracking",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "Math",
+   "Simulation"
+  ],
+  "companies": [
+   "Adobe",
+   "Walmart",
+   "Bloomberg"
+  ],
+  "description": "An `n x m` grid (`n` rows, `m` columns) has its cells numbered row by row from `0`; the cell at row `r`, column `c` is the one we follow. The string `ops` is applied in order: `R` rotates the whole grid 90 degrees clockwise (the grid then has `m` rows and `n` columns), `H` mirrors it left to right, and `V` mirrors it top to bottom. Return the number of the followed cell's new position, counted row by row in the final grid.",
+  "examples": [
+   {
+    "input": "n = 2, m = 3, r = 0, c = 0, ops = \"R\"",
+    "output": "1",
+    "explanation": "The cell ends up at position 1."
+   },
+   {
+    "input": "n = 2, m = 3, r = 1, c = 2, ops = \"\"",
+    "output": "5",
+    "explanation": "The cell ends up at position 5."
+   }
+  ],
+  "constraints": [
+   "1 <= n, m <= 1000000 and 0 <= r < n, 0 <= c < m",
+   "ops has 0 to 100 characters, each R, H or V"
+  ],
+  "functionName": "trackCellAfterOps",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   },
+   {
+    "name": "ops",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2,
+     3,
+     0,
+     0,
+     "R"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     3,
+     1,
+     2,
+     ""
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     3,
+     0,
+     1,
+     "H"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     3,
+     0,
+     1,
+     "V"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     5,
+     1,
+     3,
+     "RR"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     2,
+     3,
+     0,
+     "RHV"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     1000000,
+     5,
+     7,
+     "RRRR"
+    ],
+    "expected": 5000007,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Bank Teller Finish Time",
+  "difficulty": "Medium",
+  "tags": [
+   "Heap",
+   "Simulation",
+   "Greedy"
+  ],
+  "companies": [
+   "Infosys",
+   "Atlassian",
+   "TCS"
+  ],
+  "description": "A bank has `k` tellers. Customer `i` arrives at minute `arr[i]` and needs `svc[i]` minutes of service; arrivals are listed in non-decreasing order. Customers are served in order of arrival: each goes to a teller that is free (a teller who finishes at minute `t` can start a new customer at minute `t`), and if all tellers are busy the customer waits until one becomes free. Return the minute at which the last customer finishes.",
+  "examples": [
+   {
+    "input": "arr = [0], svc = [5], k = 1",
+    "output": "5",
+    "explanation": "The last customer finishes at minute 5."
+   },
+   {
+    "input": "arr = [0,1], svc = [5,5], k = 1",
+    "output": "10",
+    "explanation": "The last customer finishes at minute 10."
+   }
+  ],
+  "constraints": [
+   "1 <= arr.length = svc.length <= 100000 and 1 <= k <= 100000",
+   "0 <= arr[i] <= 1000000000 (non-decreasing) and 1 <= svc[i] <= 10000"
+  ],
+  "functionName": "bankFinishTime",
+  "params": [
+   {
+    "name": "arr",
+    "type": "int[]"
+   },
+   {
+    "name": "svc",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ],
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     [
+      5,
+      5
+     ],
+     1
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     [
+      5,
+      5
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      3,
+      3,
+      3,
+      3
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      10
+     ],
+     [
+      4,
+      4,
+      4,
+      1
+     ],
+     2
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      2,
+      2
+     ],
+     [
+      5,
+      1,
+      1,
+      1,
+      9
+     ],
+     3
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5
+     ],
+     [
+      2,
+      2,
+      2
+     ],
+     5
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Printer Queue Position",
+  "difficulty": "Medium",
+  "tags": [
+   "Queue",
+   "Simulation",
+   "Sorting"
+  ],
+  "companies": [
+   "Flipkart",
+   "TCS",
+   "Google"
+  ],
+  "description": "A printer queue holds jobs with priorities `pri[0], pri[1], ...` (a larger number is more urgent) in order. The printer repeatedly looks at the first job in the queue: if some job still waiting in the queue behind it has a strictly higher priority, the first job is moved to the back of the queue; otherwise it is printed and removed. Return the order in which the job that started at index `loc` is printed, counting the first printed job as `1`.",
+  "examples": [
+   {
+    "input": "pri = [5], loc = 0",
+    "output": "1",
+    "explanation": "That job is printed number 1."
+   },
+   {
+    "input": "pri = [1,1,9,1,1,1], loc = 0",
+    "output": "5",
+    "explanation": "That job is printed number 5."
+   }
+  ],
+  "constraints": [
+   "1 <= pri.length <= 100000",
+   "1 <= pri[i] <= 9 and 0 <= loc < pri.length"
+  ],
+  "functionName": "printerQueuePosition",
+  "params": [
+   {
+    "name": "pri",
+    "type": "int[]"
+   },
+   {
+    "name": "loc",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      9,
+      1,
+      1,
+      1
+     ],
+     0
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      2,
+      1
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      3,
+      2
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      2,
+      3,
+      1,
+      2
+     ],
+     4
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Crossword Slot Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "TCS",
+   "Facebook"
+  ],
+  "description": "A crossword grid is stored row by row in `g` with `cols` cells per row; `1` is a white cell and `0` is a black cell. A word slot is a maximal horizontal or vertical run of white cells of length at least `2` (it cannot be extended in either direction). Return the total number of word slots.",
+  "examples": [
+   {
+    "input": "g = [1,1], cols = 2",
+    "output": "1",
+    "explanation": "The grid has 1 word slots."
+   },
+   {
+    "input": "g = [1], cols = 1",
+    "output": "0",
+    "explanation": "The grid has 0 word slots."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 100 and 1 <= g.length <= 10000",
+   "g.length is a multiple of cols and every g[i] is 0 or 1"
+  ],
+  "functionName": "crosswordSlotCount",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1
+     ],
+     4
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Mirror Maze Hit Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Matrix",
+   "Geometry"
+  ],
+  "companies": [
+   "Walmart",
+   "Amazon",
+   "TCS"
+  ],
+  "description": "A rectangular room is stored row by row in `g` with `cols` cells per row. A cell holds `0` (empty), `1` (a mirror shaped like `/`) or `2` (a mirror shaped like `\\`). A laser enters the room at the left edge of the top-left cell travelling east (towards larger column numbers; row `0` is the top row). Going through an empty cell does not change its direction; a `/` mirror turns east into north, north into east, west into south and south into west; a `\\` mirror turns east into south, south into east, west into north and north into west. The beam leaves the room when it passes any edge. Return the number of mirrors it hits (a mirror hit again counts again).",
+  "examples": [
+   {
+    "input": "g = [0], cols = 1",
+    "output": "0",
+    "explanation": "The laser hits 0 mirrors."
+   },
+   {
+    "input": "g = [1], cols = 1",
+    "output": "1",
+    "explanation": "The laser hits 1 mirrors."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 100 and 1 <= g.length <= 10000",
+   "g.length is a multiple of cols and every g[i] is 0, 1 or 2"
+  ],
+  "functionName": "mirrorMazeHits",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      0
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      0,
+      1,
+      0,
+      2,
+      0,
+      1
+     ],
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Binary Counter Flip Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Bit Manipulation",
+   "Math",
+   "Simulation"
+  ],
+  "companies": [
+   "Zoho",
+   "Paytm",
+   "Google"
+  ],
+  "description": "A binary counter is stored in an unlimited number of bits and starts at the value `a`. Each tick adds `1` to it, and the cost of a tick is the number of bits that change (for example going from `0111` to `1000` changes 4 bits). Return the total cost of ticking until the counter equals `b`.",
+  "examples": [
+   {
+    "input": "a = 0, b = 0",
+    "output": "0",
+    "explanation": "The total number of bit changes is 0."
+   },
+   {
+    "input": "a = 0, b = 1",
+    "output": "1",
+    "explanation": "The total number of bit changes is 1."
+   }
+  ],
+  "constraints": [
+   "0 <= a <= b <= 1000000000",
+   "If a = b the cost is 0"
+  ],
+  "functionName": "binaryCounterFlipTotal",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     0,
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     0,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     0,
+     4
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     8
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     100
+    ],
+    "expected": 193,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     1000000000
+    ],
+    "expected": 1999999987,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Minimum Raggedness Wrap Cost",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "A paragraph has words with lengths `lens` in a fixed order. It is typeset in lines of width `w`: a line holds consecutive words separated by single spaces, and its length (word lengths plus one space between neighbours) must not exceed `w`. A line that is not the last one costs `(w - length)^2`; the last line costs `0`. Return the smallest possible total cost over all ways to break the paragraph into lines.",
+  "examples": [
+   {
+    "input": "lens = [3], w = 5",
+    "output": "0",
+    "explanation": "The smallest total cost is 0."
+   },
+   {
+    "input": "lens = [2,2,2], w = 5",
+    "output": "0",
+    "explanation": "The smallest total cost is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= lens.length <= 2000 and 1 <= w <= 100",
+   "1 <= lens[i] <= w"
+  ],
+  "functionName": "minRaggednessCost",
+  "params": [
+   {
+    "name": "lens",
+    "type": "int[]"
+   },
+   {
+    "name": "w",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ],
+     7
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      1,
+      5,
+      1,
+      5
+     ],
+     7
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      2,
+      6,
+      1,
+      3,
+      3
+     ],
+     8
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     10
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Closest Fraction Within Denominator Bound",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Continued Fractions"
+  ],
+  "companies": [
+   "Apple",
+   "LinkedIn",
+   "Walmart"
+  ],
+  "description": "Given the positive fraction `n / d` and a bound `B`, look at all fractions `p / q` with integer `p >= 0` and `1 <= q <= B`. Return the denominator `q` of the one that is closest to `n / d`. If two different fractions are equally close, take the one with the smaller denominator. A fraction with a common factor is the same value as its reduced form, so the smallest denominator that gives the closest value is returned.",
+  "examples": [
+   {
+    "input": "n = 1, d = 2, B = 1",
+    "output": "1",
+    "explanation": "The closest fraction has denominator 1."
+   },
+   {
+    "input": "n = 1, d = 3, B = 2",
+    "output": "2",
+    "explanation": "The closest fraction has denominator 2."
+   }
+  ],
+  "constraints": [
+   "1 <= n, d <= 1000000000",
+   "1 <= B <= 1000000000"
+  ],
+  "functionName": "closestFractionDenominator",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "d",
+    "type": "int"
+   },
+   {
+    "name": "B",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     2,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     3,
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     22,
+     7,
+     5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     355,
+     113,
+     100
+    ],
+    "expected": 99,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     1000000000,
+     1000000
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     3,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     314159265,
+     100000000,
+     1000
+    ],
+    "expected": 113,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Euclid Subtraction Game",
+  "difficulty": "Hard",
+  "tags": [
+   "Game Theory",
+   "Math",
+   "Euclid"
+  ],
+  "companies": [
+   "Google",
+   "Apple"
+  ],
+  "description": "Two positive integers `a` and `b` are written on a board. Two players alternate turns. On a turn the player picks the smaller number (either one if they are equal) and subtracts any positive multiple of it from the larger number, as long as the result is not negative (the numbers may become equal). The player who makes one of the numbers `0` wins. Return `true` if the first player wins with optimal play.",
+  "examples": [
+   {
+    "input": "a = 1, b = 1",
+    "output": "true",
+    "explanation": "The first player wins: True."
+   },
+   {
+    "input": "a = 2, b = 3",
+    "output": "false",
+    "explanation": "The first player wins: False."
+   }
+  ],
+  "constraints": [
+   "1 <= a, b <= 1000000000",
+   "Subtracting to exactly 0 wins immediately"
+  ],
+  "functionName": "euclidGameFirstWins",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     3
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     5
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     8
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     7
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     25,
+     7
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     999999999
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Lattice Paths Avoiding Blocked Cells",
+  "difficulty": "Hard",
+  "tags": [
+   "Combinatorics",
+   "Math",
+   "Inclusion Exclusion"
+  ],
+  "companies": [
+   "Google",
+   "LinkedIn",
+   "Adobe"
+  ],
+  "description": "A grid has `n` rows and `m` columns. A walker starts in the top-left cell `(0, 0)` and wants to reach the bottom-right cell `(n-1, m-1)`, moving one step right or one step down each time. Some cells are blocked, given as flat pairs `(row, column)` in `blocked`; the walker may not enter them. Return the number of different paths modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "n = 1, m = 1, blocked = []",
+    "output": "1",
+    "explanation": "There are 1 paths modulo 1000000007."
+   },
+   {
+    "input": "n = 2, m = 2, blocked = []",
+    "output": "2",
+    "explanation": "There are 2 paths modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= n, m <= 100000 and blocked.length is even with at most 10 cells",
+   "blocked cells are distinct, inside the grid, and are neither (0,0) nor (n-1,m-1)"
+  ],
+  "functionName": "countPathsAvoidingBlocked",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "blocked",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1,
+     []
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     2,
+     []
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     3,
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     4,
+     [
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000,
+     100000,
+     [
+      50000,
+      50000
+     ]
+    ],
+    "expected": 123445622,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     6,
+     [
+      0,
+      2,
+      2,
+      0,
+      3,
+      3,
+      1,
+      4
+     ]
+    ],
+    "expected": 26,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Lyndon Factorization Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Lyndon Words",
+   "Greedy"
+  ],
+  "companies": [
+   "Oracle",
+   "Bloomberg"
+  ],
+  "description": "A Lyndon word is a non-empty string that is strictly smaller (in dictionary order) than each of its proper rotations (a one-letter string is a Lyndon word). Every string can be written in exactly one way as a concatenation of Lyndon words that never increase in dictionary order from left to right. Return the number of words in that factorization of `s`.",
+  "examples": [
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "The factorization has 1 words."
+   },
+   {
+    "input": "s = \"ab\"",
+    "output": "1",
+    "explanation": "The factorization has 1 words."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100000",
+   "s consists of lowercase letters"
+  ],
+  "functionName": "lyndonFactorizationCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ba"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "banana"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaabaab"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzabcabcabd"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Minimal Rotation Start",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Two Pointers",
+   "Math"
+  ],
+  "companies": [
+   "Netflix",
+   "Atlassian",
+   "Paytm"
+  ],
+  "description": "Rotating a string by `i` moves its first `i` characters to the end. Among all `n` rotations of `s` (rotations by `0..n-1`), take the lexicographically smallest one and return the smallest rotation amount `i` that produces it.",
+  "examples": [
+   {
+    "input": "s = \"a\"",
+    "output": "0",
+    "explanation": "The smallest rotation starts at index 0."
+   },
+   {
+    "input": "s = \"ba\"",
+    "output": "1",
+    "explanation": "The smallest rotation starts at index 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100000",
+   "s consists of lowercase letters"
+  ],
+  "functionName": "minimalRotationStart",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ba"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "cabca"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzz"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bcaabca"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "dcbaabcd"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Closest Subset Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Meet In The Middle",
+   "Binary Search",
+   "Math"
+  ],
+  "companies": [
+   "Atlassian",
+   "Netflix",
+   "Paytm"
+  ],
+  "description": "Choose any sub-collection of the numbers in `a` (possibly empty, each number used at most once) so that its sum is as close as possible to `target`. Return the smallest possible value of `|sum - target|`.",
+  "examples": [
+   {
+    "input": "a = [1,2,3], target = 7",
+    "output": "1",
+    "explanation": "The closest achievable sum is off by 1."
+   },
+   {
+    "input": "a = [5], target = 3",
+    "output": "2",
+    "explanation": "The closest achievable sum is off by 2."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 36",
+   "-1000000000 <= a[i], target <= 1000000000"
+  ],
+  "functionName": "closestSubsetSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     7
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -3,
+      4
+     ],
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      11,
+      13
+     ],
+     20
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      100,
+      200,
+      300
+     ],
+     250
+    ],
+    "expected": 50,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     -5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      999999999,
+      1000000000,
+      -5
+     ],
+     1000000000
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pisano Period Length",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Fibonacci"
+  ],
+  "companies": [
+   "Walmart",
+   "Netflix",
+   "Infosys"
+  ],
+  "description": "The Fibonacci numbers are `F(0) = 0, F(1) = 1, F(k) = F(k-1) + F(k-2)`. Taken modulo `m` they repeat with some period: the smallest `k >= 1` with `F(k) mod m = 0` and `F(k+1) mod m = 1 mod m`. Return that period for the given `m`.",
+  "examples": [
+   {
+    "input": "m = 1",
+    "output": "1",
+    "explanation": "The period is 1."
+   },
+   {
+    "input": "m = 2",
+    "output": "3",
+    "explanation": "The period is 3."
+   }
+  ],
+  "constraints": [
+   "1 <= m <= 100000",
+   "For m = 1 the period is 1"
+  ],
+  "functionName": "pisanoPeriod",
+  "params": [
+   {
+    "name": "m",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 60,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 300,
+    "isSample": false
+   },
+   {
+    "args": [
+     99991
+    ],
+    "expected": 33330,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000
+    ],
+    "expected": 150000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Coprime Pair Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Mobius"
+  ],
+  "companies": [
+   "Apple",
+   "Atlassian",
+   "LinkedIn"
+  ],
+  "description": "Return the number of pairs of indices `i < j` such that `a[i]` and `a[j]` are coprime (their greatest common divisor is `1`).",
+  "examples": [
+   {
+    "input": "a = [1]",
+    "output": "0",
+    "explanation": "There are 0 coprime pairs."
+   },
+   {
+    "input": "a = [2,3]",
+    "output": "1",
+    "explanation": "There are 1 coprime pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "1 <= a[i] <= 100000"
+  ],
+  "functionName": "coprimePairCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      4
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      10,
+      15
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ]
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      100000,
+      99999,
+      99991
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Bounded Linear Equation Solutions",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Extended Euclid"
+  ],
+  "companies": [
+   "Oracle",
+   "Goldman Sachs",
+   "Paytm"
+  ],
+  "description": "Count the pairs of integers `(x, y)` with `0 <= x <= X`, `0 <= y <= Y` and `a*x + b*y = c`.",
+  "examples": [
+   {
+    "input": "a = 2, b = 3, c = 12, X = 10, Y = 10",
+    "output": "3",
+    "explanation": "There are 3 solutions."
+   },
+   {
+    "input": "a = 1, b = 1, c = 5, X = 5, Y = 5",
+    "output": "6",
+    "explanation": "There are 6 solutions."
+   }
+  ],
+  "constraints": [
+   "1 <= a, b <= 1000000000 and 0 <= c <= 1000000000",
+   "0 <= X, Y <= 1000000000"
+  ],
+  "functionName": "countBoundedSolutions",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   },
+   {
+    "name": "X",
+    "type": "int"
+   },
+   {
+    "name": "Y",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2,
+     3,
+     12,
+     10,
+     10
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     5,
+     5,
+     5
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     4,
+     7,
+     10,
+     10
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     5,
+     0,
+     5,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     9,
+     30,
+     100,
+     100
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     1,
+     1000000000,
+     1000000000,
+     1000000000
+    ],
+    "expected": 1000000001,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     11,
+     1000,
+     200,
+     200
+    ],
+    "expected": 13,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Couples Not Adjacent Seating",
+  "difficulty": "Hard",
+  "tags": [
+   "Combinatorics",
+   "Inclusion Exclusion",
+   "Math"
+  ],
+  "companies": [
+   "Facebook",
+   "Oracle",
+   "TCS"
+  ],
+  "description": "`n` couples (`2n` different people) sit in a row of `2n` seats. Return the number of seatings in which no two members of the same couple sit next to each other, modulo `1000000007`. Seatings that differ in who sits where are different.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "There are 0 valid seatings modulo 1000000007."
+   },
+   {
+    "input": "n = 2",
+    "output": "8",
+    "explanation": "There are 8 valid seatings modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100000",
+   "Every person is different"
+  ],
+  "functionName": "countSeatingsNoCoupleAdjacent",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 240,
+    "isSample": false
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 13824,
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 1263360,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 510926052,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000
+    ],
+    "expected": 293884996,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Graphical Degree Sequence",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Math",
+   "Greedy"
+  ],
+  "companies": [
+   "Infosys",
+   "Amazon",
+   "Paytm"
+  ],
+  "description": "A list `deg` gives the desired degree of each of `n` vertices. Return `true` if there exists a simple undirected graph (no self-loops, no repeated edges) on `n` labelled vertices in which vertex `i` has exactly `deg[i]` neighbours.",
+  "examples": [
+   {
+    "input": "deg = [0]",
+    "output": "true",
+    "explanation": "A graph with these degrees exists: True."
+   },
+   {
+    "input": "deg = [1,1]",
+    "output": "true",
+    "explanation": "A graph with these degrees exists: True."
+   }
+  ],
+  "constraints": [
+   "1 <= deg.length <= 100000",
+   "0 <= deg[i] <= 100000"
+  ],
+  "functionName": "isGraphicalSequence",
+  "params": [
+   {
+    "name": "deg",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      1,
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      3,
+      2,
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Tournament Score Sequence",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Math",
+   "Sorting"
+  ],
+  "companies": [
+   "Adobe",
+   "Salesforce",
+   "Apple"
+  ],
+  "description": "In a round-robin tournament of `n` players every pair plays exactly one match, and each match has a winner (no draws). `scores[i]` is the number of matches won by player `i`. Return `true` if some set of match results produces exactly these win counts.",
+  "examples": [
+   {
+    "input": "scores = [0]",
+    "output": "true",
+    "explanation": "These scores are possible: True."
+   },
+   {
+    "input": "scores = [1,0]",
+    "output": "true",
+    "explanation": "These scores are possible: True."
+   }
+  ],
+  "constraints": [
+   "1 <= scores.length <= 100000",
+   "0 <= scores[i] <= 100000"
+  ],
+  "functionName": "isTournamentScores",
+  "params": [
+   {
+    "name": "scores",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      0,
+      0
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Binary Matrix From Row And Column Sums",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Matrix",
+   "Greedy"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Google",
+   "Amazon"
+  ],
+  "description": "Return `true` if there is a matrix with `rows.length` rows and `cols.length` columns, every entry `0` or `1`, in which row `i` sums to `rows[i]` and column `j` sums to `cols[j]`.",
+  "examples": [
+   {
+    "input": "rows = [1], cols = [1]",
+    "output": "true",
+    "explanation": "Such a matrix exists: True."
+   },
+   {
+    "input": "rows = [2], cols = [1]",
+    "output": "false",
+    "explanation": "Such a matrix exists: False."
+   }
+  ],
+  "constraints": [
+   "1 <= rows.length, cols.length <= 100000",
+   "0 <= rows[i], cols[j] <= 100000"
+  ],
+  "functionName": "binaryMatrixExists",
+  "params": [
+   {
+    "name": "rows",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ],
+     [
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     [
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      0
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      0
+     ],
+     [
+      1,
+      1,
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      2
+     ],
+     [
+      3,
+      3,
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Unpayable Amount With Three Coins",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Graph"
+  ],
+  "companies": [
+   "Oracle",
+   "Uber",
+   "Goldman Sachs"
+  ],
+  "description": "A shop has three coin values `a`, `b` and `c`, with an unlimited supply of each, and `gcd(a, b, c) = 1`. An amount is payable if it is a sum of coins (each value may be used any number of times, the amount `0` is payable). Return the largest amount that is not payable, or `-1` if every amount is payable.",
+  "examples": [
+   {
+    "input": "a = 1, b = 5, c = 7",
+    "output": "-1",
+    "explanation": "The largest unpayable amount is -1 (-1 means none)."
+   },
+   {
+    "input": "a = 3, b = 5, c = 7",
+    "output": "4",
+    "explanation": "The largest unpayable amount is 4 (-1 means none)."
+   }
+  ],
+  "constraints": [
+   "1 <= a, b, c <= 3000",
+   "gcd(a, b, c) = 1"
+  ],
+  "functionName": "largestUnpayableAmount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     5,
+     7
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     5,
+     7
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     6,
+     9
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     7,
+     11
+    ],
+    "expected": 13,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     15,
+     6
+    ],
+    "expected": 29,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     3,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2999,
+     3000,
+     2998
+    ],
+    "expected": 4494001,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Project Selection Max Profit",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Max Flow",
+   "Min Cut"
+  ],
+  "companies": [
+   "Apple",
+   "Salesforce",
+   "Adobe"
+  ],
+  "description": "There are `n` projects numbered `0..n-1`; project `i` yields `profit[i]` (which may be negative, a cost). `deps` lists requirements as flat pairs `(a, b)` meaning that if project `a` is chosen then project `b` must be chosen too (dependencies may form cycles). Choose a set of projects that respects every requirement and return the largest possible total profit (choosing nothing gives `0`).",
+  "examples": [
+   {
+    "input": "profit = [5], deps = []",
+    "output": "5",
+    "explanation": "The best total profit is 5."
+   },
+   {
+    "input": "profit = [-5], deps = []",
+    "output": "0",
+    "explanation": "The best total profit is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000 and deps.length is even with at most 5000 pairs",
+   "-1000000 <= profit[i] <= 1000000 and 0 <= a, b < n"
+  ],
+  "functionName": "maxProjectProfit",
+  "params": [
+   {
+    "name": "profit",
+    "type": "int[]"
+   },
+   {
+    "name": "deps",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5
+     ],
+     []
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -5
+     ],
+     []
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      -3
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      -6
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      -2,
+      -3,
+      6
+     ],
+     [
+      0,
+      1,
+      0,
+      2,
+      3,
+      2
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      -1,
+      3,
+      -1
+     ],
+     [
+      0,
+      1,
+      2,
+      3,
+      1,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      -4,
+      -4,
+      -4
+     ],
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Coupon Collector Expected Rolls",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Probability",
+   "Modular Arithmetic"
+  ],
+  "companies": [
+   "Oracle",
+   "Zoho"
+  ],
+  "description": "A fair die with `n` faces is rolled repeatedly until every face has appeared at least once. The expected number of rolls is a fraction `p / q` in lowest terms. Return `p * q^(-1)` modulo `1000000007` (where `q^(-1)` is the modular inverse of `q`).",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The expected rolls modulo 1000000007 is 1."
+   },
+   {
+    "input": "n = 2",
+    "output": "3",
+    "explanation": "The expected rolls modulo 1000000007 is 3."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "The denominator is not divisible by 1000000007"
+  ],
+  "functionName": "expectedRollsAllFaces",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 500000009,
+    "isSample": false
+   },
+   {
+    "args": [
+     6
+    ],
+    "expected": 900000021,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 289682571,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 274230659,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 269826812,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Gambler Ruin Win Probability",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Probability",
+   "Modular Arithmetic"
+  ],
+  "companies": [
+   "Netflix",
+   "Apple"
+  ],
+  "description": "A gambler starts with `i` coins and bets one coin per round. Each round is won with probability `pn / pd` (and lost otherwise); a win gives one coin, a loss takes one. The game stops when the gambler has `0` coins (ruin) or `N` coins (success). The probability of reaching `N` is a fraction `p / q` in lowest terms. Return `p * q^(-1)` modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "i = 1, N = 2, pn = 1, pd = 2",
+    "output": "500000004",
+    "explanation": "The success probability modulo 1000000007 is 500000004."
+   },
+   {
+    "input": "i = 2, N = 4, pn = 1, pd = 2",
+    "output": "500000004",
+    "explanation": "The success probability modulo 1000000007 is 500000004."
+   }
+  ],
+  "constraints": [
+   "0 <= i <= N <= 1000000000 and N >= 1",
+   "1 <= pn < pd <= 1000000 (so the win probability is strictly between 0 and 1) and the denominators involved are not divisible by 1000000007"
+  ],
+  "functionName": "gamblerSuccessProbability",
+  "params": [
+   {
+    "name": "i",
+    "type": "int"
+   },
+   {
+    "name": "N",
+    "type": "int"
+   },
+   {
+    "name": "pn",
+    "type": "int"
+   },
+   {
+    "name": "pd",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     2,
+     1,
+     2
+    ],
+    "expected": 500000004,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     4,
+     1,
+     2
+    ],
+    "expected": 500000004,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     3,
+     2,
+     3
+    ],
+    "expected": 571428576,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     5,
+     1,
+     3
+    ],
+    "expected": 903225813,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     5,
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5,
+     3,
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     500,
+     1000,
+     51,
+     100
+    ],
+    "expected": 245292013,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Expected Flips Until Pattern",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Probability",
+   "String"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian",
+   "Adobe"
+  ],
+  "description": "A fair coin is flipped repeatedly and the results are written as a string of `H` and `T`. Return the expected number of flips until the string `pattern` first appears as a block of consecutive flips. The expected value is always a whole number for these inputs.",
+  "examples": [
+   {
+    "input": "pattern = \"H\"",
+    "output": "2",
+    "explanation": "The expected number of flips is 2."
+   },
+   {
+    "input": "pattern = \"HT\"",
+    "output": "4",
+    "explanation": "The expected number of flips is 4."
+   }
+  ],
+  "constraints": [
+   "1 <= pattern.length <= 20",
+   "pattern consists of H and T"
+  ],
+  "functionName": "expectedFlipsUntilPattern",
+  "params": [
+   {
+    "name": "pattern",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "H"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "HT"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "HH"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "HTH"
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "TTT"
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     "HHTHH"
+    ],
+    "expected": 38,
+    "isSample": false
+   },
+   {
+    "args": [
+     "HTHTHTHTHTHTHTHTHTHT"
+    ],
+    "expected": 1398100,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Border Occurrence Total",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "KMP",
+   "Counting"
+  ],
+  "companies": [
+   "Zoho",
+   "TCS"
+  ],
+  "description": "A border of `s` is a non-empty proper prefix of `s` that is also a suffix of `s`. For every border, count how many times it occurs as a substring of `s` (occurrences may overlap). Return the sum of these counts over all borders, modulo `1000000007`; the answer is `0` when `s` has no border.",
+  "examples": [
+   {
+    "input": "s = \"a\"",
+    "output": "0",
+    "explanation": "The occurrences add up to 0 modulo 1000000007."
+   },
+   {
+    "input": "s = \"aa\"",
+    "output": "2",
+    "explanation": "The occurrences add up to 2 modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100000",
+   "s consists of lowercase letters"
+  ],
+  "functionName": "borderOccurrenceTotal",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abaabaaba"
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaaab"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Binary Strings With Given Runs And Ones",
+  "difficulty": "Hard",
+  "tags": [
+   "Combinatorics",
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "Walmart",
+   "Paytm"
+  ],
+  "description": "A run is a maximal block of equal consecutive characters. Count the binary strings of length `n` that contain exactly `k` ones and exactly `r` runs, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "n = 1, r = 1, k = 0",
+    "output": "1",
+    "explanation": "There are 1 such strings modulo 1000000007."
+   },
+   {
+    "input": "n = 1, r = 1, k = 1",
+    "output": "1",
+    "explanation": "There are 1 such strings modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "1 <= r <= n and 0 <= k <= n"
+  ],
+  "functionName": "countBinaryStringsRunsOnes",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1,
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     2,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     3,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     1,
+     6
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     4,
+     5
+    ],
+    "expected": 32,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     1000,
+     500000
+    ],
+    "expected": 580586594,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Grid Independent Set Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix Exponentiation",
+   "Dynamic Programming",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Bloomberg",
+   "LinkedIn"
+  ],
+  "description": "Every cell of an `R x C` grid is either chosen or not chosen. Two chosen cells must never share an edge (cells that touch only at a corner are fine). Return the number of ways to choose cells (the empty choice counts), modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "R = 1, C = 1",
+    "output": "2",
+    "explanation": "There are 2 valid choices modulo 1000000007."
+   },
+   {
+    "input": "R = 1, C = 5",
+    "output": "13",
+    "explanation": "There are 13 valid choices modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= R <= 6",
+   "1 <= C <= 1000000000"
+  ],
+  "functionName": "countGridIndependentSets",
+  "params": [
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     5
+    ],
+    "expected": 13,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     2
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     3
+    ],
+    "expected": 63,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     4
+    ],
+    "expected": 1234,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     1000000000
+    ],
+    "expected": 319645985,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     100
+    ],
+    "expected": 812547234,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Sequences With Exact GCD",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Mobius"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Salesforce"
+  ],
+  "description": "Count the sequences of length `k` whose elements are integers between `1` and `m` (repeats allowed, order matters) and whose greatest common divisor is exactly `g`. Return the count modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "m = 1, k = 1, g = 1",
+    "output": "1",
+    "explanation": "There are 1 such sequences modulo 1000000007."
+   },
+   {
+    "input": "m = 6, k = 2, g = 1",
+    "output": "23",
+    "explanation": "There are 23 such sequences modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= m <= 1000000 and 1 <= k <= 1000000000",
+   "1 <= g <= 1000000000"
+  ],
+  "functionName": "countSequencesWithGcd",
+  "params": [
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   },
+   {
+    "name": "g",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     6,
+     2,
+     1
+    ],
+    "expected": 23,
+    "isSample": true
+   },
+   {
+    "args": [
+     6,
+     2,
+     2
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     3,
+     1
+    ],
+    "expected": 841,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     3,
+     11
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     1,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     1000000000,
+     3
+    ],
+    "expected": 107118544,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Non-Attacking Kings Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Bit Manipulation",
+   "Combinatorics"
+  ],
+  "companies": [
+   "Apple",
+   "Goldman Sachs"
+  ],
+  "description": "On an `R x C` chessboard, place exactly `K` kings so that no two attack each other (no two kings may touch, not even diagonally). Return the number of different sets of squares, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "R = 1, C = 1, K = 1",
+    "output": "1",
+    "explanation": "There are 1 placements modulo 1000000007."
+   },
+   {
+    "input": "R = 2, C = 2, K = 1",
+    "output": "4",
+    "explanation": "There are 4 placements modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "1 <= R <= 50 and 1 <= C <= 8",
+   "0 <= K <= 100"
+  ],
+  "functionName": "countNonAttackingKings",
+  "params": [
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "K",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     2,
+     1
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     3,
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     4,
+     4
+    ],
+    "expected": 79,
+    "isSample": false
+   },
+   {
+    "args": [
+     8,
+     8,
+     16
+    ],
+    "expected": 281571,
+    "isSample": false
+   },
+   {
+    "args": [
+     50,
+     8,
+     40
+    ],
+    "expected": 327825564,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Minimum Dominating Set In Tree",
+  "difficulty": "Hard",
+  "tags": [
+   "Tree",
+   "Dynamic Programming",
+   "Greedy"
+  ],
+  "companies": [
+   "Apple",
+   "TCS"
+  ],
+  "description": "A tree has nodes `0..n-1` with `n = par.length + 1`; node `i + 1` is joined to its parent `par[i]` (with `par[i] <= i`). A set of nodes dominates the tree if every node is either in the set or adjacent to a node of the set. Return the smallest possible size of a dominating set.",
+  "examples": [
+   {
+    "input": "par = [0]",
+    "output": "1",
+    "explanation": "The smallest dominating set has 1 nodes."
+   },
+   {
+    "input": "par = [0,0]",
+    "output": "1",
+    "explanation": "The smallest dominating set has 1 nodes."
+   }
+  ],
+  "constraints": [
+   "1 <= par.length <= 100000",
+   "0 <= par[i] <= i"
+  ],
+  "functionName": "minDominatingSetTree",
+  "params": [
+   {
+    "name": "par",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ }
+]

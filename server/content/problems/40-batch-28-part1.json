@@ -1,0 +1,11811 @@
+[
+ {
+  "title": "Run Length Expand Text",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`s` is a compressed text made of pairs: a lowercase letter followed by a digit `1`-`9` telling how many times that letter is repeated. Return the full text.",
+  "examples": [
+   {
+    "input": "s = \"a3b2\"",
+    "output": "\"aaabb\"",
+    "explanation": "The expanded text is aaabb."
+   },
+   {
+    "input": "s = \"z1\"",
+    "output": "\"z\"",
+    "explanation": "The expanded text is z."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 200 and s.length is even",
+   "odd positions hold lowercase letters, even positions hold digits 1-9 (counting from 1)"
+  ],
+  "functionName": "runLengthExpandText",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "a3b2"
+    ],
+    "expected": "aaabb",
+    "isSample": true
+   },
+   {
+    "args": [
+     "z1"
+    ],
+    "expected": "z",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a1b1c1"
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "x9"
+    ],
+    "expected": "xxxxxxxxx",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a2a2"
+    ],
+    "expected": "aaaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "m5n1"
+    ],
+    "expected": "mmmmmn",
+    "isSample": false
+   },
+   {
+    "args": [
+     "q3w2e1"
+    ],
+    "expected": "qqqwwe",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Odd Even Slot Checksum",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Sorting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Take the values at even indices (`0, 2, 4, ...`) of `a` and put them back in those same slots in ascending order; take the values at odd indices and put them back in those slots in descending order. Return `1*b1 + 2*b2 + ...` where `b` is the resulting array.",
+  "examples": [
+   {
+    "input": "a = [5,3,1,4,2]",
+    "output": "52",
+    "explanation": "The checksum is 52."
+   },
+   {
+    "input": "a = [7]",
+    "output": "7",
+    "explanation": "The checksum is 7."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "-1000 <= a[i] <= 1000"
+  ],
+  "functionName": "oddEvenSlotChecksum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      3,
+      1,
+      4,
+      2
+     ]
+    ],
+    "expected": 52,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      8,
+      2,
+      7,
+      3
+     ]
+    ],
+    "expected": 96,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3,
+      -4
+     ]
+    ],
+    "expected": -26,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      9,
+      3,
+      8,
+      2,
+      7,
+      1
+     ]
+    ],
+    "expected": 142,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Spreadsheet Column Label",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Spreadsheet columns are labelled `A, B, ..., Z, AA, AB, ..., AZ, BA, ...`. Return the label of column number `n` (counting from `1`).",
+  "examples": [
+   {
+    "input": "n = 28",
+    "output": "\"AB\"",
+    "explanation": "The label is AB."
+   },
+   {
+    "input": "n = 1",
+    "output": "\"A\"",
+    "explanation": "The label is A."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "spreadsheetColumnLabel",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     28
+    ],
+    "expected": "AB",
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": "A",
+    "isSample": true
+   },
+   {
+    "args": [
+     26
+    ],
+    "expected": "Z",
+    "isSample": false
+   },
+   {
+    "args": [
+     27
+    ],
+    "expected": "AA",
+    "isSample": false
+   },
+   {
+    "args": [
+     52
+    ],
+    "expected": "AZ",
+    "isSample": false
+   },
+   {
+    "args": [
+     703
+    ],
+    "expected": "AAA",
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": "CFDGSXL",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse Letters Keep Others",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Reverse the order of the letters in `s` but leave every other character (digits, spaces, `-`, `.`, `,`) in its original position. Return the result.",
+  "examples": [
+   {
+    "input": "s = \"ab-cd\"",
+    "output": "\"dc-ba\"",
+    "explanation": "The result is dc-ba."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "\"a\"",
+    "explanation": "The result is a."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase and uppercase letters, digits, spaces and the characters - . ,"
+  ],
+  "functionName": "reverseLettersKeepOthers",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "ab-cd"
+    ],
+    "expected": "dc-ba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a1b2"
+    ],
+    "expected": "b1a2",
+    "isSample": false
+   },
+   {
+    "args": [
+     "Test1ng-Leet-code-Q."
+    ],
+    "expected": "Qedo1ct-eeLg-ntse-T.",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c"
+    ],
+    "expected": "c b a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "7-x.y"
+    ],
+    "expected": "7-y.x",
+    "isSample": false
+   },
+   {
+    "args": [
+     "Abc,De"
+    ],
+    "expected": "eDc,bA",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Sentence Word Order Reverse",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`s` is a sentence of words separated by single spaces. Return the sentence with the order of the words reversed (the letters inside each word keep their order).",
+  "examples": [
+   {
+    "input": "s = \"the sky is blue\"",
+    "output": "\"blue is sky the\"",
+    "explanation": "The reversed sentence is blue is sky the."
+   },
+   {
+    "input": "s = \"hello\"",
+    "output": "\"hello\"",
+    "explanation": "The reversed sentence is hello."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase words separated by single spaces, with no leading or trailing space"
+  ],
+  "functionName": "sentenceWordOrderReverse",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "the sky is blue"
+    ],
+    "expected": "blue is sky the",
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": "hello",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b"
+    ],
+    "expected": "b a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "one two three four"
+    ],
+    "expected": "four three two one",
+    "isSample": false
+   },
+   {
+    "args": [
+     "x y x"
+    ],
+    "expected": "x y x",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc def"
+    ],
+    "expected": "def abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zz"
+    ],
+    "expected": "zz",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Repeated Value Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return how many different values appear at least twice in `a`.",
+  "examples": [
+   {
+    "input": "a = [1,2,1,3,3,3]",
+    "output": "2",
+    "explanation": "2 values repeat."
+   },
+   {
+    "input": "a = [5]",
+    "output": "0",
+    "explanation": "0 values repeat."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "-1000 <= a[i] <= 1000"
+  ],
+  "functionName": "repeatedValueCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      -1,
+      0,
+      -1,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Binary Digit Numbers",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Greedy",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Call a positive integer a binary-digit number if every digit in its decimal form is `0` or `1` (such as `1`, `10`, `11`, `101`). Return the fewest binary-digit numbers (repeats allowed) whose sum is exactly `n`.",
+  "examples": [
+   {
+    "input": "n = 32",
+    "output": "3",
+    "explanation": "The fewest count is 3."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The fewest count is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "fewestBinaryDigitNumbers",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     32
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     111
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000000000000
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     987654321
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Generation Member Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Tree",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A family tree has members `0..n-1` with `n = par.length + 1`; member `i + 1` is a child of member `par[i]` (with `par[i] <= i`), and member `0` is the founder (generation `0`, their children are generation `1`, and so on). Return how many members belong to generation `L`.",
+  "examples": [
+   {
+    "input": "par = [0,0,1,1], L = 2",
+    "output": "2",
+    "explanation": "2 members are in that generation."
+   },
+   {
+    "input": "par = [], L = 0",
+    "output": "1",
+    "explanation": "1 members are in that generation."
+   }
+  ],
+  "constraints": [
+   "0 <= par.length <= 1000 and 0 <= L <= 1000",
+   "0 <= par[i] <= i"
+  ],
+  "functionName": "generationMemberCount",
+  "params": [
+   {
+    "name": "par",
+    "type": "int[]"
+   },
+   {
+    "name": "L",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Diamond Row Width",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Pattern",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A diamond of stars has `2n - 1` rows: row `1` has one star, each next row has two more stars until the middle row `n`, and then the rows shrink back to one star. Return the number of stars in row `r` (rows counted from `1`).",
+  "examples": [
+   {
+    "input": "n = 3, r = 1",
+    "output": "1",
+    "explanation": "The row has 1 stars."
+   },
+   {
+    "input": "n = 1, r = 1",
+    "output": "1",
+    "explanation": "The row has 1 stars."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000 and 1 <= r <= 2 * n - 1",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "diamondRowWidth",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     6
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     4
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     1999999
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Merged Unique Length",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Two Pointers",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`a` and `b` are both sorted in non-decreasing order. Return how many different values appear in `a` and `b` together.",
+  "examples": [
+   {
+    "input": "a = [1,3,5], b = [2,3,6]",
+    "output": "5",
+    "explanation": "5 different values appear."
+   },
+   {
+    "input": "a = [1], b = [1]",
+    "output": "1",
+    "explanation": "1 different values appear."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 1000",
+   "-1000 <= a[i], b[i] <= 1000, both arrays sorted"
+  ],
+  "functionName": "mergedUniqueLength",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "b",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      5
+     ],
+     [
+      2,
+      3,
+      6
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      0
+     ],
+     [
+      0,
+      5
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6
+     ],
+     [
+      1,
+      3,
+      5,
+      7
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9
+     ],
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pattern Occurrence Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return how many positions of `s` start an occurrence of `p` (occurrences may overlap).",
+  "examples": [
+   {
+    "input": "s = \"aaaa\", p = \"aa\"",
+    "output": "3",
+    "explanation": "The pattern occurs 3 times."
+   },
+   {
+    "input": "s = \"a\", p = \"a\"",
+    "output": "1",
+    "explanation": "The pattern occurs 1 times."
+   }
+  ],
+  "constraints": [
+   "1 <= p.length <= s.length <= 1000",
+   "s and p have only lowercase letters"
+  ],
+  "functionName": "patternOccurrenceCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "p",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aaaa",
+     "aa"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "d"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ababab",
+     "abab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello",
+     "l"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     "abc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa",
+     "aaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Spreadsheet Label To Number",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Spreadsheet columns are labelled `A, B, ..., Z, AA, AB, ...`. Return the column number (counting from `1`) of the label `s`.",
+  "examples": [
+   {
+    "input": "s = \"AB\"",
+    "output": "28",
+    "explanation": "The column number is 28."
+   },
+   {
+    "input": "s = \"A\"",
+    "output": "1",
+    "explanation": "The column number is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 6",
+   "s has only uppercase letters A-Z"
+  ],
+  "functionName": "spreadsheetLabelToNumber",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "AB"
+    ],
+    "expected": 28,
+    "isSample": true
+   },
+   {
+    "args": [
+     "A"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "Z"
+    ],
+    "expected": 26,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AA"
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ZY"
+    ],
+    "expected": 701,
+    "isSample": false
+   },
+   {
+    "args": [
+     "XFD"
+    ],
+    "expected": 16384,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AAA"
+    ],
+    "expected": 703,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Right Leaders Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "An element is a right leader if it is strictly greater than every element to its right (the last element is always a right leader). Return the number of right leaders in `a`.",
+  "examples": [
+   {
+    "input": "a = [16,17,4,3,5,2]",
+    "output": "3",
+    "explanation": "There are 3 right leaders."
+   },
+   {
+    "input": "a = [5]",
+    "output": "1",
+    "explanation": "There are 1 right leaders."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "-1000 <= a[i] <= 1000"
+  ],
+  "functionName": "rightLeadersCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      16,
+      17,
+      4,
+      3,
+      5,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      9,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -5,
+      -3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Frequent Values Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return how many different values of `a` occur as often as the most frequent value does (the most frequent value itself is included).",
+  "examples": [
+   {
+    "input": "a = [1,1,2,2,3]",
+    "output": "2",
+    "explanation": "2 values tie for the highest frequency."
+   },
+   {
+    "input": "a = [5]",
+    "output": "1",
+    "explanation": "1 values tie for the highest frequency."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "-1000 <= a[i] <= 1000"
+  ],
+  "functionName": "mostFrequentValuesCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      4
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Typed Texts Equal With Backspace",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Stack",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Two texts are typed on a keyboard where the `#` key deletes the previous character (and does nothing on an empty text). Return `true` if `s` and `t` end up as the same text.",
+  "examples": [
+   {
+    "input": "s = \"ab#c\", t = \"ad#c\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"a\", t = \"a\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length, t.length <= 1000",
+   "s and t have lowercase letters and #"
+  ],
+  "functionName": "typedTextsEqual",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "ab#c",
+     "ad#c"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a#c",
+     "b"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab##",
+     "c#d#"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a##c",
+     "#a#c"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abd"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "###",
+     "#"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Sentence Word Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Parsing",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "`s` is a paragraph of lowercase words separated by single spaces. Sentences end with `.`, `!` or `?`. Return the number of words in the sentence with the most words.",
+  "examples": [
+   {
+    "input": "s = \"this is one. short! is it a question?\"",
+    "output": "4",
+    "explanation": "The longest sentence has 4 words."
+   },
+   {
+    "input": "s = \"hello\"",
+    "output": "1",
+    "explanation": "The longest sentence has 1 words."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters, spaces and sentence terminators . ! ?; it contains at least one word"
+  ],
+  "functionName": "longestSentenceWordCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "this is one. short! is it a question?"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b c."
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a. b c. d e f."
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "go! go! go?"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "one two. three"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x y z w!"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Elements Without Multiple Partner",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return how many elements `x` of `a` have no element equal to `x * k` anywhere in `a`.",
+  "examples": [
+   {
+    "input": "a = [1,2,4,8], k = 2",
+    "output": "1",
+    "explanation": "1 elements have no partner."
+   },
+   {
+    "input": "a = [5], k = 2",
+    "output": "1",
+    "explanation": "1 elements have no partner."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000 and 2 <= k <= 1000",
+   "1 <= a[i] <= 1000000"
+  ],
+  "functionName": "elementsWithoutPartner",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      4,
+      8
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      6
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      9,
+      27
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      2
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      20,
+      40,
+      5
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Missing Letter Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return how many of the 26 letters of the English alphabet do not appear in `s`, ignoring case.",
+  "examples": [
+   {
+    "input": "s = \"The quick brown fox\"",
+    "output": "11",
+    "explanation": "11 letters are missing."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "25",
+    "explanation": "25 letters are missing."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has letters (both cases), digits and spaces"
+  ],
+  "functionName": "missingLetterCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "The quick brown fox"
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 25,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcdefghijklmnopqrstuvwxyz"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AaBb"
+    ],
+    "expected": 24,
+    "isSample": false
+   },
+   {
+    "args": [
+     "123 456"
+    ],
+    "expected": 26,
+    "isSample": false
+   },
+   {
+    "args": [
+     "Hello World"
+    ],
+    "expected": 19,
+    "isSample": false
+   },
+   {
+    "args": [
+     "Pack my box with five dozen liquor jugs"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Twin Prime Pairs Upto N",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "A twin prime pair is two primes that differ by `2`, such as `(3, 5)`. Return how many twin prime pairs `(p, p + 2)` have both numbers at most `n`.",
+  "examples": [
+   {
+    "input": "n = 20",
+    "output": "4",
+    "explanation": "There are 4 twin prime pairs."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "There are 0 twin prime pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "twinPrimePairsUpto",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     20
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 35,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000
+    ],
+    "expected": 1224,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fibonacci Even Sum Upto N",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Consider the Fibonacci terms `1, 2, 3, 5, 8, 13, ...` (each term is the sum of the previous two). Return the sum of the even terms that are at most `n`.",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "10",
+    "explanation": "The sum is 10."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The sum is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "fibonacciEvenSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     8
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 44,
+    "isSample": false
+   },
+   {
+    "args": [
+     4000000
+    ],
+    "expected": 4613732,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000000000000
+    ],
+    "expected": 889989708002357094,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Strong Number Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "A number is strong if it equals the sum of the factorials of its digits (for example `145 = 1! + 4! + 5!`). Return `true` if `n` is strong.",
+  "examples": [
+   {
+    "input": "n = 145",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 1",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "isStrongNumber",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     145
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     40585
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     123
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999999
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Automorphic Number Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "A number is automorphic if its square ends with the number itself (`25 * 25 = 625` ends with `25`). Return `true` if `n` is automorphic.",
+  "examples": [
+   {
+    "input": "n = 25",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 0",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "isAutomorphicNumber",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     25
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     6
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     76
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindromic Number Count In Range",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return how many integers from `l` to `r` (both included) read the same forwards and backwards in decimal.",
+  "examples": [
+   {
+    "input": "l = 1, r = 20",
+    "output": "10",
+    "explanation": "10 numbers are palindromes."
+   },
+   {
+    "input": "l = 1, r = 1",
+    "output": "1",
+    "explanation": "1 numbers are palindromes."
+   }
+  ],
+  "constraints": [
+   "1 <= l <= r <= 100000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "palindromicNumberCount",
+  "params": [
+   {
+    "name": "l",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     20
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     10,
+     10
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     100,
+     200
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     100000
+    ],
+    "expected": 1098,
+    "isSample": false
+   },
+   {
+    "args": [
+     12,
+     12
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     99,
+     101
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Alternating Series Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return the sum of the first `n` terms of the series `1 - 2 + 3 - 4 + 5 - ...`.",
+  "examples": [
+   {
+    "input": "n = 5",
+    "output": "3",
+    "explanation": "The sum is 3."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The sum is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "alternatingSeriesSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     5
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": -2,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": -5,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999999
+    ],
+    "expected": 500000000,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": -500000000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "First Non-Repeating Letter Index",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return the index of the first letter of `s` that occurs exactly once in `s`, or `-1` if there is none.",
+  "examples": [
+   {
+    "input": "s = \"leetcode\"",
+    "output": "0",
+    "explanation": "The index is 0."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "0",
+    "explanation": "The index is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has only lowercase letters"
+  ],
+  "functionName": "firstNonRepeatingIndex",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "leetcode"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "loveleetcode"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbc"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzy"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Values Appearing Once Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return how many values appear exactly once in `a`.",
+  "examples": [
+   {
+    "input": "a = [1,2,2,3]",
+    "output": "2",
+    "explanation": "2 values appear once."
+   },
+   {
+    "input": "a = [5]",
+    "output": "1",
+    "explanation": "1 values appear once."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "-1000 <= a[i] <= 1000"
+  ],
+  "functionName": "onceValuesCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      5,
+      5,
+      6
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      8,
+      7,
+      9,
+      8
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Best Contiguous Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Dynamic Programming",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return the largest sum of a non-empty contiguous part of `a`.",
+  "examples": [
+   {
+    "input": "a = [-2,1,-3,4,-1,2,1,-5,4]",
+    "output": "6",
+    "explanation": "The best sum is 6."
+   },
+   {
+    "input": "a = [-1]",
+    "output": "-1",
+    "explanation": "The best sum is -1."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "-1000 <= a[i] <= 1000"
+  ],
+  "functionName": "bestContiguousSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      -2,
+      1,
+      -3,
+      4,
+      -1,
+      2,
+      1,
+      -5,
+      4
+     ]
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -1
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      -2,
+      -1
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      -5,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      4,
+      -1,
+      4
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "First Index In Sorted",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Binary Search",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "`a` is sorted in non-decreasing order. Return the smallest index at which `t` occurs in `a`, or `-1` if `t` does not occur.",
+  "examples": [
+   {
+    "input": "a = [1,2,2,3], t = 2",
+    "output": "1",
+    "explanation": "The first index is 1."
+   },
+   {
+    "input": "a = [5], t = 5",
+    "output": "0",
+    "explanation": "The first index is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000 and a is sorted",
+   "-1000 <= a[i], t <= 1000"
+  ],
+  "functionName": "firstIndexInSorted",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "t",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     4
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      5
+     ],
+     6
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      -3,
+      0,
+      4
+     ],
+     -3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6,
+      8
+     ],
+     8
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Daily Steps Target",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "You need `goal` steps in total and have already walked `done` steps. Return the smallest whole number of steps you must walk on each of the remaining `days` days (the same number every day) to reach the goal. Return `0` if the goal is already reached.",
+  "examples": [
+   {
+    "input": "goal = 10000, done = 4000, days = 3",
+    "output": "2000",
+    "explanation": "You need 2000 steps per day."
+   },
+   {
+    "input": "goal = 5, done = 5, days = 1",
+    "output": "0",
+    "explanation": "You need 0 steps per day."
+   }
+  ],
+  "constraints": [
+   "0 <= goal, done <= 1000000000 and 1 <= days <= 1000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "dailyStepsTarget",
+  "params": [
+   {
+    "name": "goal",
+    "type": "int"
+   },
+   {
+    "name": "done",
+    "type": "int"
+   },
+   {
+    "name": "days",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10000,
+     4000,
+     3
+    ],
+    "expected": 2000,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     5,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     9,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     0,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     0,
+     1000000
+    ],
+    "expected": 1000,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     3,
+     7
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     0,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Octal To Binary Text",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "`s` is a number written in octal (digits `0`-`7`). Return the same number written in binary, without leading zeros (`0` stays `0`).",
+  "examples": [
+   {
+    "input": "s = \"17\"",
+    "output": "\"1111\"",
+    "explanation": "The binary form is 1111."
+   },
+   {
+    "input": "s = \"0\"",
+    "output": "\"0\"",
+    "explanation": "The binary form is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 60",
+   "s has only the digits 0-7"
+  ],
+  "functionName": "octalToBinaryText",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "17"
+    ],
+    "expected": "1111",
+    "isSample": true
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": "0",
+    "isSample": true
+   },
+   {
+    "args": [
+     "7"
+    ],
+    "expected": "111",
+    "isSample": false
+   },
+   {
+    "args": [
+     "10"
+    ],
+    "expected": "1000",
+    "isSample": false
+   },
+   {
+    "args": [
+     "777"
+    ],
+    "expected": "111111111",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1234567"
+    ],
+    "expected": "1010011100101110111",
+    "isSample": false
+   },
+   {
+    "args": [
+     "00"
+    ],
+    "expected": "0",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Hanoi Total Moves",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Recursion",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "In the Tower of Hanoi with `n` disks, return the smallest number of moves needed to transfer the whole tower to another rod, one disk at a time, never putting a larger disk on a smaller one.",
+  "examples": [
+   {
+    "input": "n = 3",
+    "output": "7",
+    "explanation": "The smallest number of moves is 7."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The smallest number of moves is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 60",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "hanoiTotalMoves",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 1023,
+    "isSample": false
+   },
+   {
+    "args": [
+     20
+    ],
+    "expected": 1048575,
+    "isSample": false
+   },
+   {
+    "args": [
+     60
+    ],
+    "expected": 1152921504606846975,
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 31,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Factorial Modulo",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Modular Arithmetic",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return `n!` (the product `1 * 2 * ... * n`, with `0! = 1`) modulo `m`.",
+  "examples": [
+   {
+    "input": "n = 5, m = 7",
+    "output": "1",
+    "explanation": "The result is 1."
+   },
+   {
+    "input": "n = 0, m = 5",
+    "output": "1",
+    "explanation": "The result is 1."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 1000000 and 1 <= m <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "factorialModulo",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     5,
+     7
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     0,
+     5
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     1000
+    ],
+    "expected": 800,
+    "isSample": false
+   },
+   {
+    "args": [
+     20,
+     1000000000
+    ],
+    "expected": 176640000,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     6
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     999999937
+    ],
+    "expected": 286787927,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Range AND Value",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return the bitwise AND of all integers from `l` to `r`, both included.",
+  "examples": [
+   {
+    "input": "l = 5, r = 7",
+    "output": "4",
+    "explanation": "The AND of the range is 4."
+   },
+   {
+    "input": "l = 0, r = 0",
+    "output": "0",
+    "explanation": "The AND of the range is 0."
+   }
+  ],
+  "constraints": [
+   "0 <= l <= r <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "rangeAndValue",
+  "params": [
+   {
+    "name": "l",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     5,
+     7
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     0,
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     12,
+     15
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     1000000000
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999990,
+     1000000000
+    ],
+    "expected": 999999488,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Next Power Of Two Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation",
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "For every element, find the smallest power of two (`1, 2, 4, 8, ...`) that is at least as large as it. Return the sum of these powers.",
+  "examples": [
+   {
+    "input": "a = [5,8,17]",
+    "output": "48",
+    "explanation": "The sum is 48."
+   },
+   {
+    "input": "a = [1]",
+    "output": "1",
+    "explanation": "The sum is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 1000",
+   "1 <= a[i] <= 1000000000"
+  ],
+  "functionName": "nextPowerOfTwoSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      8,
+      17
+     ]
+    ],
+    "expected": 48,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1000000000
+     ]
+    ],
+    "expected": 1073741824,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4
+     ]
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      7,
+      9,
+      15
+     ]
+    ],
+    "expected": 48,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Add Reversed Digit Lists",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Simulation",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Two non-negative numbers are stored as lists of decimal digits with the least significant digit first (`[3, 4, 2]` is `243`). Return their sum as a normal decimal string.",
+  "examples": [
+   {
+    "input": "a = [2,4,3], b = [5,6,4]",
+    "output": "\"807\"",
+    "explanation": "The sum is 807."
+   },
+   {
+    "input": "a = [0], b = [0]",
+    "output": "\"0\"",
+    "explanation": "The sum is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 1000",
+   "every digit is 0-9 (leading zeros are allowed)"
+  ],
+  "functionName": "addReversedDigitLists",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "b",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      4,
+      3
+     ],
+     [
+      5,
+      6,
+      4
+     ]
+    ],
+    "expected": "807",
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     [
+      0
+     ]
+    ],
+    "expected": "0",
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      9,
+      9,
+      9
+     ],
+     [
+      1
+     ]
+    ],
+    "expected": "1000",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     [
+      5
+     ]
+    ],
+    "expected": "10",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     [
+      9
+     ]
+    ],
+    "expected": "1010",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     [
+      0
+     ]
+    ],
+    "expected": "0",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      9
+     ],
+     [
+      9,
+      9
+     ]
+    ],
+    "expected": "198",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Path With Keys",
+  "difficulty": "Hard",
+  "tags": [
+   "BFS",
+   "Bitmask",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`s` is a grid whose rows are separated by single spaces. `@` is the start, `.` is a free cell, `#` is a wall, a lowercase letter `a..f` is a key (each key appears at most once) and an uppercase letter `A..F` is a lock that can be entered only after the matching key has been picked up. You move one cell up, down, left or right per step, and stepping on a key picks it up. Return the fewest steps needed to pick up every key in the grid (`0` if there are none), or `-1` if that is impossible.",
+  "examples": [
+   {
+    "input": "s = \"@.a.# #.#.. ..A.b\"",
+    "output": "6",
+    "explanation": "The fewest steps are 6."
+   },
+   {
+    "input": "s = \"@\"",
+    "output": "0",
+    "explanation": "The fewest steps are 0."
+   }
+  ],
+  "constraints": [
+   "1 <= rows, columns <= 30 and rows have equal length",
+   "exactly one `@`; characters are from `@.#a-fA-F`; each lowercase letter appears at most once"
+  ],
+  "functionName": "shortestPathWithKeys",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "@.a.# #.#.. ..A.b"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "@"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "@a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "@A .a"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "@.#a"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "@.b A.a"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a.@ #B# b.A"
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Word Search Path Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Backtracking",
+   "DFS",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`s` is a letter grid whose rows are separated by single spaces. A path spells `w` if it visits `w.length` cells where each next cell is the neighbour (up, down, left or right) of the previous one, no cell is used twice and the letters read, in order, equal `w`. Return the number of different paths that spell `w`.",
+  "examples": [
+   {
+    "input": "s = \"aba bab aba\", w = \"abab\"",
+    "output": "40",
+    "explanation": "There are 40 paths."
+   },
+   {
+    "input": "s = \"a\", w = \"a\"",
+    "output": "1",
+    "explanation": "There are 1 paths."
+   }
+  ],
+  "constraints": [
+   "1 <= rows, columns <= 6 and rows have equal length",
+   "1 <= w.length <= 10; only lowercase letters"
+  ],
+  "functionName": "wordSearchPathCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "w",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aba bab aba",
+     "abab"
+    ],
+    "expected": 40,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa aa",
+     "aaa"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba",
+     "ab"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "cba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa aaa aaa",
+     "aaaa"
+    ],
+    "expected": 80,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Block After Column Reorder",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "Sorting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A table with `cols` columns holds `0`s and `1`s row by row in `g`. You may rearrange the columns in any order (whole columns move together). Return the area of the largest rectangle made only of `1`s that can be obtained.",
+  "examples": [
+   {
+    "input": "g = [0,0,1,1,0,1,1,0,1], cols = 3",
+    "output": "4",
+    "explanation": "The largest area is 4."
+   },
+   {
+    "input": "g = [1], cols = 1",
+    "output": "1",
+    "explanation": "The largest area is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= cols and 1 <= g.length <= 1000000 and g.length is a multiple of cols",
+   "g[i] is 0 or 1"
+  ],
+  "functionName": "largestBlockColumnReorder",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Kth Smallest Row Pick Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Heap",
+   "Matrix",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A table with `cols` columns is stored row by row in `g`. Choose exactly one element from every row and add them up. Over all possible choices (choices that use different columns count separately, even when the sums are equal), return the `k`-th smallest sum, counting from `1`.",
+  "examples": [
+   {
+    "input": "g = [1,3,11,2,4,6], cols = 3, k = 5",
+    "output": "7",
+    "explanation": "The k-th smallest sum is 7."
+   },
+   {
+    "input": "g = [5], cols = 1, k = 1",
+    "output": "5",
+    "explanation": "The k-th smallest sum is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= cols <= 40, 1 <= rows <= 40 and g.length = rows * cols",
+   "1 <= g[i] <= 5000 and 1 <= k <= min(200, cols^rows)"
+  ],
+  "functionName": "kthSmallestRowPickSum",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      11,
+      2,
+      4,
+      6
+     ],
+     3,
+     5
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     2,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2,
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      5,
+      1,
+      9
+     ],
+     2,
+     3
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     3,
+     9
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      2
+     ],
+     3,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Profit With Cooldown And Fee",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "State Machine",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`p[i]` is a share price on day `i`. You may hold at most one share. Buying costs `p[i]`; selling returns `p[i]` but also costs a fixed `fee` per sale. After a sale you must rest for the whole next day (no buying on the day right after a sale). You can trade as often as you like. Return the greatest total profit (`0` if you never trade).",
+  "examples": [
+   {
+    "input": "p = [1,3,2,8,4,9], fee = 2",
+    "output": "6",
+    "explanation": "The best profit is 6."
+   },
+   {
+    "input": "p = [5], fee = 0",
+    "output": "0",
+    "explanation": "The best profit is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= p.length <= 100000",
+   "1 <= p[i] <= 100000 and 0 <= fee <= 100000"
+  ],
+  "functionName": "profitCooldownFee",
+  "params": [
+   {
+    "name": "p",
+    "type": "int[]"
+   },
+   {
+    "name": "fee",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      8,
+      4,
+      9
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      2
+     ],
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      1,
+      3,
+      2,
+      4,
+      7
+     ],
+     1
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      4,
+      5,
+      2,
+      9,
+      7
+     ],
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Snake And Ladder Fewest Throws",
+  "difficulty": "Hard",
+  "tags": [
+   "BFS",
+   "Graph",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A board has cells `1..n`. You start on cell `1` and each throw of a die moves you forward by `1` to `6` cells; a throw that would go beyond cell `n` is not allowed. `j` lists snakes and ladders as flat pairs `(from, to)`: if you land on cell `from` you are immediately moved to cell `to` (a jump never leads onto another jump cell). Return the fewest throws needed to stand on cell `n`, or `-1` if it cannot be done.",
+  "examples": [
+   {
+    "input": "n = 30, j = [3,22,5,8,11,26,20,29,17,4,19,7,27,1,21,9]",
+    "output": "3",
+    "explanation": "The fewest throws are 3."
+   },
+   {
+    "input": "n = 2, j = []",
+    "output": "1",
+    "explanation": "The fewest throws are 1."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 100000 and j.length is even, at most 200000",
+   "each `from` is in 2..n-1 and appears once; each `to` is in 1..n and is not a `from` cell"
+  ],
+  "functionName": "snakeLadderFewestThrows",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "j",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     30,
+     [
+      3,
+      22,
+      5,
+      8,
+      11,
+      26,
+      20,
+      29,
+      17,
+      4,
+      19,
+      7,
+      27,
+      1,
+      21,
+      9
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     []
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     7,
+     []
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     13,
+     []
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     8,
+     [
+      7,
+      1,
+      6,
+      1,
+      5,
+      1,
+      4,
+      1,
+      3,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     30,
+     []
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     12,
+     [
+      2,
+      10
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Insertions To Palindrome",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "You may insert letters anywhere in `s`. Return the fewest insertions that turn `s` into a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"zzazz\"",
+    "output": "0",
+    "explanation": "0 insertions are needed."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "0",
+    "explanation": "0 insertions are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 2000",
+   "s has only lowercase letters"
+  ],
+  "functionName": "fewestInsertionsPalindrome",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "zzazz"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mbadm"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "leetcode"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Bitonic Subsequence",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return the length of the longest subsequence of `a` that first strictly increases and then strictly decreases. The increasing part or the decreasing part may be empty, so a strictly increasing subsequence, a strictly decreasing one, or a single element also qualifies.",
+  "examples": [
+   {
+    "input": "a = [1,11,2,10,4,5,2,1]",
+    "output": "6",
+    "explanation": "The longest length is 6."
+   },
+   {
+    "input": "a = [5]",
+    "output": "1",
+    "explanation": "The longest length is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 2000",
+   "-1000000000 <= a[i] <= 1000000000"
+  ],
+  "functionName": "longestBitonicSubsequence",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      11,
+      2,
+      10,
+      4,
+      5,
+      2,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      3,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      8,
+      4,
+      12,
+      2,
+      10,
+      6,
+      14,
+      1,
+      9
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximin Grid Path",
+  "difficulty": "Hard",
+  "tags": [
+   "Heap",
+   "Graph",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A table with `cols` columns is stored row by row in `g`. Walk from the top-left cell to the bottom-right cell, moving one cell up, down, left or right at a time. The score of a walk is the smallest value among all cells it visits (both end cells included). Return the largest score any walk can have.",
+  "examples": [
+   {
+    "input": "g = [5,4,5,1,2,6,7,4,6], cols = 3",
+    "output": "4",
+    "explanation": "The best score is 4."
+   },
+   {
+    "input": "g = [7], cols = 1",
+    "output": "7",
+    "explanation": "The best score is 7."
+   }
+  ],
+  "constraints": [
+   "1 <= cols and 1 <= g.length <= 1000000 and g.length is a multiple of cols",
+   "0 <= g[i] <= 1000000000"
+  ],
+  "functionName": "maximinGridPath",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      4,
+      5,
+      1,
+      2,
+      6,
+      7,
+      4,
+      6
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     1
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      0,
+      9,
+      9,
+      0,
+      9,
+      9,
+      9,
+      9
+     ],
+     3
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3,
+      3
+     ],
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      9,
+      9,
+      9
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      1,
+      1,
+      4,
+      4,
+      4
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Island Count After Additions Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Union Find",
+   "Matrix",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A `R x C` map starts as all water. `ops` lists cells as flat pairs `(row, col)`; for each pair, in order, that cell becomes land (a cell that already is land stays land). After every operation count the islands, where an island is a group of land cells linked by up, down, left or right neighbours. Return the sum of these counts over all operations, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "R = 3, C = 3, ops = [0,0,0,1,1,2,2,2,1,1]",
+    "output": "7",
+    "explanation": "The total is 7."
+   },
+   {
+    "input": "R = 1, C = 1, ops = [0,0]",
+    "output": "1",
+    "explanation": "The total is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 100000 and 2 <= ops.length <= 200000, ops.length is even",
+   "0 <= row < R and 0 <= col < C"
+  ],
+  "functionName": "islandCountAdditionsSum",
+  "params": [
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     3,
+     [
+      0,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     3,
+     [
+      0,
+      0,
+      0,
+      2,
+      0,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     2,
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     2,
+     [
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5,
+     [
+      0,
+      0,
+      4,
+      4,
+      2,
+      2
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     5,
+     [
+      0,
+      1,
+      0,
+      3,
+      0,
+      2,
+      0,
+      0,
+      0,
+      4
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Non-Decreasing Digit Numbers Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Digit DP",
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Count the integers `x` with `1 <= x <= n` whose decimal digits never decrease from left to right (for example `1223` and `7`, but not `1320`).",
+  "examples": [
+   {
+    "input": "n = 20",
+    "output": "18",
+    "explanation": "There are 18 such numbers."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "There are 1 such numbers."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "nonDecreasingDigitCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     20
+    ],
+    "expected": 18,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 54,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 5004,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000000000000
+    ],
+    "expected": 4686824,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Two Non-Overlapping Windows Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Sliding Window",
+   "Dynamic Programming",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Choose one block of exactly `L` consecutive elements and one block of exactly `M` consecutive elements from `a` so that the blocks do not share any position (either block may come first). Return the largest possible total of the two blocks.",
+  "examples": [
+   {
+    "input": "a = [0,6,5,2,2,5,1,9,4], L = 1, M = 2",
+    "output": "20",
+    "explanation": "The best total is 20."
+   },
+   {
+    "input": "a = [1,1], L = 1, M = 1",
+    "output": "2",
+    "explanation": "The best total is 2."
+   }
+  ],
+  "constraints": [
+   "1 <= L, M and L + M <= a.length <= 100000",
+   "0 <= a[i] <= 1000"
+  ],
+  "functionName": "twoWindowsMaxSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "L",
+    "type": "int"
+   },
+   {
+    "name": "M",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      6,
+      5,
+      2,
+      2,
+      5,
+      1,
+      9,
+      4
+     ],
+     1,
+     2
+    ],
+    "expected": 20,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      8,
+      1,
+      3,
+      2,
+      1,
+      8,
+      9,
+      0
+     ],
+     3,
+     2
+    ],
+    "expected": 29,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      5,
+      6,
+      0,
+      9,
+      5,
+      0,
+      3,
+      8
+     ],
+     4,
+     3
+    ],
+    "expected": 31,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5
+     ],
+     1,
+     2
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      0,
+      0,
+      9
+     ],
+     1,
+     1
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     2,
+     3
+    ],
+    "expected": 15,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Subarrays With Bounded Maximum",
+  "difficulty": "Hard",
+  "tags": [
+   "Two Pointers",
+   "Counting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return the number of non-empty contiguous parts of `a` whose largest element lies between `lo` and `hi` (both included).",
+  "examples": [
+   {
+    "input": "a = [2,1,4,3], lo = 2, hi = 3",
+    "output": "3",
+    "explanation": "There are 3 such parts."
+   },
+   {
+    "input": "a = [5], lo = 1, hi = 9",
+    "output": "1",
+    "explanation": "There are 1 such parts."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "0 <= a[i], lo <= hi <= 1000000000"
+  ],
+  "functionName": "subarraysBoundedMaximum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "lo",
+    "type": "int"
+   },
+   {
+    "name": "hi",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      1,
+      4,
+      3
+     ],
+     2,
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     9
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     6,
+     9
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     1,
+     1
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      9,
+      2,
+      5,
+      6
+     ],
+     2,
+     8
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     0,
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      2,
+      1
+     ],
+     2,
+     4
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Subset Sum Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Bitset",
+   "Dynamic Programming",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Every subset of `a` (including the empty one) has a sum. Return how many different sums occur.",
+  "examples": [
+   {
+    "input": "a = [1,2,3]",
+    "output": "7",
+    "explanation": "There are 7 different sums."
+   },
+   {
+    "input": "a = [0]",
+    "output": "1",
+    "explanation": "There are 1 different sums."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 200",
+   "0 <= a[i] <= 1000"
+  ],
+  "functionName": "distinctSubsetSumCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      5,
+      7,
+      0
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      10,
+      100
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Common Supersequence Length",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return the length of the shortest string that contains both `a` and `b` as subsequences.",
+  "examples": [
+   {
+    "input": "a = \"abac\", b = \"cab\"",
+    "output": "5",
+    "explanation": "The shortest length is 5."
+   },
+   {
+    "input": "a = \"a\", b = \"a\"",
+    "output": "1",
+    "explanation": "The shortest length is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 1000",
+   "only lowercase letters"
+  ],
+  "functionName": "shortestSupersequenceLength",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abac",
+     "cab"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "def"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa",
+     "aa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "geek",
+     "eke"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Divisible Chain Subset",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "`a` holds distinct positive integers. Pick as many of them as you can so that for any two picked numbers one divides the other. Return how many you can pick.",
+  "examples": [
+   {
+    "input": "a = [1,2,3]",
+    "output": "2",
+    "explanation": "You can pick at most 2."
+   },
+   {
+    "input": "a = [7]",
+    "output": "1",
+    "explanation": "You can pick at most 1."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 2000",
+   "1 <= a[i] <= 1000000000 and all values are different"
+  ],
+  "functionName": "largestDivisibleChain",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      4,
+      8
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      5,
+      7
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      8,
+      10,
+      240
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      6,
+      3,
+      12,
+      24
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      10,
+      20,
+      3,
+      9
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Increasing Subsequences Of Length K Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Fenwick Tree",
+   "Dynamic Programming",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Count the subsequences of `a` that have exactly `k` elements and are strictly increasing (subsequences taken from different positions count separately even if they look alike). Return the count modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "a = [1,2,3,4], k = 2",
+    "output": "6",
+    "explanation": "There are 6 such subsequences (modulo 1000000007)."
+   },
+   {
+    "input": "a = [5], k = 1",
+    "output": "1",
+    "explanation": "There are 1 such subsequences (modulo 1000000007)."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 2000 and 1 <= k <= 50",
+   "1 <= a[i] <= 1000000000"
+  ],
+  "functionName": "increasingSubsequencesLengthK",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      3
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      4
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Gift Packing K Boxes Max Distinct",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Gifts are in a row, gift `i` having type `a[i]`. Cut the row into exactly `k` non-empty consecutive boxes. A box scores the number of different gift types inside it. Return the largest total score.",
+  "examples": [
+   {
+    "input": "a = [1,2,1,2,3], k = 2",
+    "output": "5",
+    "explanation": "The best total is 5."
+   },
+   {
+    "input": "a = [4], k = 1",
+    "output": "1",
+    "explanation": "The best total is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= a.length <= 200",
+   "1 <= a[i] <= 1000000000"
+  ],
+  "functionName": "giftPackingKBoxes",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      3
+     ],
+     2
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      3,
+      1
+     ],
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      6,
+      6
+     ],
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cheapest Array Clearing",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Greedy",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "You must turn every element of `a` into `0`. Operation A picks one element and sets it to `0` at a cost of `x`. Operation B picks a contiguous part in which every element is at least `1` and subtracts `1` from each of them, at a cost of `y`. You may use the operations in any order and any number of times. Return the smallest total cost.",
+  "examples": [
+   {
+    "input": "a = [3,1,2], x = 5, y = 2",
+    "output": "8",
+    "explanation": "The smallest cost is 8."
+   },
+   {
+    "input": "a = [0], x = 3, y = 3",
+    "output": "0",
+    "explanation": "The smallest cost is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 2000",
+   "0 <= a[i] <= 1000 and 1 <= x, y <= 1000"
+  ],
+  "functionName": "cheapestArrayClearing",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "x",
+    "type": "int"
+   },
+   {
+    "name": "y",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      1,
+      2
+     ],
+     5,
+     2
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     3,
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     10,
+     1
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     2,
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      1
+     ],
+     2,
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ],
+     7,
+     3
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      0,
+      5
+     ],
+     3,
+     4
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Best Block Sum With K Skips",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Pick a contiguous part of `a` and then skip (leave out of the sum) at most `k` of its elements, but at least one element must stay counted. Return the largest sum you can get.",
+  "examples": [
+   {
+    "input": "a = [1,-2,0,3], k = 1",
+    "output": "4",
+    "explanation": "The best sum is 4."
+   },
+   {
+    "input": "a = [-5], k = 0",
+    "output": "-5",
+    "explanation": "The best sum is -5."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000 and 0 <= k <= 50",
+   "-1000000 <= a[i] <= 1000000"
+  ],
+  "functionName": "bestBlockSumKSkips",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      -2,
+      0,
+      3
+     ],
+     1
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -5
+     ],
+     0
+    ],
+    "expected": -5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -5
+     ],
+     3
+    ],
+    "expected": -5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3
+     ],
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      -9,
+      4
+     ],
+     1
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      -9,
+      4
+     ],
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      -1,
+      -1,
+      5,
+      -3
+     ],
+     2
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Bounded Knapsack Large Counts",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Knapsack",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Item `i` weighs `w[i]`, is worth `v[i]`, and at most `c[i]` copies of it are available. Choose how many copies of each item to take so that the total weight does not exceed `cap` and the total value is as large as possible. Return that value.",
+  "examples": [
+   {
+    "input": "w = [2,3], v = [3,5], c = [2,3], cap = 8",
+    "output": "13",
+    "explanation": "The best value is 13."
+   },
+   {
+    "input": "w = [1], v = [1], c = [1], cap = 1",
+    "output": "1",
+    "explanation": "The best value is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= w.length = v.length = c.length <= 100 and 1 <= cap <= 10000",
+   "1 <= w[i] <= 10000, 1 <= v[i] <= 100000 and 1 <= c[i] <= 1000000000"
+  ],
+  "functionName": "boundedKnapsackLargeCounts",
+  "params": [
+   {
+    "name": "w",
+    "type": "int[]"
+   },
+   {
+    "name": "v",
+    "type": "int[]"
+   },
+   {
+    "name": "c",
+    "type": "int[]"
+   },
+   {
+    "name": "cap",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      3
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      2,
+      3
+     ],
+     8
+    ],
+    "expected": 13,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ],
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     [
+      7
+     ],
+     [
+      1000000000
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     [
+      7
+     ],
+     [
+      1000000000
+     ],
+     10000
+    ],
+    "expected": 14000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3
+     ],
+     [
+      5,
+      4
+     ],
+     [
+      2,
+      1000
+     ],
+     9
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      3
+     ],
+     [
+      3,
+      3
+     ],
+     4
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      1,
+      1
+     ],
+     5
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pairs With AND Zero Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Dynamic Programming",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Count the pairs of positions `i < j` for which `a[i] & a[j] = 0` (bitwise AND).",
+  "examples": [
+   {
+    "input": "a = [1,2,3]",
+    "output": "1",
+    "explanation": "There are 1 such pairs."
+   },
+   {
+    "input": "a = [0]",
+    "output": "0",
+    "explanation": "There are 0 such pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "0 <= a[i] < 65536"
+  ],
+  "functionName": "pairsAndZeroCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      2,
+      8,
+      7
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      65535,
+      0,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      9,
+      3,
+      12
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Subset XOR",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Linear Basis",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Choose any subset of `a` (possibly empty) and XOR its elements together. Return the largest value that can be obtained.",
+  "examples": [
+   {
+    "input": "a = [2,4,5]",
+    "output": "7",
+    "explanation": "The maximum is 7."
+   },
+   {
+    "input": "a = [0]",
+    "output": "0",
+    "explanation": "The maximum is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "0 <= a[i] < 1073741824"
+  ],
+  "functionName": "maximumSubsetXor",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      4,
+      5
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      4
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1073741823,
+      1
+     ]
+    ],
+    "expected": 1073741823,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      8,
+      1,
+      2,
+      12
+     ]
+    ],
+    "expected": 15,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Subarrays For Max OR Total",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Sliding Window",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "For every start position `i`, let `m_i` be the bitwise OR of `a[i], a[i+1], ..., a[n-1]`. Find the shortest part that starts at `i` and whose OR equals `m_i`, and take its length. Return the sum of these lengths over all start positions, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "a = [1,0,2,1,3]",
+    "output": "11",
+    "explanation": "The total is 11 (modulo 1000000007)."
+   },
+   {
+    "input": "a = [0]",
+    "output": "1",
+    "explanation": "The total is 1 (modulo 1000000007)."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "0 <= a[i] < 1073741824"
+  ],
+  "functionName": "shortestMaxOrLengthsTotal",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      1,
+      3
+     ]
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      4
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      2,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      2,
+      8
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Split Gifts Smallest Heaviest Box",
+  "difficulty": "Hard",
+  "tags": [
+   "Binary Search",
+   "Greedy",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Gift `i` weighs `a[i]`. Pack the row of gifts, in order, into exactly `k` non-empty boxes of consecutive gifts. Return the smallest possible weight of the heaviest box.",
+  "examples": [
+   {
+    "input": "a = [7,2,5,10,8], k = 2",
+    "output": "18",
+    "explanation": "The smallest heaviest box is 18."
+   },
+   {
+    "input": "a = [5], k = 1",
+    "output": "5",
+    "explanation": "The smallest heaviest box is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= a.length <= 100000",
+   "0 <= a[i] <= 1000000"
+  ],
+  "functionName": "splitGiftsHeaviestBox",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      7,
+      2,
+      5,
+      10,
+      8
+     ],
+     2
+    ],
+    "expected": 18,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      1,
+      9
+     ],
+     2
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      2,
+      1,
+      6
+     ],
+     3
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fibonacci Spiral Cell Value",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "An `R x C` grid is filled with the Fibonacci numbers `1, 1, 2, 3, 5, ...` in clockwise spiral order, starting at the top-left cell and first moving right. Return the number stored in the cell at row `r`, column `c` (counting from `0`), modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "R = 3, C = 3, r = 1, c = 1",
+    "output": "34",
+    "explanation": "The cell holds 34 (modulo 1000000007)."
+   },
+   {
+    "input": "R = 1, C = 1, r = 0, c = 0",
+    "output": "1",
+    "explanation": "The cell holds 1 (modulo 1000000007)."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 1000000",
+   "0 <= r < R and 0 <= c < C"
+  ],
+  "functionName": "fibonacciSpiralCellValue",
+  "params": [
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     3,
+     1,
+     1
+    ],
+    "expected": 34,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     5,
+     0,
+     4
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     1,
+     3,
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     4,
+     2,
+     0
+    ],
+    "expected": 34,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5,
+     2,
+     2
+    ],
+    "expected": 75025,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     1000000,
+     500000,
+     500000
+    ],
+    "expected": 978246218,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Nested Repeat Character At",
+  "difficulty": "Medium",
+  "tags": [
+   "Recursion",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`s` is encoded as follows: `k[x]` means the decoded form of `x` repeated `k` times, and letters stand for themselves; encodings can be nested and concatenated (`2[a3[bc]]d` decodes to `abcbcbcabcbcbcd`). Return the `k`-th character (counting from `1`) of the decoded string. The decoded string may be far too long to build.",
+  "examples": [
+   {
+    "input": "s = \"3[a2[bc]]\", k = 5",
+    "output": "\"c\"",
+    "explanation": "The character is c."
+   },
+   {
+    "input": "s = \"abc\", k = 3",
+    "output": "\"c\"",
+    "explanation": "The character is c."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s is a valid encoding, every repeat count is between 1 and 1000, and 1 <= k <= the decoded length"
+  ],
+  "functionName": "nestedRepeatCharacterAt",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "3[a2[bc]]",
+     5
+    ],
+    "expected": "c",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     3
+    ],
+    "expected": "c",
+    "isSample": true
+   },
+   {
+    "args": [
+     "2[a3[bc]]d",
+     15
+    ],
+    "expected": "d",
+    "isSample": false
+   },
+   {
+    "args": [
+     "10[z]",
+     10
+    ],
+    "expected": "z",
+    "isSample": false
+   },
+   {
+    "args": [
+     "2[ab]c",
+     5
+    ],
+    "expected": "c",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1000[1000[1000[ab]]]",
+     2000000000
+    ],
+    "expected": "b",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a2[b]c",
+     3
+    ],
+    "expected": "b",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Topological Position",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Topological Sort",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A directed graph has nodes `0..n-1` and edges given as flat pairs `(from, to)`; an edge means `from` must come before `to`. Among all orderings of all nodes that respect every edge, take the lexicographically smallest one (comparing node numbers). Return the position (counting from `0`) of node `x` in it, or `-1` if no valid ordering exists.",
+  "examples": [
+   {
+    "input": "n = 4, edges = [3,0,2,1], x = 0",
+    "output": "3",
+    "explanation": "Node x is at position 3."
+   },
+   {
+    "input": "n = 1, edges = [], x = 0",
+    "output": "0",
+    "explanation": "Node x is at position 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100000 and 0 <= edges.length <= 200000 and edges.length is even",
+   "0 <= edges[i], x < n"
+  ],
+  "functionName": "smallestTopologicalPosition",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "x",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     4,
+     [
+      3,
+      0,
+      2,
+      1
+     ],
+     0
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     [],
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     1
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     [
+      2,
+      1,
+      1,
+      0
+     ],
+     0
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      3,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     [
+      4,
+      3,
+      3,
+      2
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     [],
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Swaps To Sort Three Values",
+  "difficulty": "Medium",
+  "tags": [
+   "Greedy",
+   "Sorting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`a` contains only the values `0`, `1` and `2`. In one move you swap any two elements (they need not be neighbours). Return the fewest moves needed to sort `a` in non-decreasing order.",
+  "examples": [
+   {
+    "input": "a = [2,0,1]",
+    "output": "2",
+    "explanation": "The fewest number of swaps is 2."
+   },
+   {
+    "input": "a = [1]",
+    "output": "0",
+    "explanation": "The fewest number of swaps is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "a[i] is 0, 1 or 2"
+  ],
+  "functionName": "fewestSwapsSortThreeValues",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      0,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      0,
+      1,
+      2,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      2,
+      2,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equal Pairs With Gap",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return the number of pairs of indices `i < j` with `a[i] == a[j]` and `j - i >= k`.",
+  "examples": [
+   {
+    "input": "a = [1,2,1,2,1], k = 2",
+    "output": "4",
+    "explanation": "There are 4 such pairs."
+   },
+   {
+    "input": "a = [5], k = 1",
+    "output": "0",
+    "explanation": "There are 0 such pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000 and 1 <= k <= 100000",
+   "-1000000000 <= a[i] <= 1000000000"
+  ],
+  "functionName": "equalPairsWithGap",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      1
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3,
+      3
+     ],
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      7,
+      7,
+      7,
+      7
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Least Frequently Used Hit Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A cache holds at most `cap` distinct keys. Each request in `seq` that finds its key in the cache is a hit and raises that key's use count by one. A request for a missing key is a miss: if the cache is full, first evict the key with the smallest use count (ties: the key whose most recent use is the oldest), then store the new key with use count `1`. Return the number of hits.",
+  "examples": [
+   {
+    "input": "cap = 2, seq = [1,2,1,3,1,2]",
+    "output": "2",
+    "explanation": "There are 2 hits."
+   },
+   {
+    "input": "cap = 1, seq = [5]",
+    "output": "0",
+    "explanation": "There are 0 hits."
+   }
+  ],
+  "constraints": [
+   "1 <= cap <= 1000 and 1 <= seq.length <= 100000",
+   "0 <= seq[i] <= 1000000000"
+  ],
+  "functionName": "leastFrequentlyUsedHits",
+  "params": [
+   {
+    "name": "cap",
+    "type": "int"
+   },
+   {
+    "name": "seq",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2,
+     [
+      1,
+      2,
+      1,
+      3,
+      1,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     [
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     [
+      1,
+      2,
+      3,
+      4,
+      1,
+      2,
+      5,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      1,
+      2,
+      1,
+      2,
+      3,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Descendants At Generation Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Tree",
+   "Binary Search",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A family tree has members `0..n-1` with `n = par.length + 1`; member `i + 1` is a child of member `par[i]` (with `par[i] <= i`). `queries` lists questions as flat pairs `(x, g)`: how many descendants of member `x` are exactly `g` generations below `x` (`g = 1` means children, `g = 2` grandchildren, ...)? Return the sum of all answers, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "par = [0,0,1,1], queries = [0,1,0,2,1,1]",
+    "output": "6",
+    "explanation": "The answers add up to 6 modulo 1000000007."
+   },
+   {
+    "input": "par = [], queries = [0,1]",
+    "output": "0",
+    "explanation": "The answers add up to 0 modulo 1000000007."
+   }
+  ],
+  "constraints": [
+   "0 <= par.length <= 100000 and 2 <= queries.length <= 200000 and queries.length is even",
+   "0 <= par[i] <= i, 0 <= x <= par.length and 1 <= g <= 100000"
+  ],
+  "functionName": "descendantsAtGenerationTotal",
+  "params": [
+   {
+    "name": "par",
+    "type": "int[]"
+   },
+   {
+    "name": "queries",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      3,
+      1,
+      2,
+      2,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     [
+      0,
+      2,
+      1,
+      2,
+      2,
+      1
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      2
+     ],
+     [
+      0,
+      2,
+      0,
+      3,
+      0,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Dotted Quad Split Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Count the ways to cut the digit string `s` into exactly four non-empty parts that could be the four numbers of an IPv4 address: each part is a number from `0` to `255` written without leading zeros (the part `0` itself is allowed).",
+  "examples": [
+   {
+    "input": "s = \"25525511135\"",
+    "output": "2",
+    "explanation": "There are 2 valid splits."
+   },
+   {
+    "input": "s = \"0000\"",
+    "output": "1",
+    "explanation": "There are 1 valid splits."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 30",
+   "s has only digits"
+  ],
+  "functionName": "dottedQuadSplitCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "25525511135"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0000"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "010010"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "101023"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "255255255255"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Taxi Dispatch Top Earner",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Design",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Taxis stand on a straight road at positions `starts[i]` (all free at time `0`). `requests` lists bookings as flat triples `(time, pickup, drop)` sorted by time. For each booking, among the taxis that are free at that time (a taxi is free from the moment its last trip ends), the one closest to `pickup` is sent (ties: the smaller taxi number); if no taxi is free the booking is dropped. A trip takes `|taxiPosition - pickup| + |drop - pickup|` time units, the taxi ends at `drop`, and earns `|drop - pickup|`. Return the number of the taxi with the highest total earnings (ties: the smaller number).",
+  "examples": [
+   {
+    "input": "starts = [0,10], requests = [0,5,8,1,9,12]",
+    "output": "0",
+    "explanation": "Taxi 0 earns the most."
+   },
+   {
+    "input": "starts = [0], requests = [0,0,5]",
+    "output": "0",
+    "explanation": "Taxi 0 earns the most."
+   }
+  ],
+  "constraints": [
+   "1 <= starts.length <= 100 and 3 <= requests.length <= 30000 and requests.length is a multiple of 3",
+   "0 <= starts[i], pickup, drop <= 1000000 and times are non-decreasing, 0 <= time <= 1000000"
+  ],
+  "functionName": "taxiDispatchTopEarner",
+  "params": [
+   {
+    "name": "starts",
+    "type": "int[]"
+   },
+   {
+    "name": "requests",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      10
+     ],
+     [
+      0,
+      5,
+      8,
+      1,
+      9,
+      12
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     [
+      0,
+      0,
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      5
+     ],
+     [
+      0,
+      5,
+      6,
+      0,
+      5,
+      9
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      100
+     ],
+     [
+      0,
+      1,
+      2,
+      1,
+      99,
+      101
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      2,
+      0,
+      1,
+      3,
+      0,
+      1,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3
+     ],
+     [
+      0,
+      3,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5
+     ],
+     [
+      0,
+      1,
+      2,
+      10,
+      9,
+      8,
+      10,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Inventory Order Replay Revenue",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Simulation",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "A shop sells items `0..m-1`; `prices[i]` is the price of one unit of item `i`, and every item starts with no stock. `ops` lists events as flat triples `(type, item, qty)`. Type `0` adds `qty` units to the stock of `item`. Type `1` is a customer order for `qty` units: the shop ships as many as it has (up to `qty`) and the customer pays the price for each shipped unit. Return the total revenue, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "prices = [5,2], ops = [0,0,10,1,0,4,1,0,10,1,1,3]",
+    "output": "50",
+    "explanation": "The revenue is 50 (modulo 1000000007)."
+   },
+   {
+    "input": "prices = [1], ops = [1,0,5]",
+    "output": "0",
+    "explanation": "The revenue is 0 (modulo 1000000007)."
+   }
+  ],
+  "constraints": [
+   "1 <= prices.length <= 1000 and 3 <= ops.length <= 30000 and ops.length is a multiple of 3",
+   "1 <= prices[i], qty <= 1000000, type is 0 or 1 and 0 <= item < prices.length"
+  ],
+  "functionName": "inventoryOrderRevenue",
+  "params": [
+   {
+    "name": "prices",
+    "type": "int[]"
+   },
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      2
+     ],
+     [
+      0,
+      0,
+      10,
+      1,
+      0,
+      4,
+      1,
+      0,
+      10,
+      1,
+      1,
+      3
+     ]
+    ],
+    "expected": 50,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1,
+      0,
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3
+     ],
+     [
+      0,
+      0,
+      1,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4
+     ],
+     [
+      0,
+      1,
+      2,
+      1,
+      1,
+      5,
+      1,
+      0,
+      5
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     [
+      0,
+      0,
+      5,
+      0,
+      0,
+      5,
+      1,
+      0,
+      100
+     ]
+    ],
+    "expected": 70,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1000000
+     ],
+     [
+      0,
+      0,
+      1000000,
+      1,
+      0,
+      1000000
+     ]
+    ],
+    "expected": 999993007,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3
+     ],
+     [
+      0,
+      0,
+      2,
+      0,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      0,
+      2
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Kth Distinct In Two Sorted",
+  "difficulty": "Medium",
+  "tags": [
+   "Two Pointers",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`a` and `b` are sorted in non-decreasing order. Consider the different values that appear in `a` or `b`, listed in increasing order. Return the `k`-th of them (counting from `1`), or `-1` if there are fewer than `k`.",
+  "examples": [
+   {
+    "input": "a = [1,3,5], b = [2,3,6], k = 4",
+    "output": "5",
+    "explanation": "The answer is 5."
+   },
+   {
+    "input": "a = [1], b = [1], k = 1",
+    "output": "1",
+    "explanation": "The answer is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 100000 and 1 <= k <= 200000",
+   "-1000000000 <= a[i], b[j] <= 1000000000, both sorted"
+  ],
+  "functionName": "kthDistinctInTwoSorted",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "b",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      5
+     ],
+     [
+      2,
+      3,
+      6
+     ],
+     4
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ],
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      2,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      0
+     ],
+     [
+      0,
+      5
+     ],
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4
+     ],
+     [
+      1,
+      4
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Frequency Sort Checksum",
+  "difficulty": "Medium",
+  "tags": [
+   "Sorting",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Rearrange `a` so that values that occur more often come first; values with the same number of occurrences are ordered by increasing value, and equal values stay together. If the rearranged array is `b`, return `1*b1 + 2*b2 + ...` (positions counted from `1`) modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "a = [2,3,1,3,2]",
+    "output": "32",
+    "explanation": "The checksum is 32."
+   },
+   {
+    "input": "a = [5]",
+    "output": "5",
+    "explanation": "The checksum is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "-1000000000 <= a[i] <= 1000000000"
+  ],
+  "functionName": "frequencySortChecksum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      3,
+      1,
+      3,
+      2
+     ]
+    ],
+    "expected": 32,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 17,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 48,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -1,
+      0
+     ]
+    ],
+    "expected": 1000000004,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      7
+     ]
+    ],
+    "expected": 50,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 63,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Pair Sum Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Two Pointers",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return the number of different value pairs `(x, y)` with `x <= y` and `x + y = t` that can be taken from two different positions of `a` (two pairs are the same if they have the same `x` and `y`).",
+  "examples": [
+   {
+    "input": "a = [1,1,2,45,46,46], t = 47",
+    "output": "2",
+    "explanation": "There are 2 such pairs."
+   },
+   {
+    "input": "a = [5], t = 10",
+    "output": "0",
+    "explanation": "There are 0 such pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "-1000000000 <= a[i] <= 1000000000 and -2000000000 <= t <= 2000000000"
+  ],
+  "functionName": "distinctPairSumCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "t",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      45,
+      46,
+      46
+     ],
+     47
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     10
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      5
+     ],
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ],
+     6
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      -1
+     ],
+     0
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      7,
+      -1,
+      5
+     ],
+     6
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Stretch Without Repeats",
+  "difficulty": "Medium",
+  "tags": [
+   "Sliding Window",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Return the length of the longest substring of `s` in which no letter appears twice.",
+  "examples": [
+   {
+    "input": "s = \"abcabcbb\"",
+    "output": "3",
+    "explanation": "The longest stretch has 3 letters."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "The longest stretch has 1 letters."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100000",
+   "s has only lowercase letters"
+  ],
+  "functionName": "longestStretchWithoutRepeats",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcabcbb"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bbbbb"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "pwwkew"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdef"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abba"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "dvdf"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Concatenated Number",
+  "difficulty": "Medium",
+  "tags": [
+   "Greedy",
+   "Sorting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Join all the numbers of `a` one after another, in any order you like, into a single decimal string. Return the largest number that can be formed, as a string (`0` if every number is `0`).",
+  "examples": [
+   {
+    "input": "a = [3,30,34,5,9]",
+    "output": "\"9534330\"",
+    "explanation": "The largest number is 9534330."
+   },
+   {
+    "input": "a = [0]",
+    "output": "\"0\"",
+    "explanation": "The largest number is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 10000",
+   "0 <= a[i] <= 1000000000"
+  ],
+  "functionName": "largestConcatenatedNumber",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      30,
+      34,
+      5,
+      9
+     ]
+    ],
+    "expected": "9534330",
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": "0",
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": "0",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      2
+     ]
+    ],
+    "expected": "210",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": "1",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      121,
+      12
+     ]
+    ],
+    "expected": "12121",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      824,
+      8247
+     ]
+    ],
+    "expected": "8248247",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Platforms Needed",
+  "difficulty": "Medium",
+  "tags": [
+   "Greedy",
+   "Sorting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "Train `i` arrives at time `arr[i]` and leaves at time `dep[i]` (with `arr[i] < dep[i]`). It occupies a platform during `[arr[i], dep[i])`, so a platform freed at time `t` can be used by a train arriving at time `t`. Return the smallest number of platforms that lets every train use a platform for its whole stay.",
+  "examples": [
+   {
+    "input": "arr = [900,940,950,1100,1500,1800], dep = [910,1200,1120,1130,1900,2000]",
+    "output": "3",
+    "explanation": "3 platforms are needed."
+   },
+   {
+    "input": "arr = [1], dep = [2]",
+    "output": "1",
+    "explanation": "1 platforms are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= arr.length = dep.length <= 100000",
+   "0 <= arr[i] < dep[i] <= 1000000000"
+  ],
+  "functionName": "fewestPlatformsNeeded",
+  "params": [
+   {
+    "name": "arr",
+    "type": "int[]"
+   },
+   {
+    "name": "dep",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      900,
+      940,
+      950,
+      1100,
+      1500,
+      1800
+     ],
+     [
+      910,
+      1200,
+      1120,
+      1130,
+      1900,
+      2000
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      10,
+      10,
+      10
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      1,
+      3
+     ],
+     [
+      6,
+      4,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Right Leaders Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Array",
+   "Monotonic Stack",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "An element is a right leader if it is strictly greater than every element to its right (the last element is always one). Return the sum of the right leaders of `a`.",
+  "examples": [
+   {
+    "input": "a = [16,17,4,3,5,2]",
+    "output": "24",
+    "explanation": "The leaders add up to 24."
+   },
+   {
+    "input": "a = [5]",
+    "output": "5",
+    "explanation": "The leaders add up to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "-1000000000 <= a[i] <= 1000000000"
+  ],
+  "functionName": "rightLeadersSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      16,
+      17,
+      4,
+      3,
+      5,
+      2
+     ]
+    ],
+    "expected": 24,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      9,
+      1
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -5,
+      -3
+     ]
+    ],
+    "expected": -4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Next Digit Permutation",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Greedy",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Zoho"
+  ],
+  "description": "`s` is a string of digits. Return the smallest rearrangement of its digits that is strictly larger than `s` when read as a string of the same length, or `-1` if `s` already is the largest arrangement.",
+  "examples": [
+   {
+    "input": "s = \"123\"",
+    "output": "\"132\"",
+    "explanation": "The next arrangement is 132."
+   },
+   {
+    "input": "s = \"1\"",
+    "output": "\"-1\"",
+    "explanation": "The next arrangement is -1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100000",
+   "s has only digits"
+  ],
+  "functionName": "nextDigitPermutation",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "123"
+    ],
+    "expected": "132",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": "-1",
+    "isSample": true
+   },
+   {
+    "args": [
+     "321"
+    ],
+    "expected": "-1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "115"
+    ],
+    "expected": "151",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1999"
+    ],
+    "expected": "9199",
+    "isSample": false
+   },
+   {
+    "args": [
+     "5300"
+    ],
+    "expected": "-1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "2764"
+    ],
+    "expected": "4267",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Merged Rows Checksum",
+  "difficulty": "Medium",
+  "tags": [
+   "Heap",
+   "Matrix",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "A table with `cols` columns is stored row by row in the flat array `g`; every row is sorted in non-decreasing order. Merge all rows into one sorted sequence, dropping repeated values so each value appears once. If that sequence is `u`, return `1*u1 + 2*u2 + ...` modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "g = [1,3,5,2,3,6], cols = 3",
+    "output": "64",
+    "explanation": "The checksum is 64."
+   },
+   {
+    "input": "g = [4], cols = 1",
+    "output": "4",
+    "explanation": "The checksum is 4."
+   }
+  ],
+  "constraints": [
+   "1 <= cols and 1 <= g.length <= 1000000 and g.length is a multiple of cols",
+   "-1000000000 <= g[i] <= 1000000000 and every row is sorted"
+  ],
+  "functionName": "mergedRowsChecksum",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      5,
+      2,
+      3,
+      6
+     ],
+     3
+    ],
+    "expected": 64,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     1
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2
+     ],
+     2
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      0,
+      0,
+      5
+     ],
+     2
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      2,
+      6,
+      3,
+      7
+     ],
+     2
+    ],
+    "expected": 106,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      3,
+      4,
+      5,
+      5,
+      6,
+      7
+     ],
+     3
+    ],
+    "expected": 140,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Additions For Multiple Pairs",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "You want to split `a` into pairs so that the sum of every pair is a multiple of `k`. You may insert extra integers of your choice into `a` first. Return the fewest integers you must insert so that such a split exists.",
+  "examples": [
+   {
+    "input": "a = [1,2,3,4], k = 5",
+    "output": "0",
+    "explanation": "0 insertions are needed."
+   },
+   {
+    "input": "a = [1], k = 3",
+    "output": "1",
+    "explanation": "1 insertions are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000 and 1 <= k <= 1000",
+   "0 <= a[i] <= 1000000000"
+  ],
+  "functionName": "fewestAdditionsForPairs",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      9
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Prime Factor Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "For each integer `m` from `2` to `n`, take its smallest prime divisor. Return the sum of these values modulo `1000000007` (`0` if `n < 2`).",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "28",
+    "explanation": "The sum is 28."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The sum is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "smallestPrimeFactorSum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 28,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 1257,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 79189,
+    "isSample": false
+   },
+   {
+    "args": [
+     50000
+    ],
+    "expected": 121387003,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Collatz Start Below N",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Memoization",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "The Collatz walk from `s` repeats: if the number is even halve it, otherwise replace it with `3*x + 1`, until it reaches `1`. Among the starts `s = 1, 2, ..., n - 1`, return the one whose walk takes the most steps (the smallest such `s` on ties).",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "9",
+    "explanation": "The start is 9."
+   },
+   {
+    "input": "n = 2",
+    "output": "1",
+    "explanation": "The start is 1."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 300000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "longestCollatzStartBelow",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     28
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 97,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 871,
+    "isSample": false
+   },
+   {
+    "args": [
+     20000
+    ],
+    "expected": 17647,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Bracket Insertions",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "Greedy",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "`s` contains only `(` and `)`. You may insert brackets anywhere. Return the fewest insertions that make `s` a correctly balanced bracket string.",
+  "examples": [
+   {
+    "input": "s = \"())\"",
+    "output": "1",
+    "explanation": "1 insertions are needed."
+   },
+   {
+    "input": "s = \"(\"",
+    "output": "1",
+    "explanation": "1 insertions are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100000",
+   "s has only ( and )"
+  ],
+  "functionName": "fewestBracketInsertions",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "())"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "("
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     ")"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "()"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     ")("
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "((("
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "())(()"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rotate Matrix Checksum",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "Math",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "A table with `cols` columns is stored row by row in `g`. Rotate the table by 90 degrees clockwise and read the rotated table row by row into a flat list `f`. Return `1*f1 + 2*f2 + ...` modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "g = [1,2,3,4,5,6], cols = 3",
+    "output": "77",
+    "explanation": "The checksum is 77."
+   },
+   {
+    "input": "g = [7], cols = 1",
+    "output": "7",
+    "explanation": "The checksum is 7."
+   }
+  ],
+  "constraints": [
+   "1 <= cols and 1 <= g.length <= 1000000 and g.length is a multiple of cols",
+   "-1000000 <= g[i] <= 1000000"
+  ],
+  "functionName": "rotateMatrixChecksum",
+  "params": [
+   {
+    "name": "g",
+    "type": "int[]"
+   },
+   {
+    "name": "cols",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     3
+    ],
+    "expected": 77,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     1
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2
+    ],
+    "expected": 25,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      0,
+      2,
+      5,
+      9,
+      4
+     ],
+     2
+    ],
+    "expected": 51,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     3
+    ],
+    "expected": 225,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Common Digit Upto N",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Counting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Write the numbers `1, 2, ..., n` one after another into a single long string of digits. Return the digit that appears most often in it (the smallest such digit if several tie).",
+  "examples": [
+   {
+    "input": "n = 13",
+    "output": "1",
+    "explanation": "The digit is 1."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The digit is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "mostCommonDigitUpto",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     13
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     999
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2025
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Closest Pair Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Two Pointers",
+   "Sorting",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Among all sums `a[i] + a[j]` with `i < j`, return the one that is nearest to `t`. If two sums are equally near, return the smaller sum.",
+  "examples": [
+   {
+    "input": "a = [-1,2,1,-4], t = 1",
+    "output": "1",
+    "explanation": "The closest sum is 1."
+   },
+   {
+    "input": "a = [1,2], t = 10",
+    "output": "3",
+    "explanation": "The closest sum is 3."
+   }
+  ],
+  "constraints": [
+   "2 <= a.length <= 100000",
+   "-1000000000 <= a[i] <= 1000000000 and -2000000000 <= t <= 2000000000"
+  ],
+  "functionName": "closestPairSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "t",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      -1,
+      2,
+      1,
+      -4
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     10
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     -10
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      9
+     ],
+     8
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      7,
+      5
+     ],
+     9
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      5,
+      0,
+      10
+     ],
+     4
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Triplets Sum Divisible By K Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Count the index triples `i < j < l` for which `a[i] + a[j] + a[l]` is divisible by `k`. Return the count modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "a = [1,2,3,4,5], k = 3",
+    "output": "4",
+    "explanation": "There are 4 such triples (modulo 1000000007)."
+   },
+   {
+    "input": "a = [1], k = 2",
+    "output": "0",
+    "explanation": "There are 0 such triples (modulo 1000000007)."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000 and 1 <= k <= 1000",
+   "0 <= a[i] <= 1000000000"
+  ],
+  "functionName": "tripletsDivisibleByK",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6,
+      8
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      5
+     ],
+     1
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     4
+    ],
+    "expected": 22,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Range Decrements",
+  "difficulty": "Medium",
+  "tags": [
+   "Greedy",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "In one operation you choose a contiguous part of `a` and subtract `1` from every element in it. All elements of `a` are non-negative. Return the fewest operations that turn every element into `0`.",
+  "examples": [
+   {
+    "input": "a = [3,1,2]",
+    "output": "4",
+    "explanation": "4 operations are needed."
+   },
+   {
+    "input": "a = [0]",
+    "output": "0",
+    "explanation": "0 operations are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "0 <= a[i] <= 1000000000"
+  ],
+  "functionName": "fewestRangeDecrements",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      1,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      0,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      1,
+      3,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Days To Make Bouquets",
+  "difficulty": "Medium",
+  "tags": [
+   "Binary Search",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Flower `i` of a row blooms on day `bloom[i]` and stays in bloom afterwards. A bouquet needs `k` neighbouring flowers that are all in bloom, and a flower can be used in only one bouquet. Return the earliest day on which `m` bouquets can be made, or `-1` if it is impossible.",
+  "examples": [
+   {
+    "input": "bloom = [1,10,3,10,2], m = 3, k = 1",
+    "output": "3",
+    "explanation": "The earliest day is 3."
+   },
+   {
+    "input": "bloom = [1,10,3,10,2], m = 3, k = 2",
+    "output": "-1",
+    "explanation": "The earliest day is -1."
+   }
+  ],
+  "constraints": [
+   "1 <= bloom.length <= 100000 and 1 <= m, k <= 100000",
+   "1 <= bloom[i] <= 1000000000"
+  ],
+  "functionName": "fewestDaysBouquets",
+  "params": [
+   {
+    "name": "bloom",
+    "type": "int[]"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      10,
+      3,
+      10,
+      2
+     ],
+     3,
+     1
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      10,
+      3,
+      10,
+      2
+     ],
+     3,
+     2
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7,
+      7,
+      7,
+      7,
+      12,
+      7,
+      7
+     ],
+     2,
+     3
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     1,
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4
+     ],
+     1,
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      9,
+      1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Uniform Digit Base",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return the smallest base `b >= 2` in which all digits of `n` are the same (for example `7` is `111` in base `2`). Bases larger than `n` are not considered, and `n >= 3` guarantees that an answer exists.",
+  "examples": [
+   {
+    "input": "n = 7",
+    "output": "2",
+    "explanation": "The base is 2."
+   },
+   {
+    "input": "n = 3",
+    "output": "2",
+    "explanation": "The base is 2."
+   }
+  ],
+  "constraints": [
+   "3 <= n <= 1000000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "smallestUniformDigitBase",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     7
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     15
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     21
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": 31999,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Knapsack With Item Limit",
+  "difficulty": "Medium",
+  "tags": [
+   "Dynamic Programming",
+   "Knapsack",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Item `i` weighs `w[i]` and is worth `v[i]`. Choose at most `k` different items whose total weight does not exceed `cap`, to maximise the total value. Return that value.",
+  "examples": [
+   {
+    "input": "w = [1,3,4], v = [15,20,30], cap = 4, k = 2",
+    "output": "35",
+    "explanation": "The best value is 35."
+   },
+   {
+    "input": "w = [5], v = [9], cap = 4, k = 1",
+    "output": "0",
+    "explanation": "The best value is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= w.length = v.length <= 100 and 1 <= cap <= 1000 and 1 <= k <= 100",
+   "1 <= w[i] <= 1000 and 0 <= v[i] <= 100000"
+  ],
+  "functionName": "knapsackItemLimit",
+  "params": [
+   {
+    "name": "w",
+    "type": "int[]"
+   },
+   {
+    "name": "v",
+    "type": "int[]"
+   },
+   {
+    "name": "cap",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      4
+     ],
+     [
+      15,
+      20,
+      30
+     ],
+     4,
+     2
+    ],
+    "expected": 35,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     [
+      9
+     ],
+     4,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ],
+     [
+      3,
+      4,
+      5
+     ],
+     6,
+     2
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ],
+     [
+      5,
+      6
+     ],
+     10,
+     1
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3
+     ],
+     [
+      1,
+      2
+     ],
+     5,
+     5
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4
+     ],
+     [
+      7,
+      8
+     ],
+     7,
+     2
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     [
+      1,
+      5,
+      6,
+      7
+     ],
+     6,
+     3
+    ],
+    "expected": 12,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Max Subarray Sum Length Bounds",
+  "difficulty": "Medium",
+  "tags": [
+   "Sliding Window",
+   "Prefix Sum",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return the largest sum of a contiguous part of `a` whose length is at least `lo` and at most `hi`. A part of that length always exists.",
+  "examples": [
+   {
+    "input": "a = [1,-2,3,4,-1], lo = 2, hi = 3",
+    "output": "7",
+    "explanation": "The best sum is 7."
+   },
+   {
+    "input": "a = [5], lo = 1, hi = 1",
+    "output": "5",
+    "explanation": "The best sum is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= lo <= hi <= a.length <= 100000",
+   "-1000000 <= a[i] <= 1000000"
+  ],
+  "functionName": "maxSubarraySumLengthBounds",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "lo",
+    "type": "int"
+   },
+   {
+    "name": "hi",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      -2,
+      3,
+      4,
+      -1
+     ],
+     2,
+     3
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3
+     ],
+     1,
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3
+     ],
+     2,
+     2
+    ],
+    "expected": -3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      -1,
+      2,
+      1
+     ],
+     1,
+     4
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     3,
+     4
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      8,
+      -2,
+      -2,
+      9
+     ],
+     2,
+     3
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pointer Chain Cycle Start",
+  "difficulty": "Medium",
+  "tags": [
+   "Linked List",
+   "Two Pointers",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Cell `i` of `a` holds the number of the cell that comes after it (`0 <= a[i] < a.length`). Walk from cell `0` following these pointers forever. The walk must eventually loop; return the first cell of that loop, meaning the first cell that the walk visits twice.",
+  "examples": [
+   {
+    "input": "a = [1,2,0]",
+    "output": "0",
+    "explanation": "The loop begins at cell 0."
+   },
+   {
+    "input": "a = [0]",
+    "output": "0",
+    "explanation": "The loop begins at cell 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "0 <= a[i] < a.length"
+  ],
+  "functionName": "pointerChainCycleStart",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Covered Length Of Segments",
+  "difficulty": "Medium",
+  "tags": [
+   "Sorting",
+   "Intervals",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "`s` lists segments of a number line as flat pairs `(l, r)` with `l < r`; a segment covers the stretch from `l` to `r`. Return the total length of the number line covered by at least one segment (overlaps are counted once).",
+  "examples": [
+   {
+    "input": "s = [1,3,2,5]",
+    "output": "4",
+    "explanation": "The covered length is 4."
+   },
+   {
+    "input": "s = [0,1]",
+    "output": "1",
+    "explanation": "The covered length is 1."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 200000 and s.length is even",
+   "0 <= l < r <= 1000000000"
+  ],
+  "functionName": "coveredLengthOfSegments",
+  "params": [
+   {
+    "name": "s",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      5
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      10,
+      2,
+      3
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      6,
+      1,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      4,
+      4,
+      8,
+      10,
+      12
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      3,
+      7,
+      6,
+      9,
+      20,
+      25
+     ]
+    ],
+    "expected": 13,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Subarrays With Sum K Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Prefix Sum",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Return the number of non-empty contiguous parts of `a` whose elements add up to exactly `k`.",
+  "examples": [
+   {
+    "input": "a = [1,1,1], k = 2",
+    "output": "2",
+    "explanation": "There are 2 such parts."
+   },
+   {
+    "input": "a = [1], k = 1",
+    "output": "1",
+    "explanation": "There are 1 such parts."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "-1000 <= a[i] <= 1000 and -100000000 <= k <= 100000000"
+  ],
+  "functionName": "subarraysWithSumK",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     0
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      -1,
+      0
+     ],
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      4,
+      7,
+      2,
+      -3,
+      1,
+      4,
+      2
+     ],
+     7
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -1,
+      1
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Best Two-Box Distinct Split",
+  "difficulty": "Medium",
+  "tags": [
+   "Prefix Sum",
+   "Hash Table",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Gifts are laid in a row, gift `i` having type `a[i]`. Cut the row at one place into two non-empty parts, a left box and a right box. The score of a cut is the number of different types in the left box plus the number of different types in the right box. Return the best possible score.",
+  "examples": [
+   {
+    "input": "a = [1,2,1,3]",
+    "output": "4",
+    "explanation": "The best score is 4."
+   },
+   {
+    "input": "a = [4,4]",
+    "output": "2",
+    "explanation": "The best score is 2."
+   }
+  ],
+  "constraints": [
+   "2 <= a.length <= 100000",
+   "1 <= a[i] <= 1000000000"
+  ],
+  "functionName": "bestTwoBoxDistinctSplit",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      3
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      6,
+      5
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Range AND Queries Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Bit Manipulation",
+   "Prefix Sum",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Each query `(l, r)` (given as flat pairs in `q`, indices counted from `0`) asks for the bitwise AND of `a[l], a[l+1], ..., a[r]`. Return the sum of the answers of all queries, modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "a = [12,10,14], q = [0,2,1,2]",
+    "output": "18",
+    "explanation": "The total is 18."
+   },
+   {
+    "input": "a = [7], q = [0,0]",
+    "output": "7",
+    "explanation": "The total is 7."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000 and 2 <= q.length <= 100000 and q.length is even",
+   "0 <= a[i] < 1073741824 and 0 <= l <= r < a.length"
+  ],
+  "functionName": "rangeAndQueriesTotal",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "q",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      12,
+      10,
+      14
+     ],
+     [
+      0,
+      2,
+      1,
+      2
+     ]
+    ],
+    "expected": 18,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      0,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      15,
+      15,
+      15
+     ],
+     [
+      0,
+      1,
+      1,
+      2,
+      0,
+      2
+     ]
+    ],
+    "expected": 45,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      1
+     ],
+     [
+      0,
+      0,
+      1,
+      2
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1073741823,
+      1073741823
+     ],
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 73741816,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      3,
+      2,
+      7
+     ],
+     [
+      0,
+      3,
+      1,
+      3,
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Gap In Sorted Order",
+  "difficulty": "Medium",
+  "tags": [
+   "Sorting",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "Sort `a` and look at every pair of neighbours in the sorted order. Return the largest difference between two neighbours (`0` if all values are equal).",
+  "examples": [
+   {
+    "input": "a = [3,6,9,1]",
+    "output": "3",
+    "explanation": "The largest gap is 3."
+   },
+   {
+    "input": "a = [10,10]",
+    "output": "0",
+    "explanation": "The largest gap is 0."
+   }
+  ],
+  "constraints": [
+   "2 <= a.length <= 100000",
+   "0 <= a[i] <= 1000000000"
+  ],
+  "functionName": "maximumGapSorted",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      6,
+      9,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      10,
+      10
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      100
+     ]
+    ],
+    "expected": 99,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      9
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1000000000
+     ]
+    ],
+    "expected": 1000000000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      1,
+      7,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Below With Distinct Digits",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Enumeration",
+   "Previously Asked"
+  ],
+  "companies": [
+   "TCS"
+  ],
+  "description": "Return the largest positive integer strictly smaller than `n` whose decimal digits are all different, or `0` if there is none.",
+  "examples": [
+   {
+    "input": "n = 100",
+    "output": "98",
+    "explanation": "The number is 98."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The number is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000000",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "largestBelowDistinctDigits",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     100
+    ],
+    "expected": 98,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     11
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 987,
+    "isSample": false
+   },
+   {
+    "args": [
+     112
+    ],
+    "expected": 109,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 987654,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Subarray Product Below K Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Sliding Window",
+   "Array",
+   "Previously Asked"
+  ],
+  "companies": [
+   "Infosys"
+  ],
+  "description": "All elements of `a` are positive. Count the non-empty contiguous parts of `a` whose product of elements is strictly less than `k`. Return the count modulo `1000000007`.",
+  "examples": [
+   {
+    "input": "a = [10,5,2,6], k = 100",
+    "output": "8",
+    "explanation": "There are 8 such parts (modulo 1000000007)."
+   },
+   {
+    "input": "a = [1], k = 1",
+    "output": "0",
+    "explanation": "There are 0 such parts (modulo 1000000007)."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length <= 100000",
+   "1 <= a[i] <= 1000 and 0 <= k <= 1000000000"
+  ],
+  "functionName": "subarrayProductBelowK",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      10,
+      5,
+      2,
+      6
+     ],
+     100
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5
+     ],
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      4
+     ],
+     24
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      4
+     ],
+     25
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ }
+]

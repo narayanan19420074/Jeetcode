@@ -1,0 +1,12667 @@
+[
+ {
+  "title": "Frequency Spread",
+  "difficulty": "Easy",
+  "tags": [
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "Count how many times each distinct value occurs in `nums`. Return the highest count minus the lowest count.",
+  "examples": [
+   {
+    "input": "nums = [1,1,2]",
+    "output": "1",
+    "explanation": "The spread between highest and lowest count is 1."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "0",
+    "explanation": "The spread between highest and lowest count is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "frequencySpread",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      4,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      7,
+      7,
+      1,
+      1,
+      9
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Adjacent Equal Pair Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Oracle",
+   "Uber",
+   "Atlassian"
+  ],
+  "description": "Return the number of indices `i` with `0 <= i < nums.length - 1` such that `nums[i] == nums[i + 1]`.",
+  "examples": [
+   {
+    "input": "nums = [1,1,2,2,2]",
+    "output": "3",
+    "explanation": "There are 3 equal adjacent pair(s)."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "0",
+    "explanation": "There are 0 equal adjacent pair(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "adjacentEqualPairCount",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      4,
+      3,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Even Prefix Sum Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Uber",
+   "Google",
+   "Goldman Sachs"
+  ],
+  "description": "A prefix is the first `k` elements for `1 <= k <= nums.length`. Return how many prefixes have an even sum.",
+  "examples": [
+   {
+    "input": "nums = [1,1,1]",
+    "output": "1",
+    "explanation": "1 prefix(es) have an even sum."
+   },
+   {
+    "input": "nums = [2]",
+    "output": "1",
+    "explanation": "1 prefix(es) have an even sum."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "evenPrefixSumCount",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      1,
+      -1,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Common Digit",
+  "difficulty": "Easy",
+  "tags": [
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Flipkart",
+   "Salesforce"
+  ],
+  "description": "Write every number of `nums` in decimal (ignore minus signs) and count how often each digit `0-9` appears overall. Return the digit that appears most often; on a tie return the smaller digit.",
+  "examples": [
+   {
+    "input": "nums = [123,321]",
+    "output": "1",
+    "explanation": "The most common digit is 1."
+   },
+   {
+    "input": "nums = [0]",
+    "output": "0",
+    "explanation": "The most common digit is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 500",
+   "-10^6 <= nums[i] <= 10^6"
+  ],
+  "functionName": "mostCommonDigit",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      123,
+      321
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      11,
+      22,
+      22
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      5,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      100,
+      1000
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      999999,
+      1
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      12,
+      34,
+      56,
+      78
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Clamped Array Total",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "Salesforce",
+   "Infosys",
+   "Bloomberg"
+  ],
+  "description": "Replace every element `x` of `nums` by `lo` if `x < lo`, by `hi` if `x > hi`, and keep it otherwise. Return the sum of the resulting array.",
+  "examples": [
+   {
+    "input": "nums = [1,5,9], lo = 3, hi = 6",
+    "output": "14",
+    "explanation": "The clamped total is 14."
+   },
+   {
+    "input": "nums = [0], lo = 0, hi = 0",
+    "output": "0",
+    "explanation": "The clamped total is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000, -1000 <= nums[i] <= 1000",
+   "-1000 <= lo <= hi <= 1000"
+  ],
+  "functionName": "clampedArrayTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "lo",
+    "type": "int"
+   },
+   {
+    "name": "hi",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      5,
+      9
+     ],
+     3,
+     6
+    ],
+    "expected": 14,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     0,
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -5,
+      5
+     ],
+     -1,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ],
+     2,
+     2
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      -10,
+      0
+     ],
+     -3,
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      100,
+      200
+     ],
+     0,
+     50
+    ],
+    "expected": 100,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     5,
+     9
+    ],
+    "expected": 15,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Index Parity Agreement",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Amazon",
+   "Walmart"
+  ],
+  "description": "Count the indices `i` (0-based) for which `nums[i]` and `i` have the same parity (both even or both odd).",
+  "examples": [
+   {
+    "input": "nums = [0,1,2,3]",
+    "output": "4",
+    "explanation": "4 index(es) agree in parity."
+   },
+   {
+    "input": "nums = [1]",
+    "output": "0",
+    "explanation": "0 index(es) agree in parity."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "indexParityAgreement",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6,
+      8
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Halves Sum Difference",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "Uber",
+   "Google",
+   "Amazon"
+  ],
+  "description": "Split `nums` into a left half (first `n / 2` elements), a right half (last `n / 2` elements, integer division) and, for odd `n`, a middle element which is ignored. Return the absolute difference between the left and right sums.",
+  "examples": [
+   {
+    "input": "nums = [1,2,3,4]",
+    "output": "4",
+    "explanation": "The halves differ by 4."
+   },
+   {
+    "input": "nums = [7]",
+    "output": "0",
+    "explanation": "The halves differ by 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "halvesSumDifference",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      100,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      0,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      -10,
+      10,
+      -10
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Widest Gap Between Targets",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Uber",
+   "Apple",
+   "Goldman Sachs"
+  ],
+  "description": "Look at the positions where `target` occurs in `nums`. Return the largest difference between two consecutive occurrences, or `0` if it occurs fewer than two times.",
+  "examples": [
+   {
+    "input": "nums = [1,2,1,3,1], target = 1",
+    "output": "2",
+    "explanation": "The widest gap is 2."
+   },
+   {
+    "input": "nums = [5], target = 5",
+    "output": "0",
+    "explanation": "The widest gap is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i], target <= 1000"
+  ],
+  "functionName": "widestGapBetweenTargets",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      3,
+      1
+     ],
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ],
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      0,
+      0,
+      0,
+      7
+     ],
+     7
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      9,
+      1,
+      1,
+      9,
+      9
+     ],
+     9
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      3,
+      1,
+      1,
+      1,
+      3
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Median Triple Total",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Sorting"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "For every window of three consecutive elements of `nums` take its median (the middle value when sorted). Return the sum of these medians (`0` if `nums` has fewer than 3 elements).",
+  "examples": [
+   {
+    "input": "nums = [1,3,2,5]",
+    "output": "5",
+    "explanation": "The medians add up to 5."
+   },
+   {
+    "input": "nums = [4]",
+    "output": "0",
+    "explanation": "The medians add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "medianTripleTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -5,
+      3,
+      8,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ]
+    ],
+    "expected": 14,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Binary Search Probe Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Binary Search",
+   "Simulation"
+  ],
+  "companies": [
+   "Infosys",
+   "Zoho",
+   "Microsoft"
+  ],
+  "description": "Run the standard binary search for `target` on the sorted array `nums` (`mid = (lo + hi) / 2` with integer division, `lo = 0`, `hi = n - 1`, shrinking to `mid + 1` or `mid - 1`). Return how many middle elements are inspected before it stops, whether or not the target is found.",
+  "examples": [
+   {
+    "input": "nums = [1,3,5,7,9], target = 7",
+    "output": "2",
+    "explanation": "The search inspects 2 element(s)."
+   },
+   {
+    "input": "nums = [4], target = 4",
+    "output": "1",
+    "explanation": "The search inspects 1 element(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000, nums is sorted ascending with distinct values",
+   "-10^4 <= nums[i], target <= 10^4"
+  ],
+  "functionName": "binarySearchProbeCount",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      5,
+      7,
+      9
+     ],
+     7
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+     ],
+     8
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      6,
+      8
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      20,
+      30
+     ],
+     25
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Above Average Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "TCS",
+   "Zoho"
+  ],
+  "description": "Return how many elements of `nums` are strictly greater than the average of the whole array (compare exactly, do not round the average).",
+  "examples": [
+   {
+    "input": "nums = [1,2,3]",
+    "output": "1",
+    "explanation": "1 element(s) are above the average."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "0",
+    "explanation": "0 element(s) are above the average."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "aboveAverageCount",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -1,
+      10
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      100
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Vowel Consonant Gap",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "`s` contains only lowercase letters. Return the absolute difference between the number of vowels (`a e i o u`) and the number of consonants.",
+  "examples": [
+   {
+    "input": "s = \"hello\"",
+    "output": "1",
+    "explanation": "The gap is 1."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "The gap is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "lowercase letters only"
+  ],
+  "functionName": "vowelConsonantGap",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "b"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aeiou"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "education"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Uppercase Letter Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "TCS",
+   "Infosys"
+  ],
+  "description": "Return how many characters of `s` are uppercase letters (`A-Z`). `s` may also contain lowercase letters and digits.",
+  "examples": [
+   {
+    "input": "s = \"Hello\"",
+    "output": "1",
+    "explanation": "1 uppercase letter(s)."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "0 uppercase letter(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "letters and digits only"
+  ],
+  "functionName": "uppercaseLetterCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "Hello"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ABC"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a1B2c3D"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "Z"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aAaAaA"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Same End Letter Words",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return how many words start and end with the same letter (a one-letter word counts).",
+  "examples": [
+   {
+    "input": "s = \"level noon abc\"",
+    "output": "2",
+    "explanation": "2 word(s) start and end alike."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "1 word(s) start and end alike."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "words are lowercase and separated by exactly one space"
+  ],
+  "functionName": "sameEndLetterWords",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "level noon abc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aba cdc ef"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x y z"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "tat tot tit tut"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Character Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Uber",
+   "Salesforce"
+  ],
+  "description": "`s` contains letters and digits. Return the sum of the digit characters (each digit counts as its numeric value; letters count as `0`).",
+  "examples": [
+   {
+    "input": "s = \"a1b2c3\"",
+    "output": "6",
+    "explanation": "The digits add up to 6."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "The digits add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "lowercase letters and digits only"
+  ],
+  "functionName": "digitCharacterSum",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a1b2c3"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "9"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "99999"
+    ],
+    "expected": 45,
+    "isSample": false
+   },
+   {
+    "args": [
+     "z0z"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12ab34"
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Strict Case Alternation",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Flipkart",
+   "TCS"
+  ],
+  "description": "`s` contains only letters. Return `true` if the letters alternate strictly between uppercase and lowercase from one position to the next (starting with either case).",
+  "examples": [
+   {
+    "input": "s = \"aBcD\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"AbCd\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "letters only"
+  ],
+  "functionName": "isStrictCaseAlternation",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "aBcD"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "AbCd"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AB"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aBc"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AbcD"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shared Prefix Length",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Paytm",
+   "LinkedIn"
+  ],
+  "description": "Return the length of the longest common prefix of the strings `a` and `b` (`0` if their first characters differ).",
+  "examples": [
+   {
+    "input": "a = \"flower\", b = \"flow\"",
+    "output": "4",
+    "explanation": "The shared prefix has length 4."
+   },
+   {
+    "input": "a = \"a\", b = \"b\"",
+    "output": "0",
+    "explanation": "The shared prefix has length 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 200",
+   "lowercase letters only"
+  ],
+  "functionName": "sharedPrefixLength",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "flower",
+     "flow"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abd"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "x"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "same",
+     "sameness"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello",
+     "help"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Vowel Position Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Microsoft",
+   "Facebook"
+  ],
+  "description": "Positions in `s` are numbered from `1`. Return the sum of the positions at which a vowel (`a e i o u`) appears.",
+  "examples": [
+   {
+    "input": "s = \"hello\"",
+    "output": "7",
+    "explanation": "The vowel positions add up to 7."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "The vowel positions add up to 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "lowercase letters only"
+  ],
+  "functionName": "vowelPositionSum",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aeiou"
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "banana"
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     "education"
+    ],
+    "expected": 24,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Character Run Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "A run is a maximal block of identical consecutive characters. Return the number of runs in `s`.",
+  "examples": [
+   {
+    "input": "s = \"aabbb\"",
+    "output": "2",
+    "explanation": "`s` has 2 run(s)."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "`s` has 1 run(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "lowercase letters only"
+  ],
+  "functionName": "characterRunCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aabbb"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzyyx"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Runner-Up Letter",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Salesforce"
+  ],
+  "description": "Rank the letters of `s` by how often they occur (more occurrences first; equal counts ordered alphabetically). Return the letter ranked second.",
+  "examples": [
+   {
+    "input": "s = \"aabbb\"",
+    "output": "\"a\"",
+    "explanation": "The second-ranked letter is \"a\"."
+   },
+   {
+    "input": "s = \"ab\"",
+    "output": "\"b\"",
+    "explanation": "The second-ranked letter is \"b\"."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 200",
+   "lowercase letters; at least two different letters appear"
+  ],
+  "functionName": "runnerUpLetter",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "aabbb"
+    ],
+    "expected": "a",
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": "b",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": "b",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzyyx"
+    ],
+    "expected": "y",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcc"
+    ],
+    "expected": "b",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyxyxz"
+    ],
+    "expected": "y",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbbaaac"
+    ],
+    "expected": "b",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Average Word Length Floor",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Paytm",
+   "Adobe"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return the average word length rounded down.",
+  "examples": [
+   {
+    "input": "s = \"ab cd ef\"",
+    "output": "2",
+    "explanation": "The floored average length is 2."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "The floored average length is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "words are lowercase and separated by exactly one space"
+  ],
+  "functionName": "averageWordLengthFloor",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ab cd ef"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a bb"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa b"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "the cat sat"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdef gh"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Ones Block Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Paytm",
+   "Microsoft"
+  ],
+  "description": "`s` is a binary string. Return the number of maximal blocks of consecutive `1` characters.",
+  "examples": [
+   {
+    "input": "s = \"110011\"",
+    "output": "2",
+    "explanation": "There are 2 block(s) of ones."
+   },
+   {
+    "input": "s = \"0\"",
+    "output": "0",
+    "explanation": "There are 0 block(s) of ones."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s contains only 0 and 1"
+  ],
+  "functionName": "onesBlockCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "110011"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "10101"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "000"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0110110"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cross Array Pair Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "Return `true` if one element of `a` and one element of `b` add up to `target`.",
+  "examples": [
+   {
+    "input": "a = [1,2], b = [3,4], target = 5",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "a = [1], b = [1], target = 3",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 1000",
+   "-1000 <= a[i], b[i], target <= 1000"
+  ],
+  "functionName": "crossArrayPairSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "b",
+    "type": "int[]"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ],
+     3
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     [
+      0
+     ],
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      6
+     ],
+     [
+      1,
+      2
+     ],
+     10
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      4
+     ],
+     [
+      1,
+      9
+     ],
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2
+     ],
+     [
+      3
+     ],
+     5
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      10,
+      20
+     ],
+     4
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rising Day Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Oracle",
+   "Google",
+   "Walmart"
+  ],
+  "description": "`prices[i]` is the price on day `i`. Return the number of days `i >= 1` on which the price is strictly higher than on day `i - 1`.",
+  "examples": [
+   {
+    "input": "prices = [1,2,3]",
+    "output": "2",
+    "explanation": "The price rose on 2 day(s)."
+   },
+   {
+    "input": "prices = [5]",
+    "output": "0",
+    "explanation": "The price rose on 0 day(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= prices.length <= 1000",
+   "0 <= prices[i] <= 10^4"
+  ],
+  "functionName": "risingDayCount",
+  "params": [
+   {
+    "name": "prices",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      6,
+      5,
+      6,
+      5,
+      6
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      10000
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Total Travel Distance",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "Apple",
+   "Oracle"
+  ],
+  "description": "A traveller visits the positions listed in `stops` in order. Return the total distance travelled, i.e. the sum of `|stops[i + 1] - stops[i]|`.",
+  "examples": [
+   {
+    "input": "stops = [1,5,2]",
+    "output": "7",
+    "explanation": "The traveller covers 7 unit(s)."
+   },
+   {
+    "input": "stops = [7]",
+    "output": "0",
+    "explanation": "The traveller covers 0 unit(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= stops.length <= 1000",
+   "-10^4 <= stops[i] <= 10^4"
+  ],
+  "functionName": "totalTravelDistance",
+  "params": [
+   {
+    "name": "stops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      5,
+      2
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      -10,
+      10
+     ]
+    ],
+    "expected": 40,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      9,
+      9
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Dominant Parity",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Counting"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "Return `1` if `nums` contains more odd numbers than even numbers, `0` if it contains more even numbers, and `-1` if the counts are equal.",
+  "examples": [
+   {
+    "input": "nums = [1,3,2]",
+    "output": "1",
+    "explanation": "The result is 1."
+   },
+   {
+    "input": "nums = [2]",
+    "output": "0",
+    "explanation": "The result is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "dominantParity",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      4,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -3,
+      -5,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Busiest Tens Bucket",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Paytm",
+   "Bloomberg"
+  ],
+  "description": "Group the numbers of `nums` into buckets by `x / 10` (integer division): bucket `0` holds 0-9, bucket `1` holds 10-19, and so on. Return the index of the fullest bucket; on a tie return the smaller index.",
+  "examples": [
+   {
+    "input": "nums = [1,2,15]",
+    "output": "0",
+    "explanation": "Bucket 0 is the fullest."
+   },
+   {
+    "input": "nums = [55]",
+    "output": "5",
+    "explanation": "Bucket 5 is the fullest."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "0 <= nums[i] <= 99"
+  ],
+  "functionName": "busiestTensBucket",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      15
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      55
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      15
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      99,
+      98,
+      1
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      11,
+      20,
+      21
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      90
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      33,
+      34,
+      35,
+      1,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Values In Range Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Counting"
+  ],
+  "companies": [
+   "Atlassian",
+   "LinkedIn"
+  ],
+  "description": "Return how many elements of `nums` lie in the inclusive range `[lo, hi]`.",
+  "examples": [
+   {
+    "input": "nums = [1,5,9], lo = 2, hi = 6",
+    "output": "1",
+    "explanation": "1 element(s) fall inside the range."
+   },
+   {
+    "input": "nums = [0], lo = 0, hi = 0",
+    "output": "1",
+    "explanation": "1 element(s) fall inside the range."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000, -1000 <= nums[i] <= 1000",
+   "-1000 <= lo <= hi <= 1000"
+  ],
+  "functionName": "valuesInRangeCount",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "lo",
+    "type": "int"
+   },
+   {
+    "name": "hi",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      5,
+      9
+     ],
+     2,
+     6
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     4,
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      5
+     ],
+     -5,
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ],
+     3,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      20,
+      30
+     ],
+     15,
+     25
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     1,
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Extreme Index Distance",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Microsoft",
+   "Walmart"
+  ],
+  "description": "Let `i` be the index of the first occurrence of the maximum of `nums` and `j` the index of the first occurrence of the minimum. Return `|i - j|`.",
+  "examples": [
+   {
+    "input": "nums = [1,5,2]",
+    "output": "1",
+    "explanation": "The extremes are 1 index(es) apart."
+   },
+   {
+    "input": "nums = [4]",
+    "output": "0",
+    "explanation": "The extremes are 0 index(es) apart."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "extremeIndexDistance",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      5,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      5,
+      9
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      8,
+      0,
+      8,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Consecutive Rise Triples",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Salesforce",
+   "Adobe",
+   "Goldman Sachs"
+  ],
+  "description": "Count the indices `i` with `nums[i] < nums[i + 1] < nums[i + 2]`.",
+  "examples": [
+   {
+    "input": "nums = [1,2,3,4]",
+    "output": "2",
+    "explanation": "2 rising triple(s) exist."
+   },
+   {
+    "input": "nums = [1]",
+    "output": "0",
+    "explanation": "0 rising triple(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "consecutiveRiseTriples",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      6,
+      7,
+      8,
+      9
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Same Multiset Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Zoho",
+   "Paytm"
+  ],
+  "description": "Return `true` if arrays `a` and `b` contain exactly the same values with the same multiplicities (order does not matter).",
+  "examples": [
+   {
+    "input": "a = [1,2,3], b = [3,2,1]",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "a = [1], b = [1]",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 1000",
+   "-1000 <= a[i], b[i] <= 1000"
+  ],
+  "functionName": "isSameMultiset",
+  "params": [
+   {
+    "name": "a",
+    "type": "int[]"
+   },
+   {
+    "name": "b",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     [
+      2
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2
+     ],
+     [
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5
+     ],
+     [
+      5,
+      5
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      -1
+     ],
+     [
+      -1,
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "First Repeat Position",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Hash Table"
+  ],
+  "companies": [
+   "Oracle",
+   "Flipkart",
+   "Apple"
+  ],
+  "description": "Scan `nums` from left to right and return the index of the first element whose value has already appeared earlier, or `-1` if all values are distinct.",
+  "examples": [
+   {
+    "input": "nums = [1,2,1]",
+    "output": "2",
+    "explanation": "The first repeat is at index 2 (-1 means none)."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "-1",
+    "explanation": "The first repeat is at index -1 (-1 means none)."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "firstRepeatPosition",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      5,
+      6,
+      7,
+      5,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Running Maximum Total",
+  "difficulty": "Easy",
+  "tags": [
+   "Array"
+  ],
+  "companies": [
+   "Bloomberg",
+   "TCS"
+  ],
+  "description": "For each index `i`, let `m[i]` be the largest value among `nums[0..i]`. Return the sum of all `m[i]`.",
+  "examples": [
+   {
+    "input": "nums = [1,3,2]",
+    "output": "7",
+    "explanation": "The running maxima add up to 7."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "5",
+    "explanation": "The running maxima add up to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "runningMaximumTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3
+     ]
+    ],
+    "expected": -3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      2,
+      8,
+      3
+     ]
+    ],
+    "expected": 27,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Net Zero Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "Facebook",
+   "Amazon",
+   "Netflix"
+  ],
+  "description": "Return `true` if the elements of `nums` add up to exactly zero.",
+  "examples": [
+   {
+    "input": "nums = [1,-1]",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "nums = [0]",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000"
+  ],
+  "functionName": "isNetZero",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      -1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      -3
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -4,
+      2,
+      2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      -1,
+      -1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Widest Word In Sentence",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Bloomberg",
+   "TCS"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return the length of the longest word.",
+  "examples": [
+   {
+    "input": "s = \"the quick brown fox\"",
+    "output": "5",
+    "explanation": "The longest word has 5 letter(s)."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "1",
+    "explanation": "The longest word has 1 letter(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "words are lowercase and separated by exactly one space"
+  ],
+  "functionName": "widestWordInSentence",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "the quick brown fox"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa bb cc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x yyy zz"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "i am here"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefghij k"
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equal Digit Sum Pairs",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Counting",
+   "Math"
+  ],
+  "companies": [
+   "Atlassian",
+   "Uber"
+  ],
+  "description": "Count the pairs of indices `i < j` for which `nums[i]` and `nums[j]` have the same sum of decimal digits.",
+  "examples": [
+   {
+    "input": "nums = [18,81,27]",
+    "output": "3",
+    "explanation": "3 pair(s) share a digit sum."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "0",
+    "explanation": "0 pair(s) share a digit sum."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "1 <= nums[i] <= 10^6"
+  ],
+  "functionName": "equalDigitSumPairs",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      18,
+      81,
+      27
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      10,
+      100
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      12,
+      21,
+      3,
+      30
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      99,
+      99
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      19,
+      28,
+      37,
+      46,
+      55
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Power Of Two Sum Pairs",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Bit Manipulation",
+   "Counting"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Google"
+  ],
+  "description": "Count the pairs of indices `i < j` for which `nums[i] + nums[j]` is a power of two (`1, 2, 4, 8, ...`).",
+  "examples": [
+   {
+    "input": "nums = [1,3,5,7]",
+    "output": "3",
+    "explanation": "3 pair(s) add up to a power of two."
+   },
+   {
+    "input": "nums = [1]",
+    "output": "0",
+    "explanation": "0 pair(s) add up to a power of two."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "1 <= nums[i] <= 10^6"
+  ],
+  "functionName": "powerOfTwoSumPairs",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      5,
+      7
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      6
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      4
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1000000,
+      48576
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Distinct After Shifts",
+  "difficulty": "Medium",
+  "tags": [
+   "Greedy",
+   "Sorting"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "You may add to every element of `nums` one integer from `-k` to `k` (each element chooses its own shift). Return the largest possible number of distinct values in the resulting array.",
+  "examples": [
+   {
+    "input": "nums = [1,2,2,3,3,4], k = 2",
+    "output": "6",
+    "explanation": "At most 6 distinct value(s) are possible."
+   },
+   {
+    "input": "nums = [4,4,4,4], k = 1",
+    "output": "3",
+    "explanation": "At most 3 distinct value(s) are possible."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "-1000 <= nums[i] <= 1000, 0 <= k <= 1000"
+  ],
+  "functionName": "mostDistinctAfterShifts",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      4
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      10,
+      11,
+      11
+     ],
+     1
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Next Greater Frequency Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Zoho",
+   "Microsoft"
+  ],
+  "description": "Let `f(x)` be how many times value `x` occurs in the whole array. For each index `i` find the nearest index `j > i` with `f(nums[j]) > f(nums[i])` and take `nums[j]`; if no such index exists take `-1`. Return the sum of the values taken.",
+  "examples": [
+   {
+    "input": "nums = [1,1,2,3,2,1]",
+    "output": "1",
+    "explanation": "The chosen values add up to 1."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "-1",
+    "explanation": "The chosen values add up to -1."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "0 <= nums[i] <= 1000"
+  ],
+  "functionName": "nextGreaterFrequencyTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": -3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": -3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      3,
+      1,
+      2
+     ]
+    ],
+    "expected": -2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      5,
+      4,
+      5,
+      6
+     ]
+    ],
+    "expected": -5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Same Value Distance Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "TCS",
+   "Bloomberg"
+  ],
+  "description": "For every index `i`, add up `|i - j|` over all other indices `j` with `nums[j] == nums[i]`. Return the sum of these totals over all `i`.",
+  "examples": [
+   {
+    "input": "nums = [1,3,1,1,2]",
+    "output": "12",
+    "explanation": "The distances add up to 12."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "0",
+    "explanation": "The distances add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "0 <= nums[i] <= 1000"
+  ],
+  "functionName": "sameValueDistanceTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      1,
+      1,
+      2
+     ]
+    ],
+    "expected": 12,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      0,
+      7,
+      0,
+      0,
+      7
+     ]
+    ],
+    "expected": 32,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Max Chunks With Duplicates",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "Greedy",
+   "Array"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "Split `nums` into the largest number of contiguous chunks so that sorting each chunk on its own and joining the chunks in order gives the fully sorted array. Return that largest number of chunks (values may repeat).",
+  "examples": [
+   {
+    "input": "nums = [5,4,3,2,1]",
+    "output": "1",
+    "explanation": "The array can be cut into 1 chunk(s)."
+   },
+   {
+    "input": "nums = [2,1,3,4,4]",
+    "output": "4",
+    "explanation": "The array can be cut into 4 chunk(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "0 <= nums[i] <= 1000"
+  ],
+  "functionName": "maxChunksWithDuplicates",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      4,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      3,
+      4,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      2,
+      5,
+      4,
+      6
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Subarrays With Frequent Maximum",
+  "difficulty": "Medium",
+  "tags": [
+   "Sliding Window",
+   "Array"
+  ],
+  "companies": [
+   "Oracle",
+   "Apple",
+   "Goldman Sachs"
+  ],
+  "description": "Let `M` be the largest value in the whole array. Count the contiguous subarrays in which `M` occurs at least `k` times.",
+  "examples": [
+   {
+    "input": "nums = [1,3,2,3,3], k = 2",
+    "output": "6",
+    "explanation": "6 subarray(s) qualify."
+   },
+   {
+    "input": "nums = [1,4,2,1], k = 3",
+    "output": "0",
+    "explanation": "0 subarray(s) qualify."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "1 <= nums[i] <= 1000, 1 <= k <= 2000"
+  ],
+  "functionName": "subarraysWithFrequentMaximum",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      3,
+      3
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      4,
+      2,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ],
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2
+     ],
+     1
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      3,
+      1,
+      3
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse-Sum Twin Pairs",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Math",
+   "Counting"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Apple",
+   "Salesforce"
+  ],
+  "description": "Let `rev(x)` be `x` with its decimal digits reversed (`120` becomes `21`). Count the pairs `i < j` with `nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])`.",
+  "examples": [
+   {
+    "input": "nums = [42,11,1,97]",
+    "output": "2",
+    "explanation": "2 twin pair(s) exist."
+   },
+   {
+    "input": "nums = [13,10,35,52,68,80,83,94,97]",
+    "output": "4",
+    "explanation": "4 twin pair(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "0 <= nums[i] <= 10^9"
+  ],
+  "functionName": "reverseSumTwinPairs",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      42,
+      11,
+      1,
+      97
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      13,
+      10,
+      35,
+      52,
+      68,
+      80,
+      83,
+      94,
+      97
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      12,
+      21
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      11,
+      22,
+      33
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      100,
+      1,
+      10
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "First Unformable Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Greedy",
+   "Array",
+   "Math"
+  ],
+  "companies": [
+   "Flipkart",
+   "Google"
+  ],
+  "description": "Return the smallest positive integer that cannot be written as the sum of some sub-collection of `nums` (each element used at most once; the collection may be a single element).",
+  "examples": [
+   {
+    "input": "nums = [1,2,4]",
+    "output": "8",
+    "explanation": "The smallest unreachable sum is 8."
+   },
+   {
+    "input": "nums = [1,1,1]",
+    "output": "4",
+    "explanation": "The smallest unreachable sum is 4."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "1 <= nums[i] <= 10^4"
+  ],
+  "functionName": "firstUnformableTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      4
+     ]
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      5
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      10
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Block Up The Ones Swaps",
+  "difficulty": "Medium",
+  "tags": [
+   "Sliding Window",
+   "Array",
+   "Greedy"
+  ],
+  "companies": [
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "`bits` is a binary array. A swap exchanges the values at any two positions. Return the minimum number of swaps needed so that all `1` values form one contiguous block (`0` if there are no ones).",
+  "examples": [
+   {
+    "input": "bits = [1,0,1,0,1]",
+    "output": "1",
+    "explanation": "At least 1 swap(s) are needed."
+   },
+   {
+    "input": "bits = [0]",
+    "output": "0",
+    "explanation": "At least 0 swap(s) are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= bits.length <= 1000",
+   "each element is 0 or 1"
+  ],
+  "functionName": "blockUpTheOnesSwaps",
+  "params": [
+   {
+    "name": "bits",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Polygon Doubled Area",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Math"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Flipkart",
+   "Uber"
+  ],
+  "description": "`points` lists, as flat pairs `[x0, y0, x1, y1, ...]`, the vertices of a simple polygon in order (clockwise or counter-clockwise). Return twice the polygon's area, which is always an integer.",
+  "examples": [
+   {
+    "input": "points = [0,0,4,0,4,3,0,3]",
+    "output": "24",
+    "explanation": "Twice the area is 24."
+   },
+   {
+    "input": "points = [0,0,4,0,0,3]",
+    "output": "12",
+    "explanation": "Twice the area is 12."
+   }
+  ],
+  "constraints": [
+   "3 <= number of vertices <= 20",
+   "-100 <= x, y <= 100; the polygon does not cross itself and has non-zero area"
+  ],
+  "functionName": "polygonDoubledArea",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      3,
+      0,
+      3
+     ]
+    ],
+    "expected": 24,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      0,
+      3
+     ]
+    ],
+    "expected": 12,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      2
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      3,
+      4,
+      0
+     ]
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      -5,
+      5,
+      -5,
+      5,
+      5,
+      -5,
+      5
+     ]
+    ],
+    "expected": 200,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      0,
+      3,
+      1,
+      1,
+      1,
+      1,
+      3,
+      0,
+      3
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10,
+      0,
+      10,
+      10
+     ]
+    ],
+    "expected": 100,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Point Inside Polygon",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Math"
+  ],
+  "companies": [
+   "Flipkart",
+   "TCS"
+  ],
+  "description": "`points` lists, as flat pairs, the vertices of a simple polygon in order. Return `true` if the point `(qx, qy)` lies inside the polygon or exactly on its boundary.",
+  "examples": [
+   {
+    "input": "points = [0,0,4,0,4,4,0,4], qx = 2, qy = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "points = [0,0,4,0,4,4,0,4], qx = 4, qy = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "3 <= number of vertices <= 20",
+   "-100 <= x, y, qx, qy <= 100; the polygon is simple with non-zero area"
+  ],
+  "functionName": "isPointInsidePolygon",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   },
+   {
+    "name": "qx",
+    "type": "int"
+   },
+   {
+    "name": "qy",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4
+     ],
+     2,
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4
+     ],
+     4,
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4
+     ],
+     5,
+     2
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      0,
+      4
+     ],
+     3,
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      0,
+      4
+     ],
+     2,
+     2
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      6,
+      0,
+      6,
+      6,
+      3,
+      2,
+      0,
+      6
+     ],
+     3,
+     4
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      6,
+      0,
+      6,
+      6,
+      3,
+      2,
+      0,
+      6
+     ],
+     3,
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Points On One Line",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Math"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "`points` lists distinct points as flat pairs `[x0, y0, x1, y1, ...]`. Return the largest number of points that lie on a single straight line.",
+  "examples": [
+   {
+    "input": "points = [1,1,2,2,3,3]",
+    "output": "3",
+    "explanation": "At most 3 point(s) are collinear."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "1",
+    "explanation": "At most 1 point(s) are collinear."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 300",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "mostPointsOnOneLine",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      3,
+      2,
+      5,
+      3,
+      4,
+      1,
+      2,
+      3,
+      1,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      1,
+      4,
+      2,
+      6,
+      3,
+      1,
+      5
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equidistant Pair Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Walmart",
+   "Paytm",
+   "Microsoft"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Count the ordered triples `(i, j, k)` of different points where point `j` and point `k` are at the same distance from point `i` (swapping `j` and `k` counts as a different triple).",
+  "examples": [
+   {
+    "input": "points = [0,0,1,0,2,0]",
+    "output": "2",
+    "explanation": "2 ordered triple(s) qualify."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "0 ordered triple(s) qualify."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 200",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "equidistantPairCount",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      2,
+      2,
+      0,
+      2,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1,
+      -1,
+      0,
+      0,
+      -1
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Four Points Make Square",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Math"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "`points` holds exactly four points as flat pairs `[x0, y0, ..., x3, y3]` in any order. Return `true` if they are the corners of a square (non-zero side length).",
+  "examples": [
+   {
+    "input": "points = [0,0,1,1,1,0,0,1]",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "points = [0,0,1,1,1,0,0,12]",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "points.length = 8",
+   "-100 <= x, y <= 100; points may coincide"
+  ],
+  "functionName": "fourPointsMakeSquare",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      12
+     ]
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      -1,
+      0,
+      0,
+      1,
+      0,
+      -1
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      2,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      1,
+      2,
+      4,
+      -1,
+      3
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Convex Polygon Check",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Math"
+  ],
+  "companies": [
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "`points` lists the vertices of a simple polygon in order as flat pairs. Return `true` if the polygon is convex (every turn goes the same direction; vertices lying on a straight line with their neighbours are allowed).",
+  "examples": [
+   {
+    "input": "points = [0,0,4,0,4,4,0,4]",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "points = [0,0,4,0,2,1,4,4,0,4]",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "3 <= number of vertices <= 20",
+   "-100 <= x, y <= 100; the polygon is simple with non-zero area"
+  ],
+  "functionName": "isConvexPolygon",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      2,
+      1,
+      4,
+      4,
+      0,
+      4
+     ]
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      0,
+      4
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      6,
+      0,
+      6,
+      6,
+      3,
+      2,
+      0,
+      6
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      2,
+      3,
+      3,
+      5,
+      1,
+      4,
+      -2
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      1,
+      1,
+      1,
+      1,
+      3
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Overlapping Rectangle Pairs",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Array",
+   "Counting"
+  ],
+  "companies": [
+   "Walmart",
+   "Google",
+   "Flipkart"
+  ],
+  "description": "`rects` lists axis-aligned rectangles as flat quadruples `[x1, y1, x2, y2, ...]` (bottom-left `(x1, y1)`, top-right `(x2, y2)`, with `x1 < x2` and `y1 < y2`). Count the pairs of rectangles whose overlap has positive area (touching along an edge or at a corner does not count).",
+  "examples": [
+   {
+    "input": "rects = [0,0,2,2,1,1,3,3]",
+    "output": "1",
+    "explanation": "1 pair(s) overlap."
+   },
+   {
+    "input": "rects = [0,0,1,1]",
+    "output": "0",
+    "explanation": "0 pair(s) overlap."
+   }
+  ],
+  "constraints": [
+   "1 <= number of rectangles <= 100",
+   "0 <= coordinates <= 10^4"
+  ],
+  "functionName": "overlappingRectanglePairs",
+  "params": [
+   {
+    "name": "rects",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      3,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      4,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      5,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      3,
+      0,
+      0,
+      3,
+      3
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10000,
+      10000,
+      5,
+      5,
+      6,
+      6
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Closest Pair Squared Distance",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Sorting",
+   "Divide And Conquer"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Uber",
+   "Google"
+  ],
+  "description": "`points` lists at least two distinct points as flat pairs. Return the smallest squared Euclidean distance `(dx * dx + dy * dy)` between any two different points.",
+  "examples": [
+   {
+    "input": "points = [0,0,3,4]",
+    "output": "25",
+    "explanation": "The smallest squared distance is 25."
+   },
+   {
+    "input": "points = [0,0,1,1,5,5]",
+    "output": "2",
+    "explanation": "The smallest squared distance is 2."
+   }
+  ],
+  "constraints": [
+   "2 <= number of points <= 2000",
+   "-10^4 <= x, y <= 10^4; all points are distinct"
+  ],
+  "functionName": "closestPairSquaredDistance",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      4
+     ]
+    ],
+    "expected": 25,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      5,
+      5
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10,
+      0,
+      10,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -10000,
+      -10000,
+      10000,
+      10000
+     ]
+    ],
+    "expected": 800000000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      5,
+      4,
+      0,
+      3,
+      3
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      0,
+      0,
+      5,
+      6,
+      9,
+      9
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cell Cluster Perimeter",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Matrix"
+  ],
+  "companies": [
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "`cells` lists distinct unit squares of the plane as flat pairs `[x0, y0, ...]` (the square with lower-left corner `(x, y)`). Return the total length of the boundary of the shape formed by their union, counting every unit edge that separates a chosen square from an unchosen one (this includes edges around holes).",
+  "examples": [
+   {
+    "input": "cells = [0,0]",
+    "output": "4",
+    "explanation": "The perimeter is 4."
+   },
+   {
+    "input": "cells = [0,0,1,0]",
+    "output": "6",
+    "explanation": "The perimeter is 6."
+   }
+  ],
+  "constraints": [
+   "1 <= number of cells <= 500",
+   "-1000 <= x, y <= 1000; all cells are distinct"
+  ],
+  "functionName": "cellClusterPerimeter",
+  "params": [
+   {
+    "name": "cells",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0
+     ]
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1,
+      2,
+      1,
+      0,
+      2,
+      1,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      5,
+      5
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -1,
+      0,
+      -1,
+      0,
+      0
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rectangle Union Area",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Sweep Line",
+   "Array"
+  ],
+  "companies": [
+   "Salesforce",
+   "Bloomberg",
+   "TCS"
+  ],
+  "description": "`rects` lists axis-aligned rectangles as flat quadruples `[x1, y1, x2, y2, ...]` with `x1 < x2` and `y1 < y2`. Return the total area covered by at least one rectangle (overlapping regions are counted once).",
+  "examples": [
+   {
+    "input": "rects = [0,0,2,2,1,1,3,3]",
+    "output": "7",
+    "explanation": "The union covers an area of 7."
+   },
+   {
+    "input": "rects = [0,0,1,1]",
+    "output": "1",
+    "explanation": "The union covers an area of 1."
+   }
+  ],
+  "constraints": [
+   "1 <= number of rectangles <= 100",
+   "0 <= coordinates <= 10^4"
+  ],
+  "functionName": "rectangleUnionArea",
+  "params": [
+   {
+    "name": "rects",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      3,
+      3
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      2,
+      0,
+      4,
+      2
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      4,
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      1,
+      0,
+      0,
+      1,
+      3,
+      2,
+      0,
+      3,
+      3
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10000,
+      10000,
+      0,
+      0,
+      10000,
+      10000
+     ]
+    ],
+    "expected": 100000000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      3,
+      3,
+      5,
+      5
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Perfect Rectangle Cover",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Math"
+  ],
+  "companies": [
+   "Zoho",
+   "Netflix",
+   "LinkedIn"
+  ],
+  "description": "`rects` lists axis-aligned rectangles as flat quadruples `[x1, y1, x2, y2, ...]` with `x1 < x2` and `y1 < y2`. Return `true` if together they cover one single rectangle exactly, with no gaps and no overlaps.",
+  "examples": [
+   {
+    "input": "rects = [1,1,3,3,3,1,4,2,3,2,4,4,1,3,2,4,2,3,3,4]",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "rects = [1,1,2,3,1,3,2,4,3,1,4,2,3,2,4,4]",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= number of rectangles <= 100",
+   "0 <= coordinates <= 10^4"
+  ],
+  "functionName": "isPerfectRectangleCover",
+  "params": [
+   {
+    "name": "rects",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      3,
+      3,
+      3,
+      1,
+      4,
+      2,
+      3,
+      2,
+      4,
+      4,
+      1,
+      3,
+      2,
+      4,
+      2,
+      3,
+      3,
+      4
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      3,
+      1,
+      3,
+      2,
+      4,
+      3,
+      1,
+      4,
+      2,
+      3,
+      2,
+      4,
+      4
+     ]
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      3,
+      3
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      2,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      0,
+      3,
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      0,
+      0,
+      2,
+      2
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Right Triangle Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Math"
+  ],
+  "companies": [
+   "Atlassian",
+   "Google"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Count the sets of three points that form a triangle with a right angle at one of its corners (the three points must not lie on one line).",
+  "examples": [
+   {
+    "input": "points = [0,0,1,0,0,1]",
+    "output": "1",
+    "explanation": "1 right triangle(s) exist."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "0 right triangle(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 150",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "rightTriangleCount",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      1,
+      1,
+      1,
+      -1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      2,
+      2,
+      1,
+      3,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      1,
+      0,
+      2,
+      1,
+      0,
+      2,
+      0
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Parallelogram Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Math"
+  ],
+  "companies": [
+   "Uber",
+   "Atlassian",
+   "Flipkart"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Count the sets of four points that are the corners of a parallelogram with non-zero area (rectangles, rhombuses and squares count too).",
+  "examples": [
+   {
+    "input": "points = [0,0,1,0,0,1,1,1]",
+    "output": "1",
+    "explanation": "1 parallelogram(s) exist."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "0 parallelogram(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 100",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "parallelogramCount",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      1,
+      1,
+      3,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      1,
+      1,
+      3,
+      3,
+      4
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      0,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Axis Rectangle Area",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Sorting"
+  ],
+  "companies": [
+   "Walmart",
+   "Uber",
+   "Goldman Sachs"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Return the smallest area of an axis-parallel rectangle whose four corners are all in `points`, or `0` if no such rectangle exists.",
+  "examples": [
+   {
+    "input": "points = [1,1,1,3,3,1,3,3,2,2]",
+    "output": "4",
+    "explanation": "The smallest rectangle has area 4."
+   },
+   {
+    "input": "points = [1,1,1,3,3,1,3,3,4,1,4,3]",
+    "output": "2",
+    "explanation": "The smallest rectangle has area 2."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 500",
+   "0 <= x, y <= 10^4; all points are distinct"
+  ],
+  "functionName": "smallestAxisRectangleArea",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      3,
+      3,
+      1,
+      3,
+      3,
+      2,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      3,
+      3,
+      1,
+      3,
+      3,
+      4,
+      1,
+      4,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      2,
+      3,
+      0,
+      3,
+      2,
+      1,
+      0,
+      1,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10000,
+      10000,
+      0,
+      10000,
+      10000,
+      0
+     ]
+    ],
+    "expected": 100000000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Axis Square Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Count the axis-parallel squares (positive side length, sides parallel to the x and y axes) whose four corners are all in `points`.",
+  "examples": [
+   {
+    "input": "points = [0,0,1,0,0,1,1,1]",
+    "output": "1",
+    "explanation": "1 square(s) exist."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "0 square(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 200",
+   "0 <= x, y <= 100; all points are distinct"
+  ],
+  "functionName": "axisSquareCount",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      0,
+      2,
+      2,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      2,
+      1,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      0,
+      0,
+      3,
+      3,
+      3,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      2,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      6,
+      5,
+      5,
+      6,
+      6,
+      6
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Meeting Spot Manhattan Cost",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Math",
+   "Sorting"
+  ],
+  "companies": [
+   "Infosys",
+   "Walmart",
+   "Uber"
+  ],
+  "description": "Friends live at the points listed in `points` (flat pairs, repeats allowed). They meet at an integer point and each walks along the grid, so the distance is `|dx| + |dy|`. Return the smallest possible total walking distance over all meeting points.",
+  "examples": [
+   {
+    "input": "points = [0,0,2,2]",
+    "output": "4",
+    "explanation": "The cheapest meeting costs 4."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "The cheapest meeting costs 0."
+   }
+  ],
+  "constraints": [
+   "1 <= number of friends <= 1000",
+   "-1000 <= x, y <= 1000"
+  ],
+  "functionName": "meetingSpotManhattanCost",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      4,
+      4,
+      0,
+      4,
+      4,
+      2,
+      2
+     ]
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      -5,
+      5,
+      5,
+      0,
+      0
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10,
+      0,
+      0,
+      10
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Vertical Mirror Symmetry",
+  "difficulty": "Medium",
+  "tags": [
+   "Geometry",
+   "Hash Table"
+  ],
+  "companies": [
+   "Adobe",
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Return `true` if there is a vertical line `x = c` (c may be a half-integer) such that reflecting every point across it gives back exactly the same set of points.",
+  "examples": [
+   {
+    "input": "points = [1,1,-1,1]",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "points = [1,1,2,1,3,2]",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 1000",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "hasVerticalMirrorSymmetry",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      -1,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      1,
+      3,
+      2
+     ]
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      0,
+      1,
+      5,
+      2,
+      5
+     ]
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Days Between Two Dates",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Date"
+  ],
+  "companies": [
+   "TCS",
+   "Zoho"
+  ],
+  "description": "Given two calendar dates `(y1, m1, d1)` and `(y2, m2, d2)` in the Gregorian calendar, return the number of days between them (always non-negative; the same date gives `0`). A year is a leap year if divisible by 4, except years divisible by 100 that are not divisible by 400.",
+  "examples": [
+   {
+    "input": "y1 = 2020, m1 = 1, d1 = 1, y2 = 2020, m2 = 1, d2 = 31",
+    "output": "30",
+    "explanation": "The dates are 30 day(s) apart."
+   },
+   {
+    "input": "y1 = 2000, m1 = 2, d1 = 28, y2 = 2000, m2 = 3, d2 = 1",
+    "output": "2",
+    "explanation": "The dates are 2 day(s) apart."
+   }
+  ],
+  "constraints": [
+   "1900 <= year <= 2100",
+   "both dates are valid; either date may come first"
+  ],
+  "functionName": "daysBetweenTwoDates",
+  "params": [
+   {
+    "name": "y1",
+    "type": "int"
+   },
+   {
+    "name": "m1",
+    "type": "int"
+   },
+   {
+    "name": "d1",
+    "type": "int"
+   },
+   {
+    "name": "y2",
+    "type": "int"
+   },
+   {
+    "name": "m2",
+    "type": "int"
+   },
+   {
+    "name": "d2",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2020,
+     1,
+     1,
+     2020,
+     1,
+     31
+    ],
+    "expected": 30,
+    "isSample": true
+   },
+   {
+    "args": [
+     2000,
+     2,
+     28,
+     2000,
+     3,
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     1900,
+     2,
+     28,
+     1900,
+     3,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2100,
+     12,
+     31,
+     1900,
+     1,
+     1
+    ],
+    "expected": 73413,
+    "isSample": false
+   },
+   {
+    "args": [
+     2024,
+     5,
+     5,
+     2024,
+     5,
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     2019,
+     12,
+     31,
+     2020,
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2001,
+     1,
+     1,
+     2002,
+     1,
+     1
+    ],
+    "expected": 365,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Friday The Thirteenth Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Date"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "Return how many months in the years `a` to `b` inclusive have their 13th day on a Friday (Gregorian calendar; 1 January 1900 was a Monday).",
+  "examples": [
+   {
+    "input": "a = 2015, b = 2015",
+    "output": "3",
+    "explanation": "3 such month(s) occur."
+   },
+   {
+    "input": "a = 1900, b = 1900",
+    "output": "2",
+    "explanation": "2 such month(s) occur."
+   }
+  ],
+  "constraints": [
+   "1900 <= a <= b <= 2100",
+   "All inputs are integers or strings within the stated ranges"
+  ],
+  "functionName": "fridayTheThirteenthCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2015,
+     2015
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1900,
+     1900
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     2000,
+     2000
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1900,
+     2100
+    ],
+    "expected": 345,
+    "isSample": false
+   },
+   {
+    "args": [
+     2026,
+     2026
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     1999,
+     2001
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     2100,
+     2100
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Repeating Decimal Period",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Hash Table"
+  ],
+  "companies": [
+   "Zoho",
+   "Netflix",
+   "Infosys"
+  ],
+  "description": "Write the fraction `p / q` as a decimal. Return the length of its repeating cycle (for example `1/3 = 0.333...` has length `1`, `1/7` has length `6`), or `0` if the decimal terminates.",
+  "examples": [
+   {
+    "input": "p = 1, q = 3",
+    "output": "1",
+    "explanation": "The repeating part has length 1."
+   },
+   {
+    "input": "p = 1, q = 7",
+    "output": "6",
+    "explanation": "The repeating part has length 6."
+   }
+  ],
+  "constraints": [
+   "1 <= p, q <= 10^5",
+   "the fraction need not be in lowest terms"
+  ],
+  "functionName": "repeatingDecimalPeriod",
+  "params": [
+   {
+    "name": "p",
+    "type": "int"
+   },
+   {
+    "name": "q",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     7
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     6
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     22,
+     7
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     99991
+    ],
+    "expected": 49995,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     25
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit At Sequence Position",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Binary Search"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Google"
+  ],
+  "description": "Write the positive integers one after another to form the digit stream `1234567891011121314...`. Return the digit at position `n` (positions start at `1`).",
+  "examples": [
+   {
+    "input": "n = 3",
+    "output": "3",
+    "explanation": "The digit at that position is 3."
+   },
+   {
+    "input": "n = 11",
+    "output": "0",
+    "explanation": "The digit at that position is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 2^31 - 1",
+   "the answer is a single digit 0-9"
+  ],
+  "functionName": "digitAtSequencePosition",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     11
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     190
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Repunit Base",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Binary Search"
+  ],
+  "companies": [
+   "TCS",
+   "Walmart"
+  ],
+  "description": "A repunit is a number whose digits are all `1`. Return the smallest base `k >= 2` in which `n` is written as a repunit with at least two digits (such a base always exists: `n - 1`).",
+  "examples": [
+   {
+    "input": "n = 13",
+    "output": "3",
+    "explanation": "The smallest base is 3."
+   },
+   {
+    "input": "n = 3",
+    "output": "2",
+    "explanation": "The smallest base is 2."
+   }
+  ],
+  "constraints": [
+   "3 <= n <= 10^9",
+   "the answer is at least 2"
+  ],
+  "functionName": "smallestRepunitBase",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     13
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     31
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": 999999999,
+    "isSample": false
+   },
+   {
+    "args": [
+     57
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Spelled Number Letters",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Atlassian",
+   "Infosys"
+  ],
+  "description": "Write each number from `1` to `n` in British English words, for example `342` is `three hundred and forty-two`, `115` is `one hundred and fifteen` and `1000` is `one thousand`. A word like `and` is inserted after `hundred` or `thousand` whenever something less than a hundred follows. Hyphens and spaces are not counted. Return the total number of letters used for all the numbers.",
+  "examples": [
+   {
+    "input": "n = 5",
+    "output": "19",
+    "explanation": "19 letter(s) are used in total."
+   },
+   {
+    "input": "n = 1",
+    "output": "3",
+    "explanation": "3 letter(s) are used in total."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 9999",
+   "use the style shown: `nine thousand nine hundred and ninety-nine`"
+  ],
+  "functionName": "spelledNumberLetters",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     5
+    ],
+    "expected": 19,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     115
+    ],
+    "expected": 1133,
+    "isSample": false
+   },
+   {
+    "args": [
+     342
+    ],
+    "expected": 6117,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 21124,
+    "isSample": false
+   },
+   {
+    "args": [
+     9999
+    ],
+    "expected": 321803,
+    "isSample": false
+   },
+   {
+    "args": [
+     20
+    ],
+    "expected": 112,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Balanced Ternary Length",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Zoho",
+   "Adobe",
+   "Goldman Sachs"
+  ],
+  "description": "Balanced ternary writes integers with the digits `-1, 0, 1` (powers of 3 as place values) and no leading zeros. Return how many digits the balanced ternary form of `n` needs (`0` needs `1` digit).",
+  "examples": [
+   {
+    "input": "n = 0",
+    "output": "1",
+    "explanation": "The balanced ternary form has 1 digit(s)."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The balanced ternary form has 1 digit(s)."
+   }
+  ],
+  "constraints": [
+   "-10^9 <= n <= 10^9",
+   "the sign does not change the length"
+  ],
+  "functionName": "balancedTernaryLength",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     14
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     -40
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": 20,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Traffic Light Wait Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Math"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Salesforce"
+  ],
+  "description": "A light starts green at second `0`; it stays green for `g` seconds, then red for `red` seconds, and repeats. A car arriving at second `t` drives through at once if the light is green (green covers seconds `0..g-1` of each cycle), otherwise it waits until the next green. Return the total waiting seconds of all cars in `times`.",
+  "examples": [
+   {
+    "input": "g = 3, red = 2, times = [0,3,4,5,7]",
+    "output": "3",
+    "explanation": "The cars wait 3 second(s) in total."
+   },
+   {
+    "input": "g = 1, red = 1, times = [0]",
+    "output": "0",
+    "explanation": "The cars wait 0 second(s) in total."
+   }
+  ],
+  "constraints": [
+   "1 <= g, red <= 1000, 1 <= times.length <= 1000",
+   "0 <= times[i] <= 10^6"
+  ],
+  "functionName": "trafficLightWaitTotal",
+  "params": [
+   {
+    "name": "g",
+    "type": "int"
+   },
+   {
+    "name": "red",
+    "type": "int"
+   },
+   {
+    "name": "times",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     2,
+     [
+      0,
+      3,
+      4,
+      5,
+      7
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5,
+     [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     3,
+     [
+      100,
+      101,
+      102
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     1,
+     [
+      10,
+      20,
+      30
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     9,
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 30,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Dominoes Final State",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Two Pointers",
+   "String"
+  ],
+  "companies": [
+   "Adobe",
+   "Facebook",
+   "Oracle"
+  ],
+  "description": "`s` describes a row of dominoes: `L` is pushed left, `R` is pushed right, `.` stands upright. Every second each falling domino topples its upright neighbour in the direction it falls, but an upright domino hit from both sides at the same second stays upright. Return the final row once nothing changes.",
+  "examples": [
+   {
+    "input": "s = \"RR.L\"",
+    "output": "\"RR.L\"",
+    "explanation": "The final row is \"RR.L\"."
+   },
+   {
+    "input": "s = \".L.R...LR..L..\"",
+    "output": "\"LL.RR.LLRRLL..\"",
+    "explanation": "The final row is \"LL.RR.LLRRLL..\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s contains only `L`, `R` and `.`"
+  ],
+  "functionName": "dominoesFinalState",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "RR.L"
+    ],
+    "expected": "RR.L",
+    "isSample": true
+   },
+   {
+    "args": [
+     ".L.R...LR..L.."
+    ],
+    "expected": "LL.RR.LLRRLL..",
+    "isSample": true
+   },
+   {
+    "args": [
+     "..."
+    ],
+    "expected": "...",
+    "isSample": false
+   },
+   {
+    "args": [
+     "R..."
+    ],
+    "expected": "RRRR",
+    "isSample": false
+   },
+   {
+    "args": [
+     "...L"
+    ],
+    "expected": "LLLL",
+    "isSample": false
+   },
+   {
+    "args": [
+     "R.R.L"
+    ],
+    "expected": "RRR.L",
+    "isSample": false
+   },
+   {
+    "args": [
+     "L.R"
+    ],
+    "expected": "L.R",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Duration String Seconds",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Parsing",
+   "Math"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Salesforce"
+  ],
+  "description": "A duration is written as a sequence of `<number><unit>` parts, where the unit is `d` (86400 seconds), `h` (3600), `m` (60) or `s` (1), for example `1h30m5s`. Units may repeat or appear in any order. Return the total number of seconds.",
+  "examples": [
+   {
+    "input": "s = \"1h30m5s\"",
+    "output": "5405",
+    "explanation": "The duration is 5405 second(s)."
+   },
+   {
+    "input": "s = \"90s\"",
+    "output": "90",
+    "explanation": "The duration is 90 second(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 60",
+   "each number has 1 to 4 digits; only the letters d, h, m, s are used as units"
+  ],
+  "functionName": "durationStringSeconds",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "1h30m5s"
+    ],
+    "expected": 5405,
+    "isSample": true
+   },
+   {
+    "args": [
+     "90s"
+    ],
+    "expected": 90,
+    "isSample": true
+   },
+   {
+    "args": [
+     "2d"
+    ],
+    "expected": 172800,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1d1d"
+    ],
+    "expected": 172800,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0s"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "10m10m10m"
+    ],
+    "expected": 1800,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1s2m3h4d"
+    ],
+    "expected": 356521,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Curly Brace Reversals",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "Greedy",
+   "String"
+  ],
+  "companies": [
+   "TCS",
+   "Bloomberg"
+  ],
+  "description": "`s` contains only `{` and `}`. In one operation you flip a single brace into the other kind. Return the minimum operations needed to make `s` a balanced sequence, or `-1` if that is impossible.",
+  "examples": [
+   {
+    "input": "s = \"}{\"",
+    "output": "2",
+    "explanation": "Minimum operations: 2 (-1 means impossible)."
+   },
+   {
+    "input": "s = \"{{{{\"",
+    "output": "2",
+    "explanation": "Minimum operations: 2 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s contains only { and }"
+  ],
+  "functionName": "curlyBraceReversals",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "}{"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "{{{{"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "{{{"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "{}"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "}}}}"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "{{}}{{{}"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "}{}{"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Bracket Pair Span Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "String"
+  ],
+  "companies": [
+   "Flipkart",
+   "Salesforce"
+  ],
+  "description": "`s` is a balanced string of round brackets. Every `(` is matched with its closing `)`. For each matched pair take the distance between the two positions (closing index minus opening index). Return the sum of these distances.",
+  "examples": [
+   {
+    "input": "s = \"()\"",
+    "output": "1",
+    "explanation": "The pair spans add up to 1."
+   },
+   {
+    "input": "s = \"(())\"",
+    "output": "4",
+    "explanation": "The pair spans add up to 4."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 1000",
+   "s is a balanced sequence of ( and )"
+  ],
+  "functionName": "bracketPairSpanTotal",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "()"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "(())"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "()()"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(()())"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     "((()))"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "()(())()"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(()(()))"
+    ],
+    "expected": 12,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pyramid Cup Fill Level",
+  "difficulty": "Medium",
+  "tags": [
+   "Simulation",
+   "Dynamic Programming",
+   "Math"
+  ],
+  "companies": [
+   "Microsoft",
+   "Netflix"
+  ],
+  "description": "Cups are stacked in a pyramid: row `r` has `r + 1` cups, and cup `(r, k)` sits above cups `(r + 1, k)` and `(r + 1, k + 1)`. Each cup holds `c` units. `p` units are poured into the top cup; whatever a full cup cannot hold overflows, split equally between the two cups below it (overflow is exact, fractions allowed). Return the number of whole units in cup `(row, col)` (round down).",
+  "examples": [
+   {
+    "input": "p = 10, c = 4, row = 1, col = 0",
+    "output": "3",
+    "explanation": "That cup holds 3 whole unit(s)."
+   },
+   {
+    "input": "p = 2, c = 1, row = 1, col = 1",
+    "output": "0",
+    "explanation": "That cup holds 0 whole unit(s)."
+   }
+  ],
+  "constraints": [
+   "0 <= p <= 10^6, 1 <= c <= 1000",
+   "0 <= row <= 30, 0 <= col <= row"
+  ],
+  "functionName": "pyramidCupFillLevel",
+  "params": [
+   {
+    "name": "p",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   },
+   {
+    "name": "row",
+    "type": "int"
+   },
+   {
+    "name": "col",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10,
+     4,
+     1,
+     0
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     1,
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     5,
+     3,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     100,
+     1,
+     2,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000,
+     10,
+     30,
+     15
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     25,
+     5,
+     3,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Convex Hull Doubled Area",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Math",
+   "Sorting"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Imagine a rubber band stretched around all of them (the convex hull). Return twice the area enclosed by it, or `0` if all points lie on one line or there are fewer than three points.",
+  "examples": [
+   {
+    "input": "points = [0,0,4,0,4,4,0,4,2,2]",
+    "output": "32",
+    "explanation": "Twice the hull area is 32."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "Twice the hull area is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 500",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "convexHullDoubledArea",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4,
+      2,
+      2
+     ]
+    ],
+    "expected": 32,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      1,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      2,
+      0,
+      2,
+      2
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      5,
+      0,
+      5,
+      5,
+      0,
+      5,
+      1,
+      1,
+      4,
+      4,
+      2,
+      3
+     ]
+    ],
+    "expected": 50,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1000,
+      -1000,
+      1000,
+      1000,
+      1000,
+      -1000
+     ]
+    ],
+    "expected": 4000000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Triangle Doubled Area",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Math"
+  ],
+  "companies": [
+   "Paytm",
+   "Adobe"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Among all triangles whose corners are three of the points, return twice the area of the largest one (`0` if fewer than three points or all collinear).",
+  "examples": [
+   {
+    "input": "points = [0,0,4,0,0,3]",
+    "output": "12",
+    "explanation": "Twice the largest area is 12."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "Twice the largest area is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 100",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "largestTriangleDoubledArea",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      0,
+      3
+     ]
+    ],
+    "expected": 12,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      2,
+      2,
+      0,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10,
+      0,
+      5,
+      7,
+      5,
+      3
+     ]
+    ],
+    "expected": 70,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -5,
+      -5,
+      5,
+      -5,
+      0,
+      5,
+      0,
+      0
+     ]
+    ],
+    "expected": 100,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rectangle Union Perimeter",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Sweep Line",
+   "Array"
+  ],
+  "companies": [
+   "Netflix",
+   "Microsoft"
+  ],
+  "description": "`rects` lists axis-aligned rectangles as flat quadruples `[x1, y1, x2, y2, ...]` with `x1 < x2` and `y1 < y2`. Return the total length of the outline of their union (including the outlines of any holes).",
+  "examples": [
+   {
+    "input": "rects = [0,0,2,2]",
+    "output": "8",
+    "explanation": "The union outline measures 8."
+   },
+   {
+    "input": "rects = [0,0,2,2,1,1,3,3]",
+    "output": "12",
+    "explanation": "The union outline measures 12."
+   }
+  ],
+  "constraints": [
+   "1 <= number of rectangles <= 60",
+   "0 <= coordinates <= 10^4"
+  ],
+  "functionName": "rectangleUnionPerimeter",
+  "params": [
+   {
+    "name": "rects",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2
+     ]
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      3,
+      3
+     ]
+    ],
+    "expected": 12,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      2,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      3,
+      1,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      1,
+      0,
+      2,
+      3,
+      3,
+      0,
+      0,
+      1,
+      3,
+      2,
+      0,
+      3,
+      3
+     ]
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10000,
+      10000
+     ]
+    ],
+    "expected": 40000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Points In Square Window",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Sliding Window",
+   "Sorting"
+  ],
+  "companies": [
+   "Atlassian",
+   "Infosys"
+  ],
+  "description": "`points` lists distinct points as flat pairs. A square window `[x, x + k] x [y, y + k]` (borders included, `x` and `y` any integers) is placed on the plane. Return the largest number of points it can contain.",
+  "examples": [
+   {
+    "input": "points = [0,0,1,1,5,5], k = 1",
+    "output": "2",
+    "explanation": "A window can hold at most 2 point(s)."
+   },
+   {
+    "input": "points = [0,0], k = 0",
+    "output": "1",
+    "explanation": "A window can hold at most 1 point(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 500",
+   "-1000 <= x, y <= 1000, 0 <= k <= 2000; all points are distinct"
+  ],
+  "functionName": "mostPointsInSquareWindow",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      5,
+      5
+     ],
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      4,
+      4
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      0,
+      0,
+      3,
+      3,
+      3
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      10,
+      10
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4
+     ],
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Interior Lattice Points",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Oracle",
+   "Flipkart",
+   "LinkedIn"
+  ],
+  "description": "`points` lists the vertices of a simple polygon in order as flat pairs. Return how many integer points lie strictly inside the polygon (points on its boundary are not counted).",
+  "examples": [
+   {
+    "input": "points = [0,0,4,0,4,4,0,4]",
+    "output": "9",
+    "explanation": "9 lattice point(s) lie strictly inside."
+   },
+   {
+    "input": "points = [0,0,1,0,0,1]",
+    "output": "0",
+    "explanation": "0 lattice point(s) lie strictly inside."
+   }
+  ],
+  "constraints": [
+   "3 <= number of vertices <= 20",
+   "-100 <= x, y <= 100; the polygon is simple with non-zero area"
+  ],
+  "functionName": "interiorLatticePoints",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      4,
+      4,
+      0,
+      4
+     ]
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      6,
+      0,
+      0,
+      6
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      5,
+      0,
+      5,
+      3,
+      0,
+      3
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      6,
+      0,
+      6,
+      6,
+      3,
+      2,
+      0,
+      6
+     ]
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      100,
+      0,
+      100,
+      100,
+      0,
+      100
+     ]
+    ],
+    "expected": 9801,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      1,
+      1,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Tilted Rectangle Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Hash Table",
+   "Math"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Google"
+  ],
+  "description": "`points` lists distinct points as flat pairs. Count the sets of four points that are the corners of a rectangle with non-zero area; the rectangle may be rotated to any angle and squares count.",
+  "examples": [
+   {
+    "input": "points = [0,0,1,0,0,1,1,1]",
+    "output": "1",
+    "explanation": "1 rectangle(s) exist."
+   },
+   {
+    "input": "points = [0,0]",
+    "output": "0",
+    "explanation": "0 rectangle(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= number of points <= 150",
+   "-1000 <= x, y <= 1000; all points are distinct"
+  ],
+  "functionName": "tiltedRectangleCount",
+  "params": [
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      1,
+      1,
+      3,
+      -1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      2,
+      0,
+      1,
+      -1,
+      3,
+      1,
+      3,
+      -1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      3,
+      0,
+      3,
+      2,
+      0,
+      2,
+      1,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Next Palindromic Date",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Date",
+   "Simulation"
+  ],
+  "companies": [
+   "Salesforce",
+   "Infosys",
+   "Zoho"
+  ],
+  "description": "A date is palindromic if its `YYYYMMDD` digits read the same backwards (for example `20211202`). Given a valid date, return the first palindromic date strictly after it, as the integer `YYYYMMDD`.",
+  "examples": [
+   {
+    "input": "y = 2021, m = 12, d = 2",
+    "output": "20300302",
+    "explanation": "The next palindromic date is 20300302."
+   },
+   {
+    "input": "y = 2020, m = 2, d = 2",
+    "output": "20211202",
+    "explanation": "The next palindromic date is 20211202."
+   }
+  ],
+  "constraints": [
+   "1900 <= y <= 2100",
+   "the input date is valid (Gregorian calendar)"
+  ],
+  "functionName": "nextPalindromicDate",
+  "params": [
+   {
+    "name": "y",
+    "type": "int"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "d",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2021,
+     12,
+     2
+    ],
+    "expected": 20300302,
+    "isSample": true
+   },
+   {
+    "args": [
+     2020,
+     2,
+     2
+    ],
+    "expected": 20211202,
+    "isSample": true
+   },
+   {
+    "args": [
+     1900,
+     1,
+     1
+    ],
+    "expected": 20011002,
+    "isSample": false
+   },
+   {
+    "args": [
+     2100,
+     12,
+     31
+    ],
+    "expected": 21011012,
+    "isSample": false
+   },
+   {
+    "args": [
+     2011,
+     11,
+     2
+    ],
+    "expected": 20200202,
+    "isSample": false
+   },
+   {
+    "args": [
+     1999,
+     9,
+     9
+    ],
+    "expected": 20011002,
+    "isSample": false
+   },
+   {
+    "args": [
+     2029,
+     1,
+     1
+    ],
+    "expected": 20300302,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Zero-One Multiple",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "BFS",
+   "Number Theory"
+  ],
+  "companies": [
+   "Walmart",
+   "Apple",
+   "Facebook"
+  ],
+  "description": "Find the smallest positive multiple of `n` whose decimal digits are all `0` or `1` and return how many digits it has (for `n = 3` the multiple is `111`, so the answer is `3`).",
+  "examples": [
+   {
+    "input": "n = 3",
+    "output": "3",
+    "explanation": "The multiple has 3 digit(s)."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The multiple has 1 digit(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^5",
+   "a multiple with digits 0 and 1 always exists"
+  ],
+  "functionName": "shortestZeroOneMultiple",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     99999
+    ],
+    "expected": 45,
+    "isSample": false
+   },
+   {
+    "args": [
+     99
+    ],
+    "expected": 18,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Number After K Swaps",
+  "difficulty": "Hard",
+  "tags": [
+   "Greedy",
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Microsoft",
+   "Zoho"
+  ],
+  "description": "`num` is a string of decimal digits (leading zeros allowed). In one move you swap two neighbouring digits. Using at most `k` moves, return the smallest number you can obtain, as a string of the same length.",
+  "examples": [
+   {
+    "input": "num = \"4321\", k = 4",
+    "output": "\"1342\"",
+    "explanation": "The smallest result is \"1342\"."
+   },
+   {
+    "input": "num = \"100\", k = 1",
+    "output": "\"010\"",
+    "explanation": "The smallest result is \"010\"."
+   }
+  ],
+  "constraints": [
+   "1 <= num.length <= 30",
+   "0 <= k <= 1000"
+  ],
+  "functionName": "smallestNumberAfterKSwaps",
+  "params": [
+   {
+    "name": "num",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "4321",
+     4
+    ],
+    "expected": "1342",
+    "isSample": true
+   },
+   {
+    "args": [
+     "100",
+     1
+    ],
+    "expected": "010",
+    "isSample": true
+   },
+   {
+    "args": [
+     "36789",
+     1000
+    ],
+    "expected": "36789",
+    "isSample": false
+   },
+   {
+    "args": [
+     "9438957234",
+     4
+    ],
+    "expected": "3489957234",
+    "isSample": false
+   },
+   {
+    "args": [
+     "5",
+     3
+    ],
+    "expected": "5",
+    "isSample": false
+   },
+   {
+    "args": [
+     "21",
+     0
+    ],
+    "expected": "21",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1000",
+     2
+    ],
+    "expected": "0010",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Word Wrap Minimum Slack",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "String"
+  ],
+  "companies": [
+   "Flipkart",
+   "Google"
+  ],
+  "description": "Words with lengths `lengths` must be placed in order on lines of width `W`, with one space between neighbouring words on the same line. A line holds a word sequence only if its total length (letters plus single spaces) is at most `W`. The slack of a line is `W` minus its length; the cost of a layout is the sum of `slack * slack` over every line except the last one. Return the minimum possible cost.",
+  "examples": [
+   {
+    "input": "lengths = [3,2,2,5], W = 6",
+    "output": "10",
+    "explanation": "The minimum cost is 10."
+   },
+   {
+    "input": "lengths = [1], W = 1",
+    "output": "0",
+    "explanation": "The minimum cost is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= lengths.length <= 500",
+   "1 <= lengths[i] <= W <= 1000"
+  ],
+  "functionName": "wordWrapMinimumSlack",
+  "params": [
+   {
+    "name": "lengths",
+    "type": "int[]"
+   },
+   {
+    "name": "W",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      2,
+      2,
+      5
+     ],
+     6
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      2
+     ],
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      2,
+      3,
+      1,
+      5
+     ],
+     8
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5
+     ],
+     10
+    ],
+    "expected": 50,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Bus Lines",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "BFS"
+  ],
+  "companies": [
+   "Infosys",
+   "Netflix",
+   "Adobe"
+  ],
+  "description": "`routes` describes bus lines as a flat list: each line is written as its stop count `k` followed by `k` distinct stop ids, e.g. `[3, 1, 2, 7, 2, 7, 9]` means line A stops at 1,2,7 and line B at 7,9. Every line runs in both directions and you may board or leave at any of its stops. Starting at stop `s`, return the fewest bus lines you must ride to reach stop `t` (`0` if `s == t`, `-1` if impossible).",
+  "examples": [
+   {
+    "input": "routes = [3,1,2,7,3,3,6,7], s = 1, t = 6",
+    "output": "2",
+    "explanation": "The fewest lines needed is 2 (-1 means impossible)."
+   },
+   {
+    "input": "routes = [2,7,12,2,4,5,2,15,19,2,3,6], s = 15, t = 12",
+    "output": "-1",
+    "explanation": "The fewest lines needed is -1 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of lines <= 20, 1 <= stops per line <= 20",
+   "0 <= stop id, s, t <= 10^5"
+  ],
+  "functionName": "fewestBusLines",
+  "params": [
+   {
+    "name": "routes",
+    "type": "int[]"
+   },
+   {
+    "name": "s",
+    "type": "int"
+   },
+   {
+    "name": "t",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      1,
+      2,
+      7,
+      3,
+      3,
+      6,
+      7
+     ],
+     1,
+     6
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      7,
+      12,
+      2,
+      4,
+      5,
+      2,
+      15,
+      19,
+      2,
+      3,
+      6
+     ],
+     15,
+     12
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      2
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1,
+      2
+     ],
+     1,
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      2,
+      3,
+      3,
+      3,
+      4,
+      5,
+      2,
+      5,
+      6
+     ],
+     1,
+     6
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      0,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3
+     ],
+     0,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5
+     ],
+     5,
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Alien Alphabet Order",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Topological Sort",
+   "String"
+  ],
+  "companies": [
+   "Netflix",
+   "Paytm"
+  ],
+  "description": "`words` is a space-separated list of lowercase words that an alien dictionary lists in sorted order, using an unknown order of the letters. Return the alphabet order of all letters that appear in `words` (as a string) that explains the list; if several orders work return the lexicographically smallest one (in ordinary English alphabetical order of the resulting strings). Return the word `none` if no order can explain the list.",
+  "examples": [
+   {
+    "input": "words = \"abc abd eb ecc bdcc\"",
+    "output": "\"aebcd\"",
+    "explanation": "The alphabet order is \"aebcd\"."
+   },
+   {
+    "input": "words = \"a b\"",
+    "output": "\"ab\"",
+    "explanation": "The alphabet order is \"ab\"."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 30",
+   "words use only the letters a-e and have length 1 to 6"
+  ],
+  "functionName": "alienAlphabetOrder",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abc abd eb ecc bdcc"
+    ],
+    "expected": "aebcd",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b"
+    ],
+    "expected": "ab",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc ab"
+    ],
+    "expected": "none",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ba bc ac cc"
+    ],
+    "expected": "bac",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": "ab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc abd"
+    ],
+    "expected": "abcd",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Island Shapes",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "DFS",
+   "Hash Table"
+  ],
+  "companies": [
+   "Uber",
+   "TCS",
+   "Adobe"
+  ],
+  "description": "`grid` is an `R x C` binary table stored row by row (`1` = land). An island is a group of land cells connected up/down/left/right. Two islands have the same shape if one can be moved onto the other by sliding it (no rotation or flipping). Return the number of different island shapes.",
+  "examples": [
+   {
+    "input": "grid = [1,1,0,0,1,1,0,0,0,0,1,1,0,0,1,1], R = 4, C = 4",
+    "output": "1",
+    "explanation": "There are 1 distinct shape(s)."
+   },
+   {
+    "input": "grid = [0], R = 1, C = 1",
+    "output": "0",
+    "explanation": "There are 0 distinct shape(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 12, grid.length = R * C",
+   "each cell is 0 or 1"
+  ],
+  "functionName": "distinctIslandShapes",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1
+     ],
+     4,
+     4
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1
+     ],
+     1,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Two-Ocean Flow Cells",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "BFS",
+   "DFS"
+  ],
+  "companies": [
+   "Walmart",
+   "Flipkart",
+   "LinkedIn"
+  ],
+  "description": "`grid` is an `R x C` table of heights stored row by row. Water on a cell flows to a neighbouring cell (up/down/left/right) of equal or lower height. The top and left edges touch ocean A; the bottom and right edges touch ocean B. Return how many cells can send water to both oceans (a corner cell can touch two edges).",
+  "examples": [
+   {
+    "input": "grid = [1,2,2,3,5,3,2,3,4,4,2,4,5,3,1,6,7,1,4,5,5,1,1,2,4], R = 5, C = 5",
+    "output": "7",
+    "explanation": "7 cell(s) drain into both oceans."
+   },
+   {
+    "input": "grid = [1], R = 1, C = 1",
+    "output": "1",
+    "explanation": "1 cell(s) drain into both oceans."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 30, grid.length = R * C",
+   "0 <= grid[i] <= 10^5"
+  ],
+  "functionName": "twoOceanFlowCells",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      5,
+      3,
+      2,
+      3,
+      4,
+      4,
+      2,
+      4,
+      5,
+      3,
+      1,
+      6,
+      7,
+      1,
+      4,
+      5,
+      5,
+      1,
+      1,
+      2,
+      4
+     ],
+     5,
+     5
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ],
+     3,
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      5,
+      4,
+      1,
+      4,
+      5,
+      4,
+      5
+     ],
+     3,
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      3,
+      2,
+      1,
+      2,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Bridge Length",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "BFS",
+   "DFS"
+  ],
+  "companies": [
+   "Uber",
+   "Atlassian",
+   "Apple"
+  ],
+  "description": "`grid` is an `R x C` binary table stored row by row (`1` = land) that contains exactly two islands (groups of land cells connected up/down/left/right). You may turn water cells (`0`) into land. Return the minimum number of water cells that must be turned to land so that the two islands become one.",
+  "examples": [
+   {
+    "input": "grid = [0,1,1,0], R = 2, C = 2",
+    "output": "1",
+    "explanation": "A bridge of 1 cell(s) is needed."
+   },
+   {
+    "input": "grid = [0,1,0,0,0,0,0,0,1], R = 3, C = 3",
+    "output": "2",
+    "explanation": "A bridge of 2 cell(s) is needed."
+   }
+  ],
+  "constraints": [
+   "2 <= R * C <= 100, 1 <= R, C <= 10",
+   "each cell is 0 or 1 and there are exactly two islands"
+  ],
+  "functionName": "shortestBridgeLength",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     1,
+     5
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1
+     ],
+     1,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1
+     ],
+     2,
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cheapest Toll Route Within Time",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Dynamic Programming",
+   "Shortest Path"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Google"
+  ],
+  "description": "`n` towns (0 to n-1) are linked by two-way roads given as flat triples `[u0, v0, minutes0, ...]`. Every time you arrive in a town (including the start, town `0`) you pay `fees[town]`, even if you pass through it again. Return the smallest total fee for a trip from town `0` to town `n - 1` that takes at most `maxTime` minutes, or `-1` if there is none.",
+  "examples": [
+   {
+    "input": "edges = [0,1,2], fees = [3,4], n = 2, maxTime = 5",
+    "output": "7",
+    "explanation": "The cheapest trip costs 7 (-1 means none)."
+   },
+   {
+    "input": "edges = [0,1,2], fees = [3,4], n = 2, maxTime = 1",
+    "output": "-1",
+    "explanation": "The cheapest trip costs -1 (-1 means none)."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 20, at most 40 roads, 1 <= minutes <= 100",
+   "1 <= fees[i] <= 1000, fees.length = n, 1 <= maxTime <= 1000"
+  ],
+  "functionName": "cheapestTollRouteWithinTime",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "fees",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "maxTime",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ],
+     2,
+     5
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ],
+     [
+      3,
+      4
+     ],
+     2,
+     1
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      3,
+      1,
+      2,
+      3,
+      0,
+      2,
+      10
+     ],
+     [
+      1,
+      10,
+      1
+     ],
+     3,
+     6
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      3,
+      1,
+      2,
+      3,
+      0,
+      2,
+      10
+     ],
+     [
+      1,
+      10,
+      1
+     ],
+     3,
+     10
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      3,
+      1,
+      0,
+      3,
+      5
+     ],
+     [
+      2,
+      9,
+      9,
+      1
+     ],
+     4,
+     3
+    ],
+    "expected": 21,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1
+     ],
+     [
+      5,
+      5
+     ],
+     2,
+     1000
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      2,
+      2
+     ],
+     [
+      1,
+      100,
+      1
+     ],
+     3,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Distinct-Label Path In Tree",
+  "difficulty": "Hard",
+  "tags": [
+   "Tree",
+   "DFS",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Netflix",
+   "Uber"
+  ],
+  "description": "A tree has `n` nodes (0 to n-1) and `edges` as flat pairs; `labels[i]` is the lowercase letter on node `i`. Return the largest number of nodes on a simple path in which no two neighbouring nodes on the path carry the same letter.",
+  "examples": [
+   {
+    "input": "edges = [0,1,0,2], n = 3, labels = \"abc\"",
+    "output": "3",
+    "explanation": "The longest valid path has 3 node(s)."
+   },
+   {
+    "input": "edges = [], n = 1, labels = \"a\"",
+    "output": "1",
+    "explanation": "The longest valid path has 1 node(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, labels.length = n",
+   "edges form a tree; labels are lowercase letters"
+  ],
+  "functionName": "longestDistinctLabelPath",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "labels",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2
+     ],
+     3,
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1,
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     "aaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4,
+     "abab"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4,
+     "aabb"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     5,
+     "abbab"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      3,
+      1,
+      4
+     ],
+     5,
+     "abcab"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rolling Ball Shortest Distance",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Dijkstra",
+   "Matrix"
+  ],
+  "companies": [
+   "Flipkart",
+   "Salesforce"
+  ],
+  "description": "`grid` is an `R x C` maze stored row by row (`0` = open, `1` = wall). A ball at `(sr, sc)` rolls in one of the four directions and keeps going until the next cell is a wall or outside the maze, then stops; only then may it choose a new direction. Return the shortest total number of cells travelled to make the ball stop exactly on `(dr, dc)`, or `-1` if impossible. The ball counts as already stopped at its starting cell.",
+  "examples": [
+   {
+    "input": "grid = [0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,1,0,0,1,0,0], R = 5, C = 5, sr = 0, sc = 4, dr = 4, dc = 4",
+    "output": "14",
+    "explanation": "The shortest rolling distance is 14 (-1 means impossible)."
+   },
+   {
+    "input": "grid = [0,0,0], R = 1, C = 3, sr = 0, sc = 0, dr = 0, dc = 2",
+    "output": "2",
+    "explanation": "The shortest rolling distance is 2 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 8, grid.length = R * C",
+   "start and destination are open cells inside the maze"
+  ],
+  "functionName": "rollingBallShortestDistance",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "sr",
+    "type": "int"
+   },
+   {
+    "name": "sc",
+    "type": "int"
+   },
+   {
+    "name": "dr",
+    "type": "int"
+   },
+   {
+    "name": "dc",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+     ],
+     5,
+     5,
+     0,
+     4,
+     4,
+     4
+    ],
+    "expected": 14,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     1,
+     3,
+     0,
+     0,
+     0,
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     1,
+     3,
+     0,
+     0,
+     0,
+     1
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1,
+     1,
+     0,
+     0,
+     0,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     2,
+     0,
+     0,
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     3,
+     3,
+     0,
+     0,
+     2,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     3,
+     3,
+     0,
+     0,
+     2,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Remove Boxes Points",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Memoization"
+  ],
+  "companies": [
+   "Infosys",
+   "Netflix",
+   "LinkedIn"
+  ],
+  "description": "`boxes[i]` is the colour of the `i`-th box in a row. Repeatedly choose a block of `k >= 1` neighbouring boxes of the same colour and remove it, scoring `k * k` points; the remaining boxes close up. Return the maximum total score for removing all boxes.",
+  "examples": [
+   {
+    "input": "boxes = [1,3,2,2,2,3,4,3,1]",
+    "output": "23",
+    "explanation": "The best score is 23."
+   },
+   {
+    "input": "boxes = [1]",
+    "output": "1",
+    "explanation": "The best score is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= boxes.length <= 100",
+   "1 <= boxes[i] <= 100"
+  ],
+  "functionName": "removeBoxesPoints",
+  "params": [
+   {
+    "name": "boxes",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      2,
+      2,
+      3,
+      4,
+      3,
+      1
+     ]
+    ],
+    "expected": 23,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 17,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Superstring Length",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Bit Manipulation",
+   "String"
+  ],
+  "companies": [
+   "Infosys",
+   "Netflix",
+   "LinkedIn"
+  ],
+  "description": "`words` is a space-separated list of lowercase words. Return the length of the shortest string that contains every word as a contiguous substring.",
+  "examples": [
+   {
+    "input": "words = \"abc bcd cde\"",
+    "output": "5",
+    "explanation": "The shortest superstring has length 5."
+   },
+   {
+    "input": "words = \"a\"",
+    "output": "1",
+    "explanation": "The shortest superstring has length 1."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 8",
+   "each word has length 1 to 8"
+  ],
+  "functionName": "shortestSuperstringLength",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc bcd cde"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc b"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc xyz"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "catg ctaagt gcta ttca atgcatc"
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa aab baa"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Time Window Maximum Replay",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Monotonic Deque",
+   "Sliding Window"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix"
+  ],
+  "description": "Events arrive in order of time as flat triples `(type, time, x)`. Type `0`: a reading `x` is recorded at `time`. Type `1` (with `x = 0`): ask for the largest reading whose time lies in the last `w` seconds, i.e. in `(time - w, time]`; the answer is `0` if there is none. Times never decrease. Return the sum of all answers.",
+  "examples": [
+   {
+    "input": "w = 3, ops = [0,1,5,0,2,9,1,3,0]",
+    "output": "9",
+    "explanation": "The answers add up to 9."
+   },
+   {
+    "input": "w = 1, ops = [1,0,0]",
+    "output": "0",
+    "explanation": "The answers add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= w <= 1000",
+   "3 <= ops.length <= 300 and ops.length is a multiple of 3; 0 <= time <= 10^5, 1 <= x <= 10^4 for readings"
+  ],
+  "functionName": "timeWindowMaximumReplay",
+  "params": [
+   {
+    "name": "w",
+    "type": "int"
+   },
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     [
+      0,
+      1,
+      5,
+      0,
+      2,
+      9,
+      1,
+      3,
+      0
+     ]
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2,
+     [
+      0,
+      1,
+      4,
+      1,
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     [
+      0,
+      1,
+      1,
+      0,
+      2,
+      2,
+      0,
+      3,
+      3,
+      1,
+      3,
+      0,
+      1,
+      8,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     [
+      0,
+      5,
+      7,
+      1,
+      5,
+      0,
+      1,
+      6,
+      0
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     [
+      0,
+      0,
+      3,
+      0,
+      0,
+      8,
+      1,
+      0,
+      0
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      0,
+      1,
+      9,
+      0,
+      2,
+      1,
+      1,
+      2,
+      0,
+      1,
+      3,
+      0,
+      1,
+      4,
+      0
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Product Divisible Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Math",
+   "Digit DP"
+  ],
+  "companies": [
+   "Paytm",
+   "Bloomberg"
+  ],
+  "description": "Return how many integers `x` in `1..n` have a product of decimal digits that is divisible by `k` (a number containing the digit `0` has product `0`, which is divisible by every `k`).",
+  "examples": [
+   {
+    "input": "n = 100, k = 5",
+    "output": "28",
+    "explanation": "28 number(s) qualify."
+   },
+   {
+    "input": "n = 9, k = 1",
+    "output": "9",
+    "explanation": "9 number(s) qualify."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "1 <= k <= 100"
+  ],
+  "functionName": "digitProductDivisibleCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     100,
+     5
+    ],
+    "expected": 28,
+    "isSample": true
+   },
+   {
+    "args": [
+     9,
+     1
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     20,
+     3
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     7
+    ],
+    "expected": 846608312,
+    "isSample": false
+   },
+   {
+    "args": [
+     999,
+     6
+    ],
+    "expected": 625,
+    "isSample": false
+   },
+   {
+    "args": [
+     50,
+     10
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cheapest Product Tree",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Stack",
+   "Greedy"
+  ],
+  "companies": [
+   "Adobe",
+   "Oracle",
+   "Uber"
+  ],
+  "description": "The array `leaves` gives the values of the leaves of a binary tree, in left-to-right order (the in-order leaf sequence). Every internal node has exactly two children, and its value is the product of the largest leaf value in its left subtree and the largest leaf value in its right subtree. Choose the tree shape that minimises the sum of all internal node values and return that sum.",
+  "examples": [
+   {
+    "input": "leaves = [6,2,4]",
+    "output": "32",
+    "explanation": "The smallest possible sum is 32."
+   },
+   {
+    "input": "leaves = [4,11]",
+    "output": "44",
+    "explanation": "The smallest possible sum is 44."
+   }
+  ],
+  "constraints": [
+   "2 <= leaves.length <= 40",
+   "1 <= leaves[i] <= 15"
+  ],
+  "functionName": "cheapestProductTree",
+  "params": [
+   {
+    "name": "leaves",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      6,
+      2,
+      4
+     ]
+    ],
+    "expected": 32,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4,
+      11
+     ]
+    ],
+    "expected": 44,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      15,
+      13,
+      5,
+      3,
+      15
+     ]
+    ],
+    "expected": 500,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      1,
+      5
+     ]
+    ],
+    "expected": 30,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Properly Crossing Segment Pairs",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Math"
+  ],
+  "companies": [
+   "Oracle",
+   "Atlassian",
+   "LinkedIn"
+  ],
+  "description": "`segments` lists line segments as flat quadruples `[x1, y1, x2, y2, ...]`. Count the pairs of segments that cross each other properly: they meet at a single point that is strictly inside both segments (touching at an endpoint, overlapping along a line or being parallel does not count).",
+  "examples": [
+   {
+    "input": "segments = [0,0,2,2,0,2,2,0]",
+    "output": "1",
+    "explanation": "1 pair(s) cross properly."
+   },
+   {
+    "input": "segments = [0,0,1,1]",
+    "output": "0",
+    "explanation": "0 pair(s) cross properly."
+   }
+  ],
+  "constraints": [
+   "1 <= number of segments <= 50",
+   "-100 <= coordinates <= 100; no segment is a single point"
+  ],
+  "functionName": "properlyCrossingSegmentPairs",
+  "params": [
+   {
+    "name": "segments",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      0,
+      2,
+      2,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      4,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      0,
+      1,
+      0,
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      4,
+      0,
+      4,
+      4,
+      0,
+      2,
+      -1,
+      2,
+      5
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      4,
+      4,
+      1,
+      1,
+      3,
+      3,
+      0,
+      4,
+      4,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Empty Square Among Points",
+  "difficulty": "Hard",
+  "tags": [
+   "Geometry",
+   "Math",
+   "Sorting"
+  ],
+  "companies": [
+   "Zoho",
+   "Bloomberg",
+   "Oracle"
+  ],
+  "description": "A rectangular field spans `[0, W] x [0, H]`. `points` lists trees as flat pairs. Return the side length of the largest axis-parallel square inside the field that has no tree strictly inside it (trees on its border are allowed). The square may be placed anywhere, not only on integer positions.",
+  "examples": [
+   {
+    "input": "W = 10, H = 10, points = [5,5]",
+    "output": "5",
+    "explanation": "The largest empty square has side 5."
+   },
+   {
+    "input": "W = 4, H = 3, points = []",
+    "output": "3",
+    "explanation": "The largest empty square has side 3."
+   }
+  ],
+  "constraints": [
+   "1 <= W, H <= 1000, 0 <= number of trees <= 100",
+   "0 <= x <= W, 0 <= y <= H for every tree; trees are distinct"
+  ],
+  "functionName": "largestEmptySquareAmongPoints",
+  "params": [
+   {
+    "name": "W",
+    "type": "int"
+   },
+   {
+    "name": "H",
+    "type": "int"
+   },
+   {
+    "name": "points",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10,
+     10,
+     [
+      5,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     3,
+     []
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     5,
+     [
+      1,
+      1,
+      4,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     2,
+     [
+      3,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     8,
+     8,
+     [
+      4,
+      4,
+      2,
+      6,
+      6,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     10,
+     [
+      0,
+      0,
+      10,
+      10
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     5,
+     [
+      2,
+      2,
+      5,
+      3,
+      3,
+      4
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ }
+]

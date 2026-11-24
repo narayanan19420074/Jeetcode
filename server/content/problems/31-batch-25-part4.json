@@ -1,0 +1,12509 @@
+[
+ {
+  "title": "Divisor Count Of Number",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "Return the number of positive divisors of `n` (including `1` and `n`).",
+  "examples": [
+   {
+    "input": "n = 12",
+    "output": "6",
+    "explanation": "`n` has 6 positive divisor(s)."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "`n` has 1 positive divisor(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^6",
+   "count every positive divisor once"
+  ],
+  "functionName": "divisorCountOfNumber",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     12
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     36
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     997920
+    ],
+    "expected": 240,
+    "isSample": false
+   },
+   {
+    "args": [
+     64
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Least Common Multiple Pair",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Salesforce",
+   "Flipkart",
+   "Uber"
+  ],
+  "description": "Return the least common multiple of the two positive integers `a` and `b`.",
+  "examples": [
+   {
+    "input": "a = 4, b = 6",
+    "output": "12",
+    "explanation": "The least common multiple is 12."
+   },
+   {
+    "input": "a = 7, b = 13",
+    "output": "91",
+    "explanation": "The least common multiple is 91."
+   }
+  ],
+  "constraints": [
+   "1 <= a, b <= 30000",
+   "the result fits in a 32-bit integer"
+  ],
+  "functionName": "leastCommonMultiplePair",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     4,
+     6
+    ],
+    "expected": 12,
+    "isSample": true
+   },
+   {
+    "args": [
+     7,
+     13
+    ],
+    "expected": 91,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     5
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     30000
+    ],
+    "expected": 30000,
+    "isSample": false
+   },
+   {
+    "args": [
+     12,
+     18
+    ],
+    "expected": 36,
+    "isSample": false
+   },
+   {
+    "args": [
+     30000,
+     29999
+    ],
+    "expected": 899970000,
+    "isSample": false
+   },
+   {
+    "args": [
+     8,
+     32
+    ],
+    "expected": 32,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reversed Number Value",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Zoho",
+   "Microsoft",
+   "Netflix"
+  ],
+  "description": "Reverse the decimal digits of the positive integer `n` and return the resulting integer (trailing zeros of `n` disappear, e.g. `120` becomes `21`).",
+  "examples": [
+   {
+    "input": "n = 123",
+    "output": "321",
+    "explanation": "The reversed number is 321."
+   },
+   {
+    "input": "n = 120",
+    "output": "21",
+    "explanation": "The reversed number is 21."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "the reversed value fits in a 32-bit integer"
+  ],
+  "functionName": "reversedNumberValue",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     123
+    ],
+    "expected": 321,
+    "isSample": true
+   },
+   {
+    "args": [
+     120
+    ],
+    "expected": 21,
+    "isSample": true
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     987654321
+    ],
+    "expected": 123456789,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4005
+    ],
+    "expected": 5004,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Harshad Number Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "TCS",
+   "Bloomberg"
+  ],
+  "description": "A positive integer is a Harshad number if it is divisible by the sum of its own digits. Return `true` if `n` is a Harshad number.",
+  "examples": [
+   {
+    "input": "n = 18",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 19",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "digits are in base 10"
+  ],
+  "functionName": "isHarshadNumber",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     18
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     19
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     21
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     111
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1729
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Trailing Zero Bits Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Infosys",
+   "Zoho",
+   "Paytm"
+  ],
+  "description": "Return the number of trailing zero bits in the binary representation of `n` (for example `8 = 1000` has three).",
+  "examples": [
+   {
+    "input": "n = 8",
+    "output": "3",
+    "explanation": "`n` ends with 3 zero bit(s)."
+   },
+   {
+    "input": "n = 12",
+    "output": "2",
+    "explanation": "`n` ends with 2 zero bit(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 2^31 - 1",
+   "count zeros from the least significant bit up to the first set bit"
+  ],
+  "functionName": "trailingZeroBitsCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     8
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     12
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     1024
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     96
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Power Of Two Not Above",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation",
+   "Math"
+  ],
+  "companies": [
+   "Adobe",
+   "Facebook",
+   "Goldman Sachs"
+  ],
+  "description": "Return the largest power of two that is less than or equal to `n`.",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "8",
+    "explanation": "The largest power of two not above n is 8."
+   },
+   {
+    "input": "n = 16",
+    "output": "16",
+    "explanation": "The largest power of two not above n is 16."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 2^30",
+   "powers of two are 1, 2, 4, 8, ..."
+  ],
+  "functionName": "largestPowerOfTwoNotAbove",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     16
+    ],
+    "expected": 16,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1073741824
+    ],
+    "expected": 1073741824,
+    "isSample": false
+   },
+   {
+    "args": [
+     1073741823
+    ],
+    "expected": 536870912,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 64,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Binary Ones Run",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation",
+   "Math"
+  ],
+  "companies": [
+   "Salesforce",
+   "Microsoft",
+   "Goldman Sachs"
+  ],
+  "description": "Return the length of the longest block of consecutive `1` bits in the binary representation of `n` (`0` if `n = 0`).",
+  "examples": [
+   {
+    "input": "n = 14",
+    "output": "3",
+    "explanation": "The longest run of ones has length 3."
+   },
+   {
+    "input": "n = 0",
+    "output": "0",
+    "explanation": "The longest run of ones has length 0."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 2^31 - 1",
+   "use the plain binary form without leading zeros"
+  ],
+  "functionName": "longestBinaryOnesRun",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     14
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     255
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": 31,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Odd Bit Parity Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Netflix",
+   "LinkedIn"
+  ],
+  "description": "Return `true` if the binary representation of `n` contains an odd number of `1` bits.",
+  "examples": [
+   {
+    "input": "n = 7",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 3",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 2^31 - 1",
+   "only the count of set bits matters"
+  ],
+  "functionName": "hasOddBitParity",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     7
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1023
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     8
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse Eight Bits",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Zoho",
+   "Infosys",
+   "Bloomberg"
+  ],
+  "description": "Write `n` as an 8-bit binary number (with leading zeros), reverse the order of the 8 bits and return the resulting integer.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "128",
+    "explanation": "Reversing the 8 bits gives 128."
+   },
+   {
+    "input": "n = 6",
+    "output": "96",
+    "explanation": "Reversing the 8 bits gives 96."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 255",
+   "always use exactly 8 bits"
+  ],
+  "functionName": "reverseEightBits",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 128,
+    "isSample": true
+   },
+   {
+    "args": [
+     6
+    ],
+    "expected": 96,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     255
+    ],
+    "expected": 255,
+    "isSample": false
+   },
+   {
+    "args": [
+     128
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     170
+    ],
+    "expected": 85,
+    "isSample": false
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": 176,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Xor Of Stepped Sequence",
+  "difficulty": "Easy",
+  "tags": [
+   "Bit Manipulation",
+   "Math"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix"
+  ],
+  "description": "Build the array `a` with `a[i] = start + 2 * i` for `0 <= i < n` and return the bitwise XOR of all its elements.",
+  "examples": [
+   {
+    "input": "n = 5, start = 0",
+    "output": "8",
+    "explanation": "The XOR of the sequence is 8."
+   },
+   {
+    "input": "n = 4, start = 3",
+    "output": "8",
+    "explanation": "The XOR of the sequence is 8."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 1000",
+   "0 <= start <= 1000"
+  ],
+  "functionName": "xorOfSteppedSequence",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "start",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     5,
+     0
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     3
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     7
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     10
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     5
+    ],
+    "expected": 19,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Collatz Steps To One",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Simulation"
+  ],
+  "companies": [
+   "TCS",
+   "Walmart"
+  ],
+  "description": "Starting from `n`, repeat: if the number is even divide it by `2`, otherwise replace it by `3 * number + 1`. Return the number of steps needed to reach `1`.",
+  "examples": [
+   {
+    "input": "n = 6",
+    "output": "8",
+    "explanation": "It takes 8 step(s) to reach 1."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "It takes 0 step(s) to reach 1."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^5",
+   "the sequence always reaches 1 for these inputs"
+  ],
+  "functionName": "collatzStepsToOne",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     6
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     27
+    ],
+    "expected": 111,
+    "isSample": false
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     97
+    ],
+    "expected": 118,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000
+    ],
+    "expected": 128,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Sum Of Two Squares Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Adobe",
+   "Goldman Sachs",
+   "Facebook"
+  ],
+  "description": "Return `true` if `n` can be written as `a * a + b * b` for some non-negative integers `a` and `b`.",
+  "examples": [
+   {
+    "input": "n = 5",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 3",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 10^6",
+   "a and b may be zero"
+  ],
+  "functionName": "isSumOfTwoSquares",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     5
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     25
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Anti-Diagonal Total",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Array"
+  ],
+  "companies": [
+   "Microsoft",
+   "Walmart"
+  ],
+  "description": "`grid` is an `n x n` table stored row by row. Return the sum of the cells on the anti-diagonal (from the top-right corner to the bottom-left corner).",
+  "examples": [
+   {
+    "input": "grid = [1,2,3,4,5,6,7,8,9], n = 3",
+    "output": "15",
+    "explanation": "The anti-diagonal adds up to 15."
+   },
+   {
+    "input": "grid = [5], n = 1",
+    "output": "5",
+    "explanation": "The anti-diagonal adds up to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100, grid.length = n * n",
+   "-1000 <= grid[i] <= 1000"
+  ],
+  "functionName": "antiDiagonalTotal",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     3
+    ],
+    "expected": 15,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      1,
+      9
+     ],
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+     ],
+     4
+    ],
+    "expected": 34,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3,
+      -4
+     ],
+     2
+    ],
+    "expected": -5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Heaviest Row Index",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Array"
+  ],
+  "companies": [
+   "Atlassian",
+   "Infosys"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. Return the index of the row with the largest sum; if several rows tie, return the smallest index.",
+  "examples": [
+   {
+    "input": "grid = [1,2,3,4,5,6], R = 2, C = 3",
+    "output": "1",
+    "explanation": "Row 1 has the largest sum."
+   },
+   {
+    "input": "grid = [5,5,5,5], R = 2, C = 2",
+    "output": "0",
+    "explanation": "Row 0 has the largest sum."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 100, grid.length = R * C",
+   "-1000 <= grid[i] <= 1000"
+  ],
+  "functionName": "heaviestRowIndex",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5,
+      5
+     ],
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      9,
+      9,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3,
+      -4
+     ],
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+     ],
+     3,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      2,
+      2,
+      3,
+      3
+     ],
+     3,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Transposed Weighted Sum",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Math"
+  ],
+  "companies": [
+   "Apple",
+   "Zoho"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. Let `T` be its transpose (a `C x R` table, `T[i][j] = grid[j][i]`). Return the sum of `T[i][j] * (i + 1) * (j + 1)` over all cells of `T`.",
+  "examples": [
+   {
+    "input": "grid = [1,2,3,4,5,6], R = 2, C = 3",
+    "output": "78",
+    "explanation": "The weighted sum is 78."
+   },
+   {
+    "input": "grid = [1,2,3,4], R = 2, C = 2",
+    "output": "27",
+    "explanation": "The weighted sum is 27."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 50, grid.length = R * C",
+   "-100 <= grid[i] <= 100"
+  ],
+  "functionName": "transposedWeightedSum",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3
+    ],
+    "expected": 78,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2,
+     2
+    ],
+    "expected": 27,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     3,
+     1
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      1,
+      -1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cells Above Both Averages",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Counting"
+  ],
+  "companies": [
+   "Uber",
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. Count the cells whose value is strictly greater than the average of their row and also strictly greater than the average of their column.",
+  "examples": [
+   {
+    "input": "grid = [1,2,3,4,5,6,7,8,9], R = 3, C = 3",
+    "output": "1",
+    "explanation": "1 cell(s) beat both averages."
+   },
+   {
+    "input": "grid = [1,1,1,1], R = 2, C = 2",
+    "output": "0",
+    "explanation": "0 cell(s) beat both averages."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 100, grid.length = R * C",
+   "-1000 <= grid[i] <= 1000"
+  ],
+  "functionName": "cellsAboveBothAverages",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     3,
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      9,
+      9,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      1,
+      1,
+      1,
+      9,
+      1,
+      1,
+      1,
+      9
+     ],
+     3,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      5,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reshaped Cell Lookup",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Array"
+  ],
+  "companies": [
+   "Oracle",
+   "Flipkart",
+   "TCS"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. Reshape it, keeping the row-by-row order of the elements, into an `r x c` table. If this is impossible (`R * C != r * c`) return `-1`; otherwise return the value in row `i`, column `j` of the reshaped table.",
+  "examples": [
+   {
+    "input": "grid = [1,2,3,4], R = 2, C = 2, r = 1, c = 4, i = 0, j = 3",
+    "output": "4",
+    "explanation": "The requested value is 4 (-1 means the reshape is impossible)."
+   },
+   {
+    "input": "grid = [1,2,3,4], R = 2, C = 2, r = 2, c = 4, i = 0, j = 0",
+    "output": "-1",
+    "explanation": "The requested value is -1 (-1 means the reshape is impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C, r, c <= 100, grid.length = R * C",
+   "-1000 <= grid[k] <= 1000, 0 <= i < r, 0 <= j < c"
+  ],
+  "functionName": "reshapedCellLookup",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "r",
+    "type": "int"
+   },
+   {
+    "name": "c",
+    "type": "int"
+   },
+   {
+    "name": "i",
+    "type": "int"
+   },
+   {
+    "name": "j",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2,
+     2,
+     1,
+     4,
+     0,
+     3
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2,
+     2,
+     2,
+     4,
+     0,
+     0
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3,
+     3,
+     2,
+     2,
+     1
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     1,
+     1,
+     1,
+     1,
+     0,
+     0
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2,
+     2,
+     4,
+     1,
+     2,
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3,
+     6,
+     1,
+     5,
+     0
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3,
+     2,
+     2,
+     1,
+     1
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Identity Matrix Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "`grid` is an `n x n` table stored row by row. Return `true` if it is the identity matrix (ones on the main diagonal and zeros everywhere else).",
+  "examples": [
+   {
+    "input": "grid = [1,0,0,1], n = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "grid = [1,0,1,1], n = 2",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100, grid.length = n * n",
+   "0 <= grid[i] <= 9"
+  ],
+  "functionName": "isIdentityMatrix",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Upper Triangular Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix"
+  ],
+  "companies": [
+   "Zoho",
+   "Microsoft",
+   "Walmart"
+  ],
+  "description": "`grid` is an `n x n` table stored row by row. Return `true` if every cell below the main diagonal is `0` (the matrix is upper triangular).",
+  "examples": [
+   {
+    "input": "grid = [1,2,0,3], n = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "grid = [1,2,1,3], n = 2",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 100, grid.length = n * n",
+   "-1000 <= grid[i] <= 1000"
+  ],
+  "functionName": "isUpperTriangular",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      0,
+      3
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      3
+     ],
+     2
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      0,
+      4,
+      5,
+      0,
+      0,
+      6
+     ],
+     3
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      0,
+      4,
+      5,
+      1,
+      0,
+      6
+     ],
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      3
+     ],
+     2
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Empty Rows And Columns Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Matrix",
+   "Counting"
+  ],
+  "companies": [
+   "Atlassian",
+   "Google"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. Return the number of rows that contain only zeros plus the number of columns that contain only zeros.",
+  "examples": [
+   {
+    "input": "grid = [0,0,1,0,0,0], R = 2, C = 3",
+    "output": "3",
+    "explanation": "There are 3 all-zero lines in total."
+   },
+   {
+    "input": "grid = [1,1,1,1], R = 2, C = 2",
+    "output": "0",
+    "explanation": "There are 0 all-zero lines in total."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 100, grid.length = R * C",
+   "0 <= grid[i] <= 9"
+  ],
+  "functionName": "emptyRowsAndColumnsCount",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+     ],
+     2,
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+     ],
+     3,
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ],
+     1,
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Excess Divisor Sum Numbers",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Adobe",
+   "TCS",
+   "Zoho"
+  ],
+  "description": "A number is abundant if the sum of its proper divisors (divisors smaller than itself) is greater than the number. Return how many abundant numbers lie in `1..n`.",
+  "examples": [
+   {
+    "input": "n = 12",
+    "output": "1",
+    "explanation": "There are 1 abundant number(s) up to n."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "There are 0 abundant number(s) up to n."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 5000",
+   "proper divisors exclude the number itself"
+  ],
+  "functionName": "excessDivisorSumNumbers",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     12
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     11
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     24
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 22,
+    "isSample": false
+   },
+   {
+    "args": [
+     5000
+    ],
+    "expected": 1239,
+    "isSample": false
+   },
+   {
+    "args": [
+     20
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Prime Factor",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Oracle",
+   "TCS",
+   "Walmart"
+  ],
+  "description": "Return the smallest prime that divides the integer `n >= 2` (a prime `n` returns itself).",
+  "examples": [
+   {
+    "input": "n = 15",
+    "output": "3",
+    "explanation": "The smallest prime factor is 3."
+   },
+   {
+    "input": "n = 13",
+    "output": "13",
+    "explanation": "The smallest prime factor is 13."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 10^9",
+   "the answer is a prime number"
+  ],
+  "functionName": "smallestPrimeFactor",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     15
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": 13,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     49
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999937
+    ],
+    "expected": 999999937,
+    "isSample": false
+   },
+   {
+    "args": [
+     91
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     64
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Node Degree Lookup",
+  "difficulty": "Easy",
+  "tags": [
+   "Graph"
+  ],
+  "companies": [
+   "Microsoft",
+   "Zoho"
+  ],
+  "description": "An undirected graph has `n` nodes (0 to n-1). `edges` lists the edges as flat pairs `[u0, v0, u1, v1, ...]`. Return the number of edges touching node `v`.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,0], n = 3, v = 0",
+    "output": "2",
+    "explanation": "Node v has degree 2."
+   },
+   {
+    "input": "edges = [0,1], n = 3, v = 2",
+    "output": "0",
+    "explanation": "Node v has degree 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "0 <= v < n"
+  ],
+  "functionName": "nodeDegreeLookup",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "v",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3,
+     0
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     3,
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4,
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      3,
+      1
+     ],
+     4,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Even Degree Node Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Graph",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Netflix"
+  ],
+  "description": "An undirected graph has `n` nodes (0 to n-1) and `edges` as flat pairs `[u0, v0, u1, v1, ...]`. Return how many nodes have an even number of incident edges (zero counts as even).",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,0], n = 3",
+    "output": "3",
+    "explanation": "3 node(s) have even degree."
+   },
+   {
+    "input": "edges = [0,1], n = 3",
+    "output": "1",
+    "explanation": "1 node(s) have even degree."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "isolated nodes have degree 0"
+  ],
+  "functionName": "evenDegreeNodeCount",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+     ],
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Source Node Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Graph",
+   "Counting"
+  ],
+  "companies": [
+   "Oracle",
+   "Google",
+   "Facebook"
+  ],
+  "description": "A directed graph has `n` nodes (0 to n-1) and `edges` as flat pairs `[from0, to0, from1, to1, ...]`. Return the number of nodes that have no incoming edge.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2], n = 3",
+    "output": "1",
+    "explanation": "1 node(s) have no incoming edge."
+   },
+   {
+    "input": "edges = [], n = 3",
+    "output": "3",
+    "explanation": "3 node(s) have no incoming edge."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges",
+   "no self loops or repeated edges"
+  ],
+  "functionName": "sourceNodeCount",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      0,
+      3,
+      0
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Edge Between Nodes Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Graph"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Uber"
+  ],
+  "description": "An undirected graph has `n` nodes and `edges` as flat pairs `[u0, v0, u1, v1, ...]`. Return `true` if nodes `a` and `b` are joined directly by an edge.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2], n = 3, a = 0, b = 1",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "edges = [0,1,1,2], n = 3, a = 0, b = 2",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "0 <= a, b < n, a != b"
+  ],
+  "functionName": "hasEdgeBetween",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     0,
+     1
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     0,
+     2
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     2,
+     0,
+     1
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      1
+     ],
+     3,
+     1,
+     2
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3,
+     2,
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      3
+     ],
+     4,
+     3,
+     1
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0
+     ],
+     2,
+     0,
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Leap Years In Range",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Netflix",
+   "Uber"
+  ],
+  "description": "Return how many leap years lie in the inclusive year range `[a, b]`. A year is leap if divisible by 4, except years divisible by 100 that are not divisible by 400.",
+  "examples": [
+   {
+    "input": "a = 2000, b = 2000",
+    "output": "1",
+    "explanation": "There are 1 leap year(s) in the range."
+   },
+   {
+    "input": "a = 1900, b = 1900",
+    "output": "0",
+    "explanation": "There are 0 leap year(s) in the range."
+   }
+  ],
+  "constraints": [
+   "1 <= a <= b <= 10^6",
+   "use the Gregorian rule for every year"
+  ],
+  "functionName": "leapYearsInRange",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2000,
+     2000
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1900,
+     1900
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1896,
+     1904
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2001,
+     2003
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     1000000
+    ],
+    "expected": 242500,
+    "isSample": false
+   },
+   {
+    "args": [
+     1600,
+     2400
+    ],
+    "expected": 195,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Additive Persistence Steps",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "Repeatedly replace `n` by the sum of its decimal digits until a single digit remains. Return how many replacements were needed (`0` if `n` already has one digit).",
+  "examples": [
+   {
+    "input": "n = 0",
+    "output": "0",
+    "explanation": "It takes 0 replacement(s)."
+   },
+   {
+    "input": "n = 9",
+    "output": "0",
+    "explanation": "It takes 0 replacement(s)."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 10^12",
+   "count only the replacements performed"
+  ],
+  "functionName": "additivePersistenceSteps",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     99
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     199
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999999999
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     19999999999
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Triangular Number Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Apple",
+   "Amazon"
+  ],
+  "description": "Return `true` if `n` is a triangular number, i.e. `n = 1 + 2 + ... + k` for some `k >= 0`.",
+  "examples": [
+   {
+    "input": "n = 6",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 7",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 10^12",
+   "0 counts as triangular (k = 0)"
+  ],
+  "functionName": "isTriangularNumber",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     6
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     500000500000
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     500000500001
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pronic Number Check",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Salesforce",
+   "Microsoft",
+   "Facebook"
+  ],
+  "description": "A pronic number is a product of two consecutive integers `k * (k + 1)` with `k >= 0`. Return `true` if `n` is pronic.",
+  "examples": [
+   {
+    "input": "n = 12",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 13",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 10^12",
+   "0 = 0 * 1 is pronic"
+  ],
+  "functionName": "isPronicNumber",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     12
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     6
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999000000
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Letter Case Variants Count",
+  "difficulty": "Easy",
+  "tags": [
+   "Backtracking",
+   "String"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Google"
+  ],
+  "description": "Every letter of `s` may be written in lowercase or uppercase while digits stay fixed. Return how many distinct strings can be produced.",
+  "examples": [
+   {
+    "input": "s = \"a1b2\"",
+    "output": "4",
+    "explanation": "4 distinct string(s) can be produced."
+   },
+   {
+    "input": "s = \"123\"",
+    "output": "1",
+    "explanation": "1 distinct string(s) can be produced."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 20",
+   "s has lowercase letters and digits only"
+  ],
+  "functionName": "letterCaseVariantsCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a1b2"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "123"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "z9z9z9"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefghijklmnopqrst"
+    ],
+    "expected": 1048576,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0a0"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Weighted Degree Of Node",
+  "difficulty": "Easy",
+  "tags": [
+   "Graph"
+  ],
+  "companies": [
+   "Adobe",
+   "Atlassian",
+   "Uber"
+  ],
+  "description": "A directed graph has `n` nodes and `edges` as flat triples `[from0, to0, w0, from1, to1, w1, ...]`. Return the total weight of all edges that start or end at node `v` (an edge touching `v` counts once).",
+  "examples": [
+   {
+    "input": "edges = [0,1,5,1,2,3], n = 3, v = 1",
+    "output": "8",
+    "explanation": "The edges touching v weigh 8 in total."
+   },
+   {
+    "input": "edges = [], n = 2, v = 0",
+    "output": "0",
+    "explanation": "The edges touching v weigh 0 in total."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges",
+   "1 <= w <= 20, no self loops"
+  ],
+  "functionName": "weightedDegreeOfNode",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "v",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      2,
+      3
+     ],
+     3,
+     1
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     2,
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4
+     ],
+     2,
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4
+     ],
+     2,
+     1
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      0,
+      3
+     ],
+     2,
+     0
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      1,
+      2,
+      0,
+      1
+     ],
+     3,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      7
+     ],
+     3,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Page Navigation Trail Replay",
+  "difficulty": "Easy",
+  "tags": [
+   "Design",
+   "Simulation"
+  ],
+  "companies": [
+   "Adobe",
+   "TCS",
+   "Infosys"
+  ],
+  "description": "A browser starts on page `0`. `ops` is a flat list of `(type, x)` pairs: type `0` visits page `x` (all forward history is discarded), type `1` goes back `x` steps (stopping at the first page), type `2` goes forward `x` steps (stopping at the latest page). Return the page the browser shows after all operations.",
+  "examples": [
+   {
+    "input": "ops = [0,5,0,7,1,1]",
+    "output": "5",
+    "explanation": "The browser ends on page 5."
+   },
+   {
+    "input": "ops = []",
+    "output": "0",
+    "explanation": "The browser ends on page 0."
+   }
+  ],
+  "constraints": [
+   "0 <= ops.length <= 60 and ops.length is even",
+   "type is 0, 1 or 2; 1 <= x <= 100"
+  ],
+  "functionName": "pageNavigationTrailReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      5,
+      0,
+      7,
+      1,
+      1
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     []
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      0,
+      7,
+      1,
+      1,
+      0,
+      9
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      1,
+      1,
+      2,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      2,
+      2,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      4,
+      1,
+      9,
+      2,
+      9
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Aliquot Sum Equals Itself",
+  "difficulty": "Easy",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Infosys",
+   "Walmart",
+   "Uber"
+  ],
+  "description": "A positive integer is perfect if it equals the sum of its proper divisors (all divisors smaller than itself). Return `true` if `n` is perfect.",
+  "examples": [
+   {
+    "input": "n = 6",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 28",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^5",
+   "1 is not perfect"
+  ],
+  "functionName": "aliquotSumEqualsItself",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     6
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     28
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     12
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     496
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     8128
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     27
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Power Fixed Point",
+  "difficulty": "Easy",
+  "tags": [
+   "Math"
+  ],
+  "companies": [
+   "Amazon",
+   "Netflix"
+  ],
+  "description": "A number is an Armstrong number if it equals the sum of each of its digits raised to the power of the number of digits. Return `true` if `n` is one.",
+  "examples": [
+   {
+    "input": "n = 153",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "n = 154",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 10^9",
+   "single-digit numbers are Armstrong numbers"
+  ],
+  "functionName": "isDigitPowerFixedPoint",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     153
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     154
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     9474
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     370
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Squarefree Numbers Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Sieve"
+  ],
+  "companies": [
+   "Apple",
+   "Oracle"
+  ],
+  "description": "A positive integer is squarefree if no perfect square larger than `1` divides it. Return how many squarefree numbers lie in `1..n`.",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "7",
+    "explanation": "There are 7 squarefree number(s) up to n."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "There are 1 squarefree number(s) up to n."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^6",
+   "1 counts as squarefree"
+  ],
+  "functionName": "squarefreeNumbersCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     30
+    ],
+    "expected": 19,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 61,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 607926,
+    "isSample": false
+   },
+   {
+    "args": [
+     50
+    ],
+    "expected": 31,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Two-Factor Numbers Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Sieve"
+  ],
+  "companies": [
+   "TCS",
+   "Adobe"
+  ],
+  "description": "Count the integers in `2..n` that can be written as a product of exactly two primes (the two primes may be equal, e.g. `4 = 2 * 2` and `15 = 3 * 5`).",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "4",
+    "explanation": "4 number(s) are products of exactly two primes."
+   },
+   {
+    "input": "n = 2",
+    "output": "0",
+    "explanation": "0 number(s) are products of exactly two primes."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 10^6",
+   "primes are counted with multiplicity"
+  ],
+  "functionName": "twoFactorNumbersCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     30
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 34,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 210035,
+    "isSample": false
+   },
+   {
+    "args": [
+     36
+    ],
+    "expected": 13,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Divisor Count Running Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "TCS",
+   "Adobe"
+  ],
+  "description": "Let `d(k)` be the number of positive divisors of `k`. Return `d(1) + d(2) + ... + d(n)`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "The running total of divisor counts is 1."
+   },
+   {
+    "input": "n = 5",
+    "output": "10",
+    "explanation": "The running total of divisor counts is 10."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "the answer fits in a 64-bit integer"
+  ],
+  "functionName": "divisorCountRunningTotal",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 482,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 13970034,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": 20877697634,
+    "isSample": false
+   },
+   {
+    "args": [
+     36
+    ],
+    "expected": 140,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Perfect Power Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Flipkart",
+   "LinkedIn"
+  ],
+  "description": "A perfect power is a number `a^b` with integers `a >= 2` and `b >= 2`. Return how many distinct perfect powers lie in `2..n`.",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "3",
+    "explanation": "There are 3 perfect power(s) up to n."
+   },
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "There are 0 perfect power(s) up to n."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^12",
+   "count each value once even if it has several representations"
+  ],
+  "functionName": "perfectPowerCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     64
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 40,
+    "isSample": false
+   },
+   {
+    "args": [
+     500
+    ],
+    "expected": 29,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Number With Two Remainders",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "Given coprime moduli `m` and `n` and remainders `a < m`, `b < n`, return the smallest non-negative integer `x` with `x % m == a` and `x % n == b`.",
+  "examples": [
+   {
+    "input": "a = 2, m = 3, b = 3, n = 5",
+    "output": "8",
+    "explanation": "The smallest such number is 8."
+   },
+   {
+    "input": "a = 0, m = 2, b = 0, n = 3",
+    "output": "0",
+    "explanation": "The smallest such number is 0."
+   }
+  ],
+  "constraints": [
+   "2 <= m, n <= 10^4 and gcd(m, n) = 1",
+   "0 <= a < m, 0 <= b < n"
+  ],
+  "functionName": "smallestNumberWithTwoRemainders",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2,
+     3,
+     3,
+     5
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     0,
+     2,
+     0,
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     4,
+     2,
+     5
+    ],
+    "expected": 17,
+    "isSample": false
+   },
+   {
+    "args": [
+     0,
+     7,
+     0,
+     11
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     7,
+     10,
+     11
+    ],
+    "expected": 76,
+    "isSample": false
+   },
+   {
+    "args": [
+     9999,
+     10000,
+     9998,
+     9999
+    ],
+    "expected": 99989999,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     5,
+     2,
+     7
+    ],
+    "expected": 23,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Binomial Trailing Zeros",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Combinatorics"
+  ],
+  "companies": [
+   "Flipkart",
+   "Apple"
+  ],
+  "description": "Return the number of trailing zero digits of the binomial coefficient `C(n, k)` written in decimal.",
+  "examples": [
+   {
+    "input": "n = 10, k = 5",
+    "output": "0",
+    "explanation": "C(n, k) ends with 0 zero(s)."
+   },
+   {
+    "input": "n = 5, k = 0",
+    "output": "0",
+    "explanation": "C(n, k) ends with 0 zero(s)."
+   }
+  ],
+  "constraints": [
+   "0 <= k <= n <= 10^9",
+   "C(n, k) = n! / (k! (n - k)!)"
+  ],
+  "functionName": "binomialTrailingZeros",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10,
+     5
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     0
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     100,
+     50
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     25,
+     12
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     500000000
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     20,
+     10
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pairs With Target XOR",
+  "difficulty": "Medium",
+  "tags": [
+   "Bit Manipulation",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Apple",
+   "Oracle"
+  ],
+  "description": "Count the pairs of indices `i < j` such that `nums[i] XOR nums[j] == target`.",
+  "examples": [
+   {
+    "input": "nums = [1,2,3,4], target = 5",
+    "output": "1",
+    "explanation": "There are 1 qualifying pair(s)."
+   },
+   {
+    "input": "nums = [5,5,5], target = 0",
+    "output": "3",
+    "explanation": "There are 3 qualifying pair(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "0 <= nums[i], target <= 10^6"
+  ],
+  "functionName": "pairsWithTargetXor",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5
+     ],
+     0
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     0
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      6,
+      5,
+      9,
+      12
+     ],
+     10
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pairs With Zero AND",
+  "difficulty": "Medium",
+  "tags": [
+   "Bit Manipulation",
+   "Counting"
+  ],
+  "companies": [
+   "Netflix",
+   "LinkedIn"
+  ],
+  "description": "Count the pairs of indices `i < j` such that `nums[i] AND nums[j] == 0`.",
+  "examples": [
+   {
+    "input": "nums = [1,2,4]",
+    "output": "3",
+    "explanation": "There are 3 pair(s) whose AND is zero."
+   },
+   {
+    "input": "nums = [3,3]",
+    "output": "0",
+    "explanation": "There are 0 pair(s) whose AND is zero."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "0 <= nums[i] <= 255"
+  ],
+  "functionName": "pairsWithZeroAnd",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      4
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      5,
+      7
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      255,
+      0,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      9,
+      15,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Subarrays With AND Equal K",
+  "difficulty": "Medium",
+  "tags": [
+   "Bit Manipulation",
+   "Array",
+   "Counting"
+  ],
+  "companies": [
+   "TCS",
+   "Microsoft"
+  ],
+  "description": "Count the contiguous non-empty subarrays whose bitwise AND of all elements equals `k`.",
+  "examples": [
+   {
+    "input": "nums = [1,1,1], k = 1",
+    "output": "6",
+    "explanation": "6 subarray(s) have AND equal to k."
+   },
+   {
+    "input": "nums = [1,2,3], k = 0",
+    "output": "2",
+    "explanation": "2 subarray(s) have AND equal to k."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "0 <= nums[i], k <= 10^6"
+  ],
+  "functionName": "subarraysWithAndEqualK",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     1
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     0
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     7
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      5,
+      6
+     ],
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3,
+      3
+     ],
+     3
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      6,
+      7,
+      14,
+      12
+     ],
+     6
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Subarray XOR",
+  "difficulty": "Medium",
+  "tags": [
+   "Bit Manipulation",
+   "Trie",
+   "Array"
+  ],
+  "companies": [
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "Return the largest XOR value obtainable from any non-empty contiguous subarray of `nums`.",
+  "examples": [
+   {
+    "input": "nums = [8,1,2,12]",
+    "output": "15",
+    "explanation": "The best subarray XOR is 15."
+   },
+   {
+    "input": "nums = [5]",
+    "output": "5",
+    "explanation": "The best subarray XOR is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "0 <= nums[i] <= 10^5"
+  ],
+  "functionName": "maximumSubarrayXor",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      8,
+      1,
+      2,
+      12
+     ]
+    ],
+    "expected": 15,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      4
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      10,
+      5,
+      25,
+      2,
+      8
+     ]
+    ],
+    "expected": 31,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      7,
+      7
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      100000,
+      1,
+      100000
+     ]
+    ],
+    "expected": 100001,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Diagonal Sort Weighted Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "Sorting"
+  ],
+  "companies": [
+   "Walmart",
+   "TCS",
+   "Microsoft"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. Sort every top-left to bottom-right diagonal in ascending order (from its top-left end). Then return the sum of `value * (position + 1)` over all cells, where `position` is the cell's index in the row-by-row layout.",
+  "examples": [
+   {
+    "input": "grid = [3,3,1,1,2,2,1,2,1], R = 3, C = 3",
+    "output": "90",
+    "explanation": "The weighted total after sorting diagonals is 90."
+   },
+   {
+    "input": "grid = [5], R = 1, C = 1",
+    "output": "5",
+    "explanation": "The weighted total after sorting diagonals is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 50, grid.length = R * C",
+   "1 <= grid[i] <= 100"
+  ],
+  "functionName": "diagonalSortWeightedTotal",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      3,
+      1,
+      1,
+      2,
+      2,
+      1,
+      2,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 90,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      7,
+      6
+     ],
+     2,
+     2
+    ],
+    "expected": 79,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ],
+     3,
+     1
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      3,
+      2,
+      1,
+      9,
+      8,
+      7
+     ],
+     2,
+     4
+    ],
+    "expected": 201,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2
+     ],
+     2,
+     2
+    ],
+    "expected": 20,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Zeroable By Line Toggles",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "Bit Manipulation",
+   "Math"
+  ],
+  "companies": [
+   "Zoho",
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "`grid` is an `R x C` binary table stored row by row. In one move you may pick a whole row or a whole column and toggle every bit in it (0 becomes 1, 1 becomes 0). Return `true` if some sequence of moves turns the table into all zeros.",
+  "examples": [
+   {
+    "input": "grid = [0,1,1,0], R = 2, C = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "grid = [1,1,1,1], R = 2, C = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 12, grid.length = R * C",
+   "each cell is 0 or 1"
+  ],
+  "functionName": "zeroableByLineToggles",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1,
+     1
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+     ],
+     2,
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      1,
+      0
+     ],
+     3,
+     3
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Richest Walk Through Mine",
+  "difficulty": "Medium",
+  "tags": [
+   "Backtracking",
+   "Matrix",
+   "DFS"
+  ],
+  "companies": [
+   "Atlassian",
+   "Uber"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row; `grid[i][j]` is the gold in a cell and `0` means the cell is blocked. Start at any non-empty cell, move up/down/left/right only into non-empty cells, never visit a cell twice, and collect the gold of every visited cell. Return the maximum gold collectable (`0` if every cell is blocked).",
+  "examples": [
+   {
+    "input": "grid = [0,6,0,5,8,7,0,9,0], R = 3, C = 3",
+    "output": "24",
+    "explanation": "The best walk collects 24 gold."
+   },
+   {
+    "input": "grid = [0], R = 1, C = 1",
+    "output": "0",
+    "explanation": "The best walk collects 0 gold."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 15, grid.length = R * C",
+   "0 <= grid[i] <= 100 and at most 25 cells are non-zero"
+  ],
+  "functionName": "richestWalkThroughMine",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      6,
+      0,
+      5,
+      8,
+      7,
+      0,
+      9,
+      0
+     ],
+     3,
+     3
+    ],
+    "expected": 24,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ],
+     1,
+     1
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3
+    ],
+    "expected": 21,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      0,
+      10,
+      0,
+      10,
+      0
+     ],
+     3,
+     2
+    ],
+    "expected": 30,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cheapest Matrix Product Order",
+  "difficulty": "Medium",
+  "tags": [
+   "Dynamic Programming",
+   "Matrix"
+  ],
+  "companies": [
+   "Uber",
+   "TCS",
+   "Infosys"
+  ],
+  "description": "A chain of `n` matrices is multiplied in order; matrix `i` has `dims[i]` rows and `dims[i + 1]` columns (so `dims.length = n + 1`). Multiplying an `a x b` matrix by a `b x c` matrix costs `a * b * c` scalar multiplications. Return the minimum total cost over all ways to parenthesize the product.",
+  "examples": [
+   {
+    "input": "dims = [10,30,5,60]",
+    "output": "4500",
+    "explanation": "The cheapest ordering costs 4500 multiplications."
+   },
+   {
+    "input": "dims = [5,10]",
+    "output": "0",
+    "explanation": "The cheapest ordering costs 0 multiplications."
+   }
+  ],
+  "constraints": [
+   "2 <= dims.length <= 100",
+   "1 <= dims[i] <= 100"
+  ],
+  "functionName": "cheapestMatrixProductOrder",
+  "params": [
+   {
+    "name": "dims",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      10,
+      30,
+      5,
+      60
+     ]
+    ],
+    "expected": 4500,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      10
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      40,
+      20,
+      30,
+      10,
+      30
+     ]
+    ],
+    "expected": 26000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      20,
+      30,
+      40,
+      30
+     ]
+    ],
+    "expected": 30000,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 24,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      6,
+      2,
+      7
+     ]
+    ],
+    "expected": 158,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Hops Between Nodes",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "BFS"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "An undirected graph has `n` nodes (0 to n-1) and `edges` as flat pairs `[u0, v0, u1, v1, ...]`. Return the minimum number of edges on a path from `a` to `b`, or `-1` if they are not connected.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2], n = 3, a = 0, b = 2",
+    "output": "2",
+    "explanation": "The shortest connection uses 2 edge(s) (-1 means none)."
+   },
+   {
+    "input": "edges = [0,1], n = 3, a = 0, b = 2",
+    "output": "-1",
+    "explanation": "The shortest connection uses -1 edge(s) (-1 means none)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "0 <= a, b < n"
+  ],
+  "functionName": "fewestHopsBetweenNodes",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "b",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     0,
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     3,
+     0,
+     2
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1,
+     0,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+     ],
+     4,
+     0,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      0,
+      2
+     ],
+     3,
+     0,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3
+     ],
+     4,
+     1,
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     5,
+     4,
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Nodes Within K Hops",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "BFS"
+  ],
+  "companies": [
+   "Walmart",
+   "LinkedIn",
+   "Paytm"
+  ],
+  "description": "An undirected graph has `n` nodes (0 to n-1) and `edges` as flat pairs. Return how many nodes (including `s` itself) can be reached from `s` using at most `k` edges.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,3], n = 4, s = 0, k = 2",
+    "output": "3",
+    "explanation": "3 node(s) lie within k hops."
+   },
+   {
+    "input": "edges = [0,1], n = 3, s = 2, k = 5",
+    "output": "1",
+    "explanation": "1 node(s) lie within k hops."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "0 <= s < n, 0 <= k <= 20"
+  ],
+  "functionName": "nodesWithinKHops",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "s",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4,
+     0,
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     3,
+     2,
+     5
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4,
+     1,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4,
+     1,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3,
+     0,
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Network Diameter",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "BFS"
+  ],
+  "companies": [
+   "Salesforce",
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "An undirected graph has `n` nodes and `edges` as flat pairs. If the graph is connected, return its diameter: the largest, over all node pairs, of the fewest edges needed to travel between them. If it is not connected return `-1`.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,3], n = 4",
+    "output": "3",
+    "explanation": "The diameter is 3 (-1 means disconnected)."
+   },
+   {
+    "input": "edges = [0,1], n = 3",
+    "output": "-1",
+    "explanation": "The diameter is -1 (-1 means disconnected)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "a single node has diameter 0"
+  ],
+  "functionName": "networkDiameter",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      0
+     ],
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Central Node Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "BFS"
+  ],
+  "companies": [
+   "Infosys",
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "An undirected graph has `n` nodes and `edges` as flat pairs. The eccentricity of a node is its largest shortest-path distance to any other node. If the graph is connected, return how many nodes have the smallest eccentricity in the graph; otherwise return `-1`.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,3], n = 4",
+    "output": "2",
+    "explanation": "2 node(s) are central (-1 means disconnected)."
+   },
+   {
+    "input": "edges = [0,1], n = 3",
+    "output": "-1",
+    "explanation": "-1 node(s) are central (-1 means disconnected)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "a single node is its own centre"
+  ],
+  "functionName": "centralNodeCount",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+     ],
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Dependency Order",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Topological Sort",
+   "Heap"
+  ],
+  "companies": [
+   "Paytm",
+   "LinkedIn"
+  ],
+  "description": "A directed graph has `n` tasks (0 to n-1); each pair `(u, v)` in the flat list `edges` means task `u` must come before task `v`. Return the lexicographically smallest valid ordering (compare as sequences of numbers) as the task ids joined by single spaces, or the word `none` if no valid ordering exists.",
+  "examples": [
+   {
+    "input": "edges = [1,0], n = 2",
+    "output": "\"1 0\"",
+    "explanation": "The ordering is \"1 0\"."
+   },
+   {
+    "input": "edges = [0,1,1,0], n = 2",
+    "output": "\"none\"",
+    "explanation": "The ordering is \"none\"."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 8, at most 20 edges",
+   "no self loops or repeated edges"
+  ],
+  "functionName": "smallestDependencyOrder",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": "1 0",
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ],
+     2
+    ],
+    "expected": "none",
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     3
+    ],
+    "expected": "0 1 2",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      0,
+      2,
+      1
+     ],
+     3
+    ],
+    "expected": "2 0 1",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3
+    ],
+    "expected": "none",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      3,
+      2,
+      1,
+      0
+     ],
+     4
+    ],
+    "expected": "3 1 0 2",
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      0,
+      5,
+      0,
+      4,
+      1,
+      5,
+      2
+     ],
+     6
+    ],
+    "expected": "3 4 1 5 0 2",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Routes From First To Last Node",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Dynamic Programming",
+   "DFS"
+  ],
+  "companies": [
+   "Uber",
+   "Atlassian",
+   "Paytm"
+  ],
+  "description": "A directed acyclic graph has `n` nodes (0 to n-1) and `edges` as flat pairs `[from0, to0, ...]`. Return the number of different paths from node `0` to node `n - 1` (a graph with `n = 1` has exactly one path).",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2], n = 3",
+    "output": "1",
+    "explanation": "There are 1 distinct route(s)."
+   },
+   {
+    "input": "edges = [], n = 1",
+    "output": "1",
+    "explanation": "There are 1 distinct route(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 8, at most 20 edges",
+   "the graph has no cycles, self loops or repeated edges"
+  ],
+  "functionName": "routesFromFirstToLast",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      3,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      3,
+      2,
+      3,
+      1,
+      2
+     ],
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Richest Cluster Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Union Find"
+  ],
+  "companies": [
+   "Google",
+   "Walmart",
+   "Uber"
+  ],
+  "description": "An undirected graph has `n` nodes; node `i` holds `values[i]`. `edges` lists the connections as flat pairs. A cluster is a maximal set of mutually reachable nodes. Return the largest total value held by any single cluster.",
+  "examples": [
+   {
+    "input": "values = [1,2,3], edges = [0,1], n = 3",
+    "output": "3",
+    "explanation": "The richest cluster totals 3."
+   },
+   {
+    "input": "values = [5], edges = [], n = 1",
+    "output": "5",
+    "explanation": "The richest cluster totals 5."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, values.length = n, at most 40 edges",
+   "-100 <= values[i] <= 100, no self loops or repeated edges"
+  ],
+  "functionName": "richestClusterTotal",
+  "params": [
+   {
+    "name": "values",
+    "type": "int[]"
+   },
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     [],
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3
+     ],
+     [],
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      -5,
+      6
+     ],
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -3,
+      -4,
+      10,
+      2
+     ],
+     [
+      0,
+      1,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     [
+      0,
+      1,
+      1,
+      2,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Money Loop Detection",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Bellman-Ford"
+  ],
+  "companies": [
+   "Flipkart",
+   "LinkedIn"
+  ],
+  "description": "A directed graph has `n` nodes and `edges` as flat triples `[from0, to0, w0, from1, to1, w1, ...]` where `w` may be negative. Return `true` if the graph contains a cycle whose total weight is negative (reachable or not from any particular start).",
+  "examples": [
+   {
+    "input": "edges = [0,1,-2,1,0,1], n = 2",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "edges = [0,1,1,1,0,1], n = 2",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10, at most 20 edges",
+   "-5 <= w <= 10, no self loops, no repeated (from, to) pair"
+  ],
+  "functionName": "hasNegativeCycle",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      -2,
+      1,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      -5,
+      2,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      -1,
+      2,
+      0,
+      -1
+     ],
+     3
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      -4,
+      1,
+      0,
+      3
+     ],
+     2
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      3,
+      1,
+      2,
+      -3,
+      2,
+      3,
+      2,
+      3,
+      1,
+      -1
+     ],
+     4
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Spare Cables To Connect Network",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Union Find"
+  ],
+  "companies": [
+   "Amazon",
+   "Netflix"
+  ],
+  "description": "`n` computers (0 to n-1) are wired by the cables in `edges` (flat pairs). In one move you may unplug any cable and reuse it between any two computers. Return the minimum moves needed to make all computers connected, or `-1` if there are not enough cables.",
+  "examples": [
+   {
+    "input": "edges = [0,1,0,2,1,2], n = 4",
+    "output": "1",
+    "explanation": "1 move(s) are needed (-1 means impossible)."
+   },
+   {
+    "input": "edges = [0,1,0,2], n = 4",
+    "output": "-1",
+    "explanation": "-1 move(s) are needed (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 cables",
+   "no self loops or repeated cables"
+  ],
+  "functionName": "spareCablesToConnect",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      2
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2
+     ],
+     4
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [],
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      2
+     ],
+     6
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Mutual Friend Triangles",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Counting"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "An undirected graph has `n` nodes and `edges` as flat pairs. Return the number of triangles: sets of three nodes that are all directly connected to each other.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,0], n = 3",
+    "output": "1",
+    "explanation": "The graph has 1 triangle(s)."
+   },
+   {
+    "input": "edges = [0,1,1,2], n = 3",
+    "output": "0",
+    "explanation": "The graph has 0 triangle(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges",
+   "no self loops or repeated edges"
+  ],
+  "functionName": "mutualFriendTriangles",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      2,
+      1,
+      3,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0,
+      2,
+      3,
+      3,
+      4,
+      4,
+      2
+     ],
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Kth Balanced Bracket String",
+  "difficulty": "Medium",
+  "tags": [
+   "Backtracking",
+   "Combinatorics",
+   "String"
+  ],
+  "companies": [
+   "Walmart",
+   "Google",
+   "Facebook"
+  ],
+  "description": "Consider all valid strings made of `n` pairs of round brackets, sorted in dictionary order with `(` smaller than `)`. Return the `k`-th string (1-indexed), or the word `none` if there are fewer than `k` strings.",
+  "examples": [
+   {
+    "input": "n = 3, k = 1",
+    "output": "\"((()))\"",
+    "explanation": "The k-th string is \"((()))\"."
+   },
+   {
+    "input": "n = 3, k = 5",
+    "output": "\"()()()\"",
+    "explanation": "The k-th string is \"()()()\"."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 12",
+   "1 <= k <= 10^6"
+  ],
+  "functionName": "kthBalancedBracketString",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     3,
+     1
+    ],
+    "expected": "((()))",
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     5
+    ],
+    "expected": "()()()",
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     6
+    ],
+    "expected": "none",
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": "()",
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     2
+    ],
+    "expected": "()()",
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     14
+    ],
+    "expected": "()()()()",
+    "isSample": false
+   },
+   {
+    "args": [
+     12,
+     1000000
+    ],
+    "expected": "none",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Knight Board Walk Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Dynamic Programming",
+   "Matrix",
+   "Backtracking"
+  ],
+  "companies": [
+   "Netflix",
+   "Uber"
+  ],
+  "description": "A knight stands on square `(sr, sc)` of an `R x C` board (0-indexed). Return how many different sequences of exactly `L` knight moves keep it on the board (squares may be revisited).",
+  "examples": [
+   {
+    "input": "R = 3, C = 3, sr = 0, sc = 0, L = 2",
+    "output": "4",
+    "explanation": "4 move sequence(s) exist."
+   },
+   {
+    "input": "R = 3, C = 3, sr = 1, sc = 1, L = 1",
+    "output": "0",
+    "explanation": "0 move sequence(s) exist."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 8, 0 <= sr < R, 0 <= sc < C",
+   "0 <= L <= 10"
+  ],
+  "functionName": "knightBoardWalkCount",
+  "params": [
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "sr",
+    "type": "int"
+   },
+   {
+    "name": "sc",
+    "type": "int"
+   },
+   {
+    "name": "L",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     3,
+     0,
+     0,
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     3,
+     1,
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     0,
+     0,
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     8,
+     8,
+     0,
+     0,
+     3
+    ],
+    "expected": 64,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     4,
+     0,
+     0,
+     4
+    ],
+    "expected": 28,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     4,
+     1,
+     2,
+     5
+    ],
+    "expected": 336,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     5,
+     2,
+     2,
+     3
+    ],
+    "expected": 128,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Versioned Store Replay",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Hash Table",
+   "Binary Search"
+  ],
+  "companies": [
+   "Zoho",
+   "Walmart",
+   "Apple"
+  ],
+  "description": "`ops` is a flat list of quadruples `(type, key, value, time)`. Type `0` stores `value` under `key` at `time`; type `1` reads `key` as of `time` (the value whose store time is the latest one not after `time`, or `0` if none) and its `value` field is `0`. Store times strictly increase through the list. Return the sum of all values read.",
+  "examples": [
+   {
+    "input": "ops = [0,1,5,1,1,1,0,2]",
+    "output": "5",
+    "explanation": "The reads add up to 5."
+   },
+   {
+    "input": "ops = [1,1,0,3]",
+    "output": "0",
+    "explanation": "The reads add up to 0."
+   }
+  ],
+  "constraints": [
+   "4 <= ops.length <= 400 and ops.length is a multiple of 4",
+   "1 <= key <= 1000, 1 <= time <= 10^4, 1 <= stored value <= 10^4"
+  ],
+  "functionName": "versionedStoreReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      1,
+      1,
+      0,
+      2
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      0,
+      1,
+      7,
+      4,
+      1,
+      1,
+      0,
+      3,
+      1,
+      1,
+      0,
+      5
+     ]
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      2,
+      9,
+      2,
+      1,
+      1,
+      0,
+      2,
+      1,
+      2,
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      2,
+      2,
+      0,
+      1,
+      3,
+      3,
+      1,
+      1,
+      0,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4,
+      5,
+      1,
+      1,
+      0,
+      5,
+      1,
+      1,
+      0,
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      3,
+      6,
+      1,
+      0,
+      3,
+      8,
+      9,
+      1,
+      3,
+      0,
+      9,
+      1,
+      3,
+      0,
+      8
+     ]
+    ],
+    "expected": 14,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Deepest Prerequisite Chain",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Dynamic Programming",
+   "Topological Sort"
+  ],
+  "companies": [
+   "Netflix",
+   "LinkedIn"
+  ],
+  "description": "A directed acyclic graph has `n` nodes (0 to n-1) and `edges` as flat pairs `[from0, to0, ...]`. Return the number of edges on the longest path in the graph (`0` if it has no edges).",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2,2,3], n = 4",
+    "output": "3",
+    "explanation": "The longest chain has 3 edge(s)."
+   },
+   {
+    "input": "edges = [], n = 3",
+    "output": "0",
+    "explanation": "The longest chain has 0 edge(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 8, at most 20 edges",
+   "the graph has no cycles, self loops or repeated edges"
+  ],
+  "functionName": "deepestPrerequisiteChain",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      2,
+      1,
+      1,
+      0
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      3,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      0,
+      2
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      3,
+      0
+     ],
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Dictionary Segmentation Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Backtracking"
+  ],
+  "companies": [
+   "Apple",
+   "Oracle"
+  ],
+  "description": "`words` is a space-separated list of distinct dictionary words. Return the number of different ways to split the whole string `s` into a sequence of dictionary words (words may be reused).",
+  "examples": [
+   {
+    "input": "s = \"catsanddog\", words = \"cat cats and sand dog\"",
+    "output": "2",
+    "explanation": "There are 2 way(s) to segment s."
+   },
+   {
+    "input": "s = \"aaa\", words = \"a aa\"",
+    "output": "3",
+    "explanation": "There are 3 way(s) to segment s."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 30, 1 to 8 words, each of length 1 to 10",
+   "only lowercase letters"
+  ],
+  "functionName": "dictionarySegmentationCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "catsanddog",
+     "cat cats and sand dog"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaa",
+     "a aa"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "x y"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "a aa aaa"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     "pineapplepenapple",
+     "apple pen pine pineapple"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "ab a b"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Prime Factor Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Sieve"
+  ],
+  "companies": [
+   "Oracle",
+   "Apple",
+   "Salesforce"
+  ],
+  "description": "For each `k` in `1..n` count how many different primes divide `k` (`1` has none). Return the sum of these counts.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "0",
+    "explanation": "The total is 0."
+   },
+   {
+    "input": "n = 10",
+    "output": "11",
+    "explanation": "The total is 11."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^6",
+   "count each distinct prime once per number"
+  ],
+  "functionName": "distinctPrimeFactorTotal",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     12
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     30
+    ],
+    "expected": 43,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 171,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000
+    ],
+    "expected": 2853708,
+    "isSample": false
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smooth Number Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Number Theory",
+   "Sieve"
+  ],
+  "companies": [
+   "Netflix",
+   "Infosys"
+  ],
+  "description": "A number is `p`-smooth if all of its prime factors are at most `p`. Return how many numbers in `1..n` are `p`-smooth (`1` always counts).",
+  "examples": [
+   {
+    "input": "n = 10, p = 3",
+    "output": "7",
+    "explanation": "7 number(s) are smooth."
+   },
+   {
+    "input": "n = 1, p = 1",
+    "output": "1",
+    "explanation": "1 number(s) are smooth."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^5",
+   "1 <= p <= 10^5"
+  ],
+  "functionName": "smoothNumberCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "p",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10,
+     3
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     30,
+     5
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     100,
+     2
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     100,
+     100
+    ],
+    "expected": 100,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000,
+     7
+    ],
+    "expected": 694,
+    "isSample": false
+   },
+   {
+    "args": [
+     50,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Two-Base Palindrome Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Adobe",
+   "Facebook",
+   "Goldman Sachs"
+  ],
+  "description": "Count the integers in `1..n` that read the same forwards and backwards both in decimal and in binary (no leading zeros).",
+  "examples": [
+   {
+    "input": "n = 10",
+    "output": "5",
+    "explanation": "5 number(s) are palindromes in both bases."
+   },
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "1 number(s) are palindromes in both bases."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^8",
+   "binary form has no leading zeros"
+  ],
+  "functionName": "twoBasePalindromeCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     100000000
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     585
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Halving Steps To One",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Dynamic Programming",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Apple"
+  ],
+  "description": "In one step, an even `n` becomes `n / 2`; an odd `n` becomes either `n + 1` or `n - 1`. Return the minimum number of steps to reach `1`.",
+  "examples": [
+   {
+    "input": "n = 8",
+    "output": "3",
+    "explanation": "The minimum is 3 step(s)."
+   },
+   {
+    "input": "n = 7",
+    "output": "4",
+    "explanation": "The minimum is 4 step(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 2^31 - 1",
+   "intermediate values may exceed 2^31 - 1"
+  ],
+  "functionName": "halvingStepsToOne",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     8
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     15
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": 32,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Leaderboard Replay",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Hash Table",
+   "Heap"
+  ],
+  "companies": [
+   "Apple",
+   "Goldman Sachs"
+  ],
+  "description": "`ops` is a flat list of triples `(type, a, b)`. Type `0`: add `b` points to player `a` (new players start at 0). Type `1`: sum the points of the `a` highest-scoring players (all of them if fewer exist; `b = 0`). Type `2`: remove player `a` from the board (`b = 0`; nothing happens if absent). Return the sum of all type-1 answers.",
+  "examples": [
+   {
+    "input": "ops = [0,1,10,0,2,5,1,1,0]",
+    "output": "10",
+    "explanation": "The top-score queries add up to 10."
+   },
+   {
+    "input": "ops = [1,3,0]",
+    "output": "0",
+    "explanation": "The top-score queries add up to 0."
+   }
+  ],
+  "constraints": [
+   "3 <= ops.length <= 300 and ops.length is a multiple of 3",
+   "1 <= a <= 20, 1 <= b <= 100 for type 0"
+  ],
+  "functionName": "leaderboardReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      10,
+      0,
+      2,
+      5,
+      1,
+      1,
+      0
+     ]
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      10,
+      2,
+      1,
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      0,
+      2,
+      7,
+      0,
+      3,
+      6,
+      1,
+      2,
+      0
+     ]
+    ],
+    "expected": 13,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      0,
+      1,
+      5,
+      1,
+      1,
+      0
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4,
+      0,
+      2,
+      9,
+      2,
+      2,
+      0,
+      1,
+      5,
+      0
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      4,
+      3,
+      0,
+      5,
+      8,
+      1,
+      1,
+      0,
+      0,
+      4,
+      9,
+      1,
+      2,
+      0
+     ]
+    ],
+    "expected": 28,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Running Median Replay",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Heap"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Salesforce"
+  ],
+  "description": "`ops` is a flat list of pairs `(type, x)`. Type `0` adds the number `x` to a collection. Type `1` (with `x = 0`) asks for the current median: the middle value when the count is odd, or the floor of the average of the two middle values when it is even. The collection is never empty at a query. Return the sum of all answers.",
+  "examples": [
+   {
+    "input": "ops = [0,5,1,0]",
+    "output": "5",
+    "explanation": "The medians add up to 5."
+   },
+   {
+    "input": "ops = [0,1,0,2,1,0]",
+    "output": "1",
+    "explanation": "The medians add up to 1."
+   }
+  ],
+  "constraints": [
+   "2 <= ops.length <= 200 and ops.length is even",
+   "-1000 <= x <= 1000 for additions"
+  ],
+  "functionName": "runningMedianReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      5,
+      1,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      -3,
+      0,
+      -4,
+      1,
+      0
+     ]
+    ],
+    "expected": -4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      7,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      9,
+      1,
+      0
+     ]
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      0,
+      5,
+      1,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      -1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      -2,
+      1,
+      0
+     ]
+    ],
+    "expected": -2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      10,
+      0,
+      20,
+      0,
+      30,
+      0,
+      40,
+      1,
+      0
+     ]
+    ],
+    "expected": 25,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Transfer Ledger Replay",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Simulation",
+   "Array"
+  ],
+  "companies": [
+   "Zoho",
+   "Infosys",
+   "Amazon"
+  ],
+  "description": "`balances[i]` is the money in account `i`. `ops` is a flat list of triples `(from, to, amount)`; a transfer happens only if the `from` account has at least `amount`, otherwise it is skipped. After all operations return the sum of `balance[i] * (i + 1)` over all accounts.",
+  "examples": [
+   {
+    "input": "balances = [10,5], ops = [0,1,7]",
+    "output": "27",
+    "explanation": "The weighted final balance is 27."
+   },
+   {
+    "input": "balances = [10,5], ops = [0,1,11]",
+    "output": "20",
+    "explanation": "The weighted final balance is 20."
+   }
+  ],
+  "constraints": [
+   "1 <= balances.length <= 20, 0 <= balances[i] <= 1000",
+   "ops.length is a multiple of 3 and at most 150; accounts are valid and from != to; 1 <= amount <= 1000"
+  ],
+  "functionName": "transferLedgerReplay",
+  "params": [
+   {
+    "name": "balances",
+    "type": "int[]"
+   },
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      10,
+      5
+     ],
+     [
+      0,
+      1,
+      7
+     ]
+    ],
+    "expected": 27,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      10,
+      5
+     ],
+     [
+      0,
+      1,
+      11
+     ]
+    ],
+    "expected": 20,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3
+     ],
+     []
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      5,
+      5
+     ],
+     [
+      0,
+      1,
+      5,
+      1,
+      2,
+      10,
+      2,
+      0,
+      4
+     ]
+    ],
+    "expected": 37,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      100,
+      0,
+      0
+     ],
+     [
+      0,
+      1,
+      60,
+      1,
+      2,
+      30,
+      2,
+      0,
+      100
+     ]
+    ],
+    "expected": 190,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     [
+      3,
+      0,
+      4,
+      0,
+      1,
+      5,
+      1,
+      2,
+      1
+     ]
+    ],
+    "expected": 24,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Towns Within Travel Budget",
+  "difficulty": "Medium",
+  "tags": [
+   "Graph",
+   "Dijkstra",
+   "Shortest Path"
+  ],
+  "companies": [
+   "Apple",
+   "Amazon"
+  ],
+  "description": "A directed road network has `n` towns (0 to n-1) and `edges` as flat triples `[from0, to0, cost0, ...]`. Starting in town `0`, return how many towns (including town 0) can be reached with a total travel cost of at most `B`.",
+  "examples": [
+   {
+    "input": "edges = [0,1,5,1,2,5], n = 3, B = 10",
+    "output": "3",
+    "explanation": "3 town(s) are reachable within the budget."
+   },
+   {
+    "input": "edges = [0,1,5,1,2,5], n = 3, B = 9",
+    "output": "2",
+    "explanation": "2 town(s) are reachable within the budget."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges",
+   "1 <= cost <= 20, 0 <= B <= 400, no self loops"
+  ],
+  "functionName": "townsWithinTravelBudget",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "B",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      2,
+      5
+     ],
+     3,
+     10
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      2,
+      5
+     ],
+     3,
+     9
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     2,
+     100
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      3,
+      0,
+      2,
+      4,
+      1,
+      2,
+      1
+     ],
+     3,
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2
+     ],
+     2,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      0,
+      2,
+      1,
+      2,
+      2
+     ],
+     3,
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1
+     ],
+     2,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Island After One Fill",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "DFS",
+   "Union Find"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "`grid` is an `R x C` binary table stored row by row (`1` = land). You may change at most one `0` cell into land. Return the size of the largest island (group of land cells connected up/down/left/right) that can result.",
+  "examples": [
+   {
+    "input": "grid = [1,0,0,1], R = 2, C = 2",
+    "output": "3",
+    "explanation": "The largest island can reach size 3."
+   },
+   {
+    "input": "grid = [1,1,1,1], R = 2, C = 2",
+    "output": "4",
+    "explanation": "The largest island can reach size 4."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 12, grid.length = R * C",
+   "each cell is 0 or 1"
+  ],
+  "functionName": "largestIslandAfterOneFill",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     2,
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ],
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1
+     ],
+     1,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Diamond Neighbourhood Best Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Matrix",
+   "Simulation"
+  ],
+  "companies": [
+   "TCS",
+   "Adobe"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row. For a centre cell `(i, j)` its diamond is every cell `(x, y)` inside the table with `|x - i| + |y - j| <= k`. Return the largest diamond sum over all centre cells.",
+  "examples": [
+   {
+    "input": "grid = [1,2,3,4,5,6,7,8,9], R = 3, C = 3, k = 1",
+    "output": "29",
+    "explanation": "The best diamond sums to 29."
+   },
+   {
+    "input": "grid = [5], R = 1, C = 1, k = 0",
+    "output": "5",
+    "explanation": "The best diamond sums to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 50, grid.length = R * C",
+   "-100 <= grid[i] <= 100, 0 <= k <= 50"
+  ],
+  "functionName": "diamondNeighbourhoodBestSum",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     3,
+     3,
+     1
+    ],
+    "expected": 29,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1,
+     0
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ],
+     2,
+     2,
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      -1,
+      -2,
+      -3,
+      -4
+     ],
+     2,
+     2,
+     2
+    ],
+    "expected": -10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3,
+     1
+    ],
+    "expected": 17,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9
+     ],
+     3,
+     3,
+     2
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+     ],
+     3,
+     3,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pairs With Given LCM",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "Return the number of pairs of positive integers `(a, b)` with `a <= b` whose least common multiple is exactly `n`.",
+  "examples": [
+   {
+    "input": "n = 1",
+    "output": "1",
+    "explanation": "There are 1 such pair(s)."
+   },
+   {
+    "input": "n = 12",
+    "output": "8",
+    "explanation": "There are 8 such pair(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^12",
+   "the answer fits in a 32-bit integer"
+  ],
+  "functionName": "pairsWithGivenLcm",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     12
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     6
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     36
+    ],
+    "expected": 13,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000000
+    ],
+    "expected": 313,
+    "isSample": false
+   },
+   {
+    "args": [
+     720720
+    ],
+    "expected": 1823,
+    "isSample": false
+   },
+   {
+    "args": [
+     97
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Lattice Points In Circle",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Geometry"
+  ],
+  "companies": [
+   "Flipkart",
+   "Google"
+  ],
+  "description": "Return the number of integer points `(x, y)` (including the boundary) with `x*x + y*y <= r*r`.",
+  "examples": [
+   {
+    "input": "r = 0",
+    "output": "1",
+    "explanation": "The circle contains 1 lattice point(s)."
+   },
+   {
+    "input": "r = 1",
+    "output": "5",
+    "explanation": "The circle contains 5 lattice point(s)."
+   }
+  ],
+  "constraints": [
+   "0 <= r <= 10^4",
+   "the origin counts"
+  ],
+  "functionName": "latticePointsInCircle",
+  "params": [
+   {
+    "name": "r",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     0
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 13,
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": 81,
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": 31417,
+    "isSample": false
+   },
+   {
+    "args": [
+     10000
+    ],
+    "expected": 314159053,
+    "isSample": false
+   },
+   {
+    "args": [
+     13
+    ],
+    "expected": 529,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Sum Multiple Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Math",
+   "Digit DP"
+  ],
+  "companies": [
+   "Amazon",
+   "Walmart"
+  ],
+  "description": "Return how many integers in `1..n` have a decimal digit sum that is divisible by `k`.",
+  "examples": [
+   {
+    "input": "n = 100, k = 5",
+    "output": "19",
+    "explanation": "19 number(s) qualify."
+   },
+   {
+    "input": "n = 9, k = 3",
+    "output": "3",
+    "explanation": "3 number(s) qualify."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "1 <= k <= 100"
+  ],
+  "functionName": "digitSumMultipleCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     100,
+     5
+    ],
+    "expected": 19,
+    "isSample": true
+   },
+   {
+    "args": [
+     9,
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000,
+     7
+    ],
+    "expected": 142857049,
+    "isSample": false
+   },
+   {
+    "args": [
+     50,
+     10
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     999999999,
+     100
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     30,
+     2
+    ],
+    "expected": 14,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pairs With XOR In Range",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Trie",
+   "Counting"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Uber"
+  ],
+  "description": "Count the pairs of indices `i < j` for which `low <= nums[i] XOR nums[j] <= high`.",
+  "examples": [
+   {
+    "input": "nums = [1,4,2,7], low = 2, high = 6",
+    "output": "6",
+    "explanation": "6 pair(s) have XOR in the range."
+   },
+   {
+    "input": "nums = [9,8,4,2,1,5], low = 5, high = 14",
+    "output": "11",
+    "explanation": "11 pair(s) have XOR in the range."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 2000",
+   "0 <= nums[i] <= 20000, 0 <= low <= high <= 20000"
+  ],
+  "functionName": "pairsWithXorInRange",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "low",
+    "type": "int"
+   },
+   {
+    "name": "high",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      4,
+      2,
+      7
+     ],
+     2,
+     6
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      4,
+      2,
+      1,
+      5
+     ],
+     5,
+     14
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     0,
+     10
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     0,
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     1,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      20000
+     ],
+     20000,
+     20000
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      5,
+      6,
+      9
+     ],
+     0,
+     20000
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Signed Powers To Zero",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Greedy",
+   "Math"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix"
+  ],
+  "description": "In one operation you add or subtract any power of two (`1, 2, 4, 8, ...`) to the current value. Return the minimum number of operations to turn `n` into `0`.",
+  "examples": [
+   {
+    "input": "n = 39",
+    "output": "3",
+    "explanation": "It takes 3 operation(s)."
+   },
+   {
+    "input": "n = 54",
+    "output": "3",
+    "explanation": "It takes 3 operation(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "powers of two may be reused"
+  ],
+  "functionName": "fewestSignedPowersToZero",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     39
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     54
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1000000000
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     63
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Submatrices With Target Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "Hash Table",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "`grid` is an `R x C` table stored row by row (values may be negative). Return the number of contiguous rectangular sub-tables whose cells add up to exactly `k`.",
+  "examples": [
+   {
+    "input": "grid = [0,1,0,1,1,1,0,1,0], R = 3, C = 3, k = 0",
+    "output": "4",
+    "explanation": "4 sub-table(s) sum to k."
+   },
+   {
+    "input": "grid = [1], R = 1, C = 1, k = 1",
+    "output": "1",
+    "explanation": "1 sub-table(s) sum to k."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 30, grid.length = R * C",
+   "-100 <= grid[i], k <= 100"
+  ],
+  "functionName": "submatricesWithTargetSum",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+     ],
+     3,
+     3,
+     0
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1,
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1,
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0
+     ],
+     2,
+     2,
+     0
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      -1,
+      1,
+      -1
+     ],
+     2,
+     2,
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     2,
+     3,
+     6
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      -5,
+      5,
+      -5,
+      5,
+      -5
+     ],
+     3,
+     2,
+     5
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Multiplicative Order",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Atlassian",
+   "Flipkart"
+  ],
+  "description": "Given `a` and `m` with `gcd(a, m) = 1`, return the smallest positive integer `k` such that `a^k` leaves remainder `1` when divided by `m`.",
+  "examples": [
+   {
+    "input": "a = 2, m = 7",
+    "output": "3",
+    "explanation": "The order is 3."
+   },
+   {
+    "input": "a = 3, m = 7",
+    "output": "6",
+    "explanation": "The order is 6."
+   }
+  ],
+  "constraints": [
+   "2 <= m <= 10^9, 1 <= a < m",
+   "gcd(a, m) = 1"
+  ],
+  "functionName": "multiplicativeOrder",
+  "params": [
+   {
+    "name": "a",
+    "type": "int"
+   },
+   {
+    "name": "m",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2,
+     7
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     7
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     17
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     999999937
+    ],
+    "expected": 41666664,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     999999999
+    ],
+    "expected": 667332,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     100
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Primitive Root Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "Number Theory"
+  ],
+  "companies": [
+   "Walmart",
+   "Apple",
+   "Oracle"
+  ],
+  "description": "A primitive root modulo `n` is a number `g` coprime to `n` whose powers `g^1, g^2, ...` hit every residue coprime to `n`. Return how many primitive roots exist among `1..n` (`0` if none).",
+  "examples": [
+   {
+    "input": "n = 7",
+    "output": "2",
+    "explanation": "There are 2 primitive root(s) modulo n."
+   },
+   {
+    "input": "n = 8",
+    "output": "0",
+    "explanation": "There are 0 primitive root(s) modulo n."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 10^6",
+   "roots are counted among residues 1 to n (n itself is never coprime)"
+  ],
+  "functionName": "primitiveRootCount",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     7
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     8
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     9
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     999983
+    ],
+    "expected": 493584,
+    "isSample": false
+   },
+   {
+    "args": [
+     12
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Monotone Paths With K Turns",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Matrix",
+   "Combinatorics"
+  ],
+  "companies": [
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "On an `R x C` grid you walk from the top-left cell to the bottom-right cell moving only right or down. A turn happens whenever two consecutive moves differ in direction. Return how many different paths have exactly `k` turns.",
+  "examples": [
+   {
+    "input": "R = 3, C = 3, k = 1",
+    "output": "2",
+    "explanation": "2 path(s) have exactly k turns."
+   },
+   {
+    "input": "R = 3, C = 3, k = 2",
+    "output": "2",
+    "explanation": "2 path(s) have exactly k turns."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 12",
+   "0 <= k <= 22"
+  ],
+  "functionName": "monotonePathsWithKTurns",
+  "params": [
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     3,
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     3,
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1,
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     5,
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     2,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     12,
+     12,
+     5
+    ],
+    "expected": 4050,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     5,
+     3
+    ],
+    "expected": 12,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Arrow Edits To Cross",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Matrix",
+   "0-1 BFS"
+  ],
+  "companies": [
+   "Zoho",
+   "Walmart",
+   "TCS"
+  ],
+  "description": "Each cell of an `R x C` table (stored row by row) holds an arrow: `1` right, `2` left, `3` down, `4` up. Starting at the top-left cell you follow the arrow of the cell you stand on. You may edit any cell's arrow at a cost of `1` each (a cell may be used more than once but needs editing only once). Return the minimum edits so that the walk can reach the bottom-right cell, moving only to cells inside the table.",
+  "examples": [
+   {
+    "input": "grid = [1,1,3,3,3,1,4,1,1], R = 3, C = 3",
+    "output": "1",
+    "explanation": "Minimum edits: 1."
+   },
+   {
+    "input": "grid = [1], R = 1, C = 1",
+    "output": "0",
+    "explanation": "Minimum edits: 0."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 12, grid.length = R * C",
+   "each cell is 1, 2, 3 or 4"
+  ],
+  "functionName": "fewestArrowEditsToCross",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      3,
+      3,
+      3,
+      1,
+      4,
+      1,
+      1
+     ],
+     3,
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2
+     ],
+     1,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ],
+     1,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      4
+     ],
+     2,
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3,
+      3
+     ],
+     2,
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      2,
+      2,
+      2
+     ],
+     2,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Flood Wait Crossing",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "Binary Search",
+   "Graph"
+  ],
+  "companies": [
+   "Atlassian",
+   "Paytm"
+  ],
+  "description": "`grid` is an `R x C` table of terrain heights stored row by row. Water rises uniformly; at time `T` you may stand on, and walk (up/down/left/right) between, cells whose height is at most `T`. Starting in the top-left cell, return the earliest time `T` at which you can reach the bottom-right cell.",
+  "examples": [
+   {
+    "input": "grid = [0,2,1,3], R = 2, C = 2",
+    "output": "3",
+    "explanation": "The earliest crossing time is 3."
+   },
+   {
+    "input": "grid = [5], R = 1, C = 1",
+    "output": "5",
+    "explanation": "The earliest crossing time is 5."
+   }
+  ],
+  "constraints": [
+   "1 <= R, C <= 30, grid.length = R * C",
+   "0 <= grid[i] <= 10^4"
+  ],
+  "functionName": "floodWaitCrossing",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "R",
+    "type": "int"
+   },
+   {
+    "name": "C",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      2,
+      1,
+      3
+     ],
+     2,
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1,
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+     ],
+     3,
+     3
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1,
+      0
+     ],
+     2,
+     2
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      9,
+      9,
+      1,
+      1,
+      1
+     ],
+     2,
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      4,
+      4,
+      4
+     ],
+     2,
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      10000
+     ],
+     1,
+     2
+    ],
+    "expected": 10000,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Runner-Up Spanning Tree Cost",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Minimum Spanning Tree"
+  ],
+  "companies": [
+   "Oracle",
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "An undirected weighted graph has `n` nodes and `edges` as flat triples `[u0, v0, w0, ...]`. Consider every spanning tree (set of `n - 1` edges connecting all nodes) and sort their total weights, keeping duplicates for different trees. Return the second smallest total, or `-1` if the graph has fewer than two spanning trees.",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,1,2,2,0,2,3], n = 3",
+    "output": "4",
+    "explanation": "The second cheapest spanning tree costs 4."
+   },
+   {
+    "input": "edges = [0,1,1], n = 2",
+    "output": "-1",
+    "explanation": "The second cheapest spanning tree costs -1."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 8, at most 12 edges",
+   "1 <= w <= 9, no self loops or repeated node pairs"
+  ],
+  "functionName": "runnerUpSpanningTreeCost",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      0,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1
+     ],
+     2
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      1,
+      0,
+      2,
+      1
+     ],
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      1,
+      2,
+      2
+     ],
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3,
+      2,
+      3,
+      0,
+      2
+     ],
+     4
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4,
+      0,
+      2,
+      1,
+      1,
+      2,
+      2,
+      2,
+      3,
+      5,
+      1,
+      3,
+      3
+     ],
+     4
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Heaviest Non-Adjacent Node Set In Tree",
+  "difficulty": "Hard",
+  "tags": [
+   "Tree",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Infosys",
+   "Walmart"
+  ],
+  "description": "A tree has `n` nodes (0 to n-1); node `i` has weight `values[i]`. `edges` lists its `n - 1` edges as flat pairs. Choose a set of nodes with no two directly connected and return the largest possible total weight.",
+  "examples": [
+   {
+    "input": "values = [5], edges = [], n = 1",
+    "output": "5",
+    "explanation": "The best set weighs 5."
+   },
+   {
+    "input": "values = [3,4], edges = [0,1], n = 2",
+    "output": "4",
+    "explanation": "The best set weighs 4."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 16, values.length = n",
+   "1 <= values[i] <= 20, edges form a tree"
+  ],
+  "functionName": "heaviestNonAdjacentNodeSet",
+  "params": [
+   {
+    "name": "values",
+    "type": "int[]"
+   },
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5
+     ],
+     [],
+     1
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      4
+     ],
+     [
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      1
+     ],
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      1,
+      1,
+      4
+     ],
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3
+     ],
+     4
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2
+     ],
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      10,
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      0,
+      4
+     ],
+     5
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distance Sum Weighted Over Tree Nodes",
+  "difficulty": "Hard",
+  "tags": [
+   "Tree",
+   "Dynamic Programming",
+   "DFS"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "A tree has `n` nodes (0 to n-1) and `edges` as flat pairs. For each node `i` let `S(i)` be the sum of distances (in edges) from `i` to every other node. Return the sum of `(i + 1) * S(i)` over all nodes.",
+  "examples": [
+   {
+    "input": "edges = [], n = 1",
+    "output": "0",
+    "explanation": "The weighted total is 0."
+   },
+   {
+    "input": "edges = [0,1], n = 2",
+    "output": "3",
+    "explanation": "The weighted total is 3."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20",
+   "edges form a tree"
+  ],
+  "functionName": "distanceSumWeightedOverTreeNodes",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [],
+     1
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4
+    ],
+    "expected": 48,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     5
+    ],
+    "expected": 120,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      4,
+      1,
+      5,
+      2
+     ],
+     6
+    ],
+    "expected": 246,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      3,
+      1,
+      4,
+      2,
+      5,
+      2,
+      6
+     ],
+     7
+    ],
+    "expected": 417,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Ancestor Meeting Point Total",
+  "difficulty": "Hard",
+  "tags": [
+   "Tree",
+   "Binary Lifting",
+   "DFS"
+  ],
+  "companies": [
+   "Paytm",
+   "Adobe"
+  ],
+  "description": "A tree on nodes `0..n-1` is rooted at node `0`; `edges` lists its `n - 1` edges as flat pairs. `queries` is a flat list of pairs `(a, b)`. For each pair find their lowest common ancestor (the deepest node that lies on both root paths; a node is its own ancestor). Return the sum of the ids of these ancestors.",
+  "examples": [
+   {
+    "input": "edges = [0,1,0,2], n = 3, queries = [1,2]",
+    "output": "0",
+    "explanation": "The meeting points sum to 0."
+   },
+   {
+    "input": "edges = [], n = 1, queries = [0,0]",
+    "output": "0",
+    "explanation": "The meeting points sum to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, edges form a tree",
+   "queries.length is even and at most 60; 0 <= a, b < n"
+  ],
+  "functionName": "ancestorMeetingPointTotal",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "queries",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2
+     ],
+     3,
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     1,
+     [
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     [
+      2,
+      1,
+      2,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      1,
+      3,
+      1,
+      4
+     ],
+     5,
+     [
+      3,
+      4,
+      3,
+      2,
+      4,
+      4
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      1,
+      3,
+      2
+     ],
+     4,
+     [
+      3,
+      0,
+      3,
+      2
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      2,
+      3,
+      2,
+      4,
+      4,
+      5
+     ],
+     6,
+     [
+      5,
+      3,
+      1,
+      5,
+      4,
+      2
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ],
+     5,
+     [
+      4,
+      2,
+      0,
+      4
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cable Network With Free Links",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Minimum Spanning Tree",
+   "Greedy"
+  ],
+  "companies": [
+   "Amazon",
+   "Netflix"
+  ],
+  "description": "An undirected weighted graph has `n` nodes and `edges` as flat triples `[u0, v0, w0, ...]` (the cost of laying each cable). A promotion lets you lay at most `k` cables for free. Return the minimum total cost to connect all nodes, or `-1` if they cannot be connected.",
+  "examples": [
+   {
+    "input": "edges = [0,1,4,1,2,3], n = 3, k = 1",
+    "output": "3",
+    "explanation": "The cheapest network costs 3."
+   },
+   {
+    "input": "edges = [0,1,4,1,2,3], n = 3, k = 0",
+    "output": "7",
+    "explanation": "The cheapest network costs 7."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 8, at most 12 edges, 0 <= k <= 10",
+   "1 <= w <= 9, no self loops or repeated node pairs"
+  ],
+  "functionName": "cableNetworkWithFreeLinks",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      4,
+      1,
+      2,
+      3
+     ],
+     3,
+     1
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4,
+      1,
+      2,
+      3
+     ],
+     3,
+     0
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4
+     ],
+     3,
+     1
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [],
+     1,
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      2,
+      6,
+      0,
+      2,
+      1
+     ],
+     3,
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3,
+      2
+     ],
+     4,
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      9,
+      1,
+      2,
+      1,
+      2,
+      3,
+      9,
+      3,
+      0,
+      1
+     ],
+     4,
+     1
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Components After Each Removal Total",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Union Find"
+  ],
+  "companies": [
+   "Walmart",
+   "Flipkart",
+   "TCS"
+  ],
+  "description": "An undirected graph has `n` nodes and `edges` as flat pairs; `order` is a permutation of the edge indices `0..m-1`. Edges are deleted one at a time following `order`. After each deletion count the connected components of the remaining graph. Return the sum of these counts over all `m` deletions (`0` if there are no edges).",
+  "examples": [
+   {
+    "input": "edges = [0,1,1,2], n = 3, order = [0,1]",
+    "output": "5",
+    "explanation": "The component counts add up to 5."
+   },
+   {
+    "input": "edges = [0,1,1,2], n = 3, order = [1,0]",
+    "output": "5",
+    "explanation": "The component counts add up to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 20, at most 40 edges, no self loops or repeated edges",
+   "order contains each index 0..m-1 exactly once"
+  ],
+  "functionName": "componentsAfterEachRemovalTotal",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "order",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2
+     ],
+     3,
+     [
+      1,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [],
+     3,
+     []
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      0
+     ],
+     3,
+     [
+      2,
+      0,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3
+     ],
+     4,
+     [
+      1,
+      0
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      2,
+      2,
+      3,
+      3,
+      0
+     ],
+     4,
+     [
+      0,
+      2,
+      1,
+      3
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3
+     ],
+     4,
+     [
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Sliding Tile Fewest Moves",
+  "difficulty": "Hard",
+  "tags": [
+   "BFS",
+   "Matrix",
+   "Backtracking"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix"
+  ],
+  "description": "A `2 x 3` board holds the tiles `1..5` and one empty slot `0`, listed row by row. A move slides a tile that is next to the empty slot (up/down/left/right) into it. Return the fewest moves needed to reach `[1, 2, 3, 4, 5, 0]`, or `-1` if it is impossible.",
+  "examples": [
+   {
+    "input": "board = [1,2,3,4,0,5]",
+    "output": "1",
+    "explanation": "The fewest moves: 1 (-1 means impossible)."
+   },
+   {
+    "input": "board = [1,2,3,5,4,0]",
+    "output": "-1",
+    "explanation": "The fewest moves: -1 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "board.length = 6",
+   "board is a permutation of 0..5"
+  ],
+  "functionName": "slidingTileFewestMoves",
+  "params": [
+   {
+    "name": "board",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      0,
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      5,
+      4,
+      0
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4,
+      5,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      1,
+      2,
+      5,
+      0,
+      3
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      4,
+      1,
+      5,
+      0
+     ]
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": 14,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Bitmask Sets To Cover",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Bit Manipulation",
+   "Backtracking"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "The universe is `{0, ..., m-1}`. Each entry of `sets` is a bitmask: bit `i` set means that set contains element `i`. Return the fewest sets (each usable once, but using one twice never helps) whose union is the whole universe, or `-1` if impossible.",
+  "examples": [
+   {
+    "input": "m = 3, sets = [1,2,4]",
+    "output": "3",
+    "explanation": "The fewest sets needed: 3 (-1 means impossible)."
+   },
+   {
+    "input": "m = 3, sets = [3,6]",
+    "output": "2",
+    "explanation": "The fewest sets needed: 2 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= m <= 10",
+   "1 <= sets.length <= 12, 1 <= sets[i] < 2^m"
+  ],
+  "functionName": "fewestBitmaskSetsToCover",
+  "params": [
+   {
+    "name": "m",
+    "type": "int"
+   },
+   {
+    "name": "sets",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     3,
+     [
+      1,
+      2,
+      4
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     [
+      3,
+      6
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     [
+      3
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     [
+      15,
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     4,
+     [
+      3,
+      12,
+      5,
+      10
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     [
+      1,
+      2,
+      4,
+      8,
+      16,
+      31
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Magic Square Completions",
+  "difficulty": "Hard",
+  "tags": [
+   "Backtracking",
+   "Matrix",
+   "Math"
+  ],
+  "companies": [
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "A `3 x 3` board (row by row) is partly filled: `0` marks an empty cell, other cells hold distinct digits `1..9`. A completed board is magic if it uses each of `1..9` exactly once and every row, column and both diagonals add up to `15`. Return how many magic boards agree with all the filled cells.",
+  "examples": [
+   {
+    "input": "cells = [0,0,0,0,0,0,0,0,0]",
+    "output": "8",
+    "explanation": "8 magic board(s) match."
+   },
+   {
+    "input": "cells = [2,7,6,9,5,1,4,3,8]",
+    "output": "1",
+    "explanation": "1 magic board(s) match."
+   }
+  ],
+  "constraints": [
+   "cells.length = 9",
+   "each cell is 0 to 9 and non-zero values are distinct"
+  ],
+  "functionName": "magicSquareCompletions",
+  "params": [
+   {
+    "name": "cells",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      2,
+      7,
+      6,
+      9,
+      5,
+      1,
+      4,
+      3,
+      8
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      8,
+      3,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      5,
+      0,
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Merged Runs Count Replay",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Interval",
+   "Binary Search"
+  ],
+  "companies": [
+   "Atlassian",
+   "Google"
+  ],
+  "description": "`ops` is a flat list of pairs `(type, x)`. Type `0` inserts the integer `x` into a set (duplicates are ignored). Type `1` (with `x = 0`) asks how many maximal runs of consecutive integers the set currently forms, for example `{1,2,3,7,8,10}` forms `3` runs. Return the sum of all answers.",
+  "examples": [
+   {
+    "input": "ops = [0,1,1,0]",
+    "output": "1",
+    "explanation": "The run counts add up to 1."
+   },
+   {
+    "input": "ops = [0,1,0,3,1,0,0,2,1,0]",
+    "output": "3",
+    "explanation": "The run counts add up to 3."
+   }
+  ],
+  "constraints": [
+   "2 <= ops.length <= 200 and ops.length is even",
+   "0 <= x <= 1000 for insertions; type is 0 or 1"
+  ],
+  "functionName": "mergedRunsCountReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      3,
+      1,
+      0,
+      0,
+      2,
+      1,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      1,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      0,
+      5,
+      1,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      0,
+      2,
+      0,
+      3,
+      1,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      10,
+      0,
+      8,
+      1,
+      0,
+      0,
+      9,
+      1,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      1000,
+      1,
+      0,
+      0,
+      500,
+      1,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Row Swaps To Staircase",
+  "difficulty": "Hard",
+  "tags": [
+   "Matrix",
+   "Greedy",
+   "BFS"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Goldman Sachs"
+  ],
+  "description": "`grid` is an `n x n` binary table stored row by row. In one move you swap two adjacent rows. The table is valid when every cell above the main diagonal is `0`. Return the minimum number of moves to make it valid, or `-1` if that is impossible.",
+  "examples": [
+   {
+    "input": "grid = [0,0,1,1,1,0,1,0,0], n = 3",
+    "output": "3",
+    "explanation": "Minimum swaps: 3 (-1 means impossible)."
+   },
+   {
+    "input": "grid = [1,1,1,1,1,1,1,1,1], n = 3",
+    "output": "-1",
+    "explanation": "Minimum swaps: -1 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 8, grid.length = n * n",
+   "each cell is 0 or 1"
+  ],
+  "functionName": "fewestRowSwapsToStaircase",
+  "params": [
+   {
+    "name": "grid",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+     ],
+     3
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      0,
+      1
+     ],
+     2
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1
+     ],
+     3
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Widest Route Bottleneck",
+  "difficulty": "Hard",
+  "tags": [
+   "Graph",
+   "Union Find",
+   "Greedy"
+  ],
+  "companies": [
+   "Zoho",
+   "Adobe",
+   "Facebook"
+  ],
+  "description": "An undirected road network has `n` towns (0 to n-1) and `edges` as flat triples `[u0, v0, capacity0, ...]`. The bottleneck of a route is the smallest capacity along it. Return the largest bottleneck achievable by any route from town `0` to town `n - 1`, or `0` if they are not connected.",
+  "examples": [
+   {
+    "input": "edges = [0,1,5,1,2,3], n = 3",
+    "output": "3",
+    "explanation": "The best bottleneck is 3."
+   },
+   {
+    "input": "edges = [0,1,5], n = 3",
+    "output": "0",
+    "explanation": "The best bottleneck is 0."
+   }
+  ],
+  "constraints": [
+   "2 <= n <= 8, at most 14 edges",
+   "1 <= capacity <= 9, no self loops or repeated node pairs"
+  ],
+  "functionName": "widestRouteBottleneck",
+  "params": [
+   {
+    "name": "edges",
+    "type": "int[]"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      1,
+      5,
+      1,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      5
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      4
+     ],
+     2
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      2,
+      1,
+      2,
+      9,
+      0,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      7,
+      1,
+      3,
+      2,
+      0,
+      2,
+      3,
+      2,
+      3,
+      6
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      9,
+      2,
+      3,
+      9
+     ],
+     4
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      3,
+      1,
+      2,
+      4,
+      2,
+      3,
+      5,
+      0,
+      3,
+      2
+     ],
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Letter Cutout Sticker Count",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "Bit Manipulation",
+   "Backtracking"
+  ],
+  "companies": [
+   "Infosys",
+   "Netflix",
+   "Adobe"
+  ],
+  "description": "`stickers` is a space-separated list of words, each an unlimited supply of stickers. Using any number of stickers you may cut out single letters and rearrange them freely. Return the fewest stickers needed to spell the string `target`, or `-1` if it cannot be spelled.",
+  "examples": [
+   {
+    "input": "stickers = \"with example science\", target = \"thehat\"",
+    "output": "3",
+    "explanation": "Fewest stickers: 3 (-1 means impossible)."
+   },
+   {
+    "input": "stickers = \"notice possible\", target = \"basicbasic\"",
+    "output": "-1",
+    "explanation": "Fewest stickers: -1 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of stickers <= 6, each of length 1 to 8",
+   "1 <= target.length <= 10, lowercase letters only"
+  ],
+  "functionName": "letterCutoutStickerCount",
+  "params": [
+   {
+    "name": "stickers",
+    "type": "string"
+   },
+   {
+    "name": "target",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "with example science",
+     "thehat"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "notice possible",
+     "basicbasic"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab bc",
+     "abc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "aaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "d"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab bcc",
+     "abcabc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xy yz",
+     "zyx"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Max-OR Shortest Reach Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Array"
+  ],
+  "companies": [
+   "Flipkart",
+   "Apple"
+  ],
+  "description": "For every start index `i`, find the shortest subarray beginning at `i` whose bitwise OR equals the largest OR achievable by any subarray starting at `i`. Return the sum of those shortest lengths over all `i`.",
+  "examples": [
+   {
+    "input": "nums = [1,0,2,1,3]",
+    "output": "11",
+    "explanation": "The window lengths add up to 11."
+   },
+   {
+    "input": "nums = [1,2]",
+    "output": "3",
+    "explanation": "The window lengths add up to 3."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 1000",
+   "0 <= nums[i] <= 10^9"
+  ],
+  "functionName": "maxOrShortestReachSum",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      0,
+      2,
+      1,
+      3
+     ]
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      4,
+      8
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      8,
+      4,
+      2,
+      1
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ }
+]

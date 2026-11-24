@@ -3,6 +3,8 @@ import { bullets, code, courseModule, heading, lesson, note, predict, task, text
 const VIDEO_FOLDER = '/videos/big-o';
 const WHAT_IS_BIG_O_VIDEO_TEXT = 'The same code takes 0.2 seconds on a fast laptop and 0.9 seconds on an older phone, so seconds cannot compare algorithms fairly. Instead, count the steps. The function find_first checks the items one by one: with 10 items, the worst case is 10 steps. With 100 items it is 100 steps and with 1,000 items it is 1,000 steps. Ten times more items means ten times more steps, and this growth is called O(n). Plotted as curves, O(1), O(log n), O(n) and O(n²) have different shapes, and Big O describes that shape. Remember: Big O shows how work grows with input size, it counts steps so the machine does not matter, and find_first is O(n).';
 
+const TIME_COMPLEXITY_VIDEO_TEXT = 'A basic step is one simple operation, such as an addition, a comparison, an assignment or reading one item. In the function total, the line result = 0 is 1 step, the loop line repeats n times, the line result += value is 1 step each time, and the return is 1 step. That is 1 + n + 1 = n + 2 steps. For large n the + 2 does not matter, so the function is O(n). Next, a loop inside a loop: if the outer loop visits n items and the inner loop always runs 3 times, the total is 3 x n steps. With n = 5 that is 15 steps and with n = 10 it is 30 steps, so doubling n doubles the steps, which is still O(n). A loop with range(3) is constant, while a loop with range(n) grows with n. Only loops that depend on the input make the complexity grow. Remember: count steps, not seconds; loops over the input grow with n and fixed loops do not; total is O(n) even with a fixed inner loop.';
+
 const whatIsBigO = lesson('l1', 'What is Big O notation?', 15, [
   video(`${VIDEO_FOLDER}/what-is-big-o.mp4`, 'What is Big O notation?', `${VIDEO_FOLDER}/what-is-big-o.jpg`, WHAT_IS_BIG_O_VIDEO_TEXT),
   text('Big O notation describes how the work an algorithm does grows as its input grows. It does not measure seconds. It answers one question: if the input becomes ten times bigger, how much slower does the code get?'),
@@ -19,6 +21,7 @@ const whatIsBigO = lesson('l1', 'What is Big O notation?', 15, [
 ]);
 
 const timeComplexity = lesson('l2', 'Time complexity', 15, [
+  video(`${VIDEO_FOLDER}/time-complexity.mp4`, 'Time complexity', `${VIDEO_FOLDER}/time-complexity.jpg`, TIME_COMPLEXITY_VIDEO_TEXT),
   text('Time complexity counts the basic steps an algorithm performs, as a function of the input size n. A basic step is one simple operation: an addition, a comparison, an assignment or reading one list item.'),
   code('def total(numbers):\n    result = 0            # 1 step\n    for value in numbers: # repeats n times\n        result += value   # 1 step each time\n    return result         # 1 step'),
   text('The loop body runs n times, so the function does about n + 2 steps. For large n the extra 2 steps do not matter, and we call the function O(n).'),

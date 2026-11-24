@@ -1,0 +1,9948 @@
+[
+ {
+  "title": "Same Ends Word Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Salesforce",
+   "LinkedIn",
+   "Microsoft"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return the number of words whose first and last letters are the same (a one-letter word counts).",
+  "examples": [
+   {
+    "input": "s = \"level noon cat\"",
+    "output": "2",
+    "explanation": "2 word(s) start and end with the same letter."
+   },
+   {
+    "input": "s = \"a bb abc\"",
+    "output": "2",
+    "explanation": "2 word(s) start and end with the same letter."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s has lowercase letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "sameEndsWordCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "level noon cat"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a bb abc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "x"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "tot dad mom pop"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc def"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zz zzz zaz"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Word Length",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Salesforce",
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return the length of its longest word.",
+  "examples": [
+   {
+    "input": "s = \"the quick brown fox\"",
+    "output": "5",
+    "explanation": "The longest word has 5 letters."
+   },
+   {
+    "input": "s = \"a bb ccc\"",
+    "output": "3",
+    "explanation": "The longest word has 3 letters."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s has lowercase letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "longestWordLength",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "the quick brown fox"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a bb ccc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a a a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "one three five"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x yy"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Letters In Both Cases Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Uber",
+   "TCS",
+   "Netflix"
+  ],
+  "description": "Return the number of distinct letters that appear in `s` in both lowercase and uppercase form.",
+  "examples": [
+   {
+    "input": "s = \"aaAbcC\"",
+    "output": "2",
+    "explanation": "2 letter(s) appear in both cases."
+   },
+   {
+    "input": "s = \"abBCcD\"",
+    "output": "2",
+    "explanation": "2 letter(s) appear in both cases."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has only English letters"
+  ],
+  "functionName": "lettersInBothCases",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aaAbcC"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abBCcD"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aA"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AaAa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ABC"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "First Repeated Letter",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Infosys",
+   "Zoho"
+  ],
+  "description": "Return the first letter of `s` whose second occurrence appears earliest in the string (scan left to right and stop at the first letter already seen). Return an empty string if no letter repeats.",
+  "examples": [
+   {
+    "input": "s = \"abcdab\"",
+    "output": "\"a\"",
+    "explanation": "The first letter seen twice is \"a\" (empty means none)."
+   },
+   {
+    "input": "s = \"abcd\"",
+    "output": "\"\"",
+    "explanation": "The first letter seen twice is \"\" (empty means none)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has lowercase letters only"
+  ],
+  "functionName": "firstRepeatedLetter",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abcdab"
+    ],
+    "expected": "a",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": "",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abba"
+    ],
+    "expected": "b",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zyxzyx"
+    ],
+    "expected": "z",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcba"
+    ],
+    "expected": "b",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Triple Windows",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Sliding Window"
+  ],
+  "companies": [
+   "Atlassian",
+   "Infosys"
+  ],
+  "description": "Return the number of substrings of `s` of length exactly `3` whose three letters are all different.",
+  "examples": [
+   {
+    "input": "s = \"xyzzaz\"",
+    "output": "1",
+    "explanation": "1 window(s) have three different letters."
+   },
+   {
+    "input": "s = \"aababcabc\"",
+    "output": "4",
+    "explanation": "4 window(s) have three different letters."
+   }
+  ],
+  "constraints": [
+   "3 <= s.length <= 100",
+   "s has lowercase letters only"
+  ],
+  "functionName": "distinctTripleWindows",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "xyzzaz"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aababcabc"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zxyzxy"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Vowel Run",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Adobe",
+   "Facebook",
+   "Goldman Sachs"
+  ],
+  "description": "Return the length of the longest block of consecutive vowels (`a e i o u`) in `s`. Return `0` if there is no vowel.",
+  "examples": [
+   {
+    "input": "s = \"beautiful\"",
+    "output": "3",
+    "explanation": "The longest vowel block has length 3."
+   },
+   {
+    "input": "s = \"rhythm\"",
+    "output": "0",
+    "explanation": "The longest vowel block has length 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has lowercase letters only"
+  ],
+  "functionName": "longestVowelRun",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "beautiful"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "rhythm"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aeiou"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "baaeb"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "queueing"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Group Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "`s` contains lowercase letters and digits. Return the number of maximal blocks of consecutive digits.",
+  "examples": [
+   {
+    "input": "s = \"a123bc34d8ef34\"",
+    "output": "4",
+    "explanation": "There are 4 digit group(s)."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "There are 0 digit group(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has lowercase letters and digits only"
+  ],
+  "functionName": "digitGroupCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a123bc34d8ef34"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "007"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a1b2c3"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12ab34"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a99b"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse Each Word",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "`s` is a sentence of words separated by single spaces. Return the sentence in which every word is reversed but the word order stays the same.",
+  "examples": [
+   {
+    "input": "s = \"let us code\"",
+    "output": "\"tel su edoc\"",
+    "explanation": "Reversing each word gives \"tel su edoc\"."
+   },
+   {
+    "input": "s = \"abc def\"",
+    "output": "\"cba fed\"",
+    "explanation": "Reversing each word gives \"cba fed\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s has lowercase letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "reverseEachWord",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "let us code"
+    ],
+    "expected": "tel su edoc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc def"
+    ],
+    "expected": "cba fed",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": "ba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "racecar level"
+    ],
+    "expected": "racecar level",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xy z"
+    ],
+    "expected": "yx z",
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world foo"
+    ],
+    "expected": "olleh dlrow oof",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Deletions For No Adjacent Repeats",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Facebook",
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "Return the minimum number of characters to delete from `s` so that no two neighbouring characters are equal.",
+  "examples": [
+   {
+    "input": "s = \"aab\"",
+    "output": "1",
+    "explanation": "At least 1 deletion(s) are needed."
+   },
+   {
+    "input": "s = \"aaabbb\"",
+    "output": "4",
+    "explanation": "At least 4 deletion(s) are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has lowercase letters only"
+  ],
+  "functionName": "deletionsNoAdjacentRepeats",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaabbb"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzyyxx"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindromic Word Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Zoho",
+   "Walmart",
+   "Apple"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return how many of its words read the same forwards and backwards.",
+  "examples": [
+   {
+    "input": "s = \"level was racecar\"",
+    "output": "2",
+    "explanation": "2 word(s) are palindromes."
+   },
+   {
+    "input": "s = \"abc cba\"",
+    "output": "0",
+    "explanation": "0 word(s) are palindromes."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s has lowercase letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "palindromicWordCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "level was racecar"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc cba"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa ab"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "noon moon"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyx yy z"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba ab"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Title Case Sentence",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Google",
+   "Zoho",
+   "Netflix"
+  ],
+  "description": "`s` is a sentence of words separated by single spaces. Return it with the first letter of every word in uppercase and all other letters in lowercase.",
+  "examples": [
+   {
+    "input": "s = \"hello wORLD\"",
+    "output": "\"Hello World\"",
+    "explanation": "The title-cased sentence is \"Hello World\"."
+   },
+   {
+    "input": "s = \"a bC dEf\"",
+    "output": "\"A Bc Def\"",
+    "explanation": "The title-cased sentence is \"A Bc Def\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s has English letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "titleCaseSentence",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "hello wORLD"
+    ],
+    "expected": "Hello World",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a bC dEf"
+    ],
+    "expected": "A Bc Def",
+    "isSample": true
+   },
+   {
+    "args": [
+     "x"
+    ],
+    "expected": "X",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ABC"
+    ],
+    "expected": "Abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc def ghi"
+    ],
+    "expected": "Abc Def Ghi",
+    "isSample": false
+   },
+   {
+    "args": [
+     "mIxEd cAsE"
+    ],
+    "expected": "Mixed Case",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zz YY"
+    ],
+    "expected": "Zz Yy",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Decode Hash Letter Codes",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Netflix",
+   "Adobe"
+  ],
+  "description": "Letters `a` to `i` are written as `1` to `9`, and letters `j` to `z` are written as `10#` to `26#`. Return the lowercase text that `s` encodes.",
+  "examples": [
+   {
+    "input": "s = \"10#11#12\"",
+    "output": "\"jkab\"",
+    "explanation": "The decoded text is \"jkab\"."
+   },
+   {
+    "input": "s = \"1326#\"",
+    "output": "\"acz\"",
+    "explanation": "The decoded text is \"acz\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s is a valid encoding made only of digits and '#'"
+  ],
+  "functionName": "decodeHashLetterCodes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "10#11#12"
+    ],
+    "expected": "jkab",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1326#"
+    ],
+    "expected": "acz",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "26#"
+    ],
+    "expected": "z",
+    "isSample": false
+   },
+   {
+    "args": [
+     "123"
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "12345678910#"
+    ],
+    "expected": "abcdefghij",
+    "isSample": false
+   },
+   {
+    "args": [
+     "25#24#1"
+    ],
+    "expected": "yxa",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Vowel Free String",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "Return `s` with every vowel (`a e i o u`) removed. The remaining letters keep their order.",
+  "examples": [
+   {
+    "input": "s = \"leetcodeisacommunity\"",
+    "output": "\"ltcdscmmnty\"",
+    "explanation": "Removing the vowels leaves \"ltcdscmmnty\"."
+   },
+   {
+    "input": "s = \"hello\"",
+    "output": "\"hll\"",
+    "explanation": "Removing the vowels leaves \"hll\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has lowercase letters only and contains at least one consonant"
+  ],
+  "functionName": "vowelFreeString",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "leetcodeisacommunity"
+    ],
+    "expected": "ltcdscmmnty",
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": "hll",
+    "isSample": true
+   },
+   {
+    "args": [
+     "b"
+    ],
+    "expected": "b",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aeixb"
+    ],
+    "expected": "xb",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": "xyz",
+    "isSample": false
+   },
+   {
+    "args": [
+     "banana"
+    ],
+    "expected": "bnn",
+    "isSample": false
+   },
+   {
+    "args": [
+     "queuet"
+    ],
+    "expected": "qt",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Swap Case Text",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Zoho",
+   "Microsoft"
+  ],
+  "description": "Return `s` with every lowercase letter changed to uppercase and every uppercase letter changed to lowercase.",
+  "examples": [
+   {
+    "input": "s = \"aBc\"",
+    "output": "\"AbC\"",
+    "explanation": "Swapping every letter's case gives \"AbC\"."
+   },
+   {
+    "input": "s = \"HELLO\"",
+    "output": "\"hello\"",
+    "explanation": "Swapping every letter's case gives \"hello\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has English letters only"
+  ],
+  "functionName": "swapCaseText",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "aBc"
+    ],
+    "expected": "AbC",
+    "isSample": true
+   },
+   {
+    "args": [
+     "HELLO"
+    ],
+    "expected": "hello",
+    "isSample": true
+   },
+   {
+    "args": [
+     "z"
+    ],
+    "expected": "Z",
+    "isSample": false
+   },
+   {
+    "args": [
+     "Zz"
+    ],
+    "expected": "zZ",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdef"
+    ],
+    "expected": "ABCDEF",
+    "isSample": false
+   },
+   {
+    "args": [
+     "QwErTy"
+    ],
+    "expected": "qWeRtY",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ABab"
+    ],
+    "expected": "abAB",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Balanced LR Pieces",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Greedy",
+   "Counting"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Oracle"
+  ],
+  "description": "`s` has the same number of `L` and `R` letters. Cut `s` into the largest possible number of contiguous pieces such that every piece has equally many `L` and `R`. Return that number.",
+  "examples": [
+   {
+    "input": "s = \"RLRRLLRLRL\"",
+    "output": "4",
+    "explanation": "The string splits into at most 4 balanced piece(s)."
+   },
+   {
+    "input": "s = \"RLLLLRRRLR\"",
+    "output": "3",
+    "explanation": "The string splits into at most 3 balanced piece(s)."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 1000",
+   "s has only 'L' and 'R', with equal numbers of each"
+  ],
+  "functionName": "maxBalancedLRPieces",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "RLRRLLRLRL"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "RLLLLRRRLR"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "LR"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LLRR"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LRLRLR"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RRLL"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LRRL"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Unmatched Parenthesis Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Stack",
+   "Greedy"
+  ],
+  "companies": [
+   "Apple",
+   "Atlassian"
+  ],
+  "description": "Return the minimum number of parentheses you must delete from `s` so that the remaining parentheses are balanced.",
+  "examples": [
+   {
+    "input": "s = \"())\"",
+    "output": "1",
+    "explanation": "1 parenthesis(es) must be removed."
+   },
+   {
+    "input": "s = \"(((\"",
+    "output": "3",
+    "explanation": "3 parenthesis(es) must be removed."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has only '(' and ')'"
+  ],
+  "functionName": "unmatchedParenthesisCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "())"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "((("
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "()"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     ")("
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(()))("
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     ")"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "()()()"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Stack Replay Top Value",
+  "difficulty": "Easy",
+  "tags": [
+   "Stack",
+   "Simulation",
+   "Array"
+  ],
+  "companies": [
+   "Adobe",
+   "Facebook",
+   "Atlassian"
+  ],
+  "description": "Process `ops` on an empty stack: a positive number is pushed; `0` pops the top (and does nothing on an empty stack). Return the value on top of the stack at the end, or `-1` if it is empty.",
+  "examples": [
+   {
+    "input": "ops = [5,3,0,7]",
+    "output": "7",
+    "explanation": "The final top of the stack is 7 (-1 means empty)."
+   },
+   {
+    "input": "ops = [1,0,0]",
+    "output": "-1",
+    "explanation": "The final top of the stack is -1 (-1 means empty)."
+   }
+  ],
+  "constraints": [
+   "1 <= ops.length <= 1000",
+   "0 <= ops[i] <= 1000"
+  ],
+  "functionName": "stackReplayTop",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      5,
+      3,
+      0,
+      7
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      0
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      0,
+      0,
+      0,
+      6
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Word Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Adobe",
+   "Salesforce",
+   "Flipkart"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return the number of different words it contains.",
+  "examples": [
+   {
+    "input": "s = \"to be or not to be\"",
+    "output": "4",
+    "explanation": "The sentence has 4 different word(s)."
+   },
+   {
+    "input": "s = \"a a a\"",
+    "output": "1",
+    "explanation": "The sentence has 1 different word(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "s has lowercase letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "distinctWordCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "to be or not to be"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a a a"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "x"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba ab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "one two three"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa a aa a"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "z y x z"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Common Letter",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Apple",
+   "Salesforce"
+  ],
+  "description": "Return the letter that occurs most often in `s`. If several letters tie, return the alphabetically smallest of them.",
+  "examples": [
+   {
+    "input": "s = \"banana\"",
+    "output": "\"a\"",
+    "explanation": "The most common letter is \"a\"."
+   },
+   {
+    "input": "s = \"abcabc\"",
+    "output": "\"a\"",
+    "explanation": "The most common letter is \"a\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "mostCommonLetter",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "banana"
+    ],
+    "expected": "a",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcabc"
+    ],
+    "expected": "a",
+    "isSample": true
+   },
+   {
+    "args": [
+     "z"
+    ],
+    "expected": "z",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzaa"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyzzy"
+    ],
+    "expected": "y",
+    "isSample": false
+   },
+   {
+    "args": [
+     "mississippi"
+    ],
+    "expected": "i",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abracadabra"
+    ],
+    "expected": "a",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Isogram Check",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Paytm",
+   "Microsoft"
+  ],
+  "description": "An isogram is a word in which no letter appears more than once. Return `true` if `s` is an isogram.",
+  "examples": [
+   {
+    "input": "s = \"lumberjack\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"hello\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has lowercase letters only"
+  ],
+  "functionName": "isIsogram",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "lumberjack"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefghijklmnopqrstuvwxyz"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abca"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "python"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Words With Given Prefix Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Facebook",
+   "Oracle",
+   "Uber"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return how many words start with the string `p`.",
+  "examples": [
+   {
+    "input": "s = \"apple app apt bat\", p = \"ap\"",
+    "output": "3",
+    "explanation": "3 word(s) start with the prefix."
+   },
+   {
+    "input": "s = \"abc abd abe\", p = \"abc\"",
+    "output": "1",
+    "explanation": "1 word(s) start with the prefix."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200, 1 <= p.length <= 10",
+   "s and p have lowercase letters (s also has single spaces, no leading or trailing space)"
+  ],
+  "functionName": "wordsWithPrefixCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "p",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "apple app apt bat",
+     "ap"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc abd abe",
+     "abc"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b",
+     "c"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x",
+     "x"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa a aaa",
+     "aa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cat car cart",
+     "ca"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzz",
+     "zzzz"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equal Letter Group Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Uber",
+   "Atlassian"
+  ],
+  "description": "Return the number of maximal blocks of consecutive equal characters in `s`. For example `aabccc` has three blocks.",
+  "examples": [
+   {
+    "input": "s = \"aabccc\"",
+    "output": "3",
+    "explanation": "The string has 3 block(s)."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "3",
+    "explanation": "The string has 3 block(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has lowercase letters only"
+  ],
+  "functionName": "equalLetterGroupCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aabccc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzyyx"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Left Rotate String",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "Move the first `k` characters of `s` to its end (a left rotation by `k`) and return the result. If `k` is not smaller than `s.length`, rotate by `k % s.length`.",
+  "examples": [
+   {
+    "input": "s = \"abcdef\", k = 2",
+    "output": "\"cdefab\"",
+    "explanation": "After rotating, the string is \"cdefab\"."
+   },
+   {
+    "input": "s = \"hello\", k = 7",
+    "output": "\"llohe\"",
+    "explanation": "After rotating, the string is \"llohe\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "0 <= k <= 1000, s has lowercase letters only"
+  ],
+  "functionName": "leftRotateString",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abcdef",
+     2
+    ],
+    "expected": "cdefab",
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello",
+     7
+    ],
+    "expected": "llohe",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     5
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     0
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     3
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     1
+    ],
+    "expected": "yzx",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd",
+     6
+    ],
+    "expected": "cdab",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Binary String To Number",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Oracle",
+   "Salesforce",
+   "Paytm"
+  ],
+  "description": "`s` is a binary numeral (most significant bit first). Return its value as an integer.",
+  "examples": [
+   {
+    "input": "s = \"101\"",
+    "output": "5",
+    "explanation": "The binary numeral equals 5."
+   },
+   {
+    "input": "s = \"1111\"",
+    "output": "15",
+    "explanation": "The binary numeral equals 15."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 30",
+   "s has only '0' and '1'"
+  ],
+  "functionName": "binaryStringToNumber",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "101"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": 15,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1000000"
+    ],
+    "expected": 64,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0011"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "111111111111111111111111111111"
+    ],
+    "expected": 1073741823,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Common Prefix Length Pair",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Paytm",
+   "LinkedIn"
+  ],
+  "description": "Return the length of the longest common prefix of the two strings `a` and `b`.",
+  "examples": [
+   {
+    "input": "a = \"flower\", b = \"flow\"",
+    "output": "4",
+    "explanation": "The common prefix has length 4."
+   },
+   {
+    "input": "a = \"abc\", b = \"xyz\"",
+    "output": "0",
+    "explanation": "The common prefix has length 0."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 100",
+   "a and b have lowercase letters only"
+  ],
+  "functionName": "commonPrefixLengthPair",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "flower",
+     "flow"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "xyz"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abcd"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello",
+     "help"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zz",
+     "zzz"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "ba"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Mismatch Position Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Infosys",
+   "Netflix",
+   "Flipkart"
+  ],
+  "description": "`a` and `b` have the same length. Return the number of positions `i` where `a[i] != b[i]`.",
+  "examples": [
+   {
+    "input": "a = \"karolin\", b = \"kathrin\"",
+    "output": "3",
+    "explanation": "The strings differ at 3 position(s)."
+   },
+   {
+    "input": "a = \"abc\", b = \"abc\"",
+    "output": "0",
+    "explanation": "The strings differ at 0 position(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length = b.length <= 1000",
+   "a and b have lowercase letters only"
+  ],
+  "functionName": "mismatchPositionCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "karolin",
+     "kathrin"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "bbbb"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "baba"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "xyy"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello",
+     "jello"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equal Counts Of A And B",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "Return `true` if the letter `a` occurs in `s` exactly as many times as the letter `b`.",
+  "examples": [
+   {
+    "input": "s = \"abab\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"aab\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "equalCountsAB",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbaaxx"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaabbbb"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Last Index Of Letter",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Oracle",
+   "Apple",
+   "Goldman Sachs"
+  ],
+  "description": "Return the largest index at which the single letter `c` occurs in `s`, or `-1` if it does not occur.",
+  "examples": [
+   {
+    "input": "s = \"hello\", c = \"l\"",
+    "output": "3",
+    "explanation": "The last occurrence is at index 3 (-1 means absent)."
+   },
+   {
+    "input": "s = \"hello\", c = \"z\"",
+    "output": "-1",
+    "explanation": "The last occurrence is at index -1 (-1 means absent)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000, c.length = 1",
+   "s and c have lowercase letters only"
+  ],
+  "functionName": "lastIndexOfLetter",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "c",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "hello",
+     "l"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello",
+     "z"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     "a"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "x"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "a"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "c"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Characters Product",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Flipkart",
+   "Apple"
+  ],
+  "description": "`s` has lowercase letters and digits. Multiply together all the digit characters (as numbers). Return the product, or `0` if `s` contains no digit.",
+  "examples": [
+   {
+    "input": "s = \"a2b3c4\"",
+    "output": "24",
+    "explanation": "The product of the digits is 24."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "The product of the digits is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 50",
+   "s has lowercase letters and digits only, with at most 8 digits"
+  ],
+  "functionName": "digitCharactersProduct",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a2b3c4"
+    ],
+    "expected": 24,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "5"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a0b9"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12345"
+    ],
+    "expected": 120,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x9y9"
+    ],
+    "expected": 81,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1a1"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rearrangeable Into Palindrome",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Zoho",
+   "Adobe"
+  ],
+  "description": "Return `true` if the letters of `s` can be reordered to form a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"carerac\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "canRearrangeToPalindrome",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "carerac"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbc"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcd"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Long Word Count",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "`s` is a sentence of lowercase words separated by single spaces. Return the number of words that are strictly longer than `k` letters.",
+  "examples": [
+   {
+    "input": "s = \"hello big world\", k = 3",
+    "output": "2",
+    "explanation": "2 word(s) are longer than k."
+   },
+   {
+    "input": "s = \"a bb ccc\", k = 1",
+    "output": "2",
+    "explanation": "2 word(s) are longer than k."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 200",
+   "0 <= k <= 20, s has lowercase letters and single spaces, no leading or trailing space"
+  ],
+  "functionName": "longWordCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "hello big world",
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a bb ccc",
+     1
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "x",
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x",
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc abc",
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa bbb cccc",
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "one two",
+     5
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Letter Frequency Spread",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Atlassian",
+   "LinkedIn"
+  ],
+  "description": "Among the letters that occur in `s`, find the highest and the lowest occurrence counts. Return their difference.",
+  "examples": [
+   {
+    "input": "s = \"aaabbc\"",
+    "output": "2",
+    "explanation": "The frequency spread is 2."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "The frequency spread is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "letterFrequencySpread",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aaabbc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzzy"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbcccdddd"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Index Shifted Text",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "TCS",
+   "Walmart"
+  ],
+  "description": "Shift the letter at index `i` of `s` forward in the alphabet by `i` places, wrapping from `z` to `a`, and return the new string.",
+  "examples": [
+   {
+    "input": "s = \"abc\"",
+    "output": "\"ace\"",
+    "explanation": "Shifting each letter by its index gives \"ace\"."
+   },
+   {
+    "input": "s = \"zzz\"",
+    "output": "\"zab\"",
+    "explanation": "Shifting each letter by its index gives \"zab\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has lowercase letters only"
+  ],
+  "functionName": "indexShiftedText",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": "ace",
+    "isSample": true
+   },
+   {
+    "args": [
+     "zzz"
+    ],
+    "expected": "zab",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": "abcd",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": "xzb",
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": "hfnos",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zazaza"
+    ],
+    "expected": "zbbddf",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Letters With Top Frequency",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Walmart",
+   "Uber",
+   "Atlassian"
+  ],
+  "description": "Return the number of different letters that tie for the highest occurrence count in `s`.",
+  "examples": [
+   {
+    "input": "s = \"aabbc\"",
+    "output": "2",
+    "explanation": "2 letter(s) share the top frequency."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "3",
+    "explanation": "3 letter(s) share the top frequency."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "lettersWithTopFrequency",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aabbc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcd"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzyyxxw"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Alternating Case Check",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Walmart",
+   "Google",
+   "Goldman Sachs"
+  ],
+  "description": "Return `true` if the letters of `s` alternate between lowercase and uppercase (no two neighbouring letters share a case). A single letter counts as alternating.",
+  "examples": [
+   {
+    "input": "s = \"aBcD\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"aBBc\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has English letters only"
+  ],
+  "functionName": "isAlternatingCase",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "aBcD"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aBBc"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AbA"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AB"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xYzW"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Balanced AB Substrings",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Facebook"
+  ],
+  "description": "Return the number of non-empty substrings of `s` in which the letter `a` occurs exactly as many times as the letter `b` (other letters are ignored, so a substring with no `a` and no `b` also counts).",
+  "examples": [
+   {
+    "input": "s = \"abc\"",
+    "output": "3",
+    "explanation": "There are 3 such substrings."
+   },
+   {
+    "input": "s = \"aabb\"",
+    "output": "2",
+    "explanation": "There are 2 such substrings."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has lowercase letters only"
+  ],
+  "functionName": "balancedABSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "c"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cccc"
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbacab"
+    ],
+    "expected": 11,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest All-Even Substring",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Bit Manipulation",
+   "Hash Table"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "Return the length of the longest substring of `s` in which every letter occurs an even number of times. Return `0` if there is none.",
+  "examples": [
+   {
+    "input": "s = \"abbac\"",
+    "output": "4",
+    "explanation": "The longest all-even substring has length 4."
+   },
+   {
+    "input": "s = \"aabb\"",
+    "output": "4",
+    "explanation": "The longest all-even substring has length 4."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has lowercase letters only"
+  ],
+  "functionName": "longestAllEvenSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abbac"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyyxzz"
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Star Removal Result",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Stack",
+   "Simulation"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "In one operation you pick a `*` in `s` and delete it together with the closest non-star letter to its left. Repeat until no star remains and return the resulting string. The input guarantees every star has a letter to remove and that the result is non-empty.",
+  "examples": [
+   {
+    "input": "s = \"leet**cod*e\"",
+    "output": "\"lecoe\"",
+    "explanation": "After removing starred letters the string is \"lecoe\"."
+   },
+   {
+    "input": "s = \"erase*****x\"",
+    "output": "\"x\"",
+    "explanation": "After removing starred letters the string is \"x\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has lowercase letters and '*', every '*' can be matched and the result is non-empty"
+  ],
+  "functionName": "starRemovalResult",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "leet**cod*e"
+    ],
+    "expected": "lecoe",
+    "isSample": true
+   },
+   {
+    "args": [
+     "erase*****x"
+    ],
+    "expected": "x",
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab*c"
+    ],
+    "expected": "ac",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a*bc"
+    ],
+    "expected": "bc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab**c"
+    ],
+    "expected": "c",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xy*z*w"
+    ],
+    "expected": "xw",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Unique Concatenation",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Backtracking",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "`s` is a list of lowercase words separated by single spaces. Choose any subset of the words and concatenate them in any order. Return the largest total length of a concatenation in which every letter is different (all letters appear at most once).",
+  "examples": [
+   {
+    "input": "s = \"un iq ue\"",
+    "output": "4",
+    "explanation": "The longest letter-distinct concatenation has length 4."
+   },
+   {
+    "input": "s = \"cha r act ers\"",
+    "output": "6",
+    "explanation": "The longest letter-distinct concatenation has length 6."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 16",
+   "1 <= word length <= 26, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "longestUniqueConcatenation",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "un iq ue"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "cha r act ers"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcdefghijklmnopqrstuvwxyz"
+    ],
+    "expected": 26,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa bb"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd ef"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc ade bcd"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c a"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Substrings With All Five Vowels",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sliding Window",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "Count the substrings of `s` that consist only of vowels (`a e i o u`) and contain each of the five vowels at least once.",
+  "examples": [
+   {
+    "input": "s = \"aeiouu\"",
+    "output": "2",
+    "explanation": "There are 2 such substrings."
+   },
+   {
+    "input": "s = \"unicornarrivesquickly\"",
+    "output": "0",
+    "explanation": "There are 0 such substrings."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has lowercase letters only"
+  ],
+  "functionName": "allFiveVowelSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aeiouu"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "unicornarrivesquickly"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aeiou"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aeio"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xaeioux"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaeeiioouu"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "uoiea"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindromic Rotation Count",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Netflix",
+   "Infosys"
+  ],
+  "description": "A rotation of `s` moves the first `i` characters to the end (`0 <= i < s.length`). Count the values of `i` for which the rotated string is a palindrome (different `i` count separately even if the rotated strings are equal).",
+  "examples": [
+   {
+    "input": "s = \"aab\"",
+    "output": "1",
+    "explanation": "1 rotation(s) are palindromes."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "0 rotation(s) are palindromes."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "palindromicRotationCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Secret Code Hints",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Zoho",
+   "Paytm"
+  ],
+  "description": "`secret` and `guess` are digit strings of the same length. A bull is a position where both strings hold the same digit. A cow is a digit of `guess` that appears elsewhere in `secret` and is not a bull (each digit of `secret` can serve only one guess digit). Return the hint as `\"xAyB\"` where `x` is the number of bulls and `y` the number of cows.",
+  "examples": [
+   {
+    "input": "secret = \"1807\", guess = \"7810\"",
+    "output": "\"1A3B\"",
+    "explanation": "The hint is \"1A3B\"."
+   },
+   {
+    "input": "secret = \"1123\", guess = \"0111\"",
+    "output": "\"1A1B\"",
+    "explanation": "The hint is \"1A1B\"."
+   }
+  ],
+  "constraints": [
+   "1 <= secret.length = guess.length <= 1000",
+   "secret and guess contain digits only"
+  ],
+  "functionName": "secretCodeHints",
+  "params": [
+   {
+    "name": "secret",
+    "type": "string"
+   },
+   {
+    "name": "guess",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "1807",
+     "7810"
+    ],
+    "expected": "1A3B",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1123",
+     "0111"
+    ],
+    "expected": "1A1B",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1",
+     "1"
+    ],
+    "expected": "1A0B",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1",
+     "0"
+    ],
+    "expected": "0A0B",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1122",
+     "2211"
+    ],
+    "expected": "0A4B",
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000",
+     "0000"
+    ],
+    "expected": "4A0B",
+    "isSample": false
+   },
+   {
+    "args": [
+     "123",
+     "321"
+    ],
+    "expected": "1A2B",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Product Of Word Lengths",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "`s` is a list of lowercase words separated by single spaces. Return the largest value of `len(w1) * len(w2)` over pairs of different positions whose words share no common letter. Return `0` if no such pair exists.",
+  "examples": [
+   {
+    "input": "s = \"abcw baz foo bar xtfn abcdef\"",
+    "output": "16",
+    "explanation": "The best product is 16."
+   },
+   {
+    "input": "s = \"a ab abc abcd\"",
+    "output": "0",
+    "explanation": "The best product is 0."
+   }
+  ],
+  "constraints": [
+   "2 <= number of words <= 1000",
+   "1 <= word length <= 1000, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "maxProductWordLengths",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcw baz foo bar xtfn abcdef"
+    ],
+    "expected": 16,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a ab abc abcd"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd ef"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa bbbb cc"
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xy yz zx"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Similar Word Pairs Count",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Uber",
+   "Google",
+   "Amazon"
+  ],
+  "description": "`s` is a list of lowercase words separated by single spaces. Two words are similar if they are made of exactly the same set of distinct letters (for example `abca` and `cba`). Return the number of index pairs `i < j` whose words are similar.",
+  "examples": [
+   {
+    "input": "s = \"aba aabb abcd bac aabc\"",
+    "output": "2",
+    "explanation": "There are 2 similar pairs."
+   },
+   {
+    "input": "s = \"aabb ab bba\"",
+    "output": "3",
+    "explanation": "There are 3 similar pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 1000",
+   "1 <= word length <= 100, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "similarWordPairsCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aba aabb abcd bac aabc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabb ab bba"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a a a"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba aabb bbaa"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x xx xxx y"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Word Pairs Differing By One Letter",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Atlassian"
+  ],
+  "description": "`s` is a list of lowercase words separated by single spaces. Count the index pairs `i < j` for which the two words have the same length and differ in exactly one position.",
+  "examples": [
+   {
+    "input": "s = \"abc abd aec xyz\"",
+    "output": "2",
+    "explanation": "There are 2 such pairs."
+   },
+   {
+    "input": "s = \"aa ab bb\"",
+    "output": "2",
+    "explanation": "There are 2 such pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 1000",
+   "1 <= word length <= 100, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "wordPairsOneLetterApart",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc abd aec xyz"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa ab bb"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ab ab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ac ad"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc ab abd"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Function Exclusive Time",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Oracle",
+   "Flipkart",
+   "Google"
+  ],
+  "description": "A single-threaded CPU logs function calls as comma-separated entries `id:s:time` (call starts at the beginning of that time unit) and `id:e:time` (call ends at the end of that time unit, so the unit still counts for it). Calls may be nested or recursive. Return the exclusive time of function `f`: the number of time units during which `f` was the innermost running call.",
+  "examples": [
+   {
+    "input": "logs = \"0:s:0,1:s:2,1:e:5,0:e:6\", f = 0",
+    "output": "3",
+    "explanation": "Function f runs exclusively for 3 time unit(s)."
+   },
+   {
+    "input": "logs = \"0:s:0,1:s:2,1:e:5,0:e:6\", f = 1",
+    "output": "4",
+    "explanation": "Function f runs exclusively for 4 time unit(s)."
+   }
+  ],
+  "constraints": [
+   "2 <= number of log entries <= 300, 0 <= id, f <= 9",
+   "logs is well-formed: calls are properly nested and times never go back (after an end at time t the next entry is at time >= t + 1)"
+  ],
+  "functionName": "functionExclusiveTime",
+  "params": [
+   {
+    "name": "logs",
+    "type": "string"
+   },
+   {
+    "name": "f",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "0:s:0,1:s:2,1:e:5,0:e:6",
+     0
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0:s:0,1:s:2,1:e:5,0:e:6",
+     1
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0:s:0,0:e:0",
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0:s:0,0:s:1,0:e:2,0:e:3",
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0:s:0,1:s:0,1:e:0,0:e:1",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "2:s:0,2:e:3",
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0:s:1,1:s:4,1:e:4,0:e:9",
+     0
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rate Limited Message Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Design",
+   "Simulation"
+  ],
+  "companies": [
+   "Infosys",
+   "Zoho",
+   "Microsoft"
+  ],
+  "description": "A logger receives messages in order: message `msg[i]` arrives at second `ts[i]` (timestamps never decrease). A message is printed only if the same message id was never printed before or was last printed at least `10` seconds earlier. Suppressed messages do not reset the timer. Return the number of printed messages.",
+  "examples": [
+   {
+    "input": "ts = [1,2,3,8,10,11], msg = [1,2,1,2,1,1]",
+    "output": "3",
+    "explanation": "3 message(s) are printed."
+   },
+   {
+    "input": "ts = [0,5,9,10,20], msg = [7,7,7,7,7]",
+    "output": "3",
+    "explanation": "3 message(s) are printed."
+   }
+  ],
+  "constraints": [
+   "1 <= ts.length = msg.length <= 10^5",
+   "0 <= ts[i] <= 10^9 non-decreasing, 0 <= msg[i] <= 10^5"
+  ],
+  "functionName": "rateLimitedPrintCount",
+  "params": [
+   {
+    "name": "ts",
+    "type": "int[]"
+   },
+   {
+    "name": "msg",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      8,
+      10,
+      11
+     ],
+     [
+      1,
+      2,
+      1,
+      2,
+      1,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      9,
+      10,
+      20
+     ],
+     [
+      7,
+      7,
+      7,
+      7,
+      7
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ],
+     [
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     [
+      5,
+      5,
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      10
+     ],
+     [
+      3,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      9,
+      18
+     ],
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "LRU Cache Hit Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Design",
+   "Hash Table",
+   "Simulation"
+  ],
+  "companies": [
+   "Atlassian",
+   "Paytm"
+  ],
+  "description": "A cache holds at most `capacity` keys and evicts the least recently used key when a new key must be inserted into a full cache. Each access in `keys` is a hit if the key is already cached (and marks it as most recently used) or a miss otherwise (the key is then inserted). The cache starts empty. Return the number of hits.",
+  "examples": [
+   {
+    "input": "capacity = 2, keys = [1,2,1,3,2,1]",
+    "output": "1",
+    "explanation": "The sequence produces 1 cache hit(s)."
+   },
+   {
+    "input": "capacity = 1, keys = [1,1,2,2,1]",
+    "output": "2",
+    "explanation": "The sequence produces 2 cache hit(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= capacity <= 1000",
+   "1 <= keys.length <= 10^5, 0 <= keys[i] <= 10^5"
+  ],
+  "functionName": "lruCacheHitCount",
+  "params": [
+   {
+    "name": "capacity",
+    "type": "int"
+   },
+   {
+    "name": "keys",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2,
+     [
+      1,
+      2,
+      1,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     [
+      1,
+      1,
+      2,
+      2,
+      1
+     ]
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     3,
+     [
+      5
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     [
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      7,
+      7,
+      7,
+      7
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     [
+      1,
+      2,
+      3,
+      4,
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Stream First Unique Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Queue",
+   "Hash Table",
+   "Design"
+  ],
+  "companies": [
+   "Infosys",
+   "Microsoft",
+   "Zoho"
+  ],
+  "description": "Numbers arrive one by one from `nums`. After each arrival, take the first number (in arrival order) that has appeared exactly once so far, or `-1` if there is none. Return the sum of these values over all arrivals.",
+  "examples": [
+   {
+    "input": "nums = [2,3,5,5,2,3]",
+    "output": "10",
+    "explanation": "The first-unique values add up to 10."
+   },
+   {
+    "input": "nums = [7,7,7]",
+    "output": "5",
+    "explanation": "The first-unique values add up to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 10^5",
+   "1 <= nums[i] <= 10^8"
+  ],
+  "functionName": "streamFirstUniqueSum",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      2,
+      3,
+      5,
+      5,
+      2,
+      3
+     ]
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7,
+      7,
+      7
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      2,
+      3
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      6,
+      5,
+      6
+     ]
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      9,
+      7,
+      8
+     ]
+    ],
+    "expected": 41,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Last K Product Total",
+  "difficulty": "Medium",
+  "tags": [
+   "Prefix Sum",
+   "Math",
+   "Design"
+  ],
+  "companies": [
+   "Zoho",
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "Numbers from `nums` are appended to a stream one at a time. After every append that leaves at least `k` numbers in the stream, compute the product of the last `k` numbers. Return the sum of these products modulo `10^9 + 7`. Zeros must be handled correctly.",
+  "examples": [
+   {
+    "input": "nums = [3,0,2,5,4], k = 2",
+    "output": "30",
+    "explanation": "The sum of last-k products is 30."
+   },
+   {
+    "input": "nums = [1,2,3], k = 3",
+    "output": "6",
+    "explanation": "The sum of last-k products is 6."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 10^5",
+   "0 <= nums[i] <= 100, 1 <= k <= nums.length"
+  ],
+  "functionName": "lastKProductTotal",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      3,
+      0,
+      2,
+      5,
+      4
+     ],
+     2
+    ],
+    "expected": 30,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ],
+     3
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     1
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0
+     ],
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2,
+      2
+     ],
+     2
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      7,
+      0,
+      7
+     ],
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      3,
+      0,
+      4,
+      5
+     ],
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rank Teams By Votes",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sorting",
+   "Hash Table"
+  ],
+  "companies": [
+   "Oracle",
+   "Salesforce",
+   "Bloomberg"
+  ],
+  "description": "`s` holds voters' rankings separated by single spaces; each ranking is a string of distinct team letters from best to worst, and all rankings use the same teams. Order the teams by the number of first-place votes (more is better); break ties with second-place votes, then third, and so on. If teams are still tied, the alphabetically smaller letter comes first. Return the final order as a string.",
+  "examples": [
+   {
+    "input": "s = \"abc acb abc\"",
+    "output": "\"abc\"",
+    "explanation": "The final team ranking is \"abc\"."
+   },
+   {
+    "input": "s = \"ba ab\"",
+    "output": "\"ab\"",
+    "explanation": "The final team ranking is \"ab\"."
+   }
+  ],
+  "constraints": [
+   "1 <= number of rankings <= 1000",
+   "each ranking has 1 to 26 distinct lowercase letters, and all rankings contain the same letters"
+  ],
+  "functionName": "rankTeamsByVotes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abc acb abc"
+    ],
+    "expected": "abc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "ba ab"
+    ],
+    "expected": "ab",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc cab bca"
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bca cab"
+    ],
+    "expected": "cba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd dcba abcd"
+    ],
+    "expected": "adbc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zy yz zy"
+    ],
+    "expected": "zy",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Alternating After Rotations Flips",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sliding Window"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Paytm",
+   "Infosys"
+  ],
+  "description": "You may rotate the binary string `s` by moving its first character to the end any number of times (rotations are free). You may also flip any character (`0` to `1` or `1` to `0`) at cost one each. Return the minimum number of flips so that `s` becomes alternating (no two neighbours equal) after your rotations and flips.",
+  "examples": [
+   {
+    "input": "s = \"111000\"",
+    "output": "2",
+    "explanation": "The minimum number of flips is 2."
+   },
+   {
+    "input": "s = \"010\"",
+    "output": "0",
+    "explanation": "The minimum number of flips is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has only '0' and '1'"
+  ],
+  "functionName": "alternatingAfterRotationsFlips",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "111000"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "010"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1110"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1100"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "001011"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Frogs Needed For Croaks",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Counting",
+   "Simulation"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "Several frogs croak at once, and each croak is the letters `c r o a k` in that order. The string `s` mixes the letters of all croaks. A frog that finishes a croak can start a new one. Return the minimum number of frogs that could have produced `s`, or `-1` if `s` is not a valid mix of complete croaks.",
+  "examples": [
+   {
+    "input": "s = \"croakcroak\"",
+    "output": "1",
+    "explanation": "At least 1 frog(s) are needed (-1 means invalid)."
+   },
+   {
+    "input": "s = \"crcoakroak\"",
+    "output": "2",
+    "explanation": "At least 2 frog(s) are needed (-1 means invalid)."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has only the letters 'c', 'r', 'o', 'a', 'k'"
+  ],
+  "functionName": "frogsNeededForCroaks",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "croakcroak"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "crcoakroak"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "croak"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cr"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "croakcr"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ccrrooaakk"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "kcroa"
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Cross Swaps To Match Strings",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy",
+   "Math"
+  ],
+  "companies": [
+   "Walmart",
+   "TCS",
+   "Zoho"
+  ],
+  "description": "`s1` and `s2` have equal length and contain only `x` and `y`. In one swap you exchange `s1[i]` with `s2[j]` for any two indices `i` and `j`. Return the minimum number of swaps that make the strings equal, or `-1` if it is impossible.",
+  "examples": [
+   {
+    "input": "s1 = \"xx\", s2 = \"yy\"",
+    "output": "1",
+    "explanation": "The minimum number of swaps is 1 (-1 means impossible)."
+   },
+   {
+    "input": "s1 = \"xy\", s2 = \"yx\"",
+    "output": "2",
+    "explanation": "The minimum number of swaps is 2 (-1 means impossible)."
+   }
+  ],
+  "constraints": [
+   "1 <= s1.length = s2.length <= 1000",
+   "s1 and s2 contain only 'x' and 'y'"
+  ],
+  "functionName": "crossSwapsToMatchStrings",
+  "params": [
+   {
+    "name": "s1",
+    "type": "string"
+   },
+   {
+    "name": "s2",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "xx",
+     "yy"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "xy",
+     "yx"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "xx",
+     "xy"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x",
+     "x"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyx",
+     "yxy"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xxyy",
+     "yyxx"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyxy",
+     "yxyx"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Camel Case Pattern Matches",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Oracle",
+   "Google",
+   "Netflix"
+  ],
+  "description": "`s` is a list of words separated by single spaces and `p` is a pattern. A word matches if it can be obtained by inserting any number of lowercase letters (anywhere, possibly none) into `p`. Return how many words match.",
+  "examples": [
+   {
+    "input": "s = \"FooBar FooBarTest FootBall FrameBuffer ForceFeedBack\", p = \"FB\"",
+    "output": "3",
+    "explanation": "3 word(s) match the pattern."
+   },
+   {
+    "input": "s = \"FooBar FooBarTest\", p = \"FoBa\"",
+    "output": "1",
+    "explanation": "1 word(s) match the pattern."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 100, 1 <= word length <= 100",
+   "1 <= p.length <= 100, all strings have English letters only"
+  ],
+  "functionName": "camelCasePatternMatches",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "p",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "FooBar FooBarTest FootBall FrameBuffer ForceFeedBack",
+     "FB"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "FooBar FooBarTest",
+     "FoBa"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "A"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aB Ab AB",
+     "AB"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab Ab",
+     "A"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyZ",
+     "xZ"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindromic Concatenation Pairs",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "`s` is a list of distinct lowercase words separated by single spaces. Count the ordered pairs of different positions `(i, j)` such that the concatenation `words[i] + words[j]` is a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"abcd dcba lls s sssll\"",
+    "output": "4",
+    "explanation": "There are 4 such ordered pairs."
+   },
+   {
+    "input": "s = \"bat tab cat\"",
+    "output": "2",
+    "explanation": "There are 2 such ordered pairs."
+   }
+  ],
+  "constraints": [
+   "2 <= number of words <= 1000, all words distinct",
+   "1 <= word length <= 300, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "palindromicConcatenationPairs",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcd dcba lls s sssll"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bat tab cat"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a aa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc cba bca"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c aba"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Universal Words Count",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Uber",
+   "Atlassian",
+   "Paytm"
+  ],
+  "description": "`a` and `b` are lists of lowercase words separated by single spaces. A word of `a` is universal if every word of `b` is a subset of it: each letter of the `b` word appears in the `a` word at least as many times. Return the number of universal words in `a`.",
+  "examples": [
+   {
+    "input": "a = \"amazon apple facebook google leetcode\", b = \"e o\"",
+    "output": "3",
+    "explanation": "3 word(s) of the first list are universal."
+   },
+   {
+    "input": "a = \"amazon apple facebook google leetcode\", b = \"l e\"",
+    "output": "3",
+    "explanation": "3 word(s) of the first list are universal."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words in a, b <= 100",
+   "1 <= word length <= 20, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "universalWordsCount",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "amazon apple facebook google leetcode",
+     "e o"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "amazon apple facebook google leetcode",
+     "l e"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab ab",
+     "aa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc cab",
+     "ab bc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "xx"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Completing Word",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Walmart",
+   "Apple",
+   "Oracle"
+  ],
+  "description": "`plate` is a string of lowercase letters and `s` is a list of lowercase words separated by single spaces. A word completes the plate if it contains every letter of `plate` at least as many times as the plate does (extra letters are fine). Return the shortest completing word; if several have the same length, return the earliest one in `s`. A completing word always exists.",
+  "examples": [
+   {
+    "input": "plate = \"stp\", s = \"step steps stripe stepple\"",
+    "output": "\"step\"",
+    "explanation": "The shortest completing word is \"step\"."
+   },
+   {
+    "input": "plate = \"sts\", s = \"step steps stripe stepple\"",
+    "output": "\"steps\"",
+    "explanation": "The shortest completing word is \"steps\"."
+   }
+  ],
+  "constraints": [
+   "1 <= plate.length <= 7, lowercase letters only",
+   "1 <= number of words <= 100, 1 <= word length <= 15, a completing word exists"
+  ],
+  "functionName": "shortestCompletingWord",
+  "params": [
+   {
+    "name": "plate",
+    "type": "string"
+   },
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "stp",
+     "step steps stripe stepple"
+    ],
+    "expected": "step",
+    "isSample": true
+   },
+   {
+    "args": [
+     "sts",
+     "step steps stripe stepple"
+    ],
+    "expected": "steps",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "ba ab abb"
+    ],
+    "expected": "ba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa",
+     "a aa aaa"
+    ],
+    "expected": "aa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "xabcx cba abcc"
+    ],
+    "expected": "cba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "z",
+     "zz z yz"
+    ],
+    "expected": "z",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Subarrays Starting With Their Minimum",
+  "difficulty": "Medium",
+  "tags": [
+   "Monotonic Stack",
+   "Array"
+  ],
+  "companies": [
+   "Oracle",
+   "Salesforce",
+   "Flipkart"
+  ],
+  "description": "Count the non-empty subarrays of `nums` whose first element is less than or equal to every other element of the subarray.",
+  "examples": [
+   {
+    "input": "nums = [1,4,2,5,3]",
+    "output": "11",
+    "explanation": "There are 11 such subarrays."
+   },
+   {
+    "input": "nums = [3,2,1]",
+    "output": "3",
+    "explanation": "There are 3 such subarrays."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 10^5",
+   "0 <= nums[i] <= 10^5"
+  ],
+  "functionName": "subarraysStartingWithMinimum",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      4,
+      2,
+      5,
+      3
+     ]
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      1,
+      4,
+      1
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      9,
+      0
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Left Smaller Neighbour Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Monotonic Stack",
+   "Array"
+  ],
+  "companies": [
+   "Oracle",
+   "Google",
+   "Facebook"
+  ],
+  "description": "For each index `i`, find the nearest element to its left that is strictly smaller than `nums[i]` and take its value (`0` if there is none). Return the sum of these values over all `i`.",
+  "examples": [
+   {
+    "input": "nums = [4,5,2,10,8]",
+    "output": "8",
+    "explanation": "The neighbour values add up to 8."
+   },
+   {
+    "input": "nums = [3,2,1]",
+    "output": "0",
+    "explanation": "The neighbour values add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 10^5",
+   "1 <= nums[i] <= 10^9"
+  ],
+  "functionName": "leftSmallerNeighbourSum",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      4,
+      5,
+      2,
+      10,
+      8
+     ]
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      7
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      1,
+      5,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      9,
+      3,
+      6,
+      2,
+      8
+     ]
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Widest Ramp Span",
+  "difficulty": "Medium",
+  "tags": [
+   "Monotonic Stack",
+   "Array"
+  ],
+  "companies": [
+   "Uber",
+   "Goldman Sachs",
+   "Google"
+  ],
+  "description": "A ramp is a pair of indices `(i, j)` with `i < j` and `nums[i] <= nums[j]`; its width is `j - i`. Return the largest ramp width, or `0` if there is no ramp.",
+  "examples": [
+   {
+    "input": "nums = [6,0,8,2,1,5]",
+    "output": "4",
+    "explanation": "The widest ramp has width 4."
+   },
+   {
+    "input": "nums = [9,8,1,0,1,9,4,0,4,1]",
+    "output": "7",
+    "explanation": "The widest ramp has width 7."
+   }
+  ],
+  "constraints": [
+   "2 <= nums.length <= 5 * 10^4",
+   "0 <= nums[i] <= 5 * 10^4"
+  ],
+  "functionName": "widestRampSpan",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      6,
+      0,
+      8,
+      2,
+      1,
+      5
+     ]
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      9,
+      8,
+      1,
+      0,
+      1,
+      9,
+      4,
+      0,
+      4,
+      1
+     ]
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      4,
+      3,
+      4,
+      5
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      9,
+      1,
+      8
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Subsequence Of Length K",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "Greedy",
+   "String"
+  ],
+  "companies": [
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "Return the lexicographically smallest subsequence of `s` that has exactly `k` characters.",
+  "examples": [
+   {
+    "input": "s = \"cbacdcbc\", k = 4",
+    "output": "\"acbc\"",
+    "explanation": "The smallest subsequence of length k is \"acbc\"."
+   },
+   {
+    "input": "s = \"bcabc\", k = 3",
+    "output": "\"abc\"",
+    "explanation": "The smallest subsequence of length k is \"abc\"."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= s.length <= 10^5",
+   "s has lowercase letters only"
+  ],
+  "functionName": "smallestSubsequenceLengthK",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "cbacdcbc",
+     4
+    ],
+    "expected": "acbc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "bcabc",
+     3
+    ],
+    "expected": "abc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zyx",
+     2
+    ],
+    "expected": "yx",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     3
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bab",
+     1
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcc",
+     4
+    ],
+    "expected": "aabb",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Mixed-Case Complete Substring",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Recursion",
+   "Hash Table"
+  ],
+  "companies": [
+   "Paytm",
+   "Infosys"
+  ],
+  "description": "A substring is balanced-case if every letter in it appears in both its lowercase and its uppercase form inside that substring. Return the length of the longest balanced-case substring of `s`, or `0` if there is none.",
+  "examples": [
+   {
+    "input": "s = \"YazaAay\"",
+    "output": "3",
+    "explanation": "The longest balanced-case substring has length 3."
+   },
+   {
+    "input": "s = \"Bb\"",
+    "output": "2",
+    "explanation": "The longest balanced-case substring has length 2."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has English letters only"
+  ],
+  "functionName": "longestMixedCaseComplete",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "YazaAay"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "Bb"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aAbBcC"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aAbc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AbBa"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Sorted In Alien Order",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Sorting"
+  ],
+  "companies": [
+   "Apple",
+   "Amazon"
+  ],
+  "description": "An alien language uses lowercase letters in the alphabet order given by `order` (a string of distinct letters containing every letter used in `s`). `s` is a list of words separated by single spaces. Return `true` if the words are in non-decreasing order under that alphabet, where a word comes before any longer word that starts with it.",
+  "examples": [
+   {
+    "input": "order = \"hlabcdefgijkmnopqrstuvwxyz\", s = \"hello leetcode\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "order = \"worldabcefghijkmnpqstuvxyz\", s = \"word world row\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= order.length <= 26, order has distinct lowercase letters",
+   "2 <= number of words <= 100, 1 <= word length <= 20, words use only letters of order"
+  ],
+  "functionName": "sortedInAlienOrder",
+  "params": [
+   {
+    "name": "order",
+    "type": "string"
+   },
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "hlabcdefgijkmnopqrstuvwxyz",
+     "hello leetcode"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "worldabcefghijkmnpqstuvxyz",
+     "word world row"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "ab abc"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abc ab"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cba",
+     "cc cb ca"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "ba ab"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "a a a"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cheapest Leaf Product Tree",
+  "difficulty": "Medium",
+  "tags": [
+   "Monotonic Stack",
+   "Greedy",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Facebook"
+  ],
+  "description": "`nums` lists the leaf values of a binary tree in left-to-right order; every internal node has exactly two children. The value of an internal node is the largest leaf value in its left subtree multiplied by the largest leaf value in its right subtree. Over all trees that fit `nums`, return the smallest possible sum of the internal node values.",
+  "examples": [
+   {
+    "input": "nums = [6,2,4]",
+    "output": "32",
+    "explanation": "The smallest possible sum of internal nodes is 32."
+   },
+   {
+    "input": "nums = [4,11]",
+    "output": "44",
+    "explanation": "The smallest possible sum of internal nodes is 44."
+   }
+  ],
+  "constraints": [
+   "2 <= nums.length <= 40",
+   "1 <= nums[i] <= 15"
+  ],
+  "functionName": "cheapestLeafProductTree",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      6,
+      2,
+      4
+     ]
+    ],
+    "expected": 32,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4,
+      11
+     ]
+    ],
+    "expected": 44,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      3,
+      3
+     ]
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      3,
+      4
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      4,
+      3,
+      2,
+      1
+     ]
+    ],
+    "expected": 20,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      15,
+      1,
+      15,
+      1
+     ]
+    ],
+    "expected": 255,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Preorder Serialization Valid",
+  "difficulty": "Medium",
+  "tags": [
+   "Stack",
+   "String"
+  ],
+  "companies": [
+   "Oracle",
+   "Atlassian",
+   "Paytm"
+  ],
+  "description": "A binary tree is written in preorder as comma-separated tokens: a number for a node and `#` for an empty child. Without rebuilding the tree, return `true` if `s` is a valid complete serialization of some binary tree (every number is followed by serializations of its left and right child).",
+  "examples": [
+   {
+    "input": "s = \"9,3,4,#,#,1,#,#,2,#,6,#,#\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"1,#\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^4",
+   "s is made of tokens separated by single commas; each token is '#' or a number from 1 to 99"
+  ],
+  "functionName": "isValidPreorderSerialization",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "9,3,4,#,#,1,#,#,2,#,6,#,#"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1,#"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "#"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1,#,#"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9,#,#,1"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "#,#,#"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1,2,#,#,#"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fraction Expression Result",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Infosys",
+   "Zoho"
+  ],
+  "description": "`s` is an expression that adds and subtracts fractions, such as `-1/2+1/3-5/6` (a leading sign is optional). Return the result as a fraction in lowest terms written `numerator/denominator`; an integer result is written with denominator `1` (for example `2/1`) and zero is `0/1`.",
+  "examples": [
+   {
+    "input": "s = \"-1/2+1/2+1/3\"",
+    "output": "\"1/3\"",
+    "explanation": "The simplified result is \"1/3\"."
+   },
+   {
+    "input": "s = \"1/3-1/2\"",
+    "output": "\"-1/6\"",
+    "explanation": "The simplified result is \"-1/6\"."
+   }
+  ],
+  "constraints": [
+   "1 <= number of fractions <= 10",
+   "each fraction is `a/b` with 1 <= a, b <= 10, joined by '+' or '-'"
+  ],
+  "functionName": "fractionExpressionResult",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "-1/2+1/2+1/3"
+    ],
+    "expected": "1/3",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1/3-1/2"
+    ],
+    "expected": "-1/6",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1/1"
+    ],
+    "expected": "1/1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1/2+1/2"
+    ],
+    "expected": "1/1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "-3/6"
+    ],
+    "expected": "-1/2",
+    "isSample": false
+   },
+   {
+    "args": [
+     "5/3-2/3"
+    ],
+    "expected": "1/1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1/2-1/2"
+    ],
+    "expected": "0/1",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Linear Equation Solution",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "TCS",
+   "Netflix"
+  ],
+  "description": "`s` is a linear equation in the unknown `x` using only `+`, `-`, integers and the letter `x` (a lone `x` means `1x`), with exactly one `=`, such as `x+5-3+x=6+x-2`. Return `\"x=value\"` if there is exactly one solution, `\"No solution\"` if there is none, or `\"Infinite solutions\"` if every `x` works. When there is exactly one solution it is an integer.",
+  "examples": [
+   {
+    "input": "s = \"x+5-3+x=6+x-2\"",
+    "output": "\"x=2\"",
+    "explanation": "The result is \"x=2\"."
+   },
+   {
+    "input": "s = \"x=x\"",
+    "output": "\"Infinite solutions\"",
+    "explanation": "The result is \"Infinite solutions\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s has digits, 'x', '+', '-' and one '='; numbers have no leading zeros; a single solution is always an integer"
+  ],
+  "functionName": "linearEquationSolution",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "x+5-3+x=6+x-2"
+    ],
+    "expected": "x=2",
+    "isSample": true
+   },
+   {
+    "args": [
+     "x=x"
+    ],
+    "expected": "Infinite solutions",
+    "isSample": true
+   },
+   {
+    "args": [
+     "2x=x"
+    ],
+    "expected": "x=0",
+    "isSample": false
+   },
+   {
+    "args": [
+     "x=x+2"
+    ],
+    "expected": "No solution",
+    "isSample": false
+   },
+   {
+    "args": [
+     "2x+3x-6x=x+2"
+    ],
+    "expected": "x=-1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "3x=9"
+    ],
+    "expected": "x=3",
+    "isSample": false
+   },
+   {
+    "args": [
+     "-x=-4"
+    ],
+    "expected": "x=4",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reformat Phone Digits",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Netflix",
+   "Flipkart"
+  ],
+  "description": "`s` contains digits, spaces and dashes (at least two digits). Remove the spaces and dashes, then group the digits from left to right into blocks of three until four or fewer digits remain. Finish with: two digits as one block of two, three digits as one block of three, four digits as two blocks of two. Return the blocks joined with `-`.",
+  "examples": [
+   {
+    "input": "s = \"1-23-45 6\"",
+    "output": "\"123-456\"",
+    "explanation": "The reformatted number is \"123-456\"."
+   },
+   {
+    "input": "s = \"123 4-567\"",
+    "output": "\"123-45-67\"",
+    "explanation": "The reformatted number is \"123-45-67\"."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 100",
+   "s has digits, spaces and '-' only, with at least two digits"
+  ],
+  "functionName": "reformatPhoneDigits",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "1-23-45 6"
+    ],
+    "expected": "123-456",
+    "isSample": true
+   },
+   {
+    "args": [
+     "123 4-567"
+    ],
+    "expected": "123-45-67",
+    "isSample": true
+   },
+   {
+    "args": [
+     "12"
+    ],
+    "expected": "12",
+    "isSample": false
+   },
+   {
+    "args": [
+     "123"
+    ],
+    "expected": "123",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1234"
+    ],
+    "expected": "12-34",
+    "isSample": false
+   },
+   {
+    "args": [
+     "12345"
+    ],
+    "expected": "123-45",
+    "isSample": false
+   },
+   {
+    "args": [
+     "123456789"
+    ],
+    "expected": "123-456-789",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Digit Sum Groups Largest Count",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Math",
+   "Counting"
+  ],
+  "companies": [
+   "Flipkart",
+   "TCS"
+  ],
+  "description": "Group the integers from `lo` to `hi` inclusive by the sum of their decimal digits. Return the number of groups that have the largest size.",
+  "examples": [
+   {
+    "input": "lo = 1, hi = 13",
+    "output": "4",
+    "explanation": "4 group(s) share the largest size."
+   },
+   {
+    "input": "lo = 1, hi = 2",
+    "output": "2",
+    "explanation": "2 group(s) share the largest size."
+   }
+  ],
+  "constraints": [
+   "1 <= lo <= hi <= 10^4",
+   "the range is small enough to enumerate"
+  ],
+  "functionName": "digitSumGroupsLargestCount",
+  "params": [
+   {
+    "name": "lo",
+    "type": "int"
+   },
+   {
+    "name": "hi",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     1,
+     13
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     2
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     5,
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     10,
+     99
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     24
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     100,
+     130
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     7,
+     12
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Closest Shared Word Index Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "String"
+  ],
+  "companies": [
+   "LinkedIn",
+   "Paytm",
+   "Walmart"
+  ],
+  "description": "`a` and `b` are lists of distinct lowercase words (each separated by single spaces, with no repeated word inside one list). For a word present in both lists, its score is its 0-based index in `a` plus its 0-based index in `b`. Return the smallest score over all shared words, or `-1` if the lists share no word.",
+  "examples": [
+   {
+    "input": "a = \"shogun tapioca burger\", b = \"burger shogun\"",
+    "output": "1",
+    "explanation": "The smallest index sum is 1 (-1 means no shared word)."
+   },
+   {
+    "input": "a = \"a b c\", b = \"d e\"",
+    "output": "-1",
+    "explanation": "The smallest index sum is -1 (-1 means no shared word)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words in each list <= 1000",
+   "1 <= word length <= 30, lowercase letters only, words distinct within a list"
+  ],
+  "functionName": "closestSharedWordIndexSum",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "shogun tapioca burger",
+     "burger shogun"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b c",
+     "d e"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "x",
+     "x"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b",
+     "b a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c",
+     "c b a"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "p q",
+     "q"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "m n o",
+     "o"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Number After One Swap",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "Greedy",
+   "Hash Table"
+  ],
+  "companies": [
+   "Zoho",
+   "Adobe",
+   "TCS"
+  ],
+  "description": "You may swap two digits of the non-negative integer `num` at most once. Return the largest number you can obtain.",
+  "examples": [
+   {
+    "input": "num = 2736",
+    "output": "7236",
+    "explanation": "The largest number reachable with one swap is 7236."
+   },
+   {
+    "input": "num = 9973",
+    "output": "9973",
+    "explanation": "The largest number reachable with one swap is 9973."
+   }
+  ],
+  "constraints": [
+   "0 <= num <= 10^8",
+   "the result fits in a 32-bit integer"
+  ],
+  "functionName": "largestNumberOneSwap",
+  "params": [
+   {
+    "name": "num",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     2736
+    ],
+    "expected": 7236,
+    "isSample": true
+   },
+   {
+    "args": [
+     9973
+    ],
+    "expected": 9973,
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     98368
+    ],
+    "expected": 98863,
+    "isSample": false
+   },
+   {
+    "args": [
+     1993
+    ],
+    "expected": 9913,
+    "isSample": false
+   },
+   {
+    "args": [
+     115
+    ],
+    "expected": 511,
+    "isSample": false
+   },
+   {
+    "args": [
+     10
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Swaps To Balance Brackets",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Stack",
+   "Greedy"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Oracle"
+  ],
+  "description": "`s` has equal numbers of `[` and `]`. In one operation you swap the characters at any two positions. Return the minimum number of swaps that make `s` a balanced bracket string (every prefix has at least as many `[` as `]`, and the totals are equal).",
+  "examples": [
+   {
+    "input": "s = \"][][\"",
+    "output": "1",
+    "explanation": "The minimum number of swaps is 1."
+   },
+   {
+    "input": "s = \"]]][[[\"",
+    "output": "2",
+    "explanation": "The minimum number of swaps is 2."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 10^5, s.length is even",
+   "s has only '[' and ']' with equal counts of each"
+  ],
+  "functionName": "fewestSwapsBalanceBrackets",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "][]["
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "]]][[["
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "[]"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "[[]]"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "]["
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "]][["
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "[]][[]]["
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Word Chain",
+  "difficulty": "Medium",
+  "tags": [
+   "Hash Table",
+   "Dynamic Programming",
+   "String"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Atlassian"
+  ],
+  "description": "`s` is a list of distinct lowercase words separated by single spaces. Word `x` is a predecessor of word `y` if inserting exactly one letter anywhere into `x` gives `y`. A chain is a sequence of words from `s` in which each word is the predecessor of the next. Return the maximum chain length (a single word is a chain of length 1).",
+  "examples": [
+   {
+    "input": "s = \"a b ba bca bda bdca\"",
+    "output": "4",
+    "explanation": "The longest chain has 4 word(s)."
+   },
+   {
+    "input": "s = \"xbc pcxbcf xb cxbc pcxbc\"",
+    "output": "5",
+    "explanation": "The longest chain has 5 word(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 1000, all words distinct",
+   "1 <= word length <= 16, lowercase letters only, words separated by single spaces"
+  ],
+  "functionName": "longestWordChain",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a b ba bca bda bdca"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "xbc pcxbcf xb cxbc pcxbc"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a ab abc abcd"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a ba bca"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "b a ab bb"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Integer To English Words",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Recursion",
+   "Math"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Salesforce"
+  ],
+  "description": "Convert the non-negative integer `n` to its English words, each word capitalised and separated by single spaces, with no `and` and no hyphens (for example `1234` becomes `One Thousand Two Hundred Thirty Four`, and `0` becomes `Zero`).",
+  "examples": [
+   {
+    "input": "n = 123",
+    "output": "\"One Hundred Twenty Three\"",
+    "explanation": "The number in words is \"One Hundred Twenty Three\"."
+   },
+   {
+    "input": "n = 12345",
+    "output": "\"Twelve Thousand Three Hundred Forty Five\"",
+    "explanation": "The number in words is \"Twelve Thousand Three Hundred Forty Five\"."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 2^31 - 1",
+   "no 'and' and no hyphens in the output"
+  ],
+  "functionName": "integerToEnglishWords",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     123
+    ],
+    "expected": "One Hundred Twenty Three",
+    "isSample": true
+   },
+   {
+    "args": [
+     12345
+    ],
+    "expected": "Twelve Thousand Three Hundred Forty Five",
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": "Zero",
+    "isSample": false
+   },
+   {
+    "args": [
+     1000010
+    ],
+    "expected": "One Million Ten",
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": "Two Billion One Hundred Forty Seven Million Four Hundred Eighty Three Thousand Six Hundred Forty Seven",
+    "isSample": false
+   },
+   {
+    "args": [
+     100
+    ],
+    "expected": "One Hundred",
+    "isSample": false
+   },
+   {
+    "args": [
+     20
+    ],
+    "expected": "Twenty",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Lexicographic Rank Of Arrangement",
+  "difficulty": "Hard",
+  "tags": [
+   "Math",
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Bloomberg",
+   "Oracle"
+  ],
+  "description": "Consider all distinct strings that can be made by rearranging the letters of `s` (rearrangements that look identical count once), sorted in dictionary order. Return how many of them are strictly smaller than `s`, modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "s = \"bca\"",
+    "output": "3",
+    "explanation": "3 distinct arrangements come before s."
+   },
+   {
+    "input": "s = \"aab\"",
+    "output": "0",
+    "explanation": "0 distinct arrangements come before s."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "lexicographicRankArrangement",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "bca"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cba"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mississ"
+    ],
+    "expected": 32,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Split Into Three Palindromes",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "Return `true` if `s` can be cut into exactly three non-empty contiguous pieces such that each piece is a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"abcbdd\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"bcbddxy\"",
+    "output": "false",
+    "explanation": "The answer is False."
+   }
+  ],
+  "constraints": [
+   "3 <= s.length <= 2000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "canSplitIntoThreePalindromes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "abcbdd"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bcbddxy"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaa"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Uniform Frequency Substring Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Sliding Window",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Bloomberg",
+   "Salesforce"
+  ],
+  "description": "A substring is uniform if every distinct letter in it occurs the same number of times (for example `aabb` and `abc` are uniform, `aab` is not). Count the uniform substrings of `s`; equal substrings at different positions count separately.",
+  "examples": [
+   {
+    "input": "s = \"abab\"",
+    "output": "8",
+    "explanation": "There are 8 uniform substrings."
+   },
+   {
+    "input": "s = \"aaa\"",
+    "output": "6",
+    "explanation": "There are 6 uniform substrings."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 2000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "uniformFrequencySubstringCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc"
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbaabb"
+    ],
+    "expected": 22,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Counter Extremes Replay",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Hash Table",
+   "Heap"
+  ],
+  "companies": [
+   "Flipkart",
+   "Apple"
+  ],
+  "description": "`ops` is a flat list of operation pairs `[type0, key0, type1, key1, ...]` applied to an empty counter map. Type `1` adds one to `key`; type `2` subtracts one from `key` (ignored if the key's count is `0`); type `3` queries the largest count among keys with a positive count and type `4` queries the smallest such count (for both queries `key` is ignored, and an empty map answers `0`). Return the sum of all query answers.",
+  "examples": [
+   {
+    "input": "ops = [1,5,1,5,1,7,3,0,4,0]",
+    "output": "3",
+    "explanation": "The query answers add up to 3."
+   },
+   {
+    "input": "ops = [1,1,2,1,3,0,4,0]",
+    "output": "0",
+    "explanation": "The query answers add up to 0."
+   }
+  ],
+  "constraints": [
+   "2 <= ops.length <= 2 * 10^5 and ops.length is even",
+   "type in 1..4, 0 <= key <= 10^5"
+  ],
+  "functionName": "counterExtremesReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      5,
+      1,
+      5,
+      1,
+      7,
+      3,
+      0,
+      4,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      2,
+      1,
+      3,
+      0,
+      4,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      2,
+      2,
+      3,
+      0,
+      4,
+      0
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      9,
+      3,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      2,
+      1,
+      3,
+      4,
+      0,
+      1,
+      3,
+      4,
+      0,
+      3,
+      0
+     ]
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      4,
+      1,
+      4,
+      2,
+      4,
+      2,
+      4,
+      2,
+      4,
+      4,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Compound Word Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Atlassian",
+   "Flipkart"
+  ],
+  "description": "`s` is a list of distinct lowercase words separated by single spaces. A word is compound if it can be written as a concatenation of at least two shorter words from the list (words may be used more than once). Return the number of compound words in the list.",
+  "examples": [
+   {
+    "input": "s = \"cat cats catsdogcats dog dogcatsdog hippopotamuses rat ratcatdogcat\"",
+    "output": "3",
+    "explanation": "3 word(s) are compound."
+   },
+   {
+    "input": "s = \"cat dog catdog\"",
+    "output": "1",
+    "explanation": "1 word(s) are compound."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 1000, words are distinct",
+   "1 <= word length <= 30, lowercase letters only"
+  ],
+  "functionName": "compoundWordCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "cat cats catsdogcats dog dogcatsdog hippopotamuses rat ratcatdogcat"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "cat dog catdog"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a aa aaa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba abba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b ab ba aba"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x y z"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Word Segmentation Ways",
+  "difficulty": "Hard",
+  "tags": [
+   "Dynamic Programming",
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Goldman Sachs",
+   "TCS"
+  ],
+  "description": "`dict` is a list of distinct lowercase words separated by single spaces (each word may be reused). Return the number of different ways to cut `s` into a sequence of dictionary words, modulo `10^9 + 7`. Two ways differ if the cut positions differ.",
+  "examples": [
+   {
+    "input": "s = \"catsanddog\", dict = \"cat cats and sand dog\"",
+    "output": "2",
+    "explanation": "There are 2 ways to segment s."
+   },
+   {
+    "input": "s = \"aaaa\", dict = \"a aa\"",
+    "output": "5",
+    "explanation": "There are 5 ways to segment s."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "1 <= number of dictionary words <= 100, distinct, each of length 1 to 20, lowercase letters only"
+  ],
+  "functionName": "wordSegmentationWays",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "dict",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "catsanddog",
+     "cat cats and sand dog"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa",
+     "a aa"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "a b"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "ab c"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa",
+     "a aa aaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ba",
+     "a b ba"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Prefix Suffix Index Total",
+  "difficulty": "Hard",
+  "tags": [
+   "Hash Table",
+   "String",
+   "Design"
+  ],
+  "companies": [
+   "Goldman Sachs",
+   "Oracle"
+  ],
+  "description": "`words` is a list of lowercase words separated by single spaces (the same word may appear more than once). `pre` and `suf` are lists of the same number of lowercase strings; query `i` asks for the largest index `j` such that `words[j]` starts with `pre[i]` and ends with `suf[i]` (`-1` if none). Return the sum of the answers to all queries.",
+  "examples": [
+   {
+    "input": "words = \"apple ape banana\", pre = \"ap b a\", suf = \"e a x\"",
+    "output": "2",
+    "explanation": "The query answers add up to 2."
+   },
+   {
+    "input": "words = \"ab ab ba\", pre = \"a b\", suf = \"b a\"",
+    "output": "3",
+    "explanation": "The query answers add up to 3."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 1000, 1 <= word length <= 10",
+   "pre and suf have the same number (1 to 1000) of strings, each of length 1 to 10, lowercase letters only"
+  ],
+  "functionName": "prefixSuffixIndexTotal",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   },
+   {
+    "name": "pre",
+    "type": "string"
+   },
+   {
+    "name": "suf",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "apple ape banana",
+     "ap b a",
+     "e a x"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab ab ba",
+     "a b",
+     "b a"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a",
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "b",
+     "a"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc abd",
+     "ab",
+     "c"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa aa",
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "x y",
+     "z z"
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Stream Suffix Matches Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Design",
+   "Hash Table"
+  ],
+  "companies": [
+   "Paytm",
+   "LinkedIn"
+  ],
+  "description": "`dict` is a list of lowercase words separated by single spaces. Characters of `s` arrive one at a time. After each arrival, check whether some dictionary word is a suffix of the characters received so far. Return the number of arrivals after which this is true.",
+  "examples": [
+   {
+    "input": "dict = \"cd f kl\", s = \"abcdefghijkl\"",
+    "output": "3",
+    "explanation": "A dictionary word ends at 3 arrival(s)."
+   },
+   {
+    "input": "dict = \"ab\", s = \"ababab\"",
+    "output": "3",
+    "explanation": "A dictionary word ends at 3 arrival(s)."
+   }
+  ],
+  "constraints": [
+   "1 <= number of dictionary words <= 1000, 1 <= word length <= 200",
+   "1 <= s.length <= 10^5, lowercase letters only"
+  ],
+  "functionName": "streamSuffixMatchCount",
+  "params": [
+   {
+    "name": "dict",
+    "type": "string"
+   },
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "cd f kl",
+     "abcdefghijkl"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab",
+     "ababab"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "aaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc bc c",
+     "abcabc"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "xyzxyz"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa",
+     "aaaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Transformable By Sorting Substrings",
+  "difficulty": "Hard",
+  "tags": [
+   "Greedy",
+   "Queue",
+   "String"
+  ],
+  "companies": [
+   "Salesforce",
+   "Adobe",
+   "TCS"
+  ],
+  "description": "In one operation you choose any non-empty substring of the digit string `s` and sort its digits in ascending order in place. You may repeat this any number of times. Return `true` if `s` can be turned into `t`.",
+  "examples": [
+   {
+    "input": "s = \"84532\", t = \"34852\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   },
+   {
+    "input": "s = \"34521\", t = \"23415\"",
+    "output": "true",
+    "explanation": "The answer is True."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length = t.length <= 10^5",
+   "s and t contain digits only"
+  ],
+  "functionName": "transformableBySortingSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "84532",
+     "34852"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "34521",
+     "23415"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "12345",
+     "12345"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "21",
+     "12"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12",
+     "21"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "132",
+     "123"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "321",
+     "231"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Adjacent Swaps To Kth Permutation",
+  "difficulty": "Hard",
+  "tags": [
+   "Greedy",
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Infosys",
+   "Netflix",
+   "Bloomberg"
+  ],
+  "description": "`num` is a digit string and `k` is a positive number. The `k`-th next permutation of `num` is the result of moving to the next larger arrangement of its digits (as in the standard next-permutation step) `k` times. Return the minimum number of swaps of two adjacent digits needed to turn `num` into its `k`-th next permutation. The `k`-th next permutation is guaranteed to exist.",
+  "examples": [
+   {
+    "input": "num = \"5489355142\", k = 4",
+    "output": "2",
+    "explanation": "The minimum number of adjacent swaps is 2."
+   },
+   {
+    "input": "num = \"11112\", k = 4",
+    "output": "4",
+    "explanation": "The minimum number of adjacent swaps is 4."
+   }
+  ],
+  "constraints": [
+   "2 <= num.length <= 1000",
+   "1 <= k <= 1000, num has digits only, the k-th next permutation exists"
+  ],
+  "functionName": "adjacentSwapsKthPermutation",
+  "params": [
+   {
+    "name": "num",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "5489355142",
+     4
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "11112",
+     4
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "123",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00123",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1234",
+     5
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1123",
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Palindromic-Anagram Substring",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Bit Manipulation",
+   "Hash Table"
+  ],
+  "companies": [
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "Return the length of the longest non-empty substring of the digit string `s` whose digits can be rearranged to form a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"3242415\"",
+    "output": "5",
+    "explanation": "The longest such substring has length 5."
+   },
+   {
+    "input": "s = \"12345\"",
+    "output": "1",
+    "explanation": "The longest such substring has length 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s contains digits only"
+  ],
+  "functionName": "longestPalindromicAnagramSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "3242415"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "12345"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "7"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1212"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "123123"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9876789"
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Rearrangeable Palindrome Substrings Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Bit Manipulation",
+   "Hash Table"
+  ],
+  "companies": [
+   "Zoho",
+   "Walmart",
+   "Google"
+  ],
+  "description": "Count the non-empty substrings of `s` whose letters can be rearranged to form a palindrome. Equal substrings at different positions count separately.",
+  "examples": [
+   {
+    "input": "s = \"aab\"",
+    "output": "5",
+    "explanation": "There are 5 such substrings."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "3",
+    "explanation": "There are 3 such substrings."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has only the letters 'a' to 'j'"
+  ],
+  "functionName": "rearrangeablePalindromeSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "jjaa"
+    ],
+    "expected": 9,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Valid Repairs Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Backtracking",
+   "Recursion"
+  ],
+  "companies": [
+   "Microsoft",
+   "Facebook"
+  ],
+  "description": "Delete the minimum possible number of parentheses from `s` (letters are never deleted) so that the parentheses become balanced. Return the number of different strings that can be obtained this way.",
+  "examples": [
+   {
+    "input": "s = \"()())()\"",
+    "output": "2",
+    "explanation": "2 different strings are possible."
+   },
+   {
+    "input": "s = \"(a)())()\"",
+    "output": "2",
+    "explanation": "2 different strings are possible."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 25",
+   "s has lowercase letters and the characters '(' and ')'; at most 20 parentheses"
+  ],
+  "functionName": "validRepairsCount",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "()())()"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "(a)())()"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     ")("
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(("
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(()"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "())(a)"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Disjoint Long Palindromes",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Greedy"
+  ],
+  "companies": [
+   "TCS",
+   "Adobe"
+  ],
+  "description": "Choose as many non-overlapping substrings of `s` as possible such that every chosen substring is a palindrome of length at least `k`. Return the maximum number of substrings.",
+  "examples": [
+   {
+    "input": "s = \"abaccdbbd\", k = 3",
+    "output": "2",
+    "explanation": "At most 2 disjoint palindromes of length >= k fit."
+   },
+   {
+    "input": "s = \"adbcda\", k = 2",
+    "output": "0",
+    "explanation": "At most 0 disjoint palindromes of length >= k fit."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= s.length <= 2000",
+   "s has lowercase letters only"
+  ],
+  "functionName": "disjointLongPalindromes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abaccdbbd",
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "adbcda",
+     2
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     2
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd",
+     1
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaa",
+     3
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbaabba",
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Substring Avoiding Forbidden Words",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Sliding Window",
+   "Hash Table"
+  ],
+  "companies": [
+   "Facebook",
+   "Netflix",
+   "Uber"
+  ],
+  "description": "`forbidden` is a list of distinct lowercase words separated by single spaces. A substring of `s` is valid if none of the forbidden words occurs anywhere inside it as a contiguous piece. Return the length of the longest valid substring of `s` (`0` if every single letter is forbidden).",
+  "examples": [
+   {
+    "input": "s = \"cbaaaabc\", forbidden = \"aaa cb\"",
+    "output": "4",
+    "explanation": "The longest valid substring has length 4."
+   },
+   {
+    "input": "s = \"leetcode\", forbidden = \"de le e\"",
+    "output": "4",
+    "explanation": "The longest valid substring has length 4."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "1 <= number of forbidden words <= 1000, each of length 1 to 10, lowercase letters only and distinct"
+  ],
+  "functionName": "longestAvoidingForbiddenWords",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "forbidden",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "cbaaaabc",
+     "aaa cb"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "leetcode",
+     "de le e"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab",
+     "a b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "aa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "d"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     "bc ca"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabb",
+     "ab"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Substring Pairs With One Mismatch",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Amazon",
+   "Walmart"
+  ],
+  "description": "Count the pairs `(x, y)` where `x` is a non-empty substring of `s` and `y` is a substring of `t` of the same length such that `x` and `y` differ in exactly one position. Pairs are distinguished by where the substrings sit in `s` and `t`.",
+  "examples": [
+   {
+    "input": "s = \"aba\", t = \"baba\"",
+    "output": "6",
+    "explanation": "There are 6 such pairs."
+   },
+   {
+    "input": "s = \"ab\", t = \"bb\"",
+    "output": "3",
+    "explanation": "There are 3 such pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length, t.length <= 100",
+   "s and t have lowercase letters only"
+  ],
+  "functionName": "substringPairsOneMismatch",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aba",
+     "baba"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab",
+     "bb"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abd"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa",
+     "bb"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "baba"
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Missing Subsequence Length",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "`s` uses only the letters `a`, `b` and `c`. Return the length of the shortest string over the alphabet `{a, b, c}` that is NOT a subsequence of `s`.",
+  "examples": [
+   {
+    "input": "s = \"abaacbcbb\"",
+    "output": "2",
+    "explanation": "The shortest string that is not a subsequence has length 2."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "2",
+    "explanation": "The shortest string that is not a subsequence has length 2."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s has only 'a', 'b' and 'c'"
+  ],
+  "functionName": "shortestMissingSubsequenceLength",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abaacbcbb"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cba"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabc"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ccbbaa"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Target Majority Subarrays",
+  "difficulty": "Hard",
+  "tags": [
+   "Binary Search",
+   "Prefix Sum",
+   "Array"
+  ],
+  "companies": [
+   "Adobe",
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "description": "Count the contiguous subarrays of `nums` in which the value `target` appears strictly more than half of the time (more than `length / 2` occurrences).",
+  "examples": [
+   {
+    "input": "nums = [1,2,2,3,2], target = 2",
+    "output": "9",
+    "explanation": "There are 9 such subarrays."
+   },
+   {
+    "input": "nums = [1,1,1], target = 1",
+    "output": "6",
+    "explanation": "There are 6 such subarrays."
+   }
+  ],
+  "constraints": [
+   "1 <= nums.length <= 10^5",
+   "1 <= nums[i], target <= 10^9"
+  ],
+  "functionName": "targetMajoritySubarrays",
+  "params": [
+   {
+    "name": "nums",
+    "type": "int[]"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      2
+     ],
+     2
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1
+     ],
+     1
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     5
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5
+     ],
+     6
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      1,
+      2
+     ],
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      2,
+      2,
+      1,
+      1,
+      2
+     ],
+     2
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      3,
+      1,
+      3,
+      1,
+      3,
+      1
+     ],
+     3
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Puzzle Words Count Total",
+  "difficulty": "Hard",
+  "tags": [
+   "Bit Manipulation",
+   "Hash Table",
+   "String"
+  ],
+  "companies": [
+   "Infosys",
+   "Microsoft",
+   "Walmart"
+  ],
+  "description": "`puzzles` is a list of strings, each made of exactly 7 distinct lowercase letters; `words` is a list of lowercase words. A word is valid for a puzzle if it contains the puzzle's first letter and every letter of the word occurs in the puzzle. Return the total, over all puzzles, of the number of valid words (a word is counted once per puzzle it is valid for, and repeated words count separately).",
+  "examples": [
+   {
+    "input": "words = \"aaaa asas able ability actt actor access\", puzzles = \"aboveyz abrodyz abslute absoryz actresz gaswxyz\"",
+    "output": "11",
+    "explanation": "The valid word counts add up to 11."
+   },
+   {
+    "input": "words = \"abcd abcdefg\", puzzles = \"abcdefg gfedcba\"",
+    "output": "3",
+    "explanation": "The valid word counts add up to 3."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 10^5, 4 <= word length <= 50",
+   "1 <= number of puzzles <= 10^4, each puzzle has 7 distinct lowercase letters; strings are separated by single spaces"
+  ],
+  "functionName": "puzzleWordsCountTotal",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   },
+   {
+    "name": "puzzles",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aaaa asas able ability actt actor access",
+     "aboveyz abrodyz abslute absoryz actresz gaswxyz"
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd abcdefg",
+     "abcdefg gfedcba"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa",
+     "abcdefg"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "bcdefga"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd bcda",
+     "abcdefg"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd abcd",
+     "dcbaefg"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hhhh gggg",
+     "abcdefg"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Concatenation Start Indices Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Sliding Window",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Bloomberg",
+   "Oracle"
+  ],
+  "description": "`words` is a list of lowercase words separated by single spaces, all of the same length (a word may repeat). A concatenation is formed by joining all the words in any order. Return the sum of all start indices `i` for which the substring of `s` beginning at `i` is exactly such a concatenation (`0` if there is none).",
+  "examples": [
+   {
+    "input": "s = \"barfoothefoobarman\", words = \"foo bar\"",
+    "output": "9",
+    "explanation": "The start indices add up to 9."
+   },
+   {
+    "input": "s = \"wordgoodgoodgoodbestword\", words = \"word good best word\"",
+    "output": "0",
+    "explanation": "The start indices add up to 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^4",
+   "1 <= number of words <= 5000, all words have the same length from 1 to 30, lowercase letters only"
+  ],
+  "functionName": "concatenationStartIndicesSum",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "barfoothefoobarman",
+     "foo bar"
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     "wordgoodgoodgoodbestword",
+     "word good best word"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa",
+     "a a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "ab ab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     "abc bca"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "barfoofoobarthefoobarman",
+     "bar foo the"
+    ],
+    "expected": 27,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Task Priority Manager Replay",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Heap",
+   "Hash Table"
+  ],
+  "companies": [
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "`ops` is a flat list of triples `[type, a, b]` applied to an initially empty task manager. Type `1` adds task `a` with priority `b` (ignored if task `a` already exists); type `2` changes the priority of existing task `a` to `b` (ignored if absent); type `3` removes task `a` (ignored if absent); type `4` removes and executes the task with the highest priority, breaking ties by the larger task id (`a` and `b` are ignored). Return the sum of the ids of all executed tasks, counting `-1` for every type `4` operation performed on an empty manager.",
+  "examples": [
+   {
+    "input": "ops = [1,1,5,1,2,7,4,0,0,4,0,0]",
+    "output": "3",
+    "explanation": "The executed task ids add up to 3."
+   },
+   {
+    "input": "ops = [4,0,0]",
+    "output": "-1",
+    "explanation": "The executed task ids add up to -1."
+   }
+  ],
+  "constraints": [
+   "3 <= ops.length <= 3 * 10^5 and ops.length is a multiple of 3",
+   "1 <= type <= 4, 0 <= a, b <= 10^5"
+  ],
+  "functionName": "taskPriorityManagerReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      1,
+      1,
+      5,
+      1,
+      2,
+      7,
+      4,
+      0,
+      0,
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      3,
+      1,
+      4,
+      3,
+      2,
+      3,
+      9,
+      4,
+      0,
+      0,
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      5,
+      3,
+      1,
+      0,
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      5,
+      2,
+      1,
+      6,
+      2,
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      1,
+      1,
+      2,
+      1,
+      9,
+      1,
+      2,
+      5,
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      4,
+      1,
+      2,
+      9,
+      4,
+      0,
+      0,
+      4,
+      0,
+      0
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Detect Squares Replay",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Hash Table",
+   "Math"
+  ],
+  "companies": [
+   "Netflix",
+   "Infosys"
+  ],
+  "description": "`ops` is a flat list of triples `[type, x, y]`. Type `0` adds the point `(x, y)` to a multiset of points (the same point may be added many times). Type `1` is a query: count the ways to choose three stored points (distinct stored copies count separately) that, together with the query point `(x, y)`, are the four corners of an axis-aligned square with positive area. Return the sum of the answers of all queries.",
+  "examples": [
+   {
+    "input": "ops = [0,3,10,0,11,2,0,3,2,1,11,10,1,14,8,0,11,2,1,11,10]",
+    "output": "3",
+    "explanation": "The query answers add up to 3."
+   },
+   {
+    "input": "ops = [0,0,0,0,0,1,0,1,0,1,1,1]",
+    "output": "1",
+    "explanation": "The query answers add up to 1."
+   }
+  ],
+  "constraints": [
+   "3 <= ops.length <= 3 * 10^4 and ops.length is a multiple of 3",
+   "type is 0 or 1, 0 <= x, y <= 1000"
+  ],
+  "functionName": "detectSquaresReplay",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      0,
+      3,
+      10,
+      0,
+      11,
+      2,
+      0,
+      3,
+      2,
+      1,
+      11,
+      10,
+      1,
+      14,
+      8,
+      0,
+      11,
+      2,
+      1,
+      11,
+      10
+     ]
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      0,
+      2,
+      0,
+      1,
+      2,
+      2
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      2,
+      2,
+      1,
+      2,
+      2,
+      1,
+      1,
+      2
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Calendar K-Booking Sum",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Intervals",
+   "Sorting"
+  ],
+  "companies": [
+   "Walmart",
+   "Google",
+   "Netflix"
+  ],
+  "description": "`ops` is a flat list of half-open intervals `[start0, end0, start1, end1, ...]` (the booking covers moments `start <= t < end`). Bookings are added one at a time. After each addition, let `k` be the largest number of bookings that overlap at a single moment among all bookings added so far. Return the sum of these `k` values over all additions.",
+  "examples": [
+   {
+    "input": "ops = [10,20,50,60,10,40,5,15,5,10,25,55]",
+    "output": "13",
+    "explanation": "The running maximum overlaps add up to 13."
+   },
+   {
+    "input": "ops = [1,3,2,4,3,5]",
+    "output": "5",
+    "explanation": "The running maximum overlaps add up to 5."
+   }
+  ],
+  "constraints": [
+   "2 <= ops.length <= 800 and ops.length is even",
+   "0 <= start < end <= 10^9"
+  ],
+  "functionName": "calendarKBookingSum",
+  "params": [
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     [
+      10,
+      20,
+      50,
+      60,
+      10,
+      40,
+      5,
+      15,
+      5,
+      10,
+      25,
+      55
+     ]
+    ],
+    "expected": 13,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      1,
+      3,
+      2,
+      4,
+      3,
+      5
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     [
+      0,
+      1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      5,
+      0,
+      5,
+      0,
+      5
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      1,
+      2,
+      2,
+      3,
+      3,
+      4
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      5,
+      10,
+      1,
+      6,
+      2,
+      7,
+      8,
+      9
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     [
+      0,
+      100,
+      10,
+      20,
+      15,
+      30
+     ]
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Exam Room Seating Replay",
+  "difficulty": "Hard",
+  "tags": [
+   "Design",
+   "Simulation",
+   "Greedy"
+  ],
+  "companies": [
+   "Netflix",
+   "Microsoft"
+  ],
+  "description": "An exam room has `n` seats in a row numbered `0..n-1`. `ops` is processed in order: `-1` seats a new student in the seat that maximises the distance to the closest seated student (an empty room uses seat `0`; the end seats count as having a neighbour only on one side), choosing the lowest seat number on ties; a value `p >= 0` means the student in seat `p` leaves. Return the sum of the seat numbers chosen by all seating operations.",
+  "examples": [
+   {
+    "input": "n = 10, ops = [-1,-1,-1,-1,4,-1]",
+    "output": "20",
+    "explanation": "The seats chosen add up to 20."
+   },
+   {
+    "input": "n = 4, ops = [-1,-1,-1,1,-1]",
+    "output": "5",
+    "explanation": "The seats chosen add up to 5."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^9",
+   "1 <= ops.length <= 10^4, every leave refers to an occupied seat and no student is seated in a full room"
+  ],
+  "functionName": "examRoomSeatingReplay",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "ops",
+    "type": "int[]"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     10,
+     [
+      -1,
+      -1,
+      -1,
+      -1,
+      4,
+      -1
+     ]
+    ],
+    "expected": 20,
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     [
+      -1,
+      -1,
+      -1,
+      1,
+      -1
+     ]
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     [
+      -1
+     ]
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     2,
+     [
+      -1,
+      -1,
+      0,
+      -1
+     ]
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+     ]
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     [
+      -1,
+      -1,
+      -1,
+      2,
+      -1
+     ]
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     3,
+     [
+      -1,
+      -1,
+      -1,
+      0,
+      -1
+     ]
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ }
+]

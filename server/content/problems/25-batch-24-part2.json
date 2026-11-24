@@ -1,0 +1,9363 @@
+[
+ {
+  "title": "Cleaned Text Palindrome",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Microsoft",
+   "Facebook",
+   "Apple"
+  ],
+  "description": "Ignore every character of `s` that is not a letter or digit, and ignore letter case. Return `true` if what remains reads the same forwards and backwards (an empty remainder counts as a palindrome).",
+  "examples": [
+   {
+    "input": "s = \"A man, a plan, a canal: Panama\"",
+    "output": "true",
+    "explanation": "After cleaning, `s` becomes \"amanaplanacanalpanama\", which is a palindrome."
+   },
+   {
+    "input": "s = \"race a car\"",
+    "output": "false",
+    "explanation": "After cleaning, `s` becomes \"raceacar\", which is not a palindrome."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "`s` consists of printable ASCII characters"
+  ],
+  "functionName": "isCleanedPalindrome",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "A man, a plan, a canal: Panama"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "race a car"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     " "
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0P"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "Ab,bA"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a."
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab_a"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindrome With One Removal",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Facebook",
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "Return `true` if `s` is a palindrome or can become one after deleting exactly one character; otherwise return `false`.",
+  "examples": [
+   {
+    "input": "s = \"abca\"",
+    "output": "true",
+    "explanation": "Deleting the `c` leaves \"aba\", a palindrome."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "false",
+    "explanation": "No single deletion of \"abc\" gives a palindrome."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "palindromeAfterOneRemoval",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "abca"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aba"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "deeee"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdba"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse Every Second Block",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Amazon"
+  ],
+  "description": "Split `s` into consecutive blocks of `k` characters (the last block may be shorter). Reverse the 1st, 3rd, 5th, ... blocks and leave the others unchanged, then return the result.",
+  "examples": [
+   {
+    "input": "s = \"abcdefg\", k = 2",
+    "output": "\"bacdfeg\"",
+    "explanation": "Blocks are \"ab\", \"cd\", \"ef\", \"g\"; reversing the 1st and 3rd gives \"ba\", \"cd\", \"fe\", \"g\"."
+   },
+   {
+    "input": "s = \"abcd\", k = 4",
+    "output": "\"dcba\"",
+    "explanation": "A single block is reversed whole."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "1 <= k <= 10^4",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "reverseAlternateBlocks",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abcdefg",
+     2
+    ],
+    "expected": "bacdfeg",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd",
+     4
+    ],
+    "expected": "dcba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefgh",
+     3
+    ],
+    "expected": "cbadefhg",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefgh",
+     1
+    ],
+    "expected": "abcdefgh",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     5
+    ],
+    "expected": "cba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyzxyzxyz",
+     2
+    ],
+    "expected": "yxzxzyxyz",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Needle Position In Haystack",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Adobe"
+  ],
+  "description": "Return the index of the first occurrence of `needle` inside `haystack`, or -1 if `needle` does not occur. Do not use a built-in substring search.",
+  "examples": [
+   {
+    "input": "haystack = \"sadbutsad\", needle = \"sad\"",
+    "output": "0",
+    "explanation": "\"sad\" first appears at index 0."
+   },
+   {
+    "input": "haystack = \"leetcode\", needle = \"leeto\"",
+    "output": "-1",
+    "explanation": "\"leeto\" does not occur in \"leetcode\"."
+   }
+  ],
+  "constraints": [
+   "1 <= needle.length, haystack.length <= 10^4",
+   "Both strings consist of lowercase English letters"
+  ],
+  "functionName": "needlePosition",
+  "params": [
+   {
+    "name": "haystack",
+    "type": "string"
+   },
+   {
+    "name": "needle",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "sadbutsad",
+     "sad"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "leetcode",
+     "leeto"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa",
+     "aaaa"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mississippi",
+     "issip"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabd",
+     "abcabd"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab",
+     "ab"
+    ],
+    "expected": 1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Nesting Depth",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Stack"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Bloomberg"
+  ],
+  "description": "`s` is a valid math expression whose parentheses are correctly matched. Return the greatest number of parentheses that are open at the same moment (0 if there are none).",
+  "examples": [
+   {
+    "input": "s = \"(1+(2*3)+((8)/4))+1\"",
+    "output": "3",
+    "explanation": "The innermost digit \"3\" sits inside 3 open parentheses."
+   },
+   {
+    "input": "s = \"1+2\"",
+    "output": "0",
+    "explanation": "No parentheses appear, so the depth is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "`s` contains digits, `+ - * /`, parentheses and spaces",
+   "The parentheses are balanced"
+  ],
+  "functionName": "maxNestingDepth",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "(1+(2*3)+((8)/4))+1"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1+2"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "(())"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "()()()"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "((((7))))"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(1)+(2)"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "((1+2)*(3+(4)))"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Strip Outermost Parentheses",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Stack"
+  ],
+  "companies": [
+   "Google",
+   "Facebook"
+  ],
+  "description": "A balanced parentheses string is primitive if it cannot be split into two non-empty balanced strings. Split `s` into its primitive pieces, remove the outermost pair of each piece, and return the concatenation of what is left.",
+  "examples": [
+   {
+    "input": "s = \"(()())(())\"",
+    "output": "\"()()()\"",
+    "explanation": "Pieces \"(()())\" and \"(())\" lose their outer pairs, leaving \"()()\" and \"()\"."
+   },
+   {
+    "input": "s = \"()()\"",
+    "output": "\"\"",
+    "explanation": "Both pieces are \"()\", which become empty."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "`s` is a balanced string of `(` and `)`"
+  ],
+  "functionName": "stripOutermostParens",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "(()())(())"
+    ],
+    "expected": "()()()",
+    "isSample": true
+   },
+   {
+    "args": [
+     "()()"
+    ],
+    "expected": "",
+    "isSample": true
+   },
+   {
+    "args": [
+     "()"
+    ],
+    "expected": "",
+    "isSample": false
+   },
+   {
+    "args": [
+     "((()))"
+    ],
+    "expected": "(())",
+    "isSample": false
+   },
+   {
+    "args": [
+     "(()())(())(()(()))"
+    ],
+    "expected": "()()()()(())",
+    "isSample": false
+   },
+   {
+    "args": [
+     "(())()"
+    ],
+    "expected": "()",
+    "isSample": false
+   },
+   {
+    "args": [
+     "((())())"
+    ],
+    "expected": "(())()",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Interleave Two Strings",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Microsoft",
+   "Google"
+  ],
+  "description": "Build a string by taking characters alternately from `a` and `b`, starting with `a`. When one string runs out, append the rest of the other.",
+  "examples": [
+   {
+    "input": "a = \"abc\", b = \"pqr\"",
+    "output": "\"apbqcr\"",
+    "explanation": "The letters alternate a, p, b, q, c, r."
+   },
+   {
+    "input": "a = \"ab\", b = \"pqrs\"",
+    "output": "\"apbqrs\"",
+    "explanation": "`a` is exhausted after two letters, so the rest of `b` follows."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 100",
+   "Both strings consist of lowercase English letters"
+  ],
+  "functionName": "interleaveStrings",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abc",
+     "pqr"
+    ],
+    "expected": "apbqcr",
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab",
+     "pqrs"
+    ],
+    "expected": "apbqrs",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": "ab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd",
+     "x"
+    ],
+    "expected": "axbcd",
+    "isSample": false
+   },
+   {
+    "args": [
+     "x",
+     "abcd"
+    ],
+    "expected": "xabcd",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa",
+     "aa"
+    ],
+    "expected": "aaaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello",
+     "world"
+    ],
+    "expected": "hweolrllod",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Exactly One Swap Equal",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "Return `true` if you can make `a` equal to `b` by swapping the characters at exactly one pair of different indices `i != j` in `a`; otherwise return `false`.",
+  "examples": [
+   {
+    "input": "a = \"ab\", b = \"ba\"",
+    "output": "true",
+    "explanation": "Swapping the first two letters of \"ab\" gives \"ba\"."
+   },
+   {
+    "input": "a = \"ab\", b = \"ab\"",
+    "output": "false",
+    "explanation": "Equal strings need a swap of two identical letters, but \"ab\" has none."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 10^4",
+   "Both strings consist of lowercase English letters"
+  ],
+  "functionName": "equalAfterOneSwap",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "ab",
+     "ba"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab",
+     "ab"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa",
+     "aa"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcaa",
+     "abcbb"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "abab"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abcd"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Count Text Segments",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Bloomberg",
+   "Oracle"
+  ],
+  "description": "A segment is a maximal run of non-space characters in `s`. Return the number of segments.",
+  "examples": [
+   {
+    "input": "s = \"the quick brown fox\"",
+    "output": "4",
+    "explanation": "The four words form four segments."
+   },
+   {
+    "input": "s = \"   \"",
+    "output": "0",
+    "explanation": "A string of spaces has no segment."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "`s` consists of lowercase letters and spaces"
+  ],
+  "functionName": "countTextSegments",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "the quick brown fox"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "   "
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "  a  b   c "
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab cd"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     " x"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b c d e f"
+    ],
+    "expected": 6,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Total Distance To Marker",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Amazon",
+   "Apple"
+  ],
+  "description": "For each index `i` of `s`, let `d(i)` be the distance to the nearest index holding the character `c`. Return the sum of `d(i)` over all indices; `c` occurs in `s` at least once.",
+  "examples": [
+   {
+    "input": "s = \"aba\", c = \"b\"",
+    "output": "2",
+    "explanation": "Distances to the nearest `b` are 1, 0, 1, so the sum is 2."
+   },
+   {
+    "input": "s = \"abcd\", c = \"a\"",
+    "output": "6",
+    "explanation": "Distances are 0,1,2,3, so the sum is 6."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^4",
+   "`c` is one lowercase letter that occurs in `s`",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "totalDistanceToMarker",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "c",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aba",
+     "b"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd",
+     "a"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "b",
+     "b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "loveleetcode",
+     "e"
+    ],
+    "expected": 13,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaabaaa",
+     "b"
+    ],
+    "expected": 12,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbb",
+     "b"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     "c"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Same-Letter Streak",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "Infosys"
+  ],
+  "description": "Return the length of the longest streak of identical consecutive characters in `s`.",
+  "examples": [
+   {
+    "input": "s = \"leetcode\"",
+    "output": "2",
+    "explanation": "The longest streak is \"ee\", of length 2."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "1",
+    "explanation": "Every letter is different, so the answer is 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "longestLetterStreak",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "leetcode"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbbcccb"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbbbaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyzzzy"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Grouped Zero-One Substrings",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Goldman Sachs"
+  ],
+  "description": "Count the non-empty substrings of the binary string `s` that consist of some number of identical characters followed by the same number of the other character, such as `0011` or `10`. Substrings at different positions count separately.",
+  "examples": [
+   {
+    "input": "s = \"00110011\"",
+    "output": "6",
+    "explanation": "Six substrings qualify: 0011, 01, 1100, 10, 0011 and 01."
+   },
+   {
+    "input": "s = \"01\"",
+    "output": "1",
+    "explanation": "Only \"01\" qualifies."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "`s` consists of `0` and `1`"
+  ],
+  "functionName": "countGroupedSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "00110011"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "01"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "10101"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "000111"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0110"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cyclic Shift Match",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "A shift moves the first character of a string to its end. Return `true` if `goal` can be obtained from `s` using zero or more shifts.",
+  "examples": [
+   {
+    "input": "s = \"abcde\", goal = \"cdeab\"",
+    "output": "true",
+    "explanation": "Two shifts turn \"abcde\" into \"cdeab\"."
+   },
+   {
+    "input": "s = \"abcde\", goal = \"abced\"",
+    "output": "false",
+    "explanation": "No number of shifts turns \"abcde\" into \"abced\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length, goal.length <= 100",
+   "Both strings consist of lowercase English letters"
+  ],
+  "functionName": "isCyclicShift",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "goal",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "abcde",
+     "cdeab"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcde",
+     "abced"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "abc"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab",
+     "aba"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "baba"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "abc"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Odd Prefix",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Zoho"
+  ],
+  "description": "Given the digit string `num`, return the largest-valued odd number that is a substring of `num`, as a string; return an empty string if `num` has no odd digit.",
+  "examples": [
+   {
+    "input": "num = \"52\"",
+    "output": "\"5\"",
+    "explanation": "The largest odd substring is \"5\" (\"52\" is even)."
+   },
+   {
+    "input": "num = \"4206\"",
+    "output": "\"\"",
+    "explanation": "There is no odd digit."
+   }
+  ],
+  "constraints": [
+   "1 <= num.length <= 10^5",
+   "`num` consists of digits and does not start with `0`"
+  ],
+  "functionName": "largestOddSubstring",
+  "params": [
+   {
+    "name": "num",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "52"
+    ],
+    "expected": "5",
+    "isSample": true
+   },
+   {
+    "args": [
+     "4206"
+    ],
+    "expected": "",
+    "isSample": true
+   },
+   {
+    "args": [
+     "35427"
+    ],
+    "expected": "35427",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": "1",
+    "isSample": false
+   },
+   {
+    "args": [
+     "2468"
+    ],
+    "expected": "",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1000003"
+    ],
+    "expected": "1000003",
+    "isSample": false
+   },
+   {
+    "args": [
+     "9876543210"
+    ],
+    "expected": "987654321",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Balloon Words Formable",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "Return the maximum number of copies of the word \"balloon\" that can be formed using the letters of `text`, using each letter at most once.",
+  "examples": [
+   {
+    "input": "text = \"nlaebolko\"",
+    "output": "1",
+    "explanation": "The letters spell \"balloon\" once, with spare letters left."
+   },
+   {
+    "input": "text = \"balon\"",
+    "output": "0",
+    "explanation": "There is only one `l` and one `o`, so none can be formed."
+   }
+  ],
+  "constraints": [
+   "1 <= text.length <= 10^4",
+   "`text` consists of lowercase English letters"
+  ],
+  "functionName": "maxBalloons",
+  "params": [
+   {
+    "name": "text",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "nlaebolko"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "balon"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "lollopbalon"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "balloonballoon"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "loonbalxballpoon"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbaallllooooon"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Mailboxes After Normalising",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Amazon",
+   "Atlassian"
+  ],
+  "description": "`emails` holds addresses `local@domain` separated by single spaces. In the local part, every `.` is ignored and everything from the first `+` onward is dropped; the domain is unchanged. Return how many distinct normalised addresses there are.",
+  "examples": [
+   {
+    "input": "emails = \"te.st+z@x.com test@x.com te.st@y.org\"",
+    "output": "2",
+    "explanation": "The first two reduce to \"test@x.com\"; the third has another domain, so 2 are distinct."
+   },
+   {
+    "input": "emails = \"a.b@x.com ab+q@x.com\"",
+    "output": "1",
+    "explanation": "Dots and plus parts are ignored, so both become \"ab@x.com\"."
+   }
+  ],
+  "constraints": [
+   "1 <= emails.length <= 400",
+   "Each local part starts with a lowercase letter and contains lowercase letters, `.` and `+`",
+   "Each domain is non-empty and addresses are separated by single spaces"
+  ],
+  "functionName": "distinctMailboxes",
+  "params": [
+   {
+    "name": "emails",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "te.st+z@x.com test@x.com te.st@y.org"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a.b@x.com ab+q@x.com"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a@x.com"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a@x.com a@y.org"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a+b@x.com a+c@x.com a@x.com"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a.b.c@x.com abc@x.com ab.c+d@x.com"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab@x.com a.b@y.com"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Adjacent Letter Gap Total",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Amazon",
+   "Zoho"
+  ],
+  "description": "The score of a string is the sum of the absolute differences between the ASCII codes of each pair of adjacent characters. Return the score of `s`.",
+  "examples": [
+   {
+    "input": "s = \"hello\"",
+    "output": "13",
+    "explanation": "The gaps are 3, 7, 0, 3, which total 13."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "0",
+    "explanation": "A single character has no adjacent pairs."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "adjacentGapScore",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 13,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "zaz"
+    ],
+    "expected": 50,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdef"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "az"
+    ],
+    "expected": 25,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mnmnm"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Best Binary Split Score",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "description": "Split the binary string `s` into a non-empty left part and a non-empty right part. The score is the number of `0`s in the left part plus the number of `1`s in the right part. Return the maximum score over all splits.",
+  "examples": [
+   {
+    "input": "s = \"011101\"",
+    "output": "5",
+    "explanation": "Splitting into \"0\" and \"11101\" scores 1 + 4 = 5."
+   },
+   {
+    "input": "s = \"00\"",
+    "output": "1",
+    "explanation": "The best split is \"0\" and \"0\", scoring 1."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 10^5",
+   "`s` consists of `0` and `1`"
+  ],
+  "functionName": "bestBinarySplit",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "011101"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "00"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00111"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "10"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "010101"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Dotted Thousands Format",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Microsoft",
+   "Flipkart"
+  ],
+  "description": "Write the non-negative integer `n` as a string, inserting a `.` between every group of three digits counted from the right (no leading zeros).",
+  "examples": [
+   {
+    "input": "n = 1234",
+    "output": "\"1.234\"",
+    "explanation": "1234 becomes \"1.234\"."
+   },
+   {
+    "input": "n = 987",
+    "output": "\"987\"",
+    "explanation": "Fewer than four digits need no separator."
+   }
+  ],
+  "constraints": [
+   "0 <= n <= 2^31 - 1",
+   "`n` has no leading zeros"
+  ],
+  "functionName": "dottedThousands",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     1234
+    ],
+    "expected": "1.234",
+    "isSample": true
+   },
+   {
+    "args": [
+     987
+    ],
+    "expected": "987",
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": "0",
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": "1.000",
+    "isSample": false
+   },
+   {
+    "args": [
+     123456789
+    ],
+    "expected": "123.456.789",
+    "isSample": false
+   },
+   {
+    "args": [
+     2147483647
+    ],
+    "expected": "2.147.483.647",
+    "isSample": false
+   },
+   {
+    "args": [
+     100000
+    ],
+    "expected": "100.000",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "First K Words",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "TCS"
+  ],
+  "description": "A sentence `s` is words separated by single spaces. Return a sentence made of only its first `k` words.",
+  "examples": [
+   {
+    "input": "s = \"hello how are you\", k = 2",
+    "output": "\"hello how\"",
+    "explanation": "The first 2 words are \"hello how\"."
+   },
+   {
+    "input": "s = \"a b c\", k = 3",
+    "output": "\"a b c\"",
+    "explanation": "The whole sentence is kept."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 500",
+   "`s` has lowercase words separated by single spaces, with no leading or trailing space",
+   "1 <= k <= number of words in `s`"
+  ],
+  "functionName": "firstKWords",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "hello how are you",
+     2
+    ],
+    "expected": "hello how",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b c",
+     3
+    ],
+    "expected": "a b c",
+    "isSample": true
+   },
+   {
+    "args": [
+     "solo",
+     1
+    ],
+    "expected": "solo",
+    "isSample": false
+   },
+   {
+    "args": [
+     "one two three four five",
+     4
+    ],
+    "expected": "one two three four",
+    "isSample": false
+   },
+   {
+    "args": [
+     "x y",
+     1
+    ],
+    "expected": "x",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa bb cc dd",
+     2
+    ],
+    "expected": "aa bb",
+    "isSample": false
+   },
+   {
+    "args": [
+     "i love code",
+     1
+    ],
+    "expected": "i",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Single Block Of Ones",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "Infosys"
+  ],
+  "description": "The binary string `s` starts with `1`. Return `true` if all of its `1`s form one contiguous block, and `false` otherwise.",
+  "examples": [
+   {
+    "input": "s = \"1001\"",
+    "output": "false",
+    "explanation": "The `1`s at indices 0 and 3 are separated by zeros."
+   },
+   {
+    "input": "s = \"110\"",
+    "output": "true",
+    "explanation": "The two `1`s are adjacent."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "`s` consists of `0` and `1` and `s[0] == '1'`"
+  ],
+  "functionName": "singleBlockOfOnes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "1001"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "110"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "10"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1101"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "100000"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Flips To Alternating Bits",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Google",
+   "Paytm"
+  ],
+  "description": "In one move you may flip any character of the binary string `s`. Return the minimum number of moves needed to make no two adjacent characters equal.",
+  "examples": [
+   {
+    "input": "s = \"0100\"",
+    "output": "1",
+    "explanation": "Flipping the last `0` gives \"0101\"."
+   },
+   {
+    "input": "s = \"10\"",
+    "output": "0",
+    "explanation": "\"10\" is already alternating."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^4",
+   "`s` consists of `0` and `1`"
+  ],
+  "functionName": "flipsToAlternating",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "0100"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "10"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000011"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "010101"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1001"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Extra Letter Added",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Google",
+   "Bloomberg"
+  ],
+  "description": "String `t` is a rearrangement of `s` with exactly one extra lowercase letter inserted somewhere. Return that extra letter as a one-character string.",
+  "examples": [
+   {
+    "input": "s = \"abcd\", t = \"abcde\"",
+    "output": "\"e\"",
+    "explanation": "\"abcde\" holds the letters of \"abcd\" plus `e`."
+   },
+   {
+    "input": "s = \"a\", t = \"ya\"",
+    "output": "\"y\"",
+    "explanation": "A lone `y` is the extra letter."
+   }
+  ],
+  "constraints": [
+   "0 <= s.length <= 1000, t.length == s.length + 1",
+   "Both strings consist of lowercase English letters"
+  ],
+  "functionName": "extraLetter",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abcd",
+     "abcde"
+    ],
+    "expected": "e",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "ya"
+    ],
+    "expected": "y",
+    "isSample": true
+   },
+   {
+    "args": [
+     "aab",
+     "baaa"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "zyxx"
+    ],
+    "expected": "x",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "cbaa"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "mmm",
+     "mmmm"
+    ],
+    "expected": "m",
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello",
+     "ohlelz"
+    ],
+    "expected": "z",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Widest Gap Between Equal Letters",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Return the length of the longest substring lying strictly between two equal characters of `s` (the two equal characters are not counted). Return -1 if no letter occurs twice.",
+  "examples": [
+   {
+    "input": "s = \"abca\"",
+    "output": "2",
+    "explanation": "The two `a`s enclose \"bc\", of length 2."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "-1",
+    "explanation": "No letter repeats, so the answer is -1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 300",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "widestEqualGap",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abca"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cbzxy"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cabbac"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdeab"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": -1,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equal Vowel Halves",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Google"
+  ],
+  "description": "Split `s` (even length) into two halves of equal length. Return `true` if both halves contain the same number of vowels, where vowels are `aeiou` in either case.",
+  "examples": [
+   {
+    "input": "s = \"book\"",
+    "output": "true",
+    "explanation": "Each half (\"bo\" and \"ok\") contains one vowel."
+   },
+   {
+    "input": "s = \"textbook\"",
+    "output": "false",
+    "explanation": "\"text\" has one vowel while \"book\" has two."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 1000",
+   "`s.length` is even",
+   "`s` consists of uppercase and lowercase letters"
+  ],
+  "functionName": "equalVowelHalves",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "book"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "textbook"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "AbCdEfGh"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xy"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aexz"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "UiOpqr"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Caesar Shift Cipher",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Zoho",
+   "TCS",
+   "Infosys"
+  ],
+  "description": "Shift every lowercase letter of `s` forward by `k` positions in the alphabet, wrapping from `z` back to `a`. Characters that are not lowercase letters stay unchanged.",
+  "examples": [
+   {
+    "input": "s = \"xyz\", k = 3",
+    "output": "\"abc\"",
+    "explanation": "Each letter moves 3 places, so `x` wraps to `a`."
+   },
+   {
+    "input": "s = \"ab 1\", k = 27",
+    "output": "\"bc 1\"",
+    "explanation": "Shifting by 27 moves each letter by one place and leaves the digit and space alone."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "0 <= k <= 10^9",
+   "`s` consists of lowercase letters, digits and spaces"
+  ],
+  "functionName": "caesarShift",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "xyz",
+     3
+    ],
+    "expected": "abc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab 1",
+     27
+    ],
+    "expected": "bc 1",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     0
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzz",
+     1
+    ],
+    "expected": "aaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "hello world",
+     13
+    ],
+    "expected": "uryyb jbeyq",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     1000000000
+    ],
+    "expected": "mno",
+    "isSample": false
+   },
+   {
+    "args": [
+     "m9n",
+     26
+    ],
+    "expected": "m9n",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Long-Pressed Keyboard Name",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "LinkedIn"
+  ],
+  "description": "While typing `name`, a key may have been held so a character appeared more than once. Return `true` if `typed` could have been produced by typing `name` this way (every character of `name` typed in order, some possibly repeated).",
+  "examples": [
+   {
+    "input": "name = \"alex\", typed = \"aaleex\"",
+    "output": "true",
+    "explanation": "The `a` and `e` were each held down for one extra character."
+   },
+   {
+    "input": "name = \"saeed\", typed = \"ssaaedd\"",
+    "output": "false",
+    "explanation": "\"saeed\" needs two `e` characters but `typed` has only one."
+   }
+  ],
+  "constraints": [
+   "1 <= name.length, typed.length <= 1000",
+   "Both strings consist of lowercase English letters"
+  ],
+  "functionName": "isLongPressedName",
+  "params": [
+   {
+    "name": "name",
+    "type": "string"
+   },
+   {
+    "name": "typed",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "alex",
+     "aaleex"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "saeed",
+     "ssaaedd"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "laiden",
+     "laiden"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "aaaa"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "ab"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "bba"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab",
+     "aabb"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Round Dial Typing Time",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Math",
+   "Simulation"
+  ],
+  "companies": [
+   "Amazon",
+   "Uber"
+  ],
+  "description": "The 26 lowercase letters sit on a circular dial in alphabetical order, with `z` next to `a`, and the pointer starts at `a`. Moving the pointer one step either way takes 1 second, and typing the letter under it takes 1 second. Return the total time to type `word`.",
+  "examples": [
+   {
+    "input": "word = \"abc\"",
+    "output": "5",
+    "explanation": "Moving to `b` and `c` costs 1 move each, plus 3 typings: 5 seconds."
+   },
+   {
+    "input": "word = \"z\"",
+    "output": "2",
+    "explanation": "Reaching `z` from `a` is 1 move backwards, plus 1 to type: 2 seconds."
+   }
+  ],
+  "constraints": [
+   "1 <= word.length <= 100",
+   "`word` consists of lowercase English letters"
+  ],
+  "functionName": "dialTypingTime",
+  "params": [
+   {
+    "name": "word",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "z"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zjpc"
+    ],
+    "expected": 34,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mn"
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "az"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Cheapest Smallest Palindrome",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers",
+   "Greedy"
+  ],
+  "companies": [
+   "Google",
+   "Zoho"
+  ],
+  "description": "In one operation you may replace any character of `s` with any lowercase letter. Make `s` a palindrome using the fewest operations, and among all ways to do so return the lexicographically smallest result.",
+  "examples": [
+   {
+    "input": "s = \"egcfe\"",
+    "output": "\"efcfe\"",
+    "explanation": "The mismatched pair `g`/`f` is fixed by making both `f`."
+   },
+   {
+    "input": "s = \"abbda\"",
+    "output": "\"abbba\"",
+    "explanation": "Pair `a`/`d` is fixed by making both `a`, then the middle `b` stays."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "smallestPalindromeByChanges",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "egcfe"
+    ],
+    "expected": "efcfe",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abbda"
+    ],
+    "expected": "abbba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": "aa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzz"
+    ],
+    "expected": "zzzz",
+    "isSample": false
+   },
+   {
+    "args": [
+     "race"
+    ],
+    "expected": "eaae",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefg"
+    ],
+    "expected": "abcdcba",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Prefix Word Position",
+  "difficulty": "Easy",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "Atlassian"
+  ],
+  "description": "Words of the sentence `sentence` are separated by single spaces and numbered from 1. Return the number of the first word that starts with `w`, or -1 if no word does.",
+  "examples": [
+   {
+    "input": "sentence = \"i love eating burger\", w = \"burg\"",
+    "output": "4",
+    "explanation": "\"burger\" is the 4th word and the first to start with \"burg\"."
+   },
+   {
+    "input": "sentence = \"this is easy\", w = \"hello\"",
+    "output": "-1",
+    "explanation": "No word starts with \"hello\"."
+   }
+  ],
+  "constraints": [
+   "1 <= sentence.length <= 100",
+   "1 <= w.length <= 10",
+   "Lowercase letters only, with single spaces between words"
+  ],
+  "functionName": "prefixWordPosition",
+  "params": [
+   {
+    "name": "sentence",
+    "type": "string"
+   },
+   {
+    "name": "w",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "i love eating burger",
+     "burg"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "this is easy",
+     "hello"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a ab abc",
+     "ab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab a",
+     "abc"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cat car cart",
+     "car"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Integers In Text",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Amazon",
+   "Bloomberg"
+  ],
+  "description": "Replace every non-digit character of `s` with a space. The remaining digit groups are integers written possibly with leading zeros. Return how many distinct integer values appear.",
+  "examples": [
+   {
+    "input": "s = \"a123bc34d8ef34\"",
+    "output": "3",
+    "explanation": "The integers are 123, 34, 8 and 34, so there are 3 distinct values."
+   },
+   {
+    "input": "s = \"a01b1c001\"",
+    "output": "1",
+    "explanation": "The groups \"01\", \"1\" and \"001\" all have value 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 1000",
+   "`s` consists of digits and lowercase English letters"
+  ],
+  "functionName": "distinctIntegersInText",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "a123bc34d8ef34"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a01b1c001"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00a000"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1a2b3c4"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12a21b012"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Up-Down Letter Picking",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Counting",
+   "Simulation"
+  ],
+  "companies": [
+   "Google",
+   "Microsoft"
+  ],
+  "description": "Repeat until all letters of `s` are used: take the smallest unused letter, then repeatedly the next larger unused distinct letter until none is larger; then take the largest unused letter and repeatedly the next smaller distinct letter until none is smaller. Each pass uses one copy of each distinct remaining letter. Return the picked order as a string.",
+  "examples": [
+   {
+    "input": "s = \"aaaabbbbcccc\"",
+    "output": "\"abccbaabccba\"",
+    "explanation": "The ascending pass gives \"abc\" and the descending pass gives \"cba\"."
+   },
+   {
+    "input": "s = \"x\"",
+    "output": "\"x\"",
+    "explanation": "A single letter is picked once."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 500",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "upDownLetterPicking",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "aaaabbbbcccc"
+    ],
+    "expected": "abccbaabccba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "x"
+    ],
+    "expected": "x",
+    "isSample": true
+   },
+   {
+    "args": [
+     "rat"
+    ],
+    "expected": "art",
+    "isSample": false
+   },
+   {
+    "args": [
+     "leetcode"
+    ],
+    "expected": "cdelotee",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ggggggg"
+    ],
+    "expected": "ggggggg",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc"
+    ],
+    "expected": "abccba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zyxzyx"
+    ],
+    "expected": "xyzzyx",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Abbreviation Fits Word",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Amazon"
+  ],
+  "description": "An abbreviation of a word replaces some non-empty, non-adjacent substrings with their lengths written as decimal numbers (a number may not have a leading zero). Return `true` if `abbr` is a valid abbreviation of `word`.",
+  "examples": [
+   {
+    "input": "word = \"sign\", abbr = \"s2n\"",
+    "output": "true",
+    "explanation": "\"s2n\" expands to s??n, which fits \"sign\"."
+   },
+   {
+    "input": "word = \"a\", abbr = \"a1\"",
+    "output": "false",
+    "explanation": "\"a1\" would need 2 letters but \"a\" has 1."
+   }
+  ],
+  "constraints": [
+   "1 <= word.length <= 20",
+   "`word` is lowercase letters; `abbr` has lowercase letters and digits, length 1 to 20"
+  ],
+  "functionName": "abbreviationFitsWord",
+  "params": [
+   {
+    "name": "word",
+    "type": "string"
+   },
+   {
+    "name": "abbr",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "sign",
+     "s2n"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a1"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "01"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "apple",
+     "a2e"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "apple",
+     "a3e"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "internationalization",
+     "i12iz4n"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "hi",
+     "2"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse Prefix Through Letter",
+  "difficulty": "Easy",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Find the first occurrence of the letter `c` in `s`. Reverse the segment from index 0 through that occurrence (inclusive) and return the result; if `c` does not occur, return `s` unchanged.",
+  "examples": [
+   {
+    "input": "s = \"abcdefd\", c = \"d\"",
+    "output": "\"dcbaefd\"",
+    "explanation": "Reversing \"abcd\" gives \"dcba\"."
+   },
+   {
+    "input": "s = \"abcd\", c = \"z\"",
+    "output": "\"abcd\"",
+    "explanation": "The letter `z` is absent, so the string is unchanged."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 250",
+   "`s` is lowercase letters and `c` is one lowercase letter"
+  ],
+  "functionName": "reversePrefixThrough",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "c",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abcdefd",
+     "d"
+    ],
+    "expected": "dcbaefd",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd",
+     "z"
+    ],
+    "expected": "abcd",
+    "isSample": true
+   },
+   {
+    "args": [
+     "xyxzxe",
+     "z"
+    ],
+    "expected": "zxyxxe",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "a"
+    ],
+    "expected": "aaaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     "c"
+    ],
+    "expected": "cbaabc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zabc",
+     "z"
+    ],
+    "expected": "zabc",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shift Equivalent Word Groups",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "`words` is a string of lowercase words separated by single spaces. Two words are in the same group if they have equal length and one becomes the other by shifting every letter forward by the same amount, wrapping `z` to `a`. Return the number of groups.",
+  "examples": [
+   {
+    "input": "words = \"abc bcd xyz az ba\"",
+    "output": "2",
+    "explanation": "\"abc\", \"bcd\" and \"xyz\" are shifts of each other, and \"az\" and \"ba\" form a second group, so there are 2 groups."
+   },
+   {
+    "input": "words = \"hello\"",
+    "output": "1",
+    "explanation": "A single word forms one group."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 100",
+   "Each word has 1 to 10 lowercase letters; words are separated by single spaces"
+  ],
+  "functionName": "shiftWordGroups",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc bcd xyz az ba"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "hello"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a b c"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc abc abc"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "az ba cb zy"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ace bdf xyz pqr zbd"
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Palindromic Rearrangement",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Zoho"
+  ],
+  "description": "Rearrange all the letters of `s` into a palindrome. Return the lexicographically smallest such palindrome, or an empty string if no rearrangement is a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"aabbc\"",
+    "output": "\"abcba\"",
+    "explanation": "The smallest palindrome using two `a`, two `b` and one `c` is \"abcba\"."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "\"\"",
+    "explanation": "Three letters occur an odd number of times, so no palindrome exists."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "smallestPalindromeRearrangement",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "aabbc"
+    ],
+    "expected": "abcba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": "",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzz"
+    ],
+    "expected": "zzzz",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbaacc"
+    ],
+    "expected": "abccba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "cabbac"
+    ],
+    "expected": "abccba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xxyyzzzw"
+    ],
+    "expected": "",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Infix To Postfix Form",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Stack"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "`s` is an infix expression of single-character operands (lowercase letters or digits), the left-associative operators `+`, `-`, `*`, `/` (where `*` and `/` bind tighter than `+` and `-`), and parentheses. Return its postfix (reverse Polish) form as a string with no spaces.",
+  "examples": [
+   {
+    "input": "s = \"a+b*c\"",
+    "output": "\"abc*+\"",
+    "explanation": "`*` is applied to `b` and `c` first, then `+` joins `a`, giving \"abc*+\"."
+   },
+   {
+    "input": "s = \"(a+b)*c\"",
+    "output": "\"ab+c*\"",
+    "explanation": "Parentheses force `a+b` first, giving \"ab+c*\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 40",
+   "`s` is a valid expression using lowercase letters, digits, `+-*/` and parentheses"
+  ],
+  "functionName": "infixToPostfix",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "a+b*c"
+    ],
+    "expected": "abc*+",
+    "isSample": true
+   },
+   {
+    "args": [
+     "(a+b)*c"
+    ],
+    "expected": "ab+c*",
+    "isSample": true
+   },
+   {
+    "args": [
+     "x"
+    ],
+    "expected": "x",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a-b-c"
+    ],
+    "expected": "ab-c-",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a/(b-c)*d"
+    ],
+    "expected": "abc-/d*",
+    "isSample": false
+   },
+   {
+    "args": [
+     "((a))"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a+b*c-d/e*(f+g)"
+    ],
+    "expected": "abc*+de/fg+*-",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Wildcard Parentheses Validity",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Amazon"
+  ],
+  "description": "`s` contains only `(`, `)` and `*`. Each `*` may be treated as `(`, as `)`, or as an empty string. Return `true` if some choice makes `s` a balanced parentheses string.",
+  "examples": [
+   {
+    "input": "s = \"(*)\"",
+    "output": "true",
+    "explanation": "The `*` can be treated as an empty string, leaving \"()\"."
+   },
+   {
+    "input": "s = \")*(\"",
+    "output": "false",
+    "explanation": "The first `)` has nothing to close and `*` comes after it, so it cannot be balanced."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "`s` consists of `(`, `)` and `*`"
+  ],
+  "functionName": "wildcardParenthesesValid",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "(*)"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     ")*("
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "*"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(*))"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(((**"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "*(*)"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "((*)*)*(((*"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Largest Merge Of Two Strings",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Build a string by repeatedly taking the first letter of `a` or of `b` and appending it, until both are empty. Return the lexicographically largest string you can build.",
+  "examples": [
+   {
+    "input": "a = \"cabaa\", b = \"bcaaa\"",
+    "output": "\"cbcabaaaaa\"",
+    "explanation": "Always taking from the string whose remaining suffix is larger produces \"cbcabaaaaa\"."
+   },
+   {
+    "input": "a = \"abcabc\", b = \"abdcaba\"",
+    "output": "\"abdcabcabcaba\"",
+    "explanation": "The suffixes \"abcabc\" and \"abdcaba\" compare so that the larger one is taken first, giving \"abdcabcabcaba\"."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 3000",
+   "`a` and `b` consist of lowercase English letters"
+  ],
+  "functionName": "largestMergeOfStrings",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "cabaa",
+     "bcaaa"
+    ],
+    "expected": "cbcabaaaaa",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcabc",
+     "abdcaba"
+    ],
+    "expected": "abdcabcabcaba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": "aa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "z",
+     "a"
+    ],
+    "expected": "za",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa",
+     "aa"
+    ],
+    "expected": "aaaaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ba",
+     "bab"
+    ],
+    "expected": "bbaba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "abaa"
+    ],
+    "expected": "abababaa",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Substring With Frequent Letters",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Recursion",
+   "Sliding Window"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Facebook"
+  ],
+  "description": "Return the length of the longest substring of `s` in which every letter that appears occurs at least `k` times. Return 0 if there is none.",
+  "examples": [
+   {
+    "input": "s = \"aaabb\", k = 3",
+    "output": "3",
+    "explanation": "\"aaabb\" has `a` three times and `b` twice, so the whole string qualifies, length 5."
+   },
+   {
+    "input": "s = \"ababbc\", k = 2",
+    "output": "5",
+    "explanation": "The best is \"ababb\" with `a` twice and `b` three times, length 5."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^4",
+   "`s` consists of lowercase English letters",
+   "1 <= k <= 10^5"
+  ],
+  "functionName": "longestFrequentLetterSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aaabb",
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ababbc",
+     2
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcc",
+     2
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ababacb",
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbaaacbd",
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Even-Vowel Substring",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Bit Manipulation",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "Return the length of the longest substring of `s` in which each of the vowels `a`, `e`, `i`, `o`, `u` occurs an even number of times (zero counts as even).",
+  "examples": [
+   {
+    "input": "s = \"eleetminicoworoep\"",
+    "output": "13",
+    "explanation": "The substring \"leetminicowor\" has two `e`, two `i` and two `o`, so the answer is 13."
+   },
+   {
+    "input": "s = \"bcbcbc\"",
+    "output": "6",
+    "explanation": "\"bcbcbc\" has no vowels, so the whole string qualifies, length 6."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 5 * 10^5",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "longestEvenVowelSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "eleetminicoworoep"
+    ],
+    "expected": 13,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bcbcbc"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aeiou"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbeeaa"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xaxexixoxux"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "leetcodeisgreat"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Substrings Containing A B C",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sliding Window",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "`s` contains only the letters `a`, `b` and `c`. Return the number of substrings (counted by position) that contain at least one `a`, at least one `b` and at least one `c`.",
+  "examples": [
+   {
+    "input": "s = \"abcabc\"",
+    "output": "10",
+    "explanation": "Ten substrings of \"abcabc\" contain all three letters."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "1",
+    "explanation": "Only \"abc\" itself contains all three letters."
+   }
+  ],
+  "constraints": [
+   "3 <= s.length <= 5 * 10^4",
+   "`s` consists only of `a`, `b` and `c`"
+  ],
+  "functionName": "countSubstringsWithAbc",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcabc"
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaacb"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cccbbbaaa"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcc"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "cba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abacbcabcab"
+    ],
+    "expected": 43,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Break The Palindrome",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Facebook",
+   "Amazon",
+   "Google"
+  ],
+  "description": "`p` is a palindrome. Change exactly one character of `p` to a different lowercase letter so that the result is not a palindrome, and return the lexicographically smallest string possible. If this cannot be done, return an empty string.",
+  "examples": [
+   {
+    "input": "p = \"abccba\"",
+    "output": "\"aaccba\"",
+    "explanation": "Replacing the leading `a`-less letter `b` with `a` gives the smallest result."
+   },
+   {
+    "input": "p = \"a\"",
+    "output": "\"\"",
+    "explanation": "A single letter cannot be changed into a non-palindrome."
+   }
+  ],
+  "constraints": [
+   "1 <= p.length <= 1000",
+   "`p` is a palindrome of lowercase English letters"
+  ],
+  "functionName": "breakPalindrome",
+  "params": [
+   {
+    "name": "p",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abccba"
+    ],
+    "expected": "aaccba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "",
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": "ab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aba"
+    ],
+    "expected": "abb",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": "aaab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bab"
+    ],
+    "expected": "aab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcba"
+    ],
+    "expected": "aacba",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest String By Letter Sum",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Flipkart"
+  ],
+  "description": "The value of a lowercase letter is its position in the alphabet (`a` = 1, ..., `z` = 26). Return the lexicographically smallest string of length `n` whose letter values sum to exactly `k`.",
+  "examples": [
+   {
+    "input": "n = 3, k = 27",
+    "output": "\"aay\"",
+    "explanation": "\"aay\" has value 1 + 1 + 25 = 27 and is the smallest such string."
+   },
+   {
+    "input": "n = 4, k = 104",
+    "output": "\"zzzz\"",
+    "explanation": "\"zzzz\" is the only string of length 4 with sum 104."
+   }
+  ],
+  "constraints": [
+   "1 <= n <= 10^5",
+   "n <= k <= 26 * n"
+  ],
+  "functionName": "smallestStringBySum",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     3,
+     27
+    ],
+    "expected": "aay",
+    "isSample": true
+   },
+   {
+    "args": [
+     4,
+     104
+    ],
+    "expected": "zzzz",
+    "isSample": true
+   },
+   {
+    "args": [
+     1,
+     1
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     1,
+     26
+    ],
+    "expected": "z",
+    "isSample": false
+   },
+   {
+    "args": [
+     5,
+     73
+    ],
+    "expected": "aaszz",
+    "isSample": false
+   },
+   {
+    "args": [
+     6,
+     6
+    ],
+    "expected": "aaaaaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     8,
+     100
+    ],
+    "expected": "aaaarzzz",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Equivalent String",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Graph"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "Strings `a` and `b` have equal length, and `a[i]` is declared equivalent to `b[i]` for every `i`; equivalence is symmetric and transitive. Replace every letter of `base` by the smallest letter equivalent to it and return the result.",
+  "examples": [
+   {
+    "input": "a = \"ab\", b = \"bc\", base = \"abcd\"",
+    "output": "\"aaad\"",
+    "explanation": "Here `a`~`b` and `b`~`c`, so `c` maps to `a` and `d` stays: \"abcd\" becomes \"aaad\"."
+   },
+   {
+    "input": "a = \"x\", b = \"y\", base = \"xyz\"",
+    "output": "\"xxz\"",
+    "explanation": "Only `x`~`y` is declared, so `y` maps to `x` and the rest stay."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length == b.length <= 1000",
+   "1 <= base.length <= 1000",
+   "All strings consist of lowercase English letters"
+  ],
+  "functionName": "smallestEquivalentString",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   },
+   {
+    "name": "base",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "ab",
+     "bc",
+     "abcd"
+    ],
+    "expected": "aaad",
+    "isSample": true
+   },
+   {
+    "args": [
+     "x",
+     "y",
+     "xyz"
+    ],
+    "expected": "xxz",
+    "isSample": true
+   },
+   {
+    "args": [
+     "parker",
+     "morris",
+     "parser"
+    ],
+    "expected": "makkek",
+    "isSample": false
+   },
+   {
+    "args": [
+     "leetcode",
+     "programs",
+     "sourcecode"
+    ],
+    "expected": "aauaaaaada",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "a",
+     "zzz"
+    ],
+    "expected": "zzz",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "cba",
+     "cab"
+    ],
+    "expected": "aab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ace",
+     "bdf",
+     "fedcba"
+    ],
+    "expected": "eeccaa",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest After Front Moves",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Math",
+   "Sorting"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "In one move you take one of the first `k` letters of `s` and append it to the end of the string. You may make any number of moves. Return the lexicographically smallest string you can reach.",
+  "examples": [
+   {
+    "input": "s = \"cba\", k = 1",
+    "output": "\"acb\"",
+    "explanation": "With `k = 1` only rotations of \"cba\" are reachable, and the smallest is \"acb\"."
+   },
+   {
+    "input": "s = \"baaca\", k = 3",
+    "output": "\"aaabc\"",
+    "explanation": "With `k = 3` any ordering is reachable, so the sorted string wins."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= s.length <= 1000",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "smallestAfterFrontMoves",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "cba",
+     1
+    ],
+    "expected": "acb",
+    "isSample": true
+   },
+   {
+    "args": [
+     "baaca",
+     3
+    ],
+    "expected": "aaabc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bca",
+     2
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "dcab",
+     1
+    ],
+    "expected": "abdc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzyx",
+     2
+    ],
+    "expected": "xyzz",
+    "isSample": false
+   },
+   {
+    "args": [
+     "acbdacb",
+     1
+    ],
+    "expected": "acbacbd",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Frequent Bounded Substring",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Sliding Window"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Adobe"
+  ],
+  "description": "Among all substrings of `s` whose length is between `minSize` and `maxSize` inclusive and that contain at most `maxLetters` distinct letters, return the largest number of times any one of them occurs in `s` (overlapping occurrences count). Return 0 if no substring qualifies.",
+  "examples": [
+   {
+    "input": "s = \"aababcaab\", maxLetters = 2, minSize = 3, maxSize = 4",
+    "output": "2",
+    "explanation": "\"aab\" occurs twice in \"aababcaab\" and has 2 distinct letters."
+   },
+   {
+    "input": "s = \"aaaa\", maxLetters = 1, minSize = 3, maxSize = 3",
+    "output": "2",
+    "explanation": "\"aaa\" occurs 2 times in \"aaaa\" (overlapping), using one distinct letter."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "1 <= maxLetters <= 26",
+   "1 <= minSize <= maxSize <= min(26, s.length)"
+  ],
+  "functionName": "mostFrequentBoundedSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "maxLetters",
+    "type": "int"
+   },
+   {
+    "name": "minSize",
+    "type": "int"
+   },
+   {
+    "name": "maxSize",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aababcaab",
+     2,
+     3,
+     4
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa",
+     1,
+     3,
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd",
+     1,
+     2,
+     3
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabcabcab",
+     2,
+     2,
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     1,
+     1,
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abababab",
+     2,
+     2,
+     5
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzyzzz",
+     2,
+     3,
+     6
+    ],
+    "expected": 2,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Repeat String To Contain",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "Return the minimum number of times `a` must be written one after another so that `b` is a substring of the result, or -1 if that is impossible.",
+  "examples": [
+   {
+    "input": "a = \"abcd\", b = \"cdabcdab\"",
+    "output": "3",
+    "explanation": "\"abcdabcdabcd\" contains \"cdabcdab\", and two copies are not enough."
+   },
+   {
+    "input": "a = \"a\", b = \"b\"",
+    "output": "-1",
+    "explanation": "No repetition of \"a\" can contain `b`."
+   }
+  ],
+  "constraints": [
+   "1 <= a.length, b.length <= 10^4",
+   "`a` and `b` consist of lowercase English letters"
+  ],
+  "functionName": "repeatToContain",
+  "params": [
+   {
+    "name": "a",
+    "type": "string"
+   },
+   {
+    "name": "b",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcd",
+     "cdabcdab"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "b"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "cabcabca"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "aaaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     "ba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "bab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz",
+     "yzxyzx"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Reverse Within Brackets",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Stack"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Bloomberg"
+  ],
+  "description": "`s` holds lowercase letters and balanced parentheses. Reverse the text inside each matching pair of parentheses, starting with the innermost pair, then remove all parentheses and return the result.",
+  "examples": [
+   {
+    "input": "s = \"(ab)\"",
+    "output": "\"ba\"",
+    "explanation": "\"(ab)\" is reversed to \"ba\"."
+   },
+   {
+    "input": "s = \"(c(ab))\"",
+    "output": "\"abc\"",
+    "explanation": "Inner \"(ab)\" reverses to \"ba\", then the outer group \"cba\" in reverse gives \"abc\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 2000",
+   "`s` has lowercase letters and parentheses and the parentheses are balanced"
+  ],
+  "functionName": "reverseWithinBrackets",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "(ab)"
+    ],
+    "expected": "ba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "(c(ab))"
+    ],
+    "expected": "abc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "a(bc)d"
+    ],
+    "expected": "acbd",
+    "isSample": false
+   },
+   {
+    "args": [
+     "(u(love)i)"
+    ],
+    "expected": "iloveu",
+    "isSample": false
+   },
+   {
+    "args": [
+     "((a))"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "(ed(et(oc))el)"
+    ],
+    "expected": "leetcode",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Three-Letter Palindromic Subsequences",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Uber"
+  ],
+  "description": "Return the number of distinct strings of length 3 that read the same forwards and backwards and occur as a subsequence of `s` (not necessarily contiguous).",
+  "examples": [
+   {
+    "input": "s = \"aabca\"",
+    "output": "3",
+    "explanation": "The distinct palindromic subsequences of \"aabca\" are \"aba\", \"aaa\" and \"aca\", so there are 3."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "No letter appears twice, so there is none."
+   }
+  ],
+  "constraints": [
+   "3 <= s.length <= 10^5",
+   "`s` consists of lowercase English letters"
+  ],
+  "functionName": "countThreeLetterPalindromeSubseq",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aabca"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bbcbaba"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "adc"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabc"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zazbzcz"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Substring Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Return the number of distinct non-empty substrings of `s`. Two substrings are the same if they consist of the same characters in the same order, regardless of where they occur.",
+  "examples": [
+   {
+    "input": "s = \"abab\"",
+    "output": "7",
+    "explanation": "The substrings a, b, ab, ba, aba, bab and abab give 7."
+   },
+   {
+    "input": "s = \"aaa\"",
+    "output": "3",
+    "explanation": "Only a, aa and aaa are distinct, so the answer is 3."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "countDistinctSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcde"
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abracadabra"
+    ],
+    "expected": 54,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mississippi"
+    ],
+    "expected": 53,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzzzabzzzz"
+    ],
+    "expected": 46,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Kth Smallest Distinct Substring",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Sorting"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Uber"
+  ],
+  "description": "List the distinct non-empty substrings of `s` in lexicographic order, where a string comes before any longer string it is a prefix of. Return the `k`-th one (1-indexed), or `\"\"` if there are fewer than `k` distinct substrings.",
+  "examples": [
+   {
+    "input": "s = \"banana\", k = 5",
+    "output": "\"anana\"",
+    "explanation": "The sorted list begins a, an, ana, anan, anana, b, ..., and the 5th is \"anana\"."
+   },
+   {
+    "input": "s = \"abc\", k = 7",
+    "output": "\"\"",
+    "explanation": "\"abc\" has only 6 distinct substrings, so the answer is \"\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "1 <= k <= 10^10",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "kthDistinctSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "banana",
+     5
+    ],
+    "expected": "anana",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     7
+    ],
+    "expected": "",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     3
+    ],
+    "expected": "aaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     6
+    ],
+    "expected": "ba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "mississippi",
+     20
+    ],
+    "expected": "miss",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zyxwv",
+     15
+    ],
+    "expected": "zyxwv",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindromic Subsequences Of Length Five",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "description": "Given a digit string `s`, count the subsequences of length 5 that read the same forwards and backwards. Subsequences are counted by chosen positions, and the count is returned modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "s = \"103301\"",
+    "output": "2",
+    "explanation": "Exactly 2 position choices of length 5 form palindromes."
+   },
+   {
+    "input": "s = \"1234\"",
+    "output": "0",
+    "explanation": "The string has length 4, so no subsequence of length 5 exists."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^4",
+   "s consists of digits '0'-'9'"
+  ],
+  "functionName": "countPalSubseqFive",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "103301"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1234"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "00000"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000000"
+    ],
+    "expected": 21,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9990099900"
+    ],
+    "expected": 31,
+    "isSample": false
+   },
+   {
+    "args": [
+     "12321123211"
+    ],
+    "expected": 68,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    ],
+    "expected": 295944627,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Shortest Superstring",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "`words` is a space-separated list of lowercase words. Return the shortest string that contains every word as a substring; if several have the minimum length, return the lexicographically smallest.",
+  "examples": [
+   {
+    "input": "words = \"abc bcd cde\"",
+    "output": "\"abcde\"",
+    "explanation": "Overlapping the words as much as possible yields \"abcde\"."
+   },
+   {
+    "input": "words = \"ab ba\"",
+    "output": "\"aba\"",
+    "explanation": "The two words overlap on one letter in either order; the smaller result is \"aba\"."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 10",
+   "1 <= each word's length <= 8, lowercase letters only"
+  ],
+  "functionName": "shortestSuperstring",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abc bcd cde"
+    ],
+    "expected": "abcde",
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab ba"
+    ],
+    "expected": "aba",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc abc"
+    ],
+    "expected": "abc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "catg ctaagt gcta ttca atgcatc"
+    ],
+    "expected": "gctaagttcatgcatc",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab aba bab abb"
+    ],
+    "expected": "aababb",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyz yzx zxy xyzx"
+    ],
+    "expected": "xyzxy",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Scramble String Check",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "A string is scrambled by repeatedly splitting it into two non-empty parts at some point, optionally swapping the two parts, and applying the same process recursively to each part. Return true if `t` can be obtained from `s` by such a process (both have the same length).",
+  "examples": [
+   {
+    "input": "s = \"great\", t = \"rgeat\"",
+    "output": "true",
+    "explanation": "Split \"great\" into \"gr\" and \"eat\", swap them and keep scrambling to reach \"rgeat\"."
+   },
+   {
+    "input": "s = \"abcde\", t = \"caebd\"",
+    "output": "false",
+    "explanation": "No sequence of splits and swaps turns \"abcde\" into \"caebd\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length == t.length <= 30",
+   "s and t consist of lowercase English letters"
+  ],
+  "functionName": "isScramble",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "great",
+     "rgeat"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcde",
+     "caebd"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab",
+     "ca"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdbdacbdac",
+     "bdacabcdbdac"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdefghij",
+     "efghijabcd"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbcc",
+     "cbcaab"
+    ],
+    "expected": true,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Covering Prefix Length",
+  "difficulty": "Hard",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Flipkart"
+  ],
+  "description": "A non-empty prefix `p` of `s` covers `s` if every position of `s` lies inside at least one occurrence of `p` in `s` (occurrences may overlap). Return the length of the shortest prefix that covers `s`.",
+  "examples": [
+   {
+    "input": "s = \"ababaab\"",
+    "output": "7",
+    "explanation": "The prefix of length 7 occurs at overlapping positions and covers every index."
+   },
+   {
+    "input": "s = \"abcd\"",
+    "output": "4",
+    "explanation": "All characters differ, so the whole string is the only cover, length 4."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "shortestCoveringPrefix",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ababaab"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abaababaab"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabcab"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaabaaaab"
+    ],
+    "expected": 11,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Maximum Palindrome Value",
+  "difficulty": "Hard",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Atlassian"
+  ],
+  "description": "For every distinct palindromic substring `p` of `s`, its value is `p.length * occurrences`, where occurrences counts all starting positions of `p` in `s` (overlaps allowed). Return the largest value over all distinct palindromic substrings.",
+  "examples": [
+   {
+    "input": "s = \"abacaba\"",
+    "output": "7",
+    "explanation": "The best palindrome yields value 7."
+   },
+   {
+    "input": "s = \"aaaa\"",
+    "output": "6",
+    "explanation": "\"aa\" occurs 3 times (value 6) and \"aaa\" twice also gives 6; the maximum is 6."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "maxPalindromeValue",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abacaba"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "z"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcde"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abaaba"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "eeeeeaeeeee"
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     "racecarannakayak"
+    ],
+    "expected": 7,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pairwise Suffix Overlap Total",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Monotonic Stack"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "For every pair of different start positions `i < j` in `s`, take the length of the longest common prefix of the suffixes `s[i..]` and `s[j..]`. Return the sum of these lengths over all pairs, modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "s = \"ababa\"",
+    "output": "7",
+    "explanation": "Pairs (0,2), (0,4), (2,4), ... contribute prefix lengths adding up to 7."
+   },
+   {
+    "input": "s = \"a\"",
+    "output": "0",
+    "explanation": "A single suffix pair does not exist, so the sum is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "pairwiseSuffixOverlap",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ababa"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abracadabra"
+    ],
+    "expected": 18,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abababababababababababababababababababab"
+    ],
+    "expected": 5130,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    ],
+    "expected": 333332993,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Zuma Insertion Game",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Backtracking",
+   "Recursion"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Facebook"
+  ],
+  "description": "A row of colored balls `board` and a set of balls `hand` (colors are `R`, `Y`, `B`, `G`, `W`) are given. In one move you take any ball from `hand` and insert it at any position in the row (including both ends); whenever 3 or more consecutive balls share a color they vanish, and this repeats as chains form. Return the minimum number of balls from `hand` needed to clear the whole row, or -1 if that is impossible.",
+  "examples": [
+   {
+    "input": "board = \"WRRWW\", hand = \"R\"",
+    "output": "1",
+    "explanation": "Playing the hand balls to trigger chains clears the row with 1 insertions."
+   },
+   {
+    "input": "board = \"WWRRBBWW\", hand = \"WRBRW\"",
+    "output": "2",
+    "explanation": "A single R cannot make a group of three, so the result is 2."
+   }
+  ],
+  "constraints": [
+   "1 <= board.length <= 16 and 1 <= hand.length <= 5",
+   "board and hand use only the letters R, Y, B, G, W",
+   "board initially has no 3 consecutive equal balls"
+  ],
+  "functionName": "minInsertsToClear",
+  "params": [
+   {
+    "name": "board",
+    "type": "string"
+   },
+   {
+    "name": "hand",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "WRRWW",
+     "R"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "WWRRBBWW",
+     "WRBRW"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "WRRBBW",
+     "RB"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RB",
+     "R"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "G",
+     "GGGGG"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RYRYRY",
+     "RYRY"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "YYRRGGBBWW",
+     "YRGBW"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Singleton Letters Across Substrings",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "For a string, define its score as the number of letters that occur exactly once in it. Return the sum of this score over every non-empty substring of `s`, where substrings starting at different positions are counted separately even when their text is equal.",
+  "examples": [
+   {
+    "input": "s = \"ABC\"",
+    "output": "10",
+    "explanation": "The substrings A, B, C, AB, BC and ABC score 1+1+1+2+2+3 = 10."
+   },
+   {
+    "input": "s = \"ABA\"",
+    "output": "8",
+    "explanation": "The substrings score 1, 1, 1, 2, 2 and 1 (ABA has only B once), totaling 8."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of uppercase English letters"
+  ],
+  "functionName": "singletonLetterTotal",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ABC"
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ABA"
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     "A"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "AAAA"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LEETCODE"
+    ],
+    "expected": 92,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ABCABCABC"
+    ],
+    "expected": 63,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ZZYXZYYXZ"
+    ],
+    "expected": 59,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Mini Lisp Evaluator",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Stack",
+   "Recursion"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Evaluate the expression `expr`, which is an integer, a variable, or a parenthesized form `(add e1 e2)`, `(mult e1 e2)` or `(let v1 e1 v2 e2 ... vk ek body)`. A `let` assigns its variables one after another (each `ei` sees the earlier ones), then returns the value of `body`; a variable refers to its innermost enclosing binding, and bindings end when their `let` ends. Return the resulting integer.",
+  "examples": [
+   {
+    "input": "expr = \"(let x 2 (add x 3))\"",
+    "output": "5",
+    "explanation": "x = 2 inside the outer let, so (add x 3) gives 5 and the result is 5."
+   },
+   {
+    "input": "expr = \"(let x 2 (mult x (let x 3 y 4 (add x y))))\"",
+    "output": "14",
+    "explanation": "The inner let rebinds x only inside its own parentheses, so the result is 14."
+   }
+  ],
+  "constraints": [
+   "1 <= expr.length <= 2000",
+   "Single spaces separate tokens; variable names start with a lowercase letter; every variable is defined and all values fit in 32-bit signed integers",
+   "Integers may be negative, such as -5"
+  ],
+  "functionName": "evalMiniLisp",
+  "params": [
+   {
+    "name": "expr",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "(let x 2 (add x 3))"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "(let x 2 (mult x (let x 3 y 4 (add x y))))"
+    ],
+    "expected": 14,
+    "isSample": true
+   },
+   {
+    "args": [
+     "7"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(let x 3 x 4 x)"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(add (let x 1 y 2 (mult x y)) (let x -5 (mult x x)))"
+    ],
+    "expected": 27,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(let a1 3 b2 (add a1 1) b2)"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "(let x 1 (let x (add x 1) (let x (mult x 10) x)))"
+    ],
+    "expected": 20,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Markup Validity Check",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Stack"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Atlassian"
+  ],
+  "description": "Decide whether `code` is one valid element. An element is `<NAME>content</NAME>` with 1 to 9 uppercase letters as `NAME`, where the content is any mix of plain text with no `<`, nested valid elements, and CDATA sections written `<![CDATA[ ... ]]>` (everything up to the first `]]>` is raw text). `code` must be exactly one such element with nothing before or after it.",
+  "examples": [
+   {
+    "input": "code = \"<A><B>x</B></A>\"",
+    "output": "true",
+    "explanation": "The outer element wraps a text part and a nested element, and all names match."
+   },
+   {
+    "input": "code = \"<A></B>\"",
+    "output": "false",
+    "explanation": "The closing tag name does not match the opening one."
+   }
+  ],
+  "constraints": [
+   "1 <= code.length <= 10^4",
+   "code consists of printable ASCII characters"
+  ],
+  "functionName": "isValidMarkup",
+  "params": [
+   {
+    "name": "code",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "<A><B>x</B></A>"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "<A></B>"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "<A><![CDATA[<B>]]></A>"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "<A>x</A>y"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "<A>a<B></A></B>"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "<ABCDEFGHIJ></ABCDEFGHIJ>"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "<A><![CDATA[x]]</A>"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Shortest Repeat Encoding",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "An encoding of a string is a concatenation of single letters and groups `k[X]` with `k >= 2`, where `X` is itself an encoding of some block and the group stands for that block repeated `k` times. Return the encoding of `s` with the fewest characters; if several tie, return the one that is smallest in ASCII order (digits before `[` before letters).",
+  "examples": [
+   {
+    "input": "s = \"aaaaaaaaaa\"",
+    "output": "\"10[a]\"",
+    "explanation": "The shortest encoding of the repeated blocks is \"10[a]\"."
+   },
+   {
+    "input": "s = \"abcd\"",
+    "output": "\"abcd\"",
+    "explanation": "Encoding does not shorten the string, so the best answer is \"abcd\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 120",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "shortestEncoding",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "aaaaaaaaaa"
+    ],
+    "expected": "10[a]",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": "abcd",
+    "isSample": true
+   },
+   {
+    "args": [
+     "abababab"
+    ],
+    "expected": "4[ab]",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabcaabcd"
+    ],
+    "expected": "2[aabc]d",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbbabbbcabbbabbbc"
+    ],
+    "expected": "2[2[abbb]c]",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": "4[a]",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyzxyzxyzxyzxyz"
+    ],
+    "expected": "5[xyz]",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Edits For K Palindrome Pieces",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Flipkart"
+  ],
+  "description": "You may change characters of `s` to any lowercase letters, and then split `s` into exactly `k` non-empty contiguous pieces that must all be palindromes. Return the minimum number of characters you have to change.",
+  "examples": [
+   {
+    "input": "s = \"abc\", k = 2",
+    "output": "1",
+    "explanation": "Splitting into the given number of pieces and fixing mismatches takes 1 changes."
+   },
+   {
+    "input": "s = \"aabbc\", k = 3",
+    "output": "0",
+    "explanation": "Each piece can be made palindromic with 0 changes in total."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= s.length <= 100",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "minEditsForKPalindromes",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc",
+     2
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabbc",
+     3
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "leetcode",
+     8
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdef",
+     1
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabc",
+     3
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzxyyxzzzq",
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Steps To Sort By Pivot Swaps",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Math",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "description": "Repeat this step on `s` until it is non-decreasing: let `i` be the largest index with `s[i-1] > s[i]`; let `j` be the largest index with `s[j] < s[i-1]`; swap `s[i-1]` and `s[j]`; then reverse the suffix starting at `i`. Return the number of steps needed, modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "s = \"cba\"",
+    "output": "5",
+    "explanation": "cba reaches abc after 5 steps."
+   },
+   {
+    "input": "s = \"aabb\"",
+    "output": "0",
+    "explanation": "Each of the arrangements ranked below aabb costs one step, giving 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "stepsToSortString",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "cba"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabb"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbaa"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "leetcodeleetcode"
+    ],
+    "expected": 624849580,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zyxwvutsrqponm"
+    ],
+    "expected": 178290590,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bacabcbaaccab"
+    ],
+    "expected": 43010,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Best Pair Of Odd Palindromes",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Pick two non-overlapping substrings of `s`, each a palindrome of odd length. Return the largest possible product of their lengths.",
+  "examples": [
+   {
+    "input": "s = \"ababbb\"",
+    "output": "9",
+    "explanation": "Take ababbb split as aba and bbb, giving 3 * 3 = 9."
+   },
+   {
+    "input": "s = \"zaaaxbbby\"",
+    "output": "9",
+    "explanation": "The disjoint palindromes aaa and bbb give 3 * 3 = 9."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "maxOddPalindromeProduct",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ababbb"
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     "zaaaxbbby"
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcbaxyzzyxcba"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaabaaa"
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     "racecarbananabob"
+    ],
+    "expected": 49,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Stickers To Spell",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "`stickers` is a space-separated list of words; you have unlimited copies of each. Cutting out individual letters from stickers, find the minimum number of stickers whose letters can be rearranged to spell `target` exactly (each cut letter is used once), or -1 if it cannot be done.",
+  "examples": [
+   {
+    "input": "stickers = \"with example science\", target = \"thehat\"",
+    "output": "3",
+    "explanation": "Using stickers with the needed letters, 3 stickers cover the target."
+   },
+   {
+    "input": "stickers = \"notice possible\", target = \"basicbasic\"",
+    "output": "-1",
+    "explanation": "A letter of the target is missing from every sticker, so the result is -1."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 8, each word has 1 to 8 lowercase letters",
+   "1 <= target.length <= 15",
+   "target consists of lowercase English letters"
+  ],
+  "functionName": "minStickers",
+  "params": [
+   {
+    "name": "stickers",
+    "type": "string"
+   },
+   {
+    "name": "target",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "with example science",
+     "thehat"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "notice possible",
+     "basicbasic"
+    ],
+    "expected": -1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "aaaaa"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab bc ca",
+     "abcabc"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "these guess about garden him",
+     "atomher"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     "d"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "travel baby bill sit",
+     "billsitbaby"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Nearest Other Palindrome",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Amazon"
+  ],
+  "description": "`n` is the decimal representation of a positive integer. Return, as a string, the palindromic integer other than `n` itself whose absolute difference from `n` is smallest; if two palindromes are equally close, return the smaller one.",
+  "examples": [
+   {
+    "input": "n = \"123\"",
+    "output": "\"121\"",
+    "explanation": "The nearest palindrome other than 123 is \"121\"."
+   },
+   {
+    "input": "n = \"10\"",
+    "output": "\"9\"",
+    "explanation": "Both 9 and 11 are 1 away from 10... the answer is \"9\"."
+   }
+  ],
+  "constraints": [
+   "1 <= n.length <= 18",
+   "n has no leading zeros and represents an integer >= 1"
+  ],
+  "functionName": "nearestPalindrome",
+  "params": [
+   {
+    "name": "n",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "123"
+    ],
+    "expected": "121",
+    "isSample": true
+   },
+   {
+    "args": [
+     "10"
+    ],
+    "expected": "9",
+    "isSample": true
+   },
+   {
+    "args": [
+     "1"
+    ],
+    "expected": "0",
+    "isSample": false
+   },
+   {
+    "args": [
+     "11"
+    ],
+    "expected": "9",
+    "isSample": false
+   },
+   {
+    "args": [
+     "99"
+    ],
+    "expected": "101",
+    "isSample": false
+   },
+   {
+    "args": [
+     "1000"
+    ],
+    "expected": "999",
+    "isSample": false
+   },
+   {
+    "args": [
+     "999999999999999999"
+    ],
+    "expected": "1000000000000000001",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Most Deletions Of Repeated Prefixes",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "In one operation on the current string you may delete all of it, or delete its first `i` letters when those equal the next `i` letters (the first `2i` letters form a square). Return the maximum number of operations needed to make `s` empty.",
+  "examples": [
+   {
+    "input": "s = \"abcabcdc\"",
+    "output": "2",
+    "explanation": "Repeatedly removing a repeated prefix lets us perform 2 operations in total."
+   },
+   {
+    "input": "s = \"abcde\"",
+    "output": "1",
+    "explanation": "No prefix repeats right away, so one operation deletes everything: 1."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 4000",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "maxPrefixDeletions",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcabcdc"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcde"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaaa"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaaba"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ababab"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaabaab"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Fewest Seconds To Restore Word",
+  "difficulty": "Hard",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Atlassian"
+  ],
+  "description": "Every second, you must remove the first `k` characters of `word` and then append any `k` lowercase letters you like to its end. Return the minimum positive number of seconds after which `word` can be equal to its original value again.",
+  "examples": [
+   {
+    "input": "word = \"abacaba\", k = 3",
+    "output": "2",
+    "explanation": "Dropping a block each second, the leftover suffix first matches the prefix after 2 seconds."
+   },
+   {
+    "input": "word = \"abcbabcd\", k = 2",
+    "output": "4",
+    "explanation": "Dropping a block each second needs 4 seconds to restore it."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= word.length <= 10^5",
+   "word consists of lowercase English letters"
+  ],
+  "functionName": "secondsToRestoreWord",
+  "params": [
+   {
+    "name": "word",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abacaba",
+     3
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcbabcd",
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcbabcd",
+     4
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaaa",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd",
+     4
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abababab",
+     2
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abaababaab",
+     3
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Disjoint Palindrome Pair Count",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Counting",
+   "Prefix Sum"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Flipkart"
+  ],
+  "description": "Count the pairs of palindromic substrings of `s` (given as index ranges, so equal text at different places counts separately) where the first one ends strictly before the second one starts. Return the count modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "s = \"aab\"",
+    "output": "4",
+    "explanation": "The palindromic ranges of aab are a, a, aa and b; the disjoint ordered pairs number 4."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "3",
+    "explanation": "Only the single letters can be paired, giving 3."
+   }
+  ],
+  "constraints": [
+   "2 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "disjointPalindromePairs",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 15,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abacaba"
+    ],
+    "expected": 36,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbaabba"
+    ],
+    "expected": 66,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbaabbaab"
+    ],
+    "expected": 180,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Doubled Substring",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Binary Search",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Return the length of the longest substring of `s` that is some non-empty string `w` written twice in a row (`ww`), or 0 if no such substring exists.",
+  "examples": [
+   {
+    "input": "s = \"abcabcabc\"",
+    "output": "6",
+    "explanation": "The substring \"abcabc\" is a doubled block, so the answer is 6."
+   },
+   {
+    "input": "s = \"abcd\"",
+    "output": "0",
+    "explanation": "No block is immediately repeated, so the answer is 0."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "longestDoubledSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcabcabc"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xabaabaabay"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcdbcdbcdab"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzyxyxzz"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Count Strings Avoiding Pattern",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "Count the strings of length `n` over the first `k` lowercase letters (`a`, `b`, ...) that do not contain `p` as a substring. Return the count modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "p = \"bb\", n = 3, k = 2",
+    "output": "5",
+    "explanation": "Of the 8 binary strings of length 3, those without the pattern number 5."
+   },
+   {
+    "input": "p = \"ab\", n = 4, k = 3",
+    "output": "55",
+    "explanation": "Strings over three letters avoiding the pattern number 55."
+   }
+  ],
+  "constraints": [
+   "1 <= p.length <= 50, 1 <= n <= 10^5, 1 <= k <= 26",
+   "p uses only the first k lowercase letters"
+  ],
+  "functionName": "countAvoidingPattern",
+  "params": [
+   {
+    "name": "p",
+    "type": "string"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "bb",
+     3,
+     2
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab",
+     4,
+     3
+    ],
+    "expected": 55,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     5,
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaa",
+     6,
+     2
+    ],
+    "expected": 44,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab",
+     10,
+     2
+    ],
+    "expected": 667,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabc",
+     12,
+     3
+    ],
+    "expected": 526446,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zz",
+     3,
+     26
+    ],
+    "expected": 17525,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Pattern Occurrences In Fibonacci Words",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "description": "Define the words `F1 = \"a\"`, `F2 = \"b\"` and `Fi = F(i-1) + F(i-2)` for `i >= 3`. Return how many times the pattern `p` occurs (overlaps counted) in the word `F_n`, modulo `10^9 + 7`.",
+  "examples": [
+   {
+    "input": "p = \"ba\", n = 5",
+    "output": "2",
+    "explanation": "F5 = \"babba\"... the pattern occurs 2 times."
+   },
+   {
+    "input": "p = \"a\", n = 6",
+    "output": "3",
+    "explanation": "The pattern occurs 3 times in the word."
+   }
+  ],
+  "constraints": [
+   "1 <= p.length <= 100, p consists of the letters a and b",
+   "1 <= n <= 10^5"
+  ],
+  "functionName": "fibonacciWordOccurrences",
+  "params": [
+   {
+    "name": "p",
+    "type": "string"
+   },
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ba",
+     5
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     6
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bab",
+     7
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abba",
+     9
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "b",
+     1
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aab",
+     12
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "baba",
+     100000
+    ],
+    "expected": 654322807,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest Code-Covering Binary String",
+  "difficulty": "Hard",
+  "tags": [
+   "String",
+   "Graph",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Return the shortest binary string that contains every one of the `2^k` binary strings of length `k` as a substring. If several strings have that shortest length, return the lexicographically smallest.",
+  "examples": [
+   {
+    "input": "k = 1",
+    "output": "\"01\"",
+    "explanation": "The shortest string containing 0 and 1 is \"01\"."
+   },
+   {
+    "input": "k = 2",
+    "output": "\"00110\"",
+    "explanation": "The string \"00110\" contains 00, 01, 10 and 11 and is the smallest of length 5."
+   }
+  ],
+  "constraints": [
+   "1 <= k <= 15",
+   "The answer has length 2^k + k - 1"
+  ],
+  "functionName": "smallestCoveringBinary",
+  "params": [
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     1
+    ],
+    "expected": "01",
+    "isSample": true
+   },
+   {
+    "args": [
+     2
+    ],
+    "expected": "00110",
+    "isSample": true
+   },
+   {
+    "args": [
+     3
+    ],
+    "expected": "0001011100",
+    "isSample": false
+   },
+   {
+    "args": [
+     4
+    ],
+    "expected": "0000100110101111000",
+    "isSample": false
+   },
+   {
+    "args": [
+     5
+    ],
+    "expected": "000001000110010100111010110111110000",
+    "isSample": false
+   },
+   {
+    "args": [
+     7
+    ],
+    "expected": "00000001000001100001010000111000100100010110001101000111100100110010101001011100110110011101001111101010110101111011011101111111000000",
+    "isSample": false
+   },
+   {
+    "args": [
+     8
+    ],
+    "expected": "00000000100000011000001010000011100001001000010110000110100001111000100010011000101010001011100011001000110110001110100011111001001010010011100101011001011010010111100110011010100110111001110110011110100111111010101011101011011010111110110111101110111111110000000",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Border Length",
+  "difficulty": "Medium",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Adobe"
+  ],
+  "description": "A border of `s` is a non-empty proper prefix of `s` that is also a suffix of `s`. Return the length of the longest border of `s`, or 0 if none exists.",
+  "examples": [
+   {
+    "input": "s = \"ababab\"",
+    "output": "4",
+    "explanation": "The prefix and suffix \"abab\" are equal, and no longer proper one is."
+   },
+   {
+    "input": "s = \"abc\"",
+    "output": "0",
+    "explanation": "No non-empty proper prefix equals a suffix."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "longestBorderLength",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ababab"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abacabadabacaba"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaaab"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcab"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Self-Overlap Score Total",
+  "difficulty": "Medium",
+  "tags": [
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Flipkart"
+  ],
+  "description": "For each index `i` of `s`, let `score(i)` be the length of the longest common prefix of `s` and the suffix `s[i..]`. Return the sum of `score(i)` over all `i` (so `score(0)` is `s.length`).",
+  "examples": [
+   {
+    "input": "s = \"ababa\"",
+    "output": "9",
+    "explanation": "Scores are 5, 0, 3, 0, 1, which sum to 9."
+   },
+   {
+    "input": "s = \"aaaa\"",
+    "output": "10",
+    "explanation": "Scores are 4, 3, 2, 1 for a run of one letter."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "selfOverlapTotal",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ababa"
+    ],
+    "expected": 9,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 10,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcd"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abaabaab"
+    ],
+    "expected": 17,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzazzz"
+    ],
+    "expected": 16,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabcabc"
+    ],
+    "expected": 30,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Distinct Palindromic Substring Count",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Return the number of distinct non-empty substrings of `s` that are palindromes. Two substrings are the same if they have identical text, regardless of where they occur.",
+  "examples": [
+   {
+    "input": "s = \"abaab\"",
+    "output": "5",
+    "explanation": "The distinct palindromes are \"a\", \"b\", \"aa\", \"aba\" and \"baab\"."
+   },
+   {
+    "input": "s = \"aaa\"",
+    "output": "3",
+    "explanation": "Only \"a\", \"aa\" and \"aaa\" occur."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "distinctPalSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abaab"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaa"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abababab"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbaa"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcbaabcba"
+    ],
+    "expected": 10,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindromic Substrings With One Mismatch",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Amazon"
+  ],
+  "description": "Count the substrings of `s` (counted by position) that become palindromes after changing exactly one character, i.e. whose mirrored positions disagree in exactly one pair. A substring with no disagreeing pair does not count.",
+  "examples": [
+   {
+    "input": "s = \"abc\"",
+    "output": "3",
+    "explanation": "\"ab\", \"bc\" and \"abc\" each have exactly one mismatched mirrored pair."
+   },
+   {
+    "input": "s = \"aab\"",
+    "output": "2",
+    "explanation": "Only \"ab\" and \"aab\" have exactly one mismatched pair."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 2000",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "countOneMismatchPalSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aab"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcba"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbaab"
+    ],
+    "expected": 9,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabc"
+    ],
+    "expected": 21,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Insert Operators To Hit Target",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Backtracking",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Bloomberg"
+  ],
+  "description": "Given a digit string `num`, you may place `+`, `-`, `*` or nothing between each pair of adjacent digits. Return the number of ways that the resulting expression evaluates to `target`, using normal precedence and disallowing numbers with leading zeros (a lone `0` is fine).",
+  "examples": [
+   {
+    "input": "num = \"123\", target = 6",
+    "output": "2",
+    "explanation": "Both 1+2+3 and 1*2*3 evaluate to 6."
+   },
+   {
+    "input": "num = \"232\", target = 8",
+    "output": "2",
+    "explanation": "Both 2*3+2 and 2+3*2 evaluate to 8."
+   }
+  ],
+  "constraints": [
+   "1 <= num.length <= 10",
+   "num consists of digits; -10^9 <= target <= 10^9"
+  ],
+  "functionName": "countOperatorInsertions",
+  "params": [
+   {
+    "name": "num",
+    "type": "string"
+   },
+   {
+    "name": "target",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "123",
+     6
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "232",
+     8
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "105",
+     5
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "00",
+     0
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3456237490",
+     9191
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "999",
+     81
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Smallest String After K Adjacent Swaps",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "In one move you may swap two adjacent characters of `s`. Using at most `k` moves, return the lexicographically smallest string you can obtain.",
+  "examples": [
+   {
+    "input": "s = \"dcba\", k = 2",
+    "output": "\"bdca\"",
+    "explanation": "Moving the b two places left gives \"bdca\", and no moves remain."
+   },
+   {
+    "input": "s = \"cba\", k = 5",
+    "output": "\"abc\"",
+    "explanation": "Five moves are enough to fully sort the string."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 3000",
+   "0 <= k <= 10^9; s consists of lowercase English letters"
+  ],
+  "functionName": "smallestAfterAdjacentSwaps",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "dcba",
+     2
+    ],
+    "expected": "bdca",
+    "isSample": true
+   },
+   {
+    "args": [
+     "cba",
+     5
+    ],
+    "expected": "abc",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     3
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbaa",
+     0
+    ],
+    "expected": "bbaa",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcde",
+     4
+    ],
+    "expected": "abcde",
+    "isSample": false
+   },
+   {
+    "args": [
+     "edcbaedcba",
+     7
+    ],
+    "expected": "abedcedcba",
+    "isSample": false
+   },
+   {
+    "args": [
+     "ddccbbaa",
+     100
+    ],
+    "expected": "aabbccdd",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Deletions For Letters In Order",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Stack"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Uber"
+  ],
+  "description": "`s` contains only the letters `a` and `b`. Return the minimum number of characters to delete so that no `b` appears before an `a` (all remaining `a`s come before all remaining `b`s).",
+  "examples": [
+   {
+    "input": "s = \"aababbab\"",
+    "output": "2",
+    "explanation": "Deleting the b at index 2 and the a at index 6 leaves \"aaabbb\"."
+   },
+   {
+    "input": "s = \"bbaaaaabb\"",
+    "output": "2",
+    "explanation": "Deleting the two leading b's leaves \"aaaaabb\"."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s[i] is 'a' or 'b'"
+  ],
+  "functionName": "minDeletionsLettersInOrder",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "aababbab"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "bbaaaaabb"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ba"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaabbb"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbbaaa"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "babababa"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Greatest Suffix In Dictionary Order",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Flipkart"
+  ],
+  "description": "Among all non-empty suffixes of `s`, return the one that is largest in lexicographic (dictionary) order. A longer string wins when another is its prefix.",
+  "examples": [
+   {
+    "input": "s = \"abab\"",
+    "output": "\"bab\"",
+    "explanation": "The suffixes are abab, bab, ab and b, and \"bab\" is the largest."
+   },
+   {
+    "input": "s = \"leetcode\"",
+    "output": "\"tcode\"",
+    "explanation": "\"tcode\" starts with the largest first letter among all suffixes."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 4 * 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "greatestSuffix",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": "bab",
+    "isSample": true
+   },
+   {
+    "args": [
+     "leetcode"
+    ],
+    "expected": "tcode",
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": "a",
+    "isSample": false
+   },
+   {
+    "args": [
+     "zzzz"
+    ],
+    "expected": "zzzz",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabd"
+    ],
+    "expected": "d",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaaab"
+    ],
+    "expected": "baaab",
+    "isSample": false
+   },
+   {
+    "args": [
+     "cacacb"
+    ],
+    "expected": "cb",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Mirror Chunk Split",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Microsoft"
+  ],
+  "description": "Split `s` into the largest possible number `k` of non-empty consecutive chunks `c1, c2, ..., ck` (their concatenation is `s`) such that `ci` equals `c(k+1-i)` for every `i`. Return that maximum `k` (a single chunk always works).",
+  "examples": [
+   {
+    "input": "s = \"ghiabcdefhelloadamhelloabcdefghi\"",
+    "output": "7",
+    "explanation": "The chunks are ghi, abcdef, hello, adam, hello, abcdef, ghi."
+   },
+   {
+    "input": "s = \"merchant\"",
+    "output": "1",
+    "explanation": "No proper prefix matches the suffix of the same length, so only one chunk is possible."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "maxMirrorChunks",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ghiabcdefhelloadamhelloabcdefghi"
+    ],
+    "expected": 7,
+    "isSample": true
+   },
+   {
+    "args": [
+     "merchant"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abab"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "antaprezatepzapreanta"
+    ],
+    "expected": 11,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaabaa"
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Strip Matching Ends Length",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Oracle"
+  ],
+  "description": "`s` consists of the letters `a`, `b` and `c`. Repeatedly you may pick a non-empty prefix and a non-empty suffix that do not overlap, both made of one repeated letter and that same letter, and delete both. Return the minimum length `s` can reach.",
+  "examples": [
+   {
+    "input": "s = \"cabaabac\"",
+    "output": "0",
+    "explanation": "Peeling c, a, b and finally the two a's leaves nothing."
+   },
+   {
+    "input": "s = \"aabccabba\"",
+    "output": "3",
+    "explanation": "After peeling the a's and then the b's, \"cca\" remains with different ends."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists only of 'a', 'b' and 'c'"
+  ],
+  "functionName": "strippedLength",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "cabaabac"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aabccabba"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "bbbbbbbbbbbbbbbbbbbb"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abccba"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Substrings Divisible By Last Digit",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Dynamic Programming",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Goldman Sachs",
+   "Amazon"
+  ],
+  "description": "Given a digit string `s`, count the substrings (counted by position, leading zeros allowed) whose numeric value is divisible by their own last digit. Substrings ending in the digit `0` are never counted.",
+  "examples": [
+   {
+    "input": "s = \"12936\"",
+    "output": "11",
+    "explanation": "All five single digits count, plus six longer substrings such as 12 and 36."
+   },
+   {
+    "input": "s = \"5701283\"",
+    "output": "18",
+    "explanation": "The six non-zero single digits count, plus twelve longer substrings such as 12 and 128."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of digits '0'-'9'"
+  ],
+  "functionName": "countDivByLastDigit",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "12936"
+    ],
+    "expected": 11,
+    "isSample": true
+   },
+   {
+    "args": [
+     "5701283"
+    ],
+    "expected": 18,
+    "isSample": true
+   },
+   {
+    "args": [
+     "0"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1111"
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "24680"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9876543210"
+    ],
+    "expected": 35,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3030303"
+    ],
+    "expected": 16,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Equal-Ones Three-Way Splits",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Math",
+   "Counting"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Paytm"
+  ],
+  "description": "Count the ways to cut the binary string `s` into three non-empty consecutive parts so that each part contains the same number of `1` characters.",
+  "examples": [
+   {
+    "input": "s = \"10101\"",
+    "output": "4",
+    "explanation": "Each part holds one 1; cutting after index 0 or 1 and after index 2 or 3 gives 4 ways."
+   },
+   {
+    "input": "s = \"1001\"",
+    "output": "0",
+    "explanation": "Only two 1s exist, so they cannot be shared equally by three parts."
+   }
+  ],
+  "constraints": [
+   "3 <= s.length <= 10^5",
+   "s consists of '0' and '1'"
+  ],
+  "functionName": "countEqualOnesSplits",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "10101"
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "1001"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "000"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000"
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "100100010100"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "111"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0110100110"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Substrings With A Frequent Letter",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sliding Window",
+   "Counting"
+  ],
+  "companies": [
+   "Google",
+   "Microsoft",
+   "Amazon"
+  ],
+  "description": "Count the substrings of `s` (counted by position) in which at least one letter occurs `k` or more times.",
+  "examples": [
+   {
+    "input": "s = \"abacb\", k = 2",
+    "output": "4",
+    "explanation": "Substrings \"aba\", \"abac\", \"abacb\" and \"bacb\" each repeat a letter, so 4 qualify."
+   },
+   {
+    "input": "s = \"abcde\", k = 1",
+    "output": "15",
+    "explanation": "With k = 1 every non-empty substring qualifies, giving 15."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "1 <= k <= s.length; s consists of lowercase English letters"
+  ],
+  "functionName": "countFrequentLetterSubstrings",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "k",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abacb",
+     2
+    ],
+    "expected": 4,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcde",
+     1
+    ],
+    "expected": 15,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaaa",
+     3
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc",
+     2
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     1
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabbaabb",
+     3
+    ],
+    "expected": 10,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abababab",
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Valid Decimal Literal",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Simulation"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "LinkedIn"
+  ],
+  "description": "Return true if `s` is a valid decimal literal. It is an optional sign, then digits with an optional single `.` (at least one digit overall, so `4.` and `.5` are valid but `.` is not), then an optional exponent `e` or `E` followed by an optional sign and at least one digit. No spaces or other characters are allowed.",
+  "examples": [
+   {
+    "input": "s = \"-90E3\"",
+    "output": "true",
+    "explanation": "Sign, digits and an exponent with digits form a valid literal."
+   },
+   {
+    "input": "s = \"99e2.5\"",
+    "output": "false",
+    "explanation": "The exponent part may not contain a decimal point."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 20",
+   "s consists of digits, '+', '-', '.', 'e', 'E' and lowercase letters"
+  ],
+  "functionName": "isDecimalLiteral",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "-90E3"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "99e2.5"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "4."
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     ".e1"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "+.8"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "3e+7"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "--6"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Both-Case Substring",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Recursion",
+   "Sliding Window"
+  ],
+  "companies": [
+   "Google",
+   "Facebook",
+   "Adobe"
+  ],
+  "description": "A string is both-case if every letter it contains appears in both lowercase and uppercase. Return the longest both-case substring of `s`; if several have the maximum length return the one starting earliest, and return `\"\"` if there is none.",
+  "examples": [
+   {
+    "input": "s = \"YazaAay\"",
+    "output": "\"aAa\"",
+    "explanation": "\"aAa\" contains only a and A in both cases and is the longest such substring."
+   },
+   {
+    "input": "s = \"Bb\"",
+    "output": "\"Bb\"",
+    "explanation": "Both letters appear in both cases, so the whole string qualifies."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 100",
+   "s consists of uppercase and lowercase English letters"
+  ],
+  "functionName": "longestBothCaseSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     "YazaAay"
+    ],
+    "expected": "aAa",
+    "isSample": true
+   },
+   {
+    "args": [
+     "Bb"
+    ],
+    "expected": "Bb",
+    "isSample": true
+   },
+   {
+    "args": [
+     "c"
+    ],
+    "expected": "",
+    "isSample": false
+   },
+   {
+    "args": [
+     "abAB"
+    ],
+    "expected": "abAB",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aAbBcCd"
+    ],
+    "expected": "aAbBcC",
+    "isSample": false
+   },
+   {
+    "args": [
+     "xXyYzZaA"
+    ],
+    "expected": "xXyYzZaA",
+    "isSample": false
+   },
+   {
+    "args": [
+     "aAaBbCcDd"
+    ],
+    "expected": "aAaBbCcDd",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Common Substring Length",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Binary Search",
+   "Hash Table"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Flipkart"
+  ],
+  "description": "Return the length of the longest string that appears as a contiguous substring in both `s` and `t` (0 if they share no letters).",
+  "examples": [
+   {
+    "input": "s = \"zxabcdezy\", t = \"yzabcdezx\"",
+    "output": "6",
+    "explanation": "\"abcdez\" appears in both strings and is the longest shared substring."
+   },
+   {
+    "input": "s = \"abc\", t = \"xyz\"",
+    "output": "0",
+    "explanation": "The strings share no letter."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length, t.length <= 10^5",
+   "s and t consist of lowercase English letters"
+  ],
+  "functionName": "longestCommonSubstringLen",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "zxabcdezy",
+     "yzabcdezx"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abc",
+     "xyz"
+    ],
+    "expected": 0,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a",
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "aa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabc",
+     "cabcab"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abababab",
+     "babab"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyzzy",
+     "zzyxy"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Slide Letters Transform Check",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Two Pointers"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Uber"
+  ],
+  "description": "`start` and `end` have equal length and contain only `L`, `R` and `X`. In one move you may replace an adjacent `XL` with `LX`, or an adjacent `RX` with `XR`. Return true if `start` can be turned into `end` by some sequence of moves.",
+  "examples": [
+   {
+    "input": "start = \"RXXLRXRXL\", end = \"XRLXXRRLX\"",
+    "output": "true",
+    "explanation": "Letters L and R keep their relative order and only move in their allowed directions, so the target is reachable."
+   },
+   {
+    "input": "start = \"X\", end = \"L\"",
+    "output": "false",
+    "explanation": "The letter counts differ, so no moves can help."
+   }
+  ],
+  "constraints": [
+   "1 <= start.length == end.length <= 10^4",
+   "start and end consist of 'L', 'R' and 'X'"
+  ],
+  "functionName": "canSlideTransform",
+  "params": [
+   {
+    "name": "start",
+    "type": "string"
+   },
+   {
+    "name": "end",
+    "type": "string"
+   }
+  ],
+  "returnType": "bool",
+  "testCases": [
+   {
+    "args": [
+     "RXXLRXRXL",
+     "XRLXXRRLX"
+    ],
+    "expected": true,
+    "isSample": true
+   },
+   {
+    "args": [
+     "X",
+     "L"
+    ],
+    "expected": false,
+    "isSample": true
+   },
+   {
+    "args": [
+     "XL",
+     "LX"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "LX",
+     "XL"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RXX",
+     "XXR"
+    ],
+    "expected": true,
+    "isSample": false
+   },
+   {
+    "args": [
+     "RL",
+     "LR"
+    ],
+    "expected": false,
+    "isSample": false
+   },
+   {
+    "args": [
+     "XXLXRXL",
+     "LXXXLRX"
+    ],
+    "expected": false,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Repeat After One Swap",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sliding Window"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Bloomberg"
+  ],
+  "description": "You may swap any two characters of `s` at most once. Return the length of the longest substring made of a single repeated letter that you can obtain.",
+  "examples": [
+   {
+    "input": "s = \"ababa\"",
+    "output": "3",
+    "explanation": "Swapping a b with a distant a yields a run of three a's."
+   },
+   {
+    "input": "s = \"aaabaaa\"",
+    "output": "6",
+    "explanation": "Swapping the b with the final a produces a run of six a's."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 2 * 10^4",
+   "s consists of lowercase English letters"
+  ],
+  "functionName": "longestRepeatAfterSwap",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "ababa"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aaabaaa"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaaa"
+    ],
+    "expected": 5,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aabaaabaaaba"
+    ],
+    "expected": 7,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abbbbcb"
+    ],
+    "expected": 5,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Negabinary String",
+  "difficulty": "Medium",
+  "tags": [
+   "Math",
+   "String"
+  ],
+  "companies": [
+   "Google",
+   "Microsoft",
+   "Zoho"
+  ],
+  "description": "Return the representation of integer `n` in base -2 as a binary string, i.e. bits `b_k...b_0` with `n = sum(b_i * (-2)^i)`, written without leading zeros (zero is `\"0\"`).",
+  "examples": [
+   {
+    "input": "n = 2",
+    "output": "\"110\"",
+    "explanation": "2 = 4 - 2, so the bits are 110."
+   },
+   {
+    "input": "n = -3",
+    "output": "\"1101\"",
+    "explanation": "-3 = -8 + 4 + 1, so the bits are 1101."
+   }
+  ],
+  "constraints": [
+   "-10^9 <= n <= 10^9",
+   "n is an integer; the result has no leading zeros except for \"0\""
+  ],
+  "functionName": "toNegabinary",
+  "params": [
+   {
+    "name": "n",
+    "type": "int"
+   }
+  ],
+  "returnType": "string",
+  "testCases": [
+   {
+    "args": [
+     2
+    ],
+    "expected": "110",
+    "isSample": true
+   },
+   {
+    "args": [
+     -3
+    ],
+    "expected": "1101",
+    "isSample": true
+   },
+   {
+    "args": [
+     0
+    ],
+    "expected": "0",
+    "isSample": false
+   },
+   {
+    "args": [
+     1
+    ],
+    "expected": "1",
+    "isSample": false
+   },
+   {
+    "args": [
+     -1
+    ],
+    "expected": "11",
+    "isSample": false
+   },
+   {
+    "args": [
+     1000
+    ],
+    "expected": "10000111000",
+    "isSample": false
+   },
+   {
+    "args": [
+     -999
+    ],
+    "expected": "110001101001",
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Palindrome From Two-Letter Words",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Hash Table",
+   "Greedy"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Microsoft"
+  ],
+  "description": "`words` is a space-separated list of words, each exactly two lowercase letters. Choose some of them (each used at most once) and concatenate them in any order. Return the maximum length of a palindrome that can be built this way, or 0 if none.",
+  "examples": [
+   {
+    "input": "words = \"lc cl gg\"",
+    "output": "6",
+    "explanation": "\"lc\" + \"gg\" + \"cl\" uses all three words and forms a palindrome of length 6."
+   },
+   {
+    "input": "words = \"ab ty yt lc cl ab\"",
+    "output": "8",
+    "explanation": "The pairs \"ty\"/\"yt\" and \"lc\"/\"cl\" give length 8; the two \"ab\" words cannot be used."
+   }
+  ],
+  "constraints": [
+   "1 <= number of words <= 10^5",
+   "every word has length 2 and consists of lowercase letters"
+  ],
+  "functionName": "longestTwoLetterPalindrome",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "lc cl gg"
+    ],
+    "expected": 6,
+    "isSample": true
+   },
+   {
+    "args": [
+     "ab ty yt lc cl ab"
+    ],
+    "expected": 8,
+    "isSample": true
+   },
+   {
+    "args": [
+     "cc ll xx"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa"
+    ],
+    "expected": 2,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba ab ba ab"
+    ],
+    "expected": 8,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aa aa aa aa aa ab ba"
+    ],
+    "expected": 14,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ac bc"
+    ],
+    "expected": 0,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Substring Within Change Budget",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Sliding Window"
+  ],
+  "companies": [
+   "Amazon",
+   "Microsoft",
+   "Atlassian"
+  ],
+  "description": "Changing `s[i]` into `t[i]` costs `|s[i] - t[i]|`, the absolute difference of their alphabet positions. Return the length of the longest substring of `s` that can be turned into the matching substring of `t` with total cost at most `maxCost` (0 if none).",
+  "examples": [
+   {
+    "input": "s = \"abcd\", t = \"bcdf\", maxCost = 3",
+    "output": "3",
+    "explanation": "Turning \"abc\" into \"bcd\" costs 3, which fits the budget."
+   },
+   {
+    "input": "s = \"abcd\", t = \"cdef\", maxCost = 3",
+    "output": "1",
+    "explanation": "Each single position costs 2, so only one fits within 3."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length == t.length <= 10^5",
+   "0 <= maxCost <= 10^6; s and t are lowercase English letters"
+  ],
+  "functionName": "longestWithinBudget",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   },
+   {
+    "name": "t",
+    "type": "string"
+   },
+   {
+    "name": "maxCost",
+    "type": "int"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcd",
+     "bcdf",
+     3
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd",
+     "cdef",
+     3
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "abcd",
+     "acde",
+     0
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a",
+     "z",
+     25
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "aaaa",
+     "zzzz",
+     49
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abcabcabc",
+     "bcabcabca",
+     4
+    ],
+    "expected": 3,
+    "isSample": false
+   },
+   {
+    "args": [
+     "mnop",
+     "mnop",
+     0
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Disjoint Letter Word Pair Product",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Amazon",
+   "Google",
+   "Walmart"
+  ],
+  "description": "`words` is a space-separated list of lowercase words. Return the largest value of `len(a) * len(b)` over pairs of different positions whose words share no common letter, or 0 if no such pair exists.",
+  "examples": [
+   {
+    "input": "words = \"abcw baz foo bar xtfn abcdef\"",
+    "output": "16",
+    "explanation": "\"abcw\" and \"xtfn\" share no letters and give 4 * 4 = 16."
+   },
+   {
+    "input": "words = \"a ab abc d\"",
+    "output": "3",
+    "explanation": "\"abc\" and \"d\" share no letters and give the best product 3."
+   }
+  ],
+  "constraints": [
+   "2 <= number of words <= 1000",
+   "every word has length 1 to 20 and consists of lowercase letters"
+  ],
+  "functionName": "maxDisjointWordProduct",
+  "params": [
+   {
+    "name": "words",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "abcw baz foo bar xtfn abcdef"
+    ],
+    "expected": 16,
+    "isSample": true
+   },
+   {
+    "args": [
+     "a ab abc d"
+    ],
+    "expected": 3,
+    "isSample": true
+   },
+   {
+    "args": [
+     "aa aa"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "a b"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "ab ba ab"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "abc def abcdef ghij"
+    ],
+    "expected": 24,
+    "isSample": false
+   },
+   {
+    "args": [
+     "zz yy xx zzyy"
+    ],
+    "expected": 8,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Swaps To Equalize XY Strings",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Greedy",
+   "Math"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Goldman Sachs"
+  ],
+  "description": "`s1` and `s2` have equal length and contain only `x` and `y`. In one move you swap `s1[i]` with `s2[j]` for any indices `i` and `j`. Return the minimum number of moves to make the two strings equal, or -1 if impossible.",
+  "examples": [
+   {
+    "input": "s1 = \"xx\", s2 = \"yy\"",
+    "output": "1",
+    "explanation": "Swapping s1[0] with s2[1] makes both strings \"yx\"."
+   },
+   {
+    "input": "s1 = \"xy\", s2 = \"yx\"",
+    "output": "2",
+    "explanation": "The mismatches are of mixed type, so two swaps are needed."
+   }
+  ],
+  "constraints": [
+   "1 <= s1.length == s2.length <= 1000",
+   "s1 and s2 consist of 'x' and 'y'"
+  ],
+  "functionName": "minSwapsEqualizeXY",
+  "params": [
+   {
+    "name": "s1",
+    "type": "string"
+   },
+   {
+    "name": "s2",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "xx",
+     "yy"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "xy",
+     "yx"
+    ],
+    "expected": 2,
+    "isSample": true
+   },
+   {
+    "args": [
+     "xx",
+     "xy"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xyx",
+     "xyx"
+    ],
+    "expected": 0,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xxyyxyxyxx",
+     "xyyxyxxxyx"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "x",
+     "y"
+    ],
+    "expected": -1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "xxxyyy",
+     "yyyxxx"
+    ],
+    "expected": 4,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ },
+ {
+  "title": "Longest Palindrome-Rearrangeable Substring",
+  "difficulty": "Medium",
+  "tags": [
+   "String",
+   "Prefix Sum",
+   "Bit Manipulation"
+  ],
+  "companies": [
+   "Google",
+   "Amazon",
+   "Atlassian"
+  ],
+  "description": "`s` is a string of digits. Return the length of the longest non-empty substring whose digits can be rearranged to form a palindrome.",
+  "examples": [
+   {
+    "input": "s = \"3242415\"",
+    "output": "5",
+    "explanation": "\"24241\" can be rearranged into a palindrome such as 24142, length 5."
+   },
+   {
+    "input": "s = \"12345678\"",
+    "output": "1",
+    "explanation": "All digits are distinct, so only single digits qualify."
+   }
+  ],
+  "constraints": [
+   "1 <= s.length <= 10^5",
+   "s consists of digits '0'-'9'"
+  ],
+  "functionName": "longestRearrangeablePalSubstring",
+  "params": [
+   {
+    "name": "s",
+    "type": "string"
+   }
+  ],
+  "returnType": "int",
+  "testCases": [
+   {
+    "args": [
+     "3242415"
+    ],
+    "expected": 5,
+    "isSample": true
+   },
+   {
+    "args": [
+     "12345678"
+    ],
+    "expected": 1,
+    "isSample": true
+   },
+   {
+    "args": [
+     "213123"
+    ],
+    "expected": 6,
+    "isSample": false
+   },
+   {
+    "args": [
+     "9"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "0000"
+    ],
+    "expected": 4,
+    "isSample": false
+   },
+   {
+    "args": [
+     "1234567890"
+    ],
+    "expected": 1,
+    "isSample": false
+   },
+   {
+    "args": [
+     "5551235551"
+    ],
+    "expected": 3,
+    "isSample": false
+   }
+  ],
+  "isPublished": true
+ }
+]
