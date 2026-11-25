@@ -68,6 +68,9 @@ export const SIZES = {
   // Admin console: fixed sidebar column on desktop, and the icon column of each sidebar link.
   adminSidebarWidth: 240,
   adminNavIconWidth: 36,
+  // Admin console on phones (Material navigation drawer): height of one destination row, which is also the pill-shaped
+  // active indicator behind it.
+  adminDrawerRow: 56,
   viewportHeight: '100dvh',
   // Lets a flex child shrink below its content width so long text can truncate with an ellipsis.
   flexShrinkMinWidth: 0,

@@ -10,14 +10,35 @@ import ChatRoundedIcon from '@mui/icons-material/ChatRounded';
 
 // One entry per admin section. `end` matches only the exact index route
 // so /admin doesn't keep the Overview link highlighted while on /admin/users.
+// `group` is the heading the phone navigation drawer lists the section under (sections of a group are adjacent).
 export const ADMIN_NAV_ITEMS = [
-  { to: '/admin', label: 'Overview', icon: <DashboardRoundedIcon fontSize="small" />, end: true },
-  { to: '/admin/users', label: 'Users', icon: <GroupRoundedIcon fontSize="small" /> },
-  { to: '/admin/licenses', label: 'License Keys', icon: <VpnKeyRoundedIcon fontSize="small" /> },
-  { to: '/admin/store', label: 'Store', icon: <StorefrontRoundedIcon fontSize="small" /> },
-  { to: '/admin/problems', label: 'Problems', icon: <DescriptionRoundedIcon fontSize="small" /> },
-  { to: '/admin/aptitude', label: 'Aptitude', icon: <PsychologyRoundedIcon fontSize="small" /> },
-  { to: '/admin/support-chat', label: 'Live Chat', icon: <ChatRoundedIcon fontSize="small" />, badgeKey: 'chat' },
-  { to: '/admin/feedback', label: 'Support Inbox', icon: <FeedbackRoundedIcon fontSize="small" /> },
-  { to: '/admin/audit-log', label: 'Audit Log', icon: <HistoryRoundedIcon fontSize="small" /> },
+  { to: '/admin', label: 'Overview', icon: DashboardRoundedIcon, end: true, group: 'Manage' },
+  { to: '/admin/users', label: 'Users', icon: GroupRoundedIcon, group: 'Manage' },
+  { to: '/admin/licenses', label: 'License Keys', icon: VpnKeyRoundedIcon, group: 'Manage' },
+  { to: '/admin/store', label: 'Store', icon: StorefrontRoundedIcon, group: 'Manage' },
+  { to: '/admin/problems', label: 'Problems', icon: DescriptionRoundedIcon, group: 'Content' },
+  { to: '/admin/aptitude', label: 'Aptitude', icon: PsychologyRoundedIcon, group: 'Content' },
+  { to: '/admin/support-chat', label: 'Live Chat', icon: ChatRoundedIcon, badgeKey: 'chat', group: 'Support' },
+  { to: '/admin/feedback', label: 'Support Inbox', icon: FeedbackRoundedIcon, group: 'Support' },
+  { to: '/admin/audit-log', label: 'Audit Log', icon: HistoryRoundedIcon, group: 'System' },
 ];
+
+// Only Live Chat carries a badge: admins must notice waiting customers without opening the section.
+export const unreadBadgeFor = (item, unreadChats) => (item.badgeKey === 'chat' ? unreadChats : 0);
+
+export function groupAdminNavItems(items = ADMIN_NAV_ITEMS) {
+  return items.reduce((groups, item) => {
+    const current = groups[groups.length - 1];
+    if (current?.label === item.group) current.items.push(item);
+    else groups.push({ label: item.group, items: [item] });
+    return groups;
+  }, []);
+}
+
+const withoutTrailingSlash = (pathname) => pathname.replace(/\/+$/, '') || '/';
+
+// Same rule as NavLink's `end`, for the phone drawer that marks the open section itself.
+export function isAdminItemActive(pathname, { to, end }) {
+  const path = withoutTrailingSlash(pathname);
+  return end ? path === to : path === to || path.startsWith(`${to}/`);
+}

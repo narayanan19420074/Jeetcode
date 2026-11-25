@@ -54,9 +54,6 @@
   "features/admin/pages/AdminUsersPage.jsx": {
     "fixedSizePx": 5
   },
-  "features/aptitude/AptitudeLearnPage.jsx": {
-    "fixedSizePx": 2
-  },
   "features/aptitude/AptitudePracticeQuestionPage.jsx": {
     "fixedSizePx": 5
   },
@@ -497,9 +494,6 @@
   },
   "features/store/desktop/CourseStrip.jsx": {
     "fixedSizePx": 2
-  },
-  "features/store/desktop/StoreDesktopView.jsx": {
-    "fixedSizePx": 1
   },
   "features/store/desktop/StoreHeader.jsx": {
     "fixedSizePx": 4
