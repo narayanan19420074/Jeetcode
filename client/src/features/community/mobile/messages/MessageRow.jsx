@@ -3,7 +3,8 @@ import { PersonAvatar } from '../../../friends/friendsUi';
 import { previewOf, shortTime } from '../../../friends/friendsKit';
 import { LIB_TRACKING, LIB_ACCENT } from '../../../dashboard/components/libraryStyle';
 import { clamp } from '../../../workspace/community/CommunityBits';
-import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, RADII_PX, SIZES } from '../../../../app/design/designTokens';
+import UnreadBadge from '../../common/UnreadBadge';
+import { FONT_SIZES, FONT_WEIGHTS, SIZES } from '../../../../app/design/designTokens';
 
 const PREVIEW_LINES = 2;
 const AVATAR_GAP = 1.5;
@@ -14,7 +15,6 @@ const rowSx = {
   '&:last-of-type::after': { display: 'none' },
 };
 const buttonSx = { width: SIZES.fill, display: 'flex', alignItems: 'flex-start', justifyContent: 'flex-start', gap: AVATAR_GAP, py: 1.5, textAlign: 'left', fontFamily: 'inherit', color: 'inherit' };
-const badgeSx = { flexShrink: 0, minWidth: SIZES.unreadBadge, height: SIZES.unreadBadge, px: 0.75, mt: 0.25, borderRadius: RADII_PX.pill, display: 'grid', placeItems: 'center', bgcolor: LIB_ACCENT, color: COLOR_PALETTE.white, fontSize: FONT_SIZES.caption, fontWeight: FONT_WEIGHTS.bold };
 
 // One conversation of the phone inbox: photo with online dot, name and time on the first line, then the latest message
 // (two lines at most) with the unread count at its right. Unread conversations are bold.
@@ -31,7 +31,7 @@ export default function MessageRow({ friend, last, unread, online, myId, onOpen 
           </Stack>
           <Stack direction="row" sx={{ alignItems: 'flex-start', gap: 1 }}>
             <Typography sx={{ flex: 1, minWidth: SIZES.flexShrinkMinWidth, fontSize: FONT_SIZES.bodyLg, lineHeight: 1.4, letterSpacing: LIB_TRACKING, color: unread ? 'var(--lib-text)' : 'var(--lib-muted)', fontWeight: unread ? FONT_WEIGHTS.medium : FONT_WEIGHTS.regular, ...clamp(PREVIEW_LINES) }}>{preview}</Typography>
-            {unread > 0 && <Typography component="span" aria-hidden sx={badgeSx}>{unread > 99 ? '99+' : unread}</Typography>}
+            <UnreadBadge count={unread} sx={{ mt: 0.25 }} />
           </Stack>
         </Box>
       </ButtonBase>

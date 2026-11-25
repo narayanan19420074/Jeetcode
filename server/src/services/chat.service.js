@@ -98,32 +98,38 @@ export async function unreadSummary(me) {
 
 const previewOf = (m) => ({ from: String(m.from), kind: m.kind, text: m.text, at: new Date(m.createdAt).toISOString(), read: Boolean(m.readAt) });
 
-// The newest message of each conversation, keyed by the other member's id.
+const otherMemberId = (message, me) => (String(message.from) === String(me) ? String(message.to) : String(message.from));
+
+// The newest message of each conversation, newest conversation first. `iHaveWritten` tells whether I sent at least one
+// message in it, which separates a message request (they wrote, I never answered) from a conversation I took part in.
 async function newestMessages(me) {
   const myId = new mongoose.Types.ObjectId(String(me));
   const rows = await DirectMessage.aggregate([
     { $match: { $or: [{ from: myId }, { to: myId }] } },
     { $sort: { createdAt: -1 } },
-    { $group: { _id: '$pairKey', m: { $first: '$$ROOT' } } },
+    { $group: { _id: '$pairKey', m: { $first: '$$ROOT' }, iHaveWritten: { $max: { $eq: ['$from', myId] } } } },
     { $sort: { 'm.createdAt': -1 } },
     { $limit: MAX_CONVERSATIONS },
   ]);
-  return Object.fromEntries(rows.map(({ m }) => [String(m.from) === String(me) ? String(m.to) : String(m.from), previewOf(m)]));
+  return rows.map(({ m, iHaveWritten }) => ({ otherId: otherMemberId(m, me), preview: previewOf(m), iHaveWritten }));
 }
 
 // Name, handle and photo of the members in the inbox who are not friends (friends come from the friends list).
-// Activity and streak are friend-only details, so they are not sent.
-async function loadNonFriendCards(me, otherIds) {
+// Activity and streak are friend-only details, so they are not sent. `hasMessagedThem` drives the phone inbox: a
+// non-friend I have written to is a General conversation, one I have never answered is a message request.
+async function loadNonFriendCards(me, conversations) {
   const friendIds = new Set(await getFriendIds(me));
-  const strangerIds = otherIds.filter((id) => !friendIds.has(id));
-  const users = await User.find({ _id: { $in: strangerIds }, role: { $ne: 'admin' } }).select('name handle avatarUrl').lean();
-  return Object.fromEntries(users.map((u) => [String(u._id), { userId: String(u._id), name: u.name, handle: u.handle, avatarUrl: u.avatarUrl || null }]));
+  const strangers = conversations.filter(({ otherId }) => !friendIds.has(otherId));
+  const users = await User.find({ _id: { $in: strangers.map(({ otherId }) => otherId) }, role: { $ne: 'admin' } }).select('name handle avatarUrl').lean();
+  const hasMessagedThem = new Map(strangers.map(({ otherId, iHaveWritten }) => [otherId, Boolean(iHaveWritten)]));
+  return Object.fromEntries(users.map((u) => [String(u._id), { userId: String(u._id), name: u.name, handle: u.handle, avatarUrl: u.avatarUrl || null, hasMessagedThem: hasMessagedThem.get(String(u._id)) }]));
 }
 
 // Inbox data: -> { byUser: { memberId: lastMessage }, people: { memberId: card } } where `people` covers non-friends only.
 export async function conversationSummaries(me) {
-  const byUser = await newestMessages(me);
-  return { byUser, people: await loadNonFriendCards(me, Object.keys(byUser)) };
+  const conversations = await newestMessages(me);
+  const byUser = Object.fromEntries(conversations.map(({ otherId, preview }) => [otherId, preview]));
+  return { byUser, people: await loadNonFriendCards(me, conversations) };
 }
 
 export async function markRead(me, other) {
