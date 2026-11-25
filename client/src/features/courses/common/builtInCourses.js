@@ -1,15 +1,17 @@
-import { BIG_O_COURSE } from '../content/bigO/bigOCourse';
+import { CSS_COURSE } from '../content/css/cssCourse';
 import { DESIGN_SYSTEM_COURSE } from '../content/designSystem/designSystemCourse';
 import { PYTHON_COURSE } from '../content/python/pythonCourse';
+import { SYSTEM_DESIGN_COURSE } from '../content/systemDesign/systemDesignCourse';
 import { readDoneKeys } from './courseProgressStorage';
 
-const BUILT_IN_COURSES = [PYTHON_COURSE, BIG_O_COURSE, DESIGN_SYSTEM_COURSE];
+const BUILT_IN_COURSES = [PYTHON_COURSE, CSS_COURSE, DESIGN_SYSTEM_COURSE, SYSTEM_DESIGN_COURSE];
 
 // Courses that ship with the app (lesson text and exercises live in the client) are listed under their own section.
 export const BUILT_IN_SECTIONS = [
   { id: 'programming', label: 'Programming Languages', blurb: 'Learn a language from the first line of code, with lessons and exercises side by side.' },
-  { id: 'computer-science', label: 'Computer Science', blurb: 'Understand how efficient algorithms and data structures are built and compared.' },
+  { id: 'web', label: 'Web Development', blurb: 'Build and style real web pages, one interface part at a time.' },
   { id: 'design', label: 'Design', blurb: 'Build interfaces that look consistent and work for everyone.' },
+  { id: 'system-design', label: 'System Design', blurb: 'Design scalable, reliable systems and learn the trade-offs behind them.' },
 ];
 
 export const findBuiltInCourse = (slug) => BUILT_IN_COURSES.find((course) => course.slug === slug) ?? null;
