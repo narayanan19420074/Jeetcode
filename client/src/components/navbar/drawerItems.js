@@ -11,12 +11,11 @@ const dashLink = (view) => ({ ...DASH_SECTIONS.find((section) => section.view ==
 
 // Phone menu, most used first. Related links share one entry with one icon (a group), so the menu shows seven entries
 // instead of ten: your progress, preparation (learning plan, company prep, explore), competition (contest, quests,
-// leaderboard), friends, courses, the store and the subscription plans. Problems, Aptitude and Community are in the tab bar.
+// leaderboard), courses, the store and the subscription plans. Friends are added from the Leaderboard and answered in Messages. Problems, Aptitude and Community are in the tab bar.
 export const DRAWER_ITEMS = [
   { to: '/you', label: 'My stats', icon: InsightsRoundedIcon, signedInOnly: true },
   { label: 'Prepare', icon: MenuBookRoundedIcon, children: [dashLink('plans'), { to: '/prep', label: 'Companies' }, dashLink('explore')] },
   { label: 'Compete', icon: EmojiEventsRoundedIcon, children: [dashLink('contest'), dashLink('quests'), dashLink('leaderboard')] },
-  dashLink('friends'),
   { to: '/courses', label: 'Courses', icon: SchoolRoundedIcon },
   { to: '/store', label: 'Store', icon: StorefrontRoundedIcon },
   { to: '/plans', label: 'Plans', icon: WorkspacePremiumRoundedIcon },

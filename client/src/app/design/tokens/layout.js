@@ -162,6 +162,8 @@ export const SIZES = {
   commentSheetHeight: '70dvh',
   sheetHandleWidth: 48,
   sheetHandleHeight: 4,
+  // Tallest a bottom sheet of details may grow (the player sheet of the phone Leaderboard) before it scrolls.
+  bottomSheetMaxHeight: '90dvh',
   // Page scrollbars: regular on desktop, slim on phones, thin for auto-hide panels.
   scrollbar: { regular: 10, slim: 4, thin: 6 },
   // Desktop Leaderboard (Dashboard, Leaderboard view). Filter pills match the Library pills; the table columns
@@ -185,6 +187,8 @@ export const SIZES = {
     pointsColumn: 72,
     accentBar: 3,
     progress: 8,
+    // Thinner progress bar of the rank card at the top of the phone Leaderboard.
+    compactProgress: 5,
     loadMoreDistance: 240,
     scrollSentinel: 1,
   },

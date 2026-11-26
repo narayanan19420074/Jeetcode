@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { IconButton, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import { useSnackbar } from 'notistack';
 import MoreHorizRoundedIcon from '@mui/icons-material/MoreHorizRounded';
@@ -7,33 +6,24 @@ import ShareRoundedIcon from '@mui/icons-material/ShareRounded';
 import DownloadRoundedIcon from '@mui/icons-material/DownloadRounded';
 import PersonAddAltRoundedIcon from '@mui/icons-material/PersonAddAltRounded';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
-import { sendFriendRequest } from '../../friends/friendsSlice';
+import { acceptFriendRequest, sendFriendRequest } from '../../friends/friendsSlice';
+import useFriendStatus from '../../friends/common/useFriendStatus';
+import { useFriendAction } from '../../friends/desktop/useFriendAction';
 import { AboutMemberDialog } from './MemberInfoDialogs';
 import { profileUrlOf } from './jobProfilePaths';
 
-const FRIEND_LABELS = { friend: 'Friends', sent: 'Friend request sent', received: 'Friend request received', none: 'Add friend' };
+const FRIEND_LABELS = { friend: 'Friends', sent: 'Friend request sent', received: 'Accept friend request', none: 'Add friend' };
 
-function friendStateOf(friendsState, memberId) {
-  const { friends, incoming, outgoing } = friendsState;
-  if (friends.some((friend) => friend.userId === memberId)) return 'friend';
-  if (outgoing.some((request) => request.user.userId === memberId)) return 'sent';
-  return incoming.some((request) => request.user.userId === memberId) ? 'received' : 'none';
-}
-
-// "Add friend" sends the same friend request as the Friends page, so the member sees it under Requests.
+// "Add friend" sends the same friend request as the Leaderboard and the member search. When the member asked first, the
+// same entry accepts their request instead, so a request can be answered from the profile as well.
 function useAddFriend(owner) {
-  const dispatch = useDispatch();
-  const { enqueueSnackbar } = useSnackbar();
-  const state = useSelector((root) => friendStateOf(root.friends, String(owner._id)));
-  const send = async () => {
-    try {
-      await dispatch(sendFriendRequest(owner.handle)).unwrap();
-      enqueueSnackbar('Friend request sent', { variant: 'success' });
-    } catch (message) {
-      enqueueSnackbar(typeof message === 'string' ? message : 'Could not send the friend request.', { variant: 'error' });
-    }
-  };
-  return { label: FRIEND_LABELS[state], disabled: state !== 'none', send };
+  const memberId = String(owner._id);
+  const { status, requestId } = useFriendStatus(memberId);
+  const { run } = useFriendAction();
+  const send = () => (status === 'received'
+    ? run(requestId, acceptFriendRequest(requestId), 'Friend added')
+    : run(memberId, sendFriendRequest(owner.handle), 'Friend request sent'));
+  return { label: FRIEND_LABELS[status], disabled: status === 'friend' || status === 'sent', send };
 }
 
 async function copyProfileLink(owner, enqueueSnackbar) {

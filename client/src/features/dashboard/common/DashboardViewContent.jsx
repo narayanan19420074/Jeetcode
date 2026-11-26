@@ -5,7 +5,7 @@ import ContestPage from '../../contest/ContestPage';
 import StudyPlannerView from '../../studyplan/StudyPlannerView';
 import LeaderboardView from '../../leaderboard/LeaderboardView';
 import { ExploreView, ListView, QuestsView } from '../components/DashboardViews';
-import FriendsPanel from './FriendsPanel';
+import LegacyFriendsRedirect from './LegacyFriendsRedirect';
 
 // My stats and Plans are heavier and rarely the first screen, so they load on demand.
 const MyStatsPage = lazy(() => import('../../profile/YouPage'));
@@ -38,7 +38,7 @@ const VIEW_RENDERERS = {
   explore: ({ browse }) => <ExploreView onBrowse={browse} />,
   plans: ({ isAuthenticated }) => <StudyPlannerView isAuthenticated={isAuthenticated} />,
   leaderboard: ({ isAuthenticated }) => <LeaderboardView isAuthenticated={isAuthenticated} />,
-  friends: ({ isAuthenticated, user }) => <FriendsPanel isAuthenticated={isAuthenticated} user={user} />,
+  friends: () => <LegacyFriendsRedirect />,
   list: (dashboard) => <DashboardListPanel dashboard={dashboard} />,
   stats: () => (
     <ProtectedRoute>

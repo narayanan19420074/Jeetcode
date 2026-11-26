@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-// `stats` (My stats) and `billing` (Plans) open in the main area like the other sidebar entries.
+// `stats` (My stats) and `billing` (Plans) open in the main area like the other sidebar entries. `friends` is no longer a
+// sidebar entry; the view stays only so that old links keep working (they are forwarded by LegacyFriendsRedirect).
 const VIEWS = ['library', 'contest', 'quests', 'explore', 'plans', 'leaderboard', 'friends', 'list', 'stats', 'billing'];
 // These views need the full width, so the streak rail slides away.
 const VIEWS_WITHOUT_RAIL = ['plans', 'leaderboard', 'friends', 'explore', 'contest', 'quests', 'stats', 'billing'];

@@ -3,7 +3,7 @@ import { Divider, Paper } from '@mui/material';
 import MemberRow from '../../mobile/members/MemberRow';
 import useMemberSearch from '../../mobile/members/useMemberSearch';
 import { SIZES, Z_INDEX } from '../../../../app/design/designTokens';
-import FriendRequestButton from './FriendRequestButton';
+import FriendRequestButton from '../../../friends/common/FriendRequestButton';
 import PostResultRow from './PostResultRow';
 import SearchSection from './SearchSection';
 import usePostSearch from './usePostSearch';

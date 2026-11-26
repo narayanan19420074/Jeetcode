@@ -4,6 +4,7 @@ import WorkspacePremiumRoundedIcon from '@mui/icons-material/WorkspacePremiumRou
 import { useLibraryPalette } from '../../dashboard/components/libraryStyle';
 import { DIFF_COLOR } from '../../dashboard/dashboardUtils';
 import { COLOR_PALETTE, FONT_SIZES, FONT_WEIGHTS, MOTION, RADII_PX, SIZES } from '../../../app/design/designTokens';
+import FriendRequestButton from '../../friends/common/FriendRequestButton';
 import { tierFor } from '../tiers';
 import { APT_COLOR, PT } from '../lbShared';
 import { TABULAR } from './lbLook';
@@ -38,7 +39,7 @@ function TierBar({ row }) {
   );
 }
 
-// What this player has solved, and how far the next level is. Opens in a popover when there is no side panel.
+// What this player has solved, and how far the next level is, with the Add friend button. Opens in a popover when there is no side panel.
 export default function RowDetail({ row }) {
   const pal = useLibraryPalette();
   const { tier } = tierFor(row.score);
@@ -51,6 +52,7 @@ export default function RowDetail({ row }) {
           <Typography noWrap sx={{ fontWeight: FONT_WEIGHTS.bold, lineHeight: 1.25 }}>{row.name}</Typography>
           <Typography noWrap variant="caption" sx={{ color: pal.muted }}>@{row.handle}{row.company ? `, ${row.company}` : ''}</Typography>
         </Box>
+        <Box sx={{ ml: 'auto' }}><FriendRequestButton member={row} /></Box>
       </Box>
       <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 1 }}>
         {tiles.map(([label, count, points, color]) => <SolvedTile key={label} label={label} count={count} points={points} color={color} />)}

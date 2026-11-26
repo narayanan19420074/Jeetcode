@@ -10,6 +10,7 @@ export default function useDesktopSection() {
   return {
     section,
     showFeed: () => setSection(FEED_SECTION),
+    showMessages: () => setSection(MESSAGES_SECTION),
     // The Messages icon works as a switch: a second click returns to the feed.
     toggleMessages: () => setSection((current) => (current.type === 'messages' ? FEED_SECTION : MESSAGES_SECTION)),
     showChannelList: (kind) => setSection({ type: 'list', kind }),

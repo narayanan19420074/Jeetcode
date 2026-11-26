@@ -8,6 +8,7 @@ import FreeAccessBanner from './FreeAccessBanner';
 import { AdminModePill } from './AdminModeSwitch';
 import EmailVerifyBanner from './EmailVerifyBanner';
 import FriendsRealtime from '../features/friends/friendsRealtime';
+import FriendInviteGate from '../features/friends/common/FriendInviteGate';
 import NotificationsWatcher from '../features/notifications/NotificationsWatcher';
 import { LIBRARY_PAGE_PATHS, LIBRARY_PALETTE, isLibraryRoute } from '../features/dashboard/components/libraryStyle';
 import { DesktopLookProvider, isDashboardPath, usesDesktopLook, usesWhitePage } from '../features/dashboard/desktop/desktopLook';
@@ -87,6 +88,7 @@ export default function MainLayout() {
         <FreeAccessBanner />
         <EmailVerifyBanner />
         <FriendsRealtime />
+        <FriendInviteGate />
         <NotificationsWatcher />
         <TopBar hiddenOnPhone={hidesNavbarOnPhone(pathname, search)} />
         <Box component="main" sx={{ pb: bottomNav ? { xs: 'calc(76px + env(safe-area-inset-bottom))', md: 0 } : 0 }}>

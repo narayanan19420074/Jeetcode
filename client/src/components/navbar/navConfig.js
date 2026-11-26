@@ -9,7 +9,6 @@ import MilitaryTechRoundedIcon from '@mui/icons-material/MilitaryTechRounded';
 import ExploreRoundedIcon from '@mui/icons-material/ExploreRounded';
 import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import LeaderboardRoundedIcon from '@mui/icons-material/LeaderboardRounded';
-import PeopleAltRoundedIcon from '@mui/icons-material/PeopleAltRounded';
 import StorefrontRoundedIcon from '@mui/icons-material/StorefrontRounded';
 import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 
@@ -39,7 +38,6 @@ export const DASH_SECTIONS = [
   { to: '/dashboard?view=explore', label: 'Explore', icon: ExploreRoundedIcon, view: 'explore' },
   { to: '/dashboard?view=plans', label: 'Study Plan', icon: SchoolRoundedIcon, view: 'plans' },
   { to: '/dashboard?view=leaderboard', label: 'Leaderboard', icon: LeaderboardRoundedIcon, view: 'leaderboard' },
-  { to: '/dashboard?view=friends', label: 'Friends', icon: PeopleAltRoundedIcon, view: 'friends' },
 ];
 
 // Admin deliberately has no Navbar link. Admins reach /admin/login directly

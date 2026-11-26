@@ -17,6 +17,7 @@ import CommunityToolbar from './toolbar/CommunityToolbar';
 import ChannelDetailView from './channels/ChannelDetailView';
 import ChannelsView from './channels/ChannelsView';
 import useDesktopSection from './channels/useDesktopSection';
+import useOpenMessagesFromLink from './useOpenMessagesFromLink';
 
 function LeftRail({ onShowSaved, onOpenChannels }) {
   return (
@@ -70,6 +71,7 @@ function PageBody({ page, nav }) {
 export default function CommunityDesktopView({ page }) {
   const { feed, composeOpen, closeCompose } = page;
   const nav = useDesktopSection();
+  useOpenMessagesFromLink(nav.showMessages);
   return (
     <LibraryFont>
       <CommunityToolbar isMessagesOpen={nav.section.type === 'messages'} onToggleMessages={nav.toggleMessages} />
